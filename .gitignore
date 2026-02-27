@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# astro
+dist/
+.astro/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# env
+.env
+.env.*
+
+# vercel
+.vercel
+
+# pagefind (generated at build time)
+public/pagefind/
