@@ -172,5 +172,11 @@ const structuredData = {
 
     <!-- Load full theme logic -->
     <script src="../scripts/theme.ts"></script>
+
+    <!-- Vercel Analytics -->
+    <script>
+      import { inject } from "@vercel/analytics";
+      inject();
+    </script>
   </body>
 </html>

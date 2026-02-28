@@ -8,6 +8,7 @@ import {
   transformerNotationHighlight,
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
+import { remarkReadingTime } from "./src/utils/remark-reading-time.mjs";
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import { SITE } from "./src/config";
 
@@ -20,7 +21,7 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
+    remarkPlugins: [remarkReadingTime, remarkToc, [remarkCollapse, { test: "Table of contents" }]],
     shikiConfig: {
       // For more themes, visit https://shiki.style/themes
       themes: { light: "min-light", dark: "night-owl" },

@@ -3,19 +3,27 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-## vibecode
+## Hama
 
-AI-native development insights for vibe coders.
+I build things with AI and write about what actually works.
 
-I'm **Hama**, building [MUSU](https://musu.pro) — an agent runtime for vibe coders. This blog documents what I learn along the way: architecture decisions, AI-assisted development workflows, and the reality of shipping software with AI tools.
+Currently building [MUSU](https://musu.pro) — an agent runtime for vibe coders.
+This blog is where I document the process. What breaks, what ships, what I'd do differently.
 
-## What I write about
+No hype. No hand-waving. If I haven't tested it, I don't write about it.
 
-- **AI-native development** — practical insights from building with Claude, Cursor, and AI agents
-- **Vibe coding** — pushing the limits of AI-assisted software development
-- **Technical deep dives** — performance, architecture, infrastructure
-- **Building in public** — honest progress updates on MUSU and related projects
+### What you'll find here
 
-## Tech stack
+- **Vibe to Production** — guides for turning AI-generated prototypes into real software
+- **MCP & Agentic Engineering** — tutorials nobody else is writing yet
+- **Build logs** — transparent progress reports, including the failures
+- **Hot takes** — opinions backed by experience, not engagement metrics
 
-This blog is built with [Astro](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/), based on the excellent [AstroPaper](https://github.com/satnaing/astro-paper) theme by Sat Naing.
+### Subscribe
+
+If this sounds useful, [subscribe to the newsletter](/). Weekly. No spam. Unsubscribe anytime.
+
+### Connect
+
+- GitHub: [@yellowhama](https://github.com/yellowhama)
+- X: [@yellowhama](https://x.com/yellowhama)

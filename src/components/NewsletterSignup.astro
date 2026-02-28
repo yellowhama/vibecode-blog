@@ -1,0 +1,77 @@
+---
+type Props = {
+  class?: string;
+  compact?: boolean;
+};
+const { class: className, compact = false } = Astro.props;
+const pubId = import.meta.env.PUBLIC_BEEHIIV_PUB_ID || "";
+---
+
+<div class:list={["newsletter-signup", className]}>
+  {!compact && (
+    <div class="mb-4">
+      <h3 class="text-lg font-semibold text-foreground">Stay in the loop</h3>
+      <p class="mt-1 text-sm text-text-secondary leading-relaxed">
+        Weekly insights on AI-native development. No spam. Unsubscribe anytime.
+      </p>
+    </div>
+  )}
+  <form
+    id="newsletter-form"
+    class="flex gap-2 max-sm:flex-col"
+  >
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="your@email.com"
+      class="flex-1 rounded-md border border-border bg-bg-secondary px-3 py-2 text-sm text-foreground placeholder:text-text-muted focus:border-accent focus:outline-none"
+    />
+    <button
+      type="submit"
+      class="whitespace-nowrap rounded-md bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-dim"
+    >
+      Subscribe
+    </button>
+  </form>
+  <p id="newsletter-status" class="mt-2 hidden text-sm"></p>
+</div>
+
+<script is:inline define:vars={{ pubId }}>
+  document.addEventListener("astro:page-load", () => {
+    const form = document.getElementById("newsletter-form");
+    const status = document.getElementById("newsletter-status");
+    if (!form || !status) return;
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = form.querySelector('input[name="email"]').value;
+
+      if (!pubId) {
+        status.textContent = "Newsletter coming soon!";
+        status.className = "mt-2 text-sm text-text-muted";
+        return;
+      }
+
+      try {
+        const res = await fetch("https://api.beehiiv.com/v2/publications/" + pubId + "/subscriptions", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        });
+
+        if (res.ok) {
+          status.textContent = "You're in! Check your inbox.";
+          status.className = "mt-2 text-sm text-accent";
+          form.reset();
+        } else {
+          status.textContent = "Something went wrong. Try again.";
+          status.className = "mt-2 text-sm text-red-500";
+        }
+      } catch {
+        status.textContent = "Something went wrong. Try again.";
+        status.className = "mt-2 text-sm text-red-500";
+      }
+    });
+  });
+</script>

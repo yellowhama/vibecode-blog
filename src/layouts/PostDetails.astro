@@ -7,6 +7,8 @@ import Tag from "@/components/Tag.astro";
 import Datetime from "@/components/Datetime.astro";
 import EditPost from "@/components/EditPost.astro";
 import ShareLinks from "@/components/ShareLinks.astro";
+import NewsletterSignup from "@/components/NewsletterSignup.astro";
+import Comments from "@/components/Comments.astro";
 import BackButton from "@/components/BackButton.astro";
 import BackToTopButton from "@/components/BackToTopButton.astro";
 import { getPath } from "@/utils/getPath";
@@ -42,7 +44,7 @@ const relatedPosts = posts
   .filter(p => p.data.tags.some(t => currentTags.has(t.toLowerCase())))
   .slice(0, 3);
 
-const { Content } = await render(post);
+const { Content, remarkPluginFrontmatter } = await render(post);
 
 let ogImageUrl: string | undefined;
 
@@ -104,7 +106,7 @@ const nextPost =
       {title}
     </h1>
     <div class="my-2 flex items-center gap-2">
-      <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
+      <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" readingTime={remarkPluginFrontmatter.minutesRead} />
       <span
         aria-hidden="true"
         class:list={[
@@ -132,6 +134,12 @@ const nextPost =
     <BackToTopButton />
 
     <ShareLinks />
+
+    <div class="mt-8 border-t border-border pt-8">
+      <NewsletterSignup />
+    </div>
+
+    <Comments class="mt-8" />
 
     <!-- Related Posts -->
     {

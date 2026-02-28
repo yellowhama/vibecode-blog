@@ -9,6 +9,7 @@ import Card from "@/components/Card.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
+import NewsletterSignup from "@/components/NewsletterSignup.astro";
 import { SITE } from "@/config";
 import { SOCIALS } from "@/constants";
 
@@ -45,6 +46,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         Writing about AI-native development. No hype, no hand-waving.
         Just what works when you actually sit down and build with these tools.
       </p>
+      <NewsletterSignup compact class="mt-6" />
       {
         SOCIALS.length > 0 && (
           <div class="mt-4 flex max-sm:flex-col sm:items-center">

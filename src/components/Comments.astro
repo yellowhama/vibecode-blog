@@ -1,0 +1,64 @@
+---
+type Props = {
+  class?: string;
+};
+const { class: className } = Astro.props;
+---
+
+<div class:list={["giscus-wrapper", className]} id="giscus-container">
+  <!-- Giscus will be loaded here -->
+</div>
+
+<script is:inline>
+  function loadGiscus() {
+    const container = document.getElementById("giscus-container");
+    if (!container || container.querySelector("script")) return;
+
+    const theme =
+      document.documentElement.getAttribute("data-theme") === "dark"
+        ? "dark"
+        : "light";
+
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", "yellowhama/vibecode-blog");
+    script.setAttribute("data-repo-id", ""); // TODO: giscus.app에서 설정 후 채우기
+    script.setAttribute("data-category", "Blog Comments");
+    script.setAttribute("data-category-id", ""); // TODO: giscus.app에서 설정 후 채우기
+    script.setAttribute("data-mapping", "pathname");
+    script.setAttribute("data-strict", "0");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "top");
+    script.setAttribute("data-theme", theme);
+    script.setAttribute("data-lang", "en");
+    script.crossOrigin = "anonymous";
+    script.async = true;
+    container.appendChild(script);
+  }
+
+  function syncGiscusTheme() {
+    const observer = new MutationObserver(() => {
+      const theme =
+        document.documentElement.getAttribute("data-theme") === "dark"
+          ? "dark"
+          : "light";
+      const iframe = document.querySelector("iframe.giscus-frame");
+      if (iframe) {
+        iframe.contentWindow?.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        );
+      }
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    loadGiscus();
+    syncGiscusTheme();
+  });
+</script>
