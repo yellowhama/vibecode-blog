@@ -3,30 +3,72 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+/* ─── MUSU V2 Design Tokens ──────────────────────────────────────
+ * SSOT: design_work/branding/01-colors.md
+ *       design_work/branding/02-typography.md
+ *       design_work/branding/03-shapes-texture.md
+ * ──────────────────────────────────────────────────────────────── */
+
 :root,
 html[data-theme="light"] {
-  --background: #F8F7E8;
+  --background: #FDFCF0;
+  --bg-secondary: #F8F7E8;
+  --bg-tertiary: #F0EFE0;
+  --bg-elevated: #FFFFFF;
   --foreground: #2D1D19;
-  --accent: #3B82F6;
+  --text-secondary: rgba(45, 29, 25, 0.7);
+  --text-muted: rgba(45, 29, 25, 0.5);
+  --accent: #FFD166;
+  --accent-dim: #E1B655;
+  --accent-glow: rgba(255, 209, 102, 0.3);
   --muted: #F0EFE0;
-  --border: #E0DFD0;
+  --border: rgba(44, 26, 22, 0.2);
+  --border-strong: #2C1A16;
+  --shadow-neo: 4px 4px 0px rgba(45, 29, 25, 1);
+  --shadow-neo-hover: 6px 6px 0px rgba(45, 29, 25, 1);
+  --shadow-clay: inset 0px 4px 10px rgba(255, 255, 255, 0.6);
 }
 
 html[data-theme="dark"] {
-  --background: #0E1117;
-  --foreground: #E8E6D8;
-  --accent: #3B82F6;
-  --muted: #1A1E2A;
-  --border: #2A2E3A;
+  --background: #2D1D19;
+  --bg-secondary: #3D2D29;
+  --bg-tertiary: #4D3D39;
+  --bg-elevated: #3D2D29;
+  --foreground: #F8F7E8;
+  --text-secondary: rgba(248, 247, 232, 0.7);
+  --text-muted: rgba(248, 247, 232, 0.5);
+  --accent: #FFD166;
+  --accent-dim: #E1B655;
+  --accent-glow: rgba(255, 209, 102, 0.3);
+  --muted: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 209, 102, 0.2);
+  --border-strong: #FFD166;
+  --shadow-neo: 4px 4px 0px rgba(0, 0, 0, 0.4);
+  --shadow-neo-hover: 6px 6px 0px rgba(0, 0, 0, 0.4);
+  --shadow-clay: inset 0px 4px 10px rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
-  --font-app: var(--font-google-sans-code);
+  --font-app: var(--font-nunito);
   --color-background: var(--background);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-bg-elevated: var(--bg-elevated);
   --color-foreground: var(--foreground);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
   --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-accent-glow: var(--accent-glow);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  /* Motion */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
 }
 
 @layer base {
@@ -40,6 +82,14 @@ html[data-theme="dark"] {
   }
   body {
     @apply flex min-h-svh flex-col bg-background font-app text-foreground selection:bg-accent/75 selection:text-background;
+  }
+  /* Accent Bar — Yellow top line (brand mark) */
+  body::before {
+    content: '';
+    display: block;
+    height: 4px;
+    background: var(--accent);
+    flex-shrink: 0;
   }
   a,
   button {
@@ -67,4 +117,136 @@ html[data-theme="dark"] {
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 1rem;
+}
+
+/* ─── V2: Shared Reusable Classes (synced from musu-desktop) ────── */
+
+@layer components {
+  /*
+   * Neobrutalism + Claymorphism Hybrid Card
+   * Press-down hover: translate into shadow position → shadow disappears
+   */
+  .musu-card {
+    background: var(--bg-secondary);
+    border: 3px solid var(--border-strong);
+    border-radius: 24px;
+    box-shadow: var(--shadow-neo), var(--shadow-clay);
+    transition: all 250ms var(--ease-spring);
+  }
+
+  .musu-card.interactive:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--border-strong), var(--shadow-clay);
+    cursor: pointer;
+  }
+
+  .musu-card.interactive:active {
+    transform: translate(4px, 4px);
+    box-shadow: var(--shadow-clay);
+  }
+
+  /* Featured Card — Yellow background for featured posts */
+  .musu-card-featured {
+    background: var(--accent);
+    border: 3px solid var(--border-strong);
+    border-radius: 24px;
+    box-shadow: var(--shadow-neo),
+      inset -4px -4px 8px rgba(45, 29, 25, 0.12),
+      inset 4px 4px 8px rgba(255, 255, 255, 0.35);
+    transition: all 250ms var(--ease-spring);
+  }
+
+  .musu-card-featured.interactive:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--border-strong),
+      inset -4px -4px 8px rgba(45, 29, 25, 0.12),
+      inset 4px 4px 8px rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+  }
+
+  .musu-card-featured.interactive:active {
+    transform: translate(4px, 4px);
+    box-shadow:
+      inset -4px -4px 8px rgba(45, 29, 25, 0.12),
+      inset 4px 4px 8px rgba(255, 255, 255, 0.35);
+  }
+
+  /* Flat Panel (sidebar, section bg) */
+  .musu-panel {
+    background: var(--bg-secondary);
+    border: 3px solid var(--border-strong);
+    border-radius: 16px;
+  }
+
+  /* Pill Button — press-down hover */
+  .musu-btn {
+    background: var(--background);
+    color: var(--foreground);
+    border: 3px solid var(--border-strong);
+    border-radius: 9999px;
+    font-family: var(--font-app);
+    font-weight: 700;
+    padding: 8px 16px;
+    cursor: pointer;
+    box-shadow: var(--shadow-neo), var(--shadow-clay);
+    transition: all 250ms var(--ease-spring);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .musu-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--border-strong), var(--shadow-clay);
+  }
+
+  .musu-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+  }
+
+  .musu-btn-primary {
+    background: var(--accent);
+    color: var(--border-strong);
+  }
+
+  /* Input */
+  .musu-input {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    color: var(--foreground);
+    padding: 8px 12px;
+    font-family: var(--font-app);
+    outline: none;
+    transition: all 150ms var(--ease-out-expo);
+  }
+
+  .musu-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent-glow);
+  }
+
+  /* Tag / Badge — pop-out hover (shadow grows, lifts up) */
+  .musu-tag {
+    background: var(--bg-tertiary);
+    color: var(--foreground);
+    border: 2px solid var(--border-strong);
+    border-radius: 9999px;
+    font-family: var(--font-app);
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 2px 10px;
+    box-shadow: 2px 2px 0px var(--border-strong);
+    transition: all 200ms var(--ease-spring);
+    display: inline-block;
+  }
+
+  .musu-tag:hover {
+    background: var(--accent);
+    color: var(--border-strong);
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px var(--border-strong);
+  }
 }

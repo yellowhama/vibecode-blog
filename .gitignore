@@ -23,3 +23,6 @@ pnpm-debug.log*
 
 # pagefind (generated at build time)
 public/pagefind/
+
+# large source assets (brunch export images)
+easy_peasy/assets/

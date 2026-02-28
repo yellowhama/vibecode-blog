@@ -1,0 +1,146 @@
+# Easy  peasy claude code
+
+[001 바이브코딩](001%20%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9%2024fd2f59a06d80958314d2eb3d6e5d34.md)
+
+[002 Claude Code 설치법에 대하여](002%20Claude%20Code%20%EC%84%A4%EC%B9%98%EB%B2%95%EC%97%90%20%EB%8C%80%ED%95%98%EC%97%AC%20259d2f59a06d804bb175c256c8cfeadd.md)
+
+[003 CLAUDE.md 설정하기: 500줄에서 87줄이 되기까지](003%20CLAUDE%20md%20%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0%20500%EC%A4%84%EC%97%90%EC%84%9C%2087%EC%A4%84%EC%9D%B4%20%EB%90%98%EA%B8%B0%EA%B9%8C%EC%A7%80%2026ad2f59a06d8094a013feb8aeca3d10.md)
+
+[004 GitHub이 AI 코딩의 치명적 약점을 해결했다](004%20GitHub%EC%9D%B4%20AI%20%EC%BD%94%EB%94%A9%EC%9D%98%20%EC%B9%98%EB%AA%85%EC%A0%81%20%EC%95%BD%EC%A0%90%EC%9D%84%20%ED%95%B4%EA%B2%B0%ED%96%88%EB%8B%A4%20264d2f59a06d800590ced08c1ceb906c.md)
+
+[005 코딩 문외한이 바이브 코딩하다가 깨달은 것들-Python 대신 TypeScript?](005%20%EC%BD%94%EB%94%A9%20%EB%AC%B8%EC%99%B8%ED%95%9C%EC%9D%B4%20%EB%B0%94%EC%9D%B4%EB%B8%8C%20%EC%BD%94%EB%94%A9%ED%95%98%EB%8B%A4%EA%B0%80%20%EA%B9%A8%EB%8B%AC%EC%9D%80%20%EA%B2%83%EB%93%A4-Python%20%EB%8C%80%EC%8B%A0%20TypeScript%2025dd2f59a06d80f58bd7d6d5aea6feb4.md)
+
+[006 복순이 대수술기: 스파게티 코드에서 시스템으로](006%20%EB%B3%B5%EC%88%9C%EC%9D%B4%20%EB%8C%80%EC%88%98%EC%88%A0%EA%B8%B0%20%EC%8A%A4%ED%8C%8C%EA%B2%8C%ED%8B%B0%20%EC%BD%94%EB%93%9C%EC%97%90%EC%84%9C%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9C%BC%EB%A1%9C%20264d2f59a06d80df988adf6f62b0b111.md)
+
+[007 Claude Code로 2일 만에 미국 주식 스크리너 만들기 (Rust+PyO3+WSL)](007%20Claude%20Code%EB%A1%9C%202%EC%9D%BC%20%EB%A7%8C%EC%97%90%20%EB%AF%B8%EA%B5%AD%20%EC%A3%BC%EC%8B%9D%20%EC%8A%A4%ED%81%AC%EB%A6%AC%EB%84%88%20%EB%A7%8C%EB%93%A4%EA%B8%B0%20(Rust+PyO3+W%20264d2f59a06d80529939c1487c9c9fb6.md)
+
+“야, 이거 해줘.” 한마디면 AI가 코드를 만들고 실행하는 시대가 열렸습니다. 이제는 챗봇에게 답을 묻는 것이 아니라, **말하는대로 → 코드 → 실행**으로 이어지는 새로운 개발 방식, 바로 ‘바이브 코딩(Vibe Coding)’의 시대입니다.
+
+하지만 단순한 예제는 누구나 만들 수 있습니다. 계산기 앱이나 웹페이지 하나쯤은 금세 나오죠. 문제는 그다음입니다. 서비스급 퀄리티, 상업적으로 쓸 수 있는 수준의 안정성과 신뢰성을 얻기 위해서는 단순히 “그냥 쓰세요”만으로는 부족합니다. 이 책은 바로 그 **차이를 메우는 방법**을 다룹니다.
+
+저자는 Claude Code로 2일 만에 미국 주식 586개 종목을 분석하는 자동 스크리너를 완성했고, 1만 줄이 넘던 스파게티 코드를 시스템 구조로 리팩토링했습니다. 그 과정에서 깨달은 것은 단순했습니다. **AI는 빠른 주니어 개발자일 뿐, 우리가 안정성과 신뢰성을 확보할 장치를 마련해야 한다는 것**입니다.
+
+그래서 이 책은 네 가지를 전합니다.
+
+1. **코딩을 몰라도 된다**: 설치와 실행은 초보자도 쉽게 가능하다.
+2. **안정성을 확보한다**: SpecKit, CLAUDE.md, 타입 언어로 코드를 보완한다.
+3. **프로젝트를 완주한다**: 단순 예제가 아닌 서비스급 실전 과정을 보여준다.
+4. **수익화로 연결한다**: 자동화와 투자 툴을 넘어 사이드 프로젝트를 수익화한다.
+
+이 책은 단순 체험기가 아니라, **“신뢰성과 수익성을 확보한 AI 바이브 코딩 방법”**을 담은 실전 가이드입니다.
+
+“야, 이거 해줘.” 한마디면 AI가 코드를 만들고 실행하는 시대가 열렸습니다. 이제는 챗봇에게 답을 묻는 것이 아니라, **말하는대로 → 코드 → 실행**으로 이어지는 새로운 개발 방식, 바로 ‘바이브 코딩(Vibe Coding)’의 시대입니다.
+
+하지만 단순한 예제는 누구나 만들 수 있습니다. 계산기 앱이나 웹페이지 하나쯤은 금세 나오죠. 문제는 **그다음**입니다. 서비스급 퀄리티, 상업적으로 쓸 수 있는 수준의 안정성과 신뢰성을 얻기 위해서는 단순히 “그냥 쓰세요”로는 부족합니다. 이 책은 바로 그 **차이를 메우는 방법**을 알려줍니다. **AI는 빠른 주니어 개발자일 뿐, 우리가 안정성과 신뢰성을 보장할 방법을 마련해야 한다는 것**입니다. 그래서 이 책은 다음과 같은 실전 노하우를 담고 있습니다:
+
+이제 여러분도 챗봇에 묻는 것을 넘어, 실행하는 AI와 함께 **안정적이고 수익화 가능한 프로젝트**를 완주해보세요.
+
+[000](000%2026ed2f59a06d80129e1cf85cd313496b.md)
+
+[008](008%20270d2f59a06d80e9b99ed6c530d8f383.md)
+
+[009 "바퀴 재발명 멈춰 - GitHub는 공짜 레고 마트다"](009%20%EB%B0%94%ED%80%B4%20%EC%9E%AC%EB%B0%9C%EB%AA%85%20%EB%A9%88%EC%B6%B0%20-%20GitHub%EB%8A%94%20%EA%B3%B5%EC%A7%9C%20%EB%A0%88%EA%B3%A0%20%EB%A7%88%ED%8A%B8%EB%8B%A4%20276d2f59a06d80c4a8fed38b287499ce.md)
+
+[010 AI 바이브코딩 생산성 5배 올리는 법 - 5분 문서화 협업 시스템](010%20AI%20%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9%20%EC%83%9D%EC%82%B0%EC%84%B1%205%EB%B0%B0%20%EC%98%AC%EB%A6%AC%EB%8A%94%20%EB%B2%95%20-%205%EB%B6%84%20%EB%AC%B8%EC%84%9C%ED%99%94%20%ED%98%91%EC%97%85%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20276d2f59a06d80fca6dacdaf1a0b79df.md)
+
+[011  Spec Kit으로 게임 개발 업그레이드: Godot+Rust 체계적 바이브 코딩](011%20Spec%20Kit%EC%9C%BC%EB%A1%9C%20%EA%B2%8C%EC%9E%84%20%EA%B0%9C%EB%B0%9C%20%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C%20Godot+Rust%20%EC%B2%B4%EA%B3%84%EC%A0%81%20%EB%B0%94%EC%9D%B4%EB%B8%8C%20%EC%BD%94%EB%94%A9%20278d2f59a06d8022a85fd3017387b8e8.md)
+
+[012  계획은 누구에게나 있다, 쳐맞기 전까지는 - Spec Kit 실전기](012%20%EA%B3%84%ED%9A%8D%EC%9D%80%20%EB%88%84%EA%B5%AC%EC%97%90%EA%B2%8C%EB%82%98%20%EC%9E%88%EB%8B%A4,%20%EC%B3%90%EB%A7%9E%EA%B8%B0%20%EC%A0%84%EA%B9%8C%EC%A7%80%EB%8A%94%20-%20Spec%20Kit%20%EC%8B%A4%EC%A0%84%EA%B8%B0%20278d2f59a06d805dbbfada52bb37d35b.md)
+
+[013 바이브코딩 풀스택! 내가 진짜를 알려주마](013%20%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9%20%ED%92%80%EC%8A%A4%ED%83%9D!%20%EB%82%B4%EA%B0%80%20%EC%A7%84%EC%A7%9C%EB%A5%BC%20%EC%95%8C%EB%A0%A4%EC%A3%BC%EB%A7%88%20279d2f59a06d803fa7b6f6e400f369f9.md)
+
+[014: 키들린의 법칙 2.0 - 문제를 적으면 90% 해결된다](014%20%ED%82%A4%EB%93%A4%EB%A6%B0%EC%9D%98%20%EB%B2%95%EC%B9%99%202%200%20-%20%EB%AC%B8%EC%A0%9C%EB%A5%BC%20%EC%A0%81%EC%9C%BC%EB%A9%B4%2090%25%20%ED%95%B4%EA%B2%B0%EB%90%9C%EB%8B%A4%2027fd2f59a06d80ce9ba2fe221ba6f50a.md)
+
+[015](015%20283d2f59a06d800a87d3ceef5eca595a.md)
+
+[016 anthropic github](016%20anthropic%20github%20292d2f59a06d806c9c35f6adcb1bf9bb.md)
+
+[017 
+AI 코딩의 환각을 잡는 단축키 – Subagent + `/review` 완벽 가이드
+
+](017%20AI%20%EC%BD%94%EB%94%A9%EC%9D%98%20%ED%99%98%EA%B0%81%EC%9D%84%20%EC%9E%A1%EB%8A%94%20%EB%8B%A8%EC%B6%95%ED%82%A4%20%E2%80%93%20Subagent%20+%20review%20%EC%99%84%EB%B2%BD%20%EA%B0%80%EC%9D%B4%EB%93%9C%20294d2f59a06d8071b126e3cf9b9600d1.md)
+
+[claude code skill 자료](claude%20code%20skill%20%EC%9E%90%EB%A3%8C%20296d2f59a06d80ce9b5bc9c8fd1e6f9b.md)
+
+[018 3단계 바이브 코딩](018%203%EB%8B%A8%EA%B3%84%20%EB%B0%94%EC%9D%B4%EB%B8%8C%20%EC%BD%94%EB%94%A9%20297d2f59a06d80c08bb1f1063c764b43.md)
+
+[019 클러드코드 스킬](019%20%ED%81%B4%EB%9F%AC%EB%93%9C%EC%BD%94%EB%93%9C%20%EC%8A%A4%ED%82%AC%2029bd2f59a06d80a8840bd6410dc7f00f.md)
+
+[020  RAG](020%20RAG%202a3d2f59a06d80c4afbdd2147554b7e5.md)
+
+[021 AI는 사람을 대체한다](021%20AI%EB%8A%94%20%EC%82%AC%EB%9E%8C%EC%9D%84%20%EB%8C%80%EC%B2%B4%ED%95%9C%EB%8B%A4%202a4d2f59a06d809c93d6f4ada09818b8.md)
+
+[022 AI는 스토리텔러를 대체하지 않는다](022%20AI%EB%8A%94%20%EC%8A%A4%ED%86%A0%EB%A6%AC%ED%85%94%EB%9F%AC%EB%A5%BC%20%EB%8C%80%EC%B2%B4%ED%95%98%EC%A7%80%20%EC%95%8A%EB%8A%94%EB%8B%A4%202a4d2f59a06d802cb139fe76fe3af3a1.md)
+
+[023](023%202a4d2f59a06d8025b7affe7afa3c8865.md)
+
+[024  AI 거짓말 탐지](024%20AI%20%EA%B1%B0%EC%A7%93%EB%A7%90%20%ED%83%90%EC%A7%80%202aed2f59a06d80d5b4cac996ff0a47fa.md)
+
+[025  **2025 프롬프트 공식**](025%202025%20%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%20%EA%B3%B5%EC%8B%9D%202afd2f59a06d80a686f2e152bb9a7ce5.md)
+
+[026  Codex CLI 코드 리뷰 자동화](026%20Codex%20CLI%20%EC%BD%94%EB%93%9C%20%EB%A6%AC%EB%B7%B0%20%EC%9E%90%EB%8F%99%ED%99%94%202b0d2f59a06d80cc802dd6cd9ccdf2a9.md)
+
+[027 ai 골드러](027%20ai%20%EA%B3%A8%EB%93%9C%EB%9F%AC%202b1d2f59a06d8034883bf2d1205efe33.md)
+
+[028 Google Antigravity](028%20Google%20Antigravity%202b1d2f59a06d80188056f15653ec1cd5.md)
+
+[029](029%202b8d2f59a06d80a4979cd20537cf02fa.md)
+
+[030](030%202b8d2f59a06d800b908fe3d3bc7296fd.md)
+
+[031. Claude Code 사용 매뉴얼 종합편](031%20Claude%20Code%20%EC%82%AC%EC%9A%A9%20%EB%A7%A4%EB%89%B4%EC%96%BC%20%EC%A2%85%ED%95%A9%ED%8E%B8%202bbd2f59a06d800b917ec8a00ba93a13.md)
+
+[032  OpenAI '코드 레드' 발령](032%20OpenAI%20'%EC%BD%94%EB%93%9C%20%EB%A0%88%EB%93%9C'%20%EB%B0%9C%EB%A0%B9%202bfd2f59a06d806a975fced9d46f62e8.md)
+
+[033  Google Opal: 무료 AI 슈퍼 에이전트가 나타났다](033%20Google%20Opal%20%EB%AC%B4%EB%A3%8C%20AI%20%EC%8A%88%ED%8D%BC%20%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8%EA%B0%80%20%EB%82%98%ED%83%80%EB%82%AC%EB%8B%A4%202c0d2f59a06d80a19c93ccd7b77bbdee.md)
+
+[034  Antigravity가 왜 이렇게 대단한가](034%20Antigravity%EA%B0%80%20%EC%99%9C%20%EC%9D%B4%EB%A0%87%EA%B2%8C%20%EB%8C%80%EB%8B%A8%ED%95%9C%EA%B0%80%202c3d2f59a06d80c59889c7e7ffe9b028.md)
+
+[035](035%202c6d2f59a06d80cfb943d47fff18b265.md)
+
+[036  AI는 "지혜"를 가질 수 있을까?](036%20AI%EB%8A%94%20%EC%A7%80%ED%98%9C%20%EB%A5%BC%20%EA%B0%80%EC%A7%88%20%EC%88%98%20%EC%9E%88%EC%9D%84%EA%B9%8C%202c9d2f59a06d803b962bf9141dd9c86d.md)
+
+[037 AI를 "말하는 챗봇"에서 "일하는 시스템"으로 바꾸는 7가지 핵심 용어](037%20AI%EB%A5%BC%20%EB%A7%90%ED%95%98%EB%8A%94%20%EC%B1%97%EB%B4%87%20%EC%97%90%EC%84%9C%20%EC%9D%BC%ED%95%98%EB%8A%94%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%9C%BC%EB%A1%9C%20%EB%B0%94%EA%BE%B8%EB%8A%94%207%EA%B0%80%EC%A7%80%20%ED%95%B5%EC%8B%AC%20%EC%9A%A9%EC%96%B4%202cdd2f59a06d80b786b9d9feaa56eaa7.md)
+
+[038   Deep Agent란 무엇인가](038%20Deep%20Agent%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%202d1d2f59a06d80e3b72dcbad78d7a8f0.md)
+
+[039 **Claude가 내 브라우저를 직접 조작한다고?**](039%20Claude%EA%B0%80%20%EB%82%B4%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EB%A5%BC%20%EC%A7%81%EC%A0%91%20%EC%A1%B0%EC%9E%91%ED%95%9C%EB%8B%A4%EA%B3%A0%202d5d2f59a06d8026b9d8c97ff349ff07.md)
+
+[040 샘 알트만이 감추고 싶은 것들](040%20%EC%83%98%20%EC%95%8C%ED%8A%B8%EB%A7%8C%EC%9D%B4%20%EA%B0%90%EC%B6%94%EA%B3%A0%20%EC%8B%B6%EC%9D%80%20%EA%B2%83%EB%93%A4%202dbd2f59a06d809f9ba2d832e2bd82e7.md)
+
+[041 세계 1위 앱이 된 Sora 2,](041%20%EC%84%B8%EA%B3%84%201%EC%9C%84%20%EC%95%B1%EC%9D%B4%20%EB%90%9C%20Sora%202,%202dbd2f59a06d80e4ba86ead982ac0a0d.md)
+
+[042 Claude Code, 끝까지 일하게 만드는 법: Ralph Loop 완벽 가이드](042%20Claude%20Code,%20%EB%81%9D%EA%B9%8C%EC%A7%80%20%EC%9D%BC%ED%95%98%EA%B2%8C%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EB%B2%95%20Ralph%20Loop%20%EC%99%84%EB%B2%BD%20%EA%B0%80%EC%9D%B4%EB%93%9C%202dfd2f59a06d80d895d6d4be12dd99da.md)
+
+[043](043%202e2d2f59a06d80729d1ff043a802bbb9.md)
+
+[044 Claude Code 2.1: 1,096개 커밋이 바꿔놓은 것들](044%20Claude%20Code%202%201%201,096%EA%B0%9C%20%EC%BB%A4%EB%B0%8B%EC%9D%B4%20%EB%B0%94%EA%BF%94%EB%86%93%EC%9D%80%20%EA%B2%83%EB%93%A4%202e3d2f59a06d80678074c266679d314d.md)
+
+[045  프롬프트 시대의 종말, 컨텍스트 시대의 시작](045%20%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%20%EC%8B%9C%EB%8C%80%EC%9D%98%20%EC%A2%85%EB%A7%90,%20%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%20%EC%8B%9C%EB%8C%80%EC%9D%98%20%EC%8B%9C%EC%9E%91%202e5d2f59a06d806bb832fb859bf4b936.md)
+
+[046 프롬프트 시대는 끝났다](046%20%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%20%EC%8B%9C%EB%8C%80%EB%8A%94%20%EB%81%9D%EB%82%AC%EB%8B%A4%202e6d2f59a06d80c9bf10d508ed2e176a.md)
+
+[047 Claude Code 쓰기 전에 반드시 해야 하는 것들](047%20Claude%20Code%20%EC%93%B0%EA%B8%B0%20%EC%A0%84%EC%97%90%20%EB%B0%98%EB%93%9C%EC%8B%9C%20%ED%95%B4%EC%95%BC%20%ED%95%98%EB%8A%94%20%EA%B2%83%EB%93%A4%202e6d2f59a06d8093a092f774d46f1fe7.md)
+
+[048  AI의 대부가 경고한 일자리의 미래 — 이번엔 왜 다른가](048%20AI%EC%9D%98%20%EB%8C%80%EB%B6%80%EA%B0%80%20%EA%B2%BD%EA%B3%A0%ED%95%9C%20%EC%9D%BC%EC%9E%90%EB%A6%AC%EC%9D%98%20%EB%AF%B8%EB%9E%98%20%E2%80%94%20%EC%9D%B4%EB%B2%88%EC%97%94%20%EC%99%9C%20%EB%8B%A4%EB%A5%B8%EA%B0%80%202ecd2f59a06d808cbb93e65dd56f5af9.md)
+
+[049  바이브코딩 101-강의보고 따라하는 데 누가 망하냐구요?? 저요!](049%20%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9%20101-%EA%B0%95%EC%9D%98%EB%B3%B4%EA%B3%A0%20%EB%94%B0%EB%9D%BC%ED%95%98%EB%8A%94%20%EB%8D%B0%20%EB%88%84%EA%B0%80%20%EB%A7%9D%ED%95%98%EB%83%90%EA%B5%AC%EC%9A%94%20%EC%A0%80%EC%9A%94!%202f0d2f59a06d80e681f0c907005c5b6e.md)
+
+[050  **바이브코딩 102 - AI가 멍청한 게 아닙니다. 님이 ‘진상 상사’라서 그래요**
+](050%20%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9%20102%20-%20AI%EA%B0%80%20%EB%A9%8D%EC%B2%AD%ED%95%9C%20%EA%B2%8C%20%EC%95%84%EB%8B%99%EB%8B%88%EB%8B%A4%20%EB%8B%98%EC%9D%B4%20%E2%80%98%EC%A7%84%EC%83%81%20%EC%83%81%EC%82%AC%E2%80%99%EB%9D%BC%EC%84%9C%20%EA%B7%B8%EB%9E%98%EC%9A%94%202f1d2f59a06d807084c4db97fdbce6e4.md)
+
+[051 결정을 잘게 쪼개는 방법](051%20%EA%B2%B0%EC%A0%95%EC%9D%84%20%EC%9E%98%EA%B2%8C%20%EC%AA%BC%EA%B0%9C%EB%8A%94%20%EB%B0%A9%EB%B2%95%202f6d2f59a06d809f8295edc5655031d0.md)
+
+[052](052%202fbd2f59a06d80998082f0838bc65056.md)
+
+[053 바이브코딩105](053%20%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9105%202fed2f59a06d805ea191f2889cad982d.md)
+
+[054 바이브코딩 106](054%20%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9%20106%20300d2f59a06d804a8b38eb581162cde4.md)
+
+[055 RAG, 그게 뭔데 씹덕아.](055%20RAG,%20%EA%B7%B8%EA%B2%8C%20%EB%AD%94%EB%8D%B0%20%EC%94%B9%EB%8D%95%EC%95%84%20304d2f59a06d806688e2ef5a98eb9672.md)
+
+[056  RAG를 붙였더니, 진짜 문제가 보였다](056%20RAG%EB%A5%BC%20%EB%B6%99%EC%98%80%EB%8D%94%EB%8B%88,%20%EC%A7%84%EC%A7%9C%20%EB%AC%B8%EC%A0%9C%EA%B0%80%20%EB%B3%B4%EC%98%80%EB%8B%A4%20305d2f59a06d80d08c1df3ea3a82ec66.md)
+
+[057 옷 정리부터 하고 좀 찾아라](057%20%EC%98%B7%20%EC%A0%95%EB%A6%AC%EB%B6%80%ED%84%B0%20%ED%95%98%EA%B3%A0%20%EC%A2%80%20%EC%B0%BE%EC%95%84%EB%9D%BC%20310d2f59a06d80a29385f78145557fe7.md)
+
+[058 짜증이 스펙이 되기까지](058%20%EC%A7%9C%EC%A6%9D%EC%9D%B4%20%EC%8A%A4%ED%8E%99%EC%9D%B4%20%EB%90%98%EA%B8%B0%EA%B9%8C%EC%A7%80%20314d2f59a06d80b98e0cd5bda762905a.md)

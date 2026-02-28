@@ -1,5 +1,8 @@
 # 8. vibecode.town English Voice Guide
 
+> **⚠️ DEPRECATED — SSOT는 `docs/translation-guide.md`**
+> 이 파일은 초기 요약본. 상세 가이드는 SSOT를 참조할 것.
+
 > **Purpose:** 한국어 원본을 영어로 재창작할 때의 톤/스타일 가이드
 > **원칙:** 번역이 아니라 같은 감정으로 다시 쓰는 것
 
