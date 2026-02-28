@@ -15,7 +15,7 @@ const { tag, tagName, size = "lg" } = Astro.props;
     href={`/tags/${tag}/`}
     transition:name={tag}
     class:list={[
-      "musu-tag no-underline inline-flex items-center gap-0.5",
+      "blog-tag no-underline inline-flex items-center gap-0.5",
       { "text-xs px-2 py-0.5": size === "sm" },
       { "text-sm px-3 py-1": size === "lg" },
     ]}

@@ -36,14 +36,14 @@ async function loadGoogleFonts(
 > {
   const fontsConfig = [
     {
-      name: "Nunito",
-      font: "Nunito",
+      name: "Lora",
+      font: "Lora",
       weight: 400,
       style: "normal",
     },
     {
-      name: "Nunito",
-      font: "Nunito",
+      name: "Lora",
+      font: "Lora",
       weight: 700,
       style: "bold",
     },

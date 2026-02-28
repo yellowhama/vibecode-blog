@@ -11,27 +11,21 @@ type Props = {
 const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 
 const { title, description, featured, ...props } = data;
-const cardClass = featured ? "musu-card-featured" : "musu-card";
+const cardClass = featured ? "blog-card-featured" : "blog-card";
 ---
 
-<li class="my-6 list-none">
+<li class="list-none">
   <a
     href={getPath(id, filePath)}
-    class:list={[cardClass, "interactive block p-5 no-underline"]}
+    class:list={[cardClass, "block no-underline"]}
   >
     <Heading
       style={{ viewTransitionName: slugifyStr(title.replaceAll(".", "-")) }}
-      class:list={[
-        "text-lg font-bold sm:text-xl",
-        featured ? "text-[var(--border-strong)]" : "text-foreground",
-      ]}
+      class="text-lg font-semibold sm:text-xl text-foreground"
     >
       {title}
     </Heading>
     <Datetime {...props} class="mt-2" />
-    <p class:list={[
-      "mt-2 text-sm leading-relaxed",
-      featured ? "text-[var(--border-strong)] opacity-80" : "text-text-secondary",
-    ]}>{description}</p>
+    <p class="mt-2 text-sm leading-relaxed text-text-secondary">{description}</p>
   </a>
 </li>

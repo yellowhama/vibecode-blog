@@ -61,11 +61,11 @@ export default defineConfig({
     preserveScriptOrder: true,
     fonts: [
       {
-        name: "Nunito",
-        cssVariable: "--font-nunito",
+        name: "Lora",
+        cssVariable: "--font-lora",
         provider: fontProviders.google(),
-        fallbacks: ["sans-serif"],
-        weights: [400, 600, 700, 800, 900],
+        fallbacks: ["Georgia", "serif"],
+        weights: [400, 500, 600, 700],
         styles: ["normal", "italic"],
       },
     ],

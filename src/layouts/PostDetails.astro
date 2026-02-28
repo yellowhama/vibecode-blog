@@ -99,7 +99,7 @@ const nextPost =
   >
     <h1
       transition:name={slugifyStr(title.replaceAll(".", "-"))}
-      class="inline-block text-2xl font-bold text-accent sm:text-3xl"
+      class="inline-block text-2xl font-bold text-foreground sm:text-3xl"
     >
       {title}
     </h1>
@@ -143,7 +143,7 @@ const nextPost =
               <li class="list-none">
                 <a
                   href={getPath(rp.id, rp.filePath)}
-                  class="musu-card interactive block p-4 no-underline"
+                  class="blog-panel block p-4 no-underline"
                 >
                   <h3 class="text-sm font-bold text-foreground">{rp.data.title}</h3>
                   <p class="mt-1 line-clamp-2 text-xs leading-relaxed text-text-secondary">
@@ -165,7 +165,7 @@ const nextPost =
         prevPost && (
           <a
             href={getPath(prevPost.id, prevPost.filePath)}
-            class="musu-panel flex w-full gap-2 p-4 no-underline transition-all duration-200 hover:-translate-y-0.5"
+            class="blog-panel flex w-full gap-2 p-4 no-underline"
           >
             <IconChevronLeft class="inline-block flex-none rtl:rotate-180" />
             <div>
@@ -179,7 +179,7 @@ const nextPost =
         nextPost && (
           <a
             href={getPath(nextPost.id, nextPost.filePath)}
-            class="musu-panel flex w-full justify-end gap-2 p-4 text-end no-underline transition-all duration-200 hover:-translate-y-0.5 sm:col-start-2"
+            class="blog-panel flex w-full justify-end gap-2 p-4 text-end no-underline sm:col-start-2"
           >
             <div>
               <span class="text-xs font-bold uppercase text-text-muted">Next</span>

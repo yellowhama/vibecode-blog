@@ -3,53 +3,44 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-/* ─── MUSU V2 Design Tokens ──────────────────────────────────────
- * SSOT: design_work/branding/01-colors.md
- *       design_work/branding/02-typography.md
- *       design_work/branding/03-shapes-texture.md
- * ──────────────────────────────────────────────────────────────── */
+/* ─── Editorial Design Tokens ──────────────────────────────────── */
 
 :root,
 html[data-theme="light"] {
-  --background: #FDFCF0;
-  --bg-secondary: #F8F7E8;
-  --bg-tertiary: #F0EFE0;
+  --background: #F9F7F2;
+  --bg-secondary: #F2EFE8;
+  --bg-tertiary: #EBE8E0;
   --bg-elevated: #FFFFFF;
-  --foreground: #2D1D19;
-  --text-secondary: rgba(45, 29, 25, 0.7);
-  --text-muted: rgba(45, 29, 25, 0.5);
-  --accent: #FFD166;
-  --accent-dim: #E1B655;
-  --accent-glow: rgba(255, 209, 102, 0.3);
-  --muted: #F0EFE0;
-  --border: rgba(44, 26, 22, 0.2);
-  --border-strong: #2C1A16;
-  --shadow-neo: 4px 4px 0px rgba(45, 29, 25, 1);
-  --shadow-neo-hover: 6px 6px 0px rgba(45, 29, 25, 1);
-  --shadow-clay: inset 0px 4px 10px rgba(255, 255, 255, 0.6);
+  --foreground: #1a1a1a;
+  --text-secondary: rgba(26, 26, 26, 0.65);
+  --text-muted: rgba(26, 26, 26, 0.45);
+  --accent: #C4654A;
+  --accent-dim: #A8513A;
+  --accent-glow: rgba(196, 101, 74, 0.15);
+  --muted: #EBE8E0;
+  --border: rgba(26, 26, 26, 0.12);
+  --border-strong: rgba(26, 26, 26, 0.25);
 }
 
 html[data-theme="dark"] {
-  --background: #2D1D19;
-  --bg-secondary: #3D2D29;
-  --bg-tertiary: #4D3D39;
-  --bg-elevated: #3D2D29;
-  --foreground: #F8F7E8;
-  --text-secondary: rgba(248, 247, 232, 0.7);
-  --text-muted: rgba(248, 247, 232, 0.5);
-  --accent: #FFD166;
-  --accent-dim: #E1B655;
-  --accent-glow: rgba(255, 209, 102, 0.3);
-  --muted: rgba(255, 255, 255, 0.05);
-  --border: rgba(255, 209, 102, 0.2);
-  --border-strong: #FFD166;
-  --shadow-neo: 4px 4px 0px rgba(0, 0, 0, 0.4);
-  --shadow-neo-hover: 6px 6px 0px rgba(0, 0, 0, 0.4);
-  --shadow-clay: inset 0px 4px 10px rgba(255, 255, 255, 0.08);
+  --background: #141821;
+  --bg-secondary: #1C2029;
+  --bg-tertiary: #242832;
+  --bg-elevated: #1C2029;
+  --foreground: #C8C8C8;
+  --text-secondary: rgba(200, 200, 200, 0.7);
+  --text-muted: rgba(200, 200, 200, 0.45);
+  --accent: #4A9EC4;
+  --accent-dim: #3A88AD;
+  --accent-glow: rgba(74, 158, 196, 0.15);
+  --muted: rgba(255, 255, 255, 0.06);
+  --border: rgba(200, 200, 200, 0.1);
+  --border-strong: rgba(200, 200, 200, 0.2);
 }
 
 @theme inline {
-  --font-app: var(--font-nunito);
+  --font-app: var(--font-lora);
+  --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --color-background: var(--background);
   --color-bg-secondary: var(--bg-secondary);
   --color-bg-tertiary: var(--bg-tertiary);
@@ -65,31 +56,22 @@ html[data-theme="dark"] {
   --color-border-strong: var(--border-strong);
 
   /* Motion */
-  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 150ms;
-  --duration-normal: 250ms;
+  --duration-normal: 200ms;
 }
 
 @layer base {
   * {
     @apply border-border outline-accent/75;
-    scrollbar-width: auto;
+    scrollbar-width: thin;
     scrollbar-color: var(--color-muted) transparent;
   }
   html {
     @apply overflow-y-scroll scroll-smooth;
   }
   body {
-    @apply flex min-h-svh flex-col bg-background font-app text-foreground selection:bg-accent/75 selection:text-background;
-  }
-  /* Accent Bar — Yellow top line (brand mark) */
-  body::before {
-    content: '';
-    display: block;
-    height: 4px;
-    background: var(--accent);
-    flex-shrink: 0;
+    @apply flex min-h-svh flex-col bg-background font-app text-foreground selection:bg-accent/20 selection:text-foreground;
   }
   a,
   button {
@@ -110,143 +92,89 @@ html[data-theme="dark"] {
 }
 
 .active-nav {
-  @apply underline decoration-wavy decoration-2 underline-offset-8;
+  @apply underline decoration-solid decoration-1 underline-offset-8;
 }
 
-/* Source: https://piccalil.li/blog/a-more-modern-css-reset/ */
-/* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 1rem;
 }
 
-/* ─── V2: Shared Reusable Classes (synced from musu-desktop) ────── */
+/* ─── Editorial Component Classes ──────────────────────────────── */
 
 @layer components {
-  /*
-   * Neobrutalism + Claymorphism Hybrid Card
-   * Press-down hover: translate into shadow position → shadow disappears
-   */
-  .musu-card {
+  /* Card — clean bottom-border separator */
+  .blog-card {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: opacity 200ms ease;
+  }
+  .blog-card:last-child {
+    border-bottom: none;
+  }
+  .blog-card:hover {
+    opacity: 0.75;
+  }
+
+  /* Featured Card — accent left border */
+  .blog-card-featured {
+    padding: 1.25rem;
+    border-left: 3px solid var(--accent);
     background: var(--bg-secondary);
-    border: 3px solid var(--border-strong);
-    border-radius: 24px;
-    box-shadow: var(--shadow-neo), var(--shadow-clay);
-    transition: all 250ms var(--ease-spring);
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    transition: opacity 200ms ease;
+  }
+  .blog-card-featured:hover {
+    opacity: 0.85;
   }
 
-  .musu-card.interactive:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px var(--border-strong), var(--shadow-clay);
-    cursor: pointer;
-  }
-
-  .musu-card.interactive:active {
-    transform: translate(4px, 4px);
-    box-shadow: var(--shadow-clay);
-  }
-
-  /* Featured Card — Yellow background for featured posts */
-  .musu-card-featured {
-    background: var(--accent);
-    border: 3px solid var(--border-strong);
-    border-radius: 24px;
-    box-shadow: var(--shadow-neo),
-      inset -4px -4px 8px rgba(45, 29, 25, 0.12),
-      inset 4px 4px 8px rgba(255, 255, 255, 0.35);
-    transition: all 250ms var(--ease-spring);
-  }
-
-  .musu-card-featured.interactive:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px var(--border-strong),
-      inset -4px -4px 8px rgba(45, 29, 25, 0.12),
-      inset 4px 4px 8px rgba(255, 255, 255, 0.35);
-    cursor: pointer;
-  }
-
-  .musu-card-featured.interactive:active {
-    transform: translate(4px, 4px);
-    box-shadow:
-      inset -4px -4px 8px rgba(45, 29, 25, 0.12),
-      inset 4px 4px 8px rgba(255, 255, 255, 0.35);
-  }
-
-  /* Flat Panel (sidebar, section bg) */
-  .musu-panel {
+  /* Panel (prev/next, related posts) */
+  .blog-panel {
     background: var(--bg-secondary);
-    border: 3px solid var(--border-strong);
-    border-radius: 16px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: background 200ms ease;
+  }
+  .blog-panel:hover {
+    background: var(--bg-tertiary);
   }
 
-  /* Pill Button — press-down hover */
-  .musu-btn {
+  /* Button (pagination) */
+  .blog-btn {
     background: var(--background);
     color: var(--foreground);
-    border: 3px solid var(--border-strong);
-    border-radius: 9999px;
-    font-family: var(--font-app);
-    font-weight: 700;
-    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: var(--font-ui);
+    font-weight: 500;
+    padding: 6px 14px;
     cursor: pointer;
-    box-shadow: var(--shadow-neo), var(--shadow-clay);
-    transition: all 250ms var(--ease-spring);
+    transition: background 200ms ease, border-color 200ms ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
   }
-
-  .musu-btn:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px var(--border-strong), var(--shadow-clay);
-  }
-
-  .musu-btn:active {
-    transform: translate(4px, 4px);
-    box-shadow: none;
-  }
-
-  .musu-btn-primary {
-    background: var(--accent);
-    color: var(--border-strong);
-  }
-
-  /* Input */
-  .musu-input {
+  .blog-btn:hover {
     background: var(--bg-secondary);
-    border: 2px solid var(--border);
-    border-radius: 12px;
-    color: var(--foreground);
-    padding: 8px 12px;
-    font-family: var(--font-app);
-    outline: none;
-    transition: all 150ms var(--ease-out-expo);
+    border-color: var(--border-strong);
   }
 
-  .musu-input:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 2px var(--accent-glow);
-  }
-
-  /* Tag / Badge — pop-out hover (shadow grows, lifts up) */
-  .musu-tag {
+  /* Tag — simple rounded pill */
+  .blog-tag {
     background: var(--bg-tertiary);
-    color: var(--foreground);
-    border: 2px solid var(--border-strong);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
     border-radius: 9999px;
-    font-family: var(--font-app);
-    font-weight: 600;
+    font-family: var(--font-ui);
+    font-weight: 500;
     font-size: 0.75rem;
     padding: 2px 10px;
-    box-shadow: 2px 2px 0px var(--border-strong);
-    transition: all 200ms var(--ease-spring);
+    transition: color 200ms ease, border-color 200ms ease;
     display: inline-block;
   }
-
-  .musu-tag:hover {
-    background: var(--accent);
-    color: var(--border-strong);
-    transform: translate(-1px, -1px);
-    box-shadow: 3px 3px 0px var(--border-strong);
+  .blog-tag:hover {
+    color: var(--accent);
+    border-color: var(--accent);
   }
 }
