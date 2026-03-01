@@ -9,8 +9,21 @@
 
 ### 목적: 런칭 전 신뢰 자산(Trust Equity) 쌓기
 
-이 사람이 AI 런타임 만들면서 겪는 일을 공유한다.
-블로그(vibecode.town)도 있고 뉴스레터도 있지만, 트위터에선 그냥 그날그날 얘기한다.
+이 사람이 만드는 건 하나다: **컴퓨터 3대를 하나처럼 쓸 수 있는 도구.**
+
+집에 컴퓨터 2대, 노트북 1대. 밖에서 노트북으로 일하면서 집 컴퓨터도 쓰고 싶다.
+KVM, Remote Desktop, 클라우드 동기화 — 전부 써봤다. 다 맘에 안 듦.
+코딩 모르지만 바이브 코딩으로 직접 만들기로 했다. 이 과정을 공유한다.
+
+핀 트윗이 이 이야기의 원점:
+
+> Can't code. Not a developer.
+> Vibe coding looked fun so I started about six months ago.
+> Started building stuff I actually need for work.
+>
+> → Three computers at home and a laptop. I just wanted them to feel like one machine.
+> → Tried everything. KVM, Remote Desktop, cloud sync. Nothing works.
+> → So I'm building it.
 
 퍼널 없음. 전환 없음. 성장은 부산물이지 목표가 아님.
 
@@ -85,34 +98,42 @@ PostHog 교훈 (개발자 도구 스타트업):
 
 ## §2. 뭘 올리는가
 
-그날 겪은 일. 배운 것. 빡친 것. 만들고 있는 것.
+이 도구를 만드는 과정에서 겪는 일. 전부 하나의 이야기에 연결된다.
 
 카테고리 비율 없음. 할 말이 있으면 하고, 없으면 안 한다.
 
-### 예시 (이런 느낌)
+### 이야기 흐름 (Beat)
+
+모든 트윗이 이 이야기의 일부:
 
 ```
-오늘 Agent 3이 GPU 메모리 안 놓아서 3시간 날렸다.
-모델 로드하고 아무것도 안 하고 그냥 앉아있었음.
-타임아웃 하나 넣으면 되는 거였는데.
+시작: 컴퓨터 3대를 하나처럼 쓰고 싶다. 시중 제품 다 써봄. 다 맘에 안 듦.
+중간 (지금): 코딩 못하지만 바이브 코딩으로 직접 만들고 있다. 매일 뭔가 터진다.
+끝 (런칭): 됐다. 너도 쓸 수 있다.
 ```
 
-```
-Rust로 데이터 수집기 바꿨는데 45분 걸리던 게 1.5분.
-별 기대 안 했는데. 그냥 해봤는데.
-```
+Phase 1은 **중간**이다.
 
-```
-프롬프트 강의 20만원짜리 또 봤다.
-Claude한테 "프레임워크 5개 짜줘" 치고 PDF 묶어서 파는 거.
-이게 아직도 먹혀?
-```
+**Beat 1: 짜증** — "이런 게 있으면 좋겠는데 없다"
+핀 트윗이 이미 커버. 추가 트윗은 시중 제품 써보고 빡친 구체적 에피소드.
 
-```
-Writing tests for the fifth agent.
-Just realized it does the exact same thing as agent three.
-Six months and I'm only now noticing.
-```
+**Beat 2: 시작** — "코딩 못하는데 만들기로 함"
+바이브 코딩 시작, AI한테 시키면 되는 줄 알았음, 스펙 없이 빌드하면 생기는 일.
+
+**Beat 3: 삽질** — "만들고 있는데 매일 터진다" ← **Phase 1 메인**
+AI가 중복 코드 6개월, 보안 구멍 발견, OAuth 3일째, 테스트 통과했는데 프로덕션 터짐.
+이 Beat에서 매주 뽑는다.
+
+**Beat 4: 배움** — "만들면서 알게 된 것"
+Beat 3의 쓰레드 깊이로 연결됨. 환경 설계, P2P 아키텍처, CLAUDE.md 정리.
+
+**Beat 5: 진행** — "아직 만드는 중"
+영상 소재. Month 2~3부터. 데스크탑 앱 프리뷰, 터미널 빌드 화면.
+
+### 소재 참고
+
+`REFERENCE.md` §2에 Beat별 소재 아카이브.
+이번 주에 뭐 했는지에서 출발하되, 막히면 거기서 참고.
 
 ### 기술적 가치 필터
 

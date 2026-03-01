@@ -127,31 +127,49 @@
 ## 2. 소재 아카이브
 
 이번 주에 뭐 했는지에서 출발하되, 막히면 여기서 참고.
-비율 배정 없음. 그냥 목록.
+비율 배정 없음. 이야기 흐름(Beat) 순서로 정리.
 
-### A: Prototype ≠ Production
+### Beat 1: 짜증 — "이런 게 있으면 좋겠는데 없다"
+
+핀 트윗이 이미 커버. 추가 트윗은 구체적 에피소드.
+
+| ID | 소재 | 원천 |
+|----|------|------|
+| A11 | "짜증이 곧 스펙이다" — KVM, RDP, 클라우드 전부 시도 → 다 반쪽 | frustration-is-the-spec.md |
+
+### Beat 2: 시작 — "코딩 못하는데 만들기로 함"
+
+| ID | 소재 | 원천 |
+|----|------|------|
+| A8 | 스펙 없이 빌드하면 생기는 일 | what-vibe-coding-is.md |
+| A9 | "구현은 공짜, 오케스트레이션은 아님" | implementation-is-free.md |
+| A10 | 타입 언어가 바이브 코딩에 왜 나은지 | typescript-rust.md |
+
+### Beat 3: 삽질 — "만들고 있는데 매일 터진다" ← Phase 1 메인
+
+매주 여기서 뽑는다.
 
 | ID | 소재 | 원천 |
 |----|------|------|
 | A1 | 5,405 테스트 통과 → 프로덕션 갭 69개 | MUSU-026 |
 | A2 | Shell injection → execFile 전환 | MUSU-026 |
 | A3 | 보안 감사 B- → B+ (5일) | MUSU-036 |
-| A4 | 10,847줄 → 3,562줄 리팩토링 | refactoring-case-study.md |
-| A5 | 45분 → 12분 런타임 (Rust 전환) | refactoring-case-study.md |
+| A4 | 10,847줄 → 3,562줄 리팩토링 (6개월간 중복 코드) | refactoring-case-study.md |
+| A5 | 45분 → 12분 런타임 (Python 빡쳐서 Rust로) | refactoring-case-study.md |
 | A6 | Auth fail-closed 패턴 | MUSU-026 |
 | A7 | 멱등성 레이스 → LRU+TTL 캐시 | MUSU-026 |
-| A8 | 스펙 없이 빌드하면 생기는 일 | what-vibe-coding-is.md |
-| A9 | "구현은 공짜, 오케스트레이션은 아님" | implementation-is-free.md |
-| A10 | 타입 언어가 바이브 코딩에 왜 나은지 | typescript-rust.md |
-| A11 | "짜증이 곧 스펙이다" | frustration-is-the-spec.md |
 | A12 | Spec Kit 필드 리포트 | spec-kit-field-report.md |
-| A13 | Google OAuth 웹+데스크탑 통합 | MUSU-099 |
+| A13 | Google OAuth 웹+데스크탑 통합 (3일째) | MUSU-099 |
+| B10 | MCP 허브 = 컨텍스트 비용 | MUSU-094 |
+| B11 | Schema SSOT + CI drift gate | MUSU-029 |
 
-### B: Context Engineering
+### Beat 4: 배움 — "만들면서 알게 된 것"
+
+Beat 3의 쓰레드 깊이로 연결되는 소재.
 
 | ID | 소재 | 원천 |
 |----|------|------|
-| B1 | CLAUDE.md: 500줄 → 87줄 | claude-md.md |
+| B1 | CLAUDE.md: 500줄 → 87줄 (많다고 좋은 게 아님) | claude-md.md |
 | B2 | 프롬프트 시대의 끝 | end-of-prompting.md |
 | B3 | 환경 설계 > 프롬프트 | environment-design.md |
 | B4 | 8단계 컨텍스트 시퀀싱 | splitting-decisions.md |
@@ -160,36 +178,31 @@
 | B7 | RAG는 검색이 아니라 선택 | rag-choices.md |
 | B8 | 3계층 검색 아키텍처 | three-tier-search.md |
 | B9 | 1,624페이지 PDF → 3초 검색 | rag-in-practice.md |
-| B10 | MCP 허브 = 컨텍스트 비용 | MUSU-094 |
-| B11 | Schema SSOT + CI drift gate | MUSU-029 |
 | B12 | Anthropic GitHub 53-repo 분석 | anthropic-github.md |
 | B13 | 벡터 DB 기초 | vector-databases.md |
-
-### C: Build-in-Public 숫자
-
-| ID | 소재 | 원천 |
-|----|------|------|
-| C1 | Rust 849 + TS 5,411 = 6,260 테스트 | |
-| C2 | 15 pain points 전부 해결 | |
-| C3 | Worker 26.6K LoC → 73% 표면 축소 | |
 | C4 | QUIC primary + HTTP fallback | |
 | C5 | P2P: 서버 비용 95% 절감 ($40K → $2K) | |
-| C6 | 월간 지표 (구독자, 트래픽, 팔로워) | |
-| C7 | CONDITIONAL GO → FULL GO 판단 | |
-| C8 | MCP 44개 도구 / 7-pack 구조 | |
 
-### D: 영상 소재 (Month 2-3부터)
+### Beat 5: 진행 — "아직 만드는 중"
 
-| ID | 소재 | 길이 |
+영상 소재. Month 2~3부터.
+
+| ID | 소재 | 형식 |
 |----|------|------|
-| D1 | Rust 빌드 터미널 화면 | 30초 |
-| D2 | 리팩토링 before/after | 45초 |
-| D3 | MCP 서버 3개 동시 실행 | 30초 |
-| D4 | RAG 파이프라인: 37분 → 3초 | 45초 |
-| D5 | MUSU Bee 데스크탑 앱 프리뷰 | 60초 |
-| D6 | Claude Code 멀티에이전트 병렬 | 45초 |
-| D7 | QUIC → HTTP 폴백 라이브 | 30초 |
-| D8 | 보안 감사 diff: B- → B+ | 45초 |
+| C1 | Rust 849 + TS 5,411 = 6,260 테스트 | 숫자 |
+| C2 | 15 pain points 전부 해결 | 숫자 |
+| C3 | Worker 26.6K LoC → 73% 표면 축소 | 숫자 |
+| C6 | 월간 지표 (구독자, 트래픽, 팔로워) | 숫자 |
+| C7 | CONDITIONAL GO → FULL GO 판단 | 숫자 |
+| C8 | MCP 44개 도구 / 7-pack 구조 | 숫자 |
+| D1 | Rust 빌드 터미널 화면 | 영상 30초 |
+| D2 | 리팩토링 before/after | 영상 45초 |
+| D3 | MCP 서버 3개 동시 실행 | 영상 30초 |
+| D4 | RAG 파이프라인: 37분 → 3초 | 영상 45초 |
+| D5 | MUSU Bee 데스크탑 앱 프리뷰 | 영상 60초 |
+| D6 | Claude Code 멀티에이전트 병렬 | 영상 45초 |
+| D7 | QUIC → HTTP 폴백 라이브 | 영상 30초 |
+| D8 | 보안 감사 diff: B- → B+ | 영상 45초 |
 
 ---
 
