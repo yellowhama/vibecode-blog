@@ -1,0 +1,51 @@
+name: Post Scheduled Tweets
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (log only, no actual posting)'
+        required: false
+        default: 'false'
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  post-tweets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        working-directory: twitter
+        run: npm ci
+
+      - name: Post scheduled tweets
+        working-directory: twitter
+        env:
+          API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          API_SECRET_KEY: ${{ secrets.TWITTER_API_SECRET_KEY }}
+          ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node scripts/post-queue.mjs
+
+      - name: Commit queue status changes
+        run: |
+          git config user.name "twitter-bot"
+          git config user.email "twitter-bot@vibecode.town"
+          git add twitter/queue/
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore(twitter): update queue status [bot]"
+          git pull --rebase origin main
+          git push origin main

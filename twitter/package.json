@@ -1,0 +1,13 @@
+{
+  "name": "vibecode-twitter",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "post": "node scripts/post-queue.mjs",
+    "post:dry": "DRY_RUN=true node scripts/post-queue.mjs"
+  },
+  "dependencies": {
+    "twitter-api-v2": "^1.19.0"
+  }
+}

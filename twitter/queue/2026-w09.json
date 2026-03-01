@@ -1,0 +1,48 @@
+{
+  "week": "2026-w09",
+  "generatedAt": "2026-03-01T21:00:00+09:00",
+  "items": [
+    {
+      "id": "w09-test-standalone",
+      "type": "standalone",
+      "category": "C",
+      "source": "test",
+      "scheduledAt": "2026-03-01T00:00:00+09:00",
+      "status": "posted",
+      "content": [
+        "6,260 tests. 849 Rust + 5,411 TypeScript.\n\nThat's what production-grade looks like.\n\nNot \"it works on my machine.\"\nNot \"the demo went well.\"\n\nTests that prove the system survives."
+      ],
+      "blogLink": "https://vibecode.town",
+      "blogLinkText": "More on building production systems with AI agents:\nhttps://vibecode.town",
+      "postedIds": [
+        "2027864899960115379",
+        "2027864909674102807"
+      ],
+      "postedAt": "2026-02-28T21:54:05.374Z",
+      "error": null
+    },
+    {
+      "id": "w09-test-thread",
+      "type": "thread",
+      "category": "A",
+      "source": "refactoring-case-study.md",
+      "scheduledAt": "2026-03-01T00:30:00+09:00",
+      "status": "posted",
+      "content": [
+        "10,847 lines of AI-generated code.\n\n5 agents wrote it. 30% failure rate.\n\nI cut it to 3,562 lines. Failure rate: 3%.\n\nHere's what I learned.",
+        "The codebase looked fine. Tests passed. CI green.\n\nBut 5 agents had each made their own version of the same utility.\n\n3 different date formatters.\n2 config parsers.\n4 ways to validate input.",
+        "The fix wasn't \"rewrite everything.\"\n\nIt was: pick ONE implementation per concern.\nDelete the rest.\nLet the compiler scream.\nFix what breaks.\n\nWent from 10,847 to 3,562 lines.\nFailure rate: 30% to 3%."
+      ],
+      "blogLink": "https://vibecode.town/posts/refactoring-case-study/",
+      "blogLinkText": "Full breakdown with code samples:\nhttps://vibecode.town/posts/refactoring-case-study/",
+      "postedIds": [
+        "2027864911007846459",
+        "2027864920566743249",
+        "2027864930247192580",
+        "2027864939956969920"
+      ],
+      "postedAt": "2026-02-28T21:54:12.651Z",
+      "error": null
+    }
+  ]
+}

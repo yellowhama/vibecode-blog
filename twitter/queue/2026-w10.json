@@ -1,0 +1,55 @@
+{
+  "week": "2026-w10",
+  "generatedAt": "2026-03-01T16:30:00+09:00",
+  "items": [
+    {
+      "id": "w10-001",
+      "type": "thread",
+      "category": "A",
+      "source": "refactoring-case-study / blog-006",
+      "scheduledAt": "2026-03-03T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "AI wrote me duplicate code for six months and I never noticed.",
+        "Agent 3 and Agent 5 built the exact same function.\nNeither knew the other existed.",
+        "Three different date formatters.\nTwo config parsers.\nFour ways to validate input.",
+        "Started deleting. The app didn't break.\nIt got faster."
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    },
+    {
+      "id": "w10-002",
+      "type": "thread",
+      "category": "A",
+      "source": "security-audit / MUSU-026",
+      "scheduledAt": "2026-03-05T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "Found a shell injection in my AI-generated code.",
+        "Line 847. AI wrote it. I approved it.\nI don't read every line. That's the whole point of vibe coding.",
+        "Now I read every line.\nThat kind of defeats the purpose, doesn't it."
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    },
+    {
+      "id": "w10-003",
+      "type": "thread",
+      "category": "A",
+      "source": "google-oauth / MUSU-099",
+      "scheduledAt": "2026-03-07T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "Day three of Google login. Works on web. Desktop crashes.",
+        "Asked AI why. AI doesn't know either.\nWe're both staring at the same error message.",
+        "This is the part of vibe coding nobody warns you about.\nWhen it breaks, you can't debug what you can't read."
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    }
+  ]
+}
