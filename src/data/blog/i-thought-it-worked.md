@@ -8,7 +8,6 @@ draft: false
 tags:
   - vibe-coding
   - act-1
-  - english
 description: "Can't code. Not a developer. Claude Code made files directly. Five minutes later a to-do app existed. Three days later five agents were running. I thought it worked."
 ---
 

@@ -8,7 +8,6 @@ draft: false
 tags:
   - vibe-coding
   - act-1
-  - english
 description: "Monday morning. Made coffee. Turned on the monitor. All five agents were dead. Over ten thousand lines of code. Almost half was duplicated. And a shell injection wide open for six months."
 ---
 

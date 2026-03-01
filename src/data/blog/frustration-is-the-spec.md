@@ -8,7 +8,6 @@ draft: false
 tags:
   - vibe-coding
   - act-1
-  - english
 description: "They said I need to write a spec. Spec? Like phone specs? I didn't know the software meaning. So I got pissed instead. Turns out organized frustration IS the spec."
 ---
 

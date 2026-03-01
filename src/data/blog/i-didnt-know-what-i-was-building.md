@@ -8,7 +8,6 @@ draft: false
 tags:
   - vibe-coding
   - act-1
-  - english
 description: "Not the AI's fault. Not the prompt's fault. The problem was deeper. I didn't know what I was building. And that's the one thing AI can't decide for you."
 ---
 
