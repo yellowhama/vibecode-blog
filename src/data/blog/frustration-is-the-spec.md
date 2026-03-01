@@ -1,545 +1,297 @@
 ---
 author: Hama
-pubDatetime: 2026-02-25T09:00:00Z
+pubDatetime: 2026-03-01T12:00:00Z
 title: "Frustration Is the Spec"
 slug: frustration-is-the-spec
 featured: false
 draft: false
 tags:
   - vibe-coding
-  - ai-philosophy
-  - opinion
-description: "Three computers, scattered files, and mounting frustration. When the annoyance itself becomes the specification for what to build next."
+  - act-1
+  - english
+description: "They said I need to write a spec. Spec? Like phone specs? I didn't know the software meaning. So I got pissed instead. Turns out organized frustration IS the spec."
 ---
 
----
+They said I need to write a spec.
 
-**All I want is one thing.**
+Spec.
+Like phone specs? RAM, storage, screen resolution?
+That's the only "spec" I knew.
 
-Two computers at home. Wait, three.
+In software, spec means something else.
+"A document that describes what you're building."
 
-Main desktop, sub desktop.
+But I'm not a developer.
+Never opened a document and typed "1. System Overview."
+Never written "2. Requirements Definition."
+Never learned how.
 
-And a laptop I carry around.
-
-What I want is nothing special.
-
-Use the three like they're one.
-
-Sit down, tell one to boss the others around.
-
-Files going back and forth.
-
-At home, outside, on the laptop.
-
-On the phone or tablet if possible.
-
-I just want to work in peace.
-
-That's it.
-
-Not a tech thing.
-
-Not a framework name.
-
-I just want to live like this.
+"You need to write a spec."
+Cool. How?
 
 ---
 
-**What even is UX**
+I froze for a while because I didn't know the method.
 
-Dropping the word UX here and you might think "isn't that a design term?"
+Searched for how to write specs.
+Software Requirements Specification. SRS. PRD. Functional specs.
+All developer documents.
+Templates with fields and approval workflows.
 
-User experience.
+Foreign language to me.
+"Non-functional requirements" — what?
+"System constraints" — what?
+"Use case diagram" — what?
 
-Not a big deal.
-
-I use an iPhone. It's comfortable.
-
-Unlock, tap, done.
-
-That's good UX for me.
-
-I use an iMac. It's miserable.
-
-Three layers of settings, permission prompts, update nags.
-
-That's bad UX for me.
-
-UX is just this.
-
-The experience I desperately want.
-
-That's UX.
-
-I wanted **"three computers feeling like one."**
-
-That was my UX.
+Learning that is another few months.
+I started vibe coding because I didn't want to learn coding.
+Now you're telling me to learn spec writing?
 
 ---
 
-**Let's go find it then**
+So I just got pissed.
 
-It's gotta exist. No way it doesn't. World's a big place.
+That's literally what happened.
+Didn't find a methodology. My frustration just exploded.
 
-So I looked.
+I have a problem.
+Three computers at home. Two desktops, one laptop.
+I want them to work like one machine.
 
-**Bought a KVM switch.**
+Work from my laptop outside.
+Tell the desktops at home to do stuff.
+See the results on my laptop.
+Files sync automatically.
 
-A box that connects two computers to one keyboard and one mouse.
+That's the wish.
+But nothing on the market does this.
 
-Plugged it in, full of hope.
+Tried them one by one.
 
-Keyboard worked.
+---
 
-Mouse worked.
+**KVM switch.**
 
-But the files?
+Keyboard, monitor, mouse shared across computers.
+Works at home when both desktops share a monitor.
+But connect from a laptop outside? Nope.
+KVM only works with physically connected devices.
+Network? Not supported.
 
-Still separate.
-
-Screen flickers every time I switch.
-
-Tells me to plug and unplug USB cables.
-
-What is this, 2008?
-
-Even more pissed now.
-
-Next up, heard Windows has something.
+Half-assed.
 
 **Remote Desktop.**
 
-Oh, it works?
+See the computer screen remotely.
+Usable. But slow.
+Move the cursor, it follows 0.3 seconds later.
+Video? Forget it. Becomes a slideshow.
 
-Nope.
+And it drops.
+Wi-Fi hiccups, connection drops.
+Reconnect. Type password. Wait.
 
-My Windows is the Home edition.
+Annoying.
 
-Gotta buy Pro.
+**Cloud sync.**
 
-What? Upgrade my entire OS for this one thing?
+Google Drive, Dropbox, OneDrive.
+Files sync. That's it.
+Can't run processes.
+Not using a computer — just copying files.
 
-It's not about the money, does this even make sense.
+And my files go through someone else's server.
+Upload a 10GB dataset to the cloud then download it again?
+Plugging in a USB drive is faster.
 
-OK it's about the money too.
+**Git.**
 
-Fine. Say I somehow figured it out at home.
+Code? Perfect. Git is the best for code sync.
+But everything else?
+Large files? No.
+Binaries? Hate it.
+Runtime environment? Completely different problem.
 
-What about outside?
+**Five apps at once.**
 
-The laptop is a separate world.
+This is where I ended up.
+KVM + Remote Desktop + cloud + Git + terminal.
+Five apps running simultaneously just to get "barely okay."
 
-Files I was working on aren't on the laptop.
+Barely.
+Okay.
 
-Push to GitHub, pull on laptop, work, push again.
-
-Forget once? Done.
-
-"Damn, files aren't here."
-
-Lost count of how many times I said that at a cafe.
-
-So just put it in the cloud, right?
-
-I did.
-
-Every time data changes, gotta upload.
-
-Made an automation.
-
-Automation skips sometimes.
-
-Made a routine to check the automation.
-
-At this point I'm managing the automation that manages the automation.
-
-**Haaaaaah.**
-
-Other remote desktop options? Sure.
-
-Tried Google Chrome Remote Desktop. Tried this and that.
-
-Terminal commands work.
-
-But the screen is small, it's slow, and file management is hell.
-
-So here I am.
-
-GitHub, cloud sync, remote desktop, terminal, file manager.
-
-Five programs running just to kinda-sorta "control one computer."
-
-Close enough.
-
-But this isn't it.
+Can't work on "barely okay."
+Every morning: open five apps, remember where everything is, manually fix sync conflicts.
+That's not work. That's busywork.
 
 ---
 
-**No service gives me the UX I want.**
+So I decided to build it myself.
 
-No service?
+But here's the important part.
+It wasn't "decided to build it" first.
+It was **"figured out why nothing works"** first.
 
-Two choices.
+Why doesn't KVM work?
+→ No network support.
+→ **Requirement: must connect over network.**
 
-One. Live like this every day.
+Why is Remote Desktop annoying?
+→ Slow. Drops connection.
+→ **Requirement: fast and stable.**
 
-Five programs open.
+Why doesn't cloud work?
+→ Files only. No processes.
+→ **Requirement: files AND commands/processes.**
 
-Pissed because sync didn't work.
+→ And my files go through someone else's server.
+→ **Requirement: no cloud middleman. Direct connection.**
 
-Pissed because files aren't there.
+I wrote this down and looked at it.
 
-Pissed because I'm switching between apps.
+"Why doesn't this work?" was a question.
+"What if I do it this way?" was an attempt.
+"That doesn't work either?" became a constraint.
 
-Slowly bleeding out through a thousand tiny frustrations. Every day.
+Asked the AI.
+"Can I connect three computers directly? No cloud?"
+"P2P is possible. But behind NAT, connections are tricky."
+"What's NAT?"
+"Behind a router. Most home networks."
+"So how do you connect behind a router?"
+"QUIC tunnels or STUN/TURN servers."
+"What's that?"
+It explained. Understood half of it.
 
-Two. Get it over with in one brutal push, then live easy.
+Every time the answer was "no," I asked "why?"
+The "why" became a condition.
+Conditions stacked up until I could see what needed to be built.
 
-Build it once, kill yourself doing it.
-
-Then just use it in peace.
-
-I picked two.
-
-Fine. I'm building it.
-
----
-
-**Turning frustration into questions**
-
-But saying "I'm building it" doesn't build anything.
-
-Emotions aren't raw material.
-
-"I'm pissed" builds nothing.
-
-Questions do.
-
-So I turned frustration into questions.
-
-(Fuming) "Can't I connect computers directly without going through the cloud?"
-
-(Casually) "Can I tell my home computer to do stuff from my laptop outside?"
-
-"Can one program do all of this?"
-
-"Can I do it from my phone too?"
-
-I collected these questions.
-
-And dropped them into the RAG drawers from the last post.
-
-Frustration is emotion.
-
-Questions are material.
-
-Turning emotion into material. That's the first job.
+Twenty rounds of fighting.
+Ask. Get told no. Hear why. Ask again.
+Suggest something else. Get told no again.
 
 ---
 
-**AI doesn't give you the answer**
+I never opened a spec document.
+Never typed "1. System Overview."
+Never sat down to write a spec.
 
-So I went to AI.
+I got pissed.
+Asked questions.
+Fought.
+Organized.
 
-"Hey, I'm in this situation. Got anything?"
+And the spec was already there.
 
-AI answers.
+```
+Purpose: Use multiple computers like one machine. From anywhere.
+Reason: Nothing on the market does this. Everything is half-assed.
+Method: Direct P2P connection. No cloud middleman.
+Means: QUIC tunnels. Idle resource utilization. Local-first.
+```
 
-**"You could use an SSH tunnel."**
+Four lines.
+That's a spec.
+Not an SRS. Not a PRD.
+Just organized frustration.
 
-Oh. That works?
-
-So I asked.
-
-"Can files go back and forth too?"
-
-"That won't work. You'll need **rsync** alongside it."
-
-OK. One more thing to install.
-
-"Does it work from a laptop outside?"
-
-"That's a different problem. If you install **WireGuard VPN**..."
-
-Hold on.
-
-You want me to install three programs for this?
-
-"In that case, you could also set up a QUIC-based P2P tunnel directly..."
-
-This pattern keeps repeating.
-
-I ask one thing and AI fixes one thing.
-
-But after the fix, something else breaks next to it.
-
-"Does this work?" -- "No."
-
-"Then how?" -- "Use this."
-
-"Does that work with the first thing?" -- "That also doesn't work."
-
-Around here I realized.
-
-AI doesn't give answers.
-
-AI just tells you a technique that fixes one problem in the situation you threw at it.
-
-So the moment you touch a different condition, "oh, that won't work" comes back.
-
-So I ask again. "How do I make that work?"
-
-AI gives another technique.
-
-Another part breaks.
-
-That's ping-pong.
-
-What AI gave wasn't a solution.
-
-It was a boundary line: "that won't work."
-
-And **every single one of those boundary lines turned out to be a requirement.**
+Organize your frustration and that's what you get.
+It doesn't come from a whiteboard in a conference room.
+It comes from "why the hell doesn't this work."
 
 ---
 
-**Chat history is research**
+Once I had the spec, everything changed.
 
-Collect the fight logs.
+Instead of "build this" I told AI "build according to this spec."
 
-After about twenty rounds of this ping-pong,
+Day one.
+AI tried to install a cloud SDK.
+Showed it the spec. "It says no cloud. Right there."
+AI came back. Switched to libp2p.
 
-the chat window is pretty long.
+Before, I would've said "cool" and moved on.
+But now I had the spec. Now I could say "that's wrong."
 
-Most people do this at that point.
+And I could delete things.
+For the first time, I could actually delete code.
 
-Open a new chat.
+Opened the ten-thousand-line codebase.
+Found something not in the spec. Deleted it.
+Found another. Deleted that too.
+Three thousand lines left.
+App didn't break. It got faster.
 
-Explain everything from scratch.
-
-I did that at first too.
-
-But at some point I realized.
-
-The chat history itself is the research.
-
-The record of fighting with AI.
-
-"Does this work?" "No." "Then this?" "Also no."
-
-That raw mess is the material.
-
-Don't throw it away.
+Forty-five minutes became twelve.
+Python was pissing me off so I switched to Rust. It just got faster.
+Failure rate dropped from 30% to 3%.
 
 ---
 
-**Take it back to AI**
+But reality doesn't follow specs perfectly.
 
-Gather all the records. Organize them.
+Day one.
+Ran the build.
+Two minutes, still going. Timeout.
 
-Take them back to AI.
+Build wasn't in the spec.
+Didn't even think about builds failing.
+Dependencies were recompiling from scratch every time.
+Pinned versions, enabled cache. Twenty-eight seconds.
 
-"Hey, here's my situation, here's everything we talked about.
+Day two.
+Spec said "build from scratch."
+But existing code was already doing the same thing.
+Six months of piled-up code had some usable pieces.
 
-What tech can actually pull this off?
+Build new per spec? Or fix what's already there?
+Fixed what was there.
+Faster than starting from zero.
 
-Open source preferred."
+Surprises the spec didn't account for showed up every day.
 
-This time AI answers differently.
+Plans change when they get punched.
+Mike Tyson said it.
+"Everyone has a plan until they get punched in the mouth."
 
-Because this time there's context.
+Got punched.
+Fixed it.
+**Wrote it down.**
 
-It knows my situation.
+That's the key. Writing it down.
+Next day, same problem. "How did I fix this yesterday?"
+Wrote it down, so five seconds.
+Didn't write it down? Another thirty minutes.
 
-It knows what didn't work.
+When specs meet reality, specs change.
+Don't write down the change, you get punched in the same spot again.
 
-It knows what I want.
+Made a file called PROBLEMS.md.
+Every time something breaks, write it down.
+What broke, why it broke, how I fixed it.
 
-So this time "just use SSH" one-liners don't come out.
+One week later, same problem.
+Opened the file. Fixed in five seconds.
 
-Multiple tech candidates show up.
-
----
-
-**Make a comparison table**
-
-Once candidates appear, you compare.
-
-My two criteria.
-
-- Not too hard to build.
-- Feature-rich enough.
-
-Best case, one tech fits both.
-
-Usually doesn't.
-
-Easy ones lack features.
-
-Feature-rich ones are hell to build.
-
-Make AI organize this too.
-
-"Make a comparison table of these technologies.
-
-Sort by ease of building and by feature completeness. Both."
-
-Out comes a table.
-
-Look at the table and the options narrow.
+Specs aren't finished products.
+Specs are living documents.
+Reality punches them, you update them.
 
 ---
 
-**Sort what you gathered into four boxes**
+Six months ago I didn't know what a spec was.
+I'm still not a "spec expert."
 
-By now there's a pile of stuff.
+But I know one thing now.
 
-Frustration logs, chat logs, tech candidates, comparison table.
+Better prompts aren't the answer.
+Better AI tools aren't the answer.
+**Knowing what you're building is the answer.**
 
-Time to organize.
+And that answer doesn't come out clean.
+You get pissed. Ask questions. Fight. Organize.
 
-I use four boxes.
-
-Purpose. What I'm trying to do.
-
-"Use multiple computers like one. Anywhere."
-
-Reason. Why it doesn't work. In other words, why I'm pissed.
-
-"No service does this. The ones that exist are all half-assed."
-
-Method. How to make it work.
-
-"Connect computers directly via P2P. Skip the cloud. QUIC tunnel."
-
-Means. Tech and tools to build it.
-
-"QUIC protocol, libp2p, idle CPU/GPU utilization, local-first architecture."
-
-These four boxes.
-
-(Purpose) (Reason) (Method) (Means)
-
-Like this.
-
-- What I'm trying to do (purpose)
-- Why it doesn't work (why I'm pissed)
-- How to make it work
-- Tools to build it with
-
-That's the spec.
-
-I never sat down to write a spec.
-
-Never opened a spec document and started typing from scratch.
-
-I got pissed, asked questions, fought, organized. And the spec was already there.
-
----
-
-**The shortest path to that UX**
-
-The spec is done.
-
-But building all of it would kill me.
-
-P2P connections, file sync, GPU sharing, mobile support, security...
-
-Do it all at once and you'll never finish.
-
-So I do this.
-
-Get one technology working.
-
-Just one.
-
-When that works, add one more thing to it.
-
-Build it yourself or grab open source.
-
-Then connect them.
-
-There were letters.
-
-Buy a stamp, put it in an envelope, drop it in the mailbox.
-
-There were telegrams.
-
-There were telephones.
-
-"Operator, please connect me to the Kim residence."
-
-Then came the dial.
-
-Now?
-
-Fire off a text.
-
-All of them are "sending a message." Same function.
-
-The technology is wildly different. Sure.
-
-But from the user's side, it's all the same thing.
-
-Just how easy it is. That's the only difference.
-
-What I'm building is the same.
-
-The goal isn't feature completion.
-
-It's the UX I talked about at the start.
-
-"Sit down and use multiple machines like one."
-
-The moment that feeling hits, even once. That's the MVP.
-
-Doesn't need to do everything.
-
-File sync doesn't need to be perfect.
-
-GPU sharing can wait.
-
-But that one time--
-
-tell the home computer to do something from my laptop,
-
-get the result back,
-
-"Oh. It works. This is nice."
-
-When that feeling lands.
-
-That's the MVP.
-
-Everything else, you bolt on later.
-
----
-
-**Here's the summary**
-
-In the beginning, there was frustration.
-
-That frustration was this: "the UX I want doesn't exist in this world."
-
-So I decided to build it.
-
-Turned frustration into questions.
-
-Threw the questions at AI.
-
-AI gave boundaries instead of answers.
-
-Gathered the boundaries, organized them, and there was the spec.
-
-Picked the shortest path from the spec and called it the MVP.
-
-That's the order.
-
-Frustration. UX. Questions. Conversation. Research. Spec. MVP.
-
-Next post, I actually build this MVP.
-
-The spec is done.
-
-Now it's implementation.
+Specs don't come from conference rooms.
+They come from the grind.
