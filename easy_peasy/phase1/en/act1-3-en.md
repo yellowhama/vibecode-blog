@@ -172,15 +172,12 @@ What does it do?
 Who uses it?
 When is it done?
 
-Without answers to these four, vibe coding will always go sideways.
-No matter how polished the prompts.
-No matter which AI you use.
-No destination means every meter on the taxi just keeps ticking.
+I had none of these four.
+Didn't matter how good my prompts were.
+Didn't matter which AI I used.
+No destination. The taxi meter just kept ticking.
 
 Developers call that destination a "spec."
 
-Spec? Like phone specs? Screen size, battery life, that kind of spec?
-
-No. Different thing.
-In software, a spec is "a document that says what you're building."
-I didn't know that word existed in that context.
+Spec.
+I didn't even know what that word meant back then.

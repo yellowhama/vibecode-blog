@@ -26,7 +26,7 @@ Round and round.
 Opened the code.
 
 Can't read it. But I can scroll.
-Scrolling didn't end.
+Scrolled. And scrolled. Didn't end.
 
 Over ten thousand lines.
 10,847 to be exact.

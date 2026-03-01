@@ -70,7 +70,7 @@ Done.
 
 Everything I asked for worked.
 Nothing seemed impossible.
-Or maybe impossible things were happening and I couldn't tell.
+Wait — maybe impossible things were happening. I just couldn't tell.
 It ran, so I assumed it worked.
 
 Three days in, I had five agents running.
@@ -79,7 +79,7 @@ One collects data, one organizes, one analyzes, one reports, one monitors.
 Something like that.
 
 They ran.
-If it runs, it works. Right?
+If it runs, it works. Right? That's what I told myself.
 I thought so.
 
 ---
@@ -172,6 +172,9 @@ Can't judge if it worked or not, but thinking it did anyway.
 
 Two weeks ago I thought I was a genius.
 Two weeks later I realized I knew nothing.
+
+Survived four more months like that.
+Believing if I don't touch it, it won't break.
 
 But the worst part hadn't come yet.
 The worst part came on a Monday morning.

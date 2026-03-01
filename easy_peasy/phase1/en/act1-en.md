@@ -185,9 +185,9 @@ What does it do?
 Who uses it?
 When is it done?
 
-Without answers to these four, vibe coding will always go sideways.
-No matter how good the prompts are.
-No matter which AI you use.
+I had none of these four.
+Didn't matter how good my prompts were.
+Didn't matter which AI I used.
 No direction means every step is wasted.
 
 ---

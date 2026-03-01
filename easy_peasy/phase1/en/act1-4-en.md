@@ -195,29 +195,22 @@ Once I had the spec, everything changed.
 
 Instead of "build this" I told AI "build according to this spec."
 
-The difference?
+Day one.
+AI tried to install a cloud SDK.
+Showed it the spec. "It says no cloud. Right there."
+AI came back. Switched to libp2p.
 
-"Build this" means AI decides.
-What to do first. What structure. How far to go.
-Different decision every time.
+Before, I would've said "cool" and moved on.
+But now I had the spec. Now I could say "that's wrong."
 
-"According to this spec" means there's a direction.
-No cloud → no cloud SDK.
-P2P → use libp2p.
-Fast and stable → QUIC protocol.
-
-When AI tries to wander off, I show it the spec.
-"Look at this. Follow this."
-It comes back.
-
-With a spec, I could tell what's needed and what's not.
-I could delete things.
+And I could delete things.
 For the first time, I could actually delete code.
 
-Ten thousand lines became three thousand.
-Deleted seven thousand.
-App didn't break.
-It got faster.
+Opened the ten-thousand-line codebase.
+Found something not in the spec. Deleted it.
+Found another. Deleted that too.
+Three thousand lines left.
+App didn't break. It got faster.
 
 Forty-five minutes became twelve.
 Python was pissing me off so I switched to Rust. It just got faster.
