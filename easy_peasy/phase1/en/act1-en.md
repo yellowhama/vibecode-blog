@@ -192,10 +192,13 @@ No direction means every step is wasted.
 
 ---
 
-People call that map a "spec."
+Developers call that map a "spec."
+
+Spec? Like phone specs? Screen size, battery, storage?
+No. In software, a spec is "a document that describes what you're building."
 
 But I didn't know how to write one.
-Didn't even know what one was.
+Didn't even know that meaning existed.
 Opening a document and typing "1. System Overview" — that's not my world.
 Never learned that.
 

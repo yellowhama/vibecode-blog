@@ -1,0 +1,292 @@
+# Frustration Is the Spec
+
+They said I need to write a spec.
+
+Spec.
+Like phone specs? RAM, storage, screen resolution?
+That's the only "spec" I knew.
+
+In software, spec means something else.
+"A document that describes what you're building."
+
+But I'm not a developer.
+Never opened a document and typed "1. System Overview."
+Never written "2. Requirements Definition."
+Never learned how.
+
+"You need to write a spec."
+Cool. How?
+
+---
+
+I froze for a while because I didn't know the method.
+
+Searched for how to write specs.
+Software Requirements Specification. SRS. PRD. Functional specs.
+All developer documents.
+Templates with fields and approval workflows.
+
+Foreign language to me.
+"Non-functional requirements" — what?
+"System constraints" — what?
+"Use case diagram" — what?
+
+Learning that is another few months.
+I started vibe coding because I didn't want to learn coding.
+Now you're telling me to learn spec writing?
+
+---
+
+So I just got pissed.
+
+That's literally what happened.
+Didn't find a methodology. My frustration just exploded.
+
+I have a problem.
+Three computers at home. Two desktops, one laptop.
+I want them to work like one machine.
+
+Work from my laptop outside.
+Tell the desktops at home to do stuff.
+See the results on my laptop.
+Files sync automatically.
+
+That's the wish.
+But nothing on the market does this.
+
+Tried them one by one.
+
+---
+
+**KVM switch.**
+
+Keyboard, monitor, mouse shared across computers.
+Works at home when both desktops share a monitor.
+But connect from a laptop outside? Nope.
+KVM only works with physically connected devices.
+Network? Not supported.
+
+Half-assed.
+
+**Remote Desktop.**
+
+See the computer screen remotely.
+Usable. But slow.
+Move the cursor, it follows 0.3 seconds later.
+Video? Forget it. Becomes a slideshow.
+
+And it drops.
+Wi-Fi hiccups, connection drops.
+Reconnect. Type password. Wait.
+
+Annoying.
+
+**Cloud sync.**
+
+Google Drive, Dropbox, OneDrive.
+Files sync. That's it.
+Can't run processes.
+Not using a computer — just copying files.
+
+And my files go through someone else's server.
+Upload a 10GB dataset to the cloud then download it again?
+Plugging in a USB drive is faster.
+
+**Git.**
+
+Code? Perfect. Git is the best for code sync.
+But everything else?
+Large files? No.
+Binaries? Hate it.
+Runtime environment? Completely different problem.
+
+**Five apps at once.**
+
+This is where I ended up.
+KVM + Remote Desktop + cloud + Git + terminal.
+Five apps running simultaneously just to get "barely okay."
+
+Barely.
+Okay.
+
+Can't work on "barely okay."
+Every morning: open five apps, remember where everything is, manually fix sync conflicts.
+That's not work. That's busywork.
+
+---
+
+So I decided to build it myself.
+
+But here's the important part.
+It wasn't "decided to build it" first.
+It was **"figured out why nothing works"** first.
+
+Why doesn't KVM work?
+→ No network support.
+→ **Requirement: must connect over network.**
+
+Why is Remote Desktop annoying?
+→ Slow. Drops connection.
+→ **Requirement: fast and stable.**
+
+Why doesn't cloud work?
+→ Files only. No processes.
+→ **Requirement: files AND commands/processes.**
+
+→ And my files go through someone else's server.
+→ **Requirement: no cloud middleman. Direct connection.**
+
+I wrote this down and looked at it.
+
+"Why doesn't this work?" was a question.
+"What if I do it this way?" was an attempt.
+"That doesn't work either?" became a constraint.
+
+Asked the AI.
+"Can I connect three computers directly? No cloud?"
+"P2P is possible. But behind NAT, connections are tricky."
+"What's NAT?"
+"Behind a router. Most home networks."
+"So how do you connect behind a router?"
+"QUIC tunnels or STUN/TURN servers."
+"What's that?"
+It explained. Understood half of it.
+
+Every time the answer was "no," I asked "why?"
+The "why" became a condition.
+Conditions stacked up until I could see what needed to be built.
+
+Twenty rounds of fighting.
+Ask. Get told no. Hear why. Ask again.
+Suggest something else. Get told no again.
+
+---
+
+I never opened a spec document.
+Never typed "1. System Overview."
+Never sat down to write a spec.
+
+I got pissed.
+Asked questions.
+Fought.
+Organized.
+
+And the spec was already there.
+
+```
+Purpose: Use multiple computers like one machine. From anywhere.
+Reason: Nothing on the market does this. Everything is half-assed.
+Method: Direct P2P connection. No cloud middleman.
+Means: QUIC tunnels. Idle resource utilization. Local-first.
+```
+
+Four lines.
+That's a spec.
+Not an SRS. Not a PRD.
+Just organized frustration.
+
+Organize your frustration and that's what you get.
+It doesn't come from a whiteboard in a conference room.
+It comes from "why the hell doesn't this work."
+
+---
+
+Once I had the spec, everything changed.
+
+Instead of "build this" I told AI "build according to this spec."
+
+The difference?
+
+"Build this" means AI decides.
+What to do first. What structure. How far to go.
+Different decision every time.
+
+"According to this spec" means there's a direction.
+No cloud → no cloud SDK.
+P2P → use libp2p.
+Fast and stable → QUIC protocol.
+
+When AI tries to wander off, I show it the spec.
+"Look at this. Follow this."
+It comes back.
+
+With a spec, I could tell what's needed and what's not.
+I could delete things.
+For the first time, I could actually delete code.
+
+Ten thousand lines became three thousand.
+Deleted seven thousand.
+App didn't break.
+It got faster.
+
+Forty-five minutes became twelve.
+Python was pissing me off so I switched to Rust. It just got faster.
+Failure rate dropped from 30% to 3%.
+
+---
+
+But reality doesn't follow specs perfectly.
+
+Day one.
+Ran the build.
+Two minutes, still going. Timeout.
+
+Build wasn't in the spec.
+Didn't even think about builds failing.
+Dependencies were recompiling from scratch every time.
+Pinned versions, enabled cache. Twenty-eight seconds.
+
+Day two.
+Spec said "build from scratch."
+But existing code was already doing the same thing.
+Six months of piled-up code had some usable pieces.
+
+Build new per spec? Or fix what's already there?
+Fixed what was there.
+Faster than starting from zero.
+
+Surprises the spec didn't account for showed up every day.
+
+Plans change when they get punched.
+Mike Tyson said it.
+"Everyone has a plan until they get punched in the mouth."
+
+Got punched.
+Fixed it.
+**Wrote it down.**
+
+That's the key. Writing it down.
+Next day, same problem. "How did I fix this yesterday?"
+Wrote it down, so five seconds.
+Didn't write it down? Another thirty minutes.
+
+When specs meet reality, specs change.
+Don't write down the change, you get punched in the same spot again.
+
+Made a file called PROBLEMS.md.
+Every time something breaks, write it down.
+What broke, why it broke, how I fixed it.
+
+One week later, same problem.
+Opened the file. Fixed in five seconds.
+
+Specs aren't finished products.
+Specs are living documents.
+Reality punches them, you update them.
+
+---
+
+Six months ago I didn't know what a spec was.
+I'm still not a "spec expert."
+
+But I know one thing now.
+
+Better prompts aren't the answer.
+Better AI tools aren't the answer.
+**Knowing what you're building is the answer.**
+
+And that answer doesn't come out clean.
+You get pissed. Ask questions. Fight. Organize.
+
+Specs don't come from conference rooms.
+They come from the grind.
