@@ -151,20 +151,36 @@ Act 5: 경험 (UX) — XDD로 "이게 내가 원한 거다"를 확인. [FDD #25-
 - [x] Act 1 블로그 글 4개 → easy_peasy 최신 EN 버전으로 교체 — commit `d0f8191`
 - [ ] Act 2-5 블로그 글 → 추후 교체 예정
 
-### X 스레드 포스팅 계획 (Act 1)
+### X 자동 포스팅 시스템 (완성)
 
-| 날짜 | FDD # | 제목 | 블로그 링크 |
-|------|-------|------|------------|
-| 3/3 (월) | #1 | I Thought It Worked | /posts/i-thought-it-worked |
-| 3/4 (화) | #2 | Monday Morning | /posts/everything-broke-monday |
-| 3/5 (수) | #3 | Nothing Works | /posts/frustration-is-the-spec |
-| 3/6 (목) | #4 | The Real Problem | /posts/i-didnt-know-what-i-was-building |
-| 3/7 (금) | #5 | Frustration Is the Spec | /posts/frustration-is-the-spec |
-| 3/8 (토) | #6 | Everything Changed | /posts/frustration-is-the-spec |
+**파이프라인**: 큐 JSON (approved) → GitHub Actions (30분 cron) → Twitter API → posted 마킹 → git commit
 
-- 스케줄: 매일 14:00 KST (05:00 UTC)
-- 마지막 트윗에 블로그 링크 포함
-- 큐 JSON 업데이트: w10/w11 → 매일 스케줄로 변경
+**코드 수정** — commit `10340af`:
+- `queue-manager.mjs`: `getActiveQueueFiles()` 전체 큐 스캔으로 수정
+- `post-queue.mjs`: 파라미터 정리
+- GitHub Secrets 4개 설정 완료
+- GitHub Actions dry-run 검증 통과
+
+**Act 1 스레드 현황 (FDD #001-006)**:
+
+| 날짜 | FDD # | 제목 | 상태 |
+|------|-------|------|------|
+| 3/2 (일) | #001 | I Thought It Worked | ✅ posted (수동) |
+| 3/4 (화) 9AM PST | #002 | Monday Morning | approved → 자동 |
+| 3/5 (수) | #003 | Nothing Works | approved → 자동 |
+| 3/6 (목) | #004 | The Real Problem | approved → 자동 |
+| 3/7 (금) | #005 | Frustration Is the Spec | approved → 자동 |
+| 3/8 (토) | #006 | Everything Changed | approved → 자동 |
+
+- 스케줄: 매일 UTC 17:00 (PST 9 AM / KST 02:00+1)
+- 280자 트윗 × 4-5개/스레드, 마지막 트윗에 블로그 링크
+- 큐: w10/w11 재포맷 완료, status "approved"
+
+### 후속 작업 — Acts 2-5 큐 재포맷
+
+- [ ] Acts 2-5 (FDD #7-30) 큐 280자 재포맷 (현재 validation 실패)
+- [ ] Acts 2-5 블로그 글 vibecode.town에 교체
+- [ ] Act 1 자동 포스팅 검증 후 Acts 2-5 스케줄 확정 + approved
 
 ### Phase 1 → Phase 2 브릿지
 
