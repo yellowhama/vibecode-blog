@@ -103,6 +103,62 @@ npm run post        # 실제 발행
 
 ---
 
+## 블로그 글쓰기 파이프라인
+
+기존 블로그 포스트(blog-only/)를 원재료로 삼아 에디토리얼 시리즈(phase1/)로 변환하는 4단계 파이프라인.
+
+### 파이프라인
+```
+blog-only/049.md + 050.md + ...   (원재료: 기존 블로그 포스트)
+        ↓ /blog-plan
+서사 구조 설계 (대화로 제시, 파일 생성 안 함)
+        ↓ /blog-draft
+phase1/actN-M-ko.md + actN-ko.md   (한국어)
+        ↓ /blog-translate
+phase1/en/actN-M-en.md + actN-en.md   (영어)
+        ↓ /blog-check
+검증 리포트 (PASS/FAIL/WARN)
+```
+
+### 스킬 파일
+| 스킬 | 파일 | 역할 |
+|------|------|------|
+| `/blog-plan` | `.claude/commands/blog-plan.md` | 소스 분석 → Act/씬 서사 구조 설계 |
+| `/blog-draft` | `.claude/commands/blog-draft.md` | 설계 기반 한국어 글쓰기 |
+| `/blog-translate` | `.claude/commands/blog-translate.md` | KO → EN 번역 (voice.md 톤 유지) |
+| `/blog-check` | `.claude/commands/blog-check.md` | 10가지 검증 리포트 |
+
+### 출력 구조
+| 경로 | 내용 |
+|------|------|
+| `easy_peasy/phase1/actN-M-ko.md` | 개별 씬 (한국어) |
+| `easy_peasy/phase1/actN-ko.md` | 압축본 (한국어, 전체를 한 파일로) |
+| `easy_peasy/phase1/en/actN-M-en.md` | 개별 씬 (영어) |
+| `easy_peasy/phase1/en/actN-en.md` | 압축본 (영어) |
+
+### 현재 진행 상태 — Phase 1 완성 (40파일)
+
+| Act | 테마 | 핵심 개념 | 파일 수 (KO+EN) |
+|-----|------|----------|:--------------:|
+| **1** | 스펙이 뭔지도 몰랐다 | 스펙의 필요성 | 10 |
+| **2** | 스펙이 있으니까 끝인 줄 알았다 | SDD (Spec-Driven Dev) | 10 |
+| **3** | 코드가 왜 꼬이는가 | DDD (Domain-Driven Design) | 10 |
+| **4** | 맞는지 모르겠다 | TDD (Test-Driven Dev) | 10 |
+
+- **서사 아크**: 짜증 → 스펙(뭘) → SDD(시스템) → DDD(어디에) → TDD(됐는지) → 자유
+- **최종 선언**: "짜증이 스펙이 된다. 스펙이 시스템이 된다. 시스템이 자유가 된다."
+- **소스**: blog-only/004~058 + 실제 MUSU/HiveLink 개발 경험
+- **검증**: 전 Act 금지표현 0, 시간참조 0, 격식체 0, KO↔EN 구조 일치
+
+### 핵심 규칙
+- 시간 참조 금지 ("6개월", "X주" 등)
+- "4줄 스펙" → "4가지 개념"
+- voice.md 톤 SSOT — Bukowski 60% + Indie Hacker 30% + Product 10%
+- 모드 A (싸지르기) 기본 — 한 문장 = 한 줄, 3-7단어 펀치
+- 소재 겹침 방지 — 기존 Act에서 다룬 내용 재사용 금지
+
+---
+
 ## 도메인
 
 - 블로그: **vibecode.town**
