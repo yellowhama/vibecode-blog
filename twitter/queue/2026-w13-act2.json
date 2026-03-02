@@ -1,0 +1,57 @@
+{
+  "week": "2026-w13",
+  "series": "FDD Diary",
+  "generatedAt": "2026-03-02T04:00:00+09:00",
+  "items": [
+    {
+      "id": "w13-act2-001",
+      "type": "thread",
+      "category": "FDD Diary",
+      "title": "[FDD Diary #10] Running Everything by Hand",
+      "source": "easy_peasy/phase1/en/act2-3-en.md",
+      "scheduledAt": "2026-03-23T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "Every day. Open the spec. Fix it. Throw it at the AI.\nCheck the result. Fix the spec.\nUpdate PROBLEMS.md.\nRefresh the project doc.\nThrow it at the AI again.\n\nThis loop. Every day. Manually.\n\nForget one step and it breaks.\nDon't log in PROBLEMS.md? Get hit in the same spot.\nDon't update the project doc? AI builds from scratch.\n\n\"Do I have to do this every single time?\"",
+        "Added a feature. AI built it in Python.\nNext day, similar feature. AI built it in TypeScript.\n\n\"Yesterday was Python.\"\n\"Yes, Python was more suitable yesterday.\"\n\nSame project.\n\nAnother one. \"Build the agent system.\"\nAI dumped a thousand lines. All at once.\nRan it. Blew up. No idea where.\n\nFix one thing, another breaks. Fix that, another breaks.\n\nTwo things were missing between spec and implementation.\nTech decisions. Task decomposition.\nNo Plan. No Tasks.",
+        "Tried it myself.\n\n\"This feature uses TypeScript. Runs on Rust runtime. Uses the existing transport module.\"\nWrote that down before throwing it at the AI.\nPython stopped showing up.\n\nBroke the big thing into small pieces.\nBuilt one piece at a time.\nOne piece breaks? Fix that piece. The rest stayed intact.\n\nSpecify -> Plan -> Tasks -> Implement.\nFour stages.\n\nIt had a name.\nSpec-Driven Development. SDD.\n\"Write first. Build later.\""
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    },
+    {
+      "id": "w13-act2-002",
+      "type": "thread",
+      "category": "FDD Diary",
+      "title": "[FDD Diary #11] Words Evaporate",
+      "source": "easy_peasy/phase1/en/act2-3-en.md",
+      "scheduledAt": "2026-03-25T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "So I made a CLAUDE.md.\n\nA file the AI reads automatically at the start of every session.\nWrote this in it:\n\n\"The spec for this project is here.\"\n\"The existing feature list is here.\"\n\"Make a Plan before writing code.\"\n\"Don't build everything at once. Break it into Tasks.\"\n\nNow I don't have to say it every time.\nThe environment says it.",
+        "Words evaporate.\nEnvironment stays.\n\nNo matter how good your prompts are.\nOne well-set-up work environment beats them all.\n\nA spec went from document to system.\n\nNot \"I told the AI what to do.\"\n\"The environment tells the AI what to do.\"\n\nThat's the difference between a prompt and a system."
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    },
+    {
+      "id": "w13-act2-003",
+      "type": "thread",
+      "category": "FDD Diary",
+      "title": "[FDD Diary #12] Repetition Worked. But...",
+      "source": "easy_peasy/phase1/en/act2-4-en.md",
+      "scheduledAt": "2026-03-27T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "The SDD loop was running.\n\nNew feature: file change detection.\nSpecify. Plan. Tasks. Implement.\nFour pieces. Built in order. Two days. Done.\n\nBefore? No spec. AI would've built from scratch.\nIgnored existing modules. Collided with existing code.\nA week.\n\nAfter? Same feature built once. Because SSOT existed.\nThree hours became forty-five minutes. Because PROBLEMS.md existed.\nError rate 40% became 5%. Because Plan locked the tech.",
+        "Wrote rules in CLAUDE.md.\n\"No coding without decisions.\"\n\"Spec first. Build later.\"\n\"Check existing code before starting.\"\n\nThe AI changed.\nStopped building from scratch.\nChecks existing code first.\nAsks about anything not in the spec.\n\nNot a kindergarten teacher anymore.\nA system was running.\n\nGrowth. Absolutely.",
+        "But the code started growing.\n\nFive thousand lines became ten thousand.\nTen thousand became twenty thousand.\n\nSDD covered \"what to build.\"\nBut I opened the user settings screen.\nAgent status was showing there.\n\nWhy is this here?"
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    }
+  ]
+}

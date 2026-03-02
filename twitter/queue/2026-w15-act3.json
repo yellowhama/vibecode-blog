@@ -1,0 +1,57 @@
+{
+  "week": "2026-w15",
+  "series": "FDD Diary",
+  "generatedAt": "2026-03-02T04:00:00+09:00",
+  "items": [
+    {
+      "id": "w15-act3-001",
+      "type": "thread",
+      "category": "FDD Diary",
+      "title": "[FDD Diary #16] The Compiler Is the Law",
+      "source": "easy_peasy/phase1/en/act3-3-en.md",
+      "scheduledAt": "2026-04-07T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "TypeScript has modules.\nBut use `any` and you bypass everything.\nAI ignores the types and accesses directly.\n\"Type error? Just `as any`.\"\n\nThat's discipline.\nDiscipline has cheaters.\n\nRust is a constitution.\nA constitution can't be cheated.\nThe compiler is the law.",
+        "Electrified the fence. The world changed.\n\nAI was writing notification code.\nTried to read user database directly.\nCompile failure.\n\"Ah, I need to go through the interface.\"\n\nDon't have to teach it.\nThe environment teaches.\n\nBefore: fix one thing, three things break.\nAfter: fix one thing, only one thing breaks.\n\nBefore: read three thousand lines to find the problem.\nAfter: notification problem? Notification folder. Three hundred lines.\n\nWalls are inconvenient.\nBut inconvenience becomes structure."
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    },
+    {
+      "id": "w15-act3-002",
+      "type": "thread",
+      "category": "FDD Diary",
+      "title": "[FDD Diary #17] Names Made a Map",
+      "source": "easy_peasy/phase1/en/act3-4-en.md",
+      "scheduledAt": "2026-04-09T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "I can't read code.\nThat hasn't changed.\n\nBut just looking at the folder names, I get it.\n\"This is the agent world.\"\n\"This is the user world.\"\n\"This is the notification world.\"\n\nSomething breaks, I know where to look.\nNotification acting up? Notification folder.\nBefore, I had to dig through three thousand lines.\nNow I look at three hundred.",
+        "The AI changed too.\n\n\"Build this\" -- and the AI asks first.\n\"Which world does this belong to?\"\n\nWhen everything was one folder, it never asked that.\nSplit the folders and it decides on its own.\n\"This is notification-related, so I'll put it in the notification folder.\"\n\nWrite \"socks\" on an empty drawer and socks go in.\nFolder names are the rules.\nRules written in the environment, the AI follows.",
+        "If spec was direction.\nStructure is terrain.\n\nDirection alone, you know \"where you're going.\"\nTerrain too, you know \"where you're standing.\"\nBoth together, you don't get lost.\n\nI know what I'm building. Spec.\nI know how to build it. SDD.\nI know what goes where. DDD.\n\nGrowth. Definitely."
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    },
+    {
+      "id": "w15-act3-003",
+      "type": "thread",
+      "category": "FDD Diary",
+      "title": "[FDD Diary #18] Structure Isn't Enough",
+      "source": "easy_peasy/phase1/en/act3-4-en.md",
+      "scheduledAt": "2026-04-11T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "Friday night.\nChanged the settings screen.\nWorks fine. Checked it.\n\nMonday morning.\nAgent is dead.\n\n\"What? It worked on Friday.\"\n\nChanging settings affected agent initialization.\nOn Friday the agent was running, so I didn't notice.\nMonday it started fresh. Broke.",
+        "Structure means nothing if you can't verify it's correct.\n\nChanged the code. It runs.\nBut I don't know if \"it runs\" is real.\n\nDo the features that worked before still work?\nDoes the notification fire exactly once?\nDo settings save properly?\n\nHave to check manually every time.\nMore features, more to check.\nMore to check, more you miss.\nWhere you miss, it breaks.",
+        "Every time I change code.\n\"What's going to break this time.\"\nThat fear stops you from touching the code.\n\nStructure doesn't kill the fear.\nCan't verify \"it's correct\"? Can't change it.\nCan't change it? Can't grow.\n\nThe code hardens."
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    }
+  ]
+}

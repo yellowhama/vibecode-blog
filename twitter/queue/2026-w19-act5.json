@@ -1,0 +1,56 @@
+{
+  "week": "2026-w19",
+  "series": "FDD Diary",
+  "generatedAt": "2026-03-02T04:00:00+09:00",
+  "items": [
+    {
+      "id": "w19-act5-001",
+      "type": "thread",
+      "category": "FDD Diary",
+      "title": "[FDD Diary #28] From Letters to KakaoTalk",
+      "source": "easy_peasy/phase1/en/act5-4-en.md",
+      "scheduledAt": "2026-05-05T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "Letters. Telegrams. Phones. KakaoTalk.\n\nAll the same thing: \"send a message.\"\n\nThe tech is wildly different.\nA mailbox and KakaoTalk are completely different systems.\n\nBut to the person sending? Same thing.\n\"Get my words to someone.\"\n\nOnly difference is how easy it is.\n\nSame with what I'm building.\nThe goal isn't feature completion.\nIt's the UX I described at the start.",
+        "MVP isn't the minimum number of features.\nMVP is the minimum experience.\n\nSend a job from my laptop to the desktop at home.\nGet the result back.\n\n\"Oh. It works. This is easy.\"\n\nWhen that feeling arrives.\nThat's the MVP.\n\nDoesn't have to be perfect.\nDoesn't have to do everything.\nImperfect. Rough. Ugly.\n\n\"Oh. It works.\"\nThat one line is enough.\n\nEverything else gets bolted on after.",
+        "Here's the summary.\n\nIn the beginning, there was frustration.\nFrustration's true identity: \"the UX I want doesn't exist.\"\n\nTurned frustration into questions.\nThrew questions at AI.\nAI gave boundaries, not answers.\nBoundaries became a spec.\nSpec's shortest path became the MVP.\n\nFrustration → UX → Questions → Conversation → Research → Spec → MVP."
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    },
+    {
+      "id": "w19-act5-002",
+      "type": "thread",
+      "category": "FDD Diary",
+      "title": "[FDD Diary #29] The Full Arc",
+      "source": "easy_peasy/phase1/en/act5-4-en.md",
+      "scheduledAt": "2026-05-07T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "Phase 1. The full arc.\n\nFrustration becomes the spec. — FDD\nThe spec becomes a system. — SDD\nThe system gets a map. — DDD\nThe map gets verified. — TDD\nVerification meets experience. — XDD\n\nFive stages.\nEach one discovered through rabbit holes.\nEach one named after the pain that created it.",
+        "I'm not a developer. Can't read code. Still can't.\n\nBut I know one thing.\n\nAI writes the code.\nI design the experience.\n\nTests confirm the code is correct.\nI confirm the experience is right.\n\n\"Opened it at the cafe. File there?\"\nThere? Done.\nNot there? Do it again."
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    },
+    {
+      "id": "w19-act5-003",
+      "type": "thread",
+      "category": "FDD Diary",
+      "title": "[FDD Diary #30] Specs Come From the Grind",
+      "source": "easy_peasy/phase1/en/act5-en.md",
+      "scheduledAt": "2026-05-09T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "30 threads. 5 acts. One story.\n\nCan't code.\nNot a developer.\nBuilt a product anyway.\n\nNot because I learned to code.\nBecause I learned to decide.\n\nWhat to build. How to sequence it. Where to put it.\nHow to verify it. How it should feel.\n\nFDD → SDD → DDD → TDD → XDD.",
+        "Better prompts aren't the answer.\nBetter AI tools aren't the answer.\n\n\"What to build\" is the answer.\n\"How it should feel\" is the answer.\n\nAnd that answer doesn't come out clean.\nYou get pissed. Ask questions. Fight. Organize.\n\nSpecs come from the grind.\nExperience gets confirmed on top of the spec.\n\nPhase 1: Complete."
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    }
+  ]
+}
