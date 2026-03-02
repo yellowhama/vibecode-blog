@@ -78,27 +78,80 @@
 기존 블로그 포스트를 원재료로 삼아 서사 구조를 재구성한 에디토리얼 콘텐츠.
 변환 파이프라인: `/blog-plan` → `/blog-draft` → `/blog-translate` → `/blog-check`
 
-### Act 1: 스펙이 뭔지도 몰랐다 (완성)
+**시리즈명**: Fury-Driven Development Diary (FDD)
+**X 스레드 포맷**: `[FDD Diary #N] 부제`
+**구조**: 4 Acts × 4 씬 + 압축본 = 40파일 (KO 20 + EN 20)
+**소스**: 049–058 바이브코딩 시리즈 + MUSU 개발 실경험
 
-바이브 코딩의 시작부터 첫 대형 실패, 그리고 "스펙"이라는 개념을 발견하기까지.
+### Act 1: 스펙이 뭔지도 몰랐다 (완성, 수정 완료)
+
+바이브 코딩의 시작부터 첫 대형 실패, "스펙"이라는 개념 발견, 4가지 기둥(목적/이유/방법/수단) 구분까지.
 
 | 씬 | KO 파일 | EN 파일 | 제목 | 핵심 |
 |----|---------|---------|------|------|
 | 1 | `act1-1-ko.md` | `en/act1-1-en.md` | 됐다고 생각했다 / I Thought It Worked | 바이브 코딩 첫 경험, "돌아가니까 됐다"의 함정, 3대 컴퓨터 프로젝트 소개 |
-| 2 | `act1-2-ko.md` | `en/act1-2-en.md` | 월요일 아침에 다 터졌다 / Monday Morning | 에이전트 5개 동시 사망, 만 줄 중복, 쉘 인젝션 발견 |
-| 3 | `act1-3-ko.md` | `en/act1-3-en.md` | (3막: 왜 이렇게 됐나) | "뭘 만들고 있는지 몰랐다" — 결정 부재가 근본 원인 |
-| 4 | `act1-4-ko.md` | `en/act1-4-en.md` | (4막: 스펙의 발견) | 짜증 → 질문 → 싸움 → 정리 = 스펙. 만 줄→3천 줄 |
+| 2 | `act1-2-ko.md` | `en/act1-2-en.md` | 월요일 아침에 다 터졌다 / Monday Morning | 시스템 통째로 멈춤, 만 줄 중복, 쉘 인젝션 발견 |
+| 3 | `act1-3-ko.md` | `en/act1-3-en.md` | 왜 이렇게 됐나 / The Real Problem | "뭘 만들고 있는지 몰랐다" — 결정 부재가 근본 원인 |
+| 4 | `act1-4-ko.md` | `en/act1-4-en.md` | 짜증이 스펙이다 / Frustration Is the Spec | 4가지 기둥 에피소드: 목적≠이유, 방법≠수단. 만 줄→3천 줄 |
 | 압축 | `act1-ko.md` | `en/act1-en.md` | 전체 압축본 | 4씬을 한 파일로 |
 
-**소스 포스트**: 049, 050, 051, 052 + MUSU 개발 실경험
+**핵심 인사이트**: 4가지 기둥 — 목적(Purpose), 이유(Reason), 방법(Method), 수단(Means)
 **3막 매핑**: 짜증(씬1-2) → 난리(씬2) → 파헤침(씬3-4)
+**X 스레드**: `twitter/queue/2026-w10-act1.json` (FDD #1-3), `2026-w11-act1.json` (FDD #4-6)
 
-### Act 2 이후: 미정
+### Act 2: 스펙이 있으니까 끝인 줄 알았다 (완성)
 
-**후보 소재** (blog-only/에서 미사용):
-- 053–058: 환경 설계, 바이브 코딩 정의, AI 환각, RAG, 데이터 정리, 짜증→스펙
-- 006: 복순이 대수술기 (리팩토링 서사)
-- 007: 주식 스크리너 (실전 프로젝트 서사)
+스펙을 썼지만 현실에 맞으면 깨진다. 스펙은 한 번 쓰는 문서가 아니라 매일 갱신하는 시스템. SDD(Spec-Driven Development) 발견.
+
+| 씬 | KO 파일 | EN 파일 | 제목 | 핵심 |
+|----|---------|---------|------|------|
+| 1 | `act2-1-ko.md` | `en/act2-1-en.md` | 스펙을 적었다. 그래서 어쩌라고. / I Wrote a Spec. So What. | 스펙 있어도 빌드 실패 (타임아웃, 잊힌 코드, 깨진 기능) |
+| 2 | `act2-2-ko.md` | `en/act2-2-en.md` | AI가 28개의 왼팔을 만들었다 / The AI Made 28 Left Arms | PROBLEMS.md 도입, 스펙 30개 파일 폭발, SSOT 발견 |
+| 3 | `act2-3-ko.md` | `en/act2-3-en.md` | 손으로 돌리던 날 / The Day I Ran Everything by Hand | 수동 반복의 한계, Plan과 Tasks 개념 등장 |
+| 4 | `act2-4-ko.md` | `en/act2-4-en.md` | 반복이 가능해졌다. 근데... / Repetition Worked. But... | SDD 루프(Specify→Plan→Tasks→Implement), CLAUDE.md |
+| 압축 | `act2-ko.md` | `en/act2-en.md` | 전체 압축본 | 4씬을 한 파일로 |
+
+**핵심 인사이트**: SDD — Specify → Plan → Tasks → Implement. 스펙은 시스템이지 소원 목록이 아니다.
+**3막 매핑**: 짜증(빌드 타임아웃) → 난리(28개 중복 스펙) → 파헤침(SDD 프레임워크)
+
+### Act 3: 코드가 왜 꼬이는가 (완성)
+
+코드 2만 줄, 하나 고치면 세 개 터진다. 구조 자체가 문제. 도메인 분리(DDD)로 해결.
+
+| 씬 | KO 파일 | EN 파일 | 제목 | 핵심 |
+|----|---------|---------|------|------|
+| 1 | `act3-1-ko.md` | `en/act3-1-en.md` | 한 놈을 고치면 세 놈이 터진다 / Fix One Thing, Three Things Break | 순환 의존, 코드 꼬임 |
+| 2 | `act3-2-ko.md` | `en/act3-2-en.md` | 이름이 없으면 길을 잃는다 / No Name, No Direction | 도메인 개념 발견, 이름의 중요성 |
+| 3 | `act3-3-ko.md` | `en/act3-3-en.md` | 벽을 세우다 / Building Walls | 인터페이스/계약, 도메인 간 경계 |
+| 4 | `act3-4-ko.md` | `en/act3-4-en.md` | 이름을 붙이니까 지도가 생겼다 / Names Made a Map | DDD 완성, Rust vs TS (헌법 vs 규율) |
+| 압축 | `act3-ko.md` | `en/act3-en.md` | 전체 압축본 | 4씬을 한 파일로 |
+
+**핵심 인사이트**: DDD — 비즈니스 도메인별 분리 + 인터페이스. 벽은 불편하지만 필수.
+**3막 매핑**: 짜증(순환 의존) → 난리(코드 이동하면 전부 깨짐) → 파헤침(DDD로 세계 분리)
+
+### Act 4: 맞는지 모르겠다 (완성)
+
+코드 고쳤는데 맞는지 확인할 수 없다. 50개 기능 수동 테스트 불가능. TDD로 해결.
+
+| 씬 | KO 파일 | EN 파일 | 제목 | 핵심 |
+|----|---------|---------|------|------|
+| 1 | `act4-1-ko.md` | `en/act4-1-en.md` | 수동 테스트의 지옥 / The Hell of Manual Testing | 기능 하나 올리면 다른 거 깨짐, 수동 확인의 한계 |
+| 2 | `act4-2-ko.md` | `en/act4-2-en.md` | "됐다"를 정의하다 / Defining "Done" | 완료 기준 먼저 쓰기, 테스트 개념 발견 |
+| 3 | `act4-3-ko.md` | `en/act4-3-en.md` | 6,260개의 안전망 / 6,260 Safety Nets | Rust 849개 + TS 5,411개, 1분 실행, QUIC failover 3일 완성 |
+| 4 | `act4-4-ko.md` | `en/act4-4-en.md` | 세 가지가 하나가 된다 / Three Things Become One | SDD+DDD+TDD 통합, 69개 프로덕션 버그 인정 |
+| 압축 | `act4-ko.md` | `en/act4-en.md` | 전체 압축본 | 4씬을 한 파일로 |
+
+**핵심 인사이트**: TDD — 용기를 주는 시스템. 완벽하진 않지만 6,260배 낫다.
+**3막 매핑**: 짜증(수동 테스트 불가능) → 난리(엣지 케이스 놓침) → 파헤침(TDD = 코드 전에 테스트)
+
+### Phase 1 전체 아크
+
+```
+Act 1: 스펙 (What) — 뭘 만드는지 정하기. 4가지 기둥.
+Act 2: 프로세스 (How) — SDD로 스펙을 시스템으로.
+Act 3: 구조 (Where) — DDD로 코드에 지도를.
+Act 4: 검증 (Proof) — TDD로 "맞다"를 증명.
+```
 
 ---
 
