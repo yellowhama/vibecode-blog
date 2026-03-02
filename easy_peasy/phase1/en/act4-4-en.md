@@ -1,138 +1,148 @@
-# Three Became One
+# Three Things Become One
 
-Looking back, it was all connected.
+A new feature came in.
 
----
+QUIC tunnel fails, auto-switch to HTTP.
+They call it fallback.
 
-Write the spec.
-"What are we building?"
-"What counts as done?"
-"Why are we building it?"
-
-Write that down and direction appears.
-With direction, the AI doesn't wander.
-
-SDD.
-Spec-Driven Development.
-"Write first. Build later."
+Before, I would've just started.
+"Just build it."
 
 ---
 
-Name things.
-"Where should this live?"
-"Who manages this?"
-"Is this the same world as that, or a different one?"
+Not anymore.
 
-Decide that and structure appears.
-With structure, code goes where it belongs.
+Write it down first.
 
-DDD.
-Domain-Driven Design.
-"Name things precisely."
+"What am I building."
+When the QUIC connection drops, auto-switch to HTTP.
+The user doesn't know. Doesn't notice the connection dropped.
 
----
+"What does done look like."
+QUIC failure -- HTTP switch within 3 seconds -- existing session stays alive.
 
-Define "done."
-"If this works, it's a success."
-"If this doesn't work, it's a failure."
+"Why am I building this."
+Some networks block QUIC.
+When that happens, the app can't freeze.
 
-Define that first and verification becomes possible.
-With verification, fear disappears.
-
-TDD.
-Test-Driven Development.
-"Define 'done' before you start."
+Wrote the spec first.
 
 ---
 
-Three together:
+Next.
 
-**Fix "what." (SDD)**
-**Fix "where." (DDD)**
-**Fix "done." (TDD)**
+"Where does this belong."
 
-Without these three, the AI goes a different direction every time.
-With them, the AI moves consistently.
+Network world.
+transport folder.
 
-Three ways to lock down decisions.
+Not notifications.
+Not user settings.
+Not agent execution.
 
----
+It's a connection and switching problem. So transport.
 
-Vibe coding isn't "coding by feel."
-
-It started that way.
-"Just try it." "Just run it." "Go with the vibe."
-
-But vibes give you twenty-eight left arms.
-Vibes give you one fix that breaks three things.
-Vibes give you no way to know if it's "done."
-
-Vibe coding is building with AI.
-"With" is the key word.
-
-What "with" means:
-Decisions are mine.
-Implementation is the AI's.
-Verification is ours together.
+Named the place first.
 
 ---
 
-Without "together," it's outsourcing.
+Next.
 
-"AI, figure it out."
-That's not together. That's dumping.
+"What counts as done."
 
-Dump it and the AI goes a different direction every time.
-Every time plausible.
-Every time different.
-Every time slightly wrong.
+Wrote the tests first.
 
-Saw that in Act 1.
-That was the first lesson.
+"QUIC connection drops, switches to HTTP."
+"Switch happens within 3 seconds."
+"No data loss during switch."
+"Existing session ID persists."
 
----
+Wrote that in plain language and handed it to the AI.
+AI wrote the test code.
 
-"The reason AI can run fast
-isn't because AI is smart.
-It's because a human paved the road."
-
-The spec is the road.
-The domain is the lane markings.
-The tests are the guardrails.
-
-No road? You sprint into a dead end.
-No lanes? You crash into the car next to you.
-No guardrails? You drive off the cliff.
+Then started implementing.
 
 ---
 
-Rewind.
+Three days. Done.
 
-Act 1.
-Didn't know what a spec was.
-"Just build it." I said.
-Got ten thousand lines of spaghetti.
+All tests passed.
+No other features broke.
+6,260 -- all PASS.
 
-Act 2.
-Wrote the spec. Turned it into a system.
-"What to build" became clear.
-
-Act 3.
-Named things. Built walls.
-"Where to put it" became clear.
-
-Act 4.
-Defined "done." Tests verify it.
-"Is it correct" became clear.
+Landed clean inside the transport folder.
+Didn't touch notification code.
+Didn't touch user code.
 
 ---
 
-All of it came from the grind.
+What would've happened before?
 
-Didn't learn from a textbook.
-Builds blowing up, twenty-eight left arms, one fix breaking three things, lying awake at night thinking "is this even right?"
+Would've started without a spec.
+AI would've shoved network logic inside the notification code.
+"It was convenient here."
 
-The grind created the questions.
+Would've shipped without tests.
+Something would've blown up the next day.
+Would've spent forever finding where.
+
+Two weeks. Three blowups.
+
+---
+
+Three days versus two weeks.
+
+The difference isn't skill.
+It's sequence.
+
+Wrote down what I'm building first.
+Decided where it goes first.
+Set the bar for done first.
+
+Implementation was last.
+
+---
+
+The three don't spin separately.
+
+Specs set the direction.
+Structure sets the position.
+Tests confirm the result.
+
+Remove one and it collapses.
+
+No direction? You end up with twenty-eight left arms.
+No position? Fix one thing, three things blow up.
+No confirmation? Ship it and you don't know if it "worked."
+
+All three have to mesh.
+
+---
+
+**Lock down the "what."**
+**Lock down the "where."**
+**Lock down the "done."**
+
+Lock them down and the AI sprints inside the rails.
+Fast. Accurate. Consistent.
+
+Don't lock them down and the AI wanders in a different direction every time.
+Fast. Convincing. Different every time.
+
+Rails mean a sprint.
+No rails mean drifting.
+
+---
+
+All of it came from yak shaving.
+
+Didn't learn this from textbooks.
+Builds blew up.
+Twenty-eight left arms appeared.
+Fix one, three more break.
+Lying awake at night thinking "is this even right?"
+
+The rabbit holes created the questions.
 The questions found the concepts.
 The concepts got names.
 SDD. DDD. TDD.
@@ -142,20 +152,26 @@ Searching meant I found out I wasn't alone.
 
 ---
 
-I'm not a developer. Still not.
+I'm not a developer.
+Still not.
+
+Can't read code.
+That hasn't changed.
 
 But I know three things.
 
 Write down what you're building first.
-Name where things go.
-Define "done" before you start.
+Name where it goes.
+Set the bar for done first.
 
-With these three, you can build with AI.
+With these three things,
+I can build with AI.
+
 Without them, it's luck.
 With them, it's a system.
 
 ---
 
 Frustration becomes the spec.
-The spec becomes the system.
-The system becomes freedom.
+Specs become the system.
+Systems become freedom.

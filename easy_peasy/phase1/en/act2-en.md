@@ -1,17 +1,15 @@
 # I Thought the Spec Was Enough
 
-Learned what a spec is.
-Organize your frustration and it becomes a spec.
-Purpose, reason, method, means. Four boxes.
+For the first time, I felt confident.
 
-So I wrote one.
 Fifteen pages.
+Purpose, reason, method, means. Wrote it all down.
 
 Threw it at Claude.
 "Build this according to the spec."
 
-I was proud.
-This time it's different. This time there's direction.
+This time it's different.
+This time there's direction.
 
 ---
 
@@ -32,7 +30,7 @@ Code I asked for a week ago. Asked for it and forgot.
 Because it wasn't in the spec.
 
 Third day. Blew up again.
-Feature that worked yesterday stopped working.
+A feature that worked yesterday stopped working.
 "The new part you attached messed with the wiring of the old parts."
 
 Three days straight. All failures.
@@ -122,8 +120,8 @@ Just can't walk.
 This isn't the AI's fault.
 
 AI is diligent. Does what it's told.
-"Build this"—it builds.
-Nobody said "delete that"—so it doesn't.
+"Build this" -- it builds.
+Nobody said "delete that" -- so it doesn't.
 
 But I didn't say "delete that" either.
 Don't know what to delete.
@@ -169,11 +167,20 @@ AI isn't dumb.
 There's no shopping list.
 
 Organized the project. Had the AI do it. Five minutes.
-After that, "build this"—and the AI checks first.
+After that, "build this" -- and the AI checks first.
 "Something similar already exists. Should I modify it?"
 
 With docs: genius.
 Without docs: blind genius.
+
+---
+
+I'm not a developer.
+Didn't know how to organize.
+
+But I learned what happens when you don't.
+Twenty-eight left arms.
+That's the result of not organizing.
 
 ---
 
@@ -189,86 +196,91 @@ Forget one step and it breaks.
 
 "Do I have to do this every time?"
 
-That's when I found Spec Kit.
-Open-source tool from GitHub. Four stages.
+---
 
-Specify → Plan → Tasks → Implement.
+Added a new feature.
+"Build a user notification system."
+
+AI built it. In Python.
+
+Next day. Asked for something similar.
+"This time, a log collection module."
+
+AI built it. In TypeScript.
+
+"Yesterday was Python."
+
+Same project. Different tech every time.
+
+Another one.
+"Build the entire agent system."
+AI dumped a thousand lines. All at once.
+Ran it. Blew up. No idea where it broke.
+Fixed it. Blew up again. Fixed it. Blew up again.
+
+---
+
+Two things became clear.
+
+AI picks a different tech every time.
+-> Never decided the tech upfront.
+-> **No Plan.**
+
+A thousand lines dumped at once.
+-> Never broke it into pieces.
+-> **No Tasks.**
+
+Two things missing between spec and implementation.
+Tech decisions.
+Task decomposition.
+
+---
+
+Tried it myself.
+
+Wrote the tech decisions down before throwing it at the AI.
+Python stopped showing up.
+
+Broke the big thing into pieces.
+One piece breaks? Fix that piece.
+The rest stayed intact.
+
+Found out later.
+Someone had already organized this.
+
+Specify -> Plan -> Tasks -> Implement.
+Four stages.
 
 Reading it gave me chills.
-Isn't this what I've been doing by hand?
+Isn't this what I figured out the hard way?
+
+It had a name.
+Spec-Driven Development.
+SDD for short.
+"Write first. Build later."
+
+If I hadn't gone through it myself, I would've read "four stages? cool" and moved on.
+Because I went through it, it gave me chills.
 
 ---
-
-Exactly.
-
-Writing the spec = Specify.
-Building from the spec = Implement.
-
-But I'd been skipping two steps.
-Plan and Tasks.
-
-I wrote the spec and went straight to "build it."
-Jumped over the middle.
-
-Plan: which tech to use. How it fits with existing code.
-Never decided any of that.
-So the AI picked a different tech every time.
-Sometimes Python. Sometimes TypeScript. Sometimes both.
-
-Tasks: don't ask for everything at once. Break it down.
-Didn't do that either. So when it broke, couldn't tell where.
-
-Why did I get punched with a "build timeout" on day one?
-No Plan.
-
----
-
-Write it down and half the problem dissolves.
-
-Don't write it down? Neither the AI nor I know what's going on.
-Write it down? The AI reads it.
-Reads it? Context forms.
-Context exists? 90% solved.
-
-Before: problems that took 3 hours.
-After: 45 minutes.
-
-Before: the same feature built 4 times.
-After: once.
-
-Before: 40% error rate.
-After: 5%.
-
-The numbers changed for one reason.
-Wrote it down.
-
----
-
-But writing isn't everything.
-If the AI doesn't read what you wrote, it's useless.
-
-"Read this document first."
-Having to say that every time makes you a kindergarten teacher.
-"Did you wash your hands?" "Did you put on your shoes?" "Did you pack your bag?"
 
 So I made a CLAUDE.md.
 A file the AI reads automatically at the start of every session.
 
 "The spec for this project is here."
 "The existing feature list is here."
-"Decide before you code."
+"Make a Plan before writing code."
+"Don't build everything at once. Break it into Tasks."
 
-Now I don't have to ask every time.
-The environment asks.
+Now I don't have to say it every time.
+The environment says it.
 
 Words evaporate.
 Environment stays.
 No matter how good your prompts are.
 One well-set-up work environment beats them all.
 
-This is Spec-Driven Development.
-SDD for short.
-"Write first. Build later."
+A spec went from document to system.
 
 ---
 
@@ -276,27 +288,30 @@ The SDD loop was running.
 
 Adding a new feature:
 Specify: write down what to build.
-Plan: decide how.
+Plan: decide how to build it.
 Tasks: break it down.
 Implement: build it.
 Done? Update the spec.
 
 Repeat. Same way every time.
 
-Refactored Boksuni.
-Ten thousand lines became three thousand.
-Forty-five minutes became twelve.
-Failure rate dropped from 30% to 3%.
+Same feature getting built four times. Once.
+Three hours to solve one problem. Forty-five minutes.
+Error rate 40%. 5%.
+
+The numbers changed for one reason.
+Wrote it down.
 
 Set up the environment too.
 Wrote rules in CLAUDE.md.
-"No coding before decisions."
+"No coding without decisions."
 "Spec first. Build later."
 "Check existing code before starting."
 
 This changed the AI.
 Stopped building from scratch every time.
-Checks existing code first. Asks when something's missing.
+Checks existing code first.
+Asks about anything not in the spec.
 
 Not a kindergarten teacher anymore. A system was running.
 
@@ -304,53 +319,27 @@ Not a kindergarten teacher anymore. A system was running.
 
 I was satisfied. Genuinely.
 
-Didn't know what a spec was. → Wrote one.
-Wrote it and shoved it in a drawer. → Now I update it daily.
-Ran everything by hand. → A system runs it.
+Didn't know what a spec was. -> Wrote one.
+Wrote it and shoved it in a drawer. -> Now I update it daily.
+Ran everything by hand. -> A system runs it.
 
 Growth. Absolutely.
 
 ---
 
-But.
+But the code started growing.
 
-Three thousand lines became five thousand.
-Five thousand became ten thousand.
+More features meant more code.
+Five thousand lines became ten thousand.
 Ten thousand became twenty thousand.
 
-More features mean more code. Obviously.
+SDD covered "what to build."
+What to build -- got it.
 
-But a different problem started showing up.
+But I opened the user settings screen.
+Agent status was showing there.
 
-Added a new feature.
-"Save agent execution results as logs."
-Built it. Ran it. Worked.
-
-Next day.
-Notifications fire twice.
-Didn't touch the notification code.
-
-Opened the code.
-The log-saving module was calling the notification module directly.
-The notification module was reading user settings directly.
-User settings were referencing agent state.
-
-Everything connected.
-Touch something here, something over there blows up.
-
----
-
-SDD made "what to build" crystal clear.
-
-Specify gives direction.
-Plan locks the tech.
-Tasks break things into pieces.
-
-But as the code grew, a new question appeared.
-
-"Why is this code glued to that code?"
-"Why does the log module call notifications?"
-"Why does the notification module read user settings directly?"
+Why is this here?
 
 I know "what to build."
 I don't know "where things should live."
@@ -359,14 +348,7 @@ Spec exists.
 Structure doesn't.
 
 SDD answered "what."
-But when a system grows, different questions emerge.
-
-"Where should this live?"
-"Who manages this data?"
-"Does this feature belong in the same world as that feature, or a different one?"
-
-"What"—I've got it.
-"Where"—no clue.
+"Where" is the question now.
 
 Where code should live.
 That question needed an answer.

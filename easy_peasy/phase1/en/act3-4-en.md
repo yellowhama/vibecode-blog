@@ -3,9 +3,9 @@
 Domain splitting was done.
 
 Agent world. User world. Notification world.
-Each has its own folder.
+Each has a folder.
 Each speaks its own language.
-Need something from another world? Request through the interface.
+Need another world? Request through the interface.
 
 Opened the code.
 
@@ -18,144 +18,107 @@ This is a big deal.
 I can't read code.
 That hasn't changed.
 
-But just looking at folder names, I get it.
-"Oh, this is the agent world."
+But just looking at the folder names, I get it.
+"Ah, this is the agent world."
 "This is the user world."
 "This is the notification world."
 
-When something breaks, I know where to look.
+Something breaks, I know where to look.
 Notification acting up? Notification folder.
 Agent stuck? Agent folder.
 
-Used to dig through 3,000 lines.
-Now I check 300.
+Before, I had to dig through three thousand lines.
+Now I look at three hundred.
 
 ---
 
 The AI changed too.
 
-"Build this"—and the AI asks first.
+"Build this" -- and the AI asks first.
 "Which world does this belong to?"
 
-Never asked that question before.
-When everything was in one folder, no reason to ask.
+When everything was one folder, it never asked that.
+No reason to ask.
 
-Folders split, and the AI decides automatically.
+Split the folders and the AI decides on its own.
 "This is notification-related, so I'll put it in the notification folder."
 
-Right.
-Without being told, it puts things in the right place.
+Correct.
+Puts it in the right place without being told.
 
-Saw this in Act 2.
-If the drawer is labeled "socks," AI puts socks in it.
+Write "socks" on an empty drawer and socks go in.
 Same principle.
 
-Folder names are rules.
-Rules written in the environment are rules the AI follows.
+Folder names are the rules.
+Rules written in the environment, the AI follows.
 
 ---
 
 A map appeared.
 
-Said it in Act 1.
-"I'm a traveler dropped in a foreign country with no map."
+If spec was direction.
+Structure is terrain.
 
-Back then, the spec was the map.
-What to build. Where to go.
+Direction alone, you know "where you're going."
+Terrain too, you know "where you're standing."
 
-Now, structure is the map.
-What lives where. Where to look.
-
-Spec = direction.
-Structure = terrain.
-
-Direction alone tells you "where you're headed."
-Terrain tells you "where you're standing."
-
-Both together? You don't get lost.
+Both together, you don't get lost.
 
 ---
 
 I was satisfied.
 Genuinely.
 
-Act 1: Didn't know what a spec was. → Learned specs.
-Act 2: Turned the spec into a system. → SDD.
-Act 3: Split code into worlds. → DDD.
+I know what I'm building. Wrote the spec.
+I know how to build it. SDD.
+I know what goes where. DDD.
 
-Growth. Absolutely.
+Growth.
+Definitely.
 
 ---
 
 But.
 
-Thought hit me at night.
+Friday night.
+Changed the settings screen.
+Works fine. Checked it.
 
-"Is this actually correct?"
+Monday morning.
+Agent is dead.
+
+"What? It worked on Friday."
+
+Changing the settings screen affected the agent initialization logic.
+On Friday the agent was already running, so I didn't notice.
+Monday it started fresh. Broke.
 
 ---
 
-Changed some code.
+Structure means nothing if you can't verify it's correct.
+
+Changed the code.
 It runs.
+But I don't know if "it runs" is real.
 
-But is "it runs" really true?
-
-Features that worked before—do they still work?
+Do the features that worked before still work?
 Does the notification fire exactly once?
 Do user settings save properly?
 
-Check manually every time.
-Log in. Run agents. Check notifications.
-Change settings. Log in again.
-
-Thirty minutes.
-
-One fix, thirty minutes of checking.
-Another fix, another thirty minutes.
-
----
-
-Ten features? Manageable.
-
-But now there are fifty.
-Check fifty things by hand every time?
-
-Skip the check?
-"This one probably didn't break."
-That "probably" is where bugs escape.
-
----
-
-Structure is set.
-Code is readable.
-AI puts things in the right place.
-
-But there's no way to verify "it's correct."
-
-Only option: click through everything manually.
-And as features grow, so does the clicking.
-More clicking, more things get skipped.
-Skipped checks are where things break.
+Have to check manually every time.
+More features, more to check.
+More to check, more you miss.
+Where you miss, it breaks.
 
 ---
 
 Fear.
 
-Every time I change code: "What's going to break this time?"
-That fear paralyzes you.
+Every time I change code. "What's going to break this time."
+That fear stops you from touching the code.
 
 Structure doesn't kill the fear.
-If you can't verify "it's correct," you can't touch the code.
-Can't touch the code, can't grow.
-The code fossilizes.
+Can't verify "it's correct"? Can't change it.
+Can't change it? Can't grow.
 
----
-
-What do you need to change code without fear?
-
-"Changed it. It runs."
-Something other than me has to confirm that.
-Every time. Automatically. Without missing anything.
-
-Didn't know what that something was yet.
-But I knew I needed it.
+The code hardens.

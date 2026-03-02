@@ -1,8 +1,10 @@
-# The Day a Spec Became a System
+# The Day I Ran Everything by Hand
 
-Running it by hand.
+Spec exists.
+PROBLEMS.md exists.
+Learned about SSOT.
 
-Open the spec. Read it. Throw it at the AI.
+Every day. Open the spec. Fix it. Throw it at the AI.
 Check the result. Fix the spec.
 Update PROBLEMS.md.
 Refresh the project doc.
@@ -16,132 +18,135 @@ Forget one step and it breaks.
 Don't log in PROBLEMS.md? Get hit in the same spot again.
 Don't update the project doc? AI builds from scratch again.
 
-"Do I have to do this every time?"
+"Do I have to do this every single time?"
 
 ---
 
-That's when I found Spec Kit.
+Added a new feature.
+"Build a user notification system."
 
-Open-source tool from GitHub.
-Four stages.
+AI built it.
+In Python.
 
-Specify → Plan → Tasks → Implement.
+Next day.
+Asked for something similar.
+"This time, a log collection module."
 
-Read through it.
+AI built it.
+In TypeScript.
 
-Specify: write down "what you're building and why." No tech talk.
-Plan: write down "how to build it." This is where you pick your tech.
-Tasks: break the big chunk into small pieces. Each piece independently verifiable.
-Implement: build one piece at a time.
+"Yesterday was Python."
 
-Reading it gave me chills.
+"Yes, Python was more suitable yesterday, and TypeScript is more suitable today."
 
-Isn't this what I've been doing by hand?
-
----
-
-Exactly.
-
-Writing the spec = Specify.
-Building from the spec = Implement.
-
-But I'd been skipping two steps.
-Plan and Tasks.
-
-I wrote the spec and went straight to "build it."
-Jumped over the middle.
-
-Plan: which tech to use. What constraints exist. How it fits with existing code.
-Never decided any of that.
-So the AI picked a different tech every time.
-Sometimes Python. Sometimes TypeScript. Sometimes both.
-
-Tasks: don't ask for everything at once. Break it down.
-Didn't do that either.
-"Build the whole system at once."
-So when it broke, couldn't tell where.
+What do you mean suitable.
+Same project.
 
 ---
 
-In Specify, you write "why" first.
-No tech talk.
-
-"What does the user want to do?"
-"What problem does this solve?"
-"What counts as 'done'?"
-
-That's Specify.
-The "purpose, reason, method, means" from Act 1 live here.
-
----
-
-In Plan, you finally pick your tech.
-
-"Rust? Python? TypeScript?"
-"Where will it clash with existing code?"
-"Which libraries?"
-
-Decide this upfront and the AI won't pick something else.
-Say "use Python" and Rust won't show up.
-It's in the Plan.
-
-Why did I get punched with a "build timeout" on day one?
-No Plan.
-Build environment, dependencies, timeout limits.
-Had I written those in the Plan, day one wouldn't have hurt.
-
----
-
-In Tasks, you break the big thing down.
+Another one.
 
 "Build the entire agent system."
 
-Say that and the AI dumps a thousand lines at once.
+AI dumped a thousand lines.
+All at once.
+
+Ran it.
+Blew up.
+No idea where it broke.
+
+A thousand lines. Where's the problem?
+I can't read code.
+Asked the AI.
+"Where did it break?"
+
+"Type error on line 375."
+
+Fixed it.
+Blew up again.
+"This time, line 512."
+
+Fixed it.
+Blew up again.
+Third time.
+
+Dump a thousand lines at once and this is what happens.
 Can't tell where it broke.
-Can't tell what's right and what's wrong.
+Fix one thing, another breaks, fix that, another breaks.
 
-Instead, break it down.
+---
 
-"1. Build the data collection module."
+Two things became clear.
+
+AI picks a different tech every time.
+-> Never decided the tech upfront.
+-> **No Plan.**
+
+A thousand lines dumped at once.
+-> Never broke it into pieces.
+-> **No Tasks.**
+
+Spec existed.
+"What to build" was written down.
+But "how to build it" wasn't.
+"Build the whole thing at once" -- that's what I threw at it.
+
+Two things missing between spec and implementation.
+Tech decisions.
+Task decomposition.
+
+---
+
+Tried it myself.
+
+"This feature uses TypeScript. Runs on the Rust runtime. Uses the existing transport module."
+
+Wrote that down before throwing it at the AI.
+Python stopped showing up.
+Because it was written down.
+
+Broke "the agent system" into pieces.
+"1. Data collection module."
 "2. Test the collection module."
-"3. Build the evaluation module."
+"3. Evaluation module."
 "4. Connect collection and evaluation."
 
-Each piece runs independently.
+Built one piece at a time.
 One piece breaks? Fix that piece.
-The rest stays intact.
+The rest stayed intact.
 
 ---
 
-Write it down and half the problem dissolves.
+Found out later.
 
-Don't write it down? Neither the AI nor I know what's going on.
-Write it down? The AI reads it.
-Reads it? Context forms.
-Context exists? 90% solved.
+Someone had already organized this.
 
-Before: problems that took 3 hours.
-After: 45 minutes.
+Specify -> Plan -> Tasks -> Implement.
+Four stages.
 
-Before: the same feature built 4 times.
-After: once.
+Specify: what to build and why.
+Plan: which tech, what constraints.
+Tasks: break the big thing into small pieces.
+Implement: build one piece at a time.
 
-Before: 40% error rate.
-After: 5%.
-
-The numbers changed for one reason.
-Wrote it down.
+Reading it gave me chills.
+Isn't this what I figured out the hard way?
 
 ---
 
-But writing isn't everything.
+It had a name.
 
-If the AI doesn't read what you wrote, it's useless.
+Spec-Driven Development.
+SDD for short.
 
-"Read this document first."
+"Write first. Build later."
 
-Having to say that every time makes you a kindergarten teacher.
-"Did you wash your hands?" "Did you put on your shoes?" "Did you pack your bag?"
+Would it have been better to know the name first?
+Not sure.
+If I hadn't gone through it myself, I would've read "four stages? cool" and moved on.
+Because I went through it, it gave me chills.
+
+---
 
 So I made a CLAUDE.md.
 
@@ -150,12 +155,11 @@ Wrote this in it:
 
 "The spec for this project is here."
 "The existing feature list is here."
-"Decide before you code."
+"Make a Plan before writing code."
+"Don't build everything at once. Break it into Tasks."
 
-Now I don't have to ask every time.
-The environment asks.
-
----
+Now I don't have to say it every time.
+The environment says it.
 
 Words evaporate.
 Environment stays.
@@ -163,36 +167,4 @@ Environment stays.
 No matter how good your prompts are.
 One well-set-up work environment beats them all.
 
-Specify → Plan → Tasks → Implement.
-These four stages are the environment.
-
-Spec exists, so direction is set.
-Plan exists, so tech is locked.
-Tasks are broken down, so nothing blows up all at once.
-Implementation comes last. Not first—fourth.
-
-This is Spec-Driven Development.
-SDD for short.
-
-"Write first. Build later."
-
-But I learned the name after the fact.
-At first it was just "that thing I do by hand."
-Didn't know it had a name.
-
-Knowing the name meant I could search for it.
-Searching meant I found out other people do this too.
-I wasn't alone.
-
----
-
 A spec went from document to system.
-
-Not something you write once and shove in a drawer.
-A loop: update daily, feed into plans, break into tasks, build, verify.
-
-When this loop runs, repetition becomes possible.
-Next feature? Same process.
-Feature after that? Same process.
-
-Not luck. A system.

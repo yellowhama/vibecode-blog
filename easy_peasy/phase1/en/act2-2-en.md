@@ -43,7 +43,7 @@ But from the AI's perspective, it's right.
 The moment you delete something, responsibility kicks in.
 AI can't take responsibility.
 So it doesn't delete.
-It creates new.
+It creates new instead.
 
 ---
 
@@ -52,10 +52,15 @@ Here's the analogy.
 "Make me a left arm."
 
 AI made a left arm.
-But didn't remove the existing one. Added a new one.
+But didn't remove the existing one.
+Added a new one.
 
-Next day. "Fix the left arm." Another new arm.
-Day after that. Another new arm.
+Next day.
+"Fix the left arm."
+Another new arm.
+
+Day after that.
+Another new arm.
 
 A week later.
 Twenty-eight left arms.
@@ -75,16 +80,16 @@ Just can't walk.
 This isn't the AI's fault.
 
 AI is diligent. Does what it's told.
-"Build this"—it builds.
-Nobody said "delete that"—so it doesn't.
+"Build this" -- it builds.
+Nobody said "delete that" -- so it doesn't.
 
 But I didn't say "delete that" either.
 Why?
 Because I didn't know what to delete.
 
-Thirty files. Which one is the real one?
-Don't know. So I keep them all.
-AI keeps them all.
+Thirty files. Which one is the real one? Don't know.
+Don't know, so I keep them all.
+AI keeps them all too.
 
 Neither of us deletes.
 Neither of us knows.
@@ -166,15 +171,15 @@ There's no shopping list.
 
 So I made a shopping list.
 
-Organized everything in the project. Had the AI do it. Five minutes.
+Organized everything in the project.
+Had the AI do it. Five minutes.
 
 "Scan all files in the project and catalog what exists."
 
-Five minutes. Done.
 Opened every file and documented what was inside.
 
 After that, everything changed.
-"Build this"—and the AI checks first.
+"Build this" -- and the AI checks first.
 "Something similar already exists. Should I modify it?"
 
 Never heard that before.
@@ -186,12 +191,20 @@ Without docs: blind genius.
 
 ---
 
-Here's the takeaway.
+I'm not a developer.
+Didn't know how to organize.
 
-1. A spec isn't write-once. You update it every day.
-2. One source of truth. Not thirty—one.
-3. The AI needs a document that tells it the project's state.
-4. Making that document? Have the AI do it. Five minutes.
+But I learned what happens when you don't.
+Twenty-eight left arms.
+That's the result of not organizing.
+
+---
+
+Update the spec every day.
+One source of truth.
+The AI needs a map.
+
+Got it.
 
 But all of this was happening by hand.
 Me opening the spec.

@@ -1,50 +1,53 @@
 # The Hell of Manual Testing
 
-Domain splitting was done.
-Code was clean.
-Just looking at folder names told me what was where.
+Shipped a new feature.
 
-Added a new feature.
-Ran it.
-Worked.
+Checked it. It worked. Shipped it.
 
-"Did it actually work?"
+Next day.
+A different feature was dead.
+
+"But I checked?"
+
+Checked that feature.
+Didn't look at the others.
 
 ---
 
-Checked manually.
+So I decided to check everything from then on.
 
+Change the code.
 Login. Works.
 Agent execution. Works.
-Notification. Arrived.
-Settings change. Saved.
+Notification. Arrives.
+Settings change. Saves.
 
 Done.
 
 ---
 
 Next day.
-One small change.
+One small fix.
 Changed the notification text.
 
-Checked everything again.
+Check everything again.
 Login. Agent. Notification. Settings.
 
 Thirty minutes.
 
 ---
 
-Another change.
+Another fix.
 Slightly reordered agent execution.
 
-Checked everything again.
+Check everything again.
 Login. Agent. Notification. Settings.
 
 Thirty minutes.
 
 ---
 
-Another change.
+Another fix.
 
 Everything again.
 
@@ -59,11 +62,7 @@ Yes.
 Why?
 Because if you don't, you won't know what broke.
 
-Changed the notification text and the agent might freeze.
-Saw it in Act 3.
-Touch something here, something over there blows up.
-
-Domain splitting made it better than before.
+Domain splitting made things better than before.
 But "better" isn't "safe."
 
 Don't check? Don't know.
@@ -92,9 +91,9 @@ Skip it.
 That's exactly the door bugs walk through.
 
 Willpower runs out.
-Fifth check—focus drops.
-Tenth—you start skimming.
-Twentieth—you stop looking.
+Fifth check -- focus drops.
+Tenth -- you start skimming.
+Twentieth -- you stop looking.
 
 Manual testing isn't a time problem.
 It's a willpower problem.
@@ -111,7 +110,7 @@ Error? Don't know.
 Have to run it to find out.
 
 A state where you don't know if it's an error until you run it.
-Schrödinger's error.
+Schrodinger's error.
 
 Can't tell if the cat is alive or dead until you open the box.
 Can't tell if there's a bug until you run the code.
@@ -130,10 +129,8 @@ Always.
 
 ---
 
-Here's the summary.
-
 Change code.
-Want to know if it worked? Click through everything.
+Want to know if it worked? Click through everything manually.
 More features, more clicking.
 More clicking, more skipping.
 More skipping, more breaking.

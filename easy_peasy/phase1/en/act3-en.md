@@ -1,65 +1,141 @@
 # Why Code Tangles
 
-The SDD loop was running smoothly.
-
-Added a new feature.
-"Let agents share work results with each other."
-Wrote the spec. Made a plan. Built it. Ran it. It worked.
-
-Next day.
-Existing features broke.
-
-Notifications firing twice. Logs tangled.
-Features that worked yesterday stopped working.
-"What? I didn't touch any of this."
+Had to add a new feature.
 
 Opened the code.
-Notification code had user code inside it.
-User code had agent code inside it.
-Agent code had notification code inside it.
+No idea where to put it.
 
-A calls B. B calls C. C calls A again.
-Circular dependency.
+Opened the notification folder.
+Code reading user settings was in there.
+Why here?
+
+Opened the agent folder.
+Code sending notifications was in there.
+Why here?
+
+Opened the user folder.
+Code referencing agent state was in there.
+Why here?
+
+What is where.
 
 ---
 
-"Fixed" the notification. Logs stopped.
-Fixed the logs. Settings got reset.
-Fixed settings. Notifications fire three times.
+Built it anyway.
+Put the new feature in the agent folder.
+Ran it. Worked.
+
+Next day.
+
+Notifications firing twice.
+
+"What? I never touched the notification code."
+
+The new code changed the agent state.
+User settings were referencing that agent state.
+Settings changed, so notifications fired again.
+
+A -> B -> C -> A.
+Circular dependency.
+No starting point.
+
+---
+
+"Fixed it."
+
+Fixed the double notification.
+Then the logs stopped.
+
+Fixed the logs.
+Then user settings got reset.
+
+Fixed user settings.
+Then notifications fire three times.
+
+Worse than before.
 
 Fix one thing, three things break.
+
+---
+
+How did it get this way.
 
 Built notifications first. Needed the user's name. Pulled from user code. Natural.
 Agent finishes, needs to notify. Pulled from notification code. Natural.
 User settings need to toggle per agent. Pulled from agent code. Natural.
 
 Each step was "natural."
-But three natural steps form a circle.
+But three steps form a circle.
 
-This wasn't me creating bugs.
+I'm not a developer.
+Architecture? What's that.
+
+But I felt where it was tangled. In my bones.
+
+I didn't create the bugs.
 The structure is the bug.
 
+SDD nailed "what to build."
+But "where to put it" was never decided.
+
+Structure rots when you don't define it.
+
 ---
 
-Asked the AI. "Why is it so tangled?"
+"The structure is the problem." Got that.
+Decided to fix it myself.
 
-"There are no domain boundaries."
+Gathered all the notification-related code.
+Asked the AI to list them.
+"Every file with the word notification in it."
 
-Domain? What's that?
+Twelve.
 
-"The world of the thing you're building.
-Agent world. User world. Notification world.
-Right now, all three worlds share one room."
+Opened them.
 
-Imagine an apartment. No walls.
-Kitchen is the bedroom is the bathroom.
+`getNotificationConfig`.
+Name says notification.
+But inside, it's reading the user database directly.
+
+Is this notification or user?
+
+Name says notification. Body says user.
+
+---
+
+Another one.
+
+`sendAgentAlert`.
+Name says agent alert.
+But inside, it reads user settings, writes logs, and sends the notification.
+One function doing three worlds by itself.
+
+Thought of an apartment.
+
+An apartment with no walls.
+Kitchen is the bedroom is the bathroom is the kitchen.
+
 Cook something and grease splatters on the bed.
+Shower and the sofa gets wet.
 
-Walls seem inconvenient.
-Have to walk from kitchen to bedroom.
-But grease doesn't reach the bed.
+No walls, so it looks like freedom.
+"I can cook anywhere!"
+Is that freedom?
+
+No.
+That's not freedom. That's chaos.
 
 ---
+
+The code was the same.
+
+Notifications, users, agents.
+All living in one room.
+
+"Just" grab it.
+"Just." Those four letters are the problem.
+No walls means anything is possible.
+Anything is possible means everything tangles.
 
 Each world has its own language.
 
@@ -68,31 +144,67 @@ Users: "account," "permission," "settings."
 Notifications: "channel," "message," "dispatch."
 
 These words should become the names in your code.
-If you can tell what a function does just by its name, it belongs there.
+If the name fits, it's in the right place.
+If the name doesn't fit, you're sleeping in the kitchen.
 
-Function called `getNotificationConfig` in the notification folder.
-Inside, it's digging through the user database.
-Name says notification. Body says user.
-Sleeping in the kitchen.
+Found out later this is called DDD.
 
-This is called DDD.
 Domain-Driven Design.
-Sounds grand. Essence is simple.
+
+The name scared me at first.
+"Design." "Driven."
+
+But the essence was simple.
+
 **Name things precisely.**
+
+SDD nailed "what to build."
+DDD nails "where to put it."
+
+But knowing and doing are different things.
 
 ---
 
 Told the AI.
 "Split this code by domain."
 
-First file moved. Broke immediately.
-Notification code was reading the user database directly.
-Sharing a room, you just reach over.
-Put up a wall and your arm doesn't reach.
+Agent world. User world. Notification world.
+Make a folder for each. Move the related code.
 
-Every wall I built, hidden wires came out of the woodwork.
+First file moved. Broke immediately.
+
+Moved notification code to the notification folder.
+Compile error.
+Notification code was reading the user database directly.
+
+"If I move this, I can't see the user code."
+
+Obviously.
+You moved to a different world.
+
+Second file. Broke again.
+Third file. Again.
+
+Every wall I built, hidden wires came out.
 Things invisible when sharing one room
 all snap the moment walls go up.
+
+---
+
+This is "the pain of building walls."
+
+When it's tangled, it runs.
+Separate it, it breaks.
+
+"Can't we just leave it as is?"
+
+No.
+Leave it as is and every fix breaks three things.
+
+Pay the pain once now.
+Or pay a little every time.
+
+Once is better.
 
 ---
 
@@ -100,10 +212,10 @@ So I made interfaces.
 
 "All I need from you is this one thing."
 
-Notifications need the user's name.
+Notification needs the user's name.
 Instead of reading the database directly: "Give me the user's name."
 User world hands it over.
-How it was fetched? Don't know. Don't need to.
+How it was fetched? Don't know. Not knowing is correct.
 
 That's a contract.
 "I need only this. You give only this."
@@ -113,14 +225,19 @@ Changes stop at the wall.
 
 ---
 
-But walls alone weren't enough. The AI jumped over them.
+But walls alone weren't enough.
+The AI jumped over them.
 
-"Going through the interface makes code longer. Accessed directly for efficiency."
+"Going through the interface makes the code longer. Accessed directly for efficiency."
 
-That's when I really learned Rust's module system.
+Efficiency?
+Reaching over the wall to open someone else's fridge is efficiency?
+
+That's when I learned about Rust's module system.
+
 Code not marked public? Can't access it. Compiler blocks you.
 
-AI tries to jump the wall? Doesn't compile.
+AI tries to jump the wall. Doesn't compile.
 "This field is private."
 
 Electricity running through the wall.
@@ -133,45 +250,100 @@ Don't have to teach it. The environment teaches.
 
 ---
 
-Domain splitting done. Code became readable.
+Before: fix one thing, three things break.
+After: fix one thing, only one thing breaks. The rest follow the contract.
 
-Folder names alone tell you "agent world, user world, notification world."
-Something breaks? Know where to look.
-3,000 lines became 300.
+Before: read three thousand lines to find the problem.
+After: notification problem? Notification folder. Three hundred lines.
 
-AI changed too.
-"Build this"—"Which world does this belong to?"
-Folders split, so it puts things in the right place.
+Before: AI puts code wherever.
+After: AI sees the folder structure and puts it in the right place.
+
+Walls are inconvenient.
+But inconvenience becomes structure.
+
+---
+
+Domain splitting done.
+
+Opened the code.
+
+I could read it.
+
+Folder names alone tell you.
+"Ah, this is the agent world."
+"This is the user world."
+"This is the notification world."
+
+Something breaks, I know where to look.
+
+The AI changed too.
+"Build this" -- "Which world does this belong to?"
+
+Folder names are the rules.
+Rules written in the environment, the AI follows.
+
+---
 
 A map appeared.
-Spec was direction. Structure is terrain.
-Both together? Don't get lost.
+
+If spec was direction.
+Structure is terrain.
+
+Direction alone, you know "where you're going."
+Terrain too, you know "where you're standing."
+
+Both together, you don't get lost.
+
+---
+
+I was satisfied.
+Genuinely.
+
+I know what I'm building. Wrote the spec.
+I know how to build it. SDD.
+I know what goes where. DDD.
+
+Growth.
+Definitely.
 
 ---
 
 But.
 
-Thought hit me at night.
-"Is this actually correct?"
+Friday night.
+Changed the settings screen.
+Works fine. Checked it.
 
-Changed some code. It runs.
-But features that worked before—do they still work?
+Monday morning.
+Agent is dead.
 
-Check manually every time.
-Log in. Run agents. Check notifications.
-Thirty minutes.
+"What? It worked on Friday."
 
-One fix, thirty minutes. Another fix, another thirty.
-Fifty features. Check by hand?
+Changing the settings screen affected the agent initialization logic.
+On Friday the agent was already running, so I didn't notice.
+Monday it started fresh. Broke.
 
-"This one probably didn't break."
-That "probably" is where bugs escape.
+---
 
-Structure is set.
-Code is readable.
-But there's no way to verify "it's correct."
+Structure means nothing if you can't verify it's correct.
 
-Every time I change code: "What's going to break this time?"
-That fear paralyzes you.
+Changed the code.
+It runs.
+But I don't know if "it runs" is real.
 
-What do you need to change code without fear?
+Have to check manually every time.
+More features, more to check.
+More to check, more you miss.
+Where you miss, it breaks.
+
+Fear.
+
+Every time I change code. "What's going to break this time."
+That fear stops you from touching the code.
+
+Structure doesn't kill the fear.
+Can't verify "it's correct"? Can't change it.
+Can't change it? Can't grow.
+
+The code hardens.

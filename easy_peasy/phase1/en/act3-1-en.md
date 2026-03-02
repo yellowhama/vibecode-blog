@@ -1,102 +1,75 @@
 # Fix One Thing, Three Things Break
 
-The SDD loop was running smoothly.
+Had to add a new feature.
 
-Write the spec. Make a plan. Break it down. Build it.
-Verify. Update the spec.
-Repeat.
+Opened the code.
+No idea where to put it.
 
-Added a new feature.
-"Let agents share work results with each other."
+Opened the notification folder.
+Code reading user settings was in there.
+Why here?
 
-Wrote the spec.
-Made the plan.
-Built it.
-Ran it.
-It worked.
+Opened the agent folder.
+Code sending notifications was in there.
+Why here?
 
-Good.
+Opened the user folder.
+Code referencing agent state was in there.
+Why here?
+
+What is where.
 
 ---
 
+Built it anyway.
+Put the new feature in the agent folder.
+Ran it.
+Worked.
+
 Next day.
 
-Existing features broke.
-
 Notifications firing twice.
-Logs tangled.
-Features that worked yesterday stopped working.
 
-"What? I didn't touch any of this."
+"What? I never touched the notification code."
 
 Opened the code.
+The new code changed the agent state.
+User settings were referencing that agent state.
+Settings changed, so notifications fired again.
 
-Notification code had user code inside it.
-User code had agent code inside it.
-Agent code had notification code inside it.
-
-Wait.
-Isn't this a circle?
-
-A calls B.
-B calls C.
-C calls A again.
-
+A -> B -> C -> A.
 Circular dependency.
-A Möbius strip.
 No starting point.
 
 ---
 
-"Fixed" the notification issue.
+"Fixed it."
 
-Notifications stopped doubling.
-
-But logs stopped working.
+Fixed the double notification.
+Then the logs stopped.
 
 Fixed the logs.
-
-User settings got reset.
+Then user settings got reset.
 
 Fixed user settings.
+Then notifications fire three times.
 
-Notifications now fire three times.
-
-What.
-It's worse than before.
+Worse than before.
 
 ---
 
-Picture this.
+Pulled one end of a tangled thread to untangle it.
+The other side tightened.
+Pulled that side, another spot tightened.
 
-Tangled thread. You pull one end to untangle it.
-The other end tightens.
-Pull that end—another spot tightens.
-
-Three spots tangled at once and you can't tell which to pull first.
+Three spots tangled at once and you don't know which to pull first.
 The more you pull, the worse it gets.
 
 Fix one thing, three things break.
 
 ---
 
-Asked the AI.
-"Why is this happening?"
-
-"The modules have circular dependencies.
-A references B, B references C, C references A."
-
-I know that.
-Why did it get this way?
-
-"Each module directly imports whatever functionality it needs.
-This structure forms naturally over time."
-
-Naturally?
-
----
-
-It was natural.
+How did it get this way.
 
 Built the notification code first.
 Needed the user's name to send a notification.
@@ -109,32 +82,21 @@ Pulled from notification code.
 Natural.
 
 Built user settings.
-Users should toggle notifications per agent.
+Should be able to turn off notifications per agent.
 Pulled from agent code.
 Natural.
 
 Each step was "natural."
-But three natural steps form a circle.
-
-The circle was never intentional.
-Took one natural step at a time and ended up back at the start.
+But three steps form a circle.
 
 ---
 
-Five agents building the same function five different ways.
-Saw that in Act 1.
+I'm not a developer.
+Architecture? What's that.
 
-Back then, duplication was the problem.
-Now, connection is the problem.
+But I felt where it was tangled. In my bones.
 
-Duplication? Delete it.
-Connection? Cut it and things break.
-
-Connection is scarier than duplication.
-
----
-
-This wasn't me creating bugs.
+I didn't create the bugs.
 The structure is the bug.
 
 Each line of code is correct.
@@ -144,10 +106,7 @@ But everything is tangled together.
 SDD nailed "what to build."
 But "where to put it" was never decided.
 
-Should notification code directly call user code?
-Should agent code directly send notifications?
-
-Never asked those questions.
+Never asked that question.
 Never asked, so the code tangled itself.
 
 Structure rots when you don't define it.

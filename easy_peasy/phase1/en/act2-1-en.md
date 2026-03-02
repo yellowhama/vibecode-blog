@@ -1,18 +1,15 @@
 # I Wrote a Spec. So What.
 
-Learned what a spec is.
-Organize your frustration and it becomes a spec.
-Purpose, reason, method, means. Four boxes.
+For the first time, I felt confident.
 
-So I wrote one.
 Fifteen pages.
+Purpose, reason, method, means. Wrote it all down.
 
 Threw it at Claude.
 "Build this according to the spec."
 
-I was proud.
-This time it's different. This time there's direction.
-I have a spec. I have a plan.
+This time it's different.
+This time there's direction.
 
 ---
 
@@ -26,22 +23,23 @@ Compilation died past the two-minute mark.
 Of course not.
 The spec didn't say "compilation must finish under two minutes."
 Didn't know that was something to write down.
-Didn't even think of it.
+Didn't even occur to me.
 
 Fixed it.
 Raised the timeout limit.
 
 ---
 
-Next day. Blew up again.
+Next day.
+Blew up again.
 
 Different reason this time.
 Existing code showed up out of nowhere.
 
-AI built a new feature that collided with code that was already there.
-"Um... this feature already exists."
+The AI's new feature collided with code that was already there.
+"Um... this feature already exists here."
 
-AI said that.
+The AI said that.
 I didn't know.
 
 That code was something I asked for a week ago.
@@ -50,18 +48,17 @@ Because it wasn't in the spec.
 
 ---
 
-Third day. Blew up again.
+Third day.
+Blew up again.
 
 This time, something truly weird.
 A feature that worked yesterday stopped working.
 
-Asked the AI.
 "It worked yesterday. Why doesn't it work now?"
 
 "The newly added module altered the dependencies of the existing module."
 
-What?
-Say that in plain English.
+Say it simply.
 
 "The new part you attached messed with the wiring of the old parts."
 
@@ -88,8 +85,8 @@ No.
 The spec was fine.
 
 But the spec only said "what to build."
-It didn't cover what would break in reality.
-Couldn't have.
+What would break in reality wasn't in there.
+Couldn't have been.
 Nothing had broken yet.
 
 ---
@@ -99,14 +96,14 @@ So I made a PROBLEMS.md.
 Every time I got punched, I wrote it down.
 "Where I got hit. Why I got hit. How I dodged it."
 
-Day one: build timeout. Cause: dependency chain too long. Fix: split build config.
-Day two: code collision. Cause: existing features not in the spec. Fix: add feature inventory.
+Day one: build timeout. Cause: dependency chain. Fix: split build config.
+Day two: code collision. Cause: no existing feature inventory. Fix: add the inventory.
 Day three: dependency mutation. Cause: module connections undocumented. Fix: add dependency map.
 
 Wrote it down. Then I could see.
 The pattern emerged.
-All the same problem.
 
+All the same problem.
 **When a spec meets reality, the spec has to change.**
 But I wrote the spec once and shoved it in a drawer.
 
@@ -128,7 +125,7 @@ Write a spec once and call it done? That's a wish.
 Wishes don't come true.
 Plans come true.
 Plans change every time you take a punch.
-Writing down the changes—that's what a plan is.
+Writing down the changes -- that's what a plan is.
 
 ---
 

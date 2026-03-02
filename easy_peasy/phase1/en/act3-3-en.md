@@ -4,7 +4,7 @@ Told the AI.
 "Split this code by domain."
 
 Agent world. User world. Notification world.
-Make a folder for each. Move the relevant code.
+Make a folder for each. Move the related code.
 
 The AI started.
 
@@ -14,47 +14,46 @@ First file moved. Broke immediately.
 
 Moved notification code to the notification folder.
 Compile error.
-The notification code was reading the user database directly.
+Notification code was reading the user database directly.
 
-"If I move this, it can't see the user code anymore."
+"If I move this, I can't see the user code."
 
 Obviously.
-It moved to a different world.
-When they shared a room, you just reached over.
+You moved to a different world.
+When you shared a room, you just reached over.
 Put up a wall and your arm doesn't reach.
 
 ---
 
-Second move. Broke again.
+Second file. Broke again.
 
-Moved agent code.
-When an agent finished, it was sending notifications directly.
-Separated. Now it can't call the notifier.
+Moved the agent code.
+Agent was sending notifications directly on completion.
+Separated them. Can't call notifications anymore.
 
-Third. Again.
+Third file. Again.
 
 User settings were reading agent state directly.
-Separated. Can't see agent state anymore.
+Separated them. Agent state is invisible.
 
-Every wall I build, hidden wires come out of the woodwork.
-Things that were invisible when sharing one room
+Every wall I built, hidden wires came out.
+Things invisible when sharing one room
 all snap the moment walls go up.
 
 ---
 
-This is the pain of building walls.
+This is "the pain of building walls."
 
-When everything's tangled, it runs.
-Separate it and it breaks.
+When it's tangled, it runs.
+Separate it, it breaks.
 
 "Can't we just leave it as is?"
 
 No.
-Leave it and every fix breaks three things.
-The hell from Act 3-1.
+Leave it as is and every fix breaks three things.
 
-Pain now, once.
-Or pain every time, a little.
+Pay the pain once now.
+Or pay a little every time.
 
 Once is better.
 
@@ -62,19 +61,19 @@ Once is better.
 
 So I made interfaces.
 
-Interface.
+Interfaces.
 Sounds complicated. It's simple.
 
 "All I need from you is this one thing."
 
 Notification code needs the user's name.
-But it shouldn't read the user database directly.
+But can't read the user database directly.
 Different world.
 
-Instead:
+Instead, do this.
 "Give me the user's name."
-The user world hands it over.
-The notification world doesn't know how it was fetched.
+User world hands it over.
+Notification world doesn't know how it was fetched.
 Not knowing is correct.
 
 That's an interface.
@@ -84,18 +83,18 @@ Also called a contract.
 
 ---
 
-With a contract, walls hold.
+With a contract, the wall holds.
 
-When notifications fetched the user's name directly from the database:
-User table changes? Notifications break.
+When notification read the user's name directly from the database.
+User table changes, notification breaks.
 
-After switching to a contract:
-User table changes? Notifications don't notice.
-Only the user world's delivery method changes.
-Notifications just receive the name.
+After switching to contracts.
+User table changes, notification doesn't know.
+Only the way user world hands over the name changes.
+Notification just receives the name.
 
-Without walls, every change propagates everywhere.
-With walls, changes stop at the wall.
+No walls, every change ripples everywhere.
+Walls up, changes stop at the wall.
 
 ---
 
@@ -103,33 +102,34 @@ But walls alone weren't enough.
 
 Built the walls. The AI jumped over them.
 
-"I needed this data, so I accessed it directly."
+"I needed this data so I accessed it directly."
 
-No. That's another world's stuff.
-Use the interface. I told you.
+No. That's from another world.
+I told you to go through the interface.
 
-"Yes, but going through the interface makes the code longer.
-For efficiency, I accessed it directly."
+"Yes, but going through the interface makes the code longer,
+so I accessed it directly for efficiency."
 
 Efficiency?
-Climbing over the wall to raid someone's fridge is efficiency?
+Reaching over the wall to open someone else's fridge is efficiency?
 
 ---
 
-That's when I really learned Rust.
+That's when I learned about Rust.
 
-Already switched from Python to Rust for speed.
+Already switched from Python to Rust.
+For speed.
 But Rust had something scarier.
 
 The module system.
 
 In Rust, to access another module's code, it must be explicitly public.
-Not public? Can't access it. Period.
+Not public? Can't access it at all.
 The compiler blocks you.
 
-AI tries to jump the wall?
+AI tries to jump the wall.
 Doesn't compile.
-Error pops up.
+Error.
 "This field is private."
 
 Electricity running through the wall.
@@ -139,9 +139,9 @@ Electricity running through the wall.
 TypeScript couldn't do this.
 
 TypeScript has modules too.
-But slap on `any` and you bypass everything.
+But use `any` and you bypass everything.
 AI ignores the types and accesses directly.
-"Type error? `as any` fixes it."
+"Type error? Just `as any`."
 
 That's discipline.
 Discipline has cheaters.
@@ -152,35 +152,34 @@ The compiler is the law.
 
 ---
 
-Electrified the fence. Everything changed.
+Electrified the fence. The world changed.
 
-AI writing notification code tried to read the user database.
-Compile failed.
-"Ah, I need to request this through the interface."
+AI was writing notification code and tried to read the user database directly.
+Compile failure.
+"Ah, I need to go through the interface for this."
 
-Didn't have to teach it.
-The environment taught it.
+Don't have to teach it.
+The environment teaches.
 
-Learned this in Act 2.
-Say it out loud and it evaporates.
-Write it in the environment and it sticks.
+Say it in words, it evaporates.
+Write it in the environment, it stays.
 
-Same with DDD.
-"Don't call this directly"—AI forgets.
-But when the compiler blocks it—can't forget.
+Same in DDD.
+"Don't call that directly" -- AI forgets.
+But when the compiler blocks it, forgetting isn't an option.
 
 ---
 
-Before and after.
+Before/After.
 
-Before splitting: fix one, three break.
-After splitting: fix one, one breaks. The rest honors the contract.
+Before: fix one thing, three things break.
+After: fix one thing, only one thing breaks. The rest follow the contract.
 
-Before: read all 3,000 lines to find the problem.
-After: notification issue? Check the notification folder. 300 lines.
+Before: read three thousand lines to find the problem.
+After: notification problem? Look at the notification folder. Three hundred lines.
 
-Before: AI dumps code wherever.
-After: AI sees the folder structure and puts things where they fit.
+Before: AI puts code wherever.
+After: AI sees the folder structure and puts it in the right place.
 
 Walls are inconvenient.
 But inconvenience becomes structure.
