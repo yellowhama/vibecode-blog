@@ -7,6 +7,7 @@ featured: false
 draft: false
 tags:
   - vibe-coding
+  - fdd-diary
   - act-1
 description: "They said I need to write a spec. Spec? Like phone specs? I didn't know the software meaning. So I got pissed instead. Turns out organized frustration IS the spec."
 ---
@@ -155,17 +156,81 @@ I wrote this down and looked at it.
 
 Asked the AI.
 "Can I connect three computers directly? No cloud?"
-"P2P is possible. But behind NAT, connections are tricky."
+*"P2P is possible. But behind NAT, connections are tricky."*
 "What's NAT?"
-"Behind a router. Most home networks."
+*"Behind a router. Most home networks."*
 "So how do you connect behind a router?"
-"QUIC tunnels or STUN/TURN servers."
+*"QUIC tunnels or STUN/TURN servers."*
 "What's that?"
 It explained. Understood half of it.
 
 Every time the answer was "no," I asked "why?"
 The "why" became a condition.
 Conditions stacked up until I could see what needed to be built.
+
+---
+
+I tried organizing what I had.
+"I want multiple computers to work like one."
+Why? "Because nothing on the market does this."
+
+Showed it to the AI.
+"Is this enough?"
+*"I have a question. 'Nothing does this' is the current problem. 'Work like one' is the goal. They're different things."*
+
+I stopped.
+
+"Nothing does this" is right now. That's the reason.
+"Work like one" is what changes. That's the purpose.
+Same "why." Different answers.
+
+If you can't tell them apart, when someone asks "why build this?"
+all you get is "because nothing else does it" on repeat.
+"Because nothing else does it" is the reason. Not the purpose.
+
+---
+
+"Direct P2P connection."
+I told the AI. It started installing libp2p right away.
+
+Wait.
+What the hell is libp2p?
+Who made it?
+Can I even use this?
+
+*"Open-source by Protocol Labs. MIT license."*
+"What's MIT?"
+*"Free to use, modify, and distribute. Commercial use included."*
+
+Cool. But.
+"Do I use this as-is? Or do I need to change it?"
+*"It's a general-purpose library. Usually you adapt it to your situation."*
+"What about QUIC?"
+*"QUIC is a protocol. There's a Rust implementation called quinn. Also MIT."*
+
+That's when it clicked.
+
+"P2P connection" is a tech choice. That's the method.
+But how you get that tech is a different question.
+
+Build from scratch?
+Use someone else's code as-is?
+Fork it and adapt?
+
+And when you take it — are you even allowed to?
+MIT? Apache? GPL?
+
+"Don't reinvent the wheel."
+Heard that plenty.
+But one line was always missing.
+
+> *"When you take someone's wheel, check who owns it."*
+
+Method: what tech to use.
+Means: how to get that tech.
+Same "how." Different answers.
+
+---
 
 Twenty rounds of fighting.
 Ask. Get told no. Hear why. Ask again.
@@ -187,14 +252,18 @@ And the spec was already there.
 ```
 Purpose: Use multiple computers like one machine. From anywhere.
 Reason: Nothing on the market does this. Everything is half-assed.
-Method: Direct P2P connection. No cloud middleman.
-Means: QUIC tunnels. Idle resource utilization. Local-first.
+Method: Direct P2P connection. QUIC tunnels. Local-first.
+Means: Open-source (quinn, libp2p), forked and adapted. MIT verified.
 ```
 
-Four lines.
+Four things.
 That's a spec.
 Not an SRS. Not a PRD.
 Just organized frustration.
+
+Collapse those four into two ("why" and "how") and this doesn't happen.
+One "why" and AI can't pick a direction.
+One "how" and you end up using someone's code without checking.
 
 Organize your frustration and that's what you get.
 It doesn't come from a whiteboard in a conference room.
@@ -243,7 +312,7 @@ Pinned versions, enabled cache. Twenty-eight seconds.
 Day two.
 Spec said "build from scratch."
 But existing code was already doing the same thing.
-Six months of piled-up code had some usable pieces.
+The piled-up code had some usable pieces.
 
 Build new per spec? Or fix what's already there?
 Fixed what was there.
@@ -267,7 +336,7 @@ Didn't write it down? Another thirty minutes.
 When specs meet reality, specs change.
 Don't write down the change, you get punched in the same spot again.
 
-Made a file called PROBLEMS.md.
+Made a file called `PROBLEMS.md`.
 Every time something breaks, write it down.
 What broke, why it broke, how I fixed it.
 
@@ -280,7 +349,7 @@ Reality punches them, you update them.
 
 ---
 
-Six months ago I didn't know what a spec was.
+I didn't know what a spec was.
 I'm still not a "spec expert."
 
 But I know one thing now.

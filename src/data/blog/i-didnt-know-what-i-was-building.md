@@ -7,88 +7,89 @@ featured: false
 draft: false
 tags:
   - vibe-coding
+  - fdd-diary
   - act-1
 description: "Not the AI's fault. Not the prompt's fault. The problem was deeper. I didn't know what I was building. And that's the one thing AI can't decide for you."
 ---
 
 After shutting down all five agents.
-The coffee went cold.
+My coffee had gone cold.
 
-What went wrong?
+What the hell went wrong?
 
-Retraced everything from the start.
+Traced it back from the beginning.
 
-AI wasn't the problem.
-"Make a date format function" — it made one. Good one.
-"Parse the config" — it did. Well.
-AI did what it was told.
-Every time, precisely.
+Not the AI's fault.
+"Make a date format function." It did. Good work.
+"Parse the config." It did. Clean job.
+AI did exactly what I asked.
+Every single time.
 
-The prompts weren't the problem either.
+Not the prompt's fault either.
 "In this format." "This data." "Process it like this."
 Specific enough.
 
-Then why did I end up with ten thousand lines of spaghetti?
-Why did the same function exist five times?
+So why did I end up with ten thousand lines of spaghetti?
+Why did the same function get built five times?
 Why was there a security hole?
 
-If it wasn't AI's fault and it wasn't the prompt's fault, what was?
+If it's not the AI and it's not the prompts, what is it?
 
 ---
 
 **I didn't know what I was building.**
 
-No, I thought I knew.
-"A tool that connects three computers like one."
+I thought I did.
+"A tool that connects three computers into one."
 
-But what does that even mean?
+But what does that mean?
 
 Sync files?
 Share screens?
 Distribute processes?
-Send remote commands?
-All of it?
-Some of it?
+Send commands remotely?
+All of the above?
+Some of the above?
 In what order?
 
 "Connect three computers" is a wish, not a design.
 
 At what point is it "done"?
-I had no answer to that.
+I had no answer to that question.
 
-No answer meant this happened:
+No answer meant this kept happening:
 
-Monday: "Let's build file sync first."
-Wednesday: "Actually, isn't screen sharing more important?"
+Monday: "Let's do file sync first."
+Wednesday: "Wait, shouldn't screen sharing come first?"
 Friday: "Remote commands are the most urgent."
 
 Direction changed every time.
-AI built whatever direction I pointed.
+AI built in that direction every time.
 Every time convincing.
 Every time different.
 Every time slightly wrong.
 
 Why is this dangerous?
 
-AI doesn't say "Hey, last week you were doing file sync. Why screen sharing now?"
+AI doesn't say "Hey, last week we were doing file sync. Why are we suddenly on screen sharing?"
 It just follows orders.
-Direction changes, it follows silently.
+Direction changes, AI follows silently.
 
-A developer would say "Wait, shouldn't we finish this first?"
+A developer would say "Hold on, shouldn't we finish this before moving on?"
 I'm not a developer.
-Can't read code, so I don't even know what was built before.
-AI doesn't remember, I don't know.
+Can't read the code, so I don't even know what was built before.
+AI doesn't remember and I don't know.
 
-So every time, built from scratch.
+So every time, it built from scratch.
 The same thing.
-Different way.
+A different way.
 Five times.
 
 ---
 
-After realizing this, I remembered a sentence I'd read before.
+After realizing this, a sentence I'd read somewhere came back to me.
 
-"Implementation is free."
+> *"Implementation is free."*
 
 In the AI era, writing code is free.
 Making files. Free. Claude does it.
@@ -97,11 +98,11 @@ Creating tests. Free. Claude does it.
 Fixing bugs. Free. Claude does it.
 
 It's true.
-For six months I didn't write a single line of code.
-AI wrote everything.
+I didn't write a single line of code.
+AI wrote all of it.
 
 Implementation really is free.
-The problem wasn't implementation.
+But the problem wasn't implementation.
 
 **"Deciding what to build."**
 That's not free.
@@ -110,23 +111,23 @@ Only humans can.
 
 And I skipped that decision.
 "If I just start building, something will come out."
-"I'll figure out the direction once it's working."
+"I'll figure out the direction once something works."
 
 Something came out.
-Ten thousand lines of spaghetti came out.
+Ten thousand lines of spaghetti.
 
-Skip the decision and AI makes its own every time.
+Skip the decision and AI makes its own decision every time.
 But AI's decisions are different every time.
 Different context. Different conversation. Different moment.
 
-Each one is rational.
-Put them together, it's insanity.
+Each one is rational on its own.
+All together? Insanity.
 
 Imagine a robot with 28 left arms.
-Each arm is well-made.
+Each arm is well-built.
 But there's no right arm.
 The legs walk backwards.
-That's six months of "rational decisions" stacked up.
+That's what "rational decisions" without direction look like.
 
 ---
 
@@ -136,10 +137,10 @@ Type in English, get results.
 Build programs without knowing code.
 That's vibe coding.
 
-True. But there's a trap.
+True. But there's a catch.
 
 It works for developers.
-For people who can't read code, it works differently.
+For people who can't code, it works differently.
 
 Why?
 
@@ -147,37 +148,35 @@ Developers can read code.
 They see what AI built.
 They can tell "this is a minor fix" from "this changes the whole direction."
 
-I can't.
-Don't know code.
+I can't tell the difference.
+Can't read code.
 
-AI says "I changed this like so" and I say "cool."
-Whether that's a minor tweak or an architecture overhaul, I have no idea.
+AI says "I changed this like so." I say "cool."
+Whether that was a minor tweak or an architectural overhaul? No idea.
 "It runs? Cool."
 
 Developers are locals with built-in GPS.
-A Seoul native going from Euljiro to Jongno — do they need a map?
+A Seoul local going from Euljiro to Jongno — need a map?
 No. They know the roads. The dead ends. The shortcuts.
 
 I'm a tourist dropped in a foreign country with no map.
 AI says "this way" and I follow.
-But I can't tell if that's a right turn or a complete U-turn.
+But I can't tell if that's a right turn or a complete reversal.
 
 "What if I just write better prompts?"
 That's what I thought at first.
 
-Wrote more specific prompts. Named variables. Set formats.
+Made prompts more specific. Named variables. Set formats.
 Better?
-A little. But the fundamentals didn't change.
+A little. But the root problem didn't change.
 
-No matter how good the prompts, without direction they're useless.
-A passenger can describe the ride in perfect detail to the taxi driver,
-but without a destination the taxi just wanders.
+No matter how good the prompts are, they're useless without direction.
+A lost passenger giving the taxi driver detailed instructions —
+"AC on high, windows closed, FM radio" —
+but never saying where to go.
+The taxi just keeps driving in circles.
 
-"Take me to Gangnam Station" isn't there?
-"Turn the AC up, close the windows, put the radio on FM" won't help.
-The taxi keeps circling aimlessly.
-
-The prompts weren't the problem.
+Prompts weren't the problem.
 **There was no destination.**
 
 What am I building?
@@ -188,7 +187,8 @@ When is it done?
 I had none of these four.
 Didn't matter how good my prompts were.
 Didn't matter which AI I used.
-No destination. The taxi meter just kept ticking.
+
+> No destination. The taxi meter just kept ticking.
 
 Developers call that destination a "spec."
 

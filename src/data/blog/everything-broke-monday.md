@@ -7,14 +7,15 @@ featured: false
 draft: false
 tags:
   - vibe-coding
+  - fdd-diary
   - act-1
-description: "Monday morning. Made coffee. Turned on the monitor. All five agents were dead. Over ten thousand lines of code. Almost half was duplicated. And a shell injection wide open for six months."
+description: "Monday morning. Made coffee. Turned on the monitor. The whole system was dead. Over ten thousand lines of code. Almost half was duplicated. And a shell injection wide open the whole time."
 ---
 
 Monday morning.
 Made coffee. Turned on the monitor.
 
-All five agents were dead.
+The whole system was dead.
 
 They were running Friday evening.
 I changed something Saturday. Don't remember what.
@@ -42,10 +43,10 @@ Scrolled. And scrolled. Didn't end.
 Over ten thousand lines.
 10,847 to be exact.
 
-When I started six months ago, how many lines was it?
+When I started, how many lines was it?
 Don't remember. Maybe a few hundred?
 
-Six months of "add this too" and "build that too."
+Day after day of "add this too" and "build that too."
 AI built everything I asked for.
 New files every time. New functions. New modules.
 
@@ -83,7 +84,7 @@ Next week I told Agent 5 "handle the dates."
 Agent 5 didn't know what Agent 3 built.
 So it built another one.
 
-Six months of this.
+All of this.
 Built the same thing five times and nobody noticed.
 Not the AI. Not me.
 
@@ -127,13 +128,7 @@ I don't read every line.
 Isn't that the whole point of vibe coding? AI writes, I steer.
 
 But here's the thing.
-I'm building a tool that connects three computers over a network.
-
-Two desktops at home.
-I want to work from my laptop outside and still use the machines at home.
-That's why I started building this.
-
-This tool goes over the network.
+This tool — the one connecting my three computers — goes over the network.
 External connections come in.
 Commands get sent.
 
@@ -146,7 +141,7 @@ A door anyone can walk through.
 Anyone could get into my computer and run any command.
 Delete files. Steal data. Anything.
 
-That door was open for six months.
+That door was open the whole time.
 
 ---
 
@@ -169,7 +164,7 @@ Five agents.
 A security hole.
 Fix one thing, something else dies.
 
-Six months of work sitting in front of me.
+All my work sitting in front of me.
 But I couldn't tell if it was work or garbage.
 
 That's when I thought it for the first time.
