@@ -144,11 +144,11 @@ I wrote this down and looked at it.
 
 Asked the AI.
 "Can I connect three computers directly? No cloud?"
-"P2P is possible. But behind NAT, connections are tricky."
+*"P2P is possible. But behind NAT, connections are tricky."*
 "What's NAT?"
-"Behind a router. Most home networks."
+*"Behind a router. Most home networks."*
 "So how do you connect behind a router?"
-"QUIC tunnels or STUN/TURN servers."
+*"QUIC tunnels or STUN/TURN servers."*
 "What's that?"
 It explained. Understood half of it.
 
@@ -164,7 +164,7 @@ Why? "Because nothing on the market does this."
 
 Showed it to the AI.
 "Is this enough?"
-"I have a question. 'Nothing does this' is the current problem. 'Work like one' is the goal. They're different things."
+*"I have a question. 'Nothing does this' is the current problem. 'Work like one' is the goal. They're different things."*
 
 I stopped.
 
@@ -186,15 +186,15 @@ What the hell is libp2p?
 Who made it?
 Can I even use this?
 
-"Open-source by Protocol Labs. MIT license."
+*"Open-source by Protocol Labs. MIT license."*
 "What's MIT?"
-"Free to use, modify, and distribute. Commercial use included."
+*"Free to use, modify, and distribute. Commercial use included."*
 
 Cool. But.
 "Do I use this as-is? Or do I need to change it?"
-"It's a general-purpose library. Usually you adapt it to your situation."
+*"It's a general-purpose library. Usually you adapt it to your situation."*
 "What about QUIC?"
-"QUIC is a protocol. There's a Rust implementation called quinn. Also MIT."
+*"QUIC is a protocol. There's a Rust implementation called quinn. Also MIT."*
 
 That's when it clicked.
 
@@ -211,7 +211,8 @@ MIT? Apache? GPL?
 "Don't reinvent the wheel."
 Heard that plenty.
 But one line was always missing.
-"When you take someone's wheel, check who owns it."
+
+> *"When you take someone's wheel, check who owns it."*
 
 Method: what tech to use.
 Means: how to get that tech.
@@ -323,7 +324,7 @@ Didn't write it down? Another thirty minutes.
 When specs meet reality, specs change.
 Don't write down the change, you get punched in the same spot again.
 
-Made a file called PROBLEMS.md.
+Made a file called `PROBLEMS.md`.
 Every time something breaks, write it down.
 What broke, why it broke, how I fixed it.
 

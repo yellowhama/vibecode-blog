@@ -77,7 +77,7 @@ Five times.
 
 After realizing this, a sentence I'd read somewhere came back to me.
 
-"Implementation is free."
+> *"Implementation is free."*
 
 In the AI era, writing code is free.
 Making files. Free. Claude does it.
@@ -175,7 +175,8 @@ When is it done?
 I had none of these four.
 Didn't matter how good my prompts were.
 Didn't matter which AI I used.
-No destination. The taxi meter just kept ticking.
+
+> No destination. The taxi meter just kept ticking.
 
 Developers call that destination a "spec."
 

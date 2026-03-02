@@ -261,10 +261,12 @@ Same "why." Different answers.
 "Fork libp2p, check the MIT license" is how I get it. That's the means.
 Same "how." Different answers.
 
+```
 Purpose: Use multiple computers like one machine. From anywhere.
 Reason: Nothing on the market does this. Everything out there is half-assed.
 Method: Direct P2P connection. QUIC tunnels. Local-first.
 Means: Open-source (quinn, libp2p), forked and adapted. MIT verified.
+```
 
 Organize your frustration and that's what you get.
 It doesn't come from a whiteboard in a conference room.
