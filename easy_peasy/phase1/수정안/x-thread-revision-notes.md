@@ -100,9 +100,32 @@ Act 1의 핵심은 **4가지를 먼저 정하는 것**이다:
 
 ---
 
-## 다음 단계
+## 7. 시리즈 네이밍 확정
 
-1. Act 1 원문 리뷰 — 4가지 기둥이 충분히 에피소드로 전달되는지
-2. X 스레드 순서 수정 (w10-act1-002 ↔ 003)
-3. 킬러 훅 적용
-4. "에이전트 5개가 죽었다" 표현 수정
+**시리즈명**: **Fury-Driven Development Diary**
+**약어**: **FDD** (Feature-Driven Development 비틀기 — 의도적 밈)
+
+**X 스레드 포맷**: `[FDD Diary #N] 부제`
+
+예시:
+- [FDD Diary #1] I Thought It Worked
+- [FDD Diary #2] Monday Morning
+- [FDD Diary #3] Nothing Works
+- [FDD Diary #4] The Real Problem
+- [FDD Diary #5] Frustration Is the Spec
+- [FDD Diary #6] Everything Changed
+
+**왜 FDD인가**:
+- 개발자 밈 (TDD, DDD, FDD를 비틀기) → 즉시 호감 + 공유
+- 하드보일드 톤앤매너와 찰떡 — "빡쳐서 직접 기준을 세웠다"
+- 시리즈/브랜드 확장성 우수
+
+---
+
+## 완료 상태 (2026-03-02)
+
+- [x] Act 1 원문 리뷰 — 4가지 기둥 에피소드 확장 완료
+- [x] X 스레드 순서 수정 (w10-act1-002 ↔ 003)
+- [x] 킬러 훅 적용 (4개 스레드)
+- [x] "에이전트 5개가 죽었다" → "시스템이 통째로 멈췄다"
+- [x] 시리즈명 확정: Fury-Driven Development Diary (FDD)

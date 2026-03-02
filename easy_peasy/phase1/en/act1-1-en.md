@@ -113,7 +113,23 @@ That was the trap.
 
 ---
 
-Two weeks in, something was off.
+But all of that was practice.
+
+My real project? Something else.
+Three computers at home. Two desktops, one laptop.
+Work from my laptop outside.
+Still use the machines at home.
+Like one machine.
+
+Nothing on the market did this.
+Built it myself.
+
+The to-do app, the stock screener, the five agents — warm-ups.
+This was the real thing.
+
+---
+
+Then something was off.
 
 One agent was pulling data slightly wrong.
 Fine yesterday, numbers are different today.
@@ -170,10 +186,10 @@ That was my disaster.
 "I thought it worked" is the scariest sentence.
 Can't judge if it worked or not, but thinking it did anyway.
 
-Two weeks ago I thought I was a genius.
-Two weeks later I realized I knew nothing.
+I thought I was a genius.
+Then I realized I knew nothing.
 
-Survived four more months like that.
+Survived like that.
 Believing if I don't touch it, it won't break.
 
 But the worst part hadn't come yet.

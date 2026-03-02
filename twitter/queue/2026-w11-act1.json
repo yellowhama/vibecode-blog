@@ -1,0 +1,59 @@
+{
+  "week": "2026-w11",
+  "series": "FDD Diary",
+  "generatedAt": "2026-03-02T04:00:00+09:00",
+  "items": [
+    {
+      "id": "w11-act1-001",
+      "type": "thread",
+      "category": "FDD Diary",
+      "title": "[FDD Diary #4] The Real Problem",
+      "source": "easy_peasy/phase1/en/act1-3-en.md",
+      "scheduledAt": "2026-03-10T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "Not the AI's fault.\n\"Make a date format function.\" It did. Good work.\n\"Parse the config.\" It did. Clean job.\nAI did exactly what I asked. Every single time.\n\nNot the prompt's fault either.\n\"In this format.\" \"This data.\" \"Process it like this.\"\nSpecific enough.\n\nSo why did ten thousand lines of tangled spaghetti come out?\nWhy did the same function get built five times?\nWhy was there a security hole?\n\nI didn't know what I was building.",
+        "\"Connect three computers.\" That's a wish, not a design.\n\nMonday: \"Let's do file sync first.\"\nWednesday: \"Wait, shouldn't screen sharing come first?\"\nFriday: \"Remote commands are the most urgent.\"\n\nDirection changed every time.\nAI built in that direction every time.\nEvery time convincing. Every time different. Every time slightly wrong.\n\nAI doesn't say \"Hey, last week we were doing file sync. Why suddenly screen sharing?\"\nIt just follows orders. Silently.\n\nI can't read code.\nCan't tell what was built before.\nSo every time, AI built from scratch.\nThe same thing. A different way. Five times.",
+        "Making files? Free. Claude does it.\nWriting functions? Free. Claude does it.\nRunning tests? Free. Claude does it.\n\nImplementation is free.\nBut the problem wasn't implementation.\n\nDeciding what to build.\nThat's not free. AI can't do that. Only you can.\n\nI skipped the decision and went straight to building.\n\"If I just start, something will come out.\"\n\nSomething came out.\nTen thousand lines of spaghetti.",
+        "\"What if I just write better prompts?\"\nNo. Prompts weren't the problem.\n\nThere was no destination.\n\nWhat am I building?\nWhat does it do?\nWho uses it?\nWhen is it done?\n\nI had none of these four.\nDidn't matter how good the prompts were.\nThe taxi just kept driving in circles."
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    },
+    {
+      "id": "w11-act1-002",
+      "type": "thread",
+      "category": "FDD Diary",
+      "title": "[FDD Diary #5] Frustration Is the Spec",
+      "source": "easy_peasy/phase1/en/act1-4-en.md",
+      "scheduledAt": "2026-03-12T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "Frustration becomes a spec.\nA spec becomes a system.\nA system becomes freedom.\n\nThey said I need to write a spec.\n\nSpec? Like phone specs? RAM, storage, screen resolution?\nThat's the only \"spec\" I knew.\n\nIn software, spec means \"a document that describes what you're building.\"\n\nBut I'm not a developer.\nNever opened a document and typed \"1. System Overview.\"\nNever learned how.\n\nSearched for how to write specs.\nSRS. PRD. Functional specs.\nAll developer documents. Templates with fields and approval workflows.\n\n\"Non-functional requirements\" — what?\n\"System constraints\" — what?\n\"Use case diagram\" — what?\n\nI started vibe coding because I didn't want to learn coding.\nNow you're telling me to learn spec writing?\n\nSo I just got pissed.",
+        "\"Why doesn't KVM work?\"\nNo network support.\nRequirement: must connect over network.\n\n\"Why is Remote Desktop annoying?\"\nSlow. Drops connection.\nRequirement: fast and stable.\n\n\"Why doesn't cloud work?\"\nFiles only. No processes. And my files go through someone else's server.\nRequirement: files AND commands. No cloud middleman.\n\nAsked AI.\n\"Can I connect three computers directly? No cloud?\"\n\"P2P is possible. But behind NAT, connections are tricky.\"\n\"What's NAT?\"\n\"Behind a router. Most home networks.\"\n\"So how do you connect behind a router?\"\n\"QUIC tunnels or STUN/TURN servers.\"\n\"What's that?\"\nUnderstood half of it.\n\nEvery \"no\" became a condition.\nTwenty rounds of fighting.\nAsk. Get told no. Hear why. Ask again.",
+        "I never opened a spec document.\nNever typed \"1. System Overview.\"\nNever sat down to write a spec.\n\nI got pissed.\nAsked questions.\nFought.\nOrganized.\n\nAnd the spec was already there.\n\n\"Nothing does this\" is the current pain. That's the Reason.\n\"Work like one machine\" is the change I want. That's the Purpose.\nSame \"why.\" Different answers.\n\n\"P2P connection\" is the tech choice. That's the Method.\n\"Fork libp2p, check the MIT license\" is how I get it. That's the Means.\nSame \"how.\" Different answers.\n\nPurpose: Use multiple computers like one machine. From anywhere.\nReason: Nothing on the market does this. Everything is half-assed.\nMethod: Direct P2P connection. QUIC tunnels. Local-first.\nMeans: Open-source (quinn, libp2p), forked and adapted. MIT verified.\n\nFour things.\nThat's a spec.\nNot an SRS. Not a PRD.\nJust organized frustration.\n\nIt doesn't come from a whiteboard in a conference room.\nIt comes from \"why the hell doesn't this work.\"\n\nFrustration is the Spec."
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    },
+    {
+      "id": "w11-act1-003",
+      "type": "thread",
+      "category": "FDD Diary",
+      "title": "[FDD Diary #6] Everything Changed",
+      "source": "easy_peasy/phase1/en/act1-4-en.md",
+      "scheduledAt": "2026-03-14T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "Once I had the spec, everything changed.\n\nDay one.\nAI tried to install a cloud SDK.\nShowed it the spec. \"It says no cloud. Right there.\"\nAI came back. Switched to libp2p.\n\nBefore, I would've said \"cool\" and moved on.\nNow I had the spec. Now I could say \"that's wrong.\"\n\nThat's the difference.\nNot better prompts. Not a smarter AI.\nA piece of paper that says what I'm building.\n\nFor the first time, I wasn't following the AI.\nThe AI was following my spec.",
+        "And I could delete things.\nFor the first time, I could actually delete code.\n\nOpened the ten-thousand-line codebase.\nFound something not in the spec. Deleted it.\nFound another. Deleted that too.\n\nThree thousand lines left.\nApp didn't break. It got faster.\n\nForty-five minutes became twelve.\nPython was pissing me off so I switched to Rust. It just got faster.\nFailure rate dropped from 30% to 3%.\n\nSeven thousand lines of code I couldn't read, couldn't understand, couldn't even tell if they belonged.\nGone.\nAnd nothing broke.\n\nBecause now I knew what was supposed to be there.",
+        "I didn't know what a spec was.\nI'm still not a \"spec expert.\"\n\nBut I know one thing now.\n\nBetter prompts aren't the answer.\nBetter AI tools aren't the answer.\nKnowing what you're building is the answer.\n\nAnd that answer doesn't come out clean.\nYou get pissed. Ask questions. Fight. Organize.\n\nSpecs don't come from conference rooms.\nThey come from the grind."
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    }
+  ]
+}

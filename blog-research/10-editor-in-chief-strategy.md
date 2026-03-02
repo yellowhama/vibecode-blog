@@ -302,15 +302,40 @@ Google Analytics 아님. Vercel Analytics는 무료이고 바로 켤 수 있다.
 
 ## 구현 우선순위 (코드 레벨)
 
-전략이 확정되면 블로그에 추가할 기술적 항목:
+### 완료 (2026-02-28)
+
+| 우선순위 | 항목 | 상태 | 비고 |
+|----------|------|------|------|
+| P0 | **Beehiiv 뉴스레터 signup** | ✅ 완료 | 홈페이지 hero (compact) + 포스트 하단 (full). `PUBLIC_BEEHIIV_PUB_ID` 환경변수 설정 필요 |
+| P0 | **Vercel Analytics** | ✅ 완료 | `@vercel/analytics` inject(), SPA 네비게이션 추적 |
+| P1 | **Reading time** | ✅ 완료 | remark 플러그인, 포스트 상세에 "X min read" 표시 |
+| P2 | **Giscus 댓글** | ✅ 완료 | 다크모드 동기화 포함. `data-repo-id`, `data-category-id` 채우기 필요 |
+| P1 | **About 페이지** | ✅ 완료 | 편집장 브랜딩에 맞게 업데이트 |
+| — | **디자인 리디자인** | ✅ 완료 | Editorial B+C 하이브리드 (Lora serif, terracotta/blue, no neo shadows) |
+| — | **Twitter/X MCP** | ✅ 완료 | `@enescinar/twitter-mcp` 연동, @lazy_genius2025 계정 |
+
+### 수동 설정 필요 (외부 작업)
+
+| 항목 | 소요 | 상태 |
+|------|------|------|
+| Beehiiv 계정 생성 + publication ID | 5분 | ⬜ 미완료 |
+| `.env`에 `PUBLIC_BEEHIIV_PUB_ID` 추가 | 1분 | ⬜ 미완료 |
+| GitHub Discussions 활성화 | 1분 | ⬜ 미완료 |
+| giscus.app에서 repo-id / category-id 획득 | 3분 | ⬜ 미완료 |
+| `Comments.astro`에 ID 값 채우기 | 1분 | ⬜ 미완료 |
+| Vercel 대시보드 Analytics 활성화 | 1분 | ⬜ 미완료 |
+| Google Search Console 등록 | 5분 | ⬜ 미완료 |
+| X Premium 가입 ($8/월) | 2분 | ⬜ 미완료 |
+
+### 미구현 (다음 단계)
 
 | 우선순위 | 항목 | 설명 |
 |----------|------|------|
-| P0 | **Beehiiv 뉴스레터 signup** | 모든 포스트 하단 + 홈페이지 hero에 이메일 수집 폼 |
-| P0 | **Vercel Analytics** | 트래픽 측정 (1줄 추가) |
 | P1 | **Google Search Console** | SEO 인덱싱 + 검색 키워드 데이터 |
-| P1 | **Reading time** | 포스트에 "5 min read" 표시 (신뢰 신호) |
-| P2 | **Giscus 댓글** | GitHub Discussions 기반 댓글 |
-| P2 | **CTA 컴포넌트** | 포스트 중간/끝에 뉴스레터 가입 유도 |
-| P3 | **시리즈 네비게이션** | "Vibe to Production" 시리즈 전용 페이지 |
-| P3 | **어필리에이트 링크 디스클로저** | FTC 준수 고지 컴포넌트 |
+| P1 | **Lead Magnet** | "The Vibe Coder's Production Checklist" PDF, 뉴스레터 구독 시 전달 |
+| P1 | **기존 47개 글 → 트위터 스레드 변환** | 하루 2-3개씩 Twitter MCP로 게시 |
+| P2 | **시리즈 네비게이션** | "Vibe to Production" 시리즈 전용 페이지 |
+| P2 | **어필리에이트 링크 디스클로저** | FTC 준수 고지 컴포넌트 |
+| P2 | **OG 이미지 커스텀** | 포스트별 브랜드 OG 이미지 개선 |
+| P3 | **Dev.to / Hashnode 크로스포스팅** | POSSE 전략 실행 |
+| P3 | **RSS → 뉴스레터 자동화** | 블로그 발행 → 뉴스레터 자동 발송 |

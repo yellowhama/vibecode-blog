@@ -1,0 +1,24 @@
+{
+  "week": "2026-w10",
+  "generatedAt": "2026-03-01T16:30:00+09:00",
+  "note": "w10-001 (duplicate code) and w10-002 (shell injection) removed — replaced by Act 1 series in 2026-w10-act1.json",
+  "items": [
+    {
+      "id": "w10-003",
+      "type": "thread",
+      "category": "Beat 3",
+      "source": "google-oauth / MUSU-099",
+      "scheduledAt": "2026-03-12T14:00:00Z",
+      "status": "draft",
+      "content": [
+        "Day three of Google login. Works on web. Desktop crashes.",
+        "Need the desktop app. That's the whole point.\nLaptop talks to the machines at home. Can't do that in a browser.",
+        "Asked AI why. AI doesn't know either.\nWe're both staring at the same error message.",
+        "This is the part of vibe coding nobody warns you about.\nWhen it breaks, you can't debug what you can't read."
+      ],
+      "postedIds": [],
+      "postedAt": null,
+      "error": null
+    }
+  ]
+}

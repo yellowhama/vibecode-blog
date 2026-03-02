@@ -86,7 +86,7 @@ Creating tests. Free. Claude does it.
 Fixing bugs. Free. Claude does it.
 
 It's true.
-Six months and I didn't write a single line of code.
+I didn't write a single line of code.
 AI wrote all of it.
 
 Implementation really is free.
@@ -115,7 +115,7 @@ Imagine a robot with 28 left arms.
 Each arm is well-built.
 But there's no right arm.
 The legs walk backwards.
-That's what six months of "rational decisions" without direction looks like.
+That's what "rational decisions" without direction look like.
 
 ---
 

@@ -64,6 +64,16 @@
 
 ---
 
+## §2.5. 시리즈 네이밍
+
+**Fury-Driven Development Diary (FDD)**
+- Phase 1 시리즈의 공식 타이틀
+- FDD = Feature-Driven Development 비틀기 (의도적 밈)
+- X 스레드 포맷: `[FDD Diary #N] 부제`
+- 시리즈 핵심: "빡쳐서 직접 기준을 세웠다"
+
+---
+
 ## §3. 핵심 주장
 
 ### 주장 1: How가 아니라 What/Why

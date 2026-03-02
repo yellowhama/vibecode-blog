@@ -2,9 +2,9 @@
 
 Can't code.
 Not a developer.
-Vibe coding looked fun so I started about six months ago.
+Vibe coding looked fun so I started.
 
-Here's what happened in those six months.
+Here's what happened.
 
 ---
 
@@ -47,7 +47,20 @@ That thought was the trap.
 
 ---
 
-Two weeks in, something felt off.
+But all of that was practice.
+
+My real project? Something else.
+Three computers at home. Two desktops, one laptop.
+Work from my laptop outside.
+Still use the machines at home.
+Like one machine.
+
+Nothing on the market did this.
+Built it myself.
+
+---
+
+Then something felt off.
 
 The code ran. But it wasn't what I wanted.
 
@@ -78,7 +91,7 @@ That was my disaster.
 ---
 
 One Monday morning.
-All five agents stopped.
+The whole system stopped.
 
 Nothing worked.
 It was fine yesterday.
@@ -92,7 +105,7 @@ Three date formatters.
 Two config parsers.
 Four different ways to validate input.
 
-Six months. Nobody noticed.
+Nobody noticed.
 Not the AI. Not me.
 Agent 3 didn't know what Agent 5 built.
 Of course not. They never saw each other's code.
@@ -107,9 +120,7 @@ AI wrote it. I approved it.
 I don't read every line. That's the whole point of vibe coding.
 
 But here's the thing.
-I'm building a tool that connects three computers over a network.
-Two desktops at home, one laptop.
-I want to work from my laptop outside and still use the machines at home.
+This tool — the one connecting my three computers — goes over the network.
 A shell injection in that code?
 
 That's not a bug. That's a door.
@@ -240,10 +251,20 @@ I never sat down to write a spec.
 I got pissed. Asked questions. Fought. Organized.
 And the spec was already there.
 
+But when I wrote it down, one question became four.
+
+"Nothing does this" is the current pain. That's the reason.
+"Work like one machine" is the change I want. That's the purpose.
+Same "why." Different answers.
+
+"P2P connection" is the tech choice. That's the method.
+"Fork libp2p, check the MIT license" is how I get it. That's the means.
+Same "how." Different answers.
+
 Purpose: Use multiple computers like one machine. From anywhere.
 Reason: Nothing on the market does this. Everything out there is half-assed.
-Method: Direct P2P connection. No cloud in between.
-Means: QUIC tunnels. Idle resource utilization. Local-first.
+Method: Direct P2P connection. QUIC tunnels. Local-first.
+Means: Open-source (quinn, libp2p), forked and adapted. MIT verified.
 
 Organize your frustration and that's what you get.
 It doesn't come from a whiteboard in a conference room.
@@ -283,7 +304,7 @@ If you don't write down the change, you get punched in the same place again.
 
 ---
 
-Six months ago I didn't know what a spec was.
+I didn't know what a spec was.
 I'm still not a "spec engineer."
 
 But I know one thing now.
