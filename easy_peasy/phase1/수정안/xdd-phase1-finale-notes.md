@@ -146,6 +146,26 @@ Act 5: 경험 (UX) — XDD로 "이게 내가 원한 거다"를 확인. [FDD #25-
 | X 스레드 큐 | 10 JSON | FDD #1-30, w10-w19 |
 | 스케줄 | 20주 | 2026-03-03 ~ 2026-05-09 |
 
+### 블로그 배포 현황
+
+- [x] Act 1 블로그 글 4개 → easy_peasy 최신 EN 버전으로 교체 — commit `d0f8191`
+- [ ] Act 2-5 블로그 글 → 추후 교체 예정
+
+### X 스레드 포스팅 계획 (Act 1)
+
+| 날짜 | FDD # | 제목 | 블로그 링크 |
+|------|-------|------|------------|
+| 3/3 (월) | #1 | I Thought It Worked | /posts/i-thought-it-worked |
+| 3/4 (화) | #2 | Monday Morning | /posts/everything-broke-monday |
+| 3/5 (수) | #3 | Nothing Works | /posts/frustration-is-the-spec |
+| 3/6 (목) | #4 | The Real Problem | /posts/i-didnt-know-what-i-was-building |
+| 3/7 (금) | #5 | Frustration Is the Spec | /posts/frustration-is-the-spec |
+| 3/8 (토) | #6 | Everything Changed | /posts/frustration-is-the-spec |
+
+- 스케줄: 매일 14:00 KST (05:00 UTC)
+- 마지막 트윗에 블로그 링크 포함
+- 큐 JSON 업데이트: w10/w11 → 매일 스케줄로 변경
+
 ### Phase 1 → Phase 2 브릿지
 
 Phase 1 결론: "짜증 → UX → 질문 → 대화 → 리서치 → 스펙 → MVP"
