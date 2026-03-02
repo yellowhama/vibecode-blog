@@ -33,7 +33,7 @@ async function main() {
   log('info', DRY_RUN ? 'Starting (DRY RUN)' : 'Starting');
 
   const now = new Date();
-  const queueFiles = getActiveQueueFiles(now);
+  const queueFiles = getActiveQueueFiles();
 
   if (queueFiles.length === 0) {
     log('info', 'No queue files found. Nothing to do.');

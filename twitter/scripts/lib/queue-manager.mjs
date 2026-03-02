@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -18,13 +18,6 @@ export function getISOWeekString(date = new Date()) {
   const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
   const weekNo = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
   return `${d.getUTCFullYear()}-w${String(weekNo).padStart(2, '0')}`;
-}
-
-/**
- * Get the queue file path for a given week string.
- */
-export function getQueuePath(weekString) {
-  return join(QUEUE_DIR, `${weekString}.json`);
 }
 
 /**
@@ -88,20 +81,18 @@ export function getDueItems(queue, now = new Date()) {
 }
 
 /**
- * Get queue files to check: current week + previous week.
+ * Get all queue files in the queue directory.
+ * Scans for any JSON file matching YYYY-wWW pattern.
  */
-export function getActiveQueueFiles(now = new Date()) {
-  const currentWeek = getISOWeekString(now);
-  const prevDate = new Date(now);
-  prevDate.setDate(prevDate.getDate() - 7);
-  const prevWeek = getISOWeekString(prevDate);
+export function getActiveQueueFiles() {
+  if (!existsSync(QUEUE_DIR)) return [];
 
   const files = [];
-  for (const week of [prevWeek, currentWeek]) {
-    const path = getQueuePath(week);
-    if (existsSync(path)) {
-      files.push({ week, path });
-    }
+  for (const entry of readdirSync(QUEUE_DIR)) {
+    if (!entry.endsWith('.json')) continue;
+    const match = entry.match(/^(\d{4}-w\d{2})/);
+    if (!match) continue;
+    files.push({ week: match[1], path: join(QUEUE_DIR, entry) });
   }
-  return files;
+  return files.sort((a, b) => a.path.localeCompare(b.path));
 }
