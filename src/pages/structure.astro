@@ -1,0 +1,138 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { SITE } from "@/config";
+---
+
+<Layout title={`The Structure | ${SITE.title}`}>
+  <Header />
+  <main id="main-content" class="app-layout">
+    <section class="border-b border-border pt-12 pb-10">
+      <p class="text-xs tracking-[0.14em] text-text-muted uppercase">The Structure</p>
+      <h1 class="mt-3 text-4xl leading-tight font-bold sm:text-5xl">
+        Keep your AI. Add structure.
+      </h1>
+      <p class="mt-4 max-w-2xl text-text-secondary leading-relaxed">
+        MUSU does not replace Claude, Cursor, or your existing workflow.
+        It adds deterministic boundaries so AI output can be reviewed,
+        accepted, and operated safely.
+      </p>
+      <p class="mt-4 text-sm font-semibold tracking-wide text-accent">
+        Probabilistic AI. Deterministic structure.
+      </p>
+    </section>
+
+    <section id="the-structure" class="border-b border-border py-12">
+      <h2 class="text-2xl font-bold sm:text-3xl">Four structural layers above your AI</h2>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2">
+        <article class="rounded-md border border-border bg-bg-secondary p-5">
+          <p class="text-xs tracking-[0.12em] text-text-muted uppercase">Layer 1</p>
+          <h3 class="mt-1 text-xl font-semibold">Intent</h3>
+          <p class="mt-2 text-sm text-text-secondary leading-relaxed">
+            Intent is declared once and locked. Every future change is measured
+            against that intent, not against temporary chat context.
+          </p>
+        </article>
+        <article class="rounded-md border border-border bg-bg-secondary p-5">
+          <p class="text-xs tracking-[0.12em] text-text-muted uppercase">Layer 2</p>
+          <h3 class="mt-1 text-xl font-semibold">Lifecycle Enforcement</h3>
+          <p class="mt-2 text-sm text-text-secondary leading-relaxed">
+            Plan, build, control, operate. Work cannot skip stages and every
+            transition must satisfy declared constraints.
+          </p>
+        </article>
+        <article class="rounded-md border border-border bg-bg-secondary p-5">
+          <p class="text-xs tracking-[0.12em] text-text-muted uppercase">Layer 3</p>
+          <h3 class="mt-1 text-xl font-semibold">Validation Loop</h3>
+          <p class="mt-2 text-sm text-text-secondary leading-relaxed">
+            Each AI change is judged deterministically with GO, FIX, or BLOCK.
+            Fixable issues retry. Unsafe changes halt.
+          </p>
+        </article>
+        <article class="rounded-md border border-border bg-bg-secondary p-5">
+          <p class="text-xs tracking-[0.12em] text-text-muted uppercase">Layer 4</p>
+          <h3 class="mt-1 text-xl font-semibold">Persistent State</h3>
+          <p class="mt-2 text-sm text-text-secondary leading-relaxed">
+            Decisions, verdicts, and changes remain as project state across
+            sessions, models, and machines.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="border-b border-border py-12">
+      <h2 class="text-2xl font-bold sm:text-3xl">How it actually works</h2>
+      <div class="mt-6 rounded-md border border-border bg-bg-secondary p-5">
+        <pre class="overflow-x-auto text-sm text-foreground"><code>{`Normal: Prompt -> Output -> Accept
+MUSU:   Intent -> Draft -> Structural Check -> Policy Check -> State Update -> Accept`}</code></pre>
+      </div>
+      <p class="mt-4 max-w-2xl text-text-secondary leading-relaxed">
+        AI proposes. MUSU enforces. Nothing is accepted into project state
+        without passing deterministic review.
+      </p>
+    </section>
+
+    <section id="inside" class="border-b border-border py-12">
+      <p class="text-xs tracking-[0.14em] text-text-muted uppercase">Inside MUSU</p>
+      <h2 class="mt-2 text-2xl font-bold sm:text-3xl">One system. Three internal layers.</h2>
+      <p class="mt-3 max-w-2xl text-text-secondary leading-relaxed">
+        You install one thing. You run one thing. The internals keep AI output
+        bounded, executable, and governable.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        <article class="rounded-md border border-border p-5">
+          <h3 class="text-lg font-semibold">Planning &amp; Control</h3>
+          <p class="mt-2 text-sm text-text-secondary leading-relaxed">
+            Captures intent before code is written and reviews every change with
+            automated gates.
+          </p>
+        </article>
+        <article class="rounded-md border border-border p-5">
+          <h3 class="text-lg font-semibold">Execution Engine</h3>
+          <p class="mt-2 text-sm text-text-secondary leading-relaxed">
+            Runs validation and enforcement locally so cloud AI is reserved for
+            high-value reasoning.
+          </p>
+        </article>
+        <article class="rounded-md border border-border p-5">
+          <h3 class="text-lg font-semibold">Private Mesh</h3>
+          <p class="mt-2 text-sm text-text-secondary leading-relaxed">
+            Connects your machines into one secure execution surface without
+            forcing your workload into someone else&apos;s cloud.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <h2 class="text-2xl font-bold sm:text-3xl">For engineers</h2>
+      <ul class="mt-4 space-y-2 text-text-secondary">
+        <li>How is intent enforced at runtime?</li>
+        <li>What prevents stages from being skipped?</li>
+        <li>What creates a deterministic verdict?</li>
+        <li>How is state reconstructed across runs?</li>
+      </ul>
+      <div class="mt-8 flex flex-wrap items-center gap-4 text-sm">
+        <a
+          class="rounded-full border border-border px-4 py-2 font-medium transition hover:border-accent hover:text-accent"
+          href={SITE.links.docs}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read Product Docs
+        </a>
+        <a
+          class="rounded-full border border-border px-4 py-2 font-medium transition hover:border-accent hover:text-accent"
+          href={SITE.links.github}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View on GitHub
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

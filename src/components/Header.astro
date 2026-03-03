@@ -2,7 +2,6 @@
 import IconX from "@/assets/icons/IconX.svg";
 import IconMoon from "@/assets/icons/IconMoon.svg";
 import IconSearch from "@/assets/icons/IconSearch.svg";
-import IconArchive from "@/assets/icons/IconArchive.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
 import LinkButton from "./LinkButton.astro";
@@ -72,13 +71,21 @@ const isActive = (path: string) => {
         ]}
       >
         <li class="col-span-2">
-          <a href="/posts" class:list={{ "active-nav": isActive("/posts") }}>
-            Posts
+          <a href="/" class:list={{ "active-nav": isActive("/") }}>
+            Home
           </a>
         </li>
         <li class="col-span-2">
-          <a href="/tags" class:list={{ "active-nav": isActive("/tags") }}>
-            Tags
+          <a
+            href="/structure"
+            class:list={{ "active-nav": isActive("/structure") }}
+          >
+            Structure
+          </a>
+        </li>
+        <li class="col-span-2">
+          <a href="/posts" class:list={{ "active-nav": isActive("/posts") }}>
+            Posts
           </a>
         </li>
         <li class="col-span-2">
@@ -86,26 +93,34 @@ const isActive = (path: string) => {
             About
           </a>
         </li>
-        {
-          SITE.showArchives && (
-            <li class="col-span-2">
-              <LinkButton
-                href="/archives"
-                class:list={[
-                  "focus-outline flex justify-center p-3 sm:p-1",
-                  {
-                    "active-nav [&>svg]:stroke-accent": isActive("/archives"),
-                  },
-                ]}
-                title="Archives"
-                aria-label="archives"
-              >
-                <IconArchive class="hidden sm:inline-block" />
-                <span class="sm:sr-only">Archives</span>
-              </LinkButton>
-            </li>
-          )
-        }
+        <li class="col-span-2">
+          <a
+            href={SITE.links.windowsDownload}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-semibold text-accent"
+          >
+            Download .exe
+          </a>
+        </li>
+        <li class="col-span-2">
+          <a
+            href={SITE.links.docs}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Docs
+          </a>
+        </li>
+        <li class="col-span-2">
+          <a
+            href={SITE.links.pricing}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pricing
+          </a>
+        </li>
         <li class="col-span-1 flex items-center justify-center">
           <LinkButton
             href="/search"

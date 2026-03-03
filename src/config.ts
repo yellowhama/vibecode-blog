@@ -20,4 +20,11 @@ export const SITE = {
   dir: "ltr",
   lang: "en",
   timezone: "Asia/Seoul",
+  links: {
+    github: "https://github.com/yellowhama/Musu",
+    docs: "https://github.com/yellowhama/Musu/tree/main/docs/product",
+    pricing:
+      "https://github.com/yellowhama/Musu/blob/main/docs/product/website-copy/pricing.md",
+    windowsDownload: "https://github.com/yellowhama/Musu/releases/latest",
+  },
 } as const;

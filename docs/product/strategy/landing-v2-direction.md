@@ -18,17 +18,17 @@
 
 ## 핵심 결정
 
-| 항목 | 결정 |
-|------|------|
-| 타겟 | 바이브 코더 전체 |
-| 포지션 | 안전장치 + 운영자 |
-| 톤 | 차분하지만 강하게 — 운영자 톤 |
-| 카테고리 | AI Operator Layer |
-| 메인 문장 | "Keep your AI. Add an operator." |
-| 킬러 카피 | "AI writes code. MUSU decides if it lives." (절대 건드리지 않음) |
-| 한 줄 정의 | "A deterministic operator beneath your AI." |
-| 기존 랜딩 처리 | → `/structure` 페이지로 이동 |
-| 프라이싱 노출 | 유료/무료 구분 웹사이트에 적지 않음 |
+| 항목           | 결정                                                             |
+| -------------- | ---------------------------------------------------------------- |
+| 타겟           | 바이브 코더 전체                                                 |
+| 포지션         | 안전장치 + 운영자                                                |
+| 톤             | 차분하지만 강하게 — 운영자 톤                                    |
+| 카테고리       | AI Operator Layer                                                |
+| 메인 문장      | "Keep your AI. Add an operator."                                 |
+| 킬러 카피      | "AI writes code. MUSU decides if it lives." (절대 건드리지 않음) |
+| 한 줄 정의     | "A deterministic operator beneath your AI."                      |
+| 기존 랜딩 처리 | → `/structure` 페이지로 이동                                     |
+| 프라이싱 노출  | 유료/무료 구분 웹사이트에 적지 않음                              |
 
 ---
 
@@ -38,15 +38,16 @@
 
 MUSU는 보증자가 아니다. 보험이 아니다. SLA를 보장하는 클라우드도 아니다.
 
-| ❌ 쓰지 않는다 | ⭕ 이렇게 쓴다 |
-|---------------|--------------|
-| 책임을 진다 | 운영을 안정화한다 |
+| ❌ 쓰지 않는다   | ⭕ 이렇게 쓴다                  |
+| ---------------- | ------------------------------- |
+| 책임을 진다      | 운영을 안정화한다               |
 | AI 대신 결정한다 | 결정이 구조를 통과하도록 만든다 |
-| 보장한다 | 예측 가능하게 만든다 |
+| 보장한다         | 예측 가능하게 만든다            |
 
 ### 운영자의 정확한 정의
 
 운영자는:
+
 - 방향을 정하지 않는다
 - 결과를 보장하지 않는다
 - 대신 시스템을 **일관되게 유지한다**
@@ -152,14 +153,14 @@ MUSU: Build는 생성, Run은 운영
 
 ## 기존 랜딩에서 반드시 살려야 할 것
 
-| # | 문장 | 용도 |
-|---|------|------|
-| 1 | Probabilistic AI. Deterministic structure. | 정체성 |
-| 2 | AI tools generate. MUSU governs. | 카테고리 |
-| 3 | Intent / Lifecycle / Validation / Persistent State | 4-Layer |
-| 4 | You don't have a prompt problem. You have a structure problem. | 타겟 직격 |
-| 5 | This is not a framework. It's a running boundary layer. | 차별화 |
-| 6 | Enforcement that doesn't consume tokens. | CPU AI |
+| #   | 문장                                                           | 용도      |
+| --- | -------------------------------------------------------------- | --------- |
+| 1   | Probabilistic AI. Deterministic structure.                     | 정체성    |
+| 2   | AI tools generate. MUSU governs.                               | 카테고리  |
+| 3   | Intent / Lifecycle / Validation / Persistent State             | 4-Layer   |
+| 4   | You don't have a prompt problem. You have a structure problem. | 타겟 직격 |
+| 5   | This is not a framework. It's a running boundary layer.        | 차별화    |
+| 6   | Enforcement that doesn't consume tokens.                       | CPU AI    |
 
 ---
 
@@ -375,20 +376,20 @@ Under your AI. In control of execution.
 
 ## 킬러 카피 정리
 
-| 순위 | 문장 | 용도 |
-|------|------|------|
-| 1 | AI writes code. MUSU decides if it lives. | Hook (풀스크린) |
-| 2 | Keep your AI. Add an operator. | Hero 메인 |
-| 3 | Probabilistic AI. Deterministic operation. | Hero 하단 |
-| 4 | AI proposes. MUSU enforces structure. | 대안 서브카피 |
-| 5 | AI generates output. MUSU decides what becomes state. | 엔지니어 톤 대안 |
+| 순위 | 문장                                                  | 용도             |
+| ---- | ----------------------------------------------------- | ---------------- |
+| 1    | AI writes code. MUSU decides if it lives.             | Hook (풀스크린)  |
+| 2    | Keep your AI. Add an operator.                        | Hero 메인        |
+| 3    | Probabilistic AI. Deterministic operation.            | Hero 하단        |
+| 4    | AI proposes. MUSU enforces structure.                 | 대안 서브카피    |
+| 5    | AI generates output. MUSU decides what becomes state. | 엔지니어 톤 대안 |
 
 ---
 
 ## 다음 단계
 
-- [ ] 기존 랜딩 → `/structure` 페이지 이동
-- [ ] 새 랜딩 v2 구현 (9섹션)
-- [ ] Header 네비게이션 업데이트
-- [ ] `/structure` 페이지에서 Inside MUSU 섹션 통합
-- [ ] .exe 다운로드 링크 준비 (GitHub Releases)
+- [x] 기존 랜딩 → `/structure` 페이지 이동
+- [x] 새 랜딩 v2 구현 (9섹션)
+- [x] Header 네비게이션 업데이트
+- [x] `/structure` 페이지에서 Inside MUSU 섹션 통합
+- [x] .exe 다운로드 링크 준비 (GitHub Releases)
