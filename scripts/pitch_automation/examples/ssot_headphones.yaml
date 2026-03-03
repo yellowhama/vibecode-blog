@@ -1,0 +1,68 @@
+# 예시 SSOT: 헤드폰
+# 이 파일은 "형식 예시"입니다. 실제 값은 제품 라벨/현물 기준으로 바꾸세요.
+
+meta:
+  product_slug: "headphones_example"
+  language: "ko"
+  created_at: "2026-02-28"
+
+product_fact:
+  name: "헤드폰(예시, 모델 미정)"
+  category: "전자기기"
+  what_it_is: "머리에 쓰는 헤드폰(유/무선 미정)"
+  variants: []
+  materials: "TODO: 이어패드/헤드밴드 재질 확인"
+  size: ""
+  weight: "TODO: 스펙/라벨 확인"
+  in_box: ["헤드폰", "TODO: 케이블/케이스/설명서 확인"]
+  labels_on_package: ["TODO: 포장 문구 그대로 적기"]
+  made_in: "TODO: 라벨 확인"
+  model_no: "TODO: 모델명/품번 확인"
+  color: ""
+
+usage_fact:
+  how_to_use: "기기에 연결/페어링 후 사용(사실 확인 필요)"
+  who_uses_it: ""
+  where_used: ""
+
+proof_fact:
+  numbers: ["TODO: 배터리/무게/유닛/지연시간/코덱 등 스펙 근거 확보"]
+  certifications: ["TODO: KC/CE 등 라벨 근거 확보"]
+  reviews: []
+
+commerce_fact:
+  pricing:
+    currency: "KRW"
+    base_price: "TODO: 판매 단가(원) 확인"
+    options: []
+    promo: ""
+  policy:
+    shipping: "TODO: 출고/배송비/무료배송 조건 확인"
+    exchange_return: "TODO: 반품/교환 가능 기간 및 비용 확인"
+    refund: "TODO: 환불 처리 기간(영업일 기준) 확인"
+    as_warranty: "TODO: 보증/AS 기간 및 접수 방법 확인"
+    contact: "TODO: 문의 채널(판매처 문의하기/연락처) 확인"
+
+assets_fact:
+  photos:
+    - file: ""
+      note: "핸드폰 정면샷/착용샷이 있으면 경로"
+  existing_brand_assets: []
+
+brand_rules:
+  tone: "친절/단정/전문"
+  must_include: ["호환/AS 안내", "충전/배터리 주의사항"]
+  forbidden_words: ["100% 보장", "무조건", "최고"]
+  risk_notes: ["근거 없는 음질/성능 과장 금지"]
+
+guesses:
+  target_guess: "재택근무/집중이 필요한 직장인"
+  price_guess: ""
+  positioning_ideas: ["집중", "편안한 착용감", "간편한 연결"]
+
+questions:
+  - "유선/무선 여부는?"
+  - "배터리 시간/충전 방식은?"
+  - "노이즈 캔슬링 여부/수준은?"
+  - "지원 코덱/호환 기기는?"
+  - "AS/보증 기간은?"

@@ -40,12 +40,16 @@
 
 | 경로 | 내용 |
 |------|------|
-| `easy_peasy/blog-only/` | 한국어 블로그 원본 ~47편 |
-| `easy_peasy/blog-only/en/` | 영문 번역 |
-| `easy_peasy/book-source/` | 책 원안 소스 (섹션별 정리) |
+| `content/blog/blog-only/` | 한국어 블로그 원본 ~47편 |
+| `content/blog/blog-only/en/` | 영문 번역 |
+| `content/blog/book-source/` | 책 원안 소스 (섹션별 정리) |
+| `content/video/` | 비디오 생성 프로젝트 최상위 |
+| `content/video/planning/` | 비디오 스토리보드 및 시각화 가이드 문서 모음 |
+| `content/video/output/` | 렌더링 된 최종/중간 비디오 파일 결과물 |
+| `scripts/video/` | 비디오 생성 및 편집 자동화 스크립트 |
 | `docs/book-structure-v2.md` | 새 책 목차 v2 |
 | `blog-research/` | 블로그 전략 리서치 (인덱스: `00-INDEX.md`) |
-| `publy_april_pitch/` | 퍼블리 투고 준비 + 상세페이지 자동화 키트 |
+| `scripts/pitch_automation/` | 퍼블리 투고 준비 + 상세페이지 자동화 키트 |
 
 ---
 
@@ -71,16 +75,16 @@
 ### 파일 구조
 | 경로 | 역할 |
 |------|------|
-| `twitter/package.json` | `twitter-api-v2` 의존성 (블로그와 분리) |
-| `twitter/scripts/post-queue.mjs` | 메인 스크립트 — 큐 읽기→발행→상태 업데이트 |
-| `twitter/scripts/lib/twitter-client.mjs` | Twitter API v2 래퍼 |
-| `twitter/scripts/lib/queue-manager.mjs` | 큐 파일 I/O, ISO 주차 계산, 15분 간격 안전장치 |
-| `twitter/queue/*.json` | 주간 큐 파일 (주차별 분리) |
+| `scripts/twitter/package.json` | `twitter-api-v2` 의존성 (블로그와 분리) |
+| `scripts/twitter/post-queue.mjs` | 메인 스크립트 — 큐 읽기→발행→상태 업데이트 |
+| `scripts/twitter/lib/twitter-client.mjs` | Twitter API v2 래퍼 |
+| `scripts/twitter/lib/queue-manager.mjs` | 큐 파일 I/O, ISO 주차 계산, 15분 간격 안전장치 |
+| `content/twitter_queue/*.json` | 주간 큐 파일 (주차별 분리) |
 | `.github/workflows/twitter-post.yml` | cron 30분 + workflow_dispatch (dry_run 지원) |
 
 ### 실행 방법
 ```bash
-cd twitter
+cd scripts/twitter
 npm run post:dry    # 드라이런
 npm run post        # 실제 발행
 ```
@@ -120,21 +124,21 @@ phase1/en/actN-M-en.md + actN-en.md   (영어)
 검증 리포트 (PASS/FAIL/WARN)
 ```
 
-### 스킬 파일
-| 스킬 | 파일 | 역할 |
+### 스킬 (Agent Skills)
+| 스킬 (Skill) | 파일 | 역할 |
 |------|------|------|
-| `/blog-plan` | `.claude/commands/blog-plan.md` | 소스 분석 → Act/씬 서사 구조 설계 |
-| `/blog-draft` | `.claude/commands/blog-draft.md` | 설계 기반 한국어 글쓰기 |
-| `/blog-translate` | `.claude/commands/blog-translate.md` | KO → EN 번역 (voice.md 톤 유지) |
-| `/blog-check` | `.claude/commands/blog-check.md` | 10가지 검증 리포트 |
+| `blog_pipeline` | `.agents/skills/blog_pipeline/SKILL.md` | 블로그 서사 기획, 초안 작성, 영어 번역, 검열 수행 |
+| `twitter_pipeline` | `.agents/skills/twitter_pipeline/SKILL.md` | 트위터 쓰레드 기획, 초안 작성, JSON 큐 적재, 검열 수행 |
+| `branding_reviewer` | `.agents/skills/branding_reviewer/SKILL.md` | 브랜드 서사(3막) 및 보이스(나이키 룰) 품질 관리 |
+| `video_pipeline` | `.agents/skills/video_pipeline/SKILL.md` | 비디오용 캐릭터/내러티브 기획 및 시네마틱 샷 프롬프트 구성 |
 
 ### 출력 구조
 | 경로 | 내용 |
 |------|------|
-| `easy_peasy/phase1/actN-M-ko.md` | 개별 씬 (한국어) |
-| `easy_peasy/phase1/actN-ko.md` | 압축본 (한국어, 전체를 한 파일로) |
-| `easy_peasy/phase1/en/actN-M-en.md` | 개별 씬 (영어) |
-| `easy_peasy/phase1/en/actN-en.md` | 압축본 (영어) |
+| `content/blog/phase1/actN-M-ko.md` | 개별 씬 (한국어) |
+| `content/blog/phase1/actN-ko.md` | 압축본 (한국어, 전체를 한 파일로) |
+| `content/blog/phase1/en/actN-M-en.md` | 개별 씬 (영어) |
+| `content/blog/phase1/en/actN-en.md` | 압축본 (영어) |
 
 ### 현재 진행 상태 — Phase 1 완성 (40파일)
 
@@ -168,7 +172,7 @@ phase1/en/actN-M-en.md + actN-en.md   (영어)
 
 ## 상세페이지 자동화 키트 (퍼블리 투고용)
 
-- 키트 루트: `publy_april_pitch/automation_kit/`
-- 마스터 프롬프트: `publy_april_pitch/automation_kit/prompts/00_orchestrator.md`
-- RAG 인덱스: `cd publy_april_pitch/automation_kit/rag && node scripts/build_index.mjs`
+- 키트 루트: `scripts/pitch_automation/`
+- 마스터 프롬프트: `scripts/pitch_automation/prompts/00_orchestrator.md`
+- RAG 인덱스: `cd scripts/pitch_automation/rag && node scripts/build_index.mjs`
 - 검색: `node scripts/query.mjs "Hero 톤" --top=3`

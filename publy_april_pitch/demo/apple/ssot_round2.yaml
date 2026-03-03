@@ -1,0 +1,71 @@
+# 예시 SSOT: 사과 (2차 입력 예시)
+# 목적: 질문 5개(품종/원산지/구성/가격/정책)를 “사용자 제공 값”으로 채운 버전
+
+meta:
+  product_slug: "apple_example_r2"
+  language: "ko"
+  created_at: "2026-03-01"
+
+product_fact:
+  name: "사과 부사(예시)"
+  category: "과일"
+  what_it_is: "먹는 생과일"
+  variants: ["2kg(10과) 박스"]
+  materials: ""
+  size: "지름 7~8cm(예시, 확인 필요)"
+  weight: "1개 약 250g(예시)"
+  in_box: ["사과 10과(총 2kg, 예시)"]
+  labels_on_package:
+    - "원산지: 경북 안동(예시)"
+    - "등급: 특(예시)"
+  made_in: "대한민국(예시)"
+  model_no: ""
+  color: "빨강"
+
+usage_fact:
+  how_to_use: "세척 후 섭취"
+  who_uses_it: "가정 간식/가족(사용자 제공)"
+  where_used: "집/사무실"
+
+proof_fact:
+  numbers:
+    - "구성: 2kg(10과)(사용자 제공)"
+    - "당도: 13 brix(예시: 당도계 실측 값, 사진 근거 필요)"
+  certifications: []
+  reviews: []
+
+commerce_fact:
+  pricing:
+    currency: "KRW"
+    base_price: "12900" # 예시
+    options: []
+    promo: "3/1~3/7, 1,000원 쿠폰(예시)"
+  policy:
+    shipping: "상온 택배, 영업일 기준 1~2일 출고(예시)"
+    exchange_return: "수령 후 24시간 내 파손/변질 사진 접수 시 교환/환불(예시)"
+    refund: "결제 수단별 2~5영업일(예시)"
+    as_warranty: ""
+    contact: "판매처 문의하기(예시)"
+
+assets_fact:
+  photos:
+    - file: ""
+      note: "핸드폰 정면샷 1장(있으면 경로 넣기)"
+  existing_brand_assets: []
+
+brand_rules:
+  tone: "친절/단정"
+  must_include: ["보관/배송 안내"]
+  forbidden_words: ["100% 보장", "무조건", "최고"]
+  risk_notes:
+    - "근거 없는 당도/효능 표현 금지"
+
+guesses:
+  target_guess: "가정 간식/가족"
+  price_guess: ""
+  positioning_ideas: ["신선함", "간편한 간식", "선물용"]
+
+questions:
+  - "보관 방법(냉장/실온) 권장 기준은?"
+  - "세척 방법/주의사항이 있는가?"
+  - "배송 중 파손 대응은 어떻게 되는가?"

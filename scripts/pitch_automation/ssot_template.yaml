@@ -1,0 +1,93 @@
+# SSOT(단일 진실 문서) 템플릿
+#
+# 규칙:
+# - 모르는 건 비워두거나 "TODO"로 남기세요.
+# - Fact(사실) / Guess(추정) / Question(질문)을 섞지 마세요.
+# - 근거 없는 수치/효과는 쓰지 마세요.
+
+meta:
+  product_slug: "product" # runs/ 폴더 이름에 쓰는 짧은 ID (영문 추천)
+  language: "ko"
+  created_at: "YYYY-MM-DD"
+
+product_fact:
+  name: ""
+  category: ""
+  what_it_is: "" # 한 문장 설명(사실)
+  variants: [] # 예: ["블랙", "화이트"] / 없으면 비워두기
+  materials: "" # 예: "알루미늄 + 패브릭"
+  size: "" # 예: "가로 12cm, 세로 8cm" / 대략이면 '대략' 표시
+  weight: "" # 예: "약 250g"
+  in_box: [] # 구성품(사실)
+  labels_on_package: [] # 포장에 적힌 문구를 그대로
+  made_in: "" # 원산지/제조국 (라벨 기준)
+  model_no: "" # 모델명/품번 (라벨 기준)
+  color: ""
+
+usage_fact:
+  how_to_use: "" # 사용법(사실)
+  who_uses_it: "" # 누가 쓰는지(사실이면 적고, 아니면 추정으로)
+  where_used: "" # 어디서 쓰는지(사실이면 적고, 아니면 추정으로)
+
+proof_fact:
+  numbers: [] # 예: ["배터리 40시간(근거: 스펙표)"]
+  certifications: [] # 예: ["KC 인증(근거: 라벨 사진)"]
+  reviews: [] # 예: ["후기(근거: 링크)"]
+
+commerce_fact:
+  pricing:
+    currency: "KRW"
+    base_price: "" # 예: "19900" 또는 "19,900원" (사실로 확인된 값)
+    options: [] # 옵션이 없으면 비워두기
+    # 예시:
+    #   - name: "화이트/블랙"
+    #     price: "24900"
+    #     note: "추가 구성품 포함"
+    promo: "" # 예: "3/1~3/7, 쿠폰 적용 시" / 없으면 비워두기
+  policy:
+    shipping: "" # 예: "3만원 이상 무료배송, 영업일 기준 1~2일 출고" / 모르면 TODO
+    exchange_return: "" # 예: "수령 후 7일 이내, 단순 변심 왕복 배송비" / 모르면 TODO
+    refund: "" # 예: "결제 수단별 2~5영업일" / 모르면 TODO
+    as_warranty: "" # 예: "구매 후 1년" / 전자제품이면 중요 / 모르면 TODO
+    contact: "" # 예: "판매처 문의하기" / 모르면 TODO
+
+assets_fact:
+  photos:
+    - file: "" # 로컬 파일 경로(선택)
+      note: "" # 예: "정면샷, 형광등 아래"
+  existing_brand_assets: [] # 로고/폰트/가이드가 있으면
+
+brand_rules:
+  tone: "친절/단정"
+  must_include: [] # 예: ["배송/교환/환불 안내", "주의사항"]
+  forbidden_words:
+    - "100% 보장"
+    - "무조건"
+    - "최고"
+  risk_notes:
+    - "근거 없는 수치/효과 금지"
+
+design_references:
+  # 이전 리서치 결과나 참고할 상세페이지를 여기에 넣으세요.
+  # 비워두면 AI가 카테고리 기준으로 추정합니다 ([ASSUMPTION]).
+  # 채워두면 추정 대신 이걸 기반으로 리서치합니다.
+  competitor_pages: []
+    # 예:
+    #   - url: "https://smartstore.naver.com/example/products/123"
+    #     note: "Hero에서 산지 사진 + 당도 수치를 바로 보여줌"
+    #   - url: "https://www.coupang.com/vp/products/456"
+    #     note: "FAQ를 접이식으로 7개 넣음, 배송 안내가 상단"
+  design_direction: [] # 설계 원칙(이전 리서치에서 가져올 수 있음)
+    # 예:
+    #   - "모바일에서 첫 화면에 산지+당도가 보여야 한다"
+    #   - "사진이 부족하니 텍스트 카드로 신뢰를 보강한다"
+  previous_research: "" # 이전 가동의 02b_design_research.md 경로 (있으면)
+    # 예: "runs/20260301_apple/02b_design_research.md"
+    # 같은 카테고리면 이전 리서치를 재활용할 수 있음
+
+guesses:
+  target_guess: "" # 예: "재택근무 직장인"
+  price_guess: "" # 모르면 비워두기
+  positioning_ideas: [] # 아이디어(추정)
+
+questions: [] # 반드시 확인해야 하는 질문 리스트

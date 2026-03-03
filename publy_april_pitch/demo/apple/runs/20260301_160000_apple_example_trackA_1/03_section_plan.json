@@ -1,0 +1,97 @@
+{
+  "product_slug": "apple_example",
+  "positioning": {
+    "candidates": [
+      {
+        "name": "간단한 과일 간식",
+        "target": "바쁜 직장인/가정",
+        "one_liner": "씻어서 바로 먹는 사과",
+        "why_it_works": "증명(수치/인증)이 없어도 '사용 장면' 중심으로 안전하게 말할 수 있다."
+      },
+      {
+        "name": "선물용으로 무난한 과일",
+        "target": "선물 고민하는 사람",
+        "one_liner": "부담 없는 과일 선물(정보 확인 후)",
+        "why_it_works": "선물 포지션은 구성/원산지/포장 정보가 필요하다. 지금은 정보가 비어 있어 TODO가 많아진다."
+      },
+      {
+        "name": "신선함 중심",
+        "target": "신선한 과일을 찾는 사람",
+        "one_liner": "신선한 사과(근거 필요)",
+        "why_it_works": "'신선'은 근거(수확일/보관/배송)가 없으면 리스크가 크다."
+      }
+    ],
+    "selected": {
+      "name": "간단한 과일 간식",
+      "reason": "현재 SSOT에 근거가 부족해서, 수치/효과를 피하고 '사용 장면(세척 후 섭취)' 중심으로 안전하게 구성한다."
+    }
+  },
+  "sections": [
+    {
+      "id": "Hero",
+      "goal": "첫 화면에서 '무슨 제품인지'와 '어떻게 먹는지'를 3초 안에 전달한다.",
+      "key_messages": [
+        "사과(생과일)입니다.",
+        "세척 후 바로 먹는 간식입니다.",
+        "품종/원산지/구성은 라벨 확인이 필요합니다. (TODO)"
+      ],
+      "assets_needed": [
+        "IMG-HERO-01 제품 정면 사진(핸드폰 사진 가능)",
+        "가격/구성 표 자리(TODO)"
+      ],
+      "copy_slots": ["headline", "subcopy", "bullets", "cta", "disclaimer"]
+    },
+    {
+      "id": "USP",
+      "goal": "장점 3개를 카드로 보여주되, Fact가 없으면 TODO로 비워 둔다.",
+      "key_messages": [
+        "TODO: 품종/특징 기반 장점 1개",
+        "TODO: 구성/중량 기반 장점 1개",
+        "TODO: 보관/배송 안내 기반 장점 1개"
+      ],
+      "assets_needed": [
+        "IMG-USP-01 손/사이즈 비교샷",
+        "IMG-USP-02 디테일/질감 샷",
+        "아이콘 3개(라인 아이콘)"
+      ],
+      "copy_slots": ["headline", "subcopy", "bullets"]
+    },
+    {
+      "id": "Proof",
+      "goal": "라벨/구성처럼 '확인 가능한 근거'만 모아 신뢰를 만든다.",
+      "key_messages": [
+        "원산지/등급은 라벨 사진으로 확인합니다. (TODO)",
+        "구성/중량은 포장/실측 기준으로 표기합니다. (TODO)",
+        "수치(당도/효과)는 근거 없으면 쓰지 않습니다."
+      ],
+      "assets_needed": [
+        "IMG-PROOF-01 포장 라벨 클로즈업",
+        "IMG-PROOF-02 구성/중량 증명샷(저울/박스)",
+        "spec_table(텍스트 표)"
+      ],
+      "copy_slots": ["headline", "spec_table", "disclaimer"]
+    },
+    {
+      "id": "FAQ",
+      "goal": "구매 전 불안을 줄이는 질문 5개를 짧게 답한다.",
+      "key_messages": [
+        "배송 방식/출고일은 판매처 기준으로 안내합니다. (TODO)",
+        "교환/환불은 상품 특성상 조건이 있습니다. (TODO)",
+        "보관 방법을 명확히 안내합니다. (TODO)"
+      ],
+      "assets_needed": ["FAQ 아코디언 5개(텍스트)"] ,
+      "copy_slots": ["headline", "bullets", "disclaimer"]
+    },
+    {
+      "id": "CTA",
+      "goal": "구매 결정을 돕고 마지막 체크포인트(정책/문의)를 정리한다.",
+      "key_messages": [
+        "구매 전 체크: 품종/원산지/구성",
+        "정책 체크: 배송/교환/환불",
+        "문의 채널: TODO"
+      ],
+      "assets_needed": ["IMG-CTA-01 구성샷 또는 제품 여러 개 샷"],
+      "copy_slots": ["headline", "subcopy", "cta", "disclaimer"]
+    }
+  ]
+}

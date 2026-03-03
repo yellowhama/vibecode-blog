@@ -1,0 +1,97 @@
+{
+  "product_slug": "apple_example",
+  "positioning": {
+    "candidates": [
+      {
+        "name": "간편함(시간 절약)",
+        "target": "바쁜 직장인/가정",
+        "one_liner": "씻어서 바로 먹는 사과",
+        "why_it_works": "Proof(수치/인증)가 없어도 '사용 장면' 기반으로 안전하게 구성할 수 있다."
+      },
+      {
+        "name": "문제 해결(오해/클레임 줄이기)",
+        "target": "구매 전 불안이 큰 사람",
+        "one_liner": "정책/보관을 먼저 알려서 불안을 줄이는 사과",
+        "why_it_works": "식품은 오해가 CS로 이어지기 쉬워서, 정책/보관/FAQ를 앞에 두면 안전하다."
+      },
+      {
+        "name": "품질(맛/당도) 중심",
+        "target": "맛을 최우선으로 보는 사람",
+        "one_liner": "달콤한 사과(근거 필요)",
+        "why_it_works": "맛/당도는 강력하지만 근거 없으면 위험하다. 지금 SSOT에는 근거가 없다."
+      }
+    ],
+    "selected": {
+      "name": "간편함(시간 절약)",
+      "reason": "현재 SSOT는 '세척 후 섭취' 같은 사용 정보만 확실하다. 그래서 과장/수치 없이도 쓸 수 있는 간편함 포지셔닝을 선택한다."
+    }
+  },
+  "sections": [
+    {
+      "id": "Hero",
+      "goal": "첫 화면에서 제품 정의 + 사용법 + 안전문구를 짧게 전달한다.",
+      "key_messages": [
+        "사과(생과일)입니다.",
+        "세척 후 바로 먹습니다.",
+        "구성/가격/정책은 확인 후 안내합니다. (TODO)"
+      ],
+      "assets_needed": [
+        "IMG-HERO-01 제품 정면 사진(핸드폰 사진 가능)",
+        "정책 안전문구 1줄"
+      ],
+      "copy_slots": ["headline", "subcopy", "bullets", "cta", "disclaimer"]
+    },
+    {
+      "id": "USP",
+      "goal": "장점 3개를 '확인 가능한 문장'으로만 쓴다.",
+      "key_messages": [
+        "세척 후 섭취(사용법)처럼 Fact만 강조합니다.",
+        "원산지/구성은 라벨/사진으로 보여줍니다. (TODO)",
+        "보관/정책을 적어 오해를 줄입니다. (TODO)"
+      ],
+      "assets_needed": [
+        "IMG-USP-01 사용 상황(손/씻는 장면)",
+        "IMG-USP-02 디테일/상태",
+        "아이콘 3개(세척/보관/정책)"
+      ],
+      "copy_slots": ["headline", "subcopy", "bullets"]
+    },
+    {
+      "id": "Proof",
+      "goal": "라벨/표로 '사실'만 정리한다.",
+      "key_messages": [
+        "원산지/표기 문구는 라벨 기준으로 안내합니다. (TODO)",
+        "가격/옵션은 모르면 만들지 않고 TODO로 둡니다.",
+        "수치(당도/효과)는 근거가 있을 때만 씁니다."
+      ],
+      "assets_needed": [
+        "IMG-PROOF-01 라벨 클로즈업",
+        "IMG-PROOF-02 구성/중량 증명샷(선택)",
+        "spec_table(구성/가격/정책)"
+      ],
+      "copy_slots": ["headline", "spec_table", "disclaimer"]
+    },
+    {
+      "id": "FAQ",
+      "goal": "배송/교환/환불/보관 질문을 짧게 처리해 CS를 줄인다.",
+      "key_messages": [
+        "정확한 정책은 판매처 기준입니다. (TODO)",
+        "모르는 건 단정하지 않고 확인 경로를 적습니다.",
+        "광고가 아니라 오해 방지용 안내입니다."
+      ],
+      "assets_needed": ["FAQ 아코디언 5개(텍스트)"] ,
+      "copy_slots": ["headline", "bullets", "disclaimer"]
+    },
+    {
+      "id": "CTA",
+      "goal": "마지막에 구매 전 체크리스트를 주고 버튼 1개로 마무리한다.",
+      "key_messages": [
+        "구매 전 체크: 품종/원산지/구성",
+        "정책 체크: 배송/교환/환불",
+        "정확한 정보는 구매 페이지에서 재확인"
+      ],
+      "assets_needed": ["IMG-CTA-01 구성샷"],
+      "copy_slots": ["headline", "subcopy", "cta", "disclaimer"]
+    }
+  ]
+}

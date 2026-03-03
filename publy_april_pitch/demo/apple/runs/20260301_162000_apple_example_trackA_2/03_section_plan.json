@@ -1,0 +1,97 @@
+{
+  "product_slug": "apple_example_r2",
+  "positioning": {
+    "candidates": [
+      {
+        "name": "2kg 박스로 쟁여두는 과일 간식",
+        "target": "가정 간식/가족",
+        "one_liner": "2kg(10과) 박스로 한 번에 준비",
+        "why_it_works": "구성(2kg/10과)과 사용법(세척 후 섭취)이 있어, 과장 없이도 설득이 가능하다."
+      },
+      {
+        "name": "달콤함(당도) 중심",
+        "target": "단맛을 중요하게 보는 사람",
+        "one_liner": "당도 13 brix(근거 필요)",
+        "why_it_works": "당도는 강력하지만, 측정 근거가 없으면 리스크가 커서 Proof가 반드시 필요하다."
+      },
+      {
+        "name": "선물용 과일",
+        "target": "선물/답례품을 찾는 사람",
+        "one_liner": "무난한 과일 선물(라벨/포장 확인)",
+        "why_it_works": "선물은 포장/원산지/정책 정보가 중요하다. 현재 정보는 일부 있으나 사진 근거가 필요하다."
+      }
+    ],
+    "selected": {
+      "name": "2kg 박스로 쟁여두는 과일 간식",
+      "reason": "현재 SSOT에서 가장 확실한 Fact는 '구성/단위/가격/정책 초안'이므로, 그 정보로 안전하게 설득한다."
+    }
+  },
+  "sections": [
+    {
+      "id": "Hero",
+      "goal": "첫 화면에서 제품/구성/가격을 한 번에 보여준다.",
+      "key_messages": [
+        "부사 사과(예시)입니다.",
+        "2kg(10과) 박스 구성(사용자 제공)입니다.",
+        "가격 12,900원(예시)이며, 조건은 구매 페이지에서 확인합니다."
+      ],
+      "assets_needed": [
+        "IMG-HERO-01 박스+사과 정면샷",
+        "가격/구성 1줄 텍스트"
+      ],
+      "copy_slots": ["headline", "subcopy", "bullets", "cta", "disclaimer"]
+    },
+    {
+      "id": "USP",
+      "goal": "구매 이유 3개(구성/사용/정책)를 카드로 요약한다.",
+      "key_messages": [
+        "2kg(10과)로 한 번에 준비합니다.",
+        "세척 후 바로 먹는 간식입니다.",
+        "파손/변질은 사진 접수로 빠르게 처리합니다. (예시)"
+      ],
+      "assets_needed": [
+        "IMG-USP-01 손/사이즈 비교",
+        "IMG-USP-02 단면/식감 디테일",
+        "아이콘 3개(구성/세척/정책)"
+      ],
+      "copy_slots": ["headline", "subcopy", "bullets"]
+    },
+    {
+      "id": "Proof",
+      "goal": "라벨/정책/수치 근거를 '보이는 형태'로 제공한다.",
+      "key_messages": [
+        "원산지/등급은 라벨 기준으로 안내합니다. (예시)",
+        "구성(2kg/10과)과 가격은 표로 정리합니다. (예시)",
+        "당도 13 brix는 근거(측정 사진)가 있을 때만 표기합니다."
+      ],
+      "assets_needed": [
+        "IMG-PROOF-01 원산지/등급 라벨",
+        "IMG-PROOF-02 당도계 측정 사진(있을 때만)",
+        "spec_table(구성/가격/정책 요약)"
+      ],
+      "copy_slots": ["headline", "spec_table", "disclaimer"]
+    },
+    {
+      "id": "FAQ",
+      "goal": "배송/교환/환불/보관 같은 불안을 짧게 해소한다.",
+      "key_messages": [
+        "배송은 상온 택배이며 출고는 1~2영업일(예시)입니다.",
+        "파손/변질은 24시간 내 사진 접수(예시)로 처리합니다.",
+        "보관/세척은 확인 후 안내합니다. (TODO)"
+      ],
+      "assets_needed": ["FAQ 아코디언 5개(텍스트)"] ,
+      "copy_slots": ["headline", "bullets", "disclaimer"]
+    },
+    {
+      "id": "CTA",
+      "goal": "마지막에 '구매 전 확인할 것'과 버튼을 정리한다.",
+      "key_messages": [
+        "구성/가격/정책을 확인하고 구매합니다.",
+        "쿠폰은 기간/조건이 있습니다. (예시)",
+        "정확한 정책은 판매처 구매 페이지에서 다시 확인합니다."
+      ],
+      "assets_needed": ["IMG-CTA-01 구성 한눈샷"],
+      "copy_slots": ["headline", "subcopy", "cta", "disclaimer"]
+    }
+  ]
+}

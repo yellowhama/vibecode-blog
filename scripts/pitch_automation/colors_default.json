@@ -1,0 +1,25 @@
+{
+  "default_ui": {
+    "bg": "#F9FAFB",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "muted_text": "#4B5563",
+    "border": "#E5E7EB",
+    "accent": "#2563EB",
+    "accent_2": "#0EA5E9",
+    "success": "#10B981",
+    "warning": "#F59E0B"
+  },
+  "trend_neutral": {
+    "note": "Cloud Dancer 같은 부드러운 오프화이트 배경 + 차분한 틸 포인트(영감용).",
+    "bg": "#F0EEE9",
+    "surface": "#FFFFFF",
+    "text": "#1F2937",
+    "muted_text": "#6B7280",
+    "border": "#E7E5E4",
+    "accent": "#0F766E",
+    "accent_2": "#C48F7A",
+    "success": "#16A34A",
+    "warning": "#D97706"
+  }
+}

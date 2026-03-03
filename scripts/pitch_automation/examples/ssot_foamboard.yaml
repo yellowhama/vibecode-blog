@@ -1,0 +1,71 @@
+# 예시 SSOT: 폼보드
+# 이 파일은 "형식 예시"입니다. 실제 값은 제품 라벨/현물 기준으로 바꾸세요.
+
+meta:
+  product_slug: "foamboard_example"
+  language: "ko"
+  created_at: "2026-02-28"
+
+product_fact:
+  name: "폼보드(예시)"
+  category: "문구/자재"
+  what_it_is: "가벼운 판 형태의 보드"
+  variants: ["TODO: 사이즈/두께 옵션 확인"]
+  materials: "TODO: 재질 표기 확인"
+  size: "대략 A2 느낌(정확치 않음)"
+  weight: "가벼움(정량 필요)"
+  in_box: ["폼보드 1장(확인 필요)"]
+  labels_on_package: ["TODO: 포장 문구 그대로 적기"]
+  made_in: "TODO: 라벨 확인"
+  model_no: ""
+  color: "화이트(추정)"
+
+usage_fact:
+  how_to_use: "칼로 자르고/붙여서 작업(사실 확인 필요)"
+  who_uses_it: ""
+  where_used: ""
+
+proof_fact:
+  numbers: ["TODO: 두께/무게/표면 재질 스펙 근거 확보"]
+  certifications: []
+  reviews: []
+
+commerce_fact:
+  pricing:
+    currency: "KRW"
+    base_price: "TODO: 판매 단가(원) 확인"
+    options:
+      - name: "TODO: 사이즈/두께 옵션"
+        price: "TODO"
+        note: ""
+    promo: ""
+  policy:
+    shipping: "TODO: 배송 시 파손/휘어짐 대응 및 배송비/무료배송 조건 확인"
+    exchange_return: "TODO: 반품/교환 가능 기간 및 비용 확인(훼손/재단 시 예외 여부 포함)"
+    refund: "TODO: 환불 처리 기준/기간 확인"
+    as_warranty: ""
+    contact: "TODO: 문의 채널(판매처 문의하기/연락처) 확인"
+
+assets_fact:
+  photos:
+    - file: ""
+      note: "옆면 두께/표면 질감이 보이는 사진이 있으면 경로"
+  existing_brand_assets: []
+
+brand_rules:
+  tone: "친절/단정"
+  must_include: ["사이즈/두께 안내", "배송 파손 안내"]
+  forbidden_words: ["100% 보장", "무조건", "최고"]
+  risk_notes: ["근거 없는 내구성/강도 과장 금지"]
+
+guesses:
+  target_guess: "발표/전시/모형 제작"
+  price_guess: ""
+  positioning_ideas: ["작업이 쉬움", "결과물이 깔끔함", "가볍고 보관이 편함"]
+
+questions:
+  - "정확한 사이즈/두께 옵션은?"
+  - "표면이 매끈한가/거친가?"
+  - "칼/커터로 자를 때 부스러짐은?"
+  - "배송 시 휘어짐/파손 방지는?"
+  - "권장 접착제/사용 팁이 있는가?"
