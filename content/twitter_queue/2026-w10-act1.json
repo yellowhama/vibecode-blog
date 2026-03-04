@@ -18,7 +18,13 @@
         "\"Notes app.\" Done.\n\"Database.\" Done.\n\"Login.\" Done.\n\nBuilt a stock screener in two days.\n586 US stocks, three strategies, done in 3 minutes.\n\n\"Run this every day.\" Done.\n\"Send to Slack.\" Done.\n\nThree days in I had five agents running.",
         "Am I a genius?\nI knew I wasn't. But it felt that way.\n\n\"I can build anything with this.\"\n\nThat thought. That feeling.\nThat was the trap.\n\nhttps://vibecode.town/posts/i-thought-it-worked"
       ],
-      "postedIds": ["2028473693735944518", "2028473721762279887", "2028473763294228498", "2028473802360082594", "2028473834396152236"],
+      "postedIds": [
+        "2028473693735944518",
+        "2028473721762279887",
+        "2028473763294228498",
+        "2028473802360082594",
+        "2028473834396152236"
+      ],
       "postedAt": "2026-03-02T14:10:00Z",
       "error": null
     },
@@ -29,7 +35,7 @@
       "title": "[FDD Diary #002] Monday Morning",
       "source": "easy_peasy/phase1/en/act1-2-en.md",
       "scheduledAt": "2026-03-04T17:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Monday morning.\nMade coffee. Turned on the monitor.\n\nThe whole system was dead.\n\nFDD Diary #002 🧵",
         "I built it the same way I built the to-do app.\n\n\"Add file sync.\" Done.\n\"Add remote commands.\" Done.\n\"Add monitoring.\" Done.\n\nLike assembling IKEA furniture.\nI never stopped to ask if the pieces fit together.",
@@ -37,8 +43,14 @@
         "Ran a security audit. Line 847.\nShell injection.\n\nThis tool connects my computers over a network.\nA shell injection means anyone can walk in and run anything.\n\nThat's not a bug. That's a door.\nThat door was open the whole time.",
         "That night I shut everything down.\nStared at ten thousand lines.\n\n\"What the hell am I even building?\"\n\nhttps://vibecode.town/posts/everything-broke-monday"
       ],
-      "postedIds": [],
-      "postedAt": null,
+      "postedIds": [
+        "2029248726968021011",
+        "2029248736157696174",
+        "2029248745422848389",
+        "2029248754826567873",
+        "2029248764125282732"
+      ],
+      "postedAt": "2026-03-04T17:33:01.774Z",
       "error": null
     },
     {
