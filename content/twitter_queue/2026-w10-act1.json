@@ -60,15 +60,20 @@
       "title": "[FDD Diary #003] Nothing Works",
       "source": "easy_peasy/phase1/en/act1-4-en.md",
       "scheduledAt": "2026-03-05T17:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Three computers at home.\nTwo desktops, one laptop.\n\nI want to work from my laptop outside\nand still use the machines at home.\n\nNothing on the market does this.\n\nFDD Diary #003 🧵",
         "KVM switch — physical only. No network.\nRemote Desktop — slow. Drops connection.\nCloud sync — files only. No processes.\nGit — code only. Large files? No.\n\nFive apps running at once just to get \"barely okay.\"\n\nBarely. Okay.",
         "Every morning: open five apps, remember where everything is, manually fix sync conflicts.\n\nThat's not work. That's busywork.\n\nSo I decided to build it myself.",
         "It wasn't \"decided to build it\" first.\nIt was \"figured out why nothing works\" first.\n\nEvery product I tried, I knew what pissed me off about it.\n\nThat list of grievances?\nThe beginning of a spec.\n\nhttps://vibecode.town/posts/frustration-is-the-spec"
       ],
-      "postedIds": [],
-      "postedAt": null,
+      "postedIds": [
+        "2029616989061124513",
+        "2029616998464753877",
+        "2029617007939682491",
+        "2029617017402110299"
+      ],
+      "postedAt": "2026-03-05T17:56:20.243Z",
       "error": null
     }
   ]
