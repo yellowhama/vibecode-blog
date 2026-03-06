@@ -10,7 +10,7 @@
       "title": "[FDD Diary #004] The Real Problem",
       "source": "easy_peasy/phase1/en/act1-3-en.md",
       "scheduledAt": "2026-03-06T17:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Not the AI's fault.\nNot the prompt's fault.\n\nThe problem was deeper.\n\nI didn't know what I was building.\n\nFDD Diary #004 🧵",
         "\"Connect three computers.\"\nThat's a wish, not a design.\n\nMonday: \"File sync first.\"\nWednesday: \"Screen sharing first.\"\nFriday: \"Remote commands first.\"\n\nDirection changed every time.\nAI built in that direction every time.\nEvery time convincing. Every time different.",
@@ -18,8 +18,14 @@
         "Implementation is free.\nClaude makes files. Functions. Tests. Bug fixes.\nAll free.\n\nBut deciding what to build?\nThat's not free. AI can't do that.\nOnly you can.",
         "\"What if I just write better prompts?\"\n\nNo. Prompts weren't the problem.\nThere was no destination.\n\nThe taxi just kept driving in circles.\n\nhttps://vibecode.town/posts/i-didnt-know-what-i-was-building"
       ],
-      "postedIds": [],
-      "postedAt": null,
+      "postedIds": [
+        "2029966321216364683",
+        "2029966330477301995",
+        "2029966339818107048",
+        "2029966349284610157",
+        "2029966358910530004"
+      ],
+      "postedAt": "2026-03-06T17:04:29.740Z",
       "error": null
     },
     {
