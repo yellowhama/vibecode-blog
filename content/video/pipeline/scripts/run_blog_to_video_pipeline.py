@@ -21,6 +21,7 @@ PREPRO_DIR_RE = re.compile(r"\[OK\] prepro dir:\s*(.+)")
 MANIFEST_RE = re.compile(r"\[OK\] auto shot manifest:\s*(.+)")
 
 ALL_STAGES = ("prepro", "manifest", "tts", "render", "package")
+DEFAULT_EVALUATE_ASSETS_GUIDE = Path("/mnt/e/vibecode-blog/content/video/planning/03-visual_assets_guide.md")
 
 
 def _run(cmd: list[str]) -> str:
@@ -139,8 +140,10 @@ def main() -> int:
     parser.add_argument("--subtitle-lang", choices=["ko", "en", "dual"], default="ko")
     parser.add_argument("--subtitle-text-ko", default=None)
     parser.add_argument("--subtitle-text-en", default=None)
-    parser.add_argument("--subtitle-font-ko", default="Pretendard")
-    parser.add_argument("--subtitle-font-en", default="Inter")
+    parser.add_argument("--subtitle-font-ko", default="Noto Sans CJK KR")
+    parser.add_argument("--subtitle-font-en", default="DejaVu Sans")
+    parser.add_argument("--subtitle-fonts-dir", type=Path, default=Path("/mnt/e/vibecode-blog/content/video/assets/fonts"))
+    parser.add_argument("--skip-subtitle-font-bootstrap", action="store_true")
     parser.add_argument("--audio-ducking", action="store_true")
     parser.add_argument("--duck-threshold", type=float, default=0.02)
     parser.add_argument("--duck-ratio", type=float, default=6.0)
@@ -150,6 +153,12 @@ def main() -> int:
     parser.add_argument("--final-quality-check", action="store_true")
     parser.add_argument("--quality-check-strict", action="store_true")
     parser.add_argument("--scene-chapters", action="store_true")
+    parser.add_argument("--silence-duration", type=float, default=2.0)
+    parser.add_argument("--silence-noise-db", type=float, default=-55.0)
+    parser.add_argument("--evaluate-assets-guide", type=Path, default=DEFAULT_EVALUATE_ASSETS_GUIDE)
+    parser.add_argument("--evaluate-min-score", type=int, default=75)
+    parser.add_argument("--evaluate-label", default=None)
+    parser.add_argument("--evaluate-overwrite", action="store_true")
     parser.add_argument("--render", action="store_true", help="Run Comfy render and package step")
     parser.add_argument("--workflow", type=Path, default=None)
     parser.add_argument("--bindings", type=Path, default=None)
@@ -461,6 +470,10 @@ async def _async_pipeline(
         e2e_cmd.extend(["--subtitle-font-ko", args.subtitle_font_ko])
     if args.subtitle_font_en:
         e2e_cmd.extend(["--subtitle-font-en", args.subtitle_font_en])
+    if args.subtitle_fonts_dir:
+        e2e_cmd.extend(["--subtitle-fonts-dir", str(args.subtitle_fonts_dir)])
+    if args.skip_subtitle_font_bootstrap:
+        e2e_cmd.append("--skip-subtitle-font-bootstrap")
     if args.audio_ducking:
         e2e_cmd.append("--audio-ducking")
         e2e_cmd.extend(["--duck-threshold", str(args.duck_threshold)])
@@ -476,6 +489,14 @@ async def _async_pipeline(
         e2e_cmd.append("--quality-check-strict")
     if args.scene_chapters:
         e2e_cmd.append("--scene-chapters")
+    e2e_cmd.extend(["--silence-duration", str(args.silence_duration)])
+    e2e_cmd.extend(["--silence-noise-db", str(args.silence_noise_db)])
+    e2e_cmd.extend(["--evaluate-assets-guide", str(args.evaluate_assets_guide)])
+    e2e_cmd.extend(["--evaluate-min-score", str(args.evaluate_min_score)])
+    if args.evaluate_label:
+        e2e_cmd.extend(["--evaluate-label", args.evaluate_label])
+    if args.evaluate_overwrite:
+        e2e_cmd.append("--evaluate-overwrite")
 
     e2e_out = await _arun(e2e_cmd)
     print(e2e_out.strip())

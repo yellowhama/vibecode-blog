@@ -322,6 +322,10 @@ D (색감 정규화) → A (xfade 트랜지션) → C (오디오 덕킹) → B (
 --subtitles --subtitle-lang dual
 --subtitle-text-ko "한국어 전체 텍스트..."
 --subtitle-text-en "English full text..."
+--subtitle-font-ko "Noto Sans CJK KR"
+--subtitle-fonts-dir /mnt/e/vibecode-blog/content/video/assets/fonts
+# 기본은 repo-local font bootstrap on, 필요시만:
+--skip-subtitle-font-bootstrap
 
 # 오디오 덕킹
 --audio-ducking --duck-threshold 0.02 --duck-ratio 6
@@ -337,6 +341,11 @@ D (색감 정규화) → A (xfade 트랜지션) → C (오디오 덕킹) → B (
 ### 의존성
 ```bash
 pip install stable-ts pysubs2 color-matcher
+```
+
+repo-local 자막 폰트 bootstrap:
+```bash
+python3 /mnt/e/vibecode-blog/content/video/pipeline/scripts/ensure_subtitle_fonts.py
 ```
 
 ### 검증 커맨드
@@ -372,10 +381,39 @@ python3 /mnt/e/vibecode-blog/content/video/pipeline/scripts/run_end_to_end_video
   --scene-chapters
 ```
 
+자막 단독 smoke (`subtitle_pipeline.py` standalone CLI):
+```bash
+python3 /mnt/e/vibecode-blog/content/video/pipeline/scripts/subtitle_pipeline.py \
+  --video /mnt/e/vibecode-blog/content/video/output/renders/phase1_act1_ko_final_smoke_video_20260305_064043/S01_01/S01_01.mp4 \
+  --audio /mnt/e/vibecode-blog/content/video/preproduction/phase1_act1_ko_final_smoke_20260305_064040/voiceover_master_tts.wav \
+  --text-ko "스펙이 뭔지도 몰랐다" \
+  --output /mnt/e/vibecode-blog/content/video/output/logs/subtitle_smoke_phase7_repo_font.mp4
+```
+
+완화 프로파일로 Act1 재평가:
+```bash
+python3 /mnt/e/vibecode-blog/content/video/pipeline/scripts/evaluate_renders.py \
+  --run-dir /mnt/e/vibecode-blog/content/video/output/renders/phase1_act1_i2v_hunyuan_baseline_20260305_011522 \
+  --manifest /mnt/e/vibecode-blog/content/video/pipeline/manifests/phase1_act1_i2v_hunyuan_baseline_manifest.json \
+  --provider gemini \
+  --assets-guide /mnt/e/vibecode-blog/content/video/planning/03-visual_assets_guide_production_2026-03-06.md \
+  --min-score 70 \
+  --evaluation-label production_relaxed \
+  --overwrite
+```
+
 현재 기준선 상태:
 - Phase 7 synthetic smoke 3종 PASS
 - Act1 postproduction packaging PASS
-- 남은 리스크: `evaluate_renders fail=5`, `silencedetect` warning, subtitle runtime smoke 미실행
+- subtitle runtime smoke PASS (repo-local Noto font bootstrap)
+- strict guide: `pass=0 fail=5`
+- relaxed guide (`production_relaxed`): `pass=1 fail=4`
+
+운영 기본값(현재):
+- `silencedetect` default noise floor = `-55dB`
+- `--evaluate-strict` = off
+- `--quality-check-strict` = off
+- strict guide 기본 유지, 필요 시 `--evaluate-assets-guide ...03-visual_assets_guide_production_2026-03-06.md --evaluate-min-score 70`
 
 ### 사용 예시 (풀 옵션)
 ```bash
@@ -392,6 +430,7 @@ python package_for_youtube.py \
   --subtitles --subtitle-lang dual \
   --subtitle-text-ko "전체 한국어 나레이션..." \
   --subtitle-text-en "Full English narration..." \
+  --subtitle-fonts-dir assets/fonts \
   --final-quality-check \
   --scene-chapters \
   --blog-source content/blog/phase1/act1.md

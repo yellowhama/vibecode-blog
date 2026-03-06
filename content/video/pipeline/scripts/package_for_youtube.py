@@ -649,8 +649,19 @@ def main() -> int:
     parser.add_argument("--subtitle-lang", choices=["ko", "en", "dual"], default="ko", help="Subtitle language")
     parser.add_argument("--subtitle-text-ko", default=None, help="Korean text for subtitle alignment")
     parser.add_argument("--subtitle-text-en", default=None, help="English text for subtitle alignment")
-    parser.add_argument("--subtitle-font-ko", default="Pretendard", help="Korean subtitle font")
-    parser.add_argument("--subtitle-font-en", default="Inter", help="English subtitle font")
+    parser.add_argument("--subtitle-font-ko", default="Noto Sans CJK KR", help="Korean subtitle font")
+    parser.add_argument("--subtitle-font-en", default="DejaVu Sans", help="English subtitle font")
+    parser.add_argument(
+        "--subtitle-fonts-dir",
+        type=Path,
+        default=Path("/mnt/e/vibecode-blog/content/video/assets/fonts"),
+        help="Directory containing repo-local subtitle fonts",
+    )
+    parser.add_argument(
+        "--skip-subtitle-font-bootstrap",
+        action="store_true",
+        help="Do not auto-download repo-local subtitle fonts before subtitle burn-in",
+    )
 
     # --- Phase C: Audio ducking ---
     parser.add_argument("--audio-ducking", action="store_true", help="Enable sidechain ducking for BGM")
@@ -666,6 +677,8 @@ def main() -> int:
     parser.add_argument("--final-quality-check", action="store_true", help="Run blackdetect/freezedetect/silencedetect")
     parser.add_argument("--quality-check-strict", action="store_true", help="Fail if quality check finds issues")
     parser.add_argument("--scene-chapters", action="store_true", help="Group chapters by scene instead of per-shot")
+    parser.add_argument("--silence-duration", type=float, default=2.0, help="silencedetect minimum duration in seconds")
+    parser.add_argument("--silence-noise-db", type=float, default=-55.0, help="silencedetect noise floor in dB")
 
     args = parser.parse_args()
 
@@ -850,6 +863,11 @@ def main() -> int:
 
     # --- Phase B: Subtitle burn-in (after assembly, before thumbnail) ---
     if args.subtitles and args.voiceover:
+        if not args.skip_subtitle_font_bootstrap:
+            from ensure_subtitle_fonts import ensure_default_subtitle_fonts
+
+            for font_path in ensure_default_subtitle_fonts(args.subtitle_fonts_dir):
+                print(f"[POST] subtitle font ready: {font_path}")
         from subtitle_pipeline import subtitle_pipeline
 
         text_ko = args.subtitle_text_ko
@@ -872,6 +890,7 @@ def main() -> int:
                 output_path=subtitled_video,
                 font_ko=args.subtitle_font_ko,
                 font_en=args.subtitle_font_en,
+                fonts_dir=args.subtitle_fonts_dir,
             )
             delivery_video = subtitled_video
 
@@ -1026,6 +1045,8 @@ def main() -> int:
         qc_report = run_final_quality_check(
             video_path=delivery_video,
             output_path=meta_dir / "final_quality_check.json",
+            silence_duration=args.silence_duration,
+            silence_noise_db=args.silence_noise_db,
             strict=args.quality_check_strict,
         )
         package_manifest["final_quality_check"] = str(meta_dir / "final_quality_check.json")

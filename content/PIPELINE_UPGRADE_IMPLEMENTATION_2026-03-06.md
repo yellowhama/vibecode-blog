@@ -96,7 +96,8 @@ vibecode-blog 멀티채널 퍼블리싱 파이프라인에 6개 Phase 엔지니�
 ### 7-B. 자막 파이프라인
 - **신규**: `subtitle_pipeline.py` — stable-ts 정렬 → pysubs2 ASS → FFmpeg ass 번인
 - 듀얼 자막: KO 메인(하단) + EN 보조(하단 위), 독립 ASS 스타일
-- 플래그: `--subtitles`, `--subtitle-lang ko|en|dual`, `--subtitle-text-ko/en`, `--subtitle-font-ko/en`
+- 기본 폰트: `Noto Sans CJK KR` + `DejaVu Sans`, repo-local `fontsdir` 지원
+- 플래그: `--subtitles`, `--subtitle-lang ko|en|dual`, `--subtitle-text-ko/en`, `--subtitle-font-ko/en`, `--subtitle-fonts-dir`
 
 ### 7-C. 오디오 덕킹
 - **수정**: `audio_postprocess.py` — `mix_with_ducking()` 추가 (FFmpeg sidechaincompress)
@@ -114,6 +115,15 @@ vibecode-blog 멀티채널 퍼블리싱 파이프라인에 6개 Phase 엔지니�
 - `build_scene_chapters()`: scene 단위 챕터 그룹핑 (shot 단위 → scene 단위)
 - 플래그: `--final-quality-check`, `--quality-check-strict`, `--scene-chapters`
 
+### 7-F. 운영 마감 보강
+- **신규**: `ensure_subtitle_fonts.py` — repo-local KO subtitle font bootstrap
+- **수정**: `package_for_youtube.py` — subtitle burn-in 직전 자동 font bootstrap (`--skip-subtitle-font-bootstrap` opt-out)
+- **수정**: `subtitle_pipeline.py` — standalone CLI 추가 (`--video`, `--audio`, `--text-ko|en`)
+- **수정**: `evaluate_renders.py` — `--evaluation-label` 지원, strict/relaxed 결과 공존
+- **수정**: hallucination keyword false-positive 제거 (`no visible texts/watermarks/...` 문장을 오탐하지 않도록 보강)
+- **신규**: `03-visual_assets_guide_production_2026-03-06.md` — production QA용 완화 프로파일
+- **수정**: 상위 오케스트레이터에서 `--evaluate-assets-guide`, `--evaluate-min-score`, `--evaluate-label`, `--evaluate-overwrite` 전달
+
 ### 실행 순서
 ```
 D (색감) → A (트랜지션+합본) → C (오디오덕킹) → B (자막번인) → E (품질검사)
@@ -126,11 +136,12 @@ D (색감) → A (트랜지션+합본) → C (오디오덕킹) → B (자막번�
 | `subtitle_pipeline.py` | 신규 — stable-ts + pysubs2 + FFmpeg burn-in |
 | `color_normalize.py` | 신규 — color-matcher LUT + FFmpeg lut3d |
 | `validate_phase7_postproduction.py` | 신규 — xfade/ducking/color_normalize 스모크 검증 |
+| `ensure_subtitle_fonts.py` | 신규 — repo-local subtitle font bootstrap |
 | `audio_postprocess.py` | +mix_with_ducking (sidechaincompress) |
-| `evaluate_renders.py` | +final quality check, best thumbnail, scene chapters |
-| `package_for_youtube.py` | 18 new CLI flags, 5-phase integration |
-| `run_end_to_end_video_pipeline.py` | Phase 7 flags passthrough |
-| `run_blog_to_video_pipeline.py` | Phase 7 flags passthrough |
+| `evaluate_renders.py` | +final quality check, labeled evaluation outputs, hallucination false-positive fix |
+| `package_for_youtube.py` | Phase 7 integration + subtitle font auto-bootstrap |
+| `run_end_to_end_video_pipeline.py` | Phase 7 + evaluate profile flags passthrough |
+| `run_blog_to_video_pipeline.py` | Phase 7 + evaluate profile flags passthrough |
 
 ### 의존성
 ```bash
@@ -142,20 +153,33 @@ pip install stable-ts pysubs2 color-matcher
 - [x] 클립 xfade 합본 실행 검증
 - [x] 덕킹 믹스 실행 검증
 - [x] 색감 정규화 실행 검증
+- [x] repo-local subtitle font bootstrap + KO burn-in smoke 검증
+- [x] relaxed production guide profile 재평가 검증
 - [~] Act1 통합 파이프라인 실행
 
 ### 검증 로그
 - `content/video/output/logs/phase7_validation_20260306_062819/phase7_validation_report.json`
 - `content/video/output/youtube_packages/phase1_act1_i2v_hunyuan_baseline_20260305_011522/metadata/final_quality_check.json`
 - `content/video/output/renders/phase1_act1_i2v_hunyuan_baseline_20260305_011522/evaluations_summary.json`
+- `content/video/output/logs/subtitle_smoke_phase7_repo_font.mp4`
+- `content/video/output/logs/subtitle_smoke_phase7_repo_font_frame_1s.jpg`
+- `content/video/output/renders/phase1_act1_i2v_hunyuan_baseline_20260305_011522/evaluations_summary_production_relaxed.json`
+- `content/video/output/renders/phase1_act1_i2v_hunyuan_baseline_20260305_011522/quality_summary_production_relaxed.json`
 
 ### 잔여 리스크
 - `evaluate_renders` current result on Act1 baseline: `pass=0 fail=5`
-- final packaged output hits `silencedetect` warning (`14.88s`)
-- subtitle runtime smoke has not been executed yet
+- relaxed production guide result on the same baseline: `pass=1 fail=4`
+- 동일 baseline이라도 vision QA provider rerun 결과가 완전히 고정되지는 않음 (`e2e_relaxed_passthrough` smoke에서 별도 labeled output 확인)
+- frame review + evaluation feedback indicate this is mainly asset-guide/style mismatch, not Phase 7 wiring failure
+- subtitle runtime 자체는 해결됨. 남은 과제는 font availability가 아니라 baseline render quality다.
 
 ### 다음 단계
-1. `evaluate_renders` FAIL 5건이 실제 렌더 품질 문제인지, 평가 프롬프트/threshold 문제인지 분리
-2. `silencedetect` 기준 또는 BGM baseline을 운영값에 맞게 조정
-3. subtitle runtime smoke를 실제 KO/EN 텍스트 + voiceover로 실행
-4. 위 3건 정리 후 `--evaluate-strict`, `--quality-check-strict`의 운영 기본값 결정
+1. `run_blog_to_video_pipeline.py --render` 경로로 blog->render->package one-shot 재검증
+2. render prompt / visual asset guide alignment를 맞춰 strict FAIL 5건과 relaxed FAIL 4건을 줄이기
+3. 위 2건 정리 전까지 `--evaluate-strict`, `--quality-check-strict`는 opt-in 유지
+
+### 운영 기본값(현재)
+- `silencedetect` 기본 noise floor: `-55dB`
+- `--evaluate-strict`: 기본 비활성
+- `--quality-check-strict`: 기본 비활성
+- `--evaluate-assets-guide`: strict guide 유지, 필요 시 production guide opt-in

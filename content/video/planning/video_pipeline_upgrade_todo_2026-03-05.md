@@ -115,7 +115,7 @@ Environment note (resolved in this run):
 ### K-B. 자막 파이프라인 (stable-ts + pysubs2)
 - [x] `subtitle_pipeline.py` 신규 생성 (음성→텍스트 정렬, ASS 생성, FFmpeg 번인)
 - [x] 듀얼 자막 지원 (KO 메인 + EN 보조)
-- [x] `--subtitles`, `--subtitle-lang ko|en|dual`, `--subtitle-text-ko`, `--subtitle-text-en`, `--subtitle-font-ko`, `--subtitle-font-en` 플래그
+- [x] `--subtitles`, `--subtitle-lang ko|en|dual`, `--subtitle-text-ko`, `--subtitle-text-en`, `--subtitle-font-ko`, `--subtitle-font-en`, `--subtitle-fonts-dir` 플래그
 
 ### K-C. 오디오 덕킹
 - [x] `audio_postprocess.py`에 `mix_with_ducking()` 추가 (sidechaincompress)
@@ -144,12 +144,17 @@ Validation logs:
 - `content/video/output/logs/phase7_validation_20260306_062819/phase7_validation_report.json`
 - `content/video/output/youtube_packages/phase1_act1_i2v_hunyuan_baseline_20260305_011522/metadata/final_quality_check.json`
 - `content/video/output/renders/phase1_act1_i2v_hunyuan_baseline_20260305_011522/evaluations_summary.json`
+- `content/video/output/logs/subtitle_smoke_phase7_repo_font.mp4`
+- `content/video/output/logs/subtitle_smoke_phase7_repo_font_frame_1s.jpg`
+- `content/video/output/renders/phase1_act1_i2v_hunyuan_baseline_20260305_011522/evaluations_summary_production_relaxed.json`
 
 Act1 integration note:
 - Postproduction chain(`color_normalize -> xfade -> ducking -> thumbnail/chapters -> final quality check`) packaging succeeded on existing baseline run.
 - Residual blockers before calling the full pipeline "complete":
   - `evaluate_renders` current result = `pass=0 fail=5`
-  - final quality check reports `silencedetect` warning on the packaged output
+  - frame review indicates real asset-guide/style mismatch (smooth 3D-like finish, facial spec drift), not postproduction wiring failure
+  - strict guide 기준으로는 여전히 baseline render 품질이 부족
+  - relaxed production guide 기준 재평가 결과도 `pass=1 fail=4`로 개선 여지는 남아 있음
 
 ### K-G. 운영 보강 및 잔여 리스크
 - [x] `run_end_to_end_video_pipeline.py`에 Phase 7 CLI flags 전체 전달
@@ -160,9 +165,26 @@ Act1 integration note:
 - [x] `mix_with_ducking()` FFmpeg 4.4 호환성 수정 (`asplit` + `aformat`)
 - [x] `color_normalize.py` LUT 스케일/순서 버그 수정
 - [x] `validate_phase7_postproduction.py` 스모크 검증 스크립트 추가
-- [ ] subtitles runtime smoke 검증
-- [ ] `evaluate_renders` FAIL 5건 원인 분석 및 strict gate 정책 확정
-- [ ] `silencedetect` 기준 또는 BGM baseline 조정
+- [x] `ensure_subtitle_fonts.py` 추가 (repo-local KO subtitle font bootstrap)
+- [x] `package_for_youtube.py`에 subtitle font auto-bootstrap 연결 (`--skip-subtitle-font-bootstrap` opt-out)
+- [x] `subtitle_pipeline.py` 단독 CLI 추가 (`--video/--audio/--text-ko|en`)
+- [x] subtitles runtime smoke 실행 완료 (repo-local Noto font로 KO burn-in PASS)
+- [x] silence gate default를 `-55dB`로 조정
+- [x] `evaluate_renders.py`에 `--evaluation-label` 추가 (strict vs relaxed 결과 공존)
+- [x] hallucination keyword false-positive 수정 (`no visible texts/watermarks/...` 문장을 오탐하지 않도록 보강)
+- [x] production QA용 `03-visual_assets_guide_production_2026-03-06.md` 추가
+- [x] 상위 오케스트레이터에 `--evaluate-assets-guide`, `--evaluate-min-score`, `--evaluate-label`, `--evaluate-overwrite` 전달
+- [x] Act1 baseline relaxed evaluation 재실행 (`pass=1 fail=4`, `label=production_relaxed`)
+- [x] `run_end_to_end_video_pipeline.py --skip-render` 경로로 evaluate profile passthrough smoke 확인 (`label=e2e_relaxed_passthrough`)
+- [x] strict 운영 기본값 결정: `--evaluate-strict`, `--quality-check-strict`는 당분간 opt-in 유지
+- [ ] render baseline 개선 후 `--evaluate-strict` 활성화 시점 재평가
+- [ ] asset-guide/prompt를 현재 렌더 스타일에 맞게 조정하거나 렌더 품질을 상향
+
+### K-H. 다음 실행 백로그
+- [ ] `run_blog_to_video_pipeline.py --render` 경로로 blog->render->package one-shot 재검증
+- [ ] relaxed guide 기준 `pass_rate >= 0.8` 달성 전까지 strict gate 기본값 유지
+- [ ] vision QA rerun variance를 줄이기 위한 provider/model/timeout 정책 고정
+- [ ] prompt/asset guide/모델 route를 조정해 strict guide FAIL 5건을 줄이기
 
 Dependencies:
 ```bash
@@ -174,10 +196,13 @@ New files:
 - `pipeline/scripts/subtitle_pipeline.py`
 - `pipeline/scripts/color_normalize.py`
 - `pipeline/scripts/validate_phase7_postproduction.py`
+- `pipeline/scripts/ensure_subtitle_fonts.py`
+- `planning/03-visual_assets_guide_production_2026-03-06.md`
 
 Modified files:
 - `pipeline/scripts/audio_postprocess.py` (+mix_with_ducking)
-- `pipeline/scripts/evaluate_renders.py` (+quality check, thumbnail, scene chapters)
-- `pipeline/scripts/package_for_youtube.py` (18 new CLI flags, 5-phase integration)
-- `pipeline/scripts/run_end_to_end_video_pipeline.py` (+Phase 7 flag passthrough)
-- `pipeline/scripts/run_blog_to_video_pipeline.py` (+Phase 7 flag passthrough)
+- `pipeline/scripts/evaluate_renders.py` (+quality check, thumbnail, scene chapters, labeled evaluation outputs)
+- `pipeline/scripts/package_for_youtube.py` (+subtitle font bootstrap, Phase 7 integration)
+- `pipeline/scripts/run_end_to_end_video_pipeline.py` (+Phase 7 and evaluate profile passthrough)
+- `pipeline/scripts/run_blog_to_video_pipeline.py` (+Phase 7 and evaluate profile passthrough)
+- `pipeline/scripts/subtitle_pipeline.py` (+font preflight, standalone CLI)

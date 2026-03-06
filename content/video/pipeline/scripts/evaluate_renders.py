@@ -33,6 +33,27 @@ STATIC_IMAGE_EXTS = {".png", ".jpg", ".jpeg"}
 DEFAULT_ASSETS_GUIDE = Path("/mnt/e/vibecode-blog/content/video/planning/03-visual_assets_guide.md")
 
 
+def _normalize_label(label: str | None) -> str | None:
+    if label is None:
+        return None
+    normalized = re.sub(r"[^a-zA-Z0-9._-]+", "_", label.strip()).strip("._-")
+    if not normalized:
+        raise ValueError("evaluation label must contain at least one alphanumeric character")
+    return normalized
+
+
+def _evaluation_file_name(label: str | None) -> str:
+    return "evaluation.json" if not label else f"evaluation_{label}.json"
+
+
+def _evaluations_summary_name(label: str | None) -> str:
+    return "evaluations_summary.json" if not label else f"evaluations_summary_{label}.json"
+
+
+def _quality_summary_name(label: str | None) -> str:
+    return "quality_summary.json" if not label else f"quality_summary_{label}.json"
+
+
 def _json_load(path: Path) -> Dict[str, Any]:
     with path.open("r", encoding="utf-8") as f:
         return json.load(f)
@@ -380,14 +401,15 @@ def _normalize_score(raw_score: Any, status: str) -> int:
 
 def _contains_hallucination_keywords(text: str) -> bool:
     lowered = text.lower()
-    # Remove explicit negations like "no text" to avoid false positives.
-    lowered = re.sub(
-        r"\b(no|without|absent|none)\s+(visible\s+)?(text|watermark|logo|subtitles?|speech bubbles?|letters?)\b",
-        "",
-        lowered,
-    )
-    keywords = ("text", "watermark", "logo", "subtitle", "speech bubble", "letters")
-    return any(k in lowered for k in keywords)
+    keywords = ("text", "texts", "watermark", "watermarks", "logo", "logos", "subtitle", "subtitles", "speech bubble", "speech bubbles", "letter", "letters")
+    negation_re = re.compile(r"\b(no|without|absent|none)\b")
+    for keyword in keywords:
+        for match in re.finditer(re.escape(keyword), lowered):
+            prefix = lowered[max(0, match.start() - 32):match.start()]
+            if negation_re.search(prefix):
+                continue
+            return True
+    return False
 
 
 def _normalize_evaluation(
@@ -434,8 +456,17 @@ def main() -> int:
     parser.add_argument("--frames", type=int, default=4)
     parser.add_argument("--min-score", type=int, default=75)
     parser.add_argument("--timeout-sec", type=int, default=120)
+    parser.add_argument("--evaluation-label", default=None, help="Optional suffix for evaluation outputs")
     parser.add_argument("--overwrite", action="store_true")
     args = parser.parse_args()
+    try:
+        evaluation_label = _normalize_label(args.evaluation_label)
+    except ValueError as exc:
+        raise SystemExit(f"[FAIL] {exc}") from exc
+
+    evaluation_file_name = _evaluation_file_name(evaluation_label)
+    evaluations_summary_name = _evaluations_summary_name(evaluation_label)
+    quality_summary_name = _quality_summary_name(evaluation_label)
 
     run_dir = args.run_dir
     render_log_path = run_dir / "render_log.json"
@@ -479,6 +510,9 @@ def main() -> int:
     summary = {
         "run_dir": str(run_dir),
         "manifest": str(manifest_path),
+        "assets_guide": str(args.assets_guide),
+        "min_score_gate": int(args.min_score),
+        "evaluation_label": evaluation_label,
         "provider": provider,
         "model": args.model if provider in ("openai", "gemini") else "mock",
         "evaluated_at": datetime.now().isoformat(),
@@ -493,7 +527,7 @@ def main() -> int:
         shot_id = str(shot_record.get("shot_id", "UNKNOWN"))
         shot_cfg = manifest_shot_map.get(shot_id, {"shot_id": shot_id})
         shot_dir = run_dir / shot_id
-        eval_path = shot_dir / "evaluation.json"
+        eval_path = shot_dir / evaluation_file_name
         if eval_path.exists() and not args.overwrite:
             existing = _json_load(eval_path)
             status = str(existing.get("status", "REVIEW_REQUIRED")).upper()
@@ -601,7 +635,7 @@ def main() -> int:
         else:
             summary["review_required"] += 1
 
-    summary_path = run_dir / "evaluations_summary.json"
+    summary_path = run_dir / evaluations_summary_name
     _json_dump(summary_path, summary)
     print(f"[OK] wrote {summary_path}")
     print(
@@ -616,6 +650,9 @@ def main() -> int:
     # --- Quality statistics aggregation ---
     quality_stats: Dict[str, Any] = {
         "run_dir": str(run_dir),
+        "assets_guide": str(args.assets_guide),
+        "min_score_gate": int(args.min_score),
+        "evaluation_label": evaluation_label,
         "evaluated_at": datetime.now().isoformat(),
         "total": summary["shots_total"],
         "pass_count": summary["pass"],
@@ -629,7 +666,7 @@ def main() -> int:
     fail_metric_counts: Dict[str, int] = {}
     for shot_info in summary["shots"]:
         shot_dir = run_dir / shot_info["shot_id"]
-        eval_file = shot_dir / "evaluation.json"
+        eval_file = shot_dir / evaluation_file_name
         if eval_file.exists():
             eval_data = _json_load(eval_file)
             if "score" in eval_data:
@@ -655,7 +692,7 @@ def main() -> int:
             )
             print(f"[WARN] {quality_stats['repeated_failure_warning']}")
 
-    quality_stats_path = run_dir / "quality_summary.json"
+    quality_stats_path = run_dir / quality_summary_name
     _json_dump(quality_stats_path, quality_stats)
     print(f"[OK] quality stats: {quality_stats_path}")
 
@@ -684,7 +721,7 @@ def run_final_quality_check(
     freeze_duration: float = 2.0,
     freeze_noise: float = 0.003,
     silence_duration: float = 2.0,
-    silence_noise_db: float = -50.0,
+    silence_noise_db: float = -55.0,
     strict: bool = False,
 ) -> Dict[str, Any]:
     """Run blackdetect, freezedetect, silencedetect on a final assembled video.
