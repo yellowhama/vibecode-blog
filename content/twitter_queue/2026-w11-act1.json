@@ -35,7 +35,7 @@
       "title": "[FDD Diary #005] Frustration Is the Spec",
       "source": "easy_peasy/phase1/en/act1-4-en.md",
       "scheduledAt": "2026-03-07T17:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "They said I need to write a spec.\n\nSpec? Like phone specs?\nRAM, storage, screen resolution?\n\nI'm not a developer.\nNever opened a document and typed \"1. System Overview.\"\n\nFDD Diary #005 🧵",
         "Searched for how to write specs.\nSRS. PRD. Functional specs.\nAll developer documents.\n\n\"Non-functional requirements\" — what?\n\"System constraints\" — what?\n\nI started vibe coding because I didn't want to learn coding.\nNow you're telling me to learn spec writing?",
@@ -43,8 +43,14 @@
         "I got pissed. Asked questions. Fought. Organized.\n\nAnd the spec was already there.\n\nPurpose: Multiple computers as one.\nReason: Nothing works. Everything half-assed.\nMethod: Direct P2P. QUIC tunnels.\nMeans: Open-source. MIT verified.\n\nFour things. That's a spec.",
         "It doesn't come from a whiteboard in a conference room.\nIt comes from \"why the hell doesn't this work.\"\n\nFrustration is the Spec.\n\nhttps://vibecode.town/posts/frustration-is-the-spec"
       ],
-      "postedIds": [],
-      "postedAt": null,
+      "postedIds": [
+        "2030331469290205575",
+        "2030331479054483698",
+        "2030331488382701921",
+        "2030331497714966656",
+        "2030331507097702833"
+      ],
+      "postedAt": "2026-03-07T17:15:27.826Z",
       "error": null
     },
     {
