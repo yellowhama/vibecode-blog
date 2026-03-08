@@ -60,7 +60,7 @@
       "title": "[FDD Diary #006] Everything Changed",
       "source": "easy_peasy/phase1/en/act1-4-en.md",
       "scheduledAt": "2026-03-08T17:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Once I had the spec, everything changed.\n\nDay one.\nAI tried to install a cloud SDK.\nShowed it the spec.\n\"It says no cloud. Right there.\"\n\nFor the first time, the AI was following MY spec.\n\nFDD Diary #006 🧵",
         "And I could delete things.\nFor the first time, I could actually delete code.\n\nOpened the ten-thousand-line codebase.\nFound something not in the spec. Deleted it.\nFound another. Deleted that too.\n\nThree thousand lines left.\nApp didn't break. It got faster.",
@@ -68,8 +68,14 @@
         "But reality doesn't follow specs perfectly.\n\nGot punched. Fixed it. Wrote it down.\n\nMade a file called PROBLEMS.md.\nEvery time something breaks, write it down.\nOne week later, same problem.\nOpened the file. Fixed in five seconds.\n\nSpecs are living documents.",
         "Better prompts aren't the answer.\nBetter AI tools aren't the answer.\nKnowing what you're building is the answer.\n\nSpecs don't come from conference rooms.\nThey come from the grind.\n\nhttps://vibecode.town/posts/frustration-is-the-spec"
       ],
-      "postedIds": [],
-      "postedAt": null,
+      "postedIds": [
+        "2030694281384517995",
+        "2030694290918125712",
+        "2030694300397298063",
+        "2030694309880553626",
+        "2030694319254872465"
+      ],
+      "postedAt": "2026-03-08T17:17:09.000Z",
       "error": null
     }
   ]
