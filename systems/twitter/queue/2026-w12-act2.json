@@ -10,7 +10,7 @@
       "title": "[FDD Diary #7] I Wrote a Spec. So What.",
       "source": "easy_peasy/phase1/en/act2-1-en.md",
       "scheduledAt": "2026-03-16T14:00:00Z",
-      "status": "draft",
+      "status": "approved",
       "content": [
         "Fifteen pages of spec.\nPurpose, reason, method, means.\nThrew it at Claude.\n\"Build this according to the spec.\"\n\nFirst day. Build blew up. Timeout.\nSecond day. Code collision. Existing code I forgot about.\nThird day. A working feature stopped working.\n\nThree days straight. All failures.\nI had a spec.\n\n\"Everyone has a plan until they get punched in the mouth.\"\nMike Tyson said that.\nThis was exactly that situation.",
         "Was the spec the problem?\nNo. The spec was fine.\n\nBut the spec only said \"what to build.\"\nWhat would break in reality wasn't in there.\nCouldn't have been. Nothing had broken yet.\n\nSo I made a `PROBLEMS.md`.\nEvery time I got punched, I wrote it down.\n\"Where I got hit. Why I got hit. How I dodged it.\"\n\nDay one: build timeout. Fix: split build config.\nDay two: code collision. Fix: add feature inventory.\nDay three: dependency mutation. Fix: add dependency map.\n\nWrote it down. Then I could see.\nThe pattern emerged.",
@@ -27,7 +27,7 @@
       "title": "[FDD Diary #8] 28 Left Arms",
       "source": "easy_peasy/phase1/en/act2-2-en.md",
       "scheduledAt": "2026-03-18T14:00:00Z",
-      "status": "draft",
+      "status": "approved",
       "content": [
         "\"Make me a left arm.\"\nAI made one. But didn't remove the old one.\nNext day. \"Fix the left arm.\" Another new arm.\nDay after. Another.\n\nA week later. Twenty-eight left arms.\nLeft arms on the legs. Left arms on the back.\nNineteen deactivated. Six never discovered.\nEvery feature exists. Just can't walk.\n\nStarted with one spec document.\nA week later, thirty.\n\nspec_v1.md\nspec_v3_final.md\nspec_v3_final_real.md\nspec_v3_final_real_2.md\n\nNo idea which one was right.",
         "Asked the AI. \"Why do you keep making new files?\"\n\n\"Modifying the existing file could result in loss of previous content. For safety, I generated a new version.\"\n\nSafety? Thirty files is safety?\n\nBut from the AI's perspective, it's right.\nDelete something, responsibility kicks in.\nAI can't take responsibility.\nSo it doesn't delete. It creates.\n\nImplementation is free.\nCleanup costs money.\n\nYesterday's Claude did the work.\nToday's GPT has to dig through it.\nNot coding anymore. Archaeology.",
@@ -44,7 +44,7 @@
       "title": "[FDD Diary #9] The Blind Genius",
       "source": "easy_peasy/phase1/en/act2-2-en.md",
       "scheduledAt": "2026-03-20T14:00:00Z",
-      "status": "draft",
+      "status": "approved",
       "content": [
         "AI is a genius with no eyes.\n\nDoesn't know what's in the project.\nEvery session, a new hire walks in.\nDoesn't know what happened yesterday.\nSo it builds again.\n\nThree eggs in the fridge.\nGo to the store without a shopping list.\nBuy three more eggs.\nCome home to six eggs.\n\nAI isn't dumb.\nThere's no shopping list.",
         "So I made a shopping list.\n\nHad the AI scan all files and catalog what exists.\nFive minutes.\n\nAfter that, everything changed.\n\"Build this\" -- and the AI checks first.\n\"Something similar already exists. Should I modify it?\"\n\nNever heard that before.\nWhy? Because the AI didn't know what was there.\n\nWith docs: genius.\nWithout docs: blind genius.",

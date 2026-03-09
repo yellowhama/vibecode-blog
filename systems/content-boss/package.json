@@ -1,0 +1,13 @@
+{
+  "name": "vibecode-content-boss",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "approve": "node auto-approve.mjs",
+    "produce": "node weekly-produce.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  }
+}

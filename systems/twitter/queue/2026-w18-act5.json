@@ -10,7 +10,7 @@
       "title": "[FDD Diary #25] The Trap After the Spec",
       "source": "easy_peasy/phase1/en/act5-1-en.md",
       "scheduledAt": "2026-04-28T14:00:00Z",
-      "status": "draft",
+      "status": "approved",
       "content": [
         "Got a spec. Got a process. Got structure. Got tests.\nThought I was ready.\n\nSix things in the spec.\n\"Build all of this.\"\nIt blew up.\n\nBuild six things at once, six things blow up at once.\nFile sync collided with remote commands.\nGPU module tangled with monitoring.\nAlerts had nothing to connect to.\n\nA spec is a map.\nBut you can't walk every road at the same time.",
         "What should I build first?\n\nEverything's important. Everything's needed.\nBut not at the same time.\n\nRemembered what I wanted in the first place.\nThree computers working like one.\n\nGPU sharing? Later.\nAuto-recovery? Later.\n\nRight now, one thing.\nSend a job from my laptop to the desktop.\nGet the result back.\n\nIf that works, everything else can be added.\nIf that doesn't work, nothing else matters.",
@@ -27,7 +27,7 @@
       "title": "[FDD Diary #26] UX Is Not Design",
       "source": "easy_peasy/phase1/en/act5-2-en.md",
       "scheduledAt": "2026-04-30T14:00:00Z",
-      "status": "draft",
+      "status": "approved",
       "content": [
         "\"UX? Isn't that a design term?\"\nNo.\n\niPhone. Unlock. Tap. Done. Good UX.\niMac. Settings three times. Permission. Update. Bad UX.\n\nUX is not design.\nUX is the experience you desperately want.\n\nOpen my laptop at a cafe.\nNeed a file from home.\nIt's not there.\n\"Shit.\"\n\nEliminating that moment.\nThat's my UX.",
         "Specs define what to build.\nUX defines how you experience it.\n\n\"File sync\" is a spec.\n\"Open it at the cafe and it's there\" is UX.\n\nBuild from the system perspective only:\n\"Sync success: 1,247 files. 3 conflicts — resolve manually.\"\nFeature runs. But it's infuriating.\n\nBuild from the human perspective:\nOpen the laptop. File's there. Done.\nConflicts? Handled. Message? Don't need it.\n\n\"It's there.\" That's all.",
@@ -44,7 +44,7 @@
       "title": "[FDD Diary #27] AI Gives You Boundaries",
       "source": "easy_peasy/phase1/en/act5-3-en.md",
       "scheduledAt": "2026-05-01T14:00:00Z",
-      "status": "draft",
+      "status": "approved",
       "content": [
         "\"SSH?\" \"Yes. Not behind NAT.\"\n\"Port forwarding?\" \"Yes. Security risk.\"\n\"VPN?\" \"Yes. Slow.\"\n\"QUIC?\" \"Yes. Blocked on some networks.\"\n\nTwenty rounds of ping-pong.\n\nEvery \"no\" got a \"why.\"\n\"No\" ten times. \"Why\" ten times.\n\nAI doesn't give you the answer.\nAI tells you one fix for one problem.\nTouch a different condition — \"that won't work\" pops up.\n\nWhat AI gave me wasn't a solution.\nIt was a boundary.\n\nEvery boundary turned out to be a requirement.",
         "Twenty rounds. Chat gets long.\nMost people open a new chat.\nStart from scratch.\n\nWrong.\n\nThe conversation itself is the research.\nThe fight is the data.\nDon't throw it away.\n\nGather the records. Bring them back to AI.\nThis time AI answers differently.\nBecause this time there's context.\n\nNew chat — AI is a new hire.\nSame chat with context — AI is a colleague.\nSame AI. Different context.",

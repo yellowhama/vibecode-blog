@@ -10,7 +10,7 @@
       "title": "[FDD Diary #22] Change, Confirm, Breathe",
       "source": "easy_peasy/phase1/en/act4-3-en.md",
       "scheduledAt": "2026-04-21T14:00:00Z",
-      "status": "draft",
+      "status": "approved",
       "content": [
         "Change code.\nTests confirm it.\nConfirmed, so I change more with confidence.\nMore changes, cleaner code.\nClean code breeds new features.\nNew features get new tests.\n\nChange -- confirm -- breathe -- change again.\n\nThat loop spins.\nWithout fear.",
         "The fear didn't vanish.\nI got a way to check the fear.\n\n\"Something's going to break.\"\nRun tests.\n\"Nothing broke.\"\nKeep going.\n\nChanging code used to scare me.\nNot scared anymore.\nScared? Run the tests.\nThirty seconds later, the answer's there.\n\nThat's freedom."
@@ -26,7 +26,7 @@
       "title": "[FDD Diary #23] Three Things Become One",
       "source": "easy_peasy/phase1/en/act4-4-en.md",
       "scheduledAt": "2026-04-23T14:00:00Z",
-      "status": "draft",
+      "status": "approved",
       "content": [
         "New feature. QUIC tunnel fails, auto-switch to HTTP.\n\nBefore, I would've just started.\n\"Just build it.\"\n\nNot anymore.\n\nWrite it down first.\n\"When QUIC drops, auto-switch to HTTP. User doesn't notice.\"\n\nName the place first.\nNetwork world. Transport folder.\nNot notifications. Not user settings.\n\nWrite the tests first.\n\"Switch within 3 seconds. No data loss. Session persists.\"\n\nThen start implementing.",
         "Three days. Done.\n\nAll tests passed.\nNo other features broke.\n6,260 -- all PASS.\n\nLanded clean inside the transport folder.\nDidn't touch notification code.\nDidn't touch user code.\n\nWhat would've happened before?\nNo spec. AI shoves network logic inside notifications.\nNo tests. Blows up the next day.\nTwo weeks. Three blowups.\n\nThree days versus two weeks.\nThe difference isn't skill. It's sequence.",
@@ -43,7 +43,7 @@
       "title": "[FDD Diary #24] Frustration Becomes the System",
       "source": "easy_peasy/phase1/en/act4-4-en.md",
       "scheduledAt": "2026-04-25T14:00:00Z",
-      "status": "draft",
+      "status": "approved",
       "content": [
         "All of it came from yak shaving.\n\nDidn't learn this from textbooks.\nBuilds blew up.\nTwenty-eight left arms appeared.\nFix one, three more break.\nLying awake at night thinking \"is this even right?\"\n\nThe rabbit holes created the questions.\nThe questions found the concepts.\nThe concepts got names.\nSDD. DDD. TDD.",
         "I'm not a developer.\nStill not.\n\nCan't read code.\nThat hasn't changed.\n\nBut I know three things.\n\nWrite down what you're building first.\nName where it goes.\nSet the bar for done first.\n\nWith these three things,\nI can build with AI.\n\nWithout them, it's luck.\nWith them, it's a system.",

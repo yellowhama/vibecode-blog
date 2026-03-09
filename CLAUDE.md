@@ -240,6 +240,39 @@ prepro_manifest.json
 
 ---
 
+## Content Boss (자율 콘텐츠 운영)
+
+### 아키텍처
+```
+일요일 08:00 UTC: weekly-report.yml → feedback-context.md 갱신
+일요일 10:00 UTC: content-boss.yml  → Claude API → 큐 JSON 생성
+                                    → auto-approve → PR 생성
+유저:             PR 확인 (5분) → 머지
+평일:             twitter-post.yml (30분 cron) → approved 항목 자동 발행
+매일 06:00 UTC:   twitter-analytics.yml → 메트릭 수집 → 리포트 + 피드백
+```
+
+### 파일 구조
+| 경로 | 역할 |
+|------|------|
+| `systems/content-boss/package.json` | `@anthropic-ai/sdk` 의존성 |
+| `systems/content-boss/auto-approve.mjs` | 큐 아이템 자동 검증 (금지표현, 링크, 시간참조, 4줄) |
+| `systems/content-boss/weekly-produce.mjs` | Claude API로 다음 주 큐 생성 |
+| `systems/content-boss/prompts/twitter-system.md` | 생성 시스템 프롬프트 (voice+narrative+strategy 핵심) |
+| `systems/content-boss/logs/` | 생성 실패 시 에러 로그 |
+| `.github/workflows/content-boss.yml` | 일요일 10:00 UTC cron + workflow_dispatch |
+
+### GitHub Secrets (필요)
+`ANTHROPIC_API_KEY` — Claude API 호출용 (content-boss.yml)
+
+### 검증 규칙 (auto-approve.mjs)
+1. 금지 표현: game-changer, deep dive, unpack, Furthermore, In conclusion, utilize, facilitate, leverage, "I think maybe", "I write about", "In this article"
+2. 링크/CTA: http(s), .com/.town/.pro, "check out", "read more", "more at", "link in bio"
+3. 시간 참조: "six months", "months ago", N months, N weeks
+4. "4줄" 표현: "four lines", "4줄", "four-line"
+
+---
+
 ## 상세페이지 자동화 키트 (퍼블리 투고용)
 
 - 키트 루트: `systems/pitch/automation/`

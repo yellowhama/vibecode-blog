@@ -10,7 +10,7 @@
       "title": "[FDD Diary #19] Manual Testing Hell",
       "source": "easy_peasy/phase1/en/act4-1-en.md",
       "scheduledAt": "2026-04-14T14:00:00Z",
-      "status": "draft",
+      "status": "approved",
       "content": [
         "Changed the notification text.\nCheck everything again.\nLogin. Agent. Notification. Settings.\nThirty minutes.\n\nAnother fix. Everything again. Thirty minutes.\nAnother fix. Everything again. Thirty minutes.\n\n\"Do I have to check everything every time I make a change?\"\n\nYes.\nBecause if you don't, you won't know what broke.",
         "Around the fifth check, things change.\n\n\"This has nothing to do with what I just changed.\"\n\"This one probably didn't break.\"\n\nSkip it.\nThat's exactly the door bugs walk through.\n\nWillpower runs out.\nFifth check -- focus drops.\nTenth -- you start skimming.\nTwentieth -- you stop looking.\n\nManual testing isn't a time problem.\nIt's a willpower problem.",
@@ -27,7 +27,7 @@
       "title": "[FDD Diary #20] Defining Done",
       "source": "easy_peasy/phase1/en/act4-2-en.md",
       "scheduledAt": "2026-04-16T14:00:00Z",
-      "status": "draft",
+      "status": "approved",
       "content": [
         "Asked the AI.\n\"I don't want to check everything every time.\"\n\"Write tests.\"\n\nTests? I can't read code. Tests are code.\nHow am I supposed to do that?\n\n\"A test is writing down 'if this works, it's done.'\"\n\nWait.\n\nSpec: \"When a user logs in, the dashboard appears.\"\nThat's what you're building.\n\nTest: \"Click login. Dashboard appears. Username displayed.\"\nThat's how you confirm it's built.\n\nSpec is the destination.\nTest is the arrival confirmation.",
         "The key is you write it first.\n\nNot after writing code.\nBefore.\n\n\"Login shows the dashboard.\"\nWrite that down first.\nCode passes this bar? \"Done.\"\nDoesn't pass? \"Not done.\"\n\nNo bar means you can't tell \"done\" from \"probably done.\"\n\nTDD. Test-Driven Development.\nAnother grand name. Simple essence.\nSetting the bar for \"done\" first.",
@@ -44,7 +44,7 @@
       "title": "[FDD Diary #21] 6,260 Safety Nets",
       "source": "easy_peasy/phase1/en/act4-3-en.md",
       "scheduledAt": "2026-04-18T14:00:00Z",
-      "status": "draft",
+      "status": "approved",
       "content": [
         "Started with five tests. Ran them. Thirty seconds. All passed.\n\nFive became fifty. Fifty became five hundred.\nRun five hundred. One minute. All pass.\n\n\"If even one out of five hundred fails, something's broken.\"\nOne minute. Automatic.\n\nThat code I just changed. Did it break anything?\nRun tests. Thirty seconds. All PASS.\n\"Nope.\"\n\nHard to describe that moment.\n\"Safe to change.\"\nThat certainty. Never had it before.",
         "Now there are 6,260 tests.\n849 in Rust. 5,411 in TypeScript.\nRun them all in one minute.\n\nOne minute confirms 6,260 features are correct.\n\n\"Can I delete this function?\"\nRun tests. All pass. Yes, delete it.\n\n\"Can I restructure this?\"\nRun tests. Three fail. Fix three. Run again. All pass.\nYes, restructure it.\n\nWithout tests, I was too scared to touch anything.\nWith tests, I cut without hesitation.\n\nTests aren't feature verification.\nThey're courage.",
