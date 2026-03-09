@@ -134,13 +134,65 @@ Our target: **Vibe coders** — people who can't read code but build with AI. Th
 | Audience Resonance | **5** | "I can't read code" "copy-paste→error loop" "AI wrote it. I approved it." — direct vibe coder mirror |
 | **TOTAL** | **23/25** | **Grade A — Production ready** |
 
-### Act 1-1: "I Thought It Worked" (act1-1-en.md)
+### Act 2: "I Thought the Spec Was Enough" (act2-en.md)
 
-*Pending evaluation*
+| Axis | Score | Evidence |
+|---|---|---|
+| Hook & Retention | **4** | "For the first time, I felt confident. Fifteen pages." — setup-for-a-fall hook. Open loop: "This time it's different" (it's not). Mike Tyson punch quote as twist. Slower than Act 1's instant identity hook |
+| Narrative Arc | **5** | Context (spec confidence) → Conflict (3 days of explosions, 28 left arms, Python/TS mismatch) → Climax (manual loop drudgery, "do I have to do this every time?") → Conclusion (SDD discovery, CLAUDE.md) → Change (40%→5% error, 3hr→45min). Textbook 5C's |
+| Visual Metaphor | **4** | Strong: 28 left arms (clay limbs everywhere — signature scene), spec files multiplying (papers piling), eggs in fridge (shopping list), PROBLEMS.md as punch diary. Weak: SSOT explanation is abstract, "words evaporate / environment stays" is conceptual. ~65-70% mappable |
+| Beat Pacing | **4** | 355 lines, ~18 natural sections. Clear scene breaks. Some mid-sections (SSOT, SDD explanation) could drag. Fits 3-5 min, needs compression for 2-4 target |
+| Audience Resonance | **5** | "Thirty files is safety?" "Yesterday's Claude / Today's GPT = archaeology" "AI picks a different tech every time" — direct vibe coder pain. "Words evaporate. Environment stays." — actionable. High shareability |
+| **TOTAL** | **22/25** | **Grade A — Production ready** |
 
-### Act 2~5
+**Production notes**: The "28 left arms" scene is the visual centerpiece — commit to it for 30+ seconds of extended claymation. SSOT/SDD explanations need visual reinterpretation (e.g., one glowing document vs. 30 scattered papers). The Mike Tyson moment could be a clay punch visual gag.
 
-*Pending evaluation*
+---
+
+### Act 3: "Why Code Tangles" (act3-en.md)
+
+| Axis | Score | Evidence |
+|---|---|---|
+| Hook & Retention | **4** | "Had to add a new feature. Opened the code. No idea where to put it." — situational hook, immediately relatable. Open loop: why is code in the wrong places? "Fix one thing, three things break" — strong turn. Opening less punchy than Act 1 |
+| Narrative Arc | **5** | Context (code growing, nowhere to put things) → Conflict (circular dependency A→B→C→A, fix one break three) → Climax ("I didn't create the bugs. The structure is the bug.") → Conclusion (DDD discovery, domain splitting, Rust compiler enforcement) → Change (3000→300 lines to debug, Friday→Monday agent death as new fear). Exceptional emotional curve: confusion → frustration → revelation → structure → new fear |
+| Visual Metaphor | **5** | Exceptional density. Apartment with no walls (cook→grease on bed), tangled wires snapping when walls go up, building literal walls, electricity through the fence (Rust compiler), reaching over wall to open someone else's fridge, folder names as drawer labels. The apartment metaphor is PERFECT for extended claymation — one scene, evolving chaos → order. 75%+ directly mappable |
+| Beat Pacing | **4** | 350 lines, ~16 sections. Strong rhythm: problem→diagnosis→attempt→pain→solution→test. DDD naming section could drag slightly in video form. Fits 3-5 min well |
+| Audience Resonance | **5** | "Fix one thing, three things break" — universal dev/vibe-coder pain. "No idea where to put it" — every non-coder building with AI. "`as any` bypasses everything" — specific, lived experience. Friday→Monday dead agent — visceral "that's literally me" moment |
+| **TOTAL** | **23/25** | **Grade A — Production ready** |
+
+**Production notes**: Best visual metaphor density of all acts. The apartment-with-no-walls scene should be the extended centerpiece (Kurzgesagt-style single metaphor commitment). The "electricity through the fence" (Rust compiler) is a strong visual gag for claymation. This act may produce the most visually compelling video of the series.
+
+---
+
+### Act 4: "I Don't Know If It's Right" (act4-en.md)
+
+| Axis | Score | Evidence |
+|---|---|---|
+| Hook & Retention | **4** | "Shipped a new feature. Checked it. It worked. Next day. A different feature was dead." — strong setup→reversal. Open loop: how do you know it's really right? "Tests as courage" is a satisfying twist. Solid but predictable arc |
+| Narrative Arc | **5** | Context (manual checking, growing features) → Conflict (willpower problem, "scared to touch code", code hardens) → Climax (6,260 tests → 69 production issues → "not panic, a list") → Conclusion (SDD+DDD+TDD = three frameworks, QUIC feature in 3 days) → Change ("Frustration becomes the spec. Specs become the system. Systems become freedom.") Strong landing |
+| Visual Metaphor | **3** | Decent: Schrodinger's box (clay box with question mark), manual clicking (clay figure at desk, repetitive), 50 boxes to open (literal boxes), dead cat in box, 6260→6329 counter. Weak: TDD explanation mid-section is conceptual ("spec is destination, test is arrival confirmation" = hard to visualize). "Seoul Station test" is verbal. ~50-55% mappable — needs significant creative reinterpretation |
+| Beat Pacing | **4** | 203 lines, ~10 sections — tightest act. Good rhythm, natural 2-3 min fit. TDD explanation section risks feeling lecture-y on video. The QUIC feature example at the end is a strong concrete beat |
+| Audience Resonance | **5** | "Manual testing is a willpower problem" — universal truth. "Tests aren't verification. They're courage." — powerful reframe. "I can't read code. But I can write 'if this works, it's done.'" — exact vibe coder situation. "Decisions are mine. Implementation is the AI's. Verification is the test's." — quotable manifesto line |
+| **TOTAL** | **21/25** | **Grade B — Strong candidate, minor adaptation needed** |
+
+**Production notes**: Visual metaphor gap is the main weakness. TDD concept needs invented visuals: suggest a "clay quality gate" — character pushes creation through a glowing checkpoint, green light = pass, red = reject and rebuild. The Schrodinger's box scene has physical comedy potential (character afraid to open box). The 6,260 counter can be a wall of tiny clay checkmarks filling the screen. Consider merging with Act 3's Friday/Monday scene as a callback.
+
+---
+
+### Act 5: "AI Writes the Code, I Design the Experience" (act5-en.md)
+
+| Axis | Score | Evidence |
+|---|---|---|
+| Hook & Retention | **3** | "Got a spec. Got a process. Got structure. Got tests. Thought I was ready. It blew up." — decent setup→reversal but feels like recap of earlier acts. Open loop: "What is the experience?" Less discovery tension — functions as summary/manifesto rather than new journey |
+| Narrative Arc | **3** | Context (has everything, builds six at once) → Conflict (six features explode) → Climax (cafe moment: "Not there. Shit.") → Conclusion (UX ≠ design, experience review, boundaries = requirements) → Change (FDD→SDD→DDD→TDD→XDD framework). Arc exists but compressed. The cafe "shit" moment is strong, but surrounding material is more reflective than narrative |
+| Visual Metaphor | **3** | Good: six towers collapsing simultaneously (clay), cafe laptop scene (strong physical moment), SSH/VPN/QUIC ping-pong (clay figure bouncing between walls). Weak: much of act is philosophical — "experience review" is abstract, "MVP is minimum experience" is verbal, the FDD→XDD framework listing is pure text. ~50% mappable |
+| Beat Pacing | **3** | 118 lines, ~6 sections — very short. Fits 1.5-2 min — at the lower end of 2-4 min target. Dense but risks feeling rushed. Or, if padded, risks feeling thin. Sub-chapters (act5-1~4, 563 lines) would score higher here |
+| Audience Resonance | **4** | "Build six things at once, six blow up" — relatable. "MVP is minimum experience" — valuable reframe. "AI writes code, I design experience" — powerful identity statement. But as a summary, lacks the visceral first-person "that's me" moments of earlier acts. Reads more as lesson than lived experience |
+| **TOTAL** | **16/25** | **Grade C — Needs rewrite or creative visual reinterpretation** |
+
+**Production notes**: The summary version (act5-en.md) is too compressed for standalone video. **Recommend using sub-chapters instead** (act5-1~4, 563 lines total) which contain the concrete scenes: the six-feature explosion, the cafe laptop moment, the SSH/VPN ping-pong fight, and the MVP test. Alternatively, treat Act 5 as a series finale montage that callbacks visuals from Acts 1-4 with the FDD→XDD framework as voiceover — this would leverage existing rendered assets and solve the visual metaphor gap. The cafe "shit" moment alone is worth building the video around.
+
+**Sub-chapter recommendation**: Evaluate `act5-1-en.md` through `act5-4-en.md` separately for potential 2-video split (Act 5A: XDD discovery, Act 5B: finale/manifesto).
 
 ---
 
@@ -148,10 +200,13 @@ Our target: **Vibe coders** — people who can't read code but build with AI. Th
 
 Based on evaluation scores, production order:
 
-| Priority | Content | Score | Status |
-|---|---|---|---|
-| 1 | Act 1 (act1-en.md) | 23/25 | Evaluated ✅ → Next: English prepro |
-| 2-5 | Act 2~5 | - | Pending evaluation |
+| Priority | Content | Score | Grade | Status |
+|---|---|---|---|---|
+| 1 | Act 1 (act1-en.md) | 23/25 | A | Evaluated ✅ → Next: English prepro |
+| 2 | Act 3 (act3-en.md) | 23/25 | A | Evaluated ✅ — Best visual metaphor density |
+| 3 | Act 2 (act2-en.md) | 22/25 | A | Evaluated ✅ — "28 left arms" signature scene |
+| 4 | Act 4 (act4-en.md) | 21/25 | B | Evaluated ✅ — Needs visual reinterpretation for TDD |
+| 5 | Act 5 (act5-en.md) | 16/25 | C | Evaluated ✅ — Use sub-chapters or finale montage |
 
 ---
 
