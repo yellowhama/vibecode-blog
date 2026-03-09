@@ -31,8 +31,8 @@
 
 | 경로 | 상태 |
 |------|------|
-| `docs/voice/character.md` | 원본 보존. SSOT는 `branding/voice.md` |
-| `docs/translation-guide.md` | 원본 보존. SSOT는 `branding/voice.md` |
+| `research/docs/voice/character.md` | 원본 보존. SSOT는 `branding/voice.md` |
+| `research/docs/translation-guide.md` | 원본 보존. SSOT는 `branding/voice.md` |
 
 ---
 
@@ -43,13 +43,14 @@
 | `content/blog/blog-only/` | 한국어 블로그 원본 ~47편 |
 | `content/blog/blog-only/en/` | 영문 번역 |
 | `content/blog/book-source/` | 책 원안 소스 (섹션별 정리) |
-| `content/video/` | 비디오 생성 프로젝트 최상위 |
-| `content/video/planning/` | 비디오 스토리보드 및 시각화 가이드 문서 모음 |
-| `content/video/output/` | 렌더링 된 최종/중간 비디오 파일 결과물 |
-| `scripts/video/` | 비디오 생성 및 편집 자동화 스크립트 |
-| `docs/book-structure-v2.md` | 새 책 목차 v2 |
-| `blog-research/` | 블로그 전략 리서치 (인덱스: `00-INDEX.md`) |
-| `scripts/pitch_automation/` | 퍼블리 투고 준비 + 상세페이지 자동화 키트 |
+| `systems/video/` | 비디오 생성 프로젝트 최상위 |
+| `systems/video/planning/` | 비디오 스토리보드 및 시각화 가이드 문서 모음 |
+| `systems/video/output/` | 렌더링 된 최종/중간 비디오 파일 결과물 |
+| `systems/twitter/automation/` | Twitter 자동 발행 + 분석 수집 |
+| `content/publish_log.json` | 멀티채널 게시 상태 레지스트리 (blog/twitter/youtube URL 연결) |
+| `research/docs/book-structure-v2.md` | 새 책 목차 v2 |
+| `research/blog-analysis/` | 블로그 전략 리서치 (인덱스: `00-INDEX.md`) |
+| `systems/pitch/automation/` | 퍼블리 투고 준비 + 상세페이지 자동화 키트 |
 
 ---
 
@@ -57,10 +58,10 @@
 
 | 문서 | 역할 |
 |------|------|
-| `twitter/STRATEGY.md` | 전략 — 왜 하는가, 뭘 올리고, 어떻게 쓰고, 뭘 안 하는가 |
-| `twitter/REFERENCE.md` | 참고 — 알고리즘 팩트, 롤모델, 소재 아카이브, 금지 표현 |
-| `twitter/PLAYBOOK.md` | 실행 — 매일/매주 뭘 하는가, Phase 전환 기준 |
-| `twitter/archive/` | 이전 전략 문서 (00~05) 아카이브 |
+| `systems/twitter/strategy/STRATEGY.md` | 전략 — 왜 하는가, 뭘 올리고, 어떻게 쓰고, 뭘 안 하는가 |
+| `systems/twitter/strategy/REFERENCE.md` | 참고 — 알고리즘 팩트, 롤모델, 소재 아카이브, 금지 표현 |
+| `systems/twitter/strategy/PLAYBOOK.md` | 실행 — 매일/매주 뭘 하는가, Phase 전환 기준 |
+| `systems/twitter/archive/` | 이전 전략 문서 (00~05) 아카이브 |
 
 ---
 
@@ -75,16 +76,17 @@
 ### 파일 구조
 | 경로 | 역할 |
 |------|------|
-| `scripts/twitter/package.json` | `twitter-api-v2` 의존성 (블로그와 분리) |
-| `scripts/twitter/post-queue.mjs` | 메인 스크립트 — 큐 읽기→발행→상태 업데이트 |
-| `scripts/twitter/lib/twitter-client.mjs` | Twitter API v2 래퍼 |
-| `scripts/twitter/lib/queue-manager.mjs` | 큐 파일 I/O, ISO 주차 계산, 15분 간격 안전장치 |
-| `content/twitter_queue/*.json` | 주간 큐 파일 (주차별 분리) |
+| `systems/twitter/automation/package.json` | `twitter-api-v2` 의존성 (블로그와 분리) |
+| `systems/twitter/automation/post-queue.mjs` | 메인 스크립트 — 큐 읽기→발행→상태 업데이트 |
+| `systems/twitter/automation/lib/twitter-client.mjs` | Twitter API v2 래퍼 |
+| `systems/twitter/automation/lib/queue-manager.mjs` | 큐 파일 I/O, ISO 주차 계산, 15분 간격 안전장치 |
+| `systems/twitter/queue/*.json` | 주간 큐 파일 (주차별 분리) |
 | `.github/workflows/twitter-post.yml` | cron 30분 + workflow_dispatch (dry_run 지원) |
+| `.github/workflows/twitter-analytics.yml` | 일간 06:00 UTC 분석 수집 cron |
 
 ### 실행 방법
 ```bash
-cd scripts/twitter
+cd systems/twitter/automation
 npm run post:dry    # 드라이런
 npm run post        # 실제 발행
 ```
@@ -130,7 +132,7 @@ phase1/en/actN-M-en.md + actN-en.md   (영어)
 | `blog_pipeline` | `.agents/skills/blog_pipeline/SKILL.md` | 블로그 서사 기획, 초안 작성, 영어 번역, 검열 수행 |
 | `twitter_pipeline` | `.agents/skills/twitter_pipeline/SKILL.md` | 트위터 쓰레드 기획, 초안 작성, JSON 큐 적재, 검열 수행 |
 | `branding_reviewer` | `.agents/skills/branding_reviewer/SKILL.md` | 브랜드 서사(3막) 및 보이스(나이키 룰) 품질 관리 |
-| `video_pipeline` | `.agents/skills/video_pipeline/SKILL.md` | 비디오용 캐릭터/내러티브 기획 및 시네마틱 샷 프롬프트 구성 |
+| `video_production` | `.agents/skills/video_production/SKILL.md` | 비디오 프로덕션 워크플로우 (기획/리뷰/퍼블리싱) |
 
 ### 출력 구조
 | 경로 | 내용 |
@@ -163,6 +165,43 @@ phase1/en/actN-M-en.md + actN-en.md   (영어)
 
 ---
 
+## 비디오 파이프라인 (자동화 인프라)
+
+### DAG 구조
+```
+blog.md
+  ↓ prepro
+prepro_manifest.json
+  ├──► manifest (build_shot_manifest) ──► render (comfy_batch) ──► evaluate ──► package ──► upload
+  └──► TTS (generate_tts) ──────────────────────────────────────┘ (VO merge)
+```
+- **manifest + TTS 병렬 실행** (asyncio.gather)
+- `--stages prepro,tts` / `--resume-from render` 로 부분 실행 가능
+
+### 핵심 스크립트
+| 경로 | 역할 |
+|------|------|
+| `systems/video/pipeline/scripts/run_blog_to_video_pipeline.py` | 최상위 DAG orchestrator (asyncio) |
+| `systems/video/pipeline/scripts/run_end_to_end_video_pipeline.py` | render→learn→evaluate→package 체인 |
+| `systems/video/scripts/comfy_batch_render.py` | ComfyUI API 배치 렌더 (증분 캐시 + 재시도) |
+| `systems/video/pipeline/scripts/evaluate_renders.py` | Vision QA (Gemini/OpenAI) + 품질 통계 |
+| `systems/video/pipeline/scripts/package_for_youtube.py` | 패키징 + YouTube 업로드 (`--upload`) |
+| `systems/video/pipeline/scripts/youtube_upload.py` | YouTube Data API v3 업로드 |
+| `systems/video/pipeline/scripts/generate_tts_from_prepro.py` | TTS 생성 + actual_duration 피드백 |
+| `systems/video/pipeline/scripts/pipeline_watcher.py` | watchdog 파일 감시 자동 트리거 |
+
+### 증분 렌더링
+- 각 샷 config → SHA256 해시 → `.render_cache.json`
+- 해시 동일 + 파일 존재 → 스킵 (`status: "cached"`)
+- `--force-render` 로 캐시 무시
+
+### YouTube 업로드
+- `pip install google-api-python-client google-auth-oauthlib`
+- credentials: `~/.youtube_credentials.json` 또는 `--youtube-credentials`
+- 기본 privacy: `unlisted` (안전)
+
+---
+
 ## 도메인
 
 - 블로그: **vibecode.town**
@@ -172,7 +211,7 @@ phase1/en/actN-M-en.md + actN-en.md   (영어)
 
 ## 상세페이지 자동화 키트 (퍼블리 투고용)
 
-- 키트 루트: `scripts/pitch_automation/`
-- 마스터 프롬프트: `scripts/pitch_automation/prompts/00_orchestrator.md`
-- RAG 인덱스: `cd scripts/pitch_automation/rag && node scripts/build_index.mjs`
+- 키트 루트: `systems/pitch/automation/`
+- 마스터 프롬프트: `systems/pitch/automation/prompts/00_orchestrator.md`
+- RAG 인덱스: `cd systems/pitch/automation/rag && node scripts/build_index.mjs`
 - 검색: `node scripts/query.mjs "Hero 톤" --top=3`

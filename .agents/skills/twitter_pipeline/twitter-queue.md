@@ -18,7 +18,7 @@ allowed-tools: ["Read", "Glob", "Grep", "Bash", "Edit", "Write"]
 
 ### `list` (기본값)
 
-`twitter/queue/` 의 모든 활성 JSON 파일을 스캔한다 (archive 제외).
+`systems/twitter/queue/` 의 모든 활성 JSON 파일을 스캔한다 (archive 제외).
 
 각 파일의 items를 테이블로 표시:
 
@@ -39,7 +39,7 @@ allowed-tools: ["Read", "Glob", "Grep", "Bash", "Edit", "Write"]
 
 ### `archive [file-path]`
 
-지정된 파일을 `twitter/queue/archive/`로 이동한다.
+지정된 파일을 `systems/twitter/queue/archive/`로 이동한다.
 
 - archive 디렉토리가 없으면 생성한다
 - `posted` 상태의 파일만 아카이브한다

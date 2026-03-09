@@ -16,11 +16,11 @@ allowed-tools: ["Read", "Glob", "Grep", "Task"]
 
 1. 소스 파일 전체를 읽는다
 2. 아래 레퍼런스 파일을 읽는다:
-   - `twitter/STRATEGY.md` — 비트 구조 (Beat 1~5), 나이키 룰, 페르마 구조, 광고 카피 테스트
+   - `systems/twitter/strategy/STRATEGY.md` — 비트 구조 (Beat 1~5), 나이키 룰, 페르마 구조, 광고 카피 테스트
    - `branding/narrative.md` — 3막 구조, 페르마 구조, 첫 트윗 패턴 (A/B/C/D)
-   - `twitter/PLAYBOOK.md` — 현재 Phase 확인
-   - `twitter/story/` — 기존 스토리 매핑 파일 확인 (있으면 참조)
-3. 기존 큐 파일을 확인한다 (`twitter/queue/*.json`) — 겹치는 소재가 있는지
+   - `systems/twitter/strategy/PLAYBOOK.md` — 현재 Phase 확인
+   - `systems/twitter/story/` — 기존 스토리 매핑 파일 확인 (있으면 참조)
+3. 기존 큐 파일을 확인한다 (`systems/twitter/queue/*.json`) — 겹치는 소재가 있는지
 4. 서사 구조를 설계한다:
    - 쓰레드 개수
    - 각 쓰레드의 핵심 한 줄 + 비트 (STRATEGY.md의 Beat 매핑)

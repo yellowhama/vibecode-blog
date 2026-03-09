@@ -26,3 +26,5 @@ public/pagefind/
 
 # large source assets (brunch export images)
 easy_peasy/assets/
+__pycache__
+*.pyc

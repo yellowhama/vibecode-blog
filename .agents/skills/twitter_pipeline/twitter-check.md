@@ -11,7 +11,7 @@ allowed-tools: ["Read", "Glob", "Grep", "Task"]
 ## 대상
 
 - 큐 파일 경로: $ARGUMENTS
-- 인자가 없으면 `twitter/queue/` 의 모든 활성 JSON 파일 (archive 제외)
+- 인자가 없으면 `systems/twitter/queue/` 의 모든 활성 JSON 파일 (archive 제외)
 
 ## 프로세스
 
@@ -19,7 +19,7 @@ allowed-tools: ["Read", "Glob", "Grep", "Task"]
 2. 아래 레퍼런스 파일을 읽는다:
    - `branding/voice.md` §7 — 금지 표현 목록
    - `branding/examples.md` — 광고 카피 체크리스트 (§4)
-   - `twitter/STRATEGY.md` — 나이키 룰, 페르마 구조, 행동이 전면, 기술적 가치 필터
+   - `systems/twitter/strategy/STRATEGY.md` — 나이키 룰, 페르마 구조, 행동이 전면, 기술적 가치 필터
 3. 각 트윗에 대해 아래 9가지 검증을 수행한다
 4. 결과를 테이블 형태로 보고한다
 
