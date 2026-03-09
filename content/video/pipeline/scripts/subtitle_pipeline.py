@@ -167,6 +167,35 @@ def generate_ass(
     return output_path
 
 
+def generate_srt(
+    segments: List[Dict[str, Any]],
+    output_path: Path,
+) -> Path:
+    """Generate SRT subtitle file from aligned segments.
+
+    Args:
+        segments: List of {"start", "end", "text"} dicts.
+        output_path: Where to write the .srt file.
+
+    Returns:
+        Path to generated SRT file.
+    """
+    import pysubs2  # type: ignore
+
+    subs = pysubs2.SSAFile()
+    for seg in segments:
+        if not seg.get("text", "").strip():
+            continue
+        subs.append(pysubs2.SSAEvent(
+            start=pysubs2.make_time(s=seg["start"]),
+            end=pysubs2.make_time(s=seg["end"]),
+            text=seg["text"].strip(),
+        ))
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    subs.save(str(output_path), format_="srt")
+    return output_path
+
+
 def generate_dual_ass(
     ko_segments: List[Dict[str, Any]],
     en_segments: List[Dict[str, Any]],
@@ -302,8 +331,10 @@ def subtitle_pipeline(
     font_en: str = "DejaVu Sans",
     font_size: int = 28,
     fonts_dir: Path | None = DEFAULT_SUBTITLE_FONTS_DIR,
+    output_format: str = "ass",
+    srt_output_dir: Path | None = None,
 ) -> Path:
-    """Full subtitle pipeline: align → ASS → burn-in.
+    """Full subtitle pipeline: align → ASS/SRT → burn-in.
 
     Args:
         video_path: Input assembled video.
@@ -315,6 +346,9 @@ def subtitle_pipeline(
         font_ko: Korean subtitle font.
         font_en: English subtitle font.
         font_size: Base subtitle font size.
+        output_format: "ass" | "srt" | "both". ASS is always used for burn-in.
+            When "srt" or "both", SRT files are written to srt_output_dir.
+        srt_output_dir: Directory for SRT file output (defaults to video parent dir).
 
     Returns:
         Path to video with burned-in subtitles.
@@ -327,6 +361,8 @@ def subtitle_pipeline(
 
     _ensure_required_fonts(text_ko, text_en, font_ko, font_en, fonts_dir)
 
+    srt_dir = srt_output_dir or video_path.parent
+
     with tempfile.TemporaryDirectory(prefix="subtitle_") as td:
         td_path = Path(td)
 
@@ -338,7 +374,19 @@ def subtitle_pipeline(
         if text_en:
             en_segments = align_text_to_audio(audio_path, text_en, language="en")
 
-        # Determine subtitle mode
+        # Generate SRT if requested
+        if output_format in ("srt", "both"):
+            srt_dir.mkdir(parents=True, exist_ok=True)
+            if ko_segments:
+                srt_ko = srt_dir / f"{video_path.stem}_ko.srt"
+                generate_srt(ko_segments, srt_ko)
+                print(f"[OK] SRT (ko): {srt_ko}")
+            if en_segments:
+                srt_en = srt_dir / f"{video_path.stem}_en.srt"
+                generate_srt(en_segments, srt_en)
+                print(f"[OK] SRT (en): {srt_en}")
+
+        # ASS generation for burn-in (always needed unless format is srt-only with no burn)
         if text_ko and text_en:
             ass_path = td_path / "dual_subtitles.ass"
             generate_dual_ass(
@@ -383,6 +431,13 @@ def main() -> int:
     parser.add_argument("--font-en", default="DejaVu Sans")
     parser.add_argument("--font-size", type=int, default=28)
     parser.add_argument("--fonts-dir", type=Path, default=DEFAULT_SUBTITLE_FONTS_DIR)
+    parser.add_argument(
+        "--output-format",
+        choices=["ass", "srt", "both"],
+        default="ass",
+        help="Subtitle output format: ass (burn-in only), srt (external file), both",
+    )
+    parser.add_argument("--srt-output-dir", type=Path, default=None, help="Directory for SRT output files")
     args = parser.parse_args()
 
     output_path = subtitle_pipeline(
@@ -396,6 +451,8 @@ def main() -> int:
         font_en=args.font_en,
         font_size=args.font_size,
         fonts_dir=args.fonts_dir,
+        output_format=args.output_format,
+        srt_output_dir=args.srt_output_dir,
     )
     print(f"[OK] subtitled video: {output_path}")
     return 0

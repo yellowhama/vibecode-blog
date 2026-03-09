@@ -1,0 +1,51 @@
+{
+  "bgm": [
+    {
+      "id": "calm_coding",
+      "path": "assets/audio/bgm/calm_coding.wav",
+      "bpm": 90,
+      "mood": "focused",
+      "tags": ["coding", "tutorial"],
+      "license": "CC0"
+    },
+    {
+      "id": "upbeat_build",
+      "path": "assets/audio/bgm/upbeat_build.wav",
+      "bpm": 120,
+      "mood": "energetic",
+      "tags": ["build", "progress"],
+      "license": "CC0"
+    },
+    {
+      "id": "dramatic_reveal",
+      "path": "assets/audio/bgm/dramatic_reveal.wav",
+      "bpm": 100,
+      "mood": "dramatic",
+      "tags": ["reveal", "demo"],
+      "license": "CC0"
+    }
+  ],
+  "sfx": [
+    {
+      "id": "keyboard_typing",
+      "path": "assets/audio/sfx/keyboard_typing.wav",
+      "duration_sec": 2.1,
+      "category": "ui",
+      "license": "CC0"
+    },
+    {
+      "id": "notification_chime",
+      "path": "assets/audio/sfx/notification_chime.wav",
+      "duration_sec": 0.8,
+      "category": "ui",
+      "license": "CC0"
+    },
+    {
+      "id": "whoosh_transition",
+      "path": "assets/audio/sfx/whoosh_transition.wav",
+      "duration_sec": 0.5,
+      "category": "transition",
+      "license": "CC0"
+    }
+  ]
+}

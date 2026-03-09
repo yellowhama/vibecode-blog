@@ -617,7 +617,8 @@ def main() -> int:
     parser.add_argument("--channel-name", default="MUSU")
     parser.add_argument("--teaser-sec", type=int, default=30)
     parser.add_argument("--voiceover", type=Path, default=None, help="Narration audio file (wav/mp3/m4a)")
-    parser.add_argument("--bgm", type=Path, default=None, help="Optional background music audio file")
+    parser.add_argument("--bgm", type=Path, default=None, help="Optional background music audio file (path or catalog ID)")
+    parser.add_argument("--bgm-id", default=None, help="BGM catalog ID (looked up in audio_catalog.json)")
     parser.add_argument("--voiceover-volume", type=float, default=1.0)
     parser.add_argument("--bgm-volume", type=float, default=0.18)
     parser.add_argument("--checklist-strict", action="store_true", help="Fail packaging if required upload gates fail")
@@ -662,6 +663,12 @@ def main() -> int:
         action="store_true",
         help="Do not auto-download repo-local subtitle fonts before subtitle burn-in",
     )
+    parser.add_argument(
+        "--subtitle-format",
+        choices=["ass", "srt", "both"],
+        default="ass",
+        help="Subtitle output format: ass (burn-in only), srt (external file), both",
+    )
 
     # --- Phase C: Audio ducking ---
     parser.add_argument("--audio-ducking", action="store_true", help="Enable sidechain ducking for BGM")
@@ -694,6 +701,16 @@ def main() -> int:
         raise SystemExit("[FAIL] --subtitle-lang dual requires at least one of --subtitle-text-ko/--subtitle-text-en")
     if args.quality_check_strict and not args.final_quality_check:
         args.final_quality_check = True
+
+    # Resolve BGM from catalog ID if provided
+    if args.bgm_id and not args.bgm:
+        from audio_catalog import load_catalog, select_bgm
+
+        catalog = load_catalog()
+        bgm_entry = select_bgm(catalog, bgm_id=args.bgm_id)
+        if bgm_entry is None:
+            raise SystemExit(f"[FAIL] BGM catalog ID not found: {args.bgm_id}")
+        args.bgm = Path(bgm_entry["path"])
 
     manifest = _json_load(args.manifest)
     render_log_path = args.run_dir / "render_log.json"
@@ -879,7 +896,7 @@ def main() -> int:
             print("[WARN] --subtitles with en/dual but no --subtitle-text-en provided, skipping EN")
 
         if text_ko or text_en:
-            print(f"[POST] subtitle burn-in (lang={args.subtitle_lang})...")
+            print(f"[POST] subtitle burn-in (lang={args.subtitle_lang}, format={args.subtitle_format})...")
             subtitled_video = final_dir / f"{project_id}_youtube_full_subtitled.mp4"
             subtitle_pipeline(
                 video_path=delivery_video,
@@ -891,6 +908,8 @@ def main() -> int:
                 font_ko=args.subtitle_font_ko,
                 font_en=args.subtitle_font_en,
                 fonts_dir=args.subtitle_fonts_dir,
+                output_format=args.subtitle_format,
+                srt_output_dir=meta_dir,
             )
             delivery_video = subtitled_video
 
