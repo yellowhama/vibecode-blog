@@ -28,7 +28,7 @@
       "scheduledAt": "2026-04-16T14:00:00Z",
       "status": "approved",
       "content": [
-        "Friday night. Fixed the settings screen.\nWorked. Looked good.\n\nMonday morning. Agent dead. Again.\n\nChanged code. Didn't know what else it touched.\nCouldn't know. Didn't check.",
+        "Changed one line. Notification text. Tiny fix.\nPushed it.\n\nDashboard broke. Settings broke. Agent log stopped.\n\nOne line. Three things I didn't touch.\nNo way to know before pushing.",
         "AI said: 'Write tests.'\n\nTests are code. I don't write code.\n\n'A test is writing down: if this works, it's done.'\n\nWait.\n\nSpec: 'Login shows dashboard.' That's the goal.\nTest: 'Click login. Dashboard appears.' That's the proof.\n\nI write the bar. AI writes the code.",
         "Write the bar before the code. Not after.\n\n'Notification fires once.'\n'Settings save correctly.'\n\nPlain language. Hand it to the AI.\nAI writes the test code.\n\nDecisions are mine.\nImplementation is the AI's.\nVerification is the test's."
       ],
