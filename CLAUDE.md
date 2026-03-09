@@ -244,26 +244,27 @@ prepro_manifest.json
 
 ### 아키텍처
 ```
-일요일 08:00 UTC: weekly-report.yml → feedback-context.md 갱신
-일요일 10:00 UTC: content-boss.yml  → Claude API → 큐 JSON 생성
-                                    → auto-approve → PR 생성
-유저:             PR 확인 (5분) → 머지
-평일:             twitter-post.yml (30분 cron) → approved 항목 자동 발행
-매일 06:00 UTC:   twitter-analytics.yml → 메트릭 수집 → 리포트 + 피드백
+Claude Code 세션:   소스 읽기 → 큐 JSON 작성 → auto-approve → 커밋 푸시
+                    (몇 주치 미리 예약 가능)
+평일:               twitter-post.yml (30분 cron) → approved 항목 자동 발행
+매일 06:00 UTC:     twitter-analytics.yml → 메트릭 수집 → 리포트 + 피드백
+일요일 08:00 UTC:   weekly-report.yml → feedback-context.md 갱신
 ```
+
+### 운영 방법
+1. Claude Code 세션에서 소스 콘텐츠 읽기 (`content/blog/phase1/en/`, `content/blog/book-source/`)
+2. `systems/content-boss/prompts/twitter-system.md` 가이드에 따라 큐 JSON 직접 작성
+3. `systems/twitter/queue/YYYY-wWW-{series}.json`에 저장
+4. `node systems/content-boss/auto-approve.mjs`로 검증
+5. 커밋 + 푸시 → twitter-post.yml cron이 예약 시간에 자동 발행
 
 ### 파일 구조
 | 경로 | 역할 |
 |------|------|
-| `systems/content-boss/package.json` | `@anthropic-ai/sdk` 의존성 |
 | `systems/content-boss/auto-approve.mjs` | 큐 아이템 자동 검증 (금지표현, 링크, 시간참조, 4줄) |
-| `systems/content-boss/weekly-produce.mjs` | Claude API로 다음 주 큐 생성 |
-| `systems/content-boss/prompts/twitter-system.md` | 생성 시스템 프롬프트 (voice+narrative+strategy 핵심) |
-| `systems/content-boss/logs/` | 생성 실패 시 에러 로그 |
-| `.github/workflows/content-boss.yml` | 일요일 10:00 UTC cron + workflow_dispatch |
-
-### GitHub Secrets (필요)
-`ANTHROPIC_API_KEY` — Claude API 호출용 (content-boss.yml)
+| `systems/content-boss/prompts/twitter-system.md` | Claude Code용 생성 가이드 (voice+narrative+strategy 핵심) |
+| `systems/content-boss/logs/` | 에러 로그 |
+| `systems/content-boss/package.json` | auto-approve 실행용 |
 
 ### 검증 규칙 (auto-approve.mjs)
 1. 금지 표현: game-changer, deep dive, unpack, Furthermore, In conclusion, utilize, facilitate, leverage, "I think maybe", "I write about", "In this article"

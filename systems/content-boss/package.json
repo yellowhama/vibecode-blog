@@ -4,10 +4,6 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "approve": "node auto-approve.mjs",
-    "produce": "node weekly-produce.mjs"
-  },
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.39.0"
+    "approve": "node auto-approve.mjs"
   }
 }
