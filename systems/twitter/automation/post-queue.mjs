@@ -12,6 +12,8 @@
  *   DRY_RUN (optional)
  */
 
+import fs from 'node:fs';
+import path from 'node:path';
 import { createClient, postThread, postStandalone } from './lib/twitter-client.mjs';
 import {
   getActiveQueueFiles,
@@ -20,6 +22,28 @@ import {
   validateQueue,
   getDueItems,
 } from './lib/queue-manager.mjs';
+
+const PUBLISH_LOG_PATH = path.resolve(import.meta.dirname, '../../../content/publish_log.json');
+
+function updatePublishLogPosted(itemId, postedIds) {
+  try {
+    const log = JSON.parse(fs.readFileSync(PUBLISH_LOG_PATH, 'utf-8'));
+    // Find entry that references this item
+    for (const entry of Object.values(log.entries || {})) {
+      const tw = entry.channels?.twitter;
+      if (tw?.item_ids?.includes(itemId)) {
+        if (!tw.posted_ids) tw.posted_ids = [];
+        tw.posted_ids.push(...postedIds);
+        tw.status = 'posted';
+        entry.updated_at = new Date().toISOString();
+        fs.writeFileSync(PUBLISH_LOG_PATH, JSON.stringify(log, null, 2) + '\n', 'utf-8');
+        return;
+      }
+    }
+  } catch {
+    // publish_log.json may not exist or have matching entries — that's fine
+  }
+}
 
 const DRY_RUN = process.env.DRY_RUN === 'true';
 
@@ -100,6 +124,9 @@ async function main() {
         item.postedAt = new Date().toISOString();
         item.error = null;
         totalPosted++;
+
+        // Update publish_log.json if entry exists
+        updatePublishLogPosted(item.id, result.postedIds);
 
         log('info', 'Posted successfully', {
           id: item.id,

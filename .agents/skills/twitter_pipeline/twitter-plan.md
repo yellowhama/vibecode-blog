@@ -20,14 +20,15 @@ allowed-tools: ["Read", "Glob", "Grep", "Task"]
    - `branding/narrative.md` — 3막 구조, 페르마 구조, 첫 트윗 패턴 (A/B/C/D)
    - `systems/twitter/strategy/PLAYBOOK.md` — 현재 Phase 확인
    - `systems/twitter/story/` — 기존 스토리 매핑 파일 확인 (있으면 참조)
-3. 기존 큐 파일을 확인한다 (`systems/twitter/queue/*.json`) — 겹치는 소재가 있는지
-4. 서사 구조를 설계한다:
+3. `systems/analytics/feedback-context.md` 존재 시 읽기. top/bottom hook 패턴 참고하여 beat 선택 및 hook 설계에 반영.
+4. 기존 큐 파일을 확인한다 (`systems/twitter/queue/*.json`) — 겹치는 소재가 있는지
+5. 서사 구조를 설계한다:
    - 쓰레드 개수
    - 각 쓰레드의 핵심 한 줄 + 비트 (STRATEGY.md의 Beat 매핑)
    - 순서와 브릿지 (이전 쓰레드 끝 → 다음 쓰레드 시작의 연결)
    - 각 쓰레드의 소재 추출 포인트 (소스 파일명:라인 범위)
    - 스케줄 제안 (week, 요일, UTC 시간)
-5. 설계안을 사용자에게 제시한다
+6. 설계안을 사용자에게 제시한다
 
 ## 절대 규칙
 

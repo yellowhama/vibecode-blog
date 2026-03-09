@@ -26,10 +26,11 @@ allowed-tools: ["Read", "Glob", "Grep", "Write", "Task"]
    - `branding/narrative.md` — 페르마 구조, 첫 트윗 패턴
    - `branding/examples.md` — 좋은/나쁜 예시, 광고 카피 체크리스트
    - `systems/twitter/strategy/STRATEGY.md` — 나이키 룰, 행동이 전면, 기술적 가치 필터
-4. 기존 큐 파일 확인 — 같은 week에 파일이 있으면 충돌 경고
-5. 트윗을 작성한다
-6. 큐 JSON 파일을 생성한다: `systems/twitter/queue/YYYY-wWW-{series}.json`
-7. 사용자에게 결과를 제시한다
+4. `systems/analytics/feedback-context.md` 존재 시 읽기. "Top Performing Hooks" 구조 패턴(감정 오프너, 행동 오프너 등)을 새 콘텐츠에 적응.
+5. 기존 큐 파일 확인 — 같은 week에 파일이 있으면 충돌 경고
+6. 트윗을 작성한다
+7. 큐 JSON 파일을 생성한다: `systems/twitter/queue/YYYY-wWW-{series}.json`
+8. 사용자에게 결과를 제시한다
 
 ## 작성 규칙
 

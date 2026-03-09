@@ -33,12 +33,18 @@ jobs:
           ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
         run: node fetch-analytics.mjs
 
+      - name: Generate weekly report
+        run: node systems/analytics/generate-report.mjs
+
+      - name: Build feedback context
+        run: node systems/analytics/build-feedback-context.mjs
+
       - name: Commit analytics data
         run: |
           git config user.name "twitter-bot"
           git config user.email "twitter-bot@vibecode.town"
-          git add systems/twitter/queue/analytics/
+          git add systems/twitter/queue/analytics/ systems/analytics/reports/ systems/analytics/feedback-context.md
           git diff --cached --quiet && echo "No changes to commit" && exit 0
-          git commit -m "chore(twitter): update analytics [bot]"
+          git commit -m "chore(twitter): update analytics + report [bot]"
           git pull --rebase origin main
           git push origin main

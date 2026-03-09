@@ -132,6 +132,8 @@ phase1/en/actN-M-en.md + actN-en.md   (영어)
 | `blog_pipeline` | `.agents/skills/blog_pipeline/SKILL.md` | 블로그 서사 기획, 초안 작성, 영어 번역, 검열 수행 |
 | `twitter_pipeline` | `.agents/skills/twitter_pipeline/SKILL.md` | 트위터 쓰레드 기획, 초안 작성, JSON 큐 적재, 검열 수행 |
 | `branding_reviewer` | `.agents/skills/branding_reviewer/SKILL.md` | 브랜드 서사(3막) 및 보이스(나이키 룰) 품질 관리 |
+| `content_multiplexer` | `.agents/skills/content_multiplexer/SKILL.md` | 블로그 → 멀티채널(Twitter+Video+Shorts) 일괄 변환 |
+| `shorts_pipeline` | `.agents/skills/shorts_pipeline/SKILL.md` | 숏폼(TikTok/Reels/Shorts) 슬라이드 기획, 작성, 검증 |
 | `video_production` | `.agents/skills/video_production/SKILL.md` | 비디오 프로덕션 워크플로우 (기획/리뷰/퍼블리싱) |
 
 ### 출력 구조
@@ -162,6 +164,35 @@ phase1/en/actN-M-en.md + actN-en.md   (영어)
 - voice.md 톤 SSOT — Bukowski 60% + Indie Hacker 30% + Product 10%
 - 모드 A (싸지르기) 기본 — 한 문장 = 한 줄, 3-7단어 펀치
 - 소재 겹침 방지 — 기존 Act에서 다룬 내용 재사용 금지
+
+---
+
+## 콘텐츠 분석 + 피드백 루프
+
+### 아키텍처
+```
+Twitter API → queue/analytics/ → generate-report.mjs → reports/YYYY-wNN-report.json
+                                                      → build-feedback-context.mjs → feedback-context.md
+                                                                                        ↓
+                                                                              twitter-plan, twitter-draft, /multiply
+```
+
+### 파일 구조
+| 경로 | 역할 |
+|------|------|
+| `systems/analytics/generate-report.mjs` | 주간 성과 리포트 생성 (engagement rate, hook 랭킹) |
+| `systems/analytics/build-feedback-context.mjs` | 최근 4주 리포트 → AI 읽기용 마크다운 |
+| `systems/analytics/fetch-youtube-analytics.py` | YouTube Data API v3 채널 분석 수집 |
+| `systems/analytics/update-publish-log.mjs` | `content/publish_log.json` 업데이트 헬퍼 |
+| `systems/analytics/reports/` | 주간 리포트 JSON |
+| `systems/analytics/youtube/` | YouTube 주간 메트릭 |
+| `systems/analytics/feedback-context.md` | 스킬에서 읽는 성과 피드백 (자동 생성) |
+
+### GitHub Actions
+| 워크플로우 | 스케줄 |
+|-----------|--------|
+| `.github/workflows/twitter-analytics.yml` | 매일 06:00 UTC — 메트릭 수집 + 리포트 + 피드백 |
+| `.github/workflows/weekly-report.yml` | 매주 일요일 08:00 UTC — 주간 리포트 + 피드백 |
 
 ---
 

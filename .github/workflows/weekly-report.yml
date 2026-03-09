@@ -1,0 +1,37 @@
+name: Weekly Analytics Report
+
+on:
+  schedule:
+    - cron: '0 8 * * 0'  # Sunday 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Generate weekly report
+        run: node systems/analytics/generate-report.mjs
+
+      - name: Build feedback context
+        run: node systems/analytics/build-feedback-context.mjs
+
+      - name: Commit reports
+        run: |
+          git config user.name "analytics-bot"
+          git config user.email "analytics-bot@vibecode.town"
+          git add systems/analytics/reports/ systems/analytics/feedback-context.md
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore(analytics): weekly report + feedback context [bot]"
+          git pull --rebase origin main
+          git push origin main

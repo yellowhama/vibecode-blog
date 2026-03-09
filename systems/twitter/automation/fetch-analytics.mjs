@@ -4,7 +4,7 @@
  * Fetch engagement metrics for posted tweets and save analytics.
  *
  * Scans queue files for posted items, fetches metrics via Twitter API v2,
- * and saves to content/twitter_queue/analytics/YYYY-wNN-metrics.json.
+ * and saves to systems/twitter/queue/analytics/YYYY-wNN-metrics.json.
  *
  * Usage:
  *   node scripts/twitter/fetch-analytics.mjs
@@ -20,7 +20,7 @@ import { getActiveQueueFiles, loadQueue } from './lib/queue-manager.mjs';
 
 const ANALYTICS_DIR = path.resolve(
   import.meta.dirname,
-  '../../content/twitter_queue/analytics'
+  '../queue/analytics'
 );
 
 function log(level, msg, data) {

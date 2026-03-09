@@ -1,0 +1,80 @@
+{
+  "week": "2026-w10",
+  "generated_at": "2026-03-09T20:57:34.106Z",
+  "summary": {
+    "total_items": 3,
+    "total_tweets": 6,
+    "total_impressions": 15900,
+    "avg_engagement_rate": 0.0084,
+    "best_format": "thread"
+  },
+  "top_hooks": [
+    {
+      "text": "Fury-Driven Development.\n\nCan't code. Not a developer.\nBuilt a product with AI anyway.\nThen the whole system died.\n\nThis is the diary of what happened.\n\nFDD Diary #001 🧵",
+      "engagement_rate": 0.0098,
+      "impressions": 6600,
+      "category": "FDD Diary",
+      "format": "thread"
+    },
+    {
+      "text": "Monday morning.\nMade coffee. Turned on the monitor.\n\nThe whole system was dead.\n\nFDD Diary #002 🧵",
+      "engagement_rate": 0.009,
+      "impressions": 5000,
+      "category": "FDD Diary",
+      "format": "thread"
+    },
+    {
+      "text": "Three computers at home.\nTwo desktops, one laptop.\n\nI want to work from my laptop outside\nand still use the machines at home.\n\nNothing on the market does this.\n\nFDD Diary #003 🧵",
+      "engagement_rate": 0.0056,
+      "impressions": 4300,
+      "category": "FDD Diary",
+      "format": "thread"
+    }
+  ],
+  "bottom_hooks": [
+    {
+      "text": "Three computers at home.\nTwo desktops, one laptop.\n\nI want to work from my laptop outside\nand still use the machines at home.\n\nNothing on the market does this.\n\nFDD Diary #003 🧵",
+      "engagement_rate": 0.0056,
+      "impressions": 4300,
+      "category": "FDD Diary",
+      "format": "thread"
+    },
+    {
+      "text": "Monday morning.\nMade coffee. Turned on the monitor.\n\nThe whole system was dead.\n\nFDD Diary #002 🧵",
+      "engagement_rate": 0.009,
+      "impressions": 5000,
+      "category": "FDD Diary",
+      "format": "thread"
+    },
+    {
+      "text": "Fury-Driven Development.\n\nCan't code. Not a developer.\nBuilt a product with AI anyway.\nThen the whole system died.\n\nThis is the diary of what happened.\n\nFDD Diary #001 🧵",
+      "engagement_rate": 0.0098,
+      "impressions": 6600,
+      "category": "FDD Diary",
+      "format": "thread"
+    }
+  ],
+  "by_category": {
+    "FDD Diary": {
+      "count": 3,
+      "impressions": 15900,
+      "likes": 100,
+      "retweets": 22,
+      "replies": 12,
+      "avg_engagement_rate": 0.0084
+    }
+  },
+  "by_format": {
+    "thread": {
+      "count": 3,
+      "impressions": 15900,
+      "avg_engagement_rate": 0.0081
+    }
+  },
+  "by_hour_utc": {
+    "17": {
+      "count": 3,
+      "avg_engagement_rate": 0.0081
+    }
+  }
+}
