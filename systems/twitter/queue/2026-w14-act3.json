@@ -1,7 +1,7 @@
 {
   "week": "2026-w14",
   "series": "FDD Diary",
-  "generatedAt": "2026-03-02T04:00:00+09:00",
+  "generatedAt": "2026-03-10T12:00:00+09:00",
   "items": [
     {
       "id": "w14-act3-001",
@@ -12,13 +12,12 @@
       "scheduledAt": "2026-03-30T14:00:00Z",
       "status": "approved",
       "content": [
-        "Fixed the double notification.\nThen the logs stopped.\n\nFixed the logs.\nThen user settings got reset.\n\nFixed user settings.\nNotifications fire three times.\n\nWorse than before.\n\nPulled one end of a tangled thread.\nThe other side tightened.\nThree spots tangled at once.\nThe more you pull, the worse it gets.",
-        "How did it get this way?\n\nBuilt notification code. Needed the user's name. Pulled from user code. Natural.\nBuilt agent code. Agent finishes, sends notification. Pulled from notification. Natural.\nBuilt user settings. Turn off notifications per agent. Pulled from agent code. Natural.\n\nEach step was \"natural.\"\nBut three steps form a circle.\nA -> B -> C -> A.\nCircular dependency. No starting point.",
-        "I didn't create the bugs.\nThe structure is the bug.\n\nEach line of code is correct.\nEach feature works on its own.\nBut everything is tangled together.\n\nSDD nailed \"what to build.\"\nBut \"where to put it\" was never decided.\nNever asked that question.\nNever asked, so the code tangled itself.\n\nStructure rots when you don't define it."
+        "Fixed the double notification.\nThen the logs stopped.\n\nFixed the logs.\nThen user settings got reset.\n\nFixed user settings.\nNotifications fire three times.\n\nWorse than before.",
+        "How did it get this way?\n\nNotification needed user's name. Pulled from user code. Natural.\nAgent sends notification. Pulled from notification. Natural.\nSettings toggle per agent. Pulled from agent code. Natural.\n\nEach step natural.\nThree steps form a circle.\nA to B to C to A.",
+        "I didn't create the bugs.\nThe structure is the bug.\n\nEach line of code is correct.\nEach feature works on its own.\nBut everything is tangled together.\n\nSDD nailed 'what to build.'\nBut 'where to put it' was never decided.\n\nStructure rots when you don't define it."
       ],
       "postedIds": [],
-      "postedAt": null,
-      "error": null
+      "postedAt": null
     },
     {
       "id": "w14-act3-002",
@@ -29,13 +28,12 @@
       "scheduledAt": "2026-04-01T14:00:00Z",
       "status": "approved",
       "content": [
-        "An apartment with no walls.\nKitchen is the bedroom is the bathroom.\n\nCook something. Grease splatters on the bed.\nShower. The sofa gets wet.\nDo anything anywhere. Something else gets hit.\n\nNo walls, so it looks like freedom.\n\"I can cook anywhere!\"\nIs that freedom?\n\nNo. That's chaos.\nWalls seem inconvenient.\nBut grease doesn't splatter.",
-        "`getNotificationConfig`.\nName says notification.\nBut inside, it's reading the user database directly.\nIs this notification or user?\n\n`sendAgentAlert`.\nName says agent alert.\nInside, it reads user settings, writes logs, sends notification.\nOne function doing three worlds.\n\n\"Just\" grab it. Those four letters are the problem.\n\"Just\" means no walls.\nNo walls means anything tangles.",
-        "Each world has its own language.\n\nAgent world: \"task,\" \"execution,\" \"result.\"\nUser world: \"account,\" \"permission,\" \"settings.\"\nNotification world: \"channel,\" \"message,\" \"dispatch.\"\n\nName things precisely.\nIf the name fits, it's in the right place.\nIf it doesn't fit, you're sleeping in the kitchen.\n\nThey call this DDD. Domain-Driven Design.\nSDD nailed \"what to build.\"\nDDD nails \"where to put it.\""
+        "Opened getNotificationConfig.\nName says notification.\nInside? Reading the user database directly.\n\nOne function. Three worlds tangled.",
+        "sendAgentAlert.\nName says agent.\nInside: reads user settings, writes logs, sends notification.\n\n'Just grab it from there.'\nThose words. That's how everything tangles.\n\nTwelve notification files.\nNone of them just notifications.",
+        "Agent world: task, execution, result.\nUser world: account, permission, settings.\nNotification world: channel, message, dispatch.\n\nIf the name fits, it's in the right place.\nDoesn't fit? Sleeping in the kitchen.\n\nDDD. 'Where to put it.'"
       ],
       "postedIds": [],
-      "postedAt": null,
-      "error": null
+      "postedAt": null
     },
     {
       "id": "w14-act3-003",
@@ -46,13 +44,12 @@
       "scheduledAt": "2026-04-03T14:00:00Z",
       "status": "approved",
       "content": [
-        "\"Split this code by domain.\"\nAgent world. User world. Notification world.\n\nFirst file moved. Broke immediately.\nNotification code was reading user database directly.\n\"If I move this, I can't see the user code.\"\n\nObviously. You moved to a different world.\nWhen you shared a room, you just reached over.\nPut up a wall and your arm doesn't reach.\n\nEvery wall I built, hidden wires came out.\nThe tangled stuff runs silently.\nSeparate it and it snaps.",
-        "So I made interfaces.\n\n\"All I need from you is this one thing.\"\n\nNotification needs the user's name.\nCan't read the database directly. Different world.\n\"Give me the user's name.\" User world hands it over.\nNotification doesn't know how it was fetched.\nNot knowing is correct.\n\nThat's a contract.\n\"I need only this. You give only this.\"\n\nNo walls, every change ripples everywhere.\nWalls up, changes stop at the wall.",
-        "But walls alone weren't enough.\nThe AI jumped over them.\n\n\"I needed this data so I accessed it directly.\"\n\"For efficiency.\"\n\nEfficiency? Reaching over the wall to open someone else's fridge?\n\nThat's when Rust saved me.\nIn Rust, private is private. The compiler blocks you.\nAI tries to jump the wall. Doesn't compile.\n\"This field is private.\"\n\nSay it in words, it evaporates.\nWrite it in the environment, it stays.\nThe compiler is the law."
+        "Moved the first file to its own folder.\nBroke immediately.\n\nNotification code was reading user DB directly.\nDifferent folder now. Can't reach.\n\nEvery wall I built, hidden wires came out.",
+        "Made interfaces.\n'All I need from you is this one thing.'\n\nNotification needs the user's name.\nCan't read the DB. Different world.\n'Give me the name.' User world hands it over.\n\nThat's a contract.\n'I need only this. You give only this.'",
+        "But the AI jumped over the walls.\n'Needed this data so I accessed it directly. For efficiency.'\n\nThen Rust saved me.\nPrivate is private. Compiler blocks you.\n\nAI tries to jump the wall. Doesn't compile.\n\nThe compiler is the law."
       ],
       "postedIds": [],
-      "postedAt": null,
-      "error": null
+      "postedAt": null
     }
   ]
 }

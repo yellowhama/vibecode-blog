@@ -1,7 +1,7 @@
 {
   "week": "2026-w17",
   "series": "FDD Diary",
-  "generatedAt": "2026-03-02T04:00:00+09:00",
+  "generatedAt": "2026-03-10T12:00:00+09:00",
   "items": [
     {
       "id": "w17-act4-001",
@@ -12,12 +12,12 @@
       "scheduledAt": "2026-04-21T14:00:00Z",
       "status": "approved",
       "content": [
-        "Change code.\nTests confirm it.\nConfirmed, so I change more with confidence.\nMore changes, cleaner code.\nClean code breeds new features.\nNew features get new tests.\n\nChange -- confirm -- breathe -- change again.\n\nThat loop spins.\nWithout fear.",
-        "The fear didn't vanish.\nI got a way to check the fear.\n\n\"Something's going to break.\"\nRun tests.\n\"Nothing broke.\"\nKeep going.\n\nChanging code used to scare me.\nNot scared anymore.\nScared? Run the tests.\nThirty seconds later, the answer's there.\n\nThat's freedom."
+        "Rewrote the notification handler.\nHit run. 6,260 tests. Thirty seconds.\n\nAll green.\n\nFirst time I changed code without holding my breath.",
+        "Before: change code, check everything by hand, miss something, find out Monday.\n\nAfter: change code, run tests, thirty seconds, done.\n\nThe fear didn't vanish.\nGot a way to check it.\n\n'Something broke?'\nRun tests.\n'Nothing broke.'\nKeep going.",
+        "Change. Confirm. Breathe. Change again.\n\nThat loop spins now.\nWithout fear.\n\nScared? Run the tests.\nThirty seconds later, the answer's there.\n\nThat's freedom."
       ],
       "postedIds": [],
-      "postedAt": null,
-      "error": null
+      "postedAt": null
     },
     {
       "id": "w17-act4-002",
@@ -28,30 +28,28 @@
       "scheduledAt": "2026-04-23T14:00:00Z",
       "status": "approved",
       "content": [
-        "New feature. QUIC tunnel fails, auto-switch to HTTP.\n\nBefore, I would've just started.\n\"Just build it.\"\n\nNot anymore.\n\nWrite it down first.\n\"When QUIC drops, auto-switch to HTTP. User doesn't notice.\"\n\nName the place first.\nNetwork world. Transport folder.\nNot notifications. Not user settings.\n\nWrite the tests first.\n\"Switch within 3 seconds. No data loss. Session persists.\"\n\nThen start implementing.",
-        "Three days. Done.\n\nAll tests passed.\nNo other features broke.\n6,260 -- all PASS.\n\nLanded clean inside the transport folder.\nDidn't touch notification code.\nDidn't touch user code.\n\nWhat would've happened before?\nNo spec. AI shoves network logic inside notifications.\nNo tests. Blows up the next day.\nTwo weeks. Three blowups.\n\nThree days versus two weeks.\nThe difference isn't skill. It's sequence.",
-        "Lock down the \"what.\" SDD.\nLock down the \"where.\" DDD.\nLock down the \"done.\" TDD.\n\nLock them down and the AI sprints inside the rails.\nFast. Accurate. Consistent.\n\nDon't lock them down and the AI wanders.\nFast. Convincing. Different every time.\n\nRails mean a sprint.\nNo rails mean drifting."
+        "New feature: QUIC drops, auto-switch to HTTP.\nUser doesn't notice.\n\nWrote the spec first.\nNamed the place: transport folder.\nWrote the tests: switch in 3 seconds, no data loss.\n\nThree days. Done. Clean.",
+        "All tests passed. No other features broke.\n6,260 — all green.\n\nLanded clean inside transport.\nDidn't touch notification code. Didn't touch user code.\n\nBefore? No spec. AI shoves network logic inside notifications.\nTwo weeks. Three blowups.",
+        "Lock down the what. SDD.\nLock down the where. DDD.\nLock down the done. TDD.\n\nLock them down and the AI sprints inside the rails.\nFast. Accurate. Consistent.\n\nDon't lock them down and the AI wanders.\nFast. Convincing. Different every time."
       ],
       "postedIds": [],
-      "postedAt": null,
-      "error": null
+      "postedAt": null
     },
     {
       "id": "w17-act4-003",
       "type": "thread",
       "category": "FDD Diary",
-      "title": "[FDD Diary #24] Frustration Becomes the System",
+      "title": "[FDD Diary #24] Yak Shaving Built the System",
       "source": "easy_peasy/phase1/en/act4-4-en.md",
       "scheduledAt": "2026-04-25T14:00:00Z",
       "status": "approved",
       "content": [
-        "All of it came from yak shaving.\n\nDidn't learn this from textbooks.\nBuilds blew up.\nTwenty-eight left arms appeared.\nFix one, three more break.\nLying awake at night thinking \"is this even right?\"\n\nThe rabbit holes created the questions.\nThe questions found the concepts.\nThe concepts got names.\nSDD. DDD. TDD.",
-        "I'm not a developer.\nStill not.\n\nCan't read code.\nThat hasn't changed.\n\nBut I know three things.\n\nWrite down what you're building first.\nName where it goes.\nSet the bar for done first.\n\nWith these three things,\nI can build with AI.\n\nWithout them, it's luck.\nWith them, it's a system.",
-        "Frustration becomes the spec.\nSpecs become the system.\nSystems become freedom."
+        "Didn't learn any of this from textbooks.\n\nBuilds blew up. Twenty-eight left arms.\nFix one, three more break.\nLying awake thinking 'is this even right?'\n\nThe rabbit holes created the questions.\nQuestions found the concepts.",
+        "SDD came from builds exploding.\nDDD came from code tangling.\nTDD came from Monday morning dead agents.\n\nEvery framework was born from a specific pain.\nNamed after the frustration that created it.",
+        "Write down what you're building first.\nName where it goes.\nSet the bar for done.\n\nThree things. That's the system.\n\nWithout them, it's luck.\nWith them, it's repeatable."
       ],
       "postedIds": [],
-      "postedAt": null,
-      "error": null
+      "postedAt": null
     }
   ]
 }

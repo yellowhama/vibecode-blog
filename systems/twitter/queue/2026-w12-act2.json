@@ -1,7 +1,7 @@
 {
   "week": "2026-w12",
   "series": "FDD Diary",
-  "generatedAt": "2026-03-02T04:00:00+09:00",
+  "generatedAt": "2026-03-10T12:00:00+09:00",
   "items": [
     {
       "id": "w12-act2-001",
@@ -12,13 +12,12 @@
       "scheduledAt": "2026-03-16T14:00:00Z",
       "status": "approved",
       "content": [
-        "Fifteen pages of spec.\nPurpose, reason, method, means.\nThrew it at Claude.\n\"Build this according to the spec.\"\n\nFirst day. Build blew up. Timeout.\nSecond day. Code collision. Existing code I forgot about.\nThird day. A working feature stopped working.\n\nThree days straight. All failures.\nI had a spec.\n\n\"Everyone has a plan until they get punched in the mouth.\"\nMike Tyson said that.\nThis was exactly that situation.",
-        "Was the spec the problem?\nNo. The spec was fine.\n\nBut the spec only said \"what to build.\"\nWhat would break in reality wasn't in there.\nCouldn't have been. Nothing had broken yet.\n\nSo I made a `PROBLEMS.md`.\nEvery time I got punched, I wrote it down.\n\"Where I got hit. Why I got hit. How I dodged it.\"\n\nDay one: build timeout. Fix: split build config.\nDay two: code collision. Fix: add feature inventory.\nDay three: dependency mutation. Fix: add dependency map.\n\nWrote it down. Then I could see.\nThe pattern emerged.",
-        "A spec is not a diary.\n\nA diary you write once and never look at.\nA spec you read every day. Fix every day.\n\nWrite a spec once and call it done? That's a wish.\n\"I hope this works out.\"\n\nWishes don't come true.\nPlans come true.\nPlans change every time you take a punch.\nWriting down the changes -- that's what a plan is."
+        "I can't read code.\nSo I wrote a spec instead.\nFifteen pages. Purpose, method, structure.\nThrew it at Claude.\n\nThree straight days of explosions.",
+        "Day one: build timeout.\nDay two: code collision.\nDay three: a working feature died.\n\nThe spec said what to build.\nDidn't say what would break.\nCouldn't have. Nothing had broken yet.\n\nMade a PROBLEMS.md.\nWrote down every hit.\nThe pattern emerged.",
+        "A spec you write once and never touch?\nThat's a wish.\n\nPlans change every time you take a punch.\nWriting down the changes.\nThat's what a plan is."
       ],
       "postedIds": [],
-      "postedAt": null,
-      "error": null
+      "postedAt": null
     },
     {
       "id": "w12-act2-002",
@@ -29,13 +28,12 @@
       "scheduledAt": "2026-03-18T14:00:00Z",
       "status": "approved",
       "content": [
-        "\"Make me a left arm.\"\nAI made one. But didn't remove the old one.\nNext day. \"Fix the left arm.\" Another new arm.\nDay after. Another.\n\nA week later. Twenty-eight left arms.\nLeft arms on the legs. Left arms on the back.\nNineteen deactivated. Six never discovered.\nEvery feature exists. Just can't walk.\n\nStarted with one spec document.\nA week later, thirty.\n\nspec_v1.md\nspec_v3_final.md\nspec_v3_final_real.md\nspec_v3_final_real_2.md\n\nNo idea which one was right.",
-        "Asked the AI. \"Why do you keep making new files?\"\n\n\"Modifying the existing file could result in loss of previous content. For safety, I generated a new version.\"\n\nSafety? Thirty files is safety?\n\nBut from the AI's perspective, it's right.\nDelete something, responsibility kicks in.\nAI can't take responsibility.\nSo it doesn't delete. It creates.\n\nImplementation is free.\nCleanup costs money.\n\nYesterday's Claude did the work.\nToday's GPT has to dig through it.\nNot coding anymore. Archaeology.",
-        "So I learned one thing.\n\nSSOT. Single Source of Truth.\nOne spec file. One config file.\nOne document that says \"this is correct.\"\n\nEverything else references that one.\nWhen that one changes, everything else follows.\n\nThirty files each telling a different story? Rules collapse.\nOne file telling one story? Rules hold."
+        "'Make me a left arm.'\nAI made one. Didn't remove the old one.\nNext day, another. Day after, another.\n\nA week later. Twenty-eight left arms.\nLeft arms on the legs. On the back.\nNineteen deactivated. Six never discovered.",
+        "Asked the AI. 'Why new files every time?'\n\n'Modifying existing files could lose content. For safety, I generated a new version.'\n\nThirty files is safety?\n\nImplementation is free.\nCleanup costs money.\nYesterday's Claude did the work.\nToday's GPT does archaeology.",
+        "One spec file. One config file.\nOne document that says 'this is correct.'\n\nThirty files, thirty stories. Rules collapse.\nOne file, one story. Rules hold.\n\nSSOT. Single Source of Truth."
       ],
       "postedIds": [],
-      "postedAt": null,
-      "error": null
+      "postedAt": null
     },
     {
       "id": "w12-act2-003",
@@ -46,13 +44,12 @@
       "scheduledAt": "2026-03-20T14:00:00Z",
       "status": "approved",
       "content": [
-        "AI is a genius with no eyes.\n\nDoesn't know what's in the project.\nEvery session, a new hire walks in.\nDoesn't know what happened yesterday.\nSo it builds again.\n\nThree eggs in the fridge.\nGo to the store without a shopping list.\nBuy three more eggs.\nCome home to six eggs.\n\nAI isn't dumb.\nThere's no shopping list.",
-        "So I made a shopping list.\n\nHad the AI scan all files and catalog what exists.\nFive minutes.\n\nAfter that, everything changed.\n\"Build this\" -- and the AI checks first.\n\"Something similar already exists. Should I modify it?\"\n\nNever heard that before.\nWhy? Because the AI didn't know what was there.\n\nWith docs: genius.\nWithout docs: blind genius.",
-        "Update the spec every day.\nOne source of truth.\nThe AI needs a map.\n\nGot it.\nBut all of this was happening by hand.\nMe opening the spec. Me fixing it.\nMe telling the AI \"read this first.\"\n\nEvery time.\n\nIs there a way to run this loop automatically?"
+        "AI is a genius with no eyes.\n\nThree eggs in the fridge.\nNo shopping list. Buy three more.\nCome home to six.\n\nAI isn't dumb.\nThere's no shopping list.",
+        "Had the AI scan every file. Catalog what exists.\nFive minutes.\n\n'Build this.' AI checks first.\n'Something similar already exists. Modify it?'\n\nNever heard that before.\nBecause the AI didn't know what was there.\n\nWith docs: genius.\nWithout docs: blind genius.",
+        "Update the list every day.\nOne source of truth.\nGot it.\n\nBut all of this. Me opening the spec.\nMe fixing it. Me saying 'read this first.'\n\nEvery. Single. Time.\n\nMy hands were the automation."
       ],
       "postedIds": [],
-      "postedAt": null,
-      "error": null
+      "postedAt": null
     }
   ]
 }

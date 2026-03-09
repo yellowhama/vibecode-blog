@@ -1,7 +1,7 @@
 {
   "week": "2026-w16",
   "series": "FDD Diary",
-  "generatedAt": "2026-03-02T04:00:00+09:00",
+  "generatedAt": "2026-03-10T12:00:00+09:00",
   "items": [
     {
       "id": "w16-act4-001",
@@ -12,30 +12,28 @@
       "scheduledAt": "2026-04-14T14:00:00Z",
       "status": "approved",
       "content": [
-        "Changed the notification text.\nCheck everything again.\nLogin. Agent. Notification. Settings.\nThirty minutes.\n\nAnother fix. Everything again. Thirty minutes.\nAnother fix. Everything again. Thirty minutes.\n\n\"Do I have to check everything every time I make a change?\"\n\nYes.\nBecause if you don't, you won't know what broke.",
-        "Around the fifth check, things change.\n\n\"This has nothing to do with what I just changed.\"\n\"This one probably didn't break.\"\n\nSkip it.\nThat's exactly the door bugs walk through.\n\nWillpower runs out.\nFifth check -- focus drops.\nTenth -- you start skimming.\nTwentieth -- you stop looking.\n\nManual testing isn't a time problem.\nIt's a willpower problem.",
-        "Fifty features means fifty boxes.\n\nHave to open each one.\nDon't want to? \"Probably fine.\" Skip.\nSkip and a dead cat stays in the box.\n\nSchrodinger's error.\nCan't tell if there's a bug until you run the code.\n\nGets discovered later.\nAt the worst possible moment.\nAlways.\n\nIs there a way out of this loop?"
+        "Manual testing isn't a time problem.\nIt's a willpower problem.\n\nFifth check, focus drops.\nTenth, skimming.\nTwentieth, you stop looking.\n\nThat's exactly the door bugs walk through.",
+        "Changed the notification text.\nCheck everything. Login. Agent. Settings.\nThirty minutes.\n\nAnother fix. Everything again. Thirty minutes.\nAnother fix. Thirty minutes.\n\n'This one probably didn't break.'\nSkip it.\n\nDead cat stays in the box.",
+        "Fifty features. Fifty boxes to open.\n\nDon't want to? 'Probably fine.' Skip.\n\nGets discovered later.\nAt the worst possible moment.\nAlways.\n\nNeeded a way out."
       ],
       "postedIds": [],
-      "postedAt": null,
-      "error": null
+      "postedAt": null
     },
     {
       "id": "w16-act4-002",
       "type": "thread",
       "category": "FDD Diary",
-      "title": "[FDD Diary #20] Defining Done",
+      "title": "[FDD Diary #20] Before Tests",
       "source": "easy_peasy/phase1/en/act4-2-en.md",
       "scheduledAt": "2026-04-16T14:00:00Z",
       "status": "approved",
       "content": [
-        "Asked the AI.\n\"I don't want to check everything every time.\"\n\"Write tests.\"\n\nTests? I can't read code. Tests are code.\nHow am I supposed to do that?\n\n\"A test is writing down 'if this works, it's done.'\"\n\nWait.\n\nSpec: \"When a user logs in, the dashboard appears.\"\nThat's what you're building.\n\nTest: \"Click login. Dashboard appears. Username displayed.\"\nThat's how you confirm it's built.\n\nSpec is the destination.\nTest is the arrival confirmation.",
-        "The key is you write it first.\n\nNot after writing code.\nBefore.\n\n\"Login shows the dashboard.\"\nWrite that down first.\nCode passes this bar? \"Done.\"\nDoesn't pass? \"Not done.\"\n\nNo bar means you can't tell \"done\" from \"probably done.\"\n\nTDD. Test-Driven Development.\nAnother grand name. Simple essence.\nSetting the bar for \"done\" first.",
-        "\"But how do I write tests?\"\n\nYou don't.\nYou just set the bar.\n\n\"Login shows the dashboard.\"\n\"Notification fires exactly once.\"\n\"Settings change gets saved.\"\n\nPlain language. Give that to the AI.\n\"Write test code that matches this bar.\"\nAI writes it.\n\nDecisions are mine.\nImplementation is the AI's.\nVerification is the test's.\n\nThe thing AI can't do is always a decision."
+        "Friday night. Fixed the settings screen.\nWorked. Looked good.\n\nMonday morning. Agent dead. Again.\n\nChanged code. Didn't know what else it touched.\nCouldn't know. Didn't check.",
+        "AI said: 'Write tests.'\n\nTests are code. I don't write code.\n\n'A test is writing down: if this works, it's done.'\n\nWait.\n\nSpec: 'Login shows dashboard.' That's the goal.\nTest: 'Click login. Dashboard appears.' That's the proof.\n\nI write the bar. AI writes the code.",
+        "Write the bar before the code. Not after.\n\n'Notification fires once.'\n'Settings save correctly.'\n\nPlain language. Hand it to the AI.\nAI writes the test code.\n\nDecisions are mine.\nImplementation is the AI's.\nVerification is the test's."
       ],
       "postedIds": [],
-      "postedAt": null,
-      "error": null
+      "postedAt": null
     },
     {
       "id": "w16-act4-003",
@@ -46,13 +44,12 @@
       "scheduledAt": "2026-04-18T14:00:00Z",
       "status": "approved",
       "content": [
-        "Started with five tests. Ran them. Thirty seconds. All passed.\n\nFive became fifty. Fifty became five hundred.\nRun five hundred. One minute. All pass.\n\n\"If even one out of five hundred fails, something's broken.\"\nOne minute. Automatic.\n\nThat code I just changed. Did it break anything?\nRun tests. Thirty seconds. All PASS.\n\"Nope.\"\n\nHard to describe that moment.\n\"Safe to change.\"\nThat certainty. Never had it before.",
-        "Now there are 6,260 tests.\n849 in Rust. 5,411 in TypeScript.\nRun them all in one minute.\n\nOne minute confirms 6,260 features are correct.\n\n\"Can I delete this function?\"\nRun tests. All pass. Yes, delete it.\n\n\"Can I restructure this?\"\nRun tests. Three fail. Fix three. Run again. All pass.\nYes, restructure it.\n\nWithout tests, I was too scared to touch anything.\nWith tests, I cut without hesitation.\n\nTests aren't feature verification.\nThey're courage.",
-        "All 6,260 passed. Pushed to production.\n69 issues showed up in the real world.\n\nTests aren't perfect.\nThey only check situations I thought of.\nDifferent browsers. Slow networks. Unexpected click orders.\n\nBut when those 69 showed up?\nIt wasn't panic. It was a list.\nFixed one by one. Added a test each time.\n69 became 0. 6,260 became 6,329.\n\nTests aren't perfect.\nBut they're 6,260 times better than nothing."
+        "Five tests became fifty.\nFifty became five hundred.\nFive hundred became 6,260.\n\nRun them all. One minute. Every feature checked.\n\nChanged code. Something break?\nThirty seconds. The answer's there.",
+        "'Can I delete this function?'\nRun tests. All pass. Yes.\n\n'Can I restructure this?'\nThree fail. Fix three. Run again. All pass. Yes.\n\nToo scared to touch code before.\nNow I cut without hesitation.\n\nTests aren't verification.\nThey're courage.",
+        "All 6,260 passed. Pushed to production.\n69 issues in the real world.\n\nTests only check what I thought of.\n\nBut those 69? Not panic. A list.\nFixed one by one. Added a test each time.\n6,260 became 6,329.\n\nNot perfect. 6,260 times better than nothing."
       ],
       "postedIds": [],
-      "postedAt": null,
-      "error": null
+      "postedAt": null
     }
   ]
 }

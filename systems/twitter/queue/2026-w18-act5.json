@@ -1,7 +1,7 @@
 {
   "week": "2026-w18",
   "series": "FDD Diary",
-  "generatedAt": "2026-03-02T04:00:00+09:00",
+  "generatedAt": "2026-03-10T12:00:00+09:00",
   "items": [
     {
       "id": "w18-act5-001",
@@ -12,30 +12,28 @@
       "scheduledAt": "2026-04-28T14:00:00Z",
       "status": "approved",
       "content": [
-        "Got a spec. Got a process. Got structure. Got tests.\nThought I was ready.\n\nSix things in the spec.\n\"Build all of this.\"\nIt blew up.\n\nBuild six things at once, six things blow up at once.\nFile sync collided with remote commands.\nGPU module tangled with monitoring.\nAlerts had nothing to connect to.\n\nA spec is a map.\nBut you can't walk every road at the same time.",
-        "What should I build first?\n\nEverything's important. Everything's needed.\nBut not at the same time.\n\nRemembered what I wanted in the first place.\nThree computers working like one.\n\nGPU sharing? Later.\nAuto-recovery? Later.\n\nRight now, one thing.\nSend a job from my laptop to the desktop.\nGet the result back.\n\nIf that works, everything else can be added.\nIf that doesn't work, nothing else matters.",
-        "\"Start with the smallest thing.\"\n\nHeard that a hundred times.\nBut nobody told me what \"smallest\" means.\n\nSmallest = fewest features?\nNo.\n\nSmallest = the moment the experience I wanted is felt even once.\n\nTen features and no experience? Nothing.\nOne feature and that experience? That's the beginning.\n\nBut what is \"the experience\"?\nWhat does that even mean?"
+        "Had the spec. Had the process. Had the tests.\nBuilt six features at once.\n\nAll six blew up at once.\n\nFile sync hit remote commands.\nGPU tangled with monitoring.\nAlerts had nothing to connect to.",
+        "A spec is a map.\nCan't walk every road at the same time.\n\nWhat should I build first?\nEverything's important.\n\nWent back to the beginning.\nWhat did I want?\nSend a job from laptop to desktop. Get the result back.\nThat's it.\n\nGPU sharing? Later.\nAuto-recovery? Later.",
+        "'Start small.'\nHeard it a hundred times.\nNobody says what 'small' means.\n\nFewest features? No.\n\nSmallest = the moment the experience I wanted happens once.\n\nTen features, no experience? Nothing.\nOne feature, that experience? Beginning."
       ],
       "postedIds": [],
-      "postedAt": null,
-      "error": null
+      "postedAt": null
     },
     {
       "id": "w18-act5-002",
       "type": "thread",
       "category": "FDD Diary",
-      "title": "[FDD Diary #26] UX Is Not Design",
+      "title": "[FDD Diary #26] The Cafe Test",
       "source": "easy_peasy/phase1/en/act5-2-en.md",
       "scheduledAt": "2026-04-30T14:00:00Z",
       "status": "approved",
       "content": [
-        "\"UX? Isn't that a design term?\"\nNo.\n\niPhone. Unlock. Tap. Done. Good UX.\niMac. Settings three times. Permission. Update. Bad UX.\n\nUX is not design.\nUX is the experience you desperately want.\n\nOpen my laptop at a cafe.\nNeed a file from home.\nIt's not there.\n\"Shit.\"\n\nEliminating that moment.\nThat's my UX.",
-        "Specs define what to build.\nUX defines how you experience it.\n\n\"File sync\" is a spec.\n\"Open it at the cafe and it's there\" is UX.\n\nBuild from the system perspective only:\n\"Sync success: 1,247 files. 3 conflicts — resolve manually.\"\nFeature runs. But it's infuriating.\n\nBuild from the human perspective:\nOpen the laptop. File's there. Done.\nConflicts? Handled. Message? Don't need it.\n\n\"It's there.\" That's all.",
-        "A non-developer can't do code review.\nCan't read code.\n\nBut experience review? Absolutely.\n\n\"Opened it at the cafe. File there?\"\nThere? Pass. Not there? Fail.\n\nDidn't read a single line of code.\nBut answered \"is this what I wanted?\"\n\nThat's the non-developer's ultimate weapon.\nNot code review. Experience review.\n\nXDD. UX-Driven Development.\nCode is the AI's job.\nI design the experience."
+        "Opened my laptop at the cafe.\nNeeded a file from home.\nNot there.\n\nShit.\n\nThat moment.\nEliminating that moment.\nThat's the whole product.",
+        "Spec says 'file sync.'\nUX says 'open it at the cafe, it's there.'\n\nBuild from the system side:\n'Sync success: 1,247 files. 3 conflicts.'\nFeature works. Infuriating.\n\nBuild from the human side:\nOpen laptop. File's there. Done.\n\nSpec can be right and UX can still be wrong.",
+        "Never read a line of code in my life.\nBut experience review?\n\n'Opened at the cafe. File there?'\nThere? Pass. Not there? Fail.\n\nAnswered 'is this what I wanted?' without touching the code.\n\nThat's the weapon."
       ],
       "postedIds": [],
-      "postedAt": null,
-      "error": null
+      "postedAt": null
     },
     {
       "id": "w18-act5-003",
@@ -46,13 +44,12 @@
       "scheduledAt": "2026-05-01T14:00:00Z",
       "status": "approved",
       "content": [
-        "\"SSH?\" \"Yes. Not behind NAT.\"\n\"Port forwarding?\" \"Yes. Security risk.\"\n\"VPN?\" \"Yes. Slow.\"\n\"QUIC?\" \"Yes. Blocked on some networks.\"\n\nTwenty rounds of ping-pong.\n\nEvery \"no\" got a \"why.\"\n\"No\" ten times. \"Why\" ten times.\n\nAI doesn't give you the answer.\nAI tells you one fix for one problem.\nTouch a different condition — \"that won't work\" pops up.\n\nWhat AI gave me wasn't a solution.\nIt was a boundary.\n\nEvery boundary turned out to be a requirement.",
-        "Twenty rounds. Chat gets long.\nMost people open a new chat.\nStart from scratch.\n\nWrong.\n\nThe conversation itself is the research.\nThe fight is the data.\nDon't throw it away.\n\nGather the records. Bring them back to AI.\nThis time AI answers differently.\nBecause this time there's context.\n\nNew chat — AI is a new hire.\nSame chat with context — AI is a colleague.\nSame AI. Different context.",
-        "Conversation history = research data.\n\"Won't work\" = requirement.\nTwenty rounds = twenty boundaries = twenty spec conditions.\n\nDon't throw it away.\nDon't open a new chat.\nTake the fight records and go back.\n\nThat's how a non-developer uses AI."
+        "'SSH?' 'Yes. Not behind NAT.'\n'Port forwarding?' 'Yes. Security risk.'\n'VPN?' 'Yes. Slow.'\n'QUIC?' 'Yes. Blocked on some networks.'\n\nTwenty rounds of ping-pong.\n\nAI doesn't give you the answer.\nIt gives you a boundary.\n\nEvery boundary turned out to be a requirement.",
+        "Twenty rounds. Chat gets long.\nMost people open a new chat.\nStart from scratch.\n\nWrong.\n\nThe conversation is the research.\nThe fight is the data.\nDon't throw it away.\n\nNew chat — AI is a new hire.\nSame chat with context — AI is a colleague.\nSame AI. Different context.",
+        "Conversation history = research data.\n'Won't work' = requirement.\nTwenty rounds = twenty boundaries = twenty spec conditions.\n\nDon't throw it away.\nDon't open a new chat.\nTake the fight records and go back."
       ],
       "postedIds": [],
-      "postedAt": null,
-      "error": null
+      "postedAt": null
     }
   ]
 }
