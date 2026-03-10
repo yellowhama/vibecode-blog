@@ -2,7 +2,7 @@
 
 ## 1. 개요 (System Overview)
 *   **목표**: 블로그 글 한 편으로 브랜딩이 박힌 고퀄리티 유튜브 영상(3막+훅 구조)을 자율 생산.
-*   **핵심 철학**: 
+*   **핵심 철학**:
     *   **Result-First Hook**: 영상 시작 10초 내에 결과를 보여줌.
     *   **Nike Rule**: 대사를 최소화하고 클레이모션 액션으로 증명.
     *   **Agent-Mediated**: 에이전트(Gemini/Claude)의 창의성과 파이썬의 엄격한 규격을 결합.
@@ -16,13 +16,28 @@
 | **Step 3** | **Agent (Gemini/Claude)** | 4막 스크립트 및 매니페스트 작성 | `narration_script.fountain` |
 | **Step 4** | `generate_tts_simple.py` | Edge-TTS 목소리 및 자막 생성 | `voiceover_master.wav`, `.srt` |
 | **Step 5** | `sync_shots_to_audio.py` | 실제 목소리 길이에 맞춰 영상 싱크 조정 | `shots_synchronized.json` |
+| **Step 5.5** | `generate_kontext_keyframes.py` | **골든 레퍼런스 → 씬별 키프레임 (캐릭터 일관성)** | `{shot_id}_keyframe.png` |
 | **Step 6** | `comfy_batch_render.py` | RTX 5070 Ti 가동 (ComfyUI API) | `N001.mp4` ~ `N008.mp4` |
 | **Step 7** | `finalize_video_v2.py` | 영상+오디오+자막+BGM 최종 믹싱 | `FINAL_CONTENT_BOSS.mp4` |
+
+### 2-pass 렌더 아키텍처
+
+```
+Golden Ref (1장)
+    ↓ Flux Kontext (Pass 1)
+씬별 키프레임 PNG (캐릭터 동일인물)
+    ↓ Wan I2V (Pass 2)
+5초 영상 클립
+```
+
+*   **Pass 1 (Kontext)**: `generate_kontext_keyframes.py` → 골든 레퍼런스 이미지를 Flux Kontext로 편집하여 씬별 키프레임 생성. 얼굴/스타일/색감 유지.
+*   **Pass 2 (I2V)**: `comfy_batch_render.py` → Kontext 키프레임을 Wan I2V `start_image`로 사용하여 5초 영상 생성.
+*   ComfyUI가 모델 자동 스왑 (Kontext ~12GB → Wan ~13.4GB). 동시 로드 없음.
 
 ## 3. 핵심 컴포넌트 상세
 
 ### **A. 내러티브 엔진 (`branding/storyform.json`)**
-*   프로젝트의 **SSOT(Single Source of Truth)**. 
+*   프로젝트의 **SSOT(Single Source of Truth)**.
 *   3막 구조(Fury, Mess, Insight)와 금지어, 필수 비유 등을 정의하여 모든 에이전트가 동일한 톤을 유지하게 함.
 
 ### **B. 지능형 샷 플래너 (`shot_planner.py`)**
@@ -38,15 +53,34 @@
 *   `PySceneDetect` 통합: 한 샷 내에 의도치 않은 컷(`BadCut`)이 발생하면 패키징 단계에서 차단.
 *   유튜브 썸네일 자동 생성: Hook 단계에서 가장 화려한 프레임 추출.
 
+### **E. Kontext 캐릭터 일관성 엔진 (`generate_kontext_keyframes.py`)**
+*   **골든 레퍼런스** 1장으로 모든 씬의 키프레임을 자동 생성.
+*   Flux Kontext 모델이 레퍼런스 이미지를 편집하여 씬만 변경, 얼굴/스타일 유지.
+*   shot manifest의 `kontext_prompt` 필드 사용 (I2V `prompt_positive`와 분리).
+*   프롬프트 템플릿: `{씬 지시문}. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.`
+
 ## 4. 운영 가이드 (Operation)
 
 ### **전체 실행 (자동 중단 포함)**
 ```bash
 python3 systems/video/pipeline/scripts/run_blog_to_video_pipeline.py \
     --blog content/blog/phase1/en/act1-en.md \
-    --language en
+    --language en \
+    --golden-ref ivy_burr_golden_ref.png
 ```
-*   실행 후 `[PAUSE]` 메시지가 뜨면 생성된 `.prompt` 파일을 에이전트에 넣고 결과물을 작업 폴더에 저장.
+*   `--golden-ref` 지정 시 Kontext 키프레임 자동 생성 (Step 5.5).
+*   `--skip-kontext` 로 이미 생성된 키프레임 재사용.
+*   `--golden-ref` 없으면 Kontext 스킵 (하위 호환).
+
+### **E2E 파이프라인 (TTS + Kontext + Render + Package)**
+```bash
+python3 systems/video/pipeline/scripts/run_end_to_end_video_pipeline.py \
+    --manifest shots.json \
+    --workflow wan22_moe_i2v_full.json \
+    --bindings wan22_moe_i2v_bindings.json \
+    --golden-ref ivy_burr_golden_ref.png \
+    --kontext-guidance 2.5
+```
 
 ### **렌더링 후 최종 조립**
 ```bash
@@ -56,16 +90,17 @@ python3 systems/video/pipeline/scripts/finalize_video_v2.py \
 
 ## 5. 인프라 설정
 *   **ComfyUI**: 8188 포트 사용. 서버 실행: `bash systems/video/scripts/run_comfy_server.sh`
-*   **기본 모델**: Wan 2.2 GGUF MoE (HighNoise + LowNoise Q3_K_M, 각 6.7GB)
+*   **이미지 모델**: Flux.1-dev GGUF (T2I) + Flux Kontext GGUF (씬 편집)
+*   **영상 모델**: Wan 2.2 GGUF MoE (HighNoise + LowNoise Q3_K_M, 각 6.7GB)
 *   **레거시 모델**: `hunyuan_v15_fp8` (심볼릭 링크 완료)
-*   **커스텀 노드**: `ComfyUI-GGUF` (UnetLoaderGGUF 노드)
+*   **커스텀 노드**: `ComfyUI-GGUF`, `ComfyUI-PuLID-Flux`
 *   **의존성**: `edge-tts`, `ffmpeg`, `scenedetect` 기반.
 
 ## 6. ByteDance API 통합 특이사항
 *   **지원 노드**: `ByteDanceImageToVideoNode`, `ByteDanceTextToVideoNode` 등.
 *   **해상도(Resolution)**: `"480p"`, `"720p"`, `"1080p"` 중 하나를 명확히 지정해야 함 (문자열).
     *   *주의*: `ByteDanceImageReferenceNode`는 `"1080p"`를 지원하지 않음.
-*   **길이(Duration)**: 3~12초 범위의 **초(seconds)** 단위를 사용. 
+*   **길이(Duration)**: 3~12초 범위의 **초(seconds)** 단위를 사용.
     *   *주의*: 로컬 훈위안 모델과 달리 프레임(frames) 단위가 아니므로 `comfy_batch_render.py`에서 별도 처리가 필요함 (패치 완료).
 
 ## 7. Wan 2.2 GGUF MoE 렌더링 엔진
@@ -79,11 +114,25 @@ python3 systems/video/pipeline/scripts/finalize_video_v2.py \
     *   `models/unet/Wan2.2-Animate-14B-Q3_K_M.gguf` (T2V용, 미사용)
 
 ### API 워크플로우 템플릿 (`workflows/api/`)
+
+#### Flux (이미지 생성)
+| 워크플로우 | 용도 | VRAM |
+|:---|:---|:---|
+| `flux_dev_t2i.json` | 기본 T2I (캐릭터시트, 컨셉아트) | ~9GB |
+| `flux_kontext_edit.json` | **Kontext 씬 편집 (캐릭터 일관성 최강)** | ~12GB |
+| `flux_controlnet_t2i.json` | T2I + ControlNet 포즈 제어 | ~13GB |
+| `flux_lora_t2i.json` | T2I + LoRA 캐릭터 고정 | ~9.2GB |
+| `flux_lora_controlnet_t2i.json` | T2I + LoRA + ControlNet 결합 | ~13.2GB |
+| `flux_pulid_t2i.json` | T2I + PuLID 얼굴 일관성 (실사 전용) | ~11.6GB |
+| `flux_pulid_controlnet_t2i.json` | T2I + PuLID + ControlNet | ~15.6GB |
+| `flux_face_inpaint.json` | 얼굴 인페인팅 (Flux Fill) | ~9GB |
+
+#### Wan (영상 생성)
 | 워크플로우 | 용도 | 해상도 | 프레임 |
 |:---|:---|:---|:---|
-| `wan22_moe_t2i.json` | 이미지 생성 (캐릭터시트, 컨셉아트) | 1024x1024 | 1 |
-| `wan22_moe_i2v_short.json` | 짧은 영상 (앵글전환, 모션테스트) | 768x768 | 33 (2초) |
+| `wan22_moe_i2v_short.json` | 짧은 영상 (모션테스트) | 768x768 | 33 (2초) |
 | `wan22_moe_i2v_full.json` | 프로덕션 영상 (본편 샷) | 768x768 | 81 (5초) |
+| `wan22_moe_t2i.json` | ~~이미지~~ **(사용 금지 — Flux 사용)** | 1024x1024 | 1 |
 
 ### MoE 세팅 차이
 | | T2I (이미지) | I2V (영상) |
@@ -98,20 +147,22 @@ python3 systems/video/pipeline/scripts/finalize_video_v2.py \
 *   `VHS_VideoCombine` 미설치 시 `SaveImage`로 PNG 시퀀스 출력.
 *   I2V 입력 이미지는 `ComfyUI/app/input/` 폴더에 위치해야 함.
 
-## 8. 캐릭터 시스템 — Vee (비)
+## 8. 캐릭터 시스템 — Ivy Burr (아이비 버)
 
-### 캐릭터 디자인 v2.0
+### 캐릭터 디자인 v4.0
 *   **SSOT**: `systems/video/assets/characters/vee/character_design.json`
-*   **스타일**: Aardman claymation (핑거프린트 텍스처, 매트 마감)
+*   **스타일**: 3D Pixar-like render with subtle clay texture (NOT heavy claymation, NOT photorealistic)
 *   **외형 레퍼런스**: 장나라(얼굴형, 표정) 60% + Amy Adams(머리색, 분위기) 40%
 *   **핵심 특징**:
     *   피부: 따뜻한 레몬크림 매트 클레이 (#FFF3D4)
-    *   머리: 오번-코퍼 웨이브 (#B7472A)
-    *   의상: 코코아 브라운 후디 (#5D4037) + 블루 데님 쇼츠 (#5C6BC0)
+    *   머리: 코코아 브라운 웨이브 (#5D4037)
+    *   의상: MUSU Yellow 후디 (#FFD166) + 블루 데님 쇼츠 (#5C6BC0)
     *   악세: 두꺼운 검정 동그란 안경, 살짝 비뚤어진 채
-    *   체형: 치비 비율 (4등신), 뭉툭한 팔다리
+    *   체형: 4.5등신, 날씬한 성인 여성 (치비 아님)
 
 ### 캐릭터 일관성 (Identity Persistence)
-*   **I2V 방식**: 정면 시트(`Vee_sheet_front.png`)를 `start_image`로 사용하여 앵글 전환 렌더링.
-*   **프롬프트 잠금**: 모든 샷에 identity 키워드 강제 삽입 (`auburn clay hair, cocoa brown hoodie, round glasses`).
+*   **Primary: Flux Kontext** — 골든 레퍼런스 이미지를 편집해 씬별 키프레임 생성. 5/5 테스트 통과.
+*   **Secondary: PuLID-Flux** — 실사 전용. 스타일 캐릭터에서 InsightFace 임베딩 실패.
+*   **골든 레퍼런스**: `ivy_burr_golden_ref.png` (Flux T2I, seed=2025, guidance=3.5)
+*   **프롬프트 잠금**: 모든 Kontext 샷에 `"Keep her exact face, hair, glasses, and yellow hoodie unchanged"` 강제.
 *   **character_extractor.py**: `KNOWN_CHARACTERS`에 Vee 등록 완료.

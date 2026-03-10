@@ -108,21 +108,28 @@ def _build_api_prompt(workflow: Dict, bindings: Dict, shot: Dict) -> Dict:
 
     # --- Special-case mappings (need value transformation) ---
 
-    # video_duration: convert seconds → frame count
-    if "video_duration" in mappings and shot.get("duration_sec"):
+    # video_duration: convert seconds → frame count, or use raw frame count
+    if "video_duration" in mappings:
         node_id = mappings["video_duration"]["node_id"]
         field = mappings["video_duration"]["field"]
-        fps = 16
-        frame_count = max(17, int(shot["duration_sec"] * fps) + 1)
-        if node_id in nodes:
+        if shot.get("video_duration"):
+            # Direct frame count (e.g., 33, 81)
+            frame_count = int(shot["video_duration"])
+        elif shot.get("duration_sec"):
+            fps = 16
+            frame_count = max(17, int(shot["duration_sec"] * fps) + 1)
+        else:
+            frame_count = None
+        if frame_count and node_id in nodes:
             nodes[node_id]["inputs"][field] = frame_count
 
-    # input_image: map from shot["keyframe"]
-    if "input_image" in mappings and shot.get("keyframe"):
+    # input_image: map from shot["keyframe"] or shot["input_image"]
+    img_value = shot.get("keyframe") or shot.get("input_image")
+    if "input_image" in mappings and img_value:
         node_id = mappings["input_image"]["node_id"]
         field = mappings["input_image"]["field"]
         if node_id in nodes:
-            nodes[node_id]["inputs"][field] = shot["keyframe"]
+            nodes[node_id]["inputs"][field] = img_value
 
     SPECIAL_KEYS = {"video_duration", "input_image", "filename_prefix"}
 

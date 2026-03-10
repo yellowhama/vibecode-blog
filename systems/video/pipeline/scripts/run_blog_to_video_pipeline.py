@@ -30,6 +30,9 @@ def main():
     parser.add_argument("--server", default="127.0.0.1:8188")
     parser.add_argument("--workflow", type=Path)
     parser.add_argument("--bindings", type=Path)
+    parser.add_argument("--golden-ref", default=None, help="Golden reference image for Kontext keyframe generation")
+    parser.add_argument("--skip-kontext", action="store_true", help="Skip Kontext keyframe generation")
+    parser.add_argument("--kontext-guidance", type=float, default=2.5, help="Kontext guidance (default: 2.5)")
     args = parser.parse_args()
 
     # Paths
@@ -40,7 +43,7 @@ def main():
     
     video_root = root.parent # E:\vibecode-blog
     
-    active_stages = args.stages.split(",") if args.stages != "all" else ["prepro", "agent", "tts", "sync", "render", "package"]
+    active_stages = args.stages.split(",") if args.stages != "all" else ["prepro", "agent", "tts", "sync", "kontext", "render", "package"]
     
     # Context state
     project_id = args.blog.stem
@@ -96,7 +99,25 @@ def main():
             "--output", str(run_dir / "shots_synchronized.json")
         ], "Synchronizing Visuals to Audio")
 
-    # 5. RENDER
+    # 5.5. KONTEXT KEYFRAMES
+    if "kontext" in active_stages and args.golden_ref and not args.skip_kontext:
+        manifest_for_kontext = run_dir / "shots_synchronized.json"
+        if not manifest_for_kontext.exists():
+            manifest_for_kontext = run_dir / "shots_planned.json"
+        kontext_cmd = [
+            "python3", str(scripts / "generate_kontext_keyframes.py"),
+            "--manifest", str(manifest_for_kontext),
+            "--golden-ref", args.golden_ref,
+            "--output-dir", str(output_root / "kontext_keyframes"),
+            "--server", args.server,
+            "--guidance", str(args.kontext_guidance),
+        ]
+        comfy_input = Path("/home/hugh/ComfyUI/app/input")
+        if comfy_input.exists():
+            kontext_cmd.extend(["--comfy-input", str(comfy_input)])
+        _run(kontext_cmd, "Kontext Keyframe Generation (Character Consistency)")
+
+    # 6. RENDER
     if args.render or ("render" in active_stages and args.resume_from == "render"):
         workflow = args.workflow or root / "workflows" / "v2_standard_workflow.json"
         bindings = args.bindings or root / "workflows" / "v2_standard_bindings.json"
