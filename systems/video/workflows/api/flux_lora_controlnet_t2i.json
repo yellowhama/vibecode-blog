@@ -2,7 +2,7 @@
   "_meta": {
     "title": "Flux.1-dev GGUF — T2I + LoRA + ControlNet Pose",
     "description": "LoRA 캐릭터 고정 + ControlNet 포즈 제어 결합. 씬별 키프레임 최종 파이프라인.",
-    "model": "flux1-dev-Q5_K_S.gguf + LoRA + ControlNet Union Pro 2.0",
+    "model": "flux1-dev-Q5_K_S.gguf + LoRA + Flux ControlNet Union Pro",
     "resolution": "1024x1024",
     "vram": "~13.2GB (Flux 9GB + LoRA 0.2GB + ControlNet 4GB)",
     "notes": "16GB GPU에서 동작. LoRA로 캐릭터 고정 + ControlNet으로 포즈 지정."
@@ -61,8 +61,15 @@
       "class_type": "OpenposePreprocessor"
     },
     "32": {
-      "inputs": { "control_net_name": "xinsir-controlnet-union-sdxl-1.0-promax.safetensors" },
+      "inputs": { "control_net_name": "flux-controlnet-union-pro.safetensors" },
       "class_type": "ControlNetLoader"
+    },
+    "34": {
+      "inputs": {
+        "type": "openpose",
+        "control_net": ["32", 0]
+      },
+      "class_type": "SetUnionControlNetType"
     },
     "33": {
       "inputs": {
@@ -71,10 +78,11 @@
         "end_percent": 0.9,
         "positive": ["26", 0],
         "negative": ["6", 0],
-        "control_net": ["32", 0],
+        "control_net": ["34", 0],
+        "vae": ["12", 0],
         "image": ["31", 0]
       },
-      "class_type": "ControlNetApplyAdvanced"
+      "class_type": "ControlNetApplySD3"
     },
     "13": {
       "inputs": {
