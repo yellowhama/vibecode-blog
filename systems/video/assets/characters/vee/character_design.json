@@ -25,7 +25,7 @@
     "golden_ref_image": {
       "comfyui_input": "ivy_burr_golden_ref.png",
       "repo_path": "systems/video/assets/characters/vee/ivy_burr_golden_ref.png",
-      "generation": "Flux T2I, seed=2025, guidance=3.5, semi-realistic 3D style"
+      "generation": "Flux T2I, golden_07 (seed=2025, guidance=3.5, 3D Pixar-like style)"
     }
   },
 
