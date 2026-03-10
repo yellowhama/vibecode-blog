@@ -103,9 +103,60 @@ npm run post        # 실제 발행
 
 - **패키지**: `@enescinar/twitter-mcp` (유저 레벨 MCP, `-s user`)
 - **설정 방법**: `claude mcp add twitter -s user -e API_KEY=... -e API_SECRET_KEY=... -e ACCESS_TOKEN=... -e ACCESS_TOKEN_SECRET=... -- npx -y @enescinar/twitter-mcp`
+- **AI Writers Workshop MCP**: `claude mcp add story-workshop -s user -- npx -y @angrysky56/ai-writers-workshop` (서사 및 아키타입 기반 스크립트 작성 지원)
 - **주의**: `-e` 플래그는 반드시 `--` 앞에 (환경변수로 전달됨)
-- **X 계정**: @lazy_genius2025
-- **사용 가능 도구**: `mcp__twitter__post_tweet`, `mcp__twitter__search_tweets` 등
+
+---
+
+## 고급 도구 및 기술 로드맵
+
+이 프로젝트는 다음 오픈소스 기술을 우선적으로 채택함:
+
+### 1. 비디오 파이프라인 최적화
+- **모델**: Stable Video Diffusion(SVD)보다 고품질인 **Wan 2.1** 또는 **LTX-Video** 우선 사용.
+- **자동화**: `ComfyUI-to-Python-Extension`을 활용하여 JSON 워크플로우를 순수 파이썬 스크립트로 변환, 유지보수성 향상.
+- **검증**: `evaluate_renders.py`에 **PySceneDetect**를 통합하여 샷 전환 오류 및 "Bad Cut" 자동 감지.
+
+### 2. 서사 및 브랜딩 전략
+- **NCP (Narrative Context Protocol)**: `branding/storyform.json`을 SSOT로 사용하여 모든 에이전트가 동일한 테마와 아크를 유지.
+- **Astro SEO**: Open Graph 및 Twitter 카드 자동화를 위해 `astro-seo` 활용.
+
+---
+
+## 스크립트 및 스토리보드 워크플로우
+
+이 프로젝트는 다음 전문 스킬을 활용하여 운영됨:
+
+| 스킬 | 핵심 역할 |
+|------|----------|
+| `ai-video-production-master` | 스크립트-투-비디오 파이프라인, LoRA 학습, 클라우드 GPU(Vast.ai) 오케스트레이션 |
+| `media-processing` | FFmpeg/ImageMagick 기반 미디어 변환, 최적화, 스트리밍 매니페스트 생성 |
+| `ffmpeg` | Remotion 호환 비디오 인코딩, GIF 변환, 플랫폼별(YouTube/Twitter) 최적화 |
+| `web-design-guidelines` | 블로그 UI/UX 디자인 리뷰 및 접근성 감사 |
+
+### 비디오 프로덕션 가이드라인
+1. **접근 방식**: 교육용은 Stock Footage, 브랜드 자산은 I2V(ComfyUI) 선호.
+2. **인코딩 표준**: `-movflags faststart -pix_fmt yuv420p` 필수 사용.
+3. **해상도**: 홀수 픽셀 방지를 위해 `scale=trunc(iw/2)*2:trunc(ih/2)*2` 필터 적용.
+4. **품질**: 프로덕션용은 CRF 18-22, 웹 프리뷰는 CRF 24-28 사용.
+
+---
+
+## 스크립트 및 스토리보드 워크플로우
+
+이 프로젝트는 **Fountain** 포맷을 표준으로 사용하며, 모든 비디오 제작 전 스토리보드 단계를 거침.
+
+### 1. Fountain 포맷 (.fountain)
+- 모든 스크립트는 일반 텍스트 마크업인 Fountain 형식을 따름 (Git 관리에 최적화).
+- `INT./EXT.` 헤더, 캐릭터 이름 대문자, 액션 중심의 서술.
+
+### 2. 스토리보딩 (Shot List)
+- 모든 스크립트 작성 후 `shots.json` 또는 상세 샷 리스트 생성 필수.
+- **샷 유형**: WS(Wide), MS(Medium), CU(Close Up), POV 등 명시.
+- **나이키 룰**: 대사보다 행동(Action) 위주로 구성. 설명하지 말고 보여줄 것.
+
+### 3. 에이전트 스킬 활용
+- `.agents/skills/script_storyboard_expert/` 스킬을 활성화하여 씬 설계 및 프롬프트 생성.
 
 ---
 

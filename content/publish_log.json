@@ -1,0 +1,5 @@
+{
+  "_schema_version": "1.0",
+  "_description": "Multi-channel publish status registry. Updated by pipeline scripts after each channel publish.",
+  "entries": {}
+}

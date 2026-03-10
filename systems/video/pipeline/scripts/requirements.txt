@@ -1,0 +1,6 @@
+scenedetect[opencv]
+opencv-python
+pillow
+numpy
+requests
+httpx

@@ -170,6 +170,40 @@ def _probe_duration_seconds(media_path: Path) -> float | None:
     return None
 
 
+def _detect_scene_changes(media_path: Path, threshold: float = 27.0) -> int:
+    """Detect number of scenes in a video using scenedetect.
+    A single shot should ideally have only 1 scene.
+    """
+    if media_path.suffix.lower() in STATIC_IMAGE_EXTS:
+        return 1
+        
+    try:
+        # Run scenedetect in quiet mode, using content-based detection
+        cmd = [
+            "scenedetect",
+            "-i", str(media_path),
+            "-q",
+            "detect-content",
+            "-t", str(threshold),
+            "list-scenes",
+            "-n" # suppress CSV creation
+        ]
+        result = _run_cmd(cmd)
+        
+        # Scenedetect output usually contains 'Detected N scenes'
+        match = re.search(r"Detected (\d+) scenes", result.stdout)
+        if match:
+            return int(match.group(1))
+            
+        # Fallback: list-scenes output table parsing if needed
+        # But usually 'Detected N scenes' is in stdout
+        return 1
+    except Exception as exc:
+        # If scenedetect is not installed or fails, fallback to 1
+        print(f"[DEBUG] Scene detection failed for {media_path.name}: {exc}")
+        return 1
+
+
 def _extract_frames(media_path: Path, temp_dir: Path, frame_count: int) -> List[Path]:
     ext = media_path.suffix.lower()
     if ext in STATIC_IMAGE_EXTS:
@@ -566,6 +600,10 @@ def main() -> int:
         else:
             system_prompt = _build_system_prompt(guide_text, args.min_score)
             user_prompt = _build_user_prompt(shot_cfg, media_path)
+            
+            # 1. Automated Scene Detection (Bad Cut detection)
+            scene_count = _detect_scene_changes(media_path)
+            
             with tempfile.TemporaryDirectory(prefix="eval_frames_") as td:
                 frames = _extract_frames(media_path, Path(td), max(1, args.frames))
                 if not frames:
@@ -602,6 +640,23 @@ def main() -> int:
                             "feedback": f"Vision API call failed: {exc}",
                             "failed_metrics": ["VisionApiError"],
                         }
+            
+            # 2. Add automated scene detection results to raw_eval
+            if scene_count > 1:
+                if "failed_metrics" not in raw_eval:
+                    raw_eval["failed_metrics"] = []
+                if "BadCut" not in raw_eval["failed_metrics"]:
+                    raw_eval["failed_metrics"].append("BadCut")
+                
+                # Penalty for bad cuts: -15 points
+                current_score = raw_eval.get("score", 50)
+                raw_eval["score"] = max(0, current_score - 15)
+                
+                current_feedback = raw_eval.get("feedback", "")
+                raw_eval["feedback"] = (
+                    f"[AUTO-DETECTED BAD CUT: {scene_count} scenes found] "
+                    + current_feedback
+                )
 
         normalized = _normalize_evaluation(
             raw_eval=raw_eval,

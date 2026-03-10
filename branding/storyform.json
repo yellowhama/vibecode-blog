@@ -1,0 +1,57 @@
+{
+  "protocol": "NCP",
+  "version": "1.0",
+  "brand": {
+    "name": "vibecode.town",
+    "narrative_arc": "Zero-to-One AI Runtime Builder",
+    "tone": {
+      "base": "Bukowski Grit (60%)",
+      "flavor": "Indie Hacker Manifesto (30%)",
+      "spice": "Product Philosopher (10%)"
+    }
+  },
+  "narrative_structure": {
+    "act_1": {
+      "label": "Frustration (짜증)",
+      "goal": "Identify a specific, visceral pain point. 'What the hell is this?'",
+      "trigger": "A real-world breaking point (Monday morning crash, 3 hours wasted)."
+    },
+    "act_2": {
+      "label": "The Mess (난리)",
+      "goal": "Show the struggle of implementation. 'I built it, and it broke again.'",
+      "trigger": "Unexpected errors, cascading failures, or the realization that the solution is the problem."
+    },
+    "act_3": {
+      "label": "The Deep Dive (파헤침)",
+      "goal": "Translate technical complexity into everyday metaphors. 'RAG is like my mom's closet.'",
+      "trigger": "Insight through failure. A punchy declaration or a 'still breaking' reality."
+    }
+  },
+  "voice_constraints": {
+    "prohibited": [
+      "game-changer",
+      "deep dive",
+      "unpack",
+      "furthermore",
+      "in conclusion",
+      "utilize",
+      "facilitate",
+      "leverage",
+      "I think maybe",
+      "In this article"
+    ],
+    "mandatory_rhythm": "One sentence per line. 3-7 word punches. Self-correction patterns.",
+    "nike_rule": "Action > Dialogue. Products are background. People/Experience are foreground."
+  },
+  "metaphor_toolbox": {
+    "RAG": "Mom's closet organization",
+    "Git": "Dark Souls bonfire / 30 save files",
+    "Context": "Restaurant kitchen prep",
+    "Development": "Michelin inspector judging the result"
+  },
+  "enemy_profiles": [
+    "The Cheap AI Guru (Prompt formulas for sale)",
+    "The 5-Minute Builder (Fake success)",
+    "The Copy-Paste Habit (Infinite error loops)"
+  ]
+}
