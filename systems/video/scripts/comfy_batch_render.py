@@ -137,6 +137,10 @@ def _build_api_prompt(workflow: Dict, bindings: Dict, shot: Dict) -> Dict:
         "height": ["height"],
         "pose_image": ["pose_image", "pose_ref"],
         "controlnet_strength": ["controlnet_strength", "cn_strength"],
+        "pulid_ref_image": ["pulid_ref_image", "ref_face", "face_ref"],
+        "pulid_weight": ["pulid_weight"],
+        "pulid_start_at": ["pulid_start_at"],
+        "pulid_end_at": ["pulid_end_at"],
         "lora_name": ["lora_name", "lora"],
         "lora_strength_model": ["lora_strength_model", "lora_strength"],
         "lora_strength_clip": ["lora_strength_clip"],
@@ -174,7 +178,8 @@ def _build_api_prompt(workflow: Dict, bindings: Dict, shot: Dict) -> Dict:
                 value = int(value)
             elif field in ("strength", "denoise", "guidance", "cfg",
                            "lora_strength_model", "lora_strength_clip",
-                           "controlnet_strength"):
+                           "controlnet_strength",
+                           "weight", "start_at", "end_at"):
                 value = float(value)
             nodes[node_id]["inputs"][field] = value
 

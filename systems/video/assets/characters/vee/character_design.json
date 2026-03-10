@@ -1,9 +1,25 @@
 {
-  "character_id": "vee",
-  "character_name": "Vee (비)",
+  "character_id": "ivy_burr",
+  "character_name": "Ivy Burr (아이비 버)",
+  "character_aliases": ["Vee", "비"],
   "role": "여주인공 — 개발자 아바타",
   "version": "4.0",
   "design_date": "2026-03-11",
+
+  "identity_system": {
+    "method": "PuLID-Flux",
+    "model": "pulid_flux_v0.9.1.safetensors",
+    "golden_ref_image": {
+      "comfyui_input": "ivy_burr_golden_ref.png",
+      "repo_path": "systems/video/assets/characters/vee/ivy_burr_golden_ref.png"
+    },
+    "weight_guidelines": {
+      "claymation": { "range": "0.8-1.0", "note": "스타일 유지하면서 얼굴 일관성" },
+      "semi_realistic": { "range": "1.0-1.2", "note": "반리얼 스타일에서 강한 일관성" },
+      "realistic": { "range": "1.2-1.5", "note": "리얼리스틱에서 최대 일관성" }
+    },
+    "notes": "PuLID InsightFace는 실사 얼굴에 최적화. 클레이모션 레퍼런스로도 동작하나 임베딩이 약할 수 있음. 골든 이미지를 반리얼 스타일로 생성하면 임베딩 품질 향상."
+  },
 
   "design_philosophy": {
     "style": "Aardman studio claymation (Wallace & Gromit / Shaun the Sheep)",

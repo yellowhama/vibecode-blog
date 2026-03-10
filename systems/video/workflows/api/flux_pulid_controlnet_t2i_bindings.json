@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "workflow": "flux_pulid_controlnet_t2i.json",
+  "description": "Flux T2I + PuLID 얼굴 + ControlNet 포즈 바인딩 — 얼굴 고정 + 포즈 제어 동시 사용",
+  "node_mappings": {
+    "positive_prompt": { "node_id": "6", "field": "text" },
+    "seed": { "node_id": "13", "field": "seed" },
+    "guidance": { "node_id": "26", "field": "guidance" },
+    "width": { "node_id": "5", "field": "width" },
+    "height": { "node_id": "5", "field": "height" },
+    "pulid_ref_image": { "node_id": "62", "field": "image" },
+    "pulid_weight": { "node_id": "63", "field": "weight" },
+    "pulid_start_at": { "node_id": "63", "field": "start_at" },
+    "pulid_end_at": { "node_id": "63", "field": "end_at" },
+    "pose_image": { "node_id": "30", "field": "image" },
+    "controlnet_strength": { "node_id": "33", "field": "strength" },
+    "filename_prefix": { "node_id": "9", "field": "filename_prefix" }
+  },
+  "notes": {
+    "vram_warning": "~15.6GB — 16GB GPU에서 빡빡함. OOM 시 --lowvram 또는 Q4_K_M 다운그레이드.",
+    "pulid_ref_image": "골든 레퍼런스 얼굴 이미지. ComfyUI input/ 폴더.",
+    "pulid_weight": "클레이모션: 0.8-1.0, 리얼리스틱: 1.2-1.5.",
+    "pose_image": "포즈 레퍼런스 이미지. OpenPose 자동 전처리.",
+    "controlnet_strength": "0.5=약, 0.7=기본, 0.9=강. 너무 높으면 포즈에 얼굴까지 끌려감.",
+    "combo_tip": "PuLID weight + CN strength 합이 너무 높으면 아티팩트 발생. 둘 다 0.7-0.8 추천."
+  },
+  "defaults": {
+    "guidance": 3.5,
+    "pulid_weight": 1.0,
+    "pulid_start_at": 0.0,
+    "pulid_end_at": 1.0,
+    "controlnet_strength": 0.7,
+    "width": 1024,
+    "height": 1024,
+    "steps": 20,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple"
+  }
+}

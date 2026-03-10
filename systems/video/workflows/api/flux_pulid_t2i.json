@@ -1,0 +1,106 @@
+{
+  "_meta": {
+    "title": "Flux.1-dev GGUF — T2I + PuLID Face Consistency",
+    "description": "PuLID-Flux로 레퍼런스 얼굴 1장 기반 얼굴 일관성 유지하며 T2I 생성. 학습 불필요.",
+    "model": "flux1-dev-Q5_K_S.gguf + pulid_flux_v0.9.1.safetensors",
+    "resolution": "1024x1024",
+    "vram": "~11.6GB (Flux 9GB + PuLID 1.1GB + EVA-CLIP 0.5GB + overhead 1GB)",
+    "notes": "PuLID는 model을 수정 (LoRA 패턴). ControlNet은 conditioning을 수정. 서로 독립적으로 결합 가능. InsightFace는 CPU 모드로 VRAM 절약."
+  },
+  "prompt": {
+    "10": {
+      "inputs": { "unet_name": "flux1-dev-Q5_K_S.gguf" },
+      "class_type": "UnetLoaderGGUF",
+      "_meta": { "title": "Flux.1-dev GGUF" }
+    },
+    "11": {
+      "inputs": {
+        "clip_name1": "t5-v1_1-xxl-encoder-Q5_K_M.gguf",
+        "clip_name2": "clip_l.safetensors",
+        "type": "flux"
+      },
+      "class_type": "DualCLIPLoaderGGUF",
+      "_meta": { "title": "Dual CLIP (T5-XXL GGUF + CLIP-L)" }
+    },
+    "12": {
+      "inputs": { "vae_name": "ae.safetensors" },
+      "class_type": "VAELoader",
+      "_meta": { "title": "Flux VAE" }
+    },
+    "60": {
+      "inputs": { "pulid_file": "pulid_flux_v0.9.1.safetensors" },
+      "class_type": "PulidFluxModelLoader",
+      "_meta": { "title": "PuLID Flux Model" }
+    },
+    "61": {
+      "inputs": { "provider": "CPU" },
+      "class_type": "PulidFluxInsightFaceLoader",
+      "_meta": { "title": "InsightFace (CPU — VRAM 절약)" }
+    },
+    "62": {
+      "inputs": { "image": "ivy_burr_golden_ref.png", "upload": "image" },
+      "class_type": "LoadImage",
+      "_meta": { "title": "Golden Reference Face Image" }
+    },
+    "64": {
+      "inputs": {},
+      "class_type": "PulidFluxEvaClipLoader",
+      "_meta": { "title": "EVA-CLIP (첫 실행 시 자동 다운로드 ~430MB)" }
+    },
+    "63": {
+      "inputs": {
+        "model": ["10", 0],
+        "pulid_flux": ["60", 0],
+        "eva_clip": ["64", 0],
+        "face_analysis": ["61", 0],
+        "image": ["62", 0],
+        "weight": 1.0,
+        "start_at": 0.0,
+        "end_at": 1.0
+      },
+      "class_type": "ApplyPulidFlux",
+      "_meta": { "title": "Apply PuLID Flux (weight=1.0)" }
+    },
+    "6": {
+      "inputs": { "text": "POSITIVE_PROMPT_HERE", "clip": ["11", 0] },
+      "class_type": "CLIPTextEncode",
+      "_meta": { "title": "Prompt (Flux는 positive만 사용)" }
+    },
+    "26": {
+      "inputs": { "guidance": 3.5, "conditioning": ["6", 0] },
+      "class_type": "FluxGuidance",
+      "_meta": { "title": "Guidance (3.5 기본)" }
+    },
+    "5": {
+      "inputs": { "width": 1024, "height": 1024, "batch_size": 1 },
+      "class_type": "EmptySD3LatentImage",
+      "_meta": { "title": "Empty Latent (1024x1024)" }
+    },
+    "13": {
+      "inputs": {
+        "seed": 42,
+        "steps": 20,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0,
+        "model": ["63", 0],
+        "positive": ["26", 0],
+        "negative": ["6", 0],
+        "latent_image": ["5", 0]
+      },
+      "class_type": "KSampler",
+      "_meta": { "title": "KSampler (model은 PuLID 적용 후)" }
+    },
+    "8": {
+      "inputs": { "samples": ["13", 0], "vae": ["12", 0] },
+      "class_type": "VAEDecode",
+      "_meta": { "title": "VAE Decode" }
+    },
+    "9": {
+      "inputs": { "filename_prefix": "Flux_PuLID_T2I", "images": ["8", 0] },
+      "class_type": "SaveImage",
+      "_meta": { "title": "Save Output" }
+    }
+  }
+}

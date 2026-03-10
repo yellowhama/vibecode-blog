@@ -23,6 +23,8 @@
 | `flux_controlnet_t2i.json` | T2I + ControlNet 포즈 제어 | 1024x1024 | ~13GB | ~3분 |
 | `flux_lora_t2i.json` | T2I + LoRA 캐릭터 고정 | 1024x1024 | ~9.2GB | ~2분 |
 | `flux_lora_controlnet_t2i.json` | T2I + LoRA + ControlNet 결합 | 1024x1024 | ~13.2GB | ~3분 |
+| `flux_pulid_t2i.json` | T2I + PuLID 얼굴 일관성 | 1024x1024 | ~11.6GB | ~3분 |
+| `flux_pulid_controlnet_t2i.json` | T2I + PuLID + ControlNet 포즈 | 1024x1024 | ~15.6GB | ~4분 |
 | `flux_face_inpaint.json` | 얼굴 인페인팅 (Flux Fill) | 원본 유지 | ~9GB | ~2분 |
 
 ### 바인딩
@@ -33,6 +35,8 @@
 | `flux_controlnet_t2i_bindings.json` | ControlNet 포즈 |
 | `flux_lora_t2i_bindings.json` | LoRA 캐릭터 |
 | `flux_lora_controlnet_t2i_bindings.json` | LoRA + ControlNet |
+| `flux_pulid_t2i_bindings.json` | PuLID 얼굴 일관성 |
+| `flux_pulid_controlnet_t2i_bindings.json` | PuLID + ControlNet |
 | `flux_face_inpaint_bindings.json` | 얼굴 인페인팅 |
 
 ### 노드 구조 (기본 T2I)
@@ -49,6 +53,36 @@ EmptySD3LatentImage(1024x1024)
 KSampler(cfg=1.0, euler/simple, 20 steps)
          ↓
 VAEDecode → SaveImage
+```
+
+### 노드 구조 (PuLID T2I)
+
+```
+UnetLoaderGGUF(flux1-dev) ───────────────────────────────┐
+                                                          │
+PulidFluxModelLoader(pulid_v0.9.1) ──┐                   │
+PulidFluxInsightFaceLoader(CPU) ─────┤                   │
+PulidFluxEvaClipLoader ──────────────┤                   │
+LoadImage(golden_ref) ───────────────┤                   │
+                          ApplyPulidFlux(weight=1.0) ←───┘
+                                  │ (modified model)
+DualCLIPLoaderGGUF → CLIPTextEncode → FluxGuidance(3.5)
+                                  │
+EmptySD3LatentImage(1024x1024) ───┴── KSampler(cfg=1.0, euler/simple, 20 steps)
+                                          │
+                                    VAEDecode → SaveImage
+```
+
+### 노드 구조 (PuLID + ControlNet)
+
+```
+UnetLoaderGGUF(flux1-dev) → ApplyPulidFlux(weight=1.0)
+                                    │ (PuLID modified model)
+DualCLIPLoaderGGUF → CLIPTextEncode → FluxGuidance(3.5)
+                                    │
+LoadImage(pose_ref) → OpenPose ──→ ControlNetApplySD3(0.7)
+ControlNetLoader(Union-Pro) ────→       │
+                                  KSampler(PuLID model + CN conditioning) → VAEDecode → SaveImage
 ```
 
 ### 노드 구조 (LoRA + ControlNet)
@@ -68,6 +102,7 @@ ControlNetLoader(Union-Pro-2.0) ─→       ↓
 
 ```
 ComfyUI/app/models/
+├── pulid/pulid_flux_v0.9.1.safetensors                              (1.1GB, Phase A — PuLID)
 ├── controlnet/xinsir-controlnet-union-sdxl-1.0-promax.safetensors  (3.98GB, Phase 1)
 ├── loras/vee_v1.safetensors                                        (학습 후, Phase 2)
 └── unet/flux1-fill-dev-Q5_K_S.gguf                                 (7.8GB, Phase 3)
@@ -150,11 +185,21 @@ ComfyUI/app/models/unet/
 
 ---
 
+### PuLID 세팅
+- PuLID는 **model을 수정** (LoRA와 같은 패턴). ControlNet은 conditioning을 수정. 서로 독립적으로 결합 가능.
+- `InsightFace`: **CPU 모드** (`provider: "CPU"`) — GPU VRAM 절약. 첫 실행 시 antelopev2 자동 다운로드 (~350MB).
+- `EVA-CLIP`: 첫 실행 시 자동 다운로드 (~430MB). 이후 캐시 사용.
+- `weight`: 클레이모션 0.8-1.0, 리얼리스틱 1.2-1.5. 너무 높으면 스타일이 레퍼런스에 끌려감.
+- PuLID + ControlNet 동시 사용 시 ~15.6GB VRAM. OOM 시 `--lowvram` 또는 Flux Q4_K_M 다운그레이드.
+
+---
+
 ## 프로덕션 파이프라인 (권장 순서)
 
 ```
-1. Flux T2I (+ LoRA)          →  캐릭터 시트 (정면/측면/전신)
-2. Flux T2I (+ LoRA + CN)     →  씬별 키프레임 (포즈 제어)
+0. Flux T2I                    →  Golden Reference 생성 (PuLID용 얼굴 기준 이미지)
+1. Flux T2I (+ PuLID)         →  캐릭터 시트 (얼굴 일관성 유지)
+2. Flux T2I (+ PuLID + CN)    →  씬별 키프레임 (포즈 제어 + 얼굴 고정)
 3. Flux Face Inpaint           →  얼굴 디테일 수정 (필요 시)
 4. Wan I2V                     →  키프레임 → 5초 영상 렌더링
 5. ffmpeg                      →  영상 + VO + BGM 최종 조립

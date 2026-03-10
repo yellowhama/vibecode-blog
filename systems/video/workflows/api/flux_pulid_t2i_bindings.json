@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "workflow": "flux_pulid_t2i.json",
+  "description": "Flux T2I + PuLID 얼굴 일관성 바인딩 — 골든 레퍼런스 기반 캐릭터 생성용",
+  "node_mappings": {
+    "positive_prompt": { "node_id": "6", "field": "text" },
+    "seed": { "node_id": "13", "field": "seed" },
+    "guidance": { "node_id": "26", "field": "guidance" },
+    "width": { "node_id": "5", "field": "width" },
+    "height": { "node_id": "5", "field": "height" },
+    "pulid_ref_image": { "node_id": "62", "field": "image" },
+    "pulid_weight": { "node_id": "63", "field": "weight" },
+    "pulid_start_at": { "node_id": "63", "field": "start_at" },
+    "pulid_end_at": { "node_id": "63", "field": "end_at" },
+    "filename_prefix": { "node_id": "9", "field": "filename_prefix" }
+  },
+  "notes": {
+    "pulid_ref_image": "ComfyUI input/ 폴더에 있는 골든 레퍼런스 얼굴 이미지 파일명",
+    "pulid_weight": "얼굴 일관성 강도. 클레이모션: 0.8-1.0, 리얼리스틱: 1.2-1.5. 너무 높으면 스타일이 레퍼런스에 끌려감.",
+    "pulid_start_at": "PuLID 적용 시작 시점 (0.0=처음부터). 보통 0.0 유지.",
+    "pulid_end_at": "PuLID 적용 종료 시점 (1.0=끝까지). 스타일 자유도 위해 0.8로 줄일 수 있음.",
+    "insightface": "CPU 모드로 실행되어 GPU VRAM 절약. 자동 다운로드 (~350MB).",
+    "eva_clip": "첫 실행 시 자동 다운로드 (~430MB). 이후 캐시 사용."
+  },
+  "defaults": {
+    "guidance": 3.5,
+    "pulid_weight": 1.0,
+    "pulid_start_at": 0.0,
+    "pulid_end_at": 1.0,
+    "width": 1024,
+    "height": 1024,
+    "steps": 20,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple"
+  }
+}
