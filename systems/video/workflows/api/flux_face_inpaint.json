@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "title": "Flux.1-Fill-dev GGUF — Face Inpainting",
+    "description": "얼굴 영역만 마스크로 지정하여 재생성. 클레이모션 스타일 얼굴 뭉개짐/비대칭 후처리.",
+    "model": "flux1-fill-dev-Q5_K_S.gguf (전용 인페인트 모델)",
+    "resolution": "원본 유지",
+    "vram": "~9GB (fill 모델 단독)",
+    "notes": "LoRA와 함께 사용하여 인페인트 시 캐릭터 아이덴티티 유지 가능. ControlNet과 동시 사용은 VRAM 초과 (~17GB)."
+  },
+  "prompt": {
+    "50": {
+      "inputs": { "unet_name": "flux1-fill-dev-Q5_K_S.gguf" },
+      "class_type": "UnetLoaderGGUF"
+    },
+    "11": {
+      "inputs": {
+        "clip_name1": "t5-v1_1-xxl-encoder-Q5_K_M.gguf",
+        "clip_name2": "clip_l.safetensors",
+        "type": "flux"
+      },
+      "class_type": "DualCLIPLoaderGGUF"
+    },
+    "12": {
+      "inputs": { "vae_name": "ae.safetensors" },
+      "class_type": "VAELoader"
+    },
+    "6": {
+      "inputs": { "text": "POSITIVE_PROMPT_HERE", "clip": ["11", 0] },
+      "class_type": "CLIPTextEncode"
+    },
+    "26": {
+      "inputs": { "guidance": 3.5, "conditioning": ["6", 0] },
+      "class_type": "FluxGuidance"
+    },
+    "51": {
+      "inputs": { "image": "source_image.png", "upload": "image" },
+      "class_type": "LoadImage"
+    },
+    "52": {
+      "inputs": { "image": "face_mask.png", "upload": "image" },
+      "class_type": "LoadImage"
+    },
+    "53": {
+      "inputs": {
+        "pixels": ["51", 0],
+        "vae": ["12", 0],
+        "mask": ["52", 0]
+      },
+      "class_type": "VAEEncodeForInpaint"
+    },
+    "13": {
+      "inputs": {
+        "seed": 42,
+        "steps": 25,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 0.7,
+        "model": ["50", 0],
+        "positive": ["26", 0],
+        "negative": ["6", 0],
+        "latent_image": ["53", 0]
+      },
+      "class_type": "KSampler"
+    },
+    "8": {
+      "inputs": { "samples": ["13", 0], "vae": ["12", 0] },
+      "class_type": "VAEDecode"
+    },
+    "9": {
+      "inputs": { "filename_prefix": "Flux_Inpaint", "images": ["8", 0] },
+      "class_type": "SaveImage"
+    }
+  }
+}

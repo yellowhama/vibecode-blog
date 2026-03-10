@@ -68,7 +68,7 @@
   },
   "3": {
     "inputs": {
-      "text": "Character sheet with multiple views (front, side, three-quarter, back). (Masterpiece, high quality, 3D claymation, sculpted clay figure:1.3), Aardman studio style. A strikingly cute female 3D clay character named Vee, inspired by the features of Jang Nara and Amy Adams. Face: A youthful round baby-face with large, sparkling close-set white sphere eyes and tiny black pupils. A small, delicate clay button nose. A wide, bright, infectious grin. Hair: Charming strawberry-blonde chunky clay hair, tied up loosely with messy strands framing the face. Body: Slender and petite frame made of pale lemon-yellow matte clay. Outfit: Wearing an oversized, slouchy Kakao Brown clay hoodie with a wide neck showing collarbones, and mini denim clay shorts. Handcrafted plasticine texture with subtle fingerprint indentations. Cinematic studio lighting, subsurface scattering. Solid light grey background. Multiple angles of the same character.",
+      "text": "Exact same character as the reference image. Character sheet showing front, side, and back views. (Masterpiece, high quality, 3D claymation, sculpted clay figure:1.3), Aardman studio style. Maintain the exact face, large glasses, and copper-auburn hair texture of the character Vee. 3D volumetric clay. Solid light grey background.",
       "clip": [
         "4",
         0
@@ -94,7 +94,7 @@
   },
   "100": {
     "inputs": {
-      "image": "character_vee_base.png"
+      "image": "character_vee_master.png"
     },
     "class_type": "LoadImage",
     "_meta": {
@@ -120,7 +120,7 @@
   "20": {
     "inputs": {
       "add_noise": "enable",
-      "noise_seed": 4444,
+      "noise_seed": 55555,
       "steps": 35,
       "cfg": 3.0,
       "sampler_name": "uni_pc",
@@ -144,7 +144,7 @@
         "101",
         0
       ],
-      "denoise": 0.75
+      "denoise": 0.45
     },
     "class_type": "KSamplerAdvanced",
     "_meta": {

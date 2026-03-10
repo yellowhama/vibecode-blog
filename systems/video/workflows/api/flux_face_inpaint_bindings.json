@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "workflow": "flux_face_inpaint.json",
+  "description": "Flux Fill 인페인팅 바인딩 — 얼굴 디테일 수정용",
+  "node_mappings": {
+    "positive_prompt": { "node_id": "6", "field": "text" },
+    "seed": { "node_id": "13", "field": "seed" },
+    "guidance": { "node_id": "26", "field": "guidance" },
+    "denoise": { "node_id": "13", "field": "denoise" },
+    "input_image": { "node_id": "51", "field": "image" },
+    "mask_image": { "node_id": "52", "field": "image" },
+    "filename_prefix": { "node_id": "9", "field": "filename_prefix" }
+  },
+  "notes": {
+    "input_image": "원본 이미지 파일명 (ComfyUI input/ 폴더)",
+    "mask_image": "마스크 이미지 파일명. 흰색=인페인트 영역, 검정=보존 영역.",
+    "denoise": "0.5=약한 수정, 0.7=기본, 0.9=거의 새로 생성. 얼굴 수정은 0.6~0.75 추천.",
+    "lora_combo": "LoRA와 함께 사용 시 node 50을 LoraLoader로 감싸야 함."
+  },
+  "defaults": {
+    "guidance": 3.5,
+    "denoise": 0.7,
+    "steps": 25,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple"
+  }
+}

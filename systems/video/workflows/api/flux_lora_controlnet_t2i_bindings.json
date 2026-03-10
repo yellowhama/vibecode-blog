@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "workflow": "flux_lora_controlnet_t2i.json",
+  "description": "Flux T2I + LoRA + ControlNet 통합 바인딩 — 씬별 키프레임 최종 파이프라인",
+  "node_mappings": {
+    "positive_prompt": { "node_id": "6", "field": "text" },
+    "seed": { "node_id": "13", "field": "seed" },
+    "guidance": { "node_id": "26", "field": "guidance" },
+    "width": { "node_id": "5", "field": "width" },
+    "height": { "node_id": "5", "field": "height" },
+    "lora_name": { "node_id": "40", "field": "lora_name", "default": "vee_v1.safetensors" },
+    "lora_strength_model": { "node_id": "40", "field": "strength_model" },
+    "lora_strength_clip": { "node_id": "40", "field": "strength_clip" },
+    "pose_image": { "node_id": "30", "field": "image" },
+    "controlnet_strength": { "node_id": "33", "field": "strength" },
+    "filename_prefix": { "node_id": "9", "field": "filename_prefix" }
+  },
+  "notes": {
+    "combo": "LoRA 캐릭터 고정 + ControlNet 포즈 제어 동시 적용",
+    "vram": "~13.2GB. 16GB GPU에서 동작하지만 여유 적음.",
+    "priority": "LoRA가 캐릭터, ControlNet이 포즈 담당. 강도 합이 너무 높으면 아티팩트 발생."
+  },
+  "defaults": {
+    "guidance": 3.5,
+    "lora_strength_model": 0.8,
+    "lora_strength_clip": 0.8,
+    "controlnet_strength": 0.7,
+    "width": 1024,
+    "height": 1024,
+    "steps": 20,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple"
+  }
+}

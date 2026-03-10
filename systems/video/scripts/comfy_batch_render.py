@@ -93,48 +93,90 @@ def _check_server(server: str) -> bool:
 
 
 def _build_api_prompt(workflow: Dict, bindings: Dict, shot: Dict) -> Dict:
-    """Build ComfyUI API prompt from workflow + bindings + shot data."""
-    # Deep copy workflow nodes
-    nodes = copy.deepcopy(workflow.get("nodes", workflow))
+    """Build ComfyUI API prompt from workflow + bindings + shot data.
+
+    Injection strategy:
+    1. Special-case keys that require transformation (video_duration, input_image).
+    2. Generic fallback: any other key in node_mappings is injected directly
+       from the matching shot field (supports ControlNet, LoRA, etc.).
+    """
+    # Deep copy — handle both {"prompt": {…}} and {"nodes": {…}} and flat
+    raw = workflow.get("prompt") or workflow.get("nodes") or workflow
+    nodes = copy.deepcopy(raw)
 
     mappings = bindings.get("node_mappings", {})
 
-    # Inject positive prompt
-    if "positive_prompt" in mappings and shot.get("prompt_positive"):
-        node_id = mappings["positive_prompt"]["node_id"]
-        field = mappings["positive_prompt"]["field"]
-        if node_id in nodes:
-            nodes[node_id]["inputs"][field] = shot["prompt_positive"]
+    # --- Special-case mappings (need value transformation) ---
 
-    # Inject negative prompt
-    if "negative_prompt" in mappings and shot.get("prompt_negative"):
-        node_id = mappings["negative_prompt"]["node_id"]
-        field = mappings["negative_prompt"]["field"]
-        if node_id in nodes:
-            nodes[node_id]["inputs"][field] = shot["prompt_negative"]
-
-    # Inject seed
-    if "seed" in mappings and shot.get("seed") is not None:
-        node_id = mappings["seed"]["node_id"]
-        field = mappings["seed"]["field"]
-        if node_id in nodes:
-            nodes[node_id]["inputs"][field] = int(shot["seed"])
-
-    # Inject video duration (frame count)
+    # video_duration: convert seconds → frame count
     if "video_duration" in mappings and shot.get("duration_sec"):
         node_id = mappings["video_duration"]["node_id"]
         field = mappings["video_duration"]["field"]
-        fps = 16  # default from workflow
+        fps = 16
         frame_count = max(17, int(shot["duration_sec"] * fps) + 1)
         if node_id in nodes:
             nodes[node_id]["inputs"][field] = frame_count
 
-    # Inject input image if specified
+    # input_image: map from shot["keyframe"]
     if "input_image" in mappings and shot.get("keyframe"):
         node_id = mappings["input_image"]["node_id"]
         field = mappings["input_image"]["field"]
         if node_id in nodes:
             nodes[node_id]["inputs"][field] = shot["keyframe"]
+
+    SPECIAL_KEYS = {"video_duration", "input_image", "filename_prefix"}
+
+    # --- Generic injection for all other mappings ---
+    # Maps binding key → shot data key. Tries exact match first, then common aliases.
+    SHOT_ALIASES = {
+        "positive_prompt": ["prompt_positive", "positive_prompt", "prompt"],
+        "negative_prompt": ["prompt_negative", "negative_prompt"],
+        "seed": ["seed"],
+        "guidance": ["guidance"],
+        "width": ["width"],
+        "height": ["height"],
+        "pose_image": ["pose_image", "pose_ref"],
+        "controlnet_strength": ["controlnet_strength", "cn_strength"],
+        "lora_name": ["lora_name", "lora"],
+        "lora_strength_model": ["lora_strength_model", "lora_strength"],
+        "lora_strength_clip": ["lora_strength_clip"],
+        "denoise": ["denoise"],
+        "steps": ["steps"],
+        "sampler_name": ["sampler_name", "sampler"],
+        "scheduler": ["scheduler"],
+    }
+
+    for mapping_key, mapping_def in mappings.items():
+        if mapping_key in SPECIAL_KEYS:
+            continue
+        node_id = mapping_def.get("node_id")
+        field = mapping_def.get("field")
+        if not node_id or not field or node_id not in nodes:
+            continue
+
+        # Find value from shot data
+        value = None
+        aliases = SHOT_ALIASES.get(mapping_key, [mapping_key])
+        for alias in aliases:
+            if alias in shot and shot[alias] is not None:
+                value = shot[alias]
+                break
+
+        # Also check mapping_def for static defaults (e.g. model_file)
+        if value is None and "default" in mapping_def:
+            value = mapping_def["default"]
+        if value is None and "model_file" in mapping_def:
+            value = mapping_def["model_file"]
+
+        if value is not None:
+            # Type coercion for known numeric fields
+            if field in ("seed", "noise_seed"):
+                value = int(value)
+            elif field in ("strength", "denoise", "guidance", "cfg",
+                           "lora_strength_model", "lora_strength_clip",
+                           "controlnet_strength"):
+                value = float(value)
+            nodes[node_id]["inputs"][field] = value
 
     # Set filename prefix
     for nid, node in nodes.items():

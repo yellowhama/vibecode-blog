@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "workflow": "flux_lora_t2i.json",
+  "description": "Flux T2I + LoRA 바인딩 — 캐릭터 고정 생성용",
+  "node_mappings": {
+    "positive_prompt": { "node_id": "6", "field": "text" },
+    "seed": { "node_id": "13", "field": "seed" },
+    "guidance": { "node_id": "26", "field": "guidance" },
+    "width": { "node_id": "5", "field": "width" },
+    "height": { "node_id": "5", "field": "height" },
+    "lora_name": { "node_id": "40", "field": "lora_name", "default": "vee_v1.safetensors" },
+    "lora_strength_model": { "node_id": "40", "field": "strength_model" },
+    "lora_strength_clip": { "node_id": "40", "field": "strength_clip" },
+    "filename_prefix": { "node_id": "9", "field": "filename_prefix" }
+  },
+  "notes": {
+    "lora_name": "models/loras/ 안의 safetensors 파일명. 기본값: vee_v1.safetensors",
+    "lora_strength": "0.5=약하게, 0.8=기본, 1.0=최대. 0.7~0.8에서 아이덴티티와 다양성 균형.",
+    "trigger_word": "프롬프트에 'vee_clay' 트리거 워드 포함 필수."
+  },
+  "defaults": {
+    "guidance": 3.5,
+    "lora_strength_model": 0.8,
+    "lora_strength_clip": 0.8,
+    "width": 1024,
+    "height": 1024,
+    "steps": 20,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple"
+  }
+}

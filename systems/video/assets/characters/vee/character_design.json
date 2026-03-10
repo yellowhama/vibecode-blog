@@ -2,7 +2,7 @@
   "character_id": "vee",
   "character_name": "Vee (비)",
   "role": "여주인공 — 개발자 아바타",
-  "version": "3.0",
+  "version": "4.0",
   "design_date": "2026-03-11",
 
   "design_philosophy": {
@@ -27,14 +27,14 @@
       "shape": "Soft round face, slightly heart-shaped chin — 장나라's youthful round cheekbones blended with Amy Adams' delicate jawline",
       "skin": "Warm lemon-cream matte clay (#FFF3D4), visible clay tool marks and fingerprint textures",
       "eyes": "Large expressive round eyes with thick clay eyelids, bright hazel-brown clay irises. Wide-set placement (장나라 style). Slight upward tilt at outer corners giving a warm, curious expression",
-      "eyebrows": "Thin sculpted auburn clay arches, slightly raised — perpetually curious/amused",
+      "eyebrows": "Thin sculpted dark brown clay arches, slightly raised — perpetually curious/amused",
       "nose": "Tiny round button nose, sculpted as a simple clay ball",
       "mouth": "Small gentle smile, sculpted as a subtle curved line. Warm and approachable (장나라's signature smile)",
       "cheeks": "Slightly flushed — two tiny dabs of soft pink clay (#FFCDD2) on cheekbones"
     },
     "hair": {
       "style": "Shoulder-length wavy clay hair with chunky sculpted clumps and visible clay texture",
-      "color": "Auburn-copper (#B7472A) — Amy Adams' signature red-auburn, rendered as rich terracotta clay",
+      "color": "Cocoa brown (#5D4037) — rich dark chocolate-brown clay",
       "details": "Loose messy waves, a few strands falling across forehead. Individual clumps sculpted separately then assembled. Some strands catch studio light"
     },
     "body": {
@@ -42,23 +42,22 @@
       "height_ratio": "4.5 heads tall — proportionate feminine adult figure"
     },
     "clothing": {
-      "top": "Oversized slouchy Cocoa Brown (#5D4037) clay hoodie with the hood down, revealing hair. Front kangaroo pocket. Sleeves way too long covering hands halfway — 뉴논스톱 장나라식 오버핏",
-      "bottom": "Baggy light-wash clay jeans (#90CAF9) or loose cargo pants — 펑퍼짐한 편한 바지. 치마 절대 안 입는 캐릭터",
+      "top": "Oversized slouchy MUSU Yellow (#FFD166) clay hoodie with the hood down, revealing hair. Front kangaroo pocket. Sleeves way too long covering hands halfway — 뉴논스톱 장나라식 오버핏",
+      "bottom": "Short denim clay hot pants (#5C6BC0) — 짧은 청바지 핫팬츠. 활동적이고 캐주얼한 느낌",
       "shoes": "Beat-up clay sneakers or slip-on — 편한 게 최고",
       "accessories": "Thick-rimmed round glasses with black clay frames, always sitting slightly crooked on nose. 고치지 않음",
-      "style_note": "꾸안꾸 — 2000년대 초 현실 대학생 패션. 세련된 게 아니라 편한 거. 후드티+펑퍼짐한 바지가 기본"
+      "style_note": "꾸안꾸 — 2000년대 초 현실 대학생 패션. 노란 후드티+짧은 청바지가 기본. 편한 게 최고"
     }
   },
 
   "color_palette": {
     "skin": "#FFF3D4",
-    "hair": "#B7472A",
-    "hoodie": "#5D4037",
-    "baggy_jeans": "#90CAF9",
+    "hair": "#5D4037",
+    "hoodie": "#FFD166",
+    "denim_shorts": "#5C6BC0",
     "glasses": "#212121",
     "eyes_iris": "#8D6E63",
-    "cheek_blush": "#FFCDD2",
-    "accent_musu_yellow": "#FFD166"
+    "cheek_blush": "#FFCDD2"
   },
 
   "expressions": {
@@ -92,22 +91,22 @@
   },
 
   "comfyui_prompts": {
-    "positive_base": "Stop-motion claymation, Aardman studio style. Soft matte studio lighting. Heavy fingerprint textures, matte finish. A volumetric 3D female clay figure named Vee. Warm lemon-cream matte clay skin with visible fingerprint textures. Auburn-copper wavy shoulder-length clay hair in chunky sculpted clumps. Large expressive wide-set hazel-brown clay eyes, tiny round button nose, gentle warm smile. Slightly flushed pink clay cheeks. Wearing an oversized slouchy cocoa brown clay hoodie with hood down and front kangaroo pocket, blue denim clay shorts. Thick-rimmed round black clay glasses sitting slightly crooked. Chibi stubby proportions, petite frame. Professional macro photography of a physical clay toy figure.",
+    "positive_base": "Stop-motion claymation, Aardman studio style. Soft matte studio lighting. Heavy fingerprint textures, matte finish. A volumetric 3D female clay figure named Vee. Warm lemon-cream matte clay skin with visible fingerprint textures. Dark cocoa-brown wavy shoulder-length clay hair in chunky sculpted clumps. Large expressive wide-set hazel-brown clay eyes, tiny round button nose, gentle warm smile. Slightly flushed pink clay cheeks. Wearing an oversized slouchy bright yellow clay hoodie with hood down and front kangaroo pocket, short blue denim clay hot pants. Thick-rimmed round black clay glasses sitting slightly crooked. 4.5 head proportions, slender petite adult woman frame. Professional macro photography of a physical clay toy figure.",
     "negative_base": "text, subtitles, watermark, logo, speech bubble, blurry, deformed, ugly, oversaturated, photorealistic, CGI, smooth animation, live action, plastic sheen, glossy, multiple characters, crowd, anime, cartoon, 2D, flat, sketch, illustration, human skin texture, realistic skin",
     "style_lock": "CRITICAL: Must maintain heavy clay/plasticine material appearance. All features sculpted from clay. Visible tool marks and fingerprint indentations. Matte finish only, no glossy surfaces.",
-    "identity_keywords": "auburn clay hair, cocoa brown hoodie, round glasses, warm cream clay skin, pink clay cheeks, chibi proportions",
+    "identity_keywords": "dark brown clay hair, bright yellow hoodie, round glasses, warm cream clay skin, pink clay cheeks, short denim hot pants",
 
     "sheet_prompts": {
-      "front": "Front view, facing camera directly. Stop-motion claymation, Aardman studio style. Soft matte studio lighting. Heavy fingerprint textures, matte finish. A volumetric 3D female clay figure named Vee. Warm lemon-cream matte clay skin. Auburn-copper wavy shoulder-length clay hair. Large expressive wide-set hazel-brown clay eyes, tiny round button nose, gentle warm smile, pink clay cheeks. Oversized cocoa brown clay hoodie hood down, blue denim clay shorts, thick round black clay glasses. Chibi proportions. Plain solid white studio background. CRITICAL: NO TEXT, NO LETTERS, NO SPEECH BUBBLES.",
-      "three_quarter": "Three-quarter view, slight angle. Stop-motion claymation, Aardman studio style. Soft matte studio lighting. Heavy fingerprint textures, matte finish. A volumetric 3D female clay figure named Vee. Warm lemon-cream matte clay skin. Auburn-copper wavy shoulder-length clay hair with chunky sculpted clumps. Large expressive hazel-brown clay eyes, tiny button nose, gentle smile. Oversized cocoa brown clay hoodie, blue denim clay shorts, thick round black clay glasses. Chibi stubby proportions. Plain solid white studio background. CRITICAL: NO TEXT, NO LETTERS.",
-      "side": "Side profile view. Stop-motion claymation, Aardman studio style. Soft matte studio lighting. Heavy fingerprint textures, matte finish. A volumetric 3D female clay figure named Vee in profile. Warm lemon-cream matte clay skin. Auburn-copper wavy shoulder-length clay hair visible from side. Button nose in profile, gentle smile line. Oversized cocoa brown clay hoodie, blue denim clay shorts, thick round black clay glasses in profile. Chibi proportions. Plain solid white studio background. CRITICAL: NO TEXT.",
-      "full_body": "Full body view, head to toe. Stop-motion claymation, Aardman studio style. Soft matte studio lighting. Heavy fingerprint textures, matte finish. A volumetric 3D female clay figure named Vee standing. Warm lemon-cream clay skin. Auburn-copper wavy clay hair. Large expressive hazel-brown eyes, round glasses, gentle smile, pink cheeks. Oversized cocoa brown clay hoodie with kangaroo pocket, sleeves bunched at wrists, blue denim clay shorts, short stubby clay legs. Chibi stubby proportions, 4 heads tall. Plain solid white studio background. Wooden workbench floor. CRITICAL: NO TEXT."
+      "front": "Front view, facing camera directly. Stop-motion claymation, Aardman studio style. Soft matte studio lighting. Heavy fingerprint textures, matte finish. A volumetric 3D female clay figure named Vee. Warm lemon-cream matte clay skin. Dark cocoa-brown wavy shoulder-length clay hair. Large expressive wide-set hazel-brown clay eyes, tiny round button nose, gentle warm smile, pink clay cheeks. Oversized bright yellow clay hoodie hood down, short blue denim clay hot pants, thick round black clay glasses. 4.5 head proportions, slender adult woman. Plain solid white studio background. CRITICAL: NO TEXT, NO LETTERS, NO SPEECH BUBBLES.",
+      "three_quarter": "Three-quarter view, slight angle. Stop-motion claymation, Aardman studio style. Soft matte studio lighting. Heavy fingerprint textures, matte finish. A volumetric 3D female clay figure named Vee. Warm lemon-cream matte clay skin. Dark cocoa-brown wavy shoulder-length clay hair with chunky sculpted clumps. Large expressive hazel-brown clay eyes, tiny button nose, gentle smile. Oversized bright yellow clay hoodie, short blue denim clay hot pants, thick round black clay glasses. 4.5 head proportions, slender adult woman. Plain solid white studio background. CRITICAL: NO TEXT, NO LETTERS.",
+      "side": "Side profile view. Stop-motion claymation, Aardman studio style. Soft matte studio lighting. Heavy fingerprint textures, matte finish. A volumetric 3D female clay figure named Vee in profile. Warm lemon-cream matte clay skin. Dark cocoa-brown wavy shoulder-length clay hair visible from side. Button nose in profile, gentle smile line. Oversized bright yellow clay hoodie, short blue denim clay hot pants, thick round black clay glasses in profile. 4.5 head proportions. Plain solid white studio background. CRITICAL: NO TEXT.",
+      "full_body": "Full body view, head to toe. Stop-motion claymation, Aardman studio style. Soft matte studio lighting. Heavy fingerprint textures, matte finish. A volumetric 3D female clay figure named Vee standing. Warm lemon-cream clay skin. Dark cocoa-brown wavy clay hair. Large expressive hazel-brown eyes, round glasses, gentle smile, pink cheeks. Oversized bright yellow clay hoodie with kangaroo pocket, sleeves bunched at wrists, short blue denim clay hot pants, slender clay legs with beat-up sneakers. 4.5 head proportions, petite adult woman. Plain solid white studio background. Wooden workbench floor. CRITICAL: NO TEXT."
     }
   },
 
   "relationship_to_existing_characters": {
-    "dev_protagonist": "Vee replaces the generic brown-hooded avatar as the named protagonist. Same Cocoa Brown hoodie color (#5D4037) maintains visual continuity.",
-    "yellow_robot": "Vee's AI companion — appears on her screen. Contrasts her warm auburn with its bright yellow.",
+    "dev_protagonist": "Vee replaces the generic avatar as the named protagonist. MUSU Yellow hoodie (#FFD166) ties her to the brand.",
+    "yellow_robot": "Vee's AI companion — appears on her screen. Both share yellow as brand color, robot is brighter neon yellow.",
     "spider_monster": "Vee's antagonist — the spaghetti code monster she battles."
   }
 }

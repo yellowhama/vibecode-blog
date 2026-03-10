@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "title": "Flux.1-dev GGUF — T2I + ControlNet Pose",
+    "description": "포즈 레퍼런스 이미지로 캐릭터 포즈를 제어하면서 Flux T2I 생성. ControlNet Union Pro 2.0 사용.",
+    "model": "flux1-dev-Q5_K_S.gguf + ControlNet Union Pro 2.0",
+    "resolution": "1024x1024",
+    "vram": "~13GB (Flux 9GB + ControlNet 4GB)",
+    "notes": "pose_image에 포즈 레퍼런스 이미지 경로 지정. OpenPose로 자동 전처리."
+  },
+  "prompt": {
+    "10": {
+      "inputs": { "unet_name": "flux1-dev-Q5_K_S.gguf" },
+      "class_type": "UnetLoaderGGUF"
+    },
+    "11": {
+      "inputs": {
+        "clip_name1": "t5-v1_1-xxl-encoder-Q5_K_M.gguf",
+        "clip_name2": "clip_l.safetensors",
+        "type": "flux"
+      },
+      "class_type": "DualCLIPLoaderGGUF"
+    },
+    "12": {
+      "inputs": { "vae_name": "ae.safetensors" },
+      "class_type": "VAELoader"
+    },
+    "6": {
+      "inputs": { "text": "POSITIVE_PROMPT_HERE", "clip": ["11", 0] },
+      "class_type": "CLIPTextEncode"
+    },
+    "26": {
+      "inputs": { "guidance": 3.5, "conditioning": ["6", 0] },
+      "class_type": "FluxGuidance"
+    },
+    "5": {
+      "inputs": { "width": 1024, "height": 1024, "batch_size": 1 },
+      "class_type": "EmptySD3LatentImage"
+    },
+    "30": {
+      "inputs": { "image": "pose_reference.png", "upload": "image" },
+      "class_type": "LoadImage"
+    },
+    "31": {
+      "inputs": {
+        "detect_hand": "enable",
+        "detect_body": "enable",
+        "detect_face": "enable",
+        "resolution": 1024,
+        "image": ["30", 0]
+      },
+      "class_type": "OpenposePreprocessor"
+    },
+    "32": {
+      "inputs": { "control_net_name": "xinsir-controlnet-union-sdxl-1.0-promax.safetensors" },
+      "class_type": "ControlNetLoader"
+    },
+    "33": {
+      "inputs": {
+        "strength": 0.7,
+        "start_percent": 0.0,
+        "end_percent": 0.9,
+        "positive": ["26", 0],
+        "negative": ["6", 0],
+        "control_net": ["32", 0],
+        "image": ["31", 0]
+      },
+      "class_type": "ControlNetApplyAdvanced"
+    },
+    "13": {
+      "inputs": {
+        "seed": 42,
+        "steps": 20,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0,
+        "model": ["10", 0],
+        "positive": ["33", 0],
+        "negative": ["33", 1],
+        "latent_image": ["5", 0]
+      },
+      "class_type": "KSampler"
+    },
+    "8": {
+      "inputs": { "samples": ["13", 0], "vae": ["12", 0] },
+      "class_type": "VAEDecode"
+    },
+    "9": {
+      "inputs": { "filename_prefix": "Flux_CN_T2I", "images": ["8", 0] },
+      "class_type": "SaveImage"
+    }
+  }
+}
