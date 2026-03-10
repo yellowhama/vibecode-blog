@@ -135,6 +135,12 @@ def _scene_label(idx: int) -> str:
     return f"Scene{math.floor((idx - 1) / 4) + 1}"
 
 
+def _compose_kontext_prompt(visual_goal: str) -> str:
+    """Build a Kontext scene editing prompt from the visual goal."""
+    goal = visual_goal.rstrip(". ")
+    return f"{goal}. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged."
+
+
 def _compose_positive_prompt(text: str, visual_goal: str, camera_style: str, shot_mode: str) -> str:
     motion = "Static camera with gentle micro motion." if shot_mode == "i2v" else "Natural cinematic motion."
     return (
@@ -249,6 +255,7 @@ def main() -> int:
                 "shot_id": shot_id,
                 "scene": _scene_label(i),
                 "purpose": _short_purpose(text),
+                "kontext_prompt": _compose_kontext_prompt(visual_goal),
                 "prompt_positive": _compose_positive_prompt(
                     text=text,
                     visual_goal=visual_goal,

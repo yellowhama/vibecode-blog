@@ -135,6 +135,12 @@ def main() -> int:
     parser.add_argument("--tts-voice", default=None, help="TTS voice name")
     parser.add_argument("--tts-language", default="ko", help="TTS language (default: ko)")
 
+    # --- Stage 0c: Kontext keyframe generation ---
+    parser.add_argument("--golden-ref", default=None, help="Golden reference image for Kontext keyframe generation (filename in ComfyUI input/)")
+    parser.add_argument("--skip-kontext", action="store_true", help="Skip Kontext keyframe generation stage")
+    parser.add_argument("--kontext-guidance", type=float, default=2.5, help="Kontext guidance value (default: 2.5)")
+    parser.add_argument("--kontext-output-dir", type=Path, default=None, help="Output directory for Kontext keyframes")
+
     # --- Stage 5: Subtitle format ---
     parser.add_argument("--subtitle-format", choices=["ass", "srt", "both"], default="both", help="Subtitle output format")
 
@@ -152,6 +158,7 @@ def main() -> int:
     package_py = video_root / "pipeline" / "scripts" / "package_for_youtube.py"
     tts_py = video_root / "pipeline" / "scripts" / "generate_tts_from_prepro.py"
     build_manifest_py = video_root / "pipeline" / "scripts" / "build_shot_manifest_from_prepro.py"
+    kontext_py = video_root / "pipeline" / "scripts" / "generate_kontext_keyframes.py"
 
     # ── Stage 0: Preproduction (TTS → timing-synced manifest) ──────────
     if args.prepro_manifest:
@@ -205,6 +212,25 @@ def main() -> int:
             raise RuntimeError(f"BGM catalog ID not found: {args.bgm_id}")
         args.bgm = Path(bgm_entry["path"])
         print(f"[OK] BGM from catalog: {args.bgm_id} → {args.bgm}")
+
+    # ── Stage 0c: Kontext Keyframe Generation ────────────────────────
+    if args.golden_ref and not args.skip_kontext:
+        print(f"[STAGE 0c] Generating Kontext keyframes (golden_ref={args.golden_ref})")
+        kontext_output = args.kontext_output_dir or (args.output_root / "kontext_keyframes")
+        kontext_cmd = [
+            "python3", str(kontext_py),
+            "--manifest", str(args.manifest),
+            "--golden-ref", args.golden_ref,
+            "--output-dir", str(kontext_output),
+            "--server", args.server,
+            "--guidance", str(args.kontext_guidance),
+        ]
+        # Default ComfyUI input dir
+        comfy_input = Path("/home/hugh/ComfyUI/app/input")
+        if comfy_input.exists():
+            kontext_cmd.extend(["--comfy-input", str(comfy_input)])
+        kontext_out = _run(kontext_cmd)
+        print(kontext_out.strip())
 
     # ── Stage 1: Render ────────────────────────────────────────────────
     if args.skip_render:

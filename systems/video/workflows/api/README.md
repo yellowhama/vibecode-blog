@@ -222,6 +222,32 @@ ComfyUI/app/models/unet/
 5. ffmpeg                      →  영상 + VO + BGM 최종 조립
 ```
 
+### 자동화된 Kontext → I2V 2-pass 파이프라인
+
+```bash
+# 풀 파이프라인 (Kontext 키프레임 자동 생성 → Wan I2V 렌더)
+python run_end_to_end_video_pipeline.py \
+    --manifest shots.json \
+    --workflow wan22_moe_i2v_full.json \
+    --bindings wan22_moe_i2v_bindings.json \
+    --golden-ref ivy_burr_golden_ref.png \
+    --kontext-guidance 2.5
+
+# Kontext 단독 실행 (키프레임만 생성)
+python generate_kontext_keyframes.py \
+    --manifest shots.json \
+    --golden-ref ivy_burr_golden_ref.png \
+    --output-dir output/renders/kontext_keyframes \
+    --comfy-input /home/hugh/ComfyUI/app/input \
+    --dry-run
+```
+
+**흐름**: `shot_manifest` → `generate_kontext_keyframes.py` (Flux Kontext) → `{shot_id}_keyframe.png` → `comfy_batch_render.py` (Wan I2V) → 영상
+
+- `--golden-ref` 안 주면 Kontext 스테이지 스킵 (하위 호환)
+- `--skip-kontext` 로 이미 생성된 키프레임 재사용
+- shot manifest에 `kontext_prompt` 필드 사용 (I2V `prompt_positive`와 분리)
+
 ## 배치 렌더러 (comfy_batch_render.py)
 
 - **정본**: `systems/video/scripts/comfy_batch_render.py` (generic binding injection)
