@@ -23,6 +23,7 @@
 | `flux_controlnet_t2i.json` | T2I + ControlNet 포즈 제어 | 1024x1024 | ~13GB | ~3분 |
 | `flux_lora_t2i.json` | T2I + LoRA 캐릭터 고정 | 1024x1024 | ~9.2GB | ~2분 |
 | `flux_lora_controlnet_t2i.json` | T2I + LoRA + ControlNet 결합 | 1024x1024 | ~13.2GB | ~3분 |
+| `flux_kontext_edit.json` | **Kontext 씬 편집 (캐릭터 일관성)** | 자동 | ~12GB | ~3분 |
 | `flux_pulid_t2i.json` | T2I + PuLID 얼굴 일관성 | 1024x1024 | ~11.6GB | ~3분 |
 | `flux_pulid_controlnet_t2i.json` | T2I + PuLID + ControlNet 포즈 | 1024x1024 | ~15.6GB | ~4분 |
 | `flux_face_inpaint.json` | 얼굴 인페인팅 (Flux Fill) | 원본 유지 | ~9GB | ~2분 |
@@ -35,6 +36,7 @@
 | `flux_controlnet_t2i_bindings.json` | ControlNet 포즈 |
 | `flux_lora_t2i_bindings.json` | LoRA 캐릭터 |
 | `flux_lora_controlnet_t2i_bindings.json` | LoRA + ControlNet |
+| `flux_kontext_edit_bindings.json` | **Kontext 씬 편집** |
 | `flux_pulid_t2i_bindings.json` | PuLID 얼굴 일관성 |
 | `flux_pulid_controlnet_t2i_bindings.json` | PuLID + ControlNet |
 | `flux_face_inpaint_bindings.json` | 얼굴 인페인팅 |
@@ -53,6 +55,20 @@ EmptySD3LatentImage(1024x1024)
 KSampler(cfg=1.0, euler/simple, 20 steps)
          ↓
 VAEDecode → SaveImage
+```
+
+### 노드 구조 (Kontext 씬 편집) — 캐릭터 일관성 추천
+
+```
+LoadImage(golden_ref) → FluxKontextImageScale → VAEEncode ─┬→ KSampler latent_image
+                                                            │
+DualCLIPLoaderGGUF → CLIPTextEncode(편집 지시문) ──┐        │
+                                                    ├→ ReferenceLatent → FluxGuidance(2.5) → KSampler positive
+                     CLIPTextEncode → ConditioningZeroOut ──────────────────────────────────→ KSampler negative
+
+UnetLoaderGGUF(kontext-Q5_K_S) ─────────────────────────────────────────────────────────────→ KSampler model
+                                                                                                │
+                                                                                          VAEDecode → SaveImage
 ```
 
 ### 노드 구조 (PuLID T2I)
@@ -102,6 +118,7 @@ ControlNetLoader(Union-Pro-2.0) ─→       ↓
 
 ```
 ComfyUI/app/models/
+├── unet/flux1-kontext-dev-Q5_K_S.gguf                               (8.3GB, Kontext 씬 편집)
 ├── pulid/pulid_flux_v0.9.1.safetensors                              (1.1GB, Phase A — PuLID)
 ├── controlnet/xinsir-controlnet-union-sdxl-1.0-promax.safetensors  (3.98GB, Phase 1)
 ├── loras/vee_v1.safetensors                                        (학습 후, Phase 2)
@@ -197,9 +214,9 @@ ComfyUI/app/models/unet/
 ## 프로덕션 파이프라인 (권장 순서)
 
 ```
-0. Flux T2I                    →  Golden Reference 생성 (PuLID용 얼굴 기준 이미지)
-1. Flux T2I (+ PuLID)         →  캐릭터 시트 (얼굴 일관성 유지)
-2. Flux T2I (+ PuLID + CN)    →  씬별 키프레임 (포즈 제어 + 얼굴 고정)
+0. Flux T2I                    →  Golden Reference 생성 (캐릭터 기준 이미지)
+1. **Flux Kontext**            →  씬별 키프레임 (얼굴+스타일 일관성 최강)
+2. Flux T2I (+ ControlNet)    →  포즈 제어가 필요한 경우 (Kontext로 부족할 때)
 3. Flux Face Inpaint           →  얼굴 디테일 수정 (필요 시)
 4. Wan I2V                     →  키프레임 → 5초 영상 렌더링
 5. ffmpeg                      →  영상 + VO + BGM 최종 조립

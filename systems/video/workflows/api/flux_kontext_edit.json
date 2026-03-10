@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "title": "Flux Kontext Dev GGUF — Image Edit (캐릭터 일관성)",
+    "description": "레퍼런스 이미지 기반 씬 편집. 얼굴/스타일/색감 유지하면서 배경/포즈/씬만 변경. 캐릭터 일관성 최강.",
+    "model": "flux1-kontext-dev-Q5_K_S.gguf",
+    "resolution": "자동 (FluxKontextImageScale)",
+    "vram": "~12GB (Kontext 8.3GB + CLIP + VAE + overhead)",
+    "notes": "Kontext는 편집 모델. 레퍼런스 이미지 필수. 프롬프트는 영어 편집 지시문 (Change X to Y, keep Z unchanged)."
+  },
+  "prompt": {
+    "10": {
+      "inputs": { "unet_name": "flux1-kontext-dev-Q5_K_S.gguf" },
+      "class_type": "UnetLoaderGGUF",
+      "_meta": { "title": "Flux Kontext Dev GGUF" }
+    },
+    "11": {
+      "inputs": {
+        "clip_name1": "t5-v1_1-xxl-encoder-Q5_K_M.gguf",
+        "clip_name2": "clip_l.safetensors",
+        "type": "flux"
+      },
+      "class_type": "DualCLIPLoaderGGUF",
+      "_meta": { "title": "Dual CLIP (T5-XXL GGUF + CLIP-L)" }
+    },
+    "12": {
+      "inputs": { "vae_name": "ae.safetensors" },
+      "class_type": "VAELoader",
+      "_meta": { "title": "Flux VAE" }
+    },
+    "50": {
+      "inputs": { "image": "ivy_burr_golden_ref.png", "upload": "image" },
+      "class_type": "LoadImage",
+      "_meta": { "title": "Reference Image (골든 레퍼런스)" }
+    },
+    "51": {
+      "inputs": { "image": ["50", 0] },
+      "class_type": "FluxKontextImageScale",
+      "_meta": { "title": "Kontext Image Scale (자동 리사이즈)" }
+    },
+    "52": {
+      "inputs": { "pixels": ["51", 0], "vae": ["12", 0] },
+      "class_type": "VAEEncode",
+      "_meta": { "title": "VAE Encode (레퍼런스 → latent)" }
+    },
+    "6": {
+      "inputs": { "text": "EDIT_PROMPT_HERE", "clip": ["11", 0] },
+      "class_type": "CLIPTextEncode",
+      "_meta": { "title": "Edit Prompt (편집 지시문)" }
+    },
+    "55": {
+      "inputs": {
+        "conditioning": ["6", 0],
+        "latent": ["52", 0]
+      },
+      "class_type": "ReferenceLatent",
+      "_meta": { "title": "ReferenceLatent (이미지+텍스트 융합)" }
+    },
+    "26": {
+      "inputs": { "guidance": 2.5, "conditioning": ["55", 0] },
+      "class_type": "FluxGuidance",
+      "_meta": { "title": "Guidance (2.5 — Kontext 기본)" }
+    },
+    "56": {
+      "inputs": { "conditioning": ["6", 0] },
+      "class_type": "ConditioningZeroOut",
+      "_meta": { "title": "Empty Negative (Flux 필수)" }
+    },
+    "13": {
+      "inputs": {
+        "seed": 42,
+        "steps": 20,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0,
+        "model": ["10", 0],
+        "positive": ["26", 0],
+        "negative": ["56", 0],
+        "latent_image": ["52", 0]
+      },
+      "class_type": "KSampler",
+      "_meta": { "title": "KSampler (레퍼런스 latent 위에서 편집)" }
+    },
+    "8": {
+      "inputs": { "samples": ["13", 0], "vae": ["12", 0] },
+      "class_type": "VAEDecode",
+      "_meta": { "title": "VAE Decode" }
+    },
+    "9": {
+      "inputs": { "filename_prefix": "Kontext_Edit", "images": ["8", 0] },
+      "class_type": "SaveImage",
+      "_meta": { "title": "Save Output" }
+    }
+  }
+}

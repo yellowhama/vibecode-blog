@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "workflow": "flux_kontext_edit.json",
+  "description": "Flux Kontext 편집 바인딩 — 레퍼런스 이미지 기반 캐릭터 일관성 씬 생성",
+  "node_mappings": {
+    "positive_prompt": { "node_id": "6", "field": "text" },
+    "seed": { "node_id": "13", "field": "seed" },
+    "guidance": { "node_id": "26", "field": "guidance" },
+    "input_image": { "node_id": "50", "field": "image" },
+    "filename_prefix": { "node_id": "9", "field": "filename_prefix" }
+  },
+  "notes": {
+    "input_image": "레퍼런스 이미지 — ComfyUI input/ 폴더의 파일명. 골든 레퍼런스 또는 이전 생성 결과.",
+    "prompt_format": "영어 편집 지시문. 예: 'Place her sitting at a desk typing on a laptop, cozy room with bookshelves, warm lighting'",
+    "guidance": "2.5 기본. 낮을수록 레퍼런스에 가깝고, 높을수록 프롬프트에 충실.",
+    "no_negative": "Kontext는 ConditioningZeroOut으로 빈 네거티브 사용. 네거티브 프롬프트 없음.",
+    "resolution": "FluxKontextImageScale이 자동으로 Kontext 호환 해상도로 조절."
+  },
+  "defaults": {
+    "guidance": 2.5,
+    "steps": 20,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple"
+  }
+}
