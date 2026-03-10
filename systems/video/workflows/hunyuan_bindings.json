@@ -1,0 +1,19 @@
+{
+  "project_id": "hunyuan_v15_bindings",
+  "workflow_file": "hunyuan_api_workflow.json",
+  "version": "2.1",
+  "node_mappings": {
+    "positive_prompt": {
+      "node_id": "3",
+      "field": "text"
+    },
+    "seed": {
+      "node_id": "6",
+      "field": "seed"
+    },
+    "video_duration": {
+      "node_id": "5",
+      "field": "batch_size"
+    }
+  }
+}

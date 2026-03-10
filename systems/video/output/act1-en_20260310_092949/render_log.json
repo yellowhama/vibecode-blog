@@ -1,0 +1,48 @@
+{
+  "summary": {
+    "total": 8,
+    "errors": 0
+  },
+  "shots": [
+    {
+      "shot_id": "N001",
+      "status": "error",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "shot_id": "N002",
+      "status": "error",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "shot_id": "N003",
+      "status": "error",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "shot_id": "N004",
+      "status": "error",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "shot_id": "N005",
+      "status": "error",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "shot_id": "N006",
+      "status": "error",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "shot_id": "N007",
+      "status": "error",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "shot_id": "N008",
+      "status": "error",
+      "error": "HTTP Error 400: Bad Request"
+    }
+  ]
+}

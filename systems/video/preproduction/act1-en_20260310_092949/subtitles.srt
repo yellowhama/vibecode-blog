@@ -1,0 +1,32 @@
+1
+00:00:00,000 --> 00:00:04,032
+My three computers finally act like one. I can work from anywhere.
+
+2
+00:00:04,232 --> 00:00:07,663
+But getting here? It took six months of absolute hell.
+
+3
+00:00:07,863 --> 00:00:13,647
+Monday morning. Everything stopped. Ten thousand lines of code, and half of it was garbage.
+
+4
+00:00:13,848 --> 00:00:18,024
+AI wrote a back door. I approved it. I didn't even know it was there.
+
+5
+00:00:18,224 --> 00:00:23,551
+Five agents building the same thing. Three date formatters. Four ways to validate a string.
+
+6
+00:00:23,751 --> 00:00:28,600
+It looked convincing. That's why it was dangerous. I was vibe coding with no map.
+
+7
+00:00:28,800 --> 00:00:33,960
+Implementation is free. But deciding what to build? That's the only thing that isn't.
+
+8
+00:00:34,159 --> 00:00:37,735
+Specs don't come from conference rooms. They come from the grind.
+

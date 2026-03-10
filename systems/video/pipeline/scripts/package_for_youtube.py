@@ -243,12 +243,14 @@ def _build_upload_checklist(
     meta: Dict[str, Any],
     render_log: Dict[str, Any],
     learning: Dict[str, Any] | None,
+    evaluations: Dict[str, Any] | None,
     voiceover_quality: Dict[str, Any] | None,
     voiceover_timing: Dict[str, Any] | None,
     args: argparse.Namespace,
 ) -> Dict[str, Any]:
     checks: List[Dict[str, Any]] = []
 
+    # 1. Technical Render Check
     render_summary = render_log.get("summary") or {}
     render_errors = int(render_summary.get("errors", 0))
     _add_check(
@@ -260,6 +262,25 @@ def _build_upload_checklist(
         expected="errors == 0",
         actual=f"errors == {render_errors}",
         details="Derived from render_log.json summary.",
+    )
+
+    # 2. BadCut Detection (Hard Gate)
+    bad_cuts: List[str] = []
+    if evaluations:
+        for shot_id, eval_data in evaluations.get("shots", {}).items():
+            failed_metrics = eval_data.get("failed_metrics", [])
+            if "BadCut" in failed_metrics:
+                bad_cuts.append(shot_id)
+    
+    _add_check(
+        checks,
+        check_id="bad_cut_gate",
+        title="Zero BadCuts detected by PySceneDetect",
+        result=CHECK_STATUS_PASS if not bad_cuts else CHECK_STATUS_FAIL,
+        required=True,
+        expected="bad_cuts == 0",
+        actual=f"bad_cuts == {len(bad_cuts)} ({', '.join(bad_cuts)})",
+        details="Automated scene detection found unintended cuts within single shots.",
     )
 
     invalid_shots: List[str] = []
@@ -721,6 +742,9 @@ def main() -> int:
     learning_path = args.run_dir / "learning_analysis.json"
     learning = _json_load(learning_path) if learning_path.exists() else None
 
+    evaluations_path = args.run_dir / "evaluations_summary.json"
+    evaluations = _json_load(evaluations_path) if evaluations_path.exists() else None
+
     clips = _validate_and_collect_clips(manifest, render_log, learning)
     chapters = _build_chapters(manifest)
 
@@ -785,96 +809,35 @@ def main() -> int:
     if args.voiceover:
         if not args.voiceover.exists():
             raise RuntimeError(f"voiceover file not found: {args.voiceover}")
-        if args.bgm and not args.bgm.exists():
-            raise RuntimeError(f"bgm file not found: {args.bgm}")
+        
+        from video_assembler import assemble_narrative_audio
+        import tempfile as _tmpmod
 
-        if args.bgm and args.audio_ducking:
-            # Phase C: Sidechain ducking — BGM ducks when VO is active
-            from audio_postprocess import mix_with_ducking
-            import tempfile as _tmpmod
-
-            print("[POST] audio ducking mix...")
-            with _tmpmod.TemporaryDirectory(prefix="ducking_") as _dtd:
-                ducked_audio = Path(_dtd) / "ducked_mix.wav"
-                mix_with_ducking(
-                    vo_path=args.voiceover,
-                    bgm_path=args.bgm,
-                    output_path=ducked_audio,
-                    duration=duration,
-                    vo_volume=args.voiceover_volume,
-                    bgm_volume=args.bgm_volume,
-                    duck_threshold=args.duck_threshold,
-                    duck_ratio=args.duck_ratio,
-                )
-                # Mux ducked audio with video
-                _run([
-                    "ffmpeg", "-y",
-                    "-i", str(final_video),
-                    "-i", str(ducked_audio),
-                    "-map", "0:v",
-                    "-map", "1:a",
-                    "-c:v", "copy",
-                    "-c:a", "aac",
-                    "-movflags", "+faststart",
-                    str(final_video_narrated),
-                ])
-        elif args.bgm:
-            # Keep video stream untouched, mix padded VO + looped BGM to exact video duration.
-            _run(
-                [
-                    "ffmpeg",
-                    "-y",
-                    "-i",
-                    str(final_video),
-                    "-i",
-                    str(args.voiceover),
-                    "-stream_loop",
-                    "-1",
-                    "-i",
-                    str(args.bgm),
-                    "-filter_complex",
-                    (
-                        f"[1:a]volume={args.voiceover_volume},apad,atrim=duration={duration:.3f}[vo];"
-                        f"[2:a]volume={args.bgm_volume},atrim=duration={duration:.3f}[bgm];"
-                        "[vo][bgm]amix=inputs=2:normalize=0[a]"
-                    ),
-                    "-map",
-                    "0:v",
-                    "-map",
-                    "[a]",
-                    "-c:v",
-                    "copy",
-                    "-c:a",
-                    "aac",
-                    "-movflags",
-                    "+faststart",
-                    str(final_video_narrated),
-                ]
+        print("[POST] advanced narrative audio assembly (BGM acts + SFX keywords)...")
+        with _tmpmod.TemporaryDirectory(prefix="audio_engine_") as _dtd:
+            master_audio = Path(_dtd) / "master_mix.wav"
+            assemble_narrative_audio(
+                manifest=manifest,
+                vo_path=args.voiceover,
+                output_path=master_audio,
+                vo_volume=args.voiceover_volume,
+                bgm_volume=args.bgm_volume,
+                duck_threshold=args.duck_threshold,
+                duck_ratio=args.duck_ratio,
             )
-        else:
-            _run(
-                [
-                    "ffmpeg",
-                    "-y",
-                    "-i",
-                    str(final_video),
-                    "-i",
-                    str(args.voiceover),
-                    "-filter_complex",
-                    f"[1:a]volume={args.voiceover_volume},apad,atrim=duration={duration:.3f}[a]",
-                    "-map",
-                    "0:v",
-                    "-map",
-                    "[a]",
-                    "-c:v",
-                    "copy",
-                    "-c:a",
-                    "aac",
-                    "-movflags",
-                    "+faststart",
-                    str(final_video_narrated),
-                ]
-            )
+            
+            # Mux master audio with video
+            _run([
+                "ffmpeg", "-y",
+                "-i", str(final_video),
+                "-i", str(master_audio),
+                "-map", "0:v",
+                "-map", "1:a",
+                "-c:v", "copy",
+                "-c:a", "aac",
+                "-movflags", "+faststart",
+                str(final_video_narrated),
+            ])
 
         delivery_video = final_video_narrated
 
@@ -1036,6 +999,7 @@ def main() -> int:
         meta=meta,
         render_log=render_log,
         learning=learning,
+        evaluations=evaluations,
         voiceover_quality=voiceover_quality,
         voiceover_timing=voiceover_timing,
         args=args,

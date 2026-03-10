@@ -1,51 +1,78 @@
 {
   "bgm": [
     {
-      "id": "calm_coding",
-      "path": "assets/audio/bgm/calm_coding.wav",
-      "bpm": 90,
-      "mood": "focused",
-      "tags": ["coding", "tutorial"],
-      "license": "CC0"
+      "id": "fdd_fury_stomp",
+      "path": "assets/audio/bgm/fdd_fury_stomp.wav",
+      "bpm": 85,
+      "mood": "angry_determined",
+      "style": "Industrial Blues / Dark Stomp",
+      "narrative_stage": "Act 1: Frustration",
+      "tags": ["fury", "grit", "heavy_kick", "bukowski"],
+      "reference": "Black Keys style / Heavy Blues"
     },
     {
-      "id": "upbeat_build",
-      "path": "assets/audio/bgm/upbeat_build.wav",
-      "bpm": 120,
-      "mood": "energetic",
-      "tags": ["build", "progress"],
-      "license": "CC0"
+      "id": "yak_shaving_machine",
+      "path": "assets/audio/bgm/yak_shaving_machine.wav",
+      "bpm": 135,
+      "mood": "repetitive_manic",
+      "style": "Mechanical Percussion / Lo-fi Garage",
+      "narrative_stage": "Act 2: The Mess",
+      "tags": ["chaos", "loop", "broken_drums", "fast_coding"],
+      "reference": "Percussion only / Distorted garage rock"
     },
     {
-      "id": "dramatic_reveal",
-      "path": "assets/audio/bgm/dramatic_reveal.wav",
-      "bpm": 100,
-      "mood": "dramatic",
-      "tags": ["reveal", "demo"],
-      "license": "CC0"
+      "id": "nike_insight_minimal",
+      "path": "assets/audio/bgm/nike_insight_minimal.wav",
+      "bpm": 110,
+      "mood": "clear_resolute",
+      "style": "Minimalist Techno / Neo-Classical",
+      "narrative_stage": "Act 3: Declaration",
+      "tags": ["victory", "clarity", "philosophy", "nike_rule"],
+      "reference": "Trent Reznor style / Ambient minimalist"
+    },
+    {
+      "id": "cynical_indie_hacker",
+      "path": "assets/audio/bgm/cynical_indie_hacker.wav",
+      "bpm": 95,
+      "mood": "cool_nonchalant",
+      "style": "Dirty Lo-fi / Slow Garage",
+      "narrative_stage": "General / B-roll",
+      "tags": ["cynical", "cool", "slow_burn", "manifesto"],
+      "reference": "White Stripes / Lo-fi Blues"
     }
   ],
   "sfx": [
     {
-      "id": "keyboard_typing",
-      "path": "assets/audio/sfx/keyboard_typing.wav",
-      "duration_sec": 2.1,
-      "category": "ui",
-      "license": "CC0"
+      "id": "fury_typing_mechanical",
+      "path": "assets/audio/sfx/fury_typing.wav",
+      "duration_sec": 3.5,
+      "category": "action",
+      "tags": ["aggressive", "keyboard", "coding_war"],
+      "description": "Rapid, heavy mechanical typing with frustration"
     },
     {
-      "id": "notification_chime",
-      "path": "assets/audio/sfx/notification_chime.wav",
-      "duration_sec": 0.8,
-      "category": "ui",
-      "license": "CC0"
+      "id": "system_explosion_glitch",
+      "path": "assets/audio/sfx/glitch_error.wav",
+      "duration_sec": 1.2,
+      "category": "error",
+      "tags": ["glitch", "failure", "crash"],
+      "description": "Distorted glitch sound for critical system error"
     },
     {
-      "id": "whoosh_transition",
-      "path": "assets/audio/sfx/whoosh_transition.wav",
+      "id": "meditative_hum_success",
+      "path": "assets/audio/sfx/zen_ping.wav",
+      "duration_sec": 1.5,
+      "category": "success",
+      "tags": ["zen", "insight", "bell"],
+      "description": "Clean, resonant bell for a 'philosophical' declaration"
+    },
+    {
+      "id": "clay_squish_movement",
+      "path": "assets/audio/sfx/clay_squish.wav",
       "duration_sec": 0.5,
-      "category": "transition",
-      "license": "CC0"
+      "category": "character",
+      "tags": ["claymation", "stop_motion", "foley"],
+      "description": "Wet squish sound for clay character movement"
     }
   ]
 }

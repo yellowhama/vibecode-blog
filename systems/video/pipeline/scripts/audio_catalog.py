@@ -61,6 +61,39 @@ def load_catalog(
     return catalog
 
 
+def select_bgm_by_stage(
+    catalog: Dict[str, List[Dict[str, Any]]],
+    stage: str,
+    assets_root: Path = DEFAULT_ASSETS_ROOT,
+) -> Optional[Dict[str, Any]]:
+    """Select a BGM entry based on the narrative stage (HOOK, FURY, MESS, INSIGHT)."""
+    entries = catalog.get("bgm", [])
+    stage_upper = stage.upper()
+    
+    # Mapping stages to the narrative_stage field in our JSON
+    stage_map = {
+        "HOOK": "Act 3: Declaration", # Use cleaner sound for result hook
+        "FURY": "Act 1: Frustration",
+        "MESS": "Act 2: The Mess",
+        "INSIGHT": "Act 3: Declaration"
+    }
+    
+    target_stage = stage_map.get(stage_upper, "General / B-roll")
+    
+    def _resolve(entry: Dict[str, Any]) -> Dict[str, Any]:
+        resolved = dict(entry)
+        resolved["path"] = str(assets_root / entry["path"])
+        return resolved
+
+    # Search for matching narrative_stage
+    for e in entries:
+        if e.get("narrative_stage") == target_stage:
+            return _resolve(e)
+            
+    # Fallback to general mood search if stage match fails
+    return select_bgm(catalog, mood="cool_nonchalant", assets_root=assets_root)
+
+
 def select_bgm(
     catalog: Dict[str, List[Dict[str, Any]]],
     bgm_id: Optional[str] = None,
@@ -109,6 +142,33 @@ def select_bgm(
                 return _resolve(e)
 
     return _resolve(entries[0])
+
+
+def select_sfx_by_keywords(
+    catalog: Dict[str, List[Dict[str, Any]]],
+    visual_text: str,
+    narration_text: str,
+    assets_root: Path = DEFAULT_ASSETS_ROOT,
+) -> List[Dict[str, Any]]:
+    """Select appropriate SFX based on keywords in visual/narration text."""
+    combined = (visual_text + " " + narration_text).lower()
+    selected = []
+    
+    # Map keywords to SFX tags in our catalog
+    keyword_map = {
+        "clay_squish_movement": ["clay", "squish", "move", "walk", "grab"],
+        "system_explosion_glitch": ["error", "crash", "broken", "injection", "fail"],
+        "fury_typing_mechanical": ["type", "code", "agent", "keyboard", "writing"],
+        "meditative_hum_success": ["insight", "done", "success", "clear", "clean"]
+    }
+    
+    for sfx_id, keywords in keyword_map.items():
+        if any(k in combined for k in keywords):
+            matches = select_sfx(catalog, sfx_id=sfx_id, assets_root=assets_root)
+            if matches:
+                selected.append(matches[0])
+                
+    return selected
 
 
 def select_sfx(

@@ -1,0 +1,104 @@
+{
+  "phases": [
+    {
+      "phase": "HOOK",
+      "beats": [
+        {
+          "beat_id": "N001",
+          "source_beats": ["B001"],
+          "narration_text": "My three computers finally act like one. I can work from anywhere.",
+          "emotional_direction": "cool",
+          "visual_goal": "INT. SNOWY CABIN. Character with laptop; 3 distant blue towers glow in sync.",
+          "visual_intensity": "calm",
+          "fountain_scene_heading": "INT. SNOWY CABIN - DAY",
+          "estimated_duration_sec": 5.0
+        },
+        {
+          "beat_id": "N002",
+          "source_beats": ["B002"],
+          "narration_text": "But getting here? It took six months of absolute hell.",
+          "emotional_direction": "cynical",
+          "visual_goal": "Holo-sync pulse across machines. Transition to glitchy flicker.",
+          "visual_intensity": "medium",
+          "fountain_scene_heading": "INT. SNOWY CABIN - DAY",
+          "estimated_duration_sec": 4.5
+        }
+      ]
+    },
+    {
+      "phase": "FURY",
+      "beats": [
+        {
+          "beat_id": "N003",
+          "source_beats": ["B010"],
+          "narration_text": "Monday morning. Everything stopped. Ten thousand lines of code, and half of it was garbage.",
+          "emotional_direction": "pissed",
+          "visual_goal": "INT. DARK OFFICE. Character buried in red clay wires. Strobe red light.",
+          "visual_intensity": "high",
+          "fountain_scene_heading": "INT. DARK OFFICE - NIGHT",
+          "estimated_duration_sec": 6.0
+        },
+        {
+          "beat_id": "N004",
+          "source_beats": ["B015"],
+          "narration_text": "AI wrote a back door. I approved it. I didn't even know it was there.",
+          "emotional_direction": "raw",
+          "visual_goal": "CLOSE UP - MONITOR. Screen cracks; door handle 'SHELL INJECTION' pops out.",
+          "visual_intensity": "high",
+          "fountain_scene_heading": "INT. DARK OFFICE - NIGHT",
+          "estimated_duration_sec": 5.5
+        }
+      ]
+    },
+    {
+      "phase": "MESS",
+      "beats": [
+        {
+          "beat_id": "N005",
+          "source_beats": ["B020"],
+          "narration_text": "Five agents building the same thing. Three date formatters. Four ways to validate a string.",
+          "emotional_direction": "manic",
+          "visual_goal": "INT. CODE JUNGLE. 5 robots building conflicting bridges in clay forest.",
+          "visual_intensity": "high",
+          "fountain_scene_heading": "INT. CODE JUNGLE - DAY",
+          "estimated_duration_sec": 6.5
+        },
+        {
+          "beat_id": "N006",
+          "source_beats": ["B025"],
+          "narration_text": "It looked convincing. That's why it was dangerous. I was vibe coding with no map.",
+          "emotional_direction": "cynical",
+          "visual_goal": "Character pulls vine; entire forest collapses into a clay knot.",
+          "visual_intensity": "high",
+          "fountain_scene_heading": "INT. CODE JUNGLE - DAY",
+          "estimated_duration_sec": 5.5
+        }
+      ]
+    },
+    {
+      "phase": "INSIGHT",
+      "beats": [
+        {
+          "beat_id": "N007",
+          "source_beats": ["B030"],
+          "narration_text": "Implementation is free. But deciding what to build? That's the only thing that isn't.",
+          "emotional_direction": "resolute",
+          "visual_goal": "INT. CLEAN STUDIO. Character pins minimal blueprint to pristine off-white wall.",
+          "visual_intensity": "calm",
+          "fountain_scene_heading": "INT. CLEAN STUDIO - DAY",
+          "estimated_duration_sec": 6.0
+        },
+        {
+          "beat_id": "N008",
+          "source_beats": ["B040"],
+          "narration_text": "Specs don't come from conference rooms. They come from the grind.",
+          "emotional_direction": "philosopher",
+          "visual_goal": "Character walks across sturdy clay bridge over organized grid.",
+          "visual_intensity": "calm",
+          "fountain_scene_heading": "INT. CLEAN STUDIO - DAY",
+          "estimated_duration_sec": 5.0
+        }
+      ]
+    }
+  ]
+}

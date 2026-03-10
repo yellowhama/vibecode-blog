@@ -1,0 +1,96 @@
+{
+  "phases": [
+    {
+      "phase": "HOOK",
+      "beats": [
+        {
+          "beat_id": "N001",
+          "source_beats": ["B001"],
+          "narration_text": "My three computers finally act like one. I can work from anywhere.",
+          "emotional_direction": "cool_nonchalant",
+          "visual_goal": "INT. REMOTE BEACH - DAY. Clay character on beach with laptop and 3 synced holo-monitors.",
+          "visual_intensity": "calm",
+          "fountain_scene_heading": "INT. REMOTE BEACH - DAY"
+        },
+        {
+          "beat_id": "N002",
+          "source_beats": ["B002"],
+          "narration_text": "But getting here? It took six months of absolute hell.",
+          "emotional_direction": "cynical",
+          "visual_goal": "Character taps key, holo-screens pulse. Transition to glitchy flicker.",
+          "visual_intensity": "medium",
+          "fountain_scene_heading": "INT. REMOTE BEACH - DAY"
+        }
+      ]
+    },
+    {
+      "phase": "FURY",
+      "beats": [
+        {
+          "beat_id": "N003",
+          "source_beats": ["B003", "B004"],
+          "narration_text": "Monday morning. Everything stopped. Ten thousand lines of code, and half of it was garbage.",
+          "emotional_direction": "pissed",
+          "visual_goal": "INT. DARK OFFICE - NIGHT. Character illuminated by red 'CRASH' glow, surrounded by clay wires.",
+          "visual_intensity": "high",
+          "fountain_scene_heading": "INT. DARK OFFICE - NIGHT"
+        },
+        {
+          "beat_id": "N004",
+          "source_beats": ["B005"],
+          "narration_text": "AI wrote a back door. I approved it. I didn't even know it was there.",
+          "emotional_direction": "raw",
+          "visual_goal": "CLOSE UP - MONITOR. A crack reveals a door handle labeled 'SHELL INJECTION'.",
+          "visual_intensity": "high",
+          "fountain_scene_heading": "INT. DARK OFFICE - NIGHT"
+        }
+      ]
+    },
+    {
+      "phase": "MESS",
+      "beats": [
+        {
+          "beat_id": "N005",
+          "source_beats": ["B006", "B007"],
+          "narration_text": "Five agents building the same thing. Three date formatters. Four ways to validate a string.",
+          "emotional_direction": "manic",
+          "visual_goal": "INT. THE CODE JUNGLE - DAY. 5 robots building conflicting bridges in a clay vine forest.",
+          "visual_intensity": "high",
+          "fountain_scene_heading": "INT. THE CODE JUNGLE - DAY"
+        },
+        {
+          "beat_id": "N006",
+          "source_beats": ["B008"],
+          "narration_text": "It looked convincing. That's why it was dangerous. I was vibe coding with no map.",
+          "emotional_direction": "cynical",
+          "visual_goal": "Forest collapses on character as he pulls a single clay vine.",
+          "visual_intensity": "high",
+          "fountain_scene_heading": "INT. THE CODE JUNGLE - DAY"
+        }
+      ]
+    },
+    {
+      "phase": "INSIGHT",
+      "beats": [
+        {
+          "beat_id": "N007",
+          "source_beats": ["B009", "B010"],
+          "narration_text": "Implementation is free. But deciding what to build? That's the only thing that isn't.",
+          "emotional_direction": "resolute",
+          "visual_goal": "INT. CLEAN STUDIO - DAY. Character pins a simple 4-line blueprint to an off-white wall.",
+          "visual_intensity": "calm",
+          "fountain_scene_heading": "INT. CLEAN STUDIO - DAY"
+        },
+        {
+          "beat_id": "N008",
+          "source_beats": ["B011"],
+          "narration_text": "Specs don't come from conference rooms. They come from the grind.",
+          "emotional_direction": "philosopher",
+          "visual_goal": "Character walks across a sturdy, simple clay bridge. Jungle gone.",
+          "visual_intensity": "calm",
+          "fountain_scene_heading": "INT. CLEAN STUDIO - DAY"
+        }
+      ]
+    }
+  ]
+}

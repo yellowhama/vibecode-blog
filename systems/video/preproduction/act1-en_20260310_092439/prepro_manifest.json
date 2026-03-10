@@ -1,0 +1,610 @@
+{
+  "project_id": "act1-en",
+  "language": "en",
+  "source_file": "/mnt/e/vibecode-blog/content/blog/phase1/en/act1-en.md",
+  "created_at": "2026-03-10T09:24:39.352553",
+  "total_raw_beats": 100,
+  "total_estimated_duration_sec": 550.7999999999998,
+  "beats": [
+    {
+      "beat_id": "B001",
+      "text": "I Didn't Know What a Spec Was",
+      "duration_sec": 2.8,
+      "images": []
+    },
+    {
+      "beat_id": "B002",
+      "text": "Can't code. Not a developer. Vibe coding looked fun so I started.",
+      "duration_sec": 4.8,
+      "images": []
+    },
+    {
+      "beat_id": "B003",
+      "text": "Here's what happened.",
+      "duration_sec": 1.5,
+      "images": []
+    },
+    {
+      "beat_id": "B004",
+      "text": "---",
+      "duration_sec": 1.5,
+      "images": []
+    },
+    {
+      "beat_id": "B005",
+      "text": "The first time I opened Claude Code, I typed \"make me a to-do app\" out of habit.",
+      "duration_sec": 6.8,
+      "images": []
+    },
+    {
+      "beat_id": "B006",
+      "text": "Back in the ChatGPT days, that's where the loop starts. Code block shows up. Copy it. Paste it in the terminal. Error. Ask again. Copy again. Paste again. Error again. That loop.",
+      "duration_sec": 12.8,
+      "images": []
+    },
+    {
+      "beat_id": "B007",
+      "text": "But something different happened. Instead of showing me code, it made the files directly.",
+      "duration_sec": 5.6,
+      "images": []
+    },
+    {
+      "beat_id": "B008",
+      "text": "Wait. I don't have to copy-paste?",
+      "duration_sec": 2.4,
+      "images": []
+    },
+    {
+      "beat_id": "B009",
+      "text": "I tried it. It worked. Tried another thing. That worked too.",
+      "duration_sec": 4.4,
+      "images": []
+    },
+    {
+      "beat_id": "B010",
+      "text": "Three days in, I had five agents running. I didn't fully understand what they did. But they ran. If it runs, it works. That's what I thought.",
+      "duration_sec": 10.8,
+      "images": []
+    },
+    {
+      "beat_id": "B011",
+      "text": "---",
+      "duration_sec": 1.5,
+      "images": []
+    },
+    {
+      "beat_id": "B012",
+      "text": "I built a stock screener. Took two days.",
+      "duration_sec": 3.2,
+      "images": []
+    },
+    {
+      "beat_id": "B013",
+      "text": "Scans 586 US stocks across three strategies. Done in three minutes.",
+      "duration_sec": 4.4,
+      "images": []
+    },
+    {
+      "beat_id": "B014",
+      "text": "Before, I used to ask Claude \"what is this?\" Now I tell Claude \"do this.\"",
+      "duration_sec": 6.0,
+      "images": []
+    },
+    {
+      "beat_id": "B015",
+      "text": "If you can feel the difference, good for you. I couldn't. That's the trap.",
+      "duration_sec": 5.6,
+      "images": []
+    },
+    {
+      "beat_id": "B016",
+      "text": "\"I can build anything with this.\"",
+      "duration_sec": 2.4,
+      "images": []
+    },
+    {
+      "beat_id": "B017",
+      "text": "That thought was the trap.",
+      "duration_sec": 2.0,
+      "images": []
+    },
+    {
+      "beat_id": "B018",
+      "text": "---",
+      "duration_sec": 1.5,
+      "images": []
+    },
+    {
+      "beat_id": "B019",
+      "text": "But all of that was practice.",
+      "duration_sec": 2.4,
+      "images": []
+    },
+    {
+      "beat_id": "B020",
+      "text": "My real project? Something else. Three computers at home. Two desktops, one laptop. Work from my laptop outside. Still use the machines at home. Like one machine.",
+      "duration_sec": 10.8,
+      "images": []
+    },
+    {
+      "beat_id": "B021",
+      "text": "Nothing on the market did this. Built it myself.",
+      "duration_sec": 3.6,
+      "images": []
+    },
+    {
+      "beat_id": "B022",
+      "text": "---",
+      "duration_sec": 1.5,
+      "images": []
+    },
+    {
+      "beat_id": "B023",
+      "text": "Then something felt off.",
+      "duration_sec": 1.6,
+      "images": []
+    },
+    {
+      "beat_id": "B024",
+      "text": "The code ran. But it wasn't what I wanted.",
+      "duration_sec": 3.6,
+      "images": []
+    },
+    {
+      "beat_id": "B025",
+      "text": "I tweaked the prompt. It got worse. Tweaked it again. A feature I had before disappeared.",
+      "duration_sec": 6.4,
+      "images": []
+    },
+    {
+      "beat_id": "B026",
+      "text": "It wasn't broken. But it wasn't right either. Stuck somewhere in between.",
+      "duration_sec": 4.8,
+      "images": []
+    },
+    {
+      "beat_id": "B027",
+      "text": "The scariest part? I couldn't tell if it was correct. I couldn't tell where it went wrong. I was afraid that asking for a fix would break it more.",
+      "duration_sec": 11.6,
+      "images": []
+    },
+    {
+      "beat_id": "B028",
+      "text": "So I left it alone. Touching it would only make it worse.",
+      "duration_sec": 4.8,
+      "images": []
+    },
+    {
+      "beat_id": "B029",
+      "text": "AI-written code looks convincing. That's what makes it dangerous.",
+      "duration_sec": 3.6,
+      "images": []
+    },
+    {
+      "beat_id": "B030",
+      "text": "Completely broken code? Anyone can spot that. Error on screen, you know it's dead.",
+      "duration_sec": 5.6,
+      "images": []
+    },
+    {
+      "beat_id": "B031",
+      "text": "But code that looks fine on the outside while rotting on the inside? For someone who can't read code, that's a disaster. That was my disaster.",
+      "duration_sec": 10.4,
+      "images": []
+    },
+    {
+      "beat_id": "B032",
+      "text": "---",
+      "duration_sec": 1.5,
+      "images": []
+    },
+    {
+      "beat_id": "B033",
+      "text": "One Monday morning. The whole system stopped.",
+      "duration_sec": 2.8,
+      "images": []
+    },
+    {
+      "beat_id": "B034",
+      "text": "Nothing worked. It was fine yesterday.",
+      "duration_sec": 2.4,
+      "images": []
+    },
+    {
+      "beat_id": "B035",
+      "text": "I opened the code. Over ten thousand lines. Almost half of it was duplicated.",
+      "duration_sec": 5.6,
+      "images": []
+    },
+    {
+      "beat_id": "B036",
+      "text": "Five agents had built the same function five different ways. Three date formatters. Two config parsers. Four different ways to validate input.",
+      "duration_sec": 8.8,
+      "images": []
+    },
+    {
+      "beat_id": "B037",
+      "text": "Nobody noticed. Not the AI. Not me. Agent 3 didn't know what Agent 5 built. Of course not. They never saw each other's code.",
+      "duration_sec": 9.6,
+      "images": []
+    },
+    {
+      "beat_id": "B038",
+      "text": "But me? I didn't know either. I can't read code.",
+      "duration_sec": 4.0,
+      "images": []
+    },
+    {
+      "beat_id": "B039",
+      "text": "Then I ran a security audit. Line 847. Shell injection.",
+      "duration_sec": 4.0,
+      "images": []
+    },
+    {
+      "beat_id": "B040",
+      "text": "AI wrote it. I approved it. I don't read every line. That's the whole point of vibe coding.",
+      "duration_sec": 7.2,
+      "images": []
+    },
+    {
+      "beat_id": "B041",
+      "text": "But here's the thing. This tool — the one connecting my three computers — goes over the network. A shell injection in that code?",
+      "duration_sec": 9.6,
+      "images": []
+    },
+    {
+      "beat_id": "B042",
+      "text": "That's not a bug. That's a door. A door anyone can walk through.",
+      "duration_sec": 5.2,
+      "images": []
+    },
+    {
+      "beat_id": "B043",
+      "text": "---",
+      "duration_sec": 1.5,
+      "images": []
+    },
+    {
+      "beat_id": "B044",
+      "text": "What the hell went wrong?",
+      "duration_sec": 2.0,
+      "images": []
+    },
+    {
+      "beat_id": "B045",
+      "text": "Not the AI's fault. AI did what I told it to. Not the prompt's fault. The prompts were specific enough.",
+      "duration_sec": 8.0,
+      "images": []
+    },
+    {
+      "beat_id": "B046",
+      "text": "The problem was deeper.",
+      "duration_sec": 1.6,
+      "images": []
+    },
+    {
+      "beat_id": "B047",
+      "text": "I didn't know what I was building.",
+      "duration_sec": 2.8,
+      "images": []
+    },
+    {
+      "beat_id": "B048",
+      "text": "No, I thought I knew. \"Connect three computers.\"",
+      "duration_sec": 3.2,
+      "images": []
+    },
+    {
+      "beat_id": "B049",
+      "text": "But what does that even mean? Sync files? Share screens? Distribute processes? At what point is it \"done\"?",
+      "duration_sec": 7.2,
+      "images": []
+    },
+    {
+      "beat_id": "B050",
+      "text": "I had no answer. No answer meant AI went in a different direction every time. Every time convincing. Every time different. Every time slightly wrong.",
+      "duration_sec": 10.0,
+      "images": []
+    },
+    {
+      "beat_id": "B051",
+      "text": "Making files? AI does that. Free. Writing code? Free. Running tests? Free.",
+      "duration_sec": 4.8,
+      "images": []
+    },
+    {
+      "beat_id": "B052",
+      "text": "Exactly one thing isn't free. Deciding what to build. AI can't do that. Only humans can.",
+      "duration_sec": 6.4,
+      "images": []
+    },
+    {
+      "beat_id": "B053",
+      "text": "But I skipped the decision and went straight to building. \"If I just start, something will come out of it.\"",
+      "duration_sec": 8.0,
+      "images": []
+    },
+    {
+      "beat_id": "B054",
+      "text": "Something came out. Ten thousand lines of spaghetti.",
+      "duration_sec": 3.2,
+      "images": []
+    },
+    {
+      "beat_id": "B055",
+      "text": "---",
+      "duration_sec": 1.5,
+      "images": []
+    },
+    {
+      "beat_id": "B056",
+      "text": "Karpathy coined \"vibe coding.\" Type in English, get results. Works for developers.",
+      "duration_sec": 4.8,
+      "images": []
+    },
+    {
+      "beat_id": "B057",
+      "text": "But there's a reason it works for developers. They can read the code.",
+      "duration_sec": 5.2,
+      "images": []
+    },
+    {
+      "beat_id": "B058",
+      "text": "They can tell \"this is a minor fix\" from \"this changes the whole direction.\" I can't. I don't know code.",
+      "duration_sec": 8.0,
+      "images": []
+    },
+    {
+      "beat_id": "B059",
+      "text": "Developers are locals with built-in GPS. They know the roads. The dead ends. The shortcuts.",
+      "duration_sec": 6.0,
+      "images": []
+    },
+    {
+      "beat_id": "B060",
+      "text": "I'm a tourist dropped in a foreign country with no map. AI says \"this way\" and I follow. But I can't tell if that's a right turn or a U-turn.",
+      "duration_sec": 12.0,
+      "images": []
+    },
+    {
+      "beat_id": "B061",
+      "text": "\"What if I just write better prompts?\" No. The prompts weren't the problem.",
+      "duration_sec": 5.2,
+      "images": []
+    },
+    {
+      "beat_id": "B062",
+      "text": "I didn't have a map.",
+      "duration_sec": 2.0,
+      "images": []
+    },
+    {
+      "beat_id": "B063",
+      "text": "What am I building? What does it do? Who uses it? When is it done?",
+      "duration_sec": 6.0,
+      "images": []
+    },
+    {
+      "beat_id": "B064",
+      "text": "I had none of these four. Didn't matter how good my prompts were. Didn't matter which AI I used. No direction means every step is wasted.",
+      "duration_sec": 10.4,
+      "images": []
+    },
+    {
+      "beat_id": "B065",
+      "text": "---",
+      "duration_sec": 1.5,
+      "images": []
+    },
+    {
+      "beat_id": "B066",
+      "text": "Developers call that map a \"spec.\"",
+      "duration_sec": 2.4,
+      "images": []
+    },
+    {
+      "beat_id": "B067",
+      "text": "Spec? Like phone specs? Screen size, battery, storage? No. In software, a spec is \"a document that describes what you're building.\"",
+      "duration_sec": 8.4,
+      "images": []
+    },
+    {
+      "beat_id": "B068",
+      "text": "But I didn't know how to write one. Didn't even know that meaning existed. Opening a document and typing \"1. System Overview\" — that's not my world. Never learned that.",
+      "duration_sec": 12.0,
+      "images": []
+    },
+    {
+      "beat_id": "B069",
+      "text": "So what did I do?",
+      "duration_sec": 2.0,
+      "images": []
+    },
+    {
+      "beat_id": "B070",
+      "text": "I got pissed.",
+      "duration_sec": 1.5,
+      "images": []
+    },
+    {
+      "beat_id": "B071",
+      "text": "Three computers at home. I want them to work like one. Tried everything on the market.",
+      "duration_sec": 6.4,
+      "images": []
+    },
+    {
+      "beat_id": "B072",
+      "text": "KVM switch. Half-assed. Remote Desktop. Slow and choppy. Cloud sync. My files going through someone else's server. Git for code sync. Only handles code, nothing else. Five apps running at once just to get \"barely okay.\"",
+      "duration_sec": 14.4,
+      "images": []
+    },
+    {
+      "beat_id": "B073",
+      "text": "Nothing worked the way I wanted.",
+      "duration_sec": 2.4,
+      "images": []
+    },
+    {
+      "beat_id": "B074",
+      "text": "\"Why doesn't this work?\" That became a question.",
+      "duration_sec": 3.2,
+      "images": []
+    },
+    {
+      "beat_id": "B075",
+      "text": "\"What if I do it this way?\" That became an attempt.",
+      "duration_sec": 4.4,
+      "images": []
+    },
+    {
+      "beat_id": "B076",
+      "text": "\"That doesn't work either?\" That became a constraint.",
+      "duration_sec": 3.2,
+      "images": []
+    },
+    {
+      "beat_id": "B077",
+      "text": "I asked the AI. \"Can I connect them like this?\" \"No. Here's why.\" That \"no\" became a requirement.",
+      "duration_sec": 7.2,
+      "images": []
+    },
+    {
+      "beat_id": "B078",
+      "text": "Ask. Get told no. Hear why not. Ask again. Twenty rounds of that fight.",
+      "duration_sec": 5.6,
+      "images": []
+    },
+    {
+      "beat_id": "B079",
+      "text": "I never opened a spec document. I never sat down to write a spec.",
+      "duration_sec": 5.6,
+      "images": []
+    },
+    {
+      "beat_id": "B080",
+      "text": "I got pissed. Asked questions. Fought. Organized. And the spec was already there.",
+      "duration_sec": 5.2,
+      "images": []
+    },
+    {
+      "beat_id": "B081",
+      "text": "But when I wrote it down, one question became four.",
+      "duration_sec": 4.0,
+      "images": []
+    },
+    {
+      "beat_id": "B082",
+      "text": "\"Nothing does this\" is the current pain. That's the reason. \"Work like one machine\" is the change I want. That's the purpose. Same \"why.\" Different answers.",
+      "duration_sec": 10.4,
+      "images": []
+    },
+    {
+      "beat_id": "B083",
+      "text": "\"P2P connection\" is the tech choice. That's the method. \"Fork libp2p, check the MIT license\" is how I get it. That's the means. Same \"how.\" Different answers.",
+      "duration_sec": 10.8,
+      "images": []
+    },
+    {
+      "beat_id": "B084",
+      "text": "Organize your frustration and that's what you get. It doesn't come from a whiteboard in a conference room. It comes from \"why the hell doesn't this work.\"",
+      "duration_sec": 10.8,
+      "images": []
+    },
+    {
+      "beat_id": "B085",
+      "text": "---",
+      "duration_sec": 1.5,
+      "images": []
+    },
+    {
+      "beat_id": "B086",
+      "text": "Once I had the spec, everything changed.",
+      "duration_sec": 2.8,
+      "images": []
+    },
+    {
+      "beat_id": "B087",
+      "text": "Instead of \"build this\" I told AI \"build this according to this spec.\"",
+      "duration_sec": 5.2,
+      "images": []
+    },
+    {
+      "beat_id": "B088",
+      "text": "Direction meant AI stopped wandering off. Constraints meant it stopped making the same mistakes. A definition of \"done\" meant I could see the finish line.",
+      "duration_sec": 10.0,
+      "images": []
+    },
+    {
+      "beat_id": "B089",
+      "text": "Ten thousand lines became three thousand. I could finally delete things. I could tell what was needed and what wasn't.",
+      "duration_sec": 8.0,
+      "images": []
+    },
+    {
+      "beat_id": "B090",
+      "text": "Forty-five minutes became twelve. Python was pissing me off so I switched to Rust. It just got faster.",
+      "duration_sec": 7.2,
+      "images": []
+    },
+    {
+      "beat_id": "B091",
+      "text": "Failure rate dropped from 30% to 3%. Less code, fewer places to break.",
+      "duration_sec": 5.2,
+      "images": []
+    },
+    {
+      "beat_id": "B092",
+      "text": "But reality doesn't follow specs perfectly. First day, the build blew up. Timeout. Old code the spec didn't account for popped up. Collision.",
+      "duration_sec": 9.2,
+      "images": []
+    },
+    {
+      "beat_id": "B093",
+      "text": "Plans change when they get punched. Got punched. Fixed it. Wrote it down. Next time I got punched in the same spot, five seconds to fix.",
+      "duration_sec": 10.4,
+      "images": []
+    },
+    {
+      "beat_id": "B094",
+      "text": "Writing it down is the whole point. When specs meet reality, specs change. If you don't write down the change, you get punched in the same place again.",
+      "duration_sec": 11.2,
+      "images": []
+    },
+    {
+      "beat_id": "B095",
+      "text": "---",
+      "duration_sec": 1.5,
+      "images": []
+    },
+    {
+      "beat_id": "B096",
+      "text": "I didn't know what a spec was. I'm still not a \"spec engineer.\"",
+      "duration_sec": 5.2,
+      "images": []
+    },
+    {
+      "beat_id": "B097",
+      "text": "But I know one thing now.",
+      "duration_sec": 2.4,
+      "images": []
+    },
+    {
+      "beat_id": "B098",
+      "text": "Better prompts aren't the answer. Better AI tools aren't the answer. Knowing what you're building is the answer.",
+      "duration_sec": 7.2,
+      "images": []
+    },
+    {
+      "beat_id": "B099",
+      "text": "And that answer doesn't come out clean. It comes from getting pissed, asking questions, fighting, and organizing.",
+      "duration_sec": 6.8,
+      "images": []
+    },
+    {
+      "beat_id": "B100",
+      "text": "Specs don't come from conference rooms. They come from the grind.",
+      "duration_sec": 4.4,
+      "images": []
+    }
+  ]
+}

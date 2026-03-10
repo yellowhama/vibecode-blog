@@ -181,6 +181,98 @@ def _build_drawtext_filter(
     )
 
 
+def assemble_narrative_audio(
+    manifest: Dict[str, Any],
+    vo_path: Path,
+    output_path: Path,
+    vo_volume: float = 1.0,
+    bgm_volume: float = 0.18,
+    duck_threshold: float = 0.02,
+    duck_ratio: float = 6.0,
+) -> Path:
+    """Advanced audio assembler: BGM act-switching + SFX keywords + Sidechain Ducking."""
+    from audio_catalog import load_catalog, select_bgm_by_stage, select_sfx_by_keywords
+    
+    catalog = load_catalog()
+    shots = manifest.get("shots", [])
+    if not shots:
+        raise ValueError("No shots in manifest for audio assembly")
+
+    # Build inputs and filter complex
+    inputs = ["-i", str(vo_path)]
+    filter_parts = [f"[0:a]volume={vo_volume}[vo]"]
+    
+    # 1. Prepare BGM (Act-based switching)
+    # For v2.1, we concatenate BGM clips matching act durations
+    bgm_inputs = []
+    bgm_filter = ""
+    cursor = 0.0
+    
+    # Group shots by narrative stage to determine BGM segments
+    stages = []
+    if shots:
+        current_stage = shots[0].get("narrative_stage", "GENERAL")
+        current_dur = 0.0
+        for s in shots:
+            if s.get("narrative_stage") == current_stage:
+                current_dur += s.get("duration_sec", 5.0)
+            else:
+                stages.append((current_stage, current_dur))
+                current_stage = s.get("narrative_stage", "GENERAL")
+                current_dur = s.get("duration_sec", 5.0)
+        stages.append((current_stage, current_dur))
+
+    # Add BGM inputs and create a concatenated BGM track
+    for idx, (stage, dur) in enumerate(stages):
+        bgm_entry = select_bgm_by_stage(catalog, stage)
+        if bgm_entry:
+            inputs.extend(["-stream_loop", "-1", "-i", bgm_entry["path"]])
+            # Trim looped BGM to segment duration and apply volume
+            inputs_idx = len(inputs) // 2 - 1
+            filter_parts.append(f"[{inputs_idx}:a]atrim=duration={dur:.3f},volume={bgm_volume}[bgm{idx}]")
+            bgm_inputs.append(f"[bgm{idx}]")
+    
+    if bgm_inputs:
+        filter_parts.append(f"{''.join(bgm_inputs)}concat=n={len(bgm_inputs)}:v=0:a=1[bgm_full]")
+    else:
+        # Fallback to silence if no BGM
+        filter_parts.append("anullsrc=r=44100:cl=stereo[bgm_full]")
+
+    # 2. SFX Keyword Injection
+    sfx_inputs = []
+    cursor = 0.0
+    for shot in shots:
+        visual = shot.get("prompt_positive", "")
+        narration = shot.get("narration", "")
+        dur = float(shot.get("duration_sec", 5.0))
+        
+        selected_sfx = select_sfx_by_keywords(catalog, visual, narration)
+        for s in selected_sfx:
+            sfx_idx = len(inputs) // 2
+            inputs.extend(["-i", s["path"]])
+            # Delay SFX to its shot start time
+            filter_parts.append(f"[{sfx_idx}:a]adelay={int(cursor*1000)}|{int(cursor*1000)}[sfx{len(sfx_inputs)}]")
+            sfx_inputs.append(f"[sfx{len(sfx_inputs)}]")
+        cursor += dur
+
+    # 3. Mix SFX and then Sidechain Duck BGM
+    if sfx_inputs:
+        filter_parts.append(f"{''.join(sfx_inputs)}amix=inputs={len(sfx_inputs)}:normalize=0[sfx_all]")
+        filter_parts.append("[vo][sfx_all]amix=inputs=2:normalize=0[vo_sfx]")
+    else:
+        filter_parts.append("[vo]anull[vo_sfx]")
+
+    # Sidechain: [bgm_full] is ducked by [vo_sfx]
+    filter_parts.append(
+        f"[bgm_full][vo_sfx]sidechaingate=threshold={duck_threshold}:ratio={duck_ratio}:level_in=1[ducked_bgm]"
+    )
+    filter_parts.append("[vo_sfx][ducked_bgm]amix=inputs=2:normalize=0[outa]")
+
+    cmd = ["ffmpeg", "-y"] + inputs + ["-filter_complex", ";".join(filter_parts), "-map", "[outa]", str(output_path)]
+    _run(cmd)
+    return output_path
+
+
 def assemble_with_transitions(
     clips: List[Path],
     transition: str = "fade",

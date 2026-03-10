@@ -1,0 +1,15 @@
+{
+  "project_id": "failproof_bindings",
+  "workflow_file": "failproof_api_workflow.json",
+  "version": "2.1",
+  "node_mappings": {
+    "positive_prompt": {
+      "node_id": "6",
+      "field": "text"
+    },
+    "seed": {
+      "node_id": "3",
+      "field": "seed"
+    }
+  }
+}

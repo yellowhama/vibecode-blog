@@ -1,0 +1,23 @@
+{
+  "project_id": "bytedance_i2v_bindings",
+  "workflow_file": "bytedance_api_workflow.json",
+  "version": "2.1",
+  "node_mappings": {
+    "positive_prompt": {
+      "node_id": "1",
+      "field": "prompt"
+    },
+    "input_image": {
+      "node_id": "1",
+      "field": "image"
+    },
+    "video_duration": {
+      "node_id": "1",
+      "field": "duration"
+    },
+    "seed": {
+      "node_id": "1",
+      "field": "seed"
+    }
+  }
+}

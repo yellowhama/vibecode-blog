@@ -1,0 +1,66 @@
+[
+  {
+    "beat_id": "N001",
+    "text": "My three computers finally act like one. I can work from anywhere.",
+    "start_sec": 0.0,
+    "end_sec": 4.032,
+    "duration_sec": 4.032,
+    "path": "/mnt/e/vibecode-blog/systems/video/preproduction/act1-en_20260310_092949/audio_segments/N001.wav"
+  },
+  {
+    "beat_id": "N002",
+    "text": "But getting here? It took six months of absolute hell.",
+    "start_sec": 4.232,
+    "end_sec": 7.664,
+    "duration_sec": 3.432,
+    "path": "/mnt/e/vibecode-blog/systems/video/preproduction/act1-en_20260310_092949/audio_segments/N002.wav"
+  },
+  {
+    "beat_id": "N003",
+    "text": "Monday morning. Everything stopped. Ten thousand lines of code, and half of it was garbage.",
+    "start_sec": 7.864,
+    "end_sec": 13.648,
+    "duration_sec": 5.784,
+    "path": "/mnt/e/vibecode-blog/systems/video/preproduction/act1-en_20260310_092949/audio_segments/N003.wav"
+  },
+  {
+    "beat_id": "N004",
+    "text": "AI wrote a back door. I approved it. I didn't even know it was there.",
+    "start_sec": 13.848,
+    "end_sec": 18.024,
+    "duration_sec": 4.176,
+    "path": "/mnt/e/vibecode-blog/systems/video/preproduction/act1-en_20260310_092949/audio_segments/N004.wav"
+  },
+  {
+    "beat_id": "N005",
+    "text": "Five agents building the same thing. Three date formatters. Four ways to validate a string.",
+    "start_sec": 18.224,
+    "end_sec": 23.552,
+    "duration_sec": 5.328,
+    "path": "/mnt/e/vibecode-blog/systems/video/preproduction/act1-en_20260310_092949/audio_segments/N005.wav"
+  },
+  {
+    "beat_id": "N006",
+    "text": "It looked convincing. That's why it was dangerous. I was vibe coding with no map.",
+    "start_sec": 23.752,
+    "end_sec": 28.6,
+    "duration_sec": 4.848,
+    "path": "/mnt/e/vibecode-blog/systems/video/preproduction/act1-en_20260310_092949/audio_segments/N006.wav"
+  },
+  {
+    "beat_id": "N007",
+    "text": "Implementation is free. But deciding what to build? That's the only thing that isn't.",
+    "start_sec": 28.8,
+    "end_sec": 33.96,
+    "duration_sec": 5.16,
+    "path": "/mnt/e/vibecode-blog/systems/video/preproduction/act1-en_20260310_092949/audio_segments/N007.wav"
+  },
+  {
+    "beat_id": "N008",
+    "text": "Specs don't come from conference rooms. They come from the grind.",
+    "start_sec": 34.16,
+    "end_sec": 37.736,
+    "duration_sec": 3.576,
+    "path": "/mnt/e/vibecode-blog/systems/video/preproduction/act1-en_20260310_092949/audio_segments/N008.wav"
+  }
+]

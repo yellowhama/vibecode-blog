@@ -1,0 +1,23 @@
+{
+  "project_id": "v2_i2v_character_bindings",
+  "workflow_file": "v2_standard_workflow.json",
+  "version": "2.1",
+  "node_mappings": {
+    "positive_prompt": {
+      "node_id": "6",
+      "field": "text"
+    },
+    "seed": {
+      "node_id": "10",
+      "field": "seed"
+    },
+    "video_duration": {
+      "node_id": "8",
+      "field": "length"
+    },
+    "input_image": {
+      "node_id": "1",
+      "field": "image"
+    }
+  }
+}

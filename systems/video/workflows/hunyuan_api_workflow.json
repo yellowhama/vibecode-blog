@@ -1,0 +1,81 @@
+{
+  "1": {
+    "inputs": {
+      "unet_name": "hunyuan_v15_fp8.safetensors"
+    },
+    "class_type": "UNETLoader",
+    "_meta": { "title": "Load Hunyuan UNET" }
+  },
+  "2": {
+    "inputs": {
+      "vae_name": "hunyuan_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": { "title": "Load Hunyuan VAE" }
+  },
+  "3": {
+    "inputs": {
+      "text": "Positive prompt will be injected here",
+      "clip": ["4", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": { "title": "Positive Prompt" }
+  },
+  "4": {
+    "inputs": {
+      "clip_name": "t5xxl_fp8_e4m3fn.safetensors",
+      "type": "hunyuan"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": { "title": "Load CLIP" }
+  },
+  "5": {
+    "inputs": {
+      "width": 832,
+      "height": 480,
+      "batch_size": 33
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": { "title": "Empty Latent" }
+  },
+  "6": {
+    "inputs": {
+      "seed": 42,
+      "steps": 25,
+      "cfg": 6.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0,
+      "model": ["1", 0],
+      "positive": ["3", 0],
+      "negative": ["7", 0],
+      "latent_image": ["5", 0]
+    },
+    "class_type": "KSampler",
+    "_meta": { "title": "Sampler" }
+  },
+  "7": {
+    "inputs": {
+      "text": "text, watermark, blurry, bad quality",
+      "clip": ["4", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": { "title": "Negative Prompt" }
+  },
+  "8": {
+    "inputs": {
+      "samples": ["6", 0],
+      "vae": ["2", 0]
+    },
+    "class_type": "VAEDecode",
+    "_meta": { "title": "VAE Decode" }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "HunyuanV15",
+      "images": ["8", 0]
+    },
+    "class_type": "SaveImage",
+    "_meta": { "title": "Save Result" }
+  }
+}
