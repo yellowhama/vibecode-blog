@@ -113,8 +113,10 @@ npm run post        # 실제 발행
 이 프로젝트는 다음 오픈소스 기술을 우선적으로 채택함:
 
 ### 1. 비디오 파이프라인 최적화
-- **모델**: Stable Video Diffusion(SVD)보다 고품질인 **Wan 2.1** 또는 **LTX-Video** 우선 사용.
-- **자동화**: `ComfyUI-to-Python-Extension`을 활용하여 JSON 워크플로우를 순수 파이썬 스크립트로 변환, 유지보수성 향상.
+- **이미지 모델**: **Flux.1-dev GGUF** (T2I) + **Flux Kontext GGUF** (캐릭터 일관성 씬 편집)
+- **영상 모델**: **Wan 2.2 MoE GGUF** (I2V)
+- **캐릭터 일관성**: Flux Kontext가 primary (PuLID는 스타일 캐릭터에서 실패)
+- **자동화**: `comfy_batch_render.py` — generic binding injection으로 모든 워크플로우 배치 렌더
 - **검증**: `evaluate_renders.py`에 **PySceneDetect**를 통합하여 샷 전환 오류 및 "Bad Cut" 자동 감지.
 
 ### 2. 서사 및 브랜딩 전략

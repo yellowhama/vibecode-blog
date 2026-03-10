@@ -7,26 +7,35 @@
   "design_date": "2026-03-11",
 
   "identity_system": {
-    "method": "PuLID-Flux",
-    "model": "pulid_flux_v0.9.1.safetensors",
+    "primary_method": "Flux-Kontext",
+    "secondary_method": "PuLID-Flux (실사 전용, 스타일 캐릭터에서 약함)",
+    "kontext": {
+      "model": "flux1-kontext-dev-Q5_K_S.gguf",
+      "workflow": "flux_kontext_edit.json",
+      "how": "골든 레퍼런스 이미지를 입력 → 편집 지시문으로 씬만 변경 → 얼굴/스타일/색감 유지",
+      "guidance": 2.5,
+      "vram": "~12GB",
+      "tested": "5/5 씬 동일인물 확인 (정면/코딩/좌절/유레카/산책)"
+    },
+    "pulid": {
+      "model": "pulid_flux_v0.9.1.safetensors",
+      "status": "스타일 캐릭터에서 실패 — InsightFace가 3D/Pixar 얼굴 인식 불가. 실사 전용.",
+      "weight": "1.0~2.5 테스트했으나 동일인물 안 됨"
+    },
     "golden_ref_image": {
       "comfyui_input": "ivy_burr_golden_ref.png",
-      "repo_path": "systems/video/assets/characters/vee/ivy_burr_golden_ref.png"
-    },
-    "weight_guidelines": {
-      "claymation": { "range": "0.8-1.0", "note": "스타일 유지하면서 얼굴 일관성" },
-      "semi_realistic": { "range": "1.0-1.2", "note": "반리얼 스타일에서 강한 일관성" },
-      "realistic": { "range": "1.2-1.5", "note": "리얼리스틱에서 최대 일관성" }
-    },
-    "notes": "PuLID InsightFace는 실사 얼굴에 최적화. 클레이모션 레퍼런스로도 동작하나 임베딩이 약할 수 있음. 골든 이미지를 반리얼 스타일로 생성하면 임베딩 품질 향상."
+      "repo_path": "systems/video/assets/characters/vee/ivy_burr_golden_ref.png",
+      "generation": "Flux T2I, seed=2025, guidance=3.5, semi-realistic 3D style"
+    }
   },
 
   "design_philosophy": {
-    "style": "Aardman studio claymation (Wallace & Gromit / Shaun the Sheep)",
-    "material": "Hand-sculpted polymer clay, matte finish, heavy fingerprint textures",
+    "style": "3D Pixar-like render with subtle clay texture — NOT heavy claymation, NOT photorealistic",
+    "material": "Smooth 3D render with hint of clay/plasticine softness. Clean, bright, studio-lit.",
     "proportions": "4.5 head tall — slender graceful adult woman, NOT chibi/childlike",
-    "reference_blend": "장나라 (Jang Nara) 60% + Amy Adams 40% — translated into clay sculpture language",
-    "render_model": "이미지: Flux.1-dev GGUF / 영상: Wan 2.2 MoE GGUF"
+    "reference_blend": "장나라 (Jang Nara) 60% + Amy Adams 40% — translated into 3D character design",
+    "render_model": "이미지: Flux.1-dev GGUF (T2I) + Flux Kontext GGUF (씬 편집) / 영상: Wan 2.2 MoE GGUF",
+    "style_evolution": "v1-3: 정통 Aardman 클레이모션 → v4: 3D Pixar-like (Kontext 일관성 확보 위해 전환)"
   },
 
   "personality": {
