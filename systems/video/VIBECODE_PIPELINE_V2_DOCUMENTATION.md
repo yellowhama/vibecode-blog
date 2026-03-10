@@ -55,8 +55,10 @@ python3 systems/video/pipeline/scripts/finalize_video_v2.py \
 ```
 
 ## 5. 인프라 설정
-*   **ComfyUI**: 8188 포트 사용. 
-*   **모델**: `hunyuan_v15_fp8`을 기본으로 사용 (심볼릭 링크 완료).
+*   **ComfyUI**: 8188 포트 사용. 서버 실행: `bash systems/video/scripts/run_comfy_server.sh`
+*   **기본 모델**: Wan 2.2 GGUF MoE (HighNoise + LowNoise Q3_K_M, 각 6.7GB)
+*   **레거시 모델**: `hunyuan_v15_fp8` (심볼릭 링크 완료)
+*   **커스텀 노드**: `ComfyUI-GGUF` (UnetLoaderGGUF 노드)
 *   **의존성**: `edge-tts`, `ffmpeg`, `scenedetect` 기반.
 
 ## 6. ByteDance API 통합 특이사항
@@ -66,8 +68,50 @@ python3 systems/video/pipeline/scripts/finalize_video_v2.py \
 *   **길이(Duration)**: 3~12초 범위의 **초(seconds)** 단위를 사용. 
     *   *주의*: 로컬 훈위안 모델과 달리 프레임(frames) 단위가 아니므로 `comfy_batch_render.py`에서 별도 처리가 필요함 (패치 완료).
 
-## 7. Wan 2.2 GGUF MoE 및 캐릭터 고정 (Identity)
-*   **모델 구성**: `HighNoise` 및 `LowNoise` GGUF 모델을 동시 사용하는 Mixture of Experts(MoE) 구조.
-*   **최적화**: RTX 5070 Ti (16GB VRAM) 환경을 위해 Q3_K_M 양자화 버전 사용.
-*   **캐릭터 일관성**: `character_hugh.png`를 참조 이미지로 사용하여 전 샷에 걸쳐 일관된 외형 유지.
-*   **렌더링 로직**: `comfy_batch_render.py`에서 `wan22_gguf_bindings.json`을 감지할 경우 자동으로 MoE 병렬 로드 및 Identity 데이터 주입.
+## 7. Wan 2.2 GGUF MoE 렌더링 엔진
+
+### 모델 구성
+*   **MoE 구조**: `HighNoise`(구조) + `LowNoise`(디테일) 2단계 디노이징.
+*   **양자화**: Q3_K_M (각 6.7GB) — RTX 5070 Ti 16GB VRAM에 최적.
+*   **모델 경로**:
+    *   `models/unet/HighNoise/Wan2.2-I2V-A14B-HighNoise-Q3_K_M.gguf`
+    *   `models/unet/LowNoise/Wan2.2-I2V-A14B-LowNoise-Q3_K_M.gguf`
+    *   `models/unet/Wan2.2-Animate-14B-Q3_K_M.gguf` (T2V용, 미사용)
+
+### API 워크플로우 템플릿 (`workflows/api/`)
+| 워크플로우 | 용도 | 해상도 | 프레임 |
+|:---|:---|:---|:---|
+| `wan22_moe_t2i.json` | 이미지 생성 (캐릭터시트, 컨셉아트) | 1024x1024 | 1 |
+| `wan22_moe_i2v_short.json` | 짧은 영상 (앵글전환, 모션테스트) | 768x768 | 33 (2초) |
+| `wan22_moe_i2v_full.json` | 프로덕션 영상 (본편 샷) | 768x768 | 81 (5초) |
+
+### MoE 세팅 차이
+| | T2I (이미지) | I2V (영상) |
+|:---|:---|:---|
+| sampler | `uni_pc` | `euler` |
+| scheduler | `beta` | `simple` |
+| steps | 35 (0→8 / 8→35) | 20 (0→10 / 10→20) |
+| cfg | 2.5 / 3.5 | 3.5 / 3.5 |
+
+### 주의사항
+*   `ModelSamplingSD3`에 `shift`만 설정 (width/height 넣으면 에러).
+*   `VHS_VideoCombine` 미설치 시 `SaveImage`로 PNG 시퀀스 출력.
+*   I2V 입력 이미지는 `ComfyUI/app/input/` 폴더에 위치해야 함.
+
+## 8. 캐릭터 시스템 — Vee (비)
+
+### 캐릭터 디자인 v2.0
+*   **SSOT**: `systems/video/assets/characters/vee/character_design.json`
+*   **스타일**: Aardman claymation (핑거프린트 텍스처, 매트 마감)
+*   **외형 레퍼런스**: 장나라(얼굴형, 표정) 60% + Amy Adams(머리색, 분위기) 40%
+*   **핵심 특징**:
+    *   피부: 따뜻한 레몬크림 매트 클레이 (#FFF3D4)
+    *   머리: 오번-코퍼 웨이브 (#B7472A)
+    *   의상: 코코아 브라운 후디 (#5D4037) + 블루 데님 쇼츠 (#5C6BC0)
+    *   악세: 두꺼운 검정 동그란 안경, 살짝 비뚤어진 채
+    *   체형: 치비 비율 (4등신), 뭉툭한 팔다리
+
+### 캐릭터 일관성 (Identity Persistence)
+*   **I2V 방식**: 정면 시트(`Vee_sheet_front.png`)를 `start_image`로 사용하여 앵글 전환 렌더링.
+*   **프롬프트 잠금**: 모든 샷에 identity 키워드 강제 삽입 (`auburn clay hair, cocoa brown hoodie, round glasses`).
+*   **character_extractor.py**: `KNOWN_CHARACTERS`에 Vee 등록 완료.
