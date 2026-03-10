@@ -77,7 +77,13 @@ def render_shots(manifest_path, workflow_path, bindings_path, output_root, serve
             field = mappings['video_duration']['field']
             if node_id in nodes_ref:
                 # Many I2V models use frames, assuming 12fps
-                class_type = nodes_ref[node_id].get("class_type", ""); nodes_ref[node_id]["inputs"][field] = int(shot["duration_sec"]) if class_type.startswith("ByteDance") or "Wan" in class_type else int(shot["duration_sec"] * 12)
+                if class_type.startswith("ByteDance"):
+                    nodes_ref[node_id]['inputs'][field] = int(shot["duration_sec"])
+                elif class_type == "WanImageToVideo":
+                    # Wan 2.2 I2V expects frames (usually 16fps * 5s = 81 frames)
+                    nodes_ref[node_id]['inputs'][field] = int(shot["duration_sec"] * 16) + 1
+                else:
+                    nodes_ref[node_id]['inputs'][field] = int(shot["duration_sec"] * 12)
 
         # --- CHARACTER REFERENCE (Identity) ---
         if 'character_reference' in mappings:

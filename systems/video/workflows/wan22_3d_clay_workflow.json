@@ -1,0 +1,110 @@
+{
+  "10": {
+    "inputs": {
+      "unet_name": "Wan2.2-I2V-A14B-HighNoise-Q3_K_M.gguf"
+    },
+    "class_type": "UnetLoaderGGUF",
+    "_meta": { "title": "Wan 2.2 HighNoise (GGUF)" }
+  },
+  "11": {
+    "inputs": {
+      "unet_name": "Wan2.2-I2V-A14B-LowNoise-Q3_K_M.gguf"
+    },
+    "class_type": "UnetLoaderGGUF",
+    "_meta": { "title": "Wan 2.2 LowNoise (GGUF)" }
+  },
+  "2": {
+    "inputs": {
+      "vae_name": "wan_2.1_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": { "title": "Wan VAE" }
+  },
+  "4": {
+    "inputs": {
+      "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "type": "wan"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": { "title": "Load T5 XXL" }
+  },
+  "3": {
+    "inputs": {
+      "text": "(Masterpiece, high quality, 3D render, sculpted clay figure:1.3), Aardman studio style claymation. A volumetric 3D female character named Vee. Body made of lemon-yellow matte clay with visible fingerprint indentations and rough handmade texture. She has a large elongated oval nose and a very wide expressive mouth. Wearing an oversized, heavy Kakao Brown clay hoodie and blue denim clay shorts. Her black hair is made of thick messy clay clumps. Cinematic studio lighting with soft shadows and subsurface scattering on the clay material. Standing on a wooden workbench. Plain solid light grey studio background. Professional 8k macro photography of a physical toy.",
+      "clip": ["4", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": { "title": "Positive Prompt" }
+  },
+  "7": {
+    "inputs": {
+      "text": "(2D, drawing, sketch, illustration, line art:1.5), flat, cartoon, anime, photorealistic, glossy, plastic, green background, lime, blurry, low resolution, human skin, smooth CGI.",
+      "clip": ["4", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": { "title": "Negative Prompt" }
+  },
+  "5": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": { "title": "Empty Latent" }
+  },
+  "20": {
+    "inputs": {
+      "add_noise": "enable",
+      "noise_seed": 9999,
+      "steps": 35,
+      "cfg": 4.5,
+      "sampler_name": "dpmpp_2m_sde",
+      "scheduler": "karras",
+      "start_at_step": 0,
+      "end_at_step": 15,
+      "return_with_leftover_noise": "enable",
+      "model": ["10", 0],
+      "positive": ["3", 0],
+      "negative": ["7", 0],
+      "latent_image": ["5", 0]
+    },
+    "class_type": "KSamplerAdvanced",
+    "_meta": { "title": "HighNoise Stage (Structure)" }
+  },
+  "21": {
+    "inputs": {
+      "add_noise": "disable",
+      "noise_seed": 9999,
+      "steps": 35,
+      "cfg": 5.5,
+      "sampler_name": "dpmpp_2m_sde",
+      "scheduler": "karras",
+      "start_at_step": 15,
+      "end_at_step": 35,
+      "return_with_leftover_noise": "disable",
+      "model": ["11", 0],
+      "positive": ["3", 0],
+      "negative": ["7", 0],
+      "latent_image": ["20", 0]
+    },
+    "class_type": "KSamplerAdvanced",
+    "_meta": { "title": "LowNoise Stage (Refinement)" }
+  },
+  "8": {
+    "inputs": {
+      "samples": ["21", 0],
+      "vae": ["2", 0]
+    },
+    "class_type": "VAEDecode",
+    "_meta": { "title": "VAE Decode" }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "Vee_3D_Clay_Real",
+      "images": ["8", 0]
+    },
+    "class_type": "SaveImage",
+    "_meta": { "title": "Save Image" }
+  }
+}

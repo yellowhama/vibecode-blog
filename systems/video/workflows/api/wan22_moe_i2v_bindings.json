@@ -1,0 +1,31 @@
+{
+  "version": "2.0",
+  "workflow": "wan22_moe_i2v_full.json (or wan22_moe_i2v_short.json)",
+  "description": "I2V 바인딩 — 입력 이미지 + 프롬프트를 워크플로우에 주입",
+  "node_mappings": {
+    "positive_prompt": { "node_id": "3", "field": "text" },
+    "negative_prompt": { "node_id": "7", "field": "text" },
+    "seed": { "node_id": "20", "field": "noise_seed" },
+    "input_image": { "node_id": "9", "field": "image" },
+    "video_duration": { "node_id": "50", "field": "length" },
+    "width": { "node_id": "50", "field": "width" },
+    "height": { "node_id": "50", "field": "height" },
+    "filename_prefix": { "node_id": "99", "field": "filename_prefix" }
+  },
+  "notes": {
+    "duration": "length는 프레임 수. 16fps 기준: 33=2초, 49=3초, 65=4초, 81=5초",
+    "seed_sync": "node 20(HighNoise)과 21(LowNoise)의 seed를 동일하게 맞춰야 일관성 유지",
+    "input_image": "ComfyUI app/input/ 폴더에 이미지가 있어야 함"
+  },
+  "defaults": {
+    "negative_prompt": "(2D, sketch, illustration:1.5), different character, ugly, deformed, flat, cartoon, anime, photorealistic, glossy, plastic, smooth CGI, blurry, low resolution, multiple characters.",
+    "width": 768,
+    "height": 768,
+    "length_short": 33,
+    "length_full": 81,
+    "steps": 20,
+    "cfg": 3.5,
+    "sampler": "euler",
+    "scheduler": "simple"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "version": "2.0",
+  "workflow": "wan22_moe_t2i.json",
+  "description": "T2I 바인딩 — comfy_batch_render.py에서 매니페스트 값을 워크플로우 노드에 주입",
+  "node_mappings": {
+    "positive_prompt": { "node_id": "3", "field": "text" },
+    "negative_prompt": { "node_id": "7", "field": "text" },
+    "seed": { "node_id": "20", "field": "noise_seed" },
+    "width": { "node_id": "5", "field": "width" },
+    "height": { "node_id": "5", "field": "height" },
+    "filename_prefix": { "node_id": "9", "field": "filename_prefix" }
+  },
+  "defaults": {
+    "negative_prompt": "(2D, sketch, illustration:1.5), ugly, deformed, flat, cartoon, anime, photorealistic, glossy, plastic, smooth CGI, blurry, low resolution.",
+    "width": 1024,
+    "height": 1024,
+    "steps": 35,
+    "cfg_stage1": 2.5,
+    "cfg_stage2": 3.5,
+    "sampler": "uni_pc",
+    "scheduler": "beta"
+  }
+}

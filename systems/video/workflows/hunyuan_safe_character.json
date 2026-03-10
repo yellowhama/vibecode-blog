@@ -1,0 +1,82 @@
+{
+  "1": {
+    "inputs": {
+      "unet_name": "hunyuan_v15_fp8.safetensors"
+      ,"weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": { "title": "Load Hunyuan UNET" }
+  },
+  "2": {
+    "inputs": {
+      "vae_name": "hunyuanvideo15_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": { "title": "Load Hunyuan VAE" }
+  },
+  "3": {
+    "inputs": {
+      "text": "(Masterpiece, high quality, 3D claymation, sculpted clay figure:1.3), Aardman studio style. A volumetric 3D female clay figure named Vee. Warm lemon-cream matte clay skin (#FFF3D4) with deep fingerprint textures. Auburn-copper wavy shoulder-length clay hair in chunky sculpted clumps. Large expressive wide-set hazel-brown clay eyes, tiny round button nose, gentle warm smile, slightly flushed pink clay cheeks. Thick-rimmed round black clay glasses. Wearing an oversized slouchy cocoa brown clay hoodie (#5D4037) with hood down and kangaroo pocket, sleeves bunched at wrists, blue denim clay shorts. Chibi stubby proportions. Cinematic lighting, soft shadows, subsurface scattering. Standing on a wooden workbench. Plain solid white studio background. Professional 8k macro photography of a physical toy figure.",
+      "clip": ["4", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": { "title": "Positive Prompt" }
+  },
+  "4": {
+    "inputs": {
+      "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "type": "sd3"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": { "title": "Load CLIP" }
+  },
+  "5": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": { "title": "Empty Latent" }
+  },
+  "6": {
+    "inputs": {
+      "seed": 7777,
+      "steps": 30,
+      "cfg": 6.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0,
+      "model": ["1", 0],
+      "positive": ["3", 0],
+      "negative": ["7", 0],
+      "latent_image": ["5", 0]
+    },
+    "class_type": "KSampler",
+    "_meta": { "title": "Sampler" }
+  },
+  "7": {
+    "inputs": {
+      "text": "(2D, drawing, sketch, illustration, line art:1.5), flat, cartoon, anime, photorealistic, glossy, plastic, green background, blurry, low resolution, human skin, smooth CGI.",
+      "clip": ["4", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": { "title": "Negative Prompt" }
+  },
+  "8": {
+    "inputs": {
+      "samples": ["6", 0],
+      "vae": ["2", 0]
+    },
+    "class_type": "VAEDecode",
+    "_meta": { "title": "VAE Decode" }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "Vee_Real_Clay_Hunyuan",
+      "images": ["8", 0]
+    },
+    "class_type": "SaveImage",
+    "_meta": { "title": "Save Image" }
+  }
+}

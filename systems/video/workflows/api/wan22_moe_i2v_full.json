@@ -1,0 +1,122 @@
+{
+  "_meta": {
+    "title": "Wan 2.2 GGUF MoE — Image to Video (Full, 5sec)",
+    "description": "프로덕션 영상 렌더링용. 입력 이미지 → WanI2V(81프레임) → 2-stage MoE → SaveImage. 배치 렌더러(comfy_batch_render.py)에서 사용.",
+    "model": "Wan2.2-I2V-A14B (HighNoise + LowNoise) Q3_K_M GGUF",
+    "resolution": "768x768",
+    "frames": 81,
+    "fps": 16,
+    "duration_sec": 5,
+    "tested": "2026-03-10",
+    "usage": "python comfy_batch_render.py --workflow api/wan22_moe_i2v_full.json --bindings api/wan22_moe_i2v_bindings.json"
+  },
+  "prompt": {
+    "10": {
+      "inputs": { "unet_name": "Wan2.2-I2V-A14B-HighNoise-Q3_K_M.gguf" },
+      "class_type": "UnetLoaderGGUF",
+      "_meta": { "title": "HighNoise UNET" }
+    },
+    "11": {
+      "inputs": { "unet_name": "Wan2.2-I2V-A14B-LowNoise-Q3_K_M.gguf" },
+      "class_type": "UnetLoaderGGUF",
+      "_meta": { "title": "LowNoise UNET" }
+    },
+    "30": {
+      "inputs": { "shift": 8.0, "model": ["10", 0] },
+      "class_type": "ModelSamplingSD3",
+      "_meta": { "title": "HighNoise Shift" }
+    },
+    "31": {
+      "inputs": { "shift": 8.0, "model": ["11", 0] },
+      "class_type": "ModelSamplingSD3",
+      "_meta": { "title": "LowNoise Shift" }
+    },
+    "2": {
+      "inputs": { "vae_name": "wan_2.1_vae.safetensors" },
+      "class_type": "VAELoader",
+      "_meta": { "title": "Wan 2.1 VAE" }
+    },
+    "4": {
+      "inputs": { "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors", "type": "wan" },
+      "class_type": "CLIPLoader",
+      "_meta": { "title": "UMT5-XXL FP8 CLIP" }
+    },
+    "3": {
+      "inputs": { "text": "POSITIVE_PROMPT_HERE", "clip": ["4", 0] },
+      "class_type": "CLIPTextEncode",
+      "_meta": { "title": "Positive Prompt" }
+    },
+    "7": {
+      "inputs": { "text": "NEGATIVE_PROMPT_HERE", "clip": ["4", 0] },
+      "class_type": "CLIPTextEncode",
+      "_meta": { "title": "Negative Prompt" }
+    },
+    "9": {
+      "inputs": { "image": "INPUT_IMAGE.png" },
+      "class_type": "LoadImage",
+      "_meta": { "title": "Reference Image (start_image)" }
+    },
+    "50": {
+      "inputs": {
+        "width": 768,
+        "height": 768,
+        "length": 81,
+        "batch_size": 1,
+        "positive": ["3", 0],
+        "negative": ["7", 0],
+        "vae": ["2", 0],
+        "start_image": ["9", 0]
+      },
+      "class_type": "WanImageToVideo",
+      "_meta": { "title": "Wan I2V Encode (768x768, 81 frames = 5sec@16fps)" }
+    },
+    "20": {
+      "inputs": {
+        "add_noise": "enable",
+        "noise_seed": 42,
+        "steps": 20,
+        "cfg": 3.5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "start_at_step": 0,
+        "end_at_step": 10,
+        "return_with_leftover_noise": "enable",
+        "model": ["30", 0],
+        "positive": ["50", 0],
+        "negative": ["50", 1],
+        "latent_image": ["50", 2]
+      },
+      "class_type": "KSamplerAdvanced",
+      "_meta": { "title": "Stage 1 — HighNoise (steps 0→10)" }
+    },
+    "21": {
+      "inputs": {
+        "add_noise": "disable",
+        "noise_seed": 42,
+        "steps": 20,
+        "cfg": 3.5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "start_at_step": 10,
+        "end_at_step": 20,
+        "return_with_leftover_noise": "disable",
+        "model": ["31", 0],
+        "positive": ["50", 0],
+        "negative": ["50", 1],
+        "latent_image": ["20", 0]
+      },
+      "class_type": "KSamplerAdvanced",
+      "_meta": { "title": "Stage 2 — LowNoise (steps 10→20)" }
+    },
+    "8": {
+      "inputs": { "samples": ["21", 0], "vae": ["2", 0] },
+      "class_type": "VAEDecode",
+      "_meta": { "title": "VAE Decode" }
+    },
+    "99": {
+      "inputs": { "filename_prefix": "Wan22_I2V_Full", "images": ["8", 0] },
+      "class_type": "SaveImage",
+      "_meta": { "title": "Save Output" }
+    }
+  }
+}

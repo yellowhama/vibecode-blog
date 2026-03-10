@@ -1,0 +1,37 @@
+{
+  "project_id": "wan22_gguf_moe_i2v_bindings",
+  "version": "2.2",
+  "workflow_file": "wan22_gguf_i2v_workflow.json",
+  "node_mappings": {
+    "unet_high": {
+      "node_id": "1",
+      "field": "unet_name",
+      "model_file": "Wan2.2-I2V-A14B-HighNoise-Q3_K_M.gguf"
+    },
+    "unet_low": {
+      "node_id": "2",
+      "field": "unet_name",
+      "model_file": "Wan2.2-I2V-A14B-LowNoise-Q3_K_M.gguf"
+    },
+    "positive_prompt": {
+      "node_id": "7",
+      "field": "text"
+    },
+    "negative_prompt": {
+      "node_id": "8",
+      "field": "text"
+    },
+    "input_image": {
+      "node_id": "9",
+      "field": "image"
+    },
+    "video_duration": {
+      "node_id": "10",
+      "field": "length"
+    },
+    "seed": {
+      "node_ids": ["11", "12"],
+      "field": "noise_seed"
+    }
+  }
+}

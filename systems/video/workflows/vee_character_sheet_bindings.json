@@ -1,0 +1,38 @@
+{
+  "version": "2.0",
+  "description": "Bindings for Vee character sheet generation using existing T2V/I2V workflows",
+  "character_id": "vee",
+  "node_mappings": {
+    "positive_prompt": {
+      "node_id": "6",
+      "field": "text",
+      "description": "Positive prompt — inject per-angle sheet prompt"
+    },
+    "negative_prompt": {
+      "node_id": "7",
+      "field": "text",
+      "description": "Negative prompt"
+    },
+    "seed": {
+      "node_id": "57",
+      "field": "noise_seed",
+      "description": "Seed for reproducibility"
+    },
+    "video_duration": {
+      "node_id": "50",
+      "field": "length",
+      "description": "Frame count (set to 17 = 1 sec for sheet extraction)"
+    }
+  },
+  "defaults": {
+    "negative_prompt": "text, subtitles, watermark, logo, speech bubble, blurry, deformed, ugly, oversaturated, photorealistic, CGI, smooth animation, live action, plastic sheen, glossy, multiple characters, crowd, anime, cartoon, 2D, flat, sketch, illustration, human skin texture, realistic skin, green background",
+    "duration_frames": 17,
+    "resolution": "768x768",
+    "seeds": {
+      "front": 77770,
+      "three_quarter": 77771,
+      "side": 77772,
+      "full_body": 77773
+    }
+  }
+}

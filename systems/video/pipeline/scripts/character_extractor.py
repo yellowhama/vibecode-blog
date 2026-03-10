@@ -40,19 +40,23 @@ CRITICAL_NEGATIVES = (
 # ---------------------------------------------------------------------------
 KNOWN_CHARACTERS: list[dict[str, Any]] = [
     {
-        "id": "dev_protagonist",
-        "name": "개발자 (주인공 / Brown-Hooded Avatar)",
+        "id": "vee",
+        "name": "Vee (비) — 여주인공 / Auburn-Haired Developer",
         "appearance": (
-            "Aardman style minimalist clay figure, very chubby and stubby "
-            "proportions with short legs. Bright Musu Yellow (#FFD166) round "
-            "face with wide-set half-closed tired protruding eyes, a tiny "
-            "round yellow nose, and a slight frown. Wearing a large oversized "
-            "thick muted cocoa brown hoodie (#5D4037) with the hood pulled up "
-            "framing the face, and a front kangaroo pocket."
+            "Aardman style volumetric 3D female clay figure named Vee, chibi "
+            "stubby proportions with short legs. Warm lemon-cream matte clay "
+            "skin (#FFF3D4) with heavy fingerprint textures. Auburn-copper "
+            "wavy shoulder-length clay hair (#B7472A) in chunky sculpted clumps. "
+            "Large expressive wide-set hazel-brown clay eyes, tiny round button "
+            "nose, gentle warm smile, slightly flushed pink clay cheeks. "
+            "Thick-rimmed round black clay glasses sitting slightly crooked. "
+            "Wearing an oversized slouchy cocoa brown clay hoodie (#5D4037) "
+            "with hood down and front kangaroo pocket, sleeves bunched at "
+            "wrists, blue denim clay shorts (#5C6BC0)."
         ),
         "keywords": [
-            "character", "avatar", "brown-hooded", "hoodie",
-            "캐릭터", "주인공", "아바타",
+            "character", "avatar", "vee", "hoodie", "auburn",
+            "캐릭터", "주인공", "비", "아바타",
         ],
         "environment": "real_world",
     },
