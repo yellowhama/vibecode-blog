@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "workflow": "flux_dev_t2i.json",
+  "description": "Flux T2I 바인딩 — 캐릭터 시트, 키프레임 생성용",
+  "node_mappings": {
+    "positive_prompt": { "node_id": "6", "field": "text" },
+    "seed": { "node_id": "13", "field": "seed" },
+    "guidance": { "node_id": "26", "field": "guidance" },
+    "width": { "node_id": "5", "field": "width" },
+    "height": { "node_id": "5", "field": "height" },
+    "filename_prefix": { "node_id": "9", "field": "filename_prefix" }
+  },
+  "notes": {
+    "no_negative": "Flux는 네거티브 프롬프트 불필요. cfg=1.0 고정, guidance 노드로 조절.",
+    "guidance_range": "2.0(자유로움) ~ 5.0(프롬프트 충실). 캐릭터 시트는 3.5~4.0 추천.",
+    "resolution": "1024x1024 기본. 세로형은 768x1344, 가로형은 1344x768."
+  },
+  "defaults": {
+    "guidance": 3.5,
+    "width": 1024,
+    "height": 1024,
+    "steps": 20,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple"
+  }
+}

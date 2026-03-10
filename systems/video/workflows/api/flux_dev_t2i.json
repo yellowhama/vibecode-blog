@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "title": "Flux.1-dev GGUF — Text to Image",
+    "description": "캐릭터 시트, 키프레임, 컨셉아트 생성용. Flux.1-dev는 네거티브 프롬프트 없이 포지티브만 사용.",
+    "model": "flux1-dev-Q5_K_S.gguf + T5-v1.1-XXL Q5_K_M + CLIP-L",
+    "resolution": "1024x1024",
+    "vram": "~12GB (16GB GPU에 적합)",
+    "notes": "Flux는 classifier-free guidance 대신 guidance 임베딩 사용. cfg=1.0 고정, guidance node로 조절."
+  },
+  "prompt": {
+    "10": {
+      "inputs": { "unet_name": "flux1-dev-Q5_K_S.gguf" },
+      "class_type": "UnetLoaderGGUF",
+      "_meta": { "title": "Flux.1-dev GGUF" }
+    },
+    "11": {
+      "inputs": {
+        "clip_name1": "t5-v1_1-xxl-encoder-Q5_K_M.gguf",
+        "clip_name2": "clip_l.safetensors",
+        "type": "flux"
+      },
+      "class_type": "DualCLIPLoaderGGUF",
+      "_meta": { "title": "Dual CLIP (T5-XXL GGUF + CLIP-L)" }
+    },
+    "12": {
+      "inputs": { "vae_name": "ae.safetensors" },
+      "class_type": "VAELoader",
+      "_meta": { "title": "Flux VAE (ae.safetensors)" }
+    },
+    "6": {
+      "inputs": { "text": "POSITIVE_PROMPT_HERE", "clip": ["11", 0] },
+      "class_type": "CLIPTextEncode",
+      "_meta": { "title": "Prompt (Flux는 positive만 사용)" }
+    },
+    "26": {
+      "inputs": { "guidance": 3.5, "conditioning": ["6", 0] },
+      "class_type": "FluxGuidance",
+      "_meta": { "title": "Guidance (3.5 기본, 2.0~5.0 범위)" }
+    },
+    "5": {
+      "inputs": { "width": 1024, "height": 1024, "batch_size": 1 },
+      "class_type": "EmptySD3LatentImage",
+      "_meta": { "title": "Empty Latent (1024x1024)" }
+    },
+    "13": {
+      "inputs": {
+        "seed": 42,
+        "steps": 20,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0,
+        "model": ["10", 0],
+        "positive": ["26", 0],
+        "negative": ["6", 0],
+        "latent_image": ["5", 0]
+      },
+      "class_type": "KSampler",
+      "_meta": { "title": "KSampler (cfg=1.0, guidance는 FluxGuidance에서 처리)" }
+    },
+    "8": {
+      "inputs": { "samples": ["13", 0], "vae": ["12", 0] },
+      "class_type": "VAEDecode",
+      "_meta": { "title": "VAE Decode" }
+    },
+    "9": {
+      "inputs": { "filename_prefix": "Flux_T2I", "images": ["8", 0] },
+      "class_type": "SaveImage",
+      "_meta": { "title": "Save Output" }
+    }
+  }
+}

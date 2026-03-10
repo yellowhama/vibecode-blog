@@ -2,14 +2,24 @@
   "character_id": "vee",
   "character_name": "Vee (비)",
   "role": "여주인공 — 개발자 아바타",
-  "version": "2.0",
-  "design_date": "2026-03-10",
+  "version": "3.0",
+  "design_date": "2026-03-11",
 
   "design_philosophy": {
     "style": "Aardman studio claymation (Wallace & Gromit / Shaun the Sheep)",
     "material": "Hand-sculpted polymer clay, matte finish, heavy fingerprint textures",
-    "proportions": "Chibi/stubby — oversized head (40% of body), short stubby limbs, compact torso",
-    "reference_blend": "장나라 (Jang Nara) 60% + Amy Adams 40% — translated into clay sculpture language"
+    "proportions": "4.5 head tall — slender graceful adult woman, NOT chibi/childlike",
+    "reference_blend": "장나라 (Jang Nara) 60% + Amy Adams 40% — translated into clay sculpture language",
+    "render_model": "이미지: Flux.1-dev GGUF / 영상: Wan 2.2 MoE GGUF"
+  },
+
+  "personality": {
+    "core": "뉴논스톱 장나라 캐릭터 — 어리바리하고 엉뚱한데 의외로 실력파",
+    "surface": "장난기 있고 엉뚱함. 안경이 삐딱하게 걸려있어도 신경 안 씀. 화초한테 말 걸고 로봇강아지한테 이름 지어주는 타입",
+    "depth": "막상 코딩 들어가면 무서운 집중력. 성적 좋고 과대표 하는 의외의 성실함",
+    "temper": "버럭 모드 있음 — 코드 터지면 모니터에 대고 소리지르고 후디 모자 뒤집어쓰고 웅크림",
+    "charm": "예쁜데 본인은 모름. Pretty Woman인데 본인은 그냥 후디입는 개발자라고 생각함",
+    "reference": "뉴논스톱 장나라 (양동근 좋아하는 어리바리 캐릭터) + Enchanted Amy Adams (순수하고 엉뚱한 공주)"
   },
 
   "appearance": {
@@ -28,13 +38,15 @@
       "details": "Loose messy waves, a few strands falling across forehead. Individual clumps sculpted separately then assembled. Some strands catch studio light"
     },
     "body": {
-      "build": "Petite and compact, chibi proportions. Short stubby arms and legs",
-      "height_ratio": "4 heads tall (chibi standard for Aardman-style)"
+      "build": "Slender graceful petite adult woman. Not childlike, not chibi.",
+      "height_ratio": "4.5 heads tall — proportionate feminine adult figure"
     },
     "clothing": {
-      "top": "Oversized slouchy Cocoa Brown (#5D4037) clay hoodie with the hood down, revealing hair. Front kangaroo pocket. Sleeves slightly too long, bunched at wrists",
-      "bottom": "Blue denim clay shorts (#5C6BC0) with sculpted seam details",
-      "accessories": "Thick-rimmed round glasses with black clay frames. Thin clay frames sit slightly crooked on nose"
+      "top": "Oversized slouchy Cocoa Brown (#5D4037) clay hoodie with the hood down, revealing hair. Front kangaroo pocket. Sleeves way too long covering hands halfway — 뉴논스톱 장나라식 오버핏",
+      "bottom": "Baggy light-wash clay jeans (#90CAF9) or loose cargo pants — 펑퍼짐한 편한 바지. 치마 절대 안 입는 캐릭터",
+      "shoes": "Beat-up clay sneakers or slip-on — 편한 게 최고",
+      "accessories": "Thick-rimmed round glasses with black clay frames, always sitting slightly crooked on nose. 고치지 않음",
+      "style_note": "꾸안꾸 — 2000년대 초 현실 대학생 패션. 세련된 게 아니라 편한 거. 후드티+펑퍼짐한 바지가 기본"
     }
   },
 
@@ -42,7 +54,7 @@
     "skin": "#FFF3D4",
     "hair": "#B7472A",
     "hoodie": "#5D4037",
-    "shorts": "#5C6BC0",
+    "baggy_jeans": "#90CAF9",
     "glasses": "#212121",
     "eyes_iris": "#8D6E63",
     "cheek_blush": "#FFCDD2",
@@ -50,11 +62,12 @@
   },
 
   "expressions": {
-    "neutral": "Gentle half-smile, eyes slightly lidded — calm confidence",
-    "curious": "Eyes wide, eyebrows raised, head tilted 15 degrees",
-    "frustrated": "Slight frown, eyes half-closed, one hand on hoodie pocket",
-    "eureka": "Eyes wide open, mouth in small O shape, both hands up",
-    "typing": "Focused squint, slight lean forward, fingers on invisible keyboard"
+    "default": "살짝 삐딱한 미소, 안경이 코에서 살짝 흘러내린 채 — 엉뚱하지만 예쁜",
+    "curious": "눈 크게 뜨고 고개 15도 기울임, 입 살짝 벌린 채 — 뭔가 발견한 강아지 같은",
+    "frustrated_buruk": "버럭 모드 — 눈 부릅뜨고 모니터에 대고 소리지르는, 후디 모자 올려쓰고 웅크린",
+    "coding_zone": "무서운 집중력 — 눈 반쯤 감고 앞으로 기울어진, 키보드 위 손가락만 움직이는",
+    "eureka": "눈 반짝 + 입 O + 양손 번쩍 — 뭔가 된 순간",
+    "happy_quirky": "활짝 웃으면서 안경 밀어올리는, 장나라식 해맑은 웃음"
   },
 
   "external_references": {
