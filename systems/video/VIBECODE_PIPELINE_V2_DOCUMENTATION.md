@@ -58,3 +58,16 @@ python3 systems/video/pipeline/scripts/finalize_video_v2.py \
 *   **ComfyUI**: 8188 포트 사용. 
 *   **모델**: `hunyuan_v15_fp8`을 기본으로 사용 (심볼릭 링크 완료).
 *   **의존성**: `edge-tts`, `ffmpeg`, `scenedetect` 기반.
+
+## 6. ByteDance API 통합 특이사항
+*   **지원 노드**: `ByteDanceImageToVideoNode`, `ByteDanceTextToVideoNode` 등.
+*   **해상도(Resolution)**: `"480p"`, `"720p"`, `"1080p"` 중 하나를 명확히 지정해야 함 (문자열).
+    *   *주의*: `ByteDanceImageReferenceNode`는 `"1080p"`를 지원하지 않음.
+*   **길이(Duration)**: 3~12초 범위의 **초(seconds)** 단위를 사용. 
+    *   *주의*: 로컬 훈위안 모델과 달리 프레임(frames) 단위가 아니므로 `comfy_batch_render.py`에서 별도 처리가 필요함 (패치 완료).
+
+## 7. Wan 2.2 GGUF MoE 및 캐릭터 고정 (Identity)
+*   **모델 구성**: `HighNoise` 및 `LowNoise` GGUF 모델을 동시 사용하는 Mixture of Experts(MoE) 구조.
+*   **최적화**: RTX 5070 Ti (16GB VRAM) 환경을 위해 Q3_K_M 양자화 버전 사용.
+*   **캐릭터 일관성**: `character_hugh.png`를 참조 이미지로 사용하여 전 샷에 걸쳐 일관된 외형 유지.
+*   **렌더링 로직**: `comfy_batch_render.py`에서 `wan22_gguf_bindings.json`을 감지할 경우 자동으로 MoE 병렬 로드 및 Identity 데이터 주입.

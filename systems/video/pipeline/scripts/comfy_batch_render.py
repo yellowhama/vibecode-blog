@@ -45,17 +45,26 @@ def render_shots(manifest_path, workflow_path, bindings_path, output_root, serve
         # Determine if the workflow has a 'nodes' wrapper
         nodes_ref = raw_workflow.get('nodes', raw_workflow)
 
-        # --- AUTOMATIC MODEL REDIRECTION (v2.1) ---
-        # Redirect any UnetLoader/CheckpointLoader to our linked Hunyuan fp8
-        for node in nodes_ref.values():
-            if node.get('class_type') in ['UnetLoaderGGUF', 'UNETLoader', 'CheckpointLoaderSimple']:
-                for input_key in ['unet_name', 'ckpt_name']:
-                    if input_key in node.get('inputs', {}):
-                        node['inputs'][input_key] = "hunyuan_v15_fp8.safetensors"
-            if node.get('class_type') == 'VAELoader':
-                node['inputs']['vae_name'] = "hunyuan_vae.safetensors"
-
+        # --- AUTOMATIC MODEL REDIRECTION (v2.2 Wan GGUF MoE) ---
         mappings = bindings.get('node_mappings', {})
+        if 'unet_high' in mappings and 'unet_low' in mappings:
+            h_node = mappings['unet_high']['node_id']
+            h_field = mappings['unet_high']['field']
+            h_file = mappings['unet_high'].get('model_file', 'HighNoise/Wan2.2-I2V-A14B-HighNoise-Q3_K_M.gguf')
+            l_node = mappings['unet_low']['node_id']
+            l_field = mappings['unet_low']['field']
+            l_file = mappings['unet_low'].get('model_file', 'LowNoise/Wan2.2-I2V-A14B-LowNoise-Q3_K_M.gguf')
+            if h_node in nodes_ref: nodes_ref[h_node]['inputs'][h_field] = h_file
+            if l_node in nodes_ref: nodes_ref[l_node]['inputs'][l_field] = l_file
+            print(f'    - MoE Models Linked: {h_file} & {l_file}')
+        else:
+            for node in nodes_ref.values():
+                if node.get('class_type') in ['UnetLoaderGGUF', 'UNETLoader', 'CheckpointLoaderSimple']:
+                    for input_key in ['unet_name', 'ckpt_name']:
+                        if input_key in node.get('inputs', {}):
+                            node['inputs'][input_key] = 'hunyuan_v15_fp8.safetensors'
+                if node.get('class_type') == 'VAELoader':
+                    node['inputs']['vae_name'] = 'wan_2.1_vae.safetensors'
         # Map positive prompt
         if 'positive_prompt' in mappings:
             node_id = mappings['positive_prompt']['node_id']
@@ -76,7 +85,16 @@ def render_shots(manifest_path, workflow_path, bindings_path, output_root, serve
             field = mappings['video_duration']['field']
             if node_id in nodes_ref:
                 # Many I2V models use frames, assuming 12fps
-                nodes_ref[node_id]['inputs'][field] = int(shot['duration_sec'] * 12)
+                class_type = nodes_ref[node_id].get("class_type", ""); nodes_ref[node_id]["inputs"][field] = int(shot["duration_sec"]) if class_type.startswith("ByteDance") or "Wan" in class_type else int(shot["duration_sec"] * 12)
+
+        # --- CHARACTER REFERENCE (Identity) ---
+        if 'character_reference' in mappings:
+            node_id = mappings['character_reference']['node_id']
+            field = mappings['character_reference']['field']
+            if node_id in nodes_ref:
+                identity_file = 'character_hugh.png'
+                nodes_ref[node_id]['inputs'][field] = identity_file
+                print(f'    - Identity Linked: {identity_file}')
 
         # --- CHARACTER MATCHING (I2V) ---
         if 'input_image' in mappings:
@@ -128,7 +146,7 @@ def render_shots(manifest_path, workflow_path, bindings_path, output_root, serve
 
     # Save render log
     with open(run_dir / "render_log.json", 'w') as f:
-        json.dump({"summary": {"total": len(results), "errors": 0}, "shots": results}, f, indent=2)
+        json.dump({"summary": {"total": len(results), "errors": len([r for r in results if r["status"] == "error"])}, "shots": results}, f, indent=2)
     
     print(f"[OK] Batch render complete. Log: {run_dir}/render_log.json")
     return str(run_dir)
