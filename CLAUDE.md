@@ -92,7 +92,7 @@ ENDING (15-30s)     시트콤   교훈 + 떡밥
 ### 시즌 1 진행 상태
 | EP | 제목 (가제) | 소스 | 스크립트 | 매니페스트 | 렌더 |
 |----|-----------|------|---------|-----------|------|
-| 01 | "그냥 만들면 되지" | Act 1-1,1-2 | **완료** | — | — |
+| 01 | "그냥 만들면 되지" | Act 1-1,1-2 | **Phase 1-3 완료** (대본 확정 대기) | — | — |
 | 02-08 | — | Act 1-3 ~ 4-4 | — | — | — |
 
 ---
@@ -276,7 +276,7 @@ phase1/en/actN-M-en.md + actN-en.md   (영어)
 ### 핵심 스킬
 | 스킬 | 역할 |
 |------|------|
-| `screenplay_writer` | 4단계 대본 작성 (topic→plan→write→review) |
+| `screenplay_writer` | 4단계 대본 작성 (topic→plan→write→review) + `craft-reference.md` (글쓰기 원칙 내장) |
 | `validate_screenplay.py` | Fountain 자동 검증 (`python systems/video/pipeline/scripts/validate_screenplay.py --input FILE`) |
 
 ### 소재 인덱스
