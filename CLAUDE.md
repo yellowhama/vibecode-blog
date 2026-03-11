@@ -51,6 +51,49 @@
 | `research/docs/book-structure-v2.md` | 새 책 목차 v2 |
 | `research/blog-analysis/` | 블로그 전략 리서치 (인덱스: `00-INDEX.md`) |
 | `systems/pitch/automation/` | 퍼블리 투고 준비 + 상세페이지 자동화 키트 |
+| `systems/planning/` | 유튜브 채널 기획 문서 (포맷 바이블, 메타포 라이브러리, 시리즈 바이블) |
+| `systems/video/preproduction/ep01/` | EP01 파일럿 프리프로덕션 (Fountain 스크립트) |
+
+---
+
+## 유튜브 채널: 테크 시트콤 + 해설
+
+### 장르 & 타겟
+- **장르**: 테크 시트콤 + Kurzgesagt식 해설 (롱폼 하이브리드 5-8분)
+- **타겟**: Vibe Coder (코드 못 읽는데 AI로 만드는 사람)
+- **차별점**: 애니메이션 캐릭터 + 테크 코미디
+
+### 에피소드 5단계 구조
+```
+HOOK (15-30s)      시트콤   결과 먼저 보여주기
+SITCOM ACT 1 (60-90s)  시트콤   Vee 문제 + Bee 등장
+EXPLAINER (90-120s)     해설    추상 시각화 (Kurzgesagt 스타일)
+SITCOM ACT 2 (60-90s)  시트콤   이해 + 해결
+ENDING (15-30s)     시트콤   교훈 + 떡밥
+```
+
+### 비주얼 모드
+- **시트콤**: 3D Pixar-like (Vee+Bee 캐릭터), Flux Kontext + Wan I2V
+- **해설**: Kurzgesagt 추상 도형 (다크 네이비 배경, 캐릭터 없음), Flux T2I + Wan I2V
+
+### 기획 문서 (SSOT)
+| 경로 | 역할 |
+|------|------|
+| `systems/planning/10-youtube-format-bible.md` | 에피소드 구조, 비주얼 모드, 전환 연출, TTS 보이스 맵 |
+| `systems/planning/11-concept-metaphor-library.md` | Act 1-4 총 60개 소프트웨어 개념 → 메타포 매핑 |
+| `systems/planning/12-episode-series-bible.md` | 시즌 1 EP01-08, 캐릭터 아크, 쇼츠 추출 총괄 |
+
+### 파이프라인 듀얼모드 (구현 완료)
+- `build_shot_manifest_from_prepro.py`: `visual_type` ("sitcom"|"explainer"), `characters`, `dialogue`, `shorts_candidate` 필드
+- `comfy_batch_render.py`: `--workflow-map` — visual_type별 워크플로우 자동 라우팅
+- `generate_kontext_keyframes.py`: `--character-map` — Vee=Kontext, Bee=T2I, explainer=스킵
+- `generate_tts_simple.py`: `--multi-voice` — 대사 speaker별 보이스 (Vee/Bee/내레이터)
+
+### 시즌 1 진행 상태
+| EP | 제목 (가제) | 소스 | 스크립트 | 매니페스트 | 렌더 |
+|----|-----------|------|---------|-----------|------|
+| 01 | "그냥 만들면 되지" | Act 1-1,1-2 | **완료** | — | — |
+| 02-08 | — | Act 1-3 ~ 4-4 | — | — | — |
 
 ---
 
