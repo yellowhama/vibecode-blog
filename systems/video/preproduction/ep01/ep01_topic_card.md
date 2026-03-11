@@ -41,8 +41,32 @@
   - EP01 Fountain: 영어 전면 재작성, 21/21 PASS
   - 커밋: `ff4e1c9`
 
+- [x] **Phase 5: 프로덕션 파이프라인 Phase 1-3 (2026-03-12)** — `d79a0a1`
+  - `parse_fountain_to_prepro.py`: `--language` 플래그, 자동 감지, 영어 WPM 기반 duration
+  - Prepro manifest 재생성: 5 segments, 31 beats, `language=en`, 전원 narrator
+  - TTS 생성: `en-US-AriaNeural`, 148.9s master audio + SRT 자막
+  - Shot manifest 재생성: 24 shots (15 sitcom + 9 explainer), 180s, 영어 프롬프트
+
 ## 다음 단계
-- [ ] **유저 수동 리뷰**: 정보 경로 / Curse of Knowledge / 비주얼 코미디 체크
-- [ ] **Phase 5: TTS 생성** — 영어 NARRATOR 보이스 선정 + 생성
-- [ ] **Phase 6: 키프레임 생성** — 비주얼 코미디 비트 기반 Kontext 키프레임
-- [ ] **Phase 7: 렌더 + 후반작업**
+- [ ] **Phase 6: 키프레임 생성** — ComfyUI + Flux Kontext (sitcom 15샷) + T2I (explainer 9샷)
+  ```bash
+  python systems/video/pipeline/scripts/generate_kontext_keyframes.py \
+    --manifest systems/video/preproduction/ep01/ep01_shot_manifest.json \
+    --golden-ref systems/video/assets/characters/vee/ivy_burr_golden_ref.png \
+    --output-dir systems/video/output/renders/ep01_keyframes
+  ```
+- [ ] **Phase 7: I2V 렌더** — WAN 2.2 MoE i2v, ~24샷 × 2분 ≈ 48분
+  ```bash
+  python systems/video/pipeline/scripts/comfy_batch_render.py \
+    --manifest systems/video/preproduction/ep01/ep01_shot_manifest.json \
+    --workflow systems/video/workflows/api/wan22_moe_i2v_full.json \
+    --bindings systems/video/workflows/api/wan22_moe_i2v_bindings.json \
+    --output-dir systems/video/output/renders/ep01_$(date +%Y%m%d_%H%M%S)
+  ```
+- [ ] **Phase 8: QA + 최종 조립** — Vision QA → finalize_video_v2.py → EP01_FINAL.mp4
+
+## 전제 조건 (Phase 6-8)
+- ComfyUI 서버 실행 (localhost:8188)
+- GPU 사용 가능 (RTX 5070 Ti)
+- Vee golden reference: `systems/video/assets/characters/vee/ivy_burr_golden_ref.png`
+- WAN 2.2 MoE 워크플로우 + 바인딩 JSON 확인
