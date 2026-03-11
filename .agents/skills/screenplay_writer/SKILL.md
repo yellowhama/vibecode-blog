@@ -233,16 +233,19 @@ Phase 1 통과 후에만 진행. Story Circle의 각 스텝을 Fountain 세그�
 
 = Synopsis/비주얼 골 (= 접두사)
 
-INT. 장소 - 시간
+INT. LOCATION - TIME
 
-액션 라인. Vee가 뭔가 한다. (Nike Rule: 보여주기 > 말하기)
+NARRATOR (V.O.)
+Information delivery in English. One idea per sentence.
 
-CHARACTER
-(감정/동작)
-대사. 짧게. 3-7단어.
+= Visual: Character action description (for animator).
+= Vee reacts — eyes go wide, jaw drops.
+= Bee holds up a sign: "I TOLD YOU SO"
 
-> TRANSITION: 전환 지시
+> TRANSITION: transition direction
 ```
+
+> **캐릭터 음성 라인 없음.** 모든 음성은 NARRATOR (V.O.). 캐릭터 행동은 `=` 액션 라인으로만.
 
 ### 소재 활용 원칙
 
@@ -255,12 +258,17 @@ CHARACTER
 ### 집필 원칙
 
 1. **Phase 1의 Story Circle을 그대로 따른다** — 즉흥 추가/삭제 금지
-2. **시트콤**: 반말, Vee+Bee 대화, 액션 중심, 한 줄 = 한 비트
-3. **해설**: 존댓말, NARRATOR (V.O.) only, 캐릭터 등장 안 함
-4. **HOOK**: 결과 먼저 (In Medias Res), 15-30초
-5. **ENDING**: Opening Image의 거울. Phase 1에서 정의한 Final Image 반드시 포함
-6. **전환**: 시트콤→해설 줌인, 해설→시트콤 줌아웃 (물건 모핑)
-7. **쇼츠 후보**: 시리즈 바이블의 쇼츠 후보를 `shorts_candidate: true`로 마킹
+2. **정보 경로를 먼저 설계한다** (Phase 1.5) — 시청자가 아는 것 → 모르는 것, 한 번에 하나
+3. **내레이터가 모든 정보를 전달한다** — 전 세그먼트 NARRATOR (V.O.) only
+4. **캐릭터 대사 없음** — 립싱크 없으므로 캐릭터는 비주얼 리액션만 (표정, 팻말, 제스처)
+5. **대본은 영어로 작성** — 시스템 문서만 한국어
+6. **시트콤**: 내레이터가 상황 설명 + 캐릭터 비주얼 코미디 (개그 2개+ per 세그먼트)
+7. **해설**: NARRATOR (V.O.) only, 캐릭터 등장 안 함
+8. **HOOK**: 결과 먼저 (In Medias Res), 15-30초
+9. **ENDING**: Opening Image의 거울. Phase 1에서 정의한 Final Image 반드시 포함
+10. **전환**: 시트콤→해설 줌인, 해설→시트콤 줌아웃 (물건 모핑)
+11. **쇼츠 후보**: 시리즈 바이블의 쇼츠 후보를 `shorts_candidate: true`로 마킹
+12. **Curse of Knowledge 체크**: "이 문장을 바이브코딩 안 해본 사람이 이해하는가?"
 
 ### 글쓰기 품질 규칙 (`craft-reference.md` 요약)
 
@@ -289,7 +297,8 @@ python systems/video/pipeline/scripts/validate_screenplay.py \
 - 세그먼트 5개 존재 + 올바른 순서
 - 각 세그먼트 타이밍이 포맷 바이블 범위 내
 - 총 길이 240-480초 (4-8분)
-- 시트콤 세그먼트에 NARRATOR 없음
+- **모든 세그먼트에 NARRATOR (V.O.) 존재** (내레이션 온리)
+- 시트콤 세그먼트에 캐릭터 음성 대사 없음
 - 해설 세그먼트에 NARRATOR만 있음
 - `branding/storyform.json` 금지 표현 0개
 - 해설 `characters` = `[]`

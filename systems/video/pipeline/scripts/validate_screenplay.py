@@ -172,19 +172,35 @@ def validate(fountain_path: Path, storyform_path: Path | None = None) -> dict:
                 "detail": f"{duration:.0f}s",
             })
 
-            # Narrator in sitcom
-            if expected["visual_type"] == "sitcom" and seg["has_narrator"]:
+            # Narrator required in ALL segments (narrator-only format)
+            if not seg["has_narrator"]:
                 results.append({
-                    "check": f"{seg['name']} 시트콤에 NARRATOR 없음",
+                    "check": f"{seg['name']} NARRATOR (V.O.) 존재",
                     "status": "FAIL",
-                    "detail": "NARRATOR 발견",
+                    "detail": "NARRATOR 없음",
                 })
-            elif expected["visual_type"] == "sitcom":
+            else:
                 results.append({
-                    "check": f"{seg['name']} 시트콤에 NARRATOR 없음",
+                    "check": f"{seg['name']} NARRATOR (V.O.) 존재",
                     "status": "PASS",
                     "detail": "OK",
                 })
+
+            # No character dialogue in any segment (narrator-only)
+            if expected["visual_type"] == "sitcom":
+                non_narrator = seg["characters_found"] - {"NARRATOR"}
+                if non_narrator:
+                    results.append({
+                        "check": f"{seg['name']} 캐릭터 대사 없음 (내레이션 온리)",
+                        "status": "WARN",
+                        "detail": f"캐릭터 음성 발견: {', '.join(non_narrator)} — 비주얼 전용인지 확인",
+                    })
+                else:
+                    results.append({
+                        "check": f"{seg['name']} 캐릭터 대사 없음 (내레이션 온리)",
+                        "status": "PASS",
+                        "detail": "OK",
+                    })
 
             # Explainer: only NARRATOR
             if expected["visual_type"] == "explainer":
@@ -289,9 +305,16 @@ def print_results(validation: dict) -> int:
     print("  [ ] Vee 감정 아크: HOOK 감정 ≠ ENDING 감정?")
     print("      시작: _____ → 끝: _____")
     print()
-    print("  [ ] 시리즈 바이블 일치: EP 아크가 바이블 엔트리와 맞는가?")
-    print("      바이블: ___________")
-    print("      대본: ___________")
+    print("  [ ] 정보 경로: 정보가 순서대로 전달되는가?")
+    print("      정보 1: ___________")
+    print("      정보 2: ___________")
+    print("      정보 N: ___________")
+    print()
+    print("  [ ] Curse of Knowledge: 바이브코딩 안 해본 사람이 이해하는가?")
+    print()
+    print("  [ ] 비주얼 코미디: 시트콤 세그먼트마다 비주얼 개그 2개+?")
+    print()
+    print("  [ ] 내레이션 온리: 모든 음성이 NARRATOR (V.O.)인가?")
     print()
     print("  [ ] 다음편 떡밥: 다음 EP의 HOOK과 연결되는가?")
     print("      떡밥: ___________")

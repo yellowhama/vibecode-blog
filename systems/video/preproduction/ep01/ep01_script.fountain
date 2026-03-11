@@ -1,9 +1,9 @@
-Title: EP01 — 그냥 만들면 되지
+Title: EP01 — Just Build It
 Credit: Written by
 Author: vibecode.town
-Series: 바이브 코더 생존기 시즌 1
-Source: Act 1-1 (됐다고 생각했다) + Act 1-2 (월요일 아침에 다 터졌다)
-Draft date: 2026-03-11
+Series: Vibe Coder Survival Guide Season 1
+Source: Act 1-1 (I thought it worked) + Act 1-2 (Monday morning, everything broke)
+Draft date: 2026-03-12
 Contact: vibecode.town
 
 # SEGMENT 1: HOOK [0:00-0:20]
@@ -11,33 +11,35 @@ Contact: vibecode.town
 # characters: vee
 # shorts_candidate: true
 
-= Vee 자축 → 폭발. 결과부터 보여준다.
+= Vee celebrates → explosion. Show the result first.
 
-INT. VEE의 방 - 밤
+INT. VEE'S ROOM - NIGHT
 
-모니터 다섯 개가 빛나는 어두운 방. Vee가 의자에 기대앉아 있다. 모니터마다 코드, 대시보드, 터미널이 돌아간다.
+Five monitors glow in a dark room. Vee leans back in her chair. Each screen shows code, dashboards, terminals — all running.
 
-VEE
-(활짝 웃으며, 두 팔 벌려)
-됐다!
+NARRATOR (V.O.)
+This is the moment every vibe coder lives for.
 
-화면에 "BUILD SUCCESS" 초록 불. Vee가 머그컵을 들어올린다.
+= Vee throws both arms up. Eyes wide. Huge grin. "BUILD SUCCESS" flashes green on every screen.
 
-VEE
-다섯 개. 에이전트 다섯 개. 사흘 만에.
+NARRATOR (V.O.)
+You asked AI to build it. And it did. All of it.
 
-= BEAT: 1초 정적. 모니터 하나가 깜빡.
+= BEAT: 1 second of silence. One monitor flickers.
 
-모니터 하나에 빨간 에러. 두 개. 세 개. 다섯 개 전부 빨강.
-에러 메시지가 폭포처럼 쏟아진다. 화면이 빨갛게 물든다.
+= One screen turns red. Then two. Then all five. Error messages cascade like a waterfall.
 
-Vee 얼굴에서 웃음이 사라진다. 머그컵을 천천히 내려놓는다.
+NARRATOR (V.O.)
+And then, three seconds later...
 
-VEE
-(작은 목소리로)
-...뭐?
+= Vee's smile disappears. She slowly lowers her mug.
 
-> TITLE CARD: **그냥 만들면 되지**
+= CU: Vee's face. Pure confusion. She can't read a single error.
+
+NARRATOR (V.O.)
+...it all falls apart.
+
+> TITLE CARD: **JUST BUILD IT**
 
 ---
 
@@ -46,82 +48,53 @@ VEE
 # characters: vee, bee
 # shorts_candidate: false
 
-= 3일 전으로 돌아간다. Vee의 바이브코딩 여정과 Bee 첫 등장.
+= Three days earlier. Vee's vibe coding montage. Bee's first appearance.
 
-INT. VEE의 방 - 낮 (3일 전)
+INT. VEE'S ROOM - DAY (3 DAYS EARLIER)
 
-> INSERT: "3일 전"
+> INSERT: "3 days earlier"
 
-밝은 방. Vee가 모니터 앞에 앉아 있다. 터미널이 열려 있다.
+Bright room. Vee sits at her monitor. Terminal open.
 
-VEE
-(타이핑하며)
-투두리스트 앱 만들어줘.
+NARRATOR (V.O.)
+Three days ago, Vee discovered something magical.
 
-= BEAT: 터미널에서 파일이 자동 생성된다. 폴더, 코드, 패키지.
+= Vee types. Files auto-generate on screen. Folders, code, packages — appearing from nothing.
 
-VEE
-(눈 커지며)
-어? 복붙 안 해도 돼?
+= Vee's eyes go wide. She jumps out of her chair.
 
-브라우저에 투두리스트 앱이 뜬다. Vee 의자에서 벌떡.
+NARRATOR (V.O.)
+You type what you want. AI builds it. Five minutes. Done.
 
-VEE
-5분! 이게 5분!
+= MONTAGE: Rapid cuts. Vee types → app appears. Types → app appears. Types → app appears. Each time faster. Each time her grin gets bigger.
 
-= MONTAGE: Vee가 연달아 시킨다. 화면이 빠르게 전환.
+NARRATOR (V.O.)
+A to-do app. Done.
+A database. Done.
+A login page. Done.
 
-VEE (V.O.)
-메모 앱. 됐다.
-데이터베이스. 됐다.
-로그인. 됐다.
+= Vee spins in her chair, arms crossed, nodding like a CEO.
 
-VEE
-(자신만만)
-이거면 뭐든 만들겠는데?
+NARRATOR (V.O.)
+She thought she could build anything.
 
-= Vee 책상 위 모니터 옆, 작은 꿀벌이 앉아 있다. BEE. 날개를 접고 눈을 감고 있다.
+= On the desk, next to the monitor — a small bee sits on a pencil cup. BEE. Wings folded. Eyes closed. Completely unimpressed.
 
-BEE
-(눈을 안 뜨고)
-...
+= Vee doesn't notice. She keeps typing.
 
-VEE
-(못 봄, 계속 타이핑)
-주식 스크리너! 586개 종목!
+NARRATOR (V.O.)
+But there was someone who'd seen this story before.
 
-BEE
-(한쪽 눈 뜨며)
-...뭐 하는 거야.
+= Bee opens one eye. Stares at Vee. Holds up a tiny sign: "WHAT ARE YOU BUILDING?"
 
-VEE
-(깜짝)
-엇, 너 누구야?
+= Vee finally notices. Freezes. Stares at the sign. Blinks.
 
-BEE
-(한숨)
-됐고. 근데 그거.
+NARRATOR (V.O.)
+She couldn't answer.
 
-VEE
-응?
+= Bee flips the sign. The back reads: "EXACTLY."
 
-BEE
-스펙이 뭔데.
-
-VEE
-(멈칫)
-...스펙?
-
-BEE
-니가 만드는 거. 뭐야.
-
-VEE
-(자신만만하게)
-에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈—
-
-BEE
-(끊으며, 날개 접고 등 돌림)
-됐다. 알아서 해.
+= Bee folds the sign, tucks it under one wing, and flies away. No drama. Just gone.
 
 ---
 
@@ -130,84 +103,78 @@ BEE
 # characters: []
 # shorts_candidate: true
 
-= Bee가 떠난 뒤 전환. "스펙 = 설계도" 메타포.
+= Transition to abstract world. "Spec = Blueprint" metaphor.
 
-> TRANSITION: Vee 책상 위 연필에 카메라 줌인 → 연필이 파란 선으로 변형 → 설계도 세계
-
-NARRATOR (V.O.)
-여기 빈 땅이 있습니다.
-
-= 넓고 어두운 네이비 평면. 가운데 빈 공간.
+> TRANSITION: Camera zooms into a pencil on Vee's desk → pencil morphs into a blue line → blueprint world
 
 NARRATOR (V.O.)
-건물을 올리려고 합니다.
+Here's an empty lot.
 
-= 왼쪽: 설계도가 펼쳐진다. 파란 라인으로 건물 윤곽이 그려진다.
-
-NARRATOR (V.O.)
-설계도가 있으면 기둥부터 세웁니다.
-기둥 위에 보를 얹습니다.
-보 위에 바닥을 깝니다.
-순서가 있습니다.
-
-= 기둥 → 보 → 바닥 → 벽. 순서대로 조립되는 기하학적 건물.
+= Wide, dark navy surface. Empty space in the center.
 
 NARRATOR (V.O.)
-설계도가 없으면?
+You want to build something here.
 
-= 오른쪽: 다양한 색상의 블록이 아무렇게나 쌓인다.
-
-NARRATOR (V.O.)
-그냥 쌓습니다.
-올라가긴 올라갑니다.
-
-= 블록 더미가 점점 높아진다. 기울어지기 시작한다.
+= Left side: a blueprint unfolds. Blue lines trace the outline of a building.
 
 NARRATOR (V.O.)
-근데 흔들립니다.
+With a blueprint, you start with the foundation.
+Then the frame.
+Then the walls.
+There's an order. Each piece knows where it goes.
 
-= 블록이 좌우로 흔들린다.
-
-NARRATOR (V.O.)
-그리고.
-
-= 와르르 무너진다. 블록 파편이 흩어진다.
-
-= 다시 설계도 쪽. 깔끔하게 서 있는 건물.
+= Foundation → frame → walls → roof. Geometric building assembles in sequence. Clean. Stable.
 
 NARRATOR (V.O.)
-스펙은 설계도입니다.
-"뭘 만들 건지" 적어둔 것.
+Without a blueprint?
 
-= 건물 위에서 줌아웃. 도시 전경이 보인다. 도로, 건물, 공원.
-
-NARRATOR (V.O.)
-도시를 만들려면 도시 전체의 지도가 필요합니다.
-건물 하나만 짓는 게 아니니까.
-도로가 어디로 가는지.
-건물이 어디 서는지.
-그걸 안 정하고 짓기 시작하면.
-
-= 도시 전경에서 건물들이 도로를 막고, 교차로가 엉키고, 길이 막힌다.
+= Right side: colorful blocks drop from above, piling randomly.
 
 NARRATOR (V.O.)
-이렇게 됩니다.
+You just... stack.
+And it goes up. It actually goes up.
 
-= 새 장면. 작은 스케이트보드.
-
-NARRATOR (V.O.)
-처음부터 완벽한 건 필요 없습니다.
-스케이트보드면 됩니다.
-굴러가는 것. 탈 수 있는 것. 그것만.
-
-= 스케이트보드가 자전거로, 자전거가 자동차로 진화.
+= The pile grows taller. It starts leaning.
 
 NARRATOR (V.O.)
-작게 시작해서 키우는 것.
-그게 되려면 처음에 "이건 스케이트보드다"라고 적어야 합니다.
-그 한 줄이 스펙의 시작입니다.
+For a while, it looks like it's working.
 
-> TRANSITION: 자동차 도형이 줌인 → Vee 책상 위 미니카로 변형 → 카메라 줌아웃
+= The pile wobbles. Pauses.
+
+NARRATOR (V.O.)
+Then...
+
+= Collapse. Blocks scatter everywhere.
+
+= Back to the blueprint side. Clean building standing tall.
+
+NARRATOR (V.O.)
+A spec is a blueprint.
+It's not a hundred-page document.
+It's one sentence: "What am I building?"
+
+= Text appears on the blueprint: "I want to access my home computer from anywhere."
+
+NARRATOR (V.O.)
+You don't need to know every detail upfront.
+
+= New scene. A small skateboard rolls into frame.
+
+NARRATOR (V.O.)
+Start with a skateboard. Four wheels. It rolls. That's enough.
+
+= Skateboard morphs into a bicycle. Bicycle morphs into a car.
+
+NARRATOR (V.O.)
+You can always make it bigger later.
+But you have to know what "it" is first.
+
+= Text appears: "This is a skateboard." Simple. Clear.
+
+NARRATOR (V.O.)
+That one line? That's where a spec starts.
+
+> TRANSITION: Car shape zooms in → morphs into a toy car on Vee's desk → camera pulls back
 
 ---
 
@@ -216,57 +183,63 @@ NARRATOR (V.O.)
 # characters: vee, bee
 # shorts_candidate: false
 
-= Vee 혼자. 코드를 멈추고 짜증을 종이에 쓴다. 적다 보니 뭘 만들 건지가 나온다.
+= Vee alone. Stops coding. Writes frustrations on paper. Discovers what she's building.
 
-INT. VEE의 방 - 밤 (현재)
+INT. VEE'S ROOM - NIGHT (PRESENT)
 
-모니터 다섯 개. 빨간 에러. Vee가 키보드 위에 손을 올린다.
+Five monitors. Red errors. Vee's hands hover over the keyboard.
 
-= BEAT: 손가락이 떨린다. 뭘 쳐야 할지 모른다.
+NARRATOR (V.O.)
+Back in the present. Everything still broken.
 
-Vee가 손을 내린다. 의자를 뒤로 민다.
+= Vee's fingers tremble. She doesn't know what to type.
 
-= 책상 옆 서랍에서 종이와 연필을 꺼낸다. 모니터를 등진다.
+= She pulls her hands back. Pushes the chair away from the desk.
 
-VEE
-(연필을 꾹 누르며)
-뭐가 빡치냐면.
+NARRATOR (V.O.)
+And then she did something unusual.
+She stopped coding.
 
-= 종이에 글씨가 나타난다. 삐뚤삐뚤.
+= Vee opens a desk drawer. Pulls out paper and a pencil. Turns her back to the monitors.
 
-= "뭘 만들고 있는 건지 모르겠다."
+NARRATOR (V.O.)
+She started writing. Not code. Just... what was bothering her.
 
-= "에이전트 다섯 개. 데이터 모으는 놈. 정리하는 놈. 분석하는 놈."
+= CU: Paper. Messy handwriting appears:
+= "I don't know what I built."
+= "There are five of them. They collect data. They organize. They analyze."
 
-= 연필이 멈춘다.
+= The pencil stops.
 
-= "근데 뭘 분석하는 거지?"
+= "But analyze WHAT?"
 
-= Vee가 종이를 내려다본다. 1초.
+= Vee stares at the paper. One second.
 
-= 연필이 다시 움직인다. 위의 줄을 줄줄 그어 지운다.
+NARRATOR (V.O.)
+And there it was. The question she'd been avoiding.
 
-= 새로 쓴다. "밖에서도 집 컴퓨터를 쓰고 싶다."
+= The pencil moves again. Crosses out the old lines with big strokes.
 
-= 그 밑. "파일이 같아야 한다." "어디서든 접속." "끊기면 안 된다."
+= Writes fresh: "I want to use my home computer from anywhere."
 
-= 이전과 다르다. 기능이 아니라 이유.
+= Below: "Files should stay in sync." "Access from any device." "Can't drop the connection."
 
-Vee가 종이를 들고 의자를 돌린다. 모니터를 본다.
+NARRATOR (V.O.)
+Not features. Not tools.
+The reason. The one sentence that explains everything.
 
-빨간 에러 메시지. 아까는 글자 덩어리. 지금 — Vee의 눈이 한 줄을 따라간다.
+= Vee picks up the paper. Turns back to the monitors.
 
-= CU: 에러 메시지 한 줄. "Connection refused: sync agent cannot reach host."
+= Red error messages. Before: an unreadable wall of text. Now —
 
-= Vee 얼굴. 뭔가 연결된다.
+= CU: One error line highlights itself: "Connection refused: sync agent cannot reach host."
 
-VEE
-(작게)
-...동기화.
+NARRATOR (V.O.)
+The same errors. But now, one line makes sense.
 
-= Vee가 종이를 다시 본다. "파일이 같아야 한다." 고개를 들어 에러를 본다. "sync agent."
+= Vee's eyes track the line. Something clicks — shown through a slow blink, a slight tilt of the head.
 
-= 화면 구석. Bee가 책상 모서리에 앉아 있다. Vee를 쳐다본다. 0.5초. 고개를 돌린다.
+= Corner of the frame: Bee sits on the edge of the desk. Watching. 0.5 seconds. Looks away.
 
 ---
 
@@ -275,32 +248,31 @@ VEE
 # characters: vee, bee
 # shorts_candidate: true
 
-= HOOK의 거울. 같은 방, 같은 에러, 다른 사람.
+= Mirror of HOOK. Same room, same errors, different person.
 
-INT. VEE의 방 - 밤 (이어서)
+INT. VEE'S ROOM - NIGHT (CONTINUOUS)
 
-= **HOOK과 같은 구도 재현.** 모니터 다섯 개. 빨간 에러. 어두운 방.
+= **Exact same composition as HOOK.** Five monitors. Red errors. Dark room.
 
-Vee가 앉아 있다. 머그컵이 같은 자리에 있다.
+Vee sits in her chair. The mug is in the same spot.
 
-하지만 Vee는 안 당황한다.
+But Vee isn't panicking.
 
-종이 한 장을 모니터 옆에 핀으로 꽂는다. "밖에서도 집 컴퓨터를 쓰고 싶다."
+= She pins a piece of paper next to the monitor. It reads: "I want to use my home computer from anywhere."
 
-VEE
-(차분하게)
-아직 다 터져 있다.
+NARRATOR (V.O.)
+Everything is still broken.
 
 = BEAT.
 
-VEE
-근데 이제 뭘 고쳐야 하는지 안다.
+NARRATOR (V.O.)
+But now she knows what to fix.
 
-= Bee. 화면 구석. 고개를 끄덕인다. 0.5초. 바로 무표정.
+= Bee, corner of the frame. Tiny nod. 0.5 seconds. Back to deadpan.
 
 > END CARD
 
-VEE (V.O.)
-...근데 이거 맞는 거야?
+NARRATOR (V.O.)
+...at least, she thinks she does.
 
-> NEXT: EP02 — "고치면 더 터져"
+> NEXT: EP02 — "Fix One, Break Two"
