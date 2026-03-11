@@ -131,7 +131,7 @@
 
   "relationship_to_existing_characters": {
     "dev_protagonist": "Vee replaces the generic avatar as the named protagonist. MUSU Yellow hoodie (#FFD166) ties her to the brand.",
-    "yellow_robot": "Vee's AI companion — appears on her screen. Both share yellow as brand color, robot is brighter neon yellow.",
+    "bee": "Vee의 사이드킥 꿀벌. 발목 높이 (Adventure Time식 사이즈 대비). 노란 안전모+줄무늬로 브랜드 컬러 공유. 어깨 위에 앉거나 모니터 옆에서 잠듦. SSOT: systems/video/assets/characters/bee/character_design.json",
     "spider_monster": "Vee's antagonist — the spaghetti code monster she battles."
   }
 }

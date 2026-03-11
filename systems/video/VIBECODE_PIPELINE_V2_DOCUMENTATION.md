@@ -166,3 +166,13 @@ python3 systems/video/pipeline/scripts/finalize_video_v2.py \
 *   **골든 레퍼런스**: `ivy_burr_golden_ref.png` (Flux T2I, seed=2025, guidance=3.5)
 *   **프롬프트 잠금**: 모든 Kontext 샷에 `"Keep her exact face, hair, glasses, and yellow hoodie unchanged"` 강제.
 *   **character_extractor.py**: `KNOWN_CHARACTERS`에 Vee 등록 완료.
+
+### Bee 캐릭터 v1.0 (사이드킥)
+*   **SSOT**: `systems/video/assets/characters/bee/character_design.json`
+*   **역할**: Vee의 사이드킥 — 귀여운 공사장 인부 꿀벌, 내면은 지친 아저씨
+*   **사이즈**: Vee 발목 높이 (Adventure Time식 Finn:BMO 비율)
+*   **외형**: 노랑검정 줄무늬 통통한 둥근 몸, 노란 안전모, 반투명 날개, 더듬이 2개
+*   **골든 레퍼런스**: `bee_golden_ref.png` (Flux T2I, seed=3103, 짜증 기본 표정)
+*   **표정 시트 6종**: happy, tired, shocked, crying, sleeping, love (`expressions/` 폴더)
+*   **일관성 참고**: Kontext 편집 불가 확인 (guidance 2.5~7.0 모두 실패 — 원본 표정 고착). T2I 표정별 개별 생성으로 대체.
+*   **성격 갭**: 기본은 짜증+피로 (지친 아저씨) ↔ 가끔 해맑은 순간 (갭 매력)
