@@ -459,6 +459,11 @@ def main() -> int:
         shot_id = shot.get("shot_id", f"shot_{idx:03d}")
         print(f"[{idx}/{len(shots)}] {shot_id}")
 
+        # Resolve per-shot workflow (if workflow-map is active)
+        shot_workflow, shot_bindings = _resolve_workflow_for_shot(
+            shot, workflow_map, workflow, bindings, workflows_dir,
+        )
+
         # Check cache
         shot_hash = _compute_shot_hash(shot, shot_workflow, shot_bindings)
         cached = cache.get(shot_id)
@@ -474,11 +479,6 @@ def main() -> int:
                 })
                 render_log["summary"]["cached"] += 1
                 continue
-
-        # Resolve per-shot workflow (if workflow-map is active)
-        shot_workflow, shot_bindings = _resolve_workflow_for_shot(
-            shot, workflow_map, workflow, bindings, workflows_dir,
-        )
 
         # Build API prompt
         api_prompt = _build_api_prompt(shot_workflow, shot_bindings, shot)

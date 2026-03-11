@@ -1,0 +1,10 @@
+{
+  "sitcom": {
+    "workflow": "flux_kontext_edit.json",
+    "bindings": "flux_kontext_edit_bindings.json"
+  },
+  "explainer": {
+    "workflow": "flux_dev_t2i.json",
+    "bindings": "flux_dev_t2i_bindings.json"
+  }
+}

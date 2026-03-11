@@ -1,0 +1,222 @@
+{
+  "project_id": "ep01_explainer",
+  "shots": [
+    {
+      "shot_id": "S12_12",
+      "scene": "Scene3",
+      "purpose": "여기 빈 땅이 있습니다.",
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "여기 빈 땅이 있습니다.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": true,
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Bee가 떠난 뒤 전환. \"스펙 = 설계도\" 메타포. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
+      "duration_sec": 8.0,
+      "aspect_ratio": "16:9",
+      "resolution": "832x480",
+      "seed": 1300012,
+      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+      "mode": "i2v",
+      "input_image": null,
+      "output_name": "S12_12.mp4",
+      "source_beat_id": "SEG03_B021",
+      "source_scene_id": "SEG03",
+      "width": 1024,
+      "height": 1024,
+      "guidance": 3.5
+    },
+    {
+      "shot_id": "S13_13",
+      "scene": "Scene4",
+      "purpose": "설계도가 있으면 기둥부터 세웁니다. 기둥 위에 보를 얹습니다. 보 위에 바닥을 깝니다. 순서가 있습니다.",
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "설계도가 있으면 기둥부터 세웁니다. 기둥 위에 보를 얹습니다. 보 위에 바닥을 깝니다. 순서가 있습니다.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false,
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. 왼쪽: 설계도가 펼쳐진다. 파란 라인으로 건물 윤곽이 그려진다. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
+      "duration_sec": 8.0,
+      "aspect_ratio": "16:9",
+      "resolution": "832x480",
+      "seed": 1300013,
+      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+      "mode": "i2v",
+      "input_image": null,
+      "output_name": "S13_13.mp4",
+      "source_beat_id": "SEG03_B023",
+      "source_scene_id": "SEG03",
+      "width": 1024,
+      "height": 1024,
+      "guidance": 3.5
+    },
+    {
+      "shot_id": "S14_14",
+      "scene": "Scene4",
+      "purpose": "그냥 쌓습니다. 올라가긴 올라갑니다.",
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "그냥 쌓습니다. 올라가긴 올라갑니다.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false,
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. 오른쪽: 다양한 색상의 블록이 아무렇게나 쌓인다. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
+      "duration_sec": 8.0,
+      "aspect_ratio": "16:9",
+      "resolution": "832x480",
+      "seed": 1300014,
+      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+      "mode": "i2v",
+      "input_image": null,
+      "output_name": "S14_14.mp4",
+      "source_beat_id": "SEG03_B025",
+      "source_scene_id": "SEG03",
+      "width": 1024,
+      "height": 1024,
+      "guidance": 3.5
+    },
+    {
+      "shot_id": "S15_15",
+      "scene": "Scene4",
+      "purpose": "그리고.",
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "그리고.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false,
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. 블록이 좌우로 흔들린다. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
+      "duration_sec": 8.0,
+      "aspect_ratio": "16:9",
+      "resolution": "832x480",
+      "seed": 1300015,
+      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+      "mode": "i2v",
+      "input_image": null,
+      "output_name": "S15_15.mp4",
+      "source_beat_id": "SEG03_B027",
+      "source_scene_id": "SEG03",
+      "width": 1024,
+      "height": 1024,
+      "guidance": 3.5
+    },
+    {
+      "shot_id": "S16_16",
+      "scene": "Scene4",
+      "purpose": "스펙은 설계도입니다. \"뭘 만들 건지\" 적어둔 것.",
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "스펙은 설계도입니다. \"뭘 만들 건지\" 적어둔 것.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false,
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. 와르르 무너진다. 블록 파편이 흩어진다. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
+      "duration_sec": 8.0,
+      "aspect_ratio": "16:9",
+      "resolution": "832x480",
+      "seed": 1300016,
+      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+      "mode": "i2v",
+      "input_image": null,
+      "output_name": "S16_16.mp4",
+      "source_beat_id": "SEG03_B028",
+      "source_scene_id": "SEG03",
+      "width": 1024,
+      "height": 1024,
+      "guidance": 3.5
+    },
+    {
+      "shot_id": "S17_17",
+      "scene": "Scene5",
+      "purpose": "이렇게 됩니다.",
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "이렇게 됩니다.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false,
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. 건물 위에서 줌아웃. 도시 전경이 보인다. 도로, 건물, 공원. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
+      "duration_sec": 8.0,
+      "aspect_ratio": "16:9",
+      "resolution": "832x480",
+      "seed": 1300017,
+      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+      "mode": "i2v",
+      "input_image": null,
+      "output_name": "S17_17.mp4",
+      "source_beat_id": "SEG03_B030",
+      "source_scene_id": "SEG03",
+      "width": 1024,
+      "height": 1024,
+      "guidance": 3.5
+    },
+    {
+      "shot_id": "S18_18",
+      "scene": "Scene5",
+      "purpose": "작게 시작해서 키우는 것. 그게 되려면 처음에 \"이건 스케이트보드다\"라고 적어야 합니다. 그 한 줄이 스펙의 시작입니다.",
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "작게 시작해서 키우는 것. 그게 되려면 처음에 \"이건 스케이트보드다\"라고 적어야 합니다. 그 한 줄이 스펙의 시작입니다.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false,
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. 새 장면. 작은 스케이트보드. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
+      "duration_sec": 8.0,
+      "aspect_ratio": "16:9",
+      "resolution": "832x480",
+      "seed": 1300018,
+      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+      "mode": "i2v",
+      "input_image": null,
+      "output_name": "S18_18.mp4",
+      "source_beat_id": "SEG03_B032",
+      "source_scene_id": "SEG03",
+      "width": 1024,
+      "height": 1024,
+      "guidance": 3.5
+    }
+  ]
+}
