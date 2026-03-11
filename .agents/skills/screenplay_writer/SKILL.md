@@ -221,6 +221,7 @@ Phase 1 통과 후에만 진행. Story Circle의 각 스텝을 Fountain 세그�
 | Nike Rule: 액션 > 대사 | `branding/narrative.md` |
 | 금지 표현 | `branding/storyform.json` |
 | 메타포 | `11-concept-metaphor-library.md` |
+| **글쓰기 원칙** | **`craft-reference.md` — 집필 전 반드시 읽을 것** |
 
 ### Fountain 포맷 규칙
 
@@ -260,6 +261,16 @@ CHARACTER
 5. **ENDING**: Opening Image의 거울. Phase 1에서 정의한 Final Image 반드시 포함
 6. **전환**: 시트콤→해설 줌인, 해설→시트콤 줌아웃 (물건 모핑)
 7. **쇼츠 후보**: 시리즈 바이블의 쇼츠 후보를 `shorts_candidate: true`로 마킹
+
+### 글쓰기 품질 규칙 (`craft-reference.md` 요약)
+
+집필 전 `craft-reference.md` 전문을 읽는다. 아래는 액션 라인 작성 시 반드시 체크할 핵심 5가지.
+
+1. **카메라 테스트** — 액션 라인에 적힌 것을 애니메이터가 그릴 수 있는가? 못 그리면 삭제. (McKee)
+2. **감정 이름 금지** — "뭔가 연결된다" ← 못 그린다. 대신 눈동자, 손, 표정의 구체적 변화를 쓴다. (McKee)
+3. **액션 블록 3줄 이하** — 넘으면 쪼개거나 삭제. (Go Into The Story)
+4. **대사는 원할 때만** — 캐릭터가 상대에게 뭔가를 원할 때 말한다. 정보 전달용 대사 금지. (Sorkin)
+5. **잘라도 되면 잘라라** — 대사를 지워도 씬이 작동하면 그 대사는 필요 없다. (Sorkin)
 
 ---
 

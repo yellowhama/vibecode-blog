@@ -30,6 +30,6 @@
 
 ## 상태
 - [x] Phase 0: 주제 정의 — **유저 승인 완료**
-- [ ] Phase 1: 스토리 설계
-- [ ] Phase 2: Fountain 집필
-- [ ] Phase 3: 구조 검증
+- [x] Phase 1: 스토리 설계 — `ep01_story_design.md` (Story Circle + Spine + 감정 트래커 + 소재 매핑)
+- [x] Phase 2: Fountain 집필 — SITCOM1 소수정 + SITCOM2 전면 재작성 + ENDING 전면 재작성
+- [x] Phase 3: 구조 검증 — 자동 16/16 PASS + 수동 리뷰 완료
