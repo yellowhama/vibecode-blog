@@ -24,12 +24,25 @@
 - **깨달음** (끝): "짜증을 정리하면 그게 스펙이다"
 
 ## 쇼츠 후보
-1. HOOK 전체 (20s) — Vee 자축 → 에러 폭발
-2. EXPLAINER 중 "설계도 없이 쌓기 → 무너짐" (15s)
-3. Bee 첫 등장 + "스펙이 뭔데?" (15s)
+1. HOOK 전체 (20s) — Vee celebrates → error explosion
+2. EXPLAINER "stacking without blueprint → collapse" (15s)
+3. ENDING mirror shot — same errors, paper pinned (15s)
 
 ## 상태
 - [x] Phase 0: 주제 정의 — **유저 승인 완료**
 - [x] Phase 1: 스토리 설계 — `ep01_story_design.md` (Story Circle + Spine + 감정 트래커 + 소재 매핑)
 - [x] Phase 2: Fountain 집필 — SITCOM1 소수정 + SITCOM2 전면 재작성 + ENDING 전면 재작성
 - [x] Phase 3: 구조 검증 — 자동 16/16 PASS + 수동 리뷰 완료
+- [x] **Phase 4: 포맷 전환 (2026-03-12)** — 내레이터 온리 + 영어 대본 전면 재작성
+  - 포맷 바이블: 내레이터 전 세그먼트 주도, 캐릭터 대사 제거, 비주얼 코미디 가이드 추가
+  - 검증 스크립트: NARRATOR 필수 체크로 반전, 수동 체크리스트 확장
+  - 대본 스킬: 내레이션 온리 + 영어 + 정보 경로 + Curse of Knowledge 원칙
+  - EP01 Story Design: 정보 경로 최상단, 비주얼 코미디 비트 리스트
+  - EP01 Fountain: 영어 전면 재작성, 21/21 PASS
+  - 커밋: `ff4e1c9`
+
+## 다음 단계
+- [ ] **유저 수동 리뷰**: 정보 경로 / Curse of Knowledge / 비주얼 코미디 체크
+- [ ] **Phase 5: TTS 생성** — 영어 NARRATOR 보이스 선정 + 생성
+- [ ] **Phase 6: 키프레임 생성** — 비주얼 코미디 비트 기반 Kontext 키프레임
+- [ ] **Phase 7: 렌더 + 후반작업**
