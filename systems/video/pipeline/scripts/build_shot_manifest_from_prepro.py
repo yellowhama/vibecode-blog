@@ -141,7 +141,39 @@ def _compose_kontext_prompt(visual_goal: str) -> str:
     return f"{goal}. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged."
 
 
+def _compose_sitcom_prompt(text: str, visual_goal: str, camera_style: str, shot_mode: str, characters: List[str] | None = None) -> str:
+    """Compose prompt for sitcom (character-driven) shots."""
+    motion = "Static camera with gentle micro motion." if shot_mode == "i2v" else "Natural cinematic motion."
+    chars = characters or ["vee"]
+    char_desc_parts = []
+    for c in chars:
+        if c == "vee":
+            char_desc_parts.append("Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts)")
+        elif c == "bee":
+            char_desc_parts.append("Bee (small round yellow-black striped bee with yellow hard hat, translucent wings)")
+    char_desc = " and ".join(char_desc_parts) if char_desc_parts else ""
+    return (
+        f"{camera_style} {motion} 3D Pixar-like render with subtle clay texture. "
+        f"Warm lighting, shallow depth of field. "
+        f"{char_desc}. "
+        f"Primary action goal: {visual_goal} "
+        f"Narrative reference for action direction: {text} "
+        "CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES."
+    )
+
+
+def _compose_explainer_prompt(visual_goal: str, text: str = "") -> str:
+    """Compose prompt for explainer (abstract infographic) shots."""
+    return (
+        "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. "
+        f"{visual_goal} "
+        "Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. "
+        "NO characters, NO text, NO labels. Abstract concept visualization."
+    )
+
+
 def _compose_positive_prompt(text: str, visual_goal: str, camera_style: str, shot_mode: str) -> str:
+    """Legacy prompt composer — kept for backward compatibility."""
     motion = "Static camera with gentle micro motion." if shot_mode == "i2v" else "Natural cinematic motion."
     return (
         f"{camera_style} {motion} Minimalist stop-motion claymation, Aardman studio style. "
@@ -250,26 +282,48 @@ def main() -> int:
         shot_id = f"S{i:02d}_{i:02d}"
         text = str(beat.get("text", "")).strip()
         visual_goal = str(beat.get("visual_goal", "")).strip() or "Symbolic clay action with clear emotional intent."
+
+        # New fields: visual_type, characters, dialogue, shorts_candidate
+        visual_type = str(beat.get("visual_type", "sitcom"))  # "sitcom" | "explainer"
+        characters = beat.get("characters", ["vee"])  # e.g. ["vee"], ["vee","bee"], []
+        dialogue = beat.get("dialogue", [])  # [{speaker, text, emotion}]
+        shorts_candidate = bool(beat.get("shorts_candidate", False))
+
+        # Dual-mode prompt composition
+        if visual_type == "explainer":
+            prompt_positive = _compose_explainer_prompt(visual_goal, text)
+            kontext_prompt = None  # No character consistency needed
+            neg = "characters, people, faces, text, subtitles, watermark, logo, low quality"
+        else:
+            prompt_positive = _compose_sitcom_prompt(
+                text=text,
+                visual_goal=visual_goal,
+                camera_style=args.camera_style,
+                shot_mode=args.mode,
+                characters=characters,
+            )
+            kontext_prompt = _compose_kontext_prompt(visual_goal)
+            neg = args.prompt_negative
+
         shots.append(
             {
                 "shot_id": shot_id,
                 "scene": _scene_label(i),
                 "purpose": _short_purpose(text),
-                "kontext_prompt": _compose_kontext_prompt(visual_goal),
-                "prompt_positive": _compose_positive_prompt(
-                    text=text,
-                    visual_goal=visual_goal,
-                    camera_style=args.camera_style,
-                    shot_mode=args.mode,
-                ),
-                "prompt_negative": args.prompt_negative,
+                "visual_type": visual_type,
+                "characters": characters,
+                "dialogue": dialogue,
+                "shorts_candidate": shorts_candidate,
+                "kontext_prompt": kontext_prompt,
+                "prompt_positive": prompt_positive,
+                "prompt_negative": neg,
                 "duration_sec": shot_durations[i - 1],
                 "aspect_ratio": args.aspect_ratio,
                 "resolution": args.resolution,
                 "seed": args.seed_base + i - 1,
                 "model": args.model,
                 "mode": args.mode,
-                "input_image": f"{shot_id}_keyframe.png" if args.mode == "i2v" else None,
+                "input_image": f"{shot_id}_keyframe.png" if args.mode == "i2v" and visual_type != "explainer" else None,
                 "output_name": f"{shot_id}.mp4",
                 "source_beat_id": beat.get("beat_id"),
                 "source_scene_id": beat.get("scene_id"),

@@ -36,6 +36,11 @@ IDENTITY_LOCK = "Keep her exact face, hair, glasses, and yellow hoodie unchanged
 DEFAULT_GUIDANCE = 2.5
 DEFAULT_SEED_BASE = 5000000
 
+# Character rendering strategies
+CHAR_STRATEGY_KONTEXT = "kontext"  # Golden ref → Kontext scene edit (Vee)
+CHAR_STRATEGY_T2I = "t2i"          # Direct T2I generation (Bee, explainer)
+CHAR_STRATEGY_SKIP = "skip"        # No keyframe needed
+
 
 def _json_load(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as f:
@@ -54,23 +59,72 @@ def _compose_kontext_prompt(raw_prompt: str) -> str:
     return f"{prompt}. {STYLE_ANCHOR} {IDENTITY_LOCK}"
 
 
+def _determine_char_strategy(shot: dict[str, Any], character_map: dict[str, str] | None) -> str:
+    """Determine rendering strategy for a shot based on visual_type and characters.
+
+    Returns one of: CHAR_STRATEGY_KONTEXT, CHAR_STRATEGY_T2I, CHAR_STRATEGY_SKIP
+    """
+    visual_type = shot.get("visual_type", "sitcom")
+
+    # Explainer shots: use T2I (abstract visuals, no character consistency needed)
+    if visual_type == "explainer":
+        return CHAR_STRATEGY_T2I
+
+    characters = shot.get("characters", ["vee"])
+
+    # If character_map overrides exist, use them
+    if character_map:
+        # If any character maps to "kontext", use kontext
+        for c in characters:
+            if character_map.get(c) == "kontext":
+                return CHAR_STRATEGY_KONTEXT
+        # If only t2i characters, use t2i
+        return CHAR_STRATEGY_T2I
+
+    # Default: if vee is present, use kontext; otherwise t2i
+    if "vee" in characters:
+        return CHAR_STRATEGY_KONTEXT
+    elif characters:
+        return CHAR_STRATEGY_T2I
+    else:
+        return CHAR_STRATEGY_SKIP
+
+
 def _build_kontext_manifest(
     shots: list[dict[str, Any]],
     golden_ref: str,
     guidance: float,
     seed_base: int,
-) -> dict[str, Any]:
-    """Build a temporary manifest for Kontext keyframe generation."""
+    character_map: dict[str, str] | None = None,
+) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
+    """Build a temporary manifest for Kontext keyframe generation.
+
+    Returns (kontext_manifest, t2i_shots, skipped_shots).
+    Only shots needing Kontext go into the manifest; T2I and skip are returned separately.
+    """
     kontext_shots = []
+    t2i_shots = []
+    skipped_shots = []
+
     for i, shot in enumerate(shots):
-        # Prefer kontext_prompt, fall back to visual_goal or purpose
+        strategy = _determine_char_strategy(shot, character_map)
+        shot_id = shot.get("shot_id", f"KX_{i:03d}")
+
+        if strategy == CHAR_STRATEGY_SKIP:
+            skipped_shots.append(shot)
+            continue
+
+        if strategy == CHAR_STRATEGY_T2I:
+            t2i_shots.append(shot)
+            continue
+
+        # KONTEXT strategy
         raw_prompt = (
             shot.get("kontext_prompt")
             or shot.get("visual_goal")
             or shot.get("purpose")
             or "Same character in a different scene."
         )
-        shot_id = shot.get("shot_id", f"KX_{i:03d}")
 
         kontext_shots.append({
             "shot_id": f"KX_{shot_id}",
@@ -81,11 +135,12 @@ def _build_kontext_manifest(
             "filename_prefix": f"KX_{shot_id}",
         })
 
-    return {
+    manifest = {
         "project_id": "kontext_keyframes",
         "style_lock": "Flux Kontext scene editing — character consistency from golden reference",
         "shots": kontext_shots,
     }
+    return manifest, t2i_shots, skipped_shots
 
 
 def _find_render_output(run_dir: Path, shot_id: str) -> Path | None:
@@ -112,6 +167,7 @@ def generate_kontext_keyframes(
     dry_run: bool = False,
     shots_filter: list[str] | None = None,
     update_manifest: bool = True,
+    character_map: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     """Generate Kontext keyframes and optionally update the source manifest.
 
@@ -131,8 +187,10 @@ def generate_kontext_keyframes(
             print(f"[WARN] No shots matched filter: {shots_filter}")
             return {"status": "filtered_empty", "shots": []}
 
-    # Build Kontext-specific manifest
-    kontext_manifest = _build_kontext_manifest(shots, golden_ref, guidance, seed_base)
+    # Build Kontext-specific manifest (now returns tuple)
+    kontext_manifest, t2i_shots, skipped_shots = _build_kontext_manifest(
+        shots, golden_ref, guidance, seed_base, character_map
+    )
 
     output_dir = output_dir.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -140,14 +198,34 @@ def generate_kontext_keyframes(
     tmp_manifest_path = output_dir / "_kontext_manifest.json"
     _json_dump(tmp_manifest_path, kontext_manifest)
 
-    print(f"[KONTEXT] {len(kontext_manifest['shots'])} shots, golden_ref={golden_ref}, guidance={guidance}")
+    n_kontext = len(kontext_manifest["shots"])
+    n_t2i = len(t2i_shots)
+    n_skip = len(skipped_shots)
+    print(f"[KONTEXT] {n_kontext} Kontext + {n_t2i} T2I + {n_skip} skip, golden_ref={golden_ref}, guidance={guidance}")
+
+    if t2i_shots:
+        t2i_ids = [s.get("shot_id", "?") for s in t2i_shots]
+        print(f"  [T2I] These shots will use direct T2I (Bee/explainer): {', '.join(t2i_ids)}")
+    if skipped_shots:
+        skip_ids = [s.get("shot_id", "?") for s in skipped_shots]
+        print(f"  [SKIP] No keyframe needed: {', '.join(skip_ids)}")
 
     if dry_run:
         print("[DRY-RUN] Kontext manifest written, skipping render.")
         print(f"  Manifest: {tmp_manifest_path}")
         for s in kontext_manifest["shots"]:
             print(f"  {s['shot_id']}: {s['positive_prompt'][:80]}...")
-        return {"status": "dry_run", "manifest": str(tmp_manifest_path), "shots": kontext_manifest["shots"]}
+        return {
+            "status": "dry_run",
+            "manifest": str(tmp_manifest_path),
+            "shots": kontext_manifest["shots"],
+            "t2i_shots": [s.get("shot_id") for s in t2i_shots],
+            "skipped_shots": [s.get("shot_id") for s in skipped_shots],
+        }
+
+    if not kontext_manifest["shots"]:
+        print("[KONTEXT] No Kontext shots to render (all T2I or skipped).")
+        return {"status": "ok", "total": 0, "ok": 0, "results": [], "t2i_shots": t2i_shots}
 
     # Resolve workflow and bindings
     video_dir = Path(__file__).resolve().parent.parent.parent  # systems/video
@@ -246,6 +324,8 @@ def main() -> int:
                         help="Only process specific shot IDs")
     parser.add_argument("--no-update-manifest", action="store_true",
                         help="Don't update original manifest with keyframe paths")
+    parser.add_argument("--character-map", type=Path, default=None,
+                        help="JSON mapping character name → render strategy (kontext|t2i|skip)")
     args = parser.parse_args()
 
     if not args.manifest.exists():
@@ -255,6 +335,12 @@ def main() -> int:
     if args.output_dir is None:
         video_dir = Path(__file__).resolve().parent.parent.parent
         args.output_dir = video_dir / "output" / "renders" / "kontext_keyframes"
+
+    # Load character map if provided
+    char_map = None
+    if args.character_map and args.character_map.exists():
+        char_map = _json_load(args.character_map)
+        print(f"[KONTEXT] Character map: {char_map}")
 
     result = generate_kontext_keyframes(
         manifest_path=args.manifest,
@@ -267,6 +353,7 @@ def main() -> int:
         dry_run=args.dry_run,
         shots_filter=args.shots,
         update_manifest=not args.no_update_manifest,
+        character_map=char_map,
     )
 
     return 0 if result.get("status") in ("ok", "dry_run") else 1

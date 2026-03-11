@@ -338,6 +338,38 @@ def render_shot(
     return result
 
 
+def _resolve_workflow_for_shot(
+    shot: Dict,
+    workflow_map: Optional[Dict[str, Any]],
+    default_workflow: Dict,
+    default_bindings: Dict,
+    workflows_dir: Optional[Path],
+) -> tuple:
+    """Resolve workflow + bindings for a shot based on visual_type.
+
+    Returns (workflow_dict, bindings_dict).
+    If workflow_map is provided and shot has visual_type, use mapped files.
+    Otherwise fall back to defaults.
+    """
+    if not workflow_map:
+        return default_workflow, default_bindings
+
+    visual_type = shot.get("visual_type", "sitcom")
+    mapping = workflow_map.get(visual_type)
+    if not mapping:
+        return default_workflow, default_bindings
+
+    base = workflows_dir or Path(".")
+    wf_path = base / mapping["workflow"]
+    bd_path = base / mapping["bindings"]
+
+    if not wf_path.exists() or not bd_path.exists():
+        print(f"  [WARN] workflow-map files not found for '{visual_type}', using defaults")
+        return default_workflow, default_bindings
+
+    return _json_load(wf_path), _json_load(bd_path)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="ComfyUI batch renderer")
     parser.add_argument("--manifest", required=True, type=Path, help="Shot manifest JSON")
@@ -348,12 +380,31 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="Validate without rendering")
     parser.add_argument("--force-render", action="store_true", help="Ignore render cache")
     parser.add_argument("--shots", nargs="*", help="Render specific shot IDs only")
+    parser.add_argument(
+        "--workflow-map", type=Path, default=None,
+        help="JSON mapping visual_type → {workflow, bindings} files. "
+             "Enables per-shot workflow routing (sitcom vs explainer).",
+    )
+    parser.add_argument(
+        "--workflows-dir", type=Path, default=None,
+        help="Base directory for workflow-map paths (default: workflow-map file's parent)",
+    )
     args = parser.parse_args()
 
     # Load files
     manifest = _json_load(args.manifest)
     workflow = _json_load(args.workflow)
     bindings = _json_load(args.bindings)
+
+    # Load workflow map if provided
+    workflow_map: Optional[Dict[str, Any]] = None
+    if args.workflow_map and args.workflow_map.exists():
+        workflow_map = _json_load(args.workflow_map)
+        print(f"[WORKFLOW-MAP] Loaded: {args.workflow_map}")
+        for vt, m in workflow_map.items():
+            print(f"  {vt}: {m.get('workflow')} + {m.get('bindings')}")
+
+    workflows_dir = args.workflows_dir or (args.workflow_map.parent if args.workflow_map else None)
 
     shots = manifest.get("shots", [])
     if not shots:
@@ -409,7 +460,7 @@ def main() -> int:
         print(f"[{idx}/{len(shots)}] {shot_id}")
 
         # Check cache
-        shot_hash = _compute_shot_hash(shot, workflow, bindings)
+        shot_hash = _compute_shot_hash(shot, shot_workflow, shot_bindings)
         cached = cache.get(shot_id)
         if cached and cached.get("hash") == shot_hash and not args.force_render:
             # Verify files still exist
@@ -424,8 +475,13 @@ def main() -> int:
                 render_log["summary"]["cached"] += 1
                 continue
 
+        # Resolve per-shot workflow (if workflow-map is active)
+        shot_workflow, shot_bindings = _resolve_workflow_for_shot(
+            shot, workflow_map, workflow, bindings, workflows_dir,
+        )
+
         # Build API prompt
-        api_prompt = _build_api_prompt(workflow, bindings, shot)
+        api_prompt = _build_api_prompt(shot_workflow, shot_bindings, shot)
 
         # Render
         result = render_shot(
