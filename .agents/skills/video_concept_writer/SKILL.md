@@ -3,6 +3,11 @@ name: video_concept_writer
 description: Reads a blog post or thread and writes a high-level video script with narration and core visual metaphors, prior to the storyboard phase.
 ---
 
+> **DEPRECATED for EP series** — 이 스킬은 non-lingual claymation 기반.
+> 현재 채널은 **한국어 대사 + 해설** 포맷으로 전환됨.
+> EP 시리즈 대본은 `screenplay_writer` 스킬을 사용할 것.
+> 쇼츠/개별 컨셉 영상에는 여전히 사용 가능.
+
 # Video Concept Writer Skill
 
 This skill guides the agent in interpreting text content (blogs, threads) and translating it into a **High-Level Video Script and Concept**. The output of this skill is a "Concept Document" that will later be used by the `video_storyboard_planner` skill to generate a detailed, shot-by-shot storyboard.

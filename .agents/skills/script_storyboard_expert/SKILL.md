@@ -1,5 +1,9 @@
 # Scriptwriting & Storyboarding Expert Skill
 
+> **역할 한정**: 이 스킬은 **Fountain 포맷 규칙 + 샷 분해** 전문.
+> 이야기 구조(주제 정의, Story Circle, 감정 아크)는 `screenplay_writer` 스킬이 담당.
+> 이 스킬은 완성된 Fountain 스크립트의 포맷 검증과 샷리스트 생성에만 사용.
+
 Expert in AI-assisted screenwriting using the **Fountain** format and automated storyboarding workflows.
 
 ## Core Mandates

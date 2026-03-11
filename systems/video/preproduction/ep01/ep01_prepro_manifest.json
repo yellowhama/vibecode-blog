@@ -71,7 +71,8 @@
           ],
           "shorts_candidate": false
         }
-      ]
+      ],
+      "actual_duration_sec": 6.65
     },
     {
       "phase_id": "SEG02",
@@ -436,7 +437,8 @@
           ],
           "shorts_candidate": false
         }
-      ]
+      ],
+      "actual_duration_sec": 60.72
     },
     {
       "phase_id": "SEG03",
@@ -660,7 +662,8 @@
           ],
           "shorts_candidate": false
         }
-      ]
+      ],
+      "actual_duration_sec": 65.21
     },
     {
       "phase_id": "SEG04",
@@ -857,7 +860,8 @@
           ],
           "shorts_candidate": false
         }
-      ]
+      ],
+      "actual_duration_sec": 31.13
     },
     {
       "phase_id": "SEG05",
@@ -905,7 +909,8 @@
           ],
           "shorts_candidate": false
         }
-      ]
+      ],
+      "actual_duration_sec": 7.15
     }
   ],
   "beats": [
@@ -927,7 +932,12 @@
           "emotion": "활짝 웃으며, 두 팔 벌려"
         }
       ],
-      "shorts_candidate": true
+      "shorts_candidate": true,
+      "actual_duration_sec": 1.608,
+      "tts_start_sec": 0.0,
+      "tts_end_sec": 1.608,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG01_B002",
@@ -947,7 +957,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 3.624,
+      "tts_start_sec": 1.808,
+      "tts_end_sec": 5.432,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG01_B003",
@@ -967,7 +982,12 @@
           "emotion": "작은 목소리로"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 1.416,
+      "tts_start_sec": 5.632,
+      "tts_end_sec": 7.048,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG02_B004",
@@ -988,7 +1008,12 @@
           "emotion": "타이핑하며"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 2.52,
+      "tts_start_sec": 7.248,
+      "tts_end_sec": 9.768,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG02_B005",
@@ -1009,7 +1034,12 @@
           "emotion": "눈 커지며"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 3.408,
+      "tts_start_sec": 9.968,
+      "tts_end_sec": 13.376,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG02_B006",
@@ -1030,7 +1060,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 3.552,
+      "tts_start_sec": 13.576,
+      "tts_end_sec": 17.128,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG02_B007",
@@ -1051,7 +1086,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 8.712,
+      "tts_start_sec": 17.328,
+      "tts_end_sec": 26.04,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG02_B008",
@@ -1072,7 +1112,12 @@
           "emotion": "자신만만"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 2.784,
+      "tts_start_sec": 26.24,
+      "tts_end_sec": 29.024,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG02_B009",
@@ -1093,7 +1138,12 @@
           "emotion": "못 봄, 계속 타이핑"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 4.512,
+      "tts_start_sec": 29.224,
+      "tts_end_sec": 33.736,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG02_B010",
@@ -1114,7 +1164,12 @@
           "emotion": "한쪽 눈 뜨며"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 2.28,
+      "tts_start_sec": 33.936,
+      "tts_end_sec": 36.216,
+      "tts_voice": "ko-KR-InJoonNeural",
+      "tts_speaker": "bee"
     },
     {
       "beat_id": "SEG02_B011",
@@ -1135,7 +1190,12 @@
           "emotion": "깜짝"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 2.304,
+      "tts_start_sec": 36.416,
+      "tts_end_sec": 38.72,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG02_B012",
@@ -1156,7 +1216,12 @@
           "emotion": "한숨"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 4.152,
+      "tts_start_sec": 38.92,
+      "tts_end_sec": 43.072,
+      "tts_voice": "ko-KR-InJoonNeural",
+      "tts_speaker": "bee"
     },
     {
       "beat_id": "SEG02_B013",
@@ -1177,7 +1242,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 1.488,
+      "tts_start_sec": 43.272,
+      "tts_end_sec": 44.76,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG02_B014",
@@ -1198,7 +1268,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 2.352,
+      "tts_start_sec": 44.96,
+      "tts_end_sec": 47.312,
+      "tts_voice": "ko-KR-InJoonNeural",
+      "tts_speaker": "bee"
     },
     {
       "beat_id": "SEG02_B015",
@@ -1219,7 +1294,12 @@
           "emotion": "멈칫"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 1.512,
+      "tts_start_sec": 47.512,
+      "tts_end_sec": 49.024,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG02_B016",
@@ -1240,7 +1320,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 5.424,
+      "tts_start_sec": 49.224,
+      "tts_end_sec": 54.648,
+      "tts_voice": "ko-KR-InJoonNeural",
+      "tts_speaker": "bee"
     },
     {
       "beat_id": "SEG02_B017",
@@ -1261,7 +1346,12 @@
           "emotion": "자신만만하게"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 6.36,
+      "tts_start_sec": 54.848,
+      "tts_end_sec": 61.208,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG02_B018",
@@ -1282,7 +1372,12 @@
           "emotion": "끊으며"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 3.336,
+      "tts_start_sec": 61.408,
+      "tts_end_sec": 64.744,
+      "tts_voice": "ko-KR-InJoonNeural",
+      "tts_speaker": "bee"
     },
     {
       "beat_id": "SEG02_B019",
@@ -1303,7 +1398,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 1.944,
+      "tts_start_sec": 64.944,
+      "tts_end_sec": 66.888,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG02_B020",
@@ -1324,7 +1424,12 @@
           "emotion": "날개 접으며, 등 돌리고"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 4.08,
+      "tts_start_sec": 67.088,
+      "tts_end_sec": 71.168,
+      "tts_voice": "ko-KR-InJoonNeural",
+      "tts_speaker": "bee"
     },
     {
       "beat_id": "SEG03_B021",
@@ -1342,7 +1447,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": true
+      "shorts_candidate": true,
+      "actual_duration_sec": 2.52,
+      "tts_start_sec": 71.368,
+      "tts_end_sec": 73.888,
+      "tts_voice": "ko-KR-HyunsuNeural",
+      "tts_speaker": "narrator"
     },
     {
       "beat_id": "SEG03_B022",
@@ -1360,7 +1470,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 2.568,
+      "tts_start_sec": 74.088,
+      "tts_end_sec": 76.656,
+      "tts_voice": "ko-KR-HyunsuNeural",
+      "tts_speaker": "narrator"
     },
     {
       "beat_id": "SEG03_B023",
@@ -1378,7 +1493,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 10.56,
+      "tts_start_sec": 76.856,
+      "tts_end_sec": 87.416,
+      "tts_voice": "ko-KR-HyunsuNeural",
+      "tts_speaker": "narrator"
     },
     {
       "beat_id": "SEG03_B024",
@@ -1396,7 +1516,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 2.016,
+      "tts_start_sec": 87.616,
+      "tts_end_sec": 89.632,
+      "tts_voice": "ko-KR-HyunsuNeural",
+      "tts_speaker": "narrator"
     },
     {
       "beat_id": "SEG03_B025",
@@ -1414,7 +1539,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 4.392,
+      "tts_start_sec": 89.832,
+      "tts_end_sec": 94.224,
+      "tts_voice": "ko-KR-HyunsuNeural",
+      "tts_speaker": "narrator"
     },
     {
       "beat_id": "SEG03_B026",
@@ -1432,7 +1562,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 2.256,
+      "tts_start_sec": 94.424,
+      "tts_end_sec": 96.68,
+      "tts_voice": "ko-KR-HyunsuNeural",
+      "tts_speaker": "narrator"
     },
     {
       "beat_id": "SEG03_B027",
@@ -1450,7 +1585,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 1.248,
+      "tts_start_sec": 96.88,
+      "tts_end_sec": 98.128,
+      "tts_voice": "ko-KR-HyunsuNeural",
+      "tts_speaker": "narrator"
     },
     {
       "beat_id": "SEG03_B028",
@@ -1468,7 +1608,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 5.184,
+      "tts_start_sec": 98.328,
+      "tts_end_sec": 103.512,
+      "tts_voice": "ko-KR-HyunsuNeural",
+      "tts_speaker": "narrator"
     },
     {
       "beat_id": "SEG03_B029",
@@ -1486,7 +1631,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 14.424,
+      "tts_start_sec": 103.712,
+      "tts_end_sec": 118.136,
+      "tts_voice": "ko-KR-HyunsuNeural",
+      "tts_speaker": "narrator"
     },
     {
       "beat_id": "SEG03_B030",
@@ -1504,7 +1654,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 1.704,
+      "tts_start_sec": 118.336,
+      "tts_end_sec": 120.04,
+      "tts_voice": "ko-KR-HyunsuNeural",
+      "tts_speaker": "narrator"
     },
     {
       "beat_id": "SEG03_B031",
@@ -1522,7 +1677,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 8.76,
+      "tts_start_sec": 120.24,
+      "tts_end_sec": 129.0,
+      "tts_voice": "ko-KR-HyunsuNeural",
+      "tts_speaker": "narrator"
     },
     {
       "beat_id": "SEG03_B032",
@@ -1540,7 +1700,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 9.576,
+      "tts_start_sec": 129.2,
+      "tts_end_sec": 138.776,
+      "tts_voice": "ko-KR-HyunsuNeural",
+      "tts_speaker": "narrator"
     },
     {
       "beat_id": "SEG04_B033",
@@ -1561,7 +1726,12 @@
           "emotion": "중얼"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 2.208,
+      "tts_start_sec": 138.976,
+      "tts_end_sec": 141.184,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG04_B034",
@@ -1582,7 +1752,12 @@
           "emotion": "쓰면서"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 6.744,
+      "tts_start_sec": 141.384,
+      "tts_end_sec": 148.128,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG04_B035",
@@ -1603,7 +1778,12 @@
           "emotion": "안 쳐다보고"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 2.904,
+      "tts_start_sec": 148.328,
+      "tts_end_sec": 151.232,
+      "tts_voice": "ko-KR-InJoonNeural",
+      "tts_speaker": "bee"
     },
     {
       "beat_id": "SEG04_B036",
@@ -1624,7 +1804,12 @@
           "emotion": "멈추며"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 1.728,
+      "tts_start_sec": 151.432,
+      "tts_end_sec": 153.16,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG04_B037",
@@ -1645,7 +1830,12 @@
           "emotion": "빠르게"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 4.272,
+      "tts_start_sec": 153.36,
+      "tts_end_sec": 157.632,
+      "tts_voice": "ko-KR-InJoonNeural",
+      "tts_speaker": "bee"
     },
     {
       "beat_id": "SEG04_B038",
@@ -1666,7 +1856,12 @@
           "emotion": "한숨"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 4.968,
+      "tts_start_sec": 157.832,
+      "tts_end_sec": 162.8,
+      "tts_voice": "ko-KR-InJoonNeural",
+      "tts_speaker": "bee"
     },
     {
       "beat_id": "SEG04_B039",
@@ -1687,7 +1882,12 @@
           "emotion": "생각하다"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 3.456,
+      "tts_start_sec": 163.0,
+      "tts_end_sec": 166.456,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG04_B040",
@@ -1708,7 +1908,12 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 2.328,
+      "tts_start_sec": 166.656,
+      "tts_end_sec": 168.984,
+      "tts_voice": "ko-KR-InJoonNeural",
+      "tts_speaker": "bee"
     },
     {
       "beat_id": "SEG04_B041",
@@ -1729,7 +1934,12 @@
           "emotion": "눈을 안 마주치며"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 2.52,
+      "tts_start_sec": 169.184,
+      "tts_end_sec": 171.704,
+      "tts_voice": "ko-KR-InJoonNeural",
+      "tts_speaker": "bee"
     },
     {
       "beat_id": "SEG05_B042",
@@ -1749,7 +1959,12 @@
           "emotion": "조용히"
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 3.0,
+      "tts_start_sec": 171.904,
+      "tts_end_sec": 174.904,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     },
     {
       "beat_id": "SEG05_B043",
@@ -1769,7 +1984,13 @@
           "emotion": ""
         }
       ],
-      "shorts_candidate": false
+      "shorts_candidate": false,
+      "actual_duration_sec": 4.152,
+      "tts_start_sec": 175.104,
+      "tts_end_sec": 179.256,
+      "tts_voice": "ko-KR-SunHiNeural",
+      "tts_speaker": "vee"
     }
-  ]
+  ],
+  "total_actual_duration_sec": 170.86
 }

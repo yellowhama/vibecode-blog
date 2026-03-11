@@ -3,6 +3,10 @@ name: video_storyboard_planner
 description: Reads blog or thread content and designs a 'Skeptical Claymation x Whiteboard Flow' storyboard with narration and split shots (T2I/I2V).
 ---
 
+> **게이트**: Fountain 스크립트가 완성된 후에만 사용.
+> `screenplay_writer` Phase 2 (Fountain 집필) 완료 + Phase 3 (구조 검증) PASS 후,
+> 이 스킬로 T2I/I2V 샷 분해를 진행한다.
+
 # Video Storyboard Planner Skill
 
 This skill guides the agent in interpreting text content (blogs, threads) and translating it into a highly structured storyboard. The output of this skill is a "Storyboard Document" that will later be used by the `comfyui_video_pipeline` skill to generate actual video prompts.

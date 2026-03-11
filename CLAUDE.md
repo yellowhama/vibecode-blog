@@ -263,6 +263,33 @@ phase1/en/actN-M-en.md + actN-en.md   (영어)
 
 ---
 
+## 대본 (Screenplay) 프로세스
+
+### 순서 (절대 뒤집지 않음)
+1. 주제 정의 (`/screenplay-topic`) → 2. 스토리 설계 (`/screenplay-plan`) → 3. Fountain 집필 (`/screenplay-write`) → 4. 구조 검증 (`/screenplay-review`) → 5. TTS → 6. 렌더
+
+### 주제 정의 원칙
+- 주제 = 한 단어 (예: 스펙, 테스트, 도메인)
+- 주제에서 3가지 (뭔지/없으면/있으면) → 자연스럽게 3막
+- 블로그는 소재 창고. 순서대로 옮기는 거 아님. 3막 구조에 맞는 장면만 골라 쓴다.
+
+### 핵심 스킬
+| 스킬 | 역할 |
+|------|------|
+| `screenplay_writer` | 4단계 대본 작성 (topic→plan→write→review) |
+| `validate_screenplay.py` | Fountain 자동 검증 (`python systems/video/pipeline/scripts/validate_screenplay.py --input FILE`) |
+
+### 소재 인덱스
+| 경로 | 내용 |
+|------|------|
+| `systems/video/preproduction/source_index.json` | EP별 소스+주제 매핑 (시리즈 바이블 연동) |
+| `systems/video/preproduction/rag/` | 블로그 소재 RAG 인덱스 (`node scripts/query.mjs "키워드" --top=5`) |
+| `content/blog/phase1/` | 정제된 소스 (Act 1-4, 25편 KO+EN) |
+| `content/blog/blog-only/` | 원본 소스 (~50편) |
+| `systems/planning/13-screenplay-pipeline-plan.md` | 대본 파이프라인 재정비 계획 문서 |
+
+---
+
 ## 콘텐츠 분석 + 피드백 루프
 
 ### 아키텍처
