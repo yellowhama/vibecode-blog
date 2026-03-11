@@ -1,0 +1,97 @@
+{
+  "character_id": "bee",
+  "character_name": "Bee (비)",
+  "character_aliases": ["비", "꿀벌"],
+  "role": "사이드킥 — Vee의 조수 겸 만년 현장 인부",
+  "version": "1.0",
+  "design_date": "2026-03-11",
+
+  "identity_system": {
+    "primary_method": "Flux-T2I (표정별 프롬프트 — Kontext 편집 안 먹힘)",
+    "note": "Kontext guidance 2.5~7.0 테스트했으나 표정 변화 불가. 골든 레퍼런스의 짜증 표정이 너무 강해서 Kontext가 잡고 안 놓음. T2I로 표정별 개별 생성 후 동일 디자인 유지.",
+    "golden_ref_image": {
+      "comfyui_input": "bee_golden_ref.png",
+      "repo_path": "systems/video/assets/characters/bee/bee_golden_ref.png",
+      "generation": "Flux T2I, bee_frustrated (seed=3103, guidance=3.5, 3D Pixar-like style)"
+    }
+  },
+
+  "design_philosophy": {
+    "style": "3D Pixar-like render — NOT heavy claymation, NOT photorealistic",
+    "archetype": "귀여운 외모 뒤에 지친 아저씨 — 공사장 인부 꿀벌",
+    "size_ratio": "Vee 발목 높이 (Adventure Time식 사이즈 대비 — Finn:BMO 비율)",
+    "personality_gap": "평소엔 짜증+피로 → 가끔 해맑은 순간 → 갭차이가 매력",
+    "render_model": "Flux.1-dev GGUF (T2I)"
+  },
+
+  "personality": {
+    "core": "만년 현장 인부 아저씨 — 세상에 찌들었지만 쥐어팰 수도 없는",
+    "surface": "손 허리에 짚고 인상 쓰는 게 기본. '아이고' '야 이거 누가 이렇게 해놨어' 가 입버릇",
+    "depth": "막상 Vee가 위기면 누구보다 빨리 달려감. 투덜대면서도 결국 다 해줌",
+    "gap": "짜증내다가 갑자기 해맑게 웃거나, 하트눈 되거나, 서서 잠들거나 — 감정 변화가 극단적",
+    "reference": "어드벤쳐 타임 제이크 (투덜+충실) + 짱구 아빠 (지친 직장인) + 미니언즈 (표정 과장)"
+  },
+
+  "appearance": {
+    "body": {
+      "shape": "통통한 둥근 달걀형 몸통, 아래가 약간 더 넓음",
+      "pattern": "노란색(#FFD700)과 검정(#1A1A1A) 가로 줄무늬 — 전형적인 꿀벌",
+      "texture": "부드러운 3D 렌더, 약간의 솜털/퍼 텍스처",
+      "size": "Vee 발목 높이 — 대략 Vee 전체 키의 1/5~1/6"
+    },
+    "face": {
+      "eyes": "큰 둥근 눈, 검은 동공 — 표정에 따라 크기와 모양이 극단적으로 변함",
+      "mouth": "기본은 ㅡ자 또는 ∪자 입 — 감정에 따라 O, 이빨 드러냄, 울음 등",
+      "cheeks": "분홍 볼터치 (감정 격해질 때 더 진해짐)"
+    },
+    "head": {
+      "antennae": "검은 더듬이 2개 — 감정 바로미터 (기쁨=쫑긋, 피로=축 처짐, 놀람=직립)",
+      "hard_hat": "미니어처 노란 건설 안전모 — 항상 착용, 감정에 따라 기울기 변화"
+    },
+    "limbs": {
+      "arms": "짧고 뭉뚝한 검은 팔 — 허리에 짚기, 얼굴 문지르기, 만세 등 표현력 좋음",
+      "legs": "짧고 뭉뚝한 검은 다리 — 서 있거나 공중에 떠 있음",
+      "wings": "작은 반투명 날개 — 기쁠 때 파닥파닥, 지칠 때 축 처짐, 잘 때 멈춤"
+    }
+  },
+
+  "color_palette": {
+    "body_yellow": "#FFD700",
+    "body_black": "#1A1A1A",
+    "hard_hat": "#FFD700",
+    "cheek_blush": "#FFCDD2",
+    "wings": "rgba(255,255,255,0.6)",
+    "antennae": "#1A1A1A"
+  },
+
+  "expressions": {
+    "default_frustrated": "손 허리에 짚고 인상 팍. 눈 찡그리고 입 ∩자. '야 이거 누가 이렇게 해놨어' 에너지. [골든 레퍼런스]",
+    "happy": "팔 벌리고 방긋, 볼 핑크, 눈 반짝. '형 나 잘했지?!' 해맑음",
+    "tired": "눈 반쯤 감고 한 손으로 얼굴 짚고 더듬이 축 처짐. 퇴근 10분 전 아저씨",
+    "shocked": "눈 동그랗게 커지고 입 벌리고 더듬이 직립. '뭐?!' 서프라이즈",
+    "crying": "이빨 드러내고 눈물 줄줄, 주먹 꽉 쥐고 대성통곡. '아 씨 또 터졌어'",
+    "sleeping": "서서 잠듦, 헬멧 눈 위로 내려오고 Zzz, 입 살짝 벌림. 현장 아저씨",
+    "love": "하트눈 + 볼 빨개지고 하트 떠다니는. 갑자기 순정만화 모드"
+  },
+
+  "expression_assets": {
+    "golden_ref": "systems/video/assets/characters/bee/bee_golden_ref.png",
+    "happy": "systems/video/assets/characters/bee/expressions/happy.png",
+    "tired": "systems/video/assets/characters/bee/expressions/tired.png",
+    "shocked": "systems/video/assets/characters/bee/expressions/shocked.png",
+    "crying": "systems/video/assets/characters/bee/expressions/crying.png",
+    "sleeping": "systems/video/assets/characters/bee/expressions/sleeping.png",
+    "love": "systems/video/assets/characters/bee/expressions/love.png"
+  },
+
+  "comfyui_prompts": {
+    "positive_base": "3D Pixar-like render. A tiny round bumblebee character with yellow and black stripes, small translucent wings, two black antennae, miniature yellow construction hard hat. Tiny stubby black legs. Clean white studio background, soft studio lighting. Front view character design. NOT photorealistic.",
+    "negative_base": "text, subtitles, watermark, logo, speech bubble, blurry, deformed, ugly, oversaturated, photorealistic, CGI, anime, cartoon, 2D, flat, sketch, illustration, realistic, multiple characters",
+    "identity_keywords": "yellow black striped round bee, yellow hard hat, tiny wings, black antennae, construction worker bee"
+  },
+
+  "relationship_to_existing_characters": {
+    "vee": "Vee의 사이드킥. 어드벤쳐 타임 Finn:BMO 관계. Vee가 코딩할 때 어깨 위에 앉아있거나 모니터 옆에서 잠들어있음. Vee 노란 후디 + Bee 노란 줄무늬로 브랜드 컬러 공유.",
+    "size_reference": "Vee 발목 높이. duo_03 렌더 참조 (systems/video/output/renders/ 또는 ComfyUI output/duo_03_00001_.png)"
+  }
+}
