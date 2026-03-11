@@ -19,7 +19,8 @@ Usage:
     python parse_fountain_to_prepro.py \
         --input ep01_script.fountain \
         --output ep01_prepro_manifest.json \
-        --project-id ep01
+        --project-id ep01 \
+        --language en
 """
 
 from __future__ import annotations
@@ -44,6 +45,39 @@ PARENTHETICAL_RE = re.compile(r"^\((.+)\)\s*$")
 SYNOPSIS_RE = re.compile(r"^=\s+(.+)$")
 TRANSITION_RE = re.compile(r"^>\s+(.+)$")
 TIMECODE_RE = re.compile(r"(\d+):(\d+)")
+
+# Language detection: if >30% of characters are CJK, assume Korean
+CJK_RE = re.compile(r"[\u3000-\u9fff\uac00-\ud7af]")
+
+
+def _detect_language(text: str) -> str:
+    """Auto-detect language from script text. Returns 'ko' or 'en'."""
+    # Only look at dialogue/narration text (skip annotations)
+    sample = ""
+    for line in text.split("\n"):
+        stripped = line.strip()
+        if stripped and not stripped.startswith("#") and not stripped.startswith("=") and not stripped.startswith(">"):
+            sample += stripped
+        if len(sample) > 2000:
+            break
+    if not sample:
+        return "en"
+    cjk_count = len(CJK_RE.findall(sample))
+    ratio = cjk_count / len(sample)
+    return "ko" if ratio > 0.15 else "en"
+
+
+def _estimate_duration(text: str, language: str) -> float:
+    """Estimate speech duration for text.
+
+    Korean: ~2.5 chars/sec (character-dense).
+    English: ~150 WPM = 2.5 words/sec.
+    """
+    if language == "ko":
+        return max(1.5, len(text) / 2.5)
+    # English: word-based estimation
+    words = len(text.split())
+    return max(1.5, words / 2.5)
 
 
 def _parse_timecode(tc: str) -> float:
@@ -212,6 +246,7 @@ def segments_to_prepro_manifest(
     segments: list[dict[str, Any]],
     project_id: str,
     title: str = "",
+    language: str = "en",
 ) -> dict[str, Any]:
     """Convert parsed segments into prepro_manifest.json format.
 
@@ -229,9 +264,8 @@ def segments_to_prepro_manifest(
             beat_counter += 1
             beat_id = f"{seg['segment_id']}_B{beat_counter:03d}"
 
-            # Estimate duration: ~2.5 chars/sec for Korean
             text = dlg["text"]
-            est_dur = max(1.5, len(text) / 2.5)
+            est_dur = _estimate_duration(text, language)
 
             beat = {
                 "beat_id": beat_id,
@@ -279,6 +313,7 @@ def segments_to_prepro_manifest(
     return {
         "project_id": project_id,
         "title": title,
+        "language": language,
         "total_duration_sec": round(sum(s["duration_sec"] for s in segments), 1),
         "segment_count": len(segments),
         "beat_count": len(all_beats),
@@ -292,6 +327,8 @@ def main() -> int:
     parser.add_argument("--input", required=True, type=Path, help="Fountain script file")
     parser.add_argument("--output", type=Path, default=None, help="Output JSON path")
     parser.add_argument("--project-id", default=None, help="Project ID (default: filename stem)")
+    parser.add_argument("--language", default="auto", choices=["auto", "en", "ko"],
+                        help="Script language (auto-detected if not specified)")
     args = parser.parse_args()
 
     if not args.input.exists():
@@ -312,7 +349,10 @@ def main() -> int:
             title_line = line.replace("Title:", "").strip()
             break
 
-    manifest = segments_to_prepro_manifest(segments, project_id, title_line)
+    language = args.language if args.language != "auto" else _detect_language(text)
+    print(f"[OK] Language: {language}")
+
+    manifest = segments_to_prepro_manifest(segments, project_id, title_line, language=language)
 
     output = args.output or args.input.with_suffix(".prepro_manifest.json")
     output.parent.mkdir(parents=True, exist_ok=True)

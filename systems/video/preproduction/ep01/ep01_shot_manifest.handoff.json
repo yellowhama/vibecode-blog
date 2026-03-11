@@ -1,5 +1,5 @@
 {
-  "project_id": "ep01",
+  "project_id": "ep01_auto",
   "manifest": "systems/video/preproduction/ep01/ep01_shot_manifest.json",
   "notes": [
     "If mode=i2v, prepare keyframes named <shot_id>_keyframe.png before render.",

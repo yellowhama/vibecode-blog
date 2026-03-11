@@ -1,5 +1,5 @@
 {
-  "project_id": "ep01",
+  "project_id": "ep01_auto",
   "style_lock": "nonlingual claymation + no text overlays + action-first storytelling",
   "delivery_target": "16:9, 480p, short scene clips for YouTube assembly",
   "model_policy": {
@@ -10,21 +10,21 @@
     {
       "shot_id": "S01_01",
       "scene": "Scene1",
-      "purpose": "됐다!",
+      "purpose": "This is the moment every vibe coder lives for.",
       "visual_type": "sitcom",
       "characters": [
         "vee"
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "됐다!",
-          "emotion": "활짝 웃으며, 두 팔 벌려"
+          "speaker": "narrator",
+          "text": "This is the moment every vibe coder lives for.",
+          "emotion": ""
         }
       ],
       "shorts_candidate": true,
-      "kontext_prompt": "Vee 자축 → 폭발. 결과부터 보여준다. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts). Primary action goal: Vee 자축 → 폭발. 결과부터 보여준다. Narrative reference for action direction: 됐다! CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "kontext_prompt": "Vee celebrates → explosion. Show the result first. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts). Primary action goal: Vee celebrates → explosion. Show the result first. Narrative reference for action direction: This is the moment every vibe coder lives for. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
       "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
       "duration_sec": 8.0,
       "aspect_ratio": "16:9",
@@ -40,21 +40,21 @@
     {
       "shot_id": "S02_02",
       "scene": "Scene1",
-      "purpose": "...뭐?",
+      "purpose": "You asked AI to build it. And it did. All of it.",
       "visual_type": "sitcom",
       "characters": [
         "vee"
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "...뭐?",
-          "emotion": "작은 목소리로"
+          "speaker": "narrator",
+          "text": "You asked AI to build it. And it did. All of it.",
+          "emotion": ""
         }
       ],
       "shorts_candidate": false,
-      "kontext_prompt": "화면에 \"BUILD SUCCESS\" 초록 불. Vee가 머그컵을 들어올린다. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts). Primary action goal: 화면에 \"BUILD SUCCESS\" 초록 불. Vee가 머그컵을 들어올린다. Narrative reference for action direction: ...뭐? CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "kontext_prompt": "Five monitors glow in a dark room. Vee leans back in her chair. Each screen shows code, dashboards, terminals — all running. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts). Primary action goal: Five monitors glow in a dark room. Vee leans back in her chair. Each screen shows code, dashboards, terminals — all running. Narrative reference for action direction: You asked AI to build it. And it did. All of it. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
       "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
       "duration_sec": 8.0,
       "aspect_ratio": "16:9",
@@ -64,30 +64,29 @@
       "mode": "i2v",
       "input_image": "S02_02_keyframe.png",
       "output_name": "S02_02.mp4",
-      "source_beat_id": "SEG01_B003",
+      "source_beat_id": "SEG01_B002",
       "source_scene_id": "SEG01"
     },
     {
       "shot_id": "S03_03",
       "scene": "Scene1",
-      "purpose": "어? 복붙 안 해도 돼?",
+      "purpose": "...it all falls apart.",
       "visual_type": "sitcom",
       "characters": [
-        "vee",
-        "bee"
+        "vee"
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "어? 복붙 안 해도 돼?",
-          "emotion": "눈 커지며"
+          "speaker": "narrator",
+          "text": "...it all falls apart.",
+          "emotion": ""
         }
       ],
       "shorts_candidate": false,
-      "kontext_prompt": "밝은 방. Vee가 모니터 앞에 앉아 있다. 터미널이 열려 있다. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: 밝은 방. Vee가 모니터 앞에 앉아 있다. 터미널이 열려 있다. Narrative reference for action direction: 어? 복붙 안 해도 돼? CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "kontext_prompt": "BEAT: 1 second of silence. One monitor flickers. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts). Primary action goal: BEAT: 1 second of silence. One monitor flickers. Narrative reference for action direction: ...it all falls apart. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
       "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
-      "duration_sec": 8.0,
+      "duration_sec": 6.94,
       "aspect_ratio": "16:9",
       "resolution": "832x480",
       "seed": 1300003,
@@ -95,13 +94,13 @@
       "mode": "i2v",
       "input_image": "S03_03_keyframe.png",
       "output_name": "S03_03.mp4",
-      "source_beat_id": "SEG02_B005",
-      "source_scene_id": "SEG02"
+      "source_beat_id": "SEG01_B004",
+      "source_scene_id": "SEG01"
     },
     {
       "shot_id": "S04_04",
       "scene": "Scene1",
-      "purpose": "5분! 이게 5분!",
+      "purpose": "Three days ago, Vee discovered something magical.",
       "visual_type": "sitcom",
       "characters": [
         "vee",
@@ -109,16 +108,16 @@
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "5분! 이게 5분!",
+          "speaker": "narrator",
+          "text": "Three days ago, Vee discovered something magical.",
           "emotion": ""
         }
       ],
       "shorts_candidate": false,
-      "kontext_prompt": "BEAT: 터미널에서 파일이 자동 생성된다. 폴더, 코드, 패키지. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: BEAT: 터미널에서 파일이 자동 생성된다. 폴더, 코드, 패키지. Narrative reference for action direction: 5분! 이게 5분! CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "kontext_prompt": "Three days earlier. Vee's vibe coding montage. Bee's first appearance. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Three days earlier. Vee's vibe coding montage. Bee's first appearance. Narrative reference for action direction: Three days ago, Vee discovered something magical. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
       "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
-      "duration_sec": 8.0,
+      "duration_sec": 6.94,
       "aspect_ratio": "16:9",
       "resolution": "832x480",
       "seed": 1300004,
@@ -126,13 +125,13 @@
       "mode": "i2v",
       "input_image": "S04_04_keyframe.png",
       "output_name": "S04_04.mp4",
-      "source_beat_id": "SEG02_B006",
+      "source_beat_id": "SEG02_B005",
       "source_scene_id": "SEG02"
     },
     {
       "shot_id": "S05_05",
       "scene": "Scene2",
-      "purpose": "이거면 뭐든 만들겠는데?",
+      "purpose": "You type what you want. AI builds it. Five minutes. Done.",
       "visual_type": "sitcom",
       "characters": [
         "vee",
@@ -140,14 +139,14 @@
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "이거면 뭐든 만들겠는데?",
-          "emotion": "자신만만"
+          "speaker": "narrator",
+          "text": "You type what you want. AI builds it. Five minutes. Done.",
+          "emotion": ""
         }
       ],
       "shorts_candidate": false,
-      "kontext_prompt": "MONTAGE: Vee가 연달아 시킨다. 화면이 빠르게 전환. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: MONTAGE: Vee가 연달아 시킨다. 화면이 빠르게 전환. Narrative reference for action direction: 이거면 뭐든 만들겠는데? CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "kontext_prompt": "Bright room. Vee sits at her monitor. Terminal open. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Bright room. Vee sits at her monitor. Terminal open. Narrative reference for action direction: You type what you want. AI builds it. Five minutes. Done. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
       "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
       "duration_sec": 8.0,
       "aspect_ratio": "16:9",
@@ -157,13 +156,13 @@
       "mode": "i2v",
       "input_image": "S05_05_keyframe.png",
       "output_name": "S05_05.mp4",
-      "source_beat_id": "SEG02_B008",
+      "source_beat_id": "SEG02_B006",
       "source_scene_id": "SEG02"
     },
     {
       "shot_id": "S06_06",
       "scene": "Scene2",
-      "purpose": "...뭐 하는 거야.",
+      "purpose": "She thought she could build anything.",
       "visual_type": "sitcom",
       "characters": [
         "vee",
@@ -171,16 +170,16 @@
       ],
       "dialogue": [
         {
-          "speaker": "bee",
-          "text": "...뭐 하는 거야.",
-          "emotion": "한쪽 눈 뜨며"
+          "speaker": "narrator",
+          "text": "She thought she could build anything.",
+          "emotion": ""
         }
       ],
       "shorts_candidate": false,
-      "kontext_prompt": "...뭐 하는 거야. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: ...뭐 하는 거야. Narrative reference for action direction: ...뭐 하는 거야. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "kontext_prompt": "Vee's eyes go wide. She jumps out of her chair. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Vee's eyes go wide. She jumps out of her chair. Narrative reference for action direction: She thought she could build anything. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
       "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
-      "duration_sec": 8.0,
+      "duration_sec": 6.93,
       "aspect_ratio": "16:9",
       "resolution": "832x480",
       "seed": 1300006,
@@ -188,13 +187,13 @@
       "mode": "i2v",
       "input_image": "S06_06_keyframe.png",
       "output_name": "S06_06.mp4",
-      "source_beat_id": "SEG02_B010",
+      "source_beat_id": "SEG02_B008",
       "source_scene_id": "SEG02"
     },
     {
       "shot_id": "S07_07",
       "scene": "Scene2",
-      "purpose": "됐고. 근데 그거.",
+      "purpose": "But there was someone who'd seen this story before.",
       "visual_type": "sitcom",
       "characters": [
         "vee",
@@ -202,14 +201,14 @@
       ],
       "dialogue": [
         {
-          "speaker": "bee",
-          "text": "됐고. 근데 그거.",
-          "emotion": "한숨"
+          "speaker": "narrator",
+          "text": "But there was someone who'd seen this story before.",
+          "emotion": ""
         }
       ],
       "shorts_candidate": false,
-      "kontext_prompt": "됐고. 근데 그거. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: 됐고. 근데 그거. Narrative reference for action direction: 됐고. 근데 그거. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "kontext_prompt": "MONTAGE: Rapid cuts. Vee types → app appears. Types → app appears. Types → app appears. Each time faster. Each time her grin gets bigger. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: MONTAGE: Rapid cuts. Vee types → app appears. Types → app appears. Types → app appears. Each time faster. Each time her grin gets bigger. Narrative reference for action direction: But there was someone who'd seen this story before. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
       "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
       "duration_sec": 8.0,
       "aspect_ratio": "16:9",
@@ -219,13 +218,13 @@
       "mode": "i2v",
       "input_image": "S07_07_keyframe.png",
       "output_name": "S07_07.mp4",
-      "source_beat_id": "SEG02_B012",
+      "source_beat_id": "SEG02_B009",
       "source_scene_id": "SEG02"
     },
     {
       "shot_id": "S08_08",
       "scene": "Scene2",
-      "purpose": "스펙이 뭔데.",
+      "purpose": "She couldn't answer.",
       "visual_type": "sitcom",
       "characters": [
         "vee",
@@ -233,16 +232,16 @@
       ],
       "dialogue": [
         {
-          "speaker": "bee",
-          "text": "스펙이 뭔데.",
+          "speaker": "narrator",
+          "text": "She couldn't answer.",
           "emotion": ""
         }
       ],
       "shorts_candidate": false,
-      "kontext_prompt": "스펙이 뭔데. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: 스펙이 뭔데. Narrative reference for action direction: 스펙이 뭔데. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "kontext_prompt": "Vee spins in her chair, arms crossed, nodding like a CEO. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Vee spins in her chair, arms crossed, nodding like a CEO. Narrative reference for action direction: She couldn't answer. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
       "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
-      "duration_sec": 8.0,
+      "duration_sec": 6.93,
       "aspect_ratio": "16:9",
       "resolution": "832x480",
       "seed": 1300008,
@@ -250,118 +249,109 @@
       "mode": "i2v",
       "input_image": "S08_08_keyframe.png",
       "output_name": "S08_08.mp4",
-      "source_beat_id": "SEG02_B014",
+      "source_beat_id": "SEG02_B010",
       "source_scene_id": "SEG02"
     },
     {
       "shot_id": "S09_09",
       "scene": "Scene3",
-      "purpose": "니가 만드는 거. 뭐야. 뭘 만드는 건데.",
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
+      "purpose": "Here's an empty lot.",
+      "visual_type": "explainer",
+      "characters": [],
       "dialogue": [
         {
-          "speaker": "bee",
-          "text": "니가 만드는 거. 뭐야. 뭘 만드는 건데.",
+          "speaker": "narrator",
+          "text": "Here's an empty lot.",
           "emotion": ""
         }
       ],
-      "shorts_candidate": false,
-      "kontext_prompt": "니가 만드는 거. 뭐야. 뭘 만드는 건데. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: 니가 만드는 거. 뭐야. 뭘 만드는 건데. Narrative reference for action direction: 니가 만드는 거. 뭐야. 뭘 만드는 건데. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
-      "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
-      "duration_sec": 8.0,
+      "shorts_candidate": true,
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Transition to abstract world. \"Spec = Blueprint\" metaphor. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
+      "duration_sec": 6.93,
       "aspect_ratio": "16:9",
       "resolution": "832x480",
       "seed": 1300009,
       "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
       "mode": "i2v",
-      "input_image": "S09_09_keyframe.png",
+      "input_image": null,
       "output_name": "S09_09.mp4",
-      "source_beat_id": "SEG02_B016",
-      "source_scene_id": "SEG02"
+      "source_beat_id": "SEG03_B011",
+      "source_scene_id": "SEG03"
     },
     {
       "shot_id": "S10_10",
       "scene": "Scene3",
-      "purpose": "에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈—",
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
+      "purpose": "With a blueprint, you start with the foundation. Then the frame. Then the walls. There'...",
+      "visual_type": "explainer",
+      "characters": [],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈—",
-          "emotion": "자신만만하게"
+          "speaker": "narrator",
+          "text": "With a blueprint, you start with the foundation. Then the frame. Then the walls. There's an order. Each piece knows where it goes.",
+          "emotion": ""
         }
       ],
       "shorts_candidate": false,
-      "kontext_prompt": "에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈—. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: 에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈— Narrative reference for action direction: 에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈— CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
-      "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Left side: a blueprint unfolds. Blue lines trace the outline of a building. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
       "duration_sec": 8.0,
       "aspect_ratio": "16:9",
       "resolution": "832x480",
       "seed": 1300010,
       "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
       "mode": "i2v",
-      "input_image": "S10_10_keyframe.png",
+      "input_image": null,
       "output_name": "S10_10.mp4",
-      "source_beat_id": "SEG02_B017",
-      "source_scene_id": "SEG02"
+      "source_beat_id": "SEG03_B013",
+      "source_scene_id": "SEG03"
     },
     {
       "shot_id": "S11_11",
       "scene": "Scene3",
-      "purpose": "...뭐가 다른데?",
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "vee",
-          "text": "...뭐가 다른데?",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "kontext_prompt": "...뭐가 다른데?. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: ...뭐가 다른데? Narrative reference for action direction: ...뭐가 다른데? CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
-      "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
-      "duration_sec": 8.0,
-      "aspect_ratio": "16:9",
-      "resolution": "832x480",
-      "seed": 1300011,
-      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
-      "mode": "i2v",
-      "input_image": "S11_11_keyframe.png",
-      "output_name": "S11_11.mp4",
-      "source_beat_id": "SEG02_B019",
-      "source_scene_id": "SEG02"
-    },
-    {
-      "shot_id": "S12_12",
-      "scene": "Scene3",
-      "purpose": "여기 빈 땅이 있습니다.",
+      "purpose": "Without a blueprint?",
       "visual_type": "explainer",
       "characters": [],
       "dialogue": [
         {
           "speaker": "narrator",
-          "text": "여기 빈 땅이 있습니다.",
+          "text": "Without a blueprint?",
           "emotion": ""
         }
       ],
-      "shorts_candidate": true,
+      "shorts_candidate": false,
       "kontext_prompt": null,
-      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Bee가 떠난 뒤 전환. \"스펙 = 설계도\" 메타포. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Foundation → frame → walls → roof. Geometric building assembles in sequence. Clean. Stable. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
+      "duration_sec": 6.93,
+      "aspect_ratio": "16:9",
+      "resolution": "832x480",
+      "seed": 1300011,
+      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+      "mode": "i2v",
+      "input_image": null,
+      "output_name": "S11_11.mp4",
+      "source_beat_id": "SEG03_B014",
+      "source_scene_id": "SEG03"
+    },
+    {
+      "shot_id": "S12_12",
+      "scene": "Scene3",
+      "purpose": "You just... stack. And it goes up. It actually goes up.",
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "You just... stack. And it goes up. It actually goes up.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false,
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Right side: colorful blocks drop from above, piling randomly. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
       "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
       "duration_sec": 8.0,
       "aspect_ratio": "16:9",
@@ -371,27 +361,27 @@
       "mode": "i2v",
       "input_image": null,
       "output_name": "S12_12.mp4",
-      "source_beat_id": "SEG03_B021",
+      "source_beat_id": "SEG03_B015",
       "source_scene_id": "SEG03"
     },
     {
       "shot_id": "S13_13",
       "scene": "Scene4",
-      "purpose": "설계도가 있으면 기둥부터 세웁니다. 기둥 위에 보를 얹습니다. 보 위에 바닥을 깝니다. 순서가 있습니다.",
+      "purpose": "Then...",
       "visual_type": "explainer",
       "characters": [],
       "dialogue": [
         {
           "speaker": "narrator",
-          "text": "설계도가 있으면 기둥부터 세웁니다. 기둥 위에 보를 얹습니다. 보 위에 바닥을 깝니다. 순서가 있습니다.",
+          "text": "Then...",
           "emotion": ""
         }
       ],
       "shorts_candidate": false,
       "kontext_prompt": null,
-      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. 왼쪽: 설계도가 펼쳐진다. 파란 라인으로 건물 윤곽이 그려진다. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. The pile wobbles. Pauses. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
       "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
-      "duration_sec": 8.0,
+      "duration_sec": 6.93,
       "aspect_ratio": "16:9",
       "resolution": "832x480",
       "seed": 1300013,
@@ -399,25 +389,25 @@
       "mode": "i2v",
       "input_image": null,
       "output_name": "S13_13.mp4",
-      "source_beat_id": "SEG03_B023",
+      "source_beat_id": "SEG03_B017",
       "source_scene_id": "SEG03"
     },
     {
       "shot_id": "S14_14",
       "scene": "Scene4",
-      "purpose": "그냥 쌓습니다. 올라가긴 올라갑니다.",
+      "purpose": "A spec is a blueprint. It's not a hundred-page document. It's one sentence: \"What am I...",
       "visual_type": "explainer",
       "characters": [],
       "dialogue": [
         {
           "speaker": "narrator",
-          "text": "그냥 쌓습니다. 올라가긴 올라갑니다.",
+          "text": "A spec is a blueprint. It's not a hundred-page document. It's one sentence: \"What am I building?\"",
           "emotion": ""
         }
       ],
       "shorts_candidate": false,
       "kontext_prompt": null,
-      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. 오른쪽: 다양한 색상의 블록이 아무렇게나 쌓인다. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Collapse. Blocks scatter everywhere. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
       "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
       "duration_sec": 8.0,
       "aspect_ratio": "16:9",
@@ -427,27 +417,27 @@
       "mode": "i2v",
       "input_image": null,
       "output_name": "S14_14.mp4",
-      "source_beat_id": "SEG03_B025",
+      "source_beat_id": "SEG03_B018",
       "source_scene_id": "SEG03"
     },
     {
       "shot_id": "S15_15",
       "scene": "Scene4",
-      "purpose": "그리고.",
+      "purpose": "You don't need to know every detail upfront.",
       "visual_type": "explainer",
       "characters": [],
       "dialogue": [
         {
           "speaker": "narrator",
-          "text": "그리고.",
+          "text": "You don't need to know every detail upfront.",
           "emotion": ""
         }
       ],
       "shorts_candidate": false,
       "kontext_prompt": null,
-      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. 블록이 좌우로 흔들린다. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Back to the blueprint side. Clean building standing tall. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
       "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
-      "duration_sec": 8.0,
+      "duration_sec": 7.32,
       "aspect_ratio": "16:9",
       "resolution": "832x480",
       "seed": 1300015,
@@ -455,25 +445,25 @@
       "mode": "i2v",
       "input_image": null,
       "output_name": "S15_15.mp4",
-      "source_beat_id": "SEG03_B027",
+      "source_beat_id": "SEG03_B019",
       "source_scene_id": "SEG03"
     },
     {
       "shot_id": "S16_16",
       "scene": "Scene4",
-      "purpose": "스펙은 설계도입니다. \"뭘 만들 건지\" 적어둔 것.",
+      "purpose": "You can always make it bigger later. But you have to know what \"it\" is first.",
       "visual_type": "explainer",
       "characters": [],
       "dialogue": [
         {
           "speaker": "narrator",
-          "text": "스펙은 설계도입니다. \"뭘 만들 건지\" 적어둔 것.",
+          "text": "You can always make it bigger later. But you have to know what \"it\" is first.",
           "emotion": ""
         }
       ],
       "shorts_candidate": false,
       "kontext_prompt": null,
-      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. 와르르 무너진다. 블록 파편이 흩어진다. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. New scene. A small skateboard rolls into frame. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
       "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
       "duration_sec": 8.0,
       "aspect_ratio": "16:9",
@@ -483,27 +473,27 @@
       "mode": "i2v",
       "input_image": null,
       "output_name": "S16_16.mp4",
-      "source_beat_id": "SEG03_B028",
+      "source_beat_id": "SEG03_B021",
       "source_scene_id": "SEG03"
     },
     {
       "shot_id": "S17_17",
       "scene": "Scene5",
-      "purpose": "이렇게 됩니다.",
+      "purpose": "That one line? That's where a spec starts.",
       "visual_type": "explainer",
       "characters": [],
       "dialogue": [
         {
           "speaker": "narrator",
-          "text": "이렇게 됩니다.",
+          "text": "That one line? That's where a spec starts.",
           "emotion": ""
         }
       ],
       "shorts_candidate": false,
       "kontext_prompt": null,
-      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. 건물 위에서 줌아웃. 도시 전경이 보인다. 도로, 건물, 공원. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Skateboard morphs into a bicycle. Bicycle morphs into a car. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
       "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
-      "duration_sec": 8.0,
+      "duration_sec": 7.32,
       "aspect_ratio": "16:9",
       "resolution": "832x480",
       "seed": 1300017,
@@ -511,41 +501,13 @@
       "mode": "i2v",
       "input_image": null,
       "output_name": "S17_17.mp4",
-      "source_beat_id": "SEG03_B030",
+      "source_beat_id": "SEG03_B022",
       "source_scene_id": "SEG03"
     },
     {
       "shot_id": "S18_18",
       "scene": "Scene5",
-      "purpose": "작게 시작해서 키우는 것. 그게 되려면 처음에 \"이건 스케이트보드다\"라고 적어야 합니다. 그 한 줄이 스펙의 시작입니다.",
-      "visual_type": "explainer",
-      "characters": [],
-      "dialogue": [
-        {
-          "speaker": "narrator",
-          "text": "작게 시작해서 키우는 것. 그게 되려면 처음에 \"이건 스케이트보드다\"라고 적어야 합니다. 그 한 줄이 스펙의 시작입니다.",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "kontext_prompt": null,
-      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. 새 장면. 작은 스케이트보드. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
-      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
-      "duration_sec": 8.0,
-      "aspect_ratio": "16:9",
-      "resolution": "832x480",
-      "seed": 1300018,
-      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
-      "mode": "i2v",
-      "input_image": null,
-      "output_name": "S18_18.mp4",
-      "source_beat_id": "SEG03_B032",
-      "source_scene_id": "SEG03"
-    },
-    {
-      "shot_id": "S19_19",
-      "scene": "Scene5",
-      "purpose": "이게 뭘 해야 하냐면... 파일이 동기화되고... 어디서든 접속하고...",
+      "purpose": "Back in the present. Everything still broken.",
       "visual_type": "sitcom",
       "characters": [
         "vee",
@@ -553,14 +515,45 @@
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "이게 뭘 해야 하냐면... 파일이 동기화되고... 어디서든 접속하고...",
-          "emotion": "쓰면서"
+          "speaker": "narrator",
+          "text": "Back in the present. Everything still broken.",
+          "emotion": ""
         }
       ],
       "shorts_candidate": false,
-      "kontext_prompt": "Vee가 모니터를 끈다. 종이와 연필을 꺼낸다. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Vee가 모니터를 끈다. 종이와 연필을 꺼낸다. Narrative reference for action direction: 이게 뭘 해야 하냐면... 파일이 동기화되고... 어디서든 접속하고... CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "kontext_prompt": "Vee alone. Stops coding. Writes frustrations on paper. Discovers what she's building. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Vee alone. Stops coding. Writes frustrations on paper. Discovers what she's building. Narrative reference for action direction: Back in the present. Everything still broken. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
+      "duration_sec": 6.93,
+      "aspect_ratio": "16:9",
+      "resolution": "832x480",
+      "seed": 1300018,
+      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+      "mode": "i2v",
+      "input_image": "S18_18_keyframe.png",
+      "output_name": "S18_18.mp4",
+      "source_beat_id": "SEG04_B023",
+      "source_scene_id": "SEG04"
+    },
+    {
+      "shot_id": "S19_19",
+      "scene": "Scene5",
+      "purpose": "And then she did something unusual. She stopped coding.",
+      "visual_type": "sitcom",
+      "characters": [
+        "vee",
+        "bee"
+      ],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And then she did something unusual. She stopped coding.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false,
+      "kontext_prompt": "Five monitors. Red errors. Vee's hands hover over the keyboard. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Five monitors. Red errors. Vee's hands hover over the keyboard. Narrative reference for action direction: And then she did something unusual. She stopped coding. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
       "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
       "duration_sec": 8.0,
       "aspect_ratio": "16:9",
@@ -570,13 +563,13 @@
       "mode": "i2v",
       "input_image": "S19_19_keyframe.png",
       "output_name": "S19_19.mp4",
-      "source_beat_id": "SEG04_B034",
+      "source_beat_id": "SEG04_B024",
       "source_scene_id": "SEG04"
     },
     {
       "shot_id": "S20_20",
       "scene": "Scene5",
-      "purpose": "진짜?",
+      "purpose": "And there it was. The question she'd been avoiding.",
       "visual_type": "sitcom",
       "characters": [
         "vee",
@@ -584,14 +577,14 @@
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "진짜?",
-          "emotion": "멈추며"
+          "speaker": "narrator",
+          "text": "And there it was. The question she'd been avoiding.",
+          "emotion": ""
         }
       ],
       "shorts_candidate": false,
-      "kontext_prompt": "종이에 항목이 적혀간다. 서툴지만 구체적. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: 종이에 항목이 적혀간다. 서툴지만 구체적. Narrative reference for action direction: 진짜? CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "kontext_prompt": "She pulls her hands back. Pushes the chair away from the desk. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: She pulls her hands back. Pushes the chair away from the desk. Narrative reference for action direction: And there it was. The question she'd been avoiding. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
       "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
       "duration_sec": 8.0,
       "aspect_ratio": "16:9",
@@ -601,13 +594,13 @@
       "mode": "i2v",
       "input_image": "S20_20_keyframe.png",
       "output_name": "S20_20.mp4",
-      "source_beat_id": "SEG04_B036",
+      "source_beat_id": "SEG04_B026",
       "source_scene_id": "SEG04"
     },
     {
       "shot_id": "S21_21",
       "scene": "Scene6",
-      "purpose": "기능 말고. 이걸 왜 만드는 건데.",
+      "purpose": "Not features. Not tools. The reason. The one sentence that explains everything.",
       "visual_type": "sitcom",
       "characters": [
         "vee",
@@ -615,14 +608,14 @@
       ],
       "dialogue": [
         {
-          "speaker": "bee",
-          "text": "기능 말고. 이걸 왜 만드는 건데.",
-          "emotion": "한숨"
+          "speaker": "narrator",
+          "text": "Not features. Not tools. The reason. The one sentence that explains everything.",
+          "emotion": ""
         }
       ],
       "shorts_candidate": false,
-      "kontext_prompt": "Vee 살짝 웃는다. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Vee 살짝 웃는다. Narrative reference for action direction: 기능 말고. 이걸 왜 만드는 건데. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "kontext_prompt": "Vee opens a desk drawer. Pulls out paper and a pencil. Turns her back to the monitors. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Vee opens a desk drawer. Pulls out paper and a pencil. Turns her back to the monitors. Narrative reference for action direction: Not features. Not tools. The reason. The one sentence that explains everything. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
       "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
       "duration_sec": 8.0,
       "aspect_ratio": "16:9",
@@ -632,13 +625,13 @@
       "mode": "i2v",
       "input_image": "S21_21_keyframe.png",
       "output_name": "S21_21.mp4",
-      "source_beat_id": "SEG04_B038",
+      "source_beat_id": "SEG04_B027",
       "source_scene_id": "SEG04"
     },
     {
       "shot_id": "S22_22",
       "scene": "Scene6",
-      "purpose": "...밖에서도 집 컴퓨터를 쓰고 싶으니까.",
+      "purpose": "The same errors. But now, one line makes sense.",
       "visual_type": "sitcom",
       "characters": [
         "vee",
@@ -646,14 +639,14 @@
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "...밖에서도 집 컴퓨터를 쓰고 싶으니까.",
-          "emotion": "생각하다"
+          "speaker": "narrator",
+          "text": "The same errors. But now, one line makes sense.",
+          "emotion": ""
         }
       ],
       "shorts_candidate": false,
-      "kontext_prompt": "...밖에서도 집 컴퓨터를 쓰고 싶으니까. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: ...밖에서도 집 컴퓨터를 쓰고 싶으니까. Narrative reference for action direction: ...밖에서도 집 컴퓨터를 쓰고 싶으니까. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "kontext_prompt": "CU: Paper. Messy handwriting appears:. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: CU: Paper. Messy handwriting appears: Narrative reference for action direction: The same errors. But now, one line makes sense. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
       "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
       "duration_sec": 8.0,
       "aspect_ratio": "16:9",
@@ -663,13 +656,13 @@
       "mode": "i2v",
       "input_image": "S22_22_keyframe.png",
       "output_name": "S22_22.mp4",
-      "source_beat_id": "SEG04_B039",
+      "source_beat_id": "SEG04_B028",
       "source_scene_id": "SEG04"
     },
     {
       "shot_id": "S23_23",
       "scene": "Scene6",
-      "purpose": "...읽을 수는 있네.",
+      "purpose": "But now she knows what to fix.",
       "visual_type": "sitcom",
       "characters": [
         "vee",
@@ -677,16 +670,16 @@
       ],
       "dialogue": [
         {
-          "speaker": "bee",
-          "text": "...읽을 수는 있네.",
-          "emotion": "눈을 안 마주치며"
+          "speaker": "narrator",
+          "text": "But now she knows what to fix.",
+          "emotion": ""
         }
       ],
       "shorts_candidate": false,
-      "kontext_prompt": "...읽을 수는 있네. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: ...읽을 수는 있네. Narrative reference for action direction: ...읽을 수는 있네. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "kontext_prompt": "**Exact same composition as HOOK.** Five monitors. Red errors. Dark room. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: **Exact same composition as HOOK.** Five monitors. Red errors. Dark room. Narrative reference for action direction: But now she knows what to fix. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
       "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
-      "duration_sec": 8.0,
+      "duration_sec": 6.93,
       "aspect_ratio": "16:9",
       "resolution": "832x480",
       "seed": 1300023,
@@ -694,29 +687,30 @@
       "mode": "i2v",
       "input_image": "S23_23_keyframe.png",
       "output_name": "S23_23.mp4",
-      "source_beat_id": "SEG04_B041",
-      "source_scene_id": "SEG04"
+      "source_beat_id": "SEG05_B030",
+      "source_scene_id": "SEG05"
     },
     {
       "shot_id": "S24_24",
       "scene": "Scene6",
-      "purpose": "근데... 이 설계도가 맞긴 한 거야?",
+      "purpose": "...at least, she thinks she does.",
       "visual_type": "sitcom",
       "characters": [
-        "vee"
+        "vee",
+        "bee"
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "근데... 이 설계도가 맞긴 한 거야?",
+          "speaker": "narrator",
+          "text": "...at least, she thinks she does.",
           "emotion": ""
         }
       ],
       "shorts_candidate": false,
-      "kontext_prompt": "Vee가 벽에 종이를 핀으로 꽂는다. \"밖에서도 집 컴퓨터를 쓰고 싶다.\". 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
-      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts). Primary action goal: Vee가 벽에 종이를 핀으로 꽂는다. \"밖에서도 집 컴퓨터를 쓰고 싶다.\" Narrative reference for action direction: 근데... 이 설계도가 맞긴 한 거야? CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "kontext_prompt": "Vee sits in her chair. The mug is in the same spot. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "prompt_positive": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Vee sits in her chair. The mug is in the same spot. Narrative reference for action direction: ...at least, she thinks she does. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
       "prompt_negative": "text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
-      "duration_sec": 8.0,
+      "duration_sec": 6.93,
       "aspect_ratio": "16:9",
       "resolution": "832x480",
       "seed": 1300024,
@@ -724,16 +718,16 @@
       "mode": "i2v",
       "input_image": "S24_24_keyframe.png",
       "output_name": "S24_24.mp4",
-      "source_beat_id": "SEG05_B043",
+      "source_beat_id": "SEG05_B031",
       "source_scene_id": "SEG05"
     }
   ],
   "source_preproduction": "systems/video/preproduction/ep01/ep01_prepro_manifest.json",
   "selection_summary": {
-    "total_beats": 43,
+    "total_beats": 31,
     "selected_beats": 24,
-    "target_duration_sec": 290.0,
-    "actual_duration_sec": 192.0,
+    "target_duration_sec": 180.0,
+    "actual_duration_sec": 179.96,
     "timing_source": "estimate",
     "mode": "i2v"
   }

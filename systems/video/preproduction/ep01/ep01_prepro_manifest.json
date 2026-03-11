@@ -1,9 +1,10 @@
 {
   "project_id": "ep01",
-  "title": "EP01 — 그냥 만들면 되지",
+  "title": "EP01 — Just Build It",
+  "language": "en",
   "total_duration_sec": 290,
   "segment_count": 5,
-  "beat_count": 43,
+  "beat_count": 31,
   "phases": [
     {
       "phase_id": "SEG01",
@@ -14,19 +15,19 @@
         {
           "beat_id": "SEG01_B001",
           "scene_id": "SEG01",
-          "text": "됐다!",
-          "narration_text": "됐다!",
-          "visual_goal": "Vee 자축 → 폭발. 결과부터 보여준다.",
-          "duration_sec": 1.5,
+          "text": "This is the moment every vibe coder lives for.",
+          "narration_text": "This is the moment every vibe coder lives for.",
+          "visual_goal": "Vee celebrates → explosion. Show the result first.",
+          "duration_sec": 3.6,
           "visual_type": "sitcom",
           "characters": [
             "vee"
           ],
           "dialogue": [
             {
-              "speaker": "vee",
-              "text": "됐다!",
-              "emotion": "활짝 웃으며, 두 팔 벌려"
+              "speaker": "narrator",
+              "text": "This is the moment every vibe coder lives for.",
+              "emotion": ""
             }
           ],
           "shorts_candidate": true
@@ -34,18 +35,18 @@
         {
           "beat_id": "SEG01_B002",
           "scene_id": "SEG01",
-          "text": "다섯 개. 에이전트 다섯 개. 사흘 만에.",
-          "narration_text": "다섯 개. 에이전트 다섯 개. 사흘 만에.",
-          "visual_goal": "모니터 다섯 개가 빛나는 어두운 방. Vee가 의자에 기대앉아 있다. 모니터마다 코드, 대시보드, 터미널이 돌아간다.",
-          "duration_sec": 9.2,
+          "text": "You asked AI to build it. And it did. All of it.",
+          "narration_text": "You asked AI to build it. And it did. All of it.",
+          "visual_goal": "Five monitors glow in a dark room. Vee leans back in her chair. Each screen shows code, dashboards, terminals — all running.",
+          "duration_sec": 4.8,
           "visual_type": "sitcom",
           "characters": [
             "vee"
           ],
           "dialogue": [
             {
-              "speaker": "vee",
-              "text": "다섯 개. 에이전트 다섯 개. 사흘 만에.",
+              "speaker": "narrator",
+              "text": "You asked AI to build it. And it did. All of it.",
               "emotion": ""
             }
           ],
@@ -54,9 +55,9 @@
         {
           "beat_id": "SEG01_B003",
           "scene_id": "SEG01",
-          "text": "...뭐?",
-          "narration_text": "...뭐?",
-          "visual_goal": "화면에 \"BUILD SUCCESS\" 초록 불. Vee가 머그컵을 들어올린다.",
+          "text": "And then, three seconds later...",
+          "narration_text": "And then, three seconds later...",
+          "visual_goal": "Vee throws both arms up. Eyes wide. Huge grin. \"BUILD SUCCESS\" flashes green on every screen.",
           "duration_sec": 2.0,
           "visual_type": "sitcom",
           "characters": [
@@ -64,15 +65,34 @@
           ],
           "dialogue": [
             {
-              "speaker": "vee",
-              "text": "...뭐?",
-              "emotion": "작은 목소리로"
+              "speaker": "narrator",
+              "text": "And then, three seconds later...",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG01_B004",
+          "scene_id": "SEG01",
+          "text": "...it all falls apart.",
+          "narration_text": "...it all falls apart.",
+          "visual_goal": "BEAT: 1 second of silence. One monitor flickers.",
+          "duration_sec": 1.6,
+          "visual_type": "sitcom",
+          "characters": [
+            "vee"
+          ],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "...it all falls apart.",
+              "emotion": ""
             }
           ],
           "shorts_candidate": false
         }
-      ],
-      "actual_duration_sec": 6.65
+      ]
     },
     {
       "phase_id": "SEG02",
@@ -81,221 +101,11 @@
       "target_duration_sec": 75,
       "beats": [
         {
-          "beat_id": "SEG02_B004",
-          "scene_id": "SEG02",
-          "text": "투두리스트 앱 만들어줘.",
-          "narration_text": "투두리스트 앱 만들어줘.",
-          "visual_goal": "3일 전으로 돌아간다. Vee의 바이브코딩 여정과 Bee 첫 등장.",
-          "duration_sec": 5.2,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "vee",
-              "text": "투두리스트 앱 만들어줘.",
-              "emotion": "타이핑하며"
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
           "beat_id": "SEG02_B005",
           "scene_id": "SEG02",
-          "text": "어? 복붙 안 해도 돼?",
-          "narration_text": "어? 복붙 안 해도 돼?",
-          "visual_goal": "밝은 방. Vee가 모니터 앞에 앉아 있다. 터미널이 열려 있다.",
-          "duration_sec": 5.2,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "vee",
-              "text": "어? 복붙 안 해도 돼?",
-              "emotion": "눈 커지며"
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG02_B006",
-          "scene_id": "SEG02",
-          "text": "5분! 이게 5분!",
-          "narration_text": "5분! 이게 5분!",
-          "visual_goal": "BEAT: 터미널에서 파일이 자동 생성된다. 폴더, 코드, 패키지.",
-          "duration_sec": 4.0,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "vee",
-              "text": "5분! 이게 5분!",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG02_B007",
-          "scene_id": "SEG02",
-          "text": "메모 앱. 됐다. 데이터베이스. 됐다. 로그인. 됐다.",
-          "narration_text": "메모 앱. 됐다. 데이터베이스. 됐다. 로그인. 됐다.",
-          "visual_goal": "브라우저에 투두리스트 앱이 뜬다. Vee 의자에서 벌떡.",
-          "duration_sec": 12.0,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "vee",
-              "text": "메모 앱. 됐다. 데이터베이스. 됐다. 로그인. 됐다.",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG02_B008",
-          "scene_id": "SEG02",
-          "text": "이거면 뭐든 만들겠는데?",
-          "narration_text": "이거면 뭐든 만들겠는데?",
-          "visual_goal": "MONTAGE: Vee가 연달아 시킨다. 화면이 빠르게 전환.",
-          "duration_sec": 5.2,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "vee",
-              "text": "이거면 뭐든 만들겠는데?",
-              "emotion": "자신만만"
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG02_B009",
-          "scene_id": "SEG02",
-          "text": "주식 스크리너! 586개 종목!",
-          "narration_text": "주식 스크리너! 586개 종목!",
-          "visual_goal": "Vee 책상 위 모니터 옆, 작은 꿀벌이 앉아 있다. BEE. 날개를 접고 눈을 감고 있다.",
-          "duration_sec": 6.8,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "vee",
-              "text": "주식 스크리너! 586개 종목!",
-              "emotion": "못 봄, 계속 타이핑"
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG02_B010",
-          "scene_id": "SEG02",
-          "text": "...뭐 하는 거야.",
-          "narration_text": "...뭐 하는 거야.",
-          "visual_goal": "...뭐 하는 거야.",
-          "duration_sec": 4.4,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "bee",
-              "text": "...뭐 하는 거야.",
-              "emotion": "한쪽 눈 뜨며"
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG02_B011",
-          "scene_id": "SEG02",
-          "text": "엇, 너 누구야?",
-          "narration_text": "엇, 너 누구야?",
-          "visual_goal": "엇, 너 누구야?",
-          "duration_sec": 3.6,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "vee",
-              "text": "엇, 너 누구야?",
-              "emotion": "깜짝"
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG02_B012",
-          "scene_id": "SEG02",
-          "text": "됐고. 근데 그거.",
-          "narration_text": "됐고. 근데 그거.",
-          "visual_goal": "됐고. 근데 그거.",
-          "duration_sec": 4.0,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "bee",
-              "text": "됐고. 근데 그거.",
-              "emotion": "한숨"
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG02_B013",
-          "scene_id": "SEG02",
-          "text": "응?",
-          "narration_text": "응?",
-          "visual_goal": "응?",
-          "duration_sec": 1.5,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "vee",
-              "text": "응?",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG02_B014",
-          "scene_id": "SEG02",
-          "text": "스펙이 뭔데.",
-          "narration_text": "스펙이 뭔데.",
-          "visual_goal": "스펙이 뭔데.",
+          "text": "Three days ago, Vee discovered something magical.",
+          "narration_text": "Three days ago, Vee discovered something magical.",
+          "visual_goal": "Three days earlier. Vee's vibe coding montage. Bee's first appearance.",
           "duration_sec": 2.8,
           "visual_type": "sitcom",
           "characters": [
@@ -304,19 +114,61 @@
           ],
           "dialogue": [
             {
-              "speaker": "bee",
-              "text": "스펙이 뭔데.",
+              "speaker": "narrator",
+              "text": "Three days ago, Vee discovered something magical.",
               "emotion": ""
             }
           ],
           "shorts_candidate": false
         },
         {
-          "beat_id": "SEG02_B015",
+          "beat_id": "SEG02_B006",
           "scene_id": "SEG02",
-          "text": "...스펙?",
-          "narration_text": "...스펙?",
-          "visual_goal": "...스펙?",
+          "text": "You type what you want. AI builds it. Five minutes. Done.",
+          "narration_text": "You type what you want. AI builds it. Five minutes. Done.",
+          "visual_goal": "Bright room. Vee sits at her monitor. Terminal open.",
+          "duration_sec": 4.4,
+          "visual_type": "sitcom",
+          "characters": [
+            "vee",
+            "bee"
+          ],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "You type what you want. AI builds it. Five minutes. Done.",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG02_B007",
+          "scene_id": "SEG02",
+          "text": "A to-do app. Done. A database. Done. A login page. Done.",
+          "narration_text": "A to-do app. Done. A database. Done. A login page. Done.",
+          "visual_goal": "Vee types. Files auto-generate on screen. Folders, code, packages — appearing from nothing.",
+          "duration_sec": 4.4,
+          "visual_type": "sitcom",
+          "characters": [
+            "vee",
+            "bee"
+          ],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "A to-do app. Done. A database. Done. A login page. Done.",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG02_B008",
+          "scene_id": "SEG02",
+          "text": "She thought she could build anything.",
+          "narration_text": "She thought she could build anything.",
+          "visual_goal": "Vee's eyes go wide. She jumps out of her chair.",
           "duration_sec": 2.4,
           "visual_type": "sitcom",
           "characters": [
@@ -325,358 +177,19 @@
           ],
           "dialogue": [
             {
-              "speaker": "vee",
-              "text": "...스펙?",
-              "emotion": "멈칫"
+              "speaker": "narrator",
+              "text": "She thought she could build anything.",
+              "emotion": ""
             }
           ],
           "shorts_candidate": false
         },
         {
-          "beat_id": "SEG02_B016",
+          "beat_id": "SEG02_B009",
           "scene_id": "SEG02",
-          "text": "니가 만드는 거. 뭐야. 뭘 만드는 건데.",
-          "narration_text": "니가 만드는 거. 뭐야. 뭘 만드는 건데.",
-          "visual_goal": "니가 만드는 거. 뭐야. 뭘 만드는 건데.",
-          "duration_sec": 9.2,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "bee",
-              "text": "니가 만드는 거. 뭐야. 뭘 만드는 건데.",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG02_B017",
-          "scene_id": "SEG02",
-          "text": "에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈—",
-          "narration_text": "에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈—",
-          "visual_goal": "에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈—",
-          "duration_sec": 12.8,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "vee",
-              "text": "에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈—",
-              "emotion": "자신만만하게"
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG02_B018",
-          "scene_id": "SEG02",
-          "text": "그건 기능이지 스펙이 아니야.",
-          "narration_text": "그건 기능이지 스펙이 아니야.",
-          "visual_goal": "그건 기능이지 스펙이 아니야.",
-          "duration_sec": 6.4,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "bee",
-              "text": "그건 기능이지 스펙이 아니야.",
-              "emotion": "끊으며"
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG02_B019",
-          "scene_id": "SEG02",
-          "text": "...뭐가 다른데?",
-          "narration_text": "...뭐가 다른데?",
-          "visual_goal": "...뭐가 다른데?",
-          "duration_sec": 4.0,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "vee",
-              "text": "...뭐가 다른데?",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG02_B020",
-          "scene_id": "SEG02",
-          "text": "됐다. 알아서 해.",
-          "narration_text": "됐다. 알아서 해.",
-          "visual_goal": "됐다. 알아서 해.",
-          "duration_sec": 4.0,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "bee",
-              "text": "됐다. 알아서 해.",
-              "emotion": "날개 접으며, 등 돌리고"
-            }
-          ],
-          "shorts_candidate": false
-        }
-      ],
-      "actual_duration_sec": 60.72
-    },
-    {
-      "phase_id": "SEG03",
-      "phase_name": "EXPLAINER",
-      "visual_type": "explainer",
-      "target_duration_sec": 100,
-      "beats": [
-        {
-          "beat_id": "SEG03_B021",
-          "scene_id": "SEG03",
-          "text": "여기 빈 땅이 있습니다.",
-          "narration_text": "여기 빈 땅이 있습니다.",
-          "visual_goal": "Bee가 떠난 뒤 전환. \"스펙 = 설계도\" 메타포.",
-          "duration_sec": 5.2,
-          "visual_type": "explainer",
-          "characters": [],
-          "dialogue": [
-            {
-              "speaker": "narrator",
-              "text": "여기 빈 땅이 있습니다.",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": true
-        },
-        {
-          "beat_id": "SEG03_B022",
-          "scene_id": "SEG03",
-          "text": "건물을 올리려고 합니다.",
-          "narration_text": "건물을 올리려고 합니다.",
-          "visual_goal": "넓고 어두운 네이비 평면. 가운데 빈 공간.",
-          "duration_sec": 5.2,
-          "visual_type": "explainer",
-          "characters": [],
-          "dialogue": [
-            {
-              "speaker": "narrator",
-              "text": "건물을 올리려고 합니다.",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG03_B023",
-          "scene_id": "SEG03",
-          "text": "설계도가 있으면 기둥부터 세웁니다. 기둥 위에 보를 얹습니다. 보 위에 바닥을 깝니다. 순서가 있습니다.",
-          "narration_text": "설계도가 있으면 기둥부터 세웁니다. 기둥 위에 보를 얹습니다. 보 위에 바닥을 깝니다. 순서가 있습니다.",
-          "visual_goal": "왼쪽: 설계도가 펼쳐진다. 파란 라인으로 건물 윤곽이 그려진다.",
-          "duration_sec": 23.2,
-          "visual_type": "explainer",
-          "characters": [],
-          "dialogue": [
-            {
-              "speaker": "narrator",
-              "text": "설계도가 있으면 기둥부터 세웁니다. 기둥 위에 보를 얹습니다. 보 위에 바닥을 깝니다. 순서가 있습니다.",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG03_B024",
-          "scene_id": "SEG03",
-          "text": "설계도가 없으면?",
-          "narration_text": "설계도가 없으면?",
-          "visual_goal": "기둥 → 보 → 바닥 → 벽. 순서대로 조립되는 기하학적 건물.",
-          "duration_sec": 3.6,
-          "visual_type": "explainer",
-          "characters": [],
-          "dialogue": [
-            {
-              "speaker": "narrator",
-              "text": "설계도가 없으면?",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG03_B025",
-          "scene_id": "SEG03",
-          "text": "그냥 쌓습니다. 올라가긴 올라갑니다.",
-          "narration_text": "그냥 쌓습니다. 올라가긴 올라갑니다.",
-          "visual_goal": "오른쪽: 다양한 색상의 블록이 아무렇게나 쌓인다.",
-          "duration_sec": 8.0,
-          "visual_type": "explainer",
-          "characters": [],
-          "dialogue": [
-            {
-              "speaker": "narrator",
-              "text": "그냥 쌓습니다. 올라가긴 올라갑니다.",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG03_B026",
-          "scene_id": "SEG03",
-          "text": "근데 흔들립니다.",
-          "narration_text": "근데 흔들립니다.",
-          "visual_goal": "블록 더미가 점점 높아진다. 기울어지기 시작한다.",
-          "duration_sec": 3.6,
-          "visual_type": "explainer",
-          "characters": [],
-          "dialogue": [
-            {
-              "speaker": "narrator",
-              "text": "근데 흔들립니다.",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG03_B027",
-          "scene_id": "SEG03",
-          "text": "그리고.",
-          "narration_text": "그리고.",
-          "visual_goal": "블록이 좌우로 흔들린다.",
-          "duration_sec": 1.6,
-          "visual_type": "explainer",
-          "characters": [],
-          "dialogue": [
-            {
-              "speaker": "narrator",
-              "text": "그리고.",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG03_B028",
-          "scene_id": "SEG03",
-          "text": "스펙은 설계도입니다. \"뭘 만들 건지\" 적어둔 것.",
-          "narration_text": "스펙은 설계도입니다. \"뭘 만들 건지\" 적어둔 것.",
-          "visual_goal": "와르르 무너진다. 블록 파편이 흩어진다.",
-          "duration_sec": 11.2,
-          "visual_type": "explainer",
-          "characters": [],
-          "dialogue": [
-            {
-              "speaker": "narrator",
-              "text": "스펙은 설계도입니다. \"뭘 만들 건지\" 적어둔 것.",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG03_B029",
-          "scene_id": "SEG03",
-          "text": "도시를 만들려면 도시 전체의 지도가 필요합니다. 건물 하나만 짓는 게 아니니까. 도로가 어디로 가는지. 건물이 어디 서는지. 그걸 안 정하고 짓기 시작하면.",
-          "narration_text": "도시를 만들려면 도시 전체의 지도가 필요합니다. 건물 하나만 짓는 게 아니니까. 도로가 어디로 가는지. 건물이 어디 서는지. 그걸 안 정하고 짓기 시작하면.",
-          "visual_goal": "다시 설계도 쪽. 깔끔하게 서 있는 건물.",
-          "duration_sec": 34.8,
-          "visual_type": "explainer",
-          "characters": [],
-          "dialogue": [
-            {
-              "speaker": "narrator",
-              "text": "도시를 만들려면 도시 전체의 지도가 필요합니다. 건물 하나만 짓는 게 아니니까. 도로가 어디로 가는지. 건물이 어디 서는지. 그걸 안 정하고 짓기 시작하면.",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG03_B030",
-          "scene_id": "SEG03",
-          "text": "이렇게 됩니다.",
-          "narration_text": "이렇게 됩니다.",
-          "visual_goal": "건물 위에서 줌아웃. 도시 전경이 보인다. 도로, 건물, 공원.",
-          "duration_sec": 3.2,
-          "visual_type": "explainer",
-          "characters": [],
-          "dialogue": [
-            {
-              "speaker": "narrator",
-              "text": "이렇게 됩니다.",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG03_B031",
-          "scene_id": "SEG03",
-          "text": "처음부터 완벽한 건 필요 없습니다. 스케이트보드면 됩니다. 굴러가는 것. 탈 수 있는 것. 그것만.",
-          "narration_text": "처음부터 완벽한 건 필요 없습니다. 스케이트보드면 됩니다. 굴러가는 것. 탈 수 있는 것. 그것만.",
-          "visual_goal": "도시 전경에서 건물들이 도로를 막고, 교차로가 엉키고, 길이 막힌다.",
-          "duration_sec": 22.0,
-          "visual_type": "explainer",
-          "characters": [],
-          "dialogue": [
-            {
-              "speaker": "narrator",
-              "text": "처음부터 완벽한 건 필요 없습니다. 스케이트보드면 됩니다. 굴러가는 것. 탈 수 있는 것. 그것만.",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG03_B032",
-          "scene_id": "SEG03",
-          "text": "작게 시작해서 키우는 것. 그게 되려면 처음에 \"이건 스케이트보드다\"라고 적어야 합니다. 그 한 줄이 스펙의 시작입니다.",
-          "narration_text": "작게 시작해서 키우는 것. 그게 되려면 처음에 \"이건 스케이트보드다\"라고 적어야 합니다. 그 한 줄이 스펙의 시작입니다.",
-          "visual_goal": "새 장면. 작은 스케이트보드.",
-          "duration_sec": 26.8,
-          "visual_type": "explainer",
-          "characters": [],
-          "dialogue": [
-            {
-              "speaker": "narrator",
-              "text": "작게 시작해서 키우는 것. 그게 되려면 처음에 \"이건 스케이트보드다\"라고 적어야 합니다. 그 한 줄이 스펙의 시작입니다.",
-              "emotion": ""
-            }
-          ],
-          "shorts_candidate": false
-        }
-      ],
-      "actual_duration_sec": 65.21
-    },
-    {
-      "phase_id": "SEG04",
-      "phase_name": "SITCOM ACT 2",
-      "visual_type": "sitcom",
-      "target_duration_sec": 75,
-      "beats": [
-        {
-          "beat_id": "SEG04_B033",
-          "scene_id": "SEG04",
-          "text": "뭘 만드는 거지.",
-          "narration_text": "뭘 만드는 거지.",
-          "visual_goal": "Vee가 설계도를 그려본다.",
+          "text": "But there was someone who'd seen this story before.",
+          "narration_text": "But there was someone who'd seen this story before.",
+          "visual_goal": "MONTAGE: Rapid cuts. Vee types → app appears. Types → app appears. Types → app appears. Each time faster. Each time her grin gets bigger.",
           "duration_sec": 3.6,
           "visual_type": "sitcom",
           "characters": [
@@ -685,61 +198,19 @@
           ],
           "dialogue": [
             {
-              "speaker": "vee",
-              "text": "뭘 만드는 거지.",
-              "emotion": "중얼"
+              "speaker": "narrator",
+              "text": "But there was someone who'd seen this story before.",
+              "emotion": ""
             }
           ],
           "shorts_candidate": false
         },
         {
-          "beat_id": "SEG04_B034",
-          "scene_id": "SEG04",
-          "text": "이게 뭘 해야 하냐면... 파일이 동기화되고... 어디서든 접속하고...",
-          "narration_text": "이게 뭘 해야 하냐면... 파일이 동기화되고... 어디서든 접속하고...",
-          "visual_goal": "Vee가 모니터를 끈다. 종이와 연필을 꺼낸다.",
-          "duration_sec": 16.0,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "vee",
-              "text": "이게 뭘 해야 하냐면... 파일이 동기화되고... 어디서든 접속하고...",
-              "emotion": "쓰면서"
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG04_B035",
-          "scene_id": "SEG04",
-          "text": "...첫 줄은 나쁘지 않네.",
-          "narration_text": "...첫 줄은 나쁘지 않네.",
-          "visual_goal": "Vee가 종이에 쓴다. \"컴퓨터 3대를 하나처럼 쓰는 것.\"",
-          "duration_sec": 6.0,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "bee",
-              "text": "...첫 줄은 나쁘지 않네.",
-              "emotion": "안 쳐다보고"
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG04_B036",
-          "scene_id": "SEG04",
-          "text": "진짜?",
-          "narration_text": "진짜?",
-          "visual_goal": "종이에 항목이 적혀간다. 서툴지만 구체적.",
+          "beat_id": "SEG02_B010",
+          "scene_id": "SEG02",
+          "text": "She couldn't answer.",
+          "narration_text": "She couldn't answer.",
+          "visual_goal": "Vee spins in her chair, arms crossed, nodding like a CEO.",
           "duration_sec": 1.5,
           "visual_type": "sitcom",
           "characters": [
@@ -748,103 +219,335 @@
           ],
           "dialogue": [
             {
-              "speaker": "vee",
-              "text": "진짜?",
-              "emotion": "멈추며"
+              "speaker": "narrator",
+              "text": "She couldn't answer.",
+              "emotion": ""
             }
           ],
           "shorts_candidate": false
-        },
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG03",
+      "phase_name": "EXPLAINER",
+      "visual_type": "explainer",
+      "target_duration_sec": 100,
+      "beats": [
         {
-          "beat_id": "SEG04_B037",
-          "scene_id": "SEG04",
-          "text": "근데 두 번째 줄부터 또 기능 나열이야.",
-          "narration_text": "근데 두 번째 줄부터 또 기능 나열이야.",
-          "visual_goal": "Vee가 첫 줄을 고쳐 쓴다. \"밖에서도 집 컴퓨터를 쓰고 싶다.\"",
-          "duration_sec": 8.8,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
+          "beat_id": "SEG03_B011",
+          "scene_id": "SEG03",
+          "text": "Here's an empty lot.",
+          "narration_text": "Here's an empty lot.",
+          "visual_goal": "Transition to abstract world. \"Spec = Blueprint\" metaphor.",
+          "duration_sec": 1.6,
+          "visual_type": "explainer",
+          "characters": [],
           "dialogue": [
             {
-              "speaker": "bee",
-              "text": "근데 두 번째 줄부터 또 기능 나열이야.",
-              "emotion": "빠르게"
+              "speaker": "narrator",
+              "text": "Here's an empty lot.",
+              "emotion": ""
             }
           ],
-          "shorts_candidate": false
+          "shorts_candidate": true
         },
         {
-          "beat_id": "SEG04_B038",
-          "scene_id": "SEG04",
-          "text": "기능 말고. 이걸 왜 만드는 건데.",
-          "narration_text": "기능 말고. 이걸 왜 만드는 건데.",
-          "visual_goal": "Vee 살짝 웃는다.",
-          "duration_sec": 7.6,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
+          "beat_id": "SEG03_B012",
+          "scene_id": "SEG03",
+          "text": "You want to build something here.",
+          "narration_text": "You want to build something here.",
+          "visual_goal": "Wide, dark navy surface. Empty space in the center.",
+          "duration_sec": 2.4,
+          "visual_type": "explainer",
+          "characters": [],
           "dialogue": [
             {
-              "speaker": "bee",
-              "text": "기능 말고. 이걸 왜 만드는 건데.",
-              "emotion": "한숨"
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG04_B039",
-          "scene_id": "SEG04",
-          "text": "...밖에서도 집 컴퓨터를 쓰고 싶으니까.",
-          "narration_text": "...밖에서도 집 컴퓨터를 쓰고 싶으니까.",
-          "visual_goal": "...밖에서도 집 컴퓨터를 쓰고 싶으니까.",
-          "duration_sec": 9.2,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "vee",
-              "text": "...밖에서도 집 컴퓨터를 쓰고 싶으니까.",
-              "emotion": "생각하다"
-            }
-          ],
-          "shorts_candidate": false
-        },
-        {
-          "beat_id": "SEG04_B040",
-          "scene_id": "SEG04",
-          "text": "그거 먼저 써.",
-          "narration_text": "그거 먼저 써.",
-          "visual_goal": "그거 먼저 써.",
-          "duration_sec": 3.2,
-          "visual_type": "sitcom",
-          "characters": [
-            "vee",
-            "bee"
-          ],
-          "dialogue": [
-            {
-              "speaker": "bee",
-              "text": "그거 먼저 써.",
+              "speaker": "narrator",
+              "text": "You want to build something here.",
               "emotion": ""
             }
           ],
           "shorts_candidate": false
         },
         {
-          "beat_id": "SEG04_B041",
+          "beat_id": "SEG03_B013",
+          "scene_id": "SEG03",
+          "text": "With a blueprint, you start with the foundation. Then the frame. Then the walls. There's an order. Each piece knows where it goes.",
+          "narration_text": "With a blueprint, you start with the foundation. Then the frame. Then the walls. There's an order. Each piece knows where it goes.",
+          "visual_goal": "Left side: a blueprint unfolds. Blue lines trace the outline of a building.",
+          "duration_sec": 9.2,
+          "visual_type": "explainer",
+          "characters": [],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "With a blueprint, you start with the foundation. Then the frame. Then the walls. There's an order. Each piece knows where it goes.",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG03_B014",
+          "scene_id": "SEG03",
+          "text": "Without a blueprint?",
+          "narration_text": "Without a blueprint?",
+          "visual_goal": "Foundation → frame → walls → roof. Geometric building assembles in sequence. Clean. Stable.",
+          "duration_sec": 1.5,
+          "visual_type": "explainer",
+          "characters": [],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Without a blueprint?",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG03_B015",
+          "scene_id": "SEG03",
+          "text": "You just... stack. And it goes up. It actually goes up.",
+          "narration_text": "You just... stack. And it goes up. It actually goes up.",
+          "visual_goal": "Right side: colorful blocks drop from above, piling randomly.",
+          "duration_sec": 4.4,
+          "visual_type": "explainer",
+          "characters": [],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "You just... stack. And it goes up. It actually goes up.",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG03_B016",
+          "scene_id": "SEG03",
+          "text": "For a while, it looks like it's working.",
+          "narration_text": "For a while, it looks like it's working.",
+          "visual_goal": "The pile grows taller. It starts leaning.",
+          "duration_sec": 3.2,
+          "visual_type": "explainer",
+          "characters": [],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "For a while, it looks like it's working.",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG03_B017",
+          "scene_id": "SEG03",
+          "text": "Then...",
+          "narration_text": "Then...",
+          "visual_goal": "The pile wobbles. Pauses.",
+          "duration_sec": 1.5,
+          "visual_type": "explainer",
+          "characters": [],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Then...",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG03_B018",
+          "scene_id": "SEG03",
+          "text": "A spec is a blueprint. It's not a hundred-page document. It's one sentence: \"What am I building?\"",
+          "narration_text": "A spec is a blueprint. It's not a hundred-page document. It's one sentence: \"What am I building?\"",
+          "visual_goal": "Collapse. Blocks scatter everywhere.",
+          "duration_sec": 6.8,
+          "visual_type": "explainer",
+          "characters": [],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "A spec is a blueprint. It's not a hundred-page document. It's one sentence: \"What am I building?\"",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG03_B019",
+          "scene_id": "SEG03",
+          "text": "You don't need to know every detail upfront.",
+          "narration_text": "You don't need to know every detail upfront.",
+          "visual_goal": "Back to the blueprint side. Clean building standing tall.",
+          "duration_sec": 3.2,
+          "visual_type": "explainer",
+          "characters": [],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "You don't need to know every detail upfront.",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG03_B020",
+          "scene_id": "SEG03",
+          "text": "Start with a skateboard. Four wheels. It rolls. That's enough.",
+          "narration_text": "Start with a skateboard. Four wheels. It rolls. That's enough.",
+          "visual_goal": "Text appears on the blueprint: \"I want to access my home computer from anywhere.\"",
+          "duration_sec": 4.0,
+          "visual_type": "explainer",
+          "characters": [],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Start with a skateboard. Four wheels. It rolls. That's enough.",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG03_B021",
+          "scene_id": "SEG03",
+          "text": "You can always make it bigger later. But you have to know what \"it\" is first.",
+          "narration_text": "You can always make it bigger later. But you have to know what \"it\" is first.",
+          "visual_goal": "New scene. A small skateboard rolls into frame.",
+          "duration_sec": 6.4,
+          "visual_type": "explainer",
+          "characters": [],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "You can always make it bigger later. But you have to know what \"it\" is first.",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG03_B022",
+          "scene_id": "SEG03",
+          "text": "That one line? That's where a spec starts.",
+          "narration_text": "That one line? That's where a spec starts.",
+          "visual_goal": "Skateboard morphs into a bicycle. Bicycle morphs into a car.",
+          "duration_sec": 3.2,
+          "visual_type": "explainer",
+          "characters": [],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "That one line? That's where a spec starts.",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG04",
+      "phase_name": "SITCOM ACT 2",
+      "visual_type": "sitcom",
+      "target_duration_sec": 75,
+      "beats": [
+        {
+          "beat_id": "SEG04_B023",
           "scene_id": "SEG04",
-          "text": "...읽을 수는 있네.",
-          "narration_text": "...읽을 수는 있네.",
-          "visual_goal": "...읽을 수는 있네.",
+          "text": "Back in the present. Everything still broken.",
+          "narration_text": "Back in the present. Everything still broken.",
+          "visual_goal": "Vee alone. Stops coding. Writes frustrations on paper. Discovers what she's building.",
+          "duration_sec": 2.8,
+          "visual_type": "sitcom",
+          "characters": [
+            "vee",
+            "bee"
+          ],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Back in the present. Everything still broken.",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG04_B024",
+          "scene_id": "SEG04",
+          "text": "And then she did something unusual. She stopped coding.",
+          "narration_text": "And then she did something unusual. She stopped coding.",
+          "visual_goal": "Five monitors. Red errors. Vee's hands hover over the keyboard.",
+          "duration_sec": 3.6,
+          "visual_type": "sitcom",
+          "characters": [
+            "vee",
+            "bee"
+          ],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And then she did something unusual. She stopped coding.",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG04_B025",
+          "scene_id": "SEG04",
+          "text": "She started writing. Not code. Just... what was bothering her.",
+          "narration_text": "She started writing. Not code. Just... what was bothering her.",
+          "visual_goal": "Vee's fingers tremble. She doesn't know what to type.",
+          "duration_sec": 4.0,
+          "visual_type": "sitcom",
+          "characters": [
+            "vee",
+            "bee"
+          ],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "She started writing. Not code. Just... what was bothering her.",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG04_B026",
+          "scene_id": "SEG04",
+          "text": "And there it was. The question she'd been avoiding.",
+          "narration_text": "And there it was. The question she'd been avoiding.",
+          "visual_goal": "She pulls her hands back. Pushes the chair away from the desk.",
+          "duration_sec": 3.6,
+          "visual_type": "sitcom",
+          "characters": [
+            "vee",
+            "bee"
+          ],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And there it was. The question she'd been avoiding.",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG04_B027",
+          "scene_id": "SEG04",
+          "text": "Not features. Not tools. The reason. The one sentence that explains everything.",
+          "narration_text": "Not features. Not tools. The reason. The one sentence that explains everything.",
+          "visual_goal": "Vee opens a desk drawer. Pulls out paper and a pencil. Turns her back to the monitors.",
           "duration_sec": 4.8,
           "visual_type": "sitcom",
           "characters": [
@@ -853,15 +556,35 @@
           ],
           "dialogue": [
             {
-              "speaker": "bee",
-              "text": "...읽을 수는 있네.",
-              "emotion": "눈을 안 마주치며"
+              "speaker": "narrator",
+              "text": "Not features. Not tools. The reason. The one sentence that explains everything.",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": false
+        },
+        {
+          "beat_id": "SEG04_B028",
+          "scene_id": "SEG04",
+          "text": "The same errors. But now, one line makes sense.",
+          "narration_text": "The same errors. But now, one line makes sense.",
+          "visual_goal": "CU: Paper. Messy handwriting appears:",
+          "duration_sec": 3.6,
+          "visual_type": "sitcom",
+          "characters": [
+            "vee",
+            "bee"
+          ],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The same errors. But now, one line makes sense.",
+              "emotion": ""
             }
           ],
           "shorts_candidate": false
         }
-      ],
-      "actual_duration_sec": 31.13
+      ]
     },
     {
       "phase_id": "SEG05",
@@ -870,106 +593,118 @@
       "target_duration_sec": 20,
       "beats": [
         {
-          "beat_id": "SEG05_B042",
+          "beat_id": "SEG05_B029",
           "scene_id": "SEG05",
-          "text": "설계도 한 장. 그게 시작이래.",
-          "narration_text": "설계도 한 장. 그게 시작이래.",
-          "visual_goal": "교훈 + 다음편 떡밥.",
-          "duration_sec": 6.8,
+          "text": "Everything is still broken.",
+          "narration_text": "Everything is still broken.",
+          "visual_goal": "Mirror of HOOK. Same room, same errors, different person.",
+          "duration_sec": 1.6,
           "visual_type": "sitcom",
           "characters": [
-            "vee"
+            "vee",
+            "bee"
           ],
           "dialogue": [
             {
-              "speaker": "vee",
-              "text": "설계도 한 장. 그게 시작이래.",
-              "emotion": "조용히"
+              "speaker": "narrator",
+              "text": "Everything is still broken.",
+              "emotion": ""
+            }
+          ],
+          "shorts_candidate": true
+        },
+        {
+          "beat_id": "SEG05_B030",
+          "scene_id": "SEG05",
+          "text": "But now she knows what to fix.",
+          "narration_text": "But now she knows what to fix.",
+          "visual_goal": "**Exact same composition as HOOK.** Five monitors. Red errors. Dark room.",
+          "duration_sec": 2.8,
+          "visual_type": "sitcom",
+          "characters": [
+            "vee",
+            "bee"
+          ],
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "But now she knows what to fix.",
+              "emotion": ""
             }
           ],
           "shorts_candidate": false
         },
         {
-          "beat_id": "SEG05_B043",
+          "beat_id": "SEG05_B031",
           "scene_id": "SEG05",
-          "text": "근데... 이 설계도가 맞긴 한 거야?",
-          "narration_text": "근데... 이 설계도가 맞긴 한 거야?",
-          "visual_goal": "Vee가 벽에 종이를 핀으로 꽂는다. \"밖에서도 집 컴퓨터를 쓰고 싶다.\"",
-          "duration_sec": 8.4,
+          "text": "...at least, she thinks she does.",
+          "narration_text": "...at least, she thinks she does.",
+          "visual_goal": "Vee sits in her chair. The mug is in the same spot.",
+          "duration_sec": 2.4,
           "visual_type": "sitcom",
           "characters": [
-            "vee"
+            "vee",
+            "bee"
           ],
           "dialogue": [
             {
-              "speaker": "vee",
-              "text": "근데... 이 설계도가 맞긴 한 거야?",
+              "speaker": "narrator",
+              "text": "...at least, she thinks she does.",
               "emotion": ""
             }
           ],
           "shorts_candidate": false
         }
-      ],
-      "actual_duration_sec": 7.15
+      ]
     }
   ],
   "beats": [
     {
       "beat_id": "SEG01_B001",
       "scene_id": "SEG01",
-      "text": "됐다!",
-      "narration_text": "됐다!",
-      "visual_goal": "Vee 자축 → 폭발. 결과부터 보여준다.",
-      "duration_sec": 1.5,
+      "text": "This is the moment every vibe coder lives for.",
+      "narration_text": "This is the moment every vibe coder lives for.",
+      "visual_goal": "Vee celebrates → explosion. Show the result first.",
+      "duration_sec": 3.6,
       "visual_type": "sitcom",
       "characters": [
         "vee"
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "됐다!",
-          "emotion": "활짝 웃으며, 두 팔 벌려"
+          "speaker": "narrator",
+          "text": "This is the moment every vibe coder lives for.",
+          "emotion": ""
         }
       ],
-      "shorts_candidate": true,
-      "actual_duration_sec": 1.608,
-      "tts_start_sec": 0.0,
-      "tts_end_sec": 1.608,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
+      "shorts_candidate": true
     },
     {
       "beat_id": "SEG01_B002",
       "scene_id": "SEG01",
-      "text": "다섯 개. 에이전트 다섯 개. 사흘 만에.",
-      "narration_text": "다섯 개. 에이전트 다섯 개. 사흘 만에.",
-      "visual_goal": "모니터 다섯 개가 빛나는 어두운 방. Vee가 의자에 기대앉아 있다. 모니터마다 코드, 대시보드, 터미널이 돌아간다.",
-      "duration_sec": 9.2,
+      "text": "You asked AI to build it. And it did. All of it.",
+      "narration_text": "You asked AI to build it. And it did. All of it.",
+      "visual_goal": "Five monitors glow in a dark room. Vee leans back in her chair. Each screen shows code, dashboards, terminals — all running.",
+      "duration_sec": 4.8,
       "visual_type": "sitcom",
       "characters": [
         "vee"
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "다섯 개. 에이전트 다섯 개. 사흘 만에.",
+          "speaker": "narrator",
+          "text": "You asked AI to build it. And it did. All of it.",
           "emotion": ""
         }
       ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 3.624,
-      "tts_start_sec": 1.808,
-      "tts_end_sec": 5.432,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
+      "shorts_candidate": false
     },
     {
       "beat_id": "SEG01_B003",
       "scene_id": "SEG01",
-      "text": "...뭐?",
-      "narration_text": "...뭐?",
-      "visual_goal": "화면에 \"BUILD SUCCESS\" 초록 불. Vee가 머그컵을 들어올린다.",
+      "text": "And then, three seconds later...",
+      "narration_text": "And then, three seconds later...",
+      "visual_goal": "Vee throws both arms up. Eyes wide. Huge grin. \"BUILD SUCCESS\" flashes green on every screen.",
       "duration_sec": 2.0,
       "visual_type": "sitcom",
       "characters": [
@@ -977,284 +712,39 @@
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "...뭐?",
-          "emotion": "작은 목소리로"
+          "speaker": "narrator",
+          "text": "And then, three seconds later...",
+          "emotion": ""
         }
       ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 1.416,
-      "tts_start_sec": 5.632,
-      "tts_end_sec": 7.048,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
+      "shorts_candidate": false
     },
     {
-      "beat_id": "SEG02_B004",
-      "scene_id": "SEG02",
-      "text": "투두리스트 앱 만들어줘.",
-      "narration_text": "투두리스트 앱 만들어줘.",
-      "visual_goal": "3일 전으로 돌아간다. Vee의 바이브코딩 여정과 Bee 첫 등장.",
-      "duration_sec": 5.2,
+      "beat_id": "SEG01_B004",
+      "scene_id": "SEG01",
+      "text": "...it all falls apart.",
+      "narration_text": "...it all falls apart.",
+      "visual_goal": "BEAT: 1 second of silence. One monitor flickers.",
+      "duration_sec": 1.6,
       "visual_type": "sitcom",
       "characters": [
-        "vee",
-        "bee"
+        "vee"
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "투두리스트 앱 만들어줘.",
-          "emotion": "타이핑하며"
+          "speaker": "narrator",
+          "text": "...it all falls apart.",
+          "emotion": ""
         }
       ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 2.52,
-      "tts_start_sec": 7.248,
-      "tts_end_sec": 9.768,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
+      "shorts_candidate": false
     },
     {
       "beat_id": "SEG02_B005",
       "scene_id": "SEG02",
-      "text": "어? 복붙 안 해도 돼?",
-      "narration_text": "어? 복붙 안 해도 돼?",
-      "visual_goal": "밝은 방. Vee가 모니터 앞에 앉아 있다. 터미널이 열려 있다.",
-      "duration_sec": 5.2,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "vee",
-          "text": "어? 복붙 안 해도 돼?",
-          "emotion": "눈 커지며"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 3.408,
-      "tts_start_sec": 9.968,
-      "tts_end_sec": 13.376,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
-    },
-    {
-      "beat_id": "SEG02_B006",
-      "scene_id": "SEG02",
-      "text": "5분! 이게 5분!",
-      "narration_text": "5분! 이게 5분!",
-      "visual_goal": "BEAT: 터미널에서 파일이 자동 생성된다. 폴더, 코드, 패키지.",
-      "duration_sec": 4.0,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "vee",
-          "text": "5분! 이게 5분!",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 3.552,
-      "tts_start_sec": 13.576,
-      "tts_end_sec": 17.128,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
-    },
-    {
-      "beat_id": "SEG02_B007",
-      "scene_id": "SEG02",
-      "text": "메모 앱. 됐다. 데이터베이스. 됐다. 로그인. 됐다.",
-      "narration_text": "메모 앱. 됐다. 데이터베이스. 됐다. 로그인. 됐다.",
-      "visual_goal": "브라우저에 투두리스트 앱이 뜬다. Vee 의자에서 벌떡.",
-      "duration_sec": 12.0,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "vee",
-          "text": "메모 앱. 됐다. 데이터베이스. 됐다. 로그인. 됐다.",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 8.712,
-      "tts_start_sec": 17.328,
-      "tts_end_sec": 26.04,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
-    },
-    {
-      "beat_id": "SEG02_B008",
-      "scene_id": "SEG02",
-      "text": "이거면 뭐든 만들겠는데?",
-      "narration_text": "이거면 뭐든 만들겠는데?",
-      "visual_goal": "MONTAGE: Vee가 연달아 시킨다. 화면이 빠르게 전환.",
-      "duration_sec": 5.2,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "vee",
-          "text": "이거면 뭐든 만들겠는데?",
-          "emotion": "자신만만"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 2.784,
-      "tts_start_sec": 26.24,
-      "tts_end_sec": 29.024,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
-    },
-    {
-      "beat_id": "SEG02_B009",
-      "scene_id": "SEG02",
-      "text": "주식 스크리너! 586개 종목!",
-      "narration_text": "주식 스크리너! 586개 종목!",
-      "visual_goal": "Vee 책상 위 모니터 옆, 작은 꿀벌이 앉아 있다. BEE. 날개를 접고 눈을 감고 있다.",
-      "duration_sec": 6.8,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "vee",
-          "text": "주식 스크리너! 586개 종목!",
-          "emotion": "못 봄, 계속 타이핑"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 4.512,
-      "tts_start_sec": 29.224,
-      "tts_end_sec": 33.736,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
-    },
-    {
-      "beat_id": "SEG02_B010",
-      "scene_id": "SEG02",
-      "text": "...뭐 하는 거야.",
-      "narration_text": "...뭐 하는 거야.",
-      "visual_goal": "...뭐 하는 거야.",
-      "duration_sec": 4.4,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "bee",
-          "text": "...뭐 하는 거야.",
-          "emotion": "한쪽 눈 뜨며"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 2.28,
-      "tts_start_sec": 33.936,
-      "tts_end_sec": 36.216,
-      "tts_voice": "ko-KR-InJoonNeural",
-      "tts_speaker": "bee"
-    },
-    {
-      "beat_id": "SEG02_B011",
-      "scene_id": "SEG02",
-      "text": "엇, 너 누구야?",
-      "narration_text": "엇, 너 누구야?",
-      "visual_goal": "엇, 너 누구야?",
-      "duration_sec": 3.6,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "vee",
-          "text": "엇, 너 누구야?",
-          "emotion": "깜짝"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 2.304,
-      "tts_start_sec": 36.416,
-      "tts_end_sec": 38.72,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
-    },
-    {
-      "beat_id": "SEG02_B012",
-      "scene_id": "SEG02",
-      "text": "됐고. 근데 그거.",
-      "narration_text": "됐고. 근데 그거.",
-      "visual_goal": "됐고. 근데 그거.",
-      "duration_sec": 4.0,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "bee",
-          "text": "됐고. 근데 그거.",
-          "emotion": "한숨"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 4.152,
-      "tts_start_sec": 38.92,
-      "tts_end_sec": 43.072,
-      "tts_voice": "ko-KR-InJoonNeural",
-      "tts_speaker": "bee"
-    },
-    {
-      "beat_id": "SEG02_B013",
-      "scene_id": "SEG02",
-      "text": "응?",
-      "narration_text": "응?",
-      "visual_goal": "응?",
-      "duration_sec": 1.5,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "vee",
-          "text": "응?",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 1.488,
-      "tts_start_sec": 43.272,
-      "tts_end_sec": 44.76,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
-    },
-    {
-      "beat_id": "SEG02_B014",
-      "scene_id": "SEG02",
-      "text": "스펙이 뭔데.",
-      "narration_text": "스펙이 뭔데.",
-      "visual_goal": "스펙이 뭔데.",
+      "text": "Three days ago, Vee discovered something magical.",
+      "narration_text": "Three days ago, Vee discovered something magical.",
+      "visual_goal": "Three days earlier. Vee's vibe coding montage. Bee's first appearance.",
       "duration_sec": 2.8,
       "visual_type": "sitcom",
       "characters": [
@@ -1263,24 +753,61 @@
       ],
       "dialogue": [
         {
-          "speaker": "bee",
-          "text": "스펙이 뭔데.",
+          "speaker": "narrator",
+          "text": "Three days ago, Vee discovered something magical.",
           "emotion": ""
         }
       ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 2.352,
-      "tts_start_sec": 44.96,
-      "tts_end_sec": 47.312,
-      "tts_voice": "ko-KR-InJoonNeural",
-      "tts_speaker": "bee"
+      "shorts_candidate": false
     },
     {
-      "beat_id": "SEG02_B015",
+      "beat_id": "SEG02_B006",
       "scene_id": "SEG02",
-      "text": "...스펙?",
-      "narration_text": "...스펙?",
-      "visual_goal": "...스펙?",
+      "text": "You type what you want. AI builds it. Five minutes. Done.",
+      "narration_text": "You type what you want. AI builds it. Five minutes. Done.",
+      "visual_goal": "Bright room. Vee sits at her monitor. Terminal open.",
+      "duration_sec": 4.4,
+      "visual_type": "sitcom",
+      "characters": [
+        "vee",
+        "bee"
+      ],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "You type what you want. AI builds it. Five minutes. Done.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG02_B007",
+      "scene_id": "SEG02",
+      "text": "A to-do app. Done. A database. Done. A login page. Done.",
+      "narration_text": "A to-do app. Done. A database. Done. A login page. Done.",
+      "visual_goal": "Vee types. Files auto-generate on screen. Folders, code, packages — appearing from nothing.",
+      "duration_sec": 4.4,
+      "visual_type": "sitcom",
+      "characters": [
+        "vee",
+        "bee"
+      ],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "A to-do app. Done. A database. Done. A login page. Done.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG02_B008",
+      "scene_id": "SEG02",
+      "text": "She thought she could build anything.",
+      "narration_text": "She thought she could build anything.",
+      "visual_goal": "Vee's eyes go wide. She jumps out of her chair.",
       "duration_sec": 2.4,
       "visual_type": "sitcom",
       "characters": [
@@ -1289,430 +816,19 @@
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "...스펙?",
-          "emotion": "멈칫"
+          "speaker": "narrator",
+          "text": "She thought she could build anything.",
+          "emotion": ""
         }
       ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 1.512,
-      "tts_start_sec": 47.512,
-      "tts_end_sec": 49.024,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
+      "shorts_candidate": false
     },
     {
-      "beat_id": "SEG02_B016",
+      "beat_id": "SEG02_B009",
       "scene_id": "SEG02",
-      "text": "니가 만드는 거. 뭐야. 뭘 만드는 건데.",
-      "narration_text": "니가 만드는 거. 뭐야. 뭘 만드는 건데.",
-      "visual_goal": "니가 만드는 거. 뭐야. 뭘 만드는 건데.",
-      "duration_sec": 9.2,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "bee",
-          "text": "니가 만드는 거. 뭐야. 뭘 만드는 건데.",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 5.424,
-      "tts_start_sec": 49.224,
-      "tts_end_sec": 54.648,
-      "tts_voice": "ko-KR-InJoonNeural",
-      "tts_speaker": "bee"
-    },
-    {
-      "beat_id": "SEG02_B017",
-      "scene_id": "SEG02",
-      "text": "에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈—",
-      "narration_text": "에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈—",
-      "visual_goal": "에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈—",
-      "duration_sec": 12.8,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "vee",
-          "text": "에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈—",
-          "emotion": "자신만만하게"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 6.36,
-      "tts_start_sec": 54.848,
-      "tts_end_sec": 61.208,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
-    },
-    {
-      "beat_id": "SEG02_B018",
-      "scene_id": "SEG02",
-      "text": "그건 기능이지 스펙이 아니야.",
-      "narration_text": "그건 기능이지 스펙이 아니야.",
-      "visual_goal": "그건 기능이지 스펙이 아니야.",
-      "duration_sec": 6.4,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "bee",
-          "text": "그건 기능이지 스펙이 아니야.",
-          "emotion": "끊으며"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 3.336,
-      "tts_start_sec": 61.408,
-      "tts_end_sec": 64.744,
-      "tts_voice": "ko-KR-InJoonNeural",
-      "tts_speaker": "bee"
-    },
-    {
-      "beat_id": "SEG02_B019",
-      "scene_id": "SEG02",
-      "text": "...뭐가 다른데?",
-      "narration_text": "...뭐가 다른데?",
-      "visual_goal": "...뭐가 다른데?",
-      "duration_sec": 4.0,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "vee",
-          "text": "...뭐가 다른데?",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 1.944,
-      "tts_start_sec": 64.944,
-      "tts_end_sec": 66.888,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
-    },
-    {
-      "beat_id": "SEG02_B020",
-      "scene_id": "SEG02",
-      "text": "됐다. 알아서 해.",
-      "narration_text": "됐다. 알아서 해.",
-      "visual_goal": "됐다. 알아서 해.",
-      "duration_sec": 4.0,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "bee",
-          "text": "됐다. 알아서 해.",
-          "emotion": "날개 접으며, 등 돌리고"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 4.08,
-      "tts_start_sec": 67.088,
-      "tts_end_sec": 71.168,
-      "tts_voice": "ko-KR-InJoonNeural",
-      "tts_speaker": "bee"
-    },
-    {
-      "beat_id": "SEG03_B021",
-      "scene_id": "SEG03",
-      "text": "여기 빈 땅이 있습니다.",
-      "narration_text": "여기 빈 땅이 있습니다.",
-      "visual_goal": "Bee가 떠난 뒤 전환. \"스펙 = 설계도\" 메타포.",
-      "duration_sec": 5.2,
-      "visual_type": "explainer",
-      "characters": [],
-      "dialogue": [
-        {
-          "speaker": "narrator",
-          "text": "여기 빈 땅이 있습니다.",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": true,
-      "actual_duration_sec": 2.52,
-      "tts_start_sec": 71.368,
-      "tts_end_sec": 73.888,
-      "tts_voice": "ko-KR-HyunsuNeural",
-      "tts_speaker": "narrator"
-    },
-    {
-      "beat_id": "SEG03_B022",
-      "scene_id": "SEG03",
-      "text": "건물을 올리려고 합니다.",
-      "narration_text": "건물을 올리려고 합니다.",
-      "visual_goal": "넓고 어두운 네이비 평면. 가운데 빈 공간.",
-      "duration_sec": 5.2,
-      "visual_type": "explainer",
-      "characters": [],
-      "dialogue": [
-        {
-          "speaker": "narrator",
-          "text": "건물을 올리려고 합니다.",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 2.568,
-      "tts_start_sec": 74.088,
-      "tts_end_sec": 76.656,
-      "tts_voice": "ko-KR-HyunsuNeural",
-      "tts_speaker": "narrator"
-    },
-    {
-      "beat_id": "SEG03_B023",
-      "scene_id": "SEG03",
-      "text": "설계도가 있으면 기둥부터 세웁니다. 기둥 위에 보를 얹습니다. 보 위에 바닥을 깝니다. 순서가 있습니다.",
-      "narration_text": "설계도가 있으면 기둥부터 세웁니다. 기둥 위에 보를 얹습니다. 보 위에 바닥을 깝니다. 순서가 있습니다.",
-      "visual_goal": "왼쪽: 설계도가 펼쳐진다. 파란 라인으로 건물 윤곽이 그려진다.",
-      "duration_sec": 23.2,
-      "visual_type": "explainer",
-      "characters": [],
-      "dialogue": [
-        {
-          "speaker": "narrator",
-          "text": "설계도가 있으면 기둥부터 세웁니다. 기둥 위에 보를 얹습니다. 보 위에 바닥을 깝니다. 순서가 있습니다.",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 10.56,
-      "tts_start_sec": 76.856,
-      "tts_end_sec": 87.416,
-      "tts_voice": "ko-KR-HyunsuNeural",
-      "tts_speaker": "narrator"
-    },
-    {
-      "beat_id": "SEG03_B024",
-      "scene_id": "SEG03",
-      "text": "설계도가 없으면?",
-      "narration_text": "설계도가 없으면?",
-      "visual_goal": "기둥 → 보 → 바닥 → 벽. 순서대로 조립되는 기하학적 건물.",
-      "duration_sec": 3.6,
-      "visual_type": "explainer",
-      "characters": [],
-      "dialogue": [
-        {
-          "speaker": "narrator",
-          "text": "설계도가 없으면?",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 2.016,
-      "tts_start_sec": 87.616,
-      "tts_end_sec": 89.632,
-      "tts_voice": "ko-KR-HyunsuNeural",
-      "tts_speaker": "narrator"
-    },
-    {
-      "beat_id": "SEG03_B025",
-      "scene_id": "SEG03",
-      "text": "그냥 쌓습니다. 올라가긴 올라갑니다.",
-      "narration_text": "그냥 쌓습니다. 올라가긴 올라갑니다.",
-      "visual_goal": "오른쪽: 다양한 색상의 블록이 아무렇게나 쌓인다.",
-      "duration_sec": 8.0,
-      "visual_type": "explainer",
-      "characters": [],
-      "dialogue": [
-        {
-          "speaker": "narrator",
-          "text": "그냥 쌓습니다. 올라가긴 올라갑니다.",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 4.392,
-      "tts_start_sec": 89.832,
-      "tts_end_sec": 94.224,
-      "tts_voice": "ko-KR-HyunsuNeural",
-      "tts_speaker": "narrator"
-    },
-    {
-      "beat_id": "SEG03_B026",
-      "scene_id": "SEG03",
-      "text": "근데 흔들립니다.",
-      "narration_text": "근데 흔들립니다.",
-      "visual_goal": "블록 더미가 점점 높아진다. 기울어지기 시작한다.",
-      "duration_sec": 3.6,
-      "visual_type": "explainer",
-      "characters": [],
-      "dialogue": [
-        {
-          "speaker": "narrator",
-          "text": "근데 흔들립니다.",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 2.256,
-      "tts_start_sec": 94.424,
-      "tts_end_sec": 96.68,
-      "tts_voice": "ko-KR-HyunsuNeural",
-      "tts_speaker": "narrator"
-    },
-    {
-      "beat_id": "SEG03_B027",
-      "scene_id": "SEG03",
-      "text": "그리고.",
-      "narration_text": "그리고.",
-      "visual_goal": "블록이 좌우로 흔들린다.",
-      "duration_sec": 1.6,
-      "visual_type": "explainer",
-      "characters": [],
-      "dialogue": [
-        {
-          "speaker": "narrator",
-          "text": "그리고.",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 1.248,
-      "tts_start_sec": 96.88,
-      "tts_end_sec": 98.128,
-      "tts_voice": "ko-KR-HyunsuNeural",
-      "tts_speaker": "narrator"
-    },
-    {
-      "beat_id": "SEG03_B028",
-      "scene_id": "SEG03",
-      "text": "스펙은 설계도입니다. \"뭘 만들 건지\" 적어둔 것.",
-      "narration_text": "스펙은 설계도입니다. \"뭘 만들 건지\" 적어둔 것.",
-      "visual_goal": "와르르 무너진다. 블록 파편이 흩어진다.",
-      "duration_sec": 11.2,
-      "visual_type": "explainer",
-      "characters": [],
-      "dialogue": [
-        {
-          "speaker": "narrator",
-          "text": "스펙은 설계도입니다. \"뭘 만들 건지\" 적어둔 것.",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 5.184,
-      "tts_start_sec": 98.328,
-      "tts_end_sec": 103.512,
-      "tts_voice": "ko-KR-HyunsuNeural",
-      "tts_speaker": "narrator"
-    },
-    {
-      "beat_id": "SEG03_B029",
-      "scene_id": "SEG03",
-      "text": "도시를 만들려면 도시 전체의 지도가 필요합니다. 건물 하나만 짓는 게 아니니까. 도로가 어디로 가는지. 건물이 어디 서는지. 그걸 안 정하고 짓기 시작하면.",
-      "narration_text": "도시를 만들려면 도시 전체의 지도가 필요합니다. 건물 하나만 짓는 게 아니니까. 도로가 어디로 가는지. 건물이 어디 서는지. 그걸 안 정하고 짓기 시작하면.",
-      "visual_goal": "다시 설계도 쪽. 깔끔하게 서 있는 건물.",
-      "duration_sec": 34.8,
-      "visual_type": "explainer",
-      "characters": [],
-      "dialogue": [
-        {
-          "speaker": "narrator",
-          "text": "도시를 만들려면 도시 전체의 지도가 필요합니다. 건물 하나만 짓는 게 아니니까. 도로가 어디로 가는지. 건물이 어디 서는지. 그걸 안 정하고 짓기 시작하면.",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 14.424,
-      "tts_start_sec": 103.712,
-      "tts_end_sec": 118.136,
-      "tts_voice": "ko-KR-HyunsuNeural",
-      "tts_speaker": "narrator"
-    },
-    {
-      "beat_id": "SEG03_B030",
-      "scene_id": "SEG03",
-      "text": "이렇게 됩니다.",
-      "narration_text": "이렇게 됩니다.",
-      "visual_goal": "건물 위에서 줌아웃. 도시 전경이 보인다. 도로, 건물, 공원.",
-      "duration_sec": 3.2,
-      "visual_type": "explainer",
-      "characters": [],
-      "dialogue": [
-        {
-          "speaker": "narrator",
-          "text": "이렇게 됩니다.",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 1.704,
-      "tts_start_sec": 118.336,
-      "tts_end_sec": 120.04,
-      "tts_voice": "ko-KR-HyunsuNeural",
-      "tts_speaker": "narrator"
-    },
-    {
-      "beat_id": "SEG03_B031",
-      "scene_id": "SEG03",
-      "text": "처음부터 완벽한 건 필요 없습니다. 스케이트보드면 됩니다. 굴러가는 것. 탈 수 있는 것. 그것만.",
-      "narration_text": "처음부터 완벽한 건 필요 없습니다. 스케이트보드면 됩니다. 굴러가는 것. 탈 수 있는 것. 그것만.",
-      "visual_goal": "도시 전경에서 건물들이 도로를 막고, 교차로가 엉키고, 길이 막힌다.",
-      "duration_sec": 22.0,
-      "visual_type": "explainer",
-      "characters": [],
-      "dialogue": [
-        {
-          "speaker": "narrator",
-          "text": "처음부터 완벽한 건 필요 없습니다. 스케이트보드면 됩니다. 굴러가는 것. 탈 수 있는 것. 그것만.",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 8.76,
-      "tts_start_sec": 120.24,
-      "tts_end_sec": 129.0,
-      "tts_voice": "ko-KR-HyunsuNeural",
-      "tts_speaker": "narrator"
-    },
-    {
-      "beat_id": "SEG03_B032",
-      "scene_id": "SEG03",
-      "text": "작게 시작해서 키우는 것. 그게 되려면 처음에 \"이건 스케이트보드다\"라고 적어야 합니다. 그 한 줄이 스펙의 시작입니다.",
-      "narration_text": "작게 시작해서 키우는 것. 그게 되려면 처음에 \"이건 스케이트보드다\"라고 적어야 합니다. 그 한 줄이 스펙의 시작입니다.",
-      "visual_goal": "새 장면. 작은 스케이트보드.",
-      "duration_sec": 26.8,
-      "visual_type": "explainer",
-      "characters": [],
-      "dialogue": [
-        {
-          "speaker": "narrator",
-          "text": "작게 시작해서 키우는 것. 그게 되려면 처음에 \"이건 스케이트보드다\"라고 적어야 합니다. 그 한 줄이 스펙의 시작입니다.",
-          "emotion": ""
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 9.576,
-      "tts_start_sec": 129.2,
-      "tts_end_sec": 138.776,
-      "tts_voice": "ko-KR-HyunsuNeural",
-      "tts_speaker": "narrator"
-    },
-    {
-      "beat_id": "SEG04_B033",
-      "scene_id": "SEG04",
-      "text": "뭘 만드는 거지.",
-      "narration_text": "뭘 만드는 거지.",
-      "visual_goal": "Vee가 설계도를 그려본다.",
+      "text": "But there was someone who'd seen this story before.",
+      "narration_text": "But there was someone who'd seen this story before.",
+      "visual_goal": "MONTAGE: Rapid cuts. Vee types → app appears. Types → app appears. Types → app appears. Each time faster. Each time her grin gets bigger.",
       "duration_sec": 3.6,
       "visual_type": "sitcom",
       "characters": [
@@ -1721,76 +837,19 @@
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "뭘 만드는 거지.",
-          "emotion": "중얼"
+          "speaker": "narrator",
+          "text": "But there was someone who'd seen this story before.",
+          "emotion": ""
         }
       ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 2.208,
-      "tts_start_sec": 138.976,
-      "tts_end_sec": 141.184,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
+      "shorts_candidate": false
     },
     {
-      "beat_id": "SEG04_B034",
-      "scene_id": "SEG04",
-      "text": "이게 뭘 해야 하냐면... 파일이 동기화되고... 어디서든 접속하고...",
-      "narration_text": "이게 뭘 해야 하냐면... 파일이 동기화되고... 어디서든 접속하고...",
-      "visual_goal": "Vee가 모니터를 끈다. 종이와 연필을 꺼낸다.",
-      "duration_sec": 16.0,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "vee",
-          "text": "이게 뭘 해야 하냐면... 파일이 동기화되고... 어디서든 접속하고...",
-          "emotion": "쓰면서"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 6.744,
-      "tts_start_sec": 141.384,
-      "tts_end_sec": 148.128,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
-    },
-    {
-      "beat_id": "SEG04_B035",
-      "scene_id": "SEG04",
-      "text": "...첫 줄은 나쁘지 않네.",
-      "narration_text": "...첫 줄은 나쁘지 않네.",
-      "visual_goal": "Vee가 종이에 쓴다. \"컴퓨터 3대를 하나처럼 쓰는 것.\"",
-      "duration_sec": 6.0,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "bee",
-          "text": "...첫 줄은 나쁘지 않네.",
-          "emotion": "안 쳐다보고"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 2.904,
-      "tts_start_sec": 148.328,
-      "tts_end_sec": 151.232,
-      "tts_voice": "ko-KR-InJoonNeural",
-      "tts_speaker": "bee"
-    },
-    {
-      "beat_id": "SEG04_B036",
-      "scene_id": "SEG04",
-      "text": "진짜?",
-      "narration_text": "진짜?",
-      "visual_goal": "종이에 항목이 적혀간다. 서툴지만 구체적.",
+      "beat_id": "SEG02_B010",
+      "scene_id": "SEG02",
+      "text": "She couldn't answer.",
+      "narration_text": "She couldn't answer.",
+      "visual_goal": "Vee spins in her chair, arms crossed, nodding like a CEO.",
       "duration_sec": 1.5,
       "visual_type": "sitcom",
       "characters": [
@@ -1799,128 +858,319 @@
       ],
       "dialogue": [
         {
-          "speaker": "vee",
-          "text": "진짜?",
-          "emotion": "멈추며"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 1.728,
-      "tts_start_sec": 151.432,
-      "tts_end_sec": 153.16,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
-    },
-    {
-      "beat_id": "SEG04_B037",
-      "scene_id": "SEG04",
-      "text": "근데 두 번째 줄부터 또 기능 나열이야.",
-      "narration_text": "근데 두 번째 줄부터 또 기능 나열이야.",
-      "visual_goal": "Vee가 첫 줄을 고쳐 쓴다. \"밖에서도 집 컴퓨터를 쓰고 싶다.\"",
-      "duration_sec": 8.8,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "bee",
-          "text": "근데 두 번째 줄부터 또 기능 나열이야.",
-          "emotion": "빠르게"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 4.272,
-      "tts_start_sec": 153.36,
-      "tts_end_sec": 157.632,
-      "tts_voice": "ko-KR-InJoonNeural",
-      "tts_speaker": "bee"
-    },
-    {
-      "beat_id": "SEG04_B038",
-      "scene_id": "SEG04",
-      "text": "기능 말고. 이걸 왜 만드는 건데.",
-      "narration_text": "기능 말고. 이걸 왜 만드는 건데.",
-      "visual_goal": "Vee 살짝 웃는다.",
-      "duration_sec": 7.6,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "bee",
-          "text": "기능 말고. 이걸 왜 만드는 건데.",
-          "emotion": "한숨"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 4.968,
-      "tts_start_sec": 157.832,
-      "tts_end_sec": 162.8,
-      "tts_voice": "ko-KR-InJoonNeural",
-      "tts_speaker": "bee"
-    },
-    {
-      "beat_id": "SEG04_B039",
-      "scene_id": "SEG04",
-      "text": "...밖에서도 집 컴퓨터를 쓰고 싶으니까.",
-      "narration_text": "...밖에서도 집 컴퓨터를 쓰고 싶으니까.",
-      "visual_goal": "...밖에서도 집 컴퓨터를 쓰고 싶으니까.",
-      "duration_sec": 9.2,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "vee",
-          "text": "...밖에서도 집 컴퓨터를 쓰고 싶으니까.",
-          "emotion": "생각하다"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 3.456,
-      "tts_start_sec": 163.0,
-      "tts_end_sec": 166.456,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
-    },
-    {
-      "beat_id": "SEG04_B040",
-      "scene_id": "SEG04",
-      "text": "그거 먼저 써.",
-      "narration_text": "그거 먼저 써.",
-      "visual_goal": "그거 먼저 써.",
-      "duration_sec": 3.2,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee",
-        "bee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "bee",
-          "text": "그거 먼저 써.",
+          "speaker": "narrator",
+          "text": "She couldn't answer.",
           "emotion": ""
         }
       ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 2.328,
-      "tts_start_sec": 166.656,
-      "tts_end_sec": 168.984,
-      "tts_voice": "ko-KR-InJoonNeural",
-      "tts_speaker": "bee"
+      "shorts_candidate": false
     },
     {
-      "beat_id": "SEG04_B041",
+      "beat_id": "SEG03_B011",
+      "scene_id": "SEG03",
+      "text": "Here's an empty lot.",
+      "narration_text": "Here's an empty lot.",
+      "visual_goal": "Transition to abstract world. \"Spec = Blueprint\" metaphor.",
+      "duration_sec": 1.6,
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Here's an empty lot.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": true
+    },
+    {
+      "beat_id": "SEG03_B012",
+      "scene_id": "SEG03",
+      "text": "You want to build something here.",
+      "narration_text": "You want to build something here.",
+      "visual_goal": "Wide, dark navy surface. Empty space in the center.",
+      "duration_sec": 2.4,
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "You want to build something here.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG03_B013",
+      "scene_id": "SEG03",
+      "text": "With a blueprint, you start with the foundation. Then the frame. Then the walls. There's an order. Each piece knows where it goes.",
+      "narration_text": "With a blueprint, you start with the foundation. Then the frame. Then the walls. There's an order. Each piece knows where it goes.",
+      "visual_goal": "Left side: a blueprint unfolds. Blue lines trace the outline of a building.",
+      "duration_sec": 9.2,
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "With a blueprint, you start with the foundation. Then the frame. Then the walls. There's an order. Each piece knows where it goes.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG03_B014",
+      "scene_id": "SEG03",
+      "text": "Without a blueprint?",
+      "narration_text": "Without a blueprint?",
+      "visual_goal": "Foundation → frame → walls → roof. Geometric building assembles in sequence. Clean. Stable.",
+      "duration_sec": 1.5,
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Without a blueprint?",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG03_B015",
+      "scene_id": "SEG03",
+      "text": "You just... stack. And it goes up. It actually goes up.",
+      "narration_text": "You just... stack. And it goes up. It actually goes up.",
+      "visual_goal": "Right side: colorful blocks drop from above, piling randomly.",
+      "duration_sec": 4.4,
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "You just... stack. And it goes up. It actually goes up.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG03_B016",
+      "scene_id": "SEG03",
+      "text": "For a while, it looks like it's working.",
+      "narration_text": "For a while, it looks like it's working.",
+      "visual_goal": "The pile grows taller. It starts leaning.",
+      "duration_sec": 3.2,
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "For a while, it looks like it's working.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG03_B017",
+      "scene_id": "SEG03",
+      "text": "Then...",
+      "narration_text": "Then...",
+      "visual_goal": "The pile wobbles. Pauses.",
+      "duration_sec": 1.5,
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Then...",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG03_B018",
+      "scene_id": "SEG03",
+      "text": "A spec is a blueprint. It's not a hundred-page document. It's one sentence: \"What am I building?\"",
+      "narration_text": "A spec is a blueprint. It's not a hundred-page document. It's one sentence: \"What am I building?\"",
+      "visual_goal": "Collapse. Blocks scatter everywhere.",
+      "duration_sec": 6.8,
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "A spec is a blueprint. It's not a hundred-page document. It's one sentence: \"What am I building?\"",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG03_B019",
+      "scene_id": "SEG03",
+      "text": "You don't need to know every detail upfront.",
+      "narration_text": "You don't need to know every detail upfront.",
+      "visual_goal": "Back to the blueprint side. Clean building standing tall.",
+      "duration_sec": 3.2,
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "You don't need to know every detail upfront.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG03_B020",
+      "scene_id": "SEG03",
+      "text": "Start with a skateboard. Four wheels. It rolls. That's enough.",
+      "narration_text": "Start with a skateboard. Four wheels. It rolls. That's enough.",
+      "visual_goal": "Text appears on the blueprint: \"I want to access my home computer from anywhere.\"",
+      "duration_sec": 4.0,
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Start with a skateboard. Four wheels. It rolls. That's enough.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG03_B021",
+      "scene_id": "SEG03",
+      "text": "You can always make it bigger later. But you have to know what \"it\" is first.",
+      "narration_text": "You can always make it bigger later. But you have to know what \"it\" is first.",
+      "visual_goal": "New scene. A small skateboard rolls into frame.",
+      "duration_sec": 6.4,
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "You can always make it bigger later. But you have to know what \"it\" is first.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG03_B022",
+      "scene_id": "SEG03",
+      "text": "That one line? That's where a spec starts.",
+      "narration_text": "That one line? That's where a spec starts.",
+      "visual_goal": "Skateboard morphs into a bicycle. Bicycle morphs into a car.",
+      "duration_sec": 3.2,
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "That one line? That's where a spec starts.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG04_B023",
       "scene_id": "SEG04",
-      "text": "...읽을 수는 있네.",
-      "narration_text": "...읽을 수는 있네.",
-      "visual_goal": "...읽을 수는 있네.",
+      "text": "Back in the present. Everything still broken.",
+      "narration_text": "Back in the present. Everything still broken.",
+      "visual_goal": "Vee alone. Stops coding. Writes frustrations on paper. Discovers what she's building.",
+      "duration_sec": 2.8,
+      "visual_type": "sitcom",
+      "characters": [
+        "vee",
+        "bee"
+      ],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Back in the present. Everything still broken.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG04_B024",
+      "scene_id": "SEG04",
+      "text": "And then she did something unusual. She stopped coding.",
+      "narration_text": "And then she did something unusual. She stopped coding.",
+      "visual_goal": "Five monitors. Red errors. Vee's hands hover over the keyboard.",
+      "duration_sec": 3.6,
+      "visual_type": "sitcom",
+      "characters": [
+        "vee",
+        "bee"
+      ],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And then she did something unusual. She stopped coding.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG04_B025",
+      "scene_id": "SEG04",
+      "text": "She started writing. Not code. Just... what was bothering her.",
+      "narration_text": "She started writing. Not code. Just... what was bothering her.",
+      "visual_goal": "Vee's fingers tremble. She doesn't know what to type.",
+      "duration_sec": 4.0,
+      "visual_type": "sitcom",
+      "characters": [
+        "vee",
+        "bee"
+      ],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "She started writing. Not code. Just... what was bothering her.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG04_B026",
+      "scene_id": "SEG04",
+      "text": "And there it was. The question she'd been avoiding.",
+      "narration_text": "And there it was. The question she'd been avoiding.",
+      "visual_goal": "She pulls her hands back. Pushes the chair away from the desk.",
+      "duration_sec": 3.6,
+      "visual_type": "sitcom",
+      "characters": [
+        "vee",
+        "bee"
+      ],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And there it was. The question she'd been avoiding.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG04_B027",
+      "scene_id": "SEG04",
+      "text": "Not features. Not tools. The reason. The one sentence that explains everything.",
+      "narration_text": "Not features. Not tools. The reason. The one sentence that explains everything.",
+      "visual_goal": "Vee opens a desk drawer. Pulls out paper and a pencil. Turns her back to the monitors.",
       "duration_sec": 4.8,
       "visual_type": "sitcom",
       "characters": [
@@ -1929,68 +1179,96 @@
       ],
       "dialogue": [
         {
-          "speaker": "bee",
-          "text": "...읽을 수는 있네.",
-          "emotion": "눈을 안 마주치며"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 2.52,
-      "tts_start_sec": 169.184,
-      "tts_end_sec": 171.704,
-      "tts_voice": "ko-KR-InJoonNeural",
-      "tts_speaker": "bee"
-    },
-    {
-      "beat_id": "SEG05_B042",
-      "scene_id": "SEG05",
-      "text": "설계도 한 장. 그게 시작이래.",
-      "narration_text": "설계도 한 장. 그게 시작이래.",
-      "visual_goal": "교훈 + 다음편 떡밥.",
-      "duration_sec": 6.8,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "vee",
-          "text": "설계도 한 장. 그게 시작이래.",
-          "emotion": "조용히"
-        }
-      ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 3.0,
-      "tts_start_sec": 171.904,
-      "tts_end_sec": 174.904,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
-    },
-    {
-      "beat_id": "SEG05_B043",
-      "scene_id": "SEG05",
-      "text": "근데... 이 설계도가 맞긴 한 거야?",
-      "narration_text": "근데... 이 설계도가 맞긴 한 거야?",
-      "visual_goal": "Vee가 벽에 종이를 핀으로 꽂는다. \"밖에서도 집 컴퓨터를 쓰고 싶다.\"",
-      "duration_sec": 8.4,
-      "visual_type": "sitcom",
-      "characters": [
-        "vee"
-      ],
-      "dialogue": [
-        {
-          "speaker": "vee",
-          "text": "근데... 이 설계도가 맞긴 한 거야?",
+          "speaker": "narrator",
+          "text": "Not features. Not tools. The reason. The one sentence that explains everything.",
           "emotion": ""
         }
       ],
-      "shorts_candidate": false,
-      "actual_duration_sec": 4.152,
-      "tts_start_sec": 175.104,
-      "tts_end_sec": 179.256,
-      "tts_voice": "ko-KR-SunHiNeural",
-      "tts_speaker": "vee"
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG04_B028",
+      "scene_id": "SEG04",
+      "text": "The same errors. But now, one line makes sense.",
+      "narration_text": "The same errors. But now, one line makes sense.",
+      "visual_goal": "CU: Paper. Messy handwriting appears:",
+      "duration_sec": 3.6,
+      "visual_type": "sitcom",
+      "characters": [
+        "vee",
+        "bee"
+      ],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The same errors. But now, one line makes sense.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG05_B029",
+      "scene_id": "SEG05",
+      "text": "Everything is still broken.",
+      "narration_text": "Everything is still broken.",
+      "visual_goal": "Mirror of HOOK. Same room, same errors, different person.",
+      "duration_sec": 1.6,
+      "visual_type": "sitcom",
+      "characters": [
+        "vee",
+        "bee"
+      ],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Everything is still broken.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": true
+    },
+    {
+      "beat_id": "SEG05_B030",
+      "scene_id": "SEG05",
+      "text": "But now she knows what to fix.",
+      "narration_text": "But now she knows what to fix.",
+      "visual_goal": "**Exact same composition as HOOK.** Five monitors. Red errors. Dark room.",
+      "duration_sec": 2.8,
+      "visual_type": "sitcom",
+      "characters": [
+        "vee",
+        "bee"
+      ],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "But now she knows what to fix.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
+    },
+    {
+      "beat_id": "SEG05_B031",
+      "scene_id": "SEG05",
+      "text": "...at least, she thinks she does.",
+      "narration_text": "...at least, she thinks she does.",
+      "visual_goal": "Vee sits in her chair. The mug is in the same spot.",
+      "duration_sec": 2.4,
+      "visual_type": "sitcom",
+      "characters": [
+        "vee",
+        "bee"
+      ],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "...at least, she thinks she does.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false
     }
-  ],
-  "total_actual_duration_sec": 170.86
+  ]
 }
