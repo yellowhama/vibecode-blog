@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
-"""Generate T2I storyboards for all shots using Flux Dev.
+"""Generate T2I storyboards for all shots using Flux PuLID.
 
-Reads a shot manifest, builds a T2I-specific manifest with 16:9 framing,
-then delegates to comfy_batch_render.py.  After rendering, copies output
-PNGs into ComfyUI's input/ folder so Kontext and I2V can pick them up.
+Reads a shot manifest, builds a T2I-specific manifest with 16:9 framing
+and PuLID face-identity injection, then delegates to comfy_batch_render.py.
+After rendering, copies output PNGs into ComfyUI's input/ folder so
+Kontext and I2V can pick them up.
 
-This replaces the broken pipeline of golden-ref → Kontext (portrait closeup)
-with: Flux Dev T2I (832×480 scene) → Kontext character fix → WAN I2V.
+Default workflow is flux_pulid_t2i.json which injects a golden reference
+face via PuLID for character consistency across all shots.
 
 Usage:
     python generate_t2i_storyboards.py \\
         --manifest ep01_shot_manifest.json \\
-        --output-dir output/renders/ep01_storyboards \\
+        --output-dir output/renders/ep01_storyboards_v3 \\
         --comfy-input /home/hugh/ComfyUI/app/input \\
+        --pulid-ref ivy_burr_golden_ref.png \\
+        --pulid-weight 0.9 \\
         --guidance 3.5 \\
         --dry-run
 """
@@ -35,6 +38,10 @@ DEFAULT_GUIDANCE = 3.5
 DEFAULT_SEED_BASE = 4000000
 DEFAULT_WIDTH = 832
 DEFAULT_HEIGHT = 480
+DEFAULT_WORKFLOW = "flux_pulid_t2i.json"
+DEFAULT_BINDINGS = "flux_pulid_t2i_bindings.json"
+DEFAULT_PULID_REF = "ivy_burr_golden_ref.png"
+DEFAULT_PULID_WEIGHT = 0.9
 
 
 def _json_load(path: Path) -> dict[str, Any]:
@@ -52,10 +59,13 @@ def _build_t2i_manifest(
     shots: list[dict[str, Any]],
     guidance: float,
     seed_base: int,
+    pulid_ref: str | None = None,
+    pulid_weight: float = DEFAULT_PULID_WEIGHT,
 ) -> dict[str, Any]:
-    """Build a manifest for Flux Dev T2I storyboard generation.
+    """Build a manifest for Flux PuLID T2I storyboard generation.
 
-    Every shot gets a 16:9 scene render regardless of visual_type.
+    Every shot gets a 16:9 scene render with PuLID face-identity injection
+    for character consistency.
     """
     t2i_shots = []
     for i, shot in enumerate(shots):
@@ -65,7 +75,7 @@ def _build_t2i_manifest(
             print(f"  [WARN] No prompt for {shot_id}, using purpose as fallback")
             prompt = shot.get("purpose", "A scene from an animated show.")
 
-        t2i_shots.append({
+        entry: dict[str, Any] = {
             "shot_id": f"SB_{shot_id}",
             "positive_prompt": prompt,
             "width": shot.get("width", DEFAULT_WIDTH),
@@ -73,11 +83,20 @@ def _build_t2i_manifest(
             "seed": seed_base + i,
             "guidance": guidance,
             "filename_prefix": f"SB_{shot_id}",
-        })
+        }
 
+        if pulid_ref:
+            entry["pulid_ref_image"] = pulid_ref
+            entry["pulid_weight"] = pulid_weight
+            entry["pulid_start_at"] = 0.0
+            entry["pulid_end_at"] = 1.0
+
+        t2i_shots.append(entry)
+
+    style = "Flux PuLID T2I" if pulid_ref else "Flux Dev T2I"
     return {
         "project_id": "t2i_storyboards",
-        "style_lock": "Flux Dev T2I — 16:9 scene storyboards for I2V pipeline",
+        "style_lock": f"{style} — 16:9 scene storyboards for I2V pipeline",
         "shots": t2i_shots,
     }
 
@@ -105,6 +124,10 @@ def generate_t2i_storyboards(
     dry_run: bool = False,
     shots_filter: list[str] | None = None,
     update_manifest: bool = False,
+    workflow_path: Path | None = None,
+    bindings_path: Path | None = None,
+    pulid_ref: str | None = DEFAULT_PULID_REF,
+    pulid_weight: float = DEFAULT_PULID_WEIGHT,
 ) -> dict[str, Any]:
     """Generate T2I storyboards and optionally update the source manifest.
 
@@ -125,7 +148,10 @@ def generate_t2i_storyboards(
             return {"status": "filtered_empty", "shots": []}
 
     # Build T2I manifest
-    t2i_manifest = _build_t2i_manifest(shots, guidance, seed_base)
+    t2i_manifest = _build_t2i_manifest(
+        shots, guidance, seed_base,
+        pulid_ref=pulid_ref, pulid_weight=pulid_weight,
+    )
 
     output_dir = output_dir.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -150,9 +176,12 @@ def generate_t2i_storyboards(
 
     # Resolve workflow and bindings
     video_dir = Path(__file__).resolve().parent.parent.parent  # systems/video
-    workflow = video_dir / "workflows" / "api" / "flux_dev_t2i.json"
-    bindings = video_dir / "workflows" / "api" / "flux_dev_t2i_bindings.json"
+    workflow = workflow_path or (video_dir / "workflows" / "api" / DEFAULT_WORKFLOW)
+    bindings = bindings_path or (video_dir / "workflows" / "api" / DEFAULT_BINDINGS)
     render_script = video_dir / "scripts" / "comfy_batch_render.py"
+
+    if pulid_ref:
+        print(f"[T2I] PuLID enabled: ref={pulid_ref}, weight={pulid_weight}")
 
     for p in (workflow, bindings, render_script):
         if not p.exists():
@@ -228,7 +257,7 @@ def generate_t2i_storyboards(
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Generate T2I storyboards (16:9 scene images) for all shots via Flux Dev"
+        description="Generate T2I storyboards (16:9 scene images) via Flux PuLID"
     )
     parser.add_argument("--manifest", required=True, type=Path,
                         help="Shot manifest JSON")
@@ -248,6 +277,16 @@ def main() -> int:
                         help="Only process specific shot IDs")
     parser.add_argument("--update-manifest", action="store_true",
                         help="Add storyboard_image field to source manifest")
+    parser.add_argument("--workflow", type=Path, default=None,
+                        help=f"Workflow JSON path (default: {DEFAULT_WORKFLOW})")
+    parser.add_argument("--bindings", type=Path, default=None,
+                        help=f"Bindings JSON path (default: {DEFAULT_BINDINGS})")
+    parser.add_argument("--pulid-ref", type=str, default=DEFAULT_PULID_REF,
+                        help=f"PuLID reference image filename (default: {DEFAULT_PULID_REF})")
+    parser.add_argument("--pulid-weight", type=float, default=DEFAULT_PULID_WEIGHT,
+                        help=f"PuLID face weight 0.0-1.5 (default: {DEFAULT_PULID_WEIGHT})")
+    parser.add_argument("--no-pulid", action="store_true",
+                        help="Disable PuLID (use vanilla Flux Dev T2I)")
     args = parser.parse_args()
 
     if not args.manifest.exists():
@@ -257,6 +296,8 @@ def main() -> int:
     if args.output_dir is None:
         video_dir = Path(__file__).resolve().parent.parent.parent
         args.output_dir = video_dir / "output" / "renders" / "ep01_storyboards"
+
+    pulid_ref = None if args.no_pulid else args.pulid_ref
 
     result = generate_t2i_storyboards(
         manifest_path=args.manifest,
@@ -268,6 +309,10 @@ def main() -> int:
         dry_run=args.dry_run,
         shots_filter=args.shots,
         update_manifest=args.update_manifest,
+        workflow_path=args.workflow,
+        bindings_path=args.bindings,
+        pulid_ref=pulid_ref,
+        pulid_weight=args.pulid_weight,
     )
 
     return 0 if result.get("status") in ("ok", "dry_run") else 1
