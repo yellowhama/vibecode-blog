@@ -35,7 +35,9 @@
       "input_image": "S01_01_keyframe.png",
       "output_name": "S01_01.mp4",
       "source_beat_id": "SEG01_B001",
-      "source_scene_id": "SEG01"
+      "source_scene_id": "SEG01",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S02_02",
@@ -65,7 +67,9 @@
       "input_image": "S02_02_keyframe.png",
       "output_name": "S02_02.mp4",
       "source_beat_id": "SEG01_B002",
-      "source_scene_id": "SEG01"
+      "source_scene_id": "SEG01",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S03_03",
@@ -95,7 +99,9 @@
       "input_image": "S03_03_keyframe.png",
       "output_name": "S03_03.mp4",
       "source_beat_id": "SEG01_B004",
-      "source_scene_id": "SEG01"
+      "source_scene_id": "SEG01",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S04_04",
@@ -126,7 +132,9 @@
       "input_image": "S04_04_keyframe.png",
       "output_name": "S04_04.mp4",
       "source_beat_id": "SEG02_B005",
-      "source_scene_id": "SEG02"
+      "source_scene_id": "SEG02",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S05_05",
@@ -157,7 +165,9 @@
       "input_image": "S05_05_keyframe.png",
       "output_name": "S05_05.mp4",
       "source_beat_id": "SEG02_B006",
-      "source_scene_id": "SEG02"
+      "source_scene_id": "SEG02",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S06_06",
@@ -188,7 +198,9 @@
       "input_image": "S06_06_keyframe.png",
       "output_name": "S06_06.mp4",
       "source_beat_id": "SEG02_B008",
-      "source_scene_id": "SEG02"
+      "source_scene_id": "SEG02",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S07_07",
@@ -219,7 +231,9 @@
       "input_image": "S07_07_keyframe.png",
       "output_name": "S07_07.mp4",
       "source_beat_id": "SEG02_B009",
-      "source_scene_id": "SEG02"
+      "source_scene_id": "SEG02",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S08_08",
@@ -250,7 +264,9 @@
       "input_image": "S08_08_keyframe.png",
       "output_name": "S08_08.mp4",
       "source_beat_id": "SEG02_B010",
-      "source_scene_id": "SEG02"
+      "source_scene_id": "SEG02",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S09_09",
@@ -275,10 +291,12 @@
       "seed": 1300009,
       "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
       "mode": "i2v",
-      "input_image": null,
+      "input_image": "S09_09_keyframe.png",
       "output_name": "S09_09.mp4",
       "source_beat_id": "SEG03_B011",
-      "source_scene_id": "SEG03"
+      "source_scene_id": "SEG03",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S10_10",
@@ -303,10 +321,12 @@
       "seed": 1300010,
       "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
       "mode": "i2v",
-      "input_image": null,
+      "input_image": "S10_10_keyframe.png",
       "output_name": "S10_10.mp4",
       "source_beat_id": "SEG03_B013",
-      "source_scene_id": "SEG03"
+      "source_scene_id": "SEG03",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S11_11",
@@ -331,10 +351,12 @@
       "seed": 1300011,
       "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
       "mode": "i2v",
-      "input_image": null,
+      "input_image": "S11_11_keyframe.png",
       "output_name": "S11_11.mp4",
       "source_beat_id": "SEG03_B014",
-      "source_scene_id": "SEG03"
+      "source_scene_id": "SEG03",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S12_12",
@@ -362,7 +384,9 @@
       "input_image": null,
       "output_name": "S12_12.mp4",
       "source_beat_id": "SEG03_B015",
-      "source_scene_id": "SEG03"
+      "source_scene_id": "SEG03",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S13_13",
@@ -390,7 +414,9 @@
       "input_image": null,
       "output_name": "S13_13.mp4",
       "source_beat_id": "SEG03_B017",
-      "source_scene_id": "SEG03"
+      "source_scene_id": "SEG03",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S14_14",
@@ -418,7 +444,9 @@
       "input_image": null,
       "output_name": "S14_14.mp4",
       "source_beat_id": "SEG03_B018",
-      "source_scene_id": "SEG03"
+      "source_scene_id": "SEG03",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S15_15",
@@ -446,7 +474,9 @@
       "input_image": null,
       "output_name": "S15_15.mp4",
       "source_beat_id": "SEG03_B019",
-      "source_scene_id": "SEG03"
+      "source_scene_id": "SEG03",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S16_16",
@@ -474,7 +504,9 @@
       "input_image": null,
       "output_name": "S16_16.mp4",
       "source_beat_id": "SEG03_B021",
-      "source_scene_id": "SEG03"
+      "source_scene_id": "SEG03",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S17_17",
@@ -502,7 +534,9 @@
       "input_image": null,
       "output_name": "S17_17.mp4",
       "source_beat_id": "SEG03_B022",
-      "source_scene_id": "SEG03"
+      "source_scene_id": "SEG03",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S18_18",
@@ -533,7 +567,9 @@
       "input_image": "S18_18_keyframe.png",
       "output_name": "S18_18.mp4",
       "source_beat_id": "SEG04_B023",
-      "source_scene_id": "SEG04"
+      "source_scene_id": "SEG04",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S19_19",
@@ -564,7 +600,9 @@
       "input_image": "S19_19_keyframe.png",
       "output_name": "S19_19.mp4",
       "source_beat_id": "SEG04_B024",
-      "source_scene_id": "SEG04"
+      "source_scene_id": "SEG04",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S20_20",
@@ -595,7 +633,9 @@
       "input_image": "S20_20_keyframe.png",
       "output_name": "S20_20.mp4",
       "source_beat_id": "SEG04_B026",
-      "source_scene_id": "SEG04"
+      "source_scene_id": "SEG04",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S21_21",
@@ -626,7 +666,9 @@
       "input_image": "S21_21_keyframe.png",
       "output_name": "S21_21.mp4",
       "source_beat_id": "SEG04_B027",
-      "source_scene_id": "SEG04"
+      "source_scene_id": "SEG04",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S22_22",
@@ -657,7 +699,9 @@
       "input_image": "S22_22_keyframe.png",
       "output_name": "S22_22.mp4",
       "source_beat_id": "SEG04_B028",
-      "source_scene_id": "SEG04"
+      "source_scene_id": "SEG04",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S23_23",
@@ -688,7 +732,9 @@
       "input_image": "S23_23_keyframe.png",
       "output_name": "S23_23.mp4",
       "source_beat_id": "SEG05_B030",
-      "source_scene_id": "SEG05"
+      "source_scene_id": "SEG05",
+      "width": 832,
+      "height": 480
     },
     {
       "shot_id": "S24_24",
@@ -719,7 +765,9 @@
       "input_image": "S24_24_keyframe.png",
       "output_name": "S24_24.mp4",
       "source_beat_id": "SEG05_B031",
-      "source_scene_id": "SEG05"
+      "source_scene_id": "SEG05",
+      "width": 832,
+      "height": 480
     }
   ],
   "source_preproduction": "systems/video/preproduction/ep01/ep01_prepro_manifest.json",
