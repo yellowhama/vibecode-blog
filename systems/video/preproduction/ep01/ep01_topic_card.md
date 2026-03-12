@@ -47,30 +47,68 @@
   - TTS 생성: `en-US-AriaNeural`, 148.9s master audio + SRT 자막
   - Shot manifest 재생성: 24 shots (15 sitcom + 9 explainer), 180s, 영어 프롬프트
 
-- [x] **Phase 6: 키프레임 생성 (2026-03-12)** — Flux Kontext 15샷 + T2I 3샷, 18개 키프레임 완료
-- [x] **Phase 7: I2V/T2V 렌더 (2026-03-12~13)** — WAN 2.2 MoE I2V 18샷 + T2I 6샷 = 24 MP4
-- [x] **Phase 8: 최종 조립 (2026-03-13)** — `EP01_FINAL.mp4` (179.5s, 31MB, 자막 포함)
+- [x] **Phase 6: 키프레임 생성 1차 (2026-03-12)** — Flux Kontext 15샷 + T2I 3샷, 18개 키프레임
+- [x] **Phase 7: I2V/T2V 렌더 1차 (2026-03-12~13)** — WAN 2.2 MoE I2V 18샷 + T2V 6샷 = 24 MP4
+- [x] **Phase 8: 최종 조립 1차 (2026-03-13)** — `EP01_FINAL.mp4` (179.5s, 31MB, 자막 포함)
 
-## 다음 단계
-- [ ] **QA 리뷰**: 영상 품질, 캐릭터 일관성, 음성/자막 싱크 확인
+- [x] **Phase 9: QA 포스트모템 + 파이프라인 수정 (2026-03-13)** — `33a68d3`
+  - **1차 렌더 문제**: 모든 씬이 얼굴 클로즈업에서 시작, 1:1 비율 찌그러짐
+  - **근본 원인**: Kontext에 초상화(1024x1024) 입력 → 씬 구도 없이 얼굴만 생성
+  - **수정**: 바인딩 768x768→832x480, shot manifest에 width/height 명시
+  - **올바른 파이프라인 문서화**: `05-storyboard-keyframe-pipeline.md`
+    - T2I 씬 스토리보드(16:9) → Kontext 캐릭터 보정(선택) → I2V
+  - **Kontext 딥 리서치**: latent concatenation 아키텍처, RefControl LoRA, 프롬프트 가이드
+
+## 다음 단계 — EP01 2차 렌더
+
+### Phase 10: T2I 씬 스토리보드 생성 (16:9)
+- Flux Dev T2I로 24샷 키프레임 생성 (832x480, 16:9)
+- 프롬프트: shot manifest `prompt_positive` + 스타일 앵커 + 카메라 프레이밍
+- 시트콤 샷: Vee 캐릭터 디스크립션 포함
+- Explainer 샷: 추상 인포그래픽 스타일
+  ```bash
+  # T2I 스토리보드 배치 생성 (ComfyUI Flux Dev T2I 워크플로우 필요)
+  python systems/video/pipeline/scripts/generate_t2i_storyboards.py \
+    --manifest systems/video/preproduction/ep01/ep01_shot_manifest.json \
+    --output-dir systems/video/output/renders/ep01_storyboards \
+    --width 832 --height 480
+  ```
+
+### Phase 11: Kontext 캐릭터 보정 (선택)
+- T2I 스토리보드를 입력으로 Vee 일관성 보정 (시트콤 샷만)
+- golden ref를 참조 이미지로 + 스토리보드를 편집 대상으로
+- 문제 프레임만 선별 보정
   ```bash
   python systems/video/pipeline/scripts/generate_kontext_keyframes.py \
     --manifest systems/video/preproduction/ep01/ep01_shot_manifest.json \
     --golden-ref systems/video/assets/characters/vee/ivy_burr_golden_ref.png \
-    --output-dir systems/video/output/renders/ep01_keyframes
+    --input-dir systems/video/output/renders/ep01_storyboards \
+    --output-dir systems/video/output/renders/ep01_keyframes_v2
   ```
-- [ ] **Phase 7: I2V 렌더** — WAN 2.2 MoE i2v, ~24샷 × 2분 ≈ 48분
+
+### Phase 12: I2V 렌더 2차
+- WAN 2.2 MoE I2V, 832x480 (16:9)
   ```bash
   python systems/video/pipeline/scripts/comfy_batch_render.py \
     --manifest systems/video/preproduction/ep01/ep01_shot_manifest.json \
     --workflow systems/video/workflows/api/wan22_moe_i2v_full.json \
     --bindings systems/video/workflows/api/wan22_moe_i2v_bindings.json \
-    --output-dir systems/video/output/renders/ep01_$(date +%Y%m%d_%H%M%S)
+    --output-dir systems/video/output/renders/ep01_v2_$(date +%Y%m%d_%H%M%S)
   ```
-- [ ] **Phase 8: QA + 최종 조립** — Vision QA → finalize_video_v2.py → EP01_FINAL.mp4
 
-## 전제 조건 (Phase 6-8)
+### Phase 13: 최종 조립 2차
+  ```bash
+  python systems/video/pipeline/scripts/finalize_video_v2.py \
+    --render-dir systems/video/output/renders/ep01_v2_XXXXXX \
+    --voiceover systems/video/preproduction/ep01/tts_full/voiceover_master.wav \
+    --subtitles systems/video/preproduction/ep01/tts_full/subtitles.srt \
+    --output systems/video/output/EP01_FINAL_v2.mp4
+  ```
+
+## 전제 조건 (Phase 10-13)
 - ComfyUI 서버 실행 (localhost:8188)
 - GPU 사용 가능 (RTX 5070 Ti)
+- **Flux Dev T2I 워크플로우** + 바인딩 JSON 준비 필요 (Phase 10)
 - Vee golden reference: `systems/video/assets/characters/vee/ivy_burr_golden_ref.png`
-- WAN 2.2 MoE 워크플로우 + 바인딩 JSON 확인
+- WAN 2.2 MoE I2V 워크플로우 + 바인딩 JSON (수정 완료)
+- 참고: `systems/video/planning/05-storyboard-keyframe-pipeline.md`
