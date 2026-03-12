@@ -92,10 +92,11 @@ def _determine_char_strategy(shot: dict[str, Any], character_map: dict[str, str]
 
 def _build_kontext_manifest(
     shots: list[dict[str, Any]],
-    golden_ref: str,
+    golden_ref: str | None,
     guidance: float,
     seed_base: int,
     character_map: dict[str, str] | None = None,
+    storyboard_dir: Path | None = None,
 ) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
     """Build a temporary manifest for Kontext keyframe generation.
 
@@ -126,10 +127,17 @@ def _build_kontext_manifest(
             or "Same character in a different scene."
         )
 
+        # Determine input image: storyboard (scene) or golden ref (portrait)
+        if storyboard_dir:
+            sb_name = shot.get("storyboard_image", f"{shot_id}_storyboard.png")
+            input_image = sb_name
+        else:
+            input_image = golden_ref
+
         kontext_shots.append({
             "shot_id": f"KX_{shot_id}",
             "positive_prompt": _compose_kontext_prompt(raw_prompt),
-            "input_image": golden_ref,
+            "input_image": input_image,
             "seed": shot.get("kontext_seed", seed_base + i),
             "guidance": shot.get("kontext_guidance", guidance),
             "filename_prefix": f"KX_{shot_id}",
@@ -158,7 +166,7 @@ def _find_render_output(run_dir: Path, shot_id: str) -> Path | None:
 
 def generate_kontext_keyframes(
     manifest_path: Path,
-    golden_ref: str,
+    golden_ref: str | None,
     output_dir: Path,
     comfy_input: Path | None = None,
     server: str = "http://127.0.0.1:8188",
@@ -168,6 +176,7 @@ def generate_kontext_keyframes(
     shots_filter: list[str] | None = None,
     update_manifest: bool = True,
     character_map: dict[str, str] | None = None,
+    storyboard_dir: Path | None = None,
 ) -> dict[str, Any]:
     """Generate Kontext keyframes and optionally update the source manifest.
 
@@ -189,7 +198,7 @@ def generate_kontext_keyframes(
 
     # Build Kontext-specific manifest (now returns tuple)
     kontext_manifest, t2i_shots, skipped_shots = _build_kontext_manifest(
-        shots, golden_ref, guidance, seed_base, character_map
+        shots, golden_ref, guidance, seed_base, character_map, storyboard_dir
     )
 
     output_dir = output_dir.resolve()
@@ -254,7 +263,29 @@ def generate_kontext_keyframes(
             print(result.stderr[-500:])
         return {"status": "render_failed", "returncode": result.returncode}
 
-    # Post-process: copy outputs to ComfyUI input/ and build results
+    # Copy storyboards directly as keyframes for T2I shots (explainer/Bee)
+    # These don't need Kontext character correction
+    t2i_results = []
+    if storyboard_dir and t2i_shots:
+        storyboard_dir_resolved = storyboard_dir.resolve()
+        for shot in t2i_shots:
+            shot_id = shot.get("shot_id", "unknown")
+            sb_name = shot.get("storyboard_image", f"{shot_id}_storyboard.png")
+            sb_path = storyboard_dir_resolved / sb_name
+            keyframe_name = f"{shot_id}_keyframe.png"
+
+            if sb_path.exists():
+                dst = output_dir / keyframe_name
+                shutil.copy2(sb_path, dst)
+                print(f"  [T2I→KF] {sb_name} → {keyframe_name}")
+                if comfy_input:
+                    shutil.copy2(sb_path, comfy_input / keyframe_name)
+                t2i_results.append({"shot_id": shot_id, "status": "ok", "keyframe": str(dst)})
+            else:
+                print(f"  [MISS] Storyboard not found: {sb_path}")
+                t2i_results.append({"shot_id": shot_id, "status": "missing"})
+
+    # Post-process: copy Kontext outputs to ComfyUI input/ and build results
     results = []
     for shot in shots:
         shot_id = shot.get("shot_id", "unknown")
@@ -295,9 +326,10 @@ def generate_kontext_keyframes(
         _json_dump(manifest_path, manifest_data)
         print(f"[KONTEXT] Updated input_image for {len(ok_ids)} shots in {manifest_path}")
 
-    ok_count = sum(1 for r in results if r["status"] == "ok")
-    print(f"\n[KONTEXT] Done: {ok_count}/{len(results)} keyframes generated.")
-    return {"status": "ok", "total": len(results), "ok": ok_count, "results": results}
+    all_results = results + t2i_results
+    ok_count = sum(1 for r in all_results if r["status"] == "ok")
+    print(f"\n[KONTEXT] Done: {ok_count}/{len(all_results)} keyframes generated.")
+    return {"status": "ok", "total": len(all_results), "ok": ok_count, "results": all_results}
 
 
 def main() -> int:
@@ -306,8 +338,10 @@ def main() -> int:
     )
     parser.add_argument("--manifest", required=True, type=Path,
                         help="Shot manifest JSON (will be updated with keyframe paths)")
-    parser.add_argument("--golden-ref", required=True,
+    parser.add_argument("--golden-ref", required=False, default=None,
                         help="Golden reference image filename (must be in ComfyUI input/)")
+    parser.add_argument("--storyboard-dir", type=Path, default=None,
+                        help="T2I storyboard PNG directory (Phase 10 output)")
     parser.add_argument("--output-dir", type=Path, default=None,
                         help="Output directory for keyframes")
     parser.add_argument("--comfy-input", type=Path, default=None,
@@ -332,6 +366,10 @@ def main() -> int:
         print(f"[ERROR] Manifest not found: {args.manifest}", file=sys.stderr)
         return 1
 
+    if not args.storyboard_dir and not args.golden_ref:
+        print("[ERROR] Either --storyboard-dir or --golden-ref is required.", file=sys.stderr)
+        return 1
+
     if args.output_dir is None:
         video_dir = Path(__file__).resolve().parent.parent.parent
         args.output_dir = video_dir / "output" / "renders" / "kontext_keyframes"
@@ -354,6 +392,7 @@ def main() -> int:
         shots_filter=args.shots,
         update_manifest=not args.no_update_manifest,
         character_map=char_map,
+        storyboard_dir=args.storyboard_dir,
     )
 
     return 0 if result.get("status") in ("ok", "dry_run") else 1
