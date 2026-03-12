@@ -59,56 +59,61 @@
     - T2I 씬 스토리보드(16:9) → Kontext 캐릭터 보정(선택) → I2V
   - **Kontext 딥 리서치**: latent concatenation 아키텍처, RefControl LoRA, 프롬프트 가이드
 
-## 다음 단계 — EP01 2차 렌더
+## EP01 2차 렌더 — 진행 상황
 
-### Phase 10: T2I 씬 스토리보드 생성 (16:9)
-- Flux Dev T2I로 24샷 키프레임 생성 (832x480, 16:9)
-- 프롬프트: shot manifest `prompt_positive` + 스타일 앵커 + 카메라 프레이밍
-- 시트콤 샷: Vee 캐릭터 디스크립션 포함
-- Explainer 샷: 추상 인포그래픽 스타일
-  ```bash
-  # T2I 스토리보드 배치 생성 (ComfyUI Flux Dev T2I 워크플로우 필요)
-  python systems/video/pipeline/scripts/generate_t2i_storyboards.py \
-    --manifest systems/video/preproduction/ep01/ep01_shot_manifest.json \
-    --output-dir systems/video/output/renders/ep01_storyboards \
-    --width 832 --height 480
-  ```
+- [x] **Phase 10: T2I 스토리보드 파이프라인 구현 (2026-03-13)** — `00bfa17`
+  - 신규: `generate_t2i_storyboards.py` — shot manifest → Flux Dev T2I 832x480 16:9 배치 생성
+  - 수정: `generate_kontext_keyframes.py` — `--storyboard-dir` 추가, golden-ref 선택적
+  - T2I/explainer 샷은 Kontext 바이패스 (스토리보드 → 키프레임 직접 복사)
+  - dry-run 검증 완료, 하위 호환성 유지
 
-### Phase 11: Kontext 캐릭터 보정 (선택)
-- T2I 스토리보드를 입력으로 Vee 일관성 보정 (시트콤 샷만)
-- golden ref를 참조 이미지로 + 스토리보드를 편집 대상으로
-- 문제 프레임만 선별 보정
-  ```bash
-  python systems/video/pipeline/scripts/generate_kontext_keyframes.py \
-    --manifest systems/video/preproduction/ep01/ep01_shot_manifest.json \
-    --golden-ref systems/video/assets/characters/vee/ivy_burr_golden_ref.png \
-    --input-dir systems/video/output/renders/ep01_storyboards \
-    --output-dir systems/video/output/renders/ep01_keyframes_v2
-  ```
+## 다음 단계 — Phase 10 실행 + Phase 11~13
 
-### Phase 12: I2V 렌더 2차
-- WAN 2.2 MoE I2V, 832x480 (16:9)
-  ```bash
-  python systems/video/pipeline/scripts/comfy_batch_render.py \
-    --manifest systems/video/preproduction/ep01/ep01_shot_manifest.json \
-    --workflow systems/video/workflows/api/wan22_moe_i2v_full.json \
-    --bindings systems/video/workflows/api/wan22_moe_i2v_bindings.json \
-    --output-dir systems/video/output/renders/ep01_v2_$(date +%Y%m%d_%H%M%S)
-  ```
+### Phase 10 실행: T2I 스토리보드 렌더 (~48분)
+```bash
+# ComfyUI 서버 실행 확인 후
+python systems/video/pipeline/scripts/generate_t2i_storyboards.py \
+  --manifest systems/video/preproduction/ep01/ep01_shot_manifest.json \
+  --output-dir systems/video/output/renders/ep01_storyboards \
+  --comfy-input /home/hugh/ComfyUI/app/input \
+  --guidance 3.5 --update-manifest
+
+# [QA] 스토리보드 리뷰 → 문제 샷 리시드/리렌더
+# python generate_t2i_storyboards.py --manifest ... --shots S01_01 --seed-base 4100000
+```
+
+### Phase 11: Kontext 캐릭터 보정 (시트콤 15샷만)
+```bash
+python systems/video/pipeline/scripts/generate_kontext_keyframes.py \
+  --manifest systems/video/preproduction/ep01/ep01_shot_manifest.json \
+  --storyboard-dir systems/video/output/renders/ep01_storyboards \
+  --output-dir systems/video/output/renders/ep01_keyframes_v2 \
+  --comfy-input /home/hugh/ComfyUI/app/input \
+  --guidance 2.5
+```
+
+### Phase 12: I2V 렌더 2차 (24샷, 832x480 16:9)
+```bash
+python systems/video/scripts/comfy_batch_render.py \
+  --manifest systems/video/preproduction/ep01/ep01_shot_manifest.json \
+  --workflow systems/video/workflows/api/wan22_moe_i2v_full.json \
+  --bindings systems/video/workflows/api/wan22_moe_i2v_bindings.json \
+  --output-dir systems/video/output/renders/ep01_i2v_v2
+```
 
 ### Phase 13: 최종 조립 2차
-  ```bash
-  python systems/video/pipeline/scripts/finalize_video_v2.py \
-    --render-dir systems/video/output/renders/ep01_v2_XXXXXX \
-    --voiceover systems/video/preproduction/ep01/tts_full/voiceover_master.wav \
-    --subtitles systems/video/preproduction/ep01/tts_full/subtitles.srt \
-    --output systems/video/output/EP01_FINAL_v2.mp4
-  ```
+```bash
+python systems/video/pipeline/scripts/finalize_video_v2.py \
+  --render-dir systems/video/output/renders/ep01_i2v_v2 \
+  --voiceover systems/video/preproduction/ep01/tts_full/voiceover_master.wav \
+  --subtitles systems/video/preproduction/ep01/tts_full/subtitles.srt \
+  --output systems/video/output/EP01_FINAL_v2.mp4
+```
 
-## 전제 조건 (Phase 10-13)
+## 전제 조건 (Phase 10-13 실행)
 - ComfyUI 서버 실행 (localhost:8188)
 - GPU 사용 가능 (RTX 5070 Ti)
-- **Flux Dev T2I 워크플로우** + 바인딩 JSON 준비 필요 (Phase 10)
+- Flux Dev T2I 워크플로우 + 바인딩 JSON (존재 확인 완료)
 - Vee golden reference: `systems/video/assets/characters/vee/ivy_burr_golden_ref.png`
-- WAN 2.2 MoE I2V 워크플로우 + 바인딩 JSON (수정 완료)
+- WAN 2.2 MoE I2V 워크플로우 + 바인딩 JSON (832x480 수정 완료)
 - 참고: `systems/video/planning/05-storyboard-keyframe-pipeline.md`
