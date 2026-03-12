@@ -199,15 +199,17 @@ def assemble_narrative_audio(
         raise ValueError("No shots in manifest for audio assembly")
 
     # Build inputs and filter complex
+    # Track input file index explicitly (not len//2) because -stream_loop adds extra args
     inputs = ["-i", str(vo_path)]
+    input_idx = 1  # next FFmpeg input file index (0 = voiceover)
     filter_parts = [f"[0:a]volume={vo_volume}[vo]"]
-    
+
     # 1. Prepare BGM (Act-based switching)
     # For v2.1, we concatenate BGM clips matching act durations
     bgm_inputs = []
     bgm_filter = ""
     cursor = 0.0
-    
+
     # Group shots by narrative stage to determine BGM segments
     stages = []
     if shots:
@@ -227,11 +229,10 @@ def assemble_narrative_audio(
         bgm_entry = select_bgm_by_stage(catalog, stage)
         if bgm_entry:
             inputs.extend(["-stream_loop", "-1", "-i", bgm_entry["path"]])
-            # Trim looped BGM to segment duration and apply volume
-            inputs_idx = len(inputs) // 2 - 1
-            filter_parts.append(f"[{inputs_idx}:a]atrim=duration={dur:.3f},volume={bgm_volume}[bgm{idx}]")
+            filter_parts.append(f"[{input_idx}:a]atrim=duration={dur:.3f},volume={bgm_volume}[bgm{idx}]")
             bgm_inputs.append(f"[bgm{idx}]")
-    
+            input_idx += 1
+
     if bgm_inputs:
         filter_parts.append(f"{''.join(bgm_inputs)}concat=n={len(bgm_inputs)}:v=0:a=1[bgm_full]")
     else:
@@ -245,14 +246,13 @@ def assemble_narrative_audio(
         visual = shot.get("prompt_positive", "")
         narration = shot.get("narration", "")
         dur = float(shot.get("duration_sec", 5.0))
-        
+
         selected_sfx = select_sfx_by_keywords(catalog, visual, narration)
         for s in selected_sfx:
-            sfx_idx = len(inputs) // 2
             inputs.extend(["-i", s["path"]])
-            # Delay SFX to its shot start time
-            filter_parts.append(f"[{sfx_idx}:a]adelay={int(cursor*1000)}|{int(cursor*1000)}[sfx{len(sfx_inputs)}]")
+            filter_parts.append(f"[{input_idx}:a]adelay={int(cursor*1000)}|{int(cursor*1000)}[sfx{len(sfx_inputs)}]")
             sfx_inputs.append(f"[sfx{len(sfx_inputs)}]")
+            input_idx += 1
         cursor += dur
 
     # 3. Mix SFX and then Sidechain Duck BGM
@@ -262,11 +262,16 @@ def assemble_narrative_audio(
     else:
         filter_parts.append("[vo]anull[vo_sfx]")
 
-    # Sidechain: [bgm_full] is ducked by [vo_sfx]
+    # Normalize channel layouts for sidechaingate compatibility
+    filter_parts.append("[vo_sfx]aformat=channel_layouts=stereo[vo_sfx_s]")
+    filter_parts.append("[bgm_full]aformat=channel_layouts=stereo[bgm_full_s]")
+    # Split [vo_sfx_s] so it can feed both sidechaingate and final mix
+    filter_parts.append("[vo_sfx_s]asplit=2[vo_sfx_sc][vo_sfx_mix]")
+    # Sidechain: [bgm_full_s] is ducked by [vo_sfx_sc]
     filter_parts.append(
-        f"[bgm_full][vo_sfx]sidechaingate=threshold={duck_threshold}:ratio={duck_ratio}:level_in=1[ducked_bgm]"
+        f"[bgm_full_s][vo_sfx_sc]sidechaingate=threshold={duck_threshold}:ratio={duck_ratio}:level_in=1[ducked_bgm]"
     )
-    filter_parts.append("[vo_sfx][ducked_bgm]amix=inputs=2:normalize=0[outa]")
+    filter_parts.append("[vo_sfx_mix][ducked_bgm]amix=inputs=2:normalize=0[outa]")
 
     cmd = ["ffmpeg", "-y"] + inputs + ["-filter_complex", ";".join(filter_parts), "-map", "[outa]", str(output_path)]
     _run(cmd)

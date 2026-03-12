@@ -695,6 +695,7 @@ def main() -> int:
     parser.add_argument("--audio-ducking", action="store_true", help="Enable sidechain ducking for BGM")
     parser.add_argument("--duck-threshold", type=float, default=0.02, help="Sidechain compressor threshold")
     parser.add_argument("--duck-ratio", type=float, default=6.0, help="Sidechain compressor ratio")
+    parser.add_argument("--simple-audio", action="store_true", help="Skip narrative audio assembly, use simple VO+BGM amix fallback")
 
     # --- Phase D: Color normalization ---
     parser.add_argument("--color-normalize", action="store_true", help="Enable color normalization across clips")
@@ -809,23 +810,51 @@ def main() -> int:
     if args.voiceover:
         if not args.voiceover.exists():
             raise RuntimeError(f"voiceover file not found: {args.voiceover}")
-        
-        from video_assembler import assemble_narrative_audio
+
         import tempfile as _tmpmod
 
-        print("[POST] advanced narrative audio assembly (BGM acts + SFX keywords)...")
+        # Validate audio catalog and decide assembly mode
+        use_simple = args.simple_audio
+        if not use_simple:
+            from audio_catalog import validate_catalog
+            missing = validate_catalog()
+            if missing:
+                print(f"[WARN] {len(missing)} audio files missing — falling back to simple audio mode")
+                use_simple = True
+
         with _tmpmod.TemporaryDirectory(prefix="audio_engine_") as _dtd:
             master_audio = Path(_dtd) / "master_mix.wav"
-            assemble_narrative_audio(
-                manifest=manifest,
-                vo_path=args.voiceover,
-                output_path=master_audio,
-                vo_volume=args.voiceover_volume,
-                bgm_volume=args.bgm_volume,
-                duck_threshold=args.duck_threshold,
-                duck_ratio=args.duck_ratio,
-            )
-            
+
+            if use_simple:
+                # Simple fallback: VO only (or VO + BGM amix if --bgm provided)
+                print("[POST] simple audio mode (VO-only or VO+BGM amix)...")
+                if args.bgm and args.bgm.exists():
+                    _run([
+                        "ffmpeg", "-y",
+                        "-i", str(args.voiceover),
+                        "-stream_loop", "-1", "-i", str(args.bgm),
+                        "-filter_complex",
+                        f"[0:a]volume={args.voiceover_volume}[vo];"
+                        f"[1:a]volume={args.bgm_volume}[bg];"
+                        "[vo][bg]amix=inputs=2:duration=first:normalize=0[out]",
+                        "-map", "[out]",
+                        str(master_audio),
+                    ])
+                else:
+                    _run(["ffmpeg", "-y", "-i", str(args.voiceover), "-c:a", "pcm_s16le", str(master_audio)])
+            else:
+                from video_assembler import assemble_narrative_audio
+                print("[POST] advanced narrative audio assembly (BGM acts + SFX keywords)...")
+                assemble_narrative_audio(
+                    manifest=manifest,
+                    vo_path=args.voiceover,
+                    output_path=master_audio,
+                    vo_volume=args.voiceover_volume,
+                    bgm_volume=args.bgm_volume,
+                    duck_threshold=args.duck_threshold,
+                    duck_ratio=args.duck_ratio,
+                )
+
             # Mux master audio with video
             _run([
                 "ffmpeg", "-y",

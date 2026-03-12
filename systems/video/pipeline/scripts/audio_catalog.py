@@ -206,6 +206,27 @@ def select_sfx(
     return [_resolve(e) for e in entries]
 
 
+def validate_catalog(
+    path: Path = DEFAULT_CATALOG_PATH,
+    assets_root: Path = DEFAULT_ASSETS_ROOT,
+) -> List[str]:
+    """Check catalog for missing audio files. Returns list of missing descriptions."""
+    catalog = load_catalog(path, validate_files=False)
+    missing = []
+    for section in ("bgm", "sfx"):
+        for entry in catalog.get(section, []):
+            full_path = assets_root / entry["path"]
+            if not full_path.exists():
+                missing.append(f"{section}/{entry['id']}: {full_path}")
+    if missing:
+        print(f"[WARN] {len(missing)} missing audio file(s):")
+        for m in missing:
+            print(f"  - {m}")
+    else:
+        print("[OK] All audio catalog files present")
+    return missing
+
+
 if __name__ == "__main__":
     import argparse
 
