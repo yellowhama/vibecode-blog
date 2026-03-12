@@ -59,22 +59,63 @@
     - T2I 씬 스토리보드(16:9) → Kontext 캐릭터 보정(선택) → I2V
   - **Kontext 딥 리서치**: latent concatenation 아키텍처, RefControl LoRA, 프롬프트 가이드
 
-## EP01 2차 렌더 — 진행 상황
+## EP01 2차 렌더 — 완료 (Flux Dev, vanilla T2I)
 
 - [x] **Phase 10: T2I 스토리보드 파이프라인 구현 (2026-03-13)** — `00bfa17`
   - 신규: `generate_t2i_storyboards.py` — shot manifest → Flux Dev T2I 832x480 16:9 배치 생성
   - 수정: `generate_kontext_keyframes.py` — `--storyboard-dir` 추가, golden-ref 선택적
-  - T2I/explainer 샷은 Kontext 바이패스 (스토리보드 → 키프레임 직접 복사)
-  - dry-run 검증 완료, 하위 호환성 유지
 
 - [x] **Phase 10.5: 애니매틱 + 오디오 + 와이어링 (2026-03-13)** — `0ac10f2`
-  - 신규: `generate_animatic.py` — 스토리보드 PNG + VO + SRT → 타이밍 프리뷰 MP4
-  - 신규: `annotate_manifest_stages.py` — 24샷 narrative_stage 어노테이션 (HOOK/FURY/MESS/INSIGHT)
-  - 신규: `generate_placeholder_audio.py` — BGM 4개 + SFX 4개 플레이스홀더 WAV
-  - 수정: `audio_catalog.py` + `validate_catalog()` 누락 파일 감지
-  - 수정: `package_for_youtube.py` + `--simple-audio` 폴백 (에셋 부재 시 자동 전환)
-  - 수정: `video_assembler.py` 버그 3건 (인풋 인덱스, asplit, aformat) — assemble_narrative_audio 처음으로 E2E 통과
-  - 애니매틱 프리뷰: `EP01_ANIMATIC.mp4` (150s, h264+AAC) 생성 확인
+  - 신규: `generate_animatic.py`, `annotate_manifest_stages.py`, `generate_placeholder_audio.py`
+  - 수정: `audio_catalog.py`, `package_for_youtube.py`, `video_assembler.py` 버그 3건
+
+- [x] **Phase 10A: TTS 업그레이드 — Chatterbox (2026-03-13)**
+  - 31/31 beats Chatterbox 합성 성공, 88s master VO, 31-entry SRT
+
+- [x] **Phase 10B~11: T2I → Kontext → I2V 2차 (2026-03-13)**
+  - 24/24 스토리보드, 15/15 Kontext, I2V 렌더 완료
+
+## EP01 3차 렌더 — PuLID 캐릭터 일관성 + QA 체크포인트
+
+### 2차 렌더 포스트모템
+1. **T2I에 캐릭터 레퍼런스 없음** — vanilla Flux Dev T2I로 생성하여 Vee가 매 샷 다른 얼굴
+2. **단계별 QA 없이 자동 진행** — 대본/TTS/스토리보드/키프레임/I2V를 결과 확인 없이 연쇄 실행
+
+### 파이프라인 개선 (`339ee58`)
+- `generate_t2i_storyboards.py`: PuLID 기본 워크플로우로 전환 (`flux_pulid_t2i.json`)
+  - `--pulid-ref`, `--pulid-weight`, `--workflow`, `--bindings`, `--no-pulid` CLI 추가
+  - T2I manifest에 `pulid_ref_image`, `pulid_weight`, `pulid_start_at`, `pulid_end_at` 주입
+- 신규: `qa_checkpoint.py` — 대화형 QA 게이트 (Approve/Retry/Abort, exit 0/2/1)
+  - `--stage`, `--artifacts-dir`, `--artifact-type` (image/audio/video)
+  - `--report-json` 품질 보고서 요약, `--auto-approve` CI 모드
+
+### v3 파이프라인 진행 상황
+
+- [ ] **STAGE 0: 대본 리뷰**
+  - `validate_screenplay.py` + 수동 나레이션 텍스트 검토
+
+- [ ] **STAGE 1: TTS 생성**
+  - Chatterbox 31 beats → `tts_full_v3/` + `qa_checkpoint.py --stage "TTS Audio"`
+
+- [ ] **STAGE 2: T2I PuLID 스토리보드**
+  - `generate_t2i_storyboards.py --pulid-ref ivy_burr_golden_ref.png --pulid-weight 0.9`
+  - `qa_checkpoint.py --stage "T2I PuLID Storyboards"` → 캐릭터 일관성 리뷰
+
+- [ ] **STAGE 3: 애니매틱 프리뷰** ← 가장 중요한 QA (GPU 비용 0)
+  - `generate_animatic.py` → `EP01_ANIMATIC_v3.mp4`
+  - `qa_checkpoint.py --stage "Animatic Preview"` → 타이밍/페이싱/싱크 검증
+
+- [ ] **STAGE 4: Kontext 캐릭터 보정** (시트콤 15샷)
+  - `generate_kontext_keyframes.py --guidance 2.5`
+  - `qa_checkpoint.py --stage "Kontext Keyframes"`
+
+- [ ] **STAGE 5: I2V 렌더** (WAN 2.2 MoE)
+  - `comfy_batch_render.py` + `evaluate_renders.py --min-score 75`
+  - `qa_checkpoint.py --stage "I2V Renders"` + `qa_correction_agent.py` 실패 샷 보정
+
+- [ ] **STAGE 6: 최종 조립**
+  - `package_for_youtube.py --transition fade` → `EP01_FINAL_v3.mp4`
+  - `validate_phase7_postproduction.py` + `qa_checkpoint.py --stage "Final Assembly"`
 
 ## 1차 렌더 핵심 문제 — 확정
 
@@ -91,77 +132,82 @@
 
 ---
 
-## 다음 단계 — 2차 렌더 파이프라인
+## 다음 단계 — v3 렌더 런북
 
-### Phase 10A: TTS 업그레이드 (Chatterbox)
+STAGE 0 (대본 리뷰) 부터 순차 진행. 각 단계 `qa_checkpoint.py`로 승인 후 다음 진행.
+
 ```bash
-# 1. Chatterbox 백엔드 추가
-# tts_backends/chatterbox_backend.py 작성
-# 2. Vee/Bee/Narrator 레퍼런스 음성 5-10초 선정
-# 3. TTS 재생성
+# STAGE 0: 대본 리뷰
+python validate_screenplay.py --input .../ep01_script.fountain
+
+# STAGE 1: TTS
 python generate_tts_from_prepro.py \
-  --prepro ep01/prepro_manifest.json \
+  --prepro-manifest .../ep01_prepro_manifest.json \
   --tts-backend chatterbox --tts-fallback edge \
-  --output-dir ep01/tts_full_v2
-```
+  --out-audio .../tts_full_v3/voiceover_master.wav \
+  --sample-rate 48000 --gap-sec 0.15 --device cuda
+python qa_checkpoint.py --stage "TTS Audio" \
+  --artifacts-dir .../tts_full_v3 --artifact-type audio
 
-### Phase 10B: T2I 스토리보드 렌더 (~48분)
-```bash
-# ComfyUI 서버 실행 확인 후
+# STAGE 2: T2I PuLID 스토리보드
 python generate_t2i_storyboards.py \
-  --manifest ep01_shot_manifest.json \
-  --output-dir output/renders/ep01_storyboards \
+  --manifest .../ep01_shot_manifest.json \
+  --output-dir .../output/renders/ep01_storyboards_v3 \
   --comfy-input /home/hugh/ComfyUI/app/input \
-  --guidance 3.5 --update-manifest
-```
+  --pulid-ref ivy_burr_golden_ref.png \
+  --pulid-weight 0.9 --guidance 3.5 --update-manifest
+python qa_checkpoint.py --stage "T2I PuLID Storyboards" \
+  --artifacts-dir .../output/renders/ep01_storyboards_v3 --artifact-type image
 
-### Phase 10C: 애니매틱 리뷰 (I2V 전 검증)
-```bash
+# STAGE 3: 애니매틱 (GPU 비용 0, 가장 중요한 QA)
 python generate_animatic.py \
-  --manifest ep01_shot_manifest.json \
-  --storyboard-dir output/renders/ep01_storyboards \
-  --voiceover ep01/tts_full_v2/voiceover_master.wav \
-  --subtitles ep01/tts_full_v2/subtitles.srt \
-  --output EP01_ANIMATIC_v2.mp4
-# → 리뷰 → 문제 샷 리시드 → OK면 Phase 11
-```
+  --manifest .../ep01_shot_manifest.json \
+  --storyboard-dir .../output/renders/ep01_storyboards_v3 \
+  --voiceover .../tts_full_v3/voiceover_master.wav \
+  --subtitles .../tts_full_v3/subtitles.srt \
+  --output .../output/EP01_ANIMATIC_v3.mp4
+python qa_checkpoint.py --stage "Animatic Preview" \
+  --artifacts-dir .../output --artifact-type video
 
-### Phase 11: Kontext 캐릭터 보정 (시트콤 15샷만)
-```bash
+# STAGE 4: Kontext 캐릭터 보정
 python generate_kontext_keyframes.py \
-  --manifest ep01_shot_manifest.json \
-  --storyboard-dir output/renders/ep01_storyboards \
-  --output-dir output/renders/ep01_keyframes_v2 \
-  --comfy-input /home/hugh/ComfyUI/app/input \
-  --guidance 2.5
-```
+  --manifest .../ep01_shot_manifest.json \
+  --storyboard-dir .../output/renders/ep01_storyboards_v3 \
+  --output-dir .../output/renders/ep01_kontext_v3 \
+  --comfy-input /home/hugh/ComfyUI/app/input --guidance 2.5
+python qa_checkpoint.py --stage "Kontext Keyframes" \
+  --artifacts-dir .../output/renders/ep01_kontext_v3 --artifact-type image
 
-### Phase 12: I2V 렌더 2차 (24샷, 832x480 16:9)
-```bash
+# STAGE 5: I2V 렌더
 python comfy_batch_render.py \
-  --manifest ep01_shot_manifest.json \
-  --workflow wan22_moe_i2v_full.json \
-  --bindings wan22_moe_i2v_bindings.json \
-  --output-dir output/renders/ep01_i2v_v2
-```
+  --manifest .../ep01_shot_manifest.json \
+  --workflow .../workflows/api/wan22_moe_i2v_full.json \
+  --bindings .../workflows/api/wan22_moe_i2v_bindings.json \
+  --output-dir .../output/renders/ep01_i2v_v3
+python evaluate_renders.py --run-dir .../output/renders/ep01_i2v_v3 \
+  --manifest .../ep01_shot_manifest.json --min-score 75
+python qa_checkpoint.py --stage "I2V Renders" \
+  --artifacts-dir .../output/renders/ep01_i2v_v3 --artifact-type video \
+  --report-json .../output/renders/ep01_i2v_v3/evaluations_summary.json
 
-### Phase 13: 최종 조립 2차 (narrative audio 풀 파이프라인)
-```bash
+# STAGE 6: 최종 조립
 python package_for_youtube.py \
-  --manifest ep01_shot_manifest.json \
-  --render-dir output/renders/ep01_i2v_v2 \
-  --voiceover ep01/tts_full_v2/voiceover_master.wav \
-  --subtitles \
+  --manifest .../ep01_shot_manifest.json \
+  --render-dir .../output/renders/ep01_i2v_v3 \
+  --voiceover .../tts_full_v3/voiceover_master.wav \
+  --subtitles --simple-audio \
   --transition fade --transition-duration 1.0 \
-  --output EP01_FINAL_v2.mp4
-# narrative_stage + 오디오 에셋 → 풀 BGM act-switching + SFX + 덕킹
+  --output EP01_FINAL_v3.mp4
+python qa_checkpoint.py --stage "Final Assembly" \
+  --artifacts-dir .../output --artifact-type video
 ```
 
-## 전제 조건 (2차 렌더)
+## 전제 조건 (v3 렌더)
 - ComfyUI 서버 실행 (localhost:8188)
-- GPU 사용 가능 (RTX 5070 Ti)
+- GPU 사용 가능 (RTX 5070 Ti 16GB)
 - Chatterbox 환경 활성화 (`/home/hugh/chatterbox/`)
-- Flux Dev T2I 워크플로우 + 바인딩 JSON (존재 확인 완료)
-- Vee golden reference: `systems/video/assets/characters/vee/ivy_burr_golden_ref.png`
-- WAN 2.2 MoE I2V 워크플로우 + 바인딩 JSON (832x480 수정 완료)
+- PuLID 워크플로우: `flux_pulid_t2i.json` + 바인딩 + `pulid_flux_v0.9.1.safetensors` (설치 완료)
+- 골든 레퍼런스: `ivy_burr_golden_ref.png` (ComfyUI input/ 내 존재)
+- TTS: Chatterbox 31 beats 합성 완료 (`tts_full_v2/` — v3용 재생성 or 재사용)
+- WAN 2.2 MoE I2V 워크플로우 + 바인딩 JSON
 - 참고: `systems/video/planning/05-storyboard-keyframe-pipeline.md`
