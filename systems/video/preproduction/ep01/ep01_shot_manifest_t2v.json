@@ -1,0 +1,188 @@
+{
+  "project_id": "ep01_auto",
+  "style_lock": "nonlingual claymation + no text overlays + action-first storytelling",
+  "delivery_target": "16:9, 480p, short scene clips for YouTube assembly",
+  "model_policy": {
+    "primary": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+    "fallback": []
+  },
+  "shots": [
+    {
+      "shot_id": "S12_12",
+      "scene": "Scene3",
+      "purpose": "You just... stack. And it goes up. It actually goes up.",
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "You just... stack. And it goes up. It actually goes up.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false,
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Right side: colorful blocks drop from above, piling randomly. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
+      "duration_sec": 8.0,
+      "aspect_ratio": "16:9",
+      "resolution": "832x480",
+      "seed": 1300012,
+      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+      "mode": "t2v",
+      "input_image": null,
+      "output_name": "S12_12.mp4",
+      "source_beat_id": "SEG03_B015",
+      "source_scene_id": "SEG03"
+    },
+    {
+      "shot_id": "S13_13",
+      "scene": "Scene4",
+      "purpose": "Then...",
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Then...",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false,
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. The pile wobbles. Pauses. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
+      "duration_sec": 6.93,
+      "aspect_ratio": "16:9",
+      "resolution": "832x480",
+      "seed": 1300013,
+      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+      "mode": "t2v",
+      "input_image": null,
+      "output_name": "S13_13.mp4",
+      "source_beat_id": "SEG03_B017",
+      "source_scene_id": "SEG03"
+    },
+    {
+      "shot_id": "S14_14",
+      "scene": "Scene4",
+      "purpose": "A spec is a blueprint. It's not a hundred-page document. It's one sentence: \"What am I...",
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "A spec is a blueprint. It's not a hundred-page document. It's one sentence: \"What am I building?\"",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false,
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Collapse. Blocks scatter everywhere. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
+      "duration_sec": 8.0,
+      "aspect_ratio": "16:9",
+      "resolution": "832x480",
+      "seed": 1300014,
+      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+      "mode": "t2v",
+      "input_image": null,
+      "output_name": "S14_14.mp4",
+      "source_beat_id": "SEG03_B018",
+      "source_scene_id": "SEG03"
+    },
+    {
+      "shot_id": "S15_15",
+      "scene": "Scene4",
+      "purpose": "You don't need to know every detail upfront.",
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "You don't need to know every detail upfront.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false,
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Back to the blueprint side. Clean building standing tall. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
+      "duration_sec": 7.32,
+      "aspect_ratio": "16:9",
+      "resolution": "832x480",
+      "seed": 1300015,
+      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+      "mode": "t2v",
+      "input_image": null,
+      "output_name": "S15_15.mp4",
+      "source_beat_id": "SEG03_B019",
+      "source_scene_id": "SEG03"
+    },
+    {
+      "shot_id": "S16_16",
+      "scene": "Scene4",
+      "purpose": "You can always make it bigger later. But you have to know what \"it\" is first.",
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "You can always make it bigger later. But you have to know what \"it\" is first.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false,
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. New scene. A small skateboard rolls into frame. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
+      "duration_sec": 8.0,
+      "aspect_ratio": "16:9",
+      "resolution": "832x480",
+      "seed": 1300016,
+      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+      "mode": "t2v",
+      "input_image": null,
+      "output_name": "S16_16.mp4",
+      "source_beat_id": "SEG03_B021",
+      "source_scene_id": "SEG03"
+    },
+    {
+      "shot_id": "S17_17",
+      "scene": "Scene5",
+      "purpose": "That one line? That's where a spec starts.",
+      "visual_type": "explainer",
+      "characters": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "That one line? That's where a spec starts.",
+          "emotion": ""
+        }
+      ],
+      "shorts_candidate": false,
+      "kontext_prompt": null,
+      "prompt_positive": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Skateboard morphs into a bicycle. Bicycle morphs into a car. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "prompt_negative": "characters, people, faces, text, subtitles, watermark, logo, low quality",
+      "duration_sec": 7.32,
+      "aspect_ratio": "16:9",
+      "resolution": "832x480",
+      "seed": 1300017,
+      "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+      "mode": "t2v",
+      "input_image": null,
+      "output_name": "S17_17.mp4",
+      "source_beat_id": "SEG03_B022",
+      "source_scene_id": "SEG03"
+    }
+  ],
+  "source_preproduction": "systems/video/preproduction/ep01/ep01_prepro_manifest.json",
+  "selection_summary": {
+    "total_beats": 31,
+    "selected_beats": 6,
+    "target_duration_sec": 180.0,
+    "actual_duration_sec": 179.96,
+    "timing_source": "estimate",
+    "mode": "i2v"
+  }
+}

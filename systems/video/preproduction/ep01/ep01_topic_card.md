@@ -47,8 +47,12 @@
   - TTS 생성: `en-US-AriaNeural`, 148.9s master audio + SRT 자막
   - Shot manifest 재생성: 24 shots (15 sitcom + 9 explainer), 180s, 영어 프롬프트
 
+- [x] **Phase 6: 키프레임 생성 (2026-03-12)** — Flux Kontext 15샷 + T2I 3샷, 18개 키프레임 완료
+- [x] **Phase 7: I2V/T2V 렌더 (2026-03-12~13)** — WAN 2.2 MoE I2V 18샷 + T2I 6샷 = 24 MP4
+- [x] **Phase 8: 최종 조립 (2026-03-13)** — `EP01_FINAL.mp4` (179.5s, 31MB, 자막 포함)
+
 ## 다음 단계
-- [ ] **Phase 6: 키프레임 생성** — ComfyUI + Flux Kontext (sitcom 15샷) + T2I (explainer 9샷)
+- [ ] **QA 리뷰**: 영상 품질, 캐릭터 일관성, 음성/자막 싱크 확인
   ```bash
   python systems/video/pipeline/scripts/generate_kontext_keyframes.py \
     --manifest systems/video/preproduction/ep01/ep01_shot_manifest.json \

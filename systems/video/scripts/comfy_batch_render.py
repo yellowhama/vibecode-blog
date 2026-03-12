@@ -37,7 +37,7 @@ from typing import Any, Dict, List, Optional
 
 DEFAULT_SERVER = "http://127.0.0.1:8188"
 POLL_INTERVAL = 5  # seconds
-MAX_POLL_TIME = 1800  # 30 minutes per shot
+MAX_POLL_TIME = 7200  # 2 hours per shot (WAN 2.2 I2V can be very slow)
 
 
 def _json_load(path: Path) -> Dict[str, Any]:
