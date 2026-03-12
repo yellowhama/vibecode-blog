@@ -67,52 +67,100 @@
   - T2I/explainer 샷은 Kontext 바이패스 (스토리보드 → 키프레임 직접 복사)
   - dry-run 검증 완료, 하위 호환성 유지
 
-## 다음 단계 — Phase 10 실행 + Phase 11~13
+- [x] **Phase 10.5: 애니매틱 + 오디오 + 와이어링 (2026-03-13)** — `0ac10f2`
+  - 신규: `generate_animatic.py` — 스토리보드 PNG + VO + SRT → 타이밍 프리뷰 MP4
+  - 신규: `annotate_manifest_stages.py` — 24샷 narrative_stage 어노테이션 (HOOK/FURY/MESS/INSIGHT)
+  - 신규: `generate_placeholder_audio.py` — BGM 4개 + SFX 4개 플레이스홀더 WAV
+  - 수정: `audio_catalog.py` + `validate_catalog()` 누락 파일 감지
+  - 수정: `package_for_youtube.py` + `--simple-audio` 폴백 (에셋 부재 시 자동 전환)
+  - 수정: `video_assembler.py` 버그 3건 (인풋 인덱스, asplit, aformat) — assemble_narrative_audio 처음으로 E2E 통과
+  - 애니매틱 프리뷰: `EP01_ANIMATIC.mp4` (150s, h264+AAC) 생성 확인
 
-### Phase 10 실행: T2I 스토리보드 렌더 (~48분)
+## 1차 렌더 핵심 문제 — 확정
+
+### 문제 A: I2V가 얼굴만 나옴
+- **원인**: `generate_t2i_storyboards.py` 미실행 → Kontext가 골든 레퍼런스(1024x1024 얼굴 포트레이트)로 폴백 → I2V가 얼굴 클로즈업에서 영상 시작
+- **실행된 것**: [T2I 스킵] → Kontext(얼굴 1024x1024) → I2V = 전부 얼굴
+- **정상 흐름**: T2I(832x480 장면) → Kontext(캐릭터 보정) → I2V(장면 영상)
+
+### 문제 B: TTS 성우 퀄리티
+- **현재**: edge-tts (`en-US-AriaNeural`) — 합성 느낌, 감정 표현 없음
+- **추천 1순위**: **Chatterbox** — ElevenLabs 블라인드 테스트 승리, 감정 제어(0-2), 한/영, 5초 음성 클론, 무료 MIT, `/home/hugh/chatterbox/` 이미 존재
+- **추천 2순위**: **Kokoro-82M** — CPU 0.3초, 드래프트용, 무료 Apache
+- **추천 3순위**: **Fish Speech v1.5** — TTS Arena ELO 1위, 한영일, `/home/hugh/fishspeech_env/` 존재
+
+---
+
+## 다음 단계 — 2차 렌더 파이프라인
+
+### Phase 10A: TTS 업그레이드 (Chatterbox)
+```bash
+# 1. Chatterbox 백엔드 추가
+# tts_backends/chatterbox_backend.py 작성
+# 2. Vee/Bee/Narrator 레퍼런스 음성 5-10초 선정
+# 3. TTS 재생성
+python generate_tts_from_prepro.py \
+  --prepro ep01/prepro_manifest.json \
+  --tts-backend chatterbox --tts-fallback edge \
+  --output-dir ep01/tts_full_v2
+```
+
+### Phase 10B: T2I 스토리보드 렌더 (~48분)
 ```bash
 # ComfyUI 서버 실행 확인 후
-python systems/video/pipeline/scripts/generate_t2i_storyboards.py \
-  --manifest systems/video/preproduction/ep01/ep01_shot_manifest.json \
-  --output-dir systems/video/output/renders/ep01_storyboards \
+python generate_t2i_storyboards.py \
+  --manifest ep01_shot_manifest.json \
+  --output-dir output/renders/ep01_storyboards \
   --comfy-input /home/hugh/ComfyUI/app/input \
   --guidance 3.5 --update-manifest
+```
 
-# [QA] 스토리보드 리뷰 → 문제 샷 리시드/리렌더
-# python generate_t2i_storyboards.py --manifest ... --shots S01_01 --seed-base 4100000
+### Phase 10C: 애니매틱 리뷰 (I2V 전 검증)
+```bash
+python generate_animatic.py \
+  --manifest ep01_shot_manifest.json \
+  --storyboard-dir output/renders/ep01_storyboards \
+  --voiceover ep01/tts_full_v2/voiceover_master.wav \
+  --subtitles ep01/tts_full_v2/subtitles.srt \
+  --output EP01_ANIMATIC_v2.mp4
+# → 리뷰 → 문제 샷 리시드 → OK면 Phase 11
 ```
 
 ### Phase 11: Kontext 캐릭터 보정 (시트콤 15샷만)
 ```bash
-python systems/video/pipeline/scripts/generate_kontext_keyframes.py \
-  --manifest systems/video/preproduction/ep01/ep01_shot_manifest.json \
-  --storyboard-dir systems/video/output/renders/ep01_storyboards \
-  --output-dir systems/video/output/renders/ep01_keyframes_v2 \
+python generate_kontext_keyframes.py \
+  --manifest ep01_shot_manifest.json \
+  --storyboard-dir output/renders/ep01_storyboards \
+  --output-dir output/renders/ep01_keyframes_v2 \
   --comfy-input /home/hugh/ComfyUI/app/input \
   --guidance 2.5
 ```
 
 ### Phase 12: I2V 렌더 2차 (24샷, 832x480 16:9)
 ```bash
-python systems/video/scripts/comfy_batch_render.py \
-  --manifest systems/video/preproduction/ep01/ep01_shot_manifest.json \
-  --workflow systems/video/workflows/api/wan22_moe_i2v_full.json \
-  --bindings systems/video/workflows/api/wan22_moe_i2v_bindings.json \
-  --output-dir systems/video/output/renders/ep01_i2v_v2
+python comfy_batch_render.py \
+  --manifest ep01_shot_manifest.json \
+  --workflow wan22_moe_i2v_full.json \
+  --bindings wan22_moe_i2v_bindings.json \
+  --output-dir output/renders/ep01_i2v_v2
 ```
 
-### Phase 13: 최종 조립 2차
+### Phase 13: 최종 조립 2차 (narrative audio 풀 파이프라인)
 ```bash
-python systems/video/pipeline/scripts/finalize_video_v2.py \
-  --render-dir systems/video/output/renders/ep01_i2v_v2 \
-  --voiceover systems/video/preproduction/ep01/tts_full/voiceover_master.wav \
-  --subtitles systems/video/preproduction/ep01/tts_full/subtitles.srt \
-  --output systems/video/output/EP01_FINAL_v2.mp4
+python package_for_youtube.py \
+  --manifest ep01_shot_manifest.json \
+  --render-dir output/renders/ep01_i2v_v2 \
+  --voiceover ep01/tts_full_v2/voiceover_master.wav \
+  --subtitles \
+  --transition fade --transition-duration 1.0 \
+  --output EP01_FINAL_v2.mp4
+# narrative_stage + 오디오 에셋 → 풀 BGM act-switching + SFX + 덕킹
 ```
 
-## 전제 조건 (Phase 10-13 실행)
+## 전제 조건 (2차 렌더)
 - ComfyUI 서버 실행 (localhost:8188)
 - GPU 사용 가능 (RTX 5070 Ti)
+- Chatterbox 환경 활성화 (`/home/hugh/chatterbox/`)
 - Flux Dev T2I 워크플로우 + 바인딩 JSON (존재 확인 완료)
 - Vee golden reference: `systems/video/assets/characters/vee/ivy_burr_golden_ref.png`
 - WAN 2.2 MoE I2V 워크플로우 + 바인딩 JSON (832x480 수정 완료)
