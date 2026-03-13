@@ -267,6 +267,65 @@ def mix_with_ducking(
     return output_path
 
 
+def apply_audacity_effect_chain(in_wav: Path, out_wav: Path, effects: list[dict]) -> Dict[str, Any]:
+    """Apply a chain of Audacity effects via CLI-Anything harness.
+
+    Args:
+        in_wav: Input WAV file.
+        out_wav: Output WAV file.
+        effects: List of effect dicts, e.g. [{"name": "compress", "params": {"threshold": -20, "ratio": 4}}]
+
+    Returns:
+        Dict with status and applied effects list.
+    """
+    try:
+        from cli_anything_bridge import AVAILABLE_TOOLS, AudacitySession
+    except ImportError:
+        raise RuntimeError("cli_anything_bridge not found — ensure it is on PYTHONPATH")
+
+    if "audacity" not in AVAILABLE_TOOLS:
+        import logging
+        logging.warning("Audacity harness not available — falling back to FFmpeg loudnorm")
+        result = apply_loudnorm_two_pass(in_wav, out_wav, target_i=-16.0, target_lra=11.0, target_tp=-1.5)
+        return {"fallback": "ffmpeg_loudnorm", **result}
+
+    out_wav.parent.mkdir(parents=True, exist_ok=True)
+    with AudacitySession() as sess:
+        sess.project_new()
+        sess.track_add("mono")
+        sess.clip_add(str(in_wav))
+        applied = []
+        for fx in effects:
+            name = fx["name"]
+            params = fx.get("params", {})
+            sess.effect_add(name, **params)
+            applied.append(name)
+        sess.export(str(out_wav))
+    return {"status": "ok", "engine": "audacity", "effects_applied": applied}
+
+
+def apply_podcast_master(in_wav: Path, out_wav: Path) -> Dict[str, Any]:
+    """Apply podcast mastering chain: noise_reduction → high_pass(80) → compress → normalize → limit."""
+    return apply_audacity_effect_chain(in_wav, out_wav, effects=[
+        {"name": "noise_reduction", "params": {}},
+        {"name": "high_pass", "params": {"frequency": 80}},
+        {"name": "compress", "params": {"threshold": -18, "ratio": 3}},
+        {"name": "normalize", "params": {"level": -1}},
+        {"name": "limit", "params": {"threshold": -1}},
+    ])
+
+
+def apply_youtube_voice_master(in_wav: Path, out_wav: Path) -> Dict[str, Any]:
+    """Apply YouTube voice mastering chain: noise_reduction → high/low pass → compress → normalize."""
+    return apply_audacity_effect_chain(in_wav, out_wav, effects=[
+        {"name": "noise_reduction", "params": {}},
+        {"name": "high_pass", "params": {"frequency": 100}},
+        {"name": "low_pass", "params": {"frequency": 12000}},
+        {"name": "compress", "params": {"threshold": -20, "ratio": 4}},
+        {"name": "normalize", "params": {"level": -1}},
+    ])
+
+
 def build_quality_report(in_wav: Path, target_i: float = -16.0, target_lra: float = 11.0, target_tp: float = -1.5) -> Dict[str, Any]:
     duration = ffprobe_duration_sec(in_wav)
     loud = loudnorm_measure(in_wav, target_i=target_i, target_lra=target_lra, target_tp=target_tp)

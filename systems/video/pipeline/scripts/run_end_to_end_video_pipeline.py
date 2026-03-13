@@ -128,6 +128,18 @@ def main() -> int:
     parser.add_argument("--auto-correct", action="store_true", help="Auto-correct failed shots after evaluation (QA correction agent)")
     parser.add_argument("--auto-correct-max-attempts", type=int, default=3, help="Max correction attempts per shot (default: 3)")
 
+    # --- CLI-Anything integration ---
+    parser.add_argument("--audio-master", choices=["none", "podcast", "youtube"], default="none",
+                        help="Audio mastering preset via Audacity harness (default: none)")
+    parser.add_argument("--assembler", choices=["ffmpeg", "mlt"], default="ffmpeg",
+                        help="Video assembly backend (default: ffmpeg)")
+    parser.add_argument("--use-claymation-harness", action="store_true", default=False,
+                        help="Use CLI-Anything Blender harness for claymation scenes")
+    parser.add_argument("--no-claymation-harness", dest="use_claymation_harness", action="store_false")
+    parser.add_argument("--use-explainer-harness", action="store_true", default=False,
+                        help="Use CLI-Anything Inkscape harness for explainer graphics")
+    parser.add_argument("--no-explainer-harness", dest="use_explainer_harness", action="store_false")
+
     # --- Stage 0: Preproduction (TTS + timing reconciliation) ---
     parser.add_argument("--prepro-manifest", type=Path, default=None, help="Preproduction manifest for Stage 0 (TTS + timing sync)")
     parser.add_argument("--skip-tts", action="store_true", help="Skip TTS generation (reuse existing WAV)")
@@ -231,6 +243,36 @@ def main() -> int:
             kontext_cmd.extend(["--comfy-input", str(comfy_input)])
         kontext_out = _run(kontext_cmd)
         print(kontext_out.strip())
+
+    # ── Stage 0d: 3D Scene Pre-render (claymation via Blender harness) ──
+    claymation_py = video_root / "pipeline" / "scripts" / "generate_claymation_scenes.py"
+    if args.use_claymation_harness and claymation_py.exists():
+        print("[STAGE 0d] Claymation pre-render via Blender harness...")
+        clay_output = args.output_root / "claymation"
+        clay_cmd = [
+            "python3", str(claymation_py),
+            "--manifest", str(args.manifest),
+            "--output-dir", str(clay_output),
+        ]
+        if args.use_claymation_harness:
+            clay_cmd.append("--use-harness")
+        clay_out = _run(clay_cmd)
+        print(clay_out.strip())
+
+    # ── Stage 0e: Explainer Pre-render (via Inkscape harness) ─────────
+    explainer_py = video_root / "pipeline" / "scripts" / "generate_explainer_graphics.py"
+    if args.use_explainer_harness and explainer_py.exists():
+        print("[STAGE 0e] Explainer pre-render via Inkscape harness...")
+        expl_output = args.output_root / "explainer"
+        expl_cmd = [
+            "python3", str(explainer_py),
+            "--manifest", str(args.manifest),
+            "--output-dir", str(expl_output),
+        ]
+        if args.use_explainer_harness:
+            expl_cmd.append("--use-harness")
+        expl_out = _run(expl_cmd)
+        print(expl_out.strip())
 
     # ── Stage 1: Render ────────────────────────────────────────────────
     if args.skip_render:
@@ -361,6 +403,23 @@ def main() -> int:
                 qa_out = _run(qa_cmd)
                 print(qa_out.strip())
 
+    # ── Stage 3b: Audio Mastering (Audacity harness) ────────────────────
+    if args.audio_master != "none" and args.voiceover and args.voiceover.exists():
+        print(f"[STAGE 3b] Audio mastering ({args.audio_master}) via Audacity harness...")
+        import sys as _sys
+        _sys.path.insert(0, str(video_root / "pipeline" / "scripts"))
+        from audio_postprocess import apply_podcast_master, apply_youtube_voice_master
+        mastered_vo = args.voiceover.parent / f"{args.voiceover.stem}_mastered{args.voiceover.suffix}"
+        if args.audio_master == "podcast":
+            result = apply_podcast_master(args.voiceover, mastered_vo)
+        else:
+            result = apply_youtube_voice_master(args.voiceover, mastered_vo)
+        if mastered_vo.exists():
+            print(f"[STAGE 3b] Mastered: {mastered_vo} ({result.get('engine', 'unknown')})")
+            args.voiceover = mastered_vo
+        else:
+            print(f"[WARN] Mastering output not found, using original VO")
+
     package_cmd = [
         "python3",
         str(package_py),
@@ -383,6 +442,8 @@ def main() -> int:
         package_cmd.extend(["--bgm", str(args.bgm)])
     package_cmd.extend(["--voiceover-volume", str(args.voiceover_volume)])
     package_cmd.extend(["--bgm-volume", str(args.bgm_volume)])
+    if args.assembler != "ffmpeg":
+        package_cmd.extend(["--assembler", args.assembler])
     if args.checklist_strict:
         package_cmd.append("--checklist-strict")
     if args.no_transitions:

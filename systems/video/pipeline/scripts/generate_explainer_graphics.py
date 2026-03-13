@@ -197,6 +197,73 @@ def _export_with_pillow(svg_path: str, png_path: str, width: int, height: int) -
         return False
 
 
+def _generate_via_harness(shot: dict[str, Any], output_path: Path, width: int, height: int) -> Path | None:
+    """Generate explainer graphic via CLI-Anything Inkscape harness with layer support."""
+    try:
+        from cli_anything_bridge import AVAILABLE_TOOLS, InkscapeSession
+    except ImportError:
+        print("  [WARN] cli_anything_bridge not available — use --use-legacy", file=sys.stderr)
+        return None
+
+    if "inkscape" not in AVAILABLE_TOOLS:
+        print("  [WARN] Inkscape harness not available — use --use-legacy", file=sys.stderr)
+        return None
+
+    shot_id = shot.get("shot_id", "unknown")
+    purpose = shot.get("purpose", "")
+    seed = shot.get("seed", hash(shot_id)) % 10000
+
+    accent1 = _color_from_seed(seed)
+    accent2 = _color_from_seed(seed + 1)
+    accent3 = _color_from_seed(seed + 2)
+
+    content_hash = int(hashlib.md5(purpose.encode()).hexdigest()[:8], 16)
+    n_circles = 3 + (content_hash % 5)
+    cx, cy = width / 2, height / 2
+
+    try:
+        with InkscapeSession() as sess:
+            sess.document_new(width=width, height=height, background=PALETTE["bg_dark"])
+
+            # Layer: background
+            sess.layer_add("background")
+            sess.object_add("rect", x=0, y=0, width=width, height=height,
+                            fill="#1B2838", opacity=1.0)
+
+            # Layer: geometry
+            sess.layer_add("geometry")
+            import math as _math
+            for i in range(n_circles):
+                angle_offset = (content_hash + i * 137) % 360
+                r_dist = 80 + (i * 50) % 200
+                sx = cx + r_dist * _math.cos(_math.radians(angle_offset))
+                sy = cy + r_dist * _math.sin(_math.radians(angle_offset))
+                radius = 20 + (content_hash + i * 31) % 60
+                color = [accent1, accent2, accent3][i % 3]
+                opacity = 0.3 + (i * 0.15) % 0.5
+                sess.object_add("circle", cx=int(sx), cy=int(sy), r=radius,
+                                fill=color, opacity=round(opacity, 2))
+
+            # Layer: glow — central focal element
+            sess.layer_add("glow")
+            sess.object_add("circle", cx=int(cx), cy=int(cy), r=40,
+                            fill="none", stroke=accent1, stroke_width=3)
+            sess.object_add("circle", cx=int(cx), cy=int(cy), r=15,
+                            fill=accent1, opacity=0.9)
+
+            # Export
+            sess.export_png(str(output_path), width=width, height=height)
+
+        if output_path.exists():
+            print(f"  [OK/harness] {shot_id} → {output_path}")
+            return output_path
+        print(f"  [FAIL/harness] {shot_id}: output not found", file=sys.stderr)
+        return None
+    except Exception as e:
+        print(f"  [FAIL/harness] {shot_id}: {e}", file=sys.stderr)
+        return None
+
+
 def render_shot(inkscape: str | None, shot: dict[str, Any], output_dir: Path, dry_run: bool = False) -> Path | None:
     """Render a single explainer shot."""
     shot_id = shot["shot_id"]
@@ -242,6 +309,8 @@ def main() -> None:
     parser.add_argument("--manifest", required=True, help="Explainer manifest JSON")
     parser.add_argument("--output-dir", required=True, help="Output directory for rendered PNGs")
     parser.add_argument("--dry-run", action="store_true", help="Print what would be rendered")
+    parser.add_argument("--use-harness", action="store_true", default=True, help="Use CLI-Anything Inkscape harness (default)")
+    parser.add_argument("--use-legacy", dest="use_harness", action="store_false", help="Use legacy SVG generation")
     args = parser.parse_args()
 
     manifest_path = Path(args.manifest)
@@ -265,7 +334,25 @@ def main() -> None:
 
     rendered = []
     for shot in shots:
-        result = render_shot(inkscape, shot, output_dir, dry_run=args.dry_run)
+        if args.use_harness:
+            width = shot.get("width", 832)
+            height = shot.get("height", 480)
+            output_path = output_dir / f"{shot['shot_id']}_explainer.png"
+            if not output_path.exists() and not args.dry_run:
+                result = _generate_via_harness(shot, output_path, width, height)
+            elif output_path.exists():
+                print(f"  [skip] {shot['shot_id']} — already rendered")
+                result = output_path
+            elif args.dry_run:
+                print(f"  [dry-run/harness] {shot['shot_id']} → {output_path}")
+                result = None
+            else:
+                result = None
+            if result is None and not args.dry_run:
+                # Harness failed — fall back to legacy
+                result = render_shot(inkscape, shot, output_dir, dry_run=args.dry_run)
+        else:
+            result = render_shot(inkscape, shot, output_dir, dry_run=args.dry_run)
         if result:
             rendered.append(str(result))
 

@@ -173,6 +173,81 @@ print("RENDER_COMPLETE: " + scene.render.filepath)
 '''
 
 
+def _build_blender_script_legacy(shot: dict[str, Any], output_path: Path) -> str:
+    """Legacy alias for _build_blender_script."""
+    return _build_blender_script(shot, output_path)
+
+
+def render_shot_via_harness(shot: dict[str, Any], output_dir: Path, dry_run: bool = False) -> Path | None:
+    """Render a single shot via CLI-Anything Blender harness."""
+    try:
+        from cli_anything_bridge import AVAILABLE_TOOLS, BlenderSession
+    except ImportError:
+        print("  [WARN] cli_anything_bridge not available — use --use-legacy", file=sys.stderr)
+        return None
+
+    if "blender" not in AVAILABLE_TOOLS:
+        print("  [WARN] Blender harness not available — use --use-legacy", file=sys.stderr)
+        return None
+
+    shot_id = shot["shot_id"]
+    output_path = output_dir / f"{shot_id}_claymation.png"
+
+    if output_path.exists():
+        print(f"  [skip] {shot_id} — already rendered")
+        return output_path
+
+    if dry_run:
+        print(f"  [dry-run/harness] {shot_id} → {output_path}")
+        return None
+
+    characters = shot.get("characters", [])
+    width = shot.get("width", 832)
+    height = shot.get("height", 480)
+
+    char_colors = {
+        "vee": (0.95, 0.85, 0.2),
+        "default": (0.4, 0.6, 0.8),
+    }
+
+    try:
+        with BlenderSession() as sess:
+            sess.scene_new(engine="CYCLES", samples=64)
+
+            # Ground plane
+            sess.object_add("plane", location=(0, 0, 0), size=10)
+            sess.material_create("GroundClay", color=(0.76, 0.70, 0.65), roughness=0.85)
+
+            # Character placeholders
+            positions = [(0, 0, 0.75), (-1.5, 0, 0.75), (1.5, 0, 0.75)]
+            for i, char_name in enumerate(characters):
+                pos = positions[i % len(positions)]
+                color = char_colors.get(char_name, char_colors["default"])
+                sess.object_add("sphere", location=(pos[0], pos[1], pos[2] + 0.5), radius=0.5)
+                sess.material_create(f"{char_name}_clay", color=color, roughness=0.85)
+                sess.object_add("cylinder", location=pos, radius=0.3, depth=1.0)
+                sess.material_create(f"{char_name}_body_clay", color=color, roughness=0.85)
+
+            # Camera
+            sess.object_add("camera", location=(0, -5, 3), rotation=(70, 0, 0), lens=35)
+            # 3-point lighting
+            sess.object_add("light", light_type="AREA", location=(2, -2, 4), energy=200)
+            sess.object_add("light", light_type="AREA", location=(-3, -1, 3), energy=80)
+            sess.object_add("light", light_type="AREA", location=(0, 3, 2), energy=120)
+
+            # Render
+            sess.render_execute(str(output_path), width=width, height=height)
+
+        if output_path.exists():
+            print(f"  [OK/harness] {shot_id} → {output_path}")
+            return output_path
+        print(f"  [FAIL/harness] {shot_id}: output not found", file=sys.stderr)
+        return None
+    except Exception as e:
+        print(f"  [FAIL/harness] {shot_id}: {e}", file=sys.stderr)
+        return None
+
+
 def render_shot(blender: str, shot: dict[str, Any], output_dir: Path, dry_run: bool = False) -> Path | None:
     """Render a single shot scene."""
     shot_id = shot["shot_id"]
@@ -219,6 +294,8 @@ def main() -> None:
     parser.add_argument("--output-dir", required=True, help="Output directory for rendered PNGs")
     parser.add_argument("--visual-type", default="sitcom", help="Filter shots by visual_type (default: sitcom)")
     parser.add_argument("--dry-run", action="store_true", help="Print what would be rendered without actually rendering")
+    parser.add_argument("--use-harness", action="store_true", default=True, help="Use CLI-Anything Blender harness (default)")
+    parser.add_argument("--use-legacy", dest="use_harness", action="store_false", help="Use legacy Blender Python script")
     args = parser.parse_args()
 
     manifest_path = Path(args.manifest)
@@ -239,7 +316,13 @@ def main() -> None:
 
     rendered = []
     for shot in shots:
-        result = render_shot(blender, shot, output_dir, dry_run=args.dry_run)
+        if args.use_harness:
+            result = render_shot_via_harness(shot, output_dir, dry_run=args.dry_run)
+            if result is None and not args.dry_run:
+                # Harness failed — fall back to legacy for this shot
+                result = render_shot(blender, shot, output_dir, dry_run=args.dry_run)
+        else:
+            result = render_shot(blender, shot, output_dir, dry_run=args.dry_run)
         if result:
             rendered.append(str(result))
 

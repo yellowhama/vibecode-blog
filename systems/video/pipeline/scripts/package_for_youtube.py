@@ -623,6 +623,60 @@ def _checklist_to_markdown(data: Dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def _assemble_with_mlt(
+    clips: List[Path],
+    output_path: Path,
+    transition: str = "fade",
+    transition_dur: float = 1.0,
+    color_grade: dict | None = None,
+) -> Path:
+    """Assemble clips using Shotcut/melt via CLI-Anything harness.
+
+    Falls back to FFmpeg xfade if the harness is unavailable or fails.
+    """
+    try:
+        from cli_anything_bridge import AVAILABLE_TOOLS, ShotcutSession
+    except ImportError:
+        print("[WARN] cli_anything_bridge not found — falling back to FFmpeg")
+        from video_assembler import assemble_with_transitions
+        assemble_with_transitions(clips=clips, transition=transition,
+                                  transition_duration=transition_dur, output_path=output_path)
+        return output_path
+
+    if "shotcut" not in AVAILABLE_TOOLS:
+        print("[WARN] Shotcut harness not available — falling back to FFmpeg")
+        from video_assembler import assemble_with_transitions
+        assemble_with_transitions(clips=clips, transition=transition,
+                                  transition_duration=transition_dur, output_path=output_path)
+        return output_path
+
+    print(f"[POST] mlt assembly ({len(clips)} clips, transition={transition}, dur={transition_dur}s)...")
+    try:
+        with ShotcutSession() as sess:
+            sess.project_new(profile="hd1080p30")
+            sess.track_add("video")
+            for clip_path in clips:
+                sess.clip_add(str(clip_path), track=1)
+            if len(clips) > 1:
+                sess.transition_add(transition, duration=transition_dur)
+            if color_grade:
+                brightness = color_grade.get("brightness", 1.05)
+                sess.filter_add("brightness", level=brightness)
+            sess.export_render(str(output_path), preset="h264-high")
+
+        if output_path.exists():
+            print(f"[OK] mlt assembly → {output_path}")
+            return output_path
+
+        raise RuntimeError("mlt output not found")
+    except Exception as e:
+        print(f"[WARN] mlt assembly failed ({e}) — falling back to FFmpeg")
+        from video_assembler import assemble_with_transitions
+        assemble_with_transitions(clips=clips, transition=transition,
+                                  transition_duration=transition_dur, output_path=output_path)
+        return output_path
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Package render run for YouTube publishing")
     parser.add_argument("--manifest", required=True, type=Path)
@@ -660,6 +714,7 @@ def main() -> int:
     parser.add_argument("--check-audio-peak-db-max", type=float, default=-0.5)
 
     # --- Phase A: Transitions ---
+    parser.add_argument("--assembler", choices=["ffmpeg", "mlt"], default="ffmpeg", help="Video assembly backend (default: ffmpeg)")
     parser.add_argument("--transition", default="fade", help="xfade transition type (default: fade)")
     parser.add_argument("--transition-duration", type=float, default=1.0, help="Transition duration in seconds")
     parser.add_argument("--intro-text", default=None, help="Text overlay on first clip (3s fade)")
@@ -788,6 +843,12 @@ def main() -> int:
 
         print("[POST] hardcut concat (no transitions)...")
         concat_hardcut(assembly_clips, final_video)
+    elif args.assembler == "mlt":
+        final_video = _assemble_with_mlt(
+            assembly_clips, final_video,
+            transition=args.transition,
+            transition_dur=args.transition_duration,
+        )
     else:
         from video_assembler import assemble_with_transitions
 
