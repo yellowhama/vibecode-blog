@@ -331,3 +331,167 @@ class InkscapeSession(_HarnessSession):
             "--width", str(width),
             "--height", str(height),
         ])
+
+
+# ---------------------------------------------------------------------------
+# GIMP Session
+# ---------------------------------------------------------------------------
+
+class GimpSession(_HarnessSession):
+    """Context manager for GIMP CLI-Anything harness.
+
+    Usage:
+        with GimpSession() as sess:
+            sess.project_new(width=1920, height=1080)
+            sess.open_image("photo.png")
+            sess.canvas_scale(1280, 720)
+            sess.color_correct(brightness=5, contrast=10)
+            sess.watermark("MUSU", x=20, y=680, font_size=36, opacity=0.5)
+            sess.flatten()
+            sess.export("output.jpg", fmt="jpg", quality=95)
+    """
+
+    tool = "gimp"
+
+    def project_new(self, width: int = 1920, height: int = 1080, background: str = "white") -> dict:
+        return self._run([
+            "project", "new",
+            "--width", str(width),
+            "--height", str(height),
+            "--background", background,
+            "--path", str(self.workdir),
+        ])
+
+    def open_image(self, path: str) -> dict:
+        return self._run(["layer", "add-from-file", str(path)])
+
+    def canvas_scale(self, width: int, height: int) -> dict:
+        return self._run(["canvas", "resize", "--width", str(width), "--height", str(height)])
+
+    def color_correct(self, brightness: float = 0, contrast: float = 0, saturation: float = 0) -> dict:
+        args = ["filter", "add", "brightness-contrast"]
+        if brightness:
+            args.extend(["--brightness", str(brightness)])
+        if contrast:
+            args.extend(["--contrast", str(contrast)])
+        if saturation:
+            args.extend(["--saturation", str(saturation)])
+        return self._run(args)
+
+    def auto_levels(self) -> dict:
+        return self._run(["filter", "add", "levels", "--auto"])
+
+    def watermark(self, text: str, x: int = 20, y: int = 20,
+                  font_size: int = 36, opacity: float = 0.5) -> dict:
+        self._run([
+            "layer", "new", "--name", "watermark", "--opacity", str(opacity),
+        ])
+        return self._run([
+            "draw", "text", text,
+            "--x", str(x), "--y", str(y),
+            "--font-size", str(font_size),
+        ])
+
+    def flatten(self) -> dict:
+        return self._run(["layer", "flatten"])
+
+    def export(self, output_path: str, fmt: str = "png", quality: int = 95) -> dict:
+        args = ["export", "render", str(output_path), "--format", fmt]
+        if fmt in ("jpg", "jpeg", "webp"):
+            args.extend(["--quality", str(quality)])
+        return self._run_render(args)
+
+
+# ---------------------------------------------------------------------------
+# KDEnlive Session
+# ---------------------------------------------------------------------------
+
+class KDEnliveSession(_HarnessSession):
+    """Context manager for KDEnlive/melt CLI-Anything harness.
+
+    Usage:
+        with KDEnliveSession() as sess:
+            sess.project_new(profile="hd1080p30")
+            sess.bin_import("clip.mp4")
+            sess.track_add("V1", track_type="video")
+            sess.clip_add(track_id="V1", clip_id="clip_0", position=0)
+            sess.guide_add(position=5.0, comment="Scene 2")
+            xml = sess.export_xml("project.mlt")
+            sess.render("project.mlt", "output.mp4")
+    """
+
+    tool = "kdenlive"
+    _render_timeout = 600
+
+    def project_new(self, profile: str = "hd1080p30") -> dict:
+        return self._run([
+            "project", "new",
+            "--profile", profile,
+            "--path", str(self.workdir),
+        ])
+
+    def bin_import(self, media_path: str) -> dict:
+        return self._run(["bin", "import", str(media_path)])
+
+    def track_add(self, name: str, track_type: str = "video") -> dict:
+        return self._run(["track", "add", "--name", name, "--type", track_type])
+
+    def clip_add(self, track_id: str, clip_id: str, position: float = 0,
+                 in_point: float = 0, out_point: float = 0) -> dict:
+        args = [
+            "clip", "add",
+            "--track", track_id,
+            "--clip", clip_id,
+            "--position", str(position),
+        ]
+        if in_point:
+            args.extend(["--in", str(in_point)])
+        if out_point:
+            args.extend(["--out", str(out_point)])
+        return self._run(args)
+
+    def clip_trim(self, track_id: str, clip_index: int,
+                  in_point: float | None = None, out_point: float | None = None) -> dict:
+        args = ["clip", "trim", "--track", track_id, "--index", str(clip_index)]
+        if in_point is not None:
+            args.extend(["--in", str(in_point)])
+        if out_point is not None:
+            args.extend(["--out", str(out_point)])
+        return self._run(args)
+
+    def transition_add(self, type: str = "dissolve", track_a: str = "",
+                       track_b: str = "", position: float = 0,
+                       duration: float = 1.0) -> dict:
+        return self._run([
+            "transition", "add",
+            "--type", type,
+            "--track-a", track_a,
+            "--track-b", track_b,
+            "--position", str(position),
+            "--duration", str(duration),
+        ])
+
+    def filter_add(self, track_id: str, clip_index: int,
+                   filter_name: str, **params) -> dict:
+        args = [
+            "filter", "add",
+            "--track", track_id,
+            "--index", str(clip_index),
+            "--filter", filter_name,
+        ]
+        for k, v in params.items():
+            args.extend([f"--{k.replace('_', '-')}", str(v)])
+        return self._run(args)
+
+    def guide_add(self, position: float, comment: str = "") -> dict:
+        return self._run([
+            "guide", "add",
+            "--position", str(position),
+            "--comment", comment,
+        ])
+
+    def export_xml(self, output_path: str) -> dict:
+        return self._run(["export", "xml", str(output_path)])
+
+    def render(self, xml_path: str, output_path: str) -> dict:
+        return self._run_render(["render", str(xml_path), "--output", str(output_path)])

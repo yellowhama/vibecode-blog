@@ -131,8 +131,14 @@ def main() -> int:
     # --- CLI-Anything integration ---
     parser.add_argument("--audio-master", choices=["none", "podcast", "youtube"], default="none",
                         help="Audio mastering preset via Audacity harness (default: none)")
-    parser.add_argument("--assembler", choices=["ffmpeg", "mlt"], default="ffmpeg",
+    parser.add_argument("--assembler", choices=["ffmpeg", "mlt", "kdenlive"], default="ffmpeg",
                         help="Video assembly backend (default: ffmpeg)")
+    parser.add_argument("--gimp-thumbnail", action="store_true", default=False,
+                        help="Use GIMP harness for thumbnail generation")
+    parser.add_argument("--image-postprocess", action="store_true", default=False,
+                        help="Run image post-processing on renders before packaging")
+    parser.add_argument("--ab-test", action="store_true", default=False,
+                        help="Run A/B comparison after pipeline (legacy vs harness)")
     parser.add_argument("--use-claymation-harness", action="store_true", default=False,
                         help="Use CLI-Anything Blender harness for claymation scenes")
     parser.add_argument("--no-claymation-harness", dest="use_claymation_harness", action="store_false")
@@ -325,6 +331,20 @@ def main() -> int:
         ]
     )
 
+    # ── Stage 1b: Image Post-process ────────────────────────────────
+    if args.image_postprocess:
+        print("[STAGE 1b] Image post-processing on renders...")
+        image_pp_py = video_root / "pipeline" / "scripts" / "image_postprocess.py"
+        if image_pp_py.exists():
+            pp_output = run_dir / "postprocessed"
+            pp_cmd = [
+                "python3", str(image_pp_py),
+                "--input-dir", str(run_dir),
+                "--output-dir", str(pp_output),
+            ]
+            pp_out = _run(pp_cmd)
+            print(pp_out.strip())
+
     # --- Vision QA evaluation ---
     if not args.skip_evaluate:
         evaluate_cmd = [
@@ -490,11 +510,34 @@ def main() -> int:
         package_cmd.append("--scene-chapters")
     package_cmd.extend(["--silence-duration", str(args.silence_duration)])
     package_cmd.extend(["--silence-noise-db", str(args.silence_noise_db)])
+    if args.gimp_thumbnail:
+        package_cmd.append("--gimp-thumbnail")
 
     package_out = _run(package_cmd)
 
     print(f"[OK] render run dir: {run_dir}")
     print(package_out.strip())
+
+    # ── A/B Test (opt-in) ──────────────────────────────────────────
+    if args.ab_test:
+        print("[A/B] Running harness vs legacy comparison...")
+        ab_py = video_root / "pipeline" / "scripts" / "ab_test_stages.py"
+        if ab_py.exists():
+            ab_output = run_dir / "ab_test_results"
+            ab_cmd = [
+                "python3", str(ab_py),
+                "--all",
+                "--input-dir", str(run_dir),
+                "--output-dir", str(ab_output),
+            ]
+            if args.title:
+                ab_cmd.extend(["--title", args.title])
+            try:
+                ab_out = _run(ab_cmd)
+                print(ab_out.strip())
+            except Exception as e:
+                print(f"[WARN] A/B test failed (non-fatal): {e}")
+
     return 0
 
 

@@ -714,7 +714,8 @@ def main() -> int:
     parser.add_argument("--check-audio-peak-db-max", type=float, default=-0.5)
 
     # --- Phase A: Transitions ---
-    parser.add_argument("--assembler", choices=["ffmpeg", "mlt"], default="ffmpeg", help="Video assembly backend (default: ffmpeg)")
+    parser.add_argument("--assembler", choices=["ffmpeg", "mlt", "kdenlive"], default="ffmpeg", help="Video assembly backend (default: ffmpeg)")
+    parser.add_argument("--gimp-thumbnail", action="store_true", help="Use GIMP harness for thumbnail generation")
     parser.add_argument("--transition", default="fade", help="xfade transition type (default: fade)")
     parser.add_argument("--transition-duration", type=float, default=1.0, help="Transition duration in seconds")
     parser.add_argument("--intro-text", default=None, help="Text overlay on first clip (3s fade)")
@@ -849,6 +850,19 @@ def main() -> int:
             transition=args.transition,
             transition_dur=args.transition_duration,
         )
+    elif args.assembler == "kdenlive":
+        from kdenlive_assembly import assemble_with_fallback as _kdenlive_assemble
+
+        print(f"[POST] KDEnlive assembly ({len(assembly_clips)} clips)...")
+        final_video = _kdenlive_assemble(
+            clips=assembly_clips,
+            output_path=final_video,
+            manifest=manifest,
+            transition_type=args.transition,
+            transition_duration=args.transition_duration,
+            bgm_path=args.bgm,
+            voiceover_path=args.voiceover,
+        )
     else:
         from video_assembler import assemble_with_transitions
 
@@ -972,23 +986,56 @@ def main() -> int:
         delivery_teaser = _render_teaser(delivery_video, teaser_video_delivery, args.teaser_sec)
 
     # --- Phase E: Improved thumbnail (best-frame selection) ---
-    try:
-        from evaluate_renders import select_best_thumbnail_frame
+    _thumb_done = False
+    if getattr(args, "gimp_thumbnail", False):
+        try:
+            from cli_anything_bridge import AVAILABLE_TOOLS, GimpSession
 
-        select_best_thumbnail_frame(
-            delivery_video, thumbnail, sample_count=20,
-            title_text=args.title,
-        )
-    except Exception:
-        # Fallback: middle frame extraction
-        mid = max(0.0, duration / 2.0)
-        _run([
-            "ffmpeg", "-y",
-            "-ss", f"{mid:.3f}",
-            "-i", str(delivery_video),
-            "-frames:v", "1", "-q:v", "2",
-            str(thumbnail),
-        ])
+            if "gimp" in AVAILABLE_TOOLS:
+                print("[POST] GIMP harness thumbnail generation...")
+                # Extract best frame first
+                mid = max(0.0, duration / 2.0)
+                _raw_frame = thumbs_dir / "_raw_frame.png"
+                _run([
+                    "ffmpeg", "-y", "-ss", f"{mid:.3f}",
+                    "-i", str(delivery_video),
+                    "-frames:v", "1", "-q:v", "2",
+                    str(_raw_frame),
+                ])
+                with GimpSession() as _gs:
+                    _gs.project_new(width=1280, height=720)
+                    _gs.open_image(str(_raw_frame))
+                    _gs.canvas_scale(1280, 720)
+                    _gs.color_correct(brightness=5, contrast=10, saturation=10)
+                    _title = args.title or project_id
+                    _gs.watermark(text=_title, x=40, y=620, font_size=48, opacity=1.0)
+                    _gs.flatten()
+                    _gs.export(str(thumbnail), fmt="jpg", quality=95)
+                _raw_frame.unlink(missing_ok=True)
+                if thumbnail.exists():
+                    print(f"[OK] GIMP thumbnail → {thumbnail}")
+                    _thumb_done = True
+        except Exception as _e:
+            print(f"[WARN] GIMP thumbnail failed ({_e}) — falling back")
+
+    if not _thumb_done:
+        try:
+            from evaluate_renders import select_best_thumbnail_frame
+
+            select_best_thumbnail_frame(
+                delivery_video, thumbnail, sample_count=20,
+                title_text=args.title,
+            )
+        except Exception:
+            # Fallback: middle frame extraction
+            mid = max(0.0, duration / 2.0)
+            _run([
+                "ffmpeg", "-y",
+                "-ss", f"{mid:.3f}",
+                "-i", str(delivery_video),
+                "-frames:v", "1", "-q:v", "2",
+                str(thumbnail),
+            ])
 
     title = args.title or f"{project_id} | Fury-Driven Development | Claymation"
 

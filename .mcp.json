@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "cli-anything": {
+      "command": "python3",
+      "args": ["/mnt/e/vibecode-blog/systems/video/pipeline/scripts/cli_anything_mcp_server.py"]
+    }
+  }
+}
