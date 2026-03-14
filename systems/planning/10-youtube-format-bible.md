@@ -226,3 +226,42 @@ NO characters, NO text, NO labels. Abstract concept visualization."
 - 태그: vibe coding, AI coding, beginner dev, Claude, ChatGPT, no-code
 - 설명 첫 줄: 에피소드 한 줄 영어 요약 (검색용)
 - 챕터: 세그먼트 5개에 맞춰 타임스탬프 자동 생성
+
+---
+
+## 핵심 레퍼런스: Claudius Papirus 적용 포인트
+
+> [@ClaudiusPapirusYT](https://www.youtube.com/@ClaudiusPapirusYT) — 6.1K subs, 38편, AI 해설 채널
+> 우리 채널과 가장 유사한 포맷. 주황 마스코트 + 2D 모션그래픽 + AI 내레이션.
+
+### 썸네일 — Claudius 법칙 적용
+
+기존 규칙에 **Claudius 스타일 보강**:
+- **텍스트 2-3단어 MAX** (기존 2-4단어 → 축소)
+  - 예: "TOO SMART?", "THE DATA.", "NO HUMANS?"
+  - ❌ "I Built an App with AI and It All Broke"
+  - ✅ "IT BROKE."
+- **마스코트 반응 표정이 텍스트를 보완** — 텍스트가 질문이면, 캐릭터가 당황
+- **어두운 배경 + 밝은 캐릭터** (Claudius: dark navy + orange character)
+  - 우리: Dark Graphite #0E1117 + Vee의 밝은 톤 → 동일 전략 가능
+
+### 대본 구조 — Claudius 공식 vs 우리 공식
+
+```
+[Claudius 공식]                    [우리 공식]
+1. 뉴스 Hook (사건/논문)            1. HOOK (Vee 삽질 결과)
+2. 텐션 설정 ("But...")            2. SITCOM ACT 1 (문제 발생)
+3. 해설 본문 (논문 분석)            3. EXPLAINER (개념 시각화)
+4. 시사점 정리                     4. SITCOM ACT 2 (해결)
+5. 에필로그                        5. ENDING (떡밥)
+```
+
+**차이**: Claudius = 순수 해설 (시트콤 없음). 우리 = 해설을 시트콤으로 감쌈.
+**배울 것**: Hook의 "뉴스성". 우리도 HOOK에 실제 사건/트렌드 연결하면 바이럴 가능성 ↑
+
+### 콘텐츠 전략 — 적용 가능 패턴
+
+1. **속보 대응 에피소드**: 새 AI 도구 출시 → Vee가 써보는 시트콤 (Claudius의 시스템 카드 분석 = 우리의 "Vee가 써봄")
+2. **시리즈 연결**: Claudius Vending-Bench 3부작처럼, 우리 EP01-08도 같은 프로젝트를 추적하는 연속극
+3. **딥다이브 가끔**: 평균 8분 사이에 가끔 20-40분 종합 정리 → 알고리즘 watch time 부스트
+4. **소스 명시**: 매 영상 설명란에 원본 블로그/논문 링크 → 신뢰도 + SEO
