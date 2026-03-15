@@ -64,7 +64,7 @@ Three days ago, Vee discovered something magical.
 = Vee's eyes go wide. She jumps out of her chair.
 
 NARRATOR (V.O.)
-You type what you want. AI builds it. Five minutes. Done.
+What used to take three hours with ChatGPT took five minutes. You type what you want. AI builds it. Done.
 
 = MONTAGE: Rapid cuts. Vee types → app appears. Types → app appears. Types → app appears. Each time faster. Each time her grin gets bigger.
 
@@ -73,10 +73,10 @@ A to-do app. Done.
 A database. Done.
 A login page. Done.
 
-= Vee spins in her chair, arms crossed, nodding like a CEO.
+= Vee spins in her chair, arms crossed, nodding like a CEO. Five terminal windows run simultaneously.
 
 NARRATOR (V.O.)
-She thought she could build anything.
+By day three, she had five agents running. She couldn't explain what each one did. But they ran. So she assumed they worked.
 
 = On the desk, next to the monitor — a small bee sits on a pencil cup. BEE. Wings folded. Eyes closed. Completely unimpressed.
 
@@ -103,78 +103,64 @@ She couldn't answer.
 # characters: []
 # shorts_candidate: true
 
-= Transition to abstract world. "Spec = Blueprint" metaphor.
+= Transition to abstract world. Data-driven explainer: what a spec is and why it matters.
 
-> TRANSITION: Camera zooms into a pencil on Vee's desk → pencil morphs into a blue line → blueprint world
-
-NARRATOR (V.O.)
-Here's an empty lot.
-
-= Wide, dark navy surface. Empty space in the center.
+> TRANSITION: Camera zooms into Vee's monitor → scrolling code fills the screen → code dissolves into data visualization
 
 NARRATOR (V.O.)
-You want to build something here.
+Ten thousand, eight hundred and forty-seven lines.
 
-= Left side: a blueprint unfolds. Blue lines trace the outline of a building.
-
-NARRATOR (V.O.)
-With a blueprint, you start with the foundation.
-Then the frame.
-Then the walls.
-There's an order. Each piece knows where it goes.
-
-= Foundation → frame → walls → roof. Geometric building assembles in sequence. Clean. Stable.
+= A counter ticks up from 0 to 10,847. The number fills the screen.
 
 NARRATOR (V.O.)
-Without a blueprint?
+That's how much code Vee had after three days of vibe coding. Almost half of it — four thousand two hundred lines — was duplicated.
 
-= Right side: colorful blocks drop from above, piling randomly.
-
-NARRATOR (V.O.)
-You just... stack.
-And it goes up. It actually goes up.
-
-= The pile grows taller. It starts leaning.
+= The number splits. 6,647 stays white. 4,200 turns red and peels away into a pile.
 
 NARRATOR (V.O.)
-For a while, it looks like it's working.
+Five AI agents built the same functions five different ways. Three date formatters. Two config parsers. Four input validators. None of them knew the others existed.
 
-= The pile wobbles. Pauses.
-
-NARRATOR (V.O.)
-Then...
-
-= Collapse. Blocks scatter everywhere.
-
-= Back to the blueprint side. Clean building standing tall.
+= Five stick-figure workers appear on a lot. Each builds independently. Five identical small houses rise side by side.
 
 NARRATOR (V.O.)
-A spec is a blueprint.
-It's not a hundred-page document.
-It's one sentence: "What am I building?"
+Why? Because each AI session starts fresh. No memory. No shared context. Each one solves the problem from scratch — without checking if someone already solved it.
 
-= Text appears on the blueprint: "I want to access my home computer from anywhere."
+= The five houses wobble. One collapses into another. Chain reaction.
 
 NARRATOR (V.O.)
-You don't need to know every detail upfront.
+Industry data backs this up. Two-thirds of software projects fail. The number one reason? Incomplete requirements. In other words: nobody wrote down what we're building.
 
-= New scene. A small skateboard rolls into frame.
-
-NARRATOR (V.O.)
-Start with a skateboard. Four wheels. It rolls. That's enough.
-
-= Skateboard morphs into a bicycle. Bicycle morphs into a car.
+= Text overlay: "66% of IT projects fail — #1 cause: incomplete requirements" (Standish CHAOS Report)
 
 NARRATOR (V.O.)
-You can always make it bigger later.
-But you have to know what "it" is first.
+And here's the worst part. A bug caught during planning costs one dollar to fix. The same bug caught in production? A hundred dollars.
 
-= Text appears: "This is a skateboard." Simple. Clear.
+= Simple bar chart animates: $1 → $10 → $100. The bars grow dramatically.
 
 NARRATOR (V.O.)
-That one line? That's where a spec starts.
+Barry Boehm proved this in 1981. Forty-five years later, it's still true. Especially when AI writes your code.
 
-> TRANSITION: Car shape zooms in → morphs into a toy car on Vee's desk → camera pulls back
+= The bar chart dissolves. New scene: a blank page appears.
+
+NARRATOR (V.O.)
+So what IS a spec? It's not a hundred-page document. It's four questions.
+
+= Four boxes draw themselves on the page, one by one:
+
+NARRATOR (V.O.)
+What am I trying to do? Why doesn't the current solution work? How should it work? What tools will I use?
+
+= Text fills each box: "Purpose" / "Reason" / "Method" / "Means"
+
+NARRATOR (V.O.)
+Purpose. Reason. Method. Means. That's it. Answer those four, and you have a spec. Your frustration, organized — that IS the spec.
+
+= The four boxes compress into a single sheet of paper. Text appears: "I want to use my home computer from anywhere."
+
+NARRATOR (V.O.)
+One sentence that explains everything you're building. Every decision flows from this.
+
+> TRANSITION: The paper folds into a paper airplane → flies toward the camera → morphs into the paper on Vee's desk → camera pulls back
 
 ---
 
@@ -190,11 +176,16 @@ INT. VEE'S ROOM - NIGHT (PRESENT)
 Five monitors. Red errors. Vee's hands hover over the keyboard.
 
 NARRATOR (V.O.)
-Back in the present. Everything still broken.
+Back in the present. Ten thousand lines of code she can't read. And one more surprise.
 
-= Vee's fingers tremble. She doesn't know what to type.
+= Vee scrolls through code. It doesn't end. She scrolls faster. Still doesn't end.
 
-= She pulls her hands back. Pushes the chair away from the desk.
+= She runs a security check. One result highlights in red: "Line 847 — shell injection."
+
+NARRATOR (V.O.)
+Line eight forty-seven. An open door. Anyone could type a command into a text field and her computer would obey. That's not a bug. That's a welcome mat for strangers.
+
+= Vee stares at the screen. Slowly pushes the chair away from the desk.
 
 NARRATOR (V.O.)
 And then she did something unusual.

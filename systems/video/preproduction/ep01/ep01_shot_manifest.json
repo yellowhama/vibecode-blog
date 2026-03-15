@@ -38,7 +38,8 @@
       "source_scene_id": "SEG01",
       "width": 832,
       "height": 480,
-      "narrative_stage": "HOOK"
+      "narrative_stage": "HOOK",
+      "storyboard_image": "S01_01_storyboard.png"
     },
     {
       "shot_id": "S02_02",
@@ -71,7 +72,8 @@
       "source_scene_id": "SEG01",
       "width": 832,
       "height": 480,
-      "narrative_stage": "HOOK"
+      "narrative_stage": "HOOK",
+      "storyboard_image": "S02_02_storyboard.png"
     },
     {
       "shot_id": "S03_03",
@@ -104,7 +106,8 @@
       "source_scene_id": "SEG01",
       "width": 832,
       "height": 480,
-      "narrative_stage": "HOOK"
+      "narrative_stage": "HOOK",
+      "storyboard_image": "S03_03_storyboard.png"
     },
     {
       "shot_id": "S04_04",
@@ -138,7 +141,8 @@
       "source_scene_id": "SEG02",
       "width": 832,
       "height": 480,
-      "narrative_stage": "FURY"
+      "narrative_stage": "FURY",
+      "storyboard_image": "S04_04_storyboard.png"
     },
     {
       "shot_id": "S05_05",
@@ -172,7 +176,8 @@
       "source_scene_id": "SEG02",
       "width": 832,
       "height": 480,
-      "narrative_stage": "FURY"
+      "narrative_stage": "FURY",
+      "storyboard_image": "S05_05_storyboard.png"
     },
     {
       "shot_id": "S06_06",
@@ -206,7 +211,8 @@
       "source_scene_id": "SEG02",
       "width": 832,
       "height": 480,
-      "narrative_stage": "FURY"
+      "narrative_stage": "FURY",
+      "storyboard_image": "S06_06_storyboard.png"
     },
     {
       "shot_id": "S07_07",
@@ -240,7 +246,8 @@
       "source_scene_id": "SEG02",
       "width": 832,
       "height": 480,
-      "narrative_stage": "FURY"
+      "narrative_stage": "FURY",
+      "storyboard_image": "S07_07_storyboard.png"
     },
     {
       "shot_id": "S08_08",
@@ -274,7 +281,8 @@
       "source_scene_id": "SEG02",
       "width": 832,
       "height": 480,
-      "narrative_stage": "FURY"
+      "narrative_stage": "FURY",
+      "storyboard_image": "S08_08_storyboard.png"
     },
     {
       "shot_id": "S09_09",
@@ -305,7 +313,8 @@
       "source_scene_id": "SEG03",
       "width": 832,
       "height": 480,
-      "narrative_stage": "MESS"
+      "narrative_stage": "MESS",
+      "storyboard_image": "S09_09_storyboard.png"
     },
     {
       "shot_id": "S10_10",
@@ -336,7 +345,8 @@
       "source_scene_id": "SEG03",
       "width": 832,
       "height": 480,
-      "narrative_stage": "MESS"
+      "narrative_stage": "MESS",
+      "storyboard_image": "S10_10_storyboard.png"
     },
     {
       "shot_id": "S11_11",
@@ -367,7 +377,8 @@
       "source_scene_id": "SEG03",
       "width": 832,
       "height": 480,
-      "narrative_stage": "MESS"
+      "narrative_stage": "MESS",
+      "storyboard_image": "S11_11_storyboard.png"
     },
     {
       "shot_id": "S12_12",
@@ -392,13 +403,14 @@
       "seed": 1300012,
       "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
       "mode": "i2v",
-      "input_image": null,
+      "input_image": "S12_12_keyframe.png",
       "output_name": "S12_12.mp4",
       "source_beat_id": "SEG03_B015",
       "source_scene_id": "SEG03",
       "width": 832,
       "height": 480,
-      "narrative_stage": "MESS"
+      "narrative_stage": "MESS",
+      "storyboard_image": "S12_12_storyboard.png"
     },
     {
       "shot_id": "S13_13",
@@ -423,13 +435,14 @@
       "seed": 1300013,
       "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
       "mode": "i2v",
-      "input_image": null,
+      "input_image": "S13_13_keyframe.png",
       "output_name": "S13_13.mp4",
       "source_beat_id": "SEG03_B017",
       "source_scene_id": "SEG03",
       "width": 832,
       "height": 480,
-      "narrative_stage": "MESS"
+      "narrative_stage": "MESS",
+      "storyboard_image": "S13_13_storyboard.png"
     },
     {
       "shot_id": "S14_14",
@@ -454,13 +467,14 @@
       "seed": 1300014,
       "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
       "mode": "i2v",
-      "input_image": null,
+      "input_image": "S14_14_keyframe.png",
       "output_name": "S14_14.mp4",
       "source_beat_id": "SEG03_B018",
       "source_scene_id": "SEG03",
       "width": 832,
       "height": 480,
-      "narrative_stage": "MESS"
+      "narrative_stage": "MESS",
+      "storyboard_image": "S14_14_storyboard.png"
     },
     {
       "shot_id": "S15_15",
@@ -485,13 +499,14 @@
       "seed": 1300015,
       "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
       "mode": "i2v",
-      "input_image": null,
+      "input_image": "S15_15_keyframe.png",
       "output_name": "S15_15.mp4",
       "source_beat_id": "SEG03_B019",
       "source_scene_id": "SEG03",
       "width": 832,
       "height": 480,
-      "narrative_stage": "MESS"
+      "narrative_stage": "MESS",
+      "storyboard_image": "S15_15_storyboard.png"
     },
     {
       "shot_id": "S16_16",
@@ -516,13 +531,14 @@
       "seed": 1300016,
       "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
       "mode": "i2v",
-      "input_image": null,
+      "input_image": "S16_16_keyframe.png",
       "output_name": "S16_16.mp4",
       "source_beat_id": "SEG03_B021",
       "source_scene_id": "SEG03",
       "width": 832,
       "height": 480,
-      "narrative_stage": "MESS"
+      "narrative_stage": "MESS",
+      "storyboard_image": "S16_16_storyboard.png"
     },
     {
       "shot_id": "S17_17",
@@ -547,13 +563,14 @@
       "seed": 1300017,
       "model": "hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
       "mode": "i2v",
-      "input_image": null,
+      "input_image": "S17_17_keyframe.png",
       "output_name": "S17_17.mp4",
       "source_beat_id": "SEG03_B022",
       "source_scene_id": "SEG03",
       "width": 832,
       "height": 480,
-      "narrative_stage": "MESS"
+      "narrative_stage": "MESS",
+      "storyboard_image": "S17_17_storyboard.png"
     },
     {
       "shot_id": "S18_18",
@@ -587,7 +604,8 @@
       "source_scene_id": "SEG04",
       "width": 832,
       "height": 480,
-      "narrative_stage": "INSIGHT"
+      "narrative_stage": "INSIGHT",
+      "storyboard_image": "S18_18_storyboard.png"
     },
     {
       "shot_id": "S19_19",
@@ -621,7 +639,8 @@
       "source_scene_id": "SEG04",
       "width": 832,
       "height": 480,
-      "narrative_stage": "INSIGHT"
+      "narrative_stage": "INSIGHT",
+      "storyboard_image": "S19_19_storyboard.png"
     },
     {
       "shot_id": "S20_20",
@@ -655,7 +674,8 @@
       "source_scene_id": "SEG04",
       "width": 832,
       "height": 480,
-      "narrative_stage": "INSIGHT"
+      "narrative_stage": "INSIGHT",
+      "storyboard_image": "S20_20_storyboard.png"
     },
     {
       "shot_id": "S21_21",
@@ -689,7 +709,8 @@
       "source_scene_id": "SEG04",
       "width": 832,
       "height": 480,
-      "narrative_stage": "INSIGHT"
+      "narrative_stage": "INSIGHT",
+      "storyboard_image": "S21_21_storyboard.png"
     },
     {
       "shot_id": "S22_22",
@@ -723,7 +744,8 @@
       "source_scene_id": "SEG04",
       "width": 832,
       "height": 480,
-      "narrative_stage": "INSIGHT"
+      "narrative_stage": "INSIGHT",
+      "storyboard_image": "S22_22_storyboard.png"
     },
     {
       "shot_id": "S23_23",
@@ -757,7 +779,8 @@
       "source_scene_id": "SEG05",
       "width": 832,
       "height": 480,
-      "narrative_stage": "INSIGHT"
+      "narrative_stage": "INSIGHT",
+      "storyboard_image": "S23_23_storyboard.png"
     },
     {
       "shot_id": "S24_24",
@@ -791,7 +814,8 @@
       "source_scene_id": "SEG05",
       "width": 832,
       "height": 480,
-      "narrative_stage": "INSIGHT"
+      "narrative_stage": "INSIGHT",
+      "storyboard_image": "S24_24_storyboard.png"
     }
   ],
   "source_preproduction": "systems/video/preproduction/ep01/ep01_prepro_manifest.json",

@@ -219,9 +219,26 @@ def main() -> int:
             else:
                 success = False
                 for name, backend in backends:
+                    # Re-resolve voice per backend so fallback uses correct voice
+                    be_opts = SynthOptions(
+                        language=opts.language,
+                        voice=args.voice or default_voice(language, backend=name),
+                        rate=opts.rate,
+                        volume=opts.volume,
+                        pitch=opts.pitch,
+                        sample_rate=opts.sample_rate,
+                        model_id=opts.model_id,
+                        model_dir=opts.model_dir,
+                        device=opts.device,
+                        speaker=opts.speaker,
+                        speaker_wav=opts.speaker_wav,
+                        cache_dir=opts.cache_dir,
+                        exaggeration=opts.exaggeration,
+                        cfg_weight=opts.cfg_weight,
+                    )
                     try:
                         if not args.no_cache:
-                            key = cache_key(text, name, opts)
+                            key = cache_key(text, name, be_opts)
                             cached = cache_dir / name / f"{key}.wav"
                             if cached.exists():
                                 copy_file(cached, seg_wav)
@@ -232,9 +249,9 @@ def main() -> int:
                                 attempts.append({"backend": name, "ok": True, "cache_hit": True})
                                 break
 
-                        meta = backend.synthesize_to_wav(text, seg_wav, opts)
+                        meta = backend.synthesize_to_wav(text, seg_wav, be_opts)
                         if not args.no_cache:
-                            key = cache_key(text, name, opts)
+                            key = cache_key(text, name, be_opts)
                             cached = cache_dir / name / f"{key}.wav"
                             copy_file(seg_wav, cached)
                         success = True
