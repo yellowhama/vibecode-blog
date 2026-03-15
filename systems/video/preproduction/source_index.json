@@ -1,158 +1,127 @@
 {
-  "version": "1.0",
-  "description": "에피소드별 소스 블로그 매핑 인덱스. 시리즈 바이블(12-episode-series-bible.md) 기반.",
+  "version": "2.0",
+  "description": "에피소드별 주제-질문 매핑 인덱스. 주제가 먼저, 블로그는 양념.",
+  "design_principle": "시청자가 실제로 구글링할 질문 → 5분 후 알게 되는 것 → 블로그 양념 (한두 스푼만)",
   "episodes": [
     {
       "ep": "EP01",
-      "title": "그냥 만들면 되지",
-      "topic": "스펙",
-      "topic_three": {
-        "what": "뭘 만들 건지 적어둔 것. 목적/이유/방법/수단.",
-        "without": "돌아가긴 가는데 뭘 만들고 있는지 모름. AI 핑퐁 무한루프. 고치면 옆에서 터짐.",
-        "with": "뭘 만드는지 알고 시작. 에러가 있어도 뭘 고칠지 앎."
-      },
+      "question": "바이브코딩이 뭐야?",
+      "topic": "바이브코딩 정의",
+      "learning_outcome": "AI가 대신 코딩 ≠ 바이브코딩. AI와 '같이' 만드는 것. 브라우저 Claude vs Claude Code 차이.",
+      "blog_seasoning": ["001", "054", "act1-1 일부"],
       "sources": {
-        "phase1": ["act1-1-ko.md", "act1-2-ko.md"],
-        "original": ["049-에러-터지면-당신-탓.md", "050-리얼-개발기.md", "058-짜증이-스펙이-되기까지.md"],
-        "key_original": "058-짜증이-스펙이-되기까지.md"
+        "phase1": ["act1-1-ko.md"],
+        "original": ["054-바이브코딩-정의.md"],
+        "key_original": null
       },
-      "metaphor_ids": ["Act1-#1", "Act1-#2", "Act1-#9"],
-      "sitcom_beat": "Vee 첫 바이브코딩 성공 → 30초 후 전부 폭발",
-      "explainer_concept": "스펙이 뭔가 — 설계도 vs 무작위 쌓기",
-      "status": "story_designed"
+      "metaphor_ids": ["Act1-#1"],
+      "status": "pending",
+      "topic_brief_status": "pending"
     },
     {
       "ep": "EP02",
-      "title": "고치면 더 터져",
-      "topic": "디버깅",
-      "topic_three": {
-        "what": "에러를 찾아서 고치는 것. 프롬프트가 아니라 스펙으로.",
-        "without": "3개 고치면 5개 터짐. 프롬프트만 바꾸면 흐릿해짐.",
-        "with": "스펙으로 정리하면 에러가 줄어든다."
+      "question": "뭘 만들라고 해야 돼?",
+      "topic": "스펙",
+      "learning_outcome": "스펙 = 4가지 질문 (목적/이유/방법/수단). 짜증이 스펙이 되는 과정.",
+      "blog_seasoning": ["058", "act1-2 숫자들"],
+      "sources": {
+        "phase1": ["act1-1-ko.md", "act1-2-ko.md"],
+        "original": ["058-짜증이-스펙이-되기까지.md"],
+        "key_original": "058-짜증이-스펙이-되기까지.md"
       },
+      "metaphor_ids": ["Act1-#1", "Act1-#2", "Act1-#9"],
+      "status": "pending",
+      "topic_brief_status": "pending"
+    },
+    {
+      "ep": "EP03",
+      "question": "만들었는데 왜 터져?",
+      "topic": "에러와 결정",
+      "learning_outcome": "에러는 코드 문제가 아니라 결정 문제. 에러 읽는 법 기초.",
+      "blog_seasoning": ["act1-3", "act1-4 일부"],
       "sources": {
         "phase1": ["act1-3-ko.md", "act1-4-ko.md"],
         "original": [],
         "key_original": null
       },
       "metaphor_ids": ["Act1-#4", "Act1-#5"],
-      "sitcom_beat": "Vee 디버깅 시도 → 3개 고치면 5개 터짐, Bee 거부",
-      "explainer_concept": "프롬프트 vs 스펙 — 구두 주문 vs 서면 주문",
-      "status": "pending"
-    },
-    {
-      "ep": "EP03",
-      "title": "스펙을 썼는데요",
-      "topic": "SDD",
-      "topic_three": {
-        "what": "Spec-Driven Development. 구조부터 짜는 것.",
-        "without": "기능 나열 = 위시리스트. 구조 없는 스펙.",
-        "with": "구조가 있으면 읽을 수 있는 스펙이 된다."
-      },
-      "sources": {
-        "phase1": ["act2-1-ko.md", "act2-2-ko.md"],
-        "original": [],
-        "key_original": null
-      },
-      "metaphor_ids": ["Act2-#1", "Act2-#2", "Act2-#5"],
-      "sitcom_beat": "Vee 엉망 스펙 작성, Bee가 찢어버림",
-      "explainer_concept": "SDD 구조 — 집 방 나누기",
-      "status": "pending"
+      "status": "pending",
+      "topic_brief_status": "pending"
     },
     {
       "ep": "EP04",
-      "title": "왜 되는지 모름",
+      "question": "고치면 더 터지는데?",
       "topic": "의존성",
-      "topic_three": {
-        "what": "모듈 간 연결 관계. 뭐가 뭘 부르는지.",
-        "without": "되긴 되는데 왜 되는지 모름. 설명 불가.",
-        "with": "모듈별 정리 → 설명 가능 → 유지보수 가능."
-      },
+      "learning_outcome": "의존성 = 도미노. 하나만 고치면 안 되는 이유. 연결 관계 파악이 먼저.",
+      "blog_seasoning": ["act2-3 일부"],
       "sources": {
         "phase1": ["act2-3-ko.md", "act2-4-ko.md"],
         "original": [],
         "key_original": null
       },
       "metaphor_ids": ["Act2-#3", "Act2-#4"],
-      "sitcom_beat": "시스템이 됐는데 왜 되는지 모름, Bee '니가 만든 거 맞냐'",
-      "explainer_concept": "의존성과 모듈 — 도미노 + 레고",
-      "status": "pending"
+      "status": "pending",
+      "topic_brief_status": "pending"
     },
     {
       "ep": "EP05",
-      "title": "여기가 어디야",
-      "topic": "도메인",
-      "topic_three": {
-        "what": "코드가 다루는 현실 세계의 영역.",
-        "without": "프로젝트 커지면 어디서 뭘 고쳐야 할지 모름.",
-        "with": "동네(도메인)별로 나누면 길이 보인다."
-      },
+      "question": "파일이 너무 많은데?",
+      "topic": "구조와 도메인",
+      "learning_outcome": "구조 = 도시 지도. 비슷한 것끼리 모으기. 도메인 = 동네.",
+      "blog_seasoning": ["act2-1", "act3-1 일부"],
       "sources": {
-        "phase1": ["act3-1-ko.md", "act3-2-ko.md"],
+        "phase1": ["act2-1-ko.md", "act3-1-ko.md"],
         "original": [],
         "key_original": null
       },
-      "metaphor_ids": ["Act3-#1", "Act3-#2", "Act3-#3"],
-      "sitcom_beat": "코드 정글에서 길 잃음, Bee도 길 잃음",
-      "explainer_concept": "DDD 도메인 — 동네 지도",
-      "status": "pending"
+      "metaphor_ids": ["Act2-#1", "Act3-#1", "Act3-#2"],
+      "status": "pending",
+      "topic_brief_status": "pending"
     },
     {
       "ep": "EP06",
-      "title": "내 땅이야",
-      "topic": "경계",
-      "topic_three": {
-        "what": "Bounded Context. 각 영역의 울타리와 소통 규칙.",
-        "without": "내가 고치면 남의 영역이 터짐. 서로 탓.",
-        "with": "울타리 + 소통 규칙 → 각자 영역에서 평화."
-      },
-      "sources": {
-        "phase1": ["act3-3-ko.md", "act3-4-ko.md"],
-        "original": [],
-        "key_original": null
-      },
-      "metaphor_ids": ["Act3-#4", "Act3-#5"],
-      "sitcom_beat": "Vee+Bee 영역 다툼 → 결국 울타리 합의",
-      "explainer_concept": "Bounded Context — 울타리 + 검문소",
-      "status": "pending"
-    },
-    {
-      "ep": "EP07",
-      "title": "배포했습니다",
+      "question": "테스트가 뭐야?",
       "topic": "테스트",
-      "topic_three": {
-        "what": "코드가 맞는지 자동으로 확인하는 것.",
-        "without": "배포 → 전부 터짐. '테스트는?' '...뭐?'",
-        "with": "테스트가 있으면 터지기 전에 안다."
-      },
+      "learning_outcome": "테스트 = 안전망. 터지기 전에 아는 것. Red-Green 기초.",
+      "blog_seasoning": ["act4-1", "act4-2 일부"],
       "sources": {
         "phase1": ["act4-1-ko.md", "act4-2-ko.md"],
         "original": [],
         "key_original": null
       },
       "metaphor_ids": ["Act4-#1", "Act4-#2"],
-      "sitcom_beat": "배포 → 전부 터짐, Bee '그래서 테스트는?' Vee '...뭐?'",
-      "explainer_concept": "TDD 기초 — 안전망 + 신호등",
-      "status": "pending"
+      "status": "pending",
+      "topic_brief_status": "pending"
     },
     {
-      "ep": "EP08",
-      "title": "빨강 초록 빨강",
-      "topic": "TDD",
-      "topic_three": {
-        "what": "Red-Green-Refactor. 실패→성공→정리 사이클.",
-        "without": "테스트 짜긴 짜는데 과하거나 빠짐. 균형 없음.",
-        "with": "사이클을 따르면 필요한 곳에 필요한 만큼."
-      },
+      "ep": "EP07",
+      "question": "배포는 어떻게 해?",
+      "topic": "배포",
+      "learning_outcome": "로컬 vs 프로덕션. 왜 다르게 터지나. 환경 차이.",
+      "blog_seasoning": ["act4-3 일부"],
       "sources": {
-        "phase1": ["act4-3-ko.md", "act4-4-ko.md"],
+        "phase1": ["act4-3-ko.md"],
         "original": [],
         "key_original": null
       },
-      "metaphor_ids": ["Act4-#3", "Act4-#4"],
-      "sitcom_beat": "Vee TDD 학습, 처음엔 짜증 → 점점 중독, Bee 은근 뿌듯",
-      "explainer_concept": "테스팅 사이클 — Red-Green-Refactor 신호등",
-      "status": "pending"
+      "metaphor_ids": [],
+      "status": "pending",
+      "topic_brief_status": "pending"
+    },
+    {
+      "ep": "EP08",
+      "question": "이걸로 돈 벌 수 있어?",
+      "topic": "MVP",
+      "learning_outcome": "MVP = 스케이트보드. 최소한으로 시작하기. 자동차 만들지 마.",
+      "blog_seasoning": ["058 일부"],
+      "sources": {
+        "phase1": [],
+        "original": ["058-짜증이-스펙이-되기까지.md"],
+        "key_original": null
+      },
+      "metaphor_ids": ["Act1-#9"],
+      "status": "pending",
+      "topic_brief_status": "pending"
     }
   ],
   "source_paths": {
@@ -160,6 +129,7 @@
     "original": "content/blog/blog-only/",
     "metaphor_library": "systems/planning/11-concept-metaphor-library.md",
     "series_bible": "systems/planning/12-episode-series-bible.md",
-    "format_bible": "systems/planning/10-youtube-format-bible.md"
+    "format_bible": "systems/planning/10-youtube-format-bible.md",
+    "channel_identity": "systems/planning/16-channel-identity.md"
   }
 }
