@@ -1,0 +1,791 @@
+{
+  "project_id": "ep01",
+  "prepro_manifest": "/mnt/e/vibecode-blog/systems/video/preproduction/ep01/ep01_prepro_manifest.json",
+  "generated_at": "2026-03-13T04:43:31.310135",
+  "backend_chain": [
+    "chatterbox",
+    "edge"
+  ],
+  "offline_strict": false,
+  "backend_health": {
+    "chatterbox": {
+      "ok": true,
+      "msg": "chatterbox available, CUDA device: NVIDIA GeForce RTX 5070 Ti",
+      "is_local": true,
+      "registry": {
+        "module": "tts_backends.chatterbox_be",
+        "class": "ChatterboxBackend",
+        "description": "Resemble AI Chatterbox — local neural TTS with emotion control",
+        "is_local": true
+      }
+    },
+    "edge": {
+      "ok": true,
+      "msg": "edge_tts available",
+      "is_local": false,
+      "registry": {
+        "module": "tts_backends.edge",
+        "class": "EdgeBackend",
+        "description": "Microsoft Edge Neural Voices (online)",
+        "is_local": false
+      }
+    }
+  },
+  "used_backend_synthesis_counts": {
+    "chatterbox": 0,
+    "edge": 0
+  },
+  "cache_hits": 0,
+  "failed_count": 31,
+  "failed_beat_ids": [
+    "SEG01_B001",
+    "SEG01_B002",
+    "SEG01_B003",
+    "SEG01_B004",
+    "SEG02_B005",
+    "SEG02_B006",
+    "SEG02_B007",
+    "SEG02_B008",
+    "SEG02_B009",
+    "SEG02_B010",
+    "SEG03_B011",
+    "SEG03_B012",
+    "SEG03_B013",
+    "SEG03_B014",
+    "SEG03_B015",
+    "SEG03_B016",
+    "SEG03_B017",
+    "SEG03_B018",
+    "SEG03_B019",
+    "SEG03_B020",
+    "SEG03_B021",
+    "SEG03_B022",
+    "SEG04_B023",
+    "SEG04_B024",
+    "SEG04_B025",
+    "SEG04_B026",
+    "SEG04_B027",
+    "SEG04_B028",
+    "SEG05_B029",
+    "SEG05_B030",
+    "SEG05_B031"
+  ],
+  "out_audio": "/mnt/e/vibecode-blog/systems/video/preproduction/ep01/tts_full_v2/voiceover_master.wav",
+  "timing_report": "/mnt/e/vibecode-blog/systems/video/preproduction/ep01/timing_alignment_report.json",
+  "quality_report": "/mnt/e/vibecode-blog/systems/video/preproduction/ep01/voiceover_quality_report.json",
+  "segments": [
+    {
+      "order": 1,
+      "beat_id": "SEG01_B001",
+      "scene_id": "SEG01",
+      "text": "This is the moment every vibe coder lives for.",
+      "expected_duration_sec": 3.6,
+      "actual_duration_sec": 3.6,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0001_SEG01_B001.wav"
+    },
+    {
+      "order": 2,
+      "beat_id": "SEG01_B002",
+      "scene_id": "SEG01",
+      "text": "You asked AI to build it. And it did. All of it.",
+      "expected_duration_sec": 4.8,
+      "actual_duration_sec": 4.8,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0003_SEG01_B002.wav"
+    },
+    {
+      "order": 3,
+      "beat_id": "SEG01_B003",
+      "scene_id": "SEG01",
+      "text": "And then, three seconds later...",
+      "expected_duration_sec": 2.0,
+      "actual_duration_sec": 2.0,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0005_SEG01_B003.wav"
+    },
+    {
+      "order": 4,
+      "beat_id": "SEG01_B004",
+      "scene_id": "SEG01",
+      "text": "...it all falls apart.",
+      "expected_duration_sec": 1.6,
+      "actual_duration_sec": 1.6,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0007_SEG01_B004.wav"
+    },
+    {
+      "order": 5,
+      "beat_id": "SEG02_B005",
+      "scene_id": "SEG02",
+      "text": "Three days ago, Vee discovered something magical.",
+      "expected_duration_sec": 2.8,
+      "actual_duration_sec": 2.8,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0009_SEG02_B005.wav"
+    },
+    {
+      "order": 6,
+      "beat_id": "SEG02_B006",
+      "scene_id": "SEG02",
+      "text": "You type what you want. AI builds it. Five minutes. Done.",
+      "expected_duration_sec": 4.4,
+      "actual_duration_sec": 4.4,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0011_SEG02_B006.wav"
+    },
+    {
+      "order": 7,
+      "beat_id": "SEG02_B007",
+      "scene_id": "SEG02",
+      "text": "A to-do app. Done. A database. Done. A login page. Done.",
+      "expected_duration_sec": 4.4,
+      "actual_duration_sec": 4.4,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0013_SEG02_B007.wav"
+    },
+    {
+      "order": 8,
+      "beat_id": "SEG02_B008",
+      "scene_id": "SEG02",
+      "text": "She thought she could build anything.",
+      "expected_duration_sec": 2.4,
+      "actual_duration_sec": 2.4,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0015_SEG02_B008.wav"
+    },
+    {
+      "order": 9,
+      "beat_id": "SEG02_B009",
+      "scene_id": "SEG02",
+      "text": "But there was someone who'd seen this story before.",
+      "expected_duration_sec": 3.6,
+      "actual_duration_sec": 3.6,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0017_SEG02_B009.wav"
+    },
+    {
+      "order": 10,
+      "beat_id": "SEG02_B010",
+      "scene_id": "SEG02",
+      "text": "She couldn't answer.",
+      "expected_duration_sec": 1.5,
+      "actual_duration_sec": 1.5,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0019_SEG02_B010.wav"
+    },
+    {
+      "order": 11,
+      "beat_id": "SEG03_B011",
+      "scene_id": "SEG03",
+      "text": "Here's an empty lot.",
+      "expected_duration_sec": 1.6,
+      "actual_duration_sec": 1.6,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0021_SEG03_B011.wav"
+    },
+    {
+      "order": 12,
+      "beat_id": "SEG03_B012",
+      "scene_id": "SEG03",
+      "text": "You want to build something here.",
+      "expected_duration_sec": 2.4,
+      "actual_duration_sec": 2.4,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0023_SEG03_B012.wav"
+    },
+    {
+      "order": 13,
+      "beat_id": "SEG03_B013",
+      "scene_id": "SEG03",
+      "text": "With a blueprint, you start with the foundation. Then the frame. Then the walls. There's an order. Each piece knows where it goes.",
+      "expected_duration_sec": 9.2,
+      "actual_duration_sec": 9.2,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0025_SEG03_B013.wav"
+    },
+    {
+      "order": 14,
+      "beat_id": "SEG03_B014",
+      "scene_id": "SEG03",
+      "text": "Without a blueprint?",
+      "expected_duration_sec": 1.5,
+      "actual_duration_sec": 1.5,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0027_SEG03_B014.wav"
+    },
+    {
+      "order": 15,
+      "beat_id": "SEG03_B015",
+      "scene_id": "SEG03",
+      "text": "You just... stack. And it goes up. It actually goes up.",
+      "expected_duration_sec": 4.4,
+      "actual_duration_sec": 4.4,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0029_SEG03_B015.wav"
+    },
+    {
+      "order": 16,
+      "beat_id": "SEG03_B016",
+      "scene_id": "SEG03",
+      "text": "For a while, it looks like it's working.",
+      "expected_duration_sec": 3.2,
+      "actual_duration_sec": 3.2,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0031_SEG03_B016.wav"
+    },
+    {
+      "order": 17,
+      "beat_id": "SEG03_B017",
+      "scene_id": "SEG03",
+      "text": "Then...",
+      "expected_duration_sec": 1.5,
+      "actual_duration_sec": 1.5,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0033_SEG03_B017.wav"
+    },
+    {
+      "order": 18,
+      "beat_id": "SEG03_B018",
+      "scene_id": "SEG03",
+      "text": "A spec is a blueprint. It's not a hundred-page document. It's one sentence: \"What am I building?\"",
+      "expected_duration_sec": 6.8,
+      "actual_duration_sec": 6.8,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0035_SEG03_B018.wav"
+    },
+    {
+      "order": 19,
+      "beat_id": "SEG03_B019",
+      "scene_id": "SEG03",
+      "text": "You don't need to know every detail upfront.",
+      "expected_duration_sec": 3.2,
+      "actual_duration_sec": 3.2,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0037_SEG03_B019.wav"
+    },
+    {
+      "order": 20,
+      "beat_id": "SEG03_B020",
+      "scene_id": "SEG03",
+      "text": "Start with a skateboard. Four wheels. It rolls. That's enough.",
+      "expected_duration_sec": 4.0,
+      "actual_duration_sec": 4.0,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0039_SEG03_B020.wav"
+    },
+    {
+      "order": 21,
+      "beat_id": "SEG03_B021",
+      "scene_id": "SEG03",
+      "text": "You can always make it bigger later. But you have to know what \"it\" is first.",
+      "expected_duration_sec": 6.4,
+      "actual_duration_sec": 6.4,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0041_SEG03_B021.wav"
+    },
+    {
+      "order": 22,
+      "beat_id": "SEG03_B022",
+      "scene_id": "SEG03",
+      "text": "That one line? That's where a spec starts.",
+      "expected_duration_sec": 3.2,
+      "actual_duration_sec": 3.2,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0043_SEG03_B022.wav"
+    },
+    {
+      "order": 23,
+      "beat_id": "SEG04_B023",
+      "scene_id": "SEG04",
+      "text": "Back in the present. Everything still broken.",
+      "expected_duration_sec": 2.8,
+      "actual_duration_sec": 2.8,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0045_SEG04_B023.wav"
+    },
+    {
+      "order": 24,
+      "beat_id": "SEG04_B024",
+      "scene_id": "SEG04",
+      "text": "And then she did something unusual. She stopped coding.",
+      "expected_duration_sec": 3.6,
+      "actual_duration_sec": 3.6,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0047_SEG04_B024.wav"
+    },
+    {
+      "order": 25,
+      "beat_id": "SEG04_B025",
+      "scene_id": "SEG04",
+      "text": "She started writing. Not code. Just... what was bothering her.",
+      "expected_duration_sec": 4.0,
+      "actual_duration_sec": 4.0,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0049_SEG04_B025.wav"
+    },
+    {
+      "order": 26,
+      "beat_id": "SEG04_B026",
+      "scene_id": "SEG04",
+      "text": "And there it was. The question she'd been avoiding.",
+      "expected_duration_sec": 3.6,
+      "actual_duration_sec": 3.6,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0051_SEG04_B026.wav"
+    },
+    {
+      "order": 27,
+      "beat_id": "SEG04_B027",
+      "scene_id": "SEG04",
+      "text": "Not features. Not tools. The reason. The one sentence that explains everything.",
+      "expected_duration_sec": 4.8,
+      "actual_duration_sec": 4.8,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0053_SEG04_B027.wav"
+    },
+    {
+      "order": 28,
+      "beat_id": "SEG04_B028",
+      "scene_id": "SEG04",
+      "text": "The same errors. But now, one line makes sense.",
+      "expected_duration_sec": 3.6,
+      "actual_duration_sec": 3.6,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0055_SEG04_B028.wav"
+    },
+    {
+      "order": 29,
+      "beat_id": "SEG05_B029",
+      "scene_id": "SEG05",
+      "text": "Everything is still broken.",
+      "expected_duration_sec": 1.6,
+      "actual_duration_sec": 1.6,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0057_SEG05_B029.wav"
+    },
+    {
+      "order": 30,
+      "beat_id": "SEG05_B030",
+      "scene_id": "SEG05",
+      "text": "But now she knows what to fix.",
+      "expected_duration_sec": 2.8,
+      "actual_duration_sec": 2.8,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0059_SEG05_B030.wav"
+    },
+    {
+      "order": 31,
+      "beat_id": "SEG05_B031",
+      "scene_id": "SEG05",
+      "text": "...at least, she thinks she does.",
+      "expected_duration_sec": 2.4,
+      "actual_duration_sec": 2.4,
+      "backend": "silence_fallback",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": false,
+          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
+        },
+        {
+          "backend": "edge",
+          "ok": false,
+          "error": "Invalid voice 'narrator'."
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0061_SEG05_B031.wav"
+    }
+  ]
+}

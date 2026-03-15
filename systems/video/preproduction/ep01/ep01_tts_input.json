@@ -1,0 +1,564 @@
+{
+  "project_id": "ep01",
+  "shots": [
+    {
+      "shot_id": "SEG01_B001",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "됐다!",
+          "emotion": "활짝 웃으며, 두 팔 벌려"
+        }
+      ],
+      "purpose": "됐다!",
+      "narration_text": "됐다!"
+    },
+    {
+      "shot_id": "SEG01_B002",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "다섯 개. 에이전트 다섯 개. 사흘 만에.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "다섯 개. 에이전트 다섯 개. 사흘 만에.",
+      "narration_text": "다섯 개. 에이전트 다섯 개. 사흘 만에."
+    },
+    {
+      "shot_id": "SEG01_B003",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "...뭐?",
+          "emotion": "작은 목소리로"
+        }
+      ],
+      "purpose": "...뭐?",
+      "narration_text": "...뭐?"
+    },
+    {
+      "shot_id": "SEG02_B004",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "투두리스트 앱 만들어줘.",
+          "emotion": "타이핑하며"
+        }
+      ],
+      "purpose": "투두리스트 앱 만들어줘.",
+      "narration_text": "투두리스트 앱 만들어줘."
+    },
+    {
+      "shot_id": "SEG02_B005",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "어? 복붙 안 해도 돼?",
+          "emotion": "눈 커지며"
+        }
+      ],
+      "purpose": "어? 복붙 안 해도 돼?",
+      "narration_text": "어? 복붙 안 해도 돼?"
+    },
+    {
+      "shot_id": "SEG02_B006",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "5분! 이게 5분!",
+          "emotion": ""
+        }
+      ],
+      "purpose": "5분! 이게 5분!",
+      "narration_text": "5분! 이게 5분!"
+    },
+    {
+      "shot_id": "SEG02_B007",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "메모 앱. 됐다. 데이터베이스. 됐다. 로그인. 됐다.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "메모 앱. 됐다. 데이터베이스. 됐다. 로그인. 됐다.",
+      "narration_text": "메모 앱. 됐다. 데이터베이스. 됐다. 로그인. 됐다."
+    },
+    {
+      "shot_id": "SEG02_B008",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "이거면 뭐든 만들겠는데?",
+          "emotion": "자신만만"
+        }
+      ],
+      "purpose": "이거면 뭐든 만들겠는데?",
+      "narration_text": "이거면 뭐든 만들겠는데?"
+    },
+    {
+      "shot_id": "SEG02_B009",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "주식 스크리너! 586개 종목!",
+          "emotion": "못 봄, 계속 타이핑"
+        }
+      ],
+      "purpose": "주식 스크리너! 586개 종목!",
+      "narration_text": "주식 스크리너! 586개 종목!"
+    },
+    {
+      "shot_id": "SEG02_B010",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "bee",
+          "text": "...뭐 하는 거야.",
+          "emotion": "한쪽 눈 뜨며"
+        }
+      ],
+      "purpose": "...뭐 하는 거야.",
+      "narration_text": "...뭐 하는 거야."
+    },
+    {
+      "shot_id": "SEG02_B011",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "엇, 너 누구야?",
+          "emotion": "깜짝"
+        }
+      ],
+      "purpose": "엇, 너 누구야?",
+      "narration_text": "엇, 너 누구야?"
+    },
+    {
+      "shot_id": "SEG02_B012",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "bee",
+          "text": "됐고. 근데 그거.",
+          "emotion": "한숨"
+        }
+      ],
+      "purpose": "됐고. 근데 그거.",
+      "narration_text": "됐고. 근데 그거."
+    },
+    {
+      "shot_id": "SEG02_B013",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "응?",
+          "emotion": ""
+        }
+      ],
+      "purpose": "응?",
+      "narration_text": "응?"
+    },
+    {
+      "shot_id": "SEG02_B014",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "bee",
+          "text": "스펙이 뭔데.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "스펙이 뭔데.",
+      "narration_text": "스펙이 뭔데."
+    },
+    {
+      "shot_id": "SEG02_B015",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "...스펙?",
+          "emotion": "멈칫"
+        }
+      ],
+      "purpose": "...스펙?",
+      "narration_text": "...스펙?"
+    },
+    {
+      "shot_id": "SEG02_B016",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "bee",
+          "text": "니가 만드는 거. 뭐야. 뭘 만드는 건데.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "니가 만드는 거. 뭐야. 뭘 만드는 건데.",
+      "narration_text": "니가 만드는 거. 뭐야. 뭘 만드는 건데."
+    },
+    {
+      "shot_id": "SEG02_B017",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈—",
+          "emotion": "자신만만하게"
+        }
+      ],
+      "purpose": "에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈—",
+      "narration_text": "에이전트! 데이터 모으는 놈, 정리하는 놈, 분석하는 놈—"
+    },
+    {
+      "shot_id": "SEG02_B018",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "bee",
+          "text": "그건 기능이지 스펙이 아니야.",
+          "emotion": "끊으며"
+        }
+      ],
+      "purpose": "그건 기능이지 스펙이 아니야.",
+      "narration_text": "그건 기능이지 스펙이 아니야."
+    },
+    {
+      "shot_id": "SEG02_B019",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "...뭐가 다른데?",
+          "emotion": ""
+        }
+      ],
+      "purpose": "...뭐가 다른데?",
+      "narration_text": "...뭐가 다른데?"
+    },
+    {
+      "shot_id": "SEG02_B020",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "bee",
+          "text": "됐다. 알아서 해.",
+          "emotion": "날개 접으며, 등 돌리고"
+        }
+      ],
+      "purpose": "됐다. 알아서 해.",
+      "narration_text": "됐다. 알아서 해."
+    },
+    {
+      "shot_id": "SEG03_B021",
+      "visual_type": "explainer",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "여기 빈 땅이 있습니다.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "여기 빈 땅이 있습니다.",
+      "narration_text": "여기 빈 땅이 있습니다."
+    },
+    {
+      "shot_id": "SEG03_B022",
+      "visual_type": "explainer",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "건물을 올리려고 합니다.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "건물을 올리려고 합니다.",
+      "narration_text": "건물을 올리려고 합니다."
+    },
+    {
+      "shot_id": "SEG03_B023",
+      "visual_type": "explainer",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "설계도가 있으면 기둥부터 세웁니다. 기둥 위에 보를 얹습니다. 보 위에 바닥을 깝니다. 순서가 있습니다.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "설계도가 있으면 기둥부터 세웁니다. 기둥 위에 보를 얹습니다. 보 위에 바닥을 깝니다. 순서가 있습니다.",
+      "narration_text": "설계도가 있으면 기둥부터 세웁니다. 기둥 위에 보를 얹습니다. 보 위에 바닥을 깝니다. 순서가 있습니다."
+    },
+    {
+      "shot_id": "SEG03_B024",
+      "visual_type": "explainer",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "설계도가 없으면?",
+          "emotion": ""
+        }
+      ],
+      "purpose": "설계도가 없으면?",
+      "narration_text": "설계도가 없으면?"
+    },
+    {
+      "shot_id": "SEG03_B025",
+      "visual_type": "explainer",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "그냥 쌓습니다. 올라가긴 올라갑니다.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "그냥 쌓습니다. 올라가긴 올라갑니다.",
+      "narration_text": "그냥 쌓습니다. 올라가긴 올라갑니다."
+    },
+    {
+      "shot_id": "SEG03_B026",
+      "visual_type": "explainer",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "근데 흔들립니다.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "근데 흔들립니다.",
+      "narration_text": "근데 흔들립니다."
+    },
+    {
+      "shot_id": "SEG03_B027",
+      "visual_type": "explainer",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "그리고.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "그리고.",
+      "narration_text": "그리고."
+    },
+    {
+      "shot_id": "SEG03_B028",
+      "visual_type": "explainer",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "스펙은 설계도입니다. \"뭘 만들 건지\" 적어둔 것.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "스펙은 설계도입니다. \"뭘 만들 건지\" 적어둔 것.",
+      "narration_text": "스펙은 설계도입니다. \"뭘 만들 건지\" 적어둔 것."
+    },
+    {
+      "shot_id": "SEG03_B029",
+      "visual_type": "explainer",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "도시를 만들려면 도시 전체의 지도가 필요합니다. 건물 하나만 짓는 게 아니니까. 도로가 어디로 가는지. 건물이 어디 서는지. 그걸 안 정하고 짓기 시작하면.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "도시를 만들려면 도시 전체의 지도가 필요합니다. 건물 하나만 짓는 게 아니니까. 도로가 어디로 가는지. 건물이 어디 서는지. 그걸 안 정하고 짓기 시작하면.",
+      "narration_text": "도시를 만들려면 도시 전체의 지도가 필요합니다. 건물 하나만 짓는 게 아니니까. 도로가 어디로 가는지. 건물이 어디 서는지. 그걸 안 정하고 짓기 시작하면."
+    },
+    {
+      "shot_id": "SEG03_B030",
+      "visual_type": "explainer",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "이렇게 됩니다.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "이렇게 됩니다.",
+      "narration_text": "이렇게 됩니다."
+    },
+    {
+      "shot_id": "SEG03_B031",
+      "visual_type": "explainer",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "처음부터 완벽한 건 필요 없습니다. 스케이트보드면 됩니다. 굴러가는 것. 탈 수 있는 것. 그것만.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "처음부터 완벽한 건 필요 없습니다. 스케이트보드면 됩니다. 굴러가는 것. 탈 수 있는 것. 그것만.",
+      "narration_text": "처음부터 완벽한 건 필요 없습니다. 스케이트보드면 됩니다. 굴러가는 것. 탈 수 있는 것. 그것만."
+    },
+    {
+      "shot_id": "SEG03_B032",
+      "visual_type": "explainer",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "작게 시작해서 키우는 것. 그게 되려면 처음에 \"이건 스케이트보드다\"라고 적어야 합니다. 그 한 줄이 스펙의 시작입니다.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "작게 시작해서 키우는 것. 그게 되려면 처음에 \"이건 스케이트보드다\"라고 적어야 합니다. 그 한 줄이 스펙의 시작입니다.",
+      "narration_text": "작게 시작해서 키우는 것. 그게 되려면 처음에 \"이건 스케이트보드다\"라고 적어야 합니다. 그 한 줄이 스펙의 시작입니다."
+    },
+    {
+      "shot_id": "SEG04_B033",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "뭘 만드는 거지.",
+          "emotion": "중얼"
+        }
+      ],
+      "purpose": "뭘 만드는 거지.",
+      "narration_text": "뭘 만드는 거지."
+    },
+    {
+      "shot_id": "SEG04_B034",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "이게 뭘 해야 하냐면... 파일이 동기화되고... 어디서든 접속하고...",
+          "emotion": "쓰면서"
+        }
+      ],
+      "purpose": "이게 뭘 해야 하냐면... 파일이 동기화되고... 어디서든 접속하고...",
+      "narration_text": "이게 뭘 해야 하냐면... 파일이 동기화되고... 어디서든 접속하고..."
+    },
+    {
+      "shot_id": "SEG04_B035",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "bee",
+          "text": "...첫 줄은 나쁘지 않네.",
+          "emotion": "안 쳐다보고"
+        }
+      ],
+      "purpose": "...첫 줄은 나쁘지 않네.",
+      "narration_text": "...첫 줄은 나쁘지 않네."
+    },
+    {
+      "shot_id": "SEG04_B036",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "진짜?",
+          "emotion": "멈추며"
+        }
+      ],
+      "purpose": "진짜?",
+      "narration_text": "진짜?"
+    },
+    {
+      "shot_id": "SEG04_B037",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "bee",
+          "text": "근데 두 번째 줄부터 또 기능 나열이야.",
+          "emotion": "빠르게"
+        }
+      ],
+      "purpose": "근데 두 번째 줄부터 또 기능 나열이야.",
+      "narration_text": "근데 두 번째 줄부터 또 기능 나열이야."
+    },
+    {
+      "shot_id": "SEG04_B038",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "bee",
+          "text": "기능 말고. 이걸 왜 만드는 건데.",
+          "emotion": "한숨"
+        }
+      ],
+      "purpose": "기능 말고. 이걸 왜 만드는 건데.",
+      "narration_text": "기능 말고. 이걸 왜 만드는 건데."
+    },
+    {
+      "shot_id": "SEG04_B039",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "...밖에서도 집 컴퓨터를 쓰고 싶으니까.",
+          "emotion": "생각하다"
+        }
+      ],
+      "purpose": "...밖에서도 집 컴퓨터를 쓰고 싶으니까.",
+      "narration_text": "...밖에서도 집 컴퓨터를 쓰고 싶으니까."
+    },
+    {
+      "shot_id": "SEG04_B040",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "bee",
+          "text": "그거 먼저 써.",
+          "emotion": ""
+        }
+      ],
+      "purpose": "그거 먼저 써.",
+      "narration_text": "그거 먼저 써."
+    },
+    {
+      "shot_id": "SEG04_B041",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "bee",
+          "text": "...읽을 수는 있네.",
+          "emotion": "눈을 안 마주치며"
+        }
+      ],
+      "purpose": "...읽을 수는 있네.",
+      "narration_text": "...읽을 수는 있네."
+    },
+    {
+      "shot_id": "SEG05_B042",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "설계도 한 장. 그게 시작이래.",
+          "emotion": "조용히"
+        }
+      ],
+      "purpose": "설계도 한 장. 그게 시작이래.",
+      "narration_text": "설계도 한 장. 그게 시작이래."
+    },
+    {
+      "shot_id": "SEG05_B043",
+      "visual_type": "sitcom",
+      "dialogue": [
+        {
+          "speaker": "vee",
+          "text": "근데... 이 설계도가 맞긴 한 거야?",
+          "emotion": ""
+        }
+      ],
+      "purpose": "근데... 이 설계도가 맞긴 한 거야?",
+      "narration_text": "근데... 이 설계도가 맞긴 한 거야?"
+    }
+  ]
+}

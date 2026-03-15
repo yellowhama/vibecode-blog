@@ -28,3 +28,20 @@ public/pagefind/
 easy_peasy/assets/
 __pycache__
 *.pyc
+
+# video pipeline — binary outputs (renders, audio, video)
+systems/video/output/**/*.mp4
+systems/video/output/**/*.wav
+systems/video/output/**/*.png
+systems/video/output/**/*.jpg
+systems/video/output/**/EP01_v3_package/
+systems/video/preproduction/**/*.wav
+systems/video/preproduction/**/.tts_cache/
+systems/video/preproduction/**/tts_full*/
+systems/video/preproduction/**/tts_output/
+
+# Motion Canvas / Remotion build artifacts
+vibecode-diagrams/node_modules/
+vibecode-diagrams/dist/
+vibecode-assembler/node_modules/
+vibecode-assembler/dist/
