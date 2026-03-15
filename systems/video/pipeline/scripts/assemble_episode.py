@@ -5,10 +5,10 @@ Usage:
     python assemble_episode.py --episode 01 [--stage 1-7] [--draft]
 
 Stages:
-    1. TTS narration (Kokoro draft / Chatterbox production)
+    1. TTS narration (Kokoro draft / Dia2 production)
     2. Whisper timing extraction + SRT
-    3. T2I keyframe generation (ComfyUI + Flux)
-    4. I2V animation (ComfyUI + Wan 2.1)
+    3. T2I keyframe generation (ComfyUI + Flux Kontext)
+    4. I2V animation (ComfyUI + Wan 2.2 MoE)
     5. Diagram animation (Motion Canvas)
     6. BGM generation (ACE-Step)
     7. Final assembly (Remotion / FFmpeg)
@@ -129,7 +129,7 @@ def main():
                 "--manifest", str(epd / f"ep{ep}_shot_manifest.json"),
                 "--output", str(outd / "renders" / "clips"),
                 "--comfyui-url", "http://127.0.0.1:8188",
-            ], "Stage 4: I2V animation (Wan 2.1)")
+            ], "Stage 4: I2V animation (Wan 2.2 MoE)")
 
         elif stage == 5:
             # Motion Canvas explainer diagrams

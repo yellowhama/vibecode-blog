@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Animate keyframes to video clips via ComfyUI (Wan 2.1 I2V)."""
+"""Animate keyframes to video clips via ComfyUI (Wan 2.2 I2V MoE)."""
 import argparse, json, sys, time, urllib.request, urllib.error
 from pathlib import Path
 

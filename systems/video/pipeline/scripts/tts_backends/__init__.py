@@ -26,6 +26,12 @@ _REGISTRY: Dict[str, Dict[str, Any]] = {
         "description": "Kokoro-82M — ultrafast local TTS for draft iteration",
         "is_local": True,
     },
+    "dia2": {
+        "module": "tts_backends.dia2_be",
+        "class": "Dia2Backend",
+        "description": "Dia2-1B — multi-speaker dialogue TTS with streaming (Nari Labs)",
+        "is_local": True,
+    },
 }
 
 
