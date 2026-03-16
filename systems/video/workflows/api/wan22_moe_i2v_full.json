@@ -3,7 +3,7 @@
     "title": "Wan 2.2 GGUF MoE — Image to Video (Full, 5sec)",
     "description": "프로덕션 영상 렌더링용. 입력 이미지 → WanI2V(81프레임) → 2-stage MoE → SaveImage. 배치 렌더러(comfy_batch_render.py)에서 사용.",
     "model": "Wan2.2-I2V-A14B (HighNoise + LowNoise) Q3_K_M GGUF",
-    "resolution": "768x768",
+    "resolution": "832x480",
     "frames": 81,
     "fps": 16,
     "duration_sec": 5,
@@ -58,8 +58,8 @@
     },
     "50": {
       "inputs": {
-        "width": 768,
-        "height": 768,
+        "width": 832,
+        "height": 480,
         "length": 81,
         "batch_size": 1,
         "positive": ["3", 0],
@@ -68,7 +68,7 @@
         "start_image": ["9", 0]
       },
       "class_type": "WanImageToVideo",
-      "_meta": { "title": "Wan I2V Encode (768x768, 81 frames = 5sec@16fps)" }
+      "_meta": { "title": "Wan I2V Encode (832x480, 81 frames = 5sec@16fps)" }
     },
     "20": {
       "inputs": {
@@ -114,9 +114,20 @@
       "_meta": { "title": "VAE Decode" }
     },
     "99": {
-      "inputs": { "filename_prefix": "Wan22_I2V_Full", "images": ["8", 0] },
-      "class_type": "SaveImage",
-      "_meta": { "title": "Save Output" }
+      "inputs": {
+        "frame_rate": 16,
+        "loop_count": 0,
+        "filename_prefix": "Wan22_I2V_Full",
+        "format": "video/h264-mp4",
+        "pingpong": false,
+        "save_output": true,
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "images": ["8", 0]
+      },
+      "class_type": "VHS_VideoCombine",
+      "_meta": { "title": "Save Video (MP4)" }
     }
   }
 }

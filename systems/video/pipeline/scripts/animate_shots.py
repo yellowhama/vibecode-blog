@@ -27,7 +27,9 @@ def main():
     if not wf_path.exists():
         print(f"Workflow not found: {wf_path}", file=sys.stderr)
         sys.exit(1)
-    workflow = json.loads(wf_path.read_text())
+    workflow_raw = json.loads(wf_path.read_text())
+    # Extract the 'prompt' sub-object if present (ComfyUI API format)
+    workflow = workflow_raw.get("prompt", workflow_raw)
 
     # Check ComfyUI
     try:
@@ -125,6 +127,13 @@ def _inject_i2v(workflow: dict, image_filename: str, shot: dict):
         # Seed
         if "seed" in inputs and "seed" in shot:
             inputs["seed"] = shot["seed"]
+
+        # Resolution from manifest (WanImageToVideo node)
+        if class_type == "WanImageToVideo":
+            if "width" in shot:
+                inputs["width"] = shot["width"]
+            if "height" in shot:
+                inputs["height"] = shot["height"]
 
 
 def _queue_and_wait(base_url: str, workflow: dict, timeout: int = 600) -> dict | None:

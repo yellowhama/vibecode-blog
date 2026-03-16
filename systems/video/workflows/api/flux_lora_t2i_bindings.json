@@ -8,15 +8,15 @@
     "guidance": { "node_id": "26", "field": "guidance" },
     "width": { "node_id": "5", "field": "width" },
     "height": { "node_id": "5", "field": "height" },
-    "lora_name": { "node_id": "40", "field": "lora_name", "default": "vee_v1.safetensors" },
+    "lora_name": { "node_id": "40", "field": "lora_name", "default": "Simple_Vector_Flux_v2_renderartist.safetensors" },
     "lora_strength_model": { "node_id": "40", "field": "strength_model" },
     "lora_strength_clip": { "node_id": "40", "field": "strength_clip" },
     "filename_prefix": { "node_id": "9", "field": "filename_prefix" }
   },
   "notes": {
-    "lora_name": "models/loras/ 안의 safetensors 파일명. 기본값: vee_v1.safetensors",
+    "lora_name": "models/loras/ 안의 safetensors 파일명. 기본값: Simple_Vector_Flux_v2_renderartist.safetensors",
     "lora_strength": "0.5=약하게, 0.8=기본, 1.0=최대. 0.7~0.8에서 아이덴티티와 다양성 균형.",
-    "trigger_word": "프롬프트에 'vee_clay' 트리거 워드 포함 필수."
+    "trigger_word": "프롬프트에 'v3ct0r' 트리거 워드 포함 필수."
   },
   "defaults": {
     "guidance": 3.5,

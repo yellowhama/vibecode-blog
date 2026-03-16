@@ -2,10 +2,10 @@
   "_meta": {
     "title": "Flux.1-dev GGUF — T2I + LoRA",
     "description": "LoRA로 캐릭터 아이덴티티를 고정한 Flux T2I. vee_clay 트리거 워드로 일관된 Vee 생성.",
-    "model": "flux1-dev-Q5_K_S.gguf + LoRA (vee_v1.safetensors)",
+    "model": "flux1-dev-Q5_K_S.gguf + LoRA (Simple_Vector_Flux_v2_renderartist.safetensors)",
     "resolution": "1024x1024",
     "vram": "~9.2GB (Flux 9GB + LoRA overhead 0.2GB)",
-    "notes": "lora_name에 safetensors 파일명 지정. 프롬프트에 트리거 워드 포함 필수."
+    "notes": "lora_name에 safetensors 파일명 지정. 프롬프트에 'v3ct0r' 트리거 워드 포함 필수."
   },
   "prompt": {
     "10": {
@@ -26,7 +26,7 @@
     },
     "40": {
       "inputs": {
-        "lora_name": "vee_v1.safetensors",
+        "lora_name": "Simple_Vector_Flux_v2_renderartist.safetensors",
         "strength_model": 0.8,
         "strength_clip": 0.8,
         "model": ["10", 0],

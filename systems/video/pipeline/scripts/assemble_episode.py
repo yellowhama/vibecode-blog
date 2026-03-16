@@ -50,7 +50,8 @@ def main():
     parser.add_argument("--episode", "-e", required=True, help="Episode number (01, 02, ...)")
     parser.add_argument("--stage", "-s", type=int, help="Run only this stage (1-7)")
     parser.add_argument("--from-stage", type=int, default=1, help="Start from this stage")
-    parser.add_argument("--draft", action="store_true", help="Use Kokoro (fast draft) instead of Chatterbox")
+    parser.add_argument("--draft", action="store_true", help="Use Kokoro (fast draft) instead of Dia2")
+    parser.add_argument("--tts", choices=["kokoro", "dia2", "chatterbox"], help="TTS engine override")
     parser.add_argument("--skip-gpu", action="store_true", help="Skip GPU stages (3,4,6)")
     args = parser.parse_args()
 
@@ -82,13 +83,22 @@ def main():
             script_file = epd / f"ep{ep}_script.fountain"
             input_file = str(tts_input) if tts_input.exists() else str(script_file)
 
-            if args.draft:
+            tts_engine = args.tts or ("kokoro" if args.draft else "dia2")
+
+            if tts_engine == "kokoro":
                 timings[1] = run_stage([
                     sys.executable, str(SCRIPTS / "kokoro_tts.py"),
                     "--input", input_file,
                     "--output", str(outd / "audio" / "narration.wav"),
                     "--segments-dir", str(outd / "audio" / "segments"),
                 ], "Stage 1: TTS (Kokoro draft)")
+            elif tts_engine == "dia2":
+                timings[1] = run_stage([
+                    sys.executable, str(SCRIPTS / "dia2_tts.py"),
+                    "--input", input_file,
+                    "--output", str(outd / "audio" / "narration.wav"),
+                    "--segments-dir", str(outd / "audio" / "segments"),
+                ], "Stage 1: TTS (Dia2 production)")
             else:
                 timings[1] = run_stage([
                     sys.executable, str(SCRIPTS / "chatterbox_tts.py"),

@@ -30,7 +30,9 @@ def main():
         print(f"Workflow not found: {wf_path}", file=sys.stderr)
         sys.exit(1)
 
-    workflow = json.loads(wf_path.read_text())
+    workflow_raw = json.loads(wf_path.read_text())
+    # Extract the 'prompt' sub-object if present (ComfyUI API format)
+    workflow = workflow_raw.get("prompt", workflow_raw)
 
     # Check ComfyUI is running
     try:

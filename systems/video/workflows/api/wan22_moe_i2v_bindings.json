@@ -21,6 +21,7 @@
     "negative_prompt": "(2D, sketch, illustration:1.5), different character, ugly, deformed, flat, cartoon, anime, photorealistic, glossy, plastic, smooth CGI, blurry, low resolution, multiple characters.",
     "width": 832,
     "height": 480,
+    "note_resolution": "16:9 YouTube target. Wan 2.2 I2V supports 832x480.",
     "length_short": 33,
     "length_full": 81,
     "steps": 20,
