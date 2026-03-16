@@ -1,0 +1,296 @@
+Title: EP02 — Twenty-Eight Left Arms
+Credit: Written by
+Author: vibecode.town
+Series: Vibecode Town Season 1
+Source: Act 2 — "Twenty-Eight Left Arms"
+Draft date: 2026-03-17
+Contact: vibecode.town
+Duration: ~240 seconds (4:00)
+Notes: 2D flat vector style (Kurzgesagt level). Narrator V.O. only. Vee never speaks. Max 6 Vee reactions.
+
+/* ================================================================ */
+/* SEGMENT 1: HOOK [0:00–0:15]                                      */
+/* emotion_curve: CONFIDENCE                                        */
+/* narrative_stage: HOOK                                             */
+/* open_loop: "Why does one sentence stop being enough?"            */
+/* ep01_callback: spec = one sentence                               */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - NIGHT
+
+Same desk as EP01. The paper is still pinned next to the monitor: "I want to access my home files from any device." The monitor glows clean — no errors this time. Vee sits tall, confident.
+
+/* vee_reaction: 1/6 */
+/* shorts_candidate */
+
+Vee holds up a thick stack of papers. Fifteen pages, densely written. She fans them out like a winning hand of cards.
+
+NARRATOR (V.O.)
+Last time, one sentence saved everything. This time, one sentence isn't enough.
+
+= BEAT. Half a second.
+
+NARRATOR (V.O.)
+So Vee wrote fifteen pages. A design document. Colors, fonts, layouts, every screen described in detail. She gave it all to AI.
+
+= Vee feeds the papers into her monitor — the pages slide in one by one, dissolving into the screen.
+
+NARRATOR (V.O.)
+And what came back... had twenty-eight left arms.
+
+> TITLE CARD: **TWENTY-EIGHT LEFT ARMS**
+
+/* ================================================================ */
+/* SEGMENT 2: PROBLEM [0:15–0:45]                                   */
+/* emotion_curve: CONFIDENCE → CONFUSION → ABSURDITY                */
+/* narrative_stage: PROBLEM                                         */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - DAY
+
+Vee is at her desk. The monitor shows a fresh AI chat window. She types confidently.
+
+NARRATOR (V.O.)
+It started well enough. She asked AI to build a character for her app. "Make a mascot. Friendly. Wearing a hat."
+
+= The screen shows a cute character with a hat. Simple. Clean. Vee nods, satisfied.
+
+/* vee_reaction: 2/6 */
+
+= Vee nods, slight smile. Approving.
+
+NARRATOR (V.O.)
+Good. Now she needed a landing page. New conversation. New context.
+
+= The chat window clears. A fresh, blank prompt. Vee types again.
+
+NARRATOR (V.O.)
+"Add the mascot to the landing page."
+
+= The screen shows the landing page — but the mascot looks different. Different hat. Different proportions. Vee squints.
+
+NARRATOR (V.O.)
+Close. But not the same mascot. Because AI doesn't remember the last conversation. Every chat starts from zero. Every time you open a new window, the AI has amnesia.
+
+/* visual_type: motion_graphic | space: desk */
+
+= Quick montage — three more chat windows open and close. Each time, the mascot comes back slightly different. Different colors. Different style. Different pose.
+
+NARRATOR (V.O.)
+She tried again. And again. Five conversations. Five different mascots. And then she asked for the full character model sheet.
+
+= BEAT. One second.
+
+/* ================================================================ */
+/* SEGMENT 3: CORE [0:45–3:00]                                     */
+/* emotion_curve: ABSURDITY → HORROR → CLARITY                     */
+/* narrative_stage: CORE                                            */
+/* duration: ~135 seconds                                          */
+/* This is the EXTENDED METAPHOR segment: 28 Left Arms              */
+/* ================================================================ */
+
+/* extended_metaphor_start */
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= TRANSITION: The desk fades. Background brightens to clean white. Center frame, a simple character outline appears — a basic humanoid, flat vector, no detail yet. Just a body template.
+
+NARRATOR (V.O.)
+Here's what happens when AI builds without context.
+
+= A left arm appears on the character. Attaches to the left shoulder. Normal.
+
+NARRATOR (V.O.)
+First try. One left arm. Normal.
+
+= The arm detaches. A new left arm appears — slightly different angle, slightly different length. It stacks on top of the first.
+
+NARRATOR (V.O.)
+Second try. AI forgot the first arm existed. So it made another one.
+
+= Two more arms sprout from the left shoulder area. They overlap, crisscross, layer on top of each other.
+
+NARRATOR (V.O.)
+Third try. Fourth try. Each time, AI starts fresh. Each time, it doesn't know the character already has a left arm.
+
+/* shorts_candidate */
+
+= Arms keep appearing — faster now. Five. Eight. Twelve. They sprout from the shoulder, from the torso, from behind the back. All left arms. Different sizes, different angles, all piling on.
+
+NARRATOR (V.O.)
+So it adds another. And another. And another.
+
+= The character is barely visible under the mass of arms. Twenty arms. Twenty-five. The camera pulls back as the form becomes a grotesque, arm-covered monster.
+
+NARRATOR (V.O.)
+Twenty-eight left arms. Zero right arms. Because nobody told the AI what already existed.
+
+= The monster stands center frame. Arms dangling, waving, overlapping. A horrifying pile. One beat of silence.
+
+/* visual_type: diagram | space: whiteboard */
+
+= The monster shrinks to a small icon in the corner. The main frame fills with a simple diagram:
+
+NARRATOR (V.O.)
+This is context loss. And it's the silent killer of every AI project.
+
+= A timeline appears horizontally. Five dots along it, each labeled "Chat 1" through "Chat 5." Between each dot, a red gap — a break in the line.
+
+NARRATOR (V.O.)
+Every time you start a new conversation, the AI starts from zero. Your first conversation knew everything. Your second conversation knew nothing. The gap between them? That's where the arms come from.
+
+= The red gaps pulse. Small arm icons sprout from each gap.
+
+/* extended_metaphor_end */
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= The timeline fades. Clean white space.
+
+NARRATOR (V.O.)
+Vee's fifteen pages were good. The problem wasn't the spec. The problem was where the spec lived.
+
+= A stack of papers appears on the left. Fifteen pages, fanned out.
+
+NARRATOR (V.O.)
+She wrote it once. Then she pasted bits of it into five different chat windows. Each window got a different fragment. None of them had the whole picture.
+
+= The stack breaks apart. Five fragments fly to five different chat bubbles. Each bubble only shows a partial view. Jigsaw pieces that don't connect.
+
+/* vee_reaction: 3/6 */
+/* visual_type: character_reaction | space: desk */
+
+= CUT TO: Quick flash of Vee staring at her monitor, forehead on desk. Classic frustration. Hood pulled up. 1.5 seconds.
+
+= CUT BACK to whiteboard.
+
+/* visual_type: diagram | space: whiteboard */
+
+= The fragments and chat bubbles sweep off screen.
+
+NARRATOR (V.O.)
+So here's the fix. And it's embarrassingly simple.
+
+= A single document icon appears center frame. It glows blue. Bold text below it: **SSOT**
+
+NARRATOR (V.O.)
+SSOT. Single Source of Truth. One document. One file. That knows everything about your project.
+
+= The document expands. Inside it, clean sections appear:
+
+NARRATOR (V.O.)
+What you're building. What it looks like. What the rules are. What's already been decided. All of it. In one place.
+
+= Four labeled sections animate inside the document: "WHAT", "LOOK", "RULES", "DECISIONS". Each fills in with small icons — a target, a palette, a checklist, a gavel.
+
+NARRATOR (V.O.)
+Not fifteen pages scattered across five conversations. One file that every conversation reads first.
+
+= The single document duplicates — but it's the same document appearing in five chat windows simultaneously. Each window now shows the full picture.
+
+= The five chat windows now produce identical mascots. Same hat. Same style. Same proportions.
+
+NARRATOR (V.O.)
+Same input, same output. Because the AI isn't guessing anymore. It's reading.
+
+/* visual_type: diagram | space: whiteboard */
+
+= The chat windows compress. The SSOT document returns to center frame.
+
+NARRATOR (V.O.)
+You've already used one and didn't know it.
+
+= Below the SSOT document, familiar names appear one by one: "CLAUDE.md", ".cursorrules", "copilot-instructions.md", "AGENTS.md"
+
+NARRATOR (V.O.)
+CLAUDE.md. Cursorrules. Copilot instructions. These are all SSOT files. They tell the AI who it's working with, what the project is, and what decisions have already been made. Before the AI writes a single line of code.
+
+= Each filename glows briefly, then compresses into the SSOT icon.
+
+NARRATOR (V.O.)
+Words vanish. Conversations expire. Chat history gets too long and the AI forgets the beginning. But an environment file? It loads fresh every time. It never forgets. Because it was never remembering — it was always reading.
+
+/* ================================================================ */
+/* SEGMENT 4: APPLICATION [3:00–4:00]                               */
+/* emotion_curve: CLARITY → RELIEF                                  */
+/* narrative_stage: APPLICATION                                     */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - NIGHT
+
+= Back to Vee's desk. The stack of fifteen pages sits to the side. Vee opens a single file on her monitor.
+
+NARRATOR (V.O.)
+Vee took her fifteen pages and turned them into one file.
+
+/* vee_reaction: 4/6 */
+
+= Vee types, focused. The monitor shows a clean document — sections, bullet points, concise.
+
+/* visual_type: diagram | space: desk */
+
+= Close-up on the monitor. The file is titled "PROJECT.md". It has clear sections:
+
+NARRATOR (V.O.)
+Project name. Core concept — one sentence. Visual style — colors, fonts, rules. Character specs — the mascot has one left arm, one right arm, wears a blue hat. Decisions already made — "We use React. The API is REST. The database is Postgres."
+
+= Each section highlights as the narrator mentions it. Clean, structured, no clutter.
+
+NARRATOR (V.O.)
+Thirty lines. Not thirty pages. Everything the AI needs to know, and nothing it doesn't.
+
+/* vee_reaction: 5/6 */
+
+= Vee opens a new AI chat window. But before typing anything, she drags the PROJECT.md file into the conversation. It loads at the top — a blue header bar.
+
+= She types: "Add the mascot to the landing page."
+
+= The result appears on screen. Same mascot. Same hat. Same proportions. Correct.
+
+NARRATOR (V.O.)
+Same question as before. But this time, the AI read the file first. One left arm. One right arm. Blue hat. Exactly right.
+
+= Vee leans back. A slow, satisfied exhale. She looks at the fifteen pages on her desk, then back at the single file on screen.
+
+/* ================================================================ */
+/* SEGMENT 5: OUTRO [4:00–4:20]                                     */
+/* emotion_curve: RELIEF → open loop for EP03                       */
+/* narrative_stage: OUTRO                                           */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - NIGHT (CONTINUOUS)
+
+= Same composition. Vee at her desk. The fifteen pages go into a drawer. The monitor shows PROJECT.md, clean and glowing.
+
+NARRATOR (V.O.)
+One sentence told her what to build. One file tells AI how to build it.
+
+/* vee_reaction: 6/6 */
+
+= Vee stretches, cracks her neck. Opens a new terminal. Types a command. A folder tree starts expanding on screen — five folders, ten folders, twenty, thirty...
+
+= Her smile falters. The folders keep multiplying. Files appear inside files. The tree grows wider and deeper and messier.
+
+NARRATOR (V.O.)
+The file works. The AI remembers. But the project keeps growing. And Vee starts to notice something.
+
+= BEAT.
+
+NARRATOR (V.O.)
+Everything is connected to everything. She changes one thing, and three other things break. Like an apartment... with no walls.
+
+= BEAT.
+
+> TITLE CARD: **NEXT: EP03 — "The Wall-less Apartment"**
+
+= FADE TO BLACK.
+
+> END

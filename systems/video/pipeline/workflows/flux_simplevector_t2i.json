@@ -6,80 +6,62 @@
     "author": "vibecode-town pipeline"
   },
   "1": {
-    "class_type": "CheckpointLoaderSimple",
+    "class_type": "UnetLoaderGGUF",
     "inputs": {
-      "ckpt_name": "flux1-dev-Q5_K_S.gguf"
+      "unet_name": "flux1-dev-Q5_K_S.gguf"
     }
   },
   "2": {
+    "class_type": "DualCLIPLoaderGGUF",
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5-v1_1-xxl-encoder-Q5_K_M.gguf",
+      "type": "flux"
+    }
+  },
+  "10": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    }
+  },
+  "3": {
     "class_type": "LoraLoader",
     "inputs": {
-      "model": [
-        "1",
-        0
-      ],
-      "clip": [
-        "1",
-        1
-      ],
-      "lora_name": "simplevectorflux.safetensors",
+      "model": ["1", 0],
+      "clip": ["2", 0],
+      "lora_name": "Simple_Vector_Flux_v2_renderartist.safetensors",
       "strength_model": 0.9,
       "strength_clip": 0.9
     }
   },
-  "3": {
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "Positive Prompt"
-    },
-    "inputs": {
-      "text": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, front view, facing camera directly, full body, slight smile, relaxed pose, one hand on hip",
-      "clip": [
-        "2",
-        1
-      ]
-    }
-  },
   "4": {
     "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "Negative Prompt"
-    },
+    "_meta": { "title": "Positive Prompt" },
     "inputs": {
-      "text": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "clip": [
-        "2",
-        1
-      ]
+      "text": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie (#FFD93D), round black glasses (#2D2D2D), brown bob hair (#6D4C2F), warm cream skin (#FDEBD0), minimal detail, clean design, character asset, flat color fill, thin outline, no gradients, front view, facing camera directly, full body, slight smile, relaxed pose",
+      "clip": ["3", 1]
     }
   },
   "5": {
-    "class_type": "EmptyLatentImage",
+    "class_type": "CLIPTextEncode",
+    "_meta": { "title": "Negative Prompt" },
     "inputs": {
-      "width": 1280,
-      "height": 720,
-      "batch_size": 1
+      "text": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "clip": ["3", 1]
     }
   },
   "6": {
+    "class_type": "EmptyLatentImage",
+    "inputs": { "width": 768, "height": 1024, "batch_size": 1 }
+  },
+  "7": {
     "class_type": "KSampler",
     "inputs": {
-      "model": [
-        "2",
-        0
-      ],
-      "positive": [
-        "3",
-        0
-      ],
-      "negative": [
-        "4",
-        0
-      ],
-      "latent_image": [
-        "5",
-        0
-      ],
+      "model": ["3", 0],
+      "positive": ["4", 0],
+      "negative": ["5", 0],
+      "latent_image": ["6", 0],
       "seed": 0,
       "control_after_generate": "randomize",
       "steps": 25,
@@ -89,27 +71,12 @@
       "denoise": 1.0
     }
   },
-  "7": {
-    "class_type": "VAEDecode",
-    "inputs": {
-      "samples": [
-        "6",
-        0
-      ],
-      "vae": [
-        "1",
-        2
-      ]
-    }
-  },
   "8": {
+    "class_type": "VAEDecode",
+    "inputs": { "samples": ["7", 0], "vae": ["10", 0] }
+  },
+  "9": {
     "class_type": "SaveImage",
-    "inputs": {
-      "filename_prefix": "vee_2d",
-      "images": [
-        "7",
-        0
-      ]
-    }
+    "inputs": { "filename_prefix": "vee_2d", "images": ["8", 0] }
   }
 }

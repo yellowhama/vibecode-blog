@@ -1,13 +1,55 @@
 #!/usr/bin/env python3
-"""Convert blog preproduction manifest into a Comfy shot manifest."""
+"""Convert v5 prepro manifest into a v5 shot manifest for ComfyUI pipeline.
+
+Outputs the v5 manifest format matching ep01_shot_manifest_v5.json:
+- Header: version "5.0", resolution "1280x720", pipeline spec block
+- Shot fields: shot_id (H/P/C/A/O prefix), segment, visual_type, space,
+  vee_expression, vee_reaction_number, extended_metaphor, narrator_vo
+- Prompts: v3ct0r style trigger word, 2D flat vector (no 3D Pixar references)
+
+Usage:
+    python build_shot_manifest_from_prepro.py \
+        --prepro-manifest ep01_prepro_manifest.json \
+        --character-design ../../assets/characters/vee/character_design_2d.json \
+        --out-manifest ep01_shot_manifest_v5.json
+"""
 
 from __future__ import annotations
 
 import argparse
 import json
-import math
 from pathlib import Path
 from typing import Any, Dict, List, Sequence
+
+
+# ---------------------------------------------------------------------------
+# Segment prefix mapping for shot IDs
+# ---------------------------------------------------------------------------
+SEGMENT_PREFIX = {
+    "HOOK": "H",
+    "PROBLEM": "P",
+    "CORE": "C",
+    "APPLICATION": "A",
+    "OUTRO": "O",
+}
+
+# Default pipeline spec (Series Bible v5 D13)
+DEFAULT_PIPELINE = {
+    "t2i": "Flux dev + SimpleVectorFlux LoRA",
+    "edit": "Flux Kontext",
+    "i2v": "Wan 2.2 MoE GGUF",
+    "tts": "Dia2-1B",
+    "bgm": "ACE-Step 1.5",
+    "diagrams": "Motion Canvas",
+    "assembly": "FFmpeg",
+}
+
+# Default negative prompt (from character_design_2d.json)
+DEFAULT_NEGATIVE = (
+    "3D, photorealistic, gradient, shading, texture, clay, claymation, "
+    "fingerprint, detailed, complex, thin lines, realistic hands, fingers, "
+    "text, watermark, speech bubble, multiple characters, anime, sketch, rough"
+)
 
 
 def _json_load(path: Path) -> Dict[str, Any]:
@@ -21,19 +63,93 @@ def _json_dump(path: Path, data: Dict[str, Any]) -> None:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def _pick_even_indices(total: int, take: int) -> List[int]:
-    if take >= total:
-        return list(range(total))
-    if take <= 1:
-        return [0]
-    out = sorted({int(round(i * (total - 1) / (take - 1))) for i in range(take)})
-    while len(out) < take:
-        for i in range(total):
-            if i not in out:
-                out.append(i)
-                if len(out) == take:
-                    break
-    return sorted(out[:take])
+def _load_character_prompts(char_design_path: Path | None) -> Dict[str, Any]:
+    """Load character design JSON for prompt generation."""
+    if char_design_path and char_design_path.exists():
+        data = _json_load(char_design_path)
+        return data.get("comfyui_prompts", {})
+    # Fallback defaults from Series Bible D15
+    return {
+        "trigger_word": "v3ct0r",
+        "lora": "SimpleVectorFlux",
+        "positive_base": (
+            "v3ct0r style, simple flat vector art, isolated on white bg, "
+            "young woman character, bright yellow hoodie, round black glasses, "
+            "brown bob hair, warm cream skin, minimal detail, clean design, "
+            "character asset, clip art, educational animation character, "
+            "friendly approachable design, no gradients, flat color fill, thin outline"
+        ),
+        "negative_base": DEFAULT_NEGATIVE,
+        "expression_prompts": {
+            "default": "slight smile, relaxed pose, one hand on hip",
+            "curious": "head tilted, eyes wide, leaning forward slightly",
+            "frustrated": "hood pulled up over head, arms crossed, hunched",
+            "eureka": "both arms raised, eyes wide with star highlight, excited jump",
+            "coding_zone": "sitting at desk, leaning forward, half-closed eyes, intense focus",
+            "happy": "big smile, pushing glasses up, standing straight with energy",
+        },
+    }
+
+
+def _segment_prefix(segment_name: str) -> str:
+    """Get shot ID prefix for a segment."""
+    return SEGMENT_PREFIX.get(segment_name.upper(), "X")
+
+
+def _compose_character_prompt(
+    visual_goal: str,
+    vee_expression: str,
+    space: str,
+    char_prompts: Dict[str, Any],
+) -> str:
+    """Compose v3ct0r style prompt for character shots."""
+    base = char_prompts.get("positive_base", "v3ct0r style, simple flat vector art")
+    expr_prompt = char_prompts.get("expression_prompts", {}).get(vee_expression, "")
+
+    # Space-specific background
+    bg_map = {
+        "desk": "at desk with glowing monitor, warm room",
+        "screen": "dark background, digital interface elements, code",
+        "whiteboard": "clean white background, educational diagram space",
+        "digital": "clean background, geometric accent shapes",
+    }
+    bg = bg_map.get(space, "clean background")
+
+    parts = [base]
+    if expr_prompt:
+        parts.append(expr_prompt)
+    parts.append(bg)
+    if visual_goal:
+        parts.append(visual_goal)
+    parts.append("flat color fill, thin outline, clean design, no gradients")
+
+    return ", ".join(parts)
+
+
+def _compose_diagram_prompt(visual_goal: str, space: str) -> str:
+    """Compose v3ct0r style prompt for diagram/motion graphic shots (no characters)."""
+    bg_map = {
+        "whiteboard": "clean white background",
+        "screen": "dark navy background (#0D1B2A)",
+        "digital": "clean white background, geometric accent shapes",
+        "desk": "warm desk background",
+    }
+    bg = bg_map.get(space, "clean white background")
+
+    return (
+        f"v3ct0r style, simple flat vector art, {bg}, "
+        f"{visual_goal}, "
+        "bold saturated colors, educational animation, "
+        "flat color fill, no gradients"
+    )
+
+
+def _compose_negative_prompt(has_characters: bool, char_prompts: Dict[str, Any]) -> str:
+    """Compose negative prompt based on shot type."""
+    base_neg = char_prompts.get("negative_base", DEFAULT_NEGATIVE)
+    if not has_characters:
+        return base_neg + ", characters, people, faces"
+    return base_neg
 
 
 def _allocate_durations_tts_actual(
@@ -45,14 +161,8 @@ def _allocate_durations_tts_actual(
     padding_min: float = 0.2,
     padding_max: float = 2.0,
 ) -> List[float]:
-    """Allocate shot durations based on actual TTS durations with adaptive padding.
-
-    Each shot = max(actual_duration_sec + padding, lo), clamped to hi.
-    Padding adapts if total exceeds or falls short of target.
-    """
+    """Allocate shot durations based on actual TTS durations with adaptive padding."""
     actual_durs = [float(b.get("actual_duration_sec", b.get("duration_sec", lo))) for b in beats]
-
-    # First pass: default padding
     durations = [min(hi, max(lo, d + padding_default)) for d in actual_durs]
 
     if not target or target <= 0:
@@ -64,9 +174,7 @@ def _allocate_durations_tts_actual(
     if abs(overshoot) < 1e-6:
         return [round(x, 2) for x in durations]
 
-    # Adaptive padding: shrink if over target, expand if under
     if overshoot > 0:
-        # Reduce padding toward padding_min
         for i in range(len(durations)):
             actual = actual_durs[i]
             current_pad = durations[i] - actual
@@ -78,7 +186,6 @@ def _allocate_durations_tts_actual(
             if overshoot <= 1e-6:
                 break
     else:
-        # Expand padding toward padding_max
         shortfall = -overshoot
         for i in range(len(durations)):
             actual = actual_durs[i]
@@ -94,6 +201,7 @@ def _allocate_durations_tts_actual(
 
 
 def _allocate_durations(raw: Sequence[float], target: float | None, lo: float, hi: float) -> List[float]:
+    """Scale raw durations to fit target while respecting bounds."""
     base = [min(hi, max(lo, float(x))) for x in raw]
     if not target or target <= 0:
         return [round(x, 2) for x in base]
@@ -108,7 +216,6 @@ def _allocate_durations(raw: Sequence[float], target: float | None, lo: float, h
     if abs(rem) < 1e-6:
         return [round(x, 2) for x in clamped]
 
-    # Small balancing pass to approach target while honoring bounds.
     steps = 0
     while abs(rem) > 1e-6 and steps < 10000:
         steps += 1
@@ -131,127 +238,99 @@ def _allocate_durations(raw: Sequence[float], target: float | None, lo: float, h
     return [round(x, 2) for x in clamped]
 
 
-def _scene_label(idx: int) -> str:
-    return f"Scene{math.floor((idx - 1) / 4) + 1}"
-
-
-def _compose_kontext_prompt(visual_goal: str) -> str:
-    """Build a Kontext scene editing prompt from the visual goal."""
-    goal = visual_goal.rstrip(". ")
-    return f"{goal}. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged."
-
-
-def _compose_sitcom_prompt(text: str, visual_goal: str, camera_style: str, shot_mode: str, characters: List[str] | None = None) -> str:
-    """Compose prompt for sitcom (character-driven) shots."""
-    motion = "Static camera with gentle micro motion." if shot_mode == "i2v" else "Natural cinematic motion."
-    chars = characters or ["vee"]
-    char_desc_parts = []
-    for c in chars:
-        if c == "vee":
-            char_desc_parts.append("Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts)")
-        elif c == "bee":
-            char_desc_parts.append("Bee (small round yellow-black striped bee with yellow hard hat, translucent wings)")
-    char_desc = " and ".join(char_desc_parts) if char_desc_parts else ""
-    return (
-        f"{camera_style} {motion} 3D Pixar-like render with subtle clay texture. "
-        f"Warm lighting, shallow depth of field. "
-        f"{char_desc}. "
-        f"Primary action goal: {visual_goal} "
-        f"Narrative reference for action direction: {text} "
-        "CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES."
-    )
-
-
-def _compose_explainer_prompt(visual_goal: str, text: str = "") -> str:
-    """Compose prompt for explainer (abstract infographic) shots."""
-    return (
-        "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. "
-        f"{visual_goal} "
-        "Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. "
-        "NO characters, NO text, NO labels. Abstract concept visualization."
-    )
-
-
-def _compose_positive_prompt(text: str, visual_goal: str, camera_style: str, shot_mode: str) -> str:
-    """Legacy prompt composer — kept for backward compatibility."""
-    motion = "Static camera with gentle micro motion." if shot_mode == "i2v" else "Natural cinematic motion."
-    return (
-        f"{camera_style} {motion} Minimalist stop-motion claymation, Aardman studio style. "
-        "Vast Off-White background, soft matte studio lighting. "
-        f"Primary action goal: {visual_goal} "
-        f"Narrative reference for action direction: {text} "
-        "CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES. "
-        "Character is silent, mouth closed, nonverbal, nonlingual, no lip-sync."
-    )
+def _pick_even_indices(total: int, take: int) -> List[int]:
+    if take >= total:
+        return list(range(total))
+    if take <= 1:
+        return [0]
+    out = sorted({int(round(i * (total - 1) / (take - 1))) for i in range(take)})
+    while len(out) < take:
+        for i in range(total):
+            if i not in out:
+                out.append(i)
+                if len(out) == take:
+                    break
+    return sorted(out[:take])
 
 
 def _short_purpose(text: str, limit: int = 90) -> str:
     cleaned = " ".join(text.split())
     if len(cleaned) <= limit:
         return cleaned
-    return f"{cleaned[: limit - 3].rstrip()}..."
+    return f"{cleaned[:limit - 3].rstrip()}..."
+
+
+def _infer_vee_expression(beat: Dict[str, Any]) -> str | None:
+    """Infer Vee expression from beat data."""
+    # Direct field
+    expr = beat.get("vee_expression")
+    if expr and expr != "default":
+        return expr
+
+    # From dialogue emotion
+    for dlg in beat.get("dialogue", []):
+        emotion = dlg.get("emotion", "")
+        if emotion:
+            # Map common narration emotions to Vee expressions
+            emotion_map = {
+                "curious": "curious",
+                "wonder": "curious",
+                "frustrated": "frustrated",
+                "angry": "frustrated",
+                "eureka": "eureka",
+                "excited": "eureka",
+                "happy": "happy",
+                "joy": "happy",
+                "focused": "coding_zone",
+                "determined": "coding_zone",
+            }
+            mapped = emotion_map.get(emotion.lower())
+            if mapped:
+                return mapped
+
+    return beat.get("vee_expression", "default")
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Build Comfy shot manifest from prepro manifest")
+    parser = argparse.ArgumentParser(description="Build v5 shot manifest from prepro manifest")
     parser.add_argument("--prepro-manifest", required=True, type=Path)
     parser.add_argument("--out-manifest", default=None, type=Path)
+    parser.add_argument("--character-design", default=None, type=Path,
+                        help="Path to character_design_2d.json for prompt templates")
     parser.add_argument("--project-id", default=None)
-    parser.add_argument("--max-shots", type=int, default=24)
-    parser.add_argument("--target-duration-sec", type=float, default=180.0)
-    parser.add_argument("--min-shot-sec", type=float, default=3.0)
-    parser.add_argument("--max-shot-sec", type=float, default=8.0)
-    parser.add_argument("--resolution", default="832x480")
+    parser.add_argument("--max-shots", type=int, default=30)
+    parser.add_argument("--target-duration-sec", type=float, default=210.0)
+    parser.add_argument("--min-shot-sec", type=float, default=2.0)
+    parser.add_argument("--max-shot-sec", type=float, default=18.0)
+    parser.add_argument("--resolution", default="1280x720")
     parser.add_argument("--aspect-ratio", default="16:9")
     parser.add_argument(
         "--mode",
-        choices=["i2v", "t2v"],
+        choices=["i2v", "t2v", "t2i"],
         default="i2v",
-        help="i2v requires keyframes named <shot_id>_keyframe.png unless absolute input_image is provided later",
-    )
-    parser.add_argument(
-        "--model",
-        default="hunyuanvideo1.5_480p_i2v_step_distilled_fp8_scaled.safetensors",
+        help="Primary generation mode",
     )
     parser.add_argument(
         "--timing-source",
         choices=["estimate", "tts_actual"],
         default="estimate",
-        help="estimate: scale raw durations to target. tts_actual: use actual_duration_sec from TTS feedback.",
     )
-    parser.add_argument("--tts-padding", type=float, default=0.5, help="Padding after TTS duration (tts_actual mode)")
-    parser.add_argument("--tts-padding-min", type=float, default=0.2, help="Min padding (tts_actual mode)")
-    parser.add_argument("--tts-padding-max", type=float, default=2.0, help="Max padding (tts_actual mode)")
-    parser.add_argument("--seed-base", type=int, default=1300001)
-    parser.add_argument(
-        "--style-lock",
-        default="nonlingual claymation + no text overlays + action-first storytelling",
-    )
-    parser.add_argument(
-        "--delivery-target",
-        default="16:9, 480p, short scene clips for YouTube assembly",
-    )
-    parser.add_argument(
-        "--camera-style",
-        default="Medium/wide framing, readable silhouette, playful but controlled pacing.",
-    )
-    parser.add_argument(
-        "--prompt-negative",
-        default="text, subtitles, watermark, logo, speech bubble, lip-sync, deformed anatomy, low quality",
-    )
+    parser.add_argument("--tts-padding", type=float, default=0.5)
+    parser.add_argument("--tts-padding-min", type=float, default=0.2)
+    parser.add_argument("--tts-padding-max", type=float, default=2.0)
+    parser.add_argument("--seed-base", type=int, default=1500001)
     args = parser.parse_args()
 
     if not args.prepro_manifest.exists():
         raise SystemExit(f"[FAIL] prepro manifest not found: {args.prepro_manifest}")
-    if args.max_shots < 1:
-        raise SystemExit("[FAIL] --max-shots must be >= 1")
-    if args.min_shot_sec <= 0 or args.max_shot_sec < args.min_shot_sec:
-        raise SystemExit("[FAIL] invalid shot duration bounds")
 
     prepro = _json_load(args.prepro_manifest)
     beats = prepro.get("beats", [])
     if not beats:
         raise SystemExit("[FAIL] prepro manifest has no beats")
+
+    # Load character design prompts
+    char_prompts = _load_character_prompts(args.character_design)
 
     take = min(len(beats), args.max_shots)
     pick_idx = _pick_even_indices(len(beats), take)
@@ -276,65 +355,74 @@ def main() -> int:
             hi=args.max_shot_sec,
         )
 
-    project_id = args.project_id or f"{prepro.get('project_id', 'blog')}_auto"
-    shots: List[Dict[str, Any]] = []
-    for i, beat in enumerate(selected, start=1):
-        shot_id = f"S{i:02d}_{i:02d}"
-        text = str(beat.get("text", "")).strip()
-        visual_goal = str(beat.get("visual_goal", "")).strip() or "Symbolic clay action with clear emotional intent."
+    project_id = args.project_id or f"{prepro.get('project_id', 'blog')}_v5"
 
-        # New fields: visual_type, characters, dialogue, shorts_candidate
-        visual_type = str(beat.get("visual_type", "sitcom"))  # "sitcom" | "explainer"
-        characters = beat.get("characters", ["vee"])  # e.g. ["vee"], ["vee","bee"], []
-        dialogue = beat.get("dialogue", [])  # [{speaker, text, emotion}]
+    # Track shot counts per segment for ID numbering
+    seg_counters: Dict[str, int] = {}
+    shots: List[Dict[str, Any]] = []
+
+    for i, beat in enumerate(selected):
+        segment = beat.get("segment", beat.get("narrative_stage", "CORE")).upper()
+        prefix = _segment_prefix(segment)
+
+        # Increment per-segment counter
+        seg_counters[prefix] = seg_counters.get(prefix, 0) + 1
+        shot_id = f"{prefix}{seg_counters[prefix]:02d}"
+
+        text = str(beat.get("text", "")).strip()
+        visual_goal = str(beat.get("visual_goal", "")).strip() or text
+        visual_type = str(beat.get("visual_type", "character_reaction"))
+        space = str(beat.get("space", "desk"))
+        characters = beat.get("characters", [])
+        narrator_vo = str(beat.get("narrator_vo", beat.get("narration_text", text)))
+        vee_expression = _infer_vee_expression(beat)
+        vee_reaction_number = beat.get("vee_reaction_number")
+        extended_metaphor = bool(beat.get("extended_metaphor", False))
         shorts_candidate = bool(beat.get("shorts_candidate", False))
 
-        # Dual-mode prompt composition
-        if visual_type == "explainer":
-            prompt_positive = _compose_explainer_prompt(visual_goal, text)
-            kontext_prompt = None  # No character consistency needed
-            neg = "characters, people, faces, text, subtitles, watermark, logo, low quality"
-        else:
-            prompt_positive = _compose_sitcom_prompt(
-                text=text,
-                visual_goal=visual_goal,
-                camera_style=args.camera_style,
-                shot_mode=args.mode,
-                characters=characters,
-            )
-            kontext_prompt = _compose_kontext_prompt(visual_goal)
-            neg = args.prompt_negative
+        has_vee = "vee" in characters
+        has_characters = len(characters) > 0
 
-        shots.append(
-            {
-                "shot_id": shot_id,
-                "scene": _scene_label(i),
-                "purpose": _short_purpose(text),
-                "visual_type": visual_type,
-                "characters": characters,
-                "dialogue": dialogue,
-                "shorts_candidate": shorts_candidate,
-                "kontext_prompt": kontext_prompt,
-                "prompt_positive": prompt_positive,
-                "prompt_negative": neg,
-                "duration_sec": shot_durations[i - 1],
-                "aspect_ratio": args.aspect_ratio,
-                "resolution": args.resolution,
-                "seed": args.seed_base + i - 1,
-                "model": args.model,
-                "mode": args.mode,
-                "input_image": f"{shot_id}_keyframe.png" if args.mode == "i2v" and visual_type != "explainer" else None,
-                "output_name": f"{shot_id}.mp4",
-                "source_beat_id": beat.get("beat_id"),
-                "source_scene_id": beat.get("scene_id"),
-            }
-        )
+        # Compose prompts based on visual type
+        if visual_type in ("diagram", "motion_graphic") and not has_characters:
+            prompt_positive = _compose_diagram_prompt(visual_goal, space)
+        elif has_vee:
+            prompt_positive = _compose_character_prompt(
+                visual_goal, vee_expression or "default", space, char_prompts,
+            )
+        else:
+            prompt_positive = _compose_diagram_prompt(visual_goal, space)
+
+        prompt_negative = _compose_negative_prompt(has_characters, char_prompts)
+
+        shot: Dict[str, Any] = {
+            "shot_id": shot_id,
+            "segment": segment,
+            "visual_type": visual_type,
+            "space": space,
+            "description": _short_purpose(visual_goal, 200),
+            "narrator_vo": narrator_vo,
+            "characters": characters,
+            "vee_expression": vee_expression if has_vee else None,
+            "vee_reaction_number": vee_reaction_number,
+            "extended_metaphor": extended_metaphor,
+            "shorts_candidate": shorts_candidate,
+            "duration_sec": shot_durations[i],
+            "prompt_positive": prompt_positive,
+            "prompt_negative": prompt_negative,
+            "seed": args.seed_base + i,
+            "input_image": f"{shot_id}_keyframe.png",
+            "output_name": f"{shot_id}.mp4",
+        }
+        shots.append(shot)
 
     manifest: Dict[str, Any] = {
         "project_id": project_id,
-        "style_lock": args.style_lock,
-        "delivery_target": args.delivery_target,
-        "model_policy": {"primary": args.model, "fallback": []},
+        "version": "5.0",
+        "style_lock": "2D flat vector Level 2.5 + narrator V.O. only + Vee silent",
+        "delivery_target": f"16:9, {args.resolution}, YouTube",
+        "resolution": args.resolution,
+        "pipeline": DEFAULT_PIPELINE,
         "shots": shots,
         "source_preproduction": str(args.prepro_manifest),
         "selection_summary": {
@@ -343,7 +431,6 @@ def main() -> int:
             "target_duration_sec": args.target_duration_sec,
             "actual_duration_sec": round(sum(shot_durations), 2),
             "timing_source": args.timing_source,
-            "mode": args.mode,
         },
     }
 
@@ -352,24 +439,35 @@ def main() -> int:
     else:
         out_manifest = (
             Path(__file__).resolve().parent.parent / "manifests"
-            / f"{project_id}_auto_manifest.json"
+            / f"{project_id}_shot_manifest_v5.json"
         )
     _json_dump(out_manifest, manifest)
 
     handoff = {
         "project_id": project_id,
+        "version": "5.0",
         "manifest": str(out_manifest),
         "notes": [
-            "If mode=i2v, prepare keyframes named <shot_id>_keyframe.png before render.",
-            "Use sync_manifest_keyframes_to_comfy_input.py to copy keyframes into Comfy input.",
+            "v5 format: 2D flat vector, v3ct0r LoRA trigger, 1280x720.",
+            "Segment prefixes: H=HOOK, P=PROBLEM, C=CORE, A=APPLICATION, O=OUTRO.",
+            "T2I keyframes: Flux dev + SimpleVectorFlux LoRA.",
+            "Character edits: Flux Kontext (golden reference based).",
+            "I2V animation: Wan 2.2 MoE GGUF.",
+            "Diagrams go to Motion Canvas, not I2V.",
         ],
     }
     handoff_path = out_manifest.with_suffix(".handoff.json")
     _json_dump(handoff_path, handoff)
 
-    print(f"[OK] auto shot manifest: {out_manifest}")
+    print(f"[OK] v5 shot manifest: {out_manifest}")
     print(f"[OK] selected beats: {len(selected)} / {len(beats)}")
     print(f"[OK] duration sec: {round(sum(shot_durations), 2)}")
+    print(f"[OK] resolution: {args.resolution}")
+    # Segment summary
+    for prefix_name, prefix_char in SEGMENT_PREFIX.items():
+        count = seg_counters.get(prefix_char, 0)
+        if count > 0:
+            print(f"  {prefix_name}: {count} shots ({prefix_char}01-{prefix_char}{count:02d})")
     print(f"[OK] handoff: {handoff_path}")
     return 0
 

@@ -1,0 +1,281 @@
+Title: EP04 — The Box You're Afraid to Open
+Credit: Written by
+Author: vibecode.town
+Series: Vibecode Town Season 1
+Source: Act 4 — "The Box You're Afraid to Open"
+Draft date: 2026-03-17
+Contact: vibecode.town
+Duration: ~240 seconds (4:00)
+Notes: 2D flat vector style (Kurzgesagt level). Narrator V.O. only. Vee never speaks. Max 6 Vee reactions.
+
+/* ================================================================ */
+/* SEGMENT 1: HOOK [0:00–0:15]                                      */
+/* emotion_curve: DREAD                                              */
+/* narrative_stage: HOOK                                             */
+/* open_loop: "What's inside the boxes?"                            */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - NIGHT
+
+Dim room. Vee sits in her chair, turned away from the monitor. Behind her, the screen glows — code running, dashboards alive. But she's not looking.
+
+She's staring at something else.
+
+= WIDE SHOT: The room is filled with sealed cardboard boxes. Stacked against walls. Piled on the floor. Towers of them. Each box has a label: LOGIN, SYNC, DASHBOARD, AUTH, UPLOAD, PAYMENTS. Tape sealed tight. Not one has been opened.
+
+/* vee_reaction: 1/6 */
+
+Vee sits in her chair, hugging her knees, eyes wide behind her round black glasses. She glances at the nearest box. Looks away.
+
+NARRATOR (V.O.)
+Vee has been building for weeks. Features, endpoints, pages — all of it sealed up and shipped. She's never opened a single one.
+
+= BEAT. One second of silence.
+
+NARRATOR (V.O.)
+She doesn't know which ones work. And she's afraid to find out.
+
+> TITLE CARD: **THE BOX YOU'RE AFRAID TO OPEN**
+
+/* ================================================================ */
+/* SEGMENT 2: PROBLEM [0:15–0:50]                                   */
+/* emotion_curve: DREAD → AVOIDANCE                                 */
+/* narrative_stage: PROBLEM                                         */
+/* ================================================================ */
+
+/* visual_type: motion_graphic | space: desk */
+
+INT. VEE'S DESK - DAY (EARLIER)
+
+= MONTAGE — Vee building. Quick cuts, each 2 seconds: She types. A box appears on the floor, taped shut, labeled SEARCH. She types again. Another box: PROFILE. Again. NOTIFICATIONS. The boxes pile up around her. She never looks at them. She just keeps building.
+
+NARRATOR (V.O.)
+This is the pattern. Build something. Don't check it. Build the next thing. Don't check that either. Stack the boxes. Move on.
+
+/* vee_reaction: 2/6 */
+/* visual_type: character_reaction | space: desk */
+
+= Vee's desk is now surrounded by boxes. She sits in the only clear spot, typing frantically. Her eyes stay fixed on the terminal. She does not look down. She does not look behind her.
+
+NARRATOR (V.O.)
+It's not laziness. It's fear. Because every box is a verdict. Open it, and you might find out that the thing you built — the thing you were proud of — doesn't work.
+
+= BEAT.
+
+NARRATOR (V.O.)
+So you don't open it. You build another feature instead. That feels like progress. It's not.
+
+/* visual_type: motion_graphic | space: desk */
+
+= The tower of boxes wobbles. The room is almost full. Vee is squeezed into a tiny corner, still typing. The boxes lean inward, threatening to bury her.
+
+NARRATOR (V.O.)
+Eventually, the boxes stack so high you can't move. You can't build new things because you don't know if the old things hold. That's where Vee is now.
+
+/* ================================================================ */
+/* SEGMENT 3: CORE [0:50–2:30]                                     */
+/* emotion_curve: FORCED CONFRONTATION → SURPRISE RELIEF            */
+/* narrative_stage: CORE                                            */
+/* duration: ~100 seconds                                           */
+/* This is the EXTENDED METAPHOR segment: Sealed boxes = untested code */
+/* ================================================================ */
+
+/* extended_metaphor_start */
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= TRANSITION: The desk fades. Background brightens to clean white. A room full of sealed cardboard boxes appears — simple 2D flat boxes, various sizes, each labeled with a feature name. Warm amber light.
+
+NARRATOR (V.O.)
+Let's talk about these boxes.
+
+= Camera settles on the room. Dozens of boxes. Every one sealed. A single spotlight falls on the box nearest to frame.
+
+NARRATOR (V.O.)
+Every box is a feature Vee built. Login. Search. File sync. Payments. She assembled them with AI, taped them shut, and moved on. She has no idea what's inside.
+
+/* visual_type: diagram | space: whiteboard */
+
+= The box labeled LOGIN is pulled to center frame. It sits there, sealed.
+
+NARRATOR (V.O.)
+This one handles login. Probably. She thinks it works because it didn't throw an error when she built it. But she never tested it. She never opened the box.
+
+= A question mark floats above the box, pulsing.
+
+NARRATOR (V.O.)
+So right now, this box is everything and nothing. It works and it doesn't work. It's correct and it's broken. Both. At the same time.
+
+= BEAT.
+
+NARRATOR (V.O.)
+That sounds philosophical. It's not. It's just... untested code.
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= A mitten hand reaches in from the side of the frame. It grabs the tape on the LOGIN box. Hesitates. Then — RIPS it open.
+
+NARRATOR (V.O.)
+So let's open one.
+
+= The box lid flips back. Inside: a small red bug crawls out. It has tiny angry eyes. It skitters across the floor. A label appears: NULL POINTER.
+
+NARRATOR (V.O.)
+First box. A bug. A null pointer — the login crashes when the session token is empty. Ugly. But small. Fixable.
+
+= A fly-swatter smacks the bug flat. A green checkmark pops where the bug was. Tiny sparkle.
+
+NARRATOR (V.O.)
+Fixed. Ten seconds. That's it.
+
+/* shorts_candidate */
+
+= The second box, SEARCH, slides into frame. The hand opens it. Inside: nothing bad. A small green plant sits inside, healthy and growing.
+
+NARRATOR (V.O.)
+Second box. It's... fine. It works. It was fine this whole time.
+
+= A green checkmark pops above the box.
+
+NARRATOR (V.O.)
+All that anxiety — for nothing.
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= The third box, DASHBOARD, slides into frame. Bigger than the others. The hand opens it slowly. Inside: something glows. A small, intricate mechanism — gears turning, lights pulsing, beautifully arranged. It's working perfectly.
+
+/* vee_reaction: 3/6 */
+/* visual_type: character_reaction | space: whiteboard */
+
+= Quick flash: Vee's face in the corner of the whiteboard space. Eyes wide, mouth slightly open. Surprise. 1.5 seconds.
+
+NARRATOR (V.O.)
+Third box. Something beautiful. The dashboard component she built actually works better than she expected. The AI made elegant choices she didn't even ask for.
+
+= The mechanism lifts out of the box and assembles itself mid-air, glowing softly.
+
+NARRATOR (V.O.)
+This is the thing nobody tells you about testing. You're not just hunting bugs. You're discovering what works. And sometimes what works is better than you thought.
+
+/* visual_type: diagram | space: whiteboard */
+
+= The three opened boxes sit in a row. Box 1: red bug (squashed, green check). Box 2: green plant (green check). Box 3: glowing mechanism (green check). Above them, a simple score: 1 bug, 0 disasters, 1 surprise win.
+
+NARRATOR (V.O.)
+One bug. Zero disasters. One surprise win. The fear was worse than the reality. It always is.
+
+= BEAT. The three boxes glow faintly green.
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= Camera pulls back. The remaining sealed boxes fill the room. A clock appears in the corner.
+
+NARRATOR (V.O.)
+But here's the real trick. Vee waited weeks to open three boxes. The dread built up. The pile grew. What if she'd opened each box the day she built it?
+
+= TIMELAPSE ANIMATION: The room rewinds. Boxes disappear one by one. We see a different timeline — Vee builds a feature, immediately opens the box, finds a small bug or a green check, moves on. Build, open, fix. Build, open, fine. The boxes never pile up. The room stays clean.
+
+NARRATOR (V.O.)
+One box a day is nothing. One box a day is a two-minute check. It's not scary when it's small. It's only scary when it's a hundred boxes you haven't looked at in a month.
+
+= The clean room sits with zero sealed boxes. Just a small shelf of opened, green-checked boxes, neatly arranged.
+
+/* extended_metaphor_end */
+
+NARRATOR (V.O.)
+Testing isn't courage. Testing is a habit. Open the box every day and it's never scary.
+
+/* ================================================================ */
+/* SEGMENT 4: APPLICATION [2:30–3:30]                               */
+/* emotion_curve: SURPRISE RELIEF → HABIT FORMATION                 */
+/* narrative_stage: APPLICATION                                     */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - NIGHT (PRESENT)
+
+= Back to Vee's desk. The piles of boxes are still there. But Vee is different. She's sitting up straight. Hands on the keyboard.
+
+NARRATOR (V.O.)
+Back to the present.
+
+/* visual_type: motion_graphic | space: screen */
+
+= Vee's monitor. She types a simple test. Three lines. The structure is clear even without reading code: a name, an expectation, a check.
+
+NARRATOR (V.O.)
+She writes a test. Just one. Three lines. "When a user logs in with an empty token — reject it."
+
+= She hits enter. The terminal flashes. A single word appears: PASS. Green.
+
+NARRATOR (V.O.)
+Green.
+
+/* vee_reaction: 4/6 */
+
+= Vee leans back slightly. A small exhale. Not celebration — relief.
+
+= She leans forward again. Types another test.
+
+NARRATOR (V.O.)
+She writes another. "When the search returns no results — show the empty state."
+
+= She hits enter. The terminal flashes red. FAIL.
+
+/* vee_reaction: 5/6 */
+
+= Vee frowns. Squints at the screen. Tilts her head. She types a few lines. Hits enter again. PASS. Green.
+
+NARRATOR (V.O.)
+Red. She looks at the code. The empty state was never connected. She fixes it. Six characters. Green.
+
+/* visual_type: motion_graphic | space: screen */
+
+= MONTAGE — Quick rhythm: Type test. Green. Type test. Red. Fix. Green. Type test. Green. Type test. Red. Fix. Green. The terminal fills with a column of green checkmarks, one after another. A rhythm forms. The pace is steady, almost musical.
+
+NARRATOR (V.O.)
+And then it clicks. The rhythm. Test. Check. Fix. Test. Check. Pass. It's not about being brave enough to look. It's about looking so often that it stops being a question.
+
+= The column of green checks grows. Ten. Twenty. The screen fills.
+
+/* ================================================================ */
+/* SEGMENT 5: OUTRO [3:30–4:00]                                     */
+/* emotion_curve: HABIT FORMATION → open loop for season arc         */
+/* narrative_stage: OUTRO                                           */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - NIGHT (CONTINUOUS)
+
+= Same room. But the sealed boxes are fewer now. Some have been opened — lids off, green checkmarks sitting on top. Vee is typing steadily. The terminal shows a neat column of PASS results.
+
+NARRATOR (V.O.)
+The boxes are still there. But they're open now. She knows what's inside.
+
+/* vee_reaction: 6/6 */
+
+= Vee pushes her glasses up with one mitten hand. A small, satisfied nod. She looks at the remaining sealed boxes — three or four left. No dread. Just a to-do list.
+
+= Camera slowly pulls back. The room has structure: opened boxes on shelves, a clean terminal, a clear desk. On her monitor, a test suite glows green. Beside it, a sticky note: "Open one box a day."
+
+NARRATOR (V.O.)
+The code has structure. It has specs. It has walls. It has tests. She can see what works and what doesn't, without reading a single line.
+
+= BEAT. One second.
+
+NARRATOR (V.O.)
+But the code only knows what she told it. And she told it what the AI told her. What happens when the AI makes things up?
+
+= The green terminal flickers. For just a frame — one PASS result quietly changes to a question mark. Then back to green. Blink and you'd miss it.
+
+= BEAT.
+
+> TITLE CARD: **NEXT: EP05 — "What Even Is Vibe Coding?"**
+
+= FADE TO BLACK.
+
+> END

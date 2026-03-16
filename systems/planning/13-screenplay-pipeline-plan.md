@@ -2,7 +2,7 @@
 
 > 작성일: 2026-03-11
 > 최종 수정: 2026-03-17
-> 상태: **Phase 2.5 완료** — Series Bible + 2D 캐릭터 스펙 + 시즌1 가이드 확정. EP01 2D 대본 재작성 대기 중.
+> 상태: **Phase 6 완료** — Series Bible → 2D 스타일 전환 → EP01-04 전체 파이프라인 구현 완료.
 
 ## Context
 
@@ -100,68 +100,94 @@ TTS 생성 (대본 확정 후에만)
 
 ---
 
-## 다음 단계 (미완료)
+## 완료: Phase 3 — Vee 2D 골든 레퍼런스 + 표정 스톡 (2026-03-17)
 
-### Phase 3: Vee 2D 골든 레퍼런스 생성
+ComfyUI Flux dev + SimpleVectorFlux LoRA로 생성.
 
-`character_design_2d.json`에 정의된 골든 레퍼런스 3장 생성.
+| 산출물 | 파일 | 상태 |
+|--------|------|------|
+| 정면 골든 | `vee/golden/vee_2d_golden_front.png` | ✅ |
+| 3/4 골든 | `vee/golden/vee_2d_golden_3q.png` | ✅ |
+| 전신 골든 | `vee/golden/vee_2d_golden_full.png` | ✅ |
+| 표정 스톡 | `vee/expressions/` (6감정 × 3앵글 = 18장) | ✅ |
 
-**작업:**
-1. ComfyUI에서 SimpleVectorFlux LoRA 로드
-2. `comfyui_prompts.positive_base` + `angle_prompts` 조합으로 생성
-3. 정면 / 3/4 / 전신 각 4장 이상 → 베스트 1장 선정
-4. 선정된 이미지를 Kontext 골든 레퍼런스로 등록
-5. 표정 스톡 18장 (6감정 × 3앵글) 배치 생성
+**워크플로 수정사항:**
+- `flux_simplevector_t2i.json` — `CheckpointLoaderSimple` → `UnetLoaderGGUF` + `DualCLIPLoaderGGUF` + `VAELoader` 분리
+- LoRA명 수정: `simplevectorflux.safetensors` → `Simple_Vector_Flux_v2_renderartist.safetensors`
+- VAE 분리: `ae.safetensors` 별도 로더 (GGUF 모델은 VAE 미포함)
 
-**산출물:**
-- `vee_2d_golden_front.png`
-- `vee_2d_golden_3q.png`
-- `vee_2d_golden_full.png`
-- `expressions/` 폴더 (18장)
+---
 
-### Phase 4: EP01 대본 재작성 (2D 구조)
+## 완료: Phase 4 — EP01-04 대본 + 샷 매니페스트 + 다이어그램 (2026-03-17)
 
-기존 EP01 산출물(시트콤/3D 기반)을 새 Series Bible 구조로 재작성.
+### EP01 "스펙이 뭔가?" (이전 세션에서 완료)
+| 파일 | 상태 |
+|------|------|
+| `ep01/ep01_script_v2.fountain` | ✅ ~210s, 5세그먼트 |
+| `ep01/ep01_shot_manifest_v5.json` | ✅ 31샷, 1280×720 |
 
-**EP01 새 설정 (Series Bible 기준):**
-- **제목**: "스펙이 뭔가?"
-- **점수**: 23/25 (Grade A, act1-en.md 기반)
-- **포맷**: Hook → Problem → Core → Application → Outro
-- **확장 메타포**: 건물 = 코드 (청사진 O vs X)
-- **Aha**: "스펙은 한 문장이다: '내가 뭘 만드는가?'"
+### EP02 "왼팔이 28개"
+| 파일 | 상태 |
+|------|------|
+| `ep02/ep02_script.fountain` | ✅ ~240s |
+| `ep02/ep02_shot_manifest_v5.json` | ✅ v5 포맷 |
 
-**작업 순서:**
-1. EP01 스크립트 작성 (SERIES_BIBLE.md C8 포맷)
-2. 샷 매니페스트 JSON (D14 v5 포맷)
-3. Vee 2D 키프레임 생성 (Phase 3 골든레퍼런스 사용)
-4. 다이어그램/모션그래픽 (Motion Canvas)
-5. TTS + 립싱크 + BGM
-6. 조립 + QC (D17 6단계 게이트)
+### EP03 "벽 없는 아파트"
+| 파일 | 상태 |
+|------|------|
+| `ep03/ep03_script.fountain` | ✅ ~240s |
+| `ep03/ep03_shot_manifest_v5.json` | ✅ v5 포맷 |
 
-### Phase 5: CONTENT_EVALUATION_FRAMEWORK 업데이트
+### EP04 "열기 무서운 상자"
+| 파일 | 상태 |
+|------|------|
+| `ep04/ep04_script.fountain` | ✅ ~240s |
+| `ep04/ep04_shot_manifest_v5.json` | ✅ v5 포맷 |
 
-평가 프레임워크를 2D 스타일에 맞게 업데이트.
-- "claymation" → "2D flat vector" 용어 변경
-- "clay action" → "visual action" 변경
-- Axis 3 기준을 2D 다이어그램 + 모션그래픽에 맞게 조정
-- "Our position" 문구 업데이트
+### Motion Canvas 다이어그램
+| 파일 | 설명 | 상태 |
+|------|------|------|
+| `vibecode-diagrams/src/scenes/ep01-explainer.tsx` | 건물 메타포 (청사진 vs 혼돈) | ✅ |
+| `vibecode-diagrams/src/scenes/ep02-explainer.tsx` | 왼팔 28개 → SSOT 해결 | ✅ |
+| `vibecode-diagrams/src/scenes/ep03-explainer.tsx` | 벽 없는 아파트 → 도메인 분리 | ✅ |
+| `vibecode-diagrams/src/scenes/ep04-explainer.tsx` | 봉인된 상자 → 테스팅 리듬 | ✅ |
 
-### Phase 6: validate_screenplay.py 업데이트
+---
 
-자동 검증 스크립트를 새 Series Bible 구조에 맞게 업데이트.
+## 완료: Phase 5 — 파이프라인 스크립트 v5 업데이트 (2026-03-17)
 
-```
-[PASS/FAIL] 세그먼트 5개 존재 (Hook/Problem/Core/Application/Outro)
-[PASS/FAIL] 타이밍 범위 (Hook 15s, Problem 30s, Core 135s, Application 60s, Outro 60s)
-[PASS/FAIL] 총 길이 180-300초 (3-5분)
-[PASS/FAIL] 나레이터 V.O. 전 세그먼트 존재
-[PASS/FAIL] Vee 음성 대사 없음 (무언극)
-[PASS/FAIL] Vee 리액션 6회 이내, 각 1-2초
-[PASS/FAIL] 패턴 인터럽트 20-30초 간격
-[PASS/FAIL] 금지 표현 0개
-[PASS/FAIL] Core에 확장 메타포 60초+ 존재
-[PASS/WARN] 열린 루프 (Hook 안에 미답 질문)
-```
+| 파일 | 변경사항 | 상태 |
+|------|----------|------|
+| `parse_fountain_to_prepro.py` | v5 세그먼트 (Hook/Problem/Core/Application/Outro) | ✅ |
+| `build_shot_manifest_from_prepro.py` | v5 매니페스트 (segment, visual_type, space 필드) | ✅ |
+| `animate_shots.py` | Wan 2.2 MoE GGUF + 2D flat vector 워크플로 | ✅ |
+
+---
+
+## 완료: Phase 6 — 보조 산출물 (2026-03-17)
+
+| 파일 | 작업 | 상태 |
+|------|------|------|
+| `source_index.json` | v3.0 — 시즌1 가이드 정렬, 10에피소드 | ✅ |
+| `bee/character_design_2d.json` | Bee 2D v2.0 캐릭터 스펙 | ✅ |
+| `validate_screenplay.py` | Series Bible v5 구조 검증 (10체크) | ✅ (이전 커밋) |
+| `CONTENT_EVALUATION_FRAMEWORK.md` | claymation → 2D flat vector 반영 | ✅ (이전 커밋) |
+
+---
+
+## 전체 완료 상태
+
+| Phase | 내용 | 상태 |
+|-------|------|------|
+| 1 | 소스 인덱스 + RAG | ✅ |
+| 2 | 채널 리브랜딩 | ✅ |
+| 2.5 | Series Bible + 2D 스타일 확정 | ✅ |
+| 3 | Vee 2D 골든 레퍼런스 + 표정 스톡 | ✅ |
+| 4 | EP01-04 대본 + 매니페스트 + 다이어그램 | ✅ |
+| 5 | 파이프라인 스크립트 v5 | ✅ |
+| 6 | 보조 산출물 (소스 인덱스 v3, Bee 스펙) | ✅ |
+
+**다음**: EP05-10 대본 집필, TTS/I2V 렌더링, 최종 영상 조립
 
 ---
 

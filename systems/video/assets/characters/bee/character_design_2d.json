@@ -1,0 +1,186 @@
+{
+  "character_id": "bee",
+  "character_name": "Bee (비)",
+  "character_aliases": ["비", "꿀벌"],
+  "role": "코드 이해관계자 — Vee 코드 위에 산다. 코드 터지면 집이 터진다.",
+  "version": "2.0",
+  "design_date": "2026-03-17",
+
+  "design_philosophy": {
+    "style": "2D flat vector Level 2.5 — Kurzgesagt + Duolingo 하이브리드",
+    "archetype": "귀여운 외모 뒤에 지친 아저씨 — 코드 위에 사는 꿀벌",
+    "size_ratio": "Vee 발목 높이 (Vee 전체 키의 1/5~1/6)",
+    "personality_gap": "평소엔 짜증+피로 → 코드 잘 돌아가면 해맑음 → 갭차이가 매력",
+    "render_model": "Flux.1-dev GGUF + SimpleVectorFlux LoRA (T2I)",
+    "references": ["Kurzgesagt 동물 캐릭터", "Duolingo Lily (짜증)", "Adventure Time BMO (사이즈 대비)"]
+  },
+
+  "shape_language": {
+    "body": "oval (세로 타원, 아래 약간 넓음)",
+    "head": "body와 일체형 (둥근 상단)",
+    "arms": "capsule (짧고 뭉뚝한 검은 팔, 미튼)",
+    "legs": "capsule (짧고 뭉뚝한 검은 다리)",
+    "wings": "rounded_triangle × 2 (작은 날개, 반투명 느낌은 연한 흰색)",
+    "antennae": "line + circle (검은 더듬이 2개, 끝에 작은 동그라미)",
+    "hard_hat": "rounded_rect (미니 노란 안전모, 항상 착용)"
+  },
+
+  "color_palette": {
+    "body_amber": {
+      "hex": "#F59E0B",
+      "usage": "몸통 노란 줄무늬 + 안전모 — 채널 서브 컬러"
+    },
+    "body_dark": {
+      "hex": "#1A1A1A",
+      "usage": "몸통 검정 줄무늬 + 팔/다리/더듬이"
+    },
+    "cheek_blush": {
+      "hex": "#FCA5A5",
+      "usage": "볼터치 (감정 격할 때 진해짐)"
+    },
+    "wing_white": {
+      "hex": "#E5E7EB",
+      "usage": "날개 (반투명 느낌의 연한 회색)"
+    }
+  },
+
+  "silhouette_test": {
+    "40px_recognition": [
+      "달걀형 몸통",
+      "안전모 실루엣",
+      "더듬이 2개",
+      "작은 날개"
+    ],
+    "brand_colors_visible_at_100px": true
+  },
+
+  "expressions": {
+    "default_frustrated": {
+      "eyebrow": "V자 (찌푸림)",
+      "mouth": "∩자 (불만)",
+      "eye": "기본 (살짝 찌푸림)",
+      "antennae": "약간 뒤로 기움",
+      "description": "손 허리에 짚고 인상 팍. '야 이거 누가 이렇게 해놨어'"
+    },
+    "happy": {
+      "eyebrow": "∪자 (올라감)",
+      "mouth": "∪자 (방긋)",
+      "eye": "반짝 (밝음)",
+      "antennae": "쫑긋 (위로)",
+      "description": "팔 벌리고 방긋, 볼 진해짐. 해맑음."
+    },
+    "tired": {
+      "eyebrow": "수평 (무표정)",
+      "mouth": "약간 벌어짐",
+      "eye": "반쯤 감김",
+      "antennae": "축 처짐",
+      "description": "한 손으로 얼굴 짚고 더듬이 축. 퇴근 10분 전."
+    },
+    "shocked": {
+      "eyebrow": "높이 올라감",
+      "mouth": "O자 (벌어짐)",
+      "eye": "1.5배 커짐",
+      "antennae": "직립",
+      "description": "눈 동그랗게 커지고 더듬이 직립. '뭐?!'"
+    },
+    "crying": {
+      "eyebrow": "처짐",
+      "mouth": "이빨 드러냄, 울음",
+      "eye": "눈물 줄줄",
+      "antennae": "축 처짐 + 떨림",
+      "description": "주먹 꽉 쥐고 대성통곡. '아 씨 또 터졌어'"
+    },
+    "sleeping": {
+      "eyebrow": "없음",
+      "mouth": "살짝 벌어짐",
+      "eye": "완전 감김",
+      "antennae": "축 처짐 + 멈춤",
+      "description": "서서 잠듦, 안전모 눈 위로 내려옴, Zzz 이펙트"
+    }
+  },
+
+  "comfyui_prompts": {
+    "positive_base": "v3ct0r style, simple flat vector art, isolated on white bg, tiny round bumblebee character, amber yellow (#F59E0B) and black striped oval body, miniature yellow construction hard hat, two black antennae with ball tips, small pale wings, stubby black mitten arms and legs, flat color fill, thin outline, no gradients, character asset, clean design",
+    "negative_base": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic, text, watermark, speech bubble, multiple characters, anime, sketch, rough, fur, fluffy",
+    "expression_prompts": {
+      "default_frustrated": "frustrated expression, furrowed brow, frown, hands on hips",
+      "happy": "happy expression, big smile, arms spread, bright eyes, wings fluttering",
+      "tired": "tired expression, half-closed eyes, drooping antennae, hand on face",
+      "shocked": "shocked expression, wide eyes, open mouth, antennae straight up",
+      "crying": "crying expression, tears streaming, clenched fists, trembling",
+      "sleeping": "sleeping, eyes closed, hard hat over eyes, Zzz, standing sleep"
+    },
+    "angle_prompts": {
+      "front": "front view, facing camera",
+      "three_quarter": "three quarter view, slight angle",
+      "side": "side view, profile"
+    }
+  },
+
+  "consistency_stack": {
+    "primary_lora": "SimpleVectorFlux (v3ct0r trigger, weight 0.8-1.0)",
+    "identity": "T2I per-expression (Kontext not effective for Bee — expression too sticky)",
+    "fallback": "Flux T2I with locked seed per expression"
+  },
+
+  "invariants": [
+    "달걀형 몸통",
+    "노란+검정 줄무늬",
+    "노란 안전모 (항상 착용)",
+    "검은 더듬이 2개",
+    "작은 날개",
+    "짧고 뭉뚝한 검은 팔/다리",
+    "Amber #F59E0B 메인 컬러"
+  ],
+
+  "variables": [
+    "표정 (6가지)",
+    "더듬이 방향 (감정 바로미터)",
+    "안전모 기울기",
+    "날개 움직임 (파닥파닥/처짐/멈춤)",
+    "볼터치 강도",
+    "포즈",
+    "배경"
+  ],
+
+  "role_in_series": {
+    "narrative_role": "이해관계자 (stakeholder), 교육자가 아님",
+    "motivation": "Vee 코드 위에 살고 있음. 코드 터지면 집이 터짐. 이기적 동기로 끼어듦.",
+    "voice": "음성 없음. 비주얼 리액션 + 플래카드만.",
+    "appearances": "에피소드당 3-4회, 각 1-2초. Vee 6회 리액션과 별도 카운트.",
+    "placard_examples": ["NOPE", "TRY AGAIN", "WHY", "PLEASE NO", "FINALLY"]
+  },
+
+  "relationship_to_vee": {
+    "dynamic": "Vee가 코딩할 때 모니터 옆에 앉아있거나 코드 블록 위에 서 있음",
+    "size": "Vee 발목 높이",
+    "color_harmony": "Vee #FFD93D (밝은 노랑) + Bee #F59E0B (앰버) — 같은 계열, 다른 톤"
+  },
+
+  "golden_references": {
+    "front": {
+      "file": "bee_2d_golden_front.png",
+      "status": "TO_GENERATE"
+    },
+    "three_quarter": {
+      "file": "bee_2d_golden_3q.png",
+      "status": "TO_GENERATE"
+    },
+    "with_vee": {
+      "file": "bee_vee_scale_reference.png",
+      "status": "TO_GENERATE"
+    }
+  },
+
+  "changelog": {
+    "v1.0_to_v2.0": {
+      "style": "3D Pixar → 2D flat vector Level 2.5",
+      "colors": "#FFD700 → #F59E0B (Series Bible Amber)",
+      "texture": "솜털/퍼 텍스처 → 플랫 컬러, 아웃라인",
+      "role": "사이드킥/조수 → 이해관계자 (코드 위에 사는 자)",
+      "voice": "대사 있었음 → 완전 무언 (플래카드만)",
+      "personality": "투덜이 인부 유지, 교육자 역할 제거",
+      "added": "shape_language, silhouette_test, 3-element expression system, comfyui v3ct0r prompts"
+    }
+  }
+}

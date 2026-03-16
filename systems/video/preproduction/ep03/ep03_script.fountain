@@ -1,0 +1,273 @@
+Title: EP03 — The Apartment Without Walls
+Credit: Written by
+Author: vibecode.town
+Series: Vibecode Town Season 1
+Source: Act 3 — "The Apartment Without Walls"
+Draft date: 2026-03-17
+Contact: vibecode.town
+Duration: ~240 seconds (4:00)
+Notes: 2D flat vector style (Kurzgesagt level). Narrator V.O. only. Vee never speaks. Max 6 Vee reactions. Highest visual metaphor density in S1.
+
+/* ================================================================ */
+/* SEGMENT 1: HOOK [0:00–0:15]                                      */
+/* emotion_curve: FAMILIARITY → UNEASE                              */
+/* narrative_stage: HOOK                                             */
+/* open_loop: "Why does fixing one thing break three others?"       */
+/* ================================================================ */
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= A simple top-down floor plan fades in. An apartment — but no walls. One big open rectangle. A bed, a stove, a desk with a computer, a shower head, a toilet. All crammed together in one undivided space.
+
+NARRATOR (V.O.)
+Imagine an apartment with no walls.
+
+= BEAT. One second. The camera slowly pans across the open floor plan. Everything is visible from everywhere.
+
+NARRATOR (V.O.)
+Your kitchen, your bedroom, your bathroom, your office — all one room. No doors. No boundaries. Just... everything, everywhere.
+
+/* vee_reaction: 1/6 */
+/* visual_type: character_reaction | space: desk */
+/* shorts_candidate */
+
+= Quick cut: Vee at her desk. She tilts her head, one eyebrow raised. Confused recognition — she's seen this somewhere before. 1.5 seconds.
+
+> TITLE CARD: **THE APARTMENT WITHOUT WALLS**
+
+/* ================================================================ */
+/* SEGMENT 2: PROBLEM [0:15–0:50]                                   */
+/* emotion_curve: FAMILIARITY → GROWING UNEASE → FRUSTRATION        */
+/* narrative_stage: PROBLEM                                         */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - DAY
+
+= Vee stares at her monitor. Her project has grown. Dozens of files listed in a sidebar. She scrolls through them — they all look the same. No structure. No folders.
+
+NARRATOR (V.O.)
+Vee's codebase has been growing for weeks now. She has a spec. She has documentation. She even has a design document. But there's a new problem.
+
+= Vee clicks something. A piece of the UI changes. She smiles for a moment.
+
+/* vee_reaction: 2/6 */
+
+= Then three red error notifications pop up. One after another after another. Her smile collapses.
+
+NARRATOR (V.O.)
+Every time she fixes one thing, three other things break.
+
+= Vee stares at the screen. She scrolls up. Scrolls down. Scrolls up again. Everything is connected to everything. She can't find where one feature ends and another begins.
+
+NARRATOR (V.O.)
+She can't figure out why. The answer isn't in the code. The answer is in the shape of the code. And right now, her code has no shape at all.
+
+= BEAT. Half a second.
+
+NARRATOR (V.O.)
+It's an apartment without walls.
+
+/* ================================================================ */
+/* SEGMENT 3: CORE [0:50–2:50]                                     */
+/* emotion_curve: UNEASE → DISGUST → CLARITY → SATISFACTION        */
+/* narrative_stage: CORE                                            */
+/* duration: ~120 seconds                                          */
+/* This is the EXTENDED METAPHOR segment: Apartment = Codebase     */
+/* ================================================================ */
+
+/* extended_metaphor_start */
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= TRANSITION: The desk fades. Background brightens. The top-down apartment floor plan reappears — larger, more detailed. Still no walls.
+
+NARRATOR (V.O.)
+Let's walk through this apartment.
+
+/* visual_type: diagram | space: whiteboard */
+
+= The camera zooms into the kitchen area. A stove, a pan, oil sizzling.
+
+NARRATOR (V.O.)
+Here's the kitchen. You're cooking breakfast. Oil pops from the pan.
+
+= Oil droplets arc through the air — no wall to stop them. They land on the bed, two meters away. Grease stains appear on the pillow.
+
+NARRATOR (V.O.)
+And it lands on your bed. Because there's no wall between the kitchen and the bedroom.
+
+= The camera slides to the shower area. Water sprays.
+
+NARRATOR (V.O.)
+You take a shower.
+
+= Water streams across the floor — no barrier, no threshold. It reaches the desk. The computer. Sparks.
+
+NARRATOR (V.O.)
+Water runs across the floor and reaches your computer. Because there's no wall between the bathroom and the office.
+
+/* shorts_candidate */
+
+= The camera slides to the toilet. It's in full view of the kitchen.
+
+NARRATOR (V.O.)
+And your toilet? Visible from the kitchen table. While you're eating.
+
+= BEAT. One disgusted second.
+
+/* vee_reaction: 3/6 */
+/* visual_type: character_reaction | space: desk */
+
+= Quick cut: Vee. Hood pulled up. Arms crossed. Her face is a zigzag of disgust. 1.5 seconds.
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= Back to the apartment. Now everything is happening at once. Oil flying, water flowing, steam mixing, wires sparking. Total chaos. The apartment is a disaster zone.
+
+NARRATOR (V.O.)
+This is what happens when everything can reach everything. The kitchen's grease gets into the bedroom. The bathroom's water gets into the office. One problem becomes everyone's problem. That's circular dependency. That's spaghetti architecture. That's Vee's codebase right now.
+
+= BEAT. Two seconds. The chaos freezes.
+
+NARRATOR (V.O.)
+Now. Watch what happens when we add walls.
+
+= A bright vertical line drops from the ceiling between the kitchen and the bedroom. THUD. A wall. The oil droplets hit it and stop.
+
+NARRATOR (V.O.)
+A wall between the kitchen and the bedroom. Oil stays in the kitchen.
+
+= Another wall drops between the bathroom and the office. THUD. The water hits it and pools harmlessly.
+
+NARRATOR (V.O.)
+A wall between the bathroom and the office. Water stays in the bathroom.
+
+= A third wall drops, hiding the toilet from the kitchen. THUD.
+
+NARRATOR (V.O.)
+A wall between the toilet and... everywhere else. Thank god.
+
+= A fourth wall closes off the bedroom. The floor plan now has five distinct rooms. Each contained. Each independent.
+
+NARRATOR (V.O.)
+Now the kitchen is the kitchen. The bedroom is the bedroom. The bathroom is the bathroom. Each room has one job. Each room has a door — a controlled way in and out.
+
+= Small door icons appear in each wall. Arrows show the controlled flow between rooms.
+
+NARRATOR (V.O.)
+You can still walk between them. But the oil can't fly across the apartment anymore. The water can't reach the computer. Everything stays where it belongs.
+
+= The camera pulls up. The full floor plan is visible now — five clean rooms, doors connecting them, no chaos.
+
+NARRATOR (V.O.)
+That's a domain. A domain is a wall. It says: this is my room, this is my job, and you don't get to mess with my stuff unless you come through the door.
+
+/* extended_metaphor_end */
+
+/* visual_type: diagram | space: whiteboard */
+
+= The apartment transforms into a code diagram. Each room becomes a labeled module: AUTH, PAYMENTS, USER_PROFILE, NOTIFICATIONS, FILE_SYNC. Lines connect them through defined interfaces — the "doors."
+
+NARRATOR (V.O.)
+In code, the wall is a boundary. A module. A domain. The auth system doesn't touch the payment system directly. It goes through an interface — through the door.
+
+= One module lights up red — an error in PAYMENTS. The error stays contained. The other modules remain green.
+
+NARRATOR (V.O.)
+When the payment module breaks, it's a payment problem. Not an auth problem. Not a notification problem. Not an everything problem.
+
+= BEAT. The diagram pulses with calm green.
+
+NARRATOR (V.O.)
+Fix one room. The other rooms don't notice. That's the point.
+
+/* vee_reaction: 4/6 */
+/* visual_type: character_reaction | space: desk */
+
+= Quick flash of Vee. Her eyes are wide — eureka. Glasses flash with a highlight. Both hands up. She gets it. 1.5 seconds.
+
+/* ================================================================ */
+/* SEGMENT 4: APPLICATION [2:50–3:40]                               */
+/* emotion_curve: CLARITY → SATISFACTION                            */
+/* narrative_stage: APPLICATION                                     */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - NIGHT
+
+= Vee's screen shows a messy file list — everything in one flat directory. She starts dragging files into folders. Grouping them.
+
+NARRATOR (V.O.)
+Back to the code. Vee starts building walls.
+
+/* visual_type: motion_graphic | space: screen */
+
+= The flat file list transforms into a folder tree. Files slide into place:
+= `auth/` — login, session, token
+= `payments/` — billing, invoice, refund
+= `notifications/` — email, push, sms
+= `sync/` — files, connection, heartbeat
+
+NARRATOR (V.O.)
+Auth goes here. Payments go there. Notifications get their own room. File sync gets its own room. Each folder is a domain. Each domain has a clear boundary.
+
+= Between the folders, thin interface lines appear — clean connections. Not spaghetti. Structured.
+
+NARRATOR (V.O.)
+And the doors — the interfaces — are explicit. Auth can ask payments "is this user paid?" But it can't reach into the payments folder and rewrite the invoice logic.
+
+/* vee_reaction: 5/6 */
+/* visual_type: character_reaction | space: desk */
+
+= Vee makes a change in one folder. She watches the screen. No red errors. No cascade. Just... green. She exhales. Leans back. A slow, satisfied nod.
+
+NARRATOR (V.O.)
+She changes the login flow. Nothing else breaks. She updates the billing logic. Notifications don't crash. Each room keeps its own problems to itself.
+
+= The folder structure glows faintly on her screen — organized, clean, alive.
+
+NARRATOR (V.O.)
+Domains are walls. Each function gets its own room. And when your code has rooms, your code can breathe.
+
+/* ================================================================ */
+/* SEGMENT 5: OUTRO [3:40–4:00]                                     */
+/* emotion_curve: SATISFACTION → open loop for EP04                 */
+/* narrative_stage: OUTRO                                           */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - NIGHT (CONTINUOUS)
+
+= Vee looks at her clean folder structure. Five modules. Clear boundaries. She smiles — not celebration, just quiet pride.
+
+NARRATOR (V.O.)
+The apartment has walls now. Each room has a purpose. Nothing leaks, nothing bleeds, nothing breaks its neighbor.
+
+/* vee_reaction: 6/6 */
+
+= Vee nods to herself. She reaches for her coffee. Takes a sip. Sets it down. She looks at the clean code on her monitor — green status, organized files.
+
+= BEAT. One second.
+
+NARRATOR (V.O.)
+The code is organized. It's structured. It's clean.
+
+= The camera slowly pulls back from the desk. The monitor glows green. Vee's face is calm, confident.
+
+NARRATOR (V.O.)
+But there's one thing she's never done. She's never tested any of it. She doesn't know if it actually works. She just... believes it does.
+
+= BEAT.
+
+NARRATOR (V.O.)
+Sound familiar?
+
+> TITLE CARD: **NEXT: EP04 — "The Box You're Afraid to Open"**
+
+= FADE TO BLACK.
+
+> END
