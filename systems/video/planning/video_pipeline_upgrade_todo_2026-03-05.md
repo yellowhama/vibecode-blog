@@ -206,3 +206,60 @@ Modified files:
 - `pipeline/scripts/run_end_to_end_video_pipeline.py` (+Phase 7 and evaluate profile passthrough)
 - `pipeline/scripts/run_blog_to_video_pipeline.py` (+Phase 7 and evaluate profile passthrough)
 - `pipeline/scripts/subtitle_pipeline.py` (+font preflight, standalone CLI)
+
+---
+
+## L. Phase 2: 모델 설치 + EP01 파일럿 (2026-03-16)
+
+### L-1. 환경 정리 + 도구 설치
+- [x] 깨진 Wan 2.2 fp8 체크포인트 삭제 (29B + 20B)
+- [x] Dia2 TTS 설치 (`pip install git+https://github.com/nari-labs/dia.git` → `nari-tts 0.1.0`)
+- [x] ACE-Step 1.5 클론 + `uv sync` (자체 venv, torch 2.10+cu128)
+- [x] simplevectorflux LoRA 다운로드 (153MB, trigger: `v3ct0r`)
+- 참고: Kurzgesagt Civitai LoRA 대신 simplevectorflux 선택 — 2D flat vector 스타일 더 적합
+
+### L-2. ComfyUI 워크플로우 업데이트
+- [x] Wan 2.2 MoE I2V full/short → 832x480 해상도 (16:9 YouTube)
+- [x] Wan 2.2 I2V → VHS_VideoCombine MP4 출력 (SaveImage PNG → H.264 MP4)
+- [x] Flux LoRA T2I → simplevectorflux LoRA 파일명/트리거 워드 반영
+- [x] `render_keyframes.py` — prompt sub-object 추출 수정 (API-format JSON 호환)
+- [x] `animate_shots.py` — prompt sub-object + 매니페스트 해상도 주입
+- [x] `assemble_episode.py` — Dia2 기본 프로덕션 TTS 추가 (`--tts` 플래그)
+- [x] `acestep_bgm.py` — API 서버 모드 리라이트 (ACE-Step 1.5 `uv run` 호환)
+- [x] ComfyUI API (:8188) 연결 확인
+
+### L-3. EP01 스타일 검증
+- [x] Kontext 키프레임 15장 렌더 (3D Pixar 스타일, 캐릭터 일관성 우수)
+- [x] simplevectorflux LoRA 키프레임 1장 (2D flat vector — Kurzgesagt 스타일)
+- [x] Wan 2.2 MoE I2V 2초 드래프트 클립 2개 (832x480, 16fps, H.264)
+- [x] **스타일 판정**: Kontext=3D Pixar, LoRA=2D flat vector. 둘 다 사용 가능.
+- 성능: RTX 5070 Ti (16GB) — Kontext ~60s/키프레임, I2V ~8.5분/2초클립
+
+### L-4. 30초 프로토타입 조립
+- [x] `mixed_audio.wav` (나레이션 + BGM 플레이스홀더)
+- [x] 한국어 자막 (preproduction SRT 사용)
+- [x] **`EP01_PROTOTYPE.mp4`** (28초, 1920x1080, H.264+AAC)
+- [~] I2V 배치 렌더 진행 중 (2/15 완료, ~2시간 예상)
+
+### L-5. 전체 EP01 프로덕션 (대기)
+> I2V 배치 완료 후 진행
+- [ ] ACE-Step BGM 생성 (GPU 필요 — I2V 완료 후)
+- [ ] Dia2 프로덕션 내레이션
+- [ ] 전체 20샷 I2V 클립 (풀 5초)
+- [ ] 최종 조립 → `EP01_FINAL.mp4`
+
+### 모델 인벤토리 (2026-03-16 기준)
+| 모델 | 위치 | 크기 | 용도 |
+|------|------|------|------|
+| Wan2.2-I2V-A14B-HighNoise Q3_K_M | `unet/` | 6.7GB | I2V Stage 1 |
+| Wan2.2-I2V-A14B-LowNoise Q3_K_M | `unet/` | 6.7GB | I2V Stage 2 |
+| flux1-dev-Q5_K_S | `unet/` | ~9GB | T2I (LoRA 호스트) |
+| flux1-kontext-dev-Q5_K_S | `unet/` | ~8.3GB | 캐릭터 일관성 편집 |
+| simplevectorflux v2 | `loras/` | 153MB | 2D flat vector 스타일 |
+| t5-v1_1-xxl Q5_K_M | `clip/` | ~4.6GB | Flux CLIP |
+| umt5_xxl fp8 | `text_encoders/` | ~4.6GB | Wan CLIP |
+| wan_2.1_vae | `vae/` | ~150MB | Wan VAE |
+| ae.safetensors | `vae/` | ~150MB | Flux VAE |
+| Dia2-1B | pip (nari-tts) | ~2GB | 프로덕션 TTS |
+| ACE-Step 1.5 | `/home/hugh/ACE-Step-1.5/` | ~4GB | BGM 생성 |
+| Kokoro 0.9.4 | pip | ~400MB | 드래프트 TTS |
