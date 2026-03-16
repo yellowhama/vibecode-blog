@@ -1,0 +1,269 @@
+{
+  "character_id": "ivy_burr",
+  "character_name": "Ivy Burr (Vee)",
+  "version": "5.0",
+  "design_date": "2026-03-17",
+  "style_transition": "v4.0 3D Pixar-like → v5.0 2D flat vector",
+
+  "design_philosophy": {
+    "style": "Level 2.5 flat vector — between Kurzgesagt minimal and Duolingo expressive",
+    "level": "2.5",
+    "references": [
+      "Kurzgesagt (geometric forms, bold flat color, no noise)",
+      "Duolingo (round corners, mitten hands, expressive eyes)",
+      "Headspace (emotion symbols, organic curves)"
+    ],
+    "principle": "Less detail = more animation freedom. Every line must earn its place.",
+    "material": "Pure flat color fills with thin outline. No gradients, no textures, no 3D shading.",
+    "proportions": "3.5-4 head tall — compact, approachable, not childlike"
+  },
+
+  "shape_language": {
+    "head": {
+      "shape": "circle",
+      "meaning": "friendly, approachable, curious"
+    },
+    "body": {
+      "shape": "rounded_rectangle",
+      "meaning": "stable, trustworthy"
+    },
+    "arms": {
+      "shape": "capsule",
+      "meaning": "flexible, expressive"
+    },
+    "legs": {
+      "shape": "short_capsule",
+      "meaning": "grounded"
+    },
+    "hands": {
+      "shape": "circle_mitten",
+      "note": "Duolingo-style — no fingers, round or mitten shape only"
+    },
+    "glasses": {
+      "shape": "two_circles_connected",
+      "note": "Strongest silhouette identifier. Always perfectly round."
+    },
+    "rule": "No triangles, no sharp angles. Everything rounds."
+  },
+
+  "color_palette": {
+    "hoodie": {
+      "hex": "#FFD93D",
+      "name": "Vee Yellow",
+      "role": "primary_60pct"
+    },
+    "hair": {
+      "hex": "#6D4C2F",
+      "name": "Cocoa Brown",
+      "role": "secondary_25pct"
+    },
+    "skin": {
+      "hex": "#FDEBD0",
+      "name": "Warm Cream",
+      "role": "secondary_10pct"
+    },
+    "glasses_outline": {
+      "hex": "#2D2D2D",
+      "name": "Near Black",
+      "role": "accent_5pct"
+    },
+    "outline": {
+      "hex": "#2D2D2D",
+      "note": "Same as glasses. Thin outline on all body parts for AI shape separation."
+    },
+    "total_colors": 4,
+    "transition_from_v4": {
+      "skin": "#FFF3D4 → #FDEBD0 (warmer, less yellow)",
+      "hair": "#5D4037 → #6D4C2F (lighter, reads better in flat)",
+      "hoodie": "#FFD166 → #FFD93D (brighter, punchier for flat)",
+      "glasses": "#212121 → #2D2D2D (slightly lighter for thinner lines)"
+    }
+  },
+
+  "silhouette_test": {
+    "target_size": "40px",
+    "checklist": [
+      "Round glasses clearly visible as two circles",
+      "Hoodie silhouette distinguishable (oversized, hood bump on back)",
+      "Hair silhouette distinct (shoulder-length, slight wave at ends)",
+      "Overall shape reads as 'person with glasses and hoodie'",
+      "Not confusable with any other character at thumbnail size"
+    ],
+    "pass_criteria": "All 5 items must pass at 40px"
+  },
+
+  "expressions": {
+    "system": "3 elements x 6 emotions. Each expression = eyebrow curve + mouth curve + eye size.",
+    "elements": {
+      "eyebrow": "Simple arc above glasses. Direction and curve = emotion signal #1.",
+      "mouth": "Simple line or curve below nose dot. Shape = emotion type.",
+      "eye": "Dot or small circle behind glasses. Size = emotion intensity."
+    },
+    "emotions": {
+      "default": {
+        "eyebrow": "relaxed, slight arch",
+        "mouth": "small upward curve",
+        "eye": "normal dot",
+        "description": "Slightly lopsided smile, glasses sitting a bit crooked"
+      },
+      "curious": {
+        "eyebrow": "one raised higher than other",
+        "mouth": "slightly open (small O)",
+        "eye": "enlarged 1.3x",
+        "description": "Head tilted 15 degrees, like a puppy spotting something"
+      },
+      "frustrated": {
+        "eyebrow": "V-shape, angled down",
+        "mouth": "tight zigzag line",
+        "eye": "narrowed (0.7x)",
+        "description": "Hood pulled up, arms crossed, fuming"
+      },
+      "eureka": {
+        "eyebrow": "both high arches",
+        "mouth": "wide O",
+        "eye": "maximum size (1.5x) + star highlight",
+        "description": "Both hands up, glasses flash, lightbulb moment"
+      },
+      "coding_zone": {
+        "eyebrow": "level, focused",
+        "mouth": "flat line, slightly pursed",
+        "eye": "half-lidded (0.5x height)",
+        "description": "Leaning forward, world fades out, pure concentration"
+      },
+      "happy": {
+        "eyebrow": "gentle high arches",
+        "mouth": "wide U curve",
+        "eye": "happy squint (upward curves)",
+        "description": "Pushing glasses up, beaming — Jang Nara sunny smile energy"
+      }
+    }
+  },
+
+  "personality": {
+    "core": "Curious, clumsy-smart, silently competent",
+    "surface": "Playful and scatterbrained. Glasses always slightly crooked. Talks to her rubber duck. Names her terminals.",
+    "depth": "Scary focus when coding. Actually gets things done. The mess is just the surface.",
+    "role_in_series": "Viewer's emotional proxy. Never speaks. All emotion through body language and facial expressions.",
+    "communication": "SILENT. Narrator explains everything. Vee reacts visually only."
+  },
+
+  "appearance_details": {
+    "head": "Perfect circle. Slightly wider than tall for stability.",
+    "face": "Minimal — dot nose (or no nose), dot/circle eyes behind round glasses, simple mouth curve.",
+    "hair": "Single-color brown silhouette. Shoulder-length. 1-2 lighter highlight strokes for dimension. No individual strand detail.",
+    "glasses": "Round frame, #2D2D2D, always slightly crooked. Bridge connects at center. Arms not visible from front.",
+    "hoodie": {
+      "color": "#FFD93D",
+      "features": "Oversized, sleeves cover half the hands, hood hangs behind neck (visible bump in profile), single kangaroo pocket line",
+      "note": "No zipper, no logo, no text. Pure yellow block."
+    },
+    "shorts": "Not visible in most shots (hoodie covers). When shown: simple dark blue-gray rectangle.",
+    "shoes": "Simple rounded shapes, muted gray. Minimal detail.",
+    "outline": "1.5-2px uniform #2D2D2D outline on all elements. Aids AI shape separation."
+  },
+
+  "comfyui_prompts": {
+    "trigger_word": "v3ct0r",
+    "lora": "SimpleVectorFlux",
+    "positive_base": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline",
+    "negative_base": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+    "expression_prompts": {
+      "default": "slight smile, relaxed pose, one hand on hip",
+      "curious": "head tilted, eyes wide, leaning forward slightly",
+      "frustrated": "hood pulled up over head, arms crossed, hunched",
+      "eureka": "both arms raised, eyes wide with star highlight, excited jump",
+      "coding_zone": "sitting at desk, leaning forward, half-closed eyes, intense focus",
+      "happy": "big smile, pushing glasses up, standing straight with energy"
+    },
+    "angle_prompts": {
+      "front": "front view, facing camera directly, full body, T-pose or standing",
+      "three_quarter": "three-quarter view, slight angle, looking at camera",
+      "profile": "side profile view, full body visible",
+      "bust": "upper body only, shoulders and head, medium close-up"
+    }
+  },
+
+  "consistency_stack": {
+    "layer_1_style": {
+      "method": "SimpleVectorFlux LoRA",
+      "purpose": "Lock flat vector aesthetic across all generations",
+      "weight": "0.8-1.0"
+    },
+    "layer_2_identity": {
+      "method": "Flux Kontext",
+      "purpose": "Edit golden reference into new scenes while preserving identity",
+      "workflow": "flux_kontext_edit.json",
+      "guidance": 2.5,
+      "vram": "~12GB"
+    },
+    "layer_3_pose": {
+      "method": "ControlNet (OpenPose or Depth)",
+      "purpose": "Enforce pose consistency across shots",
+      "note": "Optional — only for complex multi-shot sequences"
+    },
+    "golden_references": {
+      "front": "vee_2d_golden_front.png",
+      "three_quarter": "vee_2d_golden_3q.png",
+      "full_body": "vee_2d_golden_full.png",
+      "status": "TO_GENERATE"
+    }
+  },
+
+  "invariants": {
+    "description": "These NEVER change across any episode, any shot, any context.",
+    "list": [
+      "Round circle head shape",
+      "Round black glasses (#2D2D2D), always slightly crooked",
+      "Yellow hoodie (#FFD93D), oversized, hood down (unless frustrated)",
+      "Brown hair (#6D4C2F), shoulder-length silhouette",
+      "Warm cream skin (#FDEBD0)",
+      "3.5-4 head proportions",
+      "Mitten/circle hands (no fingers)",
+      "Thin uniform outline (#2D2D2D)",
+      "No speech — ever"
+    ]
+  },
+
+  "variables": {
+    "description": "These CAN change per shot/episode.",
+    "list": [
+      "Facial expression (6 emotion presets)",
+      "Body pose and gesture",
+      "Hood up/down (down = default, up = frustrated)",
+      "Camera angle (front / 3Q / profile / bust)",
+      "Scale relative to frame",
+      "Background and environment",
+      "Props (laptop, paper, rubber duck, coffee mug)"
+    ]
+  },
+
+  "v4_to_v5_changelog": {
+    "removed": [
+      "3D Pixar-like render style",
+      "Clay/plasticine texture and fingerprints",
+      "Hazel-brown iris detail",
+      "Pink clay cheek blush",
+      "Denim shorts as prominent element",
+      "Beat-up sneaker detail",
+      "Chunky sculpted hair clumps",
+      "Detailed hand anatomy"
+    ],
+    "added": [
+      "Flat color fills, no gradients",
+      "Thin uniform outline for AI shape separation",
+      "Mitten/circle hands (Duolingo-style)",
+      "Simplified hair as single-color silhouette",
+      "3-element expression formula (eyebrow + mouth + eye)",
+      "SimpleVectorFlux LoRA integration",
+      "40px silhouette test requirement"
+    ],
+    "preserved": [
+      "Round glasses (signature identifier)",
+      "Yellow hoodie (brand color)",
+      "Brown hair color family",
+      "Curious/clumsy-smart personality",
+      "Character name and ID (ivy_burr / Vee)",
+      "Flux Kontext as identity preservation method"
+    ]
+  }
+}
