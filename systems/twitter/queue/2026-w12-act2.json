@@ -10,14 +10,19 @@
       "title": "[FDD Diary #7] I Wrote a Spec. So What.",
       "source": "easy_peasy/phase1/en/act2-1-en.md",
       "scheduledAt": "2026-03-16T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "I can't read code.\nSo I wrote a spec instead.\nFifteen pages. Purpose, method, structure.\nThrew it at Claude.\n\nThree straight days of explosions.",
         "Day one: build timeout.\nDay two: code collision.\nDay three: a working feature died.\n\nThe spec said what to build.\nDidn't say what would break.\nCouldn't have. Nothing had broken yet.\n\nMade a PROBLEMS.md.\nWrote down every hit.\nThe pattern emerged.",
         "A spec you write once and never touch?\nThat's a wish.\n\nPlans change every time you take a punch.\nWriting down the changes.\nThat's what a plan is."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2033548160614715669",
+        "2033548169926066289",
+        "2033548179271028925"
+      ],
+      "postedAt": "2026-03-16T14:17:22.225Z",
+      "error": null
     },
     {
       "id": "w12-act2-002",
