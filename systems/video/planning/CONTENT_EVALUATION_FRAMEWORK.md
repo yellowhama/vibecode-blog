@@ -1,9 +1,11 @@
 # Content Evaluation Framework
 
-Scoring rubric for evaluating blog content readiness for claymation video essay production.
+Scoring rubric for evaluating blog content readiness for 2D flat vector animated video essay production.
 
 Created: 2026-03-10
-Pipeline: MUSU Video Production (nonlingual claymation + VO narration)
+Updated: 2026-03-17 (3D 2D animation → 2D flat vector pivot)
+Pipeline: Vibecode Town Video Production (2D flat vector + VO narration)
+SSOT: `systems/video/SERIES_BIBLE.md`
 
 ---
 
@@ -51,33 +53,33 @@ Story-first approach is the "ultimate algorithm hack" because it taps into what 
 
 ### Axis 3: Visual Metaphor Density
 
-Critical for our pipeline: nonlingual claymation means **every narrative beat must translate to a visible clay action**. No dialogue, no text on screen. The visual IS the story.
+Critical for our pipeline: narrator-driven 2D animation means **every narrative beat must translate to a visible action** — character reaction, diagram animation, or motion graphic. Vee is silent (no dialogue). The visual IS the story.
 
 | Score | Criteria |
 |---|---|
-| **5** | 70%+ of sentences map to concrete visual actions (object manipulation, character movement, transformation) |
+| **5** | 70%+ of sentences map to concrete visual actions (character reaction, diagram animation, object transformation, motion graphic) |
 | **4** | 60-70% mappable. Some beats need creative interpretation but workable |
 | **3** | 50% mappable. Several abstract/explanatory passages that resist visualization |
 | **2** | 30-50% mappable. Heavy rewriting needed for visual adaptation |
 | **1** | Mostly abstract/philosophical. Would require invented visual narrative |
 
-**Key signals**: For each sentence, can you describe what the clay character is *doing*? "Tourist with no map" = clay figure looking at blank paper. "Spaghetti code" = tangled clay strings.
+**Key signals**: For each sentence, can you describe what happens visually? "Tourist with no map" = Vee looking at blank paper. "Spaghetti code" = tangled color threads. Diagram or Vee reaction for every beat.
 
 **References**:
-- [Aardman & claymation storytelling](https://huehd.com/the-best-claymation-animations-of-all-time/) — Wallace & Gromit, Chicken Run — minimal dialogue, maximum visual storytelling
-- [Claymation techniques](https://www.ikitmovie.com/claymation-animation/) — "The less dialogue, the easier it travels across the world"
 - [Kurzgesagt visual metaphors](https://10.studio/the-incredible-amount-of-work-behind-kurzgesagts-beautiful-animated-videos/) — every script concept gets a visual metaphor planned in storyboard
+- [Duolingo character design](https://blog.duolingo.com/shape-language-duolingos-art-style/) — minimal characters, maximum expression through shape language
 - [What makes good video essays](https://www.creatorhandbook.net/what-makes-the-best-video-essays-so-great-b9d310ec1b74/) — "blend of style and substance"
+- [2D animation storytelling](https://dreamfarmstudios.com/blog/shape-language-in-character-design/) — shape language conveys emotion without dialogue
 
 ### Axis 4: Beat Pacing & Duration Fit
 
-Narration beats must fit video duration constraints. Too dense = video can't keep up. Too sparse = dead air. Target: 2-4 minute videos with 12-24 beats.
+Narration beats must fit video duration constraints. Too dense = video can't keep up. Too sparse = dead air. Target: 3-5 minute videos with 12-20 beats.
 
 | Score | Criteria |
 |---|---|
-| **5** | 2-5 sec per beat. Total 2-4 min. 12-24 natural beats. Breathing room between sections |
-| **4** | Mostly good pacing. 1-2 beats too long or too short. Total within 1.5-5 min |
-| **3** | Uneven beat lengths. Some 10+ sec passages. Total under 1.5 min or over 5 min |
+| **5** | 2-5 sec per beat. Total 3-5 min. 12-20 natural beats. Breathing room between sections |
+| **4** | Mostly good pacing. 1-2 beats too long or too short. Total within 2.5-5.5 min |
+| **3** | Uneven beat lengths. Some 10+ sec passages. Total under 2.5 min or over 5.5 min |
 | **2** | Many long monologue passages. Hard to segment into beats |
 | **1** | Wall of text. No natural breakpoints. Can't segment for TTS |
 
@@ -129,7 +131,7 @@ Our target: **Vibe coders** — people who can't read code but build with AI. Th
 |---|---|---|
 | Hook & Retention | **5** | "Can't code. Not a developer." — instant identity hook. "That thought was the trap" — open loop. Monday morning crash — twist |
 | Narrative Arc | **5** | Context (vibe coding start) → Conflict (code rot, shell injection) → Climax (Monday morning total failure) → Conclusion (spec discovery) → Change (10K→3K lines, 30%→3% failure) |
-| Visual Metaphor | **4** | Strong: "tourist with no map" (clay figure + blank paper), "spaghetti code" (tangled clay), "door anyone can walk through" (clay door opening). Weak: mid-section spec explanation is abstract |
+| Visual Metaphor | **4** | Strong: "tourist with no map" (Vee + blank paper), "spaghetti code" (tangled color threads), "door anyone can walk through" (door opening). Weak: mid-section spec explanation is abstract |
 | Beat Pacing | **4** | 322 lines, ~15 natural sections (--- dividers). Fits 2-4 min. Spec explanation section could drag |
 | Audience Resonance | **5** | "I can't read code" "copy-paste→error loop" "AI wrote it. I approved it." — direct vibe coder mirror |
 | **TOTAL** | **23/25** | **Grade A — Production ready** |
@@ -140,12 +142,12 @@ Our target: **Vibe coders** — people who can't read code but build with AI. Th
 |---|---|---|
 | Hook & Retention | **4** | "For the first time, I felt confident. Fifteen pages." — setup-for-a-fall hook. Open loop: "This time it's different" (it's not). Mike Tyson punch quote as twist. Slower than Act 1's instant identity hook |
 | Narrative Arc | **5** | Context (spec confidence) → Conflict (3 days of explosions, 28 left arms, Python/TS mismatch) → Climax (manual loop drudgery, "do I have to do this every time?") → Conclusion (SDD discovery, CLAUDE.md) → Change (40%→5% error, 3hr→45min). Textbook 5C's |
-| Visual Metaphor | **4** | Strong: 28 left arms (clay limbs everywhere — signature scene), spec files multiplying (papers piling), eggs in fridge (shopping list), PROBLEMS.md as punch diary. Weak: SSOT explanation is abstract, "words evaporate / environment stays" is conceptual. ~65-70% mappable |
+| Visual Metaphor | **4** | Strong: 28 left arms (limbs everywhere — signature scene), spec files multiplying (papers piling), eggs in fridge (shopping list), PROBLEMS.md as punch diary. Weak: SSOT explanation is abstract, "words evaporate / environment stays" is conceptual. ~65-70% mappable |
 | Beat Pacing | **4** | 355 lines, ~18 natural sections. Clear scene breaks. Some mid-sections (SSOT, SDD explanation) could drag. Fits 3-5 min, needs compression for 2-4 target |
 | Audience Resonance | **5** | "Thirty files is safety?" "Yesterday's Claude / Today's GPT = archaeology" "AI picks a different tech every time" — direct vibe coder pain. "Words evaporate. Environment stays." — actionable. High shareability |
 | **TOTAL** | **22/25** | **Grade A — Production ready** |
 
-**Production notes**: The "28 left arms" scene is the visual centerpiece — commit to it for 30+ seconds of extended claymation. SSOT/SDD explanations need visual reinterpretation (e.g., one glowing document vs. 30 scattered papers). The Mike Tyson moment could be a clay punch visual gag.
+**Production notes**: The "28 left arms" scene is the visual centerpiece — commit to it for 30+ seconds of extended 2D animation. SSOT/SDD explanations need visual reinterpretation (e.g., one glowing document vs. 30 scattered papers). The Mike Tyson moment could be a visual visual gag.
 
 ---
 
@@ -155,12 +157,12 @@ Our target: **Vibe coders** — people who can't read code but build with AI. Th
 |---|---|---|
 | Hook & Retention | **4** | "Had to add a new feature. Opened the code. No idea where to put it." — situational hook, immediately relatable. Open loop: why is code in the wrong places? "Fix one thing, three things break" — strong turn. Opening less punchy than Act 1 |
 | Narrative Arc | **5** | Context (code growing, nowhere to put things) → Conflict (circular dependency A→B→C→A, fix one break three) → Climax ("I didn't create the bugs. The structure is the bug.") → Conclusion (DDD discovery, domain splitting, Rust compiler enforcement) → Change (3000→300 lines to debug, Friday→Monday agent death as new fear). Exceptional emotional curve: confusion → frustration → revelation → structure → new fear |
-| Visual Metaphor | **5** | Exceptional density. Apartment with no walls (cook→grease on bed), tangled wires snapping when walls go up, building literal walls, electricity through the fence (Rust compiler), reaching over wall to open someone else's fridge, folder names as drawer labels. The apartment metaphor is PERFECT for extended claymation — one scene, evolving chaos → order. 75%+ directly mappable |
+| Visual Metaphor | **5** | Exceptional density. Apartment with no walls (cook→grease on bed), tangled wires snapping when walls go up, building literal walls, electricity through the fence (Rust compiler), reaching over wall to open someone else's fridge, folder names as drawer labels. The apartment metaphor is PERFECT for extended 2D animation — one scene, evolving chaos → order. 75%+ directly mappable |
 | Beat Pacing | **4** | 350 lines, ~16 sections. Strong rhythm: problem→diagnosis→attempt→pain→solution→test. DDD naming section could drag slightly in video form. Fits 3-5 min well |
 | Audience Resonance | **5** | "Fix one thing, three things break" — universal dev/vibe-coder pain. "No idea where to put it" — every non-coder building with AI. "`as any` bypasses everything" — specific, lived experience. Friday→Monday dead agent — visceral "that's literally me" moment |
 | **TOTAL** | **23/25** | **Grade A — Production ready** |
 
-**Production notes**: Best visual metaphor density of all acts. The apartment-with-no-walls scene should be the extended centerpiece (Kurzgesagt-style single metaphor commitment). The "electricity through the fence" (Rust compiler) is a strong visual gag for claymation. This act may produce the most visually compelling video of the series.
+**Production notes**: Best visual metaphor density of all acts. The apartment-with-no-walls scene should be the extended centerpiece (Kurzgesagt-style single metaphor commitment). The "electricity through the fence" (Rust compiler) is a strong visual gag for 2D animation. This act may produce the most visually compelling video of the series.
 
 ---
 
@@ -170,12 +172,12 @@ Our target: **Vibe coders** — people who can't read code but build with AI. Th
 |---|---|---|
 | Hook & Retention | **4** | "Shipped a new feature. Checked it. It worked. Next day. A different feature was dead." — strong setup→reversal. Open loop: how do you know it's really right? "Tests as courage" is a satisfying twist. Solid but predictable arc |
 | Narrative Arc | **5** | Context (manual checking, growing features) → Conflict (willpower problem, "scared to touch code", code hardens) → Climax (6,260 tests → 69 production issues → "not panic, a list") → Conclusion (SDD+DDD+TDD = three frameworks, QUIC feature in 3 days) → Change ("Frustration becomes the spec. Specs become the system. Systems become freedom.") Strong landing |
-| Visual Metaphor | **3** | Decent: Schrodinger's box (clay box with question mark), manual clicking (clay figure at desk, repetitive), 50 boxes to open (literal boxes), dead cat in box, 6260→6329 counter. Weak: TDD explanation mid-section is conceptual ("spec is destination, test is arrival confirmation" = hard to visualize). "Seoul Station test" is verbal. ~50-55% mappable — needs significant creative reinterpretation |
+| Visual Metaphor | **3** | Decent: Schrodinger's box (box with question mark), manual clicking (Vee at desk, repetitive), 50 boxes to open (literal boxes), dead cat in box, 6260→6329 counter. Weak: TDD explanation mid-section is conceptual ("spec is destination, test is arrival confirmation" = hard to visualize). "Seoul Station test" is verbal. ~50-55% mappable — needs significant creative reinterpretation |
 | Beat Pacing | **4** | 203 lines, ~10 sections — tightest act. Good rhythm, natural 2-3 min fit. TDD explanation section risks feeling lecture-y on video. The QUIC feature example at the end is a strong concrete beat |
 | Audience Resonance | **5** | "Manual testing is a willpower problem" — universal truth. "Tests aren't verification. They're courage." — powerful reframe. "I can't read code. But I can write 'if this works, it's done.'" — exact vibe coder situation. "Decisions are mine. Implementation is the AI's. Verification is the test's." — quotable manifesto line |
 | **TOTAL** | **21/25** | **Grade B — Strong candidate, minor adaptation needed** |
 
-**Production notes**: Visual metaphor gap is the main weakness. TDD concept needs invented visuals: suggest a "clay quality gate" — character pushes creation through a glowing checkpoint, green light = pass, red = reject and rebuild. The Schrodinger's box scene has physical comedy potential (character afraid to open box). The 6,260 counter can be a wall of tiny clay checkmarks filling the screen. Consider merging with Act 3's Friday/Monday scene as a callback.
+**Production notes**: Visual metaphor gap is the main weakness. TDD concept needs invented visuals: suggest a "quality gate" — character pushes creation through a glowing checkpoint, green light = pass, red = reject and rebuild. The Schrodinger's box scene has physical comedy potential (character afraid to open box). The 6,260 counter can be a wall of tiny checkmarks filling the screen. Consider merging with Act 3's Friday/Monday scene as a callback.
 
 ---
 
@@ -185,7 +187,7 @@ Our target: **Vibe coders** — people who can't read code but build with AI. Th
 |---|---|---|
 | Hook & Retention | **3** | "Got a spec. Got a process. Got structure. Got tests. Thought I was ready. It blew up." — decent setup→reversal but feels like recap of earlier acts. Open loop: "What is the experience?" Less discovery tension — functions as summary/manifesto rather than new journey |
 | Narrative Arc | **3** | Context (has everything, builds six at once) → Conflict (six features explode) → Climax (cafe moment: "Not there. Shit.") → Conclusion (UX ≠ design, experience review, boundaries = requirements) → Change (FDD→SDD→DDD→TDD→XDD framework). Arc exists but compressed. The cafe "shit" moment is strong, but surrounding material is more reflective than narrative |
-| Visual Metaphor | **3** | Good: six towers collapsing simultaneously (clay), cafe laptop scene (strong physical moment), SSH/VPN/QUIC ping-pong (clay figure bouncing between walls). Weak: much of act is philosophical — "experience review" is abstract, "MVP is minimum experience" is verbal, the FDD→XDD framework listing is pure text. ~50% mappable |
+| Visual Metaphor | **3** | Good: six towers collapsing simultaneously (clay), cafe laptop scene (strong physical moment), SSH/VPN/QUIC ping-pong (Vee bouncing between walls). Weak: much of act is philosophical — "experience review" is abstract, "MVP is minimum experience" is verbal, the FDD→XDD framework listing is pure text. ~50% mappable |
 | Beat Pacing | **3** | 118 lines, ~6 sections — very short. Fits 1.5-2 min — at the lower end of 2-4 min target. Dense but risks feeling rushed. Or, if padded, risks feeling thin. Sub-chapters (act5-1~4, 563 lines) would score higher here |
 | Audience Resonance | **4** | "Build six things at once, six blow up" — relatable. "MVP is minimum experience" — valuable reframe. "AI writes code, I design experience" — powerful identity statement. But as a summary, lacks the visceral first-person "that's me" moments of earlier acts. Reads more as lesson than lived experience |
 | **TOTAL** | **16/25** | **Grade C — Needs rewrite or creative visual reinterpretation** |
@@ -217,10 +219,10 @@ Based on evaluation scores, production order:
 | **Fireship** | 100-sec explainers, meme cuts | Hook in first sentence. Respect viewer's time. Dense information per second |
 | **Kurzgesagt** | 10-min animated essays | Visual metaphor per concept. Music matches pacing. Emotional framing shifts |
 | **ThePrimeagen** | Reaction + deep dives | Authentic voice. Energy carries retention. Opinions > neutrality |
-| **Aardman (Wallace & Gromit)** | Claymation narrative | Nonlingual storytelling. Character expression through clay. Physical comedy |
+| **Duolingo** | 2D flat vector characters | Shape language, mitten hands, expressive minimal faces, round geometry |
 | **3Blue1Brown** | Math visualization | Abstract→concrete through animation. "Aha moment" structure |
 
-Our position: **Kurzgesagt's structure + Aardman's aesthetic + Fireship's pacing** for a vibe coder audience.
+Our position: **Kurzgesagt's structure + Duolingo's character style + Fireship's pacing** for a vibe coder audience.
 
 ---
 
@@ -261,7 +263,7 @@ Obviously, you should change nothing and hope it goes away..."
 **What We Steal**:
 - **Zero-warmup opens**: Our Act 1 already does this ("Can't code. Not a developer.")
 - **Contradictory hooks**: "It's wonderful... it's also horrible" → tension in first line
-- **Meme = pattern interrupt**: In claymation, this = unexpected clay action or visual gag
+- **Meme = pattern interrupt**: In 2D animation, this = unexpected visual action or visual gag
 - **Density respect**: Never waste a sentence. If it doesn't add information or emotion, cut it
 
 Sources: [How Fireship became YouTube's favorite](https://read.engineerscodex.com/p/how-fireship-became-youtubes-favorite), [Fireship-GPT training data](https://huggingface.co/datasets/AdithyaSK/Fireship_transcript_summar_prompt), [Creating content like Fireship](https://www.wisp.blog/blog/how-to-create-video-content-like-fireship-hyperplexed-and-juxtoposed)
@@ -306,7 +308,7 @@ of your own cells, stopping it from becoming cancer..."
 
 **What We Steal**:
 - **"Imagine you..." opens**: Powerful for vibe coder content ("Imagine your code runs. Then imagine you can't tell if it's right.")
-- **Extended metaphor commitment**: Spending 2 minutes inside one metaphor instead of jumping between many. Our claymation can do this — one clay scene, one evolving metaphor
+- **Extended metaphor commitment**: Spending 2 minutes inside one metaphor instead of jumping between many. Our 2D animation can do this — one scene, one evolving metaphor
 - **Emotional framing shifts**: Same information, different feeling. "Your cells die" → scary → "but that's your body protecting you" → empowering
 - **Sound design as narration**: "Deep booms on key words" = our TTS emphasis + SFX catalog
 
@@ -347,19 +349,19 @@ Sources: [Grant Sanderson Stanford interview](https://stanforddaily.com/2020/01/
 
 ---
 
-### Aardman (Wallace & Gromit / Shaun the Sheep) — Nonlingual Storytelling
+### Duolingo — Shape Language & Silent Expression
 
-**Format**: 7-30 minute stop-motion shorts/films
+**Format**: In-app micro-animations + marketing shorts
 
-**Core Technique**: Story told entirely through character expression, physical comedy, and object interaction. Minimal to zero dialogue.
+**Core Technique**: Characters built from basic geometric shapes (circles, rounded rectangles). Emotion conveyed through minimal facial elements and body posture. No dialogue needed.
 
 **What We Steal**:
-- **Expression through clay**: A confused clay figure looking at tangled strings IS "spaghetti code"
-- **Physical comedy as punctuation**: Clay character gets hit by falling error block = beats the Monday morning crash
-- **Object transformation as metaphor**: 10,000 clay blocks → crushes down to 3,000 = "10K lines became 3K"
-- **Tactile texture = authenticity**: Handmade feel creates emotional connection digital can't replicate
+- **Shape language**: Round = friendly. Vee's circle head + round glasses = instantly approachable
+- **Mitten hands**: No fingers = no AI generation artifacts. Simple and expressive
+- **3-element expressions**: Eyebrow curve + mouth curve + eye size = 6+ distinct emotions
+- **Silhouette readability**: Characters recognizable at any size, even as app icons
 
-Sources: [Best claymation of all time](https://huehd.com/the-best-claymation-animations-of-all-time/), [Claymation storytelling](https://www.ikitmovie.com/claymation-animation/)
+Sources: [Duolingo Shape Language](https://blog.duolingo.com/shape-language-duolingos-art-style/), [Duolingo Design Guidelines](https://design.duolingo.com/illustration/characters)
 
 ---
 
@@ -379,31 +381,31 @@ TRAP (5-30s)
   Show the exciting surface. "It worked."
   Open loop: but hint something is wrong.
   Example: "Five agents running. If it runs, it works. Right?"
-  Clay: Figure joyfully building, towers rising.
+  Visual: Vee joyfully building, towers rising.
 
 BREAK (30s-1:30)
   The thing that went wrong. Escalating failure.
   Extended metaphor: stay in ONE visual scenario.
   Example: "Monday morning. Nothing worked."
-  Clay: Tower collapses. Figure stares at rubble.
+  Visual: Tower collapses. Vee stares at rubble.
 
 REVELATION (1:30-2:30)
   Why it went wrong. The real insight.
   Emotional framing shift: anger → understanding.
   Example: "I didn't know what I was building."
-  Clay: Figure picks up one piece from rubble, examines it.
+  Visual: Vee picks up one piece from rubble, examines it.
 
 CHANGE (2:30-3:00)
   What changed. Measurable result.
   Landing that echoes the hook.
   Example: "10,000 lines became 3,000. Specs come from the grind."
-  Clay: New, smaller, solid structure. Figure nods.
+  Visual: New, smaller, solid structure. Vee nods.
 ```
 
 ### Per-Beat Production Checklist
 
 For each narration beat:
-- [ ] **Visual action**: What is the clay character DOING? (not just feeling)
+- [ ] **Visual action**: What is Vee DOING, or what diagram/motion graphic plays? (not just feeling)
 - [ ] **Emotional direction**: What should the viewer feel? (excitement/dread/relief/clarity)
 - [ ] **Duration**: 2-5 seconds narration. Shot = narration + 0.5s padding
 - [ ] **Sound cue**: BGM mood shift? SFX hit? Silence?
@@ -415,8 +417,8 @@ For each narration beat:
 |---|---|---|
 | Total duration | 2-4 minutes | YouTube mid-form sweet spot |
 | Narration speed | 150-180 WPM | Slightly slower than Fireship for clarity |
-| Beats | 12-20 per video | One clay scene per beat |
-| Visual cuts | 8-12 per minute | Slower than Fireship, matches clay pacing |
+| Beats | 12-20 per video | One scene per beat |
+| Visual cuts | 8-12 per minute | Slower than Fireship, matches animation pacing |
 | Pattern interrupt | Every 20-30s | Visual gag, SFX hit, or perspective change |
 | Hook window | First 5 seconds | Identity or "imagine" statement |
 | Open loop | Before 15 seconds | Unanswered question held until BREAK |

@@ -1,0 +1,113 @@
+{
+  "_meta": {
+    "title": "Vibecode Town - Flux Kontext 2D Edit (Golden Reference -> Scene)",
+    "description": "Flux Kontext image-to-image workflow for editing a golden reference of Vee into new scenes and poses while preserving character identity. Load a golden reference PNG, describe the desired edit, and generate.",
+    "version": "1.0",
+    "author": "vibecode-town pipeline"
+  },
+  "1": {
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Golden Reference Input"
+    },
+    "inputs": {
+      "image": "vee_2d_golden_front.png"
+    }
+  },
+  "2": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "flux1-kontext-dev-Q5_K_S.gguf"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Edit Instruction Prompt"
+    },
+    "inputs": {
+      "text": "Change the character pose to sitting at a desk with a laptop, leaning forward with half-closed eyes in intense focus. Keep the same flat vector style, yellow hoodie, round black glasses, brown bob hair. Add a simple desk and laptop in matching flat vector style. White background.",
+      "clip": [
+        "2",
+        1
+      ]
+    }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Negative Prompt"
+    },
+    "inputs": {
+      "text": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, different character, changed colors, changed outfit",
+      "clip": [
+        "2",
+        1
+      ]
+    }
+  },
+  "5": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "1",
+        0
+      ],
+      "vae": [
+        "2",
+        2
+      ]
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "2",
+        0
+      ],
+      "positive": [
+        "3",
+        0
+      ],
+      "negative": [
+        "4",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ],
+      "seed": 0,
+      "control_after_generate": "randomize",
+      "steps": 20,
+      "cfg": 2.5,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 0.75
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "2",
+        2
+      ]
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "vee_2d_edit",
+      "images": [
+        "7",
+        0
+      ]
+    }
+  }
+}

@@ -1,0 +1,368 @@
+Title: EP01 — What's a Spec?
+Credit: Written by
+Author: vibecode.town
+Series: Vibecode Town Season 1
+Source: Act 1 — "What's a Spec?"
+Draft date: 2026-03-17
+Contact: vibecode.town
+Duration: ~210 seconds (3:30)
+Notes: 2D flat vector style (Kurzgesagt level). Narrator V.O. only. Vee never speaks. Max 6 Vee reactions.
+
+/* ================================================================ */
+/* SEGMENT 1: HOOK [0:00–0:15]                                      */
+/* emotion_curve: EXCITEMENT                                        */
+/* narrative_stage: HOOK                                             */
+/* open_loop: "Why did everything break?"                           */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - NIGHT
+
+A single monitor glows in a dim room. Code scrolls. Dashboards pulse. A terminal blinks green. Everything is running.
+
+/* vee_reaction: 1/6 */
+/* shorts_candidate */
+
+Vee throws both arms up. Huge grin. Eyes wide behind her round black glasses. The yellow hoodie sleeves flop past her wrists. "BUILD SUCCESS" flashes green on screen.
+
+NARRATOR (V.O.)
+This is the moment every vibe coder lives for. You told AI what to build. And it built it.
+
+= BEAT. One second of silence.
+
+The monitor flickers. The green text turns amber. Then red. Error messages cascade down the screen — line after line after line.
+
+Vee's grin vanishes. Her arms lower slowly. She stares at a wall of text she cannot read.
+
+NARRATOR (V.O.)
+And then it all broke. Why?
+
+> TITLE CARD: **WHAT'S A SPEC?**
+
+/* ================================================================ */
+/* SEGMENT 2: PROBLEM [0:15–0:45]                                   */
+/* emotion_curve: EXCITEMENT → CONFIDENCE → first crack of FEAR     */
+/* narrative_stage: PROBLEM                                         */
+/* ================================================================ */
+
+/* visual_type: motion_graphic | space: desk */
+
+INT. VEE'S DESK - DAY (THREE DAYS EARLIER)
+
+> INSERT: "Three days earlier."
+
+Bright room. Sunlight. Vee sits at a clean desk. One empty terminal window.
+
+NARRATOR (V.O.)
+Three days ago, Vee discovered AI coding. And it felt like magic.
+
+= Vee types a single line. A complete app scaffolds itself on screen — folders, files, components, a running preview. Instant.
+
+/* vee_reaction: 2/6 */
+
+Vee's eyes go wide. She leans forward, mouth slightly open. Pure wonder.
+
+NARRATOR (V.O.)
+Type what you want. AI builds it. A to-do app? Done. A database? Done. A login page with auth? Done.
+
+= MONTAGE — quick cuts, each 2 seconds: Vee types → app appears. Types → app appears. Types → app appears. Her grin gets wider each time. The screen fills with more and more windows.
+
+/* visual_type: character_reaction | space: desk */
+
+NARRATOR (V.O.)
+By day three she had a thousand lines of code across a dozen files. She couldn't explain what any of it did. But it ran. So she assumed it worked.
+
+= Vee leans back, arms crossed, nodding. Confident.
+
+NARRATOR (V.O.)
+She never asked herself one question. The only question that matters.
+
+= BEAT. Half a second.
+
+NARRATOR (V.O.)
+What am I building?
+
+/* ================================================================ */
+/* SEGMENT 3: CORE [0:45–3:00]                                     */
+/* emotion_curve: FEAR → CLARITY                                    */
+/* narrative_stage: CORE                                            */
+/* duration: ~135 seconds                                          */
+/* This is the EXTENDED METAPHOR segment: Building = Code           */
+/* ================================================================ */
+
+/* extended_metaphor_start */
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= TRANSITION: The desk fades. Background brightens to clean white. A flat, empty lot appears — simple 2D ground line, pale sky.
+
+NARRATOR (V.O.)
+Let's talk about buildings. Real ones.
+
+= A glowing blue rectangle unfolds on the left side of the frame — a blueprint. Clean lines. Labeled sections: FOUNDATION, FRAME, WALLS, ROOF.
+
+/* visual_type: diagram | space: whiteboard */
+
+NARRATOR (V.O.)
+When you build a house, you start with a blueprint. It tells you the order.
+
+= The blueprint animates step by step. On the right, a building rises in sync:
+
+NARRATOR (V.O.)
+Foundation first.
+
+= A grey slab slides into place on the lot. Solid. Level.
+
+NARRATOR (V.O.)
+Then the frame.
+
+= Vertical beams rise from the foundation. Horizontal beams connect them. A clean skeleton.
+
+NARRATOR (V.O.)
+Walls.
+
+= Flat colored panels fill in between the beams. Orange and warm cream. The structure takes shape.
+
+NARRATOR (V.O.)
+Roof.
+
+= A simple angled roof lowers onto the top. A green checkmark pops above the finished house. Tiny sparkle particles.
+
+NARRATOR (V.O.)
+Done. It stands because every piece knows where it goes. The blueprint told it.
+
+= BEAT. The finished house sits solid on the right. The blueprint glows faintly on the left.
+
+/* shorts_candidate */
+
+= The blueprint fades out. The house slides off-frame. The empty lot reappears.
+
+NARRATOR (V.O.)
+Now. Take away the blueprint.
+
+= A red "X" stamps where the blueprint was. The lot is bare again.
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+NARRATOR (V.O.)
+No plan. No order. Just... start stacking.
+
+= Colored blocks begin dropping from above — random sizes, random colors. They land at odd angles. Some balance. Some don't.
+
+NARRATOR (V.O.)
+A wall before there's a foundation.
+
+= A tall orange panel lands on bare ground. It wobbles.
+
+NARRATOR (V.O.)
+A roof before there are walls.
+
+= A roof triangle drops on top of nothing. It sits crooked.
+
+NARRATOR (V.O.)
+Three different staircases going to the same floor.
+
+= Three staircases appear side by side, crammed together, each a different style and color. Absurd.
+
+= The tower of mismatched blocks grows taller. It leans. The camera follows it up. It sways.
+
+NARRATOR (V.O.)
+It looks like a building. Kinda. If you squint.
+
+= The structure sways harder. A red block at the base cracks.
+
+NARRATOR (V.O.)
+And then —
+
+= The tower COLLAPSES. Blocks tumble outward. Dust cloud. One block bounces toward the camera.
+
+NARRATOR (V.O.)
+Everything falls down.
+
+= Silence. 1.5 seconds. Rubble on the ground.
+
+NARRATOR (V.O.)
+That's what happened to Vee's code. She stacked blocks without a blueprint. And the tower fell.
+
+/* visual_type: diagram | space: whiteboard */
+
+= The rubble fades. Clean white space.
+
+NARRATOR (V.O.)
+So what's the blueprint for code?
+
+= A single word appears in bold, center frame: **SPEC**
+
+NARRATOR (V.O.)
+A spec.
+
+= The word pulses once with a faint blue glow.
+
+NARRATOR (V.O.)
+And before you close this tab — a spec is not a hundred-page document. It's not a Jira board. It's not a meeting that should've been an email.
+
+= Each rejected item appears and gets crossed out with a red X: a thick binder, a kanban board, a conference table.
+
+NARRATOR (V.O.)
+A spec is one sentence.
+
+= The crossed-out items sweep off screen. One clean line of text writes itself:
+
+= "What am I building, and why?"
+
+NARRATOR (V.O.)
+"What am I building, and why?" That's it. One sentence. Everything else follows from that.
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= BEAT. The sentence stays on screen for 2 seconds.
+
+= Below the sentence, a simple evolution diagram animates:
+
+NARRATOR (V.O.)
+Think of it like this.
+
+= A skateboard appears. Four wheels. A plank. Minimal.
+
+NARRATOR (V.O.)
+You don't start with a car. You start with a skateboard.
+
+= An arrow points right. The skateboard morphs into a bicycle. Two wheels, pedals, handlebars.
+
+NARRATOR (V.O.)
+Then a bicycle.
+
+= Another arrow. The bicycle morphs into a small car. Simple, boxy, but complete.
+
+NARRATOR (V.O.)
+Then a car. Each version works. Each version moves. But each one is a complete thing — not a random pile of car parts.
+
+= Below the evolution line, a contrasting image: a heap of disconnected parts — a steering wheel, two doors, an engine, a windshield — sitting in a pile.
+
+NARRATOR (V.O.)
+Without a spec, you get this. Parts. Not a vehicle. Parts that don't connect, built by an AI that doesn't know what the finished thing looks like. Because you never told it.
+
+= The pile of parts fades.
+
+/* extended_metaphor_end */
+
+/* vee_reaction: 3/6 */
+/* visual_type: character_reaction | space: desk */
+
+= CUT TO: Quick flash of Vee at her desk. She's staring at her monitor, head slightly tilted. A flicker of recognition crosses her face. 1.5 seconds.
+
+= CUT BACK to whiteboard.
+
+/* visual_type: diagram | space: whiteboard */
+
+= The "What am I building, and why?" sentence reappears. Below it, three bullet points write themselves:
+
+NARRATOR (V.O.)
+The spec gives you three things. One: a filter. When AI suggests something, you can ask — "Does this help me build my skateboard?" If no, skip it.
+
+= First bullet: a funnel icon. Random blocks go in, only matching blocks come out.
+
+NARRATOR (V.O.)
+Two: a sequence. Foundation, then frame, then walls, then roof. You know the order.
+
+= Second bullet: four numbered steps, connected by arrows.
+
+NARRATOR (V.O.)
+Three: a definition of done. You know when to stop. Because you know what "finished" looks like.
+
+= Third bullet: a simple finish flag icon.
+
+NARRATOR (V.O.)
+Without those three things, you're stacking random blocks and hoping they hold.
+
+= The three bullets compress into a small card labeled "SPEC" that glows blue.
+
+/* ================================================================ */
+/* SEGMENT 4: APPLICATION [3:00–3:30]                               */
+/* emotion_curve: CLARITY → GROWTH                                  */
+/* narrative_stage: APPLICATION                                     */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - NIGHT (PRESENT)
+
+= Back to the opening scene. Same room. Same red errors on the monitor. Same dark glow.
+
+But Vee isn't panicking.
+
+NARRATOR (V.O.)
+Back to the present.
+
+= Vee pushes her keyboard aside. She pulls out a piece of paper and a pencil.
+
+/* vee_reaction: 4/6 */
+
+= She turns away from the monitor. Faces the paper. Starts writing. Not code. Words.
+
+NARRATOR (V.O.)
+She stopped coding. And she started thinking.
+
+/* visual_type: diagram | space: desk */
+
+= CU on the paper. Messy handwriting scratches across the surface:
+
+= "I want to access my home files from any device."
+
+= Below it: "Files sync. Connection stays alive. Works on phone."
+
+NARRATOR (V.O.)
+One sentence. That's all it took.
+
+/* vee_reaction: 5/6 */
+
+= Vee turns back to the monitor, paper in hand. The same red errors. But now she scans them differently. Her eyes track one specific line.
+
+= One error highlights: "sync_agent: connection refused — no target host defined."
+
+NARRATOR (V.O.)
+Same errors. Same wall of red. But now, one line jumps out. Because now she knows what she's looking for.
+
+= Vee's expression shifts — a slow blink, a small nod. Not celebration. Understanding.
+
+/* ================================================================ */
+/* SEGMENT 5: OUTRO [3:30–3:50]                                     */
+/* emotion_curve: GROWTH → open loop for EP02                       */
+/* narrative_stage: OUTRO                                           */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - NIGHT (CONTINUOUS)
+
+= Same composition as the HOOK. Monitor. Errors. Dark room.
+
+Vee pins the piece of paper next to her monitor. It reads: "I want to access my home files from any device."
+
+She picks up her mug. Takes a sip. Sets it down.
+
+NARRATOR (V.O.)
+Everything is still broken.
+
+= BEAT. One second.
+
+NARRATOR (V.O.)
+But now she knows what to fix.
+
+/* vee_reaction: 6/6 */
+
+= Vee cracks her knuckles. Leans forward toward the keyboard. A tiny, determined half-smile.
+
+= The camera slowly pulls back. The paper glows faintly beside the monitor — a small blue beacon in a room full of red.
+
+NARRATOR (V.O.)
+...at least, she thinks she does. Next time — she writes fifteen pages of specs. And somehow, that makes everything worse.
+
+= BEAT.
+
+> TITLE CARD: **NEXT: EP02 — "Twenty-Eight Left Arms"**
+
+= FADE TO BLACK.
+
+> END

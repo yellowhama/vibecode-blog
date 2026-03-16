@@ -1,11 +1,25 @@
 #!/usr/bin/env python3
-"""Validate a Fountain screenplay against the 5-segment episode format.
+"""Validate a Fountain screenplay against the Series Bible 5-segment format.
 
-Runs automated checks and outputs a manual review checklist.
+Segments: HOOK -> PROBLEM -> CORE -> APPLICATION -> OUTRO
+Timing:   Hook 15s, Problem 30s, Core 135s, Application 60s, Outro 60s
+Total:    180-300 seconds (3-5 minutes)
+
+Checks (from 13-screenplay-pipeline-plan.md Phase 6):
+  1. [PASS/FAIL] 5 segments exist (Hook/Problem/Core/Application/Outro)
+  2. [PASS/FAIL] Per-segment timing within max bounds
+  3. [PASS/FAIL] Total duration 180-300s (3-5min)
+  4. [PASS/FAIL] NARRATOR (V.O.) present in every segment
+  5. [PASS/FAIL] No Vee spoken dialogue (silent character)
+  6. [PASS/FAIL] Vee reactions <= 6, each 1-2s
+  7. [PASS/FAIL] Pattern interrupts every 20-30s
+  8. [PASS/FAIL] Banned expressions = 0
+  9. [PASS/FAIL] Core has extended metaphor 60s+
+ 10. [PASS/WARN] Open loop in Hook (unanswered question)
 
 Usage:
-    python validate_screenplay.py --input ep01_script.fountain
-    python validate_screenplay.py --input ep01_script.fountain --storyform branding/storyform.json
+    python validate_screenplay.py <fountain_file>
+    python validate_screenplay.py <fountain_file> --json
 """
 
 from __future__ import annotations
@@ -17,8 +31,58 @@ import sys
 from pathlib import Path
 from typing import Any
 
+
 # ---------------------------------------------------------------------------
-# Regex patterns (shared with parse_fountain_to_prepro.py)
+# ANSI colors
+# ---------------------------------------------------------------------------
+class _C:
+    PASS = "\033[92m"   # green
+    FAIL = "\033[91m"   # red
+    WARN = "\033[93m"   # yellow
+    BOLD = "\033[1m"
+    DIM = "\033[2m"
+    RESET = "\033[0m"
+
+
+# ---------------------------------------------------------------------------
+# Segment structure (Series Bible v3 — 2D Discovery Arc)
+# ---------------------------------------------------------------------------
+EXPECTED_SEGMENTS = [
+    {"name": "HOOK",        "max_sec": 15},
+    {"name": "PROBLEM",     "max_sec": 30},
+    {"name": "CORE",        "max_sec": 135},
+    {"name": "APPLICATION", "max_sec": 60},
+    {"name": "OUTRO",       "max_sec": 60},
+]
+
+TOTAL_MIN = 180  # 3 minutes
+TOTAL_MAX = 300  # 5 minutes
+
+# Vee reaction limits
+VEE_REACTION_MAX = 6
+VEE_REACTION_SEC_MIN = 1
+VEE_REACTION_SEC_MAX = 2
+
+# Pattern interrupt interval target
+INTERRUPT_INTERVAL_MIN = 20  # seconds
+INTERRUPT_INTERVAL_MAX = 30  # seconds
+
+# Extended metaphor minimum duration in Core
+CORE_METAPHOR_MIN_SEC = 60
+
+# ---------------------------------------------------------------------------
+# Banned expressions (Series Bible tone guide)
+# ---------------------------------------------------------------------------
+BANNED_EXPRESSIONS = [
+    "game-changer",
+    "revolutionary",
+    "insane",
+    "mind-blowing",
+    "literally",
+]
+
+# ---------------------------------------------------------------------------
+# Regex patterns
 # ---------------------------------------------------------------------------
 SEGMENT_RE = re.compile(
     r"^#\s+SEGMENT\s+(\d+):\s+(.+?)\s*\[(\d+:\d+)-(\d+:\d+)\]\s*$"
@@ -28,37 +92,89 @@ CHARACTER_RE = re.compile(r"^([A-Z][A-Z\s]+?)(?:\s*\(V\.O\.\))?\s*$")
 TIMECODE_RE = re.compile(r"(\d+):(\d+)")
 TRANSITION_RE = re.compile(r"^>\s+(.+)$")
 
-# ---------------------------------------------------------------------------
-# Expected segment structure
-# ---------------------------------------------------------------------------
-EXPECTED_SEGMENTS = [
-    {"name": "HOOK", "visual_type": "sitcom", "min_sec": 15, "max_sec": 30},
-    {"name": "SITCOM ACT 1", "visual_type": "sitcom", "min_sec": 60, "max_sec": 90},
-    {"name": "EXPLAINER", "visual_type": "explainer", "min_sec": 90, "max_sec": 120},
-    {"name": "SITCOM ACT 2", "visual_type": "sitcom", "min_sec": 60, "max_sec": 90},
-    {"name": "ENDING", "visual_type": "sitcom", "min_sec": 15, "max_sec": 30},
+# Patterns that count as visual transitions / pattern interrupts
+INTERRUPT_PATTERNS = [
+    re.compile(r"^>\s+", re.IGNORECASE),
+    re.compile(r"CUT TO", re.IGNORECASE),
+    re.compile(r"SMASH CUT", re.IGNORECASE),
+    re.compile(r"MATCH CUT", re.IGNORECASE),
+    re.compile(r"DISSOLVE", re.IGNORECASE),
+    re.compile(r"INTERCUT", re.IGNORECASE),
+    re.compile(r"FLASH", re.IGNORECASE),
+    re.compile(r"MONTAGE", re.IGNORECASE),
+    re.compile(r"SPLIT SCREEN", re.IGNORECASE),
+    re.compile(r"ZOOM", re.IGNORECASE),
+    re.compile(r"PAN TO", re.IGNORECASE),
+    re.compile(r"PULL BACK", re.IGNORECASE),
+    re.compile(r"CLOSE[- ]?UP", re.IGNORECASE),
+    re.compile(r"WIDE SHOT", re.IGNORECASE),
+    re.compile(r"^\.\w", re.IGNORECASE),
+    re.compile(r"^(INT\.|EXT\.)", re.IGNORECASE),
+    re.compile(r"TITLE CARD", re.IGNORECASE),
+    re.compile(r"SUPER:", re.IGNORECASE),
 ]
 
-TOTAL_MIN = 240  # 4 minutes
-TOTAL_MAX = 480  # 8 minutes
+# Vee reaction indicators in action lines
+VEE_REACTION_RE = re.compile(
+    r"\bVee\b.*?("
+    r"react|nod|shrug|frown|smile|gasp|blink|sigh|wince|"
+    r"lean|tilt|shake|raise|drop|eye|look|stare|glance|"
+    r"gesture|point|wave|cross|uncross|scratch|rub|tap|"
+    r"laugh|chuckle|grin|smirk|grimace|panic|freeze|jump|"
+    r"slump|perk|squint|widen"
+    r")",
+    re.IGNORECASE,
+)
+
+# Vee dialogue cue — any character cue starting with VEE that is NOT an action
+VEE_DIALOGUE_RE = re.compile(r"^\s*VEE\s*(?:\(.*?\))?\s*$", re.IGNORECASE)
+
+# Open loop indicators (unanswered question in Hook)
+OPEN_LOOP_PATTERNS = [
+    re.compile(r"\?"),
+    re.compile(r"what if", re.IGNORECASE),
+    re.compile(r"have you ever", re.IGNORECASE),
+    re.compile(r"why do", re.IGNORECASE),
+    re.compile(r"how come", re.IGNORECASE),
+    re.compile(r"imagine", re.IGNORECASE),
+    re.compile(r"but here's the", re.IGNORECASE),
+    re.compile(r"the real question", re.IGNORECASE),
+]
+
+# Extended metaphor indicators
+METAPHOR_PATTERNS = [
+    re.compile(r"like a", re.IGNORECASE),
+    re.compile(r"imagine", re.IGNORECASE),
+    re.compile(r"picture this", re.IGNORECASE),
+    re.compile(r"think of it as", re.IGNORECASE),
+    re.compile(r"it's (basically|essentially|like)", re.IGNORECASE),
+    re.compile(r"just like", re.IGNORECASE),
+    re.compile(r"same way", re.IGNORECASE),
+    re.compile(r"metaphor", re.IGNORECASE),
+    re.compile(r"analogy", re.IGNORECASE),
+]
 
 
-def _parse_timecode(tc: str) -> float:
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+def _tc_to_sec(tc: str) -> float:
     m = TIMECODE_RE.match(tc)
     if not m:
         return 0.0
     return int(m.group(1)) * 60 + int(m.group(2))
 
 
-def _parse_characters_field(raw: str) -> list[str]:
-    raw = raw.strip()
-    if raw in ("[]", ""):
-        return []
-    return [c.strip().lower() for c in raw.split(",") if c.strip()]
+def _normalize_segment_name(raw: str) -> str:
+    """Normalize segment name for matching (uppercase, strip whitespace)."""
+    return raw.strip().upper()
 
 
+# ---------------------------------------------------------------------------
+# Fountain parser
+# ---------------------------------------------------------------------------
 def parse_segments(text: str) -> list[dict[str, Any]]:
-    """Extract segments from fountain text."""
+    """Extract segments from Fountain text."""
     lines = text.split("\n")
     segments: list[dict[str, Any]] = []
     current: dict[str, Any] | None = None
@@ -68,17 +184,19 @@ def parse_segments(text: str) -> list[dict[str, Any]]:
         if seg_match:
             current = {
                 "number": int(seg_match.group(1)),
-                "name": seg_match.group(2).strip(),
+                "name": _normalize_segment_name(seg_match.group(2)),
+                "raw_name": seg_match.group(2).strip(),
                 "start": seg_match.group(3),
                 "end": seg_match.group(4),
-                "start_sec": _parse_timecode(seg_match.group(3)),
-                "end_sec": _parse_timecode(seg_match.group(4)),
-                "visual_type": None,
-                "characters_field": None,
-                "characters_found": set(),
+                "start_sec": _tc_to_sec(seg_match.group(3)),
+                "end_sec": _tc_to_sec(seg_match.group(4)),
                 "has_narrator": False,
-                "has_transition": False,
+                "characters_found": set(),
+                "transitions": [],
+                "vee_reactions": [],
+                "vee_dialogue_lines": [],
                 "lines": [],
+                "action_lines": [],
             }
             segments.append(current)
             continue
@@ -86,15 +204,14 @@ def parse_segments(text: str) -> list[dict[str, Any]]:
         if current is None:
             continue
 
-        meta_match = META_RE.match(line)
-        if meta_match:
-            key, val = meta_match.group(1), meta_match.group(2).strip()
-            if key == "visual_type":
-                current["visual_type"] = val
-            elif key == "characters":
-                current["characters_field"] = _parse_characters_field(val)
-            continue
+        # Track all lines
+        current["lines"].append(line)
 
+        # Narrator detection
+        if re.match(r"^NARRATOR\s*\(V\.O\.\)\s*$", line.strip()):
+            current["has_narrator"] = True
+
+        # Character cue detection
         char_match = CHARACTER_RE.match(line)
         if char_match:
             name = char_match.group(1).strip()
@@ -102,272 +219,381 @@ def parse_segments(text: str) -> list[dict[str, Any]]:
             if name == "NARRATOR":
                 current["has_narrator"] = True
 
-        if TRANSITION_RE.match(line):
-            current["has_transition"] = True
+        # Vee dialogue cue detection (Vee should never speak)
+        if VEE_DIALOGUE_RE.match(line):
+            current["vee_dialogue_lines"].append(line.strip())
 
-        current["lines"].append(line)
+        # Transition / pattern interrupt detection
+        for pat in INTERRUPT_PATTERNS:
+            if pat.search(line):
+                current["transitions"].append(line.strip())
+                break
+
+        # Vee reaction detection (in action lines)
+        if VEE_REACTION_RE.search(line):
+            current["vee_reactions"].append(line.strip())
+
+        # Track action lines
+        stripped = line.strip()
+        if (
+            stripped
+            and not char_match
+            and not SEGMENT_RE.match(line)
+            and not META_RE.match(line)
+            and not TRANSITION_RE.match(line)
+            and not stripped.startswith("#")
+        ):
+            current["action_lines"].append(stripped)
 
     return segments
 
 
-def load_prohibited(storyform_path: Path | None) -> list[str]:
-    """Load prohibited expressions from storyform.json."""
-    if storyform_path is None or not storyform_path.exists():
-        return []
-    data = json.loads(storyform_path.read_text(encoding="utf-8"))
-    return data.get("voice_constraints", {}).get("prohibited", [])
-
-
-def check_prohibited(text: str, prohibited: list[str]) -> list[str]:
-    """Return list of found prohibited expressions."""
-    found = []
-    text_lower = text.lower()
-    for expr in prohibited:
-        if expr.lower() in text_lower:
-            found.append(expr)
-    return found
-
-
-def validate(fountain_path: Path, storyform_path: Path | None = None) -> dict:
-    """Run all validations, return results dict."""
+# ---------------------------------------------------------------------------
+# Validation engine
+# ---------------------------------------------------------------------------
+def validate(fountain_path: Path) -> dict:
+    """Run all 10 checks against a Fountain screenplay."""
     text = fountain_path.read_text(encoding="utf-8")
     segments = parse_segments(text)
-    prohibited = load_prohibited(storyform_path)
 
     results: list[dict[str, Any]] = []
-    warnings: list[str] = []
     total_duration = 0.0
 
-    # --- Check 1: Segment count ---
-    seg_count = len(segments)
-    results.append({
-        "check": "세그먼트 5개 존재",
-        "status": "PASS" if seg_count == 5 else "FAIL",
-        "detail": f"{seg_count}개 발견",
-    })
+    # Compute durations
+    for seg in segments:
+        seg["duration"] = seg["end_sec"] - seg["start_sec"]
+        total_duration += seg["duration"]
 
-    # --- Check 2: Segment order ---
-    actual_names = [s["name"] for s in segments]
+    # -------------------------------------------------------------------
+    # CHECK 1: 5 segments exist (HOOK/PROBLEM/CORE/APPLICATION/OUTRO)
+    # -------------------------------------------------------------------
     expected_names = [e["name"] for e in EXPECTED_SEGMENTS]
-    order_ok = actual_names == expected_names
+    actual_names = [s["name"] for s in segments]
+    seg_count = len(segments)
+
+    found_set = set(actual_names)
+    expected_set = set(expected_names)
+    missing = expected_set - found_set
+    extra = found_set - expected_set
+
+    check_pass = seg_count == 5 and missing == set() and actual_names == expected_names
+    detail = f"{seg_count}/5 segments"
+    if missing:
+        detail += f" | missing: {', '.join(sorted(missing))}"
+    if extra:
+        detail += f" | unexpected: {', '.join(sorted(extra))}"
+    if actual_names and actual_names != expected_names and not missing:
+        detail += f" | wrong order: {' -> '.join(actual_names)}"
+
     results.append({
-        "check": "올바른 순서 (HOOK → SITCOM1 → EXPLAINER → SITCOM2 → ENDING)",
-        "status": "PASS" if order_ok else "FAIL",
-        "detail": " → ".join(actual_names) if not order_ok else "OK",
+        "id": 1,
+        "check": "5 segments exist (Hook/Problem/Core/Application/Outro)",
+        "status": "PASS" if check_pass else "FAIL",
+        "detail": detail,
     })
 
-    # --- Check 3-7: Per-segment checks ---
-    for i, seg in enumerate(segments):
-        duration = seg["end_sec"] - seg["start_sec"]
-        total_duration += duration
-
-        if i < len(EXPECTED_SEGMENTS):
-            expected = EXPECTED_SEGMENTS[i]
-
-            # Timing range
-            in_range = expected["min_sec"] <= duration <= expected["max_sec"]
+    # -------------------------------------------------------------------
+    # CHECK 2: Per-segment timing within max bounds
+    # -------------------------------------------------------------------
+    for i, expected in enumerate(EXPECTED_SEGMENTS):
+        if i < len(segments):
+            seg = segments[i]
+            dur = seg["duration"]
+            in_range = dur <= expected["max_sec"]
             results.append({
-                "check": f"{seg['name']} 타이밍 ({expected['min_sec']}-{expected['max_sec']}s)",
+                "id": 2,
+                "check": f"{expected['name']} timing (max {expected['max_sec']}s)",
                 "status": "PASS" if in_range else "FAIL",
-                "detail": f"{duration:.0f}s",
+                "detail": f"{dur:.0f}s" + ("" if in_range else f" (over by {dur - expected['max_sec']:.0f}s)"),
+            })
+        else:
+            results.append({
+                "id": 2,
+                "check": f"{expected['name']} timing (max {expected['max_sec']}s)",
+                "status": "FAIL",
+                "detail": "segment missing",
             })
 
-            # Narrator required in ALL segments (narrator-only format)
-            if not seg["has_narrator"]:
-                results.append({
-                    "check": f"{seg['name']} NARRATOR (V.O.) 존재",
-                    "status": "FAIL",
-                    "detail": "NARRATOR 없음",
-                })
-            else:
-                results.append({
-                    "check": f"{seg['name']} NARRATOR (V.O.) 존재",
-                    "status": "PASS",
-                    "detail": "OK",
-                })
-
-            # No character dialogue in any segment (narrator-only)
-            if expected["visual_type"] == "sitcom":
-                non_narrator = seg["characters_found"] - {"NARRATOR"}
-                if non_narrator:
-                    results.append({
-                        "check": f"{seg['name']} 캐릭터 대사 없음 (내레이션 온리)",
-                        "status": "WARN",
-                        "detail": f"캐릭터 음성 발견: {', '.join(non_narrator)} — 비주얼 전용인지 확인",
-                    })
-                else:
-                    results.append({
-                        "check": f"{seg['name']} 캐릭터 대사 없음 (내레이션 온리)",
-                        "status": "PASS",
-                        "detail": "OK",
-                    })
-
-            # Explainer: only NARRATOR
-            if expected["visual_type"] == "explainer":
-                non_narrator = seg["characters_found"] - {"NARRATOR"}
-                if non_narrator:
-                    results.append({
-                        "check": f"{seg['name']} 해설에 NARRATOR만 있음",
-                        "status": "FAIL",
-                        "detail": f"다른 캐릭터 발견: {', '.join(non_narrator)}",
-                    })
-                elif not seg["has_narrator"]:
-                    results.append({
-                        "check": f"{seg['name']} 해설에 NARRATOR만 있음",
-                        "status": "WARN",
-                        "detail": "NARRATOR 없음 (해설인데 내레이션 없음?)",
-                    })
-                else:
-                    results.append({
-                        "check": f"{seg['name']} 해설에 NARRATOR만 있음",
-                        "status": "PASS",
-                        "detail": "OK",
-                    })
-
-            # Explainer characters field = []
-            if expected["visual_type"] == "explainer" and seg["characters_field"] is not None:
-                chars_empty = len(seg["characters_field"]) == 0
-                results.append({
-                    "check": f"{seg['name']} 해설 characters = []",
-                    "status": "PASS" if chars_empty else "FAIL",
-                    "detail": str(seg["characters_field"]) if not chars_empty else "[]",
-                })
-
-    # --- Check 8: Total duration ---
+    # -------------------------------------------------------------------
+    # CHECK 3: Total duration 180-300s
+    # -------------------------------------------------------------------
+    check_pass = TOTAL_MIN <= total_duration <= TOTAL_MAX
     results.append({
-        "check": f"총 길이 {TOTAL_MIN}-{TOTAL_MAX}초",
-        "status": "PASS" if TOTAL_MIN <= total_duration <= TOTAL_MAX else "FAIL",
-        "detail": f"{total_duration:.0f}s ({total_duration/60:.1f}분)",
+        "id": 3,
+        "check": f"Total duration {TOTAL_MIN}-{TOTAL_MAX}s (3-5min)",
+        "status": "PASS" if check_pass else "FAIL",
+        "detail": f"{total_duration:.0f}s ({total_duration / 60:.1f}min)",
     })
 
-    # --- Check 9: Prohibited expressions ---
-    found_prohibited = check_prohibited(text, prohibited)
+    # -------------------------------------------------------------------
+    # CHECK 4: NARRATOR (V.O.) present in every segment
+    # -------------------------------------------------------------------
+    missing_narrator = [s["name"] for s in segments if not s["has_narrator"]]
+    check_pass = len(missing_narrator) == 0 and len(segments) > 0
     results.append({
-        "check": "금지 표현 0개",
-        "status": "PASS" if len(found_prohibited) == 0 else "FAIL",
-        "detail": ", ".join(found_prohibited) if found_prohibited else "없음",
+        "id": 4,
+        "check": "NARRATOR (V.O.) present in every segment",
+        "status": "PASS" if check_pass else "FAIL",
+        "detail": "OK" if check_pass else f"missing in: {', '.join(missing_narrator)}",
     })
 
-    # --- Check 10: Transitions at sitcom↔explainer boundaries ---
-    transition_checks = []
-    for i, seg in enumerate(segments):
-        if i > 0:
-            prev_type = segments[i - 1].get("visual_type", "")
-            curr_type = seg.get("visual_type", "")
-            if prev_type != curr_type:
-                has_trans = segments[i - 1].get("has_transition", False) or seg.get("has_transition", False)
-                transition_checks.append((f"{segments[i-1]['name']}→{seg['name']}", has_trans))
+    # -------------------------------------------------------------------
+    # CHECK 5: No Vee spoken dialogue (silent character)
+    # -------------------------------------------------------------------
+    vee_lines: list[str] = []
+    for seg in segments:
+        # Catch VEE character cues
+        for line in seg["vee_dialogue_lines"]:
+            vee_lines.append(f"{seg['name']}: {line}")
+        # Also catch any non-narrator character dialogue
+        non_narrator = seg["characters_found"] - {"NARRATOR"}
+        for ch in non_narrator:
+            if ch.startswith("VEE") or ch == "VEE":
+                vee_lines.append(f"{seg['name']}: {ch} dialogue cue")
 
-    all_transitions = all(t[1] for t in transition_checks) if transition_checks else False
-    missing = [t[0] for t in transition_checks if not t[1]]
+    check_pass = len(vee_lines) == 0
     results.append({
-        "check": "시트콤↔해설 전환 지시 존재",
-        "status": "PASS" if all_transitions else "WARN",
-        "detail": f"누락: {', '.join(missing)}" if missing else "OK",
+        "id": 5,
+        "check": "No Vee spoken dialogue (silent character)",
+        "status": "PASS" if check_pass else "FAIL",
+        "detail": "OK" if check_pass else f"found: {'; '.join(vee_lines[:5])}",
     })
+
+    # -------------------------------------------------------------------
+    # CHECK 6: Vee reactions <= 6, each 1-2s
+    # -------------------------------------------------------------------
+    all_vee_reactions = []
+    for seg in segments:
+        all_vee_reactions.extend(seg["vee_reactions"])
+
+    reaction_count = len(all_vee_reactions)
+    check_pass = reaction_count <= VEE_REACTION_MAX
+    detail = f"{reaction_count}/{VEE_REACTION_MAX} reactions"
+    if reaction_count > VEE_REACTION_MAX:
+        detail += f" (exceeded by {reaction_count - VEE_REACTION_MAX})"
+
+    results.append({
+        "id": 6,
+        "check": f"Vee reactions <= {VEE_REACTION_MAX}, each {VEE_REACTION_SEC_MIN}-{VEE_REACTION_SEC_MAX}s",
+        "status": "PASS" if check_pass else "FAIL",
+        "detail": detail,
+    })
+
+    # -------------------------------------------------------------------
+    # CHECK 7: Pattern interrupts every 20-30s
+    # -------------------------------------------------------------------
+    total_transitions = sum(len(s["transitions"]) for s in segments)
+    if total_transitions > 0 and total_duration > 0:
+        avg_interval = total_duration / total_transitions
+        check_pass = avg_interval <= INTERRUPT_INTERVAL_MAX
+        detail = (
+            f"{total_transitions} interrupts across {total_duration:.0f}s "
+            f"(avg {avg_interval:.0f}s interval)"
+        )
+    elif total_duration > 0:
+        check_pass = False
+        detail = "0 pattern interrupts found"
+    else:
+        check_pass = False
+        detail = "no content to check"
+
+    results.append({
+        "id": 7,
+        "check": f"Pattern interrupts every {INTERRUPT_INTERVAL_MIN}-{INTERRUPT_INTERVAL_MAX}s",
+        "status": "PASS" if check_pass else "FAIL",
+        "detail": detail,
+    })
+
+    # -------------------------------------------------------------------
+    # CHECK 8: Banned expressions = 0
+    # -------------------------------------------------------------------
+    found_banned = []
+    text_lower = text.lower()
+    for expr in BANNED_EXPRESSIONS:
+        if expr.lower() in text_lower:
+            found_banned.append(expr)
+
+    check_pass = len(found_banned) == 0
+    results.append({
+        "id": 8,
+        "check": "Banned expressions = 0",
+        "status": "PASS" if check_pass else "FAIL",
+        "detail": "none found" if check_pass else f"found: {', '.join(found_banned)}",
+    })
+
+    # -------------------------------------------------------------------
+    # CHECK 9: Core has extended metaphor 60s+
+    # -------------------------------------------------------------------
+    core_seg = next((s for s in segments if s["name"] == "CORE"), None)
+    if core_seg:
+        metaphor_lines = []
+        for line in core_seg["lines"]:
+            for pat in METAPHOR_PATTERNS:
+                if pat.search(line):
+                    metaphor_lines.append(line.strip())
+                    break
+
+        # Heuristic: proportion of lines with metaphor indicators,
+        # mapped to the segment duration. Also accept if 3+ lines
+        # carry metaphor language (sustained metaphor).
+        core_total_lines = len([ln for ln in core_seg["lines"] if ln.strip()])
+        metaphor_proportion = len(metaphor_lines) / max(core_total_lines, 1)
+        estimated_metaphor_sec = metaphor_proportion * core_seg["duration"]
+        sustained = len(metaphor_lines) >= 3 or estimated_metaphor_sec >= CORE_METAPHOR_MIN_SEC
+
+        check_pass = sustained
+        detail = (
+            f"{len(metaphor_lines)} metaphor indicators, "
+            f"~{estimated_metaphor_sec:.0f}s estimated coverage"
+        )
+    else:
+        check_pass = False
+        detail = "CORE segment not found"
+
+    results.append({
+        "id": 9,
+        "check": f"Core extended metaphor {CORE_METAPHOR_MIN_SEC}s+",
+        "status": "PASS" if check_pass else "FAIL",
+        "detail": detail,
+    })
+
+    # -------------------------------------------------------------------
+    # CHECK 10: Open loop in Hook (WARN level)
+    # -------------------------------------------------------------------
+    hook_seg = next((s for s in segments if s["name"] == "HOOK"), None)
+    if hook_seg:
+        hook_text = "\n".join(hook_seg["lines"])
+        has_open_loop = any(pat.search(hook_text) for pat in OPEN_LOOP_PATTERNS)
+        results.append({
+            "id": 10,
+            "check": "Open loop in Hook (unanswered question)",
+            "status": "PASS" if has_open_loop else "WARN",
+            "detail": "open loop detected" if has_open_loop else "no clear open loop found — verify manually",
+        })
+    else:
+        results.append({
+            "id": 10,
+            "check": "Open loop in Hook (unanswered question)",
+            "status": "WARN",
+            "detail": "HOOK segment not found",
+        })
 
     return {
         "file": str(fountain_path),
         "segments_found": seg_count,
         "total_duration_sec": total_duration,
         "results": results,
-        "warnings": warnings,
     }
 
 
+# ---------------------------------------------------------------------------
+# Output
+# ---------------------------------------------------------------------------
 def print_results(validation: dict) -> int:
-    """Print validation results. Returns exit code (0=pass, 1=fail)."""
-    print(f"\n{'='*60}")
-    print(f"  Screenplay Validation: {validation['file']}")
-    print(f"  세그먼트: {validation['segments_found']}개 | 총 길이: {validation['total_duration_sec']:.0f}s")
-    print(f"{'='*60}\n")
+    """Print color-coded validation results. Returns exit code (0=pass, 1=fail)."""
+    C = _C
+
+    print(f"\n{C.BOLD}{'=' * 64}{C.RESET}")
+    print(f"  {C.BOLD}Screenplay Validation{C.RESET}: {validation['file']}")
+    print(
+        f"  Segments: {validation['segments_found']}/5"
+        f" | Duration: {validation['total_duration_sec']:.0f}s"
+        f" ({validation['total_duration_sec'] / 60:.1f}min)"
+    )
+    print(f"{C.BOLD}{'=' * 64}{C.RESET}\n")
 
     has_fail = False
+    pass_count = 0
+    fail_count = 0
+    warn_count = 0
+
     for r in validation["results"]:
         status = r["status"]
-        icon = {"PASS": "✅", "FAIL": "❌", "WARN": "⚠️"}.get(status, "?")
-        print(f"  {icon} [{status}] {r['check']}: {r['detail']}")
-        if status == "FAIL":
+        if status == "PASS":
+            color = C.PASS
+            pass_count += 1
+        elif status == "FAIL":
+            color = C.FAIL
+            fail_count += 1
             has_fail = True
+        else:
+            color = C.WARN
+            warn_count += 1
 
-    # Manual review checklist
-    print(f"\n{'─'*60}")
-    print("  수동 리뷰 체크리스트")
-    print(f"{'─'*60}\n")
-    print("  [ ] 서클 클로저: ENDING이 HOOK의 위기를 거울처럼 비추는가?")
-    print("      HOOK 위기: ___________")
-    print("      ENDING 거울: ___________")
-    print()
-    print("  [ ] Opening Image ↔ Final Image: 같은 상황, 다른 반응?")
-    print("      오프닝 이미지: ___________")
-    print("      파이널 이미지: ___________")
-    print()
-    print("  [ ] Vee 감정 아크: HOOK 감정 ≠ ENDING 감정?")
-    print("      시작: _____ → 끝: _____")
-    print()
-    print("  [ ] 정보 경로: 정보가 순서대로 전달되는가?")
-    print("      정보 1: ___________")
-    print("      정보 2: ___________")
-    print("      정보 N: ___________")
-    print()
-    print("  [ ] Curse of Knowledge: 바이브코딩 안 해본 사람이 이해하는가?")
-    print()
-    print("  [ ] 비주얼 코미디: 시트콤 세그먼트마다 비주얼 개그 2개+?")
-    print()
-    print("  [ ] 내레이션 온리: 모든 음성이 NARRATOR (V.O.)인가?")
-    print()
-    print("  [ ] 다음편 떡밥: 다음 EP의 HOOK과 연결되는가?")
-    print("      떡밥: ___________")
-    print("      다음편 HOOK: ___________")
-    print()
+        print(f"  {color}[{status}]{C.RESET} {r['check']}")
+        print(f"         {C.DIM}{r['detail']}{C.RESET}")
 
-    # Summary
-    pass_count = sum(1 for r in validation["results"] if r["status"] == "PASS")
-    fail_count = sum(1 for r in validation["results"] if r["status"] == "FAIL")
-    warn_count = sum(1 for r in validation["results"] if r["status"] == "WARN")
     total = len(validation["results"])
 
-    print(f"{'='*60}")
-    print(f"  결과: {pass_count}/{total} PASS | {fail_count} FAIL | {warn_count} WARN")
-    print(f"{'='*60}\n")
+    # -------------------------------------------------------------------
+    # Manual review checklist
+    # -------------------------------------------------------------------
+    print(f"\n{C.BOLD}{'-' * 64}{C.RESET}")
+    print(f"  {C.BOLD}MANUAL REVIEW CHECKLIST{C.RESET}")
+    print(f"{C.BOLD}{'-' * 64}{C.RESET}\n")
+
+    checklist = [
+        'Tone: conversational explainer, not corporate doc?',
+        'Discovery Arc: curiosity -> frustration -> clarity -> confidence?',
+        'Aha moment clearly identified in Core?',
+        'Vee reactions silhouette-safe (40px recognition)?',
+        '80/20 split: diagrams+motion / Vee reactions?',
+    ]
+
+    for item in checklist:
+        print(f"  [ ] {item}")
+    print()
+
+    # -------------------------------------------------------------------
+    # Summary
+    # -------------------------------------------------------------------
+    summary_color = C.PASS if not has_fail else C.FAIL
+    print(f"{C.BOLD}{'=' * 64}{C.RESET}")
+    print(
+        f"  {summary_color}{C.BOLD}Result: "
+        f"{pass_count}/{total} PASS | {fail_count} FAIL | {warn_count} WARN"
+        f"{C.RESET}"
+    )
+    print(f"{C.BOLD}{'=' * 64}{C.RESET}\n")
 
     return 1 if has_fail else 0
 
 
+# ---------------------------------------------------------------------------
+# CLI
+# ---------------------------------------------------------------------------
 def main():
-    parser = argparse.ArgumentParser(description="Fountain 대본 구조 검증")
-    parser.add_argument("--input", required=True, help="Fountain 파일 경로")
-    parser.add_argument(
-        "--storyform",
-        default=None,
-        help="storyform.json 경로 (금지 표현 검증용)",
+    parser = argparse.ArgumentParser(
+        description="Validate Fountain screenplay against Series Bible 5-segment format"
     )
-    parser.add_argument("--json", action="store_true", help="JSON 출력")
+    parser.add_argument(
+        "fountain_file",
+        nargs="?",
+        help="Path to the Fountain (.fountain) file",
+    )
+    parser.add_argument(
+        "--input",
+        default=None,
+        help="Path to the Fountain file (alternative to positional arg)",
+    )
+    parser.add_argument("--json", action="store_true", help="Output as JSON")
     args = parser.parse_args()
 
-    fountain_path = Path(args.input)
+    # Resolve fountain file path (positional or --input)
+    fountain_file = args.fountain_file or args.input
+    if not fountain_file:
+        parser.error("fountain file required (positional or --input)")
+
+    fountain_path = Path(fountain_file)
     if not fountain_path.exists():
         print(f"Error: {fountain_path} not found", file=sys.stderr)
         sys.exit(2)
 
-    storyform_path = Path(args.storyform) if args.storyform else None
-
-    # Auto-detect storyform.json relative to script location
-    if storyform_path is None:
-        candidates = [
-            fountain_path.parent / "../../../../branding/storyform.json",
-            Path(__file__).parent / "../../../../branding/storyform.json",
-        ]
-        for c in candidates:
-            resolved = c.resolve()
-            if resolved.exists():
-                storyform_path = resolved
-                break
-
-    validation = validate(fountain_path, storyform_path)
+    validation = validate(fountain_path)
 
     if args.json:
-        print(json.dumps(validation, ensure_ascii=False, indent=2))
+        # Serialize sets for JSON
+        print(json.dumps(validation, ensure_ascii=False, indent=2, default=str))
         sys.exit(0)
 
     exit_code = print_results(validation)

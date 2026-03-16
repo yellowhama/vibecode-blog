@@ -1,7 +1,14 @@
 # 유튜브 채널 포맷 바이블
 
-> **SSOT**: 에피소드 구조, 타이밍, 비주얼 모드, 전환 규칙.
-> **채널 아이덴티티**는 `16-channel-identity.md` 참조.
+> **SUPERSEDED (2026-03-17)**: 이 문서는 아래로 대체되었습니다.
+> - **`systems/video/SERIES_BIBLE.md`** Part C (Content Engine) + Part D (Production)
+>
+> 아래 내용은 아카이브 참조용으로 유지됩니다.
+
+---
+
+> ~~**SSOT**: 에피소드 구조, 타이밍, 비주얼 모드, 전환 규칙.~~
+> ~~**채널 아이덴티티**는 `16-channel-identity.md` 참조.~~
 
 ---
 
