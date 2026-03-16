@@ -239,14 +239,28 @@ Modified files:
 - [x] `mixed_audio.wav` (나레이션 + BGM 플레이스홀더)
 - [x] 한국어 자막 (preproduction SRT 사용)
 - [x] **`EP01_PROTOTYPE.mp4`** (28초, 1920x1080, H.264+AAC)
-- [~] I2V 배치 렌더 진행 중 (2/15 완료, ~2시간 예상)
+- [x] I2V 배치 렌더 완료 (24/24 클립)
 
-### L-5. 전체 EP01 프로덕션 (대기)
-> I2V 배치 완료 후 진행
-- [ ] ACE-Step BGM 생성 (GPU 필요 — I2V 완료 후)
-- [ ] Dia2 프로덕션 내레이션
-- [ ] 전체 20샷 I2V 클립 (풀 5초)
-- [ ] 최종 조립 → `EP01_FINAL.mp4`
+### L-5. 전체 EP01 프로덕션 ✅ (2026-03-16)
+- [x] Dia2 프로덕션 영어 내레이션 (24 세그먼트, 79.8초)
+  - `dia2.engine.Dia2` API (nari-labs/dia2 repo 에디터블 설치)
+  - `ep01_tts_input_en.json` 매니페스트 dialogue에서 추출
+- [x] 전체 24샷 키프레임 렌더 (Kontext + LoRA T2I 자동 선택)
+- [x] 전체 24샷 I2V 드래프트 클립 (2초, 832x480, Wan 2.2 MoE)
+- [x] ACE-Step 1.5 BGM 생성 (90초, turbo 8스텝, ambient electronic)
+  - `AceStepHandler.initialize_service()` + `generate_music()` 직접 호출
+  - API 서버 모드는 태스크 큐 이슈로 스킵
+- [x] 오디오 믹싱 (나레이션 + BGM, 0.15 볼륨)
+- [x] SRT 자막 생성 (24개 엔트리, 세그먼트 타이밍 기반)
+- [x] **`EP01_FINAL.mp4`** (49.6초, 1920x1080, 30fps, -15.7 LUFS)
+- [x] **`EP01_SHORTS_01.mp4`** (58초, 1080x1920, 9:16 크롭)
+
+코드 수정:
+- `dia2_tts.py`: `dia.model.Dia` → `dia2.engine.Dia2` API 마이그레이션
+- `acestep_bgm.py`: 네스트 응답 파싱 수정 (`data.task_id`)
+- `render_keyframes.py`: 듀얼 워크플로우 자동선택, v3ct0r 트리거 주입
+
+커밋: `3d1e86c` (2026-03-16)
 
 ### 모델 인벤토리 (2026-03-16 기준)
 | 모델 | 위치 | 크기 | 용도 |
@@ -263,3 +277,42 @@ Modified files:
 | Dia2-1B | pip (nari-tts) | ~2GB | 프로덕션 TTS |
 | ACE-Step 1.5 | `/home/hugh/ACE-Step-1.5/` | ~4GB | BGM 생성 |
 | Kokoro 0.9.4 | pip | ~400MB | 드래프트 TTS |
+| Dia2-1B (dia2) | editable (`/home/hugh/dia2_repo`) | ~2GB | 프로덕션 TTS (신규 API) |
+| ACE-Step 1.5 turbo | `/home/hugh/ACE-Step-1.5/checkpoints/` | ~10GB | BGM (DiT+VAE+TextEnc) |
+
+---
+
+## M. Phase 3: EP01 프로덕션 품질 업그레이드 (다음 단계)
+
+### 현재 상태 및 개선점
+EP01_FINAL.mp4 완성 — 49.6초, 24샷. 그러나:
+1. **I2V 클립이 2초 드래프트** — 풀 5초로 업그레이드 필요
+2. **자막 타이밍이 세그먼트 기반** — Whisper 정밀 정렬 필요
+3. **트랜지션 없음** — xfade/디졸브 추가
+4. **BGM 품질** — LM 모델 활성화 시 CUDA 그래프 오류, torch 호환성 해결 필요
+5. **Vee 캐릭터 일관성** — 샷 간 스타일 편차 존재
+
+### M-1. I2V 풀 길이 업그레이드
+- [ ] `wan22_moe_i2v_full.json` 워크플로우로 24샷 재렌더 (5초, 81프레임)
+- [ ] GPU 시간 예상: ~20분/클립 × 24 = ~8시간
+- [ ] 배치 스케줄링: 야간 렌더 또는 분할 실행
+
+### M-2. Whisper 자막 정밀화
+- [ ] `whisper_align.py`로 `narration_en.wav` → word-level SRT
+- [ ] stable-ts 또는 whisper-timestamped 활용
+- [ ] 듀얼 자막 (EN main) 적용
+
+### M-3. 트랜지션 + 포스트프로덕션
+- [ ] `video_assembler.py` 활용 — xfade 디졸브, 인트로/아웃트로 텍스트
+- [ ] `color_normalize.py` — 샷 간 색감 통일
+- [ ] `audio_postprocess.py` — BGM 덕킹 적용
+
+### M-4. BGM 품질 개선
+- [ ] ACE-Step LM 모델 CUDA 호환성 해결 (torch 2.10 + CUDA graph)
+- [ ] 또는 LM 없이 caption 직접 지정 + 여러 시드로 선별
+- [ ] 분위기별 BGM 세트 (인트로/전환/클라이맥스)
+
+### M-5. EP02 프리프로덕션
+- [ ] EP02 스크립트/매니페스트 작성
+- [ ] 캐릭터 확장 (Vee + 새 캐릭터?)
+- [ ] 스타일 가이드 확정 (Kontext 3D vs LoRA 2D)
