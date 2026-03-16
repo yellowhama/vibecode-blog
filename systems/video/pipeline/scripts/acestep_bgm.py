@@ -79,7 +79,9 @@ def _api_generate(args, output_path: Path) -> bool:
     try:
         resp = urllib.request.urlopen(req, timeout=30)
         data = json.loads(resp.read())
-        task_id = data.get("task_id")
+        # Handle nested response format: {data: {task_id: ...}}
+        inner = data.get("data", data)
+        task_id = inner.get("task_id") if isinstance(inner, dict) else data.get("task_id")
         if not task_id:
             print(f"No task_id in response: {data}", file=sys.stderr)
             return False
@@ -101,12 +103,18 @@ def _api_generate(args, output_path: Path) -> bool:
                 headers={"Content-Type": "application/json"},
             )
             resp = urllib.request.urlopen(poll_req, timeout=10)
-            results = json.loads(resp.read())
+            raw = json.loads(resp.read())
+            # Handle nested: {data: [...]} or {data: {task_id: ...}}
+            results = raw.get("data", raw)
+            if isinstance(results, dict) and "results" in results:
+                results = results["results"]
+            if not isinstance(results, list):
+                results = [results]
 
-            for r in results if isinstance(results, list) else [results]:
+            for r in results:
                 status = r.get("status", "")
                 if status == "completed":
-                    audio_url = r.get("audio_url", "")
+                    audio_url = r.get("audio_url", r.get("url", ""))
                     if audio_url:
                         if not audio_url.startswith("http"):
                             audio_url = f"{args.api_url}{audio_url}"
@@ -116,6 +124,10 @@ def _api_generate(args, output_path: Path) -> bool:
                 elif status == "failed":
                     print(f"Generation failed: {r}", file=sys.stderr)
                     return False
+                else:
+                    elapsed = int(time.time() - start)
+                    if elapsed % 15 == 0:
+                        print(f"  Status: {status} ({elapsed}s elapsed)")
         except Exception as e:
             print(f"Poll error: {e}", file=sys.stderr)
 

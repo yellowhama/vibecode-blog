@@ -1,0 +1,149 @@
+{
+  "project_id": "ep01_en",
+  "beats": [
+    {
+      "beat_id": "S01_01",
+      "speaker": "narrator",
+      "text": "This is the moment every vibe coder lives for.",
+      "narration_text": "This is the moment every vibe coder lives for."
+    },
+    {
+      "beat_id": "S02_02",
+      "speaker": "narrator",
+      "text": "You asked AI to build it. And it did. All of it.",
+      "narration_text": "You asked AI to build it. And it did. All of it."
+    },
+    {
+      "beat_id": "S03_03",
+      "speaker": "narrator",
+      "text": "...it all falls apart.",
+      "narration_text": "...it all falls apart."
+    },
+    {
+      "beat_id": "S04_04",
+      "speaker": "narrator",
+      "text": "Three days ago, Vee discovered something magical.",
+      "narration_text": "Three days ago, Vee discovered something magical."
+    },
+    {
+      "beat_id": "S05_05",
+      "speaker": "narrator",
+      "text": "You type what you want. AI builds it. Five minutes. Done.",
+      "narration_text": "You type what you want. AI builds it. Five minutes. Done."
+    },
+    {
+      "beat_id": "S06_06",
+      "speaker": "narrator",
+      "text": "She thought she could build anything.",
+      "narration_text": "She thought she could build anything."
+    },
+    {
+      "beat_id": "S07_07",
+      "speaker": "narrator",
+      "text": "But there was someone who'd seen this story before.",
+      "narration_text": "But there was someone who'd seen this story before."
+    },
+    {
+      "beat_id": "S08_08",
+      "speaker": "narrator",
+      "text": "She couldn't answer.",
+      "narration_text": "She couldn't answer."
+    },
+    {
+      "beat_id": "S09_09",
+      "speaker": "narrator",
+      "text": "Here's an empty lot.",
+      "narration_text": "Here's an empty lot."
+    },
+    {
+      "beat_id": "S10_10",
+      "speaker": "narrator",
+      "text": "With a blueprint, you start with the foundation. Then the frame. Then the walls. There's an order. Each piece knows where it goes.",
+      "narration_text": "With a blueprint, you start with the foundation. Then the frame. Then the walls. There's an order. Each piece knows where it goes."
+    },
+    {
+      "beat_id": "S11_11",
+      "speaker": "narrator",
+      "text": "Without a blueprint?",
+      "narration_text": "Without a blueprint?"
+    },
+    {
+      "beat_id": "S12_12",
+      "speaker": "narrator",
+      "text": "You just... stack. And it goes up. It actually goes up.",
+      "narration_text": "You just... stack. And it goes up. It actually goes up."
+    },
+    {
+      "beat_id": "S13_13",
+      "speaker": "narrator",
+      "text": "Then...",
+      "narration_text": "Then..."
+    },
+    {
+      "beat_id": "S14_14",
+      "speaker": "narrator",
+      "text": "A spec is a blueprint. It's not a hundred-page document. It's one sentence: \"What am I building?\"",
+      "narration_text": "A spec is a blueprint. It's not a hundred-page document. It's one sentence: \"What am I building?\""
+    },
+    {
+      "beat_id": "S15_15",
+      "speaker": "narrator",
+      "text": "You don't need to know every detail upfront.",
+      "narration_text": "You don't need to know every detail upfront."
+    },
+    {
+      "beat_id": "S16_16",
+      "speaker": "narrator",
+      "text": "You can always make it bigger later. But you have to know what \"it\" is first.",
+      "narration_text": "You can always make it bigger later. But you have to know what \"it\" is first."
+    },
+    {
+      "beat_id": "S17_17",
+      "speaker": "narrator",
+      "text": "That one line? That's where a spec starts.",
+      "narration_text": "That one line? That's where a spec starts."
+    },
+    {
+      "beat_id": "S18_18",
+      "speaker": "narrator",
+      "text": "Back in the present. Everything still broken.",
+      "narration_text": "Back in the present. Everything still broken."
+    },
+    {
+      "beat_id": "S19_19",
+      "speaker": "narrator",
+      "text": "And then she did something unusual. She stopped coding.",
+      "narration_text": "And then she did something unusual. She stopped coding."
+    },
+    {
+      "beat_id": "S20_20",
+      "speaker": "narrator",
+      "text": "And there it was. The question she'd been avoiding.",
+      "narration_text": "And there it was. The question she'd been avoiding."
+    },
+    {
+      "beat_id": "S21_21",
+      "speaker": "narrator",
+      "text": "Not features. Not tools. The reason. The one sentence that explains everything.",
+      "narration_text": "Not features. Not tools. The reason. The one sentence that explains everything."
+    },
+    {
+      "beat_id": "S22_22",
+      "speaker": "narrator",
+      "text": "The same errors. But now, one line makes sense.",
+      "narration_text": "The same errors. But now, one line makes sense."
+    },
+    {
+      "beat_id": "S23_23",
+      "speaker": "narrator",
+      "text": "But now she knows what to fix.",
+      "narration_text": "But now she knows what to fix."
+    },
+    {
+      "beat_id": "S24_24",
+      "speaker": "narrator",
+      "text": "...at least, she thinks she does.",
+      "narration_text": "...at least, she thinks she does."
+    }
+  ]
+}

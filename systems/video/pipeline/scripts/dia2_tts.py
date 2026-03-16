@@ -18,31 +18,31 @@ def main():
         import torch
         import numpy as np
         import scipy.io.wavfile
-        from dia.model import Dia
+        from dia2.engine import Dia2
     except ImportError:
-        print("ERROR: Install Dia2: pip install dia-tts  (or git clone https://github.com/nari-labs/dia2)", file=sys.stderr)
+        print("ERROR: Install Dia2: pip install -e /home/hugh/dia2_repo  (or git clone https://github.com/nari-labs/dia2)", file=sys.stderr)
         sys.exit(1)
 
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"Loading Dia2-1B on {device}...")
-    model = Dia.from_pretrained("nari-labs/Dia2-1B", compute_dtype="float16")
-    model = model.to(device)
+    print("Loading Dia2-1B...")
+    model = Dia2(repo="nari-labs/Dia2-1B", device="cuda" if torch.cuda.is_available() else "cpu")
+    native_sr = model.sample_rate
+    print(f"Dia2-1B loaded (sample_rate={native_sr})")
 
     def synth_one(text: str, out_path: Path):
         # Add speaker tag if missing
         if "[S1]" not in text and "[S2]" not in text:
             text = f"[S1] {text}"
 
-        output = model.generate(text, use_torch_compile=False, verbose=False)
+        result = model.generate(text)
+        waveform = result.waveform.cpu().numpy().squeeze()
 
-        audio_np = np.array(output, dtype=np.float32)
-        if audio_np.max() > 1.0:
-            audio_np = audio_np / np.abs(audio_np).max()
-        audio_int16 = np.int16(np.clip(audio_np, -1.0, 1.0) * 32767)
+        if waveform.max() > 1.0:
+            waveform = waveform / np.abs(waveform).max()
+        audio_int16 = np.int16(np.clip(waveform, -1.0, 1.0) * 32767)
 
         with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
             tmp_path = Path(tmp.name)
-        scipy.io.wavfile.write(str(tmp_path), 44100, audio_int16)
+        scipy.io.wavfile.write(str(tmp_path), native_sr, audio_int16)
 
         out_path.parent.mkdir(parents=True, exist_ok=True)
         subprocess.run([

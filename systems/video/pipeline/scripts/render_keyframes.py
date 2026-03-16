@@ -1,74 +1,120 @@
 #!/usr/bin/env python3
-"""Generate character keyframes via ComfyUI API (Flux + LoRA + IPAdapter)."""
+"""Generate keyframes via ComfyUI API.
+
+Auto-selects workflow per shot:
+  - Character shots (kontext_prompt set) → Flux Kontext Edit
+  - Infographic/other shots → Flux LoRA T2I (simplevectorflux)
+"""
 import argparse, json, sys, time, urllib.request, urllib.error
 from pathlib import Path
 
 COMFYUI_WORKFLOWS = Path("/mnt/e/vibecode-blog/systems/video/workflows/api")
+KONTEXT_WF = "flux_kontext_edit.json"
+LORA_T2I_WF = "flux_lora_t2i.json"
+
 
 def main():
     parser = argparse.ArgumentParser(description="ComfyUI keyframe renderer")
     parser.add_argument("--manifest", required=True, help="Shot manifest JSON")
     parser.add_argument("--output", required=True, help="Output directory for keyframes")
-    parser.add_argument("--workflow", default="flux_kontext_edit.json", help="ComfyUI workflow file")
+    parser.add_argument("--workflow", default="auto", help="ComfyUI workflow (auto|kontext|lora|path)")
     parser.add_argument("--comfyui-url", default="http://127.0.0.1:8188")
     parser.add_argument("--character-ref", help="Character reference image path")
+    parser.add_argument("--only-missing", action="store_true", help="Only render missing keyframes")
     args = parser.parse_args()
 
     output_dir = Path(args.output)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Load manifest
     manifest = json.loads(Path(args.manifest).read_text())
     shots = manifest.get("shots", manifest if isinstance(manifest, list) else [])
 
-    # Load workflow template
-    wf_path = COMFYUI_WORKFLOWS / args.workflow
-    if not wf_path.exists():
-        # Try the pipeline scripts directory
-        wf_path = Path(args.workflow)
-    if not wf_path.exists():
-        print(f"Workflow not found: {wf_path}", file=sys.stderr)
-        sys.exit(1)
+    # Pre-load both workflow templates
+    workflows = {}
+    for wf_name in (KONTEXT_WF, LORA_T2I_WF):
+        wf_path = COMFYUI_WORKFLOWS / wf_name
+        if wf_path.exists():
+            raw = json.loads(wf_path.read_text())
+            workflows[wf_name] = raw.get("prompt", raw)
 
-    workflow_raw = json.loads(wf_path.read_text())
-    # Extract the 'prompt' sub-object if present (ComfyUI API format)
-    workflow = workflow_raw.get("prompt", workflow_raw)
+    # Also handle explicit workflow override
+    if args.workflow not in ("auto", "kontext", "lora"):
+        wf_path = COMFYUI_WORKFLOWS / args.workflow
+        if not wf_path.exists():
+            wf_path = Path(args.workflow)
+        if wf_path.exists():
+            raw = json.loads(wf_path.read_text())
+            workflows["override"] = raw.get("prompt", raw)
 
-    # Check ComfyUI is running
+    # Check ComfyUI
     try:
         urllib.request.urlopen(f"{args.comfyui_url}/system_stats", timeout=5)
     except (urllib.error.URLError, ConnectionError):
         print(f"ComfyUI not running at {args.comfyui_url}", file=sys.stderr)
-        print("Start with: python ComfyUI/main.py --listen --port 8188", file=sys.stderr)
         sys.exit(1)
+
+    rendered = 0
+    skipped = 0
+    failed = 0
 
     print(f"Rendering {len(shots)} keyframes...")
     for i, shot in enumerate(shots):
         shot_id = shot.get("shot_id", f"shot_{i:03d}")
-        prompt = shot.get("kontext_prompt", shot.get("prompt_positive", ""))
-        if not prompt:
-            continue
-
-        # Clone workflow and inject prompt
-        wf = json.loads(json.dumps(workflow))  # deep copy
-        _inject_prompt(wf, prompt, shot)
-
-        # Submit to ComfyUI
         output_file = output_dir / f"{shot_id}_keyframe.png"
+
         if output_file.exists():
             print(f"  [{i+1}/{len(shots)}] {shot_id}: CACHED")
+            skipped += 1
             continue
 
-        print(f"  [{i+1}/{len(shots)}] {shot_id}: {prompt[:60]}...")
-        result = _queue_and_wait(args.comfyui_url, wf)
+        # Select workflow and prompt per shot
+        kontext_prompt = shot.get("kontext_prompt")
+        positive_prompt = shot.get("prompt_positive", "")
+        has_characters = bool(shot.get("characters"))
 
+        if args.workflow == "override" and "override" in workflows:
+            wf_key = "override"
+            prompt = kontext_prompt or positive_prompt
+        elif args.workflow == "kontext" or (args.workflow == "auto" and kontext_prompt and has_characters):
+            wf_key = KONTEXT_WF
+            prompt = kontext_prompt or positive_prompt
+        elif args.workflow == "lora" or (args.workflow == "auto" and not kontext_prompt):
+            wf_key = LORA_T2I_WF
+            prompt = positive_prompt
+            # Prepend v3ct0r trigger if not present
+            if prompt and "v3ct0r" not in prompt.lower():
+                prompt = f"v3ct0r style, {prompt}"
+        else:
+            wf_key = KONTEXT_WF
+            prompt = kontext_prompt or positive_prompt
+
+        if not prompt:
+            print(f"  [{i+1}/{len(shots)}] {shot_id}: SKIP (no prompt)")
+            skipped += 1
+            continue
+
+        if wf_key not in workflows:
+            print(f"  [{i+1}/{len(shots)}] {shot_id}: SKIP (workflow {wf_key} not found)")
+            skipped += 1
+            continue
+
+        wf_label = "Kontext" if wf_key == KONTEXT_WF else "LoRA T2I"
+        print(f"  [{i+1}/{len(shots)}] {shot_id} [{wf_label}]: {prompt[:60]}...")
+
+        wf = json.loads(json.dumps(workflows[wf_key]))  # deep copy
+        _inject_prompt(wf, prompt, shot)
+
+        result = _queue_and_wait(args.comfyui_url, wf)
         if result:
             _download_output(args.comfyui_url, result, output_file)
             print(f"    -> {output_file}")
+            rendered += 1
         else:
             print(f"    -> FAILED")
+            failed += 1
 
-    print(f"Keyframes complete: {output_dir}")
+    print(f"\nKeyframes: {rendered} rendered, {skipped} cached/skipped, {failed} failed")
+    print(f"Output: {output_dir}")
 
 
 def _inject_prompt(workflow: dict, prompt: str, shot: dict):
@@ -79,14 +125,17 @@ def _inject_prompt(workflow: dict, prompt: str, shot: dict):
         class_type = node.get("class_type", "")
         inputs = node.get("inputs", {})
 
-        # CLIPTextEncode or similar text input nodes
-        if "text" in inputs and class_type in ("CLIPTextEncode", "FluxGuidance"):
-            if "negative" not in node.get("_meta", {}).get("title", "").lower():
+        # CLIPTextEncode — inject positive prompt (not negative)
+        if "text" in inputs and class_type in ("CLIPTextEncode",):
+            title = node.get("_meta", {}).get("title", "").lower()
+            if "negative" not in title:
                 inputs["text"] = prompt
 
         # Seed injection
         if "seed" in inputs and "seed" in shot:
             inputs["seed"] = shot["seed"]
+        if "noise_seed" in inputs and "seed" in shot:
+            inputs["noise_seed"] = shot["seed"]
 
 
 def _queue_and_wait(base_url: str, workflow: dict, timeout: int = 300) -> dict | None:
@@ -109,7 +158,6 @@ def _queue_and_wait(base_url: str, workflow: dict, timeout: int = 300) -> dict |
         print(f"    Queue failed: {e}", file=sys.stderr)
         return None
 
-    # Poll for completion
     start = time.time()
     while time.time() - start < timeout:
         try:
