@@ -1,8 +1,8 @@
 # 대본 파이프라인 재정비 + 소스 인덱스 구축
 
 > 작성일: 2026-03-11
-> 최종 수정: 2026-03-15
-> 상태: **Phase 1 완료** — 채널 리브랜딩 + 커리큘럼 재설계 완료. EP01 재작성 대기 중.
+> 최종 수정: 2026-03-17
+> 상태: **Phase 2.5 완료** — Series Bible + 2D 캐릭터 스펙 + 시즌1 가이드 확정. EP01 2D 대본 재작성 대기 중.
 
 ## Context
 
@@ -65,55 +65,102 @@ TTS 생성 (대본 확정 후에만)
 
 ---
 
+## 완료: Phase 2.5 — Series Bible + 2D 스타일 확정 (2026-03-17, `24642ae`)
+
+### 산출물 3개 (SSOT)
+
+| 파일 | 용도 | 상태 |
+|------|------|------|
+| `systems/video/SERIES_BIBLE.md` | 마스터 기획서 (4파트, 18섹션) — **새 SSOT** | ✅ |
+| `systems/video/assets/characters/vee/character_design_2d.json` | Vee 2D 캐릭터 스펙 v5.0 | ✅ |
+| `systems/video/planning/season1_episode_guide.md` | 시즌1 10에피소드 가이드 | ✅ |
+
+### 주요 결정사항
+- **스타일 확정**: 3D Pixar (v4) → 2D flat vector Level 2.5 (v5)
+- **캐릭터 단순화**: 4색 팔레트, 원형/미튼 손, 3요소 표정 시스템
+- **포맷 확정**: 80% 다이어그램/모션그래픽 + 20% Vee 리액션 (1-2초)
+- **에피소드 포맷**: Hook → Problem → Core → Application → Outro (5세그먼트)
+- **시즌1 라인업**: 10에피소드, 교차 배치 (스토리 EP ↔ 독립 EP)
+- **파이프라인**: Flux+SimpleVectorFlux→Kontext→Wan 2.2→Dia2→ACE-Step→FFmpeg
+
+### 리서치 4편 (함께 커밋)
+- `youtube-content-strategy-research.md`
+- `video-content-strategy-research.md`
+- `ai-native-animation-research.md`
+- `2d-character-design-references.md`
+
+### 문서 상속 관계
+
+| 기존 문서 | 상태 | 대체 |
+|-----------|------|------|
+| `12-episode-series-bible.md` | **SUPERSEDED** | → `season1_episode_guide.md` |
+| `16-channel-identity.md` | **SUPERSEDED** | → `SERIES_BIBLE.md` Part A |
+| `10-youtube-format-bible.md` | **SUPERSEDED** | → `SERIES_BIBLE.md` Part C+D |
+| `CONTENT_EVALUATION_FRAMEWORK.md` | **유지 (업데이트 필요)** | 아직 "claymation" 참조 → 2D 반영 필요 |
+
+---
+
 ## 다음 단계 (미완료)
 
-### Phase 2: EP01 재작성
+### Phase 3: Vee 2D 골든 레퍼런스 생성
 
-EP01 기존 대본/산출물은 리브랜딩 전 시트콤 구조 기반. 새 질문 기반 구조로 재작성 필요.
+`character_design_2d.json`에 정의된 골든 레퍼런스 3장 생성.
 
-**EP01 새 설정:**
-- **질문**: "바이브코딩이 뭐야?"
-- **학습 결과**: AI가 대신 코딩 ≠ 바이브코딩. AI와 '같이' 만드는 것.
-- **구조**: 질문→상황→설명→적용→다음 질문
+**작업:**
+1. ComfyUI에서 SimpleVectorFlux LoRA 로드
+2. `comfyui_prompts.positive_base` + `angle_prompts` 조합으로 생성
+3. 정면 / 3/4 / 전신 각 4장 이상 → 베스트 1장 선정
+4. 선정된 이미지를 Kontext 골든 레퍼런스로 등록
+5. 표정 스톡 18장 (6감정 × 3앵글) 배치 생성
+
+**산출물:**
+- `vee_2d_golden_front.png`
+- `vee_2d_golden_3q.png`
+- `vee_2d_golden_full.png`
+- `expressions/` 폴더 (18장)
+
+### Phase 4: EP01 대본 재작성 (2D 구조)
+
+기존 EP01 산출물(시트콤/3D 기반)을 새 Series Bible 구조로 재작성.
+
+**EP01 새 설정 (Series Bible 기준):**
+- **제목**: "스펙이 뭔가?"
+- **점수**: 23/25 (Grade A, act1-en.md 기반)
+- **포맷**: Hook → Problem → Core → Application → Outro
+- **확장 메타포**: 건물 = 코드 (청사진 O vs X)
+- **Aha**: "스펙은 한 문장이다: '내가 뭘 만드는가?'"
 
 **작업 순서:**
-1. `/screenplay-topic` — EP01 새 주제 카드 작성 (질문 기반)
-2. `/screenplay-research` — EP01 토픽 브리프 재작성
-3. `/screenplay-plan` — Discovery Arc + Story Spine + 감정 트래커
-4. `/screenplay-write` — Fountain 대본 집필
-5. `/screenplay-review` — 구조 검증
-6. TTS 재생성 → 타이밍 싱크 → 렌더
+1. EP01 스크립트 작성 (SERIES_BIBLE.md C8 포맷)
+2. 샷 매니페스트 JSON (D14 v5 포맷)
+3. Vee 2D 키프레임 생성 (Phase 3 골든레퍼런스 사용)
+4. 다이어그램/모션그래픽 (Motion Canvas)
+5. TTS + 립싱크 + BGM
+6. 조립 + QC (D17 6단계 게이트)
 
-### Phase 3: 비주얼 파이프라인 전환
+### Phase 5: CONTENT_EVALUATION_FRAMEWORK 업데이트
 
-3D Pixar → 2D flat vector 전환에 따른 렌더 파이프라인 변경.
+평가 프레임워크를 2D 스타일에 맞게 업데이트.
+- "claymation" → "2D flat vector" 용어 변경
+- "clay action" → "visual action" 변경
+- Axis 3 기준을 2D 다이어그램 + 모션그래픽에 맞게 조정
+- "Our position" 문구 업데이트
 
-| 기존 | 신규 |
-|------|------|
-| Flux Kontext (3D 캐릭터) | 2D flat vector 캐릭터 (SVG 또는 Flux T2I with 2D prompt) |
-| Wan I2V (3D 모션) | 모션 그래픽 or Wan I2V (2D 키프레임) |
-| 시트콤 모드 + 해설 모드 | 캐릭터 장면 + 설명 다이어그램 + 코드 데모 |
+### Phase 6: validate_screenplay.py 업데이트
 
-**결정 필요:**
-- [ ] 2D 캐릭터 생성 파이프라인 (SVG? AI T2I? 직접 제작?)
-- [ ] 다이어그램 생성 방식 (ByteByteGo 스타일 — 모션 그래픽 도구?)
-- [ ] 코드 데모 화면 캡처/애니메이션 방식
-
-### Phase 4: validate_screenplay.py 업데이트
-
-자동 검증 스크립트를 새 구조에 맞게 업데이트.
+자동 검증 스크립트를 새 Series Bible 구조에 맞게 업데이트.
 
 ```
-[PASS/FAIL] 세그먼트 5개 존재
-[PASS/FAIL] 순서: 질문 → 상황 → 설명 → 적용 → 다음 질문
-[PASS/FAIL] 타이밍 범위 (질문 10-15s, 상황 60-90s, 설명 90-120s, 적용 30-60s, 다음 질문 10-15s)
-[PASS/FAIL] 총 길이 210-300초 (3.5-5분)
-[PASS/FAIL] 전 세그먼트 NARRATOR (V.O.) 존재
-[PASS/FAIL] 캐릭터 음성 대사 없음
-[PASS/FAIL] 설명 characters = []
-[PASS/FAIL] 금지 표현 0개 (storyform.json)
-[PASS/FAIL] 설명에 데이터 포인트 2개+
-[PASS/WARN] 전환 지시 존재
+[PASS/FAIL] 세그먼트 5개 존재 (Hook/Problem/Core/Application/Outro)
+[PASS/FAIL] 타이밍 범위 (Hook 15s, Problem 30s, Core 135s, Application 60s, Outro 60s)
+[PASS/FAIL] 총 길이 180-300초 (3-5분)
+[PASS/FAIL] 나레이터 V.O. 전 세그먼트 존재
+[PASS/FAIL] Vee 음성 대사 없음 (무언극)
+[PASS/FAIL] Vee 리액션 6회 이내, 각 1-2초
+[PASS/FAIL] 패턴 인터럽트 20-30초 간격
+[PASS/FAIL] 금지 표현 0개
+[PASS/FAIL] Core에 확장 메타포 60초+ 존재
+[PASS/WARN] 열린 루프 (Hook 안에 미답 질문)
 ```
 
 ---
