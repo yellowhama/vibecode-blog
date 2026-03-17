@@ -1,8 +1,8 @@
 # Video Production Index
 
-Central hub for the MUSU claymation video production pipeline.
+Central hub for the vibecode-town video production pipeline.
 
-Last updated: 2026-03-10
+Last updated: 2026-03-17
 
 ---
 
@@ -148,40 +148,56 @@ Stage 6: YouTube Packaging ─────────────────�
 
 ## 4. Production Status
 
-### What Works ✅
+### EP01 "What's a Spec?" — v1 COMPLETE ✅ (2026-03-17)
 
-- ComfyUI batch render (i2v/t2v, HunyuanVideo 1.5)
+**Output**: `output/ep01/final/EP01_v2_FINAL.mp4` — 3:22, 1280x720, 30fps, 14MB
+
+| Asset | Count | Path |
+|-------|-------|------|
+| Keyframes | 32 PNG | `output/ep01/keyframes/` |
+| Clips | 32 MP4 (Ken Burns) | `output/ep01/clips/` |
+| Narration | 1 WAV (Dia2-1B) | `output/ep01/audio/narration_v2.wav` |
+| BGM | 1 WAV (looped) | `output/ep01/audio/bgm_looped.wav` |
+| Mixed audio | 1 WAV | `output/ep01/audio/mixed_v2.wav` |
+| Subtitles | 87 entries SRT | `output/ep01/subtitles/subtitles.srt` |
+
+**Style**: 2D flat vector (SimpleVectorFlux LoRA T2I for all keyframes)
+**Animation**: Ken Burns zoom/pan fallback (v1 — Wan 2.2 I2V planned for v2)
+**Production plan**: `systems/planning/17-ep01-production-plan.md`
+
+### Pipeline Capabilities ✅
+
+- ComfyUI batch render (Flux LoRA T2I, Kontext I2I, Wan 2.2 I2V)
 - Vision QA evaluation (Gemini/OpenAI/mock)
 - Auto-correction agent (re-render failed shots)
 - Video assembly with xfade transitions
 - Subtitle burn-in (ko/en/dual, ASS format)
 - Audio ducking (VO + BGM sidechain compress)
-- Upload checklist (11 auto gates + 6 manual)
-- TTS generation (edge/mms/xtts backends)
-- Timing reconciliation (tts_actual mode)
-- SRT export for YouTube
+- TTS generation (Dia2/Kokoro/Chatterbox/edge backends)
+- Whisper timing → SRT + timing.json
+- Ken Burns animation from keyframes
 - Audio catalog system
 
 ### What's Next 🔲
 
-- [ ] **English prepro manifest** — `act1-en.md` → full prepro with TTS
-- [ ] **English TTS generation** — edge backend, English voice
-- [ ] **Timing-synced render** — first full E2E with `--prepro-manifest`
-- [ ] **BGM asset files** — catalog entries exist, WAV files needed in `assets/audio/`
-- [ ] **Act 2~5 content evaluation** — apply framework, prioritize production order
+- [ ] **EP01 v2 — Wan 2.2 I2V animation** — replace Ken Burns with real I2V (~6-8h GPU)
+- [ ] **EP01 v2 — ACE-Step BGM** — custom BGM generation (failed v1 due to GPU contention)
 - [ ] **Thumbnail pipeline** — best-frame selection + title overlay
+- [ ] **EP02 production** — next episode in the vibecode series
 - [ ] **YouTube upload integration** — credentials + publish_log
+- [ ] **Motion Canvas diagrams** — replace Ken Burns for C01-C10 diagram shots
 
 ---
 
 ## 5. Visual Style Guide (Summary)
 
-- **Aesthetic**: Aardman-style claymation, stop-motion texture
-- **Background**: Vast off-white (#FDFCF0), soft matte studio lighting
-- **Characters**: Sleep-deprived, skeptical clay figures. Muted cocoa brown (#2D1D19)
-- **Accents**: MUSU Yellow (#FFD166), bright red for errors/bugs
-- **Rules**: NO text, NO subtitles, NO watermark, NO speech bubbles in rendered video
-- **Narration**: Nonlingual video + separate VO track, subtitles burned in post
+- **Aesthetic**: 2D flat vector, v3ct0r LoRA style
+- **Background**: Clean flat colors, no gradients
+- **Character**: Vee — yellow hoodie, round black glasses, brown bob hair, dot eyes
+- **Style anchor**: `v3ct0r style, 2D flat vector, simple flat colors, thin outline, no gradients`
+- **LoRA**: SimpleVectorFlux (`simplevector_flux_v2.safetensors`)
+- **Rules**: NO 3D, NO photorealistic, NO gradients in character renders
+- **Narration**: VO track + SRT subtitles burned in post
 
 Full guide: `planning/03-visual_assets_guide.md`
 

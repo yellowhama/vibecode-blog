@@ -21,13 +21,13 @@ python assemble_episode.py -e 01 --stage 1 --draft
 
 | Stage | Script | Tool | VRAM | Time | Status |
 |-------|--------|------|------|------|--------|
-| 1. TTS | `kokoro_tts.py` / `dia2_tts.py` | Kokoro-82M / Dia2-1B | 0-7.4GB | 1-5min | **Kokoro tested** — 287.9s EP01, 43 segments |
-| 2. Timing | `whisper_timing.py` | Whisper medium | 2GB | 3min | **Tested** — 74 segments, SRT + timing.json |
-| 3. Keyframes | `render_keyframes.py` | Flux.1-dev + Kontext + LoRA (ComfyUI) | ~12GB | 30min | Script ready, needs ComfyUI |
-| 4. Animation | `animate_shots.py` | Wan 2.2 I2V-14B GGUF Q5 (ComfyUI) | 12-16GB | 60min | Script ready, needs model download |
-| 5. Diagrams | Motion Canvas (`vibecode-diagrams/`) | TypeScript | 0 | 120min | **Project scaffolded** — 6 components, `vite build` ✅ |
-| 6. BGM | `acestep_bgm.py` + `mix_audio.py` | ACE-Step 1.5 | <4GB | 1min | **Mixer tested**, ACE-Step needs install |
-| 7. Assembly | Remotion (`vibecode-assembler/`) / `ffmpeg_assemble.py` | React/FFmpeg | 0 | 10min | **Project scaffolded** — `tsc` ✅ |
+| 1. TTS | `kokoro_tts.py` / `dia2_tts.py` | Kokoro-82M / Dia2-1B | 0-7.4GB | 1-5min | **Dia2 production tested** — EP01 narration ✅ |
+| 2. Timing | `whisper_timing.py` | Whisper medium | 2GB | 3min | **Tested** — 87 entries SRT + timing.json ✅ |
+| 3. Keyframes | `render_keyframes.py` | Flux LoRA T2I (SimpleVectorFlux) | ~12GB | 30min | **EP01 complete** — 32 keyframes via `--workflow lora` ✅ |
+| 4. Animation | `animate_shots.py` | Wan 2.2 I2V-14B GGUF Q5 (ComfyUI) | 12-16GB | 60min | Available, deferred to v2 (Ken Burns v1) |
+| 5. Diagrams | Motion Canvas (`vibecode-diagrams/`) | TypeScript | 0 | 120min | **Project scaffolded** — deferred to v2 |
+| 6. BGM | `acestep_bgm.py` + `mix_audio.py` | ACE-Step 1.5 | <4GB | 1min | **Mixer tested** ✅, ACE-Step deferred (GPU contention) |
+| 7. Assembly | `ffmpeg_assemble.py` | FFmpeg | 0 | 10min | **EP01 complete** — concat + audio overlay ✅ |
 
 ## Model Stack (2026-03)
 
@@ -42,15 +42,26 @@ python assemble_episode.py -e 01 --stage 1 --draft
 | Music | **ACE-Step 1.5** | ~1B | <4GB | Apache 2.0 | ComfyUI native, full songs |
 | Lip Sync | **Rhubarb** | CPU | CPU | MIT | Phoneme-based, 2D optimal |
 
-## Validated Test Outputs (EP01)
+## EP01 Production Outputs (v1 COMPLETE — 2026-03-17)
+
+**Final**: `output/ep01/final/EP01_v2_FINAL.mp4` — 3:22, 1280x720, 30fps, 14MB
 
 ```
-output/ep01/audio/narration_draft.wav    — 287.9s, 43 segments (Kokoro)
-output/ep01/audio/segments/*.wav         — 43 individual WAVs
-output/ep01/audio/mixed_test.wav         — 300s (narration + BGM placeholder)
-output/ep01/subtitles/subtitles.srt      — 74 entries (Whisper medium)
+output/ep01/keyframes/*.png              — 32 keyframes (SimpleVectorFlux LoRA T2I)
+output/ep01/clips/*.mp4                  — 32 clips (Ken Burns zoom/pan)
+output/ep01/audio/narration_v2.wav       — Dia2-1B narration
+output/ep01/audio/bgm_looped.wav         — BGM (looped from bgm_real.wav)
+output/ep01/audio/mixed_v2.wav           — Final mix (narration + BGM -18dB)
+output/ep01/subtitles/subtitles.srt      — 87 entries (Whisper medium)
 output/ep01/subtitles/timing.json        — word-level timestamps
+output/ep01/final/EP01_v2_FINAL.mp4      — Final assembled video
 ```
+
+### Key Decisions
+- **Kontext abandoned for keyframes** — Flux Kontext drifts to photorealism regardless of style prompts
+- **All keyframes via LoRA T2I** — SimpleVectorFlux enforces v3ct0r flat vector style consistently
+- **Ken Burns v1** — Wan 2.2 I2V deferred to v2 for faster first completion
+- **BGM looped** — ACE-Step failed due to GPU contention, used existing bgm_real.wav looped
 
 ## Scripts Inventory (12 pipeline scripts)
 
@@ -111,22 +122,17 @@ python generate_tts_from_prepro.py --tts-backend edge ...
 - `vibecode-diagrams/` — Motion Canvas 3.x + Vite 5 (Kurzgesagt-style diagrams)
 - `vibecode-assembler/` — Remotion 4.x (programmatic video composition)
 
-## Next: Model Downloads & EP01 Pilot
+## Next Steps
 
-### P1: Install remaining tools
-1. `pip install dia-tts` — Dia2-1B TTS (7.4GB VRAM)
-2. `git clone ace-step/ACE-Step-1.5` — BGM generation
-3. Kurzgesagt LoRA (Civitai #777200) → `ComfyUI/models/loras/`
+### EP01 v2 Upgrade (quality pass)
+1. **Wan 2.2 I2V** — Replace Ken Burns clips with real I2V animation (~6-8h GPU, run overnight)
+2. **ACE-Step BGM** — Generate custom BGM (retry with GPU exclusive access)
+3. **Motion Canvas** — Replace Ken Burns for C01-C10 diagram shots with animated diagrams
 
-### P2: Model downloads
-4. Wan 2.2 I2V-14B GGUF Q5_K_M (~8GB) → `ComfyUI/models/diffusion_models/`
-5. Wan 2.2 5B (draft, ~5GB) → same dir
-
-### P3: EP01 pilot test
-6. Flux Kontext → 1 Vee keyframe (style check)
-7. Wan 2.2 → 5s I2V from keyframe (2D preservation check)
-8. Motion Canvas → simple diagram (workflow check)
-9. Full assembly → 30s prototype
+### EP02 Production
+4. Script writing → Fountain format
+5. Shot manifest generation
+6. Full pipeline run (same 7-stage flow)
 
 ## Prerequisites
 

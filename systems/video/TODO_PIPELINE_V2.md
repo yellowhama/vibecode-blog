@@ -20,15 +20,21 @@
 - [x] **Task D.2**: Implement **Automated Thumbnail Generation**.
 - [x] **Task D.3**: Refactor `run_blog_to_video_pipeline.py` to orchestrate the Agent-Mediated DAG.
 
-## Phase E: Audio-Visual Sync & Rendering (CURRENT FOCUS)
-- [ ] **Task E.1**: Implement `sync_shots_to_audio.py` helper.
-    - [ ] Logic: Read `timing_alignment.json` and update `shots_planned.json` durations.
-    - [ ] Logic: Add 0.2s padding/buffer per shot for smoother transitions.
-- [ ] **Task E.2**: Implement **Subtitle Burn-in** stage.
-    - [ ] Logic: Use `ffmpeg` to overlay `subtitles.srt` onto the final assembled video.
-- [ ] **Task E.3**: Execute End-to-End Render for `act1-en`.
-    - [ ] Trigger ComfyUI batch render using the synchronized manifest.
+## Phase E: Audio-Visual Sync & Rendering ✅ COMPLETE
+- [x] **Task E.1**: Shot-audio sync via manifest timing + FFmpeg concat
+- [x] **Task E.2**: SRT subtitle generation (Whisper medium, 87 entries)
+- [x] **Task E.3**: End-to-End render — EP01 v1 COMPLETE (2026-03-17)
+    - 32 keyframes (SimpleVectorFlux LoRA T2I)
+    - 32 clips (Ken Burns zoom/pan)
+    - Dia2-1B narration + BGM loop + audio mix
+    - Final: `EP01_v2_FINAL.mp4` — 3:22, 1280x720, 30fps
+
+## Phase F: Quality Upgrade (NEXT)
+- [ ] **Task F.1**: Wan 2.2 I2V animation — replace Ken Burns with real motion
+- [ ] **Task F.2**: ACE-Step custom BGM — replace looped placeholder
+- [ ] **Task F.3**: Motion Canvas diagrams — animated C01-C10 building metaphor
+- [ ] **Task F.4**: Thumbnail pipeline — best-frame + title overlay
 
 ---
-*Updated: 2026-03-10*
-*Status: Phase E Implementation Started*
+*Updated: 2026-03-17*
+*Status: Phase E Complete, Phase F Next*
