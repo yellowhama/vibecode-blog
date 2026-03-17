@@ -78,6 +78,10 @@ def main():
         elif args.workflow == "kontext" or (args.workflow == "auto" and kontext_prompt and has_characters):
             wf_key = KONTEXT_WF
             prompt = kontext_prompt or positive_prompt
+            # Append 2D flat vector style anchor to Kontext prompts
+            style_anchor = "2D flat vector style, v3ct0r style, simple flat colors, thin outline, no gradients, no 3D, no photorealistic."
+            if prompt and "v3ct0r" not in prompt.lower():
+                prompt = f"{prompt} {style_anchor}"
         elif args.workflow == "lora" or (args.workflow == "auto" and not kontext_prompt):
             wf_key = LORA_T2I_WF
             prompt = positive_prompt

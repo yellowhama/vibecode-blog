@@ -205,7 +205,8 @@
       "front": "vee_2d_golden_front.png",
       "three_quarter": "vee_2d_golden_3q.png",
       "full_body": "vee_2d_golden_full.png",
-      "status": "TO_GENERATE"
+      "status": "GENERATED",
+      "generated_date": "2026-03-17"
     }
   },
 

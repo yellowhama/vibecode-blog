@@ -30,7 +30,7 @@ from typing import Any
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
-STYLE_ANCHOR = "3D Pixar-like render style."
+STYLE_ANCHOR = "2D flat vector style, v3ct0r style, simple flat colors, thin outline, no gradients."
 IDENTITY_LOCK = "Keep her exact face, hair, glasses, and yellow hoodie unchanged."
 
 DEFAULT_GUIDANCE = 2.5

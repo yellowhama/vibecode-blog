@@ -1,0 +1,2544 @@
+{
+  "project_id": "ep01_v2",
+  "version": "5.0",
+  "title": "EP01 — What's a Spec?",
+  "language": "en",
+  "total_duration_sec": 230,
+  "segment_count": 5,
+  "beat_count": 44,
+  "segments": [
+    "HOOK",
+    "PROBLEM",
+    "CORE",
+    "APPLICATION",
+    "OUTRO"
+  ],
+  "phases": [
+    {
+      "phase_id": "SEG01",
+      "phase_name": "HOOK",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "EXCITEMENT",
+      "narrative_stage": "HOOK",
+      "target_duration_sec": 15,
+      "beats": [
+        {
+          "beat_id": "SEG01_B001",
+          "scene_id": "SEG01",
+          "text": "This is the moment every vibe coder lives for. You told AI what to build. And it built it.",
+          "narration_text": "This is the moment every vibe coder lives for. You told AI what to build. And it built it.",
+          "narrator_vo": "This is the moment every vibe coder lives for. You told AI what to build. And it built it.",
+          "visual_goal": "A single monitor glows in a dim room. Code scrolls. Dashboards pulse. A terminal blinks green. Everything is running.",
+          "duration_sec": 7.6,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "EXCITEMENT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "This is the moment every vibe coder lives for. You told AI what to build. And it built it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG01_B002",
+          "scene_id": "SEG01",
+          "text": "And then it all broke. Why?",
+          "narration_text": "And then it all broke. Why?",
+          "narrator_vo": "And then it all broke. Why?",
+          "visual_goal": "Vee throws both arms up. Huge grin. Eyes wide behind her round black glasses. The yellow hoodie sleeves flop past her wrists. \"BUILD SUCCESS\" flashes green on screen.",
+          "duration_sec": 2.4,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 1,
+          "extended_metaphor": false,
+          "shorts_candidate": true,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "EXCITEMENT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And then it all broke. Why?",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG02",
+      "phase_name": "PROBLEM",
+      "segment": "PROBLEM",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "emotion_curve": "EXCITEMENT → CONFIDENCE → first crack of FEAR",
+      "narrative_stage": "PROBLEM",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG02_B003",
+          "scene_id": "SEG02",
+          "text": "Three days ago, Vee discovered AI coding. And it felt like magic.",
+          "narration_text": "Three days ago, Vee discovered AI coding. And it felt like magic.",
+          "narrator_vo": "Three days ago, Vee discovered AI coding. And it felt like magic.",
+          "visual_goal": "Bright room. Sunlight. Vee sits at a clean desk. One empty terminal window.",
+          "duration_sec": 4.8,
+          "segment": "PROBLEM",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "PROBLEM",
+          "emotion_curve": "EXCITEMENT → CONFIDENCE → first crack of FEAR",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Three days ago, Vee discovered AI coding. And it felt like magic.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B004",
+          "scene_id": "SEG02",
+          "text": "Type what you want. AI builds it. A to-do app? Done. A database? Done. A login page with auth? Done.",
+          "narration_text": "Type what you want. AI builds it. A to-do app? Done. A database? Done. A login page with auth? Done.",
+          "narrator_vo": "Type what you want. AI builds it. A to-do app? Done. A database? Done. A login page with auth? Done.",
+          "visual_goal": "Vee types a single line. A complete app scaffolds itself on screen — folders, files, components, a running preview. Instant.",
+          "duration_sec": 8.0,
+          "segment": "PROBLEM",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "PROBLEM",
+          "emotion_curve": "EXCITEMENT → CONFIDENCE → first crack of FEAR",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Type what you want. AI builds it. A to-do app? Done. A database? Done. A login page with auth? Done.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B005",
+          "scene_id": "SEG02",
+          "text": "By day three she had a thousand lines of code across a dozen files. She couldn't explain what any of it did. But it ran. So she assumed it worked.",
+          "narration_text": "By day three she had a thousand lines of code across a dozen files. She couldn't explain what any of it did. But it ran. So she assumed it worked.",
+          "narrator_vo": "By day three she had a thousand lines of code across a dozen files. She couldn't explain what any of it did. But it ran. So she assumed it worked.",
+          "visual_goal": "Vee's eyes go wide. She leans forward, mouth slightly open. Pure wonder.",
+          "duration_sec": 12.0,
+          "segment": "PROBLEM",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 2,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "PROBLEM",
+          "emotion_curve": "EXCITEMENT → CONFIDENCE → first crack of FEAR",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "By day three she had a thousand lines of code across a dozen files. She couldn't explain what any of it did. But it ran. So she assumed it worked.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B006",
+          "scene_id": "SEG02",
+          "text": "She never asked herself one question. The only question that matters.",
+          "narration_text": "She never asked herself one question. The only question that matters.",
+          "narrator_vo": "She never asked herself one question. The only question that matters.",
+          "visual_goal": "MONTAGE — quick cuts, each 2 seconds: Vee types → app appears. Types → app appears. Types → app appears. Her grin gets wider each time. The screen fills with more and more windows.",
+          "duration_sec": 4.4,
+          "segment": "PROBLEM",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "PROBLEM",
+          "emotion_curve": "EXCITEMENT → CONFIDENCE → first crack of FEAR",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "She never asked herself one question. The only question that matters.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B007",
+          "scene_id": "SEG02",
+          "text": "What am I building?",
+          "narration_text": "What am I building?",
+          "narrator_vo": "What am I building?",
+          "visual_goal": "Vee leans back, arms crossed, nodding. Confident.",
+          "duration_sec": 1.6,
+          "segment": "PROBLEM",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "PROBLEM",
+          "emotion_curve": "EXCITEMENT → CONFIDENCE → first crack of FEAR",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "What am I building?",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG03",
+      "phase_name": "CORE",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "emotion_curve": "FEAR → CLARITY",
+      "narrative_stage": "CORE",
+      "target_duration_sec": 135,
+      "beats": [
+        {
+          "beat_id": "SEG03_B008",
+          "scene_id": "SEG03",
+          "text": "Let's talk about buildings. Real ones.",
+          "narration_text": "Let's talk about buildings. Real ones.",
+          "narrator_vo": "Let's talk about buildings. Real ones.",
+          "visual_goal": "TRANSITION: The desk fades. Background brightens to clean white. A flat, empty lot appears — simple 2D ground line, pale sky.",
+          "duration_sec": 2.4,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Let's talk about buildings. Real ones.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B009",
+          "scene_id": "SEG03",
+          "text": "When you build a house, you start with a blueprint. It tells you the order.",
+          "narration_text": "When you build a house, you start with a blueprint. It tells you the order.",
+          "narrator_vo": "When you build a house, you start with a blueprint. It tells you the order.",
+          "visual_goal": "A glowing blue rectangle unfolds on the left side of the frame — a blueprint. Clean lines. Labeled sections: FOUNDATION, FRAME, WALLS, ROOF.",
+          "duration_sec": 6.0,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "When you build a house, you start with a blueprint. It tells you the order.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B010",
+          "scene_id": "SEG03",
+          "text": "Foundation first.",
+          "narration_text": "Foundation first.",
+          "narrator_vo": "Foundation first.",
+          "visual_goal": "The blueprint animates step by step. On the right, a building rises in sync:",
+          "duration_sec": 1.5,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Foundation first.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B011",
+          "scene_id": "SEG03",
+          "text": "Then the frame.",
+          "narration_text": "Then the frame.",
+          "narrator_vo": "Then the frame.",
+          "visual_goal": "A grey slab slides into place on the lot. Solid. Level.",
+          "duration_sec": 1.5,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Then the frame.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B012",
+          "scene_id": "SEG03",
+          "text": "Walls.",
+          "narration_text": "Walls.",
+          "narrator_vo": "Walls.",
+          "visual_goal": "Vertical beams rise from the foundation. Horizontal beams connect them. A clean skeleton.",
+          "duration_sec": 1.5,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Walls.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B013",
+          "scene_id": "SEG03",
+          "text": "Roof.",
+          "narration_text": "Roof.",
+          "narrator_vo": "Roof.",
+          "visual_goal": "Flat colored panels fill in between the beams. Orange and warm cream. The structure takes shape.",
+          "duration_sec": 1.5,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Roof.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B014",
+          "scene_id": "SEG03",
+          "text": "Done. It stands because every piece knows where it goes. The blueprint told it.",
+          "narration_text": "Done. It stands because every piece knows where it goes. The blueprint told it.",
+          "narrator_vo": "Done. It stands because every piece knows where it goes. The blueprint told it.",
+          "visual_goal": "A simple angled roof lowers onto the top. A green checkmark pops above the finished house. Tiny sparkle particles.",
+          "duration_sec": 5.6,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Done. It stands because every piece knows where it goes. The blueprint told it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B015",
+          "scene_id": "SEG03",
+          "text": "Now. Take away the blueprint.",
+          "narration_text": "Now. Take away the blueprint.",
+          "narrator_vo": "Now. Take away the blueprint.",
+          "visual_goal": "BEAT. The finished house sits solid on the right. The blueprint glows faintly on the left.",
+          "duration_sec": 2.0,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Now. Take away the blueprint.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B016",
+          "scene_id": "SEG03",
+          "text": "No plan. No order. Just... start stacking.",
+          "narration_text": "No plan. No order. Just... start stacking.",
+          "narrator_vo": "No plan. No order. Just... start stacking.",
+          "visual_goal": "The blueprint fades out. The house slides off-frame. The empty lot reappears.",
+          "duration_sec": 2.8,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": true,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "No plan. No order. Just... start stacking.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B017",
+          "scene_id": "SEG03",
+          "text": "A wall before there's a foundation.",
+          "narration_text": "A wall before there's a foundation.",
+          "narrator_vo": "A wall before there's a foundation.",
+          "visual_goal": "A red \"X\" stamps where the blueprint was. The lot is bare again.",
+          "duration_sec": 2.4,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "A wall before there's a foundation.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B018",
+          "scene_id": "SEG03",
+          "text": "A roof before there are walls.",
+          "narration_text": "A roof before there are walls.",
+          "narrator_vo": "A roof before there are walls.",
+          "visual_goal": "Colored blocks begin dropping from above — random sizes, random colors. They land at odd angles. Some balance. Some don't.",
+          "duration_sec": 2.4,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "A roof before there are walls.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B019",
+          "scene_id": "SEG03",
+          "text": "Three different staircases going to the same floor.",
+          "narration_text": "Three different staircases going to the same floor.",
+          "narrator_vo": "Three different staircases going to the same floor.",
+          "visual_goal": "A tall orange panel lands on bare ground. It wobbles.",
+          "duration_sec": 3.2,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Three different staircases going to the same floor.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B020",
+          "scene_id": "SEG03",
+          "text": "It looks like a building. Kinda. If you squint.",
+          "narration_text": "It looks like a building. Kinda. If you squint.",
+          "narrator_vo": "It looks like a building. Kinda. If you squint.",
+          "visual_goal": "A roof triangle drops on top of nothing. It sits crooked.",
+          "duration_sec": 3.6,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "It looks like a building. Kinda. If you squint.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B021",
+          "scene_id": "SEG03",
+          "text": "And then —",
+          "narration_text": "And then —",
+          "narrator_vo": "And then —",
+          "visual_goal": "Three staircases appear side by side, crammed together, each a different style and color. Absurd.",
+          "duration_sec": 1.5,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And then —",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B022",
+          "scene_id": "SEG03",
+          "text": "Everything falls down.",
+          "narration_text": "Everything falls down.",
+          "narrator_vo": "Everything falls down.",
+          "visual_goal": "The tower of mismatched blocks grows taller. It leans. The camera follows it up. It sways.",
+          "duration_sec": 1.5,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Everything falls down.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B023",
+          "scene_id": "SEG03",
+          "text": "That's what happened to Vee's code. She stacked blocks without a blueprint. And the tower fell.",
+          "narration_text": "That's what happened to Vee's code. She stacked blocks without a blueprint. And the tower fell.",
+          "narrator_vo": "That's what happened to Vee's code. She stacked blocks without a blueprint. And the tower fell.",
+          "visual_goal": "The structure sways harder. A red block at the base cracks.",
+          "duration_sec": 6.4,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "That's what happened to Vee's code. She stacked blocks without a blueprint. And the tower fell.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B024",
+          "scene_id": "SEG03",
+          "text": "So what's the blueprint for code?",
+          "narration_text": "So what's the blueprint for code?",
+          "narrator_vo": "So what's the blueprint for code?",
+          "visual_goal": "The tower COLLAPSES. Blocks tumble outward. Dust cloud. One block bounces toward the camera.",
+          "duration_sec": 2.4,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "So what's the blueprint for code?",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B025",
+          "scene_id": "SEG03",
+          "text": "A spec.",
+          "narration_text": "A spec.",
+          "narrator_vo": "A spec.",
+          "visual_goal": "Silence. 1.5 seconds. Rubble on the ground.",
+          "duration_sec": 1.5,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "A spec.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B026",
+          "scene_id": "SEG03",
+          "text": "And before you close this tab — a spec is not a hundred-page document. It's not a Jira board. It's not a meeting that should've been an email.",
+          "narration_text": "And before you close this tab — a spec is not a hundred-page document. It's not a Jira board. It's not a meeting that should've been an email.",
+          "narrator_vo": "And before you close this tab — a spec is not a hundred-page document. It's not a Jira board. It's not a meeting that should've been an email.",
+          "visual_goal": "The rubble fades. Clean white space.",
+          "duration_sec": 11.2,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And before you close this tab — a spec is not a hundred-page document. It's not a Jira board. It's not a meeting that should've been an email.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B027",
+          "scene_id": "SEG03",
+          "text": "A spec is one sentence.",
+          "narration_text": "A spec is one sentence.",
+          "narrator_vo": "A spec is one sentence.",
+          "visual_goal": "A single word appears in bold, center frame: **SPEC**",
+          "duration_sec": 2.0,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "A spec is one sentence.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B028",
+          "scene_id": "SEG03",
+          "text": "\"What am I building, and why?\" That's it. One sentence. Everything else follows from that.",
+          "narration_text": "\"What am I building, and why?\" That's it. One sentence. Everything else follows from that.",
+          "narrator_vo": "\"What am I building, and why?\" That's it. One sentence. Everything else follows from that.",
+          "visual_goal": "The word pulses once with a faint blue glow.",
+          "duration_sec": 6.0,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "\"What am I building, and why?\" That's it. One sentence. Everything else follows from that.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B029",
+          "scene_id": "SEG03",
+          "text": "Think of it like this.",
+          "narration_text": "Think of it like this.",
+          "narrator_vo": "Think of it like this.",
+          "visual_goal": "Each rejected item appears and gets crossed out with a red X: a thick binder, a kanban board, a conference table.",
+          "duration_sec": 2.0,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Think of it like this.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B030",
+          "scene_id": "SEG03",
+          "text": "You don't start with a car. You start with a skateboard.",
+          "narration_text": "You don't start with a car. You start with a skateboard.",
+          "narrator_vo": "You don't start with a car. You start with a skateboard.",
+          "visual_goal": "The crossed-out items sweep off screen. One clean line of text writes itself:",
+          "duration_sec": 4.4,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "You don't start with a car. You start with a skateboard.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B031",
+          "scene_id": "SEG03",
+          "text": "Then a bicycle.",
+          "narration_text": "Then a bicycle.",
+          "narrator_vo": "Then a bicycle.",
+          "visual_goal": "\"What am I building, and why?\"",
+          "duration_sec": 1.5,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Then a bicycle.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B032",
+          "scene_id": "SEG03",
+          "text": "Then a car. Each version works. Each version moves. But each one is a complete thing — not a random pile of car parts.",
+          "narration_text": "Then a car. Each version works. Each version moves. But each one is a complete thing — not a random pile of car parts.",
+          "narrator_vo": "Then a car. Each version works. Each version moves. But each one is a complete thing — not a random pile of car parts.",
+          "visual_goal": "BEAT. The sentence stays on screen for 2 seconds.",
+          "duration_sec": 9.6,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Then a car. Each version works. Each version moves. But each one is a complete thing — not a random pile of car parts.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B033",
+          "scene_id": "SEG03",
+          "text": "Without a spec, you get this. Parts. Not a vehicle. Parts that don't connect, built by an AI that doesn't know what the finished thing looks like. Because you never told it.",
+          "narration_text": "Without a spec, you get this. Parts. Not a vehicle. Parts that don't connect, built by an AI that doesn't know what the finished thing looks like. Because you never told it.",
+          "narrator_vo": "Without a spec, you get this. Parts. Not a vehicle. Parts that don't connect, built by an AI that doesn't know what the finished thing looks like. Because you never told it.",
+          "visual_goal": "Below the sentence, a simple evolution diagram animates:",
+          "duration_sec": 12.8,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Without a spec, you get this. Parts. Not a vehicle. Parts that don't connect, built by an AI that doesn't know what the finished thing looks like. Because you never told it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B034",
+          "scene_id": "SEG03",
+          "text": "The spec gives you three things. One: a filter. When AI suggests something, you can ask — \"Does this help me build my skateboard?\" If no, skip it.",
+          "narration_text": "The spec gives you three things. One: a filter. When AI suggests something, you can ask — \"Does this help me build my skateboard?\" If no, skip it.",
+          "narrator_vo": "The spec gives you three things. One: a filter. When AI suggests something, you can ask — \"Does this help me build my skateboard?\" If no, skip it.",
+          "visual_goal": "A skateboard appears. Four wheels. A plank. Minimal.",
+          "duration_sec": 11.2,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The spec gives you three things. One: a filter. When AI suggests something, you can ask — \"Does this help me build my skateboard?\" If no, skip it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B035",
+          "scene_id": "SEG03",
+          "text": "Two: a sequence. Foundation, then frame, then walls, then roof. You know the order.",
+          "narration_text": "Two: a sequence. Foundation, then frame, then walls, then roof. You know the order.",
+          "narrator_vo": "Two: a sequence. Foundation, then frame, then walls, then roof. You know the order.",
+          "visual_goal": "An arrow points right. The skateboard morphs into a bicycle. Two wheels, pedals, handlebars.",
+          "duration_sec": 5.6,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Two: a sequence. Foundation, then frame, then walls, then roof. You know the order.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B036",
+          "scene_id": "SEG03",
+          "text": "Three: a definition of done. You know when to stop. Because you know what \"finished\" looks like.",
+          "narration_text": "Three: a definition of done. You know when to stop. Because you know what \"finished\" looks like.",
+          "narrator_vo": "Three: a definition of done. You know when to stop. Because you know what \"finished\" looks like.",
+          "visual_goal": "Another arrow. The bicycle morphs into a small car. Simple, boxy, but complete.",
+          "duration_sec": 6.8,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Three: a definition of done. You know when to stop. Because you know what \"finished\" looks like.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B037",
+          "scene_id": "SEG03",
+          "text": "Without those three things, you're stacking random blocks and hoping they hold.",
+          "narration_text": "Without those three things, you're stacking random blocks and hoping they hold.",
+          "narrator_vo": "Without those three things, you're stacking random blocks and hoping they hold.",
+          "visual_goal": "Below the evolution line, a contrasting image: a heap of disconnected parts — a steering wheel, two doors, an engine, a windshield — sitting in a pile.",
+          "duration_sec": 4.8,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "FEAR → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Without those three things, you're stacking random blocks and hoping they hold.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG04",
+      "phase_name": "APPLICATION",
+      "segment": "APPLICATION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "CLARITY → GROWTH",
+      "narrative_stage": "APPLICATION",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG04_B038",
+          "scene_id": "SEG04",
+          "text": "Back to the present.",
+          "narration_text": "Back to the present.",
+          "narrator_vo": "Back to the present.",
+          "visual_goal": "Back to the opening scene. Same room. Same red errors on the monitor. Same dark glow.",
+          "duration_sec": 1.6,
+          "segment": "APPLICATION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "APPLICATION",
+          "emotion_curve": "CLARITY → GROWTH",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Back to the present.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B039",
+          "scene_id": "SEG04",
+          "text": "She stopped coding. And she started thinking.",
+          "narration_text": "She stopped coding. And she started thinking.",
+          "narrator_vo": "She stopped coding. And she started thinking.",
+          "visual_goal": "But Vee isn't panicking.",
+          "duration_sec": 2.8,
+          "segment": "APPLICATION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "APPLICATION",
+          "emotion_curve": "CLARITY → GROWTH",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "She stopped coding. And she started thinking.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B040",
+          "scene_id": "SEG04",
+          "text": "One sentence. That's all it took.",
+          "narration_text": "One sentence. That's all it took.",
+          "narrator_vo": "One sentence. That's all it took.",
+          "visual_goal": "Vee pushes her keyboard aside. She pulls out a piece of paper and a pencil.",
+          "duration_sec": 2.4,
+          "segment": "APPLICATION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "APPLICATION",
+          "emotion_curve": "CLARITY → GROWTH",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "One sentence. That's all it took.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B041",
+          "scene_id": "SEG04",
+          "text": "Same errors. Same wall of red. But now, one line jumps out. Because now she knows what she's looking for.",
+          "narration_text": "Same errors. Same wall of red. But now, one line jumps out. Because now she knows what she's looking for.",
+          "narrator_vo": "Same errors. Same wall of red. But now, one line jumps out. Because now she knows what she's looking for.",
+          "visual_goal": "She turns away from the monitor. Faces the paper. Starts writing. Not code. Words.",
+          "duration_sec": 8.0,
+          "segment": "APPLICATION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 4,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "APPLICATION",
+          "emotion_curve": "CLARITY → GROWTH",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Same errors. Same wall of red. But now, one line jumps out. Because now she knows what she's looking for.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG05",
+      "phase_name": "OUTRO",
+      "segment": "OUTRO",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "GROWTH → open loop for EP02",
+      "narrative_stage": "OUTRO",
+      "target_duration_sec": 20,
+      "beats": [
+        {
+          "beat_id": "SEG05_B042",
+          "scene_id": "SEG05",
+          "text": "Everything is still broken.",
+          "narration_text": "Everything is still broken.",
+          "narrator_vo": "Everything is still broken.",
+          "visual_goal": "Same composition as the HOOK. Monitor. Errors. Dark room.",
+          "duration_sec": 1.6,
+          "segment": "OUTRO",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO",
+          "emotion_curve": "GROWTH → open loop for EP02",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Everything is still broken.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B043",
+          "scene_id": "SEG05",
+          "text": "But now she knows what to fix.",
+          "narration_text": "But now she knows what to fix.",
+          "narrator_vo": "But now she knows what to fix.",
+          "visual_goal": "Vee pins the piece of paper next to her monitor. It reads: \"I want to access my home files from any device.\"",
+          "duration_sec": 2.8,
+          "segment": "OUTRO",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO",
+          "emotion_curve": "GROWTH → open loop for EP02",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "But now she knows what to fix.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B044",
+          "scene_id": "SEG05",
+          "text": "...at least, she thinks she does. Next time — she writes fifteen pages of specs. And somehow, that makes everything worse.",
+          "narration_text": "...at least, she thinks she does. Next time — she writes fifteen pages of specs. And somehow, that makes everything worse.",
+          "narrator_vo": "...at least, she thinks she does. Next time — she writes fifteen pages of specs. And somehow, that makes everything worse.",
+          "visual_goal": "She picks up her mug. Takes a sip. Sets it down.",
+          "duration_sec": 8.4,
+          "segment": "OUTRO",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO",
+          "emotion_curve": "GROWTH → open loop for EP02",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "...at least, she thinks she does. Next time — she writes fifteen pages of specs. And somehow, that makes everything worse.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "beat_id": "SEG01_B001",
+      "scene_id": "SEG01",
+      "text": "This is the moment every vibe coder lives for. You told AI what to build. And it built it.",
+      "narration_text": "This is the moment every vibe coder lives for. You told AI what to build. And it built it.",
+      "narrator_vo": "This is the moment every vibe coder lives for. You told AI what to build. And it built it.",
+      "visual_goal": "A single monitor glows in a dim room. Code scrolls. Dashboards pulse. A terminal blinks green. Everything is running.",
+      "duration_sec": 7.6,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "EXCITEMENT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "This is the moment every vibe coder lives for. You told AI what to build. And it built it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG01_B002",
+      "scene_id": "SEG01",
+      "text": "And then it all broke. Why?",
+      "narration_text": "And then it all broke. Why?",
+      "narrator_vo": "And then it all broke. Why?",
+      "visual_goal": "Vee throws both arms up. Huge grin. Eyes wide behind her round black glasses. The yellow hoodie sleeves flop past her wrists. \"BUILD SUCCESS\" flashes green on screen.",
+      "duration_sec": 2.4,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 1,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "EXCITEMENT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And then it all broke. Why?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B003",
+      "scene_id": "SEG02",
+      "text": "Three days ago, Vee discovered AI coding. And it felt like magic.",
+      "narration_text": "Three days ago, Vee discovered AI coding. And it felt like magic.",
+      "narrator_vo": "Three days ago, Vee discovered AI coding. And it felt like magic.",
+      "visual_goal": "Bright room. Sunlight. Vee sits at a clean desk. One empty terminal window.",
+      "duration_sec": 4.8,
+      "segment": "PROBLEM",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "PROBLEM",
+      "emotion_curve": "EXCITEMENT → CONFIDENCE → first crack of FEAR",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Three days ago, Vee discovered AI coding. And it felt like magic.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B004",
+      "scene_id": "SEG02",
+      "text": "Type what you want. AI builds it. A to-do app? Done. A database? Done. A login page with auth? Done.",
+      "narration_text": "Type what you want. AI builds it. A to-do app? Done. A database? Done. A login page with auth? Done.",
+      "narrator_vo": "Type what you want. AI builds it. A to-do app? Done. A database? Done. A login page with auth? Done.",
+      "visual_goal": "Vee types a single line. A complete app scaffolds itself on screen — folders, files, components, a running preview. Instant.",
+      "duration_sec": 8.0,
+      "segment": "PROBLEM",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "PROBLEM",
+      "emotion_curve": "EXCITEMENT → CONFIDENCE → first crack of FEAR",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Type what you want. AI builds it. A to-do app? Done. A database? Done. A login page with auth? Done.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B005",
+      "scene_id": "SEG02",
+      "text": "By day three she had a thousand lines of code across a dozen files. She couldn't explain what any of it did. But it ran. So she assumed it worked.",
+      "narration_text": "By day three she had a thousand lines of code across a dozen files. She couldn't explain what any of it did. But it ran. So she assumed it worked.",
+      "narrator_vo": "By day three she had a thousand lines of code across a dozen files. She couldn't explain what any of it did. But it ran. So she assumed it worked.",
+      "visual_goal": "Vee's eyes go wide. She leans forward, mouth slightly open. Pure wonder.",
+      "duration_sec": 12.0,
+      "segment": "PROBLEM",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 2,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "PROBLEM",
+      "emotion_curve": "EXCITEMENT → CONFIDENCE → first crack of FEAR",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "By day three she had a thousand lines of code across a dozen files. She couldn't explain what any of it did. But it ran. So she assumed it worked.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B006",
+      "scene_id": "SEG02",
+      "text": "She never asked herself one question. The only question that matters.",
+      "narration_text": "She never asked herself one question. The only question that matters.",
+      "narrator_vo": "She never asked herself one question. The only question that matters.",
+      "visual_goal": "MONTAGE — quick cuts, each 2 seconds: Vee types → app appears. Types → app appears. Types → app appears. Her grin gets wider each time. The screen fills with more and more windows.",
+      "duration_sec": 4.4,
+      "segment": "PROBLEM",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "PROBLEM",
+      "emotion_curve": "EXCITEMENT → CONFIDENCE → first crack of FEAR",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "She never asked herself one question. The only question that matters.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B007",
+      "scene_id": "SEG02",
+      "text": "What am I building?",
+      "narration_text": "What am I building?",
+      "narrator_vo": "What am I building?",
+      "visual_goal": "Vee leans back, arms crossed, nodding. Confident.",
+      "duration_sec": 1.6,
+      "segment": "PROBLEM",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "PROBLEM",
+      "emotion_curve": "EXCITEMENT → CONFIDENCE → first crack of FEAR",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "What am I building?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B008",
+      "scene_id": "SEG03",
+      "text": "Let's talk about buildings. Real ones.",
+      "narration_text": "Let's talk about buildings. Real ones.",
+      "narrator_vo": "Let's talk about buildings. Real ones.",
+      "visual_goal": "TRANSITION: The desk fades. Background brightens to clean white. A flat, empty lot appears — simple 2D ground line, pale sky.",
+      "duration_sec": 2.4,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Let's talk about buildings. Real ones.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B009",
+      "scene_id": "SEG03",
+      "text": "When you build a house, you start with a blueprint. It tells you the order.",
+      "narration_text": "When you build a house, you start with a blueprint. It tells you the order.",
+      "narrator_vo": "When you build a house, you start with a blueprint. It tells you the order.",
+      "visual_goal": "A glowing blue rectangle unfolds on the left side of the frame — a blueprint. Clean lines. Labeled sections: FOUNDATION, FRAME, WALLS, ROOF.",
+      "duration_sec": 6.0,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "When you build a house, you start with a blueprint. It tells you the order.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B010",
+      "scene_id": "SEG03",
+      "text": "Foundation first.",
+      "narration_text": "Foundation first.",
+      "narrator_vo": "Foundation first.",
+      "visual_goal": "The blueprint animates step by step. On the right, a building rises in sync:",
+      "duration_sec": 1.5,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Foundation first.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B011",
+      "scene_id": "SEG03",
+      "text": "Then the frame.",
+      "narration_text": "Then the frame.",
+      "narrator_vo": "Then the frame.",
+      "visual_goal": "A grey slab slides into place on the lot. Solid. Level.",
+      "duration_sec": 1.5,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Then the frame.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B012",
+      "scene_id": "SEG03",
+      "text": "Walls.",
+      "narration_text": "Walls.",
+      "narrator_vo": "Walls.",
+      "visual_goal": "Vertical beams rise from the foundation. Horizontal beams connect them. A clean skeleton.",
+      "duration_sec": 1.5,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Walls.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B013",
+      "scene_id": "SEG03",
+      "text": "Roof.",
+      "narration_text": "Roof.",
+      "narrator_vo": "Roof.",
+      "visual_goal": "Flat colored panels fill in between the beams. Orange and warm cream. The structure takes shape.",
+      "duration_sec": 1.5,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Roof.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B014",
+      "scene_id": "SEG03",
+      "text": "Done. It stands because every piece knows where it goes. The blueprint told it.",
+      "narration_text": "Done. It stands because every piece knows where it goes. The blueprint told it.",
+      "narrator_vo": "Done. It stands because every piece knows where it goes. The blueprint told it.",
+      "visual_goal": "A simple angled roof lowers onto the top. A green checkmark pops above the finished house. Tiny sparkle particles.",
+      "duration_sec": 5.6,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Done. It stands because every piece knows where it goes. The blueprint told it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B015",
+      "scene_id": "SEG03",
+      "text": "Now. Take away the blueprint.",
+      "narration_text": "Now. Take away the blueprint.",
+      "narrator_vo": "Now. Take away the blueprint.",
+      "visual_goal": "BEAT. The finished house sits solid on the right. The blueprint glows faintly on the left.",
+      "duration_sec": 2.0,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Now. Take away the blueprint.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B016",
+      "scene_id": "SEG03",
+      "text": "No plan. No order. Just... start stacking.",
+      "narration_text": "No plan. No order. Just... start stacking.",
+      "narrator_vo": "No plan. No order. Just... start stacking.",
+      "visual_goal": "The blueprint fades out. The house slides off-frame. The empty lot reappears.",
+      "duration_sec": 2.8,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": true,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "No plan. No order. Just... start stacking.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B017",
+      "scene_id": "SEG03",
+      "text": "A wall before there's a foundation.",
+      "narration_text": "A wall before there's a foundation.",
+      "narrator_vo": "A wall before there's a foundation.",
+      "visual_goal": "A red \"X\" stamps where the blueprint was. The lot is bare again.",
+      "duration_sec": 2.4,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "A wall before there's a foundation.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B018",
+      "scene_id": "SEG03",
+      "text": "A roof before there are walls.",
+      "narration_text": "A roof before there are walls.",
+      "narrator_vo": "A roof before there are walls.",
+      "visual_goal": "Colored blocks begin dropping from above — random sizes, random colors. They land at odd angles. Some balance. Some don't.",
+      "duration_sec": 2.4,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "A roof before there are walls.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B019",
+      "scene_id": "SEG03",
+      "text": "Three different staircases going to the same floor.",
+      "narration_text": "Three different staircases going to the same floor.",
+      "narrator_vo": "Three different staircases going to the same floor.",
+      "visual_goal": "A tall orange panel lands on bare ground. It wobbles.",
+      "duration_sec": 3.2,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Three different staircases going to the same floor.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B020",
+      "scene_id": "SEG03",
+      "text": "It looks like a building. Kinda. If you squint.",
+      "narration_text": "It looks like a building. Kinda. If you squint.",
+      "narrator_vo": "It looks like a building. Kinda. If you squint.",
+      "visual_goal": "A roof triangle drops on top of nothing. It sits crooked.",
+      "duration_sec": 3.6,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "It looks like a building. Kinda. If you squint.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B021",
+      "scene_id": "SEG03",
+      "text": "And then —",
+      "narration_text": "And then —",
+      "narrator_vo": "And then —",
+      "visual_goal": "Three staircases appear side by side, crammed together, each a different style and color. Absurd.",
+      "duration_sec": 1.5,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And then —",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B022",
+      "scene_id": "SEG03",
+      "text": "Everything falls down.",
+      "narration_text": "Everything falls down.",
+      "narrator_vo": "Everything falls down.",
+      "visual_goal": "The tower of mismatched blocks grows taller. It leans. The camera follows it up. It sways.",
+      "duration_sec": 1.5,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Everything falls down.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B023",
+      "scene_id": "SEG03",
+      "text": "That's what happened to Vee's code. She stacked blocks without a blueprint. And the tower fell.",
+      "narration_text": "That's what happened to Vee's code. She stacked blocks without a blueprint. And the tower fell.",
+      "narrator_vo": "That's what happened to Vee's code. She stacked blocks without a blueprint. And the tower fell.",
+      "visual_goal": "The structure sways harder. A red block at the base cracks.",
+      "duration_sec": 6.4,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "That's what happened to Vee's code. She stacked blocks without a blueprint. And the tower fell.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B024",
+      "scene_id": "SEG03",
+      "text": "So what's the blueprint for code?",
+      "narration_text": "So what's the blueprint for code?",
+      "narrator_vo": "So what's the blueprint for code?",
+      "visual_goal": "The tower COLLAPSES. Blocks tumble outward. Dust cloud. One block bounces toward the camera.",
+      "duration_sec": 2.4,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "So what's the blueprint for code?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B025",
+      "scene_id": "SEG03",
+      "text": "A spec.",
+      "narration_text": "A spec.",
+      "narrator_vo": "A spec.",
+      "visual_goal": "Silence. 1.5 seconds. Rubble on the ground.",
+      "duration_sec": 1.5,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "A spec.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B026",
+      "scene_id": "SEG03",
+      "text": "And before you close this tab — a spec is not a hundred-page document. It's not a Jira board. It's not a meeting that should've been an email.",
+      "narration_text": "And before you close this tab — a spec is not a hundred-page document. It's not a Jira board. It's not a meeting that should've been an email.",
+      "narrator_vo": "And before you close this tab — a spec is not a hundred-page document. It's not a Jira board. It's not a meeting that should've been an email.",
+      "visual_goal": "The rubble fades. Clean white space.",
+      "duration_sec": 11.2,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And before you close this tab — a spec is not a hundred-page document. It's not a Jira board. It's not a meeting that should've been an email.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B027",
+      "scene_id": "SEG03",
+      "text": "A spec is one sentence.",
+      "narration_text": "A spec is one sentence.",
+      "narrator_vo": "A spec is one sentence.",
+      "visual_goal": "A single word appears in bold, center frame: **SPEC**",
+      "duration_sec": 2.0,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "A spec is one sentence.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B028",
+      "scene_id": "SEG03",
+      "text": "\"What am I building, and why?\" That's it. One sentence. Everything else follows from that.",
+      "narration_text": "\"What am I building, and why?\" That's it. One sentence. Everything else follows from that.",
+      "narrator_vo": "\"What am I building, and why?\" That's it. One sentence. Everything else follows from that.",
+      "visual_goal": "The word pulses once with a faint blue glow.",
+      "duration_sec": 6.0,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "\"What am I building, and why?\" That's it. One sentence. Everything else follows from that.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B029",
+      "scene_id": "SEG03",
+      "text": "Think of it like this.",
+      "narration_text": "Think of it like this.",
+      "narrator_vo": "Think of it like this.",
+      "visual_goal": "Each rejected item appears and gets crossed out with a red X: a thick binder, a kanban board, a conference table.",
+      "duration_sec": 2.0,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Think of it like this.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B030",
+      "scene_id": "SEG03",
+      "text": "You don't start with a car. You start with a skateboard.",
+      "narration_text": "You don't start with a car. You start with a skateboard.",
+      "narrator_vo": "You don't start with a car. You start with a skateboard.",
+      "visual_goal": "The crossed-out items sweep off screen. One clean line of text writes itself:",
+      "duration_sec": 4.4,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "You don't start with a car. You start with a skateboard.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B031",
+      "scene_id": "SEG03",
+      "text": "Then a bicycle.",
+      "narration_text": "Then a bicycle.",
+      "narrator_vo": "Then a bicycle.",
+      "visual_goal": "\"What am I building, and why?\"",
+      "duration_sec": 1.5,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Then a bicycle.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B032",
+      "scene_id": "SEG03",
+      "text": "Then a car. Each version works. Each version moves. But each one is a complete thing — not a random pile of car parts.",
+      "narration_text": "Then a car. Each version works. Each version moves. But each one is a complete thing — not a random pile of car parts.",
+      "narrator_vo": "Then a car. Each version works. Each version moves. But each one is a complete thing — not a random pile of car parts.",
+      "visual_goal": "BEAT. The sentence stays on screen for 2 seconds.",
+      "duration_sec": 9.6,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Then a car. Each version works. Each version moves. But each one is a complete thing — not a random pile of car parts.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B033",
+      "scene_id": "SEG03",
+      "text": "Without a spec, you get this. Parts. Not a vehicle. Parts that don't connect, built by an AI that doesn't know what the finished thing looks like. Because you never told it.",
+      "narration_text": "Without a spec, you get this. Parts. Not a vehicle. Parts that don't connect, built by an AI that doesn't know what the finished thing looks like. Because you never told it.",
+      "narrator_vo": "Without a spec, you get this. Parts. Not a vehicle. Parts that don't connect, built by an AI that doesn't know what the finished thing looks like. Because you never told it.",
+      "visual_goal": "Below the sentence, a simple evolution diagram animates:",
+      "duration_sec": 12.8,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Without a spec, you get this. Parts. Not a vehicle. Parts that don't connect, built by an AI that doesn't know what the finished thing looks like. Because you never told it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B034",
+      "scene_id": "SEG03",
+      "text": "The spec gives you three things. One: a filter. When AI suggests something, you can ask — \"Does this help me build my skateboard?\" If no, skip it.",
+      "narration_text": "The spec gives you three things. One: a filter. When AI suggests something, you can ask — \"Does this help me build my skateboard?\" If no, skip it.",
+      "narrator_vo": "The spec gives you three things. One: a filter. When AI suggests something, you can ask — \"Does this help me build my skateboard?\" If no, skip it.",
+      "visual_goal": "A skateboard appears. Four wheels. A plank. Minimal.",
+      "duration_sec": 11.2,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The spec gives you three things. One: a filter. When AI suggests something, you can ask — \"Does this help me build my skateboard?\" If no, skip it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B035",
+      "scene_id": "SEG03",
+      "text": "Two: a sequence. Foundation, then frame, then walls, then roof. You know the order.",
+      "narration_text": "Two: a sequence. Foundation, then frame, then walls, then roof. You know the order.",
+      "narrator_vo": "Two: a sequence. Foundation, then frame, then walls, then roof. You know the order.",
+      "visual_goal": "An arrow points right. The skateboard morphs into a bicycle. Two wheels, pedals, handlebars.",
+      "duration_sec": 5.6,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Two: a sequence. Foundation, then frame, then walls, then roof. You know the order.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B036",
+      "scene_id": "SEG03",
+      "text": "Three: a definition of done. You know when to stop. Because you know what \"finished\" looks like.",
+      "narration_text": "Three: a definition of done. You know when to stop. Because you know what \"finished\" looks like.",
+      "narrator_vo": "Three: a definition of done. You know when to stop. Because you know what \"finished\" looks like.",
+      "visual_goal": "Another arrow. The bicycle morphs into a small car. Simple, boxy, but complete.",
+      "duration_sec": 6.8,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Three: a definition of done. You know when to stop. Because you know what \"finished\" looks like.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B037",
+      "scene_id": "SEG03",
+      "text": "Without those three things, you're stacking random blocks and hoping they hold.",
+      "narration_text": "Without those three things, you're stacking random blocks and hoping they hold.",
+      "narrator_vo": "Without those three things, you're stacking random blocks and hoping they hold.",
+      "visual_goal": "Below the evolution line, a contrasting image: a heap of disconnected parts — a steering wheel, two doors, an engine, a windshield — sitting in a pile.",
+      "duration_sec": 4.8,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "FEAR → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Without those three things, you're stacking random blocks and hoping they hold.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B038",
+      "scene_id": "SEG04",
+      "text": "Back to the present.",
+      "narration_text": "Back to the present.",
+      "narrator_vo": "Back to the present.",
+      "visual_goal": "Back to the opening scene. Same room. Same red errors on the monitor. Same dark glow.",
+      "duration_sec": 1.6,
+      "segment": "APPLICATION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "APPLICATION",
+      "emotion_curve": "CLARITY → GROWTH",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Back to the present.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B039",
+      "scene_id": "SEG04",
+      "text": "She stopped coding. And she started thinking.",
+      "narration_text": "She stopped coding. And she started thinking.",
+      "narrator_vo": "She stopped coding. And she started thinking.",
+      "visual_goal": "But Vee isn't panicking.",
+      "duration_sec": 2.8,
+      "segment": "APPLICATION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "APPLICATION",
+      "emotion_curve": "CLARITY → GROWTH",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "She stopped coding. And she started thinking.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B040",
+      "scene_id": "SEG04",
+      "text": "One sentence. That's all it took.",
+      "narration_text": "One sentence. That's all it took.",
+      "narrator_vo": "One sentence. That's all it took.",
+      "visual_goal": "Vee pushes her keyboard aside. She pulls out a piece of paper and a pencil.",
+      "duration_sec": 2.4,
+      "segment": "APPLICATION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "APPLICATION",
+      "emotion_curve": "CLARITY → GROWTH",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "One sentence. That's all it took.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B041",
+      "scene_id": "SEG04",
+      "text": "Same errors. Same wall of red. But now, one line jumps out. Because now she knows what she's looking for.",
+      "narration_text": "Same errors. Same wall of red. But now, one line jumps out. Because now she knows what she's looking for.",
+      "narrator_vo": "Same errors. Same wall of red. But now, one line jumps out. Because now she knows what she's looking for.",
+      "visual_goal": "She turns away from the monitor. Faces the paper. Starts writing. Not code. Words.",
+      "duration_sec": 8.0,
+      "segment": "APPLICATION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 4,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "APPLICATION",
+      "emotion_curve": "CLARITY → GROWTH",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Same errors. Same wall of red. But now, one line jumps out. Because now she knows what she's looking for.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B042",
+      "scene_id": "SEG05",
+      "text": "Everything is still broken.",
+      "narration_text": "Everything is still broken.",
+      "narrator_vo": "Everything is still broken.",
+      "visual_goal": "Same composition as the HOOK. Monitor. Errors. Dark room.",
+      "duration_sec": 1.6,
+      "segment": "OUTRO",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO",
+      "emotion_curve": "GROWTH → open loop for EP02",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Everything is still broken.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B043",
+      "scene_id": "SEG05",
+      "text": "But now she knows what to fix.",
+      "narration_text": "But now she knows what to fix.",
+      "narrator_vo": "But now she knows what to fix.",
+      "visual_goal": "Vee pins the piece of paper next to her monitor. It reads: \"I want to access my home files from any device.\"",
+      "duration_sec": 2.8,
+      "segment": "OUTRO",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO",
+      "emotion_curve": "GROWTH → open loop for EP02",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "But now she knows what to fix.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B044",
+      "scene_id": "SEG05",
+      "text": "...at least, she thinks she does. Next time — she writes fifteen pages of specs. And somehow, that makes everything worse.",
+      "narration_text": "...at least, she thinks she does. Next time — she writes fifteen pages of specs. And somehow, that makes everything worse.",
+      "narrator_vo": "...at least, she thinks she does. Next time — she writes fifteen pages of specs. And somehow, that makes everything worse.",
+      "visual_goal": "She picks up her mug. Takes a sip. Sets it down.",
+      "duration_sec": 8.4,
+      "segment": "OUTRO",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO",
+      "emotion_curve": "GROWTH → open loop for EP02",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "...at least, she thinks she does. Next time — she writes fifteen pages of specs. And somehow, that makes everything worse.",
+          "emotion": ""
+        }
+      ]
+    }
+  ]
+}

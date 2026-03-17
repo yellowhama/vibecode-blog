@@ -1,0 +1,314 @@
+{
+  "project_id": "ep01_v2",
+  "language": "en",
+  "beats": [
+    {
+      "beat_id": "SEG01_B001",
+      "text": "This is the moment every vibe coder lives for. You told AI what to build. And it built it.",
+      "narration_text": "This is the moment every vibe coder lives for. You told AI what to build. And it built it.",
+      "segment": "HOOK",
+      "duration_sec": 7.6
+    },
+    {
+      "beat_id": "SEG01_B002",
+      "text": "And then it all broke. Why?",
+      "narration_text": "And then it all broke. Why?",
+      "segment": "HOOK",
+      "duration_sec": 2.4
+    },
+    {
+      "beat_id": "SEG02_B003",
+      "text": "Three days ago, Vee discovered AI coding. And it felt like magic.",
+      "narration_text": "Three days ago, Vee discovered AI coding. And it felt like magic.",
+      "segment": "PROBLEM",
+      "duration_sec": 4.8
+    },
+    {
+      "beat_id": "SEG02_B004",
+      "text": "Type what you want. AI builds it. A to-do app? Done. A database? Done. A login page with auth? Done.",
+      "narration_text": "Type what you want. AI builds it. A to-do app? Done. A database? Done. A login page with auth? Done.",
+      "segment": "PROBLEM",
+      "duration_sec": 8.0
+    },
+    {
+      "beat_id": "SEG02_B005",
+      "text": "By day three she had a thousand lines of code across a dozen files. She couldn't explain what any of it did. But it ran. So she assumed it worked.",
+      "narration_text": "By day three she had a thousand lines of code across a dozen files. She couldn't explain what any of it did. But it ran. So she assumed it worked.",
+      "segment": "PROBLEM",
+      "duration_sec": 12.0
+    },
+    {
+      "beat_id": "SEG02_B006",
+      "text": "She never asked herself one question. The only question that matters.",
+      "narration_text": "She never asked herself one question. The only question that matters.",
+      "segment": "PROBLEM",
+      "duration_sec": 4.4
+    },
+    {
+      "beat_id": "SEG02_B007",
+      "text": "What am I building?",
+      "narration_text": "What am I building?",
+      "segment": "PROBLEM",
+      "duration_sec": 1.6
+    },
+    {
+      "beat_id": "SEG03_B008",
+      "text": "Let's talk about buildings. Real ones.",
+      "narration_text": "Let's talk about buildings. Real ones.",
+      "segment": "CORE",
+      "duration_sec": 2.4
+    },
+    {
+      "beat_id": "SEG03_B009",
+      "text": "When you build a house, you start with a blueprint. It tells you the order.",
+      "narration_text": "When you build a house, you start with a blueprint. It tells you the order.",
+      "segment": "CORE",
+      "duration_sec": 6.0
+    },
+    {
+      "beat_id": "SEG03_B010",
+      "text": "Foundation first.",
+      "narration_text": "Foundation first.",
+      "segment": "CORE",
+      "duration_sec": 1.5
+    },
+    {
+      "beat_id": "SEG03_B011",
+      "text": "Then the frame.",
+      "narration_text": "Then the frame.",
+      "segment": "CORE",
+      "duration_sec": 1.5
+    },
+    {
+      "beat_id": "SEG03_B012",
+      "text": "Walls.",
+      "narration_text": "Walls.",
+      "segment": "CORE",
+      "duration_sec": 1.5
+    },
+    {
+      "beat_id": "SEG03_B013",
+      "text": "Roof.",
+      "narration_text": "Roof.",
+      "segment": "CORE",
+      "duration_sec": 1.5
+    },
+    {
+      "beat_id": "SEG03_B014",
+      "text": "Done. It stands because every piece knows where it goes. The blueprint told it.",
+      "narration_text": "Done. It stands because every piece knows where it goes. The blueprint told it.",
+      "segment": "CORE",
+      "duration_sec": 5.6
+    },
+    {
+      "beat_id": "SEG03_B015",
+      "text": "Now. Take away the blueprint.",
+      "narration_text": "Now. Take away the blueprint.",
+      "segment": "CORE",
+      "duration_sec": 2.0
+    },
+    {
+      "beat_id": "SEG03_B016",
+      "text": "No plan. No order. Just... start stacking.",
+      "narration_text": "No plan. No order. Just... start stacking.",
+      "segment": "CORE",
+      "duration_sec": 2.8
+    },
+    {
+      "beat_id": "SEG03_B017",
+      "text": "A wall before there's a foundation.",
+      "narration_text": "A wall before there's a foundation.",
+      "segment": "CORE",
+      "duration_sec": 2.4
+    },
+    {
+      "beat_id": "SEG03_B018",
+      "text": "A roof before there are walls.",
+      "narration_text": "A roof before there are walls.",
+      "segment": "CORE",
+      "duration_sec": 2.4
+    },
+    {
+      "beat_id": "SEG03_B019",
+      "text": "Three different staircases going to the same floor.",
+      "narration_text": "Three different staircases going to the same floor.",
+      "segment": "CORE",
+      "duration_sec": 3.2
+    },
+    {
+      "beat_id": "SEG03_B020",
+      "text": "It looks like a building. Kinda. If you squint.",
+      "narration_text": "It looks like a building. Kinda. If you squint.",
+      "segment": "CORE",
+      "duration_sec": 3.6
+    },
+    {
+      "beat_id": "SEG03_B021",
+      "text": "And then —",
+      "narration_text": "And then —",
+      "segment": "CORE",
+      "duration_sec": 1.5
+    },
+    {
+      "beat_id": "SEG03_B022",
+      "text": "Everything falls down.",
+      "narration_text": "Everything falls down.",
+      "segment": "CORE",
+      "duration_sec": 1.5
+    },
+    {
+      "beat_id": "SEG03_B023",
+      "text": "That's what happened to Vee's code. She stacked blocks without a blueprint. And the tower fell.",
+      "narration_text": "That's what happened to Vee's code. She stacked blocks without a blueprint. And the tower fell.",
+      "segment": "CORE",
+      "duration_sec": 6.4
+    },
+    {
+      "beat_id": "SEG03_B024",
+      "text": "So what's the blueprint for code?",
+      "narration_text": "So what's the blueprint for code?",
+      "segment": "CORE",
+      "duration_sec": 2.4
+    },
+    {
+      "beat_id": "SEG03_B025",
+      "text": "A spec.",
+      "narration_text": "A spec.",
+      "segment": "CORE",
+      "duration_sec": 1.5
+    },
+    {
+      "beat_id": "SEG03_B026",
+      "text": "And before you close this tab — a spec is not a hundred-page document. It's not a Jira board. It's not a meeting that should've been an email.",
+      "narration_text": "And before you close this tab — a spec is not a hundred-page document. It's not a Jira board. It's not a meeting that should've been an email.",
+      "segment": "CORE",
+      "duration_sec": 11.2
+    },
+    {
+      "beat_id": "SEG03_B027",
+      "text": "A spec is one sentence.",
+      "narration_text": "A spec is one sentence.",
+      "segment": "CORE",
+      "duration_sec": 2.0
+    },
+    {
+      "beat_id": "SEG03_B028",
+      "text": "\"What am I building, and why?\" That's it. One sentence. Everything else follows from that.",
+      "narration_text": "\"What am I building, and why?\" That's it. One sentence. Everything else follows from that.",
+      "segment": "CORE",
+      "duration_sec": 6.0
+    },
+    {
+      "beat_id": "SEG03_B029",
+      "text": "Think of it like this.",
+      "narration_text": "Think of it like this.",
+      "segment": "CORE",
+      "duration_sec": 2.0
+    },
+    {
+      "beat_id": "SEG03_B030",
+      "text": "You don't start with a car. You start with a skateboard.",
+      "narration_text": "You don't start with a car. You start with a skateboard.",
+      "segment": "CORE",
+      "duration_sec": 4.4
+    },
+    {
+      "beat_id": "SEG03_B031",
+      "text": "Then a bicycle.",
+      "narration_text": "Then a bicycle.",
+      "segment": "CORE",
+      "duration_sec": 1.5
+    },
+    {
+      "beat_id": "SEG03_B032",
+      "text": "Then a car. Each version works. Each version moves. But each one is a complete thing — not a random pile of car parts.",
+      "narration_text": "Then a car. Each version works. Each version moves. But each one is a complete thing — not a random pile of car parts.",
+      "segment": "CORE",
+      "duration_sec": 9.6
+    },
+    {
+      "beat_id": "SEG03_B033",
+      "text": "Without a spec, you get this. Parts. Not a vehicle. Parts that don't connect, built by an AI that doesn't know what the finished thing looks like. Because you never told it.",
+      "narration_text": "Without a spec, you get this. Parts. Not a vehicle. Parts that don't connect, built by an AI that doesn't know what the finished thing looks like. Because you never told it.",
+      "segment": "CORE",
+      "duration_sec": 12.8
+    },
+    {
+      "beat_id": "SEG03_B034",
+      "text": "The spec gives you three things. One: a filter. When AI suggests something, you can ask — \"Does this help me build my skateboard?\" If no, skip it.",
+      "narration_text": "The spec gives you three things. One: a filter. When AI suggests something, you can ask — \"Does this help me build my skateboard?\" If no, skip it.",
+      "segment": "CORE",
+      "duration_sec": 11.2
+    },
+    {
+      "beat_id": "SEG03_B035",
+      "text": "Two: a sequence. Foundation, then frame, then walls, then roof. You know the order.",
+      "narration_text": "Two: a sequence. Foundation, then frame, then walls, then roof. You know the order.",
+      "segment": "CORE",
+      "duration_sec": 5.6
+    },
+    {
+      "beat_id": "SEG03_B036",
+      "text": "Three: a definition of done. You know when to stop. Because you know what \"finished\" looks like.",
+      "narration_text": "Three: a definition of done. You know when to stop. Because you know what \"finished\" looks like.",
+      "segment": "CORE",
+      "duration_sec": 6.8
+    },
+    {
+      "beat_id": "SEG03_B037",
+      "text": "Without those three things, you're stacking random blocks and hoping they hold.",
+      "narration_text": "Without those three things, you're stacking random blocks and hoping they hold.",
+      "segment": "CORE",
+      "duration_sec": 4.8
+    },
+    {
+      "beat_id": "SEG04_B038",
+      "text": "Back to the present.",
+      "narration_text": "Back to the present.",
+      "segment": "APPLICATION",
+      "duration_sec": 1.6
+    },
+    {
+      "beat_id": "SEG04_B039",
+      "text": "She stopped coding. And she started thinking.",
+      "narration_text": "She stopped coding. And she started thinking.",
+      "segment": "APPLICATION",
+      "duration_sec": 2.8
+    },
+    {
+      "beat_id": "SEG04_B040",
+      "text": "One sentence. That's all it took.",
+      "narration_text": "One sentence. That's all it took.",
+      "segment": "APPLICATION",
+      "duration_sec": 2.4
+    },
+    {
+      "beat_id": "SEG04_B041",
+      "text": "Same errors. Same wall of red. But now, one line jumps out. Because now she knows what she's looking for.",
+      "narration_text": "Same errors. Same wall of red. But now, one line jumps out. Because now she knows what she's looking for.",
+      "segment": "APPLICATION",
+      "duration_sec": 8.0
+    },
+    {
+      "beat_id": "SEG05_B042",
+      "text": "Everything is still broken.",
+      "narration_text": "Everything is still broken.",
+      "segment": "OUTRO",
+      "duration_sec": 1.6
+    },
+    {
+      "beat_id": "SEG05_B043",
+      "text": "But now she knows what to fix.",
+      "narration_text": "But now she knows what to fix.",
+      "segment": "OUTRO",
+      "duration_sec": 2.8
+    },
+    {
+      "beat_id": "SEG05_B044",
+      "text": "...at least, she thinks she does. Next time — she writes fifteen pages of specs. And somehow, that makes everything worse.",
+      "narration_text": "...at least, she thinks she does. Next time — she writes fifteen pages of specs. And somehow, that makes everything worse.",
+      "segment": "OUTRO",
+      "duration_sec": 8.4
+    }
+  ]
+}
