@@ -1,4 +1,58 @@
-version: "1.0"
+version: "2.0"
+
+# ---------------------------------------------------------------------------
+# Narration quality rules (from SERIES_BIBLE.md + craft-reference.md)
+# Applied during TTS preprocessing as validation + auto-fix
+# ---------------------------------------------------------------------------
+
+narration:
+  # WPM targets (150-180 per SERIES_BIBLE A3)
+  wpm:
+    target_en: 165
+    min_en: 140
+    max_en: 190
+    # Korean uses syllable-words, speaking rate is lower in WPM but similar in syllables/min
+    # Korean average speaking: ~220-280 syllables/min ≈ 80-120 WPM (space-separated)
+    target_ko: 100
+    min_ko: 30
+    max_ko: 140
+
+  # Key concept emphasis: 0.3s pause before important terms (SERIES_BIBLE A3)
+  emphasis_pause_sec: 0.3
+  emphasis_markers:
+    - pattern: '\*\*([^*]+)\*\*'  # **bold** in source → pause before
+      action: prefix_pause
+    - pattern: '\b(핵심|key|critical|important|secret|the trick|the answer)\b'
+      action: prefix_pause
+
+  # One sentence = one idea (Kurzgesagt principle)
+  max_words_per_sentence_en: 25
+  max_words_per_sentence_ko: 35
+
+  # Curse of Knowledge flags — warn if jargon without context
+  jargon_watchlist_en:
+    - "dependency injection"
+    - "event loop"
+    - "middleware"
+    - "polymorphism"
+    - "singleton"
+    - "race condition"
+    - "callback hell"
+  jargon_watchlist_ko:
+    - "의존성 주입"
+    - "이벤트 루프"
+    - "미들웨어"
+    - "콜백 헬"
+
+  # Breathing points: insert micro-pause at sentence boundaries
+  # (complementary to pivot_words pauses)
+  sentence_end_pause: ","
+  paragraph_break_pause: "..."
+
+  # Tone shift markers — segments where emotion changes
+  tone_shift_segments:
+    - { from: "MISCONCEPTION", to: "THE_CRACK", marker: "... " }
+    - { from: "CORE", to: "REFRAME", marker: "... " }
 
 pronunciation:
   # Exact match (case-sensitive)

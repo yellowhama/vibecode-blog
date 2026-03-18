@@ -135,6 +135,73 @@ def get_segment_label(beat: Dict[str, Any]) -> str:
     return "_default"
 
 
+def apply_emphasis_pauses(text: str, rules: Dict[str, Any]) -> str:
+    """Insert micro-pauses before emphasis-marked words (SERIES_BIBLE A3: 0.3s pause)."""
+    narr = rules.get("narration", {})
+    markers = narr.get("emphasis_markers", [])
+    for marker in markers:
+        pattern = marker.get("pattern", "")
+        action = marker.get("action", "")
+        if action == "prefix_pause" and pattern:
+            # For **bold** markers, strip markdown and add pause
+            if "\\*\\*" in pattern or "**" in pattern:
+                text = re.sub(
+                    r'\*\*([^*]+)\*\*',
+                    lambda m: f"... {m.group(1)}",
+                    text,
+                )
+            else:
+                text = re.sub(
+                    pattern,
+                    lambda m: f"... {m.group(0)}",
+                    text,
+                    flags=re.IGNORECASE,
+                )
+    # Clean up double pauses
+    text = re.sub(r'\.{3}\s*\.{3}', '...', text)
+    return text
+
+
+def estimate_wpm(text: str, duration_sec: float, lang: str = "en") -> float:
+    """Estimate words-per-minute from text length and target duration."""
+    if duration_sec <= 0:
+        return 0.0
+    # Strip pause markers for word count
+    clean = re.sub(r'\.{3}', '', text).strip()
+    if lang == "ko":
+        # Korean: count syllable blocks (separated by spaces)
+        words = len(clean.split())
+    else:
+        words = len(clean.split())
+    return (words / duration_sec) * 60
+
+
+def check_sentence_length(text: str, lang: str, rules: Dict[str, Any]) -> List[str]:
+    """Check for sentences exceeding max word count (one sentence = one idea)."""
+    narr = rules.get("narration", {})
+    max_words = narr.get(f"max_words_per_sentence_{lang}", 25 if lang == "en" else 35)
+    warnings = []
+    # Split on sentence-ending punctuation
+    sentences = re.split(r'[.!?。]+', text)
+    for sent in sentences:
+        words = sent.strip().split()
+        if len(words) > max_words:
+            warnings.append(f"Long sentence ({len(words)} words > {max_words}): \"{sent.strip()[:60]}...\"")
+    return warnings
+
+
+def check_jargon(text: str, lang: str, rules: Dict[str, Any]) -> List[str]:
+    """Flag jargon terms that may violate Curse of Knowledge principle."""
+    narr = rules.get("narration", {})
+    watchlist = narr.get(f"jargon_watchlist_{lang}", [])
+    found = []
+    text_lower = text.lower()
+    for term in watchlist:
+        if term.lower() in text_lower:
+            found.append(f"Jargon detected: \"{term}\" — ensure context provided")
+    return found
+
+
 def compute_beat_position(beat_index: int, segment_beats: List[int]) -> float:
     """Compute normalized position (0.0-1.0) of a beat within its segment."""
     if len(segment_beats) <= 1:
@@ -174,6 +241,7 @@ def process_manifest(
         text = original_text
         text = apply_pronunciation(text, rules, lang=lang)
         text = apply_pauses(text, rules, lang=lang)
+        text = apply_emphasis_pauses(text, rules)
 
         # Compute emotion curve
         seg_label = get_segment_label(beat)
@@ -190,10 +258,38 @@ def process_manifest(
         beat["tts_exaggeration"] = exaggeration
         beat["tts_cfg_weight"] = 0.5
 
+        # --- Narration quality checks (SERIES_BIBLE + craft-reference) ---
+        beat_warnings: List[str] = []
+
+        # WPM estimate
+        duration = float(beat.get("duration_sec", 0))
+        if duration > 0:
+            wpm = estimate_wpm(text, duration, lang)
+            beat["tts_estimated_wpm"] = round(wpm, 1)
+            narr = rules.get("narration", {})
+            wpm_cfg = narr.get("wpm", {})
+            wpm_min = wpm_cfg.get(f"min_{lang}", wpm_cfg.get("min_en", 140))
+            wpm_max = wpm_cfg.get(f"max_{lang}", wpm_cfg.get("max_en", 190))
+            if wpm > wpm_max:
+                beat_warnings.append(f"WPM too fast ({wpm:.0f} > {wpm_max}): consider splitting beat or slowing")
+            elif wpm < wpm_min and len(text.split()) > 3:
+                beat_warnings.append(f"WPM too slow ({wpm:.0f} < {wpm_min}): text may be too short for duration")
+
+        # Sentence length check
+        sent_warnings = check_sentence_length(text, lang, rules)
+        beat_warnings.extend(sent_warnings)
+
+        # Jargon / Curse of Knowledge
+        jargon_warnings = check_jargon(text, lang, rules)
+        beat_warnings.extend(jargon_warnings)
+
+        if beat_warnings:
+            beat["tts_warnings"] = beat_warnings
+
         # Track modifications
         text_changed = text != original_text
         exagg_changed = exaggeration != 0.5
-        if text_changed or exagg_changed:
+        if text_changed or exagg_changed or beat_warnings:
             mod = {
                 "beat_id": beat.get("beat_id", f"B{i+1:03d}"),
                 "segment": seg_label,
@@ -205,7 +301,14 @@ def process_manifest(
                     "original": original_text[:120],
                     "transformed": text[:120],
                 }
+            if beat_warnings:
+                mod["warnings"] = beat_warnings
             modifications.append(mod)
+
+    # Aggregate quality warnings
+    all_warnings = [w for mod in modifications for w in mod.get("warnings", [])]
+    wpm_values = [b.get("tts_estimated_wpm", 0) for b in beats if b.get("tts_estimated_wpm")]
+    avg_wpm = round(sum(wpm_values) / max(1, len(wpm_values)), 1) if wpm_values else 0
 
     report = {
         "generated_at": datetime.now().isoformat(),
@@ -214,6 +317,16 @@ def process_manifest(
         "total_beats": total,
         "beats_modified": len(modifications),
         "modification_rate": round(len(modifications) / max(1, total), 4),
+        "narration_quality": {
+            "avg_wpm": avg_wpm,
+            "wpm_range": [round(min(wpm_values), 1), round(max(wpm_values), 1)] if wpm_values else [0, 0],
+            "total_warnings": len(all_warnings),
+            "warning_types": {
+                "wpm": len([w for w in all_warnings if "WPM" in w]),
+                "sentence_length": len([w for w in all_warnings if "Long sentence" in w]),
+                "jargon": len([w for w in all_warnings if "Jargon" in w]),
+            },
+        },
         "modifications": modifications,
     }
     return report
