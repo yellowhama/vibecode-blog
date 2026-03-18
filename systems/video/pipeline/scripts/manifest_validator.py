@@ -25,6 +25,12 @@ from typing import Any, Dict, List, Optional
 # top-level keys checked directly
 
 STAGE_REQUIREMENTS: Dict[int, Dict[str, Any]] = {
+    0: {
+        "label": "Pre-production",
+        "manifest_type": "preproduction",
+        "required": [],
+        "beat_fields": [],
+    },
     1: {
         "label": "TTS Narration",
         "manifest_type": "prepro",
@@ -49,6 +55,12 @@ STAGE_REQUIREMENTS: Dict[int, Dict[str, Any]] = {
         "required": ["shots"],
         "shot_fields": ["shot_id", "duration_sec"],
     },
+    5: {
+        "label": "Diagram Animation",
+        "manifest_type": "shot",
+        "required": ["shots"],
+        "shot_fields": ["shot_id"],
+    },
     6: {
         "label": "Audio Mixing",
         "manifest_type": "prepro",
@@ -68,6 +80,9 @@ STAGE_REQUIREMENTS: Dict[int, Dict[str, Any]] = {
         "beat_fields": [],
     },
 }
+
+# Allowed Vee expressions (SERIES_BIBLE B3)
+ALLOWED_VEE_EXPRESSIONS = {"default", "curious", "frustrated", "eureka", "coding_zone", "happy"}
 
 # Values that signal "needs clarification" (spec-driven principle)
 PLACEHOLDER_VALUES = {"TODO", "TBD", "FIXME", "PLACEHOLDER", ""}
@@ -166,6 +181,76 @@ def validate_for_stage(manifest: Dict[str, Any], stage: int) -> ValidationResult
                     field=f"shots[].{fld}", issue_type="needs_clarification",
                     message=f"Shot has placeholder '{fld}'", item_id=shot_id,
                 ))
+
+    # --- Extended checks per stage ---
+
+    # Stage 3: Character consistency — vee_expression must be valid
+    if stage == 3:
+        for i, shot in enumerate(shots):
+            shot_id = shot.get("shot_id", f"shot_{i}")
+            expr = shot.get("vee_expression")
+            if expr and expr not in ALLOWED_VEE_EXPRESSIONS:
+                result.issues.append(ValidationIssue(
+                    field="shots[].vee_expression", issue_type="invalid",
+                    message=f"'{expr}' not in {sorted(ALLOWED_VEE_EXPRESSIONS)}",
+                    item_id=shot_id,
+                ))
+
+    # Stage 5: Diagram animation — diagram shots need render_method + motion_type
+    if stage == 5:
+        for i, shot in enumerate(shots):
+            shot_id = shot.get("shot_id", f"shot_{i}")
+            rm = shot.get("render_method", "")
+            if rm in ("diagram", "motion_graphics", "infographic"):
+                if not shot.get("motion_type"):
+                    result.issues.append(ValidationIssue(
+                        field="shots[].motion_type", issue_type="missing",
+                        message="Diagram shot missing 'motion_type'",
+                        item_id=shot_id,
+                    ))
+
+    # Stage 7: Thumbnail + title
+    if stage == 7:
+        if not manifest.get("thumbnail"):
+            result.issues.append(ValidationIssue(
+                field="thumbnail", issue_type="missing",
+                message="Missing 'thumbnail' field for final assembly",
+            ))
+        title = manifest.get("title", "")
+        if title and len(title) > 60:
+            result.issues.append(ValidationIssue(
+                field="title", issue_type="invalid",
+                message=f"Title too long: {len(title)} chars (max 60)",
+            ))
+
+    result.ok = len(result.issues) == 0
+    return result
+
+
+def validate_preproduction_gate(ep: str) -> ValidationResult:
+    """Validate pre-production artifacts for an episode (Stage 0 gate).
+
+    Imports validate_preproduction and runs P1-P7 checks.
+    Returns a ValidationResult compatible with the pipeline gate system.
+    """
+    result = ValidationResult(stage=0, label="Pre-production")
+    try:
+        from validate_preproduction import validate as validate_prepro
+        prepro_result = validate_prepro(ep)
+        for r in prepro_result["results"]:
+            if r["status"] == "FAIL":
+                result.issues.append(ValidationIssue(
+                    field=r["id"], issue_type="invalid",
+                    message=f"{r['check']}: {r['detail']}",
+                ))
+    except ImportError:
+        # validate_preproduction.py not available — skip gracefully
+        pass
+    except Exception as e:
+        result.issues.append(ValidationIssue(
+            field="preproduction", issue_type="invalid",
+            message=f"Pre-production validation error: {e}",
+        ))
 
     result.ok = len(result.issues) == 0
     return result

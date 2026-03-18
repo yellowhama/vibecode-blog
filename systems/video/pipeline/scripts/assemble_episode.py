@@ -21,7 +21,7 @@ and writes completion status back to the manifest (SSOT write-back).
 import argparse, json, os, shutil, subprocess, sys, time
 from pathlib import Path
 
-from manifest_validator import validate_manifest_file, write_pipeline_status
+from manifest_validator import validate_manifest_file, validate_preproduction_gate, write_pipeline_status
 
 # --- Paths ---
 REPO = Path("/mnt/e/vibecode-blog")
@@ -193,6 +193,15 @@ def main():
 
     total_start = time.time()
     timings = {}
+
+    # --- STAGE 0: Pre-production gate (runs once before pipeline starts) ---
+    if args.from_stage <= 1 and not args.skip_validation:
+        prepro_result = validate_preproduction_gate(ep)
+        if not prepro_result.ok:
+            print(f"\n{prepro_result.block_message()}")
+            print("  Tip: fix pre-production issues or use --skip-validation to bypass")
+            sys.exit(1)
+        print(f"  [GATE] Stage 0 ({prepro_result.label}): validated ✓")
 
     for stage in stages_to_run:
         if args.skip_gpu and stage in (3, 4):

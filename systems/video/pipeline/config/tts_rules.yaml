@@ -94,6 +94,62 @@ pauses:
     - { word: "The problem is", prefix: "... " }
     - { word: "And that's ", prefix: "... " }
 
+# ---------------------------------------------------------------------------
+# Tone validation (SERIES_BIBLE A3 We Say/Never Say + McKee Show vs Tell)
+# ---------------------------------------------------------------------------
+tone_validation:
+  # SERIES_BIBLE A3 — 10 "Never Say" patterns (corporate/formal tone)
+  never_say_patterns:
+    - "이 개념을 이해하는 것이 중요합니다"
+    - "보안 취약점이 감지되었습니다"
+    - "코드 품질 관리가 미흡했습니다"
+    - "코드 구조가 최적화되지 않았습니다"
+    - "해당 가정은 사실과 달랐습니다"
+    - "상당한 시간 투자 후 해결책을 발견했습니다"
+    - "시스템 장애가 발생했습니다"
+    - "테스트 커버리지가 부족했습니다"
+    - "코드베이스 최적화를 통해"
+    - "이상으로 해당 주제를 마무리하겠습니다"
+
+  # McKee Show vs Tell — emotion words banned in action lines
+  emotion_words_banned_in_action:
+    - "feels"
+    - "realizes"
+    - "understands"
+    - "knows"
+    - "thinks"
+    - "decides"
+    - "notices"
+    - "considers"
+
+# ---------------------------------------------------------------------------
+# Narrative structure rules (SKILL.md Phase 1)
+# ---------------------------------------------------------------------------
+narrative_structure:
+  beat_map:
+    min: 12
+    max: 20
+    max_sec: 5  # max seconds per beat
+  discovery_arc_stages:
+    HOOK: "Belief"
+    MISCONCEPTION: "Belief"
+    THE_CRACK: "Crack"
+    CORE: "Mechanism+Method"
+    REFRAME: "Reframe"
+    OUTRO_CTA: "Action"
+  shorts_candidate_min: 2
+
+# ---------------------------------------------------------------------------
+# Pre-production gates (Phase 0 + 0.5)
+# ---------------------------------------------------------------------------
+preproduction_gates:
+  topic_card_required_sections:
+    - "실패"
+    - "3-5분 후"
+    - "내러티브 구조"
+  topic_brief_min_data_points: 5
+  evaluation_min_score: 18
+
 emotion_curves:
   HOOK:          { base: 0.6,  curve: rising,  range: [0.4, 0.7] }
   MISCONCEPTION: { base: 0.7,  curve: rising,  range: [0.5, 0.8] }

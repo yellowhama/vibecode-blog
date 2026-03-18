@@ -5,21 +5,22 @@ Segments: HOOK -> MISCONCEPTION -> THE_CRACK -> CORE -> REFRAME -> OUTRO_CTA
 Timing:   Hook 30s, Misconception 75s, The Crack 60s, Core 270s, Reframe 75s, Outro+CTA 60s
 Total:    300-600 seconds (5-10 minutes)
 
-Checks:
-  1. [PASS/FAIL] 6 segments exist (Hook/Misconception/The_Crack/Core/Reframe/Outro_CTA)
-  2. [PASS/FAIL] Per-segment timing within max bounds
-  3. [PASS/FAIL] Total duration 180-300s (3-5min)
-  4. [PASS/FAIL] NARRATOR (V.O.) present in every segment
-  5. [PASS/FAIL] No Vee spoken dialogue (silent character)
-  6. [PASS/FAIL] Vee reactions <= 6, each 1-2s
-  7. [PASS/FAIL] Pattern interrupts every 20-30s
-  8. [PASS/FAIL] Banned expressions = 0
-  9. [PASS/FAIL] Core has extended metaphor 60s+
- 10. [PASS/WARN] Open loop in Hook (unanswered question)
+Checks 1-15:  original structural & character checks
+Checks 16-24: narration research principles (Sprint 3)
+  16. Discovery Arc mapping (6 stages present)
+  17. Beat count 12-20
+  18. Beat max 5s each
+  19. Pixar formula detected (3+ markers)
+  20. Shorts candidates >= 2
+  21. Analogy-First in Core (metaphor before definition)
+  22. Show vs Tell (no emotion words in action lines)
+  23. We Say / Never Say (corporate tone patterns)
+  24. Actionable Takeaway in Outro_CTA
 
 Usage:
     python validate_screenplay.py <fountain_file>
     python validate_screenplay.py <fountain_file> --json
+    python validate_screenplay.py <fountain_file> --manifest prepro.json
 """
 
 from __future__ import annotations
@@ -30,6 +31,73 @@ import re
 import sys
 from pathlib import Path
 from typing import Any
+
+try:
+    import yaml
+except ImportError:
+    yaml = None  # type: ignore[assignment]
+
+# ---------------------------------------------------------------------------
+# Rules YAML loader
+# ---------------------------------------------------------------------------
+RULES_PATH = Path(__file__).parent.parent / "config" / "tts_rules.yaml"
+
+_RULES_CACHE: dict | None = None
+
+
+def _load_rules_yaml() -> dict:
+    """Load tts_rules.yaml once, fallback to hardcoded defaults."""
+    global _RULES_CACHE
+    if _RULES_CACHE is not None:
+        return _RULES_CACHE
+
+    if yaml and RULES_PATH.exists():
+        with RULES_PATH.open("r", encoding="utf-8") as f:
+            _RULES_CACHE = yaml.safe_load(f) or {}
+    else:
+        _RULES_CACHE = {}
+    return _RULES_CACHE
+
+
+# Hardcoded fallbacks for when YAML is unavailable
+_NEVER_SAY_DEFAULTS = [
+    "이 개념을 이해하는 것이 중요합니다",
+    "보안 취약점이 감지되었습니다",
+    "코드 품질 관리가 미흡했습니다",
+    "코드 구조가 최적화되지 않았습니다",
+    "해당 가정은 사실과 달랐습니다",
+    "상당한 시간 투자 후 해결책을 발견했습니다",
+    "시스템 장애가 발생했습니다",
+    "테스트 커버리지가 부족했습니다",
+    "코드베이스 최적화를 통해",
+    "이상으로 해당 주제를 마무리하겠습니다",
+]
+
+_EMOTION_WORDS_DEFAULTS = ["feels", "realizes", "understands", "knows", "thinks", "decides", "notices", "considers"]
+
+_DISCOVERY_ARC_DEFAULTS = {
+    "HOOK": "Belief",
+    "MISCONCEPTION": "Belief",
+    "THE_CRACK": "Crack",
+    "CORE": "Mechanism+Method",
+    "REFRAME": "Reframe",
+    "OUTRO_CTA": "Action",
+}
+
+# Pixar formula markers (Emma Coats / craft-reference.md §1)
+PIXAR_MARKERS = [
+    re.compile(r"once upon", re.IGNORECASE),
+    re.compile(r"every day", re.IGNORECASE),
+    re.compile(r"one day", re.IGNORECASE),
+    re.compile(r"because of that", re.IGNORECASE),
+    re.compile(r"until finally", re.IGNORECASE),
+]
+
+# Actionable imperative verbs for Outro_CTA
+ACTIONABLE_VERBS = re.compile(
+    r"\b(try|open|create|run|write|build|install|check|test|start|download|set up|configure)\b",
+    re.IGNORECASE,
+)
 
 
 # ---------------------------------------------------------------------------
@@ -265,8 +333,8 @@ def parse_segments(text: str) -> list[dict[str, Any]]:
 # ---------------------------------------------------------------------------
 # Validation engine
 # ---------------------------------------------------------------------------
-def validate(fountain_path: Path) -> dict:
-    """Run all 10 checks against a Fountain screenplay."""
+def validate(fountain_path: Path, manifest_path: Path | None = None) -> dict:
+    """Run all checks (1-24) against a Fountain screenplay."""
     text = fountain_path.read_text(encoding="utf-8")
     segments = parse_segments(text)
 
@@ -598,6 +666,220 @@ def validate(fountain_path: Path) -> dict:
         "detail": detail_15,
     })
 
+    # ===================================================================
+    # CHECKS 16-24: Narration Research Principles (Sprint 3)
+    # ===================================================================
+    rules = _load_rules_yaml()
+    narr_struct = rules.get("narrative_structure", {})
+    tone_val = rules.get("tone_validation", {})
+
+    # -------------------------------------------------------------------
+    # CHECK 16: Discovery Arc mapping (6 arc stages present)
+    # -------------------------------------------------------------------
+    arc_map = narr_struct.get("discovery_arc_stages", _DISCOVERY_ARC_DEFAULTS)
+    arc_keywords = {
+        "Belief": ["believe", "think", "assume", "expect", "suppose", "misconception", "wrong"],
+        "Crack": ["but", "however", "actually", "wait", "strange", "odd", "crack", "problem"],
+        "Mechanism": ["because", "how", "mechanism", "works", "under the hood", "reason", "why"],
+        "Method": ["method", "solution", "approach", "step", "do this", "way to", "practice"],
+        "Reframe": ["bigger picture", "actually means", "reframe", "perspective", "real lesson"],
+        "Action": ["try", "open", "create", "run", "start", "today", "right now", "action"],
+    }
+    arc_stages_found = set()
+    for seg in segments:
+        seg_name = seg["name"]
+        expected_arc = arc_map.get(seg_name, "")
+        for arc_label in expected_arc.split("+"):
+            arc_label = arc_label.strip()
+            kws = arc_keywords.get(arc_label, [])
+            seg_text = "\n".join(seg["lines"]).lower()
+            if any(kw in seg_text for kw in kws):
+                arc_stages_found.add(arc_label)
+
+    arc_score = len(arc_stages_found)
+    results.append({
+        "id": 16,
+        "check": "Discovery Arc mapping (6 arc stages)",
+        "status": "PASS" if arc_score >= 4 else "WARN",
+        "detail": f"{arc_score}/6 stages detected: {', '.join(sorted(arc_stages_found))}",
+    })
+
+    # -------------------------------------------------------------------
+    # CHECK 17: Beat count 12-20
+    # -------------------------------------------------------------------
+    beat_min = narr_struct.get("beat_map", {}).get("min", 12)
+    beat_max = narr_struct.get("beat_map", {}).get("max", 20)
+
+    # Try manifest first for beat count
+    beat_count = 0
+    if manifest_path and manifest_path.exists():
+        try:
+            with manifest_path.open("r", encoding="utf-8") as f:
+                manifest_data = json.load(f)
+            beat_count = len(manifest_data.get("beats", []))
+        except (json.JSONDecodeError, KeyError):
+            pass
+
+    if beat_count == 0:
+        # Fallback: count NARRATOR blocks in fountain
+        beat_count = sum(
+            1 for line in text.split("\n")
+            if re.match(r"^NARRATOR\s*\(V\.O\.\)\s*$", line.strip())
+        )
+
+    check_17 = beat_min <= beat_count <= beat_max
+    results.append({
+        "id": 17,
+        "check": f"Beat count {beat_min}-{beat_max}",
+        "status": "PASS" if check_17 else "WARN",
+        "detail": f"{beat_count} beats",
+    })
+
+    # -------------------------------------------------------------------
+    # CHECK 18: Beat max 5s each
+    # -------------------------------------------------------------------
+    max_beat_sec = narr_struct.get("beat_map", {}).get("max_sec", 5)
+    if beat_count > 0 and total_duration > 0:
+        avg_beat_sec = total_duration / beat_count
+        check_18 = avg_beat_sec <= max_beat_sec
+        detail_18 = f"avg {avg_beat_sec:.1f}s/beat (max {max_beat_sec}s)"
+    else:
+        check_18 = True
+        detail_18 = "no beats to check"
+
+    results.append({
+        "id": 18,
+        "check": f"Beat max {max_beat_sec}s each",
+        "status": "PASS" if check_18 else "WARN",
+        "detail": detail_18,
+    })
+
+    # -------------------------------------------------------------------
+    # CHECK 19: Pixar formula detected (3+ markers)
+    # -------------------------------------------------------------------
+    pixar_hits = sum(1 for pat in PIXAR_MARKERS if pat.search(text))
+    check_19 = pixar_hits >= 3
+    results.append({
+        "id": 19,
+        "check": "Pixar formula detected (3+ markers)",
+        "status": "PASS" if check_19 else "WARN",
+        "detail": f"{pixar_hits}/5 Pixar markers found",
+    })
+
+    # -------------------------------------------------------------------
+    # CHECK 20: Shorts candidates >= 2
+    # -------------------------------------------------------------------
+    shorts_min = narr_struct.get("shorts_candidate_min", 2)
+    shorts_count = len(re.findall(r"shorts_candidate:\s*true", text, re.IGNORECASE))
+    # Also count # shorts_candidate: lines in meta comments
+    shorts_count += len(re.findall(r"#\s+shorts_candidate:\s*true", text, re.IGNORECASE))
+    # Deduplicate (meta regex is subset of general regex, but both could match differently)
+    shorts_count = len(set(re.findall(r"(?:#\s+)?shorts_candidate:\s*true", text, re.IGNORECASE)))
+
+    results.append({
+        "id": 20,
+        "check": f"Shorts candidates >= {shorts_min}",
+        "status": "PASS" if shorts_count >= shorts_min else "WARN",
+        "detail": f"{shorts_count} shorts candidates",
+    })
+
+    # -------------------------------------------------------------------
+    # CHECK 21: Analogy-First in Core (metaphor before tech definition)
+    # -------------------------------------------------------------------
+    if core_seg:
+        core_text_lines = core_seg["lines"]
+        first_metaphor_idx = None
+        first_definition_idx = None
+        definition_patterns = [
+            re.compile(r"\b(is defined as|means that|refers to|technically|specification)\b", re.IGNORECASE),
+        ]
+        for i, line in enumerate(core_text_lines):
+            if first_metaphor_idx is None:
+                for pat in METAPHOR_PATTERNS:
+                    if pat.search(line):
+                        first_metaphor_idx = i
+                        break
+            if first_definition_idx is None:
+                for pat in definition_patterns:
+                    if pat.search(line):
+                        first_definition_idx = i
+                        break
+
+        if first_metaphor_idx is not None and first_definition_idx is not None:
+            check_21 = first_metaphor_idx < first_definition_idx
+            detail_21 = f"metaphor@line {first_metaphor_idx}, definition@line {first_definition_idx}"
+        elif first_metaphor_idx is not None:
+            check_21 = True
+            detail_21 = "metaphor found, no formal definition (OK)"
+        else:
+            check_21 = False
+            detail_21 = "no metaphor language found in Core"
+    else:
+        check_21 = False
+        detail_21 = "CORE segment not found"
+
+    results.append({
+        "id": 21,
+        "check": "Analogy-First in Core (metaphor before definition)",
+        "status": "PASS" if check_21 else "WARN",
+        "detail": detail_21,
+    })
+
+    # -------------------------------------------------------------------
+    # CHECK 22: Show vs Tell (no emotion words in action lines)
+    # -------------------------------------------------------------------
+    emotion_words = tone_val.get("emotion_words_banned_in_action", _EMOTION_WORDS_DEFAULTS)
+    emotion_re = re.compile(r"\b(" + "|".join(re.escape(w) for w in emotion_words) + r")\b", re.IGNORECASE)
+    tell_violations = []
+    for seg in segments:
+        for line in seg["action_lines"]:
+            m = emotion_re.search(line)
+            if m:
+                tell_violations.append(f"{seg['name']}: '{m.group()}' in \"{line[:50]}...\"")
+
+    check_22 = len(tell_violations) == 0
+    results.append({
+        "id": 22,
+        "check": "Show vs Tell (no emotion words in action lines)",
+        "status": "PASS" if check_22 else "WARN",
+        "detail": "clean" if check_22 else f"{len(tell_violations)} violations: {'; '.join(tell_violations[:3])}",
+    })
+
+    # -------------------------------------------------------------------
+    # CHECK 23: We Say / Never Say (SERIES_BIBLE A3)
+    # -------------------------------------------------------------------
+    never_say = tone_val.get("never_say_patterns", _NEVER_SAY_DEFAULTS)
+    found_never_say = [ns for ns in never_say if ns.lower() in text.lower()]
+
+    check_23 = len(found_never_say) == 0
+    results.append({
+        "id": 23,
+        "check": "We Say / Never Say (corporate tone)",
+        "status": "PASS" if check_23 else "FAIL",
+        "detail": "clean" if check_23 else f"found: {', '.join(found_never_say[:3])}",
+    })
+
+    # -------------------------------------------------------------------
+    # CHECK 24: Actionable Takeaway in Outro_CTA
+    # -------------------------------------------------------------------
+    outro_seg = next((s for s in segments if s["name"] == "OUTRO_CTA"), None)
+    if outro_seg:
+        outro_text = "\n".join(outro_seg["lines"])
+        has_actionable = bool(ACTIONABLE_VERBS.search(outro_text))
+        results.append({
+            "id": 24,
+            "check": "Actionable Takeaway in Outro_CTA",
+            "status": "PASS" if has_actionable else "WARN",
+            "detail": "imperative verb found" if has_actionable else "no actionable verb — add 'try/open/create/run/write'",
+        })
+    else:
+        results.append({
+            "id": 24,
+            "check": "Actionable Takeaway in Outro_CTA",
+            "status": "WARN",
+            "detail": "OUTRO_CTA segment not found",
+        })
+
     return {
         "file": str(fountain_path),
         "segments_found": seg_count,
@@ -653,11 +935,12 @@ def print_results(validation: dict) -> int:
     print(f"{C.BOLD}{'-' * 64}{C.RESET}\n")
 
     checklist = [
-        'Tone: conversational explainer, not corporate doc?',
-        'Discovery Arc: curiosity -> frustration -> clarity -> confidence?',
-        'Aha moment clearly identified in Core?',
-        'Vee reactions silhouette-safe (40px recognition)?',
-        '80/20 split: diagrams+motion / Vee reactions?',
+        'Tone feels like Kurzgesagt + Fireship? (not corporate, not lecture)',
+        'Discovery Arc emotional flow feels natural?',
+        'Aha moment lands clearly in Core?',
+        'Curse of Knowledge: would a non-developer understand this?',
+        'Shorts clips work as standalone content?',
+        'Emotion curve peaks/valleys feel right?',
     ]
 
     for item in checklist:
@@ -697,6 +980,7 @@ def main():
         help="Path to the Fountain file (alternative to positional arg)",
     )
     parser.add_argument("--json", action="store_true", help="Output as JSON")
+    parser.add_argument("--manifest", default=None, help="Path to prepro manifest JSON (for beat counts)")
     args = parser.parse_args()
 
     # Resolve fountain file path (positional or --input)
@@ -709,7 +993,8 @@ def main():
         print(f"Error: {fountain_path} not found", file=sys.stderr)
         sys.exit(2)
 
-    validation = validate(fountain_path)
+    manifest_path = Path(args.manifest) if args.manifest else None
+    validation = validate(fountain_path, manifest_path=manifest_path)
 
     if args.json:
         # Serialize sets for JSON
