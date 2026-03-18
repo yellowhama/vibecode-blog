@@ -1,9 +1,10 @@
 # EP01 Production Plan — "What's a Spec?" 2D Flat Vector
 
 **Created**: 2026-03-17
-**Status**: v1 COMPLETE
-**Target**: Complete EP01 video, 3:00-4:00, 2D flat vector style
-**Result**: EP01_v2_FINAL.mp4 — 3:22, 1280x720, 30fps, 14MB
+**Status**: v2 IN PROGRESS — 7:30 expansion
+**Target**: Complete EP01 video, 7:00-7:30, 2D flat vector style
+**v1 Result**: EP01_v2_FINAL.mp4 — 3:22, 1280x720, 30fps, 14MB (3:55 version, superseded)
+**v2 Target**: EP01 v5 script (53 beats, 450s) — needs full pipeline re-run
 
 ## Phase 1: Workflow + Asset Fix ✅ COMPLETE
 
@@ -70,6 +71,43 @@ python3 render_keyframes.py \
 - Final assembly 1280x720
 - Shorts extraction (2x)
 - QC checklist
+
+---
+
+## Phase 6: 7:30 Expansion (2026-03-18) — IN PROGRESS
+
+### 6.0 Infrastructure ✅ COMPLETE
+- `validate_screenplay.py` — timing constants updated (TOTAL 300-600s, CORE 270s, VEE 10, METAPHOR 120s)
+- `SERIES_BIBLE.md` — format 5-10min target 7:30, segment timing table, beats 24-40
+- `CONTENT_EVALUATION_FRAMEWORK.md` — Axis 4 + Pacing Targets updated
+
+### 6.1 EP01-04 Script Expansion ✅ COMPLETE
+| EP | Version | Beats | Duration | Commit |
+|----|---------|-------|----------|--------|
+| EP01 | v4→v5 | 30→53 | 3:55→7:30 | `1b7994f` |
+| EP02 | v6→v7 | 36→46 | 3:55→7:30 | `1b7994f` |
+| EP03 | v5→v6 | 24→38 | 3:55→7:30 | `1b7994f` |
+| EP04 | v5→v6 | 25→41 | 3:55→7:30 | `1b7994f` |
+
+### 6.2 Pipeline Artifacts ✅ COMPLETE
+- prepro_manifest: EP01 v5, EP02 v7, EP03 v7, EP04 v7
+- shot_manifest v8: all 4 episodes (30 shots each)
+- source_index.json: updated to new versions
+- Validation: 0 timing FAILs (pattern interrupt avg interval is expected for 7:30)
+
+### 6.3 TTS Re-generation ⬜ PENDING
+- Edge TTS +30% rate for all 4 episodes
+- Need: `generate_tts_from_prepro.py` run per episode
+- Target: 390-510s TTS total per episode
+
+### 6.4 Keyframe + I2V Re-render ⬜ PENDING
+- Shot count nearly doubled — all keyframes need re-rendering
+- Kontext (character), T2I (diagram), Motion Canvas (animated diagram)
+
+### 6.5 Assembly + QC ⬜ PENDING
+- FFmpeg assembly per new shot manifests
+- Shorts re-extraction
+- QC against 7:30 target
 
 ## Timeline
 
