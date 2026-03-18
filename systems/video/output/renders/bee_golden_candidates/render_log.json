@@ -1,0 +1,53 @@
+{
+  "manifest": "/tmp/bee_golden_ref.json",
+  "workflow": "systems/video/workflows/api/flux_dev_t2i.json",
+  "bindings": "systems/video/workflows/api/flux_dev_t2i_bindings.json",
+  "server": "http://127.0.0.1:8188",
+  "started_at": "2026-03-11T08:34:52.095615",
+  "summary": {
+    "total": 4,
+    "ok": 4,
+    "errors": 0,
+    "cached": 0,
+    "dry_run": 0
+  },
+  "shots": [
+    {
+      "shot_id": "bee_01",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/bee_golden_candidates/bee_01/bee_01_00001_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "bee_02",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/bee_golden_candidates/bee_02/bee_02_00001_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "bee_03",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/bee_golden_candidates/bee_03/bee_03_00001_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "bee_04",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/bee_golden_candidates/bee_04/bee_04_00001_.png"
+      ],
+      "artifact_count": 1
+    }
+  ],
+  "finished_at": "2026-03-11T08:37:42.024377"
+}

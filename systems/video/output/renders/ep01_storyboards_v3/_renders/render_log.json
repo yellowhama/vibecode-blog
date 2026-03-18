@@ -1,0 +1,26 @@
+{
+  "manifest": "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_storyboards_v3/_t2i_manifest.json",
+  "workflow": "/mnt/e/vibecode-blog/systems/video/workflows/api/flux_pulid_t2i.json",
+  "bindings": "/mnt/e/vibecode-blog/systems/video/workflows/api/flux_pulid_t2i_bindings.json",
+  "server": "http://127.0.0.1:8188",
+  "started_at": "2026-03-13T06:03:31.018879",
+  "summary": {
+    "total": 1,
+    "ok": 1,
+    "errors": 0,
+    "cached": 0,
+    "dry_run": 0
+  },
+  "shots": [
+    {
+      "shot_id": "SB_S09_09",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_storyboards_v3/_renders/SB_S09_09/SB_S09_09_00002_.png"
+      ],
+      "artifact_count": 1
+    }
+  ],
+  "finished_at": "2026-03-13T06:04:43.128125"
+}

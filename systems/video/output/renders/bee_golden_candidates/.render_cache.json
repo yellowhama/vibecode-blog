@@ -1,0 +1,30 @@
+{
+  "bee_01": {
+    "hash": "d614ede9aef568e3",
+    "saved_files": [
+      "systems/video/output/renders/bee_golden_candidates/bee_01/bee_01_00001_.png"
+    ],
+    "rendered_at": "2026-03-11T08:35:43.780466"
+  },
+  "bee_02": {
+    "hash": "bb79ff5dfd313203",
+    "saved_files": [
+      "systems/video/output/renders/bee_golden_candidates/bee_02/bee_02_00001_.png"
+    ],
+    "rendered_at": "2026-03-11T08:36:25.005044"
+  },
+  "bee_03": {
+    "hash": "e7054308e1034d7e",
+    "saved_files": [
+      "systems/video/output/renders/bee_golden_candidates/bee_03/bee_03_00001_.png"
+    ],
+    "rendered_at": "2026-03-11T08:37:06.043978"
+  },
+  "bee_04": {
+    "hash": "84f856c08970ee12",
+    "saved_files": [
+      "systems/video/output/renders/bee_golden_candidates/bee_04/bee_04_00001_.png"
+    ],
+    "rendered_at": "2026-03-11T08:37:42.012661"
+  }
+}

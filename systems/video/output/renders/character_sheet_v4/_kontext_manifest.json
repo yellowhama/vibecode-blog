@@ -1,0 +1,38 @@
+{
+  "project_id": "kontext_keyframes",
+  "style_lock": "Flux Kontext scene editing — character consistency from golden reference",
+  "shots": [
+    {
+      "shot_id": "KX_sheet_front",
+      "positive_prompt": "Front view portrait facing camera directly, clean white studio background, soft studio lighting, neutral standing pose with arms relaxed at sides, head straight forward. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "golden_07.png",
+      "seed": 5000000,
+      "guidance": 2.5,
+      "filename_prefix": "KX_sheet_front"
+    },
+    {
+      "shot_id": "KX_sheet_three_quarter",
+      "positive_prompt": "Three-quarter view portrait, slight angle turned about 30 degrees to the right, clean white studio background, soft studio lighting, relaxed standing pose, natural expression. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "golden_07.png",
+      "seed": 5000001,
+      "guidance": 2.5,
+      "filename_prefix": "KX_sheet_three_quarter"
+    },
+    {
+      "shot_id": "KX_sheet_side",
+      "positive_prompt": "Side profile view facing left, clean white studio background, soft studio lighting, standing straight, showing full profile of face and hair. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "golden_07.png",
+      "seed": 5000002,
+      "guidance": 2.5,
+      "filename_prefix": "KX_sheet_side"
+    },
+    {
+      "shot_id": "KX_sheet_full_body",
+      "positive_prompt": "Full body view from head to toe, clean white studio background, soft studio lighting, standing pose with relaxed posture, showing her yellow hoodie, short blue denim shorts, slender legs, and white sneakers. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "golden_07.png",
+      "seed": 5000003,
+      "guidance": 2.5,
+      "filename_prefix": "KX_sheet_full_body"
+    }
+  ]
+}

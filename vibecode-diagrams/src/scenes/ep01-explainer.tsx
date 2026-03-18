@@ -1,5 +1,5 @@
-import {makeScene2D, Rect, Txt, Line, Layout, Circle, Img} from '@motion-canvas/2d';
-import {createRef, all, sequence, waitFor, chain, Vector2} from '@motion-canvas/core';
+import { makeScene2D, Rect, Txt, Line, Layout, Circle, Img } from '@motion-canvas/2d';
+import { createRef, all, sequence, waitFor, chain, Vector2 } from '@motion-canvas/core';
 
 /**
  * EP01: "What's a Spec?" — Core Explainer Scene
@@ -50,11 +50,11 @@ export default makeScene2D(function* (view) {
   // Chaotic "building" — stacked blocks, misaligned
   const chaosBlocks: Rect[] = [];
   const blockData = [
-    {x: -80, y: 180, w: 160, h: 50, rot: -3, label: 'login.js'},
-    {x: 40, y: 120, w: 140, h: 50, rot: 5, label: 'auth.py'},
-    {x: -40, y: 60, w: 180, h: 50, rot: -7, label: 'database??'},
-    {x: 60, y: 0, w: 120, h: 50, rot: 4, label: 'utils.ts'},
-    {x: -20, y: -60, w: 150, h: 50, rot: -2, label: 'api_v3_final2'},
+    { x: -80, y: 180, w: 160, h: 50, rot: -3, label: 'login.js' },
+    { x: 40, y: 120, w: 140, h: 50, rot: 5, label: 'auth.py' },
+    { x: -40, y: 60, w: 180, h: 50, rot: -7, label: 'database??' },
+    { x: 60, y: 0, w: 120, h: 50, rot: 4, label: 'utils.ts' },
+    { x: -20, y: -60, w: 150, h: 50, rot: -2, label: 'api_v3_final2' },
   ];
 
   for (const b of blockData) {
@@ -213,10 +213,10 @@ export default makeScene2D(function* (view) {
   // Solid building — neat, aligned blocks
   const solidBlocks: Rect[] = [];
   const solidData = [
-    {x: 200, y: 180, w: 280, h: 50, label: 'Database', color: EP01.accent3},
-    {x: 200, y: 120, w: 280, h: 50, label: 'Auth Service', color: EP01.accent3},
-    {x: 200, y: 60, w: 280, h: 50, label: 'API Layer', color: EP01.accent3},
-    {x: 200, y: 0, w: 280, h: 50, label: 'Frontend', color: EP01.accent3},
+    { x: 200, y: 180, w: 280, h: 50, label: 'Database', color: EP01.accent3 },
+    { x: 200, y: 120, w: 280, h: 50, label: 'Auth Service', color: EP01.accent3 },
+    { x: 200, y: 60, w: 280, h: 50, label: 'API Layer', color: EP01.accent3 },
+    { x: 200, y: 0, w: 280, h: 50, label: 'Frontend', color: EP01.accent3 },
   ];
 
   // Arrow from blueprint to building
@@ -340,6 +340,84 @@ export default makeScene2D(function* (view) {
     ahaSubtext().opacity(1, 0.5),
     ahaSubtext().scale(1, 0.4),
   );
+
+  yield* waitFor(1.5);
+
+  // ========== PART 4: "Results Comparison" ==========
+
+  yield* all(
+    ahaText().opacity(0, 0.4),
+    ahaSubtext().opacity(0, 0.4),
+  );
+
+  yield* waitFor(0.3);
+
+  const locTitle = createRef<Txt>();
+  view.add(
+    <Txt
+      ref={locTitle}
+      text="The Impact"
+      fontSize={48}
+      fontFamily="Space Grotesk"
+      fill={EP01.text}
+      y={-250}
+      opacity={0}
+    />,
+  );
+
+  yield* locTitle().opacity(1, 0.4);
+
+  // Before box
+  const beforeBox = createRef<Rect>();
+  const beforeText = createRef<Txt>();
+  view.add(
+    <Rect
+      ref={beforeBox}
+      x={-200}
+      y={0}
+      width={250}
+      height={300}
+      radius={12}
+      fill={EP01.surface}
+      opacity={0}
+      stroke={EP01.danger}
+      lineWidth={4}
+    >
+      <Layout direction="column" gap={20} padding={20} alignItems="center">
+        <Txt text="Before" fontSize={24} fontFamily="Inter" fill={EP01.muted} />
+        <Txt ref={beforeText} text="10,000" fontSize={56} fontFamily="JetBrains Mono" fill={EP01.danger} />
+        <Txt text="lines of code" fontSize={20} fontFamily="Inter" fill={EP01.muted} />
+      </Layout>
+    </Rect>,
+  );
+
+  // After box
+  const afterBox = createRef<Rect>();
+  const afterText = createRef<Txt>();
+  view.add(
+    <Rect
+      ref={afterBox}
+      x={200}
+      y={0}
+      width={250}
+      height={150}
+      radius={12}
+      fill={EP01.surface}
+      opacity={0}
+      stroke={EP01.accent3}
+      lineWidth={4}
+    >
+      <Layout direction="column" gap={10} padding={20} alignItems="center">
+        <Txt text="After" fontSize={24} fontFamily="Inter" fill={EP01.muted} />
+        <Txt ref={afterText} text="3,000" fontSize={56} fontFamily="JetBrains Mono" fill={EP01.accent3} />
+        <Txt text="lines of code" fontSize={20} fontFamily="Inter" fill={EP01.muted} />
+      </Layout>
+    </Rect>,
+  );
+
+  yield* beforeBox().opacity(1, 0.5);
+  yield* waitFor(0.5);
+  yield* afterBox().opacity(1, 0.5);
 
   yield* waitFor(2);
 });

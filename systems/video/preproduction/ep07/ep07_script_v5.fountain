@@ -1,0 +1,214 @@
+Title: EP07 — AI는 왜 헛소리를 하나
+Credit: Written by
+Author: vibecode.town
+Series: Vibecode Town Season 1
+Source: Concept episode — AI hallucination (evergreen/search)
+Draft date: 2026-03-18
+Duration: 3:30-4:00
+Notes: v5 (6-segment format, narrator-only, 2D flat vector, Vee solo). High search volume concept. Target: "AI hallucination" "왜 AI가 거짓말"
+
+/* ================================================================ */
+/* SEGMENT 1: HOOK [0:00-0:15]                                       */
+/* emotion_curve: TRUST → BETRAYAL                                   */
+/* narrative_stage: HOOK                                              */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S ROOM - NIGHT
+
+= Vee reads AI output on her screen. It looks authoritative. Clean formatting. Bullet points. Citations. She nods along, taking notes.
+
+/* vee_reaction: 1/6 */
+
+= She googles one of the citations. The paper doesn't exist. She googles another. The author doesn't exist. She checks the URL. 404.
+
+= Vee's pen stops mid-note. She stares at the screen. The AI's confident, well-formatted answer now looks different — like a con artist in a nice suit.
+
+NARRATOR (V.O.)
+The answer was perfect. The formatting was flawless. The citations were invented. The AI lied to her face — and it looked absolutely certain while doing it.
+
+> TITLE CARD: **AI는 왜 헛소리를 하나**
+
+---
+
+/* ================================================================ */
+/* SEGMENT 2: MISCONCEPTION [0:15-0:45]                              */
+/* emotion_curve: FRUSTRATION → FALSE DIAGNOSIS                      */
+/* narrative_stage: MISCONCEPTION                                    */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+
+= A brain icon appears. A progress bar below it: "Knowledge: 73%." An arrow points up with the label "More Data."
+
+NARRATOR (V.O.)
+The popular explanation goes like this: AI makes mistakes because it doesn't have enough data. Train it on more books, more websites, more code — and eventually it'll stop getting things wrong.
+
+= The progress bar fills: 73% → 85% → 92% → 99%. The brain icon glows brighter.
+
+NARRATOR (V.O.)
+More training data. Bigger models. Better accuracy. Just keep feeding it information until it knows everything. Problem solved.
+
+/* visual_type: character_reaction | space: desk */
+
+/* vee_reaction: 2/6 */
+
+= Vee nods along. Makes sense. More data, fewer mistakes. She types another question into the AI. The response is wrong again — a different kind of wrong. She frowns.
+
+NARRATOR (V.O.)
+GPT-4 was trained on most of the internet. It still makes things up. More data didn't fix it. Because data was never the problem.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 3: THE_CRACK [0:45-1:15]                                  */
+/* emotion_curve: FALSE DIAGNOSIS → UNSETTLING TRUTH                 */
+/* narrative_stage: THE_CRACK                                        */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+
+= The brain icon and progress bar shatter. Behind them — a simpler mechanism. A slot machine.
+
+NARRATOR (V.O.)
+Here's the part that makes people uncomfortable. AI isn't trying to be correct. It's not looking up answers. It's not reasoning. It's predicting the next word.
+
+= The slot machine spins. Three reels. Each reel has words instead of symbols: "The" / "capital" / "of" — STOP. "France" / "is" / "Paris."
+
+NARRATOR (V.O.)
+When it says "The capital of France is Paris" — it's not because it knows geography. It's because "Paris" is the most likely word to follow that sequence. It's pattern matching, not fact-checking.
+
+= The slot machine spins again: "The" / "capital" / "of" — STOP. "Freedonia" / "is" / "Glendale."
+
+NARRATOR (V.O.)
+And when the pattern is rare or ambiguous, it doesn't say "I don't know." It picks the most probable next word anyway. With full confidence. That's hallucination.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 4: CORE [1:15-3:00]                                       */
+/* emotion_curve: UNSETTLING TRUTH → UNDERSTANDING                   */
+/* narrative_stage: CORE                                              */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+/* extended_metaphor_start */
+
+= TRANSITION: Clean white background. Center frame, a massive bookshelf appears. Thousands of books. A figure stands in front of it — not reading, but listening.
+
+NARRATOR (V.O.)
+Imagine a person who has listened to every conversation ever recorded. Every book read aloud. Every podcast. Every lecture. Every argument.
+
+= Sound waves flow into the figure's ears. Millions of them. The figure absorbs them all.
+
+NARRATOR (V.O.)
+They've heard everything. But they've never checked any of it. They don't know what's true. They know what sounds right.
+
+/* shorts_candidate */
+
+= Someone asks the figure: "What year did Napoleon invade Russia?" The figure responds instantly, confident: "1812." Correct.
+
+= Someone asks: "What year did Napoleon invade Japan?" The figure responds just as confidently: "1804." A red X appears. Japan never happened.
+
+NARRATOR (V.O.)
+Same confidence. Same speed. One is right because the pattern is common. One is wrong because the pattern is rare — so the figure filled the gap with something that sounded plausible. It didn't hesitate. It didn't flag uncertainty. It just completed the sentence.
+
+/* extended_metaphor_end */
+
+/* visual_type: diagram | space: whiteboard */
+
+= The bookshelf fades. Three technical concepts appear as simple diagrams:
+
+= BOX 1: "Token Prediction" — a chain of words, each with a probability percentage. "The" → "cat" (42%) / "dog" (31%) / "president" (8%).
+
+NARRATOR (V.O.)
+Token prediction. Every word the AI writes is a probability gamble. It picks the most likely next word — or, if you turn up the temperature, it picks a less likely one for variety. That's the creativity dial. Turn it up, more creative. Turn it up too far, more nonsense.
+
+= A temperature slider appears. Low: "safe, repetitive." Medium: "creative, useful." High: "unhinged, hallucinatory."
+
+= BOX 2: "Context Window" — a horizontal bar, filled with text. As new text enters from the right, old text falls off the left edge.
+
+NARRATOR (V.O.)
+Context window. The AI can only "see" a limited amount of text at once. Ask it about something from three thousand lines ago, and it's gone. It's not forgotten — it was never remembered. The AI is always reading through a keyhole.
+
+/* vee_reaction: 3/6 */
+
+= Quick flash: Vee at her desk. She measures the distance between her eyes and the screen with her hands — then puts her hands right up against her face, peeking through tiny gaps. Keyhole vision. 1.5 seconds.
+
+= BOX 3: "No Truth Engine" — an empty box where a fact-checking module should be. A "MISSING" stamp over it.
+
+NARRATOR (V.O.)
+And the big one. There is no truth engine. No internal fact-checker. The AI has no mechanism to distinguish "this is correct" from "this sounds correct." It doesn't have beliefs. It doesn't have knowledge. It has statistics.
+
+/* vee_reaction: 4/6 */
+
+= Vee sits back in her chair. Arms crossed. Processing. This changes how she uses the tool.
+
+/* visual_type: diagram | space: whiteboard */
+
+= A split screen. Left: "More Data" with a red X. Right: "Better Verification" with a green check.
+
+NARRATOR (V.O.)
+So more data doesn't fix hallucination. More data just gives the AI more patterns to mash together. The fix isn't a better AI. The fix is a better human.
+
+/* shorts_candidate */
+
+= The right side expands. Three verification methods appear: "Specs" (EP01 icon), "Tests" (EP04 icon), "Gates" (a new icon — a checkpoint barrier).
+
+NARRATOR (V.O.)
+Specs tell AI what the answer should look like. Tests confirm the answer is correct. Gates stop bad answers from shipping. The AI doesn't verify itself. You do.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 5: REFRAME [3:00-3:30]                                    */
+/* emotion_curve: UNDERSTANDING → ACCEPTANCE                         */
+/* narrative_stage: REFRAME                                          */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+
+= The slot machine from THE_CRACK reappears. But now it's reframed — labeled "CREATIVITY ENGINE."
+
+NARRATOR (V.O.)
+Here's the twist nobody talks about. Hallucination and creativity are the same mechanism. The ability to generate something that doesn't exist yet — that's what makes AI useful AND unreliable. You can't have one without the other.
+
+= The slot machine splits into two. Left: "Hallucination — wrong pattern completion." Right: "Creativity — novel pattern completion." Same machine, different outcome.
+
+/* vee_reaction: 5/6 */
+
+= Vee looks at the screen with a new expression — not frustration, not trust. Respect. Like she finally understands the tool she's using.
+
+NARRATOR (V.O.)
+The fix isn't better AI. It's better systems around the AI. Let it be creative. Then verify everything.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 6: OUTRO_CTA [3:30-3:55]                                  */
+/* emotion_curve: ACCEPTANCE → PRAGMATISM                            */
+/* narrative_stage: OUTRO_CTA                                        */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S ROOM - NIGHT (CONTINUOUS)
+
+= Vee at her desk. She reads an AI response. This time, she doesn't nod along. She highlights a claim. Opens a browser tab. Checks it. Correct. Highlights another. Checks. Wrong — she deletes it and writes her own version.
+
+/* vee_reaction: 6/6 */
+
+= Vee places a sticky note on her monitor: "AI는 자신감 있게 틀린다." (AI is confidently wrong.) She taps it once. Back to work.
+
+NARRATOR (V.O.)
+AI doesn't lie. It doesn't know what lying is. It completes patterns. Your job isn't to trust it or distrust it. Your job is to check.
+
+NARRATOR (V.O.)
+Specs. Tests. Gates. That's the system. The AI creates. You verify.
+
+> END CARD: 구독 + "다음 편: 바이브코더 5대 실수"
+
+= FADE TO BLACK.
+
+> END

@@ -1,0 +1,246 @@
+Title: EP01 — 스펙이 뭔가?
+Credit: Written by
+Author: vibecode.town
+Series: Vibecode Town Season 1
+Source: Act 1-1 (I thought it worked) + Act 1-2 (Monday morning, everything broke)
+Draft date: 2026-03-18
+Duration: 3:30-4:00
+Notes: v3 (6-segment format, narrator-only, 2D flat vector, Vee solo)
+
+/* ================================================================ */
+/* SEGMENT 1: HOOK [0:00-0:15]                                       */
+/* emotion_curve: EXCITEMENT → SHOCK                                  */
+/* narrative_stage: HOOK                                               */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+/* shorts_candidate */
+
+= Five monitors flash green "BUILD SUCCESS" → cascade into red errors.
+
+INT. VEE'S ROOM - NIGHT
+
+/* vee_reaction: 1/6 */
+
+= Five monitors glow in a dark room. Vee throws both arms up. Every screen flashes green: "BUILD SUCCESS."
+
+NARRATOR (V.O.)
+You asked AI to build it. It said yes.
+
+= One screen turns red. Then two. Then all five. Error messages cascade.
+
+NARRATOR (V.O.)
+Three seconds later, nothing works. And you can't read a single error.
+
+> TITLE CARD: **스펙이 뭔가?**
+
+---
+
+/* ================================================================ */
+/* SEGMENT 2: MISCONCEPTION [0:15-0:45]                               */
+/* emotion_curve: OVERCONFIDENCE → CONFUSION                          */
+/* narrative_stage: MISCONCEPTION                                      */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+= Vee's false assumption: "AI가 만드니까 스펙 필요 없지?"
+
+INT. VEE'S ROOM - DAY (3 DAYS EARLIER)
+
+> INSERT: "3일 전"
+
+NARRATOR (V.O.)
+Three days ago, Vee discovered vibe coding. Type what you want. AI builds it. Done.
+
+/* visual_type: diagram | space: screen */
+
+= MONTAGE: Vee types → app appears. Types → app appears. Each time faster.
+
+NARRATOR (V.O.)
+A to-do app. A database. A login page. Five minutes each.
+
+/* vee_reaction: 2/6 */
+
+= Vee spins in her chair, arms crossed, nodding. Five terminal windows run simultaneously.
+
+NARRATOR (V.O.)
+By day three, she had five agents running. She couldn't explain what any of them did. But they ran. So she assumed they worked.
+
+NARRATOR (V.O.)
+Why write a spec? AI handles everything. Right?
+
+---
+
+/* ================================================================ */
+/* SEGMENT 3: THE_CRACK [0:45-1:15]                                   */
+/* emotion_curve: CONFUSION → DOUBT                                   */
+/* narrative_stage: THE_CRACK                                          */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+= "코드가 돌아갔다. 근데 뭘 하는지 설명 못 한다."
+
+INT. VEE'S ROOM - NIGHT (PRESENT)
+
+= Vee scrolls through code. It doesn't end. She scrolls faster. Still doesn't end.
+
+NARRATOR (V.O.)
+Ten thousand, eight hundred and forty-seven lines. Almost half of it — duplicated.
+
+/* visual_type: diagram | space: whiteboard */
+
+= Counter ticks: 10,847. Splits into 6,647 (white) and 4,200 (red, peels away).
+
+NARRATOR (V.O.)
+Five AI sessions built the same functions five different ways. None of them knew the others existed.
+
+/* vee_reaction: 3/6 */
+
+= Vee stares at the screen. She can explain what she typed. She can't explain what it built.
+
+NARRATOR (V.O.)
+The code ran. But she couldn't explain what it does. That's not a bug. That's a different kind of broken.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 4: CORE [1:15-3:00]                                        */
+/* emotion_curve: DOUBT → CLARITY                                     */
+/* narrative_stage: CORE                                               */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+/* extended_metaphor_start */
+
+= Building metaphor: blueprint vs. random stacking.
+
+NARRATOR (V.O.)
+Here's a building. Built with a blueprint. Foundation first, walls on top, roof last. Everything connects because someone decided the order before the first brick.
+
+= A building rises on screen, piece by piece, following a glowing blue blueprint.
+
+NARRATOR (V.O.)
+Now here's a building without a blueprint. Just... stack things. Whatever arrives first goes at the bottom.
+
+= Blocks pile randomly. The structure wobbles. Leans.
+
+/* shorts_candidate */
+
+NARRATOR (V.O.)
+It looks like a building. It stands — for now. But the plumbing runs through the attic, and the front door opens into a wall.
+
+= The random building collapses. Blocks tumble.
+
+/* extended_metaphor_end */
+
+NARRATOR (V.O.)
+That's what happened to Vee's code. Each AI agent stacked features without knowing the plan. Because there was no plan.
+
+/* visual_type: diagram | space: whiteboard */
+
+= Text overlay: "66% of IT projects fail — #1 cause: incomplete requirements" (Standish CHAOS)
+
+NARRATOR (V.O.)
+Industry data backs this up. Two-thirds of software projects fail. The number one reason? Nobody wrote down what they're building.
+
+= Bar chart animates: $1 → $10 → $100.
+
+NARRATOR (V.O.)
+A bug caught during planning costs one dollar. The same bug in production? A hundred. Barry Boehm proved this in 1981.
+
+= Blank page appears. Four boxes draw themselves:
+
+NARRATOR (V.O.)
+So what IS a spec? Not a hundred-page document. Four questions.
+
+= Text fills each box: "What am I trying to do?" / "Why doesn't the current way work?" / "How should it work?" / "What tools will I use?"
+
+NARRATOR (V.O.)
+Purpose. Reason. Method. Means. Answer those four, and you have a spec. That's it.
+
+/* vee_reaction: 4/6 */
+
+= Vee pulls out paper and pencil. Turns her back to the monitors.
+
+NARRATOR (V.O.)
+Vee stopped coding. She started writing what was bothering her.
+
+= CU: Paper. Messy handwriting: "I don't know what I built."
+
+= The pencil stops. Then moves again: "I want to use my home computer from anywhere."
+
+NARRATOR (V.O.)
+One sentence that explains everything. Not features. Not tools. The reason.
+
+/* shorts_candidate */
+
+= Below: "Files should stay in sync." "Access from any device." "Can't drop the connection."
+
+= CU: Security check result — "Line 847: shell injection."
+
+NARRATOR (V.O.)
+And now the errors make sense. Line eight forty-seven wasn't random. It was an open door she never meant to build.
+
+/* vee_reaction: 5/6 */
+
+= Vee picks up the paper. Turns back to the monitors. One error line highlights: "Connection refused: sync agent cannot reach host."
+
+NARRATOR (V.O.)
+Same errors. But now, one line makes sense. Because she knows what she's looking for.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 5: REFRAME [3:00-3:30]                                     */
+/* emotion_curve: CLARITY → UNDERSTANDING                             */
+/* narrative_stage: REFRAME                                            */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+
+= Zoom out: bigger picture.
+
+NARRATOR (V.O.)
+Here's what most people miss. This isn't about Cursor, or ChatGPT, or Claude. Every AI tool wants the same thing from you.
+
+= Icons of AI tools appear, then fade. A single question mark remains.
+
+NARRATOR (V.O.)
+A definition of "done." What does finished look like? If you can't answer that, no amount of AI will save you.
+
+= The four spec boxes reappear, small, connected to a larger system diagram.
+
+NARRATOR (V.O.)
+A spec isn't documentation. It's the shortest path between frustration and something that actually works.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 6: OUTRO_CTA [3:30-3:55]                                   */
+/* emotion_curve: UNDERSTANDING → CONFIDENCE                          */
+/* narrative_stage: OUTRO_CTA                                          */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+= Mirror of HOOK. Same room, different person.
+
+INT. VEE'S ROOM - NIGHT (CONTINUOUS)
+
+= Same composition as HOOK. Five monitors. Red errors. Dark room.
+
+= Vee pins a piece of paper next to the monitor: "I want to use my home computer from anywhere."
+
+NARRATOR (V.O.)
+Everything is still broken. But now she knows what to fix.
+
+/* vee_reaction: 6/6 */
+
+= Vee's expression: determined. Slight nod. Cracks her knuckles.
+
+NARRATOR (V.O.)
+Next time — she wrote the spec. And AI gave her something completely different from what she expected. Again.
+
+> END CARD: 구독 + EP02 "왼팔이 28개" 티저

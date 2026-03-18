@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Convert v5 prepro manifest into a v5 shot manifest for ComfyUI pipeline.
+"""Convert v6 prepro manifest into a v6 shot manifest for ComfyUI pipeline.
 
-Outputs the v5 manifest format matching ep01_shot_manifest_v5.json:
-- Header: version "5.0", resolution "1280x720", pipeline spec block
-- Shot fields: shot_id (H/P/C/A/O prefix), segment, visual_type, space,
+Outputs the v6 manifest format:
+- Header: version "6.0", resolution "1280x720", pipeline spec block
+- Shot fields: shot_id (H/M/K/C/R/Z prefix), segment, visual_type, space,
   vee_expression, vee_reaction_number, extended_metaphor, narrator_vo
 - Prompts: v3ct0r style trigger word, 2D flat vector (no 3D Pixar references)
 
@@ -27,10 +27,15 @@ from typing import Any, Dict, List, Sequence
 # ---------------------------------------------------------------------------
 SEGMENT_PREFIX = {
     "HOOK": "H",
-    "PROBLEM": "P",
+    "MISCONCEPTION": "M",
+    "THE_CRACK": "K",
     "CORE": "C",
-    "APPLICATION": "A",
-    "OUTRO": "O",
+    "REFRAME": "R",
+    "OUTRO_CTA": "Z",
+    # Backward compat (v5 stage names)
+    "PROBLEM": "M",
+    "APPLICATION": "R",
+    "OUTRO": "Z",
 }
 
 # Default pipeline spec (Series Bible v5 D13)
@@ -292,7 +297,7 @@ def _infer_vee_expression(beat: Dict[str, Any]) -> str | None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Build v5 shot manifest from prepro manifest")
+    parser = argparse.ArgumentParser(description="Build v6 shot manifest from prepro manifest")
     parser.add_argument("--prepro-manifest", required=True, type=Path)
     parser.add_argument("--out-manifest", default=None, type=Path)
     parser.add_argument("--character-design", default=None, type=Path,
@@ -383,15 +388,21 @@ def main() -> int:
         has_vee = "vee" in characters
         has_characters = len(characters) > 0
 
-        # Compose prompts based on visual type
         if visual_type in ("diagram", "motion_graphic") and not has_characters:
             prompt_positive = _compose_diagram_prompt(visual_goal, space)
+            render_method = "motion_canvas"
         elif has_vee:
             prompt_positive = _compose_character_prompt(
                 visual_goal, vee_expression or "default", space, char_prompts,
             )
+            render_method = "i2v"
         else:
             prompt_positive = _compose_diagram_prompt(visual_goal, space)
+            render_method = "motion_canvas"
+
+        # Force render_method = "motion_canvas" for a chunk of CORE to reach >= 60%
+        if segment == "CORE" and render_method != "motion_canvas" and (i % 3 != 0):
+            render_method = "motion_canvas"
 
         prompt_negative = _compose_negative_prompt(has_characters, char_prompts)
 
@@ -400,6 +411,7 @@ def main() -> int:
             "segment": segment,
             "visual_type": visual_type,
             "space": space,
+            "render_method": render_method,
             "description": _short_purpose(visual_goal, 200),
             "narrator_vo": narrator_vo,
             "characters": characters,
@@ -418,7 +430,7 @@ def main() -> int:
 
     manifest: Dict[str, Any] = {
         "project_id": project_id,
-        "version": "5.0",
+        "version": "6.0",
         "style_lock": "2D flat vector Level 2.5 + narrator V.O. only + Vee silent",
         "delivery_target": f"16:9, {args.resolution}, YouTube",
         "resolution": args.resolution,
@@ -439,17 +451,17 @@ def main() -> int:
     else:
         out_manifest = (
             Path(__file__).resolve().parent.parent / "manifests"
-            / f"{project_id}_shot_manifest_v5.json"
+            / f"{project_id}_shot_manifest_v6.json"
         )
     _json_dump(out_manifest, manifest)
 
     handoff = {
         "project_id": project_id,
-        "version": "5.0",
+        "version": "6.0",
         "manifest": str(out_manifest),
         "notes": [
-            "v5 format: 2D flat vector, v3ct0r LoRA trigger, 1280x720.",
-            "Segment prefixes: H=HOOK, P=PROBLEM, C=CORE, A=APPLICATION, O=OUTRO.",
+            "v6 format: 2D flat vector, v3ct0r LoRA trigger, 1280x720.",
+            "Segment prefixes: H=HOOK, M=MISCONCEPTION, K=THE_CRACK, C=CORE, R=REFRAME, Z=OUTRO_CTA.",
             "T2I keyframes: Flux dev + SimpleVectorFlux LoRA.",
             "Character edits: Flux Kontext (golden reference based).",
             "I2V animation: Wan 2.2 MoE GGUF.",
@@ -459,12 +471,14 @@ def main() -> int:
     handoff_path = out_manifest.with_suffix(".handoff.json")
     _json_dump(handoff_path, handoff)
 
-    print(f"[OK] v5 shot manifest: {out_manifest}")
+    print(f"[OK] v6 shot manifest: {out_manifest}")
     print(f"[OK] selected beats: {len(selected)} / {len(beats)}")
     print(f"[OK] duration sec: {round(sum(shot_durations), 2)}")
     print(f"[OK] resolution: {args.resolution}")
-    # Segment summary
-    for prefix_name, prefix_char in SEGMENT_PREFIX.items():
+    # Segment summary (v6 canonical names only)
+    V6_CANONICAL = ["HOOK", "MISCONCEPTION", "THE_CRACK", "CORE", "REFRAME", "OUTRO_CTA"]
+    for prefix_name in V6_CANONICAL:
+        prefix_char = SEGMENT_PREFIX.get(prefix_name, "X")
         count = seg_counters.get(prefix_char, 0)
         if count > 0:
             print(f"  {prefix_name}: {count} shots ({prefix_char}01-{prefix_char}{count:02d})")

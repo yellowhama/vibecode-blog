@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """Annotate shot manifest with narrative_stage fields.
 
-Maps source_scene_id (e.g. SEG01) to narrative stages (HOOK, FURY, MESS, INSIGHT)
+Maps source_scene_id (e.g. SEG01) to v6 narrative stages:
+    HOOK, MISCONCEPTION, THE_CRACK, CORE, REFRAME, OUTRO_CTA
 so that audio_catalog.py's select_bgm_by_stage() can pick the right BGM per act.
 
 Usage:
     python annotate_manifest_stages.py \
         --manifest ep01_shot_manifest.json \
-        --mapping '{"SEG01":"HOOK","SEG02":"FURY","SEG03":"MESS","SEG04":"INSIGHT","SEG05":"INSIGHT"}'
+        --mapping '{"SEG01":"HOOK","SEG02":"MISCONCEPTION","SEG03":"THE_CRACK","SEG04":"CORE","SEG05":"REFRAME","SEG06":"OUTRO_CTA"}'
 
     python annotate_manifest_stages.py \
         --manifest ep01_shot_manifest.json \

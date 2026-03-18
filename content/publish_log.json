@@ -1,5 +1,14 @@
 {
-  "_schema_version": "1.0",
+  "_schema_version": "2.0",
   "_description": "Multi-channel publish status registry. Updated by pipeline scripts after each channel publish.",
+  "_entry_schema": {
+    "blog_url": "string | null — vibecode.town blog post URL",
+    "twitter_thread_id": "string | null — first tweet ID of the thread",
+    "youtube_id": "string | null — YouTube video ID (e.g., dQw4w9WgXcQ)",
+    "youtube_url": "string | null — full YouTube URL",
+    "shorts_ids": "string[] — YouTube Shorts video IDs",
+    "published_at": "ISO 8601 timestamp",
+    "status": "draft | scheduled | published | unlisted"
+  },
   "entries": {}
 }

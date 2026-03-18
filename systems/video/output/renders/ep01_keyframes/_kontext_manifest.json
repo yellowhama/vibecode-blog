@@ -1,0 +1,126 @@
+{
+  "project_id": "kontext_keyframes",
+  "style_lock": "Flux Kontext scene editing — character consistency from golden reference",
+  "shots": [
+    {
+      "shot_id": "KX_S01_01",
+      "positive_prompt": "Vee celebrates → explosion. Show the result first. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "ivy_burr_golden_ref.png",
+      "seed": 5000000,
+      "guidance": 2.5,
+      "filename_prefix": "KX_S01_01"
+    },
+    {
+      "shot_id": "KX_S02_02",
+      "positive_prompt": "Five monitors glow in a dark room. Vee leans back in her chair. Each screen shows code, dashboards, terminals — all running. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "ivy_burr_golden_ref.png",
+      "seed": 5000001,
+      "guidance": 2.5,
+      "filename_prefix": "KX_S02_02"
+    },
+    {
+      "shot_id": "KX_S03_03",
+      "positive_prompt": "BEAT: 1 second of silence. One monitor flickers. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "ivy_burr_golden_ref.png",
+      "seed": 5000002,
+      "guidance": 2.5,
+      "filename_prefix": "KX_S03_03"
+    },
+    {
+      "shot_id": "KX_S04_04",
+      "positive_prompt": "Three days earlier. Vee's vibe coding montage. Bee's first appearance. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "ivy_burr_golden_ref.png",
+      "seed": 5000003,
+      "guidance": 2.5,
+      "filename_prefix": "KX_S04_04"
+    },
+    {
+      "shot_id": "KX_S05_05",
+      "positive_prompt": "Bright room. Vee sits at her monitor. Terminal open. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "ivy_burr_golden_ref.png",
+      "seed": 5000004,
+      "guidance": 2.5,
+      "filename_prefix": "KX_S05_05"
+    },
+    {
+      "shot_id": "KX_S06_06",
+      "positive_prompt": "Vee's eyes go wide. She jumps out of her chair. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "ivy_burr_golden_ref.png",
+      "seed": 5000005,
+      "guidance": 2.5,
+      "filename_prefix": "KX_S06_06"
+    },
+    {
+      "shot_id": "KX_S07_07",
+      "positive_prompt": "MONTAGE: Rapid cuts. Vee types → app appears. Types → app appears. Types → app appears. Each time faster. Each time her grin gets bigger. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "ivy_burr_golden_ref.png",
+      "seed": 5000006,
+      "guidance": 2.5,
+      "filename_prefix": "KX_S07_07"
+    },
+    {
+      "shot_id": "KX_S08_08",
+      "positive_prompt": "Vee spins in her chair, arms crossed, nodding like a CEO. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "ivy_burr_golden_ref.png",
+      "seed": 5000007,
+      "guidance": 2.5,
+      "filename_prefix": "KX_S08_08"
+    },
+    {
+      "shot_id": "KX_S18_18",
+      "positive_prompt": "Vee alone. Stops coding. Writes frustrations on paper. Discovers what she's building. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "ivy_burr_golden_ref.png",
+      "seed": 5000017,
+      "guidance": 2.5,
+      "filename_prefix": "KX_S18_18"
+    },
+    {
+      "shot_id": "KX_S19_19",
+      "positive_prompt": "Five monitors. Red errors. Vee's hands hover over the keyboard. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "ivy_burr_golden_ref.png",
+      "seed": 5000018,
+      "guidance": 2.5,
+      "filename_prefix": "KX_S19_19"
+    },
+    {
+      "shot_id": "KX_S20_20",
+      "positive_prompt": "She pulls her hands back. Pushes the chair away from the desk. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "ivy_burr_golden_ref.png",
+      "seed": 5000019,
+      "guidance": 2.5,
+      "filename_prefix": "KX_S20_20"
+    },
+    {
+      "shot_id": "KX_S21_21",
+      "positive_prompt": "Vee opens a desk drawer. Pulls out paper and a pencil. Turns her back to the monitors. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "ivy_burr_golden_ref.png",
+      "seed": 5000020,
+      "guidance": 2.5,
+      "filename_prefix": "KX_S21_21"
+    },
+    {
+      "shot_id": "KX_S22_22",
+      "positive_prompt": "CU: Paper. Messy handwriting appears:. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "ivy_burr_golden_ref.png",
+      "seed": 5000021,
+      "guidance": 2.5,
+      "filename_prefix": "KX_S22_22"
+    },
+    {
+      "shot_id": "KX_S23_23",
+      "positive_prompt": "**Exact same composition as HOOK.** Five monitors. Red errors. Dark room. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "ivy_burr_golden_ref.png",
+      "seed": 5000022,
+      "guidance": 2.5,
+      "filename_prefix": "KX_S23_23"
+    },
+    {
+      "shot_id": "KX_S24_24",
+      "positive_prompt": "Vee sits in her chair. The mug is in the same spot. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged. 3D Pixar-like render style. Keep her exact face, hair, glasses, and yellow hoodie unchanged.",
+      "input_image": "ivy_burr_golden_ref.png",
+      "seed": 5000023,
+      "guidance": 2.5,
+      "filename_prefix": "KX_S24_24"
+    }
+  ]
+}

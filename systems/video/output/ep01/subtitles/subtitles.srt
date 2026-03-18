@@ -1,0 +1,347 @@
+1
+00:00:00,000 --> 00:00:03,140
+This is the moment every by coder lives for.
+
+2
+00:00:03,399 --> 00:00:05,839
+You told AI what to build and it built it.
+
+3
+00:00:06,540 --> 00:00:07,519
+And then it all broke.
+
+4
+00:00:07,599 --> 00:00:08,160
+Why?
+
+5
+00:00:08,679 --> 00:00:10,519
+Three days ago, we discovered AI coding
+
+6
+00:00:10,519 --> 00:00:12,759
+and it felt like magic.
+
+7
+00:00:13,099 --> 00:00:13,980
+Type what you want.
+
+8
+00:00:14,400 --> 00:00:16,879
+AI builds it, a to do app, done.
+
+9
+00:00:17,219 --> 00:00:18,480
+A database, done.
+
+10
+00:00:18,640 --> 00:00:20,760
+A login page with auth, done.
+
+11
+00:00:21,339 --> 00:00:25,219
+By day three, she had a thousand lines of code
+
+12
+00:00:25,219 --> 00:00:27,079
+across a dozen files.
+
+13
+00:00:27,079 --> 00:00:30,260
+She couldn't explain what any of it did,
+
+14
+00:00:30,559 --> 00:00:33,460
+but it ran, so she assumed it worked.
+
+15
+00:00:34,039 --> 00:00:35,740
+She never asked herself one question.
+
+16
+00:00:35,899 --> 00:00:37,359
+The only question that matters.
+
+17
+00:00:37,840 --> 00:00:38,560
+What am I building?
+
+18
+00:00:39,259 --> 00:00:41,700
+Let's talk about buildings, real ones.
+
+19
+00:00:42,380 --> 00:00:44,119
+When you build a house, you start with a blueprint.
+
+20
+00:00:44,240 --> 00:00:46,179
+It tells you the order.
+
+21
+00:00:46,960 --> 00:00:47,619
+Foundation.
+
+22
+00:00:48,619 --> 00:00:49,520
+Then the frame.
+
+23
+00:00:49,920 --> 00:00:50,579
+Then bowls.
+
+24
+00:00:51,020 --> 00:00:51,399
+Roof.
+
+25
+00:00:52,259 --> 00:00:52,640
+Done.
+
+26
+00:00:53,060 --> 00:00:56,460
+It stands because every piece knows where it goes.
+
+27
+00:00:56,460 --> 00:00:59,200
+The blueprint told it.
+
+28
+00:00:59,520 --> 00:01:00,920
+Now, take away the blueprint.
+
+29
+00:01:01,740 --> 00:01:03,380
+No plan, no order.
+
+30
+00:01:03,920 --> 00:01:05,060
+Start stacking.
+
+31
+00:01:05,700 --> 00:01:07,640
+A wall before there's a foundation.
+
+32
+00:01:08,120 --> 00:01:09,579
+A roof before there are walls.
+
+33
+00:01:10,219 --> 00:01:12,560
+Three different staircases going to the same floor.
+
+34
+00:01:13,359 --> 00:01:14,739
+It looks like a building.
+
+35
+00:01:15,120 --> 00:01:17,319
+Kinda, if you squint.
+
+36
+00:01:17,379 --> 00:01:18,519
+And then SAT.
+
+37
+00:01:19,019 --> 00:01:20,180
+Everything falls down.
+
+38
+00:01:20,599 --> 00:01:22,239
+That's what happened to V's code.
+
+39
+00:01:22,700 --> 00:01:25,500
+She stacked blocks without a blueprint
+
+40
+00:01:25,500 --> 00:01:27,060
+and the tower fell.
+
+41
+00:01:27,480 --> 00:01:29,340
+So what's the blueprint for?
+
+42
+00:01:30,159 --> 00:01:30,239
+A spec.
+
+43
+00:01:31,239 --> 00:01:32,879
+And before you close this table,
+
+44
+00:01:32,980 --> 00:01:35,319
+a spec is not a 100 page document.
+
+45
+00:01:35,540 --> 00:01:36,840
+It's not a JIRA board.
+
+46
+00:01:37,060 --> 00:01:40,140
+It's not a meeting that should have been an email.
+
+47
+00:01:40,700 --> 00:01:42,099
+A spec is one sentence.
+
+48
+00:01:42,760 --> 00:01:44,219
+What am I building and why?
+
+49
+00:01:44,760 --> 00:01:45,340
+That's it.
+
+50
+00:01:45,500 --> 00:01:46,180
+One sentence.
+
+51
+00:01:46,340 --> 00:01:48,239
+Everything else follows from that.
+
+52
+00:01:48,939 --> 00:01:49,959
+Think of it like this.
+
+53
+00:01:50,519 --> 00:01:52,859
+You don't start with a car, you start with a skateboard.
+
+54
+00:01:53,560 --> 00:01:54,299
+Then a bicycle.
+
+55
+00:01:54,939 --> 00:01:55,579
+Then a car.
+
+56
+00:01:56,219 --> 00:01:57,280
+Each version works.
+
+57
+00:01:57,640 --> 00:01:58,620
+Each version moves,
+
+58
+00:01:58,939 --> 00:02:01,000
+but each one is a complete thing re-rode,
+
+59
+00:02:01,180 --> 00:02:02,939
+not a random pile of car parts.
+
+60
+00:02:03,700 --> 00:02:04,840
+Without a spec, you get this.
+
+61
+00:02:05,299 --> 00:02:06,379
+Parts, not a vehicle.
+
+62
+00:02:06,920 --> 00:02:08,939
+Parts that don't connect, built by an AI
+
+63
+00:02:08,939 --> 00:02:11,039
+that doesn't know what the finished thing looks like
+
+64
+00:02:11,039 --> 00:02:12,479
+because you never told it.
+
+65
+00:02:12,900 --> 00:02:14,460
+The spec gives you three things.
+
+66
+00:02:14,680 --> 00:02:15,400
+One, a filter.
+
+67
+00:02:15,860 --> 00:02:18,599
+When AI suggests something, you can ask for a second,
+
+68
+00:02:18,719 --> 00:02:20,520
+does this help me build my skateboard?
+
+69
+00:02:20,639 --> 00:02:22,020
+If no, skip it.
+
+70
+00:02:22,620 --> 00:02:25,580
+To a sequence, foundation, then frame,
+
+71
+00:02:25,960 --> 00:02:27,599
+then walls, then roof.
+
+72
+00:02:28,139 --> 00:02:28,819
+You know the order.
+
+73
+00:02:29,419 --> 00:02:32,219
+Through a definition of done, you know when to stop
+
+74
+00:02:32,219 --> 00:02:34,800
+because you know what finished looks like.
+
+75
+00:02:35,360 --> 00:02:36,500
+Without those three things,
+
+76
+00:02:36,979 --> 00:02:39,620
+you're stacking random blocks and hoping they hold.
+
+77
+00:02:40,340 --> 00:02:41,419
+Back to the present.
+
+78
+00:02:41,759 --> 00:02:43,939
+She stopped coding and she started thinking.
+
+79
+00:02:44,500 --> 00:02:46,340
+One sentence, that's all it took.
+
+80
+00:02:47,080 --> 00:02:48,639
+Same errors, same wall of red,
+
+81
+00:02:48,699 --> 00:02:49,979
+but now one line jumps out
+
+82
+00:02:49,979 --> 00:02:52,659
+because now she knows what she's looking for.
+
+83
+00:02:53,060 --> 00:02:54,000
+Everything is still broken.
+
+84
+00:02:54,580 --> 00:02:56,360
+But now she knows what to fix.
+
+85
+00:02:56,759 --> 00:02:58,219
+At least she thinks she does.
+
+86
+00:02:58,719 --> 00:03:01,580
+Next time, Piers say how she writes 15 pages of specs
+
+87
+00:03:01,580 --> 00:03:03,699
+and somehow that makes everything worse.

@@ -1,0 +1,71 @@
+{
+  "manifest": "systems/video/preproduction/ep01/ep01_shot_manifest_t2v.json",
+  "workflow": "systems/video/workflows/api/wan22_moe_t2i.json",
+  "bindings": "systems/video/workflows/api/wan22_moe_t2i_bindings.json",
+  "server": "http://127.0.0.1:8188",
+  "started_at": "2026-03-13T00:34:06.741369",
+  "summary": {
+    "total": 6,
+    "ok": 6,
+    "errors": 0,
+    "cached": 0,
+    "dry_run": 0
+  },
+  "shots": [
+    {
+      "shot_id": "S12_12",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/ep01_t2v_final/S12_12/S12_12_00002_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "S13_13",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/ep01_t2v_final/S13_13/S13_13_00002_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "S14_14",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/ep01_t2v_final/S14_14/S14_14_00002_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "S15_15",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/ep01_t2v_final/S15_15/S15_15_00002_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "S16_16",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/ep01_t2v_final/S16_16/S16_16_00002_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "S17_17",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/ep01_t2v_final/S17_17/S17_17_00002_.png"
+      ],
+      "artifact_count": 1
+    }
+  ],
+  "finished_at": "2026-03-13T00:49:22.326045"
+}

@@ -1,0 +1,53 @@
+{
+  "manifest": "/mnt/e/vibecode-blog/systems/video/output/renders/character_sheet_v4_fix/_kontext_manifest.json",
+  "workflow": "/mnt/e/vibecode-blog/systems/video/workflows/api/flux_kontext_edit.json",
+  "bindings": "/mnt/e/vibecode-blog/systems/video/workflows/api/flux_kontext_edit_bindings.json",
+  "server": "http://127.0.0.1:8188",
+  "started_at": "2026-03-11T08:17:43.732092",
+  "summary": {
+    "total": 4,
+    "ok": 4,
+    "errors": 0,
+    "cached": 0,
+    "dry_run": 0
+  },
+  "shots": [
+    {
+      "shot_id": "KX_sheet_front",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/character_sheet_v4_fix/_renders/KX_sheet_front/KX_sheet_front_00002_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_sheet_three_quarter",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/character_sheet_v4_fix/_renders/KX_sheet_three_quarter/KX_sheet_three_quarter_00002_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_sheet_side",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/character_sheet_v4_fix/_renders/KX_sheet_side/KX_sheet_side_00002_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_sheet_full_body",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/character_sheet_v4_fix/_renders/KX_sheet_full_body/KX_sheet_full_body_00002_.png"
+      ],
+      "artifact_count": 1
+    }
+  ],
+  "finished_at": "2026-03-11T08:21:49.236646"
+}

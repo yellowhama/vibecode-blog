@@ -1,0 +1,268 @@
+Title: EP10 — 좌절에서 시스템으로
+Credit: Written by
+Author: vibecode.town
+Series: Vibecode Town Season 1
+Source: Season 1 finale — callbacks to EP01-04
+Draft date: 2026-03-18
+Duration: 3:30-4:00
+Notes: v5 (6-segment format, narrator-only, 2D flat vector, Vee solo). Season finale. Emotional payoff. Callbacks to all previous episodes. Vee's biggest eureka.
+
+/* ================================================================ */
+/* SEGMENT 1: HOOK [0:00-0:15]                                       */
+/* emotion_curve: CONFIDENCE → IMMEDIATE FAILURE                     */
+/* narrative_stage: HOOK                                              */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S ROOM - MORNING
+
+= Morning light. Vee sits at her desk, fresh. Her wall has everything: the spec sticky note from EP01, the SSOT document from EP02, the folder structure from EP03, the test checklist from EP04. She's ready.
+
+/* vee_reaction: 1/6 */
+/* shorts_candidate */
+
+= Vee opens a new project. She types confidently. She follows every rule. Spec first. Structure second. Tests third.
+
+= The build fails. Red errors. Not one — seventeen.
+
+= Vee stares. She did everything right. It still broke.
+
+NARRATOR (V.O.)
+She wrote the spec. She organized the code. She wrote the tests. She read the output. She did everything right. And it broke anyway.
+
+= BEAT.
+
+NARRATOR (V.O.)
+Good. That means the system is working.
+
+> TITLE CARD: **좌절에서 시스템으로**
+
+---
+
+/* ================================================================ */
+/* SEGMENT 2: MISCONCEPTION [0:15-0:45]                              */
+/* emotion_curve: FRUSTRATION → FALSE EXPECTATION                    */
+/* narrative_stage: MISCONCEPTION                                    */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S ROOM - MORNING (CONTINUOUS)
+
+= Vee scrolls through the errors. Her face cycles through frustration, confusion, almost-anger. She looks at her wall of sticky notes. "I followed every step."
+
+NARRATOR (V.O.)
+The misconception at the end of every learning journey. "I know the rules now. So it should work the first time." That's not how systems work. That's not how anything works.
+
+/* visual_type: diagram | space: whiteboard */
+
+= A staircase diagram. At the top: "MASTERY." A figure stands at the bottom, looking up. The stairs are clean, evenly spaced, going straight up.
+
+NARRATOR (V.O.)
+We imagine learning like this. A straight line up. Each lesson gets you one step closer. By step ten, you're done.
+
+= The staircase shatters. What's underneath: a jagged, messy path. Ups and downs. Loops. Dead ends. But the overall direction is still up.
+
+NARRATOR (V.O.)
+It actually looks like this. Progress isn't linear. And the failures at step ten feel different from the failures at step one — but they're still failures.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 3: THE_CRACK [0:45-1:15]                                  */
+/* emotion_curve: FALSE EXPECTATION → DIFFERENT KIND OF FAILURE      */
+/* narrative_stage: THE_CRACK                                        */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S ROOM - DAY
+
+= Vee looks at the seventeen errors again. But this time, she actually reads them. Line by line.
+
+/* vee_reaction: 2/6 */
+
+= Her expression changes. Not frustration — recognition. She's seen this before. Error #1: missing type definition. She knows where types go (EP03 — structure). Error #7: null reference on auth. She knows to check the auth boundary (EP03 — domains). Error #14: test assertion failed. The test caught a real bug before it shipped (EP04 — testing works).
+
+NARRATOR (V.O.)
+Seventeen errors. But something is different. She can read them. She knows where to look. She knows what each error means. That wasn't true two months ago.
+
+= A split screen. LEFT: EP01 Vee — staring at cascading errors, paralyzed, no idea where to start. RIGHT: EP10 Vee — reading errors methodically, fixing them one at a time.
+
+NARRATOR (V.O.)
+Same person. Same errors. Completely different experience. The system didn't prevent the failure. The system made the failure useful.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 4: CORE [1:15-3:00]                                       */
+/* emotion_curve: RECOGNITION → MONTAGE → REVELATION                 */
+/* narrative_stage: CORE                                              */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+/* extended_metaphor_start */
+
+= TRANSITION: Clean white background. Four icons appear in a horizontal line — each one from a previous episode.
+
+NARRATOR (V.O.)
+Let's trace the journey.
+
+= ICON 1 lights up: A piece of paper with four boxes. EP01.
+
+= FLASHBACK FLASH: Quick 2-second clip from EP01 — Vee writing "I want to use my home computer from anywhere" on paper. The paper glows.
+
+NARRATOR (V.O.)
+Episode one. The spec. She learned to define what she's building before she builds it. One sentence that explains everything.
+
+= ICON 2 lights up: A single document with "SSOT" written on it. EP02.
+
+= FLASHBACK FLASH: Quick 2-second clip from EP02 — the 28-armed monster transforming into a clean character when given a single source of truth.
+
+NARRATOR (V.O.)
+Episode two. Placement. She learned that AI forgets. The fix isn't better memory — it's a file that never forgets. One document. Every conversation reads it first.
+
+= ICON 3 lights up: A floor plan with walls. EP03.
+
+= FLASHBACK FLASH: Quick 2-second clip from EP03 — walls dropping into the apartment. Oil stops. Water stops. Each room contained.
+
+NARRATOR (V.O.)
+Episode three. Structure. She learned that code without boundaries is an apartment without walls. Every domain gets its own room. Every change stays contained.
+
+= ICON 4 lights up: An opened box with a green checkmark. EP04.
+
+= FLASHBACK FLASH: Quick 2-second clip from EP04 — the box opening to reveal a small bug, quickly swatted. Green check.
+
+/* shorts_candidate */
+
+NARRATOR (V.O.)
+Episode four. Verification. She learned that untested code is a sealed box. Open it daily. The fear is always worse than the reality.
+
+/* extended_metaphor_end */
+
+/* visual_type: diagram | space: whiteboard */
+
+= The four icons connect. Lines draw between them. A system forms:
+
+= SPEC → SSOT → STRUCTURE → TESTS → (loops back to SPEC)
+
+NARRATOR (V.O.)
+Alone, each lesson is useful. Together, they're a system. The spec feeds the source of truth. The source of truth defines the structure. The structure makes tests possible. The tests reveal what the spec missed. And the cycle repeats.
+
+= The loop spins slowly. Each node pulses as it activates.
+
+/* vee_reaction: 3/6 */
+
+= Quick flash: Vee's face. Not eureka — deeper than that. Quiet awe. Like watching gears mesh for the first time. 2 seconds.
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S ROOM - DAY (CONTINUOUS)
+
+= Back to the seventeen errors. Vee works through them. Not frantically — methodically.
+
+= Error #1: she opens the spec, adds a missing type definition. Fixed.
+= Error #7: she checks the auth domain boundary, adds a null check. Fixed.
+= Error #14: the test caught a logic bug. She rewrites the function. The test goes green.
+
+/* vee_reaction: 4/6 */
+
+= Vee fixes the last error. The build runs. Green. All tests pass. She doesn't celebrate — she updates the spec with what she learned. The cycle continues.
+
+NARRATOR (V.O.)
+Forty minutes. Seventeen errors. All fixed. Not because she's smarter. Because she has a system that tells her where to look.
+
+/* visual_type: diagram | space: whiteboard */
+
+= Three sentences appear, one at a time, each building on the last:
+
+NARRATOR (V.O.)
+좌절이 스펙이 된다.
+
+= "좌절이 스펙이 된다." — Frustration becomes spec.
+
+NARRATOR (V.O.)
+스펙이 시스템이 된다.
+
+= "스펙이 시스템이 된다." — Spec becomes system.
+
+NARRATOR (V.O.)
+시스템이 자유가 된다.
+
+/* shorts_candidate */
+
+= "시스템이 자유가 된다." — System becomes freedom. The three sentences stack. They glow.
+
+NARRATOR (V.O.)
+Every frustration you've felt — the code that broke, the AI that hallucinated, the file you couldn't find, the test you didn't write — each one is a spec waiting to be written. And each spec makes the system stronger. And a stronger system means you spend less time fighting and more time building.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 5: REFRAME [3:00-3:30]                                    */
+/* emotion_curve: REVELATION → PEACE                                 */
+/* narrative_stage: REFRAME                                          */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+
+= The four episode icons reappear. But now a fifth appears at the end: an infinity symbol.
+
+NARRATOR (V.O.)
+The system isn't about preventing all failures. That's impossible. The system is about making failures useful.
+
+= The infinity symbol pulses. Inside it, the cycle: frustration → spec → system → freedom → (new frustration) → (new spec) → ...
+
+NARRATOR (V.O.)
+Every time something breaks, you learn what was missing. You add it to the spec. The spec strengthens the system. The system gives you freedom to build bigger things. Which will break in new ways. Which will teach you new things.
+
+/* vee_reaction: 5/6 */
+
+= Vee looks at her wall. The sticky notes. The checklist. The SSOT. The folder diagram. It's not a wall of instructions — it's a wall of lessons. Each one started as a failure.
+
+NARRATOR (V.O.)
+That's not a hamster wheel. That's growth. And it never stops.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 6: OUTRO_CTA [3:30-3:55]                                  */
+/* emotion_curve: PEACE → OPEN DOOR                                  */
+/* narrative_stage: OUTRO_CTA                                        */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S ROOM - SUNSET
+
+= Golden hour light through the window. Vee's room looks different from EP01. Same desk. Same monitors. But the walls are covered in systems — notes, diagrams, checklists. Evidence of ten episodes of learning.
+
+= Vee opens a brand new project. Empty terminal. Blank screen. She reaches for her notebook. Opens it to a fresh page.
+
+/* vee_reaction: 6/6 */
+
+= Vee writes the first line of a new spec. She pauses. Looks at it. Crosses it out. Rewrites it. Better. She nods. One sentence. The starting point.
+
+= She looks at the camera one last time. No smugness. No fear. Just readiness. A small nod.
+
+NARRATOR (V.O.)
+Season one started with everything broken and no idea why. It ends with everything still breaking — but now she knows what to do about it.
+
+= BEAT.
+
+NARRATOR (V.O.)
+That's vibe coding. Not the tools. Not the AI. The system you build around yourself.
+
+= BEAT.
+
+NARRATOR (V.O.)
+시즌 2에서 봐요.
+
+= The four EP icons from the CORE segment line up at the bottom of the screen. They pulse once, together, like a heartbeat.
+
+> END CARD: 시즌 1 완결 + 구독 + vibecode.town
+
+= FADE TO BLACK.
+
+> END

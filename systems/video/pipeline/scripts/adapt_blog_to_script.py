@@ -75,6 +75,7 @@ You are an expert Script Doctor and Screenwriter. Your goal is to convert the fo
    - == act: insight == (The Declaration)
 3. **Visuals**: Detailed descriptions for Claymation generation (No text in visuals).
 4. **Dialogue**: First-person NARRATOR dialogue only. Max 2 sentences per shot.
+5. **Citation & Research**: Any statistics, quotes, or factual claims MUST include a brief inline source verification or context from the original blog. Do not hallucinate facts.
 
 Please output the `.fountain` content first, then a `narration_manifest.json` following the established schema.
 """

@@ -1,0 +1,232 @@
+{
+  "manifest": "preproduction/ep01/ep01_shot_manifest.json",
+  "workflow": "workflows/api/wan22_moe_i2v_full.json",
+  "bindings": "workflows/api/wan22_moe_i2v_bindings.json",
+  "server": "http://127.0.0.1:8188",
+  "started_at": "2026-03-13T12:00:00",
+  "summary": {
+    "total": 24,
+    "ok": 24,
+    "errors": 0,
+    "cached": 0,
+    "dry_run": 0
+  },
+  "shots": [
+    {
+      "shot_id": "S01_01",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S01_01/S01_01.mp4"
+      ]
+    },
+    {
+      "shot_id": "S02_02",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S02_02/S02_02.mp4"
+      ]
+    },
+    {
+      "shot_id": "S03_03",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S03_03/S03_03.mp4"
+      ]
+    },
+    {
+      "shot_id": "S04_04",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S04_04/S04_04.mp4"
+      ]
+    },
+    {
+      "shot_id": "S05_05",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S05_05/S05_05.mp4"
+      ]
+    },
+    {
+      "shot_id": "S06_06",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S06_06/S06_06.mp4"
+      ]
+    },
+    {
+      "shot_id": "S07_07",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S07_07/S07_07.mp4"
+      ]
+    },
+    {
+      "shot_id": "S08_08",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S08_08/S08_08.mp4"
+      ]
+    },
+    {
+      "shot_id": "S09_09",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S09_09/S09_09.mp4"
+      ]
+    },
+    {
+      "shot_id": "S10_10",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S10_10/S10_10.mp4"
+      ]
+    },
+    {
+      "shot_id": "S11_11",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S11_11/S11_11.mp4"
+      ]
+    },
+    {
+      "shot_id": "S12_12",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S12_12/S12_12.mp4"
+      ]
+    },
+    {
+      "shot_id": "S13_13",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S13_13/S13_13.mp4"
+      ]
+    },
+    {
+      "shot_id": "S14_14",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S14_14/S14_14.mp4"
+      ]
+    },
+    {
+      "shot_id": "S15_15",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S15_15/S15_15.mp4"
+      ]
+    },
+    {
+      "shot_id": "S16_16",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S16_16/S16_16.mp4"
+      ]
+    },
+    {
+      "shot_id": "S17_17",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S17_17/S17_17.mp4"
+      ]
+    },
+    {
+      "shot_id": "S18_18",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S18_18/S18_18.mp4"
+      ]
+    },
+    {
+      "shot_id": "S19_19",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S19_19/S19_19.mp4"
+      ]
+    },
+    {
+      "shot_id": "S20_20",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S20_20/S20_20.mp4"
+      ]
+    },
+    {
+      "shot_id": "S21_21",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S21_21/S21_21.mp4"
+      ]
+    },
+    {
+      "shot_id": "S22_22",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S22_22/S22_22.mp4"
+      ]
+    },
+    {
+      "shot_id": "S23_23",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S23_23/S23_23.mp4"
+      ]
+    },
+    {
+      "shot_id": "S24_24",
+      "status": "ok",
+      "error": null,
+      "artifact_count": 1,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_i2v_v3/S24_24/S24_24.mp4"
+      ]
+    }
+  ]
+}

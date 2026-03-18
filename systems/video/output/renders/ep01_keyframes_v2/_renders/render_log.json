@@ -1,0 +1,152 @@
+{
+  "manifest": "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_kontext_manifest.json",
+  "workflow": "/mnt/e/vibecode-blog/systems/video/workflows/api/flux_kontext_edit.json",
+  "bindings": "/mnt/e/vibecode-blog/systems/video/workflows/api/flux_kontext_edit_bindings.json",
+  "server": "http://127.0.0.1:8188",
+  "started_at": "2026-03-13T04:55:19.131923",
+  "summary": {
+    "total": 15,
+    "ok": 15,
+    "errors": 0,
+    "cached": 0,
+    "dry_run": 0
+  },
+  "shots": [
+    {
+      "shot_id": "KX_S01_01",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_renders/KX_S01_01/KX_S01_01_00004_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_S02_02",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_renders/KX_S02_02/KX_S02_02_00003_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_S03_03",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_renders/KX_S03_03/KX_S03_03_00003_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_S04_04",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_renders/KX_S04_04/KX_S04_04_00003_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_S05_05",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_renders/KX_S05_05/KX_S05_05_00003_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_S06_06",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_renders/KX_S06_06/KX_S06_06_00003_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_S07_07",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_renders/KX_S07_07/KX_S07_07_00003_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_S08_08",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_renders/KX_S08_08/KX_S08_08_00003_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_S18_18",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_renders/KX_S18_18/KX_S18_18_00002_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_S19_19",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_renders/KX_S19_19/KX_S19_19_00003_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_S20_20",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_renders/KX_S20_20/KX_S20_20_00003_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_S21_21",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_renders/KX_S21_21/KX_S21_21_00003_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_S22_22",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_renders/KX_S22_22/KX_S22_22_00003_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_S23_23",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_renders/KX_S23_23/KX_S23_23_00003_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "KX_S24_24",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "/mnt/e/vibecode-blog/systems/video/output/renders/ep01_keyframes_v2/_renders/KX_S24_24/KX_S24_24_00003_.png"
+      ],
+      "artifact_count": 1
+    }
+  ],
+  "finished_at": "2026-03-13T05:10:07.320325"
+}

@@ -1,0 +1,19 @@
+{
+  "project_id": "t2i_storyboards",
+  "style_lock": "Flux PuLID T2I — 16:9 scene storyboards for I2V pipeline",
+  "shots": [
+    {
+      "shot_id": "SB_S09_09",
+      "positive_prompt": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Transition to abstract world. \"Spec = Blueprint\" metaphor. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000000,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S09_09",
+      "pulid_ref_image": "ivy_burr_golden_ref.png",
+      "pulid_weight": 0.9,
+      "pulid_start_at": 0.0,
+      "pulid_end_at": 1.0
+    }
+  ]
+}

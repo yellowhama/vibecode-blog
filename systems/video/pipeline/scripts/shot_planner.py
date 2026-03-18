@@ -2,9 +2,9 @@
 """Intelligent shot planner v2.1: Fountain-based planning with YouTube Retention integration.
 
 Parses .fountain scripts and narration_manifest.json to produce a shots.json that:
-1. Supports 4-Act structure (HOOK, FURY, MESS, INSIGHT)
+1. Supports 6-segment structure (HOOK, MISCONCEPTION, THE_CRACK, CORE, REFRAME, OUTRO_CTA)
 2. Enforces the "Nike Rule" (Action > Dialogue)
-3. Maps visual goals to specific ComfyUI models (Wan 2.1 / Hunyuan)
+3. Maps visual goals to specific ComfyUI models (Flux dev + Wan 2.2 MoE)
 4. Injects narrative_stage metadata for audio automation
 5. Groups shots by character for generation consistency
 """

@@ -1,0 +1,230 @@
+Title: EP06 — 10분만에 AI 에이전트
+Credit: Written by
+Author: vibecode.town
+Series: Vibecode Town Season 1
+Source: Tutorial episode — step-by-step agent build
+Draft date: 2026-03-18
+Duration: 3:30-4:00
+Notes: v5 (6-segment format, narrator-only, 2D flat vector, Vee solo). Tutorial format. Vee builds a file-watcher agent on screen.
+
+/* ================================================================ */
+/* SEGMENT 1: HOOK [0:00-0:15]                                       */
+/* emotion_curve: HYPE → SKEPTICISM                                  */
+/* narrative_stage: HOOK                                              */
+/* ================================================================ */
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= A glowing headline floats in: "Build Your Own AI Agent in Minutes!" Below it, another: "Autonomous AI Agents Will Replace Everything." Another: "AgentOps: The Future of Work."
+
+NARRATOR (V.O.)
+Every week, a new headline. AI agents are going to replace your job, your dog, and your therapist. Apparently.
+
+= The headlines crumble like dry paper. Behind them — a blinking cursor on an empty terminal.
+
+/* shorts_candidate */
+
+NARRATOR (V.O.)
+But what actually IS an agent? And can you build one that does something useful in ten minutes?
+
+> TITLE CARD: **10분만에 AI 에이전트**
+
+---
+
+/* ================================================================ */
+/* SEGMENT 2: MISCONCEPTION [0:15-0:45]                              */
+/* emotion_curve: AWE → FALSE UNDERSTANDING                          */
+/* narrative_stage: MISCONCEPTION                                    */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+
+= A robot icon appears center frame. It glows with intelligence. Around it, floating labels: "Autonomous," "Self-learning," "Makes decisions," "Replaces humans."
+
+NARRATOR (V.O.)
+When people hear "AI agent," they picture this. An autonomous intelligence that thinks for itself. Plans its own goals. Decides what to do. Basically, a digital employee that never sleeps.
+
+/* vee_reaction: 1/6 */
+/* visual_type: character_reaction | space: desk */
+
+= Vee watches a demo video on her screen. An agent auto-navigates a website, writes emails, fills spreadsheets. Her eyes are wide. Impressed.
+
+NARRATOR (V.O.)
+The demos are incredible. The agent browses the web, finds data, writes a report, sends it to your inbox. All by itself. You sit back and watch.
+
+/* visual_type: diagram | space: whiteboard */
+
+= The robot icon grows larger. Crown appears on its head. It's king of automation.
+
+NARRATOR (V.O.)
+Agent equals autonomous. That's the misconception. And it's going to cost you three hours of debugging.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 3: THE_CRACK [0:45-1:15]                                  */
+/* emotion_curve: FALSE UNDERSTANDING → REALIZATION                  */
+/* narrative_stage: THE_CRACK                                        */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S ROOM - DAY
+
+= Vee builds an "autonomous" agent. She types: "Build me an agent that organizes my files." The AI produces a script. Vee runs it.
+
+= The file explorer goes haywire. Files move everywhere. Photos end up in "Invoices." Code ends up in "Recipes." The desktop is chaos.
+
+/* vee_reaction: 2/6 */
+
+= Vee slams her laptop shut. Hood up. She stares at the ceiling.
+
+NARRATOR (V.O.)
+The agent did exactly what it was told. Organize files. It just had no idea what "organized" means to Vee. Because nobody defined the rules. Nobody set the boundaries.
+
+= The robot icon from earlier reappears — but now it's spinning in circles, arms flailing, bumping into walls.
+
+NARRATOR (V.O.)
+An agent without constraints isn't autonomous. It's just chaotic. The more it can do, the more ways it can go wrong.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 4: CORE [1:15-3:00]                                       */
+/* emotion_curve: REALIZATION → UNDERSTANDING → COMPETENCE           */
+/* narrative_stage: CORE                                              */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+/* extended_metaphor_start */
+
+= TRANSITION: Clean white background. The chaotic robot shrinks to a corner. Center frame, a simple loop diagram draws itself.
+
+NARRATOR (V.O.)
+Forget autonomous. Here's what an agent actually is.
+
+= Three nodes appear in a circle, connected by arrows: OBSERVE → DECIDE → ACT → (back to OBSERVE).
+
+NARRATOR (V.O.)
+A loop. Three steps. Observe — look at the world. Decide — pick what to do. Act — do it. Then observe again. That's it. That's every agent ever built.
+
+= The loop spins slowly. Clean. Simple.
+
+NARRATOR (V.O.)
+Your thermostat is an agent. Observe: temperature is 28 degrees. Decide: too hot. Act: turn on AC. Loop forever. Nobody calls a thermostat autonomous. But it IS an agent.
+
+/* extended_metaphor_end */
+
+/* visual_type: motion_graphic | space: desk */
+
+= CUT TO: Vee's desk. Fresh start. She opens a terminal. The narrator walks through the build.
+
+NARRATOR (V.O.)
+Let's build one. A file watcher. It does one thing: when a new file appears in a folder, it reads the file name and moves it to the right place.
+
+= Vee's screen shows a simple project structure:
+= `agent/` → `watcher.py` / `rules.json` / `run.sh`
+
+/* shorts_candidate */
+
+NARRATOR (V.O.)
+Step one. Observe.
+
+= Code appears on screen (simplified, readable): a file watcher that checks a folder every five seconds. Three lines. Simple.
+
+NARRATOR (V.O.)
+Check the folder. Every five seconds. If something new appeared — flag it. That's the observe step.
+
+= The word "OBSERVE" lights up green in the loop diagram (small, in the corner).
+
+NARRATOR (V.O.)
+Step two. Decide.
+
+= A JSON file appears: rules. "If filename contains 'invoice' → move to /invoices." "If filename ends in '.png' → move to /images." "Otherwise → move to /unsorted."
+
+NARRATOR (V.O.)
+The rules file. This is where the intelligence lives — and notice, it's not AI intelligence. It's YOUR intelligence. You decided what "organized" means. The agent just follows the rules.
+
+= The word "DECIDE" lights up green.
+
+/* vee_reaction: 3/6 */
+
+= Vee nods slowly. She's writing the rules, not the logic. She gets it.
+
+NARRATOR (V.O.)
+Step three. Act.
+
+= The code moves a file. "invoice_march.pdf" slides from /downloads to /invoices. A green checkmark.
+
+NARRATOR (V.O.)
+Move the file. Log what happened. Go back to step one. The entire agent is forty lines. It does exactly one thing. And it does it perfectly, every time, because the rules are explicit.
+
+= The word "ACT" lights up green. The full loop glows.
+
+/* vee_reaction: 4/6 */
+
+= Vee runs the agent. A file drops into the watched folder. It moves automatically. Another file. Moves. Vee watches, arms crossed. Satisfied nod.
+
+/* visual_type: diagram | space: whiteboard */
+
+NARRATOR (V.O.)
+The entire thing took eight minutes. No framework. No LangChain. No crew of agents arguing with each other. One loop. One rules file. One job.
+
+= The loop diagram sits clean and complete. Beside it, a scoreboard: "Lines of code: 40. Frameworks: 0. Files organized: all of them."
+
+---
+
+/* ================================================================ */
+/* SEGMENT 5: REFRAME [3:00-3:30]                                    */
+/* emotion_curve: COMPETENCE → WISDOM                                */
+/* narrative_stage: REFRAME                                          */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+
+= The simple loop sits on the left. On the right, the chaotic robot from earlier — now calm, sitting in a small box with clear walls.
+
+NARRATOR (V.O.)
+Here's the secret the agent hype won't tell you. The hard part of building an agent isn't the code. It's the constraints.
+
+= The robot's box has labels on each wall: "SCOPE," "RULES," "BOUNDARIES," "FALLBACK."
+
+NARRATOR (V.O.)
+What should it watch? What should it ignore? What does it do when it doesn't know? Every good agent is defined more by what it CAN'T do than what it can.
+
+/* vee_reaction: 5/6 */
+
+= Vee adds one more line to her rules file: "If unsure → do nothing. Log it. Ask me later." She nods. That's the most important rule.
+
+NARRATOR (V.O.)
+The best agents do less, not more. That's the reframe. Autonomy isn't the goal. Reliability is.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 6: OUTRO_CTA [3:30-3:55]                                  */
+/* emotion_curve: WISDOM → EMPOWERMENT                               */
+/* narrative_stage: OUTRO_CTA                                        */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S ROOM - NIGHT
+
+= Vee's file watcher runs silently in a terminal tab. Files sort themselves. She's already working on something else. The agent just... works. In the background. Quiet.
+
+NARRATOR (V.O.)
+An agent isn't a digital employee. It's a loop with rules. Build one that does one thing well. Then build another. The stack grows from small pieces that you actually understand.
+
+/* vee_reaction: 6/6 */
+
+= Vee opens a new file: "rules_v2.json." She's already thinking about the next agent. But she starts with the rules, not the code.
+
+NARRATOR (V.O.)
+Start with the loop. Start with the rules. The agent writes itself.
+
+> END CARD: 구독 + "다음 편: AI는 왜 헛소리를 하나"
+
+= FADE TO BLACK.
+
+> END

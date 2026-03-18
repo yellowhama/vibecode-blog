@@ -1,0 +1,509 @@
+{
+  "project_id": "ep06_v5",
+  "version": "6.0",
+  "style_lock": "2D flat vector Level 2.5 + narrator V.O. only + Vee silent",
+  "delivery_target": "16:9, 1280x720, YouTube",
+  "resolution": "1280x720",
+  "pipeline": {
+    "t2i": "Flux dev + SimpleVectorFlux LoRA",
+    "edit": "Flux Kontext",
+    "i2v": "Wan 2.2 MoE GGUF",
+    "tts": "Dia2-1B",
+    "bgm": "ACE-Step 1.5",
+    "diagrams": "Motion Canvas",
+    "assembly": "FFmpeg"
+  },
+  "shots": [
+    {
+      "shot_id": "H01",
+      "segment": "HOOK",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "description": "A glowing headline floats in: \"Build Your Own AI Agent in Minutes!\" Below it, another: \"Autonomous AI Agents Will Replace Everything.\" Another: \"AgentOps: The Future of Work.\"",
+      "narrator_vo": "Every week, a new headline. AI agents are going to replace your job, your dog, and your therapist. Apparently.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 9.11,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A glowing headline floats in: \"Build Your Own AI Agent in Minutes!\" Below it, another: \"Autonomous AI Agents Will Replace Everything.\" Another: \"AgentOps: The Future of Work.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500001,
+      "input_image": "H01_keyframe.png",
+      "output_name": "H01.mp4"
+    },
+    {
+      "shot_id": "H02",
+      "segment": "HOOK",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "description": "The headlines crumble like dry paper. Behind them — a blinking cursor on an empty terminal.",
+      "narrator_vo": "But what actually IS an agent? And can you build one that does something useful in ten minutes?",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 8.63,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The headlines crumble like dry paper. Behind them — a blinking cursor on an empty terminal., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500002,
+      "input_image": "H02_keyframe.png",
+      "output_name": "H02.mp4"
+    },
+    {
+      "shot_id": "M01",
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "A robot icon appears center frame. It glows with intelligence. Around it, floating labels: \"Autonomous,\" \"Self-learning,\" \"Makes decisions,\" \"Replaces humans.\"",
+      "narrator_vo": "When people hear \"AI agent,\" they picture this. An autonomous intelligence that thinks for itself. Plans its own goals. Decides what to do. Basically, a digital employee that never sleeps.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "duration_sec": 14.39,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A robot icon appears center frame. It glows with intelligence. Around it, floating labels: \"Autonomous,\" \"Self-learning,\" \"Makes decisions,\" \"Replaces humans.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500003,
+      "input_image": "M01_keyframe.png",
+      "output_name": "M01.mp4"
+    },
+    {
+      "shot_id": "M02",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee watches a demo video on her screen. An agent auto-navigates a website, writes emails, fills spreadsheets. Her eyes are wide. Impressed.",
+      "narrator_vo": "The demos are incredible. The agent browses the web, finds data, writes a report, sends it to your inbox. All by itself. You sit back and watch.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 1,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 12.95,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee watches a demo video on her screen. An agent auto-navigates a website, writes emails, fills spreadsheets. Her eyes are wide. Impressed., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500004,
+      "input_image": "M02_keyframe.png",
+      "output_name": "M02.mp4"
+    },
+    {
+      "shot_id": "M03",
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "The robot icon grows larger. Crown appears on its head. It's king of automation.",
+      "narrator_vo": "Agent equals autonomous. That's the misconception. And it's going to cost you three hours of debugging.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 7.67,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The robot icon grows larger. Crown appears on its head. It's king of automation., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500005,
+      "input_image": "M03_keyframe.png",
+      "output_name": "M03.mp4"
+    },
+    {
+      "shot_id": "K01",
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee builds an \"autonomous\" agent. She types: \"Build me an agent that organizes my files.\" The AI produces a script. Vee runs it.",
+      "narrator_vo": "The agent did exactly what it was told. Organize files. It just had no idea what \"organized\" means to Vee. Because nobody defined the rules. Nobody set the boundaries.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 13.91,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee builds an \"autonomous\" agent. She types: \"Build me an agent that organizes my files.\" The AI produces a script. Vee runs it., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500006,
+      "input_image": "K01_keyframe.png",
+      "output_name": "K01.mp4"
+    },
+    {
+      "shot_id": "K02",
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "The file explorer goes haywire. Files move everywhere. Photos end up in \"Invoices.\" Code ends up in \"Recipes.\" The desktop is chaos.",
+      "narrator_vo": "An agent without constraints isn't autonomous. It's just chaotic. The more it can do, the more ways it can go wrong.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 10.07,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, The file explorer goes haywire. Files move everywhere. Photos end up in \"Invoices.\" Code ends up in \"Recipes.\" The desktop is chaos., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500007,
+      "input_image": "K02_keyframe.png",
+      "output_name": "K02.mp4"
+    },
+    {
+      "shot_id": "C01",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "TRANSITION: Clean white background. The chaotic robot shrinks to a corner. Center frame, a simple loop diagram draws itself.",
+      "narrator_vo": "Forget autonomous. Here's what an agent actually is.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 3.84,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, TRANSITION: Clean white background. The chaotic robot shrinks to a corner. Center frame, a simple loop diagram draws itself., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500008,
+      "input_image": "C01_keyframe.png",
+      "output_name": "C01.mp4"
+    },
+    {
+      "shot_id": "C02",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "Three nodes appear in a circle, connected by arrows: OBSERVE → DECIDE → ACT → (back to OBSERVE).",
+      "narrator_vo": "A loop. Three steps. Observe — look at the world. Decide — pick what to do. Act — do it. Then observe again. That's it. That's every agent ever built.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 14.39,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Three nodes appear in a circle, connected by arrows: OBSERVE → DECIDE → ACT → (back to OBSERVE)., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500009,
+      "input_image": "C02_keyframe.png",
+      "output_name": "C02.mp4"
+    },
+    {
+      "shot_id": "C03",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "The loop spins slowly. Clean. Simple.",
+      "narrator_vo": "Your thermostat is an agent. Observe: temperature is 28 degrees. Decide: too hot. Act: turn on AC. Loop forever. Nobody calls a thermostat autonomous. But it IS an agent.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 13.91,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The loop spins slowly. Clean. Simple., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500010,
+      "input_image": "C03_keyframe.png",
+      "output_name": "C03.mp4"
+    },
+    {
+      "shot_id": "C04",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "description": "CUT TO: Vee's desk. Fresh start. She opens a terminal. The narrator walks through the build.",
+      "narrator_vo": "Let's build one. A file watcher. It does one thing: when a new file appears in a folder, it reads the file name and moves it to the right place.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 14.39,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, CUT TO: Vee's desk. Fresh start. She opens a terminal. The narrator walks through the build., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500011,
+      "input_image": "C04_keyframe.png",
+      "output_name": "C04.mp4"
+    },
+    {
+      "shot_id": "C05",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "Vee's screen shows a simple project structure:",
+      "narrator_vo": "Step one. Observe.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 2.4,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Vee's screen shows a simple project structure:, flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500012,
+      "input_image": "C05_keyframe.png",
+      "output_name": "C05.mp4"
+    },
+    {
+      "shot_id": "C06",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "`agent/` → `watcher.py` / `rules.json` / `run.sh`",
+      "narrator_vo": "Check the folder. Every five seconds. If something new appeared — flag it. That's the observe step.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 8.15,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, `agent/` → `watcher.py` / `rules.json` / `run.sh`, flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500013,
+      "input_image": "C06_keyframe.png",
+      "output_name": "C06.mp4"
+    },
+    {
+      "shot_id": "C07",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "Code appears on screen (simplified, readable): a file watcher that checks a folder every five seconds. Three lines. Simple.",
+      "narrator_vo": "Step two. Decide.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "duration_sec": 2.4,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Code appears on screen (simplified, readable): a file watcher that checks a folder every five seconds. Three lines. Simple., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500014,
+      "input_image": "C07_keyframe.png",
+      "output_name": "C07.mp4"
+    },
+    {
+      "shot_id": "C08",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "The word \"OBSERVE\" lights up green in the loop diagram (small, in the corner).",
+      "narrator_vo": "The rules file. This is where the intelligence lives — and notice, it's not AI intelligence. It's YOUR intelligence. You decided what \"organized\" means. The agent just follows the rules.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 14.39,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The word \"OBSERVE\" lights up green in the loop diagram (small, in the corner)., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500015,
+      "input_image": "C08_keyframe.png",
+      "output_name": "C08.mp4"
+    },
+    {
+      "shot_id": "C09",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "A JSON file appears: rules. \"If filename contains 'invoice' → move to /invoices.\" \"If filename ends in '.png' → move to /images.\" \"Otherwise → move to /unsorted.\"",
+      "narrator_vo": "Step three. Act.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 2.4,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A JSON file appears: rules. \"If filename contains 'invoice' → move to /invoices.\" \"If filename ends in '.png' → move to /images.\" \"Otherwise → move to /unsorted.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500016,
+      "input_image": "C09_keyframe.png",
+      "output_name": "C09.mp4"
+    },
+    {
+      "shot_id": "C10",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "The word \"DECIDE\" lights up green.",
+      "narrator_vo": "Move the file. Log what happened. Go back to step one. The entire agent is forty lines. It does exactly one thing. And it does it perfectly, every time, because the rules are explicit.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 16.31,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The word \"DECIDE\" lights up green., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500017,
+      "input_image": "C10_keyframe.png",
+      "output_name": "C10.mp4"
+    },
+    {
+      "shot_id": "C11",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "Vee nods slowly. She's writing the rules, not the logic. She gets it.",
+      "narrator_vo": "The entire thing took eight minutes. No framework. No LangChain. No crew of agents arguing with each other. One loop. One rules file. One job.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 3,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 11.99,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Vee nods slowly. She's writing the rules, not the logic. She gets it., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500018,
+      "input_image": "C11_keyframe.png",
+      "output_name": "C11.mp4"
+    },
+    {
+      "shot_id": "R01",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "The simple loop sits on the left. On the right, the chaotic robot from earlier — now calm, sitting in a small box with clear walls.",
+      "narrator_vo": "Here's the secret the agent hype won't tell you. The hard part of building an agent isn't the code. It's the constraints.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 10.55,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The simple loop sits on the left. On the right, the chaotic robot from earlier — now calm, sitting in a small box with clear walls., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500019,
+      "input_image": "R01_keyframe.png",
+      "output_name": "R01.mp4"
+    },
+    {
+      "shot_id": "R02",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "The robot's box has labels on each wall: \"SCOPE,\" \"RULES,\" \"BOUNDARIES,\" \"FALLBACK.\"",
+      "narrator_vo": "What should it watch? What should it ignore? What does it do when it doesn't know? Every good agent is defined more by what it CAN'T do than what it can.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 14.87,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The robot's box has labels on each wall: \"SCOPE,\" \"RULES,\" \"BOUNDARIES,\" \"FALLBACK.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500020,
+      "input_image": "R02_keyframe.png",
+      "output_name": "R02.mp4"
+    },
+    {
+      "shot_id": "R03",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "Vee adds one more line to her rules file: \"If unsure → do nothing. Log it. Ask me later.\" She nods. That's the most important rule.",
+      "narrator_vo": "The best agents do less, not more. That's the reframe. Autonomy isn't the goal. Reliability is.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 5,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 7.67,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Vee adds one more line to her rules file: \"If unsure → do nothing. Log it. Ask me later.\" She nods. That's the most important rule., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500021,
+      "input_image": "R03_keyframe.png",
+      "output_name": "R03.mp4"
+    },
+    {
+      "shot_id": "Z01",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee's file watcher runs silently in a terminal tab. Files sort themselves. She's already working on something else. The agent just... works. In the background. Quiet.",
+      "narrator_vo": "An agent isn't a digital employee. It's a loop with rules. Build one that does one thing well. Then build another. The stack grows from small pieces that you actually understand.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 14.87,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee's file watcher runs silently in a terminal tab. Files sort themselves. She's already working on something else. The agent just... works. In the background. Quiet., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500022,
+      "input_image": "Z01_keyframe.png",
+      "output_name": "Z01.mp4"
+    },
+    {
+      "shot_id": "Z02",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee opens a new file: \"rules_v2.json.\" She's already thinking about the next agent. But she starts with the rules, not the code.",
+      "narrator_vo": "Start with the loop. Start with the rules. The agent writes itself.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 6,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 5.76,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee opens a new file: \"rules_v2.json.\" She's already thinking about the next agent. But she starts with the rules, not the code., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500023,
+      "input_image": "Z02_keyframe.png",
+      "output_name": "Z02.mp4"
+    }
+  ],
+  "source_preproduction": "systems/video/preproduction/ep06/ep06_prepro_manifest_v5.json",
+  "selection_summary": {
+    "total_beats": 23,
+    "selected_beats": 23,
+    "target_duration_sec": 235.0,
+    "actual_duration_sec": 235.02,
+    "timing_source": "estimate"
+  }
+}

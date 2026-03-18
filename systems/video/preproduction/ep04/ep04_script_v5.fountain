@@ -1,0 +1,258 @@
+Title: EP04 — 열기 무서운 상자
+Credit: Written by
+Author: vibecode.town
+Series: Vibecode Town Season 1
+Source: Act 4 — "The Box You're Afraid to Open"
+Draft date: 2026-03-18
+Duration: 3:30-4:00
+Notes: v5 (6-segment format, narrator-only, 2D flat vector Kurzgesagt level, Vee solo, dark navy backgrounds). EP03 callback: Vee has clean structure now but has never verified it works. Word count target: 550-700 narration.
+
+/* ================================================================ */
+/* SEGMENT 1: HOOK [0:00-0:15]                                       */
+/* emotion_curve: PRIDE → DREAD                                       */
+/* narrative_stage: HOOK                                               */
+/* open_loop: "She built everything. Does any of it work?"           */
+/* ep03_callback: clean domain structure from EP03                   */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+/* shorts_candidate */
+
+INT. VEE'S ROOM - NIGHT
+
+= Vee's desk is clean. Monitor shows the folder structure from EP03 — five color-coded domains, each neatly organized. On her desk, a row of beautifully wrapped gift boxes. Each box has a tag: AUTH, SYNC, PAYMENTS, SEARCH, DASHBOARD. Ribbons tied. Pristine.
+
+/* vee_reaction: 1/6 */
+
+= Vee sits cross-legged in her chair, arms folded, admiring the boxes. She reaches toward the nearest one — AUTH — then pulls her hand back. Tucks both hands under her legs.
+
+NARRATOR (V.O.)
+Vee built everything. Organized everything. She has five beautiful boxes and she hasn't opened a single one.
+
+= BEAT.
+
+NARRATOR (V.O.)
+She's afraid of what's inside.
+
+> TITLE CARD: **열기 무서운 상자**
+
+---
+
+/* ================================================================ */
+/* SEGMENT 2: MISCONCEPTION [0:15-0:50]                               */
+/* emotion_curve: FALSE SAFETY → AVOIDANCE                            */
+/* narrative_stage: MISCONCEPTION                                      */
+/* misconception: "돌아가면 건들지 마" (If it works, don't touch it)  */
+/* ================================================================ */
+
+/* visual_type: motion_graphic | space: desk */
+
+INT. VEE'S ROOM - DAY (EARLIER)
+
+= MONTAGE: Vee builds a feature. A gift box materializes on her desk, perfectly wrapped. She tapes it shut, ties a ribbon, sets it aside. Builds another. Another box. Ribbon. Set aside. She never lifts a lid.
+
+NARRATOR (V.O.)
+Here's the rule she's been living by: if it didn't crash when you built it, don't touch it. Wrap it up. Move on. Build the next thing.
+
+= The boxes stack up around her desk. A small pyramid of untouched gifts.
+
+NARRATOR (V.O.)
+It feels like progress. Five features, five boxes, all sealed. Ship it.
+
+/* vee_reaction: 2/6 */
+/* visual_type: character_reaction | space: desk */
+
+= Vee taps the side of a box with one mitten finger. Listens. Silence. She nods — good enough. Moves on.
+
+NARRATOR (V.O.)
+But "didn't crash" and "works" are two very different things. She's about to find out how different.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 3: THE_CRACK [0:50-1:20]                                   */
+/* emotion_curve: CONFIDENCE → PUBLIC HUMILIATION                     */
+/* narrative_stage: THE_CRACK                                          */
+/* crack: "네 컴퓨터에서만 돌아가는 거였어"                           */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S ROOM - NIGHT
+
+= Split screen. Left side: Vee's monitor — the app runs. Dashboard loads. Colors render. Everything looks perfect. Right side: a second monitor, different wallpaper, different computer. The same app — but the dashboard is blank. White screen. A single error icon spins.
+
+/* shorts_candidate */
+
+NARRATOR (V.O.)
+She showed it to someone. Their screen? White. Nothing. The app that ran perfectly on her machine ran perfectly on her machine only.
+
+/* vee_reaction: 3/6 */
+
+= Vee stares at the split screen. Left: working. Right: broken. Her mouth falls open. She pushes her glasses up and looks again. Still broken.
+
+NARRATOR (V.O.)
+"Works on my machine" isn't a status update. It's a confession. It means you never defined what "working" actually looks like.
+
+= The split screen collapses. Both monitors go dark. Only the row of sealed gift boxes glows faintly.
+
+NARRATOR (V.O.)
+Every one of those boxes might be empty. She'd never know. She never looked.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 4: CORE [1:20-2:50]                                        */
+/* emotion_curve: DREAD → RELUCTANT OPENING → RELIEF → INSIGHT       */
+/* narrative_stage: CORE                                               */
+/* duration: ~90 seconds                                              */
+/* extended_metaphor: gift boxes = untested code, opening = testing   */
+/* ================================================================ */
+
+/* extended_metaphor_start */
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= TRANSITION: Desk fades. Dark navy background brightens to deep midnight blue. Five gift boxes float in space, softly lit. Wrapped in different colors, ribbons intact. Beautiful. Untouched.
+
+NARRATOR (V.O.)
+Let's talk about these boxes. You wrapped them. You're proud of them. And you won't open them because — what if they're empty? What if something's wrong inside?
+
+= The camera orbits the boxes slowly. Each one has a faint question mark hovering above it.
+
+NARRATOR (V.O.)
+Here's the thing nobody says out loud: not opening the box doesn't make the contents better. If it's broken inside, it was broken before you looked. Opening the box doesn't create the problem. It just tells you the problem exists.
+
+= BEAT. One second.
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= A mitten hand reaches in. Grabs the ribbon on the first box — AUTH. Hesitates. Pulls.
+
+NARRATOR (V.O.)
+So let's open one.
+
+= The ribbon falls away. The lid lifts. Inside: a small cracked gear. It's trying to spin but catches on the crack. A label appears: "empty token → crash."
+
+NARRATOR (V.O.)
+A cracked gear. Login crashes on an empty session token. That crack was always there. Opening the box didn't break it.
+
+= A tiny wrench taps the gear. The crack seals. The gear spins smooth. Green checkmark.
+
+NARRATOR (V.O.)
+Three-line fix. Done.
+
+/* shorts_candidate */
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= Second box — SEARCH — opens. Inside: a perfectly healthy clockwork mechanism, ticking away. Green light.
+
+NARRATOR (V.O.)
+Second box. It works. It was always fine. All that dread — wasted.
+
+= Third box — PAYMENTS — opens. Inside: two gears interlocked backwards. They grind against each other, sparks flying.
+
+NARRATOR (V.O.)
+Third box. Two functions calling each other in a loop. Would have crashed in production. On someone else's machine. In front of a real user paying real money.
+
+= The gears are separated, flipped, reconnected. They mesh perfectly. Green checkmark.
+
+NARRATOR (V.O.)
+Twelve-minute fix. She would have spent twelve hours debugging it in production.
+
+/* vee_reaction: 4/6 */
+/* visual_type: character_reaction | space: whiteboard */
+
+= Quick flash: Vee's face. Wide eyes. Not fear — surprise. The boxes weren't as scary as she thought. 1.5 seconds.
+
+/* visual_type: diagram | space: whiteboard */
+
+= Three opened boxes in a row. Box 1: fixed gear (green). Box 2: healthy mechanism (green). Box 3: realigned gears (green). Above them: "1 bug, 1 fine, 1 near-disaster. All fixable."
+
+NARRATOR (V.O.)
+One bug. One clean bill of health. One disaster she caught before anyone else saw it. The scary part was never what's inside the box. The scary part was the not knowing.
+
+/* extended_metaphor_end */
+
+---
+
+/* ================================================================ */
+/* SEGMENT 5: REFRAME [2:50-3:30]                                     */
+/* emotion_curve: INSIGHT → PARADIGM SHIFT                            */
+/* narrative_stage: REFRAME                                            */
+/* reframe: tests = definition of "working," not bug hunting         */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+
+= Clean dark navy space. A single line of text fades in: "What does 'working' mean?"
+
+NARRATOR (V.O.)
+Here's the reframe. Testing isn't bug hunting. Testing is answering one question: what does "working" actually mean?
+
+= Below the question, three simple statements appear, one at a time:
+= "When the token is empty → reject the login."
+= "When search finds nothing → show the empty state."
+= "When payment fails → don't charge the card."
+
+NARRATOR (V.O.)
+Each test is a contract. Not "find what's broken." It's "define what done looks like." A test says: this is how it should behave. If it doesn't behave this way, we have a problem. If it does — we're good.
+
+= The three statements glow green. They connect to form a simple checklist.
+
+NARRATOR (V.O.)
+You don't test to find bugs. You test to define reality. The test is the definition of "works." Without it, "works" means "didn't crash yet on my machine." With it, "works" means "does exactly what I said it should."
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= The checklist compresses into a small shield icon. The shield attaches to a gift box. The box glows — it's verifiable now. Trustworthy.
+
+NARRATOR (V.O.)
+A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You already know the answer.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 6: OUTRO_CTA [3:30-3:55]                                   */
+/* emotion_curve: CONFIDENCE → open loop for EP05                    */
+/* narrative_stage: OUTRO_CTA                                          */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S ROOM - NIGHT (CONTINUOUS)
+
+= Back to Vee's desk. The gift boxes are open now — lids off, green checkmarks sitting on top of each. Her terminal shows a short column of PASS results. The room is calm.
+
+NARRATOR (V.O.)
+The boxes are open. She knows what's inside every one of them. No more guessing. No more "works on my machine."
+
+/* vee_reaction: 5/6 */
+
+= Vee writes a new test. Three lines. Hits enter. PASS. Green. She nods once — not celebration, just confirmation.
+
+NARRATOR (V.O.)
+Now she builds a feature and opens the box the same day. One test. Thirty seconds. No pile-up. No dread. The habit is the whole trick.
+
+/* vee_reaction: 6/6 */
+
+= Vee leans back. Pushes her glasses up. Looks at her clean terminal, her open boxes, her passing tests. Quiet confidence. She reaches for her coffee.
+
+= BEAT.
+
+NARRATOR (V.O.)
+The code has structure. It has tests. She knows what works and what doesn't.
+
+= The camera slowly pulls back. The terminal glows green. But on a second monitor, a browser tab is open — an AI chat. The AI's response is highlighted. One line in the generated code is subtly different from what Vee asked for. She hasn't noticed.
+
+NARRATOR (V.O.)
+But the code only knows what she told it. And she told it what the AI told her. What happens when the AI gets it wrong — and she can't tell the difference?
+
+= The highlighted line pulses once, faintly. Then the screen dims.
+
+> TITLE CARD: **NEXT: EP05 — "What Even Is Vibe Coding?"**
+
+= FADE TO BLACK.
+
+> END

@@ -1,0 +1,1213 @@
+{
+  "project_id": "ep09_v5",
+  "version": "6.0",
+  "title": "EP09 — 이 영상은 AI가 만들었다",
+  "language": "en",
+  "total_duration_sec": 235,
+  "segment_count": 6,
+  "beat_count": 20,
+  "segments": [
+    "HOOK",
+    "MISCONCEPTION",
+    "THE_CRACK",
+    "CORE",
+    "REFRAME",
+    "OUTRO_CTA"
+  ],
+  "phases": [
+    {
+      "phase_id": "SEG01",
+      "phase_name": "HOOK",
+      "segment": "HOOK",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "emotion_curve": "SURPRISE → INTRIGUE",
+      "narrative_stage": "HOOK",
+      "target_duration_sec": 15,
+      "beats": [
+        {
+          "beat_id": "SEG01_B001",
+          "scene_id": "SEG01",
+          "text": "This video you're watching right now? An AI made it. Sort of. Actually — let me be honest about what \"AI made it\" really means.",
+          "narration_text": "This video you're watching right now? An AI made it. Sort of. Actually — let me be honest about what \"AI made it\" really means.",
+          "narrator_vo": "This video you're watching right now? An AI made it. Sort of. Actually — let me be honest about what \"AI made it\" really means.",
+          "visual_goal": "The Vibecode Town intro plays — the usual animation. Then it freezes mid-frame. Cracks appear on the surface. The \"2D animation\" peels back like wallpaper, revealing a messy desktop underneath: terminals, scripts, error logs, render queues.",
+          "duration_sec": 10.0,
+          "segment": "HOOK",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "SURPRISE → INTRIGUE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "This video you're watching right now? An AI made it. Sort of. Actually — let me be honest about what \"AI made it\" really means.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG02",
+      "phase_name": "MISCONCEPTION",
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "\"WOW EASY\" → REALITY",
+      "narrative_stage": "MISCONCEPTION",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG02_B002",
+          "scene_id": "SEG02",
+          "text": "The fantasy: type a description, press a button, get a video. Upload, go viral, retire. AI handles everything.",
+          "narration_text": "The fantasy: type a description, press a button, get a video. Upload, go viral, retire. AI handles everything.",
+          "narrator_vo": "The fantasy: type a description, press a button, get a video. Upload, go viral, retire. AI handles everything.",
+          "visual_goal": "A magic wand icon appears. It taps a blank canvas — POOF — a finished YouTube video appears. Thumbnail, title, animation, audio. All instant.",
+          "duration_sec": 7.2,
+          "segment": "MISCONCEPTION",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "\"WOW EASY\" → REALITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The fantasy: type a description, press a button, get a video. Upload, go viral, retire. AI handles everything.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B003",
+          "scene_id": "SEG02",
+          "text": "That's the promise. Here's the reality.",
+          "narration_text": "That's the promise. Here's the reality.",
+          "narrator_vo": "That's the promise. Here's the reality.",
+          "visual_goal": "The magic wand sparkles. Comments flood in: \"10M views!\" Hearts. Subscribers.",
+          "duration_sec": 2.4,
+          "segment": "MISCONCEPTION",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "\"WOW EASY\" → REALITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "That's the promise. Here's the reality.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG03",
+      "phase_name": "THE_CRACK",
+      "segment": "THE_CRACK",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "REALITY → \"OH, IT'S ACTUALLY HARD\"",
+      "narrative_stage": "THE_CRACK",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG03_B004",
+          "scene_id": "SEG03",
+          "text": "One episode of Vibecode Town. Three and a half minutes of finished video. Behind it: seven tools, twenty-six shots, four hours of GPU time, and enough rejected images to fill a dumpster.",
+          "narration_text": "One episode of Vibecode Town. Three and a half minutes of finished video. Behind it: seven tools, twenty-six shots, four hours of GPU time, and enough rejected images to fill a dumpster.",
+          "narrator_vo": "One episode of Vibecode Town. Three and a half minutes of finished video. Behind it: seven tools, twenty-six shots, four hours of GPU time, and enough rejected images to fill a dumpster.",
+          "visual_goal": "A production stats card appears:",
+          "duration_sec": 12.8,
+          "segment": "THE_CRACK",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "REALITY → \"OH, IT'S ACTUALLY HARD\"",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "One episode of Vibecode Town. Three and a half minutes of finished video. Behind it: seven tools, twenty-six shots, four hours of GPU time, and enough rejected images to fill a dumpster.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B005",
+          "scene_id": "SEG03",
+          "text": "AI didn't make this video. AI was one of many tools a human used to make this video. Big difference.",
+          "narration_text": "AI didn't make this video. AI was one of many tools a human used to make this video. Big difference.",
+          "narrator_vo": "AI didn't make this video. AI was one of many tools a human used to make this video. Big difference.",
+          "visual_goal": "\"이 영상 1편 = 7 tools. 26 shots. 4 hours GPU rendering. 3 script rewrites. 47 image generations (19 rejected). 12 re-renders. 1 human director.\"",
+          "duration_sec": 8.0,
+          "segment": "THE_CRACK",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "REALITY → \"OH, IT'S ACTUALLY HARD\"",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "AI didn't make this video. AI was one of many tools a human used to make this video. Big difference.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG04",
+      "phase_name": "CORE",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+      "narrative_stage": "CORE",
+      "target_duration_sec": 105,
+      "beats": [
+        {
+          "beat_id": "SEG04_B006",
+          "scene_id": "SEG04",
+          "text": "Let me walk you through the actual pipeline. Every step. No magic.",
+          "narration_text": "Let me walk you through the actual pipeline. Every step. No magic.",
+          "narrator_vo": "Let me walk you through the actual pipeline. Every step. No magic.",
+          "visual_goal": "TRANSITION: Clean white background. A horizontal pipeline appears — seven stages, connected by arrows.",
+          "duration_sec": 4.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Let me walk you through the actual pipeline. Every step. No magic.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B007",
+          "scene_id": "SEG04",
+          "text": "Stage one. The script. Written in Fountain format — the same format Hollywood uses. Every scene, every narrator line, every Vee reaction, every visual cue. This is the spec. Without this, nothing else works.",
+          "narration_text": "Stage one. The script. Written in Fountain format — the same format Hollywood uses. Every scene, every narrator line, every Vee reaction, every visual cue. This is the spec. Without this, nothing else works.",
+          "narrator_vo": "Stage one. The script. Written in Fountain format — the same format Hollywood uses. Every scene, every narrator line, every Vee reaction, every visual cue. This is the spec. Without this, nothing else works.",
+          "visual_goal": "STAGE 1 lights up: \"FOUNTAIN SCRIPT\"",
+          "duration_sec": 13.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Stage one. The script. Written in Fountain format — the same format Hollywood uses. Every scene, every narrator line, every Vee reaction, every visual cue. This is the spec. Without this, nothing else works.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B008",
+          "scene_id": "SEG04",
+          "text": "Stage two. Text-to-speech. The narrator's voice is AI-generated. But not \"type and done.\" Each line gets checked for pacing, emphasis, and tone. Some lines get re-generated five times before they sound right.",
+          "narration_text": "Stage two. Text-to-speech. The narrator's voice is AI-generated. But not \"type and done.\" Each line gets checked for pacing, emphasis, and tone. Some lines get re-generated five times before they sound right.",
+          "narrator_vo": "Stage two. Text-to-speech. The narrator's voice is AI-generated. But not \"type and done.\" Each line gets checked for pacing, emphasis, and tone. Some lines get re-generated five times before they sound right.",
+          "visual_goal": "A screenplay format appears — the actual Fountain markup. Scene headings, dialogue blocks, action lines.",
+          "duration_sec": 12.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Stage two. Text-to-speech. The narrator's voice is AI-generated. But not \"type and done.\" Each line gets checked for pacing, emphasis, and tone. Some lines get re-generated five times before they sound right.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B009",
+          "scene_id": "SEG04",
+          "text": "Stage three. Image generation. Each shot needs a prompt that matches the script's visual description AND maintains character consistency with every other shot. This is where most of the failures happen. Forty-seven images generated. Nineteen thrown away. Wrong style, wrong character, wrong mood.",
+          "narration_text": "Stage three. Image generation. Each shot needs a prompt that matches the script's visual description AND maintains character consistency with every other shot. This is where most of the failures happen. Forty-seven images generated. Nineteen thrown away. Wrong style, wrong character, wrong mood.",
+          "narrator_vo": "Stage three. Image generation. Each shot needs a prompt that matches the script's visual description AND maintains character consistency with every other shot. This is where most of the failures happen. Forty-seven images generated. Nineteen thrown away. Wrong style, wrong character, wrong mood.",
+          "visual_goal": "STAGE 2 lights up: \"TTS — Text to Speech\"",
+          "duration_sec": 17.2,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Stage three. Image generation. Each shot needs a prompt that matches the script's visual description AND maintains character consistency with every other shot. This is where most of the failures happen. Forty-seven images generated. Nineteen thrown away. Wrong style, wrong character, wrong mood.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B010",
+          "scene_id": "SEG04",
+          "text": "Stage four. The part nobody shows in demos. Consistency checking. Does Vee look the same across all twenty-six shots? Are the backgrounds consistent? Does the color palette match? This is manual. Human eyes. No shortcut.",
+          "narration_text": "Stage four. The part nobody shows in demos. Consistency checking. Does Vee look the same across all twenty-six shots? Are the backgrounds consistent? Does the color palette match? This is manual. Human eyes. No shortcut.",
+          "narrator_vo": "Stage four. The part nobody shows in demos. Consistency checking. Does Vee look the same across all twenty-six shots? Are the backgrounds consistent? Does the color palette match? This is manual. Human eyes. No shortcut.",
+          "visual_goal": "Narrator text flows into a TTS engine icon. Audio waveforms come out.",
+          "duration_sec": 14.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Stage four. The part nobody shows in demos. Consistency checking. Does Vee look the same across all twenty-six shots? Are the backgrounds consistent? Does the color palette match? This is manual. Human eyes. No shortcut.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B011",
+          "scene_id": "SEG04",
+          "text": "Stage five. Image-to-video. The still images become animated. Two to four seconds each. But the motion has to match the script's description. \"Vee nods slowly\" is different from \"Vee nods enthusiastically.\" Each shot is a separate render. Each render takes six to twelve minutes.",
+          "narration_text": "Stage five. Image-to-video. The still images become animated. Two to four seconds each. But the motion has to match the script's description. \"Vee nods slowly\" is different from \"Vee nods enthusiastically.\" Each shot is a separate render. Each render takes six to twelve minutes.",
+          "narrator_vo": "Stage five. Image-to-video. The still images become animated. Two to four seconds each. But the motion has to match the script's description. \"Vee nods slowly\" is different from \"Vee nods enthusiastically.\" Each shot is a separate render. Each render takes six to twelve minutes.",
+          "visual_goal": "A montage: five waveforms. Four have red X marks. One has a green check.",
+          "duration_sec": 17.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Stage five. Image-to-video. The still images become animated. Two to four seconds each. But the motion has to match the script's description. \"Vee nods slowly\" is different from \"Vee nods enthusiastically.\" Each shot is a separate render. Each render takes six to twelve minutes.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B012",
+          "scene_id": "SEG04",
+          "text": "Stage six. Assembly. Twenty-six rendered clips, audio narration, background music, title cards, transitions — stitched together with FFmpeg. Timing adjusted frame by frame. A three-second narrator pause needs exactly three seconds of video, not two-point-eight.",
+          "narration_text": "Stage six. Assembly. Twenty-six rendered clips, audio narration, background music, title cards, transitions — stitched together with FFmpeg. Timing adjusted frame by frame. A three-second narrator pause needs exactly three seconds of video, not two-point-eight.",
+          "narrator_vo": "Stage six. Assembly. Twenty-six rendered clips, audio narration, background music, title cards, transitions — stitched together with FFmpeg. Timing adjusted frame by frame. A three-second narrator pause needs exactly three seconds of video, not two-point-eight.",
+          "visual_goal": "STAGE 3 lights up: \"T2I — Text to Image\"",
+          "duration_sec": 14.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": true,
+          "narrative_stage": "CORE",
+          "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Stage six. Assembly. Twenty-six rendered clips, audio narration, background music, title cards, transitions — stitched together with FFmpeg. Timing adjusted frame by frame. A three-second narrator pause needs exactly three seconds of video, not two-point-eight.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B013",
+          "scene_id": "SEG04",
+          "text": "Stage seven. The quality gate. Watch the full video. Does the audio sync? Do the transitions feel natural? Does the story flow? If any shot feels off — back to stage three. Re-generate. Re-render. Re-assemble.",
+          "narration_text": "Stage seven. The quality gate. Watch the full video. Does the audio sync? Do the transitions feel natural? Does the story flow? If any shot feels off — back to stage three. Re-generate. Re-render. Re-assemble.",
+          "narrator_vo": "Stage seven. The quality gate. Watch the full video. Does the audio sync? Do the transitions feel natural? Does the story flow? If any shot feels off — back to stage three. Re-generate. Re-render. Re-assemble.",
+          "visual_goal": "A prompt flows into an image generator. An image comes out — Vee at her desk. But it's wrong: her glasses are missing. Another attempt: wrong background color. Another: her proportions are off. Fourth try: correct.",
+          "duration_sec": 14.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Stage seven. The quality gate. Watch the full video. Does the audio sync? Do the transitions feel natural? Does the story flow? If any shot feels off — back to stage three. Re-generate. Re-render. Re-assemble.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B014",
+          "scene_id": "SEG04",
+          "text": "Seven stages. Three feedback loops. Zero magic buttons. The AI generated the voice, the images, the motion. But a human decided what to generate, judged the quality, maintained consistency, and assembled everything. That's the job now.",
+          "narration_text": "Seven stages. Three feedback loops. Zero magic buttons. The AI generated the voice, the images, the motion. But a human decided what to generate, judged the quality, maintained consistency, and assembled everything. That's the job now.",
+          "narrator_vo": "Seven stages. Three feedback loops. Zero magic buttons. The AI generated the voice, the images, the motion. But a human decided what to generate, judged the quality, maintained consistency, and assembled everything. That's the job now.",
+          "visual_goal": "Quick flash: Vee holds up two nearly identical images of herself — one has five fingers, one has seven. She points at the seven-finger version with visible horror. 1.5 seconds.",
+          "duration_sec": 14.4,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 3,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Seven stages. Three feedback loops. Zero magic buttons. The AI generated the voice, the images, the motion. But a human decided what to generate, judged the quality, maintained consistency, and assembled everything. That's the job now.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG05",
+      "phase_name": "REFRAME",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "RESPECT → PARADIGM SHIFT",
+      "narrative_stage": "REFRAME",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG05_B015",
+          "scene_id": "SEG05",
+          "text": "AI didn't replace the work. It changed what the work IS.",
+          "narration_text": "AI didn't replace the work. It changed what the work IS.",
+          "narrator_vo": "AI didn't replace the work. It changed what the work IS.",
+          "visual_goal": "Two columns. Left: \"OLD JOB — How to animate.\" Right: \"NEW JOB — How to direct.\"",
+          "duration_sec": 4.4,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "RESPECT → PARADIGM SHIFT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "AI didn't replace the work. It changed what the work IS.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B016",
+          "scene_id": "SEG05",
+          "text": "Before AI, making this video would require an animation team and six weeks. With AI, it takes one person and eleven hours. But that one person needs to be a director, not an operator. The skill shifted from \"how to make it\" to \"what to make and is it good enough.\"",
+          "narration_text": "Before AI, making this video would require an animation team and six weeks. With AI, it takes one person and eleven hours. But that one person needs to be a director, not an operator. The skill shifted from \"how to make it\" to \"what to make and is it good enough.\"",
+          "narrator_vo": "Before AI, making this video would require an animation team and six weeks. With AI, it takes one person and eleven hours. But that one person needs to be a director, not an operator. The skill shifted from \"how to make it\" to \"what to make and is it good enough.\"",
+          "visual_goal": "The left column shows: drawing frames, rigging characters, keyframing motion. Traditional animation skills.",
+          "duration_sec": 20.4,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "RESPECT → PARADIGM SHIFT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Before AI, making this video would require an animation team and six weeks. With AI, it takes one person and eleven hours. But that one person needs to be a director, not an operator. The skill shifted from \"how to make it\" to \"what to make and is it good enough.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B017",
+          "scene_id": "SEG05",
+          "text": "Take fourteen. Not take one. The AI doesn't get it right the first time. The human decides when it's right.",
+          "narration_text": "Take fourteen. Not take one. The AI doesn't get it right the first time. The human decides when it's right.",
+          "narrator_vo": "Take fourteen. Not take one. The AI doesn't get it right the first time. The human decides when it's right.",
+          "visual_goal": "The right column shows: writing specs, judging quality, maintaining consistency, managing a pipeline. Director skills.",
+          "duration_sec": 8.0,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "RESPECT → PARADIGM SHIFT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Take fourteen. Not take one. The AI doesn't get it right the first time. The human decides when it's right.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG06",
+      "phase_name": "OUTRO_CTA",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "PARADIGM SHIFT → TRANSPARENCY",
+      "narrative_stage": "OUTRO_CTA",
+      "target_duration_sec": 25,
+      "beats": [
+        {
+          "beat_id": "SEG06_B018",
+          "scene_id": "SEG06",
+          "text": "This video was made by AI. And by a human who told the AI what to make, rejected half of what it produced, and assembled the rest by hand.",
+          "narration_text": "This video was made by AI. And by a human who told the AI what to make, rejected half of what it produced, and assembled the rest by hand.",
+          "narrator_vo": "This video was made by AI. And by a human who told the AI what to make, rejected half of what it produced, and assembled the rest by hand.",
+          "visual_goal": "Vee at her desk. The pipeline diagram is pinned to her wall. She looks at the camera — fourth wall break, like EP05.",
+          "duration_sec": 11.6,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "PARADIGM SHIFT → TRANSPARENCY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "This video was made by AI. And by a human who told the AI what to make, rejected half of what it produced, and assembled the rest by hand.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B019",
+          "scene_id": "SEG06",
+          "text": "That's not less impressive than pressing a magic button. It's more. Because you can do it too. Same tools. Same pipeline. Same eleven hours.",
+          "narration_text": "That's not less impressive than pressing a magic button. It's more. Because you can do it too. Same tools. Same pipeline. Same eleven hours.",
+          "narrator_vo": "That's not less impressive than pressing a magic button. It's more. Because you can do it too. Same tools. Same pipeline. Same eleven hours.",
+          "visual_goal": "Vee gestures around the room. The terminals. The render queues. The rejected images in a trash folder. Then she points at herself and shrugs: \"Me. I'm the tool user.\"",
+          "duration_sec": 9.6,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 6,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "PARADIGM SHIFT → TRANSPARENCY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "That's not less impressive than pressing a magic button. It's more. Because you can do it too. Same tools. Same pipeline. Same eleven hours.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B020",
+          "scene_id": "SEG06",
+          "text": "The pipeline is in the description. Every tool, every step. No secrets.",
+          "narration_text": "The pipeline is in the description. Every tool, every step. No secrets.",
+          "narrator_vo": "The pipeline is in the description. Every tool, every step. No secrets.",
+          "visual_goal": "FADE TO BLACK.",
+          "duration_sec": 4.8,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "PARADIGM SHIFT → TRANSPARENCY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The pipeline is in the description. Every tool, every step. No secrets.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "beat_id": "SEG01_B001",
+      "scene_id": "SEG01",
+      "text": "This video you're watching right now? An AI made it. Sort of. Actually — let me be honest about what \"AI made it\" really means.",
+      "narration_text": "This video you're watching right now? An AI made it. Sort of. Actually — let me be honest about what \"AI made it\" really means.",
+      "narrator_vo": "This video you're watching right now? An AI made it. Sort of. Actually — let me be honest about what \"AI made it\" really means.",
+      "visual_goal": "The Vibecode Town intro plays — the usual animation. Then it freezes mid-frame. Cracks appear on the surface. The \"2D animation\" peels back like wallpaper, revealing a messy desktop underneath: terminals, scripts, error logs, render queues.",
+      "duration_sec": 10.0,
+      "segment": "HOOK",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "SURPRISE → INTRIGUE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "This video you're watching right now? An AI made it. Sort of. Actually — let me be honest about what \"AI made it\" really means.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B002",
+      "scene_id": "SEG02",
+      "text": "The fantasy: type a description, press a button, get a video. Upload, go viral, retire. AI handles everything.",
+      "narration_text": "The fantasy: type a description, press a button, get a video. Upload, go viral, retire. AI handles everything.",
+      "narrator_vo": "The fantasy: type a description, press a button, get a video. Upload, go viral, retire. AI handles everything.",
+      "visual_goal": "A magic wand icon appears. It taps a blank canvas — POOF — a finished YouTube video appears. Thumbnail, title, animation, audio. All instant.",
+      "duration_sec": 7.2,
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "\"WOW EASY\" → REALITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The fantasy: type a description, press a button, get a video. Upload, go viral, retire. AI handles everything.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B003",
+      "scene_id": "SEG02",
+      "text": "That's the promise. Here's the reality.",
+      "narration_text": "That's the promise. Here's the reality.",
+      "narrator_vo": "That's the promise. Here's the reality.",
+      "visual_goal": "The magic wand sparkles. Comments flood in: \"10M views!\" Hearts. Subscribers.",
+      "duration_sec": 2.4,
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "\"WOW EASY\" → REALITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "That's the promise. Here's the reality.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B004",
+      "scene_id": "SEG03",
+      "text": "One episode of Vibecode Town. Three and a half minutes of finished video. Behind it: seven tools, twenty-six shots, four hours of GPU time, and enough rejected images to fill a dumpster.",
+      "narration_text": "One episode of Vibecode Town. Three and a half minutes of finished video. Behind it: seven tools, twenty-six shots, four hours of GPU time, and enough rejected images to fill a dumpster.",
+      "narrator_vo": "One episode of Vibecode Town. Three and a half minutes of finished video. Behind it: seven tools, twenty-six shots, four hours of GPU time, and enough rejected images to fill a dumpster.",
+      "visual_goal": "A production stats card appears:",
+      "duration_sec": 12.8,
+      "segment": "THE_CRACK",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "REALITY → \"OH, IT'S ACTUALLY HARD\"",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "One episode of Vibecode Town. Three and a half minutes of finished video. Behind it: seven tools, twenty-six shots, four hours of GPU time, and enough rejected images to fill a dumpster.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B005",
+      "scene_id": "SEG03",
+      "text": "AI didn't make this video. AI was one of many tools a human used to make this video. Big difference.",
+      "narration_text": "AI didn't make this video. AI was one of many tools a human used to make this video. Big difference.",
+      "narrator_vo": "AI didn't make this video. AI was one of many tools a human used to make this video. Big difference.",
+      "visual_goal": "\"이 영상 1편 = 7 tools. 26 shots. 4 hours GPU rendering. 3 script rewrites. 47 image generations (19 rejected). 12 re-renders. 1 human director.\"",
+      "duration_sec": 8.0,
+      "segment": "THE_CRACK",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "REALITY → \"OH, IT'S ACTUALLY HARD\"",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "AI didn't make this video. AI was one of many tools a human used to make this video. Big difference.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B006",
+      "scene_id": "SEG04",
+      "text": "Let me walk you through the actual pipeline. Every step. No magic.",
+      "narration_text": "Let me walk you through the actual pipeline. Every step. No magic.",
+      "narrator_vo": "Let me walk you through the actual pipeline. Every step. No magic.",
+      "visual_goal": "TRANSITION: Clean white background. A horizontal pipeline appears — seven stages, connected by arrows.",
+      "duration_sec": 4.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Let me walk you through the actual pipeline. Every step. No magic.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B007",
+      "scene_id": "SEG04",
+      "text": "Stage one. The script. Written in Fountain format — the same format Hollywood uses. Every scene, every narrator line, every Vee reaction, every visual cue. This is the spec. Without this, nothing else works.",
+      "narration_text": "Stage one. The script. Written in Fountain format — the same format Hollywood uses. Every scene, every narrator line, every Vee reaction, every visual cue. This is the spec. Without this, nothing else works.",
+      "narrator_vo": "Stage one. The script. Written in Fountain format — the same format Hollywood uses. Every scene, every narrator line, every Vee reaction, every visual cue. This is the spec. Without this, nothing else works.",
+      "visual_goal": "STAGE 1 lights up: \"FOUNTAIN SCRIPT\"",
+      "duration_sec": 13.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Stage one. The script. Written in Fountain format — the same format Hollywood uses. Every scene, every narrator line, every Vee reaction, every visual cue. This is the spec. Without this, nothing else works.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B008",
+      "scene_id": "SEG04",
+      "text": "Stage two. Text-to-speech. The narrator's voice is AI-generated. But not \"type and done.\" Each line gets checked for pacing, emphasis, and tone. Some lines get re-generated five times before they sound right.",
+      "narration_text": "Stage two. Text-to-speech. The narrator's voice is AI-generated. But not \"type and done.\" Each line gets checked for pacing, emphasis, and tone. Some lines get re-generated five times before they sound right.",
+      "narrator_vo": "Stage two. Text-to-speech. The narrator's voice is AI-generated. But not \"type and done.\" Each line gets checked for pacing, emphasis, and tone. Some lines get re-generated five times before they sound right.",
+      "visual_goal": "A screenplay format appears — the actual Fountain markup. Scene headings, dialogue blocks, action lines.",
+      "duration_sec": 12.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Stage two. Text-to-speech. The narrator's voice is AI-generated. But not \"type and done.\" Each line gets checked for pacing, emphasis, and tone. Some lines get re-generated five times before they sound right.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B009",
+      "scene_id": "SEG04",
+      "text": "Stage three. Image generation. Each shot needs a prompt that matches the script's visual description AND maintains character consistency with every other shot. This is where most of the failures happen. Forty-seven images generated. Nineteen thrown away. Wrong style, wrong character, wrong mood.",
+      "narration_text": "Stage three. Image generation. Each shot needs a prompt that matches the script's visual description AND maintains character consistency with every other shot. This is where most of the failures happen. Forty-seven images generated. Nineteen thrown away. Wrong style, wrong character, wrong mood.",
+      "narrator_vo": "Stage three. Image generation. Each shot needs a prompt that matches the script's visual description AND maintains character consistency with every other shot. This is where most of the failures happen. Forty-seven images generated. Nineteen thrown away. Wrong style, wrong character, wrong mood.",
+      "visual_goal": "STAGE 2 lights up: \"TTS — Text to Speech\"",
+      "duration_sec": 17.2,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Stage three. Image generation. Each shot needs a prompt that matches the script's visual description AND maintains character consistency with every other shot. This is where most of the failures happen. Forty-seven images generated. Nineteen thrown away. Wrong style, wrong character, wrong mood.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B010",
+      "scene_id": "SEG04",
+      "text": "Stage four. The part nobody shows in demos. Consistency checking. Does Vee look the same across all twenty-six shots? Are the backgrounds consistent? Does the color palette match? This is manual. Human eyes. No shortcut.",
+      "narration_text": "Stage four. The part nobody shows in demos. Consistency checking. Does Vee look the same across all twenty-six shots? Are the backgrounds consistent? Does the color palette match? This is manual. Human eyes. No shortcut.",
+      "narrator_vo": "Stage four. The part nobody shows in demos. Consistency checking. Does Vee look the same across all twenty-six shots? Are the backgrounds consistent? Does the color palette match? This is manual. Human eyes. No shortcut.",
+      "visual_goal": "Narrator text flows into a TTS engine icon. Audio waveforms come out.",
+      "duration_sec": 14.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Stage four. The part nobody shows in demos. Consistency checking. Does Vee look the same across all twenty-six shots? Are the backgrounds consistent? Does the color palette match? This is manual. Human eyes. No shortcut.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B011",
+      "scene_id": "SEG04",
+      "text": "Stage five. Image-to-video. The still images become animated. Two to four seconds each. But the motion has to match the script's description. \"Vee nods slowly\" is different from \"Vee nods enthusiastically.\" Each shot is a separate render. Each render takes six to twelve minutes.",
+      "narration_text": "Stage five. Image-to-video. The still images become animated. Two to four seconds each. But the motion has to match the script's description. \"Vee nods slowly\" is different from \"Vee nods enthusiastically.\" Each shot is a separate render. Each render takes six to twelve minutes.",
+      "narrator_vo": "Stage five. Image-to-video. The still images become animated. Two to four seconds each. But the motion has to match the script's description. \"Vee nods slowly\" is different from \"Vee nods enthusiastically.\" Each shot is a separate render. Each render takes six to twelve minutes.",
+      "visual_goal": "A montage: five waveforms. Four have red X marks. One has a green check.",
+      "duration_sec": 17.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Stage five. Image-to-video. The still images become animated. Two to four seconds each. But the motion has to match the script's description. \"Vee nods slowly\" is different from \"Vee nods enthusiastically.\" Each shot is a separate render. Each render takes six to twelve minutes.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B012",
+      "scene_id": "SEG04",
+      "text": "Stage six. Assembly. Twenty-six rendered clips, audio narration, background music, title cards, transitions — stitched together with FFmpeg. Timing adjusted frame by frame. A three-second narrator pause needs exactly three seconds of video, not two-point-eight.",
+      "narration_text": "Stage six. Assembly. Twenty-six rendered clips, audio narration, background music, title cards, transitions — stitched together with FFmpeg. Timing adjusted frame by frame. A three-second narrator pause needs exactly three seconds of video, not two-point-eight.",
+      "narrator_vo": "Stage six. Assembly. Twenty-six rendered clips, audio narration, background music, title cards, transitions — stitched together with FFmpeg. Timing adjusted frame by frame. A three-second narrator pause needs exactly three seconds of video, not two-point-eight.",
+      "visual_goal": "STAGE 3 lights up: \"T2I — Text to Image\"",
+      "duration_sec": 14.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": true,
+      "narrative_stage": "CORE",
+      "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Stage six. Assembly. Twenty-six rendered clips, audio narration, background music, title cards, transitions — stitched together with FFmpeg. Timing adjusted frame by frame. A three-second narrator pause needs exactly three seconds of video, not two-point-eight.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B013",
+      "scene_id": "SEG04",
+      "text": "Stage seven. The quality gate. Watch the full video. Does the audio sync? Do the transitions feel natural? Does the story flow? If any shot feels off — back to stage three. Re-generate. Re-render. Re-assemble.",
+      "narration_text": "Stage seven. The quality gate. Watch the full video. Does the audio sync? Do the transitions feel natural? Does the story flow? If any shot feels off — back to stage three. Re-generate. Re-render. Re-assemble.",
+      "narrator_vo": "Stage seven. The quality gate. Watch the full video. Does the audio sync? Do the transitions feel natural? Does the story flow? If any shot feels off — back to stage three. Re-generate. Re-render. Re-assemble.",
+      "visual_goal": "A prompt flows into an image generator. An image comes out — Vee at her desk. But it's wrong: her glasses are missing. Another attempt: wrong background color. Another: her proportions are off. Fourth try: correct.",
+      "duration_sec": 14.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Stage seven. The quality gate. Watch the full video. Does the audio sync? Do the transitions feel natural? Does the story flow? If any shot feels off — back to stage three. Re-generate. Re-render. Re-assemble.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B014",
+      "scene_id": "SEG04",
+      "text": "Seven stages. Three feedback loops. Zero magic buttons. The AI generated the voice, the images, the motion. But a human decided what to generate, judged the quality, maintained consistency, and assembled everything. That's the job now.",
+      "narration_text": "Seven stages. Three feedback loops. Zero magic buttons. The AI generated the voice, the images, the motion. But a human decided what to generate, judged the quality, maintained consistency, and assembled everything. That's the job now.",
+      "narrator_vo": "Seven stages. Three feedback loops. Zero magic buttons. The AI generated the voice, the images, the motion. But a human decided what to generate, judged the quality, maintained consistency, and assembled everything. That's the job now.",
+      "visual_goal": "Quick flash: Vee holds up two nearly identical images of herself — one has five fingers, one has seven. She points at the seven-finger version with visible horror. 1.5 seconds.",
+      "duration_sec": 14.4,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 3,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "\"OH\" → FASCINATION → RESPECT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Seven stages. Three feedback loops. Zero magic buttons. The AI generated the voice, the images, the motion. But a human decided what to generate, judged the quality, maintained consistency, and assembled everything. That's the job now.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B015",
+      "scene_id": "SEG05",
+      "text": "AI didn't replace the work. It changed what the work IS.",
+      "narration_text": "AI didn't replace the work. It changed what the work IS.",
+      "narrator_vo": "AI didn't replace the work. It changed what the work IS.",
+      "visual_goal": "Two columns. Left: \"OLD JOB — How to animate.\" Right: \"NEW JOB — How to direct.\"",
+      "duration_sec": 4.4,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "RESPECT → PARADIGM SHIFT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "AI didn't replace the work. It changed what the work IS.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B016",
+      "scene_id": "SEG05",
+      "text": "Before AI, making this video would require an animation team and six weeks. With AI, it takes one person and eleven hours. But that one person needs to be a director, not an operator. The skill shifted from \"how to make it\" to \"what to make and is it good enough.\"",
+      "narration_text": "Before AI, making this video would require an animation team and six weeks. With AI, it takes one person and eleven hours. But that one person needs to be a director, not an operator. The skill shifted from \"how to make it\" to \"what to make and is it good enough.\"",
+      "narrator_vo": "Before AI, making this video would require an animation team and six weeks. With AI, it takes one person and eleven hours. But that one person needs to be a director, not an operator. The skill shifted from \"how to make it\" to \"what to make and is it good enough.\"",
+      "visual_goal": "The left column shows: drawing frames, rigging characters, keyframing motion. Traditional animation skills.",
+      "duration_sec": 20.4,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "RESPECT → PARADIGM SHIFT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Before AI, making this video would require an animation team and six weeks. With AI, it takes one person and eleven hours. But that one person needs to be a director, not an operator. The skill shifted from \"how to make it\" to \"what to make and is it good enough.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B017",
+      "scene_id": "SEG05",
+      "text": "Take fourteen. Not take one. The AI doesn't get it right the first time. The human decides when it's right.",
+      "narration_text": "Take fourteen. Not take one. The AI doesn't get it right the first time. The human decides when it's right.",
+      "narrator_vo": "Take fourteen. Not take one. The AI doesn't get it right the first time. The human decides when it's right.",
+      "visual_goal": "The right column shows: writing specs, judging quality, maintaining consistency, managing a pipeline. Director skills.",
+      "duration_sec": 8.0,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "RESPECT → PARADIGM SHIFT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Take fourteen. Not take one. The AI doesn't get it right the first time. The human decides when it's right.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B018",
+      "scene_id": "SEG06",
+      "text": "This video was made by AI. And by a human who told the AI what to make, rejected half of what it produced, and assembled the rest by hand.",
+      "narration_text": "This video was made by AI. And by a human who told the AI what to make, rejected half of what it produced, and assembled the rest by hand.",
+      "narrator_vo": "This video was made by AI. And by a human who told the AI what to make, rejected half of what it produced, and assembled the rest by hand.",
+      "visual_goal": "Vee at her desk. The pipeline diagram is pinned to her wall. She looks at the camera — fourth wall break, like EP05.",
+      "duration_sec": 11.6,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "PARADIGM SHIFT → TRANSPARENCY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "This video was made by AI. And by a human who told the AI what to make, rejected half of what it produced, and assembled the rest by hand.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B019",
+      "scene_id": "SEG06",
+      "text": "That's not less impressive than pressing a magic button. It's more. Because you can do it too. Same tools. Same pipeline. Same eleven hours.",
+      "narration_text": "That's not less impressive than pressing a magic button. It's more. Because you can do it too. Same tools. Same pipeline. Same eleven hours.",
+      "narrator_vo": "That's not less impressive than pressing a magic button. It's more. Because you can do it too. Same tools. Same pipeline. Same eleven hours.",
+      "visual_goal": "Vee gestures around the room. The terminals. The render queues. The rejected images in a trash folder. Then she points at herself and shrugs: \"Me. I'm the tool user.\"",
+      "duration_sec": 9.6,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 6,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "PARADIGM SHIFT → TRANSPARENCY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "That's not less impressive than pressing a magic button. It's more. Because you can do it too. Same tools. Same pipeline. Same eleven hours.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B020",
+      "scene_id": "SEG06",
+      "text": "The pipeline is in the description. Every tool, every step. No secrets.",
+      "narration_text": "The pipeline is in the description. Every tool, every step. No secrets.",
+      "narrator_vo": "The pipeline is in the description. Every tool, every step. No secrets.",
+      "visual_goal": "FADE TO BLACK.",
+      "duration_sec": 4.8,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "PARADIGM SHIFT → TRANSPARENCY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The pipeline is in the description. Every tool, every step. No secrets.",
+          "emotion": ""
+        }
+      ]
+    }
+  ]
+}

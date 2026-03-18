@@ -1,0 +1,222 @@
+{
+  "project_id": "t2i_storyboards",
+  "style_lock": "Flux Dev T2I — 16:9 scene storyboards for I2V pipeline",
+  "shots": [
+    {
+      "shot_id": "SB_S01_01",
+      "positive_prompt": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts). Primary action goal: Vee celebrates → explosion. Show the result first. Narrative reference for action direction: This is the moment every vibe coder lives for. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000000,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S01_01"
+    },
+    {
+      "shot_id": "SB_S02_02",
+      "positive_prompt": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts). Primary action goal: Five monitors glow in a dark room. Vee leans back in her chair. Each screen shows code, dashboards, terminals — all running. Narrative reference for action direction: You asked AI to build it. And it did. All of it. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000001,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S02_02"
+    },
+    {
+      "shot_id": "SB_S03_03",
+      "positive_prompt": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts). Primary action goal: BEAT: 1 second of silence. One monitor flickers. Narrative reference for action direction: ...it all falls apart. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000002,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S03_03"
+    },
+    {
+      "shot_id": "SB_S04_04",
+      "positive_prompt": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Three days earlier. Vee's vibe coding montage. Bee's first appearance. Narrative reference for action direction: Three days ago, Vee discovered something magical. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000003,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S04_04"
+    },
+    {
+      "shot_id": "SB_S05_05",
+      "positive_prompt": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Bright room. Vee sits at her monitor. Terminal open. Narrative reference for action direction: You type what you want. AI builds it. Five minutes. Done. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000004,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S05_05"
+    },
+    {
+      "shot_id": "SB_S06_06",
+      "positive_prompt": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Vee's eyes go wide. She jumps out of her chair. Narrative reference for action direction: She thought she could build anything. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000005,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S06_06"
+    },
+    {
+      "shot_id": "SB_S07_07",
+      "positive_prompt": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: MONTAGE: Rapid cuts. Vee types → app appears. Types → app appears. Types → app appears. Each time faster. Each time her grin gets bigger. Narrative reference for action direction: But there was someone who'd seen this story before. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000006,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S07_07"
+    },
+    {
+      "shot_id": "SB_S08_08",
+      "positive_prompt": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Vee spins in her chair, arms crossed, nodding like a CEO. Narrative reference for action direction: She couldn't answer. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000007,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S08_08"
+    },
+    {
+      "shot_id": "SB_S09_09",
+      "positive_prompt": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Transition to abstract world. \"Spec = Blueprint\" metaphor. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000008,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S09_09"
+    },
+    {
+      "shot_id": "SB_S10_10",
+      "positive_prompt": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Left side: a blueprint unfolds. Blue lines trace the outline of a building. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000009,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S10_10"
+    },
+    {
+      "shot_id": "SB_S11_11",
+      "positive_prompt": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Foundation → frame → walls → roof. Geometric building assembles in sequence. Clean. Stable. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000010,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S11_11"
+    },
+    {
+      "shot_id": "SB_S12_12",
+      "positive_prompt": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Right side: colorful blocks drop from above, piling randomly. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000011,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S12_12"
+    },
+    {
+      "shot_id": "SB_S13_13",
+      "positive_prompt": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. The pile wobbles. Pauses. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000012,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S13_13"
+    },
+    {
+      "shot_id": "SB_S14_14",
+      "positive_prompt": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Collapse. Blocks scatter everywhere. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000013,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S14_14"
+    },
+    {
+      "shot_id": "SB_S15_15",
+      "positive_prompt": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Back to the blueprint side. Clean building standing tall. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000014,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S15_15"
+    },
+    {
+      "shot_id": "SB_S16_16",
+      "positive_prompt": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. New scene. A small skateboard rolls into frame. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000015,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S16_16"
+    },
+    {
+      "shot_id": "SB_S17_17",
+      "positive_prompt": "Kurzgesagt-style infographic animation. Clean geometric shapes on dark navy (#0D1B2A) background. Skateboard morphs into a bicycle. Bicycle morphs into a car. Smooth motion graphics, bold saturated colors (orange #FF6B35, cyan #00D4FF, green #7AE582), soft glow. NO characters, NO text, NO labels. Abstract concept visualization.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000016,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S17_17"
+    },
+    {
+      "shot_id": "SB_S18_18",
+      "positive_prompt": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Vee alone. Stops coding. Writes frustrations on paper. Discovers what she's building. Narrative reference for action direction: Back in the present. Everything still broken. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000017,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S18_18"
+    },
+    {
+      "shot_id": "SB_S19_19",
+      "positive_prompt": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Five monitors. Red errors. Vee's hands hover over the keyboard. Narrative reference for action direction: And then she did something unusual. She stopped coding. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000018,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S19_19"
+    },
+    {
+      "shot_id": "SB_S20_20",
+      "positive_prompt": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: She pulls her hands back. Pushes the chair away from the desk. Narrative reference for action direction: And there it was. The question she'd been avoiding. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000019,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S20_20"
+    },
+    {
+      "shot_id": "SB_S21_21",
+      "positive_prompt": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Vee opens a desk drawer. Pulls out paper and a pencil. Turns her back to the monitors. Narrative reference for action direction: Not features. Not tools. The reason. The one sentence that explains everything. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000020,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S21_21"
+    },
+    {
+      "shot_id": "SB_S22_22",
+      "positive_prompt": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: CU: Paper. Messy handwriting appears: Narrative reference for action direction: The same errors. But now, one line makes sense. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000021,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S22_22"
+    },
+    {
+      "shot_id": "SB_S23_23",
+      "positive_prompt": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: **Exact same composition as HOOK.** Five monitors. Red errors. Dark room. Narrative reference for action direction: But now she knows what to fix. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000022,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S23_23"
+    },
+    {
+      "shot_id": "SB_S24_24",
+      "positive_prompt": "Medium/wide framing, readable silhouette, playful but controlled pacing. Static camera with gentle micro motion. 3D Pixar-like render with subtle clay texture. Warm lighting, shallow depth of field. Ivy Burr (cocoa-brown hair, round glasses, yellow hoodie, denim shorts) and Bee (small round yellow-black striped bee with yellow hard hat, translucent wings). Primary action goal: Vee sits in her chair. The mug is in the same spot. Narrative reference for action direction: ...at least, she thinks she does. CRITICAL: NO TEXT, NO LETTERS, NO SUBTITLES, NO WATERMARK, NO LOGO, NO SPEECH BUBBLES.",
+      "width": 832,
+      "height": 480,
+      "seed": 4000023,
+      "guidance": 3.5,
+      "filename_prefix": "SB_S24_24"
+    }
+  ]
+}

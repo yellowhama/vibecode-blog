@@ -1,0 +1,1157 @@
+{
+  "project_id": "ep07_v5",
+  "version": "6.0",
+  "title": "EP07 — AI는 왜 헛소리를 하나",
+  "language": "en",
+  "total_duration_sec": 235,
+  "segment_count": 6,
+  "beat_count": 19,
+  "segments": [
+    "HOOK",
+    "MISCONCEPTION",
+    "THE_CRACK",
+    "CORE",
+    "REFRAME",
+    "OUTRO_CTA"
+  ],
+  "phases": [
+    {
+      "phase_id": "SEG01",
+      "phase_name": "HOOK",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "TRUST → BETRAYAL",
+      "narrative_stage": "HOOK",
+      "target_duration_sec": 15,
+      "beats": [
+        {
+          "beat_id": "SEG01_B001",
+          "scene_id": "SEG01",
+          "text": "The answer was perfect. The formatting was flawless. The citations were invented. The AI lied to her face — and it looked absolutely certain while doing it.",
+          "narration_text": "The answer was perfect. The formatting was flawless. The citations were invented. The AI lied to her face — and it looked absolutely certain while doing it.",
+          "narrator_vo": "The answer was perfect. The formatting was flawless. The citations were invented. The AI lied to her face — and it looked absolutely certain while doing it.",
+          "visual_goal": "Vee reads AI output on her screen. It looks authoritative. Clean formatting. Bullet points. Citations. She nods along, taking notes.",
+          "duration_sec": 10.8,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "TRUST → BETRAYAL",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The answer was perfect. The formatting was flawless. The citations were invented. The AI lied to her face — and it looked absolutely certain while doing it.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG02",
+      "phase_name": "MISCONCEPTION",
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "FRUSTRATION → FALSE DIAGNOSIS",
+      "narrative_stage": "MISCONCEPTION",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG02_B002",
+          "scene_id": "SEG02",
+          "text": "The popular explanation goes like this: AI makes mistakes because it doesn't have enough data. Train it on more books, more websites, more code — and eventually it'll stop getting things wrong.",
+          "narration_text": "The popular explanation goes like this: AI makes mistakes because it doesn't have enough data. Train it on more books, more websites, more code — and eventually it'll stop getting things wrong.",
+          "narrator_vo": "The popular explanation goes like this: AI makes mistakes because it doesn't have enough data. Train it on more books, more websites, more code — and eventually it'll stop getting things wrong.",
+          "visual_goal": "A brain icon appears. A progress bar below it: \"Knowledge: 73%.\" An arrow points up with the label \"More Data.\"",
+          "duration_sec": 12.8,
+          "segment": "MISCONCEPTION",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "FRUSTRATION → FALSE DIAGNOSIS",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The popular explanation goes like this: AI makes mistakes because it doesn't have enough data. Train it on more books, more websites, more code — and eventually it'll stop getting things wrong.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B003",
+          "scene_id": "SEG02",
+          "text": "More training data. Bigger models. Better accuracy. Just keep feeding it information until it knows everything. Problem solved.",
+          "narration_text": "More training data. Bigger models. Better accuracy. Just keep feeding it information until it knows everything. Problem solved.",
+          "narrator_vo": "More training data. Bigger models. Better accuracy. Just keep feeding it information until it knows everything. Problem solved.",
+          "visual_goal": "The progress bar fills: 73% → 85% → 92% → 99%. The brain icon glows brighter.",
+          "duration_sec": 7.2,
+          "segment": "MISCONCEPTION",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "FRUSTRATION → FALSE DIAGNOSIS",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "More training data. Bigger models. Better accuracy. Just keep feeding it information until it knows everything. Problem solved.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B004",
+          "scene_id": "SEG02",
+          "text": "GPT-4 was trained on most of the internet. It still makes things up. More data didn't fix it. Because data was never the problem.",
+          "narration_text": "GPT-4 was trained on most of the internet. It still makes things up. More data didn't fix it. Because data was never the problem.",
+          "narrator_vo": "GPT-4 was trained on most of the internet. It still makes things up. More data didn't fix it. Because data was never the problem.",
+          "visual_goal": "Vee nods along. Makes sense. More data, fewer mistakes. She types another question into the AI. The response is wrong again — a different kind of wrong. She frowns.",
+          "duration_sec": 9.6,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 2,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "FRUSTRATION → FALSE DIAGNOSIS",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "GPT-4 was trained on most of the internet. It still makes things up. More data didn't fix it. Because data was never the problem.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG03",
+      "phase_name": "THE_CRACK",
+      "segment": "THE_CRACK",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "FALSE DIAGNOSIS → UNSETTLING TRUTH",
+      "narrative_stage": "THE_CRACK",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG03_B005",
+          "scene_id": "SEG03",
+          "text": "Here's the part that makes people uncomfortable. AI isn't trying to be correct. It's not looking up answers. It's not reasoning. It's predicting the next word.",
+          "narration_text": "Here's the part that makes people uncomfortable. AI isn't trying to be correct. It's not looking up answers. It's not reasoning. It's predicting the next word.",
+          "narrator_vo": "Here's the part that makes people uncomfortable. AI isn't trying to be correct. It's not looking up answers. It's not reasoning. It's predicting the next word.",
+          "visual_goal": "The brain icon and progress bar shatter. Behind them — a simpler mechanism. A slot machine.",
+          "duration_sec": 10.4,
+          "segment": "THE_CRACK",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "FALSE DIAGNOSIS → UNSETTLING TRUTH",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Here's the part that makes people uncomfortable. AI isn't trying to be correct. It's not looking up answers. It's not reasoning. It's predicting the next word.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B006",
+          "scene_id": "SEG03",
+          "text": "When it says \"The capital of France is Paris\" — it's not because it knows geography. It's because \"Paris\" is the most likely word to follow that sequence. It's pattern matching, not fact-checking.",
+          "narration_text": "When it says \"The capital of France is Paris\" — it's not because it knows geography. It's because \"Paris\" is the most likely word to follow that sequence. It's pattern matching, not fact-checking.",
+          "narrator_vo": "When it says \"The capital of France is Paris\" — it's not because it knows geography. It's because \"Paris\" is the most likely word to follow that sequence. It's pattern matching, not fact-checking.",
+          "visual_goal": "The slot machine spins. Three reels. Each reel has words instead of symbols: \"The\" / \"capital\" / \"of\" — STOP. \"France\" / \"is\" / \"Paris.\"",
+          "duration_sec": 13.2,
+          "segment": "THE_CRACK",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "FALSE DIAGNOSIS → UNSETTLING TRUTH",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "When it says \"The capital of France is Paris\" — it's not because it knows geography. It's because \"Paris\" is the most likely word to follow that sequence. It's pattern matching, not fact-checking.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B007",
+          "scene_id": "SEG03",
+          "text": "And when the pattern is rare or ambiguous, it doesn't say \"I don't know.\" It picks the most probable next word anyway. With full confidence. That's hallucination.",
+          "narration_text": "And when the pattern is rare or ambiguous, it doesn't say \"I don't know.\" It picks the most probable next word anyway. With full confidence. That's hallucination.",
+          "narrator_vo": "And when the pattern is rare or ambiguous, it doesn't say \"I don't know.\" It picks the most probable next word anyway. With full confidence. That's hallucination.",
+          "visual_goal": "The slot machine spins again: \"The\" / \"capital\" / \"of\" — STOP. \"Freedonia\" / \"is\" / \"Glendale.\"",
+          "duration_sec": 10.8,
+          "segment": "THE_CRACK",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "FALSE DIAGNOSIS → UNSETTLING TRUTH",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And when the pattern is rare or ambiguous, it doesn't say \"I don't know.\" It picks the most probable next word anyway. With full confidence. That's hallucination.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG04",
+      "phase_name": "CORE",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+      "narrative_stage": "CORE",
+      "target_duration_sec": 105,
+      "beats": [
+        {
+          "beat_id": "SEG04_B008",
+          "scene_id": "SEG04",
+          "text": "Imagine a person who has listened to every conversation ever recorded. Every book read aloud. Every podcast. Every lecture. Every argument.",
+          "narration_text": "Imagine a person who has listened to every conversation ever recorded. Every book read aloud. Every podcast. Every lecture. Every argument.",
+          "narrator_vo": "Imagine a person who has listened to every conversation ever recorded. Every book read aloud. Every podcast. Every lecture. Every argument.",
+          "visual_goal": "TRANSITION: Clean white background. Center frame, a massive bookshelf appears. Thousands of books. A figure stands in front of it — not reading, but listening.",
+          "duration_sec": 8.4,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Imagine a person who has listened to every conversation ever recorded. Every book read aloud. Every podcast. Every lecture. Every argument.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B009",
+          "scene_id": "SEG04",
+          "text": "They've heard everything. But they've never checked any of it. They don't know what's true. They know what sounds right.",
+          "narration_text": "They've heard everything. But they've never checked any of it. They don't know what's true. They know what sounds right.",
+          "narrator_vo": "They've heard everything. But they've never checked any of it. They don't know what's true. They know what sounds right.",
+          "visual_goal": "Sound waves flow into the figure's ears. Millions of them. The figure absorbs them all.",
+          "duration_sec": 8.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "They've heard everything. But they've never checked any of it. They don't know what's true. They know what sounds right.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B010",
+          "scene_id": "SEG04",
+          "text": "Same confidence. Same speed. One is right because the pattern is common. One is wrong because the pattern is rare — so the figure filled the gap with something that sounded plausible. It didn't hesitate. It didn't flag uncertainty. It just completed the sentence.",
+          "narration_text": "Same confidence. Same speed. One is right because the pattern is common. One is wrong because the pattern is rare — so the figure filled the gap with something that sounded plausible. It didn't hesitate. It didn't flag uncertainty. It just completed the sentence.",
+          "narrator_vo": "Same confidence. Same speed. One is right because the pattern is common. One is wrong because the pattern is rare — so the figure filled the gap with something that sounded plausible. It didn't hesitate. It didn't flag uncertainty. It just completed the sentence.",
+          "visual_goal": "Someone asks the figure: \"What year did Napoleon invade Russia?\" The figure responds instantly, confident: \"1812.\" Correct.",
+          "duration_sec": 17.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": true,
+          "narrative_stage": "CORE",
+          "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Same confidence. Same speed. One is right because the pattern is common. One is wrong because the pattern is rare — so the figure filled the gap with something that sounded plausible. It didn't hesitate. It didn't flag uncertainty. It just completed the sentence.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B011",
+          "scene_id": "SEG04",
+          "text": "Token prediction. Every word the AI writes is a probability gamble. It picks the most likely next word — or, if you turn up the temperature, it picks a less likely one for variety. That's the creativity dial. Turn it up, more creative. Turn it up too far, more nonsense.",
+          "narration_text": "Token prediction. Every word the AI writes is a probability gamble. It picks the most likely next word — or, if you turn up the temperature, it picks a less likely one for variety. That's the creativity dial. Turn it up, more creative. Turn it up too far, more nonsense.",
+          "narrator_vo": "Token prediction. Every word the AI writes is a probability gamble. It picks the most likely next word — or, if you turn up the temperature, it picks a less likely one for variety. That's the creativity dial. Turn it up, more creative. Turn it up too far, more nonsense.",
+          "visual_goal": "Someone asks: \"What year did Napoleon invade Japan?\" The figure responds just as confidently: \"1804.\" A red X appears. Japan never happened.",
+          "duration_sec": 20.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Token prediction. Every word the AI writes is a probability gamble. It picks the most likely next word — or, if you turn up the temperature, it picks a less likely one for variety. That's the creativity dial. Turn it up, more creative. Turn it up too far, more nonsense.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B012",
+          "scene_id": "SEG04",
+          "text": "Context window. The AI can only \"see\" a limited amount of text at once. Ask it about something from three thousand lines ago, and it's gone. It's not forgotten — it was never remembered. The AI is always reading through a keyhole.",
+          "narration_text": "Context window. The AI can only \"see\" a limited amount of text at once. Ask it about something from three thousand lines ago, and it's gone. It's not forgotten — it was never remembered. The AI is always reading through a keyhole.",
+          "narrator_vo": "Context window. The AI can only \"see\" a limited amount of text at once. Ask it about something from three thousand lines ago, and it's gone. It's not forgotten — it was never remembered. The AI is always reading through a keyhole.",
+          "visual_goal": "The bookshelf fades. Three technical concepts appear as simple diagrams:",
+          "duration_sec": 16.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Context window. The AI can only \"see\" a limited amount of text at once. Ask it about something from three thousand lines ago, and it's gone. It's not forgotten — it was never remembered. The AI is always reading through a keyhole.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B013",
+          "scene_id": "SEG04",
+          "text": "And the big one. There is no truth engine. No internal fact-checker. The AI has no mechanism to distinguish \"this is correct\" from \"this sounds correct.\" It doesn't have beliefs. It doesn't have knowledge. It has statistics.",
+          "narration_text": "And the big one. There is no truth engine. No internal fact-checker. The AI has no mechanism to distinguish \"this is correct\" from \"this sounds correct.\" It doesn't have beliefs. It doesn't have knowledge. It has statistics.",
+          "narrator_vo": "And the big one. There is no truth engine. No internal fact-checker. The AI has no mechanism to distinguish \"this is correct\" from \"this sounds correct.\" It doesn't have beliefs. It doesn't have knowledge. It has statistics.",
+          "visual_goal": "BOX 1: \"Token Prediction\" — a chain of words, each with a probability percentage. \"The\" → \"cat\" (42%) / \"dog\" (31%) / \"president\" (8%).",
+          "duration_sec": 14.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And the big one. There is no truth engine. No internal fact-checker. The AI has no mechanism to distinguish \"this is correct\" from \"this sounds correct.\" It doesn't have beliefs. It doesn't have knowledge. It has statistics.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B014",
+          "scene_id": "SEG04",
+          "text": "So more data doesn't fix hallucination. More data just gives the AI more patterns to mash together. The fix isn't a better AI. The fix is a better human.",
+          "narration_text": "So more data doesn't fix hallucination. More data just gives the AI more patterns to mash together. The fix isn't a better AI. The fix is a better human.",
+          "narrator_vo": "So more data doesn't fix hallucination. More data just gives the AI more patterns to mash together. The fix isn't a better AI. The fix is a better human.",
+          "visual_goal": "A temperature slider appears. Low: \"safe, repetitive.\" Medium: \"creative, useful.\" High: \"unhinged, hallucinatory.\"",
+          "duration_sec": 11.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "So more data doesn't fix hallucination. More data just gives the AI more patterns to mash together. The fix isn't a better AI. The fix is a better human.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B015",
+          "scene_id": "SEG04",
+          "text": "Specs tell AI what the answer should look like. Tests confirm the answer is correct. Gates stop bad answers from shipping. The AI doesn't verify itself. You do.",
+          "narration_text": "Specs tell AI what the answer should look like. Tests confirm the answer is correct. Gates stop bad answers from shipping. The AI doesn't verify itself. You do.",
+          "narrator_vo": "Specs tell AI what the answer should look like. Tests confirm the answer is correct. Gates stop bad answers from shipping. The AI doesn't verify itself. You do.",
+          "visual_goal": "BOX 2: \"Context Window\" — a horizontal bar, filled with text. As new text enters from the right, old text falls off the left edge.",
+          "duration_sec": 11.2,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Specs tell AI what the answer should look like. Tests confirm the answer is correct. Gates stop bad answers from shipping. The AI doesn't verify itself. You do.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG05",
+      "phase_name": "REFRAME",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "UNDERSTANDING → ACCEPTANCE",
+      "narrative_stage": "REFRAME",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG05_B016",
+          "scene_id": "SEG05",
+          "text": "Here's the twist nobody talks about. Hallucination and creativity are the same mechanism. The ability to generate something that doesn't exist yet — that's what makes AI useful AND unreliable. You can't have one without the other.",
+          "narration_text": "Here's the twist nobody talks about. Hallucination and creativity are the same mechanism. The ability to generate something that doesn't exist yet — that's what makes AI useful AND unreliable. You can't have one without the other.",
+          "narrator_vo": "Here's the twist nobody talks about. Hallucination and creativity are the same mechanism. The ability to generate something that doesn't exist yet — that's what makes AI useful AND unreliable. You can't have one without the other.",
+          "visual_goal": "The slot machine from THE_CRACK reappears. But now it's reframed — labeled \"CREATIVITY ENGINE.\"",
+          "duration_sec": 14.8,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "UNDERSTANDING → ACCEPTANCE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Here's the twist nobody talks about. Hallucination and creativity are the same mechanism. The ability to generate something that doesn't exist yet — that's what makes AI useful AND unreliable. You can't have one without the other.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B017",
+          "scene_id": "SEG05",
+          "text": "The fix isn't better AI. It's better systems around the AI. Let it be creative. Then verify everything.",
+          "narration_text": "The fix isn't better AI. It's better systems around the AI. Let it be creative. Then verify everything.",
+          "narrator_vo": "The fix isn't better AI. It's better systems around the AI. Let it be creative. Then verify everything.",
+          "visual_goal": "The slot machine splits into two. Left: \"Hallucination — wrong pattern completion.\" Right: \"Creativity — novel pattern completion.\" Same machine, different outcome.",
+          "duration_sec": 7.2,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "UNDERSTANDING → ACCEPTANCE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The fix isn't better AI. It's better systems around the AI. Let it be creative. Then verify everything.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG06",
+      "phase_name": "OUTRO_CTA",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "ACCEPTANCE → PRAGMATISM",
+      "narrative_stage": "OUTRO_CTA",
+      "target_duration_sec": 25,
+      "beats": [
+        {
+          "beat_id": "SEG06_B018",
+          "scene_id": "SEG06",
+          "text": "AI doesn't lie. It doesn't know what lying is. It completes patterns. Your job isn't to trust it or distrust it. Your job is to check.",
+          "narration_text": "AI doesn't lie. It doesn't know what lying is. It completes patterns. Your job isn't to trust it or distrust it. Your job is to check.",
+          "narrator_vo": "AI doesn't lie. It doesn't know what lying is. It completes patterns. Your job isn't to trust it or distrust it. Your job is to check.",
+          "visual_goal": "Vee at her desk. She reads an AI response. This time, she doesn't nod along. She highlights a claim. Opens a browser tab. Checks it. Correct. Highlights another. Checks. Wrong — she deletes it and writes her own version.",
+          "duration_sec": 10.4,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "ACCEPTANCE → PRAGMATISM",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "AI doesn't lie. It doesn't know what lying is. It completes patterns. Your job isn't to trust it or distrust it. Your job is to check.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B019",
+          "scene_id": "SEG06",
+          "text": "Specs. Tests. Gates. That's the system. The AI creates. You verify.",
+          "narration_text": "Specs. Tests. Gates. That's the system. The AI creates. You verify.",
+          "narrator_vo": "Specs. Tests. Gates. That's the system. The AI creates. You verify.",
+          "visual_goal": "Vee places a sticky note on her monitor: \"AI는 자신감 있게 틀린다.\" (AI is confidently wrong.) She taps it once. Back to work.",
+          "duration_sec": 4.4,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 6,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "ACCEPTANCE → PRAGMATISM",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Specs. Tests. Gates. That's the system. The AI creates. You verify.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "beat_id": "SEG01_B001",
+      "scene_id": "SEG01",
+      "text": "The answer was perfect. The formatting was flawless. The citations were invented. The AI lied to her face — and it looked absolutely certain while doing it.",
+      "narration_text": "The answer was perfect. The formatting was flawless. The citations were invented. The AI lied to her face — and it looked absolutely certain while doing it.",
+      "narrator_vo": "The answer was perfect. The formatting was flawless. The citations were invented. The AI lied to her face — and it looked absolutely certain while doing it.",
+      "visual_goal": "Vee reads AI output on her screen. It looks authoritative. Clean formatting. Bullet points. Citations. She nods along, taking notes.",
+      "duration_sec": 10.8,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "TRUST → BETRAYAL",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The answer was perfect. The formatting was flawless. The citations were invented. The AI lied to her face — and it looked absolutely certain while doing it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B002",
+      "scene_id": "SEG02",
+      "text": "The popular explanation goes like this: AI makes mistakes because it doesn't have enough data. Train it on more books, more websites, more code — and eventually it'll stop getting things wrong.",
+      "narration_text": "The popular explanation goes like this: AI makes mistakes because it doesn't have enough data. Train it on more books, more websites, more code — and eventually it'll stop getting things wrong.",
+      "narrator_vo": "The popular explanation goes like this: AI makes mistakes because it doesn't have enough data. Train it on more books, more websites, more code — and eventually it'll stop getting things wrong.",
+      "visual_goal": "A brain icon appears. A progress bar below it: \"Knowledge: 73%.\" An arrow points up with the label \"More Data.\"",
+      "duration_sec": 12.8,
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "FRUSTRATION → FALSE DIAGNOSIS",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The popular explanation goes like this: AI makes mistakes because it doesn't have enough data. Train it on more books, more websites, more code — and eventually it'll stop getting things wrong.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B003",
+      "scene_id": "SEG02",
+      "text": "More training data. Bigger models. Better accuracy. Just keep feeding it information until it knows everything. Problem solved.",
+      "narration_text": "More training data. Bigger models. Better accuracy. Just keep feeding it information until it knows everything. Problem solved.",
+      "narrator_vo": "More training data. Bigger models. Better accuracy. Just keep feeding it information until it knows everything. Problem solved.",
+      "visual_goal": "The progress bar fills: 73% → 85% → 92% → 99%. The brain icon glows brighter.",
+      "duration_sec": 7.2,
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "FRUSTRATION → FALSE DIAGNOSIS",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "More training data. Bigger models. Better accuracy. Just keep feeding it information until it knows everything. Problem solved.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B004",
+      "scene_id": "SEG02",
+      "text": "GPT-4 was trained on most of the internet. It still makes things up. More data didn't fix it. Because data was never the problem.",
+      "narration_text": "GPT-4 was trained on most of the internet. It still makes things up. More data didn't fix it. Because data was never the problem.",
+      "narrator_vo": "GPT-4 was trained on most of the internet. It still makes things up. More data didn't fix it. Because data was never the problem.",
+      "visual_goal": "Vee nods along. Makes sense. More data, fewer mistakes. She types another question into the AI. The response is wrong again — a different kind of wrong. She frowns.",
+      "duration_sec": 9.6,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 2,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "FRUSTRATION → FALSE DIAGNOSIS",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "GPT-4 was trained on most of the internet. It still makes things up. More data didn't fix it. Because data was never the problem.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B005",
+      "scene_id": "SEG03",
+      "text": "Here's the part that makes people uncomfortable. AI isn't trying to be correct. It's not looking up answers. It's not reasoning. It's predicting the next word.",
+      "narration_text": "Here's the part that makes people uncomfortable. AI isn't trying to be correct. It's not looking up answers. It's not reasoning. It's predicting the next word.",
+      "narrator_vo": "Here's the part that makes people uncomfortable. AI isn't trying to be correct. It's not looking up answers. It's not reasoning. It's predicting the next word.",
+      "visual_goal": "The brain icon and progress bar shatter. Behind them — a simpler mechanism. A slot machine.",
+      "duration_sec": 10.4,
+      "segment": "THE_CRACK",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "FALSE DIAGNOSIS → UNSETTLING TRUTH",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Here's the part that makes people uncomfortable. AI isn't trying to be correct. It's not looking up answers. It's not reasoning. It's predicting the next word.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B006",
+      "scene_id": "SEG03",
+      "text": "When it says \"The capital of France is Paris\" — it's not because it knows geography. It's because \"Paris\" is the most likely word to follow that sequence. It's pattern matching, not fact-checking.",
+      "narration_text": "When it says \"The capital of France is Paris\" — it's not because it knows geography. It's because \"Paris\" is the most likely word to follow that sequence. It's pattern matching, not fact-checking.",
+      "narrator_vo": "When it says \"The capital of France is Paris\" — it's not because it knows geography. It's because \"Paris\" is the most likely word to follow that sequence. It's pattern matching, not fact-checking.",
+      "visual_goal": "The slot machine spins. Three reels. Each reel has words instead of symbols: \"The\" / \"capital\" / \"of\" — STOP. \"France\" / \"is\" / \"Paris.\"",
+      "duration_sec": 13.2,
+      "segment": "THE_CRACK",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "FALSE DIAGNOSIS → UNSETTLING TRUTH",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "When it says \"The capital of France is Paris\" — it's not because it knows geography. It's because \"Paris\" is the most likely word to follow that sequence. It's pattern matching, not fact-checking.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B007",
+      "scene_id": "SEG03",
+      "text": "And when the pattern is rare or ambiguous, it doesn't say \"I don't know.\" It picks the most probable next word anyway. With full confidence. That's hallucination.",
+      "narration_text": "And when the pattern is rare or ambiguous, it doesn't say \"I don't know.\" It picks the most probable next word anyway. With full confidence. That's hallucination.",
+      "narrator_vo": "And when the pattern is rare or ambiguous, it doesn't say \"I don't know.\" It picks the most probable next word anyway. With full confidence. That's hallucination.",
+      "visual_goal": "The slot machine spins again: \"The\" / \"capital\" / \"of\" — STOP. \"Freedonia\" / \"is\" / \"Glendale.\"",
+      "duration_sec": 10.8,
+      "segment": "THE_CRACK",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "FALSE DIAGNOSIS → UNSETTLING TRUTH",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And when the pattern is rare or ambiguous, it doesn't say \"I don't know.\" It picks the most probable next word anyway. With full confidence. That's hallucination.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B008",
+      "scene_id": "SEG04",
+      "text": "Imagine a person who has listened to every conversation ever recorded. Every book read aloud. Every podcast. Every lecture. Every argument.",
+      "narration_text": "Imagine a person who has listened to every conversation ever recorded. Every book read aloud. Every podcast. Every lecture. Every argument.",
+      "narrator_vo": "Imagine a person who has listened to every conversation ever recorded. Every book read aloud. Every podcast. Every lecture. Every argument.",
+      "visual_goal": "TRANSITION: Clean white background. Center frame, a massive bookshelf appears. Thousands of books. A figure stands in front of it — not reading, but listening.",
+      "duration_sec": 8.4,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Imagine a person who has listened to every conversation ever recorded. Every book read aloud. Every podcast. Every lecture. Every argument.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B009",
+      "scene_id": "SEG04",
+      "text": "They've heard everything. But they've never checked any of it. They don't know what's true. They know what sounds right.",
+      "narration_text": "They've heard everything. But they've never checked any of it. They don't know what's true. They know what sounds right.",
+      "narrator_vo": "They've heard everything. But they've never checked any of it. They don't know what's true. They know what sounds right.",
+      "visual_goal": "Sound waves flow into the figure's ears. Millions of them. The figure absorbs them all.",
+      "duration_sec": 8.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "They've heard everything. But they've never checked any of it. They don't know what's true. They know what sounds right.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B010",
+      "scene_id": "SEG04",
+      "text": "Same confidence. Same speed. One is right because the pattern is common. One is wrong because the pattern is rare — so the figure filled the gap with something that sounded plausible. It didn't hesitate. It didn't flag uncertainty. It just completed the sentence.",
+      "narration_text": "Same confidence. Same speed. One is right because the pattern is common. One is wrong because the pattern is rare — so the figure filled the gap with something that sounded plausible. It didn't hesitate. It didn't flag uncertainty. It just completed the sentence.",
+      "narrator_vo": "Same confidence. Same speed. One is right because the pattern is common. One is wrong because the pattern is rare — so the figure filled the gap with something that sounded plausible. It didn't hesitate. It didn't flag uncertainty. It just completed the sentence.",
+      "visual_goal": "Someone asks the figure: \"What year did Napoleon invade Russia?\" The figure responds instantly, confident: \"1812.\" Correct.",
+      "duration_sec": 17.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": true,
+      "narrative_stage": "CORE",
+      "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Same confidence. Same speed. One is right because the pattern is common. One is wrong because the pattern is rare — so the figure filled the gap with something that sounded plausible. It didn't hesitate. It didn't flag uncertainty. It just completed the sentence.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B011",
+      "scene_id": "SEG04",
+      "text": "Token prediction. Every word the AI writes is a probability gamble. It picks the most likely next word — or, if you turn up the temperature, it picks a less likely one for variety. That's the creativity dial. Turn it up, more creative. Turn it up too far, more nonsense.",
+      "narration_text": "Token prediction. Every word the AI writes is a probability gamble. It picks the most likely next word — or, if you turn up the temperature, it picks a less likely one for variety. That's the creativity dial. Turn it up, more creative. Turn it up too far, more nonsense.",
+      "narrator_vo": "Token prediction. Every word the AI writes is a probability gamble. It picks the most likely next word — or, if you turn up the temperature, it picks a less likely one for variety. That's the creativity dial. Turn it up, more creative. Turn it up too far, more nonsense.",
+      "visual_goal": "Someone asks: \"What year did Napoleon invade Japan?\" The figure responds just as confidently: \"1804.\" A red X appears. Japan never happened.",
+      "duration_sec": 20.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Token prediction. Every word the AI writes is a probability gamble. It picks the most likely next word — or, if you turn up the temperature, it picks a less likely one for variety. That's the creativity dial. Turn it up, more creative. Turn it up too far, more nonsense.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B012",
+      "scene_id": "SEG04",
+      "text": "Context window. The AI can only \"see\" a limited amount of text at once. Ask it about something from three thousand lines ago, and it's gone. It's not forgotten — it was never remembered. The AI is always reading through a keyhole.",
+      "narration_text": "Context window. The AI can only \"see\" a limited amount of text at once. Ask it about something from three thousand lines ago, and it's gone. It's not forgotten — it was never remembered. The AI is always reading through a keyhole.",
+      "narrator_vo": "Context window. The AI can only \"see\" a limited amount of text at once. Ask it about something from three thousand lines ago, and it's gone. It's not forgotten — it was never remembered. The AI is always reading through a keyhole.",
+      "visual_goal": "The bookshelf fades. Three technical concepts appear as simple diagrams:",
+      "duration_sec": 16.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Context window. The AI can only \"see\" a limited amount of text at once. Ask it about something from three thousand lines ago, and it's gone. It's not forgotten — it was never remembered. The AI is always reading through a keyhole.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B013",
+      "scene_id": "SEG04",
+      "text": "And the big one. There is no truth engine. No internal fact-checker. The AI has no mechanism to distinguish \"this is correct\" from \"this sounds correct.\" It doesn't have beliefs. It doesn't have knowledge. It has statistics.",
+      "narration_text": "And the big one. There is no truth engine. No internal fact-checker. The AI has no mechanism to distinguish \"this is correct\" from \"this sounds correct.\" It doesn't have beliefs. It doesn't have knowledge. It has statistics.",
+      "narrator_vo": "And the big one. There is no truth engine. No internal fact-checker. The AI has no mechanism to distinguish \"this is correct\" from \"this sounds correct.\" It doesn't have beliefs. It doesn't have knowledge. It has statistics.",
+      "visual_goal": "BOX 1: \"Token Prediction\" — a chain of words, each with a probability percentage. \"The\" → \"cat\" (42%) / \"dog\" (31%) / \"president\" (8%).",
+      "duration_sec": 14.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And the big one. There is no truth engine. No internal fact-checker. The AI has no mechanism to distinguish \"this is correct\" from \"this sounds correct.\" It doesn't have beliefs. It doesn't have knowledge. It has statistics.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B014",
+      "scene_id": "SEG04",
+      "text": "So more data doesn't fix hallucination. More data just gives the AI more patterns to mash together. The fix isn't a better AI. The fix is a better human.",
+      "narration_text": "So more data doesn't fix hallucination. More data just gives the AI more patterns to mash together. The fix isn't a better AI. The fix is a better human.",
+      "narrator_vo": "So more data doesn't fix hallucination. More data just gives the AI more patterns to mash together. The fix isn't a better AI. The fix is a better human.",
+      "visual_goal": "A temperature slider appears. Low: \"safe, repetitive.\" Medium: \"creative, useful.\" High: \"unhinged, hallucinatory.\"",
+      "duration_sec": 11.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "So more data doesn't fix hallucination. More data just gives the AI more patterns to mash together. The fix isn't a better AI. The fix is a better human.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B015",
+      "scene_id": "SEG04",
+      "text": "Specs tell AI what the answer should look like. Tests confirm the answer is correct. Gates stop bad answers from shipping. The AI doesn't verify itself. You do.",
+      "narration_text": "Specs tell AI what the answer should look like. Tests confirm the answer is correct. Gates stop bad answers from shipping. The AI doesn't verify itself. You do.",
+      "narrator_vo": "Specs tell AI what the answer should look like. Tests confirm the answer is correct. Gates stop bad answers from shipping. The AI doesn't verify itself. You do.",
+      "visual_goal": "BOX 2: \"Context Window\" — a horizontal bar, filled with text. As new text enters from the right, old text falls off the left edge.",
+      "duration_sec": 11.2,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "UNSETTLING TRUTH → UNDERSTANDING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Specs tell AI what the answer should look like. Tests confirm the answer is correct. Gates stop bad answers from shipping. The AI doesn't verify itself. You do.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B016",
+      "scene_id": "SEG05",
+      "text": "Here's the twist nobody talks about. Hallucination and creativity are the same mechanism. The ability to generate something that doesn't exist yet — that's what makes AI useful AND unreliable. You can't have one without the other.",
+      "narration_text": "Here's the twist nobody talks about. Hallucination and creativity are the same mechanism. The ability to generate something that doesn't exist yet — that's what makes AI useful AND unreliable. You can't have one without the other.",
+      "narrator_vo": "Here's the twist nobody talks about. Hallucination and creativity are the same mechanism. The ability to generate something that doesn't exist yet — that's what makes AI useful AND unreliable. You can't have one without the other.",
+      "visual_goal": "The slot machine from THE_CRACK reappears. But now it's reframed — labeled \"CREATIVITY ENGINE.\"",
+      "duration_sec": 14.8,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "UNDERSTANDING → ACCEPTANCE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Here's the twist nobody talks about. Hallucination and creativity are the same mechanism. The ability to generate something that doesn't exist yet — that's what makes AI useful AND unreliable. You can't have one without the other.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B017",
+      "scene_id": "SEG05",
+      "text": "The fix isn't better AI. It's better systems around the AI. Let it be creative. Then verify everything.",
+      "narration_text": "The fix isn't better AI. It's better systems around the AI. Let it be creative. Then verify everything.",
+      "narrator_vo": "The fix isn't better AI. It's better systems around the AI. Let it be creative. Then verify everything.",
+      "visual_goal": "The slot machine splits into two. Left: \"Hallucination — wrong pattern completion.\" Right: \"Creativity — novel pattern completion.\" Same machine, different outcome.",
+      "duration_sec": 7.2,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "UNDERSTANDING → ACCEPTANCE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The fix isn't better AI. It's better systems around the AI. Let it be creative. Then verify everything.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B018",
+      "scene_id": "SEG06",
+      "text": "AI doesn't lie. It doesn't know what lying is. It completes patterns. Your job isn't to trust it or distrust it. Your job is to check.",
+      "narration_text": "AI doesn't lie. It doesn't know what lying is. It completes patterns. Your job isn't to trust it or distrust it. Your job is to check.",
+      "narrator_vo": "AI doesn't lie. It doesn't know what lying is. It completes patterns. Your job isn't to trust it or distrust it. Your job is to check.",
+      "visual_goal": "Vee at her desk. She reads an AI response. This time, she doesn't nod along. She highlights a claim. Opens a browser tab. Checks it. Correct. Highlights another. Checks. Wrong — she deletes it and writes her own version.",
+      "duration_sec": 10.4,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "ACCEPTANCE → PRAGMATISM",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "AI doesn't lie. It doesn't know what lying is. It completes patterns. Your job isn't to trust it or distrust it. Your job is to check.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B019",
+      "scene_id": "SEG06",
+      "text": "Specs. Tests. Gates. That's the system. The AI creates. You verify.",
+      "narration_text": "Specs. Tests. Gates. That's the system. The AI creates. You verify.",
+      "narrator_vo": "Specs. Tests. Gates. That's the system. The AI creates. You verify.",
+      "visual_goal": "Vee places a sticky note on her monitor: \"AI는 자신감 있게 틀린다.\" (AI is confidently wrong.) She taps it once. Back to work.",
+      "duration_sec": 4.4,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 6,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "ACCEPTANCE → PRAGMATISM",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Specs. Tests. Gates. That's the system. The AI creates. You verify.",
+          "emotion": ""
+        }
+      ]
+    }
+  ]
+}

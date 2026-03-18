@@ -1,0 +1,214 @@
+Title: EP08 — 바이브코더 5대 실수
+Credit: Written by
+Author: vibecode.town
+Series: Vibecode Town Season 1
+Source: Listicle format — 5 common mistakes
+Draft date: 2026-03-18
+Duration: 3:30-4:00
+Notes: v5 (6-segment format, narrator-only, 2D flat vector, Vee solo). High retention listicle. Each mistake ~30s vignette. Vee makes each mistake then learns.
+
+/* ================================================================ */
+/* SEGMENT 1: HOOK [0:00-0:15]                                       */
+/* emotion_curve: CONFIDENCE → FORESHADOWING                         */
+/* narrative_stage: HOOK                                              */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+/* shorts_candidate */
+
+INT. VEE'S ROOM - DAY
+
+= Five monitors arranged in an arc around Vee. Each one shows a different project. She cracks her knuckles. Types on one. Swivels to another. Types. Swivels. She's in the zone.
+
+/* vee_reaction: 1/6 */
+
+= All five monitors go red simultaneously. Error messages. Crash logs. A sad-face emoji from one app. Vee freezes mid-swivel.
+
+NARRATOR (V.O.)
+Vee has been vibe coding for a month. She's fast. She's productive. And she keeps making the same five mistakes over and over.
+
+= BEAT.
+
+NARRATOR (V.O.)
+Every vibe coder does. Here are all five.
+
+> TITLE CARD: **바이브코더 5대 실수**
+
+---
+
+/* ================================================================ */
+/* SEGMENT 2: MISCONCEPTION [0:15-0:45]                              */
+/* emotion_curve: "I'M PAST THE BASICS" → HUMBLING                   */
+/* narrative_stage: MISCONCEPTION                                    */
+/* — MISTAKE #1: NO SPEC —                                          */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+= TITLE INSERT: "실수 #1: 스펙 없이 시작한다"
+
+INT. VEE'S ROOM - DAY
+
+= Vee opens an AI chat. Types: "Build me a dashboard." The AI builds a dashboard. It has charts, tables, buttons. It looks great.
+
+NARRATOR (V.O.)
+Mistake number one. No spec. Just vibes.
+
+= Vee looks at the dashboard. The charts show random data. The buttons don't connect to anything. The color scheme is purple and orange — she wanted blue and white.
+
+NARRATOR (V.O.)
+She got A dashboard. Not HER dashboard. Because she never defined what "her dashboard" means.
+
+= Quick fix flash: A sticky note appears on screen — three bullet points. Purpose, constraints, done-criteria. The AI rebuilds. This time it matches.
+
+NARRATOR (V.O.)
+Fix: three sentences before you start. What it does, what it doesn't do, what "done" looks like.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 3: THE_CRACK [0:45-1:15]                                  */
+/* emotion_curve: HUMBLING → DEEPER RECOGNITION                     */
+/* narrative_stage: THE_CRACK                                        */
+/* — MISTAKE #2: ONE GIANT FILE —                                   */
+/* ================================================================ */
+
+/* visual_type: motion_graphic | space: desk */
+
+= TITLE INSERT: "실수 #2: 파일 하나에 다 넣는다"
+
+= Vee's screen shows a single file: `app.js`. The scroll bar is tiny — the file is enormous. She scrolls. And scrolls. And scrolls. The line counter reads 4,200.
+
+/* vee_reaction: 2/6 */
+
+= Vee squints. She's looking for the login function. She scrolls past the database connection, past the CSS, past three different API handlers, past a TODO from two weeks ago. She finds "login" — there are four versions. She doesn't know which one is active.
+
+NARRATOR (V.O.)
+Mistake number two. Everything in one file. AI doesn't care about file structure. It'll happily write four thousand lines into a single file. Login next to CSS next to database next to that weird function you asked for at 2 AM and forgot about.
+
+= Quick fix flash: The single file splits into five smaller files. Each has a clear name: `auth.js`, `db.js`, `api.js`, `styles.css`, `utils.js`. Clean.
+
+NARRATOR (V.O.)
+Fix: before you build, tell AI where things go. "Auth logic goes in auth.js. Styles go in styles.css." The AI follows structure. It just won't create structure on its own.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 4: CORE [1:15-3:00]                                       */
+/* emotion_curve: RECOGNITION → PATTERN AWARENESS                    */
+/* narrative_stage: CORE                                              */
+/* — MISTAKES #3, #4, #5 —                                          */
+/* ================================================================ */
+
+/* visual_type: motion_graphic | space: desk */
+
+= TITLE INSERT: "실수 #3: 테스트를 안 쓴다"
+
+= Vee finishes a feature. She runs the app. It looks fine. She ships it. Time passes — a clock fast-forwards. A user reports a bug. Vee opens the code. She has no idea what broke because she has no tests.
+
+NARRATOR (V.O.)
+Mistake number three. No tests. The app works on her machine. She saw it work. Once. With one input. That's not testing — that's hoping.
+
+= Quick fix flash: Three test lines appear. "When input is empty — show error." "When input is valid — save it." "When server is down — show retry." Three lines. Three safety nets.
+
+/* shorts_candidate */
+
+NARRATOR (V.O.)
+Fix: one test per feature. Not a test suite. Not TDD. Just one line that says "if this doesn't work, something is broken." Three tests catch eighty percent of bugs. Zero tests catch zero.
+
+= TITLE INSERT: "실수 #4: 에러를 무시한다"
+
+/* visual_type: character_reaction | space: desk */
+
+= Vee's terminal shows a wall of red text. Warnings, deprecation notices, error traces. She glances at it. The app still runs. She shrugs and keeps building.
+
+/* vee_reaction: 3/6 */
+
+= Vee literally drags the terminal window off-screen. Out of sight, out of mind.
+
+NARRATOR (V.O.)
+Mistake number four. Ignoring errors. The app runs, so the errors don't matter, right? Wrong. Those warnings are tomorrow's crashes. They're the AI telling you "I did what you asked, but something smells wrong."
+
+= Quick fix flash: Vee drags the terminal back. She reads the top error. It says "deprecated API — will be removed in v3." She tells AI to update it. Two minutes. Done.
+
+NARRATOR (V.O.)
+Fix: read the first error. Just the first one. Fix it. Then read the next. You don't have to fix all of them. You have to stop pretending they don't exist.
+
+= TITLE INSERT: "실수 #5: AI 출력을 안 읽는다"
+
+/* visual_type: motion_graphic | space: desk */
+
+= Split screen. Left: AI chat with a long response — detailed explanation, code, warnings, caveats. Right: Vee. She scrolls past everything, grabs the code block, copies it, pastes it into her editor. She never reads the text around it.
+
+/* vee_reaction: 4/6 */
+
+= The AI's response had a warning in paragraph two: "Note: this approach will fail if the user is not authenticated." Vee missed it. The code crashes in production.
+
+NARRATOR (V.O.)
+Mistake number five. The biggest one. Not reading the output. AI doesn't just write code. It writes explanations, warnings, trade-offs, caveats. The code is the least important part of the response. And most people only copy the code.
+
+= Quick fix flash: Vee reads the full response. She spots the warning. She adds an auth check before pasting the code. Thirty seconds of reading saves three hours of debugging.
+
+NARRATOR (V.O.)
+Fix: read the response before you copy the code. Every time. The AI is trying to tell you something. Let it.
+
+/* vee_reaction: 5/6 */
+
+= Vee leans back. She looks at her five monitors. Five mistakes. Five fixes. She exhales.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 5: REFRAME [3:00-3:30]                                    */
+/* emotion_curve: PATTERN AWARENESS → INSIGHT                        */
+/* narrative_stage: REFRAME                                          */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+
+= The five mistakes appear as a list. Beside each one, the fix. Below — a single insight:
+
+NARRATOR (V.O.)
+Look at these five mistakes. No spec. No structure. No tests. Ignoring errors. Not reading. Notice anything?
+
+= The list transforms. "AI" fades from every item. What remains: "No plan. No organization. No verification. No attention. No reading."
+
+/* shorts_candidate */
+
+NARRATOR (V.O.)
+None of these are AI problems. These are human problems. AI just makes them visible faster. Without AI, these mistakes take months to surface. With AI, they take minutes.
+
+= The list compresses into a single line: "AI is a mirror. It reflects your habits at ten times the speed."
+
+NARRATOR (V.O.)
+AI is a speed multiplier. It multiplies good habits AND bad habits. The tool isn't the problem. The workflow is.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 6: OUTRO_CTA [3:30-3:55]                                  */
+/* emotion_curve: INSIGHT → SELF-AWARENESS                           */
+/* narrative_stage: OUTRO_CTA                                        */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S ROOM - NIGHT
+
+= Vee at her desk. One monitor now. She opens an AI chat. But before typing, she pauses. Pulls out her notebook. Writes three bullet points. Looks at them. Nods. Then types.
+
+NARRATOR (V.O.)
+Five mistakes. Five fixes. None of them require better AI. All of them require ten seconds of thinking before you type.
+
+/* vee_reaction: 6/6 */
+
+= Vee posts a checklist next to her monitor. Five items. She checks off the first one before starting her next session: "Did I write what I want?"
+
+NARRATOR (V.O.)
+Slow down for ten seconds. The AI will wait.
+
+> END CARD: 구독 + "다음 편: 이 영상은 AI가 만들었다"
+
+= FADE TO BLACK.
+
+> END

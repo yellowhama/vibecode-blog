@@ -25,8 +25,8 @@ python assemble_episode.py -e 01 --stage 1 --draft
 | 2. Timing | `whisper_timing.py` | Whisper medium | 2GB | 3min | **Tested** — 87 entries SRT + timing.json ✅ |
 | 3. Keyframes | `render_keyframes.py` | Flux LoRA T2I (SimpleVectorFlux) | ~12GB | 30min | **EP01 complete** — 32 keyframes via `--workflow lora` ✅ |
 | 4. Animation | `animate_shots.py` | Wan 2.2 I2V-14B GGUF Q5 (ComfyUI) | 12-16GB | 60min | Available, deferred to v2 (Ken Burns v1) |
-| 5. Diagrams | Motion Canvas (`vibecode-diagrams/`) | TypeScript | 0 | 120min | **Project scaffolded** — deferred to v2 |
-| 6. BGM | `acestep_bgm.py` + `mix_audio.py` | ACE-Step 1.5 | <4GB | 1min | **Mixer tested** ✅, ACE-Step deferred (GPU contention) |
+| 5. Diagrams | Motion Canvas (`vibecode-diagrams/`) | TypeScript | 0 | 120min | **Active** — Dynamic 2D rendering routed for >=60% of CORE shots |
+| 6. BGM | `acestep_bgm.py` + `mix_audio.py` | ACE-Step 1.5 | <4GB | 1min | **Mixer upgraded** ✅ (ducking, crossfade, sfx) |
 | 7. Assembly | `ffmpeg_assemble.py` | FFmpeg | 0 | 10min | **EP01 complete** — concat + audio overlay ✅ |
 
 ## Model Stack (2026-03)
@@ -124,10 +124,10 @@ python generate_tts_from_prepro.py --tts-backend edge ...
 
 ## Next Steps
 
-### EP01 v2 Upgrade (quality pass)
-1. **Wan 2.2 I2V** — Replace Ken Burns clips with real I2V animation (~6-8h GPU, run overnight)
-2. **ACE-Step BGM** — Generate custom BGM (retry with GPU exclusive access)
-3. **Motion Canvas** — Replace Ken Burns for C01-C10 diagram shots with animated diagrams
+### EP01 v3 Upgrade (Current State)
+1. **Script Validation** — `validate_screenplay.py` enforces 15 rules (Tone, Discovery Arc, 80/20 diagram ratio).
+2. **Audio Mix** — `mix_audio.py` features sidechain ducking, multiple BGM crossfades, and 6 new SFX synced.
+3. **Motion Canvas** — `build_shot_manifest_from_prepro.py` forces >=60% motion canvas routing for CORE beats.
 
 ### EP02 Production
 4. Script writing → Fountain format

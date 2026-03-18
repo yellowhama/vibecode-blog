@@ -1,0 +1,1549 @@
+{
+  "project_id": "ep01_v3",
+  "version": "6.0",
+  "title": "EP01 — 스펙이 뭔가?",
+  "language": "en",
+  "total_duration_sec": 235,
+  "segment_count": 6,
+  "beat_count": 26,
+  "segments": [
+    "HOOK",
+    "MISCONCEPTION",
+    "THE_CRACK",
+    "CORE",
+    "REFRAME",
+    "OUTRO_CTA"
+  ],
+  "phases": [
+    {
+      "phase_id": "SEG01",
+      "phase_name": "HOOK",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "EXCITEMENT → SHOCK",
+      "narrative_stage": "HOOK",
+      "target_duration_sec": 15,
+      "beats": [
+        {
+          "beat_id": "SEG01_B001",
+          "scene_id": "SEG01",
+          "text": "You asked AI to build it. It said yes.",
+          "narration_text": "You asked AI to build it. It said yes.",
+          "narrator_vo": "You asked AI to build it. It said yes.",
+          "visual_goal": "Five monitors flash green \"BUILD SUCCESS\" → cascade into red errors.",
+          "duration_sec": 3.6,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": true,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "EXCITEMENT → SHOCK",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "You asked AI to build it. It said yes.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG01_B002",
+          "scene_id": "SEG01",
+          "text": "Three seconds later, nothing works. And you can't read a single error.",
+          "narration_text": "Three seconds later, nothing works. And you can't read a single error.",
+          "narrator_vo": "Three seconds later, nothing works. And you can't read a single error.",
+          "visual_goal": "Five monitors glow in a dark room. Vee throws both arms up. Every screen flashes green: \"BUILD SUCCESS.\"",
+          "duration_sec": 4.8,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 1,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "EXCITEMENT → SHOCK",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Three seconds later, nothing works. And you can't read a single error.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG02",
+      "phase_name": "MISCONCEPTION",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "OVERCONFIDENCE → CONFUSION",
+      "narrative_stage": "MISCONCEPTION",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG02_B003",
+          "scene_id": "SEG02",
+          "text": "Three days ago, Vee discovered vibe coding. Type what you want. AI builds it. Done.",
+          "narration_text": "Three days ago, Vee discovered vibe coding. Type what you want. AI builds it. Done.",
+          "narrator_vo": "Three days ago, Vee discovered vibe coding. Type what you want. AI builds it. Done.",
+          "visual_goal": "Vee's false assumption: \"AI가 만드니까 스펙 필요 없지?\"",
+          "duration_sec": 6.0,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "OVERCONFIDENCE → CONFUSION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Three days ago, Vee discovered vibe coding. Type what you want. AI builds it. Done.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B004",
+          "scene_id": "SEG02",
+          "text": "A to-do app. A database. A login page. Five minutes each.",
+          "narration_text": "A to-do app. A database. A login page. Five minutes each.",
+          "narrator_vo": "A to-do app. A database. A login page. Five minutes each.",
+          "visual_goal": "MONTAGE: Vee types → app appears. Types → app appears. Each time faster.",
+          "duration_sec": 4.4,
+          "segment": "MISCONCEPTION",
+          "visual_type": "diagram",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "OVERCONFIDENCE → CONFUSION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "A to-do app. A database. A login page. Five minutes each.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B005",
+          "scene_id": "SEG02",
+          "text": "By day three, she had five agents running. She couldn't explain what any of them did. But they ran. So she assumed they worked.",
+          "narration_text": "By day three, she had five agents running. She couldn't explain what any of them did. But they ran. So she assumed they worked.",
+          "narrator_vo": "By day three, she had five agents running. She couldn't explain what any of them did. But they ran. So she assumed they worked.",
+          "visual_goal": "Vee spins in her chair, arms crossed, nodding. Five terminal windows run simultaneously.",
+          "duration_sec": 9.6,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 2,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "OVERCONFIDENCE → CONFUSION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "By day three, she had five agents running. She couldn't explain what any of them did. But they ran. So she assumed they worked.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B006",
+          "scene_id": "SEG02",
+          "text": "Why write a spec? AI handles everything. Right?",
+          "narration_text": "Why write a spec? AI handles everything. Right?",
+          "narrator_vo": "Why write a spec? AI handles everything. Right?",
+          "visual_goal": "Why write a spec? AI handles everything. Right?",
+          "duration_sec": 3.2,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "OVERCONFIDENCE → CONFUSION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Why write a spec? AI handles everything. Right?",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG03",
+      "phase_name": "THE_CRACK",
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "CONFUSION → DOUBT",
+      "narrative_stage": "THE_CRACK",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG03_B007",
+          "scene_id": "SEG03",
+          "text": "Ten thousand, eight hundred and forty-seven lines. Almost half of it — duplicated.",
+          "narration_text": "Ten thousand, eight hundred and forty-seven lines. Almost half of it — duplicated.",
+          "narrator_vo": "Ten thousand, eight hundred and forty-seven lines. Almost half of it — duplicated.",
+          "visual_goal": "\"코드가 돌아갔다. 근데 뭘 하는지 설명 못 한다.\"",
+          "duration_sec": 5.2,
+          "segment": "THE_CRACK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "CONFUSION → DOUBT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Ten thousand, eight hundred and forty-seven lines. Almost half of it — duplicated.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B008",
+          "scene_id": "SEG03",
+          "text": "Five AI sessions built the same functions five different ways. None of them knew the others existed.",
+          "narration_text": "Five AI sessions built the same functions five different ways. None of them knew the others existed.",
+          "narrator_vo": "Five AI sessions built the same functions five different ways. None of them knew the others existed.",
+          "visual_goal": "Vee scrolls through code. It doesn't end. She scrolls faster. Still doesn't end.",
+          "duration_sec": 6.8,
+          "segment": "THE_CRACK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "CONFUSION → DOUBT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Five AI sessions built the same functions five different ways. None of them knew the others existed.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B009",
+          "scene_id": "SEG03",
+          "text": "The code ran. But she couldn't explain what it does. That's not a bug. That's a different kind of broken.",
+          "narration_text": "The code ran. But she couldn't explain what it does. That's not a bug. That's a different kind of broken.",
+          "narrator_vo": "The code ran. But she couldn't explain what it does. That's not a bug. That's a different kind of broken.",
+          "visual_goal": "Counter ticks: 10,847. Splits into 6,647 (white) and 4,200 (red, peels away).",
+          "duration_sec": 8.0,
+          "segment": "THE_CRACK",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "CONFUSION → DOUBT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The code ran. But she couldn't explain what it does. That's not a bug. That's a different kind of broken.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG04",
+      "phase_name": "CORE",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "DOUBT → CLARITY",
+      "narrative_stage": "CORE",
+      "target_duration_sec": 105,
+      "beats": [
+        {
+          "beat_id": "SEG04_B010",
+          "scene_id": "SEG04",
+          "text": "Here's a building. Built with a blueprint. Foundation first, walls on top, roof last. Everything connects because someone decided the order before the first brick.",
+          "narration_text": "Here's a building. Built with a blueprint. Foundation first, walls on top, roof last. Everything connects because someone decided the order before the first brick.",
+          "narrator_vo": "Here's a building. Built with a blueprint. Foundation first, walls on top, roof last. Everything connects because someone decided the order before the first brick.",
+          "visual_goal": "Building metaphor: blueprint vs. random stacking.",
+          "duration_sec": 10.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Here's a building. Built with a blueprint. Foundation first, walls on top, roof last. Everything connects because someone decided the order before the first brick.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B011",
+          "scene_id": "SEG04",
+          "text": "Now here's a building without a blueprint. Just... stack things. Whatever arrives first goes at the bottom.",
+          "narration_text": "Now here's a building without a blueprint. Just... stack things. Whatever arrives first goes at the bottom.",
+          "narrator_vo": "Now here's a building without a blueprint. Just... stack things. Whatever arrives first goes at the bottom.",
+          "visual_goal": "A building rises on screen, piece by piece, following a glowing blue blueprint.",
+          "duration_sec": 6.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Now here's a building without a blueprint. Just... stack things. Whatever arrives first goes at the bottom.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B012",
+          "scene_id": "SEG04",
+          "text": "It looks like a building. It stands — for now. But the plumbing runs through the attic, and the front door opens into a wall.",
+          "narration_text": "It looks like a building. It stands — for now. But the plumbing runs through the attic, and the front door opens into a wall.",
+          "narrator_vo": "It looks like a building. It stands — for now. But the plumbing runs through the attic, and the front door opens into a wall.",
+          "visual_goal": "Blocks pile randomly. The structure wobbles. Leans.",
+          "duration_sec": 10.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "It looks like a building. It stands — for now. But the plumbing runs through the attic, and the front door opens into a wall.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B013",
+          "scene_id": "SEG04",
+          "text": "That's what happened to Vee's code. Each AI agent stacked features without knowing the plan. Because there was no plan.",
+          "narration_text": "That's what happened to Vee's code. Each AI agent stacked features without knowing the plan. Because there was no plan.",
+          "narrator_vo": "That's what happened to Vee's code. Each AI agent stacked features without knowing the plan. Because there was no plan.",
+          "visual_goal": "The random building collapses. Blocks tumble.",
+          "duration_sec": 8.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": true,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "That's what happened to Vee's code. Each AI agent stacked features without knowing the plan. Because there was no plan.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B014",
+          "scene_id": "SEG04",
+          "text": "Industry data backs this up. Two-thirds of software projects fail. The number one reason? Nobody wrote down what they're building.",
+          "narration_text": "Industry data backs this up. Two-thirds of software projects fail. The number one reason? Nobody wrote down what they're building.",
+          "narrator_vo": "Industry data backs this up. Two-thirds of software projects fail. The number one reason? Nobody wrote down what they're building.",
+          "visual_goal": "Text overlay: \"66% of IT projects fail — #1 cause: incomplete requirements\" (Standish CHAOS)",
+          "duration_sec": 8.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Industry data backs this up. Two-thirds of software projects fail. The number one reason? Nobody wrote down what they're building.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B015",
+          "scene_id": "SEG04",
+          "text": "A bug caught during planning costs one dollar. The same bug in production? A hundred. Barry Boehm proved this in 1981.",
+          "narration_text": "A bug caught during planning costs one dollar. The same bug in production? A hundred. Barry Boehm proved this in 1981.",
+          "narrator_vo": "A bug caught during planning costs one dollar. The same bug in production? A hundred. Barry Boehm proved this in 1981.",
+          "visual_goal": "Bar chart animates: $1 → $10 → $100.",
+          "duration_sec": 8.4,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "A bug caught during planning costs one dollar. The same bug in production? A hundred. Barry Boehm proved this in 1981.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B016",
+          "scene_id": "SEG04",
+          "text": "So what IS a spec? Not a hundred-page document. Four questions.",
+          "narration_text": "So what IS a spec? Not a hundred-page document. Four questions.",
+          "narrator_vo": "So what IS a spec? Not a hundred-page document. Four questions.",
+          "visual_goal": "Blank page appears. Four boxes draw themselves:",
+          "duration_sec": 4.4,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "So what IS a spec? Not a hundred-page document. Four questions.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B017",
+          "scene_id": "SEG04",
+          "text": "Purpose. Reason. Method. Means. Answer those four, and you have a spec. That's it.",
+          "narration_text": "Purpose. Reason. Method. Means. Answer those four, and you have a spec. That's it.",
+          "narrator_vo": "Purpose. Reason. Method. Means. Answer those four, and you have a spec. That's it.",
+          "visual_goal": "Text fills each box: \"What am I trying to do?\" / \"Why doesn't the current way work?\" / \"How should it work?\" / \"What tools will I use?\"",
+          "duration_sec": 5.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Purpose. Reason. Method. Means. Answer those four, and you have a spec. That's it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B018",
+          "scene_id": "SEG04",
+          "text": "Vee stopped coding. She started writing what was bothering her.",
+          "narration_text": "Vee stopped coding. She started writing what was bothering her.",
+          "narrator_vo": "Vee stopped coding. She started writing what was bothering her.",
+          "visual_goal": "Vee pulls out paper and pencil. Turns her back to the monitors.",
+          "duration_sec": 4.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 4,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Vee stopped coding. She started writing what was bothering her.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B019",
+          "scene_id": "SEG04",
+          "text": "One sentence that explains everything. Not features. Not tools. The reason.",
+          "narration_text": "One sentence that explains everything. Not features. Not tools. The reason.",
+          "narrator_vo": "One sentence that explains everything. Not features. Not tools. The reason.",
+          "visual_goal": "CU: Paper. Messy handwriting: \"I don't know what I built.\"",
+          "duration_sec": 4.4,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "One sentence that explains everything. Not features. Not tools. The reason.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B020",
+          "scene_id": "SEG04",
+          "text": "And now the errors make sense. Line eight forty-seven wasn't random. It was an open door she never meant to build.",
+          "narration_text": "And now the errors make sense. Line eight forty-seven wasn't random. It was an open door she never meant to build.",
+          "narrator_vo": "And now the errors make sense. Line eight forty-seven wasn't random. It was an open door she never meant to build.",
+          "visual_goal": "The pencil stops. Then moves again: \"I want to use my home computer from anywhere.\"",
+          "duration_sec": 8.4,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And now the errors make sense. Line eight forty-seven wasn't random. It was an open door she never meant to build.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B021",
+          "scene_id": "SEG04",
+          "text": "Same errors. But now, one line makes sense. Because she knows what she's looking for.",
+          "narration_text": "Same errors. But now, one line makes sense. Because she knows what she's looking for.",
+          "narrator_vo": "Same errors. But now, one line makes sense. Because she knows what she's looking for.",
+          "visual_goal": "Below: \"Files should stay in sync.\" \"Access from any device.\" \"Can't drop the connection.\"",
+          "duration_sec": 6.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": true,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Same errors. But now, one line makes sense. Because she knows what she's looking for.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG05",
+      "phase_name": "REFRAME",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "CLARITY → UNDERSTANDING",
+      "narrative_stage": "REFRAME",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG05_B022",
+          "scene_id": "SEG05",
+          "text": "Here's what most people miss. This isn't about Cursor, or ChatGPT, or Claude. Every AI tool wants the same thing from you.",
+          "narration_text": "Here's what most people miss. This isn't about Cursor, or ChatGPT, or Claude. Every AI tool wants the same thing from you.",
+          "narrator_vo": "Here's what most people miss. This isn't about Cursor, or ChatGPT, or Claude. Every AI tool wants the same thing from you.",
+          "visual_goal": "Zoom out: bigger picture.",
+          "duration_sec": 8.8,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "CLARITY → UNDERSTANDING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Here's what most people miss. This isn't about Cursor, or ChatGPT, or Claude. Every AI tool wants the same thing from you.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B023",
+          "scene_id": "SEG05",
+          "text": "A definition of \"done.\" What does finished look like? If you can't answer that, no amount of AI will save you.",
+          "narration_text": "A definition of \"done.\" What does finished look like? If you can't answer that, no amount of AI will save you.",
+          "narrator_vo": "A definition of \"done.\" What does finished look like? If you can't answer that, no amount of AI will save you.",
+          "visual_goal": "Icons of AI tools appear, then fade. A single question mark remains.",
+          "duration_sec": 8.4,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "CLARITY → UNDERSTANDING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "A definition of \"done.\" What does finished look like? If you can't answer that, no amount of AI will save you.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B024",
+          "scene_id": "SEG05",
+          "text": "A spec isn't documentation. It's the shortest path between frustration and something that actually works.",
+          "narration_text": "A spec isn't documentation. It's the shortest path between frustration and something that actually works.",
+          "narrator_vo": "A spec isn't documentation. It's the shortest path between frustration and something that actually works.",
+          "visual_goal": "The four spec boxes reappear, small, connected to a larger system diagram.",
+          "duration_sec": 6.0,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "CLARITY → UNDERSTANDING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "A spec isn't documentation. It's the shortest path between frustration and something that actually works.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG06",
+      "phase_name": "OUTRO_CTA",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "UNDERSTANDING → CONFIDENCE",
+      "narrative_stage": "OUTRO_CTA",
+      "target_duration_sec": 25,
+      "beats": [
+        {
+          "beat_id": "SEG06_B025",
+          "scene_id": "SEG06",
+          "text": "Everything is still broken. But now she knows what to fix.",
+          "narration_text": "Everything is still broken. But now she knows what to fix.",
+          "narrator_vo": "Everything is still broken. But now she knows what to fix.",
+          "visual_goal": "Mirror of HOOK. Same room, different person.",
+          "duration_sec": 4.4,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "UNDERSTANDING → CONFIDENCE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Everything is still broken. But now she knows what to fix.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B026",
+          "scene_id": "SEG06",
+          "text": "Next time — she wrote the spec. And AI gave her something completely different from what she expected. Again.",
+          "narration_text": "Next time — she wrote the spec. And AI gave her something completely different from what she expected. Again.",
+          "narrator_vo": "Next time — she wrote the spec. And AI gave her something completely different from what she expected. Again.",
+          "visual_goal": "Same composition as HOOK. Five monitors. Red errors. Dark room.",
+          "duration_sec": 7.6,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "UNDERSTANDING → CONFIDENCE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Next time — she wrote the spec. And AI gave her something completely different from what she expected. Again.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "beat_id": "SEG01_B001",
+      "scene_id": "SEG01",
+      "text": "You asked AI to build it. It said yes.",
+      "narration_text": "You asked AI to build it. It said yes.",
+      "narrator_vo": "You asked AI to build it. It said yes.",
+      "visual_goal": "Five monitors flash green \"BUILD SUCCESS\" → cascade into red errors.",
+      "duration_sec": 3.6,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "EXCITEMENT → SHOCK",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "You asked AI to build it. It said yes.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG01_B002",
+      "scene_id": "SEG01",
+      "text": "Three seconds later, nothing works. And you can't read a single error.",
+      "narration_text": "Three seconds later, nothing works. And you can't read a single error.",
+      "narrator_vo": "Three seconds later, nothing works. And you can't read a single error.",
+      "visual_goal": "Five monitors glow in a dark room. Vee throws both arms up. Every screen flashes green: \"BUILD SUCCESS.\"",
+      "duration_sec": 4.8,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 1,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "EXCITEMENT → SHOCK",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Three seconds later, nothing works. And you can't read a single error.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B003",
+      "scene_id": "SEG02",
+      "text": "Three days ago, Vee discovered vibe coding. Type what you want. AI builds it. Done.",
+      "narration_text": "Three days ago, Vee discovered vibe coding. Type what you want. AI builds it. Done.",
+      "narrator_vo": "Three days ago, Vee discovered vibe coding. Type what you want. AI builds it. Done.",
+      "visual_goal": "Vee's false assumption: \"AI가 만드니까 스펙 필요 없지?\"",
+      "duration_sec": 6.0,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "OVERCONFIDENCE → CONFUSION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Three days ago, Vee discovered vibe coding. Type what you want. AI builds it. Done.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B004",
+      "scene_id": "SEG02",
+      "text": "A to-do app. A database. A login page. Five minutes each.",
+      "narration_text": "A to-do app. A database. A login page. Five minutes each.",
+      "narrator_vo": "A to-do app. A database. A login page. Five minutes each.",
+      "visual_goal": "MONTAGE: Vee types → app appears. Types → app appears. Each time faster.",
+      "duration_sec": 4.4,
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "OVERCONFIDENCE → CONFUSION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "A to-do app. A database. A login page. Five minutes each.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B005",
+      "scene_id": "SEG02",
+      "text": "By day three, she had five agents running. She couldn't explain what any of them did. But they ran. So she assumed they worked.",
+      "narration_text": "By day three, she had five agents running. She couldn't explain what any of them did. But they ran. So she assumed they worked.",
+      "narrator_vo": "By day three, she had five agents running. She couldn't explain what any of them did. But they ran. So she assumed they worked.",
+      "visual_goal": "Vee spins in her chair, arms crossed, nodding. Five terminal windows run simultaneously.",
+      "duration_sec": 9.6,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 2,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "OVERCONFIDENCE → CONFUSION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "By day three, she had five agents running. She couldn't explain what any of them did. But they ran. So she assumed they worked.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B006",
+      "scene_id": "SEG02",
+      "text": "Why write a spec? AI handles everything. Right?",
+      "narration_text": "Why write a spec? AI handles everything. Right?",
+      "narrator_vo": "Why write a spec? AI handles everything. Right?",
+      "visual_goal": "Why write a spec? AI handles everything. Right?",
+      "duration_sec": 3.2,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "OVERCONFIDENCE → CONFUSION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Why write a spec? AI handles everything. Right?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B007",
+      "scene_id": "SEG03",
+      "text": "Ten thousand, eight hundred and forty-seven lines. Almost half of it — duplicated.",
+      "narration_text": "Ten thousand, eight hundred and forty-seven lines. Almost half of it — duplicated.",
+      "narrator_vo": "Ten thousand, eight hundred and forty-seven lines. Almost half of it — duplicated.",
+      "visual_goal": "\"코드가 돌아갔다. 근데 뭘 하는지 설명 못 한다.\"",
+      "duration_sec": 5.2,
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "CONFUSION → DOUBT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Ten thousand, eight hundred and forty-seven lines. Almost half of it — duplicated.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B008",
+      "scene_id": "SEG03",
+      "text": "Five AI sessions built the same functions five different ways. None of them knew the others existed.",
+      "narration_text": "Five AI sessions built the same functions five different ways. None of them knew the others existed.",
+      "narrator_vo": "Five AI sessions built the same functions five different ways. None of them knew the others existed.",
+      "visual_goal": "Vee scrolls through code. It doesn't end. She scrolls faster. Still doesn't end.",
+      "duration_sec": 6.8,
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "CONFUSION → DOUBT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Five AI sessions built the same functions five different ways. None of them knew the others existed.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B009",
+      "scene_id": "SEG03",
+      "text": "The code ran. But she couldn't explain what it does. That's not a bug. That's a different kind of broken.",
+      "narration_text": "The code ran. But she couldn't explain what it does. That's not a bug. That's a different kind of broken.",
+      "narrator_vo": "The code ran. But she couldn't explain what it does. That's not a bug. That's a different kind of broken.",
+      "visual_goal": "Counter ticks: 10,847. Splits into 6,647 (white) and 4,200 (red, peels away).",
+      "duration_sec": 8.0,
+      "segment": "THE_CRACK",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "CONFUSION → DOUBT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The code ran. But she couldn't explain what it does. That's not a bug. That's a different kind of broken.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B010",
+      "scene_id": "SEG04",
+      "text": "Here's a building. Built with a blueprint. Foundation first, walls on top, roof last. Everything connects because someone decided the order before the first brick.",
+      "narration_text": "Here's a building. Built with a blueprint. Foundation first, walls on top, roof last. Everything connects because someone decided the order before the first brick.",
+      "narrator_vo": "Here's a building. Built with a blueprint. Foundation first, walls on top, roof last. Everything connects because someone decided the order before the first brick.",
+      "visual_goal": "Building metaphor: blueprint vs. random stacking.",
+      "duration_sec": 10.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Here's a building. Built with a blueprint. Foundation first, walls on top, roof last. Everything connects because someone decided the order before the first brick.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B011",
+      "scene_id": "SEG04",
+      "text": "Now here's a building without a blueprint. Just... stack things. Whatever arrives first goes at the bottom.",
+      "narration_text": "Now here's a building without a blueprint. Just... stack things. Whatever arrives first goes at the bottom.",
+      "narrator_vo": "Now here's a building without a blueprint. Just... stack things. Whatever arrives first goes at the bottom.",
+      "visual_goal": "A building rises on screen, piece by piece, following a glowing blue blueprint.",
+      "duration_sec": 6.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Now here's a building without a blueprint. Just... stack things. Whatever arrives first goes at the bottom.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B012",
+      "scene_id": "SEG04",
+      "text": "It looks like a building. It stands — for now. But the plumbing runs through the attic, and the front door opens into a wall.",
+      "narration_text": "It looks like a building. It stands — for now. But the plumbing runs through the attic, and the front door opens into a wall.",
+      "narrator_vo": "It looks like a building. It stands — for now. But the plumbing runs through the attic, and the front door opens into a wall.",
+      "visual_goal": "Blocks pile randomly. The structure wobbles. Leans.",
+      "duration_sec": 10.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "It looks like a building. It stands — for now. But the plumbing runs through the attic, and the front door opens into a wall.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B013",
+      "scene_id": "SEG04",
+      "text": "That's what happened to Vee's code. Each AI agent stacked features without knowing the plan. Because there was no plan.",
+      "narration_text": "That's what happened to Vee's code. Each AI agent stacked features without knowing the plan. Because there was no plan.",
+      "narrator_vo": "That's what happened to Vee's code. Each AI agent stacked features without knowing the plan. Because there was no plan.",
+      "visual_goal": "The random building collapses. Blocks tumble.",
+      "duration_sec": 8.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": true,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "That's what happened to Vee's code. Each AI agent stacked features without knowing the plan. Because there was no plan.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B014",
+      "scene_id": "SEG04",
+      "text": "Industry data backs this up. Two-thirds of software projects fail. The number one reason? Nobody wrote down what they're building.",
+      "narration_text": "Industry data backs this up. Two-thirds of software projects fail. The number one reason? Nobody wrote down what they're building.",
+      "narrator_vo": "Industry data backs this up. Two-thirds of software projects fail. The number one reason? Nobody wrote down what they're building.",
+      "visual_goal": "Text overlay: \"66% of IT projects fail — #1 cause: incomplete requirements\" (Standish CHAOS)",
+      "duration_sec": 8.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Industry data backs this up. Two-thirds of software projects fail. The number one reason? Nobody wrote down what they're building.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B015",
+      "scene_id": "SEG04",
+      "text": "A bug caught during planning costs one dollar. The same bug in production? A hundred. Barry Boehm proved this in 1981.",
+      "narration_text": "A bug caught during planning costs one dollar. The same bug in production? A hundred. Barry Boehm proved this in 1981.",
+      "narrator_vo": "A bug caught during planning costs one dollar. The same bug in production? A hundred. Barry Boehm proved this in 1981.",
+      "visual_goal": "Bar chart animates: $1 → $10 → $100.",
+      "duration_sec": 8.4,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "A bug caught during planning costs one dollar. The same bug in production? A hundred. Barry Boehm proved this in 1981.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B016",
+      "scene_id": "SEG04",
+      "text": "So what IS a spec? Not a hundred-page document. Four questions.",
+      "narration_text": "So what IS a spec? Not a hundred-page document. Four questions.",
+      "narrator_vo": "So what IS a spec? Not a hundred-page document. Four questions.",
+      "visual_goal": "Blank page appears. Four boxes draw themselves:",
+      "duration_sec": 4.4,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "So what IS a spec? Not a hundred-page document. Four questions.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B017",
+      "scene_id": "SEG04",
+      "text": "Purpose. Reason. Method. Means. Answer those four, and you have a spec. That's it.",
+      "narration_text": "Purpose. Reason. Method. Means. Answer those four, and you have a spec. That's it.",
+      "narrator_vo": "Purpose. Reason. Method. Means. Answer those four, and you have a spec. That's it.",
+      "visual_goal": "Text fills each box: \"What am I trying to do?\" / \"Why doesn't the current way work?\" / \"How should it work?\" / \"What tools will I use?\"",
+      "duration_sec": 5.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Purpose. Reason. Method. Means. Answer those four, and you have a spec. That's it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B018",
+      "scene_id": "SEG04",
+      "text": "Vee stopped coding. She started writing what was bothering her.",
+      "narration_text": "Vee stopped coding. She started writing what was bothering her.",
+      "narrator_vo": "Vee stopped coding. She started writing what was bothering her.",
+      "visual_goal": "Vee pulls out paper and pencil. Turns her back to the monitors.",
+      "duration_sec": 4.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 4,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Vee stopped coding. She started writing what was bothering her.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B019",
+      "scene_id": "SEG04",
+      "text": "One sentence that explains everything. Not features. Not tools. The reason.",
+      "narration_text": "One sentence that explains everything. Not features. Not tools. The reason.",
+      "narrator_vo": "One sentence that explains everything. Not features. Not tools. The reason.",
+      "visual_goal": "CU: Paper. Messy handwriting: \"I don't know what I built.\"",
+      "duration_sec": 4.4,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "One sentence that explains everything. Not features. Not tools. The reason.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B020",
+      "scene_id": "SEG04",
+      "text": "And now the errors make sense. Line eight forty-seven wasn't random. It was an open door she never meant to build.",
+      "narration_text": "And now the errors make sense. Line eight forty-seven wasn't random. It was an open door she never meant to build.",
+      "narrator_vo": "And now the errors make sense. Line eight forty-seven wasn't random. It was an open door she never meant to build.",
+      "visual_goal": "The pencil stops. Then moves again: \"I want to use my home computer from anywhere.\"",
+      "duration_sec": 8.4,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And now the errors make sense. Line eight forty-seven wasn't random. It was an open door she never meant to build.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B021",
+      "scene_id": "SEG04",
+      "text": "Same errors. But now, one line makes sense. Because she knows what she's looking for.",
+      "narration_text": "Same errors. But now, one line makes sense. Because she knows what she's looking for.",
+      "narrator_vo": "Same errors. But now, one line makes sense. Because she knows what she's looking for.",
+      "visual_goal": "Below: \"Files should stay in sync.\" \"Access from any device.\" \"Can't drop the connection.\"",
+      "duration_sec": 6.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Same errors. But now, one line makes sense. Because she knows what she's looking for.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B022",
+      "scene_id": "SEG05",
+      "text": "Here's what most people miss. This isn't about Cursor, or ChatGPT, or Claude. Every AI tool wants the same thing from you.",
+      "narration_text": "Here's what most people miss. This isn't about Cursor, or ChatGPT, or Claude. Every AI tool wants the same thing from you.",
+      "narrator_vo": "Here's what most people miss. This isn't about Cursor, or ChatGPT, or Claude. Every AI tool wants the same thing from you.",
+      "visual_goal": "Zoom out: bigger picture.",
+      "duration_sec": 8.8,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "CLARITY → UNDERSTANDING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Here's what most people miss. This isn't about Cursor, or ChatGPT, or Claude. Every AI tool wants the same thing from you.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B023",
+      "scene_id": "SEG05",
+      "text": "A definition of \"done.\" What does finished look like? If you can't answer that, no amount of AI will save you.",
+      "narration_text": "A definition of \"done.\" What does finished look like? If you can't answer that, no amount of AI will save you.",
+      "narrator_vo": "A definition of \"done.\" What does finished look like? If you can't answer that, no amount of AI will save you.",
+      "visual_goal": "Icons of AI tools appear, then fade. A single question mark remains.",
+      "duration_sec": 8.4,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "CLARITY → UNDERSTANDING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "A definition of \"done.\" What does finished look like? If you can't answer that, no amount of AI will save you.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B024",
+      "scene_id": "SEG05",
+      "text": "A spec isn't documentation. It's the shortest path between frustration and something that actually works.",
+      "narration_text": "A spec isn't documentation. It's the shortest path between frustration and something that actually works.",
+      "narrator_vo": "A spec isn't documentation. It's the shortest path between frustration and something that actually works.",
+      "visual_goal": "The four spec boxes reappear, small, connected to a larger system diagram.",
+      "duration_sec": 6.0,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "CLARITY → UNDERSTANDING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "A spec isn't documentation. It's the shortest path between frustration and something that actually works.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B025",
+      "scene_id": "SEG06",
+      "text": "Everything is still broken. But now she knows what to fix.",
+      "narration_text": "Everything is still broken. But now she knows what to fix.",
+      "narrator_vo": "Everything is still broken. But now she knows what to fix.",
+      "visual_goal": "Mirror of HOOK. Same room, different person.",
+      "duration_sec": 4.4,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "UNDERSTANDING → CONFIDENCE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Everything is still broken. But now she knows what to fix.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B026",
+      "scene_id": "SEG06",
+      "text": "Next time — she wrote the spec. And AI gave her something completely different from what she expected. Again.",
+      "narration_text": "Next time — she wrote the spec. And AI gave her something completely different from what she expected. Again.",
+      "narrator_vo": "Next time — she wrote the spec. And AI gave her something completely different from what she expected. Again.",
+      "visual_goal": "Same composition as HOOK. Five monitors. Red errors. Dark room.",
+      "duration_sec": 7.6,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "UNDERSTANDING → CONFIDENCE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Next time — she wrote the spec. And AI gave her something completely different from what she expected. Again.",
+          "emotion": ""
+        }
+      ]
+    }
+  ]
+}

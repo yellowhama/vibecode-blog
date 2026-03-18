@@ -56,44 +56,52 @@
 
 ---
 
-## 유튜브 채널: 테크 시트콤 + 해설
+## 유튜브 채널: Vibecode Town (나레이션 + 2D 애니메이션)
+
+> **SSOT**: `systems/video/SERIES_BIBLE.md` — 이후 모든 제작의 단일 진실 원천
 
 ### 장르 & 타겟
-- **장르**: 테크 시트콤 + Kurzgesagt식 해설 (롱폼 하이브리드 5-8분)
+- **장르**: 나레이션 + 2D flat vector 애니메이션 (Kurzgesagt meets Claudius Papirus)
 - **타겟**: Vibe Coder (코드 못 읽는데 AI로 만드는 사람)
-- **차별점**: 애니메이션 캐릭터 + 테크 코미디
+- **차별점**: 오해-먼저 교육 + Vee 캐릭터 감정 대리
 
-### 에피소드 5단계 구조
+### 에피소드 6단계 구조
 ```
-HOOK (15-30s)      시트콤   결과 먼저 보여주기
-SITCOM ACT 1 (60-90s)  시트콤   Vee 문제 + Bee 등장
-EXPLAINER (90-120s)     해설    추상 시각화 (Kurzgesagt 스타일)
-SITCOM ACT 2 (60-90s)  시트콤   이해 + 해결
-ENDING (15-30s)     시트콤   교훈 + 떡밥
+HOOK (0:00-0:15)          역설적 사실/반직관적 결과
+MISCONCEPTION (0:15-0:45) Vee의 잘못된 가정 → 실패 (빨간 색조)
+THE_CRACK (0:45-1:15)     인지부조화 — "근데 이렇게 하면?" (색조 전환)
+CORE (1:15-3:00)          올바른 방법, 비주얼 메타포 (초록 색조)
+REFRAME (3:00-3:30)       더 큰 그림 — 줌아웃, 시스템 뷰
+OUTRO_CTA (3:30-4:00)     Vee eureka + 구독 + 다음 에피소드
 ```
 
-### 비주얼 모드
-- **시트콤**: 3D Pixar-like (Vee+Bee 캐릭터), Flux Kontext + Wan I2V
-- **해설**: Kurzgesagt 추상 도형 (다크 네이비 배경, 캐릭터 없음), Flux T2I + Wan I2V
+### 비주얼 스타일
+- **2D flat vector** (Level 2-2.5, v3ct0r LoRA trigger)
+- 80% 다이어그램/모션그래픽 + 20% Vee 리액션 컷 (1-2초씩)
+- 나레이터 보이스오버 전용 — Vee는 절대 말하지 않음 (무언극)
+- 배경: 다크 네이비 #0D1B2A, 캐릭터 팔레트: #FFD93D/#6D4C2F/#FDEBD0/#2D2D2D
 
-### 기획 문서 (SSOT)
+### 기획 문서
 | 경로 | 역할 |
 |------|------|
-| `systems/planning/10-youtube-format-bible.md` | 에피소드 구조, 비주얼 모드, 전환 연출, TTS 보이스 맵 |
-| `systems/planning/11-concept-metaphor-library.md` | Act 1-4 총 60개 소프트웨어 개념 → 메타포 매핑 |
-| `systems/planning/12-episode-series-bible.md` | 시즌 1 EP01-08, 캐릭터 아크, 쇼츠 추출 총괄 |
+| `systems/video/SERIES_BIBLE.md` | **SSOT** — 아이덴티티, 캐릭터, 포맷, 프로덕션 전체 |
+| `systems/planning/11-concept-metaphor-library.md` | 소프트웨어 개념 → 비주얼 메타포 매핑 |
+| `systems/video/planning/season1_episode_guide.md` | 시즌 1 EP01-10 상세 가이드 |
 
-### 파이프라인 듀얼모드 (구현 완료)
-- `build_shot_manifest_from_prepro.py`: `visual_type` ("sitcom"|"explainer"), `characters`, `dialogue`, `shorts_candidate` 필드
-- `comfy_batch_render.py`: `--workflow-map` — visual_type별 워크플로우 자동 라우팅
-- `generate_kontext_keyframes.py`: `--character-map` — Vee=Kontext, Bee=T2I, explainer=스킵
-- `generate_tts_simple.py`: `--multi-voice` — 대사 speaker별 보이스 (Vee/Bee/내레이터)
+### 파이프라인
+- `build_shot_manifest_from_prepro.py`: `visual_type`, `space`, `vee_expression`, `shorts_candidate` 필드
+- `comfy_batch_render.py`: ComfyUI API 배치 렌더 (증분 캐시 + 재시도)
+- `generate_kontext_keyframes.py`: Vee 캐릭터 일관성 (골든레퍼런스 기반 Kontext 편집)
+- `generate_tts_simple.py`: 단일 나레이터 보이스 (Dia2-1B)
 
 ### 시즌 1 진행 상태
-| EP | 제목 (가제) | 소스 | 스크립트 | 매니페스트 | 렌더 |
-|----|-----------|------|---------|-----------|------|
-| 01 | "그냥 만들면 되지" | Act 1-1,1-2 | **Phase 1-3 완료** (대본 확정 대기) | — | — |
-| 02-08 | — | Act 1-3 ~ 4-4 | — | — | — |
+| EP | 제목 | 스크립트 | 매니페스트 | 렌더 |
+|----|------|---------|-----------|------|
+| 01 | "스펙이 뭔가?" | v3 리워크 중 | v6 | — |
+| 02 | "왼팔이 28개" | v5 작성 | — | — |
+| 03 | "벽 없는 아파트" | v5 작성 | — | — |
+| 04 | "열기 무서운 상자" | v5 작성 | — | — |
+| 05-10 | — | 기획 중 | — | — |
 
 ---
 

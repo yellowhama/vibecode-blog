@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Parse a Fountain script (Series Bible v5 format) into prepro_manifest.json.
+"""Parse a Fountain script (Series Bible v6 format) into prepro_manifest.json.
 
 Our v2 Fountain format uses block-comment annotations:
 
@@ -15,8 +15,9 @@ Our v2 Fountain format uses block-comment annotations:
     /* extended_metaphor_end */
     /* shorts_candidate */
 
-v5 segments: HOOK, PROBLEM, CORE, APPLICATION, OUTRO
-Backward compat: SITCOM ACT 1→PROBLEM, EXPLAINER→CORE, SITCOM ACT 2→APPLICATION, ENDING→OUTRO
+v6 segments: HOOK, MISCONCEPTION, THE_CRACK, CORE, REFRAME, OUTRO_CTA
+Backward compat: PROBLEM→MISCONCEPTION, APPLICATION→REFRAME, OUTRO→OUTRO_CTA
+                  SITCOM ACT 1→MISCONCEPTION, EXPLAINER→CORE, SITCOM ACT 2→REFRAME, ENDING→OUTRO_CTA
 
 Usage:
     python parse_fountain_to_prepro.py \
@@ -36,21 +37,26 @@ from typing import Any
 
 
 # ---------------------------------------------------------------------------
-# v5 Segments
+# v6 Segments
 # ---------------------------------------------------------------------------
-V5_SEGMENTS = {"HOOK", "PROBLEM", "CORE", "APPLICATION", "OUTRO"}
+V6_SEGMENTS = {"HOOK", "MISCONCEPTION", "THE_CRACK", "CORE", "REFRAME", "OUTRO_CTA"}
 
 # Backward-compat mapping from old segment names
 SEGMENT_NAME_MAP = {
-    "SITCOM ACT 1": "PROBLEM",
-    "SITCOM ACT 2": "APPLICATION",
-    "SITCOM": "PROBLEM",
+    # v5 → v6
+    "PROBLEM": "MISCONCEPTION",
+    "APPLICATION": "REFRAME",
+    "OUTRO": "OUTRO_CTA",
+    # v3/sitcom era → v6
+    "SITCOM ACT 1": "MISCONCEPTION",
+    "SITCOM ACT 2": "REFRAME",
+    "SITCOM": "MISCONCEPTION",
     "EXPLAINER": "CORE",
-    "ENDING": "OUTRO",
-    # v4 narrative stages
-    "FURY": "PROBLEM",
+    "ENDING": "OUTRO_CTA",
+    # v4 narrative stages → v6
+    "FURY": "MISCONCEPTION",
     "MESS": "CORE",
-    "INSIGHT": "APPLICATION",
+    "INSIGHT": "REFRAME",
 }
 
 # ---------------------------------------------------------------------------
@@ -151,7 +157,7 @@ def _parse_timecode(tc: str) -> float:
 def _normalize_segment_name(raw_name: str) -> str:
     """Map segment name to v5 canonical name."""
     upper = raw_name.strip().upper()
-    if upper in V5_SEGMENTS:
+    if upper in V6_SEGMENTS:
         return upper
     mapped = SEGMENT_NAME_MAP.get(upper)
     if mapped:
@@ -564,7 +570,7 @@ def segments_to_prepro_manifest(
 
     return {
         "project_id": project_id,
-        "version": "5.0",
+        "version": "6.0",
         "title": title,
         "language": language,
         "total_duration_sec": round(sum(s["duration_sec"] for s in segments), 1),
@@ -577,7 +583,7 @@ def segments_to_prepro_manifest(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Parse Fountain script to v5 prepro manifest")
+    parser = argparse.ArgumentParser(description="Parse Fountain script to v6 prepro manifest")
     parser.add_argument("--input", required=True, type=Path, help="Fountain script file")
     parser.add_argument("--output", type=Path, default=None, help="Output JSON path")
     parser.add_argument("--project-id", default=None, help="Project ID (default: filename stem)")

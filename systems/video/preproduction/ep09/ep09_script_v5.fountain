@@ -1,0 +1,228 @@
+Title: EP09 — 이 영상은 AI가 만들었다
+Credit: Written by
+Author: vibecode.town
+Series: Vibecode Town Season 1
+Source: Behind-the-scenes / meta episode
+Draft date: 2026-03-18
+Duration: 3:30-4:00
+Notes: v5 (6-segment format, narrator-only, 2D flat vector, Vee solo). Hero candidate — potential viral. Breaks the fourth wall. Shows actual production pipeline.
+
+/* ================================================================ */
+/* SEGMENT 1: HOOK [0:00-0:15]                                       */
+/* emotion_curve: SURPRISE → INTRIGUE                                */
+/* narrative_stage: HOOK                                              */
+/* ================================================================ */
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= The Vibecode Town intro plays — the usual animation. Then it freezes mid-frame. Cracks appear on the surface. The "2D animation" peels back like wallpaper, revealing a messy desktop underneath: terminals, scripts, error logs, render queues.
+
+/* shorts_candidate */
+
+NARRATOR (V.O.)
+This video you're watching right now? An AI made it. Sort of. Actually — let me be honest about what "AI made it" really means.
+
+= The peeled-back layer hangs in the corner. Behind it: chaos. Beautiful, organized chaos.
+
+> TITLE CARD: **이 영상은 AI가 만들었다**
+
+---
+
+/* ================================================================ */
+/* SEGMENT 2: MISCONCEPTION [0:15-0:45]                              */
+/* emotion_curve: "WOW EASY" → REALITY                               */
+/* narrative_stage: MISCONCEPTION                                    */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+
+= A magic wand icon appears. It taps a blank canvas — POOF — a finished YouTube video appears. Thumbnail, title, animation, audio. All instant.
+
+NARRATOR (V.O.)
+The fantasy: type a description, press a button, get a video. Upload, go viral, retire. AI handles everything.
+
+= The magic wand sparkles. Comments flood in: "10M views!" Hearts. Subscribers.
+
+/* vee_reaction: 1/6 */
+/* visual_type: character_reaction | space: desk */
+
+= Vee watches an "AI video generator" ad on her phone. She looks impressed. She looks at her own desk — seven terminal windows, four browser tabs, a script editor. She looks back at the ad. She looks back at her desk.
+
+NARRATOR (V.O.)
+That's the promise. Here's the reality.
+
+= The magic wand snaps in half. Behind it — a pipeline. A long, complicated pipeline.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 3: THE_CRACK [0:45-1:15]                                  */
+/* emotion_curve: REALITY → "OH, IT'S ACTUALLY HARD"                 */
+/* narrative_stage: THE_CRACK                                        */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+
+= A production stats card appears:
+
+= "이 영상 1편 = 7 tools. 26 shots. 4 hours GPU rendering. 3 script rewrites. 47 image generations (19 rejected). 12 re-renders. 1 human director."
+
+/* vee_reaction: 2/6 */
+
+= Vee counts on her fingers. She runs out of fingers. She holds up both hands and shrugs.
+
+NARRATOR (V.O.)
+One episode of Vibecode Town. Three and a half minutes of finished video. Behind it: seven tools, twenty-six shots, four hours of GPU time, and enough rejected images to fill a dumpster.
+
+= The stats card flips. On the back: "Time from script to upload: 11 hours." Below: "Time the AI 'did it all by itself': 0 hours."
+
+NARRATOR (V.O.)
+AI didn't make this video. AI was one of many tools a human used to make this video. Big difference.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 4: CORE [1:15-3:00]                                       */
+/* emotion_curve: "OH" → FASCINATION → RESPECT                      */
+/* narrative_stage: CORE                                              */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+/* extended_metaphor_start */
+
+= TRANSITION: Clean white background. A horizontal pipeline appears — seven stages, connected by arrows.
+
+NARRATOR (V.O.)
+Let me walk you through the actual pipeline. Every step. No magic.
+
+= STAGE 1 lights up: "FOUNTAIN SCRIPT"
+
+= A screenplay format appears — the actual Fountain markup. Scene headings, dialogue blocks, action lines.
+
+NARRATOR (V.O.)
+Stage one. The script. Written in Fountain format — the same format Hollywood uses. Every scene, every narrator line, every Vee reaction, every visual cue. This is the spec. Without this, nothing else works.
+
+= STAGE 2 lights up: "TTS — Text to Speech"
+
+= Narrator text flows into a TTS engine icon. Audio waveforms come out.
+
+NARRATOR (V.O.)
+Stage two. Text-to-speech. The narrator's voice is AI-generated. But not "type and done." Each line gets checked for pacing, emphasis, and tone. Some lines get re-generated five times before they sound right.
+
+= A montage: five waveforms. Four have red X marks. One has a green check.
+
+/* shorts_candidate */
+
+= STAGE 3 lights up: "T2I — Text to Image"
+
+= A prompt flows into an image generator. An image comes out — Vee at her desk. But it's wrong: her glasses are missing. Another attempt: wrong background color. Another: her proportions are off. Fourth try: correct.
+
+NARRATOR (V.O.)
+Stage three. Image generation. Each shot needs a prompt that matches the script's visual description AND maintains character consistency with every other shot. This is where most of the failures happen. Forty-seven images generated. Nineteen thrown away. Wrong style, wrong character, wrong mood.
+
+/* vee_reaction: 3/6 */
+
+= Quick flash: Vee holds up two nearly identical images of herself — one has five fingers, one has seven. She points at the seven-finger version with visible horror. 1.5 seconds.
+
+= STAGE 4 lights up: "CONSISTENCY CHECK"
+
+NARRATOR (V.O.)
+Stage four. The part nobody shows in demos. Consistency checking. Does Vee look the same across all twenty-six shots? Are the backgrounds consistent? Does the color palette match? This is manual. Human eyes. No shortcut.
+
+= A grid of shot thumbnails. A human cursor drags through them, flagging inconsistencies with red circles.
+
+= STAGE 5 lights up: "I2V — Image to Video"
+
+NARRATOR (V.O.)
+Stage five. Image-to-video. The still images become animated. Two to four seconds each. But the motion has to match the script's description. "Vee nods slowly" is different from "Vee nods enthusiastically." Each shot is a separate render. Each render takes six to twelve minutes.
+
+= A render progress bar crawls. 14%... 31%... 58%... Error. Restart. 14%... 31%... 72%... 100%.
+
+= STAGE 6 lights up: "EDIT — FFmpeg + Assembly"
+
+NARRATOR (V.O.)
+Stage six. Assembly. Twenty-six rendered clips, audio narration, background music, title cards, transitions — stitched together with FFmpeg. Timing adjusted frame by frame. A three-second narrator pause needs exactly three seconds of video, not two-point-eight.
+
+= A timeline editor. Clips snap into place. Audio waveforms align with video segments.
+
+= STAGE 7 lights up: "QA — Quality Gate"
+
+NARRATOR (V.O.)
+Stage seven. The quality gate. Watch the full video. Does the audio sync? Do the transitions feel natural? Does the story flow? If any shot feels off — back to stage three. Re-generate. Re-render. Re-assemble.
+
+= An arrow loops back from STAGE 7 to STAGE 3. It's labeled "happens 2-3 times per episode."
+
+/* extended_metaphor_end */
+
+/* vee_reaction: 4/6 */
+
+= Vee looks at the full pipeline diagram. Seven stages. Multiple feedback loops. She traces the path with her finger. It's not a straight line — it's a maze.
+
+NARRATOR (V.O.)
+Seven stages. Three feedback loops. Zero magic buttons. The AI generated the voice, the images, the motion. But a human decided what to generate, judged the quality, maintained consistency, and assembled everything. That's the job now.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 5: REFRAME [3:00-3:30]                                    */
+/* emotion_curve: RESPECT → PARADIGM SHIFT                           */
+/* narrative_stage: REFRAME                                          */
+/* ================================================================ */
+
+/* visual_type: diagram | space: whiteboard */
+
+= Two columns. Left: "OLD JOB — How to animate." Right: "NEW JOB — How to direct."
+
+NARRATOR (V.O.)
+AI didn't replace the work. It changed what the work IS.
+
+= The left column shows: drawing frames, rigging characters, keyframing motion. Traditional animation skills.
+
+= The right column shows: writing specs, judging quality, maintaining consistency, managing a pipeline. Director skills.
+
+/* vee_reaction: 5/6 */
+
+= Vee holds a movie director's clapperboard. She snaps it shut. Behind her, the pipeline runs — but she's in control of it.
+
+NARRATOR (V.O.)
+Before AI, making this video would require an animation team and six weeks. With AI, it takes one person and eleven hours. But that one person needs to be a director, not an operator. The skill shifted from "how to make it" to "what to make and is it good enough."
+
+/* shorts_candidate */
+
+= The clapperboard text: "VIBECODE TOWN / EP09 / TAKE 14." Fourteen takes. Not one.
+
+NARRATOR (V.O.)
+Take fourteen. Not take one. The AI doesn't get it right the first time. The human decides when it's right.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 6: OUTRO_CTA [3:30-3:55]                                  */
+/* emotion_curve: PARADIGM SHIFT → TRANSPARENCY                     */
+/* narrative_stage: OUTRO_CTA                                        */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S ROOM - NIGHT
+
+= Vee at her desk. The pipeline diagram is pinned to her wall. She looks at the camera — fourth wall break, like EP05.
+
+NARRATOR (V.O.)
+This video was made by AI. And by a human who told the AI what to make, rejected half of what it produced, and assembled the rest by hand.
+
+/* vee_reaction: 6/6 */
+
+= Vee gestures around the room. The terminals. The render queues. The rejected images in a trash folder. Then she points at herself and shrugs: "Me. I'm the tool user."
+
+NARRATOR (V.O.)
+That's not less impressive than pressing a magic button. It's more. Because you can do it too. Same tools. Same pipeline. Same eleven hours.
+
+NARRATOR (V.O.)
+The pipeline is in the description. Every tool, every step. No secrets.
+
+> END CARD: 구독 + 파이프라인 링크 + "다음 편: 좌절에서 시스템으로 (시즌 피날레)"
+
+= FADE TO BLACK.
+
+> END

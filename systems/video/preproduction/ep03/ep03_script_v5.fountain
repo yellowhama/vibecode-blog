@@ -1,0 +1,254 @@
+Title: EP03 — 벽 없는 아파트
+Credit: Written by
+Author: vibecode.town
+Series: Vibecode Town Season 1
+Source: Act 3 — "Apartment Without Walls"
+Draft date: 2026-03-18
+Duration: 3:30-4:00 (~230 seconds)
+Notes: 2D flat vector style (Kurzgesagt level). Narrator V.O. only. Vee never speaks. Max 6 Vee reactions. Korean narration. v5 — 6-segment format, reframe-driven structure. ~620 words narration.
+
+/* ================================================================ */
+/* SEGMENT 1: HOOK [0:00–0:15]                                      */
+/* emotion_curve: PRIDE → DREAD                                     */
+/* narrative_stage: HOOK                                             */
+/* open_loop: "Why does fixing one thing break three others?"       */
+/* ep02_callback: Vee has SSOT file, project growing fast           */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+/* shorts_candidate */
+
+INT. VEE'S DESK - NIGHT
+
+= Same desk as EP02. The PROJECT.md file glows on her monitor. Clean folder tree in the sidebar — but it's grown. Dozens of files. Vee sits tall, hoodie sleeves pushed up. She looks like someone who's figured things out.
+
+/* vee_reaction: 1/6 */
+
+= Vee clicks one file. Makes a small edit. Saves. Satisfied nod — and then three red error badges pop up in different parts of the sidebar. Her nod freezes.
+
+NARRATOR (V.O.)
+브이는 한 줄을 고쳤다. 세 군데가 터졌다. 그녀는 아무것도 건드리지 않았다 — 주방만 빼고.
+
+= BEAT. Half a second.
+
+> TITLE CARD: **벽 없는 아파트**
+
+/* ================================================================ */
+/* SEGMENT 2: MISCONCEPTION [0:15–0:45]                             */
+/* emotion_curve: PRIDE → FALSE LOGIC                               */
+/* narrative_stage: MISCONCEPTION                                   */
+/* misconception: "파일 하나에 다 넣으면 되지"                        */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - DAY (EARLIER)
+
+> INSERT: "일주일 전"
+
+= Vee's screen shows a single massive file — app.js — scrollbar tiny, indicating thousands of lines. She scrolls and scrolls. It doesn't end.
+
+NARRATOR (V.O.)
+일주일 전. 브이의 프로젝트는 잘 돌아가고 있었다. 스펙도 있고. 문서도 있고. 문제는 — 코드가 전부 한 파일에 들어있었다는 거다.
+
+= The file's line count ticks up in the corner: 2,400... 2,800... 3,100.
+
+NARRATOR (V.O.)
+로그인, 결제, 알림, 파일 동기화. 전부 한 파일. 삼천 줄. 브이의 논리는 이랬다 — 파일 하나면 찾기 쉽잖아.
+
+/* vee_reaction: 2/6 */
+
+= Vee shrugs — a "makes sense to me" expression. She taps the single file proudly. One file. One truth. Simple.
+
+NARRATOR (V.O.)
+맞는 말이다. 하나니까 잃어버릴 것도 없다. 하나니까 관리도 쉽다. 하나니까 — 전부 연결되어 있다.
+
+= BEAT. One second. The word "연결" lingers.
+
+NARRATOR (V.O.)
+전부.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 3: THE_CRACK [0:45–1:20]                                 */
+/* emotion_curve: FALSE LOGIC → HORROR                              */
+/* narrative_stage: THE_CRACK                                       */
+/* crack: "주방 기름이 침대에"                                       */
+/* ================================================================ */
+
+/* visual_type: motion_graphic | space: whiteboard */
+/* shorts_candidate */
+
+= TRANSITION: Desk fades. Background shifts to clean white. A top-down apartment floor plan fades in — but no walls. One giant rectangle. A stove, a bed, a shower, a desk with a computer, a toilet. All in one undivided space.
+
+NARRATOR (V.O.)
+아파트가 하나 있다. 벽이 없다. 주방, 침실, 욕실, 서재 — 전부 한 공간이다.
+
+= Oil sizzles in a pan on the stove. Droplets arc through the air — nothing to stop them. They land on the bed. Grease stains bloom on white sheets.
+
+NARRATOR (V.O.)
+아침을 요리한다. 기름이 튄다. 벽이 없으니까 — 침대에 떨어진다.
+
+= The camera slides. Shower turns on. Water streams across the floor — no barrier — and reaches the desk. The computer sparks.
+
+NARRATOR (V.O.)
+샤워를 한다. 물이 바닥을 타고 흘러서 — 컴퓨터에 닿는다.
+
+= The camera slides to the toilet. Full view from the kitchen table.
+
+NARRATOR (V.O.)
+변기는? 식탁에서 보인다. 밥 먹으면서.
+
+= BEAT. One disgusted second.
+
+/* vee_reaction: 3/6 */
+/* visual_type: character_reaction | space: desk */
+
+= Quick cut: Vee. Hood pulled up. Face scrunched — pure disgust. She pushes an invisible plate away. 1.5 seconds.
+
+= CUT BACK to whiteboard. The apartment is chaos — oil flying, water spreading, steam everywhere.
+
+NARRATOR (V.O.)
+이게 브이의 코드다. 전부 한 파일이니까 — 결제 로직을 고치면 로그인이 터진다. 알림을 바꾸면 파일 동기화가 깨진다. 주방 기름이 침대에 묻는 거다.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 4: CORE [1:20–2:50]                                      */
+/* emotion_curve: HORROR → REVELATION → SATISFACTION                */
+/* narrative_stage: CORE                                             */
+/* duration: ~90 seconds                                            */
+/* extended_metaphor: walls = module boundaries                     */
+/* ================================================================ */
+
+/* extended_metaphor_start */
+
+/* visual_type: motion_graphic | space: whiteboard */
+
+= The chaos freezes. Everything stops mid-air — oil droplets suspended, water paused, steam frozen.
+
+NARRATOR (V.O.)
+해결법은 지금 당장 보이는 그거다.
+
+= A bright vertical line drops between the kitchen and the bedroom. THUD. The oil droplets hit the new wall and splatter harmlessly against it.
+
+NARRATOR (V.O.)
+벽.
+
+= A second wall drops between the bathroom and the office. THUD. Water pools safely on the bathroom side.
+
+NARRATOR (V.O.)
+주방과 침실 사이에 벽. 욕실과 서재 사이에 벽.
+
+= A third wall hides the toilet. THUD.
+
+NARRATOR (V.O.)
+변기와 나머지 세계 사이에 벽. 감사합니다.
+
+= A fourth wall closes off the bedroom. The floor plan now has five distinct rooms. Each clean. Each contained. Small door icons appear in each wall.
+
+NARRATOR (V.O.)
+이제 주방은 주방이다. 침실은 침실이다. 각 방에는 하나의 역할이 있고, 하나의 문이 있다. 문을 통해서만 오갈 수 있다. 기름은 날아가지 않는다. 물은 흐르지 않는다.
+
+/* extended_metaphor_end */
+
+/* visual_type: diagram | space: whiteboard */
+
+= The apartment morphs into a folder tree diagram. Each room becomes a labeled folder: `auth/`, `payments/`, `notifications/`, `sync/`, `ui/`. Clean lines connect them through small interface nodes — the "doors."
+
+/* shorts_candidate */
+
+NARRATOR (V.O.)
+코드에서 벽은 — 폴더다. `auth/`는 로그인만 한다. `payments/`는 결제만 한다. 서로 직접 건드리지 않는다. 문을 통해서 — 인터페이스를 통해서 대화한다.
+
+= One folder lights up red — an error in `payments/`. The error stays inside. Other folders remain green. The red pulses once, then resolves to green.
+
+NARRATOR (V.O.)
+결제가 터지면 — 결제 문제다. 로그인은 모른다. 알림도 모른다. 각자의 방에서 각자의 일을 한다.
+
+/* vee_reaction: 4/6 */
+/* visual_type: character_reaction | space: desk */
+
+= Quick flash: Vee's eyes go wide. Both hands come up — palms out, fingers spread. The universal "oh THAT'S why" gesture. Glasses flash. 1.5 seconds.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 5: REFRAME [2:50–3:30]                                   */
+/* emotion_curve: SATISFACTION → PARADIGM SHIFT                     */
+/* narrative_stage: REFRAME                                         */
+/* reframe: "코드를 읽을 필요 없다. 지도를 읽어라"                    */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - NIGHT
+
+= Vee's screen shows her refactored project. Five folders. Clean structure. She's not reading code — she's looking at the folder tree itself. Zoomed out. Bird's eye.
+
+NARRATOR (V.O.)
+그리고 브이가 깨달은 진짜 교훈은 따로 있다.
+
+= BEAT. One second.
+
+/* visual_type: diagram | space: whiteboard */
+
+= The folder tree expands to fill the screen. Each folder has a name. Each name tells you exactly what's inside. No code visible — just structure.
+
+NARRATOR (V.O.)
+코드를 읽을 필요가 없다. 지도를 읽어라.
+
+= The folder tree transforms into an actual map — a top-down city grid. Each folder becomes a building with a sign. `auth/` becomes a guard post. `payments/` becomes a bank. `notifications/` becomes a post office. `sync/` becomes a satellite tower. Roads connect them — clean, one-way streets.
+
+NARRATOR (V.O.)
+폴더 이름이 곧 건축이다. 이름만 보면 뭐가 어디 있는지 안다. 파일 하나 열지 않아도 — 구조를 안다. AI한테 "결제 로직 고쳐줘"라고 말하면, AI도 어디를 봐야 하는지 안다. `payments/` 폴더. 끝.
+
+/* vee_reaction: 5/6 */
+/* visual_type: character_reaction | space: desk */
+
+= Vee leans back. Arms behind her head. She looks at the folder tree on her monitor — not at code, at the MAP. A slow, knowing smile. She gets it now. Structure IS the documentation. 1.5 seconds.
+
+NARRATOR (V.O.)
+구조가 문서다. 폴더가 설계도다. 벽이 있으면 — 지도가 생긴다.
+
+---
+
+/* ================================================================ */
+/* SEGMENT 6: OUTRO_CTA [3:30–3:55]                                 */
+/* emotion_curve: PARADIGM SHIFT → CONFIDENCE → open loop EP04      */
+/* narrative_stage: OUTRO_CTA                                       */
+/* ================================================================ */
+
+/* visual_type: character_reaction | space: desk */
+
+INT. VEE'S DESK - NIGHT (CONTINUOUS)
+
+= Same composition. Vee at her desk. Five clean folders on screen. The old 3,100-line app.js is gone. She cracks her knuckles.
+
+NARRATOR (V.O.)
+한 문장이 방향을 잡았다. 한 파일이 기억을 잡았다. 벽이 — 구조를 잡았다.
+
+= Vee opens a new AI chat. Types a command: "payments/ 폴더의 환불 로직을 테스트해줘." She hits enter. Waits.
+
+= The AI responds. Green checkmarks appear — but only in the `payments/` folder. The other folders don't move. Nothing breaks.
+
+/* vee_reaction: 6/6 */
+
+= Vee nods. Satisfied. She reaches for her coffee — then pauses. Looks at the green checkmarks. Squints. Tilts her head.
+
+= She opens `sync/` folder. Types: "이 폴더 테스트해줘." Hits enter. Nothing happens. No tests exist. Zero coverage. The folder has never been tested.
+
+NARRATOR (V.O.)
+구조는 잡혔다. 벽은 세워졌다. 근데 — 이 방들이 진짜 작동하는지는? 한 번도 확인 안 했다.
+
+= BEAT.
+
+NARRATOR (V.O.)
+다음에 — 브이가 상자를 연다. 안에 뭐가 있을까.
+
+> TITLE CARD: **NEXT: EP04 — "열기 무서운 상자"**
+
+= FADE TO BLACK.
+
+> END

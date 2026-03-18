@@ -1,0 +1,446 @@
+{
+  "project_id": "ep09_v5",
+  "version": "6.0",
+  "style_lock": "2D flat vector Level 2.5 + narrator V.O. only + Vee silent",
+  "delivery_target": "16:9, 1280x720, YouTube",
+  "resolution": "1280x720",
+  "pipeline": {
+    "t2i": "Flux dev + SimpleVectorFlux LoRA",
+    "edit": "Flux Kontext",
+    "i2v": "Wan 2.2 MoE GGUF",
+    "tts": "Dia2-1B",
+    "bgm": "ACE-Step 1.5",
+    "diagrams": "Motion Canvas",
+    "assembly": "FFmpeg"
+  },
+  "shots": [
+    {
+      "shot_id": "H01",
+      "segment": "HOOK",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "description": "The Vibecode Town intro plays — the usual animation. Then it freezes mid-frame. Cracks appear on the surface. The \"2D animation\" peels back like wallpaper, revealing a messy desktop underneath: ter...",
+      "narrator_vo": "This video you're watching right now? An AI made it. Sort of. Actually — let me be honest about what \"AI made it\" really means.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 10.88,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The Vibecode Town intro plays — the usual animation. Then it freezes mid-frame. Cracks appear on the surface. The \"2D animation\" peels back like wallpaper, revealing a messy desktop underneath: terminals, scripts, error logs, render queues., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500001,
+      "input_image": "H01_keyframe.png",
+      "output_name": "H01.mp4"
+    },
+    {
+      "shot_id": "M01",
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "A magic wand icon appears. It taps a blank canvas — POOF — a finished YouTube video appears. Thumbnail, title, animation, audio. All instant.",
+      "narrator_vo": "The fantasy: type a description, press a button, get a video. Upload, go viral, retire. AI handles everything.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 7.88,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A magic wand icon appears. It taps a blank canvas — POOF — a finished YouTube video appears. Thumbnail, title, animation, audio. All instant., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500002,
+      "input_image": "M01_keyframe.png",
+      "output_name": "M01.mp4"
+    },
+    {
+      "shot_id": "M02",
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "The magic wand sparkles. Comments flood in: \"10M views!\" Hearts. Subscribers.",
+      "narrator_vo": "That's the promise. Here's the reality.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 2.73,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The magic wand sparkles. Comments flood in: \"10M views!\" Hearts. Subscribers., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500003,
+      "input_image": "M02_keyframe.png",
+      "output_name": "M02.mp4"
+    },
+    {
+      "shot_id": "K01",
+      "segment": "THE_CRACK",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "A production stats card appears:",
+      "narrator_vo": "One episode of Vibecode Town. Three and a half minutes of finished video. Behind it: seven tools, twenty-six shots, four hours of GPU time, and enough rejected images to fill a dumpster.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 13.88,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A production stats card appears:, flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500004,
+      "input_image": "K01_keyframe.png",
+      "output_name": "K01.mp4"
+    },
+    {
+      "shot_id": "K02",
+      "segment": "THE_CRACK",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "\"이 영상 1편 = 7 tools. 26 shots. 4 hours GPU rendering. 3 script rewrites. 47 image generations (19 rejected). 12 re-renders. 1 human director.\"",
+      "narrator_vo": "AI didn't make this video. AI was one of many tools a human used to make this video. Big difference.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 8.74,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, \"이 영상 1편 = 7 tools. 26 shots. 4 hours GPU rendering. 3 script rewrites. 47 image generations (19 rejected). 12 re-renders. 1 human director.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500005,
+      "input_image": "K02_keyframe.png",
+      "output_name": "K02.mp4"
+    },
+    {
+      "shot_id": "C01",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "TRANSITION: Clean white background. A horizontal pipeline appears — seven stages, connected by arrows.",
+      "narrator_vo": "Let me walk you through the actual pipeline. Every step. No magic.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 5.3,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, TRANSITION: Clean white background. A horizontal pipeline appears — seven stages, connected by arrows., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500006,
+      "input_image": "C01_keyframe.png",
+      "output_name": "C01.mp4"
+    },
+    {
+      "shot_id": "C02",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "STAGE 1 lights up: \"FOUNTAIN SCRIPT\"",
+      "narrator_vo": "Stage one. The script. Written in Fountain format — the same format Hollywood uses. Every scene, every narrator line, every Vee reaction, every visual cue. This is the spec. Without this, nothing else works.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 14.73,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, STAGE 1 lights up: \"FOUNTAIN SCRIPT\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500007,
+      "input_image": "C02_keyframe.png",
+      "output_name": "C02.mp4"
+    },
+    {
+      "shot_id": "C03",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "A screenplay format appears — the actual Fountain markup. Scene headings, dialogue blocks, action lines.",
+      "narrator_vo": "Stage two. Text-to-speech. The narrator's voice is AI-generated. But not \"type and done.\" Each line gets checked for pacing, emphasis, and tone. Some lines get re-generated five times before they sound right.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 13.87,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A screenplay format appears — the actual Fountain markup. Scene headings, dialogue blocks, action lines., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500008,
+      "input_image": "C03_keyframe.png",
+      "output_name": "C03.mp4"
+    },
+    {
+      "shot_id": "C04",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "STAGE 2 lights up: \"TTS — Text to Speech\"",
+      "narrator_vo": "Stage three. Image generation. Each shot needs a prompt that matches the script's visual description AND maintains character consistency with every other shot. This is where most of the failures happen. Forty-seven images generated. Nineteen thrown away. Wrong style, wrong character, wrong mood.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 18.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, STAGE 2 lights up: \"TTS — Text to Speech\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500009,
+      "input_image": "C04_keyframe.png",
+      "output_name": "C04.mp4"
+    },
+    {
+      "shot_id": "C05",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "Narrator text flows into a TTS engine icon. Audio waveforms come out.",
+      "narrator_vo": "Stage four. The part nobody shows in demos. Consistency checking. Does Vee look the same across all twenty-six shots? Are the backgrounds consistent? Does the color palette match? This is manual. Human eyes. No shortcut.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 15.16,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Narrator text flows into a TTS engine icon. Audio waveforms come out., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500010,
+      "input_image": "C05_keyframe.png",
+      "output_name": "C05.mp4"
+    },
+    {
+      "shot_id": "C06",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "A montage: five waveforms. Four have red X marks. One has a green check.",
+      "narrator_vo": "Stage five. Image-to-video. The still images become animated. Two to four seconds each. But the motion has to match the script's description. \"Vee nods slowly\" is different from \"Vee nods enthusiastically.\" Each shot is a separate render. Each render takes six to twelve minutes.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 18.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A montage: five waveforms. Four have red X marks. One has a green check., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500011,
+      "input_image": "C06_keyframe.png",
+      "output_name": "C06.mp4"
+    },
+    {
+      "shot_id": "C07",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "STAGE 3 lights up: \"T2I — Text to Image\"",
+      "narrator_vo": "Stage six. Assembly. Twenty-six rendered clips, audio narration, background music, title cards, transitions — stitched together with FFmpeg. Timing adjusted frame by frame. A three-second narrator pause needs exactly three seconds of video, not two-point-eight.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": true,
+      "duration_sec": 15.16,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, STAGE 3 lights up: \"T2I — Text to Image\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500012,
+      "input_image": "C07_keyframe.png",
+      "output_name": "C07.mp4"
+    },
+    {
+      "shot_id": "C08",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "A prompt flows into an image generator. An image comes out — Vee at her desk. But it's wrong: her glasses are missing. Another attempt: wrong background color. Another: her proportions are off. Fou...",
+      "narrator_vo": "Stage seven. The quality gate. Watch the full video. Does the audio sync? Do the transitions feel natural? Does the story flow? If any shot feels off — back to stage three. Re-generate. Re-render. Re-assemble.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 15.16,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A prompt flows into an image generator. An image comes out — Vee at her desk. But it's wrong: her glasses are missing. Another attempt: wrong background color. Another: her proportions are off. Fourth try: correct., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500013,
+      "input_image": "C08_keyframe.png",
+      "output_name": "C08.mp4"
+    },
+    {
+      "shot_id": "C09",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "Quick flash: Vee holds up two nearly identical images of herself — one has five fingers, one has seven. She points at the seven-finger version with visible horror. 1.5 seconds.",
+      "narrator_vo": "Seven stages. Three feedback loops. Zero magic buttons. The AI generated the voice, the images, the motion. But a human decided what to generate, judged the quality, maintained consistency, and assembled everything. That's the job now.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 3,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 15.59,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Quick flash: Vee holds up two nearly identical images of herself — one has five fingers, one has seven. She points at the seven-finger version with visible horror. 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500014,
+      "input_image": "C09_keyframe.png",
+      "output_name": "C09.mp4"
+    },
+    {
+      "shot_id": "R01",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "Two columns. Left: \"OLD JOB — How to animate.\" Right: \"NEW JOB — How to direct.\"",
+      "narrator_vo": "AI didn't replace the work. It changed what the work IS.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 4.87,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Two columns. Left: \"OLD JOB — How to animate.\" Right: \"NEW JOB — How to direct.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500015,
+      "input_image": "R01_keyframe.png",
+      "output_name": "R01.mp4"
+    },
+    {
+      "shot_id": "R02",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "The left column shows: drawing frames, rigging characters, keyframing motion. Traditional animation skills.",
+      "narrator_vo": "Before AI, making this video would require an animation team and six weeks. With AI, it takes one person and eleven hours. But that one person needs to be a director, not an operator. The skill shifted from \"how to make it\" to \"what to make and is it good enough.\"",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 18.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The left column shows: drawing frames, rigging characters, keyframing motion. Traditional animation skills., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500016,
+      "input_image": "R02_keyframe.png",
+      "output_name": "R02.mp4"
+    },
+    {
+      "shot_id": "R03",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "The right column shows: writing specs, judging quality, maintaining consistency, managing a pipeline. Director skills.",
+      "narrator_vo": "Take fourteen. Not take one. The AI doesn't get it right the first time. The human decides when it's right.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 8.73,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The right column shows: writing specs, judging quality, maintaining consistency, managing a pipeline. Director skills., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500017,
+      "input_image": "R03_keyframe.png",
+      "output_name": "R03.mp4"
+    },
+    {
+      "shot_id": "Z01",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee at her desk. The pipeline diagram is pinned to her wall. She looks at the camera — fourth wall break, like EP05.",
+      "narrator_vo": "This video was made by AI. And by a human who told the AI what to make, rejected half of what it produced, and assembled the rest by hand.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 12.59,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee at her desk. The pipeline diagram is pinned to her wall. She looks at the camera — fourth wall break, like EP05., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500018,
+      "input_image": "Z01_keyframe.png",
+      "output_name": "Z01.mp4"
+    },
+    {
+      "shot_id": "Z02",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee gestures around the room. The terminals. The render queues. The rejected images in a trash folder. Then she points at herself and shrugs: \"Me. I'm the tool user.\"",
+      "narrator_vo": "That's not less impressive than pressing a magic button. It's more. Because you can do it too. Same tools. Same pipeline. Same eleven hours.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 6,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 10.44,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee gestures around the room. The terminals. The render queues. The rejected images in a trash folder. Then she points at herself and shrugs: \"Me. I'm the tool user.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500019,
+      "input_image": "Z02_keyframe.png",
+      "output_name": "Z02.mp4"
+    },
+    {
+      "shot_id": "Z03",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "FADE TO BLACK.",
+      "narrator_vo": "The pipeline is in the description. Every tool, every step. No secrets.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 5.3,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, FADE TO BLACK., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500020,
+      "input_image": "Z03_keyframe.png",
+      "output_name": "Z03.mp4"
+    }
+  ],
+  "source_preproduction": "systems/video/preproduction/ep09/ep09_prepro_manifest_v5.json",
+  "selection_summary": {
+    "total_beats": 20,
+    "selected_beats": 20,
+    "target_duration_sec": 235.0,
+    "actual_duration_sec": 235.01,
+    "timing_source": "estimate"
+  }
+}

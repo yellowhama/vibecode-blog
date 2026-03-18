@@ -1,0 +1,404 @@
+{
+  "project_id": "ep08_v5",
+  "version": "6.0",
+  "style_lock": "2D flat vector Level 2.5 + narrator V.O. only + Vee silent",
+  "delivery_target": "16:9, 1280x720, YouTube",
+  "resolution": "1280x720",
+  "pipeline": {
+    "t2i": "Flux dev + SimpleVectorFlux LoRA",
+    "edit": "Flux Kontext",
+    "i2v": "Wan 2.2 MoE GGUF",
+    "tts": "Dia2-1B",
+    "bgm": "ACE-Step 1.5",
+    "diagrams": "Motion Canvas",
+    "assembly": "FFmpeg"
+  },
+  "shots": [
+    {
+      "shot_id": "H01",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Five monitors arranged in an arc around Vee. Each one shows a different project. She cracks her knuckles. Types on one. Swivels to another. Types. Swivels. She's in the zone.",
+      "narrator_vo": "Vee has been vibe coding for a month. She's fast. She's productive. And she keeps making the same five mistakes over and over.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "duration_sec": 13.6,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Five monitors arranged in an arc around Vee. Each one shows a different project. She cracks her knuckles. Types on one. Swivels to another. Types. Swivels. She's in the zone., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500001,
+      "input_image": "H01_keyframe.png",
+      "output_name": "H01.mp4"
+    },
+    {
+      "shot_id": "H02",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "All five monitors go red simultaneously. Error messages. Crash logs. A sad-face emoji from one app. Vee freezes mid-swivel.",
+      "narrator_vo": "Every vibe coder does. Here are all five.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 1,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 5.26,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, All five monitors go red simultaneously. Error messages. Crash logs. A sad-face emoji from one app. Vee freezes mid-swivel., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500002,
+      "input_image": "H02_keyframe.png",
+      "output_name": "H02.mp4"
+    },
+    {
+      "shot_id": "M01",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "TITLE INSERT: \"실수 #1: 스펙 없이 시작한다\"",
+      "narrator_vo": "Mistake number one. No spec. Just vibes.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 4.7,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, TITLE INSERT: \"실수 #1: 스펙 없이 시작한다\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500003,
+      "input_image": "M01_keyframe.png",
+      "output_name": "M01.mp4"
+    },
+    {
+      "shot_id": "M02",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee opens an AI chat. Types: \"Build me a dashboard.\" The AI builds a dashboard. It has charts, tables, buttons. It looks great.",
+      "narrator_vo": "She got A dashboard. Not HER dashboard. Because she never defined what \"her dashboard\" means.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 9.14,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee opens an AI chat. Types: \"Build me a dashboard.\" The AI builds a dashboard. It has charts, tables, buttons. It looks great., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500004,
+      "input_image": "M02_keyframe.png",
+      "output_name": "M02.mp4"
+    },
+    {
+      "shot_id": "M03",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee looks at the dashboard. The charts show random data. The buttons don't connect to anything. The color scheme is purple and orange — she wanted blue and white.",
+      "narrator_vo": "Fix: three sentences before you start. What it does, what it doesn't do, what \"done\" looks like.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 10.25,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee looks at the dashboard. The charts show random data. The buttons don't connect to anything. The color scheme is purple and orange — she wanted blue and white., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500005,
+      "input_image": "M03_keyframe.png",
+      "output_name": "M03.mp4"
+    },
+    {
+      "shot_id": "K01",
+      "segment": "THE_CRACK",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "description": "TITLE INSERT: \"실수 #2: 파일 하나에 다 넣는다\"",
+      "narrator_vo": "Mistake number two. Everything in one file. AI doesn't care about file structure. It'll happily write four thousand lines into a single file. Login next to CSS next to database next to that weird function you asked for at 2 AM and forgot about.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 18.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, TITLE INSERT: \"실수 #2: 파일 하나에 다 넣는다\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500006,
+      "input_image": "K01_keyframe.png",
+      "output_name": "K01.mp4"
+    },
+    {
+      "shot_id": "K02",
+      "segment": "THE_CRACK",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "description": "Vee's screen shows a single file: `app.js`. The scroll bar is tiny — the file is enormous. She scrolls. And scrolls. And scrolls. The line counter reads 4,200.",
+      "narrator_vo": "Fix: before you build, tell AI where things go. \"Auth logic goes in auth.js. Styles go in styles.css.\" The AI follows structure. It just won't create structure on its own.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 17.48,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee's screen shows a single file: `app.js`. The scroll bar is tiny — the file is enormous. She scrolls. And scrolls. And scrolls. The line counter reads 4,200., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500007,
+      "input_image": "K02_keyframe.png",
+      "output_name": "K02.mp4"
+    },
+    {
+      "shot_id": "C01",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "description": "TITLE INSERT: \"실수 #3: 테스트를 안 쓴다\"",
+      "narrator_vo": "Mistake number three. No tests. The app works on her machine. She saw it work. Once. With one input. That's not testing — that's hoping.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 14.7,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, TITLE INSERT: \"실수 #3: 테스트를 안 쓴다\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500008,
+      "input_image": "C01_keyframe.png",
+      "output_name": "C01.mp4"
+    },
+    {
+      "shot_id": "C02",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "description": "Vee finishes a feature. She runs the app. It looks fine. She ships it. Time passes — a clock fast-forwards. A user reports a bug. Vee opens the code. She has no idea what broke because she has no t...",
+      "narrator_vo": "Fix: one test per feature. Not a test suite. Not TDD. Just one line that says \"if this doesn't work, something is broken.\" Three tests catch eighty percent of bugs. Zero tests catch zero.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 18.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee finishes a feature. She runs the app. It looks fine. She ships it. Time passes — a clock fast-forwards. A user reports a bug. Vee opens the code. She has no idea what broke because she has no tests., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500009,
+      "input_image": "C02_keyframe.png",
+      "output_name": "C02.mp4"
+    },
+    {
+      "shot_id": "C03",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "description": "Quick fix flash: Three test lines appear. \"When input is empty — show error.\" \"When input is valid — save it.\" \"When server is down — show retry.\" Three lines. Three safety nets.",
+      "narrator_vo": "Mistake number four. Ignoring errors. The app runs, so the errors don't matter, right? Wrong. Those warnings are tomorrow's crashes. They're the AI telling you \"I did what you asked, but something smells wrong.\"",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 18.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Quick fix flash: Three test lines appear. \"When input is empty — show error.\" \"When input is valid — save it.\" \"When server is down — show retry.\" Three lines. Three safety nets., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500010,
+      "input_image": "C03_keyframe.png",
+      "output_name": "C03.mp4"
+    },
+    {
+      "shot_id": "C04",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "description": "TITLE INSERT: \"실수 #4: 에러를 무시한다\"",
+      "narrator_vo": "Fix: read the first error. Just the first one. Fix it. Then read the next. You don't have to fix all of them. You have to stop pretending they don't exist.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "duration_sec": 18.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, TITLE INSERT: \"실수 #4: 에러를 무시한다\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500011,
+      "input_image": "C04_keyframe.png",
+      "output_name": "C04.mp4"
+    },
+    {
+      "shot_id": "C05",
+      "segment": "CORE",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee's terminal shows a wall of red text. Warnings, deprecation notices, error traces. She glances at it. The app still runs. She shrugs and keeps building.",
+      "narrator_vo": "Mistake number five. The biggest one. Not reading the output. AI doesn't just write code. It writes explanations, warnings, trade-offs, caveats. The code is the least important part of the response. And most people only copy the code.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 18.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee's terminal shows a wall of red text. Warnings, deprecation notices, error traces. She glances at it. The app still runs. She shrugs and keeps building., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500012,
+      "input_image": "C05_keyframe.png",
+      "output_name": "C05.mp4"
+    },
+    {
+      "shot_id": "C06",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "description": "Vee literally drags the terminal window off-screen. Out of sight, out of mind.",
+      "narrator_vo": "Fix: read the response before you copy the code. Every time. The AI is trying to tell you something. Let it.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 3,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 12.48,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee literally drags the terminal window off-screen. Out of sight, out of mind., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500013,
+      "input_image": "C06_keyframe.png",
+      "output_name": "C06.mp4"
+    },
+    {
+      "shot_id": "R01",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "The five mistakes appear as a list. Beside each one, the fix. Below — a single insight:",
+      "narrator_vo": "Look at these five mistakes. No spec. No structure. No tests. Ignoring errors. Not reading. Notice anything?",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 10.25,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The five mistakes appear as a list. Beside each one, the fix. Below — a single insight:, flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500014,
+      "input_image": "R01_keyframe.png",
+      "output_name": "R01.mp4"
+    },
+    {
+      "shot_id": "R02",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "The list transforms. \"AI\" fades from every item. What remains: \"No plan. No organization. No verification. No attention. No reading.\"",
+      "narrator_vo": "None of these are AI problems. These are human problems. AI just makes them visible faster. Without AI, these mistakes take months to surface. With AI, they take minutes.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 16.92,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The list transforms. \"AI\" fades from every item. What remains: \"No plan. No organization. No verification. No attention. No reading.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500015,
+      "input_image": "R02_keyframe.png",
+      "output_name": "R02.mp4"
+    },
+    {
+      "shot_id": "R03",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "The list compresses into a single line: \"AI is a mirror. It reflects your habits at ten times the speed.\"",
+      "narrator_vo": "AI is a speed multiplier. It multiplies good habits AND bad habits. The tool isn't the problem. The workflow is.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "duration_sec": 11.92,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The list compresses into a single line: \"AI is a mirror. It reflects your habits at ten times the speed.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500016,
+      "input_image": "R03_keyframe.png",
+      "output_name": "R03.mp4"
+    },
+    {
+      "shot_id": "Z01",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee at her desk. One monitor now. She opens an AI chat. But before typing, she pauses. Pulls out her notebook. Writes three bullet points. Looks at them. Nods. Then types.",
+      "narrator_vo": "Five mistakes. Five fixes. None of them require better AI. All of them require ten seconds of thinking before you type.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 12.48,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee at her desk. One monitor now. She opens an AI chat. But before typing, she pauses. Pulls out her notebook. Writes three bullet points. Looks at them. Nods. Then types., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500017,
+      "input_image": "Z01_keyframe.png",
+      "output_name": "Z01.mp4"
+    },
+    {
+      "shot_id": "Z02",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee posts a checklist next to her monitor. Five items. She checks off the first one before starting her next session: \"Did I write what I want?\"",
+      "narrator_vo": "Slow down for ten seconds. The AI will wait.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 6,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 5.81,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee posts a checklist next to her monitor. Five items. She checks off the first one before starting her next session: \"Did I write what I want?\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500018,
+      "input_image": "Z02_keyframe.png",
+      "output_name": "Z02.mp4"
+    }
+  ],
+  "source_preproduction": "systems/video/preproduction/ep08/ep08_prepro_manifest_v5.json",
+  "selection_summary": {
+    "total_beats": 18,
+    "selected_beats": 18,
+    "target_duration_sec": 235.0,
+    "actual_duration_sec": 234.99,
+    "timing_source": "estimate"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "_description": "Season 1 upload schedule — interleaved (story EP + standalone EP alternating)",
+  "schedule_version": "1.0",
+  "upload_day": "tuesday",
+  "upload_time_kst": "14:00",
+  "shorts_days": ["monday", "wednesday", "friday"],
+  "shorts_time_kst": "12:00",
+  "weeks": [
+    {"week": 1, "episode": "ep01", "title": "스펙이 뭔가?", "type": "story_arc"},
+    {"week": 2, "episode": "ep05", "title": "바이브코딩이 뭔데?", "type": "standalone"},
+    {"week": 3, "episode": "ep02", "title": "왼팔이 28개", "type": "story_arc"},
+    {"week": 4, "episode": "ep06", "title": "10분만에 AI 에이전트", "type": "standalone"},
+    {"week": 5, "episode": "ep03", "title": "벽 없는 아파트", "type": "story_arc"},
+    {"week": 6, "episode": "ep07", "title": "AI는 왜 헛소리를 하나", "type": "standalone"},
+    {"week": 7, "episode": "ep04", "title": "열기 무서운 상자", "type": "story_arc"},
+    {"week": 8, "episode": "ep08", "title": "바이브코더 5대 실수", "type": "standalone"},
+    {"week": 9, "episode": "ep09", "title": "이 영상은 AI가 만들었다", "type": "standalone"},
+    {"week": 10, "episode": "ep10", "title": "좌절에서 시스템으로", "type": "story_arc"}
+  ],
+  "strategy_notes": {
+    "interleave_reason": "Two entry points: EP01 (story arc start) and EP05 (standalone). New viewers can enter from either.",
+    "shorts_independence": "Shorts run on Mon/Wed/Fri regardless of longform schedule. Mix of episode clips + independent tips.",
+    "cold_start_mitigation": "First 4 weeks: push EP01+EP05 Shorts aggressively. Both are entry points.",
+    "community_response": "Reply to first 10 comments within 2 hours of upload.",
+    "end_screen": "Always show EP05 (standalone entry) + latest episode."
+  }
+}

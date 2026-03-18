@@ -1,0 +1,51 @@
+{
+  "S12_12": {
+    "hash": "1bd2e6107745491d",
+    "saved_files": [
+      "systems/video/output/renders/ep01_explainer_keyframes/S12_12/S12_12_00001_.png"
+    ],
+    "rendered_at": "2026-03-11T13:09:51.305162"
+  },
+  "S13_13": {
+    "hash": "1bd1d64e7ddeb4fa",
+    "saved_files": [
+      "systems/video/output/renders/ep01_explainer_keyframes/S13_13/S13_13_00001_.png"
+    ],
+    "rendered_at": "2026-03-11T13:11:56.640994"
+  },
+  "S14_14": {
+    "hash": "9cbe0db175c42c04",
+    "saved_files": [
+      "systems/video/output/renders/ep01_explainer_keyframes/S14_14/S14_14_00001_.png"
+    ],
+    "rendered_at": "2026-03-11T13:13:39.360464"
+  },
+  "S15_15": {
+    "hash": "ee8abd27e14e5ea4",
+    "saved_files": [
+      "systems/video/output/renders/ep01_explainer_keyframes/S15_15/S15_15_00001_.png"
+    ],
+    "rendered_at": "2026-03-11T13:15:13.505455"
+  },
+  "S16_16": {
+    "hash": "87f912dcebbc5023",
+    "saved_files": [
+      "systems/video/output/renders/ep01_explainer_keyframes/S16_16/S16_16_00001_.png"
+    ],
+    "rendered_at": "2026-03-11T13:16:56.057461"
+  },
+  "S17_17": {
+    "hash": "a86d69553ab8cd1a",
+    "saved_files": [
+      "systems/video/output/renders/ep01_explainer_keyframes/S17_17/S17_17_00001_.png"
+    ],
+    "rendered_at": "2026-03-11T13:18:34.393796"
+  },
+  "S18_18": {
+    "hash": "9a41450276e7fc37",
+    "saved_files": [
+      "systems/video/output/renders/ep01_explainer_keyframes/S18_18/S18_18_00001_.png"
+    ],
+    "rendered_at": "2026-03-11T13:20:08.820068"
+  }
+}

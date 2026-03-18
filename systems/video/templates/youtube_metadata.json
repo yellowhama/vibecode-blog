@@ -1,0 +1,151 @@
+{
+  "$schema": "vibecode-town-youtube-metadata-v1",
+  "title_template": "EP{episode_number} {title_ko} | {title_en} — Vibecode Town",
+  "title_max_chars": 60,
+  "description_template": [
+    "{hook_sentence}",
+    "",
+    "{description_body}",
+    "",
+    "⏱️ 챕터:",
+    "{chapters}",
+    "",
+    "🔗 Links:",
+    "Blog: https://vibecode.town",
+    "Twitter: https://x.com/vibecode_town",
+    "",
+    "📌 이 시리즈 더 보기:",
+    "EP01 스펙이 뭔가?: {ep01_url}",
+    "EP05 바이브코딩이 뭔데?: {ep05_url}",
+    "",
+    "#바이브코딩 #AI코딩 #vibecoding #AIdev #바이브코더"
+  ],
+  "tags": [
+    "바이브코딩",
+    "vibe coding",
+    "AI 코딩",
+    "AI coding tutorial",
+    "바이브코더",
+    "vibe coder",
+    "AI 개발",
+    "코딩 없이 앱 만들기",
+    "build app without code",
+    "AI agent",
+    "cursor AI",
+    "claude code",
+    "copilot",
+    "chatgpt coding",
+    "프로그래밍 초보",
+    "coding for beginners",
+    "소프트웨어 스펙",
+    "spec driven development",
+    "AI 할루시네이션",
+    "AI hallucination",
+    "vibecode town",
+    "바이브코드 타운",
+    "2D animation",
+    "tech explainer",
+    "kurzgesagt style"
+  ],
+  "category": "28",
+  "default_language": "ko",
+  "privacy": "unlisted",
+  "made_for_kids": false,
+  "chapters_auto": true,
+  "chapter_format": "{timecode} {segment_name_ko}",
+  "segment_names_ko": {
+    "HOOK": "인트로",
+    "MISCONCEPTION": "오해",
+    "THE_CRACK": "균열",
+    "CORE": "핵심",
+    "REFRAME": "리프레임",
+    "OUTRO_CTA": "마무리"
+  },
+  "end_screen": {
+    "type": "two_videos",
+    "video_1": "EP05 (standalone entry)",
+    "video_2": "latest episode"
+  },
+  "pinned_comment_template": "이 에피소드에서 가장 공감되는 부분이 뭐였어요? 💬\n\n{engagement_question}",
+  "upload_schedule": {
+    "day": "tuesday",
+    "time_kst": "14:00-16:00",
+    "timezone": "Asia/Seoul"
+  },
+  "shorts_schedule": {
+    "days": ["monday", "wednesday", "friday"],
+    "time_kst": "12:00"
+  },
+  "episodes": {
+    "ep01": {
+      "title_ko": "스펙이 뭔가?",
+      "title_en": "What's a Spec?",
+      "theme_color": "#3B82F6",
+      "engagement_question": "AI한테 시키기 전에 뭘 만들지 정하고 시작하나요, 아니면 일단 시키고 보나요?",
+      "seo_keywords": ["스펙 작성법", "software spec", "AI 코딩 실패"]
+    },
+    "ep02": {
+      "title_ko": "왼팔이 28개",
+      "title_en": "28 Left Arms",
+      "theme_color": "#FF6B35",
+      "engagement_question": "스펙을 어디에 써두세요? 별도 문서? 아니면 프로젝트 안에?",
+      "seo_keywords": ["AI 스펙 위치", "CLAUDE.md", "context engineering"]
+    },
+    "ep03": {
+      "title_ko": "벽 없는 아파트",
+      "title_en": "Apartment Without Walls",
+      "theme_color": "#7AE582",
+      "engagement_question": "파일 구조 어떻게 정하세요? AI한테 맡기나요, 직접 정하나요?",
+      "seo_keywords": ["코드 구조", "폴더 구조", "모듈화"]
+    },
+    "ep04": {
+      "title_ko": "열기 무서운 상자",
+      "title_en": "The Box You're Afraid to Open",
+      "theme_color": "#EF4444",
+      "engagement_question": "테스트 코드 작성하세요? 아니면 돌아가면 OK?",
+      "seo_keywords": ["테스트 코드", "TDD", "AI 코드 검증"]
+    },
+    "ep05": {
+      "title_ko": "바이브코딩이 뭔데?",
+      "title_en": "What Even Is Vibe Coding?",
+      "theme_color": "#06B6D4",
+      "engagement_question": "바이브코딩 해본 적 있어요? 첫 경험이 어땠나요?",
+      "seo_keywords": ["바이브코딩 뜻", "vibe coding meaning", "AI 코딩 입문"]
+    },
+    "ep06": {
+      "title_ko": "10분만에 AI 에이전트",
+      "title_en": "AI Agent in 10 Minutes",
+      "theme_color": "#8B5CF6",
+      "engagement_question": "AI 에이전트 만들어 본 적 있나요? 어디에 썼어요?",
+      "seo_keywords": ["AI agent 만들기", "AI agent tutorial", "에이전트 코딩"]
+    },
+    "ep07": {
+      "title_ko": "AI는 왜 헛소리를 하나",
+      "title_en": "Why Does AI Bullshit?",
+      "theme_color": "#F59E0B",
+      "engagement_question": "AI가 가장 황당한 답을 줬던 경험이 있나요?",
+      "seo_keywords": ["AI 할루시네이션", "AI hallucination 원인", "LLM 한계"]
+    },
+    "ep08": {
+      "title_ko": "바이브코더 5대 실수",
+      "title_en": "5 Mistakes Every Vibe Coder Makes",
+      "theme_color": "#EC4899",
+      "engagement_question": "이 5가지 중에 본인이 가장 많이 하는 실수는?",
+      "seo_keywords": ["AI 코딩 실수", "vibe coding mistakes", "초보 실수"]
+    },
+    "ep09": {
+      "title_ko": "이 영상은 AI가 만들었다",
+      "title_en": "This Video Was Made By AI",
+      "theme_color": "#10B981",
+      "engagement_question": "AI로 만든 영상 퀄리티, 어디까지 가능하다고 생각해요?",
+      "seo_keywords": ["AI 영상 제작", "AI animation", "AI video pipeline"]
+    },
+    "ep10": {
+      "title_ko": "좌절에서 시스템으로",
+      "title_en": "From Frustration to System",
+      "theme_color": "#FFD93D",
+      "engagement_question": "코딩하다 좌절했던 순간이 나중에 도움이 된 적 있나요?",
+      "seo_keywords": ["바이브코딩 시스템", "AI 개발 프로세스", "시스템 사고"]
+    }
+  }
+}

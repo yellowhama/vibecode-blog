@@ -1,0 +1,1101 @@
+{
+  "project_id": "ep08_v5",
+  "version": "6.0",
+  "title": "EP08 — 바이브코더 5대 실수",
+  "language": "en",
+  "total_duration_sec": 235,
+  "segment_count": 6,
+  "beat_count": 18,
+  "segments": [
+    "HOOK",
+    "MISCONCEPTION",
+    "THE_CRACK",
+    "CORE",
+    "REFRAME",
+    "OUTRO_CTA"
+  ],
+  "phases": [
+    {
+      "phase_id": "SEG01",
+      "phase_name": "HOOK",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "CONFIDENCE → FORESHADOWING",
+      "narrative_stage": "HOOK",
+      "target_duration_sec": 15,
+      "beats": [
+        {
+          "beat_id": "SEG01_B001",
+          "scene_id": "SEG01",
+          "text": "Vee has been vibe coding for a month. She's fast. She's productive. And she keeps making the same five mistakes over and over.",
+          "narration_text": "Vee has been vibe coding for a month. She's fast. She's productive. And she keeps making the same five mistakes over and over.",
+          "narrator_vo": "Vee has been vibe coding for a month. She's fast. She's productive. And she keeps making the same five mistakes over and over.",
+          "visual_goal": "Five monitors arranged in an arc around Vee. Each one shows a different project. She cracks her knuckles. Types on one. Swivels to another. Types. Swivels. She's in the zone.",
+          "duration_sec": 9.2,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": true,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "CONFIDENCE → FORESHADOWING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Vee has been vibe coding for a month. She's fast. She's productive. And she keeps making the same five mistakes over and over.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG01_B002",
+          "scene_id": "SEG01",
+          "text": "Every vibe coder does. Here are all five.",
+          "narration_text": "Every vibe coder does. Here are all five.",
+          "narrator_vo": "Every vibe coder does. Here are all five.",
+          "visual_goal": "All five monitors go red simultaneously. Error messages. Crash logs. A sad-face emoji from one app. Vee freezes mid-swivel.",
+          "duration_sec": 3.2,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 1,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "CONFIDENCE → FORESHADOWING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Every vibe coder does. Here are all five.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG02",
+      "phase_name": "MISCONCEPTION",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "\"I'M PAST THE BASICS\" → HUMBLING",
+      "narrative_stage": "MISCONCEPTION",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG02_B003",
+          "scene_id": "SEG02",
+          "text": "Mistake number one. No spec. Just vibes.",
+          "narration_text": "Mistake number one. No spec. Just vibes.",
+          "narrator_vo": "Mistake number one. No spec. Just vibes.",
+          "visual_goal": "TITLE INSERT: \"실수 #1: 스펙 없이 시작한다\"",
+          "duration_sec": 2.8,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "\"I'M PAST THE BASICS\" → HUMBLING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Mistake number one. No spec. Just vibes.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B004",
+          "scene_id": "SEG02",
+          "text": "She got A dashboard. Not HER dashboard. Because she never defined what \"her dashboard\" means.",
+          "narration_text": "She got A dashboard. Not HER dashboard. Because she never defined what \"her dashboard\" means.",
+          "narrator_vo": "She got A dashboard. Not HER dashboard. Because she never defined what \"her dashboard\" means.",
+          "visual_goal": "Vee opens an AI chat. Types: \"Build me a dashboard.\" The AI builds a dashboard. It has charts, tables, buttons. It looks great.",
+          "duration_sec": 6.0,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "\"I'M PAST THE BASICS\" → HUMBLING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "She got A dashboard. Not HER dashboard. Because she never defined what \"her dashboard\" means.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B005",
+          "scene_id": "SEG02",
+          "text": "Fix: three sentences before you start. What it does, what it doesn't do, what \"done\" looks like.",
+          "narration_text": "Fix: three sentences before you start. What it does, what it doesn't do, what \"done\" looks like.",
+          "narrator_vo": "Fix: three sentences before you start. What it does, what it doesn't do, what \"done\" looks like.",
+          "visual_goal": "Vee looks at the dashboard. The charts show random data. The buttons don't connect to anything. The color scheme is purple and orange — she wanted blue and white.",
+          "duration_sec": 6.8,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "\"I'M PAST THE BASICS\" → HUMBLING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Fix: three sentences before you start. What it does, what it doesn't do, what \"done\" looks like.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG03",
+      "phase_name": "THE_CRACK",
+      "segment": "THE_CRACK",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "emotion_curve": "HUMBLING → DEEPER RECOGNITION",
+      "narrative_stage": "THE_CRACK",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG03_B006",
+          "scene_id": "SEG03",
+          "text": "Mistake number two. Everything in one file. AI doesn't care about file structure. It'll happily write four thousand lines into a single file. Login next to CSS next to database next to that weird function you asked for at 2 AM and forgot about.",
+          "narration_text": "Mistake number two. Everything in one file. AI doesn't care about file structure. It'll happily write four thousand lines into a single file. Login next to CSS next to database next to that weird function you asked for at 2 AM and forgot about.",
+          "narrator_vo": "Mistake number two. Everything in one file. AI doesn't care about file structure. It'll happily write four thousand lines into a single file. Login next to CSS next to database next to that weird function you asked for at 2 AM and forgot about.",
+          "visual_goal": "TITLE INSERT: \"실수 #2: 파일 하나에 다 넣는다\"",
+          "duration_sec": 17.6,
+          "segment": "THE_CRACK",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "HUMBLING → DEEPER RECOGNITION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Mistake number two. Everything in one file. AI doesn't care about file structure. It'll happily write four thousand lines into a single file. Login next to CSS next to database next to that weird function you asked for at 2 AM and forgot about.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B007",
+          "scene_id": "SEG03",
+          "text": "Fix: before you build, tell AI where things go. \"Auth logic goes in auth.js. Styles go in styles.css.\" The AI follows structure. It just won't create structure on its own.",
+          "narration_text": "Fix: before you build, tell AI where things go. \"Auth logic goes in auth.js. Styles go in styles.css.\" The AI follows structure. It just won't create structure on its own.",
+          "narrator_vo": "Fix: before you build, tell AI where things go. \"Auth logic goes in auth.js. Styles go in styles.css.\" The AI follows structure. It just won't create structure on its own.",
+          "visual_goal": "Vee's screen shows a single file: `app.js`. The scroll bar is tiny — the file is enormous. She scrolls. And scrolls. And scrolls. The line counter reads 4,200.",
+          "duration_sec": 12.0,
+          "segment": "THE_CRACK",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "HUMBLING → DEEPER RECOGNITION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Fix: before you build, tell AI where things go. \"Auth logic goes in auth.js. Styles go in styles.css.\" The AI follows structure. It just won't create structure on its own.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG04",
+      "phase_name": "CORE",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "emotion_curve": "RECOGNITION → PATTERN AWARENESS",
+      "narrative_stage": "CORE",
+      "target_duration_sec": 105,
+      "beats": [
+        {
+          "beat_id": "SEG04_B008",
+          "scene_id": "SEG04",
+          "text": "Mistake number three. No tests. The app works on her machine. She saw it work. Once. With one input. That's not testing — that's hoping.",
+          "narration_text": "Mistake number three. No tests. The app works on her machine. She saw it work. Once. With one input. That's not testing — that's hoping.",
+          "narrator_vo": "Mistake number three. No tests. The app works on her machine. She saw it work. Once. With one input. That's not testing — that's hoping.",
+          "visual_goal": "TITLE INSERT: \"실수 #3: 테스트를 안 쓴다\"",
+          "duration_sec": 10.0,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → PATTERN AWARENESS",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Mistake number three. No tests. The app works on her machine. She saw it work. Once. With one input. That's not testing — that's hoping.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B009",
+          "scene_id": "SEG04",
+          "text": "Fix: one test per feature. Not a test suite. Not TDD. Just one line that says \"if this doesn't work, something is broken.\" Three tests catch eighty percent of bugs. Zero tests catch zero.",
+          "narration_text": "Fix: one test per feature. Not a test suite. Not TDD. Just one line that says \"if this doesn't work, something is broken.\" Three tests catch eighty percent of bugs. Zero tests catch zero.",
+          "narrator_vo": "Fix: one test per feature. Not a test suite. Not TDD. Just one line that says \"if this doesn't work, something is broken.\" Three tests catch eighty percent of bugs. Zero tests catch zero.",
+          "visual_goal": "Vee finishes a feature. She runs the app. It looks fine. She ships it. Time passes — a clock fast-forwards. A user reports a bug. Vee opens the code. She has no idea what broke because she has no tests.",
+          "duration_sec": 13.6,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → PATTERN AWARENESS",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Fix: one test per feature. Not a test suite. Not TDD. Just one line that says \"if this doesn't work, something is broken.\" Three tests catch eighty percent of bugs. Zero tests catch zero.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B010",
+          "scene_id": "SEG04",
+          "text": "Mistake number four. Ignoring errors. The app runs, so the errors don't matter, right? Wrong. Those warnings are tomorrow's crashes. They're the AI telling you \"I did what you asked, but something smells wrong.\"",
+          "narration_text": "Mistake number four. Ignoring errors. The app runs, so the errors don't matter, right? Wrong. Those warnings are tomorrow's crashes. They're the AI telling you \"I did what you asked, but something smells wrong.\"",
+          "narrator_vo": "Mistake number four. Ignoring errors. The app runs, so the errors don't matter, right? Wrong. Those warnings are tomorrow's crashes. They're the AI telling you \"I did what you asked, but something smells wrong.\"",
+          "visual_goal": "Quick fix flash: Three test lines appear. \"When input is empty — show error.\" \"When input is valid — save it.\" \"When server is down — show retry.\" Three lines. Three safety nets.",
+          "duration_sec": 13.6,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → PATTERN AWARENESS",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Mistake number four. Ignoring errors. The app runs, so the errors don't matter, right? Wrong. Those warnings are tomorrow's crashes. They're the AI telling you \"I did what you asked, but something smells wrong.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B011",
+          "scene_id": "SEG04",
+          "text": "Fix: read the first error. Just the first one. Fix it. Then read the next. You don't have to fix all of them. You have to stop pretending they don't exist.",
+          "narration_text": "Fix: read the first error. Just the first one. Fix it. Then read the next. You don't have to fix all of them. You have to stop pretending they don't exist.",
+          "narrator_vo": "Fix: read the first error. Just the first one. Fix it. Then read the next. You don't have to fix all of them. You have to stop pretending they don't exist.",
+          "visual_goal": "TITLE INSERT: \"실수 #4: 에러를 무시한다\"",
+          "duration_sec": 12.4,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": true,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → PATTERN AWARENESS",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Fix: read the first error. Just the first one. Fix it. Then read the next. You don't have to fix all of them. You have to stop pretending they don't exist.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B012",
+          "scene_id": "SEG04",
+          "text": "Mistake number five. The biggest one. Not reading the output. AI doesn't just write code. It writes explanations, warnings, trade-offs, caveats. The code is the least important part of the response. And most people only copy the code.",
+          "narration_text": "Mistake number five. The biggest one. Not reading the output. AI doesn't just write code. It writes explanations, warnings, trade-offs, caveats. The code is the least important part of the response. And most people only copy the code.",
+          "narrator_vo": "Mistake number five. The biggest one. Not reading the output. AI doesn't just write code. It writes explanations, warnings, trade-offs, caveats. The code is the least important part of the response. And most people only copy the code.",
+          "visual_goal": "Vee's terminal shows a wall of red text. Warnings, deprecation notices, error traces. She glances at it. The app still runs. She shrugs and keeps building.",
+          "duration_sec": 15.2,
+          "segment": "CORE",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → PATTERN AWARENESS",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Mistake number five. The biggest one. Not reading the output. AI doesn't just write code. It writes explanations, warnings, trade-offs, caveats. The code is the least important part of the response. And most people only copy the code.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B013",
+          "scene_id": "SEG04",
+          "text": "Fix: read the response before you copy the code. Every time. The AI is trying to tell you something. Let it.",
+          "narration_text": "Fix: read the response before you copy the code. Every time. The AI is trying to tell you something. Let it.",
+          "narrator_vo": "Fix: read the response before you copy the code. Every time. The AI is trying to tell you something. Let it.",
+          "visual_goal": "Vee literally drags the terminal window off-screen. Out of sight, out of mind.",
+          "duration_sec": 8.4,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 3,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → PATTERN AWARENESS",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Fix: read the response before you copy the code. Every time. The AI is trying to tell you something. Let it.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG05",
+      "phase_name": "REFRAME",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "PATTERN AWARENESS → INSIGHT",
+      "narrative_stage": "REFRAME",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG05_B014",
+          "scene_id": "SEG05",
+          "text": "Look at these five mistakes. No spec. No structure. No tests. Ignoring errors. Not reading. Notice anything?",
+          "narration_text": "Look at these five mistakes. No spec. No structure. No tests. Ignoring errors. Not reading. Notice anything?",
+          "narrator_vo": "Look at these five mistakes. No spec. No structure. No tests. Ignoring errors. Not reading. Notice anything?",
+          "visual_goal": "The five mistakes appear as a list. Beside each one, the fix. Below — a single insight:",
+          "duration_sec": 6.8,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "PATTERN AWARENESS → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Look at these five mistakes. No spec. No structure. No tests. Ignoring errors. Not reading. Notice anything?",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B015",
+          "scene_id": "SEG05",
+          "text": "None of these are AI problems. These are human problems. AI just makes them visible faster. Without AI, these mistakes take months to surface. With AI, they take minutes.",
+          "narration_text": "None of these are AI problems. These are human problems. AI just makes them visible faster. Without AI, these mistakes take months to surface. With AI, they take minutes.",
+          "narrator_vo": "None of these are AI problems. These are human problems. AI just makes them visible faster. Without AI, these mistakes take months to surface. With AI, they take minutes.",
+          "visual_goal": "The list transforms. \"AI\" fades from every item. What remains: \"No plan. No organization. No verification. No attention. No reading.\"",
+          "duration_sec": 11.6,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "PATTERN AWARENESS → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "None of these are AI problems. These are human problems. AI just makes them visible faster. Without AI, these mistakes take months to surface. With AI, they take minutes.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B016",
+          "scene_id": "SEG05",
+          "text": "AI is a speed multiplier. It multiplies good habits AND bad habits. The tool isn't the problem. The workflow is.",
+          "narration_text": "AI is a speed multiplier. It multiplies good habits AND bad habits. The tool isn't the problem. The workflow is.",
+          "narrator_vo": "AI is a speed multiplier. It multiplies good habits AND bad habits. The tool isn't the problem. The workflow is.",
+          "visual_goal": "The list compresses into a single line: \"AI is a mirror. It reflects your habits at ten times the speed.\"",
+          "duration_sec": 8.0,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": true,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "PATTERN AWARENESS → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "AI is a speed multiplier. It multiplies good habits AND bad habits. The tool isn't the problem. The workflow is.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG06",
+      "phase_name": "OUTRO_CTA",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "INSIGHT → SELF-AWARENESS",
+      "narrative_stage": "OUTRO_CTA",
+      "target_duration_sec": 25,
+      "beats": [
+        {
+          "beat_id": "SEG06_B017",
+          "scene_id": "SEG06",
+          "text": "Five mistakes. Five fixes. None of them require better AI. All of them require ten seconds of thinking before you type.",
+          "narration_text": "Five mistakes. Five fixes. None of them require better AI. All of them require ten seconds of thinking before you type.",
+          "narrator_vo": "Five mistakes. Five fixes. None of them require better AI. All of them require ten seconds of thinking before you type.",
+          "visual_goal": "Vee at her desk. One monitor now. She opens an AI chat. But before typing, she pauses. Pulls out her notebook. Writes three bullet points. Looks at them. Nods. Then types.",
+          "duration_sec": 8.4,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "INSIGHT → SELF-AWARENESS",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Five mistakes. Five fixes. None of them require better AI. All of them require ten seconds of thinking before you type.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B018",
+          "scene_id": "SEG06",
+          "text": "Slow down for ten seconds. The AI will wait.",
+          "narration_text": "Slow down for ten seconds. The AI will wait.",
+          "narrator_vo": "Slow down for ten seconds. The AI will wait.",
+          "visual_goal": "Vee posts a checklist next to her monitor. Five items. She checks off the first one before starting her next session: \"Did I write what I want?\"",
+          "duration_sec": 3.6,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 6,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "INSIGHT → SELF-AWARENESS",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Slow down for ten seconds. The AI will wait.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "beat_id": "SEG01_B001",
+      "scene_id": "SEG01",
+      "text": "Vee has been vibe coding for a month. She's fast. She's productive. And she keeps making the same five mistakes over and over.",
+      "narration_text": "Vee has been vibe coding for a month. She's fast. She's productive. And she keeps making the same five mistakes over and over.",
+      "narrator_vo": "Vee has been vibe coding for a month. She's fast. She's productive. And she keeps making the same five mistakes over and over.",
+      "visual_goal": "Five monitors arranged in an arc around Vee. Each one shows a different project. She cracks her knuckles. Types on one. Swivels to another. Types. Swivels. She's in the zone.",
+      "duration_sec": 9.2,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "CONFIDENCE → FORESHADOWING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Vee has been vibe coding for a month. She's fast. She's productive. And she keeps making the same five mistakes over and over.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG01_B002",
+      "scene_id": "SEG01",
+      "text": "Every vibe coder does. Here are all five.",
+      "narration_text": "Every vibe coder does. Here are all five.",
+      "narrator_vo": "Every vibe coder does. Here are all five.",
+      "visual_goal": "All five monitors go red simultaneously. Error messages. Crash logs. A sad-face emoji from one app. Vee freezes mid-swivel.",
+      "duration_sec": 3.2,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 1,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "CONFIDENCE → FORESHADOWING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Every vibe coder does. Here are all five.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B003",
+      "scene_id": "SEG02",
+      "text": "Mistake number one. No spec. Just vibes.",
+      "narration_text": "Mistake number one. No spec. Just vibes.",
+      "narrator_vo": "Mistake number one. No spec. Just vibes.",
+      "visual_goal": "TITLE INSERT: \"실수 #1: 스펙 없이 시작한다\"",
+      "duration_sec": 2.8,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "\"I'M PAST THE BASICS\" → HUMBLING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Mistake number one. No spec. Just vibes.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B004",
+      "scene_id": "SEG02",
+      "text": "She got A dashboard. Not HER dashboard. Because she never defined what \"her dashboard\" means.",
+      "narration_text": "She got A dashboard. Not HER dashboard. Because she never defined what \"her dashboard\" means.",
+      "narrator_vo": "She got A dashboard. Not HER dashboard. Because she never defined what \"her dashboard\" means.",
+      "visual_goal": "Vee opens an AI chat. Types: \"Build me a dashboard.\" The AI builds a dashboard. It has charts, tables, buttons. It looks great.",
+      "duration_sec": 6.0,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "\"I'M PAST THE BASICS\" → HUMBLING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "She got A dashboard. Not HER dashboard. Because she never defined what \"her dashboard\" means.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B005",
+      "scene_id": "SEG02",
+      "text": "Fix: three sentences before you start. What it does, what it doesn't do, what \"done\" looks like.",
+      "narration_text": "Fix: three sentences before you start. What it does, what it doesn't do, what \"done\" looks like.",
+      "narrator_vo": "Fix: three sentences before you start. What it does, what it doesn't do, what \"done\" looks like.",
+      "visual_goal": "Vee looks at the dashboard. The charts show random data. The buttons don't connect to anything. The color scheme is purple and orange — she wanted blue and white.",
+      "duration_sec": 6.8,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "\"I'M PAST THE BASICS\" → HUMBLING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Fix: three sentences before you start. What it does, what it doesn't do, what \"done\" looks like.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B006",
+      "scene_id": "SEG03",
+      "text": "Mistake number two. Everything in one file. AI doesn't care about file structure. It'll happily write four thousand lines into a single file. Login next to CSS next to database next to that weird function you asked for at 2 AM and forgot about.",
+      "narration_text": "Mistake number two. Everything in one file. AI doesn't care about file structure. It'll happily write four thousand lines into a single file. Login next to CSS next to database next to that weird function you asked for at 2 AM and forgot about.",
+      "narrator_vo": "Mistake number two. Everything in one file. AI doesn't care about file structure. It'll happily write four thousand lines into a single file. Login next to CSS next to database next to that weird function you asked for at 2 AM and forgot about.",
+      "visual_goal": "TITLE INSERT: \"실수 #2: 파일 하나에 다 넣는다\"",
+      "duration_sec": 17.6,
+      "segment": "THE_CRACK",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "HUMBLING → DEEPER RECOGNITION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Mistake number two. Everything in one file. AI doesn't care about file structure. It'll happily write four thousand lines into a single file. Login next to CSS next to database next to that weird function you asked for at 2 AM and forgot about.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B007",
+      "scene_id": "SEG03",
+      "text": "Fix: before you build, tell AI where things go. \"Auth logic goes in auth.js. Styles go in styles.css.\" The AI follows structure. It just won't create structure on its own.",
+      "narration_text": "Fix: before you build, tell AI where things go. \"Auth logic goes in auth.js. Styles go in styles.css.\" The AI follows structure. It just won't create structure on its own.",
+      "narrator_vo": "Fix: before you build, tell AI where things go. \"Auth logic goes in auth.js. Styles go in styles.css.\" The AI follows structure. It just won't create structure on its own.",
+      "visual_goal": "Vee's screen shows a single file: `app.js`. The scroll bar is tiny — the file is enormous. She scrolls. And scrolls. And scrolls. The line counter reads 4,200.",
+      "duration_sec": 12.0,
+      "segment": "THE_CRACK",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "HUMBLING → DEEPER RECOGNITION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Fix: before you build, tell AI where things go. \"Auth logic goes in auth.js. Styles go in styles.css.\" The AI follows structure. It just won't create structure on its own.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B008",
+      "scene_id": "SEG04",
+      "text": "Mistake number three. No tests. The app works on her machine. She saw it work. Once. With one input. That's not testing — that's hoping.",
+      "narration_text": "Mistake number three. No tests. The app works on her machine. She saw it work. Once. With one input. That's not testing — that's hoping.",
+      "narrator_vo": "Mistake number three. No tests. The app works on her machine. She saw it work. Once. With one input. That's not testing — that's hoping.",
+      "visual_goal": "TITLE INSERT: \"실수 #3: 테스트를 안 쓴다\"",
+      "duration_sec": 10.0,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → PATTERN AWARENESS",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Mistake number three. No tests. The app works on her machine. She saw it work. Once. With one input. That's not testing — that's hoping.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B009",
+      "scene_id": "SEG04",
+      "text": "Fix: one test per feature. Not a test suite. Not TDD. Just one line that says \"if this doesn't work, something is broken.\" Three tests catch eighty percent of bugs. Zero tests catch zero.",
+      "narration_text": "Fix: one test per feature. Not a test suite. Not TDD. Just one line that says \"if this doesn't work, something is broken.\" Three tests catch eighty percent of bugs. Zero tests catch zero.",
+      "narrator_vo": "Fix: one test per feature. Not a test suite. Not TDD. Just one line that says \"if this doesn't work, something is broken.\" Three tests catch eighty percent of bugs. Zero tests catch zero.",
+      "visual_goal": "Vee finishes a feature. She runs the app. It looks fine. She ships it. Time passes — a clock fast-forwards. A user reports a bug. Vee opens the code. She has no idea what broke because she has no tests.",
+      "duration_sec": 13.6,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → PATTERN AWARENESS",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Fix: one test per feature. Not a test suite. Not TDD. Just one line that says \"if this doesn't work, something is broken.\" Three tests catch eighty percent of bugs. Zero tests catch zero.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B010",
+      "scene_id": "SEG04",
+      "text": "Mistake number four. Ignoring errors. The app runs, so the errors don't matter, right? Wrong. Those warnings are tomorrow's crashes. They're the AI telling you \"I did what you asked, but something smells wrong.\"",
+      "narration_text": "Mistake number four. Ignoring errors. The app runs, so the errors don't matter, right? Wrong. Those warnings are tomorrow's crashes. They're the AI telling you \"I did what you asked, but something smells wrong.\"",
+      "narrator_vo": "Mistake number four. Ignoring errors. The app runs, so the errors don't matter, right? Wrong. Those warnings are tomorrow's crashes. They're the AI telling you \"I did what you asked, but something smells wrong.\"",
+      "visual_goal": "Quick fix flash: Three test lines appear. \"When input is empty — show error.\" \"When input is valid — save it.\" \"When server is down — show retry.\" Three lines. Three safety nets.",
+      "duration_sec": 13.6,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → PATTERN AWARENESS",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Mistake number four. Ignoring errors. The app runs, so the errors don't matter, right? Wrong. Those warnings are tomorrow's crashes. They're the AI telling you \"I did what you asked, but something smells wrong.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B011",
+      "scene_id": "SEG04",
+      "text": "Fix: read the first error. Just the first one. Fix it. Then read the next. You don't have to fix all of them. You have to stop pretending they don't exist.",
+      "narration_text": "Fix: read the first error. Just the first one. Fix it. Then read the next. You don't have to fix all of them. You have to stop pretending they don't exist.",
+      "narrator_vo": "Fix: read the first error. Just the first one. Fix it. Then read the next. You don't have to fix all of them. You have to stop pretending they don't exist.",
+      "visual_goal": "TITLE INSERT: \"실수 #4: 에러를 무시한다\"",
+      "duration_sec": 12.4,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → PATTERN AWARENESS",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Fix: read the first error. Just the first one. Fix it. Then read the next. You don't have to fix all of them. You have to stop pretending they don't exist.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B012",
+      "scene_id": "SEG04",
+      "text": "Mistake number five. The biggest one. Not reading the output. AI doesn't just write code. It writes explanations, warnings, trade-offs, caveats. The code is the least important part of the response. And most people only copy the code.",
+      "narration_text": "Mistake number five. The biggest one. Not reading the output. AI doesn't just write code. It writes explanations, warnings, trade-offs, caveats. The code is the least important part of the response. And most people only copy the code.",
+      "narrator_vo": "Mistake number five. The biggest one. Not reading the output. AI doesn't just write code. It writes explanations, warnings, trade-offs, caveats. The code is the least important part of the response. And most people only copy the code.",
+      "visual_goal": "Vee's terminal shows a wall of red text. Warnings, deprecation notices, error traces. She glances at it. The app still runs. She shrugs and keeps building.",
+      "duration_sec": 15.2,
+      "segment": "CORE",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → PATTERN AWARENESS",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Mistake number five. The biggest one. Not reading the output. AI doesn't just write code. It writes explanations, warnings, trade-offs, caveats. The code is the least important part of the response. And most people only copy the code.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B013",
+      "scene_id": "SEG04",
+      "text": "Fix: read the response before you copy the code. Every time. The AI is trying to tell you something. Let it.",
+      "narration_text": "Fix: read the response before you copy the code. Every time. The AI is trying to tell you something. Let it.",
+      "narrator_vo": "Fix: read the response before you copy the code. Every time. The AI is trying to tell you something. Let it.",
+      "visual_goal": "Vee literally drags the terminal window off-screen. Out of sight, out of mind.",
+      "duration_sec": 8.4,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 3,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → PATTERN AWARENESS",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Fix: read the response before you copy the code. Every time. The AI is trying to tell you something. Let it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B014",
+      "scene_id": "SEG05",
+      "text": "Look at these five mistakes. No spec. No structure. No tests. Ignoring errors. Not reading. Notice anything?",
+      "narration_text": "Look at these five mistakes. No spec. No structure. No tests. Ignoring errors. Not reading. Notice anything?",
+      "narrator_vo": "Look at these five mistakes. No spec. No structure. No tests. Ignoring errors. Not reading. Notice anything?",
+      "visual_goal": "The five mistakes appear as a list. Beside each one, the fix. Below — a single insight:",
+      "duration_sec": 6.8,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "PATTERN AWARENESS → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Look at these five mistakes. No spec. No structure. No tests. Ignoring errors. Not reading. Notice anything?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B015",
+      "scene_id": "SEG05",
+      "text": "None of these are AI problems. These are human problems. AI just makes them visible faster. Without AI, these mistakes take months to surface. With AI, they take minutes.",
+      "narration_text": "None of these are AI problems. These are human problems. AI just makes them visible faster. Without AI, these mistakes take months to surface. With AI, they take minutes.",
+      "narrator_vo": "None of these are AI problems. These are human problems. AI just makes them visible faster. Without AI, these mistakes take months to surface. With AI, they take minutes.",
+      "visual_goal": "The list transforms. \"AI\" fades from every item. What remains: \"No plan. No organization. No verification. No attention. No reading.\"",
+      "duration_sec": 11.6,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "PATTERN AWARENESS → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "None of these are AI problems. These are human problems. AI just makes them visible faster. Without AI, these mistakes take months to surface. With AI, they take minutes.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B016",
+      "scene_id": "SEG05",
+      "text": "AI is a speed multiplier. It multiplies good habits AND bad habits. The tool isn't the problem. The workflow is.",
+      "narration_text": "AI is a speed multiplier. It multiplies good habits AND bad habits. The tool isn't the problem. The workflow is.",
+      "narrator_vo": "AI is a speed multiplier. It multiplies good habits AND bad habits. The tool isn't the problem. The workflow is.",
+      "visual_goal": "The list compresses into a single line: \"AI is a mirror. It reflects your habits at ten times the speed.\"",
+      "duration_sec": 8.0,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "PATTERN AWARENESS → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "AI is a speed multiplier. It multiplies good habits AND bad habits. The tool isn't the problem. The workflow is.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B017",
+      "scene_id": "SEG06",
+      "text": "Five mistakes. Five fixes. None of them require better AI. All of them require ten seconds of thinking before you type.",
+      "narration_text": "Five mistakes. Five fixes. None of them require better AI. All of them require ten seconds of thinking before you type.",
+      "narrator_vo": "Five mistakes. Five fixes. None of them require better AI. All of them require ten seconds of thinking before you type.",
+      "visual_goal": "Vee at her desk. One monitor now. She opens an AI chat. But before typing, she pauses. Pulls out her notebook. Writes three bullet points. Looks at them. Nods. Then types.",
+      "duration_sec": 8.4,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "INSIGHT → SELF-AWARENESS",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Five mistakes. Five fixes. None of them require better AI. All of them require ten seconds of thinking before you type.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B018",
+      "scene_id": "SEG06",
+      "text": "Slow down for ten seconds. The AI will wait.",
+      "narration_text": "Slow down for ten seconds. The AI will wait.",
+      "narrator_vo": "Slow down for ten seconds. The AI will wait.",
+      "visual_goal": "Vee posts a checklist next to her monitor. Five items. She checks off the first one before starting her next session: \"Did I write what I want?\"",
+      "duration_sec": 3.6,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 6,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "INSIGHT → SELF-AWARENESS",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Slow down for ten seconds. The AI will wait.",
+          "emotion": ""
+        }
+      ]
+    }
+  ]
+}

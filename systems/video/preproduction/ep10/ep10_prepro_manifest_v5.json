@@ -1,0 +1,1437 @@
+{
+  "project_id": "ep10_v5",
+  "version": "6.0",
+  "title": "EP10 — 좌절에서 시스템으로",
+  "language": "en",
+  "total_duration_sec": 235,
+  "segment_count": 6,
+  "beat_count": 24,
+  "segments": [
+    "HOOK",
+    "MISCONCEPTION",
+    "THE_CRACK",
+    "CORE",
+    "REFRAME",
+    "OUTRO_CTA"
+  ],
+  "phases": [
+    {
+      "phase_id": "SEG01",
+      "phase_name": "HOOK",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "CONFIDENCE → IMMEDIATE FAILURE",
+      "narrative_stage": "HOOK",
+      "target_duration_sec": 15,
+      "beats": [
+        {
+          "beat_id": "SEG01_B001",
+          "scene_id": "SEG01",
+          "text": "She wrote the spec. She organized the code. She wrote the tests. She read the output. She did everything right. And it broke anyway.",
+          "narration_text": "She wrote the spec. She organized the code. She wrote the tests. She read the output. She did everything right. And it broke anyway.",
+          "narrator_vo": "She wrote the spec. She organized the code. She wrote the tests. She read the output. She did everything right. And it broke anyway.",
+          "visual_goal": "Morning light. Vee sits at her desk, fresh. Her wall has everything: the spec sticky note from EP01, the SSOT document from EP02, the folder structure from EP03, the test checklist from EP04. She's ready.",
+          "duration_sec": 9.6,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "CONFIDENCE → IMMEDIATE FAILURE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "She wrote the spec. She organized the code. She wrote the tests. She read the output. She did everything right. And it broke anyway.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG01_B002",
+          "scene_id": "SEG01",
+          "text": "Good. That means the system is working.",
+          "narration_text": "Good. That means the system is working.",
+          "narrator_vo": "Good. That means the system is working.",
+          "visual_goal": "Vee opens a new project. She types confidently. She follows every rule. Spec first. Structure second. Tests third.",
+          "duration_sec": 2.8,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 1,
+          "extended_metaphor": false,
+          "shorts_candidate": true,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "CONFIDENCE → IMMEDIATE FAILURE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Good. That means the system is working.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG02",
+      "phase_name": "MISCONCEPTION",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "FRUSTRATION → FALSE EXPECTATION",
+      "narrative_stage": "MISCONCEPTION",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG02_B003",
+          "scene_id": "SEG02",
+          "text": "The misconception at the end of every learning journey. \"I know the rules now. So it should work the first time.\" That's not how systems work. That's not how anything works.",
+          "narration_text": "The misconception at the end of every learning journey. \"I know the rules now. So it should work the first time.\" That's not how systems work. That's not how anything works.",
+          "narrator_vo": "The misconception at the end of every learning journey. \"I know the rules now. So it should work the first time.\" That's not how systems work. That's not how anything works.",
+          "visual_goal": "Vee scrolls through the errors. Her face cycles through frustration, confusion, almost-anger. She looks at her wall of sticky notes. \"I followed every step.\"",
+          "duration_sec": 12.4,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "FRUSTRATION → FALSE EXPECTATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The misconception at the end of every learning journey. \"I know the rules now. So it should work the first time.\" That's not how systems work. That's not how anything works.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B004",
+          "scene_id": "SEG02",
+          "text": "We imagine learning like this. A straight line up. Each lesson gets you one step closer. By step ten, you're done.",
+          "narration_text": "We imagine learning like this. A straight line up. Each lesson gets you one step closer. By step ten, you're done.",
+          "narrator_vo": "We imagine learning like this. A straight line up. Each lesson gets you one step closer. By step ten, you're done.",
+          "visual_goal": "A staircase diagram. At the top: \"MASTERY.\" A figure stands at the bottom, looking up. The stairs are clean, evenly spaced, going straight up.",
+          "duration_sec": 8.4,
+          "segment": "MISCONCEPTION",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "FRUSTRATION → FALSE EXPECTATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "We imagine learning like this. A straight line up. Each lesson gets you one step closer. By step ten, you're done.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B005",
+          "scene_id": "SEG02",
+          "text": "It actually looks like this. Progress isn't linear. And the failures at step ten feel different from the failures at step one — but they're still failures.",
+          "narration_text": "It actually looks like this. Progress isn't linear. And the failures at step ten feel different from the failures at step one — but they're still failures.",
+          "narrator_vo": "It actually looks like this. Progress isn't linear. And the failures at step ten feel different from the failures at step one — but they're still failures.",
+          "visual_goal": "The staircase shatters. What's underneath: a jagged, messy path. Ups and downs. Loops. Dead ends. But the overall direction is still up.",
+          "duration_sec": 10.8,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "FRUSTRATION → FALSE EXPECTATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "It actually looks like this. Progress isn't linear. And the failures at step ten feel different from the failures at step one — but they're still failures.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG03",
+      "phase_name": "THE_CRACK",
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "FALSE EXPECTATION → DIFFERENT KIND OF FAILURE",
+      "narrative_stage": "THE_CRACK",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG03_B006",
+          "scene_id": "SEG03",
+          "text": "Seventeen errors. But something is different. She can read them. She knows where to look. She knows what each error means. That wasn't true two months ago.",
+          "narration_text": "Seventeen errors. But something is different. She can read them. She knows where to look. She knows what each error means. That wasn't true two months ago.",
+          "narrator_vo": "Seventeen errors. But something is different. She can read them. She knows where to look. She knows what each error means. That wasn't true two months ago.",
+          "visual_goal": "Vee looks at the seventeen errors again. But this time, she actually reads them. Line by line.",
+          "duration_sec": 10.8,
+          "segment": "THE_CRACK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "FALSE EXPECTATION → DIFFERENT KIND OF FAILURE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Seventeen errors. But something is different. She can read them. She knows where to look. She knows what each error means. That wasn't true two months ago.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B007",
+          "scene_id": "SEG03",
+          "text": "Same person. Same errors. Completely different experience. The system didn't prevent the failure. The system made the failure useful.",
+          "narration_text": "Same person. Same errors. Completely different experience. The system didn't prevent the failure. The system made the failure useful.",
+          "narrator_vo": "Same person. Same errors. Completely different experience. The system didn't prevent the failure. The system made the failure useful.",
+          "visual_goal": "Her expression changes. Not frustration — recognition. She's seen this before. Error #1: missing type definition. She knows where types go (EP03 — structure). Error #7: null reference on auth. She knows to check the auth boundary (EP03 — domains). Error #14: test assertion failed. The test caught a real bug before it shipped (EP04 — testing works).",
+          "duration_sec": 7.6,
+          "segment": "THE_CRACK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 2,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "FALSE EXPECTATION → DIFFERENT KIND OF FAILURE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Same person. Same errors. Completely different experience. The system didn't prevent the failure. The system made the failure useful.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG04",
+      "phase_name": "CORE",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+      "narrative_stage": "CORE",
+      "target_duration_sec": 105,
+      "beats": [
+        {
+          "beat_id": "SEG04_B008",
+          "scene_id": "SEG04",
+          "text": "Let's trace the journey.",
+          "narration_text": "Let's trace the journey.",
+          "narrator_vo": "Let's trace the journey.",
+          "visual_goal": "TRANSITION: Clean white background. Four icons appear in a horizontal line — each one from a previous episode.",
+          "duration_sec": 1.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Let's trace the journey.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B009",
+          "scene_id": "SEG04",
+          "text": "Episode one. The spec. She learned to define what she's building before she builds it. One sentence that explains everything.",
+          "narration_text": "Episode one. The spec. She learned to define what she's building before she builds it. One sentence that explains everything.",
+          "narrator_vo": "Episode one. The spec. She learned to define what she's building before she builds it. One sentence that explains everything.",
+          "visual_goal": "ICON 1 lights up: A piece of paper with four boxes. EP01.",
+          "duration_sec": 8.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Episode one. The spec. She learned to define what she's building before she builds it. One sentence that explains everything.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B010",
+          "scene_id": "SEG04",
+          "text": "Episode two. Placement. She learned that AI forgets. The fix isn't better memory — it's a file that never forgets. One document. Every conversation reads it first.",
+          "narration_text": "Episode two. Placement. She learned that AI forgets. The fix isn't better memory — it's a file that never forgets. One document. Every conversation reads it first.",
+          "narrator_vo": "Episode two. Placement. She learned that AI forgets. The fix isn't better memory — it's a file that never forgets. One document. Every conversation reads it first.",
+          "visual_goal": "FLASHBACK FLASH: Quick 2-second clip from EP01 — Vee writing \"I want to use my home computer from anywhere\" on paper. The paper glows.",
+          "duration_sec": 10.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Episode two. Placement. She learned that AI forgets. The fix isn't better memory — it's a file that never forgets. One document. Every conversation reads it first.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B011",
+          "scene_id": "SEG04",
+          "text": "Episode three. Structure. She learned that code without boundaries is an apartment without walls. Every domain gets its own room. Every change stays contained.",
+          "narration_text": "Episode three. Structure. She learned that code without boundaries is an apartment without walls. Every domain gets its own room. Every change stays contained.",
+          "narrator_vo": "Episode three. Structure. She learned that code without boundaries is an apartment without walls. Every domain gets its own room. Every change stays contained.",
+          "visual_goal": "ICON 2 lights up: A single document with \"SSOT\" written on it. EP02.",
+          "duration_sec": 9.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Episode three. Structure. She learned that code without boundaries is an apartment without walls. Every domain gets its own room. Every change stays contained.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B012",
+          "scene_id": "SEG04",
+          "text": "Episode four. Verification. She learned that untested code is a sealed box. Open it daily. The fear is always worse than the reality.",
+          "narration_text": "Episode four. Verification. She learned that untested code is a sealed box. Open it daily. The fear is always worse than the reality.",
+          "narrator_vo": "Episode four. Verification. She learned that untested code is a sealed box. Open it daily. The fear is always worse than the reality.",
+          "visual_goal": "FLASHBACK FLASH: Quick 2-second clip from EP02 — the 28-armed monster transforming into a clean character when given a single source of truth.",
+          "duration_sec": 9.2,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Episode four. Verification. She learned that untested code is a sealed box. Open it daily. The fear is always worse than the reality.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B013",
+          "scene_id": "SEG04",
+          "text": "Alone, each lesson is useful. Together, they're a system. The spec feeds the source of truth. The source of truth defines the structure. The structure makes tests possible. The tests reveal what the spec missed. And the cycle repeats.",
+          "narration_text": "Alone, each lesson is useful. Together, they're a system. The spec feeds the source of truth. The source of truth defines the structure. The structure makes tests possible. The tests reveal what the spec missed. And the cycle repeats.",
+          "narrator_vo": "Alone, each lesson is useful. Together, they're a system. The spec feeds the source of truth. The source of truth defines the structure. The structure makes tests possible. The tests reveal what the spec missed. And the cycle repeats.",
+          "visual_goal": "ICON 3 lights up: A floor plan with walls. EP03.",
+          "duration_sec": 15.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Alone, each lesson is useful. Together, they're a system. The spec feeds the source of truth. The source of truth defines the structure. The structure makes tests possible. The tests reveal what the spec missed. And the cycle repeats.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B014",
+          "scene_id": "SEG04",
+          "text": "Forty minutes. Seventeen errors. All fixed. Not because she's smarter. Because she has a system that tells her where to look.",
+          "narration_text": "Forty minutes. Seventeen errors. All fixed. Not because she's smarter. Because she has a system that tells her where to look.",
+          "narrator_vo": "Forty minutes. Seventeen errors. All fixed. Not because she's smarter. Because she has a system that tells her where to look.",
+          "visual_goal": "FLASHBACK FLASH: Quick 2-second clip from EP03 — walls dropping into the apartment. Oil stops. Water stops. Each room contained.",
+          "duration_sec": 8.4,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Forty minutes. Seventeen errors. All fixed. Not because she's smarter. Because she has a system that tells her where to look.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B015",
+          "scene_id": "SEG04",
+          "text": "좌절이 스펙이 된다.",
+          "narration_text": "좌절이 스펙이 된다.",
+          "narrator_vo": "좌절이 스펙이 된다.",
+          "visual_goal": "ICON 4 lights up: An opened box with a green checkmark. EP04.",
+          "duration_sec": 1.5,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "좌절이 스펙이 된다.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B016",
+          "scene_id": "SEG04",
+          "text": "스펙이 시스템이 된다.",
+          "narration_text": "스펙이 시스템이 된다.",
+          "narrator_vo": "스펙이 시스템이 된다.",
+          "visual_goal": "FLASHBACK FLASH: Quick 2-second clip from EP04 — the box opening to reveal a small bug, quickly swatted. Green check.",
+          "duration_sec": 1.5,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "스펙이 시스템이 된다.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B017",
+          "scene_id": "SEG04",
+          "text": "시스템이 자유가 된다.",
+          "narration_text": "시스템이 자유가 된다.",
+          "narrator_vo": "시스템이 자유가 된다.",
+          "visual_goal": "The four icons connect. Lines draw between them. A system forms:",
+          "duration_sec": 1.5,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": true,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "시스템이 자유가 된다.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B018",
+          "scene_id": "SEG04",
+          "text": "Every frustration you've felt — the code that broke, the AI that hallucinated, the file you couldn't find, the test you didn't write — each one is a spec waiting to be written. And each spec makes the system stronger. And a stronger system means you spend less time fighting and more time building.",
+          "narration_text": "Every frustration you've felt — the code that broke, the AI that hallucinated, the file you couldn't find, the test you didn't write — each one is a spec waiting to be written. And each spec makes the system stronger. And a stronger system means you spend less time fighting and more time building.",
+          "narrator_vo": "Every frustration you've felt — the code that broke, the AI that hallucinated, the file you couldn't find, the test you didn't write — each one is a spec waiting to be written. And each spec makes the system stronger. And a stronger system means you spend less time fighting and more time building.",
+          "visual_goal": "SPEC → SSOT → STRUCTURE → TESTS → (loops back to SPEC)",
+          "duration_sec": 21.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Every frustration you've felt — the code that broke, the AI that hallucinated, the file you couldn't find, the test you didn't write — each one is a spec waiting to be written. And each spec makes the system stronger. And a stronger system means you spend less time fighting and more time building.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG05",
+      "phase_name": "REFRAME",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "REVELATION → PEACE",
+      "narrative_stage": "REFRAME",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG05_B019",
+          "scene_id": "SEG05",
+          "text": "The system isn't about preventing all failures. That's impossible. The system is about making failures useful.",
+          "narration_text": "The system isn't about preventing all failures. That's impossible. The system is about making failures useful.",
+          "narrator_vo": "The system isn't about preventing all failures. That's impossible. The system is about making failures useful.",
+          "visual_goal": "The four episode icons reappear. But now a fifth appears at the end: an infinity symbol.",
+          "duration_sec": 6.4,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "REVELATION → PEACE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The system isn't about preventing all failures. That's impossible. The system is about making failures useful.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B020",
+          "scene_id": "SEG05",
+          "text": "Every time something breaks, you learn what was missing. You add it to the spec. The spec strengthens the system. The system gives you freedom to build bigger things. Which will break in new ways. Which will teach you new things.",
+          "narration_text": "Every time something breaks, you learn what was missing. You add it to the spec. The spec strengthens the system. The system gives you freedom to build bigger things. Which will break in new ways. Which will teach you new things.",
+          "narrator_vo": "Every time something breaks, you learn what was missing. You add it to the spec. The spec strengthens the system. The system gives you freedom to build bigger things. Which will break in new ways. Which will teach you new things.",
+          "visual_goal": "The infinity symbol pulses. Inside it, the cycle: frustration → spec → system → freedom → (new frustration) → (new spec) → ...",
+          "duration_sec": 16.4,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "REVELATION → PEACE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Every time something breaks, you learn what was missing. You add it to the spec. The spec strengthens the system. The system gives you freedom to build bigger things. Which will break in new ways. Which will teach you new things.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B021",
+          "scene_id": "SEG05",
+          "text": "That's not a hamster wheel. That's growth. And it never stops.",
+          "narration_text": "That's not a hamster wheel. That's growth. And it never stops.",
+          "narrator_vo": "That's not a hamster wheel. That's growth. And it never stops.",
+          "visual_goal": "Vee looks at her wall. The sticky notes. The checklist. The SSOT. The folder diagram. It's not a wall of instructions — it's a wall of lessons. Each one started as a failure.",
+          "duration_sec": 4.4,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 5,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "REVELATION → PEACE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "That's not a hamster wheel. That's growth. And it never stops.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG06",
+      "phase_name": "OUTRO_CTA",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "PEACE → OPEN DOOR",
+      "narrative_stage": "OUTRO_CTA",
+      "target_duration_sec": 25,
+      "beats": [
+        {
+          "beat_id": "SEG06_B022",
+          "scene_id": "SEG06",
+          "text": "Season one started with everything broken and no idea why. It ends with everything still breaking — but now she knows what to do about it.",
+          "narration_text": "Season one started with everything broken and no idea why. It ends with everything still breaking — but now she knows what to do about it.",
+          "narrator_vo": "Season one started with everything broken and no idea why. It ends with everything still breaking — but now she knows what to do about it.",
+          "visual_goal": "Golden hour light through the window. Vee's room looks different from EP01. Same desk. Same monitors. But the walls are covered in systems — notes, diagrams, checklists. Evidence of ten episodes of learning.",
+          "duration_sec": 10.4,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "PEACE → OPEN DOOR",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Season one started with everything broken and no idea why. It ends with everything still breaking — but now she knows what to do about it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B023",
+          "scene_id": "SEG06",
+          "text": "That's vibe coding. Not the tools. Not the AI. The system you build around yourself.",
+          "narration_text": "That's vibe coding. Not the tools. Not the AI. The system you build around yourself.",
+          "narrator_vo": "That's vibe coding. Not the tools. Not the AI. The system you build around yourself.",
+          "visual_goal": "Vee opens a brand new project. Empty terminal. Blank screen. She reaches for her notebook. Opens it to a fresh page.",
+          "duration_sec": 6.0,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "PEACE → OPEN DOOR",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "That's vibe coding. Not the tools. Not the AI. The system you build around yourself.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B024",
+          "scene_id": "SEG06",
+          "text": "시즌 2에서 봐요.",
+          "narration_text": "시즌 2에서 봐요.",
+          "narrator_vo": "시즌 2에서 봐요.",
+          "visual_goal": "Vee writes the first line of a new spec. She pauses. Looks at it. Crosses it out. Rewrites it. Better. She nods. One sentence. The starting point.",
+          "duration_sec": 1.5,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 6,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "PEACE → OPEN DOOR",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "시즌 2에서 봐요.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "beat_id": "SEG01_B001",
+      "scene_id": "SEG01",
+      "text": "She wrote the spec. She organized the code. She wrote the tests. She read the output. She did everything right. And it broke anyway.",
+      "narration_text": "She wrote the spec. She organized the code. She wrote the tests. She read the output. She did everything right. And it broke anyway.",
+      "narrator_vo": "She wrote the spec. She organized the code. She wrote the tests. She read the output. She did everything right. And it broke anyway.",
+      "visual_goal": "Morning light. Vee sits at her desk, fresh. Her wall has everything: the spec sticky note from EP01, the SSOT document from EP02, the folder structure from EP03, the test checklist from EP04. She's ready.",
+      "duration_sec": 9.6,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "CONFIDENCE → IMMEDIATE FAILURE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "She wrote the spec. She organized the code. She wrote the tests. She read the output. She did everything right. And it broke anyway.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG01_B002",
+      "scene_id": "SEG01",
+      "text": "Good. That means the system is working.",
+      "narration_text": "Good. That means the system is working.",
+      "narrator_vo": "Good. That means the system is working.",
+      "visual_goal": "Vee opens a new project. She types confidently. She follows every rule. Spec first. Structure second. Tests third.",
+      "duration_sec": 2.8,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 1,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "CONFIDENCE → IMMEDIATE FAILURE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Good. That means the system is working.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B003",
+      "scene_id": "SEG02",
+      "text": "The misconception at the end of every learning journey. \"I know the rules now. So it should work the first time.\" That's not how systems work. That's not how anything works.",
+      "narration_text": "The misconception at the end of every learning journey. \"I know the rules now. So it should work the first time.\" That's not how systems work. That's not how anything works.",
+      "narrator_vo": "The misconception at the end of every learning journey. \"I know the rules now. So it should work the first time.\" That's not how systems work. That's not how anything works.",
+      "visual_goal": "Vee scrolls through the errors. Her face cycles through frustration, confusion, almost-anger. She looks at her wall of sticky notes. \"I followed every step.\"",
+      "duration_sec": 12.4,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "FRUSTRATION → FALSE EXPECTATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The misconception at the end of every learning journey. \"I know the rules now. So it should work the first time.\" That's not how systems work. That's not how anything works.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B004",
+      "scene_id": "SEG02",
+      "text": "We imagine learning like this. A straight line up. Each lesson gets you one step closer. By step ten, you're done.",
+      "narration_text": "We imagine learning like this. A straight line up. Each lesson gets you one step closer. By step ten, you're done.",
+      "narrator_vo": "We imagine learning like this. A straight line up. Each lesson gets you one step closer. By step ten, you're done.",
+      "visual_goal": "A staircase diagram. At the top: \"MASTERY.\" A figure stands at the bottom, looking up. The stairs are clean, evenly spaced, going straight up.",
+      "duration_sec": 8.4,
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "FRUSTRATION → FALSE EXPECTATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "We imagine learning like this. A straight line up. Each lesson gets you one step closer. By step ten, you're done.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B005",
+      "scene_id": "SEG02",
+      "text": "It actually looks like this. Progress isn't linear. And the failures at step ten feel different from the failures at step one — but they're still failures.",
+      "narration_text": "It actually looks like this. Progress isn't linear. And the failures at step ten feel different from the failures at step one — but they're still failures.",
+      "narrator_vo": "It actually looks like this. Progress isn't linear. And the failures at step ten feel different from the failures at step one — but they're still failures.",
+      "visual_goal": "The staircase shatters. What's underneath: a jagged, messy path. Ups and downs. Loops. Dead ends. But the overall direction is still up.",
+      "duration_sec": 10.8,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "FRUSTRATION → FALSE EXPECTATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "It actually looks like this. Progress isn't linear. And the failures at step ten feel different from the failures at step one — but they're still failures.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B006",
+      "scene_id": "SEG03",
+      "text": "Seventeen errors. But something is different. She can read them. She knows where to look. She knows what each error means. That wasn't true two months ago.",
+      "narration_text": "Seventeen errors. But something is different. She can read them. She knows where to look. She knows what each error means. That wasn't true two months ago.",
+      "narrator_vo": "Seventeen errors. But something is different. She can read them. She knows where to look. She knows what each error means. That wasn't true two months ago.",
+      "visual_goal": "Vee looks at the seventeen errors again. But this time, she actually reads them. Line by line.",
+      "duration_sec": 10.8,
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "FALSE EXPECTATION → DIFFERENT KIND OF FAILURE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Seventeen errors. But something is different. She can read them. She knows where to look. She knows what each error means. That wasn't true two months ago.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B007",
+      "scene_id": "SEG03",
+      "text": "Same person. Same errors. Completely different experience. The system didn't prevent the failure. The system made the failure useful.",
+      "narration_text": "Same person. Same errors. Completely different experience. The system didn't prevent the failure. The system made the failure useful.",
+      "narrator_vo": "Same person. Same errors. Completely different experience. The system didn't prevent the failure. The system made the failure useful.",
+      "visual_goal": "Her expression changes. Not frustration — recognition. She's seen this before. Error #1: missing type definition. She knows where types go (EP03 — structure). Error #7: null reference on auth. She knows to check the auth boundary (EP03 — domains). Error #14: test assertion failed. The test caught a real bug before it shipped (EP04 — testing works).",
+      "duration_sec": 7.6,
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 2,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "FALSE EXPECTATION → DIFFERENT KIND OF FAILURE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Same person. Same errors. Completely different experience. The system didn't prevent the failure. The system made the failure useful.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B008",
+      "scene_id": "SEG04",
+      "text": "Let's trace the journey.",
+      "narration_text": "Let's trace the journey.",
+      "narrator_vo": "Let's trace the journey.",
+      "visual_goal": "TRANSITION: Clean white background. Four icons appear in a horizontal line — each one from a previous episode.",
+      "duration_sec": 1.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Let's trace the journey.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B009",
+      "scene_id": "SEG04",
+      "text": "Episode one. The spec. She learned to define what she's building before she builds it. One sentence that explains everything.",
+      "narration_text": "Episode one. The spec. She learned to define what she's building before she builds it. One sentence that explains everything.",
+      "narrator_vo": "Episode one. The spec. She learned to define what she's building before she builds it. One sentence that explains everything.",
+      "visual_goal": "ICON 1 lights up: A piece of paper with four boxes. EP01.",
+      "duration_sec": 8.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Episode one. The spec. She learned to define what she's building before she builds it. One sentence that explains everything.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B010",
+      "scene_id": "SEG04",
+      "text": "Episode two. Placement. She learned that AI forgets. The fix isn't better memory — it's a file that never forgets. One document. Every conversation reads it first.",
+      "narration_text": "Episode two. Placement. She learned that AI forgets. The fix isn't better memory — it's a file that never forgets. One document. Every conversation reads it first.",
+      "narrator_vo": "Episode two. Placement. She learned that AI forgets. The fix isn't better memory — it's a file that never forgets. One document. Every conversation reads it first.",
+      "visual_goal": "FLASHBACK FLASH: Quick 2-second clip from EP01 — Vee writing \"I want to use my home computer from anywhere\" on paper. The paper glows.",
+      "duration_sec": 10.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Episode two. Placement. She learned that AI forgets. The fix isn't better memory — it's a file that never forgets. One document. Every conversation reads it first.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B011",
+      "scene_id": "SEG04",
+      "text": "Episode three. Structure. She learned that code without boundaries is an apartment without walls. Every domain gets its own room. Every change stays contained.",
+      "narration_text": "Episode three. Structure. She learned that code without boundaries is an apartment without walls. Every domain gets its own room. Every change stays contained.",
+      "narrator_vo": "Episode three. Structure. She learned that code without boundaries is an apartment without walls. Every domain gets its own room. Every change stays contained.",
+      "visual_goal": "ICON 2 lights up: A single document with \"SSOT\" written on it. EP02.",
+      "duration_sec": 9.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Episode three. Structure. She learned that code without boundaries is an apartment without walls. Every domain gets its own room. Every change stays contained.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B012",
+      "scene_id": "SEG04",
+      "text": "Episode four. Verification. She learned that untested code is a sealed box. Open it daily. The fear is always worse than the reality.",
+      "narration_text": "Episode four. Verification. She learned that untested code is a sealed box. Open it daily. The fear is always worse than the reality.",
+      "narrator_vo": "Episode four. Verification. She learned that untested code is a sealed box. Open it daily. The fear is always worse than the reality.",
+      "visual_goal": "FLASHBACK FLASH: Quick 2-second clip from EP02 — the 28-armed monster transforming into a clean character when given a single source of truth.",
+      "duration_sec": 9.2,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Episode four. Verification. She learned that untested code is a sealed box. Open it daily. The fear is always worse than the reality.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B013",
+      "scene_id": "SEG04",
+      "text": "Alone, each lesson is useful. Together, they're a system. The spec feeds the source of truth. The source of truth defines the structure. The structure makes tests possible. The tests reveal what the spec missed. And the cycle repeats.",
+      "narration_text": "Alone, each lesson is useful. Together, they're a system. The spec feeds the source of truth. The source of truth defines the structure. The structure makes tests possible. The tests reveal what the spec missed. And the cycle repeats.",
+      "narrator_vo": "Alone, each lesson is useful. Together, they're a system. The spec feeds the source of truth. The source of truth defines the structure. The structure makes tests possible. The tests reveal what the spec missed. And the cycle repeats.",
+      "visual_goal": "ICON 3 lights up: A floor plan with walls. EP03.",
+      "duration_sec": 15.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Alone, each lesson is useful. Together, they're a system. The spec feeds the source of truth. The source of truth defines the structure. The structure makes tests possible. The tests reveal what the spec missed. And the cycle repeats.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B014",
+      "scene_id": "SEG04",
+      "text": "Forty minutes. Seventeen errors. All fixed. Not because she's smarter. Because she has a system that tells her where to look.",
+      "narration_text": "Forty minutes. Seventeen errors. All fixed. Not because she's smarter. Because she has a system that tells her where to look.",
+      "narrator_vo": "Forty minutes. Seventeen errors. All fixed. Not because she's smarter. Because she has a system that tells her where to look.",
+      "visual_goal": "FLASHBACK FLASH: Quick 2-second clip from EP03 — walls dropping into the apartment. Oil stops. Water stops. Each room contained.",
+      "duration_sec": 8.4,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Forty minutes. Seventeen errors. All fixed. Not because she's smarter. Because she has a system that tells her where to look.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B015",
+      "scene_id": "SEG04",
+      "text": "좌절이 스펙이 된다.",
+      "narration_text": "좌절이 스펙이 된다.",
+      "narrator_vo": "좌절이 스펙이 된다.",
+      "visual_goal": "ICON 4 lights up: An opened box with a green checkmark. EP04.",
+      "duration_sec": 1.5,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "좌절이 스펙이 된다.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B016",
+      "scene_id": "SEG04",
+      "text": "스펙이 시스템이 된다.",
+      "narration_text": "스펙이 시스템이 된다.",
+      "narrator_vo": "스펙이 시스템이 된다.",
+      "visual_goal": "FLASHBACK FLASH: Quick 2-second clip from EP04 — the box opening to reveal a small bug, quickly swatted. Green check.",
+      "duration_sec": 1.5,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "스펙이 시스템이 된다.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B017",
+      "scene_id": "SEG04",
+      "text": "시스템이 자유가 된다.",
+      "narration_text": "시스템이 자유가 된다.",
+      "narrator_vo": "시스템이 자유가 된다.",
+      "visual_goal": "The four icons connect. Lines draw between them. A system forms:",
+      "duration_sec": 1.5,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "시스템이 자유가 된다.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B018",
+      "scene_id": "SEG04",
+      "text": "Every frustration you've felt — the code that broke, the AI that hallucinated, the file you couldn't find, the test you didn't write — each one is a spec waiting to be written. And each spec makes the system stronger. And a stronger system means you spend less time fighting and more time building.",
+      "narration_text": "Every frustration you've felt — the code that broke, the AI that hallucinated, the file you couldn't find, the test you didn't write — each one is a spec waiting to be written. And each spec makes the system stronger. And a stronger system means you spend less time fighting and more time building.",
+      "narrator_vo": "Every frustration you've felt — the code that broke, the AI that hallucinated, the file you couldn't find, the test you didn't write — each one is a spec waiting to be written. And each spec makes the system stronger. And a stronger system means you spend less time fighting and more time building.",
+      "visual_goal": "SPEC → SSOT → STRUCTURE → TESTS → (loops back to SPEC)",
+      "duration_sec": 21.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "RECOGNITION → MONTAGE → REVELATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Every frustration you've felt — the code that broke, the AI that hallucinated, the file you couldn't find, the test you didn't write — each one is a spec waiting to be written. And each spec makes the system stronger. And a stronger system means you spend less time fighting and more time building.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B019",
+      "scene_id": "SEG05",
+      "text": "The system isn't about preventing all failures. That's impossible. The system is about making failures useful.",
+      "narration_text": "The system isn't about preventing all failures. That's impossible. The system is about making failures useful.",
+      "narrator_vo": "The system isn't about preventing all failures. That's impossible. The system is about making failures useful.",
+      "visual_goal": "The four episode icons reappear. But now a fifth appears at the end: an infinity symbol.",
+      "duration_sec": 6.4,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "REVELATION → PEACE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The system isn't about preventing all failures. That's impossible. The system is about making failures useful.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B020",
+      "scene_id": "SEG05",
+      "text": "Every time something breaks, you learn what was missing. You add it to the spec. The spec strengthens the system. The system gives you freedom to build bigger things. Which will break in new ways. Which will teach you new things.",
+      "narration_text": "Every time something breaks, you learn what was missing. You add it to the spec. The spec strengthens the system. The system gives you freedom to build bigger things. Which will break in new ways. Which will teach you new things.",
+      "narrator_vo": "Every time something breaks, you learn what was missing. You add it to the spec. The spec strengthens the system. The system gives you freedom to build bigger things. Which will break in new ways. Which will teach you new things.",
+      "visual_goal": "The infinity symbol pulses. Inside it, the cycle: frustration → spec → system → freedom → (new frustration) → (new spec) → ...",
+      "duration_sec": 16.4,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "REVELATION → PEACE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Every time something breaks, you learn what was missing. You add it to the spec. The spec strengthens the system. The system gives you freedom to build bigger things. Which will break in new ways. Which will teach you new things.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B021",
+      "scene_id": "SEG05",
+      "text": "That's not a hamster wheel. That's growth. And it never stops.",
+      "narration_text": "That's not a hamster wheel. That's growth. And it never stops.",
+      "narrator_vo": "That's not a hamster wheel. That's growth. And it never stops.",
+      "visual_goal": "Vee looks at her wall. The sticky notes. The checklist. The SSOT. The folder diagram. It's not a wall of instructions — it's a wall of lessons. Each one started as a failure.",
+      "duration_sec": 4.4,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 5,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "REVELATION → PEACE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "That's not a hamster wheel. That's growth. And it never stops.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B022",
+      "scene_id": "SEG06",
+      "text": "Season one started with everything broken and no idea why. It ends with everything still breaking — but now she knows what to do about it.",
+      "narration_text": "Season one started with everything broken and no idea why. It ends with everything still breaking — but now she knows what to do about it.",
+      "narrator_vo": "Season one started with everything broken and no idea why. It ends with everything still breaking — but now she knows what to do about it.",
+      "visual_goal": "Golden hour light through the window. Vee's room looks different from EP01. Same desk. Same monitors. But the walls are covered in systems — notes, diagrams, checklists. Evidence of ten episodes of learning.",
+      "duration_sec": 10.4,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "PEACE → OPEN DOOR",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Season one started with everything broken and no idea why. It ends with everything still breaking — but now she knows what to do about it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B023",
+      "scene_id": "SEG06",
+      "text": "That's vibe coding. Not the tools. Not the AI. The system you build around yourself.",
+      "narration_text": "That's vibe coding. Not the tools. Not the AI. The system you build around yourself.",
+      "narrator_vo": "That's vibe coding. Not the tools. Not the AI. The system you build around yourself.",
+      "visual_goal": "Vee opens a brand new project. Empty terminal. Blank screen. She reaches for her notebook. Opens it to a fresh page.",
+      "duration_sec": 6.0,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "PEACE → OPEN DOOR",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "That's vibe coding. Not the tools. Not the AI. The system you build around yourself.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B024",
+      "scene_id": "SEG06",
+      "text": "시즌 2에서 봐요.",
+      "narration_text": "시즌 2에서 봐요.",
+      "narrator_vo": "시즌 2에서 봐요.",
+      "visual_goal": "Vee writes the first line of a new spec. She pauses. Looks at it. Crosses it out. Rewrites it. Better. She nods. One sentence. The starting point.",
+      "duration_sec": 1.5,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 6,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "PEACE → OPEN DOOR",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "시즌 2에서 봐요.",
+          "emotion": ""
+        }
+      ]
+    }
+  ]
+}

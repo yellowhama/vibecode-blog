@@ -1,0 +1,1381 @@
+{
+  "project_id": "ep06_v5",
+  "version": "6.0",
+  "title": "EP06 — 10분만에 AI 에이전트",
+  "language": "en",
+  "total_duration_sec": 235,
+  "segment_count": 6,
+  "beat_count": 23,
+  "segments": [
+    "HOOK",
+    "MISCONCEPTION",
+    "THE_CRACK",
+    "CORE",
+    "REFRAME",
+    "OUTRO_CTA"
+  ],
+  "phases": [
+    {
+      "phase_id": "SEG01",
+      "phase_name": "HOOK",
+      "segment": "HOOK",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "emotion_curve": "HYPE → SKEPTICISM",
+      "narrative_stage": "HOOK",
+      "target_duration_sec": 15,
+      "beats": [
+        {
+          "beat_id": "SEG01_B001",
+          "scene_id": "SEG01",
+          "text": "Every week, a new headline. AI agents are going to replace your job, your dog, and your therapist. Apparently.",
+          "narration_text": "Every week, a new headline. AI agents are going to replace your job, your dog, and your therapist. Apparently.",
+          "narrator_vo": "Every week, a new headline. AI agents are going to replace your job, your dog, and your therapist. Apparently.",
+          "visual_goal": "A glowing headline floats in: \"Build Your Own AI Agent in Minutes!\" Below it, another: \"Autonomous AI Agents Will Replace Everything.\" Another: \"AgentOps: The Future of Work.\"",
+          "duration_sec": 7.6,
+          "segment": "HOOK",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "HYPE → SKEPTICISM",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Every week, a new headline. AI agents are going to replace your job, your dog, and your therapist. Apparently.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG01_B002",
+          "scene_id": "SEG01",
+          "text": "But what actually IS an agent? And can you build one that does something useful in ten minutes?",
+          "narration_text": "But what actually IS an agent? And can you build one that does something useful in ten minutes?",
+          "narrator_vo": "But what actually IS an agent? And can you build one that does something useful in ten minutes?",
+          "visual_goal": "The headlines crumble like dry paper. Behind them — a blinking cursor on an empty terminal.",
+          "duration_sec": 7.2,
+          "segment": "HOOK",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "HYPE → SKEPTICISM",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "But what actually IS an agent? And can you build one that does something useful in ten minutes?",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG02",
+      "phase_name": "MISCONCEPTION",
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "AWE → FALSE UNDERSTANDING",
+      "narrative_stage": "MISCONCEPTION",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG02_B003",
+          "scene_id": "SEG02",
+          "text": "When people hear \"AI agent,\" they picture this. An autonomous intelligence that thinks for itself. Plans its own goals. Decides what to do. Basically, a digital employee that never sleeps.",
+          "narration_text": "When people hear \"AI agent,\" they picture this. An autonomous intelligence that thinks for itself. Plans its own goals. Decides what to do. Basically, a digital employee that never sleeps.",
+          "narrator_vo": "When people hear \"AI agent,\" they picture this. An autonomous intelligence that thinks for itself. Plans its own goals. Decides what to do. Basically, a digital employee that never sleeps.",
+          "visual_goal": "A robot icon appears center frame. It glows with intelligence. Around it, floating labels: \"Autonomous,\" \"Self-learning,\" \"Makes decisions,\" \"Replaces humans.\"",
+          "duration_sec": 12.0,
+          "segment": "MISCONCEPTION",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": true,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "AWE → FALSE UNDERSTANDING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "When people hear \"AI agent,\" they picture this. An autonomous intelligence that thinks for itself. Plans its own goals. Decides what to do. Basically, a digital employee that never sleeps.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B004",
+          "scene_id": "SEG02",
+          "text": "The demos are incredible. The agent browses the web, finds data, writes a report, sends it to your inbox. All by itself. You sit back and watch.",
+          "narration_text": "The demos are incredible. The agent browses the web, finds data, writes a report, sends it to your inbox. All by itself. You sit back and watch.",
+          "narrator_vo": "The demos are incredible. The agent browses the web, finds data, writes a report, sends it to your inbox. All by itself. You sit back and watch.",
+          "visual_goal": "Vee watches a demo video on her screen. An agent auto-navigates a website, writes emails, fills spreadsheets. Her eyes are wide. Impressed.",
+          "duration_sec": 10.8,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 1,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "AWE → FALSE UNDERSTANDING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The demos are incredible. The agent browses the web, finds data, writes a report, sends it to your inbox. All by itself. You sit back and watch.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B005",
+          "scene_id": "SEG02",
+          "text": "Agent equals autonomous. That's the misconception. And it's going to cost you three hours of debugging.",
+          "narration_text": "Agent equals autonomous. That's the misconception. And it's going to cost you three hours of debugging.",
+          "narrator_vo": "Agent equals autonomous. That's the misconception. And it's going to cost you three hours of debugging.",
+          "visual_goal": "The robot icon grows larger. Crown appears on its head. It's king of automation.",
+          "duration_sec": 6.4,
+          "segment": "MISCONCEPTION",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "AWE → FALSE UNDERSTANDING",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Agent equals autonomous. That's the misconception. And it's going to cost you three hours of debugging.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG03",
+      "phase_name": "THE_CRACK",
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "FALSE UNDERSTANDING → REALIZATION",
+      "narrative_stage": "THE_CRACK",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG03_B006",
+          "scene_id": "SEG03",
+          "text": "The agent did exactly what it was told. Organize files. It just had no idea what \"organized\" means to Vee. Because nobody defined the rules. Nobody set the boundaries.",
+          "narration_text": "The agent did exactly what it was told. Organize files. It just had no idea what \"organized\" means to Vee. Because nobody defined the rules. Nobody set the boundaries.",
+          "narrator_vo": "The agent did exactly what it was told. Organize files. It just had no idea what \"organized\" means to Vee. Because nobody defined the rules. Nobody set the boundaries.",
+          "visual_goal": "Vee builds an \"autonomous\" agent. She types: \"Build me an agent that organizes my files.\" The AI produces a script. Vee runs it.",
+          "duration_sec": 11.6,
+          "segment": "THE_CRACK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "FALSE UNDERSTANDING → REALIZATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The agent did exactly what it was told. Organize files. It just had no idea what \"organized\" means to Vee. Because nobody defined the rules. Nobody set the boundaries.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B007",
+          "scene_id": "SEG03",
+          "text": "An agent without constraints isn't autonomous. It's just chaotic. The more it can do, the more ways it can go wrong.",
+          "narration_text": "An agent without constraints isn't autonomous. It's just chaotic. The more it can do, the more ways it can go wrong.",
+          "narrator_vo": "An agent without constraints isn't autonomous. It's just chaotic. The more it can do, the more ways it can go wrong.",
+          "visual_goal": "The file explorer goes haywire. Files move everywhere. Photos end up in \"Invoices.\" Code ends up in \"Recipes.\" The desktop is chaos.",
+          "duration_sec": 8.4,
+          "segment": "THE_CRACK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "FALSE UNDERSTANDING → REALIZATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "An agent without constraints isn't autonomous. It's just chaotic. The more it can do, the more ways it can go wrong.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG04",
+      "phase_name": "CORE",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+      "narrative_stage": "CORE",
+      "target_duration_sec": 105,
+      "beats": [
+        {
+          "beat_id": "SEG04_B008",
+          "scene_id": "SEG04",
+          "text": "Forget autonomous. Here's what an agent actually is.",
+          "narration_text": "Forget autonomous. Here's what an agent actually is.",
+          "narrator_vo": "Forget autonomous. Here's what an agent actually is.",
+          "visual_goal": "TRANSITION: Clean white background. The chaotic robot shrinks to a corner. Center frame, a simple loop diagram draws itself.",
+          "duration_sec": 3.2,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Forget autonomous. Here's what an agent actually is.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B009",
+          "scene_id": "SEG04",
+          "text": "A loop. Three steps. Observe — look at the world. Decide — pick what to do. Act — do it. Then observe again. That's it. That's every agent ever built.",
+          "narration_text": "A loop. Three steps. Observe — look at the world. Decide — pick what to do. Act — do it. Then observe again. That's it. That's every agent ever built.",
+          "narrator_vo": "A loop. Three steps. Observe — look at the world. Decide — pick what to do. Act — do it. Then observe again. That's it. That's every agent ever built.",
+          "visual_goal": "Three nodes appear in a circle, connected by arrows: OBSERVE → DECIDE → ACT → (back to OBSERVE).",
+          "duration_sec": 12.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "A loop. Three steps. Observe — look at the world. Decide — pick what to do. Act — do it. Then observe again. That's it. That's every agent ever built.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B010",
+          "scene_id": "SEG04",
+          "text": "Your thermostat is an agent. Observe: temperature is 28 degrees. Decide: too hot. Act: turn on AC. Loop forever. Nobody calls a thermostat autonomous. But it IS an agent.",
+          "narration_text": "Your thermostat is an agent. Observe: temperature is 28 degrees. Decide: too hot. Act: turn on AC. Loop forever. Nobody calls a thermostat autonomous. But it IS an agent.",
+          "narrator_vo": "Your thermostat is an agent. Observe: temperature is 28 degrees. Decide: too hot. Act: turn on AC. Loop forever. Nobody calls a thermostat autonomous. But it IS an agent.",
+          "visual_goal": "The loop spins slowly. Clean. Simple.",
+          "duration_sec": 11.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Your thermostat is an agent. Observe: temperature is 28 degrees. Decide: too hot. Act: turn on AC. Loop forever. Nobody calls a thermostat autonomous. But it IS an agent.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B011",
+          "scene_id": "SEG04",
+          "text": "Let's build one. A file watcher. It does one thing: when a new file appears in a folder, it reads the file name and moves it to the right place.",
+          "narration_text": "Let's build one. A file watcher. It does one thing: when a new file appears in a folder, it reads the file name and moves it to the right place.",
+          "narrator_vo": "Let's build one. A file watcher. It does one thing: when a new file appears in a folder, it reads the file name and moves it to the right place.",
+          "visual_goal": "CUT TO: Vee's desk. Fresh start. She opens a terminal. The narrator walks through the build.",
+          "duration_sec": 12.0,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Let's build one. A file watcher. It does one thing: when a new file appears in a folder, it reads the file name and moves it to the right place.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B012",
+          "scene_id": "SEG04",
+          "text": "Step one. Observe.",
+          "narration_text": "Step one. Observe.",
+          "narrator_vo": "Step one. Observe.",
+          "visual_goal": "Vee's screen shows a simple project structure:",
+          "duration_sec": 1.5,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Step one. Observe.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B013",
+          "scene_id": "SEG04",
+          "text": "Check the folder. Every five seconds. If something new appeared — flag it. That's the observe step.",
+          "narration_text": "Check the folder. Every five seconds. If something new appeared — flag it. That's the observe step.",
+          "narrator_vo": "Check the folder. Every five seconds. If something new appeared — flag it. That's the observe step.",
+          "visual_goal": "`agent/` → `watcher.py` / `rules.json` / `run.sh`",
+          "duration_sec": 6.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Check the folder. Every five seconds. If something new appeared — flag it. That's the observe step.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B014",
+          "scene_id": "SEG04",
+          "text": "Step two. Decide.",
+          "narration_text": "Step two. Decide.",
+          "narrator_vo": "Step two. Decide.",
+          "visual_goal": "Code appears on screen (simplified, readable): a file watcher that checks a folder every five seconds. Three lines. Simple.",
+          "duration_sec": 1.5,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": true,
+          "narrative_stage": "CORE",
+          "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Step two. Decide.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B015",
+          "scene_id": "SEG04",
+          "text": "The rules file. This is where the intelligence lives — and notice, it's not AI intelligence. It's YOUR intelligence. You decided what \"organized\" means. The agent just follows the rules.",
+          "narration_text": "The rules file. This is where the intelligence lives — and notice, it's not AI intelligence. It's YOUR intelligence. You decided what \"organized\" means. The agent just follows the rules.",
+          "narrator_vo": "The rules file. This is where the intelligence lives — and notice, it's not AI intelligence. It's YOUR intelligence. You decided what \"organized\" means. The agent just follows the rules.",
+          "visual_goal": "The word \"OBSERVE\" lights up green in the loop diagram (small, in the corner).",
+          "duration_sec": 12.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The rules file. This is where the intelligence lives — and notice, it's not AI intelligence. It's YOUR intelligence. You decided what \"organized\" means. The agent just follows the rules.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B016",
+          "scene_id": "SEG04",
+          "text": "Step three. Act.",
+          "narration_text": "Step three. Act.",
+          "narrator_vo": "Step three. Act.",
+          "visual_goal": "A JSON file appears: rules. \"If filename contains 'invoice' → move to /invoices.\" \"If filename ends in '.png' → move to /images.\" \"Otherwise → move to /unsorted.\"",
+          "duration_sec": 1.5,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Step three. Act.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B017",
+          "scene_id": "SEG04",
+          "text": "Move the file. Log what happened. Go back to step one. The entire agent is forty lines. It does exactly one thing. And it does it perfectly, every time, because the rules are explicit.",
+          "narration_text": "Move the file. Log what happened. Go back to step one. The entire agent is forty lines. It does exactly one thing. And it does it perfectly, every time, because the rules are explicit.",
+          "narrator_vo": "Move the file. Log what happened. Go back to step one. The entire agent is forty lines. It does exactly one thing. And it does it perfectly, every time, because the rules are explicit.",
+          "visual_goal": "The word \"DECIDE\" lights up green.",
+          "duration_sec": 13.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Move the file. Log what happened. Go back to step one. The entire agent is forty lines. It does exactly one thing. And it does it perfectly, every time, because the rules are explicit.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B018",
+          "scene_id": "SEG04",
+          "text": "The entire thing took eight minutes. No framework. No LangChain. No crew of agents arguing with each other. One loop. One rules file. One job.",
+          "narration_text": "The entire thing took eight minutes. No framework. No LangChain. No crew of agents arguing with each other. One loop. One rules file. One job.",
+          "narrator_vo": "The entire thing took eight minutes. No framework. No LangChain. No crew of agents arguing with each other. One loop. One rules file. One job.",
+          "visual_goal": "Vee nods slowly. She's writing the rules, not the logic. She gets it.",
+          "duration_sec": 10.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 3,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The entire thing took eight minutes. No framework. No LangChain. No crew of agents arguing with each other. One loop. One rules file. One job.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG05",
+      "phase_name": "REFRAME",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "COMPETENCE → WISDOM",
+      "narrative_stage": "REFRAME",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG05_B019",
+          "scene_id": "SEG05",
+          "text": "Here's the secret the agent hype won't tell you. The hard part of building an agent isn't the code. It's the constraints.",
+          "narration_text": "Here's the secret the agent hype won't tell you. The hard part of building an agent isn't the code. It's the constraints.",
+          "narrator_vo": "Here's the secret the agent hype won't tell you. The hard part of building an agent isn't the code. It's the constraints.",
+          "visual_goal": "The simple loop sits on the left. On the right, the chaotic robot from earlier — now calm, sitting in a small box with clear walls.",
+          "duration_sec": 8.8,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "COMPETENCE → WISDOM",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Here's the secret the agent hype won't tell you. The hard part of building an agent isn't the code. It's the constraints.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B020",
+          "scene_id": "SEG05",
+          "text": "What should it watch? What should it ignore? What does it do when it doesn't know? Every good agent is defined more by what it CAN'T do than what it can.",
+          "narration_text": "What should it watch? What should it ignore? What does it do when it doesn't know? Every good agent is defined more by what it CAN'T do than what it can.",
+          "narrator_vo": "What should it watch? What should it ignore? What does it do when it doesn't know? Every good agent is defined more by what it CAN'T do than what it can.",
+          "visual_goal": "The robot's box has labels on each wall: \"SCOPE,\" \"RULES,\" \"BOUNDARIES,\" \"FALLBACK.\"",
+          "duration_sec": 12.4,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "COMPETENCE → WISDOM",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "What should it watch? What should it ignore? What does it do when it doesn't know? Every good agent is defined more by what it CAN'T do than what it can.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B021",
+          "scene_id": "SEG05",
+          "text": "The best agents do less, not more. That's the reframe. Autonomy isn't the goal. Reliability is.",
+          "narration_text": "The best agents do less, not more. That's the reframe. Autonomy isn't the goal. Reliability is.",
+          "narrator_vo": "The best agents do less, not more. That's the reframe. Autonomy isn't the goal. Reliability is.",
+          "visual_goal": "Vee adds one more line to her rules file: \"If unsure → do nothing. Log it. Ask me later.\" She nods. That's the most important rule.",
+          "duration_sec": 6.4,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 5,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "COMPETENCE → WISDOM",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The best agents do less, not more. That's the reframe. Autonomy isn't the goal. Reliability is.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG06",
+      "phase_name": "OUTRO_CTA",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "WISDOM → EMPOWERMENT",
+      "narrative_stage": "OUTRO_CTA",
+      "target_duration_sec": 25,
+      "beats": [
+        {
+          "beat_id": "SEG06_B022",
+          "scene_id": "SEG06",
+          "text": "An agent isn't a digital employee. It's a loop with rules. Build one that does one thing well. Then build another. The stack grows from small pieces that you actually understand.",
+          "narration_text": "An agent isn't a digital employee. It's a loop with rules. Build one that does one thing well. Then build another. The stack grows from small pieces that you actually understand.",
+          "narrator_vo": "An agent isn't a digital employee. It's a loop with rules. Build one that does one thing well. Then build another. The stack grows from small pieces that you actually understand.",
+          "visual_goal": "Vee's file watcher runs silently in a terminal tab. Files sort themselves. She's already working on something else. The agent just... works. In the background. Quiet.",
+          "duration_sec": 12.4,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "WISDOM → EMPOWERMENT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "An agent isn't a digital employee. It's a loop with rules. Build one that does one thing well. Then build another. The stack grows from small pieces that you actually understand.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B023",
+          "scene_id": "SEG06",
+          "text": "Start with the loop. Start with the rules. The agent writes itself.",
+          "narration_text": "Start with the loop. Start with the rules. The agent writes itself.",
+          "narrator_vo": "Start with the loop. Start with the rules. The agent writes itself.",
+          "visual_goal": "Vee opens a new file: \"rules_v2.json.\" She's already thinking about the next agent. But she starts with the rules, not the code.",
+          "duration_sec": 4.8,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 6,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "WISDOM → EMPOWERMENT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Start with the loop. Start with the rules. The agent writes itself.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "beat_id": "SEG01_B001",
+      "scene_id": "SEG01",
+      "text": "Every week, a new headline. AI agents are going to replace your job, your dog, and your therapist. Apparently.",
+      "narration_text": "Every week, a new headline. AI agents are going to replace your job, your dog, and your therapist. Apparently.",
+      "narrator_vo": "Every week, a new headline. AI agents are going to replace your job, your dog, and your therapist. Apparently.",
+      "visual_goal": "A glowing headline floats in: \"Build Your Own AI Agent in Minutes!\" Below it, another: \"Autonomous AI Agents Will Replace Everything.\" Another: \"AgentOps: The Future of Work.\"",
+      "duration_sec": 7.6,
+      "segment": "HOOK",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "HYPE → SKEPTICISM",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Every week, a new headline. AI agents are going to replace your job, your dog, and your therapist. Apparently.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG01_B002",
+      "scene_id": "SEG01",
+      "text": "But what actually IS an agent? And can you build one that does something useful in ten minutes?",
+      "narration_text": "But what actually IS an agent? And can you build one that does something useful in ten minutes?",
+      "narrator_vo": "But what actually IS an agent? And can you build one that does something useful in ten minutes?",
+      "visual_goal": "The headlines crumble like dry paper. Behind them — a blinking cursor on an empty terminal.",
+      "duration_sec": 7.2,
+      "segment": "HOOK",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "HYPE → SKEPTICISM",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "But what actually IS an agent? And can you build one that does something useful in ten minutes?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B003",
+      "scene_id": "SEG02",
+      "text": "When people hear \"AI agent,\" they picture this. An autonomous intelligence that thinks for itself. Plans its own goals. Decides what to do. Basically, a digital employee that never sleeps.",
+      "narration_text": "When people hear \"AI agent,\" they picture this. An autonomous intelligence that thinks for itself. Plans its own goals. Decides what to do. Basically, a digital employee that never sleeps.",
+      "narrator_vo": "When people hear \"AI agent,\" they picture this. An autonomous intelligence that thinks for itself. Plans its own goals. Decides what to do. Basically, a digital employee that never sleeps.",
+      "visual_goal": "A robot icon appears center frame. It glows with intelligence. Around it, floating labels: \"Autonomous,\" \"Self-learning,\" \"Makes decisions,\" \"Replaces humans.\"",
+      "duration_sec": 12.0,
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "AWE → FALSE UNDERSTANDING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "When people hear \"AI agent,\" they picture this. An autonomous intelligence that thinks for itself. Plans its own goals. Decides what to do. Basically, a digital employee that never sleeps.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B004",
+      "scene_id": "SEG02",
+      "text": "The demos are incredible. The agent browses the web, finds data, writes a report, sends it to your inbox. All by itself. You sit back and watch.",
+      "narration_text": "The demos are incredible. The agent browses the web, finds data, writes a report, sends it to your inbox. All by itself. You sit back and watch.",
+      "narrator_vo": "The demos are incredible. The agent browses the web, finds data, writes a report, sends it to your inbox. All by itself. You sit back and watch.",
+      "visual_goal": "Vee watches a demo video on her screen. An agent auto-navigates a website, writes emails, fills spreadsheets. Her eyes are wide. Impressed.",
+      "duration_sec": 10.8,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 1,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "AWE → FALSE UNDERSTANDING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The demos are incredible. The agent browses the web, finds data, writes a report, sends it to your inbox. All by itself. You sit back and watch.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B005",
+      "scene_id": "SEG02",
+      "text": "Agent equals autonomous. That's the misconception. And it's going to cost you three hours of debugging.",
+      "narration_text": "Agent equals autonomous. That's the misconception. And it's going to cost you three hours of debugging.",
+      "narrator_vo": "Agent equals autonomous. That's the misconception. And it's going to cost you three hours of debugging.",
+      "visual_goal": "The robot icon grows larger. Crown appears on its head. It's king of automation.",
+      "duration_sec": 6.4,
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "AWE → FALSE UNDERSTANDING",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Agent equals autonomous. That's the misconception. And it's going to cost you three hours of debugging.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B006",
+      "scene_id": "SEG03",
+      "text": "The agent did exactly what it was told. Organize files. It just had no idea what \"organized\" means to Vee. Because nobody defined the rules. Nobody set the boundaries.",
+      "narration_text": "The agent did exactly what it was told. Organize files. It just had no idea what \"organized\" means to Vee. Because nobody defined the rules. Nobody set the boundaries.",
+      "narrator_vo": "The agent did exactly what it was told. Organize files. It just had no idea what \"organized\" means to Vee. Because nobody defined the rules. Nobody set the boundaries.",
+      "visual_goal": "Vee builds an \"autonomous\" agent. She types: \"Build me an agent that organizes my files.\" The AI produces a script. Vee runs it.",
+      "duration_sec": 11.6,
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "FALSE UNDERSTANDING → REALIZATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The agent did exactly what it was told. Organize files. It just had no idea what \"organized\" means to Vee. Because nobody defined the rules. Nobody set the boundaries.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B007",
+      "scene_id": "SEG03",
+      "text": "An agent without constraints isn't autonomous. It's just chaotic. The more it can do, the more ways it can go wrong.",
+      "narration_text": "An agent without constraints isn't autonomous. It's just chaotic. The more it can do, the more ways it can go wrong.",
+      "narrator_vo": "An agent without constraints isn't autonomous. It's just chaotic. The more it can do, the more ways it can go wrong.",
+      "visual_goal": "The file explorer goes haywire. Files move everywhere. Photos end up in \"Invoices.\" Code ends up in \"Recipes.\" The desktop is chaos.",
+      "duration_sec": 8.4,
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "FALSE UNDERSTANDING → REALIZATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "An agent without constraints isn't autonomous. It's just chaotic. The more it can do, the more ways it can go wrong.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B008",
+      "scene_id": "SEG04",
+      "text": "Forget autonomous. Here's what an agent actually is.",
+      "narration_text": "Forget autonomous. Here's what an agent actually is.",
+      "narrator_vo": "Forget autonomous. Here's what an agent actually is.",
+      "visual_goal": "TRANSITION: Clean white background. The chaotic robot shrinks to a corner. Center frame, a simple loop diagram draws itself.",
+      "duration_sec": 3.2,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Forget autonomous. Here's what an agent actually is.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B009",
+      "scene_id": "SEG04",
+      "text": "A loop. Three steps. Observe — look at the world. Decide — pick what to do. Act — do it. Then observe again. That's it. That's every agent ever built.",
+      "narration_text": "A loop. Three steps. Observe — look at the world. Decide — pick what to do. Act — do it. Then observe again. That's it. That's every agent ever built.",
+      "narrator_vo": "A loop. Three steps. Observe — look at the world. Decide — pick what to do. Act — do it. Then observe again. That's it. That's every agent ever built.",
+      "visual_goal": "Three nodes appear in a circle, connected by arrows: OBSERVE → DECIDE → ACT → (back to OBSERVE).",
+      "duration_sec": 12.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "A loop. Three steps. Observe — look at the world. Decide — pick what to do. Act — do it. Then observe again. That's it. That's every agent ever built.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B010",
+      "scene_id": "SEG04",
+      "text": "Your thermostat is an agent. Observe: temperature is 28 degrees. Decide: too hot. Act: turn on AC. Loop forever. Nobody calls a thermostat autonomous. But it IS an agent.",
+      "narration_text": "Your thermostat is an agent. Observe: temperature is 28 degrees. Decide: too hot. Act: turn on AC. Loop forever. Nobody calls a thermostat autonomous. But it IS an agent.",
+      "narrator_vo": "Your thermostat is an agent. Observe: temperature is 28 degrees. Decide: too hot. Act: turn on AC. Loop forever. Nobody calls a thermostat autonomous. But it IS an agent.",
+      "visual_goal": "The loop spins slowly. Clean. Simple.",
+      "duration_sec": 11.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Your thermostat is an agent. Observe: temperature is 28 degrees. Decide: too hot. Act: turn on AC. Loop forever. Nobody calls a thermostat autonomous. But it IS an agent.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B011",
+      "scene_id": "SEG04",
+      "text": "Let's build one. A file watcher. It does one thing: when a new file appears in a folder, it reads the file name and moves it to the right place.",
+      "narration_text": "Let's build one. A file watcher. It does one thing: when a new file appears in a folder, it reads the file name and moves it to the right place.",
+      "narrator_vo": "Let's build one. A file watcher. It does one thing: when a new file appears in a folder, it reads the file name and moves it to the right place.",
+      "visual_goal": "CUT TO: Vee's desk. Fresh start. She opens a terminal. The narrator walks through the build.",
+      "duration_sec": 12.0,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Let's build one. A file watcher. It does one thing: when a new file appears in a folder, it reads the file name and moves it to the right place.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B012",
+      "scene_id": "SEG04",
+      "text": "Step one. Observe.",
+      "narration_text": "Step one. Observe.",
+      "narrator_vo": "Step one. Observe.",
+      "visual_goal": "Vee's screen shows a simple project structure:",
+      "duration_sec": 1.5,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Step one. Observe.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B013",
+      "scene_id": "SEG04",
+      "text": "Check the folder. Every five seconds. If something new appeared — flag it. That's the observe step.",
+      "narration_text": "Check the folder. Every five seconds. If something new appeared — flag it. That's the observe step.",
+      "narrator_vo": "Check the folder. Every five seconds. If something new appeared — flag it. That's the observe step.",
+      "visual_goal": "`agent/` → `watcher.py` / `rules.json` / `run.sh`",
+      "duration_sec": 6.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Check the folder. Every five seconds. If something new appeared — flag it. That's the observe step.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B014",
+      "scene_id": "SEG04",
+      "text": "Step two. Decide.",
+      "narration_text": "Step two. Decide.",
+      "narrator_vo": "Step two. Decide.",
+      "visual_goal": "Code appears on screen (simplified, readable): a file watcher that checks a folder every five seconds. Three lines. Simple.",
+      "duration_sec": 1.5,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "narrative_stage": "CORE",
+      "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Step two. Decide.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B015",
+      "scene_id": "SEG04",
+      "text": "The rules file. This is where the intelligence lives — and notice, it's not AI intelligence. It's YOUR intelligence. You decided what \"organized\" means. The agent just follows the rules.",
+      "narration_text": "The rules file. This is where the intelligence lives — and notice, it's not AI intelligence. It's YOUR intelligence. You decided what \"organized\" means. The agent just follows the rules.",
+      "narrator_vo": "The rules file. This is where the intelligence lives — and notice, it's not AI intelligence. It's YOUR intelligence. You decided what \"organized\" means. The agent just follows the rules.",
+      "visual_goal": "The word \"OBSERVE\" lights up green in the loop diagram (small, in the corner).",
+      "duration_sec": 12.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The rules file. This is where the intelligence lives — and notice, it's not AI intelligence. It's YOUR intelligence. You decided what \"organized\" means. The agent just follows the rules.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B016",
+      "scene_id": "SEG04",
+      "text": "Step three. Act.",
+      "narration_text": "Step three. Act.",
+      "narrator_vo": "Step three. Act.",
+      "visual_goal": "A JSON file appears: rules. \"If filename contains 'invoice' → move to /invoices.\" \"If filename ends in '.png' → move to /images.\" \"Otherwise → move to /unsorted.\"",
+      "duration_sec": 1.5,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Step three. Act.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B017",
+      "scene_id": "SEG04",
+      "text": "Move the file. Log what happened. Go back to step one. The entire agent is forty lines. It does exactly one thing. And it does it perfectly, every time, because the rules are explicit.",
+      "narration_text": "Move the file. Log what happened. Go back to step one. The entire agent is forty lines. It does exactly one thing. And it does it perfectly, every time, because the rules are explicit.",
+      "narrator_vo": "Move the file. Log what happened. Go back to step one. The entire agent is forty lines. It does exactly one thing. And it does it perfectly, every time, because the rules are explicit.",
+      "visual_goal": "The word \"DECIDE\" lights up green.",
+      "duration_sec": 13.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Move the file. Log what happened. Go back to step one. The entire agent is forty lines. It does exactly one thing. And it does it perfectly, every time, because the rules are explicit.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B018",
+      "scene_id": "SEG04",
+      "text": "The entire thing took eight minutes. No framework. No LangChain. No crew of agents arguing with each other. One loop. One rules file. One job.",
+      "narration_text": "The entire thing took eight minutes. No framework. No LangChain. No crew of agents arguing with each other. One loop. One rules file. One job.",
+      "narrator_vo": "The entire thing took eight minutes. No framework. No LangChain. No crew of agents arguing with each other. One loop. One rules file. One job.",
+      "visual_goal": "Vee nods slowly. She's writing the rules, not the logic. She gets it.",
+      "duration_sec": 10.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 3,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "REALIZATION → UNDERSTANDING → COMPETENCE",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The entire thing took eight minutes. No framework. No LangChain. No crew of agents arguing with each other. One loop. One rules file. One job.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B019",
+      "scene_id": "SEG05",
+      "text": "Here's the secret the agent hype won't tell you. The hard part of building an agent isn't the code. It's the constraints.",
+      "narration_text": "Here's the secret the agent hype won't tell you. The hard part of building an agent isn't the code. It's the constraints.",
+      "narrator_vo": "Here's the secret the agent hype won't tell you. The hard part of building an agent isn't the code. It's the constraints.",
+      "visual_goal": "The simple loop sits on the left. On the right, the chaotic robot from earlier — now calm, sitting in a small box with clear walls.",
+      "duration_sec": 8.8,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "COMPETENCE → WISDOM",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Here's the secret the agent hype won't tell you. The hard part of building an agent isn't the code. It's the constraints.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B020",
+      "scene_id": "SEG05",
+      "text": "What should it watch? What should it ignore? What does it do when it doesn't know? Every good agent is defined more by what it CAN'T do than what it can.",
+      "narration_text": "What should it watch? What should it ignore? What does it do when it doesn't know? Every good agent is defined more by what it CAN'T do than what it can.",
+      "narrator_vo": "What should it watch? What should it ignore? What does it do when it doesn't know? Every good agent is defined more by what it CAN'T do than what it can.",
+      "visual_goal": "The robot's box has labels on each wall: \"SCOPE,\" \"RULES,\" \"BOUNDARIES,\" \"FALLBACK.\"",
+      "duration_sec": 12.4,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "COMPETENCE → WISDOM",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "What should it watch? What should it ignore? What does it do when it doesn't know? Every good agent is defined more by what it CAN'T do than what it can.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B021",
+      "scene_id": "SEG05",
+      "text": "The best agents do less, not more. That's the reframe. Autonomy isn't the goal. Reliability is.",
+      "narration_text": "The best agents do less, not more. That's the reframe. Autonomy isn't the goal. Reliability is.",
+      "narrator_vo": "The best agents do less, not more. That's the reframe. Autonomy isn't the goal. Reliability is.",
+      "visual_goal": "Vee adds one more line to her rules file: \"If unsure → do nothing. Log it. Ask me later.\" She nods. That's the most important rule.",
+      "duration_sec": 6.4,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 5,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "COMPETENCE → WISDOM",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The best agents do less, not more. That's the reframe. Autonomy isn't the goal. Reliability is.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B022",
+      "scene_id": "SEG06",
+      "text": "An agent isn't a digital employee. It's a loop with rules. Build one that does one thing well. Then build another. The stack grows from small pieces that you actually understand.",
+      "narration_text": "An agent isn't a digital employee. It's a loop with rules. Build one that does one thing well. Then build another. The stack grows from small pieces that you actually understand.",
+      "narrator_vo": "An agent isn't a digital employee. It's a loop with rules. Build one that does one thing well. Then build another. The stack grows from small pieces that you actually understand.",
+      "visual_goal": "Vee's file watcher runs silently in a terminal tab. Files sort themselves. She's already working on something else. The agent just... works. In the background. Quiet.",
+      "duration_sec": 12.4,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "WISDOM → EMPOWERMENT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "An agent isn't a digital employee. It's a loop with rules. Build one that does one thing well. Then build another. The stack grows from small pieces that you actually understand.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B023",
+      "scene_id": "SEG06",
+      "text": "Start with the loop. Start with the rules. The agent writes itself.",
+      "narration_text": "Start with the loop. Start with the rules. The agent writes itself.",
+      "narrator_vo": "Start with the loop. Start with the rules. The agent writes itself.",
+      "visual_goal": "Vee opens a new file: \"rules_v2.json.\" She's already thinking about the next agent. But she starts with the rules, not the code.",
+      "duration_sec": 4.8,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 6,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "WISDOM → EMPOWERMENT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Start with the loop. Start with the rules. The agent writes itself.",
+          "emotion": ""
+        }
+      ]
+    }
+  ]
+}

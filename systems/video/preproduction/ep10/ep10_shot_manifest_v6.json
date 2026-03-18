@@ -1,0 +1,530 @@
+{
+  "project_id": "ep10_v5",
+  "version": "6.0",
+  "style_lock": "2D flat vector Level 2.5 + narrator V.O. only + Vee silent",
+  "delivery_target": "16:9, 1280x720, YouTube",
+  "resolution": "1280x720",
+  "pipeline": {
+    "t2i": "Flux dev + SimpleVectorFlux LoRA",
+    "edit": "Flux Kontext",
+    "i2v": "Wan 2.2 MoE GGUF",
+    "tts": "Dia2-1B",
+    "bgm": "ACE-Step 1.5",
+    "diagrams": "Motion Canvas",
+    "assembly": "FFmpeg"
+  },
+  "shots": [
+    {
+      "shot_id": "H01",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Morning light. Vee sits at her desk, fresh. Her wall has everything: the spec sticky note from EP01, the SSOT document from EP02, the folder structure from EP03, the test checklist from EP04. She's...",
+      "narrator_vo": "She wrote the spec. She organized the code. She wrote the tests. She read the output. She did everything right. And it broke anyway.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 11.82,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Morning light. Vee sits at her desk, fresh. Her wall has everything: the spec sticky note from EP01, the SSOT document from EP02, the folder structure from EP03, the test checklist from EP04. She's ready., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500001,
+      "input_image": "H01_keyframe.png",
+      "output_name": "H01.mp4"
+    },
+    {
+      "shot_id": "H02",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee opens a new project. She types confidently. She follows every rule. Spec first. Structure second. Tests third.",
+      "narrator_vo": "Good. That means the system is working.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 1,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "duration_sec": 3.65,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee opens a new project. She types confidently. She follows every rule. Spec first. Structure second. Tests third., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500002,
+      "input_image": "H02_keyframe.png",
+      "output_name": "H02.mp4"
+    },
+    {
+      "shot_id": "M01",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee scrolls through the errors. Her face cycles through frustration, confusion, almost-anger. She looks at her wall of sticky notes. \"I followed every step.\"",
+      "narrator_vo": "The misconception at the end of every learning journey. \"I know the rules now. So it should work the first time.\" That's not how systems work. That's not how anything works.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 15.19,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee scrolls through the errors. Her face cycles through frustration, confusion, almost-anger. She looks at her wall of sticky notes. \"I followed every step.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500003,
+      "input_image": "M01_keyframe.png",
+      "output_name": "M01.mp4"
+    },
+    {
+      "shot_id": "M02",
+      "segment": "MISCONCEPTION",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "A staircase diagram. At the top: \"MASTERY.\" A figure stands at the bottom, looking up. The stairs are clean, evenly spaced, going straight up.",
+      "narrator_vo": "We imagine learning like this. A straight line up. Each lesson gets you one step closer. By step ten, you're done.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 10.38,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A staircase diagram. At the top: \"MASTERY.\" A figure stands at the bottom, looking up. The stairs are clean, evenly spaced, going straight up., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500004,
+      "input_image": "M02_keyframe.png",
+      "output_name": "M02.mp4"
+    },
+    {
+      "shot_id": "M03",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "The staircase shatters. What's underneath: a jagged, messy path. Ups and downs. Loops. Dead ends. But the overall direction is still up.",
+      "narrator_vo": "It actually looks like this. Progress isn't linear. And the failures at step ten feel different from the failures at step one — but they're still failures.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 13.27,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, The staircase shatters. What's underneath: a jagged, messy path. Ups and downs. Loops. Dead ends. But the overall direction is still up., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500005,
+      "input_image": "M03_keyframe.png",
+      "output_name": "M03.mp4"
+    },
+    {
+      "shot_id": "K01",
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee looks at the seventeen errors again. But this time, she actually reads them. Line by line.",
+      "narrator_vo": "Seventeen errors. But something is different. She can read them. She knows where to look. She knows what each error means. That wasn't true two months ago.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 13.27,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee looks at the seventeen errors again. But this time, she actually reads them. Line by line., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500006,
+      "input_image": "K01_keyframe.png",
+      "output_name": "K01.mp4"
+    },
+    {
+      "shot_id": "K02",
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Her expression changes. Not frustration — recognition. She's seen this before. Error #1: missing type definition. She knows where types go (EP03 — structure). Error #7: null reference on auth. She...",
+      "narrator_vo": "Same person. Same errors. Completely different experience. The system didn't prevent the failure. The system made the failure useful.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 2,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 9.42,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Her expression changes. Not frustration — recognition. She's seen this before. Error #1: missing type definition. She knows where types go (EP03 — structure). Error #7: null reference on auth. She knows to check the auth boundary (EP03 — domains). Error #14: test assertion failed. The test caught a real bug before it shipped (EP04 — testing works)., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500007,
+      "input_image": "K02_keyframe.png",
+      "output_name": "K02.mp4"
+    },
+    {
+      "shot_id": "C01",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "TRANSITION: Clean white background. Four icons appear in a horizontal line — each one from a previous episode.",
+      "narrator_vo": "Let's trace the journey.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 2.69,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, TRANSITION: Clean white background. Four icons appear in a horizontal line — each one from a previous episode., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500008,
+      "input_image": "C01_keyframe.png",
+      "output_name": "C01.mp4"
+    },
+    {
+      "shot_id": "C02",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "ICON 1 lights up: A piece of paper with four boxes. EP01.",
+      "narrator_vo": "Episode one. The spec. She learned to define what she's building before she builds it. One sentence that explains everything.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 9.9,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, ICON 1 lights up: A piece of paper with four boxes. EP01., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500009,
+      "input_image": "C02_keyframe.png",
+      "output_name": "C02.mp4"
+    },
+    {
+      "shot_id": "C03",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "FLASHBACK FLASH: Quick 2-second clip from EP01 — Vee writing \"I want to use my home computer from anywhere\" on paper. The paper glows.",
+      "narrator_vo": "Episode two. Placement. She learned that AI forgets. The fix isn't better memory — it's a file that never forgets. One document. Every conversation reads it first.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 13.27,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, FLASHBACK FLASH: Quick 2-second clip from EP01 — Vee writing \"I want to use my home computer from anywhere\" on paper. The paper glows., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500010,
+      "input_image": "C03_keyframe.png",
+      "output_name": "C03.mp4"
+    },
+    {
+      "shot_id": "C04",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "ICON 2 lights up: A single document with \"SSOT\" written on it. EP02.",
+      "narrator_vo": "Episode three. Structure. She learned that code without boundaries is an apartment without walls. Every domain gets its own room. Every change stays contained.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 11.82,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, ICON 2 lights up: A single document with \"SSOT\" written on it. EP02., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500011,
+      "input_image": "C04_keyframe.png",
+      "output_name": "C04.mp4"
+    },
+    {
+      "shot_id": "C05",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "FLASHBACK FLASH: Quick 2-second clip from EP02 — the 28-armed monster transforming into a clean character when given a single source of truth.",
+      "narrator_vo": "Episode four. Verification. She learned that untested code is a sealed box. Open it daily. The fear is always worse than the reality.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 11.34,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, FLASHBACK FLASH: Quick 2-second clip from EP02 — the 28-armed monster transforming into a clean character when given a single source of truth., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500012,
+      "input_image": "C05_keyframe.png",
+      "output_name": "C05.mp4"
+    },
+    {
+      "shot_id": "C06",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "ICON 3 lights up: A floor plan with walls. EP03.",
+      "narrator_vo": "Alone, each lesson is useful. Together, they're a system. The spec feeds the source of truth. The source of truth defines the structure. The structure makes tests possible. The tests reveal what the spec missed. And the cycle repeats.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 18.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, ICON 3 lights up: A floor plan with walls. EP03., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500013,
+      "input_image": "C06_keyframe.png",
+      "output_name": "C06.mp4"
+    },
+    {
+      "shot_id": "C07",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "FLASHBACK FLASH: Quick 2-second clip from EP03 — walls dropping into the apartment. Oil stops. Water stops. Each room contained.",
+      "narrator_vo": "Forty minutes. Seventeen errors. All fixed. Not because she's smarter. Because she has a system that tells her where to look.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 10.38,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, FLASHBACK FLASH: Quick 2-second clip from EP03 — walls dropping into the apartment. Oil stops. Water stops. Each room contained., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500014,
+      "input_image": "C07_keyframe.png",
+      "output_name": "C07.mp4"
+    },
+    {
+      "shot_id": "C08",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "ICON 4 lights up: An opened box with a green checkmark. EP04.",
+      "narrator_vo": "좌절이 스펙이 된다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 2.69,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, ICON 4 lights up: An opened box with a green checkmark. EP04., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500015,
+      "input_image": "C08_keyframe.png",
+      "output_name": "C08.mp4"
+    },
+    {
+      "shot_id": "C09",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "FLASHBACK FLASH: Quick 2-second clip from EP04 — the box opening to reveal a small bug, quickly swatted. Green check.",
+      "narrator_vo": "스펙이 시스템이 된다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "duration_sec": 2.69,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, FLASHBACK FLASH: Quick 2-second clip from EP04 — the box opening to reveal a small bug, quickly swatted. Green check., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500016,
+      "input_image": "C09_keyframe.png",
+      "output_name": "C09.mp4"
+    },
+    {
+      "shot_id": "C10",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "The four icons connect. Lines draw between them. A system forms:",
+      "narrator_vo": "시스템이 자유가 된다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "duration_sec": 2.69,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The four icons connect. Lines draw between them. A system forms:, flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500017,
+      "input_image": "C10_keyframe.png",
+      "output_name": "C10.mp4"
+    },
+    {
+      "shot_id": "C11",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "SPEC → SSOT → STRUCTURE → TESTS → (loops back to SPEC)",
+      "narrator_vo": "Every frustration you've felt — the code that broke, the AI that hallucinated, the file you couldn't find, the test you didn't write — each one is a spec waiting to be written. And each spec makes the system stronger. And a stronger system means you spend less time fighting and more time building.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 18.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, SPEC → SSOT → STRUCTURE → TESTS → (loops back to SPEC), flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500018,
+      "input_image": "C11_keyframe.png",
+      "output_name": "C11.mp4"
+    },
+    {
+      "shot_id": "R01",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "The four episode icons reappear. But now a fifth appears at the end: an infinity symbol.",
+      "narrator_vo": "The system isn't about preventing all failures. That's impossible. The system is about making failures useful.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 7.98,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The four episode icons reappear. But now a fifth appears at the end: an infinity symbol., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500019,
+      "input_image": "R01_keyframe.png",
+      "output_name": "R01.mp4"
+    },
+    {
+      "shot_id": "R02",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "The infinity symbol pulses. Inside it, the cycle: frustration → spec → system → freedom → (new frustration) → (new spec) → ...",
+      "narrator_vo": "Every time something breaks, you learn what was missing. You add it to the spec. The spec strengthens the system. The system gives you freedom to build bigger things. Which will break in new ways. Which will teach you new things.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 18.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The infinity symbol pulses. Inside it, the cycle: frustration → spec → system → freedom → (new frustration) → (new spec) → ..., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500020,
+      "input_image": "R02_keyframe.png",
+      "output_name": "R02.mp4"
+    },
+    {
+      "shot_id": "R03",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "description": "Vee looks at her wall. The sticky notes. The checklist. The SSOT. The folder diagram. It's not a wall of instructions — it's a wall of lessons. Each one started as a failure.",
+      "narrator_vo": "That's not a hamster wheel. That's growth. And it never stops.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 5,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 5.58,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Vee looks at her wall. The sticky notes. The checklist. The SSOT. The folder diagram. It's not a wall of instructions — it's a wall of lessons. Each one started as a failure., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500021,
+      "input_image": "R03_keyframe.png",
+      "output_name": "R03.mp4"
+    },
+    {
+      "shot_id": "Z01",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Golden hour light through the window. Vee's room looks different from EP01. Same desk. Same monitors. But the walls are covered in systems — notes, diagrams, checklists. Evidence of ten episodes of...",
+      "narrator_vo": "Season one started with everything broken and no idea why. It ends with everything still breaking — but now she knows what to do about it.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 12.78,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Golden hour light through the window. Vee's room looks different from EP01. Same desk. Same monitors. But the walls are covered in systems — notes, diagrams, checklists. Evidence of ten episodes of learning., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500022,
+      "input_image": "Z01_keyframe.png",
+      "output_name": "Z01.mp4"
+    },
+    {
+      "shot_id": "Z02",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee opens a brand new project. Empty terminal. Blank screen. She reaches for her notebook. Opens it to a fresh page.",
+      "narrator_vo": "That's vibe coding. Not the tools. Not the AI. The system you build around yourself.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 7.49,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee opens a brand new project. Empty terminal. Blank screen. She reaches for her notebook. Opens it to a fresh page., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500023,
+      "input_image": "Z02_keyframe.png",
+      "output_name": "Z02.mp4"
+    },
+    {
+      "shot_id": "Z03",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "description": "Vee writes the first line of a new spec. She pauses. Looks at it. Crosses it out. Rewrites it. Better. She nods. One sentence. The starting point.",
+      "narrator_vo": "시즌 2에서 봐요.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 6,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "duration_sec": 2.68,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee writes the first line of a new spec. She pauses. Looks at it. Crosses it out. Rewrites it. Better. She nods. One sentence. The starting point., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500024,
+      "input_image": "Z03_keyframe.png",
+      "output_name": "Z03.mp4"
+    }
+  ],
+  "source_preproduction": "systems/video/preproduction/ep10/ep10_prepro_manifest_v5.json",
+  "selection_summary": {
+    "total_beats": 24,
+    "selected_beats": 24,
+    "target_duration_sec": 235.0,
+    "actual_duration_sec": 234.98,
+    "timing_source": "estimate"
+  }
+}

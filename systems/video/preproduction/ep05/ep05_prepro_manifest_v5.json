@@ -1,0 +1,1325 @@
+{
+  "project_id": "ep05_v5",
+  "version": "6.0",
+  "title": "EP05 — 바이브코딩이 뭔데?",
+  "language": "en",
+  "total_duration_sec": 235,
+  "segment_count": 6,
+  "beat_count": 22,
+  "segments": [
+    "HOOK",
+    "MISCONCEPTION",
+    "THE_CRACK",
+    "CORE",
+    "REFRAME",
+    "OUTRO_CTA"
+  ],
+  "phases": [
+    {
+      "phase_id": "SEG01",
+      "phase_name": "HOOK",
+      "segment": "HOOK",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "emotion_curve": "CURIOSITY → RECOGNITION",
+      "narrative_stage": "HOOK",
+      "target_duration_sec": 15,
+      "beats": [
+        {
+          "beat_id": "SEG01_B001",
+          "scene_id": "SEG01",
+          "text": "Seventy thousand people googled this last month. Half of them think it's the future. The other half think it's a joke.",
+          "narration_text": "Seventy thousand people googled this last month. Half of them think it's the future. The other half think it's a joke.",
+          "narrator_vo": "Seventy thousand people googled this last month. Half of them think it's the future. The other half think it's a joke.",
+          "visual_goal": "A search bar appears center frame. Someone types: \"vibe coding.\" Autocomplete explodes: \"vibe coding tutorial,\" \"vibe coding is it real,\" \"vibe coding vs programming,\" \"vibe coding dead?\"",
+          "duration_sec": 8.4,
+          "segment": "HOOK",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": true,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "CURIOSITY → RECOGNITION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Seventy thousand people googled this last month. Half of them think it's the future. The other half think it's a joke.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG01_B002",
+          "scene_id": "SEG01",
+          "text": "They're both wrong.",
+          "narration_text": "They're both wrong.",
+          "narrator_vo": "They're both wrong.",
+          "visual_goal": "The search results split into two columns. Left: \"Vibe coding will replace developers.\" Right: \"Vibe coding is not real coding.\" Both glow red.",
+          "duration_sec": 1.5,
+          "segment": "HOOK",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "CURIOSITY → RECOGNITION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "They're both wrong.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG02",
+      "phase_name": "MISCONCEPTION",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "OVERCONFIDENCE → FALSE CERTAINTY",
+      "narrative_stage": "MISCONCEPTION",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG02_B003",
+          "scene_id": "SEG02",
+          "text": "Here's what most people think vibe coding is. You type what you want. AI builds it. You ship it. Congratulations — you're a developer now.",
+          "narration_text": "Here's what most people think vibe coding is. You type what you want. AI builds it. You ship it. Congratulations — you're a developer now.",
+          "narrator_vo": "Here's what most people think vibe coding is. You type what you want. AI builds it. You ship it. Congratulations — you're a developer now.",
+          "visual_goal": "Vee sits at her desk. She types a single sentence into an AI chat: \"Make me a weather app.\" A complete app appears on her screen. Colorful. Functional. Instant.",
+          "duration_sec": 10.0,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "OVERCONFIDENCE → FALSE CERTAINTY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Here's what most people think vibe coding is. You type what you want. AI builds it. You ship it. Congratulations — you're a developer now.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B004",
+          "scene_id": "SEG02",
+          "text": "Just tell the AI what to do. It's coding. It's easy. It's basically autopilot.",
+          "narration_text": "Just tell the AI what to do. It's coding. It's easy. It's basically autopilot.",
+          "narrator_vo": "Just tell the AI what to do. It's coding. It's easy. It's basically autopilot.",
+          "visual_goal": "Vee leans back, arms behind her head. Smug nod. She gestures at the screen as if to say: \"See? Done.\"",
+          "duration_sec": 5.6,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 1,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "OVERCONFIDENCE → FALSE CERTAINTY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Just tell the AI what to do. It's coding. It's easy. It's basically autopilot.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B005",
+          "scene_id": "SEG02",
+          "text": "Right?",
+          "narration_text": "Right?",
+          "narrator_vo": "Right?",
+          "visual_goal": "A conveyor belt animation. A person drops a sentence in one end. A finished product rolls out the other. Simple. Clean. Effortless.",
+          "duration_sec": 1.5,
+          "segment": "MISCONCEPTION",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "OVERCONFIDENCE → FALSE CERTAINTY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Right?",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG03",
+      "phase_name": "THE_CRACK",
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "FALSE CERTAINTY → DOUBT",
+      "narrative_stage": "THE_CRACK",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG03_B006",
+          "scene_id": "SEG03",
+          "text": "She told AI to build it. It built something. She told AI to fix it. It fixed something. But she can't explain what she asked for. And she can't explain what she got back.",
+          "narration_text": "She told AI to build it. It built something. She told AI to fix it. It fixed something. But she can't explain what she asked for. And she can't explain what she got back.",
+          "narrator_vo": "She told AI to build it. It built something. She told AI to fix it. It fixed something. But she can't explain what she asked for. And she can't explain what she got back.",
+          "visual_goal": "Vee opens the weather app she just built. She taps a city name. The temperature shows 847 degrees. She taps another city. The app crashes.",
+          "duration_sec": 13.6,
+          "segment": "THE_CRACK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "FALSE CERTAINTY → DOUBT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "She told AI to build it. It built something. She told AI to fix it. It fixed something. But she can't explain what she asked for. And she can't explain what she got back.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B007",
+          "scene_id": "SEG03",
+          "text": "That's the crack. It's not that AI can't code. It's that she doesn't know what she told it to do.",
+          "narration_text": "That's the crack. It's not that AI can't code. It's that she doesn't know what she told it to do.",
+          "narrator_vo": "That's the crack. It's not that AI can't code. It's that she doesn't know what she told it to do.",
+          "visual_goal": "Vee stares at the screen. She opens the AI chat again. She wants to fix it. She types: \"Fix the bug.\" The AI responds with a wall of code. Vee reads it. Reads it again. She has no idea what changed.",
+          "duration_sec": 8.0,
+          "segment": "THE_CRACK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 2,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "FALSE CERTAINTY → DOUBT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "That's the crack. It's not that AI can't code. It's that she doesn't know what she told it to do.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG04",
+      "phase_name": "CORE",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "DOUBT → CLARITY",
+      "narrative_stage": "CORE",
+      "target_duration_sec": 105,
+      "beats": [
+        {
+          "beat_id": "SEG04_B008",
+          "scene_id": "SEG04",
+          "text": "Let's compare two people.",
+          "narration_text": "Let's compare two people.",
+          "narrator_vo": "Let's compare two people.",
+          "visual_goal": "TRANSITION: Desk fades. Clean white background. Two people appear side by side.",
+          "duration_sec": 1.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Let's compare two people.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B009",
+          "scene_id": "SEG04",
+          "text": "Person A plays piano. They read sheet music. Their fingers press keys. Music comes out. That's a skill. Nobody argues.",
+          "narration_text": "Person A plays piano. They read sheet music. Their fingers press keys. Music comes out. That's a skill. Nobody argues.",
+          "narrator_vo": "Person A plays piano. They read sheet music. Their fingers press keys. Music comes out. That's a skill. Nobody argues.",
+          "visual_goal": "LEFT: A person sits at a piano. Sheet music on the stand. Fingers on keys. They play — notes come out. Simple melody.",
+          "duration_sec": 8.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Person A plays piano. They read sheet music. Their fingers press keys. Music comes out. That's a skill. Nobody argues.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B010",
+          "scene_id": "SEG04",
+          "text": "Person B conducts an orchestra. They don't play a single instrument. But the symphony only exists because they know what it should sound like.",
+          "narration_text": "Person B conducts an orchestra. They don't play a single instrument. But the symphony only exists because they know what it should sound like.",
+          "narrator_vo": "Person B conducts an orchestra. They don't play a single instrument. But the symphony only exists because they know what it should sound like.",
+          "visual_goal": "RIGHT: A person stands in front of an orchestra. No instrument. They hold a baton. They raise it. The entire orchestra plays — a massive, complex symphony.",
+          "duration_sec": 9.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Person B conducts an orchestra. They don't play a single instrument. But the symphony only exists because they know what it should sound like.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B011",
+          "scene_id": "SEG04",
+          "text": "The conductor's job isn't pressing keys. It's holding the entire piece in their head — every instrument, every timing, every transition — and communicating that vision to the performers.",
+          "narration_text": "The conductor's job isn't pressing keys. It's holding the entire piece in their head — every instrument, every timing, every transition — and communicating that vision to the performers.",
+          "narrator_vo": "The conductor's job isn't pressing keys. It's holding the entire piece in their head — every instrument, every timing, every transition — and communicating that vision to the performers.",
+          "visual_goal": "The conductor waves the baton. The music swells. Then they stop — one hand up. Silence. They point at the violins. The violins adjust. The conductor nods. Music resumes, better than before.",
+          "duration_sec": 11.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": true,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The conductor's job isn't pressing keys. It's holding the entire piece in their head — every instrument, every timing, every transition — and communicating that vision to the performers.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B012",
+          "scene_id": "SEG04",
+          "text": "That's vibe coding. You're not writing code. You're conducting AI. The skill isn't syntax. The skill is knowing what the system should do — and communicating that clearly enough that AI can execute it.",
+          "narration_text": "That's vibe coding. You're not writing code. You're conducting AI. The skill isn't syntax. The skill is knowing what the system should do — and communicating that clearly enough that AI can execute it.",
+          "narrator_vo": "That's vibe coding. You're not writing code. You're conducting AI. The skill isn't syntax. The skill is knowing what the system should do — and communicating that clearly enough that AI can execute it.",
+          "visual_goal": "The orchestra fades. Text appears center frame: \"Vibe Coding = Conducting\"",
+          "duration_sec": 13.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "That's vibe coding. You're not writing code. You're conducting AI. The skill isn't syntax. The skill is knowing what the system should do — and communicating that clearly enough that AI can execute it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B013",
+          "scene_id": "SEG04",
+          "text": "Intent — what am I building and why. Structure — where does each piece live. Verification — how do I know it works. That's it. Those three things.",
+          "narration_text": "Intent — what am I building and why. Structure — where does each piece live. Verification — how do I know it works. That's it. Those three things.",
+          "narrator_vo": "Intent — what am I building and why. Structure — where does each piece live. Verification — how do I know it works. That's it. Those three things.",
+          "visual_goal": "Below, three pillars draw themselves: \"INTENT\" / \"STRUCTURE\" / \"VERIFICATION\"",
+          "duration_sec": 11.2,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Intent — what am I building and why. Structure — where does each piece live. Verification — how do I know it works. That's it. Those three things.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B014",
+          "scene_id": "SEG04",
+          "text": "People call it prompt engineering. It's not. Prompt engineering is about phrasing — saying the right words to get a good response. Vibe coding is system thinking — understanding how pieces connect before you ask AI to build any of them.",
+          "narration_text": "People call it prompt engineering. It's not. Prompt engineering is about phrasing — saying the right words to get a good response. Vibe coding is system thinking — understanding how pieces connect before you ask AI to build any of them.",
+          "narrator_vo": "People call it prompt engineering. It's not. Prompt engineering is about phrasing — saying the right words to get a good response. Vibe coding is system thinking — understanding how pieces connect before you ask AI to build any of them.",
+          "visual_goal": "Quick flash: Vee's eyes widen behind her glasses. Recognition. Not eureka — more like \"oh, that's what I've been missing.\" 1.5 seconds.",
+          "duration_sec": 16.4,
+          "segment": "CORE",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 3,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "People call it prompt engineering. It's not. Prompt engineering is about phrasing — saying the right words to get a good response. Vibe coding is system thinking — understanding how pieces connect before you ask AI to build any of them.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B015",
+          "scene_id": "SEG04",
+          "text": "A prompt engineer asks: \"How do I get better output?\" A vibe coder asks: \"What should the system look like when it's done?\"",
+          "narration_text": "A prompt engineer asks: \"How do I get better output?\" A vibe coder asks: \"What should the system look like when it's done?\"",
+          "narrator_vo": "A prompt engineer asks: \"How do I get better output?\" A vibe coder asks: \"What should the system look like when it's done?\"",
+          "visual_goal": "A spectrum line appears. Left end: \"Prompt Engineering.\" Right end: \"System Thinking.\" A marker slides from left toward the right and stops at \"System Thinking.\"",
+          "duration_sec": 9.2,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "A prompt engineer asks: \"How do I get better output?\" A vibe coder asks: \"What should the system look like when it's done?\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B016",
+          "scene_id": "SEG04",
+          "text": "Vee stopped typing prompts. She started drawing systems.",
+          "narration_text": "Vee stopped typing prompts. She started drawing systems.",
+          "narrator_vo": "Vee stopped typing prompts. She started drawing systems.",
+          "visual_goal": "The \"Prompt Engineering\" label shrinks. \"System Thinking\" glows.",
+          "duration_sec": 3.2,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Vee stopped typing prompts. She started drawing systems.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B017",
+          "scene_id": "SEG04",
+          "text": "Three boxes. Three questions. Before she writes a single prompt, she knows what she's building. That's the difference between telling AI to code and actually vibe coding.",
+          "narration_text": "Three boxes. Three questions. Before she writes a single prompt, she knows what she's building. That's the difference between telling AI to code and actually vibe coding.",
+          "narrator_vo": "Three boxes. Three questions. Before she writes a single prompt, she knows what she's building. That's the difference between telling AI to code and actually vibe coding.",
+          "visual_goal": "Vee pulls out a notebook. Not a terminal. A notebook. She starts sketching boxes and arrows. System diagram. No code.",
+          "duration_sec": 10.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 4,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DOUBT → CLARITY",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Three boxes. Three questions. Before she writes a single prompt, she knows what she's building. That's the difference between telling AI to code and actually vibe coding.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG05",
+      "phase_name": "REFRAME",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "CLARITY → CONVICTION",
+      "narrative_stage": "REFRAME",
+      "target_duration_sec": 30,
+      "beats": [
+        {
+          "beat_id": "SEG05_B018",
+          "scene_id": "SEG05",
+          "text": "Here's what nobody wants to admit. Vibe coding is harder than regular coding. Not because the tools are complex. Because you have to think about the whole system before any of it exists.",
+          "narration_text": "Here's what nobody wants to admit. Vibe coding is harder than regular coding. Not because the tools are complex. Because you have to think about the whole system before any of it exists.",
+          "narrator_vo": "Here's what nobody wants to admit. Vibe coding is harder than regular coding. Not because the tools are complex. Because you have to think about the whole system before any of it exists.",
+          "visual_goal": "Zoom out. The spectrum, the three pillars, and the orchestra — all visible as small icons on a canvas.",
+          "duration_sec": 13.2,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "CLARITY → CONVICTION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Here's what nobody wants to admit. Vibe coding is harder than regular coding. Not because the tools are complex. Because you have to think about the whole system before any of it exists.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B019",
+          "scene_id": "SEG05",
+          "text": "The \"just tell AI\" approach works for demos. It doesn't work for anything you need to maintain, debug, or explain to another human.",
+          "narration_text": "The \"just tell AI\" approach works for demos. It doesn't work for anything you need to maintain, debug, or explain to another human.",
+          "narrator_vo": "The \"just tell AI\" approach works for demos. It doesn't work for anything you need to maintain, debug, or explain to another human.",
+          "visual_goal": "The conveyor belt from MISCONCEPTION reappears — but now it's transparent. Inside, you can see the mess: tangled gears, broken belts, misaligned parts.",
+          "duration_sec": 9.2,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "CLARITY → CONVICTION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The \"just tell AI\" approach works for demos. It doesn't work for anything you need to maintain, debug, or explain to another human.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B020",
+          "scene_id": "SEG05",
+          "text": "Vibe coding is a real skill. It's system thinking expressed through AI. And like any real skill — it takes practice.",
+          "narration_text": "Vibe coding is a real skill. It's system thinking expressed through AI. And like any real skill — it takes practice.",
+          "narrator_vo": "Vibe coding is a real skill. It's system thinking expressed through AI. And like any real skill — it takes practice.",
+          "visual_goal": "Vee closes the AI chat window. Opens her notebook instead. She nods slowly. Determined.",
+          "duration_sec": 8.4,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 5,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "CLARITY → CONVICTION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Vibe coding is a real skill. It's system thinking expressed through AI. And like any real skill — it takes practice.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG06",
+      "phase_name": "OUTRO_CTA",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "CONVICTION → INVITATION",
+      "narrative_stage": "OUTRO_CTA",
+      "target_duration_sec": 25,
+      "beats": [
+        {
+          "beat_id": "SEG06_B021",
+          "scene_id": "SEG06",
+          "text": "Next time someone asks you what vibe coding is — it's not \"telling AI to code.\" It's knowing what to build, and conducting the AI to build it.",
+          "narration_text": "Next time someone asks you what vibe coding is — it's not \"telling AI to code.\" It's knowing what to build, and conducting the AI to build it.",
+          "narrator_vo": "Next time someone asks you what vibe coding is — it's not \"telling AI to code.\" It's knowing what to build, and conducting the AI to build it.",
+          "visual_goal": "Vee at her desk. The notebook is open beside her keyboard. She types a prompt — but this time, it's different. It's structured. It references the notebook. It has context.",
+          "duration_sec": 11.2,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "CONVICTION → INVITATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Next time someone asks you what vibe coding is — it's not \"telling AI to code.\" It's knowing what to build, and conducting the AI to build it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B022",
+          "scene_id": "SEG06",
+          "text": "Start with three boxes and three questions. The rest follows.",
+          "narration_text": "Start with three boxes and three questions. The rest follows.",
+          "narrator_vo": "Start with three boxes and three questions. The rest follows.",
+          "visual_goal": "Vee glances at the camera — the first time she's ever looked directly at the viewer. A tiny knowing nod. Then back to her screen.",
+          "duration_sec": 4.0,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 6,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "CONVICTION → INVITATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Start with three boxes and three questions. The rest follows.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "beat_id": "SEG01_B001",
+      "scene_id": "SEG01",
+      "text": "Seventy thousand people googled this last month. Half of them think it's the future. The other half think it's a joke.",
+      "narration_text": "Seventy thousand people googled this last month. Half of them think it's the future. The other half think it's a joke.",
+      "narrator_vo": "Seventy thousand people googled this last month. Half of them think it's the future. The other half think it's a joke.",
+      "visual_goal": "A search bar appears center frame. Someone types: \"vibe coding.\" Autocomplete explodes: \"vibe coding tutorial,\" \"vibe coding is it real,\" \"vibe coding vs programming,\" \"vibe coding dead?\"",
+      "duration_sec": 8.4,
+      "segment": "HOOK",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "CURIOSITY → RECOGNITION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Seventy thousand people googled this last month. Half of them think it's the future. The other half think it's a joke.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG01_B002",
+      "scene_id": "SEG01",
+      "text": "They're both wrong.",
+      "narration_text": "They're both wrong.",
+      "narrator_vo": "They're both wrong.",
+      "visual_goal": "The search results split into two columns. Left: \"Vibe coding will replace developers.\" Right: \"Vibe coding is not real coding.\" Both glow red.",
+      "duration_sec": 1.5,
+      "segment": "HOOK",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "CURIOSITY → RECOGNITION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "They're both wrong.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B003",
+      "scene_id": "SEG02",
+      "text": "Here's what most people think vibe coding is. You type what you want. AI builds it. You ship it. Congratulations — you're a developer now.",
+      "narration_text": "Here's what most people think vibe coding is. You type what you want. AI builds it. You ship it. Congratulations — you're a developer now.",
+      "narrator_vo": "Here's what most people think vibe coding is. You type what you want. AI builds it. You ship it. Congratulations — you're a developer now.",
+      "visual_goal": "Vee sits at her desk. She types a single sentence into an AI chat: \"Make me a weather app.\" A complete app appears on her screen. Colorful. Functional. Instant.",
+      "duration_sec": 10.0,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "OVERCONFIDENCE → FALSE CERTAINTY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Here's what most people think vibe coding is. You type what you want. AI builds it. You ship it. Congratulations — you're a developer now.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B004",
+      "scene_id": "SEG02",
+      "text": "Just tell the AI what to do. It's coding. It's easy. It's basically autopilot.",
+      "narration_text": "Just tell the AI what to do. It's coding. It's easy. It's basically autopilot.",
+      "narrator_vo": "Just tell the AI what to do. It's coding. It's easy. It's basically autopilot.",
+      "visual_goal": "Vee leans back, arms behind her head. Smug nod. She gestures at the screen as if to say: \"See? Done.\"",
+      "duration_sec": 5.6,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 1,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "OVERCONFIDENCE → FALSE CERTAINTY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Just tell the AI what to do. It's coding. It's easy. It's basically autopilot.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B005",
+      "scene_id": "SEG02",
+      "text": "Right?",
+      "narration_text": "Right?",
+      "narrator_vo": "Right?",
+      "visual_goal": "A conveyor belt animation. A person drops a sentence in one end. A finished product rolls out the other. Simple. Clean. Effortless.",
+      "duration_sec": 1.5,
+      "segment": "MISCONCEPTION",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "OVERCONFIDENCE → FALSE CERTAINTY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Right?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B006",
+      "scene_id": "SEG03",
+      "text": "She told AI to build it. It built something. She told AI to fix it. It fixed something. But she can't explain what she asked for. And she can't explain what she got back.",
+      "narration_text": "She told AI to build it. It built something. She told AI to fix it. It fixed something. But she can't explain what she asked for. And she can't explain what she got back.",
+      "narrator_vo": "She told AI to build it. It built something. She told AI to fix it. It fixed something. But she can't explain what she asked for. And she can't explain what she got back.",
+      "visual_goal": "Vee opens the weather app she just built. She taps a city name. The temperature shows 847 degrees. She taps another city. The app crashes.",
+      "duration_sec": 13.6,
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "FALSE CERTAINTY → DOUBT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "She told AI to build it. It built something. She told AI to fix it. It fixed something. But she can't explain what she asked for. And she can't explain what she got back.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B007",
+      "scene_id": "SEG03",
+      "text": "That's the crack. It's not that AI can't code. It's that she doesn't know what she told it to do.",
+      "narration_text": "That's the crack. It's not that AI can't code. It's that she doesn't know what she told it to do.",
+      "narrator_vo": "That's the crack. It's not that AI can't code. It's that she doesn't know what she told it to do.",
+      "visual_goal": "Vee stares at the screen. She opens the AI chat again. She wants to fix it. She types: \"Fix the bug.\" The AI responds with a wall of code. Vee reads it. Reads it again. She has no idea what changed.",
+      "duration_sec": 8.0,
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 2,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "FALSE CERTAINTY → DOUBT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "That's the crack. It's not that AI can't code. It's that she doesn't know what she told it to do.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B008",
+      "scene_id": "SEG04",
+      "text": "Let's compare two people.",
+      "narration_text": "Let's compare two people.",
+      "narrator_vo": "Let's compare two people.",
+      "visual_goal": "TRANSITION: Desk fades. Clean white background. Two people appear side by side.",
+      "duration_sec": 1.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Let's compare two people.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B009",
+      "scene_id": "SEG04",
+      "text": "Person A plays piano. They read sheet music. Their fingers press keys. Music comes out. That's a skill. Nobody argues.",
+      "narration_text": "Person A plays piano. They read sheet music. Their fingers press keys. Music comes out. That's a skill. Nobody argues.",
+      "narrator_vo": "Person A plays piano. They read sheet music. Their fingers press keys. Music comes out. That's a skill. Nobody argues.",
+      "visual_goal": "LEFT: A person sits at a piano. Sheet music on the stand. Fingers on keys. They play — notes come out. Simple melody.",
+      "duration_sec": 8.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Person A plays piano. They read sheet music. Their fingers press keys. Music comes out. That's a skill. Nobody argues.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B010",
+      "scene_id": "SEG04",
+      "text": "Person B conducts an orchestra. They don't play a single instrument. But the symphony only exists because they know what it should sound like.",
+      "narration_text": "Person B conducts an orchestra. They don't play a single instrument. But the symphony only exists because they know what it should sound like.",
+      "narrator_vo": "Person B conducts an orchestra. They don't play a single instrument. But the symphony only exists because they know what it should sound like.",
+      "visual_goal": "RIGHT: A person stands in front of an orchestra. No instrument. They hold a baton. They raise it. The entire orchestra plays — a massive, complex symphony.",
+      "duration_sec": 9.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Person B conducts an orchestra. They don't play a single instrument. But the symphony only exists because they know what it should sound like.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B011",
+      "scene_id": "SEG04",
+      "text": "The conductor's job isn't pressing keys. It's holding the entire piece in their head — every instrument, every timing, every transition — and communicating that vision to the performers.",
+      "narration_text": "The conductor's job isn't pressing keys. It's holding the entire piece in their head — every instrument, every timing, every transition — and communicating that vision to the performers.",
+      "narrator_vo": "The conductor's job isn't pressing keys. It's holding the entire piece in their head — every instrument, every timing, every transition — and communicating that vision to the performers.",
+      "visual_goal": "The conductor waves the baton. The music swells. Then they stop — one hand up. Silence. They point at the violins. The violins adjust. The conductor nods. Music resumes, better than before.",
+      "duration_sec": 11.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": true,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The conductor's job isn't pressing keys. It's holding the entire piece in their head — every instrument, every timing, every transition — and communicating that vision to the performers.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B012",
+      "scene_id": "SEG04",
+      "text": "That's vibe coding. You're not writing code. You're conducting AI. The skill isn't syntax. The skill is knowing what the system should do — and communicating that clearly enough that AI can execute it.",
+      "narration_text": "That's vibe coding. You're not writing code. You're conducting AI. The skill isn't syntax. The skill is knowing what the system should do — and communicating that clearly enough that AI can execute it.",
+      "narrator_vo": "That's vibe coding. You're not writing code. You're conducting AI. The skill isn't syntax. The skill is knowing what the system should do — and communicating that clearly enough that AI can execute it.",
+      "visual_goal": "The orchestra fades. Text appears center frame: \"Vibe Coding = Conducting\"",
+      "duration_sec": 13.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "That's vibe coding. You're not writing code. You're conducting AI. The skill isn't syntax. The skill is knowing what the system should do — and communicating that clearly enough that AI can execute it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B013",
+      "scene_id": "SEG04",
+      "text": "Intent — what am I building and why. Structure — where does each piece live. Verification — how do I know it works. That's it. Those three things.",
+      "narration_text": "Intent — what am I building and why. Structure — where does each piece live. Verification — how do I know it works. That's it. Those three things.",
+      "narrator_vo": "Intent — what am I building and why. Structure — where does each piece live. Verification — how do I know it works. That's it. Those three things.",
+      "visual_goal": "Below, three pillars draw themselves: \"INTENT\" / \"STRUCTURE\" / \"VERIFICATION\"",
+      "duration_sec": 11.2,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Intent — what am I building and why. Structure — where does each piece live. Verification — how do I know it works. That's it. Those three things.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B014",
+      "scene_id": "SEG04",
+      "text": "People call it prompt engineering. It's not. Prompt engineering is about phrasing — saying the right words to get a good response. Vibe coding is system thinking — understanding how pieces connect before you ask AI to build any of them.",
+      "narration_text": "People call it prompt engineering. It's not. Prompt engineering is about phrasing — saying the right words to get a good response. Vibe coding is system thinking — understanding how pieces connect before you ask AI to build any of them.",
+      "narrator_vo": "People call it prompt engineering. It's not. Prompt engineering is about phrasing — saying the right words to get a good response. Vibe coding is system thinking — understanding how pieces connect before you ask AI to build any of them.",
+      "visual_goal": "Quick flash: Vee's eyes widen behind her glasses. Recognition. Not eureka — more like \"oh, that's what I've been missing.\" 1.5 seconds.",
+      "duration_sec": 16.4,
+      "segment": "CORE",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 3,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "People call it prompt engineering. It's not. Prompt engineering is about phrasing — saying the right words to get a good response. Vibe coding is system thinking — understanding how pieces connect before you ask AI to build any of them.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B015",
+      "scene_id": "SEG04",
+      "text": "A prompt engineer asks: \"How do I get better output?\" A vibe coder asks: \"What should the system look like when it's done?\"",
+      "narration_text": "A prompt engineer asks: \"How do I get better output?\" A vibe coder asks: \"What should the system look like when it's done?\"",
+      "narrator_vo": "A prompt engineer asks: \"How do I get better output?\" A vibe coder asks: \"What should the system look like when it's done?\"",
+      "visual_goal": "A spectrum line appears. Left end: \"Prompt Engineering.\" Right end: \"System Thinking.\" A marker slides from left toward the right and stops at \"System Thinking.\"",
+      "duration_sec": 9.2,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "A prompt engineer asks: \"How do I get better output?\" A vibe coder asks: \"What should the system look like when it's done?\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B016",
+      "scene_id": "SEG04",
+      "text": "Vee stopped typing prompts. She started drawing systems.",
+      "narration_text": "Vee stopped typing prompts. She started drawing systems.",
+      "narrator_vo": "Vee stopped typing prompts. She started drawing systems.",
+      "visual_goal": "The \"Prompt Engineering\" label shrinks. \"System Thinking\" glows.",
+      "duration_sec": 3.2,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Vee stopped typing prompts. She started drawing systems.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B017",
+      "scene_id": "SEG04",
+      "text": "Three boxes. Three questions. Before she writes a single prompt, she knows what she's building. That's the difference between telling AI to code and actually vibe coding.",
+      "narration_text": "Three boxes. Three questions. Before she writes a single prompt, she knows what she's building. That's the difference between telling AI to code and actually vibe coding.",
+      "narrator_vo": "Three boxes. Three questions. Before she writes a single prompt, she knows what she's building. That's the difference between telling AI to code and actually vibe coding.",
+      "visual_goal": "Vee pulls out a notebook. Not a terminal. A notebook. She starts sketching boxes and arrows. System diagram. No code.",
+      "duration_sec": 10.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 4,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DOUBT → CLARITY",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Three boxes. Three questions. Before she writes a single prompt, she knows what she's building. That's the difference between telling AI to code and actually vibe coding.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B018",
+      "scene_id": "SEG05",
+      "text": "Here's what nobody wants to admit. Vibe coding is harder than regular coding. Not because the tools are complex. Because you have to think about the whole system before any of it exists.",
+      "narration_text": "Here's what nobody wants to admit. Vibe coding is harder than regular coding. Not because the tools are complex. Because you have to think about the whole system before any of it exists.",
+      "narrator_vo": "Here's what nobody wants to admit. Vibe coding is harder than regular coding. Not because the tools are complex. Because you have to think about the whole system before any of it exists.",
+      "visual_goal": "Zoom out. The spectrum, the three pillars, and the orchestra — all visible as small icons on a canvas.",
+      "duration_sec": 13.2,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "CLARITY → CONVICTION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Here's what nobody wants to admit. Vibe coding is harder than regular coding. Not because the tools are complex. Because you have to think about the whole system before any of it exists.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B019",
+      "scene_id": "SEG05",
+      "text": "The \"just tell AI\" approach works for demos. It doesn't work for anything you need to maintain, debug, or explain to another human.",
+      "narration_text": "The \"just tell AI\" approach works for demos. It doesn't work for anything you need to maintain, debug, or explain to another human.",
+      "narrator_vo": "The \"just tell AI\" approach works for demos. It doesn't work for anything you need to maintain, debug, or explain to another human.",
+      "visual_goal": "The conveyor belt from MISCONCEPTION reappears — but now it's transparent. Inside, you can see the mess: tangled gears, broken belts, misaligned parts.",
+      "duration_sec": 9.2,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "CLARITY → CONVICTION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The \"just tell AI\" approach works for demos. It doesn't work for anything you need to maintain, debug, or explain to another human.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B020",
+      "scene_id": "SEG05",
+      "text": "Vibe coding is a real skill. It's system thinking expressed through AI. And like any real skill — it takes practice.",
+      "narration_text": "Vibe coding is a real skill. It's system thinking expressed through AI. And like any real skill — it takes practice.",
+      "narrator_vo": "Vibe coding is a real skill. It's system thinking expressed through AI. And like any real skill — it takes practice.",
+      "visual_goal": "Vee closes the AI chat window. Opens her notebook instead. She nods slowly. Determined.",
+      "duration_sec": 8.4,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 5,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "CLARITY → CONVICTION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Vibe coding is a real skill. It's system thinking expressed through AI. And like any real skill — it takes practice.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B021",
+      "scene_id": "SEG06",
+      "text": "Next time someone asks you what vibe coding is — it's not \"telling AI to code.\" It's knowing what to build, and conducting the AI to build it.",
+      "narration_text": "Next time someone asks you what vibe coding is — it's not \"telling AI to code.\" It's knowing what to build, and conducting the AI to build it.",
+      "narrator_vo": "Next time someone asks you what vibe coding is — it's not \"telling AI to code.\" It's knowing what to build, and conducting the AI to build it.",
+      "visual_goal": "Vee at her desk. The notebook is open beside her keyboard. She types a prompt — but this time, it's different. It's structured. It references the notebook. It has context.",
+      "duration_sec": 11.2,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "CONVICTION → INVITATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Next time someone asks you what vibe coding is — it's not \"telling AI to code.\" It's knowing what to build, and conducting the AI to build it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B022",
+      "scene_id": "SEG06",
+      "text": "Start with three boxes and three questions. The rest follows.",
+      "narration_text": "Start with three boxes and three questions. The rest follows.",
+      "narrator_vo": "Start with three boxes and three questions. The rest follows.",
+      "visual_goal": "Vee glances at the camera — the first time she's ever looked directly at the viewer. A tiny knowing nod. Then back to her screen.",
+      "duration_sec": 4.0,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 6,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "CONVICTION → INVITATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Start with three boxes and three questions. The rest follows.",
+          "emotion": ""
+        }
+      ]
+    }
+  ]
+}

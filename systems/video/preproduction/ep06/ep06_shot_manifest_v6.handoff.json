@@ -1,0 +1,13 @@
+{
+  "project_id": "ep06_v5",
+  "version": "6.0",
+  "manifest": "systems/video/preproduction/ep06/ep06_shot_manifest_v6.json",
+  "notes": [
+    "v6 format: 2D flat vector, v3ct0r LoRA trigger, 1280x720.",
+    "Segment prefixes: H=HOOK, M=MISCONCEPTION, K=THE_CRACK, C=CORE, R=REFRAME, Z=OUTRO_CTA.",
+    "T2I keyframes: Flux dev + SimpleVectorFlux LoRA.",
+    "Character edits: Flux Kontext (golden reference based).",
+    "I2V animation: Wan 2.2 MoE GGUF.",
+    "Diagrams go to Motion Canvas, not I2V."
+  ]
+}

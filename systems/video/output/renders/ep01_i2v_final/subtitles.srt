@@ -1,0 +1,124 @@
+1
+00:00:00,000 --> 00:00:03,528
+This is the moment every vibe coder lives for.
+
+2
+00:00:03,728 --> 00:00:09,631
+You asked AI to build it. And it did. All of it.
+
+3
+00:00:09,832 --> 00:00:12,711
+And then, three seconds later...
+
+4
+00:00:12,912 --> 00:00:15,096
+...it all falls apart.
+
+5
+00:00:15,295 --> 00:00:19,135
+Three days ago, Vee discovered something magical.
+
+6
+00:00:19,335 --> 00:00:26,775
+You type what you want. AI builds it. Five minutes. Done.
+
+7
+00:00:26,975 --> 00:00:36,840
+A to-do app. Done. A database. Done. A login page. Done.
+
+8
+00:00:37,039 --> 00:00:39,655
+She thought she could build anything.
+
+9
+00:00:39,856 --> 00:00:43,167
+But there was someone who'd seen this story before.
+
+10
+00:00:43,368 --> 00:00:45,456
+She couldn't answer.
+
+11
+00:00:45,655 --> 00:00:47,840
+Here's an empty lot.
+
+12
+00:00:48,039 --> 00:00:50,560
+You want to build something here.
+
+13
+00:00:50,759 --> 00:01:02,039
+With a blueprint, you start with the foundation. Then the frame. Then the walls. There's an order. Each piece knows where it goes.
+
+14
+00:01:02,240 --> 00:01:04,376
+Without a blueprint?
+
+15
+00:01:04,575 --> 00:01:10,912
+You just... stack. And it goes up. It actually goes up.
+
+16
+00:01:11,111 --> 00:01:14,207
+For a while, it looks like it's working.
+
+17
+00:01:14,408 --> 00:01:15,896
+Then...
+
+18
+00:01:16,096 --> 00:01:24,207
+A spec is a blueprint. It's not a hundred-page document. It's one sentence: "What am I building?"
+
+19
+00:01:24,408 --> 00:01:27,647
+You don't need to know every detail upfront.
+
+20
+00:01:27,847 --> 00:01:35,311
+Start with a skateboard. Four wheels. It rolls. That's enough.
+
+21
+00:01:35,512 --> 00:01:40,959
+You can always make it bigger later. But you have to know what "it" is first.
+
+22
+00:01:41,159 --> 00:01:45,408
+That one line? That's where a spec starts.
+
+23
+00:01:45,608 --> 00:01:49,927
+Back in the present. Everything still broken.
+
+24
+00:01:50,128 --> 00:01:55,072
+And then she did something unusual. She stopped coding.
+
+25
+00:01:55,272 --> 00:02:01,703
+She started writing. Not code. Just... what was bothering her.
+
+26
+00:02:01,903 --> 00:02:06,415
+And there it was. The question she'd been avoiding.
+
+27
+00:02:06,615 --> 00:02:15,183
+Not features. Not tools. The reason. The one sentence that explains everything.
+
+28
+00:02:15,383 --> 00:02:20,304
+The same errors. But now, one line makes sense.
+
+29
+00:02:20,503 --> 00:02:23,000
+Everything is still broken.
+
+30
+00:02:23,199 --> 00:02:25,912
+But now she knows what to fix.
+
+31
+00:02:26,111 --> 00:02:28,919
+...at least, she thinks she does.
+

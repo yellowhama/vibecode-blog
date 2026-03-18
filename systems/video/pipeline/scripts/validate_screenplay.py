@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Validate a Fountain screenplay against the Series Bible 5-segment format.
+"""Validate a Fountain screenplay against the Series Bible v6 6-segment format.
 
-Segments: HOOK -> PROBLEM -> CORE -> APPLICATION -> OUTRO
-Timing:   Hook 15s, Problem 30s, Core 135s, Application 60s, Outro 60s
+Segments: HOOK -> MISCONCEPTION -> THE_CRACK -> CORE -> REFRAME -> OUTRO_CTA
+Timing:   Hook 15s, Misconception 30s, The Crack 30s, Core 105s, Reframe 30s, Outro+CTA 30s
 Total:    180-300 seconds (3-5 minutes)
 
-Checks (from 13-screenplay-pipeline-plan.md Phase 6):
-  1. [PASS/FAIL] 5 segments exist (Hook/Problem/Core/Application/Outro)
+Checks:
+  1. [PASS/FAIL] 6 segments exist (Hook/Misconception/The_Crack/Core/Reframe/Outro_CTA)
   2. [PASS/FAIL] Per-segment timing within max bounds
   3. [PASS/FAIL] Total duration 180-300s (3-5min)
   4. [PASS/FAIL] NARRATOR (V.O.) present in every segment
@@ -45,14 +45,15 @@ class _C:
 
 
 # ---------------------------------------------------------------------------
-# Segment structure (Series Bible v3 — 2D Discovery Arc)
+# Segment structure (Series Bible v6 — 6-stage format)
 # ---------------------------------------------------------------------------
 EXPECTED_SEGMENTS = [
-    {"name": "HOOK",        "max_sec": 15},
-    {"name": "PROBLEM",     "max_sec": 30},
-    {"name": "CORE",        "max_sec": 135},
-    {"name": "APPLICATION", "max_sec": 60},
-    {"name": "OUTRO",       "max_sec": 60},
+    {"name": "HOOK",          "max_sec": 15},
+    {"name": "MISCONCEPTION", "max_sec": 30},
+    {"name": "THE_CRACK",     "max_sec": 30},
+    {"name": "CORE",          "max_sec": 105},
+    {"name": "REFRAME",       "max_sec": 30},
+    {"name": "OUTRO_CTA",     "max_sec": 30},
 ]
 
 TOTAL_MIN = 180  # 3 minutes
@@ -84,9 +85,22 @@ BANNED_EXPRESSIONS = [
 # ---------------------------------------------------------------------------
 # Regex patterns
 # ---------------------------------------------------------------------------
-SEGMENT_RE = re.compile(
+# Hash-style: # SEGMENT 1: HOOK [0:00-0:15]
+SEGMENT_HASH_RE = re.compile(
     r"^#\s+SEGMENT\s+(\d+):\s+(.+?)\s*\[(\d+:\d+)-(\d+:\d+)\]\s*$"
 )
+# Block-comment style: /* SEGMENT 1: HOOK [0:00-0:15] */
+SEGMENT_BLOCK_RE = re.compile(
+    r"/\*\s*SEGMENT\s+(\d+):\s+(.+?)\s*\[([0-9:]+)\s*[-–—]\s*([0-9:]+)\]\s*\*/"
+)
+
+# Combined matcher
+def _match_segment(line: str):
+    m = SEGMENT_HASH_RE.match(line)
+    if m:
+        return m
+    m = SEGMENT_BLOCK_RE.search(line)
+    return m
 META_RE = re.compile(r"^#\s+(visual_type|characters|shorts_candidate):\s*(.+)$")
 CHARACTER_RE = re.compile(r"^([A-Z][A-Z\s]+?)(?:\s*\(V\.O\.\))?\s*$")
 TIMECODE_RE = re.compile(r"(\d+):(\d+)")
@@ -180,7 +194,7 @@ def parse_segments(text: str) -> list[dict[str, Any]]:
     current: dict[str, Any] | None = None
 
     for line in lines:
-        seg_match = SEGMENT_RE.match(line)
+        seg_match = _match_segment(line)
         if seg_match:
             current = {
                 "number": int(seg_match.group(1)),
@@ -238,7 +252,7 @@ def parse_segments(text: str) -> list[dict[str, Any]]:
         if (
             stripped
             and not char_match
-            and not SEGMENT_RE.match(line)
+            and not _match_segment(line)
             and not META_RE.match(line)
             and not TRANSITION_RE.match(line)
             and not stripped.startswith("#")
@@ -276,8 +290,8 @@ def validate(fountain_path: Path) -> dict:
     missing = expected_set - found_set
     extra = found_set - expected_set
 
-    check_pass = seg_count == 5 and missing == set() and actual_names == expected_names
-    detail = f"{seg_count}/5 segments"
+    check_pass = seg_count == 6 and missing == set() and actual_names == expected_names
+    detail = f"{seg_count}/6 segments"
     if missing:
         detail += f" | missing: {', '.join(sorted(missing))}"
     if extra:
@@ -287,7 +301,7 @@ def validate(fountain_path: Path) -> dict:
 
     results.append({
         "id": 1,
-        "check": "5 segments exist (Hook/Problem/Core/Application/Outro)",
+        "check": "6 segments exist (Hook/Misconception/The_Crack/Core/Reframe/Outro_CTA)",
         "status": "PASS" if check_pass else "FAIL",
         "detail": detail,
     })
@@ -478,6 +492,112 @@ def validate(fountain_path: Path) -> dict:
             "detail": "HOOK segment not found",
         })
 
+    # -------------------------------------------------------------------
+    # CHECK 11: Tone: conversational explainer, not corporate doc
+    # -------------------------------------------------------------------
+    narrator_lines = []
+    for seg in segments:
+        in_narrator = False
+        for line in seg["lines"]:
+            if "NARRATOR" in line:
+                in_narrator = True
+            elif not line.strip():
+                in_narrator = False
+            elif in_narrator and not line.startswith("("):
+                narrator_lines.append(line.strip())
+    
+    words = sum(len(l.split()) for l in narrator_lines)
+    sentences = sum(l.count('.') + l.count('?') + l.count('!') for l in narrator_lines)
+    avg_words = words / max(sentences, 1)
+    
+    check_pass_11 = avg_words < 20
+    results.append({
+        "id": 11,
+        "check": "Tone: conversational explainer (avg words/sentence < 20)",
+        "status": "PASS" if check_pass_11 else "FAIL",
+        "detail": f"{avg_words:.1f} words/sentence" + (" (too corporate/wordy)" if not check_pass_11 else ""),
+    })
+
+    # -------------------------------------------------------------------
+    # CHECK 12: Discovery Arc: curiosity -> frustration -> clarity -> confidence
+    # -------------------------------------------------------------------
+    arc_found = {"curious": False, "frustrated": False, "eureka": False, "happy": False}
+    for seg in segments:
+        for rxn in seg["vee_reactions"]:
+            rxn_l = rxn.lower()
+            if any(w in rxn_l for w in ["curious", "wonder", "tilt", "look"]): arc_found["curious"] = True
+            if any(w in rxn_l for w in ["frustrat", "sigh", "frown", "slump"]): arc_found["frustrated"] = True
+            if any(w in rxn_l for w in ["eureka", "gasp", "widen", "jump"]): arc_found["eureka"] = True
+            if any(w in rxn_l for w in ["happ", "smile", "nod", "grin"]): arc_found["happy"] = True
+    
+    score_12 = sum(arc_found.values())
+    check_pass_12 = score_12 >= 3
+    results.append({
+        "id": 12,
+        "check": "Discovery Arc progression (curious -> frustrated -> clarity -> confidence)",
+        "status": "PASS" if check_pass_12 else "WARN",
+        "detail": f"{score_12}/4 arc stages detected",
+    })
+
+    # -------------------------------------------------------------------
+    # CHECK 13: Aha moment clearly identified in Core
+    # -------------------------------------------------------------------
+    if core_seg:
+        aha_found = False
+        for rxn in core_seg["vee_reactions"]:
+            if any(w in rxn.lower() for w in ["eureka", "gasp", "jump", "widen", "realize"]):
+                aha_found = True
+        results.append({
+            "id": 13,
+            "check": "Aha moment clearly identified in Core",
+            "status": "PASS" if aha_found else "WARN",
+            "detail": "Aha moment found" if aha_found else "Missing clear eureka/gasp in Core",
+        })
+    else:
+        results.append({
+            "id": 13,
+            "check": "Aha moment clearly identified in Core",
+            "status": "FAIL",
+            "detail": "CORE segment not found",
+        })
+
+    # -------------------------------------------------------------------
+    # CHECK 14: Vee reactions silhouette-safe (40px recognition)
+    # -------------------------------------------------------------------
+    safe_whitelist = ["nod", "shrug", "jump", "point", "cross", "slump", "facepalm", "hands on head", "wave", "thumbs up", "lean"]
+    unsafe_found = []
+    for rxn in all_vee_reactions:
+        rxn_l = rxn.lower()
+        if not any(safe in rxn_l for safe in safe_whitelist):
+            unsafe_found.append(rxn)
+    
+    check_pass_14 = len(unsafe_found) == 0
+    results.append({
+        "id": 14,
+        "check": "Vee reactions silhouette-safe (40px recognition)",
+        "status": "PASS" if check_pass_14 else "WARN",
+        "detail": "All safe" if check_pass_14 else f"Unsafe/subtle reactions found: {len(unsafe_found)}",
+    })
+
+    # -------------------------------------------------------------------
+    # CHECK 15: 80/20 split: diagrams+motion / Vee reactions
+    # -------------------------------------------------------------------
+    total_shots = total_transitions + len(all_vee_reactions)
+    if total_shots > 0:
+        vee_ratio = len(all_vee_reactions) / total_shots
+        check_pass_15 = vee_ratio <= 0.35
+        detail_15 = f"{vee_ratio:.0%} Vee reactions ({len(all_vee_reactions)}/{total_shots})"
+    else:
+        check_pass_15 = False
+        detail_15 = "No shots found"
+
+    results.append({
+        "id": 15,
+        "check": "80/20 split: diagrams+motion / Vee reactions",
+        "status": "PASS" if check_pass_15 else "WARN",
+        "detail": detail_15,
+    })
+
     return {
         "file": str(fountain_path),
         "segments_found": seg_count,
@@ -496,7 +616,7 @@ def print_results(validation: dict) -> int:
     print(f"\n{C.BOLD}{'=' * 64}{C.RESET}")
     print(f"  {C.BOLD}Screenplay Validation{C.RESET}: {validation['file']}")
     print(
-        f"  Segments: {validation['segments_found']}/5"
+        f"  Segments: {validation['segments_found']}/6"
         f" | Duration: {validation['total_duration_sec']:.0f}s"
         f" ({validation['total_duration_sec'] / 60:.1f}min)"
     )
@@ -564,7 +684,7 @@ def print_results(validation: dict) -> int:
 # ---------------------------------------------------------------------------
 def main():
     parser = argparse.ArgumentParser(
-        description="Validate Fountain screenplay against Series Bible 5-segment format"
+        description="Validate Fountain screenplay against Series Bible v6 6-segment format"
     )
     parser.add_argument(
         "fountain_file",

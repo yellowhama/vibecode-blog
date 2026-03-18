@@ -66,18 +66,30 @@ def select_bgm_by_stage(
     stage: str,
     assets_root: Path = DEFAULT_ASSETS_ROOT,
 ) -> Optional[Dict[str, Any]]:
-    """Select a BGM entry based on the narrative stage (HOOK, FURY, MESS, INSIGHT)."""
+    """Select a BGM entry based on the v6 narrative stage.
+
+    v6 stages: HOOK, MISCONCEPTION, THE_CRACK, CORE, REFRAME, OUTRO_CTA
+    """
     entries = catalog.get("bgm", [])
     stage_upper = stage.upper()
-    
-    # Mapping stages to the narrative_stage field in our JSON
+
+    # Mapping v6 stages to the narrative_stage field in our audio catalog JSON
     stage_map = {
-        "HOOK": "Act 3: Declaration", # Use cleaner sound for result hook
+        "HOOK": "Act 3: Declaration",        # Clean, attention-grabbing
+        "MISCONCEPTION": "Act 1: Frustration",  # Tension, uncertainty
+        "THE_CRACK": "Act 1: Frustration",    # Transition tension
+        "CORE": "Act 2: The Mess",            # Building understanding
+        "REFRAME": "Act 3: Declaration",      # Clarity, resolution
+        "OUTRO_CTA": "Act 3: Declaration",    # Uplifting close
+        # Backward compat (v4/v5 stage names)
         "FURY": "Act 1: Frustration",
         "MESS": "Act 2: The Mess",
-        "INSIGHT": "Act 3: Declaration"
+        "INSIGHT": "Act 3: Declaration",
+        "PROBLEM": "Act 1: Frustration",
+        "APPLICATION": "Act 3: Declaration",
+        "OUTRO": "Act 3: Declaration",
     }
-    
+
     target_stage = stage_map.get(stage_upper, "General / B-roll")
     
     def _resolve(entry: Dict[str, Any]) -> Dict[str, Any]:
@@ -154,9 +166,10 @@ def select_sfx_by_keywords(
     combined = (visual_text + " " + narration_text).lower()
     selected = []
     
-    # Map keywords to SFX tags in our catalog
     keyword_map = {
-        "clay_squish_movement": ["clay", "squish", "move", "walk", "grab"],
+        "pop_appear": ["appear", "pop", "show"],
+        "swoosh_motion": ["move", "walk", "grab", "slide"],
+        "chime_idea": ["eureka", "idea", "realize", "aha"],
         "system_explosion_glitch": ["error", "crash", "broken", "injection", "fail"],
         "fury_typing_mechanical": ["type", "code", "agent", "keyboard", "writing"],
         "meditative_hum_success": ["insight", "done", "success", "clear", "clean"]

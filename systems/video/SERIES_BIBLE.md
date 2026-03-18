@@ -479,7 +479,7 @@ EP01 → EP05 → EP02 → EP06 → EP03 → EP07 → EP04 → EP08 → EP09 →
   "mode": "t2i | i2v",
   "input_image": "S01_01_keyframe.png",
   "output_name": "S01_01.mp4",
-  "narrative_stage": "HOOK | PROBLEM | CORE | APPLICATION | OUTRO",
+  "narrative_stage": "HOOK | MISCONCEPTION | THE_CRACK | CORE | REFRAME | OUTRO_CTA",
   "vee_expression": "default | curious | frustrated | eureka | coding_zone | happy",
   "space": "desk | screen | whiteboard",
   "extended_metaphor": false
@@ -490,10 +490,10 @@ EP01 → EP05 → EP02 → EP06 → EP03 → EP07 → EP04 → EP08 → EP09 →
 - `resolution`: 832x480 → 1280x720 (HD 타겟)
 - `model`: HunyuanVideo → Flux dev + Wan 2.2 MoE
 - `prompt_positive`: 3D Pixar 프롬프트 → v3ct0r flat vector 프롬프트
-- `narrative_stage`: HOOK/FURY/MESS/INSIGHT → HOOK/PROBLEM/CORE/APPLICATION/OUTRO
+- `narrative_stage`: HOOK/FURY/MESS/INSIGHT → HOOK/MISCONCEPTION/THE_CRACK/CORE/REFRAME/OUTRO_CTA
 - 추가 필드: `vee_expression`, `space`, `extended_metaphor`
 - 제거 필드: `kontext_prompt` (Kontext는 캐릭터 일관성용으로만, 별도 관리)
-- 스테이지 매핑: FURY→PROBLEM, MESS→CORE, INSIGHT→APPLICATION (OUTRO 신설)
+- 스테이지 매핑: FURY→MISCONCEPTION, MESS→CORE, INSIGHT→REFRAME, PROBLEM→MISCONCEPTION, APPLICATION→REFRAME, OUTRO→OUTRO_CTA
 
 ---
 

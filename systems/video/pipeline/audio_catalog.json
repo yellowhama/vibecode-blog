@@ -7,7 +7,12 @@
       "mood": "angry_determined",
       "style": "Industrial Blues / Dark Stomp",
       "narrative_stage": "Act 1: Frustration",
-      "tags": ["fury", "grit", "heavy_kick", "bukowski"],
+      "tags": [
+        "fury",
+        "grit",
+        "heavy_kick",
+        "bukowski"
+      ],
       "reference": "Black Keys style / Heavy Blues"
     },
     {
@@ -17,7 +22,12 @@
       "mood": "repetitive_manic",
       "style": "Mechanical Percussion / Lo-fi Garage",
       "narrative_stage": "Act 2: The Mess",
-      "tags": ["chaos", "loop", "broken_drums", "fast_coding"],
+      "tags": [
+        "chaos",
+        "loop",
+        "broken_drums",
+        "fast_coding"
+      ],
       "reference": "Percussion only / Distorted garage rock"
     },
     {
@@ -27,7 +37,12 @@
       "mood": "clear_resolute",
       "style": "Minimalist Techno / Neo-Classical",
       "narrative_stage": "Act 3: Declaration",
-      "tags": ["victory", "clarity", "philosophy", "nike_rule"],
+      "tags": [
+        "victory",
+        "clarity",
+        "philosophy",
+        "nike_rule"
+      ],
       "reference": "Trent Reznor style / Ambient minimalist"
     },
     {
@@ -37,7 +52,12 @@
       "mood": "cool_nonchalant",
       "style": "Dirty Lo-fi / Slow Garage",
       "narrative_stage": "General / B-roll",
-      "tags": ["cynical", "cool", "slow_burn", "manifesto"],
+      "tags": [
+        "cynical",
+        "cool",
+        "slow_burn",
+        "manifesto"
+      ],
       "reference": "White Stripes / Lo-fi Blues"
     }
   ],
@@ -47,7 +67,11 @@
       "path": "assets/audio/sfx/fury_typing.wav",
       "duration_sec": 3.5,
       "category": "action",
-      "tags": ["aggressive", "keyboard", "coding_war"],
+      "tags": [
+        "aggressive",
+        "keyboard",
+        "coding_war"
+      ],
       "description": "Rapid, heavy mechanical typing with frustration"
     },
     {
@@ -55,7 +79,11 @@
       "path": "assets/audio/sfx/glitch_error.wav",
       "duration_sec": 1.2,
       "category": "error",
-      "tags": ["glitch", "failure", "crash"],
+      "tags": [
+        "glitch",
+        "failure",
+        "crash"
+      ],
       "description": "Distorted glitch sound for critical system error"
     },
     {
@@ -63,16 +91,85 @@
       "path": "assets/audio/sfx/zen_ping.wav",
       "duration_sec": 1.5,
       "category": "success",
-      "tags": ["zen", "insight", "bell"],
+      "tags": [
+        "zen",
+        "insight",
+        "bell"
+      ],
       "description": "Clean, resonant bell for a 'philosophical' declaration"
     },
     {
-      "id": "clay_squish_movement",
-      "path": "assets/audio/sfx/clay_squish.wav",
-      "duration_sec": 0.5,
-      "category": "character",
-      "tags": ["claymation", "stop_motion", "foley"],
-      "description": "Wet squish sound for clay character movement"
+      "id": "pop_appear",
+      "path": "assets/audio/sfx/pop.wav",
+      "duration_sec": 0.3,
+      "category": "ui",
+      "tags": [
+        "pop",
+        "appear",
+        "bubble"
+      ],
+      "description": "Clean pop sound for objects appearing"
+    },
+    {
+      "id": "swoosh_motion",
+      "path": "assets/audio/sfx/swoosh.wav",
+      "duration_sec": 0.6,
+      "category": "motion",
+      "tags": [
+        "swoosh",
+        "swipe",
+        "move"
+      ],
+      "description": "Smooth swoosh for transitions and character movement"
+    },
+    {
+      "id": "click_interface",
+      "path": "assets/audio/sfx/click.wav",
+      "duration_sec": 0.1,
+      "category": "ui",
+      "tags": [
+        "click",
+        "button",
+        "tap"
+      ],
+      "description": "Distinct UI click sound"
+    },
+    {
+      "id": "chime_idea",
+      "path": "assets/audio/sfx/chime.wav",
+      "duration_sec": 1.2,
+      "category": "success",
+      "tags": [
+        "idea",
+        "eureka",
+        "chime",
+        "bell"
+      ],
+      "description": "Bright chime for aha moments"
+    },
+    {
+      "id": "buzzer_fail",
+      "path": "assets/audio/sfx/buzzer.wav",
+      "duration_sec": 0.8,
+      "category": "error",
+      "tags": [
+        "error",
+        "fail",
+        "wrong"
+      ],
+      "description": "Soft buzzer for mistakes or failure"
+    },
+    {
+      "id": "shimmer_magic",
+      "path": "assets/audio/sfx/shimmer.wav",
+      "duration_sec": 1.5,
+      "category": "magic",
+      "tags": [
+        "magic",
+        "transform",
+        "shimmer"
+      ],
+      "description": "Magical shimmer for major changes"
     }
   ]
 }

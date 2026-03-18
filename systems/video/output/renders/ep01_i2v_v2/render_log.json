@@ -1,0 +1,185 @@
+{
+  "manifest": "/mnt/e/vibecode-blog/systems/video/preproduction/ep01/ep01_shot_manifest.json",
+  "workflow": "/mnt/e/vibecode-blog/systems/video/workflows/api/wan22_moe_i2v_full.json",
+  "bindings": "/mnt/e/vibecode-blog/systems/video/workflows/api/wan22_moe_i2v_bindings.json",
+  "server": "http://127.0.0.1:8188",
+  "started_at": "2026-03-13T05:10:39.215207",
+  "summary": {
+    "total": 24,
+    "ok": 0,
+    "errors": 0,
+    "cached": 0,
+    "dry_run": 24
+  },
+  "shots": [
+    {
+      "shot_id": "S01_01",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S02_02",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S03_03",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S04_04",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S05_05",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S06_06",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S07_07",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S08_08",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S09_09",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S10_10",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S11_11",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S12_12",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S13_13",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S14_14",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S15_15",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S16_16",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S17_17",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S18_18",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S19_19",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S20_20",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S21_21",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S22_22",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S23_23",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    },
+    {
+      "shot_id": "S24_24",
+      "status": "dry_run",
+      "error": null,
+      "saved_files": [],
+      "artifact_count": 0
+    }
+  ],
+  "finished_at": "2026-03-13T05:10:39.219182"
+}

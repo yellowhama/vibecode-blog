@@ -1,0 +1,80 @@
+{
+  "manifest": "systems/video/preproduction/ep01/ep01_explainer_manifest.json",
+  "workflow": "systems/video/workflows/api/flux_dev_t2i.json",
+  "bindings": "systems/video/workflows/api/flux_dev_t2i_bindings.json",
+  "server": "http://127.0.0.1:8188",
+  "started_at": "2026-03-11T13:09:15.463090",
+  "summary": {
+    "total": 7,
+    "ok": 7,
+    "errors": 0,
+    "cached": 0,
+    "dry_run": 0
+  },
+  "shots": [
+    {
+      "shot_id": "S12_12",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/ep01_explainer_keyframes/S12_12/S12_12_00001_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "S13_13",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/ep01_explainer_keyframes/S13_13/S13_13_00001_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "S14_14",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/ep01_explainer_keyframes/S14_14/S14_14_00001_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "S15_15",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/ep01_explainer_keyframes/S15_15/S15_15_00001_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "S16_16",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/ep01_explainer_keyframes/S16_16/S16_16_00001_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "S17_17",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/ep01_explainer_keyframes/S17_17/S17_17_00001_.png"
+      ],
+      "artifact_count": 1
+    },
+    {
+      "shot_id": "S18_18",
+      "status": "ok",
+      "error": null,
+      "saved_files": [
+        "systems/video/output/renders/ep01_explainer_keyframes/S18_18/S18_18_00001_.png"
+      ],
+      "artifact_count": 1
+    }
+  ],
+  "finished_at": "2026-03-11T13:20:08.838725"
+}
