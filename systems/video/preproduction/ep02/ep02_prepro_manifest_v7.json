@@ -1341,7 +1341,11 @@
           "text": "Last time, Vee learned the first rule of vibe coding: you decide what, AI decides how.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.44,
+      "tts_text": "Last time, Vee learned the first rule of vibe coding: you decide what, A I decides how.",
+      "tts_exaggeration": 0.4,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG01_B002",
@@ -1369,7 +1373,11 @@
           "text": "So she tried it. For real. She wanted a simple website — a candle shop. Browse candles, send a message, that's it.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 7.76,
+      "tts_text": "So she tried it. For real. She wanted a simple website — a candle shop. Browse candles, send a message, that's it.",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG01_B003",
@@ -1397,7 +1405,11 @@
           "text": "She tried again. Five times. Five prompts. Same project.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.08,
+      "tts_text": "She tried again. Five times. Five prompts. Same project.",
+      "tts_exaggeration": 0.6,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG01_B004",
@@ -1425,7 +1437,11 @@
           "text": "Five completely different things came back.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 2.36,
+      "tts_text": "Five completely different things came back.",
+      "tts_exaggeration": 0.7,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B005",
@@ -1453,7 +1469,11 @@
           "text": "Last time she learned that being more specific didn't help. More detail, more mess. So she tried something different. She thought: what if I explain the architecture?",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 8.24,
+      "tts_text": "Last time she learned that being more specific didn't help. More detail, more mess. So she tried something different. She thought: what if I explain the architecture?",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B006",
@@ -1481,7 +1501,11 @@
           "text": "She wrote two pages. Component hierarchy. Data flow. State management. Color palette hex codes. Responsive breakpoints. Font stack. API endpoint naming conventions.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 8.88,
+      "tts_text": "She wrote two pages. Component hierarchy. Data flow. State management. Color palette hex codes. Responsive breakpoints. Font stack. A P I endpoint naming conventions.",
+      "tts_exaggeration": 0.56,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B007",
@@ -1509,7 +1533,11 @@
           "text": "She was proud of it. Pasted the whole thing into the AI.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 3.08,
+      "tts_text": "She was proud of it. Pasted the whole thing into the A I.",
+      "tts_exaggeration": 0.62,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B008",
@@ -1537,7 +1565,11 @@
           "text": "The result was technically correct. Every component she described existed. Every color matched. The API endpoints were named exactly as specified. And the whole thing was completely wrong.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 9.6,
+      "tts_text": "The result was technically correct. Every component she described existed. Every color matched. The A P I endpoints were named exactly as specified. And the whole thing was completely wrong.",
+      "tts_exaggeration": 0.68,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B009",
@@ -1565,7 +1597,11 @@
           "text": "She described how to build a building. But never said what the building was for. Architecture without purpose. Detail without direction.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.8,
+      "tts_text": "She described how to build a building. ... But never said what the building was for. Architecture without purpose. Detail without direction.",
+      "tts_exaggeration": 0.74,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B010",
@@ -1593,7 +1629,11 @@
           "text": "Two pages of instructions. Zero lines about what the customer actually needs. That's the trap — you can be incredibly specific and completely wrong at the same time.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 8.8,
+      "tts_text": "Two pages of instructions. Zero lines about what the customer actually needs. That's the trap — you can be incredibly specific and completely wrong at the same time.",
+      "tts_exaggeration": 0.8,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG03_B011",
@@ -1619,7 +1659,11 @@
           "text": "Let's look at what actually happened inside the code.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 2.84,
+      "tts_text": "Let's look at what actually happened inside the code.",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG03_B012",
@@ -1645,7 +1689,11 @@
           "text": "Ten thousand, eight hundred, forty-seven lines of code.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 2.72,
+      "tts_text": "Ten thousand, eight hundred, forty-seven lines of code.",
+      "tts_exaggeration": 0.875,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG03_B013",
@@ -1671,7 +1719,11 @@
           "text": "Almost half of them — four thousand two hundred lines — were duplicates.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 3.88,
+      "tts_text": "Almost half of them — four thousand two hundred lines — were duplicates.",
+      "tts_exaggeration": 1.0,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG03_B014",
@@ -1697,7 +1749,11 @@
           "text": "Five AI sessions built the same functions five different ways. Three different date formatters — each one converting dates into a different format. Two config parsers — reading the same settings file with different assumptions. Four input validators — checking the same email field four different ways.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 14.08,
+      "tts_text": "Five A I sessions built the same functions five different ways. Three different date formatters — each one converting dates into a different format. Two config parsers — reading the same settings file with different assumptions. Four input validators — checking the same email field four different ways.",
+      "tts_exaggeration": 0.875,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG03_B015",
@@ -1723,7 +1779,11 @@
           "text": "None of them knew about the others. Five construction crews on the same lot. No blueprint. No foreman. Just... build.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.24,
+      "tts_text": "None of them knew about the others. Five construction crews on the same lot. No blueprint. No foreman. Just... build.",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B016",
@@ -1749,7 +1809,11 @@
           "text": "Imagine building a house without a blueprint. You know you want a house. You start stacking bricks. Some go left, some go right. Eventually something stands up. But the bathroom is on the roof and there's no front door.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 10.16,
+      "tts_text": "Imagine building a house without a blueprint. You know you want a house. You start stacking bricks. Some go left, some go right. Eventually something stands up. ... But the bathroom is on the roof and there's no front door.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B017",
@@ -1775,7 +1839,11 @@
           "text": "Now imagine one piece of paper. Not a hundred-page document. One note. \"Two bedrooms. One bathroom. Front door faces south.\"",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.96,
+      "tts_text": "Now imagine one piece of paper. Not a hundred-page document. One note. \"Two bedrooms. One bathroom. Front door faces south.\"...",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B018",
@@ -1801,7 +1869,11 @@
           "text": "Same workers. Same bricks. Completely different result. That note is a spec.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.52,
+      "tts_text": "Same workers. Same bricks. Completely different result. That note is a spec.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B019",
@@ -1827,7 +1899,11 @@
           "text": "And a spec doesn't have to be complicated. Three lines is enough.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 3.68,
+      "tts_text": "And a spec doesn't have to be complicated. Three lines is enough.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B020",
@@ -1853,7 +1929,11 @@
           "text": "Line one: Goal. What are you building? \"An online store that sells handmade candles.\"",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.16,
+      "tts_text": "Line one: Goal. What are you building? \"An online store that sells handmade candles.\"...",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B021",
@@ -1879,7 +1959,11 @@
           "text": "Line two: Constraints. What are you NOT building? \"No user accounts. No payment processing — just a catalog with a contact form.\"",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 7.84,
+      "tts_text": "Line two: Constraints. What are you NOT building? \"No user accounts. No payment processing — just a catalog with a contact form.\"...",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B022",
@@ -1905,7 +1989,11 @@
           "text": "Line three: Done-when. How do you know it's finished? \"When someone can browse candles by category and send a message.\"",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.88,
+      "tts_text": "Line three: Done-when. How do you know it's finished? \"When someone can browse candles by category and send a message.\"...",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B023",
@@ -1931,7 +2019,11 @@
           "text": "That's it. Three lines. Now watch what happens.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 2.6,
+      "tts_text": "That's it. Three lines. Now watch what happens.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B024",
@@ -1957,7 +2049,11 @@
           "text": "Same project. Same AI. But now it has the spec. First result: a clean catalog page. Three candle categories. A contact form at the bottom. No shopping cart. No admin panel. No enterprise dashboard.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 11.12,
+      "tts_text": "Same project. Same A I. ... But now it has the spec. First result: a clean catalog page. Three candle categories. A contact form at the bottom. No shopping cart. No admin panel. No enterprise dashboard.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B025",
@@ -1983,7 +2079,11 @@
           "text": "Second attempt? Almost identical. Same layout, same features, minor styling differences. Twenty minutes total, instead of three hours of confusion.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 8.08,
+      "tts_text": "Second attempt? Almost identical. Same layout, same features, minor styling differences. Twenty minutes total, instead of three hours of confusion.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B026",
@@ -2009,7 +2109,11 @@
           "text": "The spec didn't make AI smarter. It made your instructions clearer.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 3.08,
+      "tts_text": "The spec didn't make A I smarter. It made your instructions clearer.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B027",
@@ -2035,7 +2139,11 @@
           "text": "And here's the frame that changes everything. A spec is a contract. Not a wish list — a contract. It says: this is what I'm buying. This is what I'm not buying. And here's how we both know when it's done.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 10.04,
+      "tts_text": "And here's the frame that changes everything. A spec is a contract. Not a wish list — a contract. It says: this is what I'm buying. This is what I'm not buying. And here's how we both know when it's done.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B028",
@@ -2061,7 +2169,11 @@
           "text": "Which means — before the AI writes a single line of code, you can review the contract. \"Wait, I said no payment processing, but I do want a price list.\" Fix it now. Not after five hundred lines of code exist.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 10.4,
+      "tts_text": "Which means — before the A I writes a single line of code, you can review the contract. \"Wait, I said no payment processing, but I do want a price list.\"... Fix it now. Not after five hundred lines of code exist.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B029",
@@ -2087,7 +2199,11 @@
           "text": "That's an approval gate. Review the plan before executing the plan. Professional developers do this. Product managers do this. You can do this.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 7.44,
+      "tts_text": "That's an approval gate. Review the plan before executing the plan. Professional developers do this. Product managers do this. You can do this.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B030",
@@ -2113,7 +2229,11 @@
           "text": "And there are tools that make this persistent. CLAUDE dot MD — a file that lives in your project. Every time Claude opens your code, it reads this file first.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 8.48,
+      "tts_text": "And there are tools that make this persistent. claude M D — a file that lives in your project. Every time Claude opens your code, it reads this file first.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B031",
@@ -2139,7 +2259,11 @@
           "text": "Your rules. Your constraints. Your context. \"This is a candle shop. We don't do user accounts. The style is warm and minimal. Never add features I didn't ask for.\"",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 9.52,
+      "tts_text": "Your rules. Your constraints. Your context. \"This is a candle shop. We don't do user accounts. The style is warm and minimal. Never add features I didn't ask for.\"...",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B032",
@@ -2165,7 +2289,11 @@
           "text": "It's like a note pinned to the kitchen wall. Every chef who walks in reads it first. \"No cream in the carbonara. Ever.\"",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.04,
+      "tts_text": "It's like a note pinned to the kitchen wall. Every chef who walks in reads it first. \"No cream in the carbonara. Ever.\"...",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B033",
@@ -2191,7 +2319,11 @@
           "text": "Cursor has the same idea — dot cursor rules. Write your rules once, every AI session follows them.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.2,
+      "tts_text": "Cursor has the same idea — dot cursor rules. Write your rules once, every A I session follows them.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B034",
@@ -2217,7 +2349,11 @@
           "text": "And if you want a full workflow — spec-kit. Four steps: specify, plan, tasks, implement. Each step validates before moving to the next. You don't build until the plan is approved. You don't plan until the spec is approved.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 10.92,
+      "tts_text": "And if you want a full workflow — spec kit. Four steps: specify, plan, tasks, implement. Each step validates before moving to the next. You don't build until the plan is approved. You don't plan until the spec is approved.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B035",
@@ -2243,7 +2379,11 @@
           "text": "The point isn't which tool. The point is: write down what you want before you ask AI to build it.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.64,
+      "tts_text": "The point isn't which tool. The point is: write down what you want before you ask A I to build it.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B036",
@@ -2269,7 +2409,11 @@
           "text": "Here's the part nobody tells you. That frustration you felt when AI made the wrong thing? When the store was neon pink and the login went to the cart? When you wrote two pages and got an enterprise dashboard instead of a candle shop?",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 9.92,
+      "tts_text": "... Here's the part nobody tells you. That frustration you felt when A I made the wrong thing? When the store was neon pink and the login went to the cart? When you wrote two pages and got an enterprise dashboard instead of a candle shop?",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B037",
@@ -2295,7 +2439,11 @@
           "text": "That's not failure. That's data.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 1.92,
+      "tts_text": "That's not failure. That's data.",
+      "tts_exaggeration": 0.56,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B038",
@@ -2321,7 +2469,11 @@
           "text": "Write down what annoyed you. \"It should have done X but did Y.\" Congratulations. You just wrote a requirement. Organize your frustrations, and you've got a spec.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 8.2,
+      "tts_text": "Write down what annoyed you. \"It should have done X but did Y.\"... Congratulations. You just wrote a requirement. Organize your frustrations, and you've got a spec.",
+      "tts_exaggeration": 0.62,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B039",
@@ -2347,7 +2499,11 @@
           "text": "Frustration is the spec. Your annoyance, organized, is the blueprint.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 3.84,
+      "tts_text": "Frustration is the spec. Your annoyance, organized, is the blueprint.",
+      "tts_exaggeration": 0.68,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B040",
@@ -2373,7 +2529,11 @@
           "text": "And here's what might surprise you — professional developers do exactly this. Every day. They don't sit down and write perfect requirements from scratch. They build something, see what's wrong, and write the spec from the wreckage. That's not amateur hour. That's the process.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 13.4,
+      "tts_text": "And here's what might surprise you — professional developers do exactly this. Every day. They don't sit down and write perfect requirements from scratch. They build something, see what's wrong, and write the spec from the wreckage. That's not amateur hour. That's the process.",
+      "tts_exaggeration": 0.74,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B041",
@@ -2399,7 +2559,11 @@
           "text": "You're not learning to code. You're learning to direct. A director doesn't operate the camera. They say: \"wider shot, warmer light, more emotion.\" The crew executes. The director decides.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 9.36,
+      "tts_text": "You're not learning to code. You're learning to direct. A director doesn't operate the camera. They say: \"wider shot, warmer light, more emotion.\"... The crew executes. The director decides.",
+      "tts_exaggeration": 0.8,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B042",
@@ -2427,7 +2591,11 @@
           "text": "Here's your homework. Before you type a single prompt — grab a piece of paper. Or open a blank file. And write three lines.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.84,
+      "tts_text": "Here's your homework. Before you type a single prompt — grab a piece of paper. Or open a blank file. And write three lines.",
+      "tts_exaggeration": 0.6,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B043",
@@ -2455,7 +2623,11 @@
           "text": "Goal. Constraints. Done-when. Fill in the blanks. Anything — a to-do app, a birthday card generator, a recipe organizer. Then give it to the AI.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 8.96,
+      "tts_text": "Goal. Constraints. Done-when. Fill in the blanks. Anything — a to-do app, a birthday card generator, a recipe organizer. Then give it to the A I.",
+      "tts_exaggeration": 0.562,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B044",
@@ -2483,7 +2655,11 @@
           "text": "And when the result comes back — hold your spec next to it. Does it match? Where does it match? Where doesn't it?",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.48,
+      "tts_text": "And when the result comes back — hold your spec next to it. Does it match? Where does it match? Where doesn't it?",
+      "tts_exaggeration": 0.525,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B045",
@@ -2511,7 +2687,11 @@
           "text": "That gap — between spec and result — that's your next spec. The differences become the instructions. Every round gets closer.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 7.04,
+      "tts_text": "That gap — between spec and result — that's your next spec. The differences become the instructions. Every round gets closer.",
+      "tts_exaggeration": 0.487,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B046",
@@ -2539,7 +2719,11 @@
           "text": "But here's a question. The spec tells AI what to build. The code gets bigger. More files, more features, more complexity. How do you keep it organized? How do you stop one change from breaking everything else? Next time — we talk about walls.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 13.04,
+      "tts_text": "... But here's a question. The spec tells A I what to build. The code gets bigger. More files, more features, more complexity. How do you keep it organized? How do you stop one change from breaking everything else? Next time — we talk about walls.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     }
   ]
 }

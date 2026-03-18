@@ -1,0 +1,50 @@
+version: "1.0"
+
+pronunciation:
+  # Exact match (case-sensitive)
+  exact:
+    "CLAUDE.md": "claude M D"
+    "CLAUDE dot MD": "claude M D"
+    ".cursorrules": "dot cursor rules"
+    "ChatGPT": "Chat G P T"
+    "OpenAI": "Open A I"
+    "SSOT": "S S O T"
+    "spec-kit": "spec kit"
+    "LLM": "L L M"
+    "API": "A P I"
+    "CLI": "C L I"
+    "MCP": "M C P"
+    "YAML": "yaml"
+    "JSON": "jason"
+    "MDX": "M D X"
+    "n8n": "n 8 n"
+    "GPT-4": "G P T four"
+    "GPT-4o": "G P T four oh"
+    "AI": "A I"
+  # Regex patterns
+  regex:
+    - pattern: '\bv(\d+)\b'
+      replacement: 'version \1'
+    - pattern: '\bEP(\d{2})\b'
+      replacement: 'episode \1'
+
+pauses:
+  # Pause after closing quote
+  after_quote_pause: "..."
+  # Pivot words get a pause prefix
+  pivot_words:
+    - { word: "But ", prefix: "... " }
+    - { word: "Because ", prefix: ", " }
+    - { word: "Why?", prefix: "... " }
+    - { word: "Here's the ", prefix: "... " }
+    - { word: "The problem is", prefix: "... " }
+    - { word: "And that's ", prefix: "... " }
+
+emotion_curves:
+  HOOK:          { base: 0.6,  curve: rising,  range: [0.4, 0.7] }
+  MISCONCEPTION: { base: 0.7,  curve: rising,  range: [0.5, 0.8] }
+  THE_CRACK:     { base: 0.8,  curve: peak,    range: [0.5, 1.0] }
+  CORE:          { base: 0.45, curve: flat,     range: [0.4, 0.5] }
+  REFRAME:       { base: 0.65, curve: rising,   range: [0.5, 0.8] }
+  OUTRO_CTA:     { base: 0.55, curve: falling,  range: [0.6, 0.45] }
+  _default:      { base: 0.5,  curve: flat,      range: [0.5, 0.5] }

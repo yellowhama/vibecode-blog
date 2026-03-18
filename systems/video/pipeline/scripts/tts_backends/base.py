@@ -92,7 +92,8 @@ def cache_key(text: str, backend_name: str, opts: SynthOptions) -> str:
     blob = json.dumps(
         {"text": text, "backend": backend_name, "voice": opts.voice, "rate": opts.rate,
          "volume": opts.volume, "pitch": opts.pitch, "sample_rate": opts.sample_rate,
-         "language": opts.language},
+         "language": opts.language,
+         "exaggeration": opts.exaggeration, "cfg_weight": opts.cfg_weight},
         sort_keys=True,
     )
     return hashlib.sha256(blob.encode()).hexdigest()[:24]

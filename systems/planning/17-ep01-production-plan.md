@@ -95,9 +95,19 @@ python3 render_keyframes.py \
 - source_index.json: updated to new versions
 - Validation: 0 timing FAILs (pattern interrupt avg interval is expected for 7:30)
 
-### 6.3 TTS Re-generation ⬜ PENDING
-- Edge TTS +30% rate for all 4 episodes
-- Need: `generate_tts_from_prepro.py` run per episode
+### 6.3 TTS Pre-processing ✅ COMPLETE
+- `prepare_tts_script.py` — pronunciation, pause, emotion curve preprocessing
+- `tts_rules.yaml` — 18 exact pronunciation fixes + 2 regex patterns + 6 pivot pauses + 7 emotion curves
+- EP01: 52/53 beats modified (98.1%), exagg 0.40-0.98
+- EP02: 42/46 beats modified (91.3%), exagg 0.40-1.00
+- EP04: 39/41 beats modified (95.1%), exagg 0.40-0.94
+- All 6 segments active: HOOK, MISCONCEPTION, THE_CRACK, CORE, REFRAME, OUTRO_CTA
+- `generate_tts_from_prepro.py` updated: reads `tts_text` + per-beat `tts_exaggeration`
+- `tts_backends/base.py` cache_key now includes exaggeration + cfg_weight
+- Commit: `(this commit)`
+
+### 6.3b TTS Re-generation ⬜ PENDING
+- Chatterbox TTS with preprocessed text for all 4 episodes
 - Target: 390-510s TTS total per episode
 
 ### 6.4 Keyframe + I2V Re-render ⬜ PENDING
@@ -128,3 +138,7 @@ Phase 5 (assembly)         ████ (~1h)
 | `pipeline/scripts/generate_kontext_keyframes.py` | STYLE_ANCHOR 3D→2D |
 | `preproduction/ep01/ep01_shot_manifest_v5.json` | kontext_prompt fields for 13 shots |
 | `assets/characters/vee/character_design_2d.json` | golden_references.status → GENERATED |
+| `pipeline/config/tts_rules.yaml` | **NEW** pronunciation/pause/emotion rules |
+| `pipeline/scripts/prepare_tts_script.py` | **NEW** TTS preprocessing (~185 lines) |
+| `pipeline/scripts/generate_tts_from_prepro.py` | tts_text + per-beat exaggeration support |
+| `pipeline/scripts/tts_backends/base.py` | cache_key includes exaggeration + cfg_weight |

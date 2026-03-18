@@ -1545,7 +1545,11 @@
           "text": "Build an app with one prompt. No code. No experience. Just vibes. The internet says anyone can do it.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.68,
+      "tts_text": "Build an app with one prompt. No code. No experience. Just vibes. The internet says anyone can do it.",
+      "tts_exaggeration": 0.4,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG01_B002",
@@ -1573,7 +1577,11 @@
           "text": "Every ad. Every thread. Every video. The message is the same: just type what you want, and AI will build it.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.68,
+      "tts_text": "Every ad. Every thread. Every video. The message is the same: just type what you want, and A I will build it.",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG01_B003",
@@ -1601,7 +1609,11 @@
           "text": "Vee believed it. She typed a prompt. Hit enter.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 3.0,
+      "tts_text": "Vee believed it. She typed a prompt. Hit enter.",
+      "tts_exaggeration": 0.6,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG01_B004",
@@ -1629,7 +1641,11 @@
           "text": "Something came out. But...",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 2.0,
+      "tts_text": "Something came out. But...",
+      "tts_exaggeration": 0.7,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B005",
@@ -1657,7 +1673,11 @@
           "text": "She typed: \"Make me an online store.\"",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 2.28,
+      "tts_text": "She typed: \"Make me an online store.\"...",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B006",
@@ -1685,7 +1705,11 @@
           "text": "And something appeared. A website. With a login button that goes to the shopping cart. A checkout page in neon pink and lime green. And a search bar that searches... nothing.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 9.04,
+      "tts_text": "And something appeared. A website. With a login button that goes to the shopping cart. A checkout page in neon pink and lime green. And a search bar that searches... nothing.",
+      "tts_exaggeration": 0.533,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B007",
@@ -1713,7 +1737,11 @@
           "text": "It didn't crash. It didn't throw an error. It just... wasn't what she wanted.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 3.76,
+      "tts_text": "It didn't crash. It didn't throw an error. It just... wasn't what she wanted.",
+      "tts_exaggeration": 0.567,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B008",
@@ -1741,7 +1769,11 @@
           "text": "This is what most people don't tell you about vibe coding. The result doesn't explode. It comes out wrong. Low quality. Not what you asked for. And you can't explain why.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 7.68,
+      "tts_text": "This is what most people don't tell you about vibe coding. The result doesn't explode. It comes out wrong. Low quality. Not what you asked for. And you can't explain why.",
+      "tts_exaggeration": 0.6,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B009",
@@ -1769,7 +1801,11 @@
           "text": "So she did what everyone does. She got more specific.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 2.96,
+      "tts_text": "So she did what everyone does. She got more specific.",
+      "tts_exaggeration": 0.633,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B010",
@@ -1797,7 +1833,11 @@
           "text": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern sans-serif font, responsive layout, search bar with autocomplete...\"",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 9.28,
+      "tts_text": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern sans-serif font, responsive layout, search bar with autocomplete...\"...",
+      "tts_exaggeration": 0.667,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B011",
@@ -1825,7 +1865,11 @@
           "text": "The result?",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 0.92,
+      "tts_text": "The result?",
+      "tts_exaggeration": 0.7,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B012",
@@ -1853,7 +1897,11 @@
           "text": "Worse. More detail made it more confused. Because detail is not direction.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.28,
+      "tts_text": "Worse. More detail made it more confused. , Because detail is not direction.",
+      "tts_exaggeration": 0.733,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B013",
@@ -1881,7 +1929,11 @@
           "text": "Okay, she thought. Maybe it's the tool. She switched tools. Three different AI assistants. Same prompt.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.2,
+      "tts_text": "Okay, she thought. Maybe it's the tool. She switched tools. Three different A I assistants. Same prompt.",
+      "tts_exaggeration": 0.767,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B014",
@@ -1909,7 +1961,11 @@
           "text": "Three tools. Three different wrong answers. The problem wasn't the tool. It was something else entirely.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.28,
+      "tts_text": "Three tools. Three different wrong answers. The problem wasn't the tool. It was something else entirely.",
+      "tts_exaggeration": 0.8,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG03_B015",
@@ -1937,7 +1993,11 @@
           "text": "So she tried one more thing. Same prompt. Same tool. Three times in a row.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.28,
+      "tts_text": "So she tried one more thing. Same prompt. Same tool. Three times in a row.",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG03_B016",
@@ -1965,7 +2025,11 @@
           "text": "Three runs. Three completely different stores. Different layouts, different colors, different features. Same exact prompt.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.52,
+      "tts_text": "Three runs. Three completely different stores. Different layouts, different colors, different features. Same exact prompt.",
+      "tts_exaggeration": 0.82,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG03_B017",
@@ -1993,7 +2057,11 @@
           "text": "Why? Because the AI isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly different. Like rolling dice with language.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 8.88,
+      "tts_text": "... Why? , Because the A I isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly different. Like rolling dice with language.",
+      "tts_exaggeration": 0.98,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG03_B018",
@@ -2021,7 +2089,11 @@
           "text": "And here's the part that really matters. She never read what the AI actually wrote.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 3.84,
+      "tts_text": "And here's the part that really matters. She never read what the A I actually wrote.",
+      "tts_exaggeration": 0.98,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG03_B019",
@@ -2049,7 +2121,11 @@
           "text": "Not the website. The code behind it. She looked at the result and said \"that's wrong\" — but she couldn't say why, because she never looked at the instructions the AI wrote to build it.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 8.88,
+      "tts_text": "Not the website. The code behind it. She looked at the result and said \"that's wrong\"... — but she couldn't say why, because she never looked at the instructions the A I wrote to build it.",
+      "tts_exaggeration": 0.82,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG03_B020",
@@ -2077,7 +2153,11 @@
           "text": "The AI wrote the recipe. She tasted the dish. But she never checked the recipe.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.36,
+      "tts_text": "The A I wrote the recipe. She tasted the dish. ... But she never checked the recipe.",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B021",
@@ -2103,7 +2183,11 @@
           "text": "Think of it like cooking. You walk into a restaurant and say: \"Make me dinner.\" The chef — a very fast, very capable chef — starts cooking immediately.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 8.36,
+      "tts_text": "Think of it like cooking. You walk into a restaurant and say: \"Make me dinner.\"... The chef — a very fast, very capable chef — starts cooking immediately.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B022",
@@ -2129,7 +2213,11 @@
           "text": "Something appears on the plate. It's food. Technically. But it's not what you wanted, because you never said what you wanted.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.52,
+      "tts_text": "Something appears on the plate. It's food. Technically. ... But it's not what you wanted, because you never said what you wanted.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B023",
@@ -2155,7 +2243,11 @@
           "text": "So you try again. \"Make me dinner. Something Italian. Use pasta. Make it creamy.\"",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.6,
+      "tts_text": "So you try again. \"Make me dinner. Something Italian. Use pasta. Make it creamy.\"...",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B024",
@@ -2181,7 +2273,11 @@
           "text": "The chef gets excited. Grabs every Italian ingredient. Puts cream on everything. Adds four types of cheese. Pasta is swimming in a lake of sauce. Garlic bread is stuffed inside the pasta somehow.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 10.04,
+      "tts_text": "The chef gets excited. Grabs every Italian ingredient. Puts cream on everything. Adds four types of cheese. Pasta is swimming in a lake of sauce. Garlic bread is stuffed inside the pasta somehow.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B025",
@@ -2207,7 +2303,11 @@
           "text": "More detail. Same problem. Because you gave ingredients, not intent.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.16,
+      "tts_text": "More detail. Same problem. , Because you gave ingredients, not intent.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B026",
@@ -2233,7 +2333,11 @@
           "text": "Now imagine one card. \"Pasta carbonara. Four ingredients. No cream. Serves two.\"",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.12,
+      "tts_text": "Now imagine one card. \"Pasta carbonara. Four ingredients. No cream. Serves two.\"...",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B027",
@@ -2259,7 +2363,11 @@
           "text": "Same chef. Same kitchen. Completely different result. Consistent. Recognizable. Close to what you wanted.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.2,
+      "tts_text": "Same chef. Same kitchen. Completely different result. Consistent. Recognizable. Close to what you wanted.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B028",
@@ -2285,7 +2393,11 @@
           "text": "But here's the question nobody asks. Would you serve this to a customer?",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 3.44,
+      "tts_text": "... But here's the question nobody asks. Would you serve this to a customer?",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B029",
@@ -2311,7 +2423,11 @@
           "text": "Your friend's kitchen? Sure, experiment. A dinner party? Maybe. A restaurant? With paying customers? You'd want to taste it first. Check the seasoning. Make sure there's no raw egg. Make sure it doesn't make someone sick.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 9.64,
+      "tts_text": "Your friend's kitchen? Sure, experiment. A dinner party? Maybe. A restaurant? With paying customers? You'd want to taste it first. Check the seasoning. Make sure there's no raw egg. Make sure it doesn't make someone sick.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B030",
@@ -2337,7 +2453,11 @@
           "text": "AI is that chef. Fast, capable, ready to go. But without a recipe, it improvises. And when you're cooking for yourself, improvisation is fine. When you're cooking for others — for production, for users, for money — you need more than vibes.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 12.56,
+      "tts_text": "A I is that chef. Fast, capable, ready to go. ... But without a recipe, it improvises. And when you're cooking for yourself, improvisation is fine. When you're cooking for others — for production, for users, for money — you need more than vibes.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B031",
@@ -2363,7 +2483,11 @@
           "text": "In February twenty twenty-five, Andrej Karpathy — one of the founders of OpenAI — gave this a name. Vibe coding. Quote: \"You just talk in natural language, run it, and most of the time it just works.\"",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 10.48,
+      "tts_text": "In February twenty twenty-five, Andrej Karpathy — one of the founders of Open A I — gave this a name. Vibe coding. Quote: \"You just talk in natural language, run it, and most of the time it just works.\"...",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B032",
@@ -2389,7 +2513,11 @@
           "text": "But here's the word most people skip. \"With.\" Vibe coding isn't AI coding for you. It's you coding with AI. The decisions — what to build, what's good enough, what's wrong — those are yours. The implementation — the actual code — that's the AI's job.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 12.88,
+      "tts_text": "... But here's the word most people skip. \"With.\"... Vibe coding isn't A I coding for you. It's you coding with A I. The decisions — what to build, what's good enough, what's wrong — those are yours. The implementation — the actual code — that's the A I's job.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B033",
@@ -2415,7 +2543,11 @@
           "text": "Not outsourcing. Collaboration. That \"with\" is the hard part.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 3.32,
+      "tts_text": "Not outsourcing. Collaboration. That \"with\"... is the hard part.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B034",
@@ -2441,7 +2573,11 @@
           "text": "So what can AI actually do well? Prototypes. Quick experiments. \"Show me what a dashboard could look like.\" Ten minutes, you have something to react to. Scripts and automations — rename five hundred files, convert data formats, generate boilerplate. Learning tools — \"explain this code,\" \"what does this function do,\" \"show me an example.\"",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 16.16,
+      "tts_text": "So what can A I actually do well? Prototypes. Quick experiments. \"Show me what a dashboard could look like.\"... Ten minutes, you have something to react to. Scripts and automations — rename five hundred files, convert data formats, generate boilerplate. Learning tools — \"explain this code,\"... \"what does this function do,\"... \"show me an example.\"...",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B035",
@@ -2467,7 +2603,11 @@
           "text": "What can't it do? Production systems — code that handles real users, real money, real data. Security — keeping attackers out, protecting passwords, encrypting sensitive information. Payment processing — where a bug means someone gets charged twice.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 14.64,
+      "tts_text": "What can't it do? Production systems — code that handles real users, real money, real data. Security — keeping attackers out, protecting passwords, encrypting sensitive information. Payment processing — where a bug means someone gets charged twice.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B036",
@@ -2493,7 +2633,11 @@
           "text": "Not \"can't ever.\" Can't without supervision. Can't without someone checking the recipe before it reaches the customer.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.8,
+      "tts_text": "Not \"can't ever.\"... Can't without supervision. Can't without someone checking the recipe before it reaches the customer.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B037",
@@ -2519,7 +2663,11 @@
           "text": "And you've got options. Cursor — an AI-powered code editor. You write alongside it. It suggests, you accept or reject.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.72,
+      "tts_text": "And you've got options. Cursor — an A I-powered code editor. You write alongside it. It suggests, you accept or reject.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B038",
@@ -2545,7 +2693,11 @@
           "text": "Claude Code — a terminal agent. It reads your entire project and makes changes across multiple files.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.8,
+      "tts_text": "Claude Code — a terminal agent. It reads your entire project and makes changes across multiple files.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B039",
@@ -2571,7 +2723,11 @@
           "text": "Replit — browser-based. No installation. Start building in thirty seconds flat.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.64,
+      "tts_text": "Replit — browser-based. No installation. Start building in thirty seconds flat.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B040",
@@ -2597,7 +2753,11 @@
           "text": "Kiro — from AWS. Spec-first. It writes requirements before touching code. We'll come back to that.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.72,
+      "tts_text": "Kiro — from AWS. Spec-first. It writes requirements before touching code. We'll come back to that.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B041",
@@ -2623,7 +2783,11 @@
           "text": "Windsurf — another AI IDE. Similar to Cursor, different workflow. The point isn't which one.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.28,
+      "tts_text": "Windsurf — another A I IDE. Similar to Cursor, different workflow. The point isn't which one.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B042",
@@ -2649,7 +2813,11 @@
           "text": "Different tools. Same principle. You decide what. AI decides how.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.64,
+      "tts_text": "Different tools. Same principle. You decide what. A I decides how.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B043",
@@ -2675,7 +2843,11 @@
           "text": "And there's a spectrum. Level one: copy-pasting from ChatGPT. Level two: an AI IDE like Cursor. Level three: an autonomous agent with a spec. Wherever you start is fine. But know where you are.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 11.96,
+      "tts_text": "And there's a spectrum. Level one: copy-pasting from Chat G P T. Level two: an A I IDE like Cursor. Level three: an autonomous agent with a spec. Wherever you start is fine. ... But know where you are.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B044",
@@ -2701,7 +2873,11 @@
           "text": "So here's the reframe. Vibe coding is not an easy button. It's not \"AI, do my job.\" It's a new skill — like learning to drive. The car does the moving. You do the steering.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 8.84,
+      "tts_text": "So here's the reframe. Vibe coding is not an easy button. It's not \"A I, do my job.\"... It's a new skill — like learning to drive. The car does the moving. You do the steering.",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B045",
@@ -2727,7 +2903,11 @@
           "text": "And the hardest part of this new skill isn't the typing. It's the judgment. Looking at what the AI made and knowing — is this good enough? Is this safe? Would I bet money on this working tomorrow?",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 9.08,
+      "tts_text": "And the hardest part of this new skill isn't the typing. It's the judgment. Looking at what the A I made and knowing — is this good enough? Is this safe? Would I bet money on this working tomorrow?",
+      "tts_exaggeration": 0.6,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B046",
@@ -2753,7 +2933,11 @@
           "text": "Professional developers do this every day. They review code. They test it. They ask: \"what could go wrong?\" That's not a coding skill. That's a thinking skill. And you already have it.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 9.2,
+      "tts_text": "Professional developers do this every day. They review code. They test it. They ask: \"what could go wrong?\"... That's not a coding skill. That's a thinking skill. And you already have it.",
+      "tts_exaggeration": 0.7,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B047",
@@ -2779,7 +2963,11 @@
           "text": "The starting point — the thing that makes all of this work — is knowing what you're building. Not how. What. That's where episode two picks up.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.32,
+      "tts_text": "The starting point — the thing that makes all of this work — is knowing what you're building. Not how. What. That's where episode two picks up.",
+      "tts_exaggeration": 0.8,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B048",
@@ -2807,7 +2995,11 @@
           "text": "Here's what you do today. Three things.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 2.28,
+      "tts_text": "Here's what you do today. Three things.",
+      "tts_exaggeration": 0.6,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B049",
@@ -2835,7 +3027,11 @@
           "text": "One — pick a tool. Any tool. Cursor, Replit, Claude, whatever feels right. Install it.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.76,
+      "tts_text": "One — pick a tool. Any tool. Cursor, Replit, Claude, whatever feels right. Install it.",
+      "tts_exaggeration": 0.57,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B050",
@@ -2863,7 +3059,11 @@
           "text": "Two — type one prompt. Anything. \"Make me a to-do app.\" \"Build a calculator.\" \"Create a personal website.\" Doesn't matter what.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.68,
+      "tts_text": "Two — type one prompt. Anything. \"Make me a to-do app.\"... \"Build a calculator.\"... \"Create a personal website.\"... Doesn't matter what.",
+      "tts_exaggeration": 0.54,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B051",
@@ -2891,7 +3091,11 @@
           "text": "Three — look at what comes out. And write down how you feel. Not what's wrong with it. How you feel. Frustrated? Confused? Excited? Disappointed?",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.84,
+      "tts_text": "Three — look at what comes out. And write down how you feel. Not what's wrong with it. How you feel. Frustrated? Confused? Excited? Disappointed?",
+      "tts_exaggeration": 0.51,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B052",
@@ -2919,7 +3123,11 @@
           "text": "That feeling is data. If the answer is \"this isn't what I wanted\" — good. That frustration? That gap between what you imagined and what appeared? That's where it all begins.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 8.68,
+      "tts_text": "That feeling is data. If the answer is \"this isn't what I wanted\"... — good. That frustration? That gap between what you imagined and what appeared? That's where it all begins.",
+      "tts_exaggeration": 0.48,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B053",
@@ -2947,7 +3155,11 @@
           "text": "Next time — we give that feeling a name. And we turn it into the most powerful tool in vibe coding.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.0,
+      "tts_text": "Next time — we give that feeling a name. And we turn it into the most powerful tool in vibe coding.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     }
   ]
 }

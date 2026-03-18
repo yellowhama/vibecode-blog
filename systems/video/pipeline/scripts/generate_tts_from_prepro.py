@@ -204,7 +204,7 @@ def main() -> int:
         for i, beat in enumerate(beats_src, start=1):
             beat_id = str(beat.get("beat_id", f"B{i:03d}"))
             scene_id = str(beat.get("scene_id", f"S{i:03d}"))
-            text = str(beat.get("narration_text", beat.get("text", ""))).strip()
+            text = str(beat.get("tts_text", beat.get("narration_text", beat.get("text", "")))).strip()
             expected = float(beat.get("duration_sec", 2.5))
 
             seg_wav = tmp / f"{seg_idx:04d}_{beat_id}.wav"
@@ -233,8 +233,8 @@ def main() -> int:
                         speaker=opts.speaker,
                         speaker_wav=opts.speaker_wav,
                         cache_dir=opts.cache_dir,
-                        exaggeration=opts.exaggeration,
-                        cfg_weight=opts.cfg_weight,
+                        exaggeration=float(beat.get("tts_exaggeration", opts.exaggeration)),
+                        cfg_weight=float(beat.get("tts_cfg_weight", opts.cfg_weight)),
                     )
                     try:
                         if not args.no_cache:

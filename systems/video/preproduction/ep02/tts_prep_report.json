@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-03-18T23:27:03.349917",
+  "rules_version": "1.0",
+  "total_beats": 46,
+  "beats_modified": 42,
+  "modification_rate": 0.913,
+  "modifications": [
+    {
+      "beat_id": "SEG01_B001",
+      "segment": "HOOK",
+      "position": 0.0,
+      "exaggeration": 0.4,
+      "text_diff": {
+        "original": "Last time, Vee learned the first rule of vibe coding: you decide what, AI decides how.",
+        "transformed": "Last time, Vee learned the first rule of vibe coding: you decide what, A I decides how."
+      }
+    },
+    {
+      "beat_id": "SEG01_B003",
+      "segment": "HOOK",
+      "position": 0.667,
+      "exaggeration": 0.6
+    },
+    {
+      "beat_id": "SEG01_B004",
+      "segment": "HOOK",
+      "position": 1.0,
+      "exaggeration": 0.7
+    },
+    {
+      "beat_id": "SEG02_B006",
+      "segment": "MISCONCEPTION",
+      "position": 0.2,
+      "exaggeration": 0.56,
+      "text_diff": {
+        "original": "She wrote two pages. Component hierarchy. Data flow. State management. Color palette hex codes. Responsive breakpoints. ",
+        "transformed": "She wrote two pages. Component hierarchy. Data flow. State management. Color palette hex codes. Responsive breakpoints. "
+      }
+    },
+    {
+      "beat_id": "SEG02_B007",
+      "segment": "MISCONCEPTION",
+      "position": 0.4,
+      "exaggeration": 0.62,
+      "text_diff": {
+        "original": "She was proud of it. Pasted the whole thing into the AI.",
+        "transformed": "She was proud of it. Pasted the whole thing into the A I."
+      }
+    },
+    {
+      "beat_id": "SEG02_B008",
+      "segment": "MISCONCEPTION",
+      "position": 0.6,
+      "exaggeration": 0.68,
+      "text_diff": {
+        "original": "The result was technically correct. Every component she described existed. Every color matched. The API endpoints were n",
+        "transformed": "The result was technically correct. Every component she described existed. Every color matched. The A P I endpoints were"
+      }
+    },
+    {
+      "beat_id": "SEG02_B009",
+      "segment": "MISCONCEPTION",
+      "position": 0.8,
+      "exaggeration": 0.74,
+      "text_diff": {
+        "original": "She described how to build a building. But never said what the building was for. Architecture without purpose. Detail wi",
+        "transformed": "She described how to build a building. ... But never said what the building was for. Architecture without purpose. Detai"
+      }
+    },
+    {
+      "beat_id": "SEG02_B010",
+      "segment": "MISCONCEPTION",
+      "position": 1.0,
+      "exaggeration": 0.8
+    },
+    {
+      "beat_id": "SEG03_B012",
+      "segment": "THE_CRACK",
+      "position": 0.25,
+      "exaggeration": 0.875
+    },
+    {
+      "beat_id": "SEG03_B013",
+      "segment": "THE_CRACK",
+      "position": 0.5,
+      "exaggeration": 1.0
+    },
+    {
+      "beat_id": "SEG03_B014",
+      "segment": "THE_CRACK",
+      "position": 0.75,
+      "exaggeration": 0.875,
+      "text_diff": {
+        "original": "Five AI sessions built the same functions five different ways. Three different date formatters — each one converting dat",
+        "transformed": "Five A I sessions built the same functions five different ways. Three different date formatters — each one converting da"
+      }
+    },
+    {
+      "beat_id": "SEG04_B016",
+      "segment": "CORE",
+      "position": 0.0,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Imagine building a house without a blueprint. You know you want a house. You start stacking bricks. Some go left, some g",
+        "transformed": "Imagine building a house without a blueprint. You know you want a house. You start stacking bricks. Some go left, some g"
+      }
+    },
+    {
+      "beat_id": "SEG04_B017",
+      "segment": "CORE",
+      "position": 0.053,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Now imagine one piece of paper. Not a hundred-page document. One note. \"Two bedrooms. One bathroom. Front door faces sou",
+        "transformed": "Now imagine one piece of paper. Not a hundred-page document. One note. \"Two bedrooms. One bathroom. Front door faces sou"
+      }
+    },
+    {
+      "beat_id": "SEG04_B018",
+      "segment": "CORE",
+      "position": 0.105,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B019",
+      "segment": "CORE",
+      "position": 0.158,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B020",
+      "segment": "CORE",
+      "position": 0.211,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Line one: Goal. What are you building? \"An online store that sells handmade candles.\"",
+        "transformed": "Line one: Goal. What are you building? \"An online store that sells handmade candles.\"..."
+      }
+    },
+    {
+      "beat_id": "SEG04_B021",
+      "segment": "CORE",
+      "position": 0.263,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Line two: Constraints. What are you NOT building? \"No user accounts. No payment processing — just a catalog with a conta",
+        "transformed": "Line two: Constraints. What are you NOT building? \"No user accounts. No payment processing — just a catalog with a conta"
+      }
+    },
+    {
+      "beat_id": "SEG04_B022",
+      "segment": "CORE",
+      "position": 0.316,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Line three: Done-when. How do you know it's finished? \"When someone can browse candles by category and send a message.\"",
+        "transformed": "Line three: Done-when. How do you know it's finished? \"When someone can browse candles by category and send a message.\"."
+      }
+    },
+    {
+      "beat_id": "SEG04_B023",
+      "segment": "CORE",
+      "position": 0.368,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B024",
+      "segment": "CORE",
+      "position": 0.421,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Same project. Same AI. But now it has the spec. First result: a clean catalog page. Three candle categories. A contact f",
+        "transformed": "Same project. Same A I. ... But now it has the spec. First result: a clean catalog page. Three candle categories. A cont"
+      }
+    },
+    {
+      "beat_id": "SEG04_B025",
+      "segment": "CORE",
+      "position": 0.474,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B026",
+      "segment": "CORE",
+      "position": 0.526,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "The spec didn't make AI smarter. It made your instructions clearer.",
+        "transformed": "The spec didn't make A I smarter. It made your instructions clearer."
+      }
+    },
+    {
+      "beat_id": "SEG04_B027",
+      "segment": "CORE",
+      "position": 0.579,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B028",
+      "segment": "CORE",
+      "position": 0.632,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Which means — before the AI writes a single line of code, you can review the contract. \"Wait, I said no payment processi",
+        "transformed": "Which means — before the A I writes a single line of code, you can review the contract. \"Wait, I said no payment process"
+      }
+    },
+    {
+      "beat_id": "SEG04_B029",
+      "segment": "CORE",
+      "position": 0.684,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B030",
+      "segment": "CORE",
+      "position": 0.737,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "And there are tools that make this persistent. CLAUDE dot MD — a file that lives in your project. Every time Claude open",
+        "transformed": "And there are tools that make this persistent. claude M D — a file that lives in your project. Every time Claude opens y"
+      }
+    },
+    {
+      "beat_id": "SEG04_B031",
+      "segment": "CORE",
+      "position": 0.789,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Your rules. Your constraints. Your context. \"This is a candle shop. We don't do user accounts. The style is warm and min",
+        "transformed": "Your rules. Your constraints. Your context. \"This is a candle shop. We don't do user accounts. The style is warm and min"
+      }
+    },
+    {
+      "beat_id": "SEG04_B032",
+      "segment": "CORE",
+      "position": 0.842,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "It's like a note pinned to the kitchen wall. Every chef who walks in reads it first. \"No cream in the carbonara. Ever.\"",
+        "transformed": "It's like a note pinned to the kitchen wall. Every chef who walks in reads it first. \"No cream in the carbonara. Ever.\"."
+      }
+    },
+    {
+      "beat_id": "SEG04_B033",
+      "segment": "CORE",
+      "position": 0.895,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Cursor has the same idea — dot cursor rules. Write your rules once, every AI session follows them.",
+        "transformed": "Cursor has the same idea — dot cursor rules. Write your rules once, every A I session follows them."
+      }
+    },
+    {
+      "beat_id": "SEG04_B034",
+      "segment": "CORE",
+      "position": 0.947,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "And if you want a full workflow — spec-kit. Four steps: specify, plan, tasks, implement. Each step validates before movi",
+        "transformed": "And if you want a full workflow — spec kit. Four steps: specify, plan, tasks, implement. Each step validates before movi"
+      }
+    },
+    {
+      "beat_id": "SEG04_B035",
+      "segment": "CORE",
+      "position": 1.0,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "The point isn't which tool. The point is: write down what you want before you ask AI to build it.",
+        "transformed": "The point isn't which tool. The point is: write down what you want before you ask A I to build it."
+      }
+    },
+    {
+      "beat_id": "SEG05_B036",
+      "segment": "REFRAME",
+      "position": 0.0,
+      "exaggeration": 0.5,
+      "text_diff": {
+        "original": "Here's the part nobody tells you. That frustration you felt when AI made the wrong thing? When the store was neon pink a",
+        "transformed": "... Here's the part nobody tells you. That frustration you felt when A I made the wrong thing? When the store was neon p"
+      }
+    },
+    {
+      "beat_id": "SEG05_B037",
+      "segment": "REFRAME",
+      "position": 0.2,
+      "exaggeration": 0.56
+    },
+    {
+      "beat_id": "SEG05_B038",
+      "segment": "REFRAME",
+      "position": 0.4,
+      "exaggeration": 0.62,
+      "text_diff": {
+        "original": "Write down what annoyed you. \"It should have done X but did Y.\" Congratulations. You just wrote a requirement. Organize ",
+        "transformed": "Write down what annoyed you. \"It should have done X but did Y.\"... Congratulations. You just wrote a requirement. Organi"
+      }
+    },
+    {
+      "beat_id": "SEG05_B039",
+      "segment": "REFRAME",
+      "position": 0.6,
+      "exaggeration": 0.68
+    },
+    {
+      "beat_id": "SEG05_B040",
+      "segment": "REFRAME",
+      "position": 0.8,
+      "exaggeration": 0.74
+    },
+    {
+      "beat_id": "SEG05_B041",
+      "segment": "REFRAME",
+      "position": 1.0,
+      "exaggeration": 0.8,
+      "text_diff": {
+        "original": "You're not learning to code. You're learning to direct. A director doesn't operate the camera. They say: \"wider shot, wa",
+        "transformed": "You're not learning to code. You're learning to direct. A director doesn't operate the camera. They say: \"wider shot, wa"
+      }
+    },
+    {
+      "beat_id": "SEG06_B042",
+      "segment": "OUTRO_CTA",
+      "position": 0.0,
+      "exaggeration": 0.6
+    },
+    {
+      "beat_id": "SEG06_B043",
+      "segment": "OUTRO_CTA",
+      "position": 0.25,
+      "exaggeration": 0.562,
+      "text_diff": {
+        "original": "Goal. Constraints. Done-when. Fill in the blanks. Anything — a to-do app, a birthday card generator, a recipe organizer.",
+        "transformed": "Goal. Constraints. Done-when. Fill in the blanks. Anything — a to-do app, a birthday card generator, a recipe organizer."
+      }
+    },
+    {
+      "beat_id": "SEG06_B044",
+      "segment": "OUTRO_CTA",
+      "position": 0.5,
+      "exaggeration": 0.525
+    },
+    {
+      "beat_id": "SEG06_B045",
+      "segment": "OUTRO_CTA",
+      "position": 0.75,
+      "exaggeration": 0.487
+    },
+    {
+      "beat_id": "SEG06_B046",
+      "segment": "OUTRO_CTA",
+      "position": 1.0,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "But here's a question. The spec tells AI what to build. The code gets bigger. More files, more features, more complexity",
+        "transformed": "... But here's a question. The spec tells A I what to build. The code gets bigger. More files, more features, more compl"
+      }
+    }
+  ],
+  "prepro_manifest": "../../preproduction/ep02/ep02_prepro_manifest_v7.json",
+  "rules_file": "../config/tts_rules.yaml"
+}

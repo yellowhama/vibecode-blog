@@ -1,0 +1,325 @@
+{
+  "generated_at": "2026-03-18T23:27:03.811698",
+  "rules_version": "1.0",
+  "total_beats": 41,
+  "beats_modified": 39,
+  "modification_rate": 0.9512,
+  "modifications": [
+    {
+      "beat_id": "SEG01_B001",
+      "segment": "HOOK",
+      "position": 0.0,
+      "exaggeration": 0.4
+    },
+    {
+      "beat_id": "SEG01_B002",
+      "segment": "HOOK",
+      "position": 1.0,
+      "exaggeration": 0.7
+    },
+    {
+      "beat_id": "SEG02_B003",
+      "segment": "MISCONCEPTION",
+      "position": 0.0,
+      "exaggeration": 0.5,
+      "text_diff": {
+        "original": "Here's the rule she's been living by: if it didn't crash when you built it, don't touch it. Wrap it up. Move on. Build t",
+        "transformed": "... Here's the rule she's been living by: if it didn't crash when you built it, don't touch it. Wrap it up. Move on. Bui"
+      }
+    },
+    {
+      "beat_id": "SEG02_B004",
+      "segment": "MISCONCEPTION",
+      "position": 0.25,
+      "exaggeration": 0.575
+    },
+    {
+      "beat_id": "SEG02_B005",
+      "segment": "MISCONCEPTION",
+      "position": 0.5,
+      "exaggeration": 0.65,
+      "text_diff": {
+        "original": "But \"didn't crash\" and \"works\" are two very different things.",
+        "transformed": "... But \"didn't crash\"... and \"works\"... are two very different things."
+      }
+    },
+    {
+      "beat_id": "SEG02_B006",
+      "segment": "MISCONCEPTION",
+      "position": 0.75,
+      "exaggeration": 0.725,
+      "text_diff": {
+        "original": "\"Didn't crash\" means it ran once on your machine with your data and nothing exploded. \"Works\" means it handles the weird",
+        "transformed": "\"Didn't crash\"... means it ran once on your machine with your data and nothing exploded. \"Works\"... means it handles the"
+      }
+    },
+    {
+      "beat_id": "SEG02_B007",
+      "segment": "MISCONCEPTION",
+      "position": 1.0,
+      "exaggeration": 0.8
+    },
+    {
+      "beat_id": "SEG03_B009",
+      "segment": "THE_CRACK",
+      "position": 0.333,
+      "exaggeration": 0.944,
+      "text_diff": {
+        "original": "\"Works on my machine\" isn't a status update. It's a confession. It means you never defined what \"working\" actually looks",
+        "transformed": "\"Works on my machine\"... isn't a status update. It's a confession. It means you never defined what \"working\"... actually"
+      }
+    },
+    {
+      "beat_id": "SEG03_B010",
+      "segment": "THE_CRACK",
+      "position": 0.667,
+      "exaggeration": 0.944
+    },
+    {
+      "beat_id": "SEG04_B012",
+      "segment": "CORE",
+      "position": 0.0,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B013",
+      "segment": "CORE",
+      "position": 0.059,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Here's the thing nobody says out loud: not opening the box doesn't make the contents better. If it's broken inside, it w",
+        "transformed": "... Here's the thing nobody says out loud: not opening the box doesn't make the contents better. If it's broken inside, "
+      }
+    },
+    {
+      "beat_id": "SEG04_B014",
+      "segment": "CORE",
+      "position": 0.118,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B015",
+      "segment": "CORE",
+      "position": 0.176,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B016",
+      "segment": "CORE",
+      "position": 0.235,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B017",
+      "segment": "CORE",
+      "position": 0.294,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B018",
+      "segment": "CORE",
+      "position": 0.353,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B019",
+      "segment": "CORE",
+      "position": 0.412,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B020",
+      "segment": "CORE",
+      "position": 0.471,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B021",
+      "segment": "CORE",
+      "position": 0.529,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B022",
+      "segment": "CORE",
+      "position": 0.588,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B023",
+      "segment": "CORE",
+      "position": 0.647,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B024",
+      "segment": "CORE",
+      "position": 0.706,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Now let's talk about how she actually opened them. Because \"opening the box\" has a name. It's called a test.",
+        "transformed": "Now let's talk about how she actually opened them. , Because \"opening the box\"... has a name. It's called a test."
+      }
+    },
+    {
+      "beat_id": "SEG04_B025",
+      "segment": "CORE",
+      "position": 0.765,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "\"When the login token is empty — reject the login.\" That's a test. One sentence. One expectation. One checkmark.",
+        "transformed": "\"When the login token is empty — reject the login.\"... That's a test. One sentence. One expectation. One checkmark."
+      }
+    },
+    {
+      "beat_id": "SEG04_B026",
+      "segment": "CORE",
+      "position": 0.824,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "\"When a payment fails — don't charge the card.\" Another test. Another sentence. Another checkmark.",
+        "transformed": "\"When a payment fails — don't charge the card.\"... Another test. Another sentence. Another checkmark."
+      }
+    },
+    {
+      "beat_id": "SEG04_B027",
+      "segment": "CORE",
+      "position": 0.882,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "\"When sync has ten users — don't crash.\" Third test. Third sentence.",
+        "transformed": "\"When sync has ten users — don't crash.\"... Third test. Third sentence."
+      }
+    },
+    {
+      "beat_id": "SEG04_B028",
+      "segment": "CORE",
+      "position": 0.941,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Each test is one sentence you write before you build. \"This is what should happen.\" If it does — green. If it doesn't — ",
+        "transformed": "Each test is one sentence you write before you build. \"This is what should happen.\"... If it does — green. If it doesn't"
+      }
+    },
+    {
+      "beat_id": "SEG04_B029",
+      "segment": "CORE",
+      "position": 1.0,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "\"Write tests for payments/. It should handle failed payments, never double-charge, and reject negative amounts.\" Three e",
+        "transformed": "\"Write tests for payments/. It should handle failed payments, never double-charge, and reject negative amounts.\"... Thre"
+      }
+    },
+    {
+      "beat_id": "SEG05_B030",
+      "segment": "REFRAME",
+      "position": 0.0,
+      "exaggeration": 0.5,
+      "text_diff": {
+        "original": "Here's the reframe. Testing isn't bug hunting. Testing is answering one question: what does \"working\" actually mean?",
+        "transformed": "... Here's the reframe. Testing isn't bug hunting. Testing is answering one question: what does \"working\"... actually me"
+      }
+    },
+    {
+      "beat_id": "SEG05_B031",
+      "segment": "REFRAME",
+      "position": 0.2,
+      "exaggeration": 0.56,
+      "text_diff": {
+        "original": "Each test is a contract. Not \"find what's broken.\" It's \"define what done looks like.\" A test says: this is how it shoul",
+        "transformed": "Each test is a contract. Not \"find what's broken.\"... It's \"define what done looks like.\"... A test says: this is how it"
+      }
+    },
+    {
+      "beat_id": "SEG05_B032",
+      "segment": "REFRAME",
+      "position": 0.4,
+      "exaggeration": 0.62,
+      "text_diff": {
+        "original": "You don't test to find bugs. You test to define reality. The test is the definition of \"works.\"",
+        "transformed": "You don't test to find bugs. You test to define reality. The test is the definition of \"works.\"..."
+      }
+    },
+    {
+      "beat_id": "SEG05_B033",
+      "segment": "REFRAME",
+      "position": 0.6,
+      "exaggeration": 0.68,
+      "text_diff": {
+        "original": "Without tests, \"works\" means \"didn't crash yet on my machine.\" With tests, \"works\" means \"does exactly what I said it sh",
+        "transformed": "Without tests, \"works\"... means \"didn't crash yet on my machine.\"... With tests, \"works\"... means \"does exactly what I s"
+      }
+    },
+    {
+      "beat_id": "SEG05_B034",
+      "segment": "REFRAME",
+      "position": 0.8,
+      "exaggeration": 0.74
+    },
+    {
+      "beat_id": "SEG05_B035",
+      "segment": "REFRAME",
+      "position": 1.0,
+      "exaggeration": 0.8,
+      "text_diff": {
+        "original": "And professional developers? They do this before they write the code. They open the box before anything's inside. \"This ",
+        "transformed": "And professional developers? They do this before they write the code. They open the box before anything's inside. \"This "
+      }
+    },
+    {
+      "beat_id": "SEG06_B036",
+      "segment": "OUTRO_CTA",
+      "position": 0.0,
+      "exaggeration": 0.6,
+      "text_diff": {
+        "original": "The boxes are open. She knows what's inside every one of them. No more guessing. No more \"works on my machine.\"",
+        "transformed": "The boxes are open. She knows what's inside every one of them. No more guessing. No more \"works on my machine.\"..."
+      }
+    },
+    {
+      "beat_id": "SEG06_B037",
+      "segment": "OUTRO_CTA",
+      "position": 0.2,
+      "exaggeration": 0.57,
+      "text_diff": {
+        "original": "Here's your homework. Next time you build something with AI, write three sentences before you start. \"When X happens, Y ",
+        "transformed": "Here's your homework. Next time you build something with A I, write three sentences before you start. \"When X happens, Y"
+      }
+    },
+    {
+      "beat_id": "SEG06_B038",
+      "segment": "OUTRO_CTA",
+      "position": 0.4,
+      "exaggeration": 0.54,
+      "text_diff": {
+        "original": "Give those sentences to the AI. \"Write tests for these.\" The AI writes the checks. You wrote the definition of done. Tha",
+        "transformed": "Give those sentences to the A I. \"Write tests for these.\"... The A I writes the checks. You wrote the definition of done"
+      }
+    },
+    {
+      "beat_id": "SEG06_B039",
+      "segment": "OUTRO_CTA",
+      "position": 0.6,
+      "exaggeration": 0.51
+    },
+    {
+      "beat_id": "SEG06_B040",
+      "segment": "OUTRO_CTA",
+      "position": 0.8,
+      "exaggeration": 0.48
+    },
+    {
+      "beat_id": "SEG06_B041",
+      "segment": "OUTRO_CTA",
+      "position": 1.0,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "But the code only knows what she told it. And she told it what the AI told her. What happens when the AI gets it wrong —",
+        "transformed": "... But the code only knows what she told it. And she told it what the A I told her. What happens when the A I gets it w"
+      }
+    }
+  ],
+  "prepro_manifest": "../../preproduction/ep04/ep04_prepro_manifest_v7.json",
+  "rules_file": "../config/tts_rules.yaml"
+}

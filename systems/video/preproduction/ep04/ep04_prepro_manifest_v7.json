@@ -1263,7 +1263,11 @@
           "text": "Vee built everything. Organized everything. She has five beautiful boxes and she hasn't opened a single one.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.32,
+      "tts_text": "Vee built everything. Organized everything. She has five beautiful boxes and she hasn't opened a single one.",
+      "tts_exaggeration": 0.4,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG01_B002",
@@ -1291,7 +1295,11 @@
           "text": "She's afraid of what's inside.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 1.4,
+      "tts_text": "She's afraid of what's inside.",
+      "tts_exaggeration": 0.7,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B003",
@@ -1319,7 +1327,11 @@
           "text": "Here's the rule she's been living by: if it didn't crash when you built it, don't touch it. Wrap it up. Move on. Build the next thing.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.84,
+      "tts_text": "... Here's the rule she's been living by: if it didn't crash when you built it, don't touch it. Wrap it up. Move on. Build the next thing.",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B004",
@@ -1347,7 +1359,11 @@
           "text": "It feels like progress. Five features, five boxes, all sealed. Ship it.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.88,
+      "tts_text": "It feels like progress. Five features, five boxes, all sealed. Ship it.",
+      "tts_exaggeration": 0.575,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B005",
@@ -1375,7 +1391,11 @@
           "text": "But \"didn't crash\" and \"works\" are two very different things.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.04,
+      "tts_text": "... But \"didn't crash\"... and \"works\"... are two very different things.",
+      "tts_exaggeration": 0.65,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B006",
@@ -1403,7 +1423,11 @@
           "text": "\"Didn't crash\" means it ran once on your machine with your data and nothing exploded. \"Works\" means it handles the weird cases. The empty fields. The slow connections. The user who clicks the back button seventeen times. The person who types emoji in the phone number field.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 11.16,
+      "tts_text": "\"Didn't crash\"... means it ran once on your machine with your data and nothing exploded. \"Works\"... means it handles the weird cases. The empty fields. The slow connections. The user who clicks the back button seventeen times. The person who types emoji in the phone number field.",
+      "tts_exaggeration": 0.725,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG02_B007",
@@ -1431,7 +1455,11 @@
           "text": "She never checked for any of that. She's about to find out what happens when you skip the check.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 3.76,
+      "tts_text": "She never checked for any of that. She's about to find out what happens when you skip the check.",
+      "tts_exaggeration": 0.8,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG03_B008",
@@ -1459,7 +1487,11 @@
           "text": "She showed it to someone. Their screen? White. Nothing. The app that ran perfectly on her machine ran perfectly on her machine only.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 7.6,
+      "tts_text": "She showed it to someone. Their screen? White. Nothing. The app that ran perfectly on her machine ran perfectly on her machine only.",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG03_B009",
@@ -1487,7 +1519,11 @@
           "text": "\"Works on my machine\" isn't a status update. It's a confession. It means you never defined what \"working\" actually looks like.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.2,
+      "tts_text": "\"Works on my machine\"... isn't a status update. It's a confession. It means you never defined what \"working\"... actually looks like.",
+      "tts_exaggeration": 0.944,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG03_B010",
@@ -1515,7 +1551,11 @@
           "text": "Her login worked because she was already logged in. Her search worked because she only searched words that existed. Her payments worked because she never tested what happens when a payment fails.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 9.28,
+      "tts_text": "Her login worked because she was already logged in. Her search worked because she only searched words that existed. Her payments worked because she never tested what happens when a payment fails.",
+      "tts_exaggeration": 0.944,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG03_B011",
@@ -1543,7 +1583,11 @@
           "text": "Every one of those boxes might be empty. She'd never know. She never looked.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 3.52,
+      "tts_text": "Every one of those boxes might be empty. She'd never know. She never looked.",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B012",
@@ -1571,7 +1615,11 @@
           "text": "Let's talk about these boxes. You wrapped them. You're proud of them. And you won't open them because — what if they're empty? What if something's wrong inside?",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 7.4,
+      "tts_text": "Let's talk about these boxes. You wrapped them. You're proud of them. And you won't open them because — what if they're empty? What if something's wrong inside?",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B013",
@@ -1599,7 +1647,11 @@
           "text": "Here's the thing nobody says out loud: not opening the box doesn't make the contents better. If it's broken inside, it was broken before you looked. Opening the box doesn't create the problem. It just tells you the problem exists.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 9.68,
+      "tts_text": "... Here's the thing nobody says out loud: not opening the box doesn't make the contents better. If it's broken inside, it was broken before you looked. Opening the box doesn't create the problem. It just tells you the problem exists.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B014",
@@ -1627,7 +1679,11 @@
           "text": "So let's open one.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 1.72,
+      "tts_text": "So let's open one.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B015",
@@ -1655,7 +1711,11 @@
           "text": "A cracked gear. Login crashes on an empty session token. That crack was always there. Opening the box didn't break it.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.12,
+      "tts_text": "A cracked gear. Login crashes on an empty session token. That crack was always there. Opening the box didn't break it.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B016",
@@ -1683,7 +1743,11 @@
           "text": "Three-line fix. Done.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 2.0,
+      "tts_text": "Three-line fix. Done.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B017",
@@ -1711,7 +1775,11 @@
           "text": "Second box. It works. It was always fine. All that dread — wasted.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 3.64,
+      "tts_text": "Second box. It works. It was always fine. All that dread — wasted.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B018",
@@ -1739,7 +1807,11 @@
           "text": "Third box. Two functions calling each other in a loop. Would have crashed in production. On someone else's machine. In front of a real user paying real money.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 7.8,
+      "tts_text": "Third box. Two functions calling each other in a loop. Would have crashed in production. On someone else's machine. In front of a real user paying real money.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B019",
@@ -1767,7 +1839,11 @@
           "text": "Twelve-minute fix. She would have spent twelve hours debugging it in production.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.0,
+      "tts_text": "Twelve-minute fix. She would have spent twelve hours debugging it in production.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B020",
@@ -1795,7 +1871,11 @@
           "text": "Fourth box. Sync works for one user. Add ten users and it crashes. The gear handles one rotation but grinds on the tenth. A ticking time bomb.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 7.48,
+      "tts_text": "Fourth box. Sync works for one user. Add ten users and it crashes. The gear handles one rotation but grinds on the tenth. A ticking time bomb.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B021",
@@ -1823,7 +1903,11 @@
           "text": "Five-minute fix. Invisible until it's too late. Unless you look.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 3.72,
+      "tts_text": "Five-minute fix. Invisible until it's too late. Unless you look.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B022",
@@ -1851,7 +1935,11 @@
           "text": "Fifth box. Perfect. Nothing wrong. Built right the first time. It happens.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.52,
+      "tts_text": "Fifth box. Perfect. Nothing wrong. Built right the first time. It happens.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B023",
@@ -1879,7 +1967,11 @@
           "text": "Two bugs. One time bomb. Two clean bills of health. The scary part was never what's inside the box. The scary part was the not knowing.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 7.4,
+      "tts_text": "Two bugs. One time bomb. Two clean bills of health. The scary part was never what's inside the box. The scary part was the not knowing.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B024",
@@ -1907,7 +1999,11 @@
           "text": "Now let's talk about how she actually opened them. Because \"opening the box\" has a name. It's called a test.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.8,
+      "tts_text": "Now let's talk about how she actually opened them. , Because \"opening the box\"... has a name. It's called a test.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B025",
@@ -1935,7 +2031,11 @@
           "text": "\"When the login token is empty — reject the login.\" That's a test. One sentence. One expectation. One checkmark.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 7.04,
+      "tts_text": "\"When the login token is empty — reject the login.\"... That's a test. One sentence. One expectation. One checkmark.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B026",
@@ -1963,7 +2063,11 @@
           "text": "\"When a payment fails — don't charge the card.\" Another test. Another sentence. Another checkmark.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.32,
+      "tts_text": "\"When a payment fails — don't charge the card.\"... Another test. Another sentence. Another checkmark.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B027",
@@ -1991,7 +2095,11 @@
           "text": "\"When sync has ten users — don't crash.\" Third test. Third sentence.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.0,
+      "tts_text": "\"When sync has ten users — don't crash.\"... Third test. Third sentence.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B028",
@@ -2019,7 +2127,11 @@
           "text": "Each test is one sentence you write before you build. \"This is what should happen.\" If it does — green. If it doesn't — you know before anyone else does. And here's the best part: you can ask the AI to write them.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 10.56,
+      "tts_text": "Each test is one sentence you write before you build. \"This is what should happen.\"... If it does — green. If it doesn't — you know before anyone else does. And here's the best part: you can ask the A I to write them.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG04_B029",
@@ -2047,7 +2159,11 @@
           "text": "\"Write tests for payments/. It should handle failed payments, never double-charge, and reject negative amounts.\" Three expectations. Three tests. The AI writes the code, you wrote the contract.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 9.32,
+      "tts_text": "\"Write tests for payments/. It should handle failed payments, never double-charge, and reject negative amounts.\"... Three expectations. Three tests. The A I writes the code, you wrote the contract.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B030",
@@ -2075,7 +2191,11 @@
           "text": "Here's the reframe. Testing isn't bug hunting. Testing is answering one question: what does \"working\" actually mean?",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.12,
+      "tts_text": "... Here's the reframe. Testing isn't bug hunting. Testing is answering one question: what does \"working\"... actually mean?",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B031",
@@ -2103,7 +2223,11 @@
           "text": "Each test is a contract. Not \"find what's broken.\" It's \"define what done looks like.\" A test says: this is how it should behave. If it doesn't behave this way, we have a problem. If it does — we're good.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 10.44,
+      "tts_text": "Each test is a contract. Not \"find what's broken.\"... It's \"define what done looks like.\"... A test says: this is how it should behave. If it doesn't behave this way, we have a problem. If it does — we're good.",
+      "tts_exaggeration": 0.56,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B032",
@@ -2131,7 +2255,11 @@
           "text": "You don't test to find bugs. You test to define reality. The test is the definition of \"works.\"",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.0,
+      "tts_text": "You don't test to find bugs. You test to define reality. The test is the definition of \"works.\"...",
+      "tts_exaggeration": 0.62,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B033",
@@ -2159,7 +2287,11 @@
           "text": "Without tests, \"works\" means \"didn't crash yet on my machine.\" With tests, \"works\" means \"does exactly what I said it should.\" Two completely different sentences. Two completely different levels of confidence.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 12.4,
+      "tts_text": "Without tests, \"works\"... means \"didn't crash yet on my machine.\"... With tests, \"works\"... means \"does exactly what I said it should.\"... Two completely different sentences. Two completely different levels of confidence.",
+      "tts_exaggeration": 0.68,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B034",
@@ -2187,7 +2319,11 @@
           "text": "A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You already know the answer.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 7.68,
+      "tts_text": "A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You already know the answer.",
+      "tts_exaggeration": 0.74,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG05_B035",
@@ -2215,7 +2351,11 @@
           "text": "And professional developers? They do this before they write the code. They open the box before anything's inside. \"This box should contain a gear that spins clockwise.\" Then they build the gear. Then they check. Green or red, no surprises.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 13.08,
+      "tts_text": "And professional developers? They do this before they write the code. They open the box before anything's inside. \"This box should contain a gear that spins clockwise.\"... Then they build the gear. Then they check. Green or red, no surprises.",
+      "tts_exaggeration": 0.8,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B036",
@@ -2243,7 +2383,11 @@
           "text": "The boxes are open. She knows what's inside every one of them. No more guessing. No more \"works on my machine.\"",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 5.56,
+      "tts_text": "The boxes are open. She knows what's inside every one of them. No more guessing. No more \"works on my machine.\"...",
+      "tts_exaggeration": 0.6,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B037",
@@ -2271,7 +2415,11 @@
           "text": "Here's your homework. Next time you build something with AI, write three sentences before you start. \"When X happens, Y should happen.\" \"When A is empty, B should show an error.\" \"When someone clicks C, D should appear.\"",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 11.48,
+      "tts_text": "Here's your homework. Next time you build something with A I, write three sentences before you start. \"When X happens, Y should happen.\"... \"When A is empty, B should show an error.\"... \"When someone clicks C, D should appear.\"...",
+      "tts_exaggeration": 0.57,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B038",
@@ -2299,7 +2447,11 @@
           "text": "Give those sentences to the AI. \"Write tests for these.\" The AI writes the checks. You wrote the definition of done. That's it. That's the whole trick.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 7.4,
+      "tts_text": "Give those sentences to the A I. \"Write tests for these.\"... The A I writes the checks. You wrote the definition of done. That's it. That's the whole trick.",
+      "tts_exaggeration": 0.54,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B039",
@@ -2327,7 +2479,11 @@
           "text": "Now she builds a feature and opens the box the same day. One test. Thirty seconds. No pile-up. No dread. The habit is the whole trick.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 6.84,
+      "tts_text": "Now she builds a feature and opens the box the same day. One test. Thirty seconds. No pile-up. No dread. The habit is the whole trick.",
+      "tts_exaggeration": 0.51,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B040",
@@ -2355,7 +2511,11 @@
           "text": "The code has structure. It has tests. She knows what works and what doesn't.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 4.2,
+      "tts_text": "The code has structure. It has tests. She knows what works and what doesn't.",
+      "tts_exaggeration": 0.48,
+      "tts_cfg_weight": 0.5
     },
     {
       "beat_id": "SEG06_B041",
@@ -2383,7 +2543,11 @@
           "text": "But the code only knows what she told it. And she told it what the AI told her. What happens when the AI gets it wrong — and she can't tell the difference? What happens when the recipe is poison and the chef doesn't know?",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 8.8,
+      "tts_text": "... But the code only knows what she told it. And she told it what the A I told her. What happens when the A I gets it wrong — and she can't tell the difference? What happens when the recipe is poison and the chef doesn't know?",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5
     }
   ]
 }

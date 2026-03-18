@@ -1,0 +1,443 @@
+{
+  "generated_at": "2026-03-18T23:26:57.421658",
+  "rules_version": "1.0",
+  "total_beats": 53,
+  "beats_modified": 52,
+  "modification_rate": 0.9811,
+  "modifications": [
+    {
+      "beat_id": "SEG01_B001",
+      "segment": "HOOK",
+      "position": 0.0,
+      "exaggeration": 0.4
+    },
+    {
+      "beat_id": "SEG01_B002",
+      "segment": "HOOK",
+      "position": 0.333,
+      "exaggeration": 0.5,
+      "text_diff": {
+        "original": "Every ad. Every thread. Every video. The message is the same: just type what you want, and AI will build it.",
+        "transformed": "Every ad. Every thread. Every video. The message is the same: just type what you want, and A I will build it."
+      }
+    },
+    {
+      "beat_id": "SEG01_B003",
+      "segment": "HOOK",
+      "position": 0.667,
+      "exaggeration": 0.6
+    },
+    {
+      "beat_id": "SEG01_B004",
+      "segment": "HOOK",
+      "position": 1.0,
+      "exaggeration": 0.7
+    },
+    {
+      "beat_id": "SEG02_B005",
+      "segment": "MISCONCEPTION",
+      "position": 0.0,
+      "exaggeration": 0.5,
+      "text_diff": {
+        "original": "She typed: \"Make me an online store.\"",
+        "transformed": "She typed: \"Make me an online store.\"..."
+      }
+    },
+    {
+      "beat_id": "SEG02_B006",
+      "segment": "MISCONCEPTION",
+      "position": 0.111,
+      "exaggeration": 0.533
+    },
+    {
+      "beat_id": "SEG02_B007",
+      "segment": "MISCONCEPTION",
+      "position": 0.222,
+      "exaggeration": 0.567
+    },
+    {
+      "beat_id": "SEG02_B008",
+      "segment": "MISCONCEPTION",
+      "position": 0.333,
+      "exaggeration": 0.6
+    },
+    {
+      "beat_id": "SEG02_B009",
+      "segment": "MISCONCEPTION",
+      "position": 0.444,
+      "exaggeration": 0.633
+    },
+    {
+      "beat_id": "SEG02_B010",
+      "segment": "MISCONCEPTION",
+      "position": 0.556,
+      "exaggeration": 0.667,
+      "text_diff": {
+        "original": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern",
+        "transformed": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern"
+      }
+    },
+    {
+      "beat_id": "SEG02_B011",
+      "segment": "MISCONCEPTION",
+      "position": 0.667,
+      "exaggeration": 0.7
+    },
+    {
+      "beat_id": "SEG02_B012",
+      "segment": "MISCONCEPTION",
+      "position": 0.778,
+      "exaggeration": 0.733,
+      "text_diff": {
+        "original": "Worse. More detail made it more confused. Because detail is not direction.",
+        "transformed": "Worse. More detail made it more confused. , Because detail is not direction."
+      }
+    },
+    {
+      "beat_id": "SEG02_B013",
+      "segment": "MISCONCEPTION",
+      "position": 0.889,
+      "exaggeration": 0.767,
+      "text_diff": {
+        "original": "Okay, she thought. Maybe it's the tool. She switched tools. Three different AI assistants. Same prompt.",
+        "transformed": "Okay, she thought. Maybe it's the tool. She switched tools. Three different A I assistants. Same prompt."
+      }
+    },
+    {
+      "beat_id": "SEG02_B014",
+      "segment": "MISCONCEPTION",
+      "position": 1.0,
+      "exaggeration": 0.8
+    },
+    {
+      "beat_id": "SEG03_B016",
+      "segment": "THE_CRACK",
+      "position": 0.2,
+      "exaggeration": 0.82
+    },
+    {
+      "beat_id": "SEG03_B017",
+      "segment": "THE_CRACK",
+      "position": 0.4,
+      "exaggeration": 0.98,
+      "text_diff": {
+        "original": "Why? Because the AI isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly ",
+        "transformed": "... Why? , Because the A I isn't reading your prompt and understanding it. It's predicting the next word. Every time, sl"
+      }
+    },
+    {
+      "beat_id": "SEG03_B018",
+      "segment": "THE_CRACK",
+      "position": 0.6,
+      "exaggeration": 0.98,
+      "text_diff": {
+        "original": "And here's the part that really matters. She never read what the AI actually wrote.",
+        "transformed": "And here's the part that really matters. She never read what the A I actually wrote."
+      }
+    },
+    {
+      "beat_id": "SEG03_B019",
+      "segment": "THE_CRACK",
+      "position": 0.8,
+      "exaggeration": 0.82,
+      "text_diff": {
+        "original": "Not the website. The code behind it. She looked at the result and said \"that's wrong\" — but she couldn't say why, becaus",
+        "transformed": "Not the website. The code behind it. She looked at the result and said \"that's wrong\"... — but she couldn't say why, bec"
+      }
+    },
+    {
+      "beat_id": "SEG03_B020",
+      "segment": "THE_CRACK",
+      "position": 1.0,
+      "exaggeration": 0.5,
+      "text_diff": {
+        "original": "The AI wrote the recipe. She tasted the dish. But she never checked the recipe.",
+        "transformed": "The A I wrote the recipe. She tasted the dish. ... But she never checked the recipe."
+      }
+    },
+    {
+      "beat_id": "SEG04_B021",
+      "segment": "CORE",
+      "position": 0.0,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Think of it like cooking. You walk into a restaurant and say: \"Make me dinner.\" The chef — a very fast, very capable che",
+        "transformed": "Think of it like cooking. You walk into a restaurant and say: \"Make me dinner.\"... The chef — a very fast, very capable "
+      }
+    },
+    {
+      "beat_id": "SEG04_B022",
+      "segment": "CORE",
+      "position": 0.045,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Something appears on the plate. It's food. Technically. But it's not what you wanted, because you never said what you wa",
+        "transformed": "Something appears on the plate. It's food. Technically. ... But it's not what you wanted, because you never said what yo"
+      }
+    },
+    {
+      "beat_id": "SEG04_B023",
+      "segment": "CORE",
+      "position": 0.091,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "So you try again. \"Make me dinner. Something Italian. Use pasta. Make it creamy.\"",
+        "transformed": "So you try again. \"Make me dinner. Something Italian. Use pasta. Make it creamy.\"..."
+      }
+    },
+    {
+      "beat_id": "SEG04_B024",
+      "segment": "CORE",
+      "position": 0.136,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B025",
+      "segment": "CORE",
+      "position": 0.182,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "More detail. Same problem. Because you gave ingredients, not intent.",
+        "transformed": "More detail. Same problem. , Because you gave ingredients, not intent."
+      }
+    },
+    {
+      "beat_id": "SEG04_B026",
+      "segment": "CORE",
+      "position": 0.227,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Now imagine one card. \"Pasta carbonara. Four ingredients. No cream. Serves two.\"",
+        "transformed": "Now imagine one card. \"Pasta carbonara. Four ingredients. No cream. Serves two.\"..."
+      }
+    },
+    {
+      "beat_id": "SEG04_B027",
+      "segment": "CORE",
+      "position": 0.273,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B028",
+      "segment": "CORE",
+      "position": 0.318,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "But here's the question nobody asks. Would you serve this to a customer?",
+        "transformed": "... But here's the question nobody asks. Would you serve this to a customer?"
+      }
+    },
+    {
+      "beat_id": "SEG04_B029",
+      "segment": "CORE",
+      "position": 0.364,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B030",
+      "segment": "CORE",
+      "position": 0.409,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "AI is that chef. Fast, capable, ready to go. But without a recipe, it improvises. And when you're cooking for yourself, ",
+        "transformed": "A I is that chef. Fast, capable, ready to go. ... But without a recipe, it improvises. And when you're cooking for yours"
+      }
+    },
+    {
+      "beat_id": "SEG04_B031",
+      "segment": "CORE",
+      "position": 0.455,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "In February twenty twenty-five, Andrej Karpathy — one of the founders of OpenAI — gave this a name. Vibe coding. Quote: ",
+        "transformed": "In February twenty twenty-five, Andrej Karpathy — one of the founders of Open A I — gave this a name. Vibe coding. Quote"
+      }
+    },
+    {
+      "beat_id": "SEG04_B032",
+      "segment": "CORE",
+      "position": 0.5,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "But here's the word most people skip. \"With.\" Vibe coding isn't AI coding for you. It's you coding with AI. The decision",
+        "transformed": "... But here's the word most people skip. \"With.\"... Vibe coding isn't A I coding for you. It's you coding with A I. The"
+      }
+    },
+    {
+      "beat_id": "SEG04_B033",
+      "segment": "CORE",
+      "position": 0.545,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Not outsourcing. Collaboration. That \"with\" is the hard part.",
+        "transformed": "Not outsourcing. Collaboration. That \"with\"... is the hard part."
+      }
+    },
+    {
+      "beat_id": "SEG04_B034",
+      "segment": "CORE",
+      "position": 0.591,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "So what can AI actually do well? Prototypes. Quick experiments. \"Show me what a dashboard could look like.\" Ten minutes,",
+        "transformed": "So what can A I actually do well? Prototypes. Quick experiments. \"Show me what a dashboard could look like.\"... Ten minu"
+      }
+    },
+    {
+      "beat_id": "SEG04_B035",
+      "segment": "CORE",
+      "position": 0.636,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B036",
+      "segment": "CORE",
+      "position": 0.682,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Not \"can't ever.\" Can't without supervision. Can't without someone checking the recipe before it reaches the customer.",
+        "transformed": "Not \"can't ever.\"... Can't without supervision. Can't without someone checking the recipe before it reaches the customer"
+      }
+    },
+    {
+      "beat_id": "SEG04_B037",
+      "segment": "CORE",
+      "position": 0.727,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "And you've got options. Cursor — an AI-powered code editor. You write alongside it. It suggests, you accept or reject.",
+        "transformed": "And you've got options. Cursor — an A I-powered code editor. You write alongside it. It suggests, you accept or reject."
+      }
+    },
+    {
+      "beat_id": "SEG04_B038",
+      "segment": "CORE",
+      "position": 0.773,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B039",
+      "segment": "CORE",
+      "position": 0.818,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B040",
+      "segment": "CORE",
+      "position": 0.864,
+      "exaggeration": 0.45
+    },
+    {
+      "beat_id": "SEG04_B041",
+      "segment": "CORE",
+      "position": 0.909,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Windsurf — another AI IDE. Similar to Cursor, different workflow. The point isn't which one.",
+        "transformed": "Windsurf — another A I IDE. Similar to Cursor, different workflow. The point isn't which one."
+      }
+    },
+    {
+      "beat_id": "SEG04_B042",
+      "segment": "CORE",
+      "position": 0.955,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "Different tools. Same principle. You decide what. AI decides how.",
+        "transformed": "Different tools. Same principle. You decide what. A I decides how."
+      }
+    },
+    {
+      "beat_id": "SEG04_B043",
+      "segment": "CORE",
+      "position": 1.0,
+      "exaggeration": 0.45,
+      "text_diff": {
+        "original": "And there's a spectrum. Level one: copy-pasting from ChatGPT. Level two: an AI IDE like Cursor. Level three: an autonomo",
+        "transformed": "And there's a spectrum. Level one: copy-pasting from Chat G P T. Level two: an A I IDE like Cursor. Level three: an auto"
+      }
+    },
+    {
+      "beat_id": "SEG05_B044",
+      "segment": "REFRAME",
+      "position": 0.0,
+      "exaggeration": 0.5,
+      "text_diff": {
+        "original": "So here's the reframe. Vibe coding is not an easy button. It's not \"AI, do my job.\" It's a new skill — like learning to ",
+        "transformed": "So here's the reframe. Vibe coding is not an easy button. It's not \"A I, do my job.\"... It's a new skill — like learning"
+      }
+    },
+    {
+      "beat_id": "SEG05_B045",
+      "segment": "REFRAME",
+      "position": 0.333,
+      "exaggeration": 0.6,
+      "text_diff": {
+        "original": "And the hardest part of this new skill isn't the typing. It's the judgment. Looking at what the AI made and knowing — is",
+        "transformed": "And the hardest part of this new skill isn't the typing. It's the judgment. Looking at what the A I made and knowing — i"
+      }
+    },
+    {
+      "beat_id": "SEG05_B046",
+      "segment": "REFRAME",
+      "position": 0.667,
+      "exaggeration": 0.7,
+      "text_diff": {
+        "original": "Professional developers do this every day. They review code. They test it. They ask: \"what could go wrong?\" That's not a",
+        "transformed": "Professional developers do this every day. They review code. They test it. They ask: \"what could go wrong?\"... That's no"
+      }
+    },
+    {
+      "beat_id": "SEG05_B047",
+      "segment": "REFRAME",
+      "position": 1.0,
+      "exaggeration": 0.8
+    },
+    {
+      "beat_id": "SEG06_B048",
+      "segment": "OUTRO_CTA",
+      "position": 0.0,
+      "exaggeration": 0.6
+    },
+    {
+      "beat_id": "SEG06_B049",
+      "segment": "OUTRO_CTA",
+      "position": 0.2,
+      "exaggeration": 0.57
+    },
+    {
+      "beat_id": "SEG06_B050",
+      "segment": "OUTRO_CTA",
+      "position": 0.4,
+      "exaggeration": 0.54,
+      "text_diff": {
+        "original": "Two — type one prompt. Anything. \"Make me a to-do app.\" \"Build a calculator.\" \"Create a personal website.\" Doesn't matte",
+        "transformed": "Two — type one prompt. Anything. \"Make me a to-do app.\"... \"Build a calculator.\"... \"Create a personal website.\"... Does"
+      }
+    },
+    {
+      "beat_id": "SEG06_B051",
+      "segment": "OUTRO_CTA",
+      "position": 0.6,
+      "exaggeration": 0.51
+    },
+    {
+      "beat_id": "SEG06_B052",
+      "segment": "OUTRO_CTA",
+      "position": 0.8,
+      "exaggeration": 0.48,
+      "text_diff": {
+        "original": "That feeling is data. If the answer is \"this isn't what I wanted\" — good. That frustration? That gap between what you im",
+        "transformed": "That feeling is data. If the answer is \"this isn't what I wanted\"... — good. That frustration? That gap between what you"
+      }
+    },
+    {
+      "beat_id": "SEG06_B053",
+      "segment": "OUTRO_CTA",
+      "position": 1.0,
+      "exaggeration": 0.45
+    }
+  ],
+  "prepro_manifest": "../../preproduction/ep01/ep01_prepro_manifest_v5.json",
+  "rules_file": "../config/tts_rules.yaml"
+}
