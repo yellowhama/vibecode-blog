@@ -30,6 +30,7 @@
 | **B (참고)** | Johnny Harris | 앵커-브릿지 사이클, 음악 3모드(thinky/feely/fun) |
 | | Wendover | 캐스케이드 리빌, 점진적 다이어그램 빌드 |
 | | RealLifeLore | 프랜차이즈 시리즈, "What If" 훅, 볼륨 전략 |
+| | [Better Stack](https://www.youtube.com/@betterstack) | DevOps 모션그래픽, 깔끔한 다이어그램 트랜지션, 짧은 포맷 리듬 |
 
 > 상세: `systems/planning/09-youtube-channel-research-v2.md`
 

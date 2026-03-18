@@ -186,6 +186,8 @@ ComfyUI Flux dev + SimpleVectorFlux LoRA로 생성.
 | 4 | EP01-04 대본 + 매니페스트 + 다이어그램 | ✅ |
 | 5 | 파이프라인 스크립트 v5 | ✅ |
 | 6 | 보조 산출물 (소스 인덱스 v3, Bee 스펙) | ✅ |
+| 6.5 | TTS 재생성 + 파이프라인 현행화 + 다국어 | ✅ |
+| 6.6 | 나레이션 리서치 원칙 파이프라인 통합 | ✅ |
 
 ---
 
@@ -273,6 +275,68 @@ Each stage writes completion status back to manifest.
 | 5 | 파이프라인 스크립트 v5 | ✅ |
 | 6 | 보조 산출물 (소스 인덱스 v3, Bee 스펙) | ✅ |
 | **6.5** | **TTS 재생성 + 파이프라인 현행화 + 다국어 + 검증 게이트** | **✅** |
+| **6.6** | **나레이션 리서치 원칙 파이프라인 통합 (25개 자동 검증)** | **✅** |
+
+---
+
+## 완료: Phase 6.6 — 나레이션 리서치 원칙 파이프라인 통합 (2026-03-19, `392a11b`)
+
+SERIES_BIBLE, craft-reference, SKILL.md에 문서화된 69개 나레이션 품질 원칙 중 **25개 미구현 원칙을 파이프라인에 자동 검증으로 통합**.
+
+### 신규/수정 파일 5개
+
+| 파일 | 변경 | 상태 |
+|------|------|------|
+| `tts_rules.yaml` | **+42줄** — tone_validation (Never Say 10 + Show vs Tell 8), narrative_structure (beat_map, discovery_arc, shorts), preproduction_gates | ✅ |
+| `validate_preproduction.py` | **신규 210줄** — 7체크 (P1-P7): topic card/brief/evaluation 게이트 | ✅ |
+| `validate_screenplay.py` | **+170줄** — 체크 16-24 추가 (Discovery Arc, beat count, Pixar formula, shorts, analogy-first, show vs tell, never say, actionable takeaway) | ✅ |
+| `manifest_validator.py` | **+55줄** — Stage 0 pre-production gate, Stage 3 vee_expression, Stage 5 diagram motion_type, Stage 7 thumbnail+title | ✅ |
+| `assemble_episode.py` | **+8줄** — Stage 0 게이트 자동 실행 (from_stage <= 1) | ✅ |
+
+### 3-스크립트 모델 (완성)
+
+```
+validate_preproduction.py (P1-P7)  ← 대본 작성 전 (Stage 0)
+  ↓ [GATE: topic card + brief + eval >= 18/25]
+validate_screenplay.py (1-24)     ← 대본 완료 후 (Phase 3)
+  ↓ [24 automated + 6 manual checks]
+manifest_validator.py (Stage 0-8) ← 각 스테이지 전
+  ↓ [extended: vee_expression, motion_type, thumbnail, title]
+assemble_episode.py               ← Stage 0 게이트 → Stage 1-8
+```
+
+### Spec-Driven 파이프라인 아키텍처 (확장)
+
+```
+Stage 0: Pre-production ← topic_card.md + topic_brief.md + eval score
+  ↓ [GATE: P1-P7 pre-production checks]
+Stage 1: TTS (Specify) ← prepro manifest SSOT
+  ↓ [GATE: language, beats[].narration_text]
+Stage 2: Whisper timing ← shot manifest SSOT
+  ↓ [GATE: shots[].shot_id, duration_sec]
+Stage 3: Keyframes ← ComfyUI
+  ↓ [GATE: shots[].prompt_positive, render_method, vee_expression ∈ {6}]
+Stage 4: I2V Animation ← Wan 2.2
+  ↓ [GATE: shots[].duration_sec]
+Stage 5: Diagrams ← Motion Canvas
+  ↓ [GATE: diagram shots need render_method + motion_type]
+Stage 6: Audio mix ← BGM catalog + narration
+  ↓ [GATE: language]
+Stage 7: Assembly ← FFmpeg
+  ↓ [GATE: shots[].shot_id, duration_sec, thumbnail, title ≤ 60자]
+Stage 8: Multi-lang export ← YouTube upload
+  ↓ [GATE: language]
+```
+
+### 검증 결과 (EP01 v5 스크립트)
+
+| 구분 | 결과 |
+|------|------|
+| 체크 1-15 (기존) | 19/20 PASS (1 FAIL: 세그먼트 타이밍) |
+| 체크 16-24 (신규) | Discovery Arc 6/6 PASS, Analogy-First PASS, We Say/Never Say PASS, Actionable Takeaway PASS |
+| Show vs Tell | 3 WARN (decides, feels — 리비전 대상) |
+| Beat count | 53 beats (12-20 범위 초과 — v5 스크립트가 길어서 정상) |
+| Pre-production | P4-P5 PASS, P1-P2 FAIL (EP01 topic card 한국어 헤딩 미적용) |
 
 **다음**: Phase 7 — ComfyUI 키프레임 렌더 → placeholder 교체 → I2V 클립 → 프로덕션 영상
 
