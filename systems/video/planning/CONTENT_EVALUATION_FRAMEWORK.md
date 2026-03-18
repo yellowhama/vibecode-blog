@@ -73,13 +73,13 @@ Critical for our pipeline: narrator-driven 2D animation means **every narrative 
 
 ### Axis 4: Beat Pacing & Duration Fit
 
-Narration beats must fit video duration constraints. Too dense = video can't keep up. Too sparse = dead air. Target: 3-5 minute videos with 12-20 beats.
+Narration beats must fit video duration constraints. Too dense = video can't keep up. Too sparse = dead air. Target: 5-10 minute videos with 24-40 beats.
 
 | Score | Criteria |
 |---|---|
-| **5** | 2-5 sec per beat. Total 3-5 min. 12-20 natural beats. Breathing room between sections |
-| **4** | Mostly good pacing. 1-2 beats too long or too short. Total within 2.5-5.5 min |
-| **3** | Uneven beat lengths. Some 10+ sec passages. Total under 2.5 min or over 5.5 min |
+| **5** | 2-5 sec per beat. Total 5-10 min. 24-40 natural beats. Breathing room between sections |
+| **4** | Mostly good pacing. 1-2 beats too long or too short. Total within 4-11 min |
+| **3** | Uneven beat lengths. Some 10+ sec passages. Total under 4 min or over 11 min |
 | **2** | Many long monologue passages. Hard to segment into beats |
 | **1** | Wall of text. No natural breakpoints. Can't segment for TTS |
 
@@ -415,9 +415,9 @@ For each narration beat:
 
 | Metric | Target | Reference |
 |---|---|---|
-| Total duration | 2-4 minutes | YouTube mid-form sweet spot |
+| Total duration | 5-10 minutes (target 7:30) | YouTube mid-form sweet spot |
 | Narration speed | 150-180 WPM | Slightly slower than Fireship for clarity |
-| Beats | 12-20 per video | One scene per beat |
+| Beats | 24-40 per video | One scene per beat |
 | Visual cuts | 8-12 per minute | Slower than Fireship, matches animation pacing |
 | Pattern interrupt | Every 20-30s | Visual gag, SFX hit, or perspective change |
 | Hook window | First 5 seconds | Identity or "imagine" statement |

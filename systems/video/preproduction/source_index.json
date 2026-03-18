@@ -26,11 +26,13 @@
         "key_original": "054-what-vibe-coding-is.md"
       },
       "metaphor_ids": [],
-      "status": "rewriting",
-      "topic_brief_status": "rewriting",
+      "status": "production",
+      "topic_brief_status": "complete",
       "preproduction": {
-        "script": "ep01/ep01_script_v4.fountain",
-        "manifest": null
+        "script": "ep01/ep01_script_v5.fountain",
+        "prepro_manifest": "ep01/ep01_prepro_manifest_v5.json",
+        "shot_manifest": "ep01/ep01_shot_manifest_v8.json",
+        "tts": "ep01/tts_full_v5/"
       }
     },
     {
@@ -54,11 +56,12 @@
         "key_original": "058-frustration-is-the-spec.md"
       },
       "metaphor_ids": [],
-      "status": "rewriting",
-      "topic_brief_status": "new",
+      "status": "manifests_ready",
+      "topic_brief_status": "complete",
       "preproduction": {
-        "script": "ep02/ep02_script_v6.fountain",
-        "manifest": null
+        "script": "ep02/ep02_script_v7.fountain",
+        "prepro_manifest": "ep02/ep02_prepro_manifest_v7.json",
+        "shot_manifest": "ep02/ep02_shot_manifest_v8.json"
       }
     },
     {
@@ -81,9 +84,15 @@
         "original": [],
         "key_original": null
       },
+      "extended_metaphor": "벽 없는 아파트 = 모듈 없는 코드 (한 파일에 다 넣으면 기름이 침대에 튐)",
       "metaphor_ids": [],
-      "status": "pending",
-      "topic_brief_status": "pending"
+      "status": "manifests_ready",
+      "topic_brief_status": "complete",
+      "preproduction": {
+        "script": "ep03/ep03_script_v6.fountain",
+        "prepro_manifest": "ep03/ep03_prepro_manifest_v7.json",
+        "shot_manifest": "ep03/ep03_shot_manifest_v8.json"
+      }
     },
     {
       "ep": "EP04",
@@ -106,8 +115,13 @@
         "key_original": "act2-en.md"
       },
       "metaphor_ids": ["Act2-#1", "Act2-#2"],
-      "status": "pending",
-      "topic_brief_status": "pending"
+      "status": "manifests_ready",
+      "topic_brief_status": "complete",
+      "preproduction": {
+        "script": "ep04/ep04_script_v6.fountain",
+        "prepro_manifest": "ep04/ep04_prepro_manifest_v7.json",
+        "shot_manifest": "ep04/ep04_shot_manifest_v8.json"
+      }
     },
     {
       "ep": "EP05",

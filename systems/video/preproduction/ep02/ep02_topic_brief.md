@@ -111,6 +111,7 @@ Done-when: [이게 되면 끝이다]
 | Standish CHAOS Report 2020 | report | 프로젝트 실패율 |
 | AWS Kiro Launch Blog | article | Spec-driven dev IDE |
 | GitHub spec-kit README | docs | 4단계 워크플로우 |
+| IBM Technology — "Spec-Driven Development: AI Assisted Coding Explained" | YouTube | SDD vs vibe coding, SDLC 통합, "spec = contract", TDD→SDD 진화 프레이밍. [references/ibm_tech_sdd_transcript.md](references/ibm_tech_sdd_transcript.md) |
 
 ---
 

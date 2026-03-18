@@ -98,8 +98,8 @@ NARRATIVE_STAGE_RE = re.compile(r"/\*\s*narrative_stage:\s*(\S+)\s*\*/")
 # Emotion curve: /* emotion_curve: X */
 EMOTION_CURVE_RE = re.compile(r"/\*\s*emotion_curve:\s*(.+?)\s*\*/")
 
-# Old-style hash metadata (v1 compat)
-META_HASH_RE = re.compile(r"^#\s+(visual_type|characters|shorts_candidate):\s*(.+)$")
+# Old-style hash metadata (v1 compat) + v4 visual_mode/space
+META_HASH_RE = re.compile(r"^#\s+(visual_type|visual_mode|characters|shorts_candidate|space):\s*(.+)$")
 
 # Standard Fountain patterns
 SCENE_HEADING_RE = re.compile(r"^(INT\.|EXT\.|INT\./EXT\.)\s+.+$")
@@ -372,12 +372,18 @@ def parse_fountain(text: str) -> list[dict[str, Any]]:
             }
             continue
 
-        # Old-style hash metadata (v1 compat)
+        # Old-style hash metadata (v1 compat) + v4 visual_mode/space
         meta_hash = META_HASH_RE.match(line_stripped)
         if meta_hash and current_segment:
             key, val = meta_hash.group(1), meta_hash.group(2).strip()
             if key == "visual_type":
                 current_segment["visual_type"] = val
+            elif key == "visual_mode":
+                # v4 visual_mode: A=character_reaction, B=diagram, C=screen_demo
+                mode_map = {"A": "character_reaction", "B": "diagram", "C": "screen_demo"}
+                current_segment["visual_type"] = mode_map.get(val.upper(), "character_reaction")
+            elif key == "space":
+                current_segment["space"] = val
             elif key == "characters":
                 current_segment["characters"] = _parse_characters_field(val)
             elif key == "shorts_candidate":

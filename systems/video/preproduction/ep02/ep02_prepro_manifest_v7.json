@@ -1,0 +1,2545 @@
+{
+  "project_id": "ep02",
+  "version": "6.0",
+  "title": "EP02 — What Is Spec-Driven Dev?",
+  "language": "en",
+  "total_duration_sec": 450,
+  "segment_count": 6,
+  "beat_count": 46,
+  "segments": [
+    "HOOK",
+    "MISCONCEPTION",
+    "THE_CRACK",
+    "CORE",
+    "REFRAME",
+    "OUTRO_CTA"
+  ],
+  "phases": [
+    {
+      "phase_id": "SEG01",
+      "phase_name": "HOOK",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "",
+      "narrative_stage": "HOOK",
+      "target_duration_sec": 25,
+      "beats": [
+        {
+          "beat_id": "SEG01_B001",
+          "scene_id": "SEG01",
+          "text": "Last time, Vee learned the first rule of vibe coding: you decide what, AI decides how.",
+          "narration_text": "Last time, Vee learned the first rule of vibe coding: you decide what, AI decides how.",
+          "narrator_vo": "Last time, Vee learned the first rule of vibe coding: you decide what, AI decides how.",
+          "visual_goal": "Synopsis: EP01 recap callback → Vee tries for real → shows a specific broken result → five attempts, five different results.",
+          "duration_sec": 6.4,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Last time, Vee learned the first rule of vibe coding: you decide what, AI decides how.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG01_B002",
+          "scene_id": "SEG01",
+          "text": "So she tried it. For real. She wanted a simple website — a candle shop. Browse candles, send a message, that's it.",
+          "narration_text": "So she tried it. For real. She wanted a simple website — a candle shop. Browse candles, send a message, that's it.",
+          "narrator_vo": "So she tried it. For real. She wanted a simple website — a candle shop. Browse candles, send a message, that's it.",
+          "visual_goal": "Visual: Quick flash — EP01 ending. Vee's small smile. Sticky note on monitor reading \"Frustrated\" in amber glow.",
+          "duration_sec": 8.8,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "So she tried it. For real. She wanted a simple website — a candle shop. Browse candles, send a message, that's it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG01_B003",
+          "scene_id": "SEG01",
+          "text": "She tried again. Five times. Five prompts. Same project.",
+          "narration_text": "She tried again. Five times. Five prompts. Same project.",
+          "narrator_vo": "She tried again. Five times. Five prompts. Same project.",
+          "visual_goal": "Visual: Vee types a prompt. Hits enter. Result loads. It's a website — but the hero image is a stock photo of a birthday cake. The \"Contact\" button opens a shopping cart. The header says \"Welcome to CandleStore\" in Comic Sans.",
+          "duration_sec": 3.6,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "She tried again. Five times. Five prompts. Same project.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG01_B004",
+          "scene_id": "SEG01",
+          "text": "Five completely different things came back.",
+          "narration_text": "Five completely different things came back.",
+          "narrator_vo": "Five completely different things came back.",
+          "visual_goal": "Vee stares at the screen. She blinks twice. Not anger — pure bewilderment. 1.5 seconds.",
+          "duration_sec": 2.4,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 1,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Five completely different things came back.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG02",
+      "phase_name": "MISCONCEPTION",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "",
+      "narrative_stage": "MISCONCEPTION",
+      "target_duration_sec": 60,
+      "beats": [
+        {
+          "beat_id": "SEG02_B005",
+          "scene_id": "SEG02",
+          "text": "Last time she learned that being more specific didn't help. More detail, more mess. So she tried something different. She thought: what if I explain the architecture?",
+          "narration_text": "Last time she learned that being more specific didn't help. More detail, more mess. So she tried something different. She thought: what if I explain the architecture?",
+          "narrator_vo": "Last time she learned that being more specific didn't help. More detail, more mess. So she tried something different. She thought: what if I explain the architecture?",
+          "visual_goal": "Synopsis: \"Describe the architecture\" → two-page prompt → technically correct but completely wrong direction → \"detail ≠ direction\" lesson",
+          "duration_sec": 10.8,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Last time she learned that being more specific didn't help. More detail, more mess. So she tried something different. She thought: what if I explain the architecture?",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B006",
+          "scene_id": "SEG02",
+          "text": "She wrote two pages. Component hierarchy. Data flow. State management. Color palette hex codes. Responsive breakpoints. Font stack. API endpoint naming conventions.",
+          "narration_text": "She wrote two pages. Component hierarchy. Data flow. State management. Color palette hex codes. Responsive breakpoints. Font stack. API endpoint naming conventions.",
+          "narrator_vo": "She wrote two pages. Component hierarchy. Data flow. State management. Color palette hex codes. Responsive breakpoints. Font stack. API endpoint naming conventions.",
+          "visual_goal": "Visual: Vee opens a blank document. Starts writing — not a prompt, a technical document. Headers, bullet points, sub-sections.",
+          "duration_sec": 8.8,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "She wrote two pages. Component hierarchy. Data flow. State management. Color palette hex codes. Responsive breakpoints. Font stack. API endpoint naming conventions.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B007",
+          "scene_id": "SEG02",
+          "text": "She was proud of it. Pasted the whole thing into the AI.",
+          "narration_text": "She was proud of it. Pasted the whole thing into the AI.",
+          "narrator_vo": "She was proud of it. Pasted the whole thing into the AI.",
+          "visual_goal": "Visual: The document grows. And grows. Two full pages of structured technical writing. Impressive looking. Official.",
+          "duration_sec": 4.8,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "She was proud of it. Pasted the whole thing into the AI.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B008",
+          "scene_id": "SEG02",
+          "text": "The result was technically correct. Every component she described existed. Every color matched. The API endpoints were named exactly as specified. And the whole thing was completely wrong.",
+          "narration_text": "The result was technically correct. Every component she described existed. Every color matched. The API endpoints were named exactly as specified. And the whole thing was completely wrong.",
+          "narrator_vo": "The result was technically correct. Every component she described existed. Every color matched. The API endpoints were named exactly as specified. And the whole thing was completely wrong.",
+          "visual_goal": "Visual: Vee copies the entire document, pastes it into an AI chat. The prompt scrolls and scrolls. She hits enter with confidence.",
+          "duration_sec": 11.2,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The result was technically correct. Every component she described existed. Every color matched. The API endpoints were named exactly as specified. And the whole thing was completely wrong.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B009",
+          "scene_id": "SEG02",
+          "text": "She described how to build a building. But never said what the building was for. Architecture without purpose. Detail without direction.",
+          "narration_text": "She described how to build a building. But never said what the building was for. Architecture without purpose. Detail without direction.",
+          "narrator_vo": "She described how to build a building. But never said what the building was for. Architecture without purpose. Detail without direction.",
+          "visual_goal": "Visual: The result loads. It's polished. Professional looking. But the candle shop is now an enterprise SaaS dashboard. There's a user management panel. Role-based access control. An admin console. Beautiful — and absolutely not a candle shop.",
+          "duration_sec": 8.4,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "She described how to build a building. But never said what the building was for. Architecture without purpose. Detail without direction.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B010",
+          "scene_id": "SEG02",
+          "text": "Two pages of instructions. Zero lines about what the customer actually needs. That's the trap — you can be incredibly specific and completely wrong at the same time.",
+          "narration_text": "Two pages of instructions. Zero lines about what the customer actually needs. That's the trap — you can be incredibly specific and completely wrong at the same time.",
+          "narrator_vo": "Two pages of instructions. Zero lines about what the customer actually needs. That's the trap — you can be incredibly specific and completely wrong at the same time.",
+          "visual_goal": "Vee's jaw drops. She looks at her two-page spec, looks at the result, back at the spec. She described a skyscraper when she wanted a cottage. 1.5 seconds.",
+          "duration_sec": 11.2,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 3,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Two pages of instructions. Zero lines about what the customer actually needs. That's the trap — you can be incredibly specific and completely wrong at the same time.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG03",
+      "phase_name": "THE_CRACK",
+      "segment": "THE_CRACK",
+      "visual_type": "screen_demo",
+      "space": "screen",
+      "emotion_curve": "",
+      "narrative_stage": "THE_CRACK",
+      "target_duration_sec": 50,
+      "beats": [
+        {
+          "beat_id": "SEG03_B011",
+          "scene_id": "SEG03",
+          "text": "Let's look at what actually happened inside the code.",
+          "narration_text": "Let's look at what actually happened inside the code.",
+          "narrator_vo": "Let's look at what actually happened inside the code.",
+          "visual_goal": "Synopsis: The numbers — 10,847 lines, 4,200 duplication → five agents, concrete examples → building metaphor bridge",
+          "duration_sec": 3.6,
+          "segment": "THE_CRACK",
+          "visual_type": "screen_demo",
+          "space": "screen",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Let's look at what actually happened inside the code.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B012",
+          "scene_id": "SEG03",
+          "text": "Ten thousand, eight hundred, forty-seven lines of code.",
+          "narration_text": "Ten thousand, eight hundred, forty-seven lines of code.",
+          "narrator_vo": "Ten thousand, eight hundred, forty-seven lines of code.",
+          "visual_goal": "Visual: A counter starts at zero. Rapidly climbs. Numbers rolling like a slot machine.",
+          "duration_sec": 3.2,
+          "segment": "THE_CRACK",
+          "visual_type": "screen_demo",
+          "space": "screen",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Ten thousand, eight hundred, forty-seven lines of code.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B013",
+          "scene_id": "SEG03",
+          "text": "Almost half of them — four thousand two hundred lines — were duplicates.",
+          "narration_text": "Almost half of them — four thousand two hundred lines — were duplicates.",
+          "narrator_vo": "Almost half of them — four thousand two hundred lines — were duplicates.",
+          "visual_goal": "Visual: Counter stops at 10,847. Big number. Holds for a beat.",
+          "duration_sec": 5.2,
+          "segment": "THE_CRACK",
+          "visual_type": "screen_demo",
+          "space": "screen",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Almost half of them — four thousand two hundred lines — were duplicates.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B014",
+          "scene_id": "SEG03",
+          "text": "Five AI sessions built the same functions five different ways. Three different date formatters — each one converting dates into a different format. Two config parsers — reading the same settings file with different assumptions. Four input validators — checking the same email field four different ways.",
+          "narration_text": "Five AI sessions built the same functions five different ways. Three different date formatters — each one converting dates into a different format. Two config parsers — reading the same settings file with different assumptions. Four input validators — checking the same email field four different ways.",
+          "narrator_vo": "Five AI sessions built the same functions five different ways. Three different date formatters — each one converting dates into a different format. Two config parsers — reading the same settings file with different assumptions. Four input validators — checking the same email field four different ways.",
+          "visual_goal": "Visual: The counter splits. 6,647 stays white. 4,200 turns red and visually separates — red blocks pulling away from white blocks.",
+          "duration_sec": 18.8,
+          "segment": "THE_CRACK",
+          "visual_type": "screen_demo",
+          "space": "screen",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Five AI sessions built the same functions five different ways. Three different date formatters — each one converting dates into a different format. Two config parsers — reading the same settings file with different assumptions. Four input validators — checking the same email field four different ways.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B015",
+          "scene_id": "SEG03",
+          "text": "None of them knew about the others. Five construction crews on the same lot. No blueprint. No foreman. Just... build.",
+          "narration_text": "None of them knew about the others. Five construction crews on the same lot. No blueprint. No foreman. Just... build.",
+          "narrator_vo": "None of them knew about the others. Five construction crews on the same lot. No blueprint. No foreman. Just... build.",
+          "visual_goal": "Visual: Five small robot icons appear, each in their own box. Between them: concrete labels. \"Date → MM/DD\", \"Date → DD-MM\", \"Date → ISO\". \"Config v1\", \"Config v2\". \"Email check #1, #2, #3, #4\".",
+          "duration_sec": 8.0,
+          "segment": "THE_CRACK",
+          "visual_type": "screen_demo",
+          "space": "screen",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "None of them knew about the others. Five construction crews on the same lot. No blueprint. No foreman. Just... build.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG04",
+      "phase_name": "CORE",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "",
+      "narrative_stage": "CORE",
+      "target_duration_sec": 210,
+      "beats": [
+        {
+          "beat_id": "SEG04_B016",
+          "scene_id": "SEG04",
+          "text": "Imagine building a house without a blueprint. You know you want a house. You start stacking bricks. Some go left, some go right. Eventually something stands up. But the bathroom is on the roof and there's no front door.",
+          "narration_text": "Imagine building a house without a blueprint. You know you want a house. You start stacking bricks. Some go left, some go right. Eventually something stands up. But the bathroom is on the roof and there's no front door.",
+          "narrator_vo": "Imagine building a house without a blueprint. You know you want a house. You start stacking bricks. Some go left, some go right. Eventually something stands up. But the bathroom is on the roof and there's no front door.",
+          "visual_goal": "Synopsis: Building metaphor (30s) → 3-line spec → candle shop demo (45s) → \"Spec = Contract\" → approval gate → CLAUDE.md deep dive → spec-kit intro",
+          "duration_sec": 15.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Imagine building a house without a blueprint. You know you want a house. You start stacking bricks. Some go left, some go right. Eventually something stands up. But the bathroom is on the roof and there's no front door.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B017",
+          "scene_id": "SEG04",
+          "text": "Now imagine one piece of paper. Not a hundred-page document. One note. \"Two bedrooms. One bathroom. Front door faces south.\"",
+          "narration_text": "Now imagine one piece of paper. Not a hundred-page document. One note. \"Two bedrooms. One bathroom. Front door faces south.\"",
+          "narrator_vo": "Now imagine one piece of paper. Not a hundred-page document. One note. \"Two bedrooms. One bathroom. Front door faces south.\"",
+          "visual_goal": "Visual: A construction site. No blueprints visible. Workers stacking blocks randomly.",
+          "duration_sec": 8.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Now imagine one piece of paper. Not a hundred-page document. One note. \"Two bedrooms. One bathroom. Front door faces south.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B018",
+          "scene_id": "SEG04",
+          "text": "Same workers. Same bricks. Completely different result. That note is a spec.",
+          "narration_text": "Same workers. Same bricks. Completely different result. That note is a spec.",
+          "narrator_vo": "Same workers. Same bricks. Completely different result. That note is a spec.",
+          "visual_goal": "Visual: Chaotic building — bricks stacked randomly. Bathroom fixtures on top. No entrance. Building wobbles.",
+          "duration_sec": 4.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Same workers. Same bricks. Completely different result. That note is a spec.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B019",
+          "scene_id": "SEG04",
+          "text": "And a spec doesn't have to be complicated. Three lines is enough.",
+          "narration_text": "And a spec doesn't have to be complicated. Three lines is enough.",
+          "narrator_vo": "And a spec doesn't have to be complicated. Three lines is enough.",
+          "visual_goal": "Visual: A simple note card appears. Three lines of text. Clean. Small. The building re-assembles — this time in order. Foundation, walls, roof. Door faces the right way.",
+          "duration_sec": 4.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And a spec doesn't have to be complicated. Three lines is enough.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B020",
+          "scene_id": "SEG04",
+          "text": "Line one: Goal. What are you building? \"An online store that sells handmade candles.\"",
+          "narration_text": "Line one: Goal. What are you building? \"An online store that sells handmade candles.\"",
+          "narrator_vo": "Line one: Goal. What are you building? \"An online store that sells handmade candles.\"",
+          "visual_goal": "Visual: Building stands solid. Simple but correct. Transition.",
+          "duration_sec": 5.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Line one: Goal. What are you building? \"An online store that sells handmade candles.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B021",
+          "scene_id": "SEG04",
+          "text": "Line two: Constraints. What are you NOT building? \"No user accounts. No payment processing — just a catalog with a contact form.\"",
+          "narration_text": "Line two: Constraints. What are you NOT building? \"No user accounts. No payment processing — just a catalog with a contact form.\"",
+          "narrator_vo": "Line two: Constraints. What are you NOT building? \"No user accounts. No payment processing — just a catalog with a contact form.\"",
+          "visual_goal": "Visual: Template appears on whiteboard, building line by line:",
+          "duration_sec": 8.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Line two: Constraints. What are you NOT building? \"No user accounts. No payment processing — just a catalog with a contact form.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B022",
+          "scene_id": "SEG04",
+          "text": "Line three: Done-when. How do you know it's finished? \"When someone can browse candles by category and send a message.\"",
+          "narration_text": "Line three: Done-when. How do you know it's finished? \"When someone can browse candles by category and send a message.\"",
+          "narrator_vo": "Line three: Done-when. How do you know it's finished? \"When someone can browse candles by category and send a message.\"",
+          "visual_goal": "Visual: \"Goal: An online store that sells handmade candles\" appears.",
+          "duration_sec": 8.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Line three: Done-when. How do you know it's finished? \"When someone can browse candles by category and send a message.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B023",
+          "scene_id": "SEG04",
+          "text": "That's it. Three lines. Now watch what happens.",
+          "narration_text": "That's it. Three lines. Now watch what happens.",
+          "narrator_vo": "That's it. Three lines. Now watch what happens.",
+          "visual_goal": "Visual: \"Constraints: No accounts, no payments. Catalog + contact form only.\" appears below.",
+          "duration_sec": 3.2,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "That's it. Three lines. Now watch what happens.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B024",
+          "scene_id": "SEG04",
+          "text": "Same project. Same AI. But now it has the spec. First result: a clean catalog page. Three candle categories. A contact form at the bottom. No shopping cart. No admin panel. No enterprise dashboard.",
+          "narration_text": "Same project. Same AI. But now it has the spec. First result: a clean catalog page. Three candle categories. A contact form at the bottom. No shopping cart. No admin panel. No enterprise dashboard.",
+          "narrator_vo": "Same project. Same AI. But now it has the spec. First result: a clean catalog page. Three candle categories. A contact form at the bottom. No shopping cart. No admin panel. No enterprise dashboard.",
+          "visual_goal": "Visual: \"Done-when: Browse candles by category + send message\" appears. Three lines. Clean.",
+          "duration_sec": 13.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Same project. Same AI. But now it has the spec. First result: a clean catalog page. Three candle categories. A contact form at the bottom. No shopping cart. No admin panel. No enterprise dashboard.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B025",
+          "scene_id": "SEG04",
+          "text": "Second attempt? Almost identical. Same layout, same features, minor styling differences. Twenty minutes total, instead of three hours of confusion.",
+          "narration_text": "Second attempt? Almost identical. Same layout, same features, minor styling differences. Twenty minutes total, instead of three hours of confusion.",
+          "narrator_vo": "Second attempt? Almost identical. Same layout, same features, minor styling differences. Twenty minutes total, instead of three hours of confusion.",
+          "visual_goal": "Visual: The three-line spec slides into an AI chat window. The same candle shop prompt — but this time with the spec above it.",
+          "duration_sec": 8.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Second attempt? Almost identical. Same layout, same features, minor styling differences. Twenty minutes total, instead of three hours of confusion.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B026",
+          "scene_id": "SEG04",
+          "text": "The spec didn't make AI smarter. It made your instructions clearer.",
+          "narration_text": "The spec didn't make AI smarter. It made your instructions clearer.",
+          "narrator_vo": "The spec didn't make AI smarter. It made your instructions clearer.",
+          "visual_goal": "Visual: The result loads. Clean. Simple. Actually a candle shop. Categories visible. Contact form at bottom. No extra features.",
+          "duration_sec": 4.4,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The spec didn't make AI smarter. It made your instructions clearer.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B027",
+          "scene_id": "SEG04",
+          "text": "And here's the frame that changes everything. A spec is a contract. Not a wish list — a contract. It says: this is what I'm buying. This is what I'm not buying. And here's how we both know when it's done.",
+          "narration_text": "And here's the frame that changes everything. A spec is a contract. Not a wish list — a contract. It says: this is what I'm buying. This is what I'm not buying. And here's how we both know when it's done.",
+          "narrator_vo": "And here's the frame that changes everything. A spec is a contract. Not a wish list — a contract. It says: this is what I'm buying. This is what I'm not buying. And here's how we both know when it's done.",
+          "visual_goal": "Quick flash: Vee sees the result. Both eyebrows go up. Bee's antennae perk up. 1.5 seconds.",
+          "duration_sec": 16.4,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": 4,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And here's the frame that changes everything. A spec is a contract. Not a wish list — a contract. It says: this is what I'm buying. This is what I'm not buying. And here's how we both know when it's done.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B028",
+          "scene_id": "SEG04",
+          "text": "Which means — before the AI writes a single line of code, you can review the contract. \"Wait, I said no payment processing, but I do want a price list.\" Fix it now. Not after five hundred lines of code exist.",
+          "narration_text": "Which means — before the AI writes a single line of code, you can review the contract. \"Wait, I said no payment processing, but I do want a price list.\" Fix it now. Not after five hundred lines of code exist.",
+          "narrator_vo": "Which means — before the AI writes a single line of code, you can review the contract. \"Wait, I said no payment processing, but I do want a price list.\" Fix it now. Not after five hundred lines of code exist.",
+          "visual_goal": "Visual: Two results side by side. Nearly identical. Convergent. Green checkmarks appear on both.",
+          "duration_sec": 16.4,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Which means — before the AI writes a single line of code, you can review the contract. \"Wait, I said no payment processing, but I do want a price list.\" Fix it now. Not after five hundred lines of code exist.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B029",
+          "scene_id": "SEG04",
+          "text": "That's an approval gate. Review the plan before executing the plan. Professional developers do this. Product managers do this. You can do this.",
+          "narration_text": "That's an approval gate. Review the plan before executing the plan. Professional developers do this. Product managers do this. You can do this.",
+          "narrator_vo": "That's an approval gate. Review the plan before executing the plan. Professional developers do this. Product managers do this. You can do this.",
+          "visual_goal": "Visual: Before/After side by side — five chaotic results vs two clean ones. Clear visual difference. Hold for 3 seconds.",
+          "duration_sec": 9.2,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "That's an approval gate. Review the plan before executing the plan. Professional developers do this. Product managers do this. You can do this.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B030",
+          "scene_id": "SEG04",
+          "text": "And there are tools that make this persistent. CLAUDE dot MD — a file that lives in your project. Every time Claude opens your code, it reads this file first.",
+          "narration_text": "And there are tools that make this persistent. CLAUDE dot MD — a file that lives in your project. Every time Claude opens your code, it reads this file first.",
+          "narrator_vo": "And there are tools that make this persistent. CLAUDE dot MD — a file that lives in your project. Every time Claude opens your code, it reads this file first.",
+          "visual_goal": "Visual: The three-line spec transforms — the paper gets a border, a signature line at the bottom. It looks like a simple contract. \"SPEC = CONTRACT\" appears above.",
+          "duration_sec": 12.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And there are tools that make this persistent. CLAUDE dot MD — a file that lives in your project. Every time Claude opens your code, it reads this file first.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B031",
+          "scene_id": "SEG04",
+          "text": "Your rules. Your constraints. Your context. \"This is a candle shop. We don't do user accounts. The style is warm and minimal. Never add features I didn't ask for.\"",
+          "narration_text": "Your rules. Your constraints. Your context. \"This is a candle shop. We don't do user accounts. The style is warm and minimal. Never add features I didn't ask for.\"",
+          "narrator_vo": "Your rules. Your constraints. Your context. \"This is a candle shop. We don't do user accounts. The style is warm and minimal. Never add features I didn't ask for.\"",
+          "visual_goal": "Visual: A hand with a red pen crosses out one line, writes a new one. The spec updates. This happens BEFORE the AI starts building.",
+          "duration_sec": 11.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Your rules. Your constraints. Your context. \"This is a candle shop. We don't do user accounts. The style is warm and minimal. Never add features I didn't ask for.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B032",
+          "scene_id": "SEG04",
+          "text": "It's like a note pinned to the kitchen wall. Every chef who walks in reads it first. \"No cream in the carbonara. Ever.\"",
+          "narration_text": "It's like a note pinned to the kitchen wall. Every chef who walks in reads it first. \"No cream in the carbonara. Ever.\"",
+          "narrator_vo": "It's like a note pinned to the kitchen wall. Every chef who walks in reads it first. \"No cream in the carbonara. Ever.\"",
+          "visual_goal": "Visual: A simple gate diagram: SPEC → [REVIEW] → BUILD. The review step glows. Emphasis.",
+          "duration_sec": 9.2,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "It's like a note pinned to the kitchen wall. Every chef who walks in reads it first. \"No cream in the carbonara. Ever.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B033",
+          "scene_id": "SEG04",
+          "text": "Cursor has the same idea — dot cursor rules. Write your rules once, every AI session follows them.",
+          "narration_text": "Cursor has the same idea — dot cursor rules. Write your rules once, every AI session follows them.",
+          "narrator_vo": "Cursor has the same idea — dot cursor rules. Write your rules once, every AI session follows them.",
+          "visual_goal": "Visual: Screen space — a file tree. CLAUDE.md highlighted. Content visible:",
+          "duration_sec": 7.2,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Cursor has the same idea — dot cursor rules. Write your rules once, every AI session follows them.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B034",
+          "scene_id": "SEG04",
+          "text": "And if you want a full workflow — spec-kit. Four steps: specify, plan, tasks, implement. Each step validates before moving to the next. You don't build until the plan is approved. You don't plan until the spec is approved.",
+          "narration_text": "And if you want a full workflow — spec-kit. Four steps: specify, plan, tasks, implement. Each step validates before moving to the next. You don't build until the plan is approved. You don't plan until the spec is approved.",
+          "narrator_vo": "And if you want a full workflow — spec-kit. Four steps: specify, plan, tasks, implement. Each step validates before moving to the next. You don't build until the plan is approved. You don't plan until the spec is approved.",
+          "visual_goal": "Visual: CLAUDE.md content scrolls — each rule visible. Clean dark-mode editor. The rules are specific and opinionated.",
+          "duration_sec": 15.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And if you want a full workflow — spec-kit. Four steps: specify, plan, tasks, implement. Each step validates before moving to the next. You don't build until the plan is approved. You don't plan until the spec is approved.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B035",
+          "scene_id": "SEG04",
+          "text": "The point isn't which tool. The point is: write down what you want before you ask AI to build it.",
+          "narration_text": "The point isn't which tool. The point is: write down what you want before you ask AI to build it.",
+          "narrator_vo": "The point isn't which tool. The point is: write down what you want before you ask AI to build it.",
+          "visual_goal": "Visual: A note pinned to a wall in the robot kitchen from EP01's metaphor. The robot reads it before cooking.",
+          "duration_sec": 8.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The point isn't which tool. The point is: write down what you want before you ask AI to build it.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG05",
+      "phase_name": "REFRAME",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "",
+      "narrative_stage": "REFRAME",
+      "target_duration_sec": 60,
+      "beats": [
+        {
+          "beat_id": "SEG05_B036",
+          "scene_id": "SEG05",
+          "text": "Here's the part nobody tells you. That frustration you felt when AI made the wrong thing? When the store was neon pink and the login went to the cart? When you wrote two pages and got an enterprise dashboard instead of a candle shop?",
+          "narration_text": "Here's the part nobody tells you. That frustration you felt when AI made the wrong thing? When the store was neon pink and the login went to the cart? When you wrote two pages and got an enterprise dashboard instead of a candle shop?",
+          "narrator_vo": "Here's the part nobody tells you. That frustration you felt when AI made the wrong thing? When the store was neon pink and the login went to the cart? When you wrote two pages and got an enterprise dashboard instead of a candle shop?",
+          "visual_goal": "Synopsis: \"Frustration IS the spec\" → pro devs do this too → \"you're learning to direct, not to code\" → EP03 bridge",
+          "duration_sec": 17.6,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Here's the part nobody tells you. That frustration you felt when AI made the wrong thing? When the store was neon pink and the login went to the cart? When you wrote two pages and got an enterprise dashboard instead of a candle shop?",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B037",
+          "scene_id": "SEG05",
+          "text": "That's not failure. That's data.",
+          "narration_text": "That's not failure. That's data.",
+          "narrator_vo": "That's not failure. That's data.",
+          "visual_goal": "Visual: Flashback montage — neon pink store, enterprise dashboard, Comic Sans header. Quick flashes.",
+          "duration_sec": 2.0,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "That's not failure. That's data.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B038",
+          "scene_id": "SEG05",
+          "text": "Write down what annoyed you. \"It should have done X but did Y.\" Congratulations. You just wrote a requirement. Organize your frustrations, and you've got a spec.",
+          "narration_text": "Write down what annoyed you. \"It should have done X but did Y.\" Congratulations. You just wrote a requirement. Organize your frustrations, and you've got a spec.",
+          "narrator_vo": "Write down what annoyed you. \"It should have done X but did Y.\" Congratulations. You just wrote a requirement. Organize your frustrations, and you've got a spec.",
+          "visual_goal": "Visual: The frustration — represented as messy red scribbles — transforms. The scribbles organize themselves into neat lines. Red becomes blue. Chaos becomes structure.",
+          "duration_sec": 10.8,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Write down what annoyed you. \"It should have done X but did Y.\" Congratulations. You just wrote a requirement. Organize your frustrations, and you've got a spec.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B039",
+          "scene_id": "SEG05",
+          "text": "Frustration is the spec. Your annoyance, organized, is the blueprint.",
+          "narration_text": "Frustration is the spec. Your annoyance, organized, is the blueprint.",
+          "narrator_vo": "Frustration is the spec. Your annoyance, organized, is the blueprint.",
+          "visual_goal": "Visual: A notepad. Scribbled complaints morph into the three-line spec template. Goal. Constraints. Done-when.",
+          "duration_sec": 4.0,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Frustration is the spec. Your annoyance, organized, is the blueprint.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B040",
+          "scene_id": "SEG05",
+          "text": "And here's what might surprise you — professional developers do exactly this. Every day. They don't sit down and write perfect requirements from scratch. They build something, see what's wrong, and write the spec from the wreckage. That's not amateur hour. That's the process.",
+          "narration_text": "And here's what might surprise you — professional developers do exactly this. Every day. They don't sit down and write perfect requirements from scratch. They build something, see what's wrong, and write the spec from the wreckage. That's not amateur hour. That's the process.",
+          "narrator_vo": "And here's what might surprise you — professional developers do exactly this. Every day. They don't sit down and write perfect requirements from scratch. They build something, see what's wrong, and write the spec from the wreckage. That's not amateur hour. That's the process.",
+          "visual_goal": "Visual: The spec template glows. Transforms into a blueprint.",
+          "duration_sec": 17.6,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And here's what might surprise you — professional developers do exactly this. Every day. They don't sit down and write perfect requirements from scratch. They build something, see what's wrong, and write the spec from the wreckage. That's not amateur hour. That's the process.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B041",
+          "scene_id": "SEG05",
+          "text": "You're not learning to code. You're learning to direct. A director doesn't operate the camera. They say: \"wider shot, warmer light, more emotion.\" The crew executes. The director decides.",
+          "narration_text": "You're not learning to code. You're learning to direct. A director doesn't operate the camera. They say: \"wider shot, warmer light, more emotion.\" The crew executes. The director decides.",
+          "narrator_vo": "You're not learning to code. You're learning to direct. A director doesn't operate the camera. They say: \"wider shot, warmer light, more emotion.\" The crew executes. The director decides.",
+          "visual_goal": "Visual: A \"PRO DEV\" badge appears next to the same frustration-to-spec flow. \"You're already doing this.\"",
+          "duration_sec": 11.6,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "You're not learning to code. You're learning to direct. A director doesn't operate the camera. They say: \"wider shot, warmer light, more emotion.\" The crew executes. The director decides.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG06",
+      "phase_name": "OUTRO_CTA",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "",
+      "narrative_stage": "OUTRO_CTA",
+      "target_duration_sec": 45,
+      "beats": [
+        {
+          "beat_id": "SEG06_B042",
+          "scene_id": "SEG06",
+          "text": "Here's your homework. Before you type a single prompt — grab a piece of paper. Or open a blank file. And write three lines.",
+          "narration_text": "Here's your homework. Before you type a single prompt — grab a piece of paper. Or open a blank file. And write three lines.",
+          "narrator_vo": "Here's your homework. Before you type a single prompt — grab a piece of paper. Or open a blank file. And write three lines.",
+          "visual_goal": "Synopsis: Actually write your first spec → give it to AI → compare → EP03 tease",
+          "duration_sec": 9.6,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Here's your homework. Before you type a single prompt — grab a piece of paper. Or open a blank file. And write three lines.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B043",
+          "scene_id": "SEG06",
+          "text": "Goal. Constraints. Done-when. Fill in the blanks. Anything — a to-do app, a birthday card generator, a recipe organizer. Then give it to the AI.",
+          "narration_text": "Goal. Constraints. Done-when. Fill in the blanks. Anything — a to-do app, a birthday card generator, a recipe organizer. Then give it to the AI.",
+          "narrator_vo": "Goal. Constraints. Done-when. Fill in the blanks. Anything — a to-do app, a birthday card generator, a recipe organizer. Then give it to the AI.",
+          "visual_goal": "Visual: The three-line template appears on screen, large and clear:",
+          "duration_sec": 10.0,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Goal. Constraints. Done-when. Fill in the blanks. Anything — a to-do app, a birthday card generator, a recipe organizer. Then give it to the AI.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B044",
+          "scene_id": "SEG06",
+          "text": "And when the result comes back — hold your spec next to it. Does it match? Where does it match? Where doesn't it?",
+          "narration_text": "And when the result comes back — hold your spec next to it. Does it match? Where does it match? Where doesn't it?",
+          "narrator_vo": "And when the result comes back — hold your spec next to it. Does it match? Where does it match? Where doesn't it?",
+          "visual_goal": "\"Goal: ___\"",
+          "duration_sec": 9.2,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And when the result comes back — hold your spec next to it. Does it match? Where does it match? Where doesn't it?",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B045",
+          "scene_id": "SEG06",
+          "text": "That gap — between spec and result — that's your next spec. The differences become the instructions. Every round gets closer.",
+          "narration_text": "That gap — between spec and result — that's your next spec. The differences become the instructions. Every round gets closer.",
+          "narrator_vo": "That gap — between spec and result — that's your next spec. The differences become the instructions. Every round gets closer.",
+          "visual_goal": "\"Constraints: ___\"",
+          "duration_sec": 8.4,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "That gap — between spec and result — that's your next spec. The differences become the instructions. Every round gets closer.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B046",
+          "scene_id": "SEG06",
+          "text": "But here's a question. The spec tells AI what to build. The code gets bigger. More files, more features, more complexity. How do you keep it organized? How do you stop one change from breaking everything else? Next time — we talk about walls.",
+          "narration_text": "But here's a question. The spec tells AI what to build. The code gets bigger. More files, more features, more complexity. How do you keep it organized? How do you stop one change from breaking everything else? Next time — we talk about walls.",
+          "narrator_vo": "But here's a question. The spec tells AI what to build. The code gets bigger. More files, more features, more complexity. How do you keep it organized? How do you stop one change from breaking everything else? Next time — we talk about walls.",
+          "visual_goal": "\"Done-when: ___\"",
+          "duration_sec": 17.6,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "But here's a question. The spec tells AI what to build. The code gets bigger. More files, more features, more complexity. How do you keep it organized? How do you stop one change from breaking everything else? Next time — we talk about walls.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "beat_id": "SEG01_B001",
+      "scene_id": "SEG01",
+      "text": "Last time, Vee learned the first rule of vibe coding: you decide what, AI decides how.",
+      "narration_text": "Last time, Vee learned the first rule of vibe coding: you decide what, AI decides how.",
+      "narrator_vo": "Last time, Vee learned the first rule of vibe coding: you decide what, AI decides how.",
+      "visual_goal": "Synopsis: EP01 recap callback → Vee tries for real → shows a specific broken result → five attempts, five different results.",
+      "duration_sec": 6.4,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Last time, Vee learned the first rule of vibe coding: you decide what, AI decides how.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG01_B002",
+      "scene_id": "SEG01",
+      "text": "So she tried it. For real. She wanted a simple website — a candle shop. Browse candles, send a message, that's it.",
+      "narration_text": "So she tried it. For real. She wanted a simple website — a candle shop. Browse candles, send a message, that's it.",
+      "narrator_vo": "So she tried it. For real. She wanted a simple website — a candle shop. Browse candles, send a message, that's it.",
+      "visual_goal": "Visual: Quick flash — EP01 ending. Vee's small smile. Sticky note on monitor reading \"Frustrated\" in amber glow.",
+      "duration_sec": 8.8,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "So she tried it. For real. She wanted a simple website — a candle shop. Browse candles, send a message, that's it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG01_B003",
+      "scene_id": "SEG01",
+      "text": "She tried again. Five times. Five prompts. Same project.",
+      "narration_text": "She tried again. Five times. Five prompts. Same project.",
+      "narrator_vo": "She tried again. Five times. Five prompts. Same project.",
+      "visual_goal": "Visual: Vee types a prompt. Hits enter. Result loads. It's a website — but the hero image is a stock photo of a birthday cake. The \"Contact\" button opens a shopping cart. The header says \"Welcome to CandleStore\" in Comic Sans.",
+      "duration_sec": 3.6,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "She tried again. Five times. Five prompts. Same project.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG01_B004",
+      "scene_id": "SEG01",
+      "text": "Five completely different things came back.",
+      "narration_text": "Five completely different things came back.",
+      "narrator_vo": "Five completely different things came back.",
+      "visual_goal": "Vee stares at the screen. She blinks twice. Not anger — pure bewilderment. 1.5 seconds.",
+      "duration_sec": 2.4,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 1,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Five completely different things came back.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B005",
+      "scene_id": "SEG02",
+      "text": "Last time she learned that being more specific didn't help. More detail, more mess. So she tried something different. She thought: what if I explain the architecture?",
+      "narration_text": "Last time she learned that being more specific didn't help. More detail, more mess. So she tried something different. She thought: what if I explain the architecture?",
+      "narrator_vo": "Last time she learned that being more specific didn't help. More detail, more mess. So she tried something different. She thought: what if I explain the architecture?",
+      "visual_goal": "Synopsis: \"Describe the architecture\" → two-page prompt → technically correct but completely wrong direction → \"detail ≠ direction\" lesson",
+      "duration_sec": 10.8,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Last time she learned that being more specific didn't help. More detail, more mess. So she tried something different. She thought: what if I explain the architecture?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B006",
+      "scene_id": "SEG02",
+      "text": "She wrote two pages. Component hierarchy. Data flow. State management. Color palette hex codes. Responsive breakpoints. Font stack. API endpoint naming conventions.",
+      "narration_text": "She wrote two pages. Component hierarchy. Data flow. State management. Color palette hex codes. Responsive breakpoints. Font stack. API endpoint naming conventions.",
+      "narrator_vo": "She wrote two pages. Component hierarchy. Data flow. State management. Color palette hex codes. Responsive breakpoints. Font stack. API endpoint naming conventions.",
+      "visual_goal": "Visual: Vee opens a blank document. Starts writing — not a prompt, a technical document. Headers, bullet points, sub-sections.",
+      "duration_sec": 8.8,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "She wrote two pages. Component hierarchy. Data flow. State management. Color palette hex codes. Responsive breakpoints. Font stack. API endpoint naming conventions.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B007",
+      "scene_id": "SEG02",
+      "text": "She was proud of it. Pasted the whole thing into the AI.",
+      "narration_text": "She was proud of it. Pasted the whole thing into the AI.",
+      "narrator_vo": "She was proud of it. Pasted the whole thing into the AI.",
+      "visual_goal": "Visual: The document grows. And grows. Two full pages of structured technical writing. Impressive looking. Official.",
+      "duration_sec": 4.8,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "She was proud of it. Pasted the whole thing into the AI.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B008",
+      "scene_id": "SEG02",
+      "text": "The result was technically correct. Every component she described existed. Every color matched. The API endpoints were named exactly as specified. And the whole thing was completely wrong.",
+      "narration_text": "The result was technically correct. Every component she described existed. Every color matched. The API endpoints were named exactly as specified. And the whole thing was completely wrong.",
+      "narrator_vo": "The result was technically correct. Every component she described existed. Every color matched. The API endpoints were named exactly as specified. And the whole thing was completely wrong.",
+      "visual_goal": "Visual: Vee copies the entire document, pastes it into an AI chat. The prompt scrolls and scrolls. She hits enter with confidence.",
+      "duration_sec": 11.2,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The result was technically correct. Every component she described existed. Every color matched. The API endpoints were named exactly as specified. And the whole thing was completely wrong.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B009",
+      "scene_id": "SEG02",
+      "text": "She described how to build a building. But never said what the building was for. Architecture without purpose. Detail without direction.",
+      "narration_text": "She described how to build a building. But never said what the building was for. Architecture without purpose. Detail without direction.",
+      "narrator_vo": "She described how to build a building. But never said what the building was for. Architecture without purpose. Detail without direction.",
+      "visual_goal": "Visual: The result loads. It's polished. Professional looking. But the candle shop is now an enterprise SaaS dashboard. There's a user management panel. Role-based access control. An admin console. Beautiful — and absolutely not a candle shop.",
+      "duration_sec": 8.4,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "She described how to build a building. But never said what the building was for. Architecture without purpose. Detail without direction.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B010",
+      "scene_id": "SEG02",
+      "text": "Two pages of instructions. Zero lines about what the customer actually needs. That's the trap — you can be incredibly specific and completely wrong at the same time.",
+      "narration_text": "Two pages of instructions. Zero lines about what the customer actually needs. That's the trap — you can be incredibly specific and completely wrong at the same time.",
+      "narrator_vo": "Two pages of instructions. Zero lines about what the customer actually needs. That's the trap — you can be incredibly specific and completely wrong at the same time.",
+      "visual_goal": "Vee's jaw drops. She looks at her two-page spec, looks at the result, back at the spec. She described a skyscraper when she wanted a cottage. 1.5 seconds.",
+      "duration_sec": 11.2,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 3,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Two pages of instructions. Zero lines about what the customer actually needs. That's the trap — you can be incredibly specific and completely wrong at the same time.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B011",
+      "scene_id": "SEG03",
+      "text": "Let's look at what actually happened inside the code.",
+      "narration_text": "Let's look at what actually happened inside the code.",
+      "narrator_vo": "Let's look at what actually happened inside the code.",
+      "visual_goal": "Synopsis: The numbers — 10,847 lines, 4,200 duplication → five agents, concrete examples → building metaphor bridge",
+      "duration_sec": 3.6,
+      "segment": "THE_CRACK",
+      "visual_type": "screen_demo",
+      "space": "screen",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Let's look at what actually happened inside the code.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B012",
+      "scene_id": "SEG03",
+      "text": "Ten thousand, eight hundred, forty-seven lines of code.",
+      "narration_text": "Ten thousand, eight hundred, forty-seven lines of code.",
+      "narrator_vo": "Ten thousand, eight hundred, forty-seven lines of code.",
+      "visual_goal": "Visual: A counter starts at zero. Rapidly climbs. Numbers rolling like a slot machine.",
+      "duration_sec": 3.2,
+      "segment": "THE_CRACK",
+      "visual_type": "screen_demo",
+      "space": "screen",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Ten thousand, eight hundred, forty-seven lines of code.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B013",
+      "scene_id": "SEG03",
+      "text": "Almost half of them — four thousand two hundred lines — were duplicates.",
+      "narration_text": "Almost half of them — four thousand two hundred lines — were duplicates.",
+      "narrator_vo": "Almost half of them — four thousand two hundred lines — were duplicates.",
+      "visual_goal": "Visual: Counter stops at 10,847. Big number. Holds for a beat.",
+      "duration_sec": 5.2,
+      "segment": "THE_CRACK",
+      "visual_type": "screen_demo",
+      "space": "screen",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Almost half of them — four thousand two hundred lines — were duplicates.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B014",
+      "scene_id": "SEG03",
+      "text": "Five AI sessions built the same functions five different ways. Three different date formatters — each one converting dates into a different format. Two config parsers — reading the same settings file with different assumptions. Four input validators — checking the same email field four different ways.",
+      "narration_text": "Five AI sessions built the same functions five different ways. Three different date formatters — each one converting dates into a different format. Two config parsers — reading the same settings file with different assumptions. Four input validators — checking the same email field four different ways.",
+      "narrator_vo": "Five AI sessions built the same functions five different ways. Three different date formatters — each one converting dates into a different format. Two config parsers — reading the same settings file with different assumptions. Four input validators — checking the same email field four different ways.",
+      "visual_goal": "Visual: The counter splits. 6,647 stays white. 4,200 turns red and visually separates — red blocks pulling away from white blocks.",
+      "duration_sec": 18.8,
+      "segment": "THE_CRACK",
+      "visual_type": "screen_demo",
+      "space": "screen",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Five AI sessions built the same functions five different ways. Three different date formatters — each one converting dates into a different format. Two config parsers — reading the same settings file with different assumptions. Four input validators — checking the same email field four different ways.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B015",
+      "scene_id": "SEG03",
+      "text": "None of them knew about the others. Five construction crews on the same lot. No blueprint. No foreman. Just... build.",
+      "narration_text": "None of them knew about the others. Five construction crews on the same lot. No blueprint. No foreman. Just... build.",
+      "narrator_vo": "None of them knew about the others. Five construction crews on the same lot. No blueprint. No foreman. Just... build.",
+      "visual_goal": "Visual: Five small robot icons appear, each in their own box. Between them: concrete labels. \"Date → MM/DD\", \"Date → DD-MM\", \"Date → ISO\". \"Config v1\", \"Config v2\". \"Email check #1, #2, #3, #4\".",
+      "duration_sec": 8.0,
+      "segment": "THE_CRACK",
+      "visual_type": "screen_demo",
+      "space": "screen",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "None of them knew about the others. Five construction crews on the same lot. No blueprint. No foreman. Just... build.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B016",
+      "scene_id": "SEG04",
+      "text": "Imagine building a house without a blueprint. You know you want a house. You start stacking bricks. Some go left, some go right. Eventually something stands up. But the bathroom is on the roof and there's no front door.",
+      "narration_text": "Imagine building a house without a blueprint. You know you want a house. You start stacking bricks. Some go left, some go right. Eventually something stands up. But the bathroom is on the roof and there's no front door.",
+      "narrator_vo": "Imagine building a house without a blueprint. You know you want a house. You start stacking bricks. Some go left, some go right. Eventually something stands up. But the bathroom is on the roof and there's no front door.",
+      "visual_goal": "Synopsis: Building metaphor (30s) → 3-line spec → candle shop demo (45s) → \"Spec = Contract\" → approval gate → CLAUDE.md deep dive → spec-kit intro",
+      "duration_sec": 15.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Imagine building a house without a blueprint. You know you want a house. You start stacking bricks. Some go left, some go right. Eventually something stands up. But the bathroom is on the roof and there's no front door.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B017",
+      "scene_id": "SEG04",
+      "text": "Now imagine one piece of paper. Not a hundred-page document. One note. \"Two bedrooms. One bathroom. Front door faces south.\"",
+      "narration_text": "Now imagine one piece of paper. Not a hundred-page document. One note. \"Two bedrooms. One bathroom. Front door faces south.\"",
+      "narrator_vo": "Now imagine one piece of paper. Not a hundred-page document. One note. \"Two bedrooms. One bathroom. Front door faces south.\"",
+      "visual_goal": "Visual: A construction site. No blueprints visible. Workers stacking blocks randomly.",
+      "duration_sec": 8.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Now imagine one piece of paper. Not a hundred-page document. One note. \"Two bedrooms. One bathroom. Front door faces south.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B018",
+      "scene_id": "SEG04",
+      "text": "Same workers. Same bricks. Completely different result. That note is a spec.",
+      "narration_text": "Same workers. Same bricks. Completely different result. That note is a spec.",
+      "narrator_vo": "Same workers. Same bricks. Completely different result. That note is a spec.",
+      "visual_goal": "Visual: Chaotic building — bricks stacked randomly. Bathroom fixtures on top. No entrance. Building wobbles.",
+      "duration_sec": 4.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Same workers. Same bricks. Completely different result. That note is a spec.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B019",
+      "scene_id": "SEG04",
+      "text": "And a spec doesn't have to be complicated. Three lines is enough.",
+      "narration_text": "And a spec doesn't have to be complicated. Three lines is enough.",
+      "narrator_vo": "And a spec doesn't have to be complicated. Three lines is enough.",
+      "visual_goal": "Visual: A simple note card appears. Three lines of text. Clean. Small. The building re-assembles — this time in order. Foundation, walls, roof. Door faces the right way.",
+      "duration_sec": 4.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And a spec doesn't have to be complicated. Three lines is enough.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B020",
+      "scene_id": "SEG04",
+      "text": "Line one: Goal. What are you building? \"An online store that sells handmade candles.\"",
+      "narration_text": "Line one: Goal. What are you building? \"An online store that sells handmade candles.\"",
+      "narrator_vo": "Line one: Goal. What are you building? \"An online store that sells handmade candles.\"",
+      "visual_goal": "Visual: Building stands solid. Simple but correct. Transition.",
+      "duration_sec": 5.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Line one: Goal. What are you building? \"An online store that sells handmade candles.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B021",
+      "scene_id": "SEG04",
+      "text": "Line two: Constraints. What are you NOT building? \"No user accounts. No payment processing — just a catalog with a contact form.\"",
+      "narration_text": "Line two: Constraints. What are you NOT building? \"No user accounts. No payment processing — just a catalog with a contact form.\"",
+      "narrator_vo": "Line two: Constraints. What are you NOT building? \"No user accounts. No payment processing — just a catalog with a contact form.\"",
+      "visual_goal": "Visual: Template appears on whiteboard, building line by line:",
+      "duration_sec": 8.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Line two: Constraints. What are you NOT building? \"No user accounts. No payment processing — just a catalog with a contact form.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B022",
+      "scene_id": "SEG04",
+      "text": "Line three: Done-when. How do you know it's finished? \"When someone can browse candles by category and send a message.\"",
+      "narration_text": "Line three: Done-when. How do you know it's finished? \"When someone can browse candles by category and send a message.\"",
+      "narrator_vo": "Line three: Done-when. How do you know it's finished? \"When someone can browse candles by category and send a message.\"",
+      "visual_goal": "Visual: \"Goal: An online store that sells handmade candles\" appears.",
+      "duration_sec": 8.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Line three: Done-when. How do you know it's finished? \"When someone can browse candles by category and send a message.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B023",
+      "scene_id": "SEG04",
+      "text": "That's it. Three lines. Now watch what happens.",
+      "narration_text": "That's it. Three lines. Now watch what happens.",
+      "narrator_vo": "That's it. Three lines. Now watch what happens.",
+      "visual_goal": "Visual: \"Constraints: No accounts, no payments. Catalog + contact form only.\" appears below.",
+      "duration_sec": 3.2,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "That's it. Three lines. Now watch what happens.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B024",
+      "scene_id": "SEG04",
+      "text": "Same project. Same AI. But now it has the spec. First result: a clean catalog page. Three candle categories. A contact form at the bottom. No shopping cart. No admin panel. No enterprise dashboard.",
+      "narration_text": "Same project. Same AI. But now it has the spec. First result: a clean catalog page. Three candle categories. A contact form at the bottom. No shopping cart. No admin panel. No enterprise dashboard.",
+      "narrator_vo": "Same project. Same AI. But now it has the spec. First result: a clean catalog page. Three candle categories. A contact form at the bottom. No shopping cart. No admin panel. No enterprise dashboard.",
+      "visual_goal": "Visual: \"Done-when: Browse candles by category + send message\" appears. Three lines. Clean.",
+      "duration_sec": 13.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Same project. Same AI. But now it has the spec. First result: a clean catalog page. Three candle categories. A contact form at the bottom. No shopping cart. No admin panel. No enterprise dashboard.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B025",
+      "scene_id": "SEG04",
+      "text": "Second attempt? Almost identical. Same layout, same features, minor styling differences. Twenty minutes total, instead of three hours of confusion.",
+      "narration_text": "Second attempt? Almost identical. Same layout, same features, minor styling differences. Twenty minutes total, instead of three hours of confusion.",
+      "narrator_vo": "Second attempt? Almost identical. Same layout, same features, minor styling differences. Twenty minutes total, instead of three hours of confusion.",
+      "visual_goal": "Visual: The three-line spec slides into an AI chat window. The same candle shop prompt — but this time with the spec above it.",
+      "duration_sec": 8.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Second attempt? Almost identical. Same layout, same features, minor styling differences. Twenty minutes total, instead of three hours of confusion.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B026",
+      "scene_id": "SEG04",
+      "text": "The spec didn't make AI smarter. It made your instructions clearer.",
+      "narration_text": "The spec didn't make AI smarter. It made your instructions clearer.",
+      "narrator_vo": "The spec didn't make AI smarter. It made your instructions clearer.",
+      "visual_goal": "Visual: The result loads. Clean. Simple. Actually a candle shop. Categories visible. Contact form at bottom. No extra features.",
+      "duration_sec": 4.4,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The spec didn't make AI smarter. It made your instructions clearer.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B027",
+      "scene_id": "SEG04",
+      "text": "And here's the frame that changes everything. A spec is a contract. Not a wish list — a contract. It says: this is what I'm buying. This is what I'm not buying. And here's how we both know when it's done.",
+      "narration_text": "And here's the frame that changes everything. A spec is a contract. Not a wish list — a contract. It says: this is what I'm buying. This is what I'm not buying. And here's how we both know when it's done.",
+      "narrator_vo": "And here's the frame that changes everything. A spec is a contract. Not a wish list — a contract. It says: this is what I'm buying. This is what I'm not buying. And here's how we both know when it's done.",
+      "visual_goal": "Quick flash: Vee sees the result. Both eyebrows go up. Bee's antennae perk up. 1.5 seconds.",
+      "duration_sec": 16.4,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": 4,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And here's the frame that changes everything. A spec is a contract. Not a wish list — a contract. It says: this is what I'm buying. This is what I'm not buying. And here's how we both know when it's done.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B028",
+      "scene_id": "SEG04",
+      "text": "Which means — before the AI writes a single line of code, you can review the contract. \"Wait, I said no payment processing, but I do want a price list.\" Fix it now. Not after five hundred lines of code exist.",
+      "narration_text": "Which means — before the AI writes a single line of code, you can review the contract. \"Wait, I said no payment processing, but I do want a price list.\" Fix it now. Not after five hundred lines of code exist.",
+      "narrator_vo": "Which means — before the AI writes a single line of code, you can review the contract. \"Wait, I said no payment processing, but I do want a price list.\" Fix it now. Not after five hundred lines of code exist.",
+      "visual_goal": "Visual: Two results side by side. Nearly identical. Convergent. Green checkmarks appear on both.",
+      "duration_sec": 16.4,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Which means — before the AI writes a single line of code, you can review the contract. \"Wait, I said no payment processing, but I do want a price list.\" Fix it now. Not after five hundred lines of code exist.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B029",
+      "scene_id": "SEG04",
+      "text": "That's an approval gate. Review the plan before executing the plan. Professional developers do this. Product managers do this. You can do this.",
+      "narration_text": "That's an approval gate. Review the plan before executing the plan. Professional developers do this. Product managers do this. You can do this.",
+      "narrator_vo": "That's an approval gate. Review the plan before executing the plan. Professional developers do this. Product managers do this. You can do this.",
+      "visual_goal": "Visual: Before/After side by side — five chaotic results vs two clean ones. Clear visual difference. Hold for 3 seconds.",
+      "duration_sec": 9.2,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "That's an approval gate. Review the plan before executing the plan. Professional developers do this. Product managers do this. You can do this.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B030",
+      "scene_id": "SEG04",
+      "text": "And there are tools that make this persistent. CLAUDE dot MD — a file that lives in your project. Every time Claude opens your code, it reads this file first.",
+      "narration_text": "And there are tools that make this persistent. CLAUDE dot MD — a file that lives in your project. Every time Claude opens your code, it reads this file first.",
+      "narrator_vo": "And there are tools that make this persistent. CLAUDE dot MD — a file that lives in your project. Every time Claude opens your code, it reads this file first.",
+      "visual_goal": "Visual: The three-line spec transforms — the paper gets a border, a signature line at the bottom. It looks like a simple contract. \"SPEC = CONTRACT\" appears above.",
+      "duration_sec": 12.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And there are tools that make this persistent. CLAUDE dot MD — a file that lives in your project. Every time Claude opens your code, it reads this file first.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B031",
+      "scene_id": "SEG04",
+      "text": "Your rules. Your constraints. Your context. \"This is a candle shop. We don't do user accounts. The style is warm and minimal. Never add features I didn't ask for.\"",
+      "narration_text": "Your rules. Your constraints. Your context. \"This is a candle shop. We don't do user accounts. The style is warm and minimal. Never add features I didn't ask for.\"",
+      "narrator_vo": "Your rules. Your constraints. Your context. \"This is a candle shop. We don't do user accounts. The style is warm and minimal. Never add features I didn't ask for.\"",
+      "visual_goal": "Visual: A hand with a red pen crosses out one line, writes a new one. The spec updates. This happens BEFORE the AI starts building.",
+      "duration_sec": 11.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Your rules. Your constraints. Your context. \"This is a candle shop. We don't do user accounts. The style is warm and minimal. Never add features I didn't ask for.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B032",
+      "scene_id": "SEG04",
+      "text": "It's like a note pinned to the kitchen wall. Every chef who walks in reads it first. \"No cream in the carbonara. Ever.\"",
+      "narration_text": "It's like a note pinned to the kitchen wall. Every chef who walks in reads it first. \"No cream in the carbonara. Ever.\"",
+      "narrator_vo": "It's like a note pinned to the kitchen wall. Every chef who walks in reads it first. \"No cream in the carbonara. Ever.\"",
+      "visual_goal": "Visual: A simple gate diagram: SPEC → [REVIEW] → BUILD. The review step glows. Emphasis.",
+      "duration_sec": 9.2,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "It's like a note pinned to the kitchen wall. Every chef who walks in reads it first. \"No cream in the carbonara. Ever.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B033",
+      "scene_id": "SEG04",
+      "text": "Cursor has the same idea — dot cursor rules. Write your rules once, every AI session follows them.",
+      "narration_text": "Cursor has the same idea — dot cursor rules. Write your rules once, every AI session follows them.",
+      "narrator_vo": "Cursor has the same idea — dot cursor rules. Write your rules once, every AI session follows them.",
+      "visual_goal": "Visual: Screen space — a file tree. CLAUDE.md highlighted. Content visible:",
+      "duration_sec": 7.2,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Cursor has the same idea — dot cursor rules. Write your rules once, every AI session follows them.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B034",
+      "scene_id": "SEG04",
+      "text": "And if you want a full workflow — spec-kit. Four steps: specify, plan, tasks, implement. Each step validates before moving to the next. You don't build until the plan is approved. You don't plan until the spec is approved.",
+      "narration_text": "And if you want a full workflow — spec-kit. Four steps: specify, plan, tasks, implement. Each step validates before moving to the next. You don't build until the plan is approved. You don't plan until the spec is approved.",
+      "narrator_vo": "And if you want a full workflow — spec-kit. Four steps: specify, plan, tasks, implement. Each step validates before moving to the next. You don't build until the plan is approved. You don't plan until the spec is approved.",
+      "visual_goal": "Visual: CLAUDE.md content scrolls — each rule visible. Clean dark-mode editor. The rules are specific and opinionated.",
+      "duration_sec": 15.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And if you want a full workflow — spec-kit. Four steps: specify, plan, tasks, implement. Each step validates before moving to the next. You don't build until the plan is approved. You don't plan until the spec is approved.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B035",
+      "scene_id": "SEG04",
+      "text": "The point isn't which tool. The point is: write down what you want before you ask AI to build it.",
+      "narration_text": "The point isn't which tool. The point is: write down what you want before you ask AI to build it.",
+      "narrator_vo": "The point isn't which tool. The point is: write down what you want before you ask AI to build it.",
+      "visual_goal": "Visual: A note pinned to a wall in the robot kitchen from EP01's metaphor. The robot reads it before cooking.",
+      "duration_sec": 8.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The point isn't which tool. The point is: write down what you want before you ask AI to build it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B036",
+      "scene_id": "SEG05",
+      "text": "Here's the part nobody tells you. That frustration you felt when AI made the wrong thing? When the store was neon pink and the login went to the cart? When you wrote two pages and got an enterprise dashboard instead of a candle shop?",
+      "narration_text": "Here's the part nobody tells you. That frustration you felt when AI made the wrong thing? When the store was neon pink and the login went to the cart? When you wrote two pages and got an enterprise dashboard instead of a candle shop?",
+      "narrator_vo": "Here's the part nobody tells you. That frustration you felt when AI made the wrong thing? When the store was neon pink and the login went to the cart? When you wrote two pages and got an enterprise dashboard instead of a candle shop?",
+      "visual_goal": "Synopsis: \"Frustration IS the spec\" → pro devs do this too → \"you're learning to direct, not to code\" → EP03 bridge",
+      "duration_sec": 17.6,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Here's the part nobody tells you. That frustration you felt when AI made the wrong thing? When the store was neon pink and the login went to the cart? When you wrote two pages and got an enterprise dashboard instead of a candle shop?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B037",
+      "scene_id": "SEG05",
+      "text": "That's not failure. That's data.",
+      "narration_text": "That's not failure. That's data.",
+      "narrator_vo": "That's not failure. That's data.",
+      "visual_goal": "Visual: Flashback montage — neon pink store, enterprise dashboard, Comic Sans header. Quick flashes.",
+      "duration_sec": 2.0,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "That's not failure. That's data.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B038",
+      "scene_id": "SEG05",
+      "text": "Write down what annoyed you. \"It should have done X but did Y.\" Congratulations. You just wrote a requirement. Organize your frustrations, and you've got a spec.",
+      "narration_text": "Write down what annoyed you. \"It should have done X but did Y.\" Congratulations. You just wrote a requirement. Organize your frustrations, and you've got a spec.",
+      "narrator_vo": "Write down what annoyed you. \"It should have done X but did Y.\" Congratulations. You just wrote a requirement. Organize your frustrations, and you've got a spec.",
+      "visual_goal": "Visual: The frustration — represented as messy red scribbles — transforms. The scribbles organize themselves into neat lines. Red becomes blue. Chaos becomes structure.",
+      "duration_sec": 10.8,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Write down what annoyed you. \"It should have done X but did Y.\" Congratulations. You just wrote a requirement. Organize your frustrations, and you've got a spec.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B039",
+      "scene_id": "SEG05",
+      "text": "Frustration is the spec. Your annoyance, organized, is the blueprint.",
+      "narration_text": "Frustration is the spec. Your annoyance, organized, is the blueprint.",
+      "narrator_vo": "Frustration is the spec. Your annoyance, organized, is the blueprint.",
+      "visual_goal": "Visual: A notepad. Scribbled complaints morph into the three-line spec template. Goal. Constraints. Done-when.",
+      "duration_sec": 4.0,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Frustration is the spec. Your annoyance, organized, is the blueprint.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B040",
+      "scene_id": "SEG05",
+      "text": "And here's what might surprise you — professional developers do exactly this. Every day. They don't sit down and write perfect requirements from scratch. They build something, see what's wrong, and write the spec from the wreckage. That's not amateur hour. That's the process.",
+      "narration_text": "And here's what might surprise you — professional developers do exactly this. Every day. They don't sit down and write perfect requirements from scratch. They build something, see what's wrong, and write the spec from the wreckage. That's not amateur hour. That's the process.",
+      "narrator_vo": "And here's what might surprise you — professional developers do exactly this. Every day. They don't sit down and write perfect requirements from scratch. They build something, see what's wrong, and write the spec from the wreckage. That's not amateur hour. That's the process.",
+      "visual_goal": "Visual: The spec template glows. Transforms into a blueprint.",
+      "duration_sec": 17.6,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And here's what might surprise you — professional developers do exactly this. Every day. They don't sit down and write perfect requirements from scratch. They build something, see what's wrong, and write the spec from the wreckage. That's not amateur hour. That's the process.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B041",
+      "scene_id": "SEG05",
+      "text": "You're not learning to code. You're learning to direct. A director doesn't operate the camera. They say: \"wider shot, warmer light, more emotion.\" The crew executes. The director decides.",
+      "narration_text": "You're not learning to code. You're learning to direct. A director doesn't operate the camera. They say: \"wider shot, warmer light, more emotion.\" The crew executes. The director decides.",
+      "narrator_vo": "You're not learning to code. You're learning to direct. A director doesn't operate the camera. They say: \"wider shot, warmer light, more emotion.\" The crew executes. The director decides.",
+      "visual_goal": "Visual: A \"PRO DEV\" badge appears next to the same frustration-to-spec flow. \"You're already doing this.\"",
+      "duration_sec": 11.6,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "You're not learning to code. You're learning to direct. A director doesn't operate the camera. They say: \"wider shot, warmer light, more emotion.\" The crew executes. The director decides.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B042",
+      "scene_id": "SEG06",
+      "text": "Here's your homework. Before you type a single prompt — grab a piece of paper. Or open a blank file. And write three lines.",
+      "narration_text": "Here's your homework. Before you type a single prompt — grab a piece of paper. Or open a blank file. And write three lines.",
+      "narrator_vo": "Here's your homework. Before you type a single prompt — grab a piece of paper. Or open a blank file. And write three lines.",
+      "visual_goal": "Synopsis: Actually write your first spec → give it to AI → compare → EP03 tease",
+      "duration_sec": 9.6,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Here's your homework. Before you type a single prompt — grab a piece of paper. Or open a blank file. And write three lines.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B043",
+      "scene_id": "SEG06",
+      "text": "Goal. Constraints. Done-when. Fill in the blanks. Anything — a to-do app, a birthday card generator, a recipe organizer. Then give it to the AI.",
+      "narration_text": "Goal. Constraints. Done-when. Fill in the blanks. Anything — a to-do app, a birthday card generator, a recipe organizer. Then give it to the AI.",
+      "narrator_vo": "Goal. Constraints. Done-when. Fill in the blanks. Anything — a to-do app, a birthday card generator, a recipe organizer. Then give it to the AI.",
+      "visual_goal": "Visual: The three-line template appears on screen, large and clear:",
+      "duration_sec": 10.0,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Goal. Constraints. Done-when. Fill in the blanks. Anything — a to-do app, a birthday card generator, a recipe organizer. Then give it to the AI.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B044",
+      "scene_id": "SEG06",
+      "text": "And when the result comes back — hold your spec next to it. Does it match? Where does it match? Where doesn't it?",
+      "narration_text": "And when the result comes back — hold your spec next to it. Does it match? Where does it match? Where doesn't it?",
+      "narrator_vo": "And when the result comes back — hold your spec next to it. Does it match? Where does it match? Where doesn't it?",
+      "visual_goal": "\"Goal: ___\"",
+      "duration_sec": 9.2,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And when the result comes back — hold your spec next to it. Does it match? Where does it match? Where doesn't it?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B045",
+      "scene_id": "SEG06",
+      "text": "That gap — between spec and result — that's your next spec. The differences become the instructions. Every round gets closer.",
+      "narration_text": "That gap — between spec and result — that's your next spec. The differences become the instructions. Every round gets closer.",
+      "narrator_vo": "That gap — between spec and result — that's your next spec. The differences become the instructions. Every round gets closer.",
+      "visual_goal": "\"Constraints: ___\"",
+      "duration_sec": 8.4,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "That gap — between spec and result — that's your next spec. The differences become the instructions. Every round gets closer.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B046",
+      "scene_id": "SEG06",
+      "text": "But here's a question. The spec tells AI what to build. The code gets bigger. More files, more features, more complexity. How do you keep it organized? How do you stop one change from breaking everything else? Next time — we talk about walls.",
+      "narration_text": "But here's a question. The spec tells AI what to build. The code gets bigger. More files, more features, more complexity. How do you keep it organized? How do you stop one change from breaking everything else? Next time — we talk about walls.",
+      "narrator_vo": "But here's a question. The spec tells AI what to build. The code gets bigger. More files, more features, more complexity. How do you keep it organized? How do you stop one change from breaking everything else? Next time — we talk about walls.",
+      "visual_goal": "\"Done-when: ___\"",
+      "duration_sec": 17.6,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "But here's a question. The spec tells AI what to build. The code gets bigger. More files, more features, more complexity. How do you keep it organized? How do you stop one change from breaking everything else? Next time — we talk about walls.",
+          "emotion": ""
+        }
+      ]
+    }
+  ]
+}

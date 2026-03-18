@@ -2,8 +2,8 @@
 """Validate a Fountain screenplay against the Series Bible v6 6-segment format.
 
 Segments: HOOK -> MISCONCEPTION -> THE_CRACK -> CORE -> REFRAME -> OUTRO_CTA
-Timing:   Hook 15s, Misconception 30s, The Crack 30s, Core 105s, Reframe 30s, Outro+CTA 30s
-Total:    180-300 seconds (3-5 minutes)
+Timing:   Hook 30s, Misconception 75s, The Crack 60s, Core 270s, Reframe 75s, Outro+CTA 60s
+Total:    300-600 seconds (5-10 minutes)
 
 Checks:
   1. [PASS/FAIL] 6 segments exist (Hook/Misconception/The_Crack/Core/Reframe/Outro_CTA)
@@ -48,19 +48,19 @@ class _C:
 # Segment structure (Series Bible v6 — 6-stage format)
 # ---------------------------------------------------------------------------
 EXPECTED_SEGMENTS = [
-    {"name": "HOOK",          "max_sec": 15},
-    {"name": "MISCONCEPTION", "max_sec": 30},
-    {"name": "THE_CRACK",     "max_sec": 30},
-    {"name": "CORE",          "max_sec": 105},
-    {"name": "REFRAME",       "max_sec": 30},
-    {"name": "OUTRO_CTA",     "max_sec": 30},
+    {"name": "HOOK",          "max_sec": 30},
+    {"name": "MISCONCEPTION", "max_sec": 75},
+    {"name": "THE_CRACK",     "max_sec": 60},
+    {"name": "CORE",          "max_sec": 270},
+    {"name": "REFRAME",       "max_sec": 75},
+    {"name": "OUTRO_CTA",     "max_sec": 60},
 ]
 
-TOTAL_MIN = 180  # 3 minutes
-TOTAL_MAX = 300  # 5 minutes
+TOTAL_MIN = 300  # 5 minutes
+TOTAL_MAX = 600  # 10 minutes
 
 # Vee reaction limits
-VEE_REACTION_MAX = 6
+VEE_REACTION_MAX = 10
 VEE_REACTION_SEC_MIN = 1
 VEE_REACTION_SEC_MAX = 2
 
@@ -69,7 +69,7 @@ INTERRUPT_INTERVAL_MIN = 20  # seconds
 INTERRUPT_INTERVAL_MAX = 30  # seconds
 
 # Extended metaphor minimum duration in Core
-CORE_METAPHOR_MIN_SEC = 60
+CORE_METAPHOR_MIN_SEC = 120
 
 # ---------------------------------------------------------------------------
 # Banned expressions (Series Bible tone guide)

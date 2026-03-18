@@ -1,0 +1,2953 @@
+{
+  "project_id": "ep01",
+  "version": "6.0",
+  "title": "EP01 — What Is Vibe Coding?",
+  "language": "en",
+  "total_duration_sec": 450,
+  "segment_count": 6,
+  "beat_count": 53,
+  "segments": [
+    "HOOK",
+    "MISCONCEPTION",
+    "THE_CRACK",
+    "CORE",
+    "REFRAME",
+    "OUTRO_CTA"
+  ],
+  "phases": [
+    {
+      "phase_id": "SEG01",
+      "phase_name": "HOOK",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "",
+      "narrative_stage": "HOOK",
+      "target_duration_sec": 25,
+      "beats": [
+        {
+          "beat_id": "SEG01_B001",
+          "scene_id": "SEG01",
+          "text": "Build an app with one prompt. No code. No experience. Just vibes. The internet says anyone can do it.",
+          "narration_text": "Build an app with one prompt. No code. No experience. Just vibes. The internet says anyone can do it.",
+          "narrator_vo": "Build an app with one prompt. No code. No experience. Just vibes. The internet says anyone can do it.",
+          "visual_goal": "Synopsis: Social media ad montage → \"the internet says anyone can do it\" → Vee tries → something comes out → \"...what is this?\"",
+          "duration_sec": 7.6,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Build an app with one prompt. No code. No experience. Just vibes. The internet says anyone can do it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG01_B002",
+          "scene_id": "SEG01",
+          "text": "Every ad. Every thread. Every video. The message is the same: just type what you want, and AI will build it.",
+          "narration_text": "Every ad. Every thread. Every video. The message is the same: just type what you want, and AI will build it.",
+          "narrator_vo": "Every ad. Every thread. Every video. The message is the same: just type what you want, and AI will build it.",
+          "visual_goal": "Visual: Quick montage — fake social media ads flash across screen. \"Build an app in 60 seconds.\" \"No code needed.\" \"AI does everything.\" Bold text, sparkly effects. TikTok-style swipe transitions.",
+          "duration_sec": 8.4,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Every ad. Every thread. Every video. The message is the same: just type what you want, and AI will build it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG01_B003",
+          "scene_id": "SEG01",
+          "text": "Vee believed it. She typed a prompt. Hit enter.",
+          "narration_text": "Vee believed it. She typed a prompt. Hit enter.",
+          "narrator_vo": "Vee believed it. She typed a prompt. Hit enter.",
+          "visual_goal": "Visual: More ads — a smiling influencer pointing at a laptop. \"I made ten thousand dollars with one prompt.\" A countdown timer: \"60 seconds to your first app.\"",
+          "duration_sec": 3.6,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Vee believed it. She typed a prompt. Hit enter.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG01_B004",
+          "scene_id": "SEG01",
+          "text": "Something came out. But...",
+          "narration_text": "Something came out. But...",
+          "narrator_vo": "Something came out. But...",
+          "visual_goal": "Visual: Desk scene — Vee's hands type a prompt on keyboard. She looks excited. Hits enter. Screen glows.",
+          "duration_sec": 1.6,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Something came out. But...",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG02",
+      "phase_name": "MISCONCEPTION",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "screen",
+      "emotion_curve": "",
+      "narrative_stage": "MISCONCEPTION",
+      "target_duration_sec": 60,
+      "beats": [
+        {
+          "beat_id": "SEG02_B005",
+          "scene_id": "SEG02",
+          "text": "She typed: \"Make me an online store.\"",
+          "narration_text": "She typed: \"Make me an online store.\"",
+          "narrator_vo": "She typed: \"Make me an online store.\"",
+          "visual_goal": "Synopsis: \"Make me a shopping mall\" → wrong result → \"be more specific\" → even worse → \"try a different tool\" → same problem",
+          "duration_sec": 2.8,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "She typed: \"Make me an online store.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B006",
+          "scene_id": "SEG02",
+          "text": "And something appeared. A website. With a login button that goes to the shopping cart. A checkout page in neon pink and lime green. And a search bar that searches... nothing.",
+          "narration_text": "And something appeared. A website. With a login button that goes to the shopping cart. A checkout page in neon pink and lime green. And a search bar that searches... nothing.",
+          "narrator_vo": "And something appeared. A website. With a login button that goes to the shopping cart. A checkout page in neon pink and lime green. And a search bar that searches... nothing.",
+          "visual_goal": "Visual: AI generates a website. It loads. It exists. It's... technically a website.",
+          "duration_sec": 12.4,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And something appeared. A website. With a login button that goes to the shopping cart. A checkout page in neon pink and lime green. And a search bar that searches... nothing.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B007",
+          "scene_id": "SEG02",
+          "text": "It didn't crash. It didn't throw an error. It just... wasn't what she wanted.",
+          "narration_text": "It didn't crash. It didn't throw an error. It just... wasn't what she wanted.",
+          "narrator_vo": "It didn't crash. It didn't throw an error. It just... wasn't what she wanted.",
+          "visual_goal": "Visual: Close-up of the website — login button labeled \"Cart,\" garish color scheme, empty search results. Each problem highlighted with a subtle red pulse.",
+          "duration_sec": 5.6,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "It didn't crash. It didn't throw an error. It just... wasn't what she wanted.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B008",
+          "scene_id": "SEG02",
+          "text": "This is what most people don't tell you about vibe coding. The result doesn't explode. It comes out wrong. Low quality. Not what you asked for. And you can't explain why.",
+          "narration_text": "This is what most people don't tell you about vibe coding. The result doesn't explode. It comes out wrong. Low quality. Not what you asked for. And you can't explain why.",
+          "narrator_vo": "This is what most people don't tell you about vibe coding. The result doesn't explode. It comes out wrong. Low quality. Not what you asked for. And you can't explain why.",
+          "visual_goal": "Vee frozen expression — not angry, not sad. Just... \"what?\" 1.5 seconds.",
+          "duration_sec": 12.4,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 2,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "This is what most people don't tell you about vibe coding. The result doesn't explode. It comes out wrong. Low quality. Not what you asked for. And you can't explain why.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B009",
+          "scene_id": "SEG02",
+          "text": "So she did what everyone does. She got more specific.",
+          "narration_text": "So she did what everyone does. She got more specific.",
+          "narrator_vo": "So she did what everyone does. She got more specific.",
+          "visual_goal": "Visual: Close-up of the garish result — zoom on neon pink checkout page. Hold for effect.",
+          "duration_sec": 4.0,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "So she did what everyone does. She got more specific.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B010",
+          "scene_id": "SEG02",
+          "text": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern sans-serif font, responsive layout, search bar with autocomplete...\"",
+          "narration_text": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern sans-serif font, responsive layout, search bar with autocomplete...\"",
+          "narrator_vo": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern sans-serif font, responsive layout, search bar with autocomplete...\"",
+          "visual_goal": "Visual: Vee typing. The prompt grows. And grows. Camera slowly zooms out — text extends beyond the screen.",
+          "duration_sec": 12.0,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern sans-serif font, responsive layout, search bar with autocomplete...\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B011",
+          "scene_id": "SEG02",
+          "text": "The result?",
+          "narration_text": "The result?",
+          "narrator_vo": "The result?",
+          "visual_goal": "Visual: Prompt fills the entire screen. Tiny font. Endless instructions.",
+          "duration_sec": 1.5,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The result?",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B012",
+          "scene_id": "SEG02",
+          "text": "Worse. More detail made it more confused. Because detail is not direction.",
+          "narration_text": "Worse. More detail made it more confused. Because detail is not direction.",
+          "narrator_vo": "Worse. More detail made it more confused. Because detail is not direction.",
+          "visual_goal": "Visual: The AI output appears. It's worse. The header is blue but covers everything. Categories overlap. Cart is on a different page entirely.",
+          "duration_sec": 4.8,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Worse. More detail made it more confused. Because detail is not direction.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B013",
+          "scene_id": "SEG02",
+          "text": "Okay, she thought. Maybe it's the tool. She switched tools. Three different AI assistants. Same prompt.",
+          "narration_text": "Okay, she thought. Maybe it's the tool. She switched tools. Three different AI assistants. Same prompt.",
+          "narrator_vo": "Okay, she thought. Maybe it's the tool. She switched tools. Three different AI assistants. Same prompt.",
+          "visual_goal": "Vee slumps back in chair. Hands drop from keyboard. She looks at Bee — Bee shrugs with tiny arms. 1.5 seconds.",
+          "duration_sec": 6.4,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 3,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Okay, she thought. Maybe it's the tool. She switched tools. Three different AI assistants. Same prompt.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B014",
+          "scene_id": "SEG02",
+          "text": "Three tools. Three different wrong answers. The problem wasn't the tool. It was something else entirely.",
+          "narration_text": "Three tools. Three different wrong answers. The problem wasn't the tool. It was something else entirely.",
+          "narrator_vo": "Three tools. Three different wrong answers. The problem wasn't the tool. It was something else entirely.",
+          "visual_goal": "Visual: Three browser windows open side by side. Three different tools. Three different results. All wrong in different ways.",
+          "duration_sec": 6.4,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Three tools. Three different wrong answers. The problem wasn't the tool. It was something else entirely.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG03",
+      "phase_name": "THE_CRACK",
+      "segment": "THE_CRACK",
+      "visual_type": "screen_demo",
+      "space": "screen",
+      "emotion_curve": "",
+      "narrative_stage": "THE_CRACK",
+      "target_duration_sec": 50,
+      "beats": [
+        {
+          "beat_id": "SEG03_B015",
+          "scene_id": "SEG03",
+          "text": "So she tried one more thing. Same prompt. Same tool. Three times in a row.",
+          "narration_text": "So she tried one more thing. Same prompt. Same tool. Three times in a row.",
+          "narrator_vo": "So she tried one more thing. Same prompt. Same tool. Three times in a row.",
+          "visual_goal": "Synopsis: Same prompt, three runs → three different results → \"AI doesn't understand — it predicts\" → \"she never read the code\"",
+          "duration_sec": 6.0,
+          "segment": "THE_CRACK",
+          "visual_type": "screen_demo",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "So she tried one more thing. Same prompt. Same tool. Three times in a row.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B016",
+          "scene_id": "SEG03",
+          "text": "Three runs. Three completely different stores. Different layouts, different colors, different features. Same exact prompt.",
+          "narration_text": "Three runs. Three completely different stores. Different layouts, different colors, different features. Same exact prompt.",
+          "narrator_vo": "Three runs. Three completely different stores. Different layouts, different colors, different features. Same exact prompt.",
+          "visual_goal": "Visual: Screen splits into three panels. Each shows a different result. One purple-themed, one text-only, one mostly images. Completely different layouts.",
+          "duration_sec": 6.0,
+          "segment": "THE_CRACK",
+          "visual_type": "screen_demo",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Three runs. Three completely different stores. Different layouts, different colors, different features. Same exact prompt.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B017",
+          "scene_id": "SEG03",
+          "text": "Why? Because the AI isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly different. Like rolling dice with language.",
+          "narration_text": "Why? Because the AI isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly different. Like rolling dice with language.",
+          "narrator_vo": "Why? Because the AI isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly different. Like rolling dice with language.",
+          "visual_goal": "Vee looks left, right, left — head swiveling between the three screens. 1.5 seconds.",
+          "duration_sec": 10.0,
+          "segment": "THE_CRACK",
+          "visual_type": "screen_demo",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 4,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Why? Because the AI isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly different. Like rolling dice with language.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B018",
+          "scene_id": "SEG03",
+          "text": "And here's the part that really matters. She never read what the AI actually wrote.",
+          "narration_text": "And here's the part that really matters. She never read what the AI actually wrote.",
+          "narrator_vo": "And here's the part that really matters. She never read what the AI actually wrote.",
+          "visual_goal": "Visual: Zoom into one screen — text appearing letter by letter, each letter a probability cloud, a dice roll. Not \"understanding\" — predicting.",
+          "duration_sec": 6.0,
+          "segment": "THE_CRACK",
+          "visual_type": "screen_demo",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And here's the part that really matters. She never read what the AI actually wrote.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B019",
+          "scene_id": "SEG03",
+          "text": "Not the website. The code behind it. She looked at the result and said \"that's wrong\" — but she couldn't say why, because she never looked at the instructions the AI wrote to build it.",
+          "narration_text": "Not the website. The code behind it. She looked at the result and said \"that's wrong\" — but she couldn't say why, because she never looked at the instructions the AI wrote to build it.",
+          "narrator_vo": "Not the website. The code behind it. She looked at the result and said \"that's wrong\" — but she couldn't say why, because she never looked at the instructions the AI wrote to build it.",
+          "visual_goal": "Visual: A code editor opens. Hundreds of lines of code scroll past. Vee's cursor doesn't move. She's looking at the preview, not the code. The code is a black box.",
+          "duration_sec": 14.0,
+          "segment": "THE_CRACK",
+          "visual_type": "screen_demo",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Not the website. The code behind it. She looked at the result and said \"that's wrong\" — but she couldn't say why, because she never looked at the instructions the AI wrote to build it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B020",
+          "scene_id": "SEG03",
+          "text": "The AI wrote the recipe. She tasted the dish. But she never checked the recipe.",
+          "narration_text": "The AI wrote the recipe. She tasted the dish. But she never checked the recipe.",
+          "narrator_vo": "The AI wrote the recipe. She tasted the dish. But she never checked the recipe.",
+          "visual_goal": "Visual: Split — left side shows the pretty preview, right side shows raw code with subtle bugs highlighted. The bugs pulse, unnoticed.",
+          "duration_sec": 6.0,
+          "segment": "THE_CRACK",
+          "visual_type": "screen_demo",
+          "space": "screen",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The AI wrote the recipe. She tasted the dish. But she never checked the recipe.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG04",
+      "phase_name": "CORE",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "",
+      "narrative_stage": "CORE",
+      "target_duration_sec": 210,
+      "beats": [
+        {
+          "beat_id": "SEG04_B021",
+          "scene_id": "SEG04",
+          "text": "Think of it like cooking. You walk into a restaurant and say: \"Make me dinner.\" The chef — a very fast, very capable chef — starts cooking immediately.",
+          "narration_text": "Think of it like cooking. You walk into a restaurant and say: \"Make me dinner.\" The chef — a very fast, very capable chef — starts cooking immediately.",
+          "narrator_vo": "Think of it like cooking. You walk into a restaurant and say: \"Make me dinner.\" The chef — a very fast, very capable chef — starts cooking immediately.",
+          "visual_goal": "Synopsis: Extended cooking metaphor (120s) → \"would you serve it to customers?\" → vibe coding definition (Karpathy) → what it's good/bad at → tool tour (5 tools) → level spectrum",
+          "duration_sec": 11.2,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Think of it like cooking. You walk into a restaurant and say: \"Make me dinner.\" The chef — a very fast, very capable chef — starts cooking immediately.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B022",
+          "scene_id": "SEG04",
+          "text": "Something appears on the plate. It's food. Technically. But it's not what you wanted, because you never said what you wanted.",
+          "narration_text": "Something appears on the plate. It's food. Technically. But it's not what you wanted, because you never said what you wanted.",
+          "narrator_vo": "Something appears on the plate. It's food. Technically. But it's not what you wanted, because you never said what you wanted.",
+          "visual_goal": "Visual: A robot wearing a chef's hat stands in a kitchen. No recipe in sight. Industrial kitchen, stainless steel, professional setup.",
+          "duration_sec": 8.4,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Something appears on the plate. It's food. Technically. But it's not what you wanted, because you never said what you wanted.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B023",
+          "scene_id": "SEG04",
+          "text": "So you try again. \"Make me dinner. Something Italian. Use pasta. Make it creamy.\"",
+          "narration_text": "So you try again. \"Make me dinner. Something Italian. Use pasta. Make it creamy.\"",
+          "narrator_vo": "So you try again. \"Make me dinner. Something Italian. Use pasta. Make it creamy.\"",
+          "visual_goal": "Visual: Robot chef grabs random ingredients. Chops, fries, plates something. Puts it on the counter. It's... a thing. Not bad, not good. Just random.",
+          "duration_sec": 5.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "So you try again. \"Make me dinner. Something Italian. Use pasta. Make it creamy.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B024",
+          "scene_id": "SEG04",
+          "text": "The chef gets excited. Grabs every Italian ingredient. Puts cream on everything. Adds four types of cheese. Pasta is swimming in a lake of sauce. Garlic bread is stuffed inside the pasta somehow.",
+          "narration_text": "The chef gets excited. Grabs every Italian ingredient. Puts cream on everything. Adds four types of cheese. Pasta is swimming in a lake of sauce. Garlic bread is stuffed inside the pasta somehow.",
+          "narrator_vo": "The chef gets excited. Grabs every Italian ingredient. Puts cream on everything. Adds four types of cheese. Pasta is swimming in a lake of sauce. Garlic bread is stuffed inside the pasta somehow.",
+          "visual_goal": "Visual: The plate sits on the counter. A fork pokes it. Confused reaction from a small figure silhouette.",
+          "duration_sec": 13.2,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The chef gets excited. Grabs every Italian ingredient. Puts cream on everything. Adds four types of cheese. Pasta is swimming in a lake of sauce. Garlic bread is stuffed inside the pasta somehow.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B025",
+          "scene_id": "SEG04",
+          "text": "More detail. Same problem. Because you gave ingredients, not intent.",
+          "narration_text": "More detail. Same problem. Because you gave ingredients, not intent.",
+          "narrator_vo": "More detail. Same problem. Because you gave ingredients, not intent.",
+          "visual_goal": "Visual: More detail written on a notepad, slid across to the robot. Robot reads, nods enthusiastically.",
+          "duration_sec": 4.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "More detail. Same problem. Because you gave ingredients, not intent.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B026",
+          "scene_id": "SEG04",
+          "text": "Now imagine one card. \"Pasta carbonara. Four ingredients. No cream. Serves two.\"",
+          "narration_text": "Now imagine one card. \"Pasta carbonara. Four ingredients. No cream. Serves two.\"",
+          "narrator_vo": "Now imagine one card. \"Pasta carbonara. Four ingredients. No cream. Serves two.\"",
+          "visual_goal": "Visual: The result is a mountain of food. Technically Italian. Technically creamy. Also completely inedible. Too much of everything.",
+          "duration_sec": 4.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Now imagine one card. \"Pasta carbonara. Four ingredients. No cream. Serves two.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B027",
+          "scene_id": "SEG04",
+          "text": "Same chef. Same kitchen. Completely different result. Consistent. Recognizable. Close to what you wanted.",
+          "narration_text": "Same chef. Same kitchen. Completely different result. Consistent. Recognizable. Close to what you wanted.",
+          "narrator_vo": "Same chef. Same kitchen. Completely different result. Consistent. Recognizable. Close to what you wanted.",
+          "visual_goal": "Visual: Transition — a hand slides a small card across the counter. Recipe card — simple, three lines. Robot chef reads it, nods once.",
+          "duration_sec": 5.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Same chef. Same kitchen. Completely different result. Consistent. Recognizable. Close to what you wanted.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B028",
+          "scene_id": "SEG04",
+          "text": "But here's the question nobody asks. Would you serve this to a customer?",
+          "narration_text": "But here's the question nobody asks. Would you serve this to a customer?",
+          "narrator_vo": "But here's the question nobody asks. Would you serve this to a customer?",
+          "visual_goal": "Visual: Robot chef follows the recipe. Controlled. Precise. Plating is clean. Result looks like actual carbonara.",
+          "duration_sec": 5.2,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "But here's the question nobody asks. Would you serve this to a customer?",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B029",
+          "scene_id": "SEG04",
+          "text": "Your friend's kitchen? Sure, experiment. A dinner party? Maybe. A restaurant? With paying customers? You'd want to taste it first. Check the seasoning. Make sure there's no raw egg. Make sure it doesn't make someone sick.",
+          "narration_text": "Your friend's kitchen? Sure, experiment. A dinner party? Maybe. A restaurant? With paying customers? You'd want to taste it first. Check the seasoning. Make sure there's no raw egg. Make sure it doesn't make someone sick.",
+          "narrator_vo": "Your friend's kitchen? Sure, experiment. A dinner party? Maybe. A restaurant? With paying customers? You'd want to taste it first. Check the seasoning. Make sure there's no raw egg. Make sure it doesn't make someone sick.",
+          "visual_goal": "Visual: Side-by-side — left: the chaotic cream mountain, right: clean carbonara. Clear difference.",
+          "duration_sec": 14.4,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Your friend's kitchen? Sure, experiment. A dinner party? Maybe. A restaurant? With paying customers? You'd want to taste it first. Check the seasoning. Make sure there's no raw egg. Make sure it doesn't make someone sick.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B030",
+          "scene_id": "SEG04",
+          "text": "AI is that chef. Fast, capable, ready to go. But without a recipe, it improvises. And when you're cooking for yourself, improvisation is fine. When you're cooking for others — for production, for users, for money — you need more than vibes.",
+          "narration_text": "AI is that chef. Fast, capable, ready to go. But without a recipe, it improvises. And when you're cooking for yourself, improvisation is fine. When you're cooking for others — for production, for users, for money — you need more than vibes.",
+          "narrator_vo": "AI is that chef. Fast, capable, ready to go. But without a recipe, it improvises. And when you're cooking for yourself, improvisation is fine. When you're cooking for others — for production, for users, for money — you need more than vibes.",
+          "visual_goal": "Visual: The carbonara plate slides toward a dining table. A real person sits there. Menu, napkin, wine glass. This isn't practice anymore.",
+          "duration_sec": 16.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "AI is that chef. Fast, capable, ready to go. But without a recipe, it improvises. And when you're cooking for yourself, improvisation is fine. When you're cooking for others — for production, for users, for money — you need more than vibes.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B031",
+          "scene_id": "SEG04",
+          "text": "In February twenty twenty-five, Andrej Karpathy — one of the founders of OpenAI — gave this a name. Vibe coding. Quote: \"You just talk in natural language, run it, and most of the time it just works.\"",
+          "narration_text": "In February twenty twenty-five, Andrej Karpathy — one of the founders of OpenAI — gave this a name. Vibe coding. Quote: \"You just talk in natural language, run it, and most of the time it just works.\"",
+          "narrator_vo": "In February twenty twenty-five, Andrej Karpathy — one of the founders of OpenAI — gave this a name. Vibe coding. Quote: \"You just talk in natural language, run it, and most of the time it just works.\"",
+          "visual_goal": "Visual: A health inspector appears with a clipboard. The robot chef nervously holds up the plate.",
+          "duration_sec": 14.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "In February twenty twenty-five, Andrej Karpathy — one of the founders of OpenAI — gave this a name. Vibe coding. Quote: \"You just talk in natural language, run it, and most of the time it just works.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B032",
+          "scene_id": "SEG04",
+          "text": "But here's the word most people skip. \"With.\" Vibe coding isn't AI coding for you. It's you coding with AI. The decisions — what to build, what's good enough, what's wrong — those are yours. The implementation — the actual code — that's the AI's job.",
+          "narration_text": "But here's the word most people skip. \"With.\" Vibe coding isn't AI coding for you. It's you coding with AI. The decisions — what to build, what's good enough, what's wrong — those are yours. The implementation — the actual code — that's the AI's job.",
+          "narrator_vo": "But here's the word most people skip. \"With.\" Vibe coding isn't AI coding for you. It's you coding with AI. The decisions — what to build, what's good enough, what's wrong — those are yours. The implementation — the actual code — that's the AI's job.",
+          "visual_goal": "Visual: Transition — whiteboard clears. New text appears, building word by word.",
+          "duration_sec": 18.4,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "But here's the word most people skip. \"With.\" Vibe coding isn't AI coding for you. It's you coding with AI. The decisions — what to build, what's good enough, what's wrong — those are yours. The implementation — the actual code — that's the AI's job.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B033",
+          "scene_id": "SEG04",
+          "text": "Not outsourcing. Collaboration. That \"with\" is the hard part.",
+          "narration_text": "Not outsourcing. Collaboration. That \"with\" is the hard part.",
+          "narrator_vo": "Not outsourcing. Collaboration. That \"with\" is the hard part.",
+          "visual_goal": "Visual: Karpathy quote appears on whiteboard, styled like a citation. Clean typography.",
+          "duration_sec": 3.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Not outsourcing. Collaboration. That \"with\" is the hard part.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B034",
+          "scene_id": "SEG04",
+          "text": "So what can AI actually do well? Prototypes. Quick experiments. \"Show me what a dashboard could look like.\" Ten minutes, you have something to react to. Scripts and automations — rename five hundred files, convert data formats, generate boilerplate. Learning tools — \"explain this code,\" \"what does this function do,\" \"show me an example.\"",
+          "narration_text": "So what can AI actually do well? Prototypes. Quick experiments. \"Show me what a dashboard could look like.\" Ten minutes, you have something to react to. Scripts and automations — rename five hundred files, convert data formats, generate boilerplate. Learning tools — \"explain this code,\" \"what does this function do,\" \"show me an example.\"",
+          "narrator_vo": "So what can AI actually do well? Prototypes. Quick experiments. \"Show me what a dashboard could look like.\" Ten minutes, you have something to react to. Scripts and automations — rename five hundred files, convert data formats, generate boilerplate. Learning tools — \"explain this code,\" \"what does this function do,\" \"show me an example.\"",
+          "visual_goal": "Visual: Two-column diagram. Left: \"YOU\" — decide, judge, direct. Right: \"AI\" — write, execute, generate. Arrow between them: \"collaboration.\"",
+          "duration_sec": 21.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "So what can AI actually do well? Prototypes. Quick experiments. \"Show me what a dashboard could look like.\" Ten minutes, you have something to react to. Scripts and automations — rename five hundred files, convert data formats, generate boilerplate. Learning tools — \"explain this code,\" \"what does this function do,\" \"show me an example.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B035",
+          "scene_id": "SEG04",
+          "text": "What can't it do? Production systems — code that handles real users, real money, real data. Security — keeping attackers out, protecting passwords, encrypting sensitive information. Payment processing — where a bug means someone gets charged twice.",
+          "narration_text": "What can't it do? Production systems — code that handles real users, real money, real data. Security — keeping attackers out, protecting passwords, encrypting sensitive information. Payment processing — where a bug means someone gets charged twice.",
+          "narrator_vo": "What can't it do? Production systems — code that handles real users, real money, real data. Security — keeping attackers out, protecting passwords, encrypting sensitive information. Payment processing — where a bug means someone gets charged twice.",
+          "visual_goal": "Visual: New section header: \"What AI is good at\"",
+          "duration_sec": 14.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "What can't it do? Production systems — code that handles real users, real money, real data. Security — keeping attackers out, protecting passwords, encrypting sensitive information. Payment processing — where a bug means someone gets charged twice.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B036",
+          "scene_id": "SEG04",
+          "text": "Not \"can't ever.\" Can't without supervision. Can't without someone checking the recipe before it reaches the customer.",
+          "narration_text": "Not \"can't ever.\" Can't without supervision. Can't without someone checking the recipe before it reaches the customer.",
+          "narrator_vo": "Not \"can't ever.\" Can't without supervision. Can't without someone checking the recipe before it reaches the customer.",
+          "visual_goal": "Visual: Three panels appear — a prototype app mockup, a terminal running a script, a chat explaining code. Each with a green checkmark.",
+          "duration_sec": 6.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Not \"can't ever.\" Can't without supervision. Can't without someone checking the recipe before it reaches the customer.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B037",
+          "scene_id": "SEG04",
+          "text": "And you've got options. Cursor — an AI-powered code editor. You write alongside it. It suggests, you accept or reject.",
+          "narration_text": "And you've got options. Cursor — an AI-powered code editor. You write alongside it. It suggests, you accept or reject.",
+          "narrator_vo": "And you've got options. Cursor — an AI-powered code editor. You write alongside it. It suggests, you accept or reject.",
+          "visual_goal": "Visual: Three panels — a server with a warning sign, a lock icon with a crack, a credit card with an error. Each with a red X.",
+          "duration_sec": 8.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And you've got options. Cursor — an AI-powered code editor. You write alongside it. It suggests, you accept or reject.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B038",
+          "scene_id": "SEG04",
+          "text": "Claude Code — a terminal agent. It reads your entire project and makes changes across multiple files.",
+          "narration_text": "Claude Code — a terminal agent. It reads your entire project and makes changes across multiple files.",
+          "narrator_vo": "Claude Code — a terminal agent. It reads your entire project and makes changes across multiple files.",
+          "visual_goal": "Visual: Transition to tool tour. Five panels appear in a row.",
+          "duration_sec": 6.8,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Claude Code — a terminal agent. It reads your entire project and makes changes across multiple files.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B039",
+          "scene_id": "SEG04",
+          "text": "Replit — browser-based. No installation. Start building in thirty seconds flat.",
+          "narration_text": "Replit — browser-based. No installation. Start building in thirty seconds flat.",
+          "narrator_vo": "Replit — browser-based. No installation. Start building in thirty seconds flat.",
+          "visual_goal": "Visual: Cursor IDE screenshot — code on left, AI chat on right. Quick 8-second glimpse.",
+          "duration_sec": 4.4,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Replit — browser-based. No installation. Start building in thirty seconds flat.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B040",
+          "scene_id": "SEG04",
+          "text": "Kiro — from AWS. Spec-first. It writes requirements before touching code. We'll come back to that.",
+          "narration_text": "Kiro — from AWS. Spec-first. It writes requirements before touching code. We'll come back to that.",
+          "narrator_vo": "Kiro — from AWS. Spec-first. It writes requirements before touching code. We'll come back to that.",
+          "visual_goal": "Visual: Terminal screen, commands flowing. Green text on dark background. 8 seconds.",
+          "duration_sec": 6.4,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Kiro — from AWS. Spec-first. It writes requirements before touching code. We'll come back to that.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B041",
+          "scene_id": "SEG04",
+          "text": "Windsurf — another AI IDE. Similar to Cursor, different workflow. The point isn't which one.",
+          "narration_text": "Windsurf — another AI IDE. Similar to Cursor, different workflow. The point isn't which one.",
+          "narrator_vo": "Windsurf — another AI IDE. Similar to Cursor, different workflow. The point isn't which one.",
+          "visual_goal": "Visual: Browser window, Replit interface. Colorful, friendly. 8 seconds.",
+          "duration_sec": 6.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Windsurf — another AI IDE. Similar to Cursor, different workflow. The point isn't which one.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B042",
+          "scene_id": "SEG04",
+          "text": "Different tools. Same principle. You decide what. AI decides how.",
+          "narration_text": "Different tools. Same principle. You decide what. AI decides how.",
+          "narrator_vo": "Different tools. Same principle. You decide what. AI decides how.",
+          "visual_goal": "Visual: Kiro interface glimpse. Requirements panel visible. 8 seconds.",
+          "duration_sec": 4.0,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Different tools. Same principle. You decide what. AI decides how.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B043",
+          "scene_id": "SEG04",
+          "text": "And there's a spectrum. Level one: copy-pasting from ChatGPT. Level two: an AI IDE like Cursor. Level three: an autonomous agent with a spec. Wherever you start is fine. But know where you are.",
+          "narration_text": "And there's a spectrum. Level one: copy-pasting from ChatGPT. Level two: an AI IDE like Cursor. Level three: an autonomous agent with a spec. Wherever you start is fine. But know where you are.",
+          "narrator_vo": "And there's a spectrum. Level one: copy-pasting from ChatGPT. Level two: an AI IDE like Cursor. Level three: an autonomous agent with a spec. Wherever you start is fine. But know where you are.",
+          "visual_goal": "Visual: Windsurf interface glimpse. 6 seconds.",
+          "duration_sec": 13.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And there's a spectrum. Level one: copy-pasting from ChatGPT. Level two: an AI IDE like Cursor. Level three: an autonomous agent with a spec. Wherever you start is fine. But know where you are.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG05",
+      "phase_name": "REFRAME",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "",
+      "narrative_stage": "REFRAME",
+      "target_duration_sec": 60,
+      "beats": [
+        {
+          "beat_id": "SEG05_B044",
+          "scene_id": "SEG05",
+          "text": "So here's the reframe. Vibe coding is not an easy button. It's not \"AI, do my job.\" It's a new skill — like learning to drive. The car does the moving. You do the steering.",
+          "narration_text": "So here's the reframe. Vibe coding is not an easy button. It's not \"AI, do my job.\" It's a new skill — like learning to drive. The car does the moving. You do the steering.",
+          "narrator_vo": "So here's the reframe. Vibe coding is not an easy button. It's not \"AI, do my job.\" It's a new skill — like learning to drive. The car does the moving. You do the steering.",
+          "visual_goal": "Synopsis: \"Not an easy button — a new skill\" → \"Judgment is the hardest part\" → EP02 bridge",
+          "duration_sec": 14.0,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "So here's the reframe. Vibe coding is not an easy button. It's not \"AI, do my job.\" It's a new skill — like learning to drive. The car does the moving. You do the steering.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B045",
+          "scene_id": "SEG05",
+          "text": "And the hardest part of this new skill isn't the typing. It's the judgment. Looking at what the AI made and knowing — is this good enough? Is this safe? Would I bet money on this working tomorrow?",
+          "narration_text": "And the hardest part of this new skill isn't the typing. It's the judgment. Looking at what the AI made and knowing — is this good enough? Is this safe? Would I bet money on this working tomorrow?",
+          "narrator_vo": "And the hardest part of this new skill isn't the typing. It's the judgment. Looking at what the AI made and knowing — is this good enough? Is this safe? Would I bet money on this working tomorrow?",
+          "visual_goal": "Visual: Whiteboard — \"easy button\" icon gets crossed out. Replaced by a steering wheel with two hands on it.",
+          "duration_sec": 15.2,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And the hardest part of this new skill isn't the typing. It's the judgment. Looking at what the AI made and knowing — is this good enough? Is this safe? Would I bet money on this working tomorrow?",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B046",
+          "scene_id": "SEG05",
+          "text": "Professional developers do this every day. They review code. They test it. They ask: \"what could go wrong?\" That's not a coding skill. That's a thinking skill. And you already have it.",
+          "narration_text": "Professional developers do this every day. They review code. They test it. They ask: \"what could go wrong?\" That's not a coding skill. That's a thinking skill. And you already have it.",
+          "narrator_vo": "Professional developers do this every day. They review code. They test it. They ask: \"what could go wrong?\" That's not a coding skill. That's a thinking skill. And you already have it.",
+          "visual_goal": "Visual: A scale appears. One side: \"good enough?\" Other side: \"dangerous?\" The scale tips back and forth.",
+          "duration_sec": 12.8,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Professional developers do this every day. They review code. They test it. They ask: \"what could go wrong?\" That's not a coding skill. That's a thinking skill. And you already have it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B047",
+          "scene_id": "SEG05",
+          "text": "The starting point — the thing that makes all of this work — is knowing what you're building. Not how. What. That's where episode two picks up.",
+          "narration_text": "The starting point — the thing that makes all of this work — is knowing what you're building. Not how. What. That's where episode two picks up.",
+          "narrator_vo": "The starting point — the thing that makes all of this work — is knowing what you're building. Not how. What. That's where episode two picks up.",
+          "visual_goal": "Visual: A non-developer looking at a plate of food — \"would I serve this?\" Same judgment, different domain.",
+          "duration_sec": 10.8,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The starting point — the thing that makes all of this work — is knowing what you're building. Not how. What. That's where episode two picks up.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG06",
+      "phase_name": "OUTRO_CTA",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "",
+      "narrative_stage": "OUTRO_CTA",
+      "target_duration_sec": 45,
+      "beats": [
+        {
+          "beat_id": "SEG06_B048",
+          "scene_id": "SEG06",
+          "text": "Here's what you do today. Three things.",
+          "narration_text": "Here's what you do today. Three things.",
+          "narrator_vo": "Here's what you do today. Three things.",
+          "visual_goal": "Synopsis: Three things to do today — install, prompt, feel. Record the feeling.",
+          "duration_sec": 2.8,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Here's what you do today. Three things.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B049",
+          "scene_id": "SEG06",
+          "text": "One — pick a tool. Any tool. Cursor, Replit, Claude, whatever feels right. Install it.",
+          "narration_text": "One — pick a tool. Any tool. Cursor, Replit, Claude, whatever feels right. Install it.",
+          "narrator_vo": "One — pick a tool. Any tool. Cursor, Replit, Claude, whatever feels right. Install it.",
+          "visual_goal": "Visual: Desk scene — a sticky note appears with \"1, 2, 3\" written on it.",
+          "duration_sec": 6.0,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "One — pick a tool. Any tool. Cursor, Replit, Claude, whatever feels right. Install it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B050",
+          "scene_id": "SEG06",
+          "text": "Two — type one prompt. Anything. \"Make me a to-do app.\" \"Build a calculator.\" \"Create a personal website.\" Doesn't matter what.",
+          "narration_text": "Two — type one prompt. Anything. \"Make me a to-do app.\" \"Build a calculator.\" \"Create a personal website.\" Doesn't matter what.",
+          "narrator_vo": "Two — type one prompt. Anything. \"Make me a to-do app.\" \"Build a calculator.\" \"Create a personal website.\" Doesn't matter what.",
+          "visual_goal": "Visual: Download progress bar fills. App opens.",
+          "duration_sec": 8.4,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Two — type one prompt. Anything. \"Make me a to-do app.\" \"Build a calculator.\" \"Create a personal website.\" Doesn't matter what.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B051",
+          "scene_id": "SEG06",
+          "text": "Three — look at what comes out. And write down how you feel. Not what's wrong with it. How you feel. Frustrated? Confused? Excited? Disappointed?",
+          "narration_text": "Three — look at what comes out. And write down how you feel. Not what's wrong with it. How you feel. Frustrated? Confused? Excited? Disappointed?",
+          "narrator_vo": "Three — look at what comes out. And write down how you feel. Not what's wrong with it. How you feel. Frustrated? Confused? Excited? Disappointed?",
+          "visual_goal": "Visual: Prompt typed. Enter pressed. Something appears on screen.",
+          "duration_sec": 10.0,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Three — look at what comes out. And write down how you feel. Not what's wrong with it. How you feel. Frustrated? Confused? Excited? Disappointed?",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B052",
+          "scene_id": "SEG06",
+          "text": "That feeling is data. If the answer is \"this isn't what I wanted\" — good. That frustration? That gap between what you imagined and what appeared? That's where it all begins.",
+          "narration_text": "That feeling is data. If the answer is \"this isn't what I wanted\" — good. That frustration? That gap between what you imagined and what appeared? That's where it all begins.",
+          "narrator_vo": "That feeling is data. If the answer is \"this isn't what I wanted\" — good. That frustration? That gap between what you imagined and what appeared? That's where it all begins.",
+          "visual_goal": "Visual: Vee looks at the result. She picks up a pen. Writes on a sticky note — not code, not feedback. A feeling.",
+          "duration_sec": 12.4,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "That feeling is data. If the answer is \"this isn't what I wanted\" — good. That frustration? That gap between what you imagined and what appeared? That's where it all begins.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B053",
+          "scene_id": "SEG06",
+          "text": "Next time — we give that feeling a name. And we turn it into the most powerful tool in vibe coding.",
+          "narration_text": "Next time — we give that feeling a name. And we turn it into the most powerful tool in vibe coding.",
+          "narrator_vo": "Next time — we give that feeling a name. And we turn it into the most powerful tool in vibe coding.",
+          "visual_goal": "Vee looks at the result. Head tilt. Then — a small smile. Not because it's good. Because she's starting. 1.5 seconds.",
+          "duration_sec": 8.4,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 5,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Next time — we give that feeling a name. And we turn it into the most powerful tool in vibe coding.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "beat_id": "SEG01_B001",
+      "scene_id": "SEG01",
+      "text": "Build an app with one prompt. No code. No experience. Just vibes. The internet says anyone can do it.",
+      "narration_text": "Build an app with one prompt. No code. No experience. Just vibes. The internet says anyone can do it.",
+      "narrator_vo": "Build an app with one prompt. No code. No experience. Just vibes. The internet says anyone can do it.",
+      "visual_goal": "Synopsis: Social media ad montage → \"the internet says anyone can do it\" → Vee tries → something comes out → \"...what is this?\"",
+      "duration_sec": 7.6,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Build an app with one prompt. No code. No experience. Just vibes. The internet says anyone can do it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG01_B002",
+      "scene_id": "SEG01",
+      "text": "Every ad. Every thread. Every video. The message is the same: just type what you want, and AI will build it.",
+      "narration_text": "Every ad. Every thread. Every video. The message is the same: just type what you want, and AI will build it.",
+      "narrator_vo": "Every ad. Every thread. Every video. The message is the same: just type what you want, and AI will build it.",
+      "visual_goal": "Visual: Quick montage — fake social media ads flash across screen. \"Build an app in 60 seconds.\" \"No code needed.\" \"AI does everything.\" Bold text, sparkly effects. TikTok-style swipe transitions.",
+      "duration_sec": 8.4,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Every ad. Every thread. Every video. The message is the same: just type what you want, and AI will build it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG01_B003",
+      "scene_id": "SEG01",
+      "text": "Vee believed it. She typed a prompt. Hit enter.",
+      "narration_text": "Vee believed it. She typed a prompt. Hit enter.",
+      "narrator_vo": "Vee believed it. She typed a prompt. Hit enter.",
+      "visual_goal": "Visual: More ads — a smiling influencer pointing at a laptop. \"I made ten thousand dollars with one prompt.\" A countdown timer: \"60 seconds to your first app.\"",
+      "duration_sec": 3.6,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Vee believed it. She typed a prompt. Hit enter.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG01_B004",
+      "scene_id": "SEG01",
+      "text": "Something came out. But...",
+      "narration_text": "Something came out. But...",
+      "narrator_vo": "Something came out. But...",
+      "visual_goal": "Visual: Desk scene — Vee's hands type a prompt on keyboard. She looks excited. Hits enter. Screen glows.",
+      "duration_sec": 1.6,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Something came out. But...",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B005",
+      "scene_id": "SEG02",
+      "text": "She typed: \"Make me an online store.\"",
+      "narration_text": "She typed: \"Make me an online store.\"",
+      "narrator_vo": "She typed: \"Make me an online store.\"",
+      "visual_goal": "Synopsis: \"Make me a shopping mall\" → wrong result → \"be more specific\" → even worse → \"try a different tool\" → same problem",
+      "duration_sec": 2.8,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "She typed: \"Make me an online store.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B006",
+      "scene_id": "SEG02",
+      "text": "And something appeared. A website. With a login button that goes to the shopping cart. A checkout page in neon pink and lime green. And a search bar that searches... nothing.",
+      "narration_text": "And something appeared. A website. With a login button that goes to the shopping cart. A checkout page in neon pink and lime green. And a search bar that searches... nothing.",
+      "narrator_vo": "And something appeared. A website. With a login button that goes to the shopping cart. A checkout page in neon pink and lime green. And a search bar that searches... nothing.",
+      "visual_goal": "Visual: AI generates a website. It loads. It exists. It's... technically a website.",
+      "duration_sec": 12.4,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And something appeared. A website. With a login button that goes to the shopping cart. A checkout page in neon pink and lime green. And a search bar that searches... nothing.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B007",
+      "scene_id": "SEG02",
+      "text": "It didn't crash. It didn't throw an error. It just... wasn't what she wanted.",
+      "narration_text": "It didn't crash. It didn't throw an error. It just... wasn't what she wanted.",
+      "narrator_vo": "It didn't crash. It didn't throw an error. It just... wasn't what she wanted.",
+      "visual_goal": "Visual: Close-up of the website — login button labeled \"Cart,\" garish color scheme, empty search results. Each problem highlighted with a subtle red pulse.",
+      "duration_sec": 5.6,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "It didn't crash. It didn't throw an error. It just... wasn't what she wanted.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B008",
+      "scene_id": "SEG02",
+      "text": "This is what most people don't tell you about vibe coding. The result doesn't explode. It comes out wrong. Low quality. Not what you asked for. And you can't explain why.",
+      "narration_text": "This is what most people don't tell you about vibe coding. The result doesn't explode. It comes out wrong. Low quality. Not what you asked for. And you can't explain why.",
+      "narrator_vo": "This is what most people don't tell you about vibe coding. The result doesn't explode. It comes out wrong. Low quality. Not what you asked for. And you can't explain why.",
+      "visual_goal": "Vee frozen expression — not angry, not sad. Just... \"what?\" 1.5 seconds.",
+      "duration_sec": 12.4,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 2,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "This is what most people don't tell you about vibe coding. The result doesn't explode. It comes out wrong. Low quality. Not what you asked for. And you can't explain why.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B009",
+      "scene_id": "SEG02",
+      "text": "So she did what everyone does. She got more specific.",
+      "narration_text": "So she did what everyone does. She got more specific.",
+      "narrator_vo": "So she did what everyone does. She got more specific.",
+      "visual_goal": "Visual: Close-up of the garish result — zoom on neon pink checkout page. Hold for effect.",
+      "duration_sec": 4.0,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "So she did what everyone does. She got more specific.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B010",
+      "scene_id": "SEG02",
+      "text": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern sans-serif font, responsive layout, search bar with autocomplete...\"",
+      "narration_text": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern sans-serif font, responsive layout, search bar with autocomplete...\"",
+      "narrator_vo": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern sans-serif font, responsive layout, search bar with autocomplete...\"",
+      "visual_goal": "Visual: Vee typing. The prompt grows. And grows. Camera slowly zooms out — text extends beyond the screen.",
+      "duration_sec": 12.0,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern sans-serif font, responsive layout, search bar with autocomplete...\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B011",
+      "scene_id": "SEG02",
+      "text": "The result?",
+      "narration_text": "The result?",
+      "narrator_vo": "The result?",
+      "visual_goal": "Visual: Prompt fills the entire screen. Tiny font. Endless instructions.",
+      "duration_sec": 1.5,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The result?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B012",
+      "scene_id": "SEG02",
+      "text": "Worse. More detail made it more confused. Because detail is not direction.",
+      "narration_text": "Worse. More detail made it more confused. Because detail is not direction.",
+      "narrator_vo": "Worse. More detail made it more confused. Because detail is not direction.",
+      "visual_goal": "Visual: The AI output appears. It's worse. The header is blue but covers everything. Categories overlap. Cart is on a different page entirely.",
+      "duration_sec": 4.8,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Worse. More detail made it more confused. Because detail is not direction.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B013",
+      "scene_id": "SEG02",
+      "text": "Okay, she thought. Maybe it's the tool. She switched tools. Three different AI assistants. Same prompt.",
+      "narration_text": "Okay, she thought. Maybe it's the tool. She switched tools. Three different AI assistants. Same prompt.",
+      "narrator_vo": "Okay, she thought. Maybe it's the tool. She switched tools. Three different AI assistants. Same prompt.",
+      "visual_goal": "Vee slumps back in chair. Hands drop from keyboard. She looks at Bee — Bee shrugs with tiny arms. 1.5 seconds.",
+      "duration_sec": 6.4,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 3,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Okay, she thought. Maybe it's the tool. She switched tools. Three different AI assistants. Same prompt.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B014",
+      "scene_id": "SEG02",
+      "text": "Three tools. Three different wrong answers. The problem wasn't the tool. It was something else entirely.",
+      "narration_text": "Three tools. Three different wrong answers. The problem wasn't the tool. It was something else entirely.",
+      "narrator_vo": "Three tools. Three different wrong answers. The problem wasn't the tool. It was something else entirely.",
+      "visual_goal": "Visual: Three browser windows open side by side. Three different tools. Three different results. All wrong in different ways.",
+      "duration_sec": 6.4,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Three tools. Three different wrong answers. The problem wasn't the tool. It was something else entirely.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B015",
+      "scene_id": "SEG03",
+      "text": "So she tried one more thing. Same prompt. Same tool. Three times in a row.",
+      "narration_text": "So she tried one more thing. Same prompt. Same tool. Three times in a row.",
+      "narrator_vo": "So she tried one more thing. Same prompt. Same tool. Three times in a row.",
+      "visual_goal": "Synopsis: Same prompt, three runs → three different results → \"AI doesn't understand — it predicts\" → \"she never read the code\"",
+      "duration_sec": 6.0,
+      "segment": "THE_CRACK",
+      "visual_type": "screen_demo",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "So she tried one more thing. Same prompt. Same tool. Three times in a row.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B016",
+      "scene_id": "SEG03",
+      "text": "Three runs. Three completely different stores. Different layouts, different colors, different features. Same exact prompt.",
+      "narration_text": "Three runs. Three completely different stores. Different layouts, different colors, different features. Same exact prompt.",
+      "narrator_vo": "Three runs. Three completely different stores. Different layouts, different colors, different features. Same exact prompt.",
+      "visual_goal": "Visual: Screen splits into three panels. Each shows a different result. One purple-themed, one text-only, one mostly images. Completely different layouts.",
+      "duration_sec": 6.0,
+      "segment": "THE_CRACK",
+      "visual_type": "screen_demo",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Three runs. Three completely different stores. Different layouts, different colors, different features. Same exact prompt.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B017",
+      "scene_id": "SEG03",
+      "text": "Why? Because the AI isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly different. Like rolling dice with language.",
+      "narration_text": "Why? Because the AI isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly different. Like rolling dice with language.",
+      "narrator_vo": "Why? Because the AI isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly different. Like rolling dice with language.",
+      "visual_goal": "Vee looks left, right, left — head swiveling between the three screens. 1.5 seconds.",
+      "duration_sec": 10.0,
+      "segment": "THE_CRACK",
+      "visual_type": "screen_demo",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 4,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Why? Because the AI isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly different. Like rolling dice with language.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B018",
+      "scene_id": "SEG03",
+      "text": "And here's the part that really matters. She never read what the AI actually wrote.",
+      "narration_text": "And here's the part that really matters. She never read what the AI actually wrote.",
+      "narrator_vo": "And here's the part that really matters. She never read what the AI actually wrote.",
+      "visual_goal": "Visual: Zoom into one screen — text appearing letter by letter, each letter a probability cloud, a dice roll. Not \"understanding\" — predicting.",
+      "duration_sec": 6.0,
+      "segment": "THE_CRACK",
+      "visual_type": "screen_demo",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And here's the part that really matters. She never read what the AI actually wrote.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B019",
+      "scene_id": "SEG03",
+      "text": "Not the website. The code behind it. She looked at the result and said \"that's wrong\" — but she couldn't say why, because she never looked at the instructions the AI wrote to build it.",
+      "narration_text": "Not the website. The code behind it. She looked at the result and said \"that's wrong\" — but she couldn't say why, because she never looked at the instructions the AI wrote to build it.",
+      "narrator_vo": "Not the website. The code behind it. She looked at the result and said \"that's wrong\" — but she couldn't say why, because she never looked at the instructions the AI wrote to build it.",
+      "visual_goal": "Visual: A code editor opens. Hundreds of lines of code scroll past. Vee's cursor doesn't move. She's looking at the preview, not the code. The code is a black box.",
+      "duration_sec": 14.0,
+      "segment": "THE_CRACK",
+      "visual_type": "screen_demo",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Not the website. The code behind it. She looked at the result and said \"that's wrong\" — but she couldn't say why, because she never looked at the instructions the AI wrote to build it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B020",
+      "scene_id": "SEG03",
+      "text": "The AI wrote the recipe. She tasted the dish. But she never checked the recipe.",
+      "narration_text": "The AI wrote the recipe. She tasted the dish. But she never checked the recipe.",
+      "narrator_vo": "The AI wrote the recipe. She tasted the dish. But she never checked the recipe.",
+      "visual_goal": "Visual: Split — left side shows the pretty preview, right side shows raw code with subtle bugs highlighted. The bugs pulse, unnoticed.",
+      "duration_sec": 6.0,
+      "segment": "THE_CRACK",
+      "visual_type": "screen_demo",
+      "space": "screen",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The AI wrote the recipe. She tasted the dish. But she never checked the recipe.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B021",
+      "scene_id": "SEG04",
+      "text": "Think of it like cooking. You walk into a restaurant and say: \"Make me dinner.\" The chef — a very fast, very capable chef — starts cooking immediately.",
+      "narration_text": "Think of it like cooking. You walk into a restaurant and say: \"Make me dinner.\" The chef — a very fast, very capable chef — starts cooking immediately.",
+      "narrator_vo": "Think of it like cooking. You walk into a restaurant and say: \"Make me dinner.\" The chef — a very fast, very capable chef — starts cooking immediately.",
+      "visual_goal": "Synopsis: Extended cooking metaphor (120s) → \"would you serve it to customers?\" → vibe coding definition (Karpathy) → what it's good/bad at → tool tour (5 tools) → level spectrum",
+      "duration_sec": 11.2,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Think of it like cooking. You walk into a restaurant and say: \"Make me dinner.\" The chef — a very fast, very capable chef — starts cooking immediately.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B022",
+      "scene_id": "SEG04",
+      "text": "Something appears on the plate. It's food. Technically. But it's not what you wanted, because you never said what you wanted.",
+      "narration_text": "Something appears on the plate. It's food. Technically. But it's not what you wanted, because you never said what you wanted.",
+      "narrator_vo": "Something appears on the plate. It's food. Technically. But it's not what you wanted, because you never said what you wanted.",
+      "visual_goal": "Visual: A robot wearing a chef's hat stands in a kitchen. No recipe in sight. Industrial kitchen, stainless steel, professional setup.",
+      "duration_sec": 8.4,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Something appears on the plate. It's food. Technically. But it's not what you wanted, because you never said what you wanted.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B023",
+      "scene_id": "SEG04",
+      "text": "So you try again. \"Make me dinner. Something Italian. Use pasta. Make it creamy.\"",
+      "narration_text": "So you try again. \"Make me dinner. Something Italian. Use pasta. Make it creamy.\"",
+      "narrator_vo": "So you try again. \"Make me dinner. Something Italian. Use pasta. Make it creamy.\"",
+      "visual_goal": "Visual: Robot chef grabs random ingredients. Chops, fries, plates something. Puts it on the counter. It's... a thing. Not bad, not good. Just random.",
+      "duration_sec": 5.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "So you try again. \"Make me dinner. Something Italian. Use pasta. Make it creamy.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B024",
+      "scene_id": "SEG04",
+      "text": "The chef gets excited. Grabs every Italian ingredient. Puts cream on everything. Adds four types of cheese. Pasta is swimming in a lake of sauce. Garlic bread is stuffed inside the pasta somehow.",
+      "narration_text": "The chef gets excited. Grabs every Italian ingredient. Puts cream on everything. Adds four types of cheese. Pasta is swimming in a lake of sauce. Garlic bread is stuffed inside the pasta somehow.",
+      "narrator_vo": "The chef gets excited. Grabs every Italian ingredient. Puts cream on everything. Adds four types of cheese. Pasta is swimming in a lake of sauce. Garlic bread is stuffed inside the pasta somehow.",
+      "visual_goal": "Visual: The plate sits on the counter. A fork pokes it. Confused reaction from a small figure silhouette.",
+      "duration_sec": 13.2,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The chef gets excited. Grabs every Italian ingredient. Puts cream on everything. Adds four types of cheese. Pasta is swimming in a lake of sauce. Garlic bread is stuffed inside the pasta somehow.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B025",
+      "scene_id": "SEG04",
+      "text": "More detail. Same problem. Because you gave ingredients, not intent.",
+      "narration_text": "More detail. Same problem. Because you gave ingredients, not intent.",
+      "narrator_vo": "More detail. Same problem. Because you gave ingredients, not intent.",
+      "visual_goal": "Visual: More detail written on a notepad, slid across to the robot. Robot reads, nods enthusiastically.",
+      "duration_sec": 4.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "More detail. Same problem. Because you gave ingredients, not intent.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B026",
+      "scene_id": "SEG04",
+      "text": "Now imagine one card. \"Pasta carbonara. Four ingredients. No cream. Serves two.\"",
+      "narration_text": "Now imagine one card. \"Pasta carbonara. Four ingredients. No cream. Serves two.\"",
+      "narrator_vo": "Now imagine one card. \"Pasta carbonara. Four ingredients. No cream. Serves two.\"",
+      "visual_goal": "Visual: The result is a mountain of food. Technically Italian. Technically creamy. Also completely inedible. Too much of everything.",
+      "duration_sec": 4.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Now imagine one card. \"Pasta carbonara. Four ingredients. No cream. Serves two.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B027",
+      "scene_id": "SEG04",
+      "text": "Same chef. Same kitchen. Completely different result. Consistent. Recognizable. Close to what you wanted.",
+      "narration_text": "Same chef. Same kitchen. Completely different result. Consistent. Recognizable. Close to what you wanted.",
+      "narrator_vo": "Same chef. Same kitchen. Completely different result. Consistent. Recognizable. Close to what you wanted.",
+      "visual_goal": "Visual: Transition — a hand slides a small card across the counter. Recipe card — simple, three lines. Robot chef reads it, nods once.",
+      "duration_sec": 5.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Same chef. Same kitchen. Completely different result. Consistent. Recognizable. Close to what you wanted.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B028",
+      "scene_id": "SEG04",
+      "text": "But here's the question nobody asks. Would you serve this to a customer?",
+      "narration_text": "But here's the question nobody asks. Would you serve this to a customer?",
+      "narrator_vo": "But here's the question nobody asks. Would you serve this to a customer?",
+      "visual_goal": "Visual: Robot chef follows the recipe. Controlled. Precise. Plating is clean. Result looks like actual carbonara.",
+      "duration_sec": 5.2,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "But here's the question nobody asks. Would you serve this to a customer?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B029",
+      "scene_id": "SEG04",
+      "text": "Your friend's kitchen? Sure, experiment. A dinner party? Maybe. A restaurant? With paying customers? You'd want to taste it first. Check the seasoning. Make sure there's no raw egg. Make sure it doesn't make someone sick.",
+      "narration_text": "Your friend's kitchen? Sure, experiment. A dinner party? Maybe. A restaurant? With paying customers? You'd want to taste it first. Check the seasoning. Make sure there's no raw egg. Make sure it doesn't make someone sick.",
+      "narrator_vo": "Your friend's kitchen? Sure, experiment. A dinner party? Maybe. A restaurant? With paying customers? You'd want to taste it first. Check the seasoning. Make sure there's no raw egg. Make sure it doesn't make someone sick.",
+      "visual_goal": "Visual: Side-by-side — left: the chaotic cream mountain, right: clean carbonara. Clear difference.",
+      "duration_sec": 14.4,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Your friend's kitchen? Sure, experiment. A dinner party? Maybe. A restaurant? With paying customers? You'd want to taste it first. Check the seasoning. Make sure there's no raw egg. Make sure it doesn't make someone sick.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B030",
+      "scene_id": "SEG04",
+      "text": "AI is that chef. Fast, capable, ready to go. But without a recipe, it improvises. And when you're cooking for yourself, improvisation is fine. When you're cooking for others — for production, for users, for money — you need more than vibes.",
+      "narration_text": "AI is that chef. Fast, capable, ready to go. But without a recipe, it improvises. And when you're cooking for yourself, improvisation is fine. When you're cooking for others — for production, for users, for money — you need more than vibes.",
+      "narrator_vo": "AI is that chef. Fast, capable, ready to go. But without a recipe, it improvises. And when you're cooking for yourself, improvisation is fine. When you're cooking for others — for production, for users, for money — you need more than vibes.",
+      "visual_goal": "Visual: The carbonara plate slides toward a dining table. A real person sits there. Menu, napkin, wine glass. This isn't practice anymore.",
+      "duration_sec": 16.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "AI is that chef. Fast, capable, ready to go. But without a recipe, it improvises. And when you're cooking for yourself, improvisation is fine. When you're cooking for others — for production, for users, for money — you need more than vibes.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B031",
+      "scene_id": "SEG04",
+      "text": "In February twenty twenty-five, Andrej Karpathy — one of the founders of OpenAI — gave this a name. Vibe coding. Quote: \"You just talk in natural language, run it, and most of the time it just works.\"",
+      "narration_text": "In February twenty twenty-five, Andrej Karpathy — one of the founders of OpenAI — gave this a name. Vibe coding. Quote: \"You just talk in natural language, run it, and most of the time it just works.\"",
+      "narrator_vo": "In February twenty twenty-five, Andrej Karpathy — one of the founders of OpenAI — gave this a name. Vibe coding. Quote: \"You just talk in natural language, run it, and most of the time it just works.\"",
+      "visual_goal": "Visual: A health inspector appears with a clipboard. The robot chef nervously holds up the plate.",
+      "duration_sec": 14.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "In February twenty twenty-five, Andrej Karpathy — one of the founders of OpenAI — gave this a name. Vibe coding. Quote: \"You just talk in natural language, run it, and most of the time it just works.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B032",
+      "scene_id": "SEG04",
+      "text": "But here's the word most people skip. \"With.\" Vibe coding isn't AI coding for you. It's you coding with AI. The decisions — what to build, what's good enough, what's wrong — those are yours. The implementation — the actual code — that's the AI's job.",
+      "narration_text": "But here's the word most people skip. \"With.\" Vibe coding isn't AI coding for you. It's you coding with AI. The decisions — what to build, what's good enough, what's wrong — those are yours. The implementation — the actual code — that's the AI's job.",
+      "narrator_vo": "But here's the word most people skip. \"With.\" Vibe coding isn't AI coding for you. It's you coding with AI. The decisions — what to build, what's good enough, what's wrong — those are yours. The implementation — the actual code — that's the AI's job.",
+      "visual_goal": "Visual: Transition — whiteboard clears. New text appears, building word by word.",
+      "duration_sec": 18.4,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "But here's the word most people skip. \"With.\" Vibe coding isn't AI coding for you. It's you coding with AI. The decisions — what to build, what's good enough, what's wrong — those are yours. The implementation — the actual code — that's the AI's job.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B033",
+      "scene_id": "SEG04",
+      "text": "Not outsourcing. Collaboration. That \"with\" is the hard part.",
+      "narration_text": "Not outsourcing. Collaboration. That \"with\" is the hard part.",
+      "narrator_vo": "Not outsourcing. Collaboration. That \"with\" is the hard part.",
+      "visual_goal": "Visual: Karpathy quote appears on whiteboard, styled like a citation. Clean typography.",
+      "duration_sec": 3.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Not outsourcing. Collaboration. That \"with\" is the hard part.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B034",
+      "scene_id": "SEG04",
+      "text": "So what can AI actually do well? Prototypes. Quick experiments. \"Show me what a dashboard could look like.\" Ten minutes, you have something to react to. Scripts and automations — rename five hundred files, convert data formats, generate boilerplate. Learning tools — \"explain this code,\" \"what does this function do,\" \"show me an example.\"",
+      "narration_text": "So what can AI actually do well? Prototypes. Quick experiments. \"Show me what a dashboard could look like.\" Ten minutes, you have something to react to. Scripts and automations — rename five hundred files, convert data formats, generate boilerplate. Learning tools — \"explain this code,\" \"what does this function do,\" \"show me an example.\"",
+      "narrator_vo": "So what can AI actually do well? Prototypes. Quick experiments. \"Show me what a dashboard could look like.\" Ten minutes, you have something to react to. Scripts and automations — rename five hundred files, convert data formats, generate boilerplate. Learning tools — \"explain this code,\" \"what does this function do,\" \"show me an example.\"",
+      "visual_goal": "Visual: Two-column diagram. Left: \"YOU\" — decide, judge, direct. Right: \"AI\" — write, execute, generate. Arrow between them: \"collaboration.\"",
+      "duration_sec": 21.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "So what can AI actually do well? Prototypes. Quick experiments. \"Show me what a dashboard could look like.\" Ten minutes, you have something to react to. Scripts and automations — rename five hundred files, convert data formats, generate boilerplate. Learning tools — \"explain this code,\" \"what does this function do,\" \"show me an example.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B035",
+      "scene_id": "SEG04",
+      "text": "What can't it do? Production systems — code that handles real users, real money, real data. Security — keeping attackers out, protecting passwords, encrypting sensitive information. Payment processing — where a bug means someone gets charged twice.",
+      "narration_text": "What can't it do? Production systems — code that handles real users, real money, real data. Security — keeping attackers out, protecting passwords, encrypting sensitive information. Payment processing — where a bug means someone gets charged twice.",
+      "narrator_vo": "What can't it do? Production systems — code that handles real users, real money, real data. Security — keeping attackers out, protecting passwords, encrypting sensitive information. Payment processing — where a bug means someone gets charged twice.",
+      "visual_goal": "Visual: New section header: \"What AI is good at\"",
+      "duration_sec": 14.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "What can't it do? Production systems — code that handles real users, real money, real data. Security — keeping attackers out, protecting passwords, encrypting sensitive information. Payment processing — where a bug means someone gets charged twice.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B036",
+      "scene_id": "SEG04",
+      "text": "Not \"can't ever.\" Can't without supervision. Can't without someone checking the recipe before it reaches the customer.",
+      "narration_text": "Not \"can't ever.\" Can't without supervision. Can't without someone checking the recipe before it reaches the customer.",
+      "narrator_vo": "Not \"can't ever.\" Can't without supervision. Can't without someone checking the recipe before it reaches the customer.",
+      "visual_goal": "Visual: Three panels appear — a prototype app mockup, a terminal running a script, a chat explaining code. Each with a green checkmark.",
+      "duration_sec": 6.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Not \"can't ever.\" Can't without supervision. Can't without someone checking the recipe before it reaches the customer.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B037",
+      "scene_id": "SEG04",
+      "text": "And you've got options. Cursor — an AI-powered code editor. You write alongside it. It suggests, you accept or reject.",
+      "narration_text": "And you've got options. Cursor — an AI-powered code editor. You write alongside it. It suggests, you accept or reject.",
+      "narrator_vo": "And you've got options. Cursor — an AI-powered code editor. You write alongside it. It suggests, you accept or reject.",
+      "visual_goal": "Visual: Three panels — a server with a warning sign, a lock icon with a crack, a credit card with an error. Each with a red X.",
+      "duration_sec": 8.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And you've got options. Cursor — an AI-powered code editor. You write alongside it. It suggests, you accept or reject.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B038",
+      "scene_id": "SEG04",
+      "text": "Claude Code — a terminal agent. It reads your entire project and makes changes across multiple files.",
+      "narration_text": "Claude Code — a terminal agent. It reads your entire project and makes changes across multiple files.",
+      "narrator_vo": "Claude Code — a terminal agent. It reads your entire project and makes changes across multiple files.",
+      "visual_goal": "Visual: Transition to tool tour. Five panels appear in a row.",
+      "duration_sec": 6.8,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Claude Code — a terminal agent. It reads your entire project and makes changes across multiple files.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B039",
+      "scene_id": "SEG04",
+      "text": "Replit — browser-based. No installation. Start building in thirty seconds flat.",
+      "narration_text": "Replit — browser-based. No installation. Start building in thirty seconds flat.",
+      "narrator_vo": "Replit — browser-based. No installation. Start building in thirty seconds flat.",
+      "visual_goal": "Visual: Cursor IDE screenshot — code on left, AI chat on right. Quick 8-second glimpse.",
+      "duration_sec": 4.4,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Replit — browser-based. No installation. Start building in thirty seconds flat.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B040",
+      "scene_id": "SEG04",
+      "text": "Kiro — from AWS. Spec-first. It writes requirements before touching code. We'll come back to that.",
+      "narration_text": "Kiro — from AWS. Spec-first. It writes requirements before touching code. We'll come back to that.",
+      "narrator_vo": "Kiro — from AWS. Spec-first. It writes requirements before touching code. We'll come back to that.",
+      "visual_goal": "Visual: Terminal screen, commands flowing. Green text on dark background. 8 seconds.",
+      "duration_sec": 6.4,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Kiro — from AWS. Spec-first. It writes requirements before touching code. We'll come back to that.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B041",
+      "scene_id": "SEG04",
+      "text": "Windsurf — another AI IDE. Similar to Cursor, different workflow. The point isn't which one.",
+      "narration_text": "Windsurf — another AI IDE. Similar to Cursor, different workflow. The point isn't which one.",
+      "narrator_vo": "Windsurf — another AI IDE. Similar to Cursor, different workflow. The point isn't which one.",
+      "visual_goal": "Visual: Browser window, Replit interface. Colorful, friendly. 8 seconds.",
+      "duration_sec": 6.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Windsurf — another AI IDE. Similar to Cursor, different workflow. The point isn't which one.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B042",
+      "scene_id": "SEG04",
+      "text": "Different tools. Same principle. You decide what. AI decides how.",
+      "narration_text": "Different tools. Same principle. You decide what. AI decides how.",
+      "narrator_vo": "Different tools. Same principle. You decide what. AI decides how.",
+      "visual_goal": "Visual: Kiro interface glimpse. Requirements panel visible. 8 seconds.",
+      "duration_sec": 4.0,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Different tools. Same principle. You decide what. AI decides how.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B043",
+      "scene_id": "SEG04",
+      "text": "And there's a spectrum. Level one: copy-pasting from ChatGPT. Level two: an AI IDE like Cursor. Level three: an autonomous agent with a spec. Wherever you start is fine. But know where you are.",
+      "narration_text": "And there's a spectrum. Level one: copy-pasting from ChatGPT. Level two: an AI IDE like Cursor. Level three: an autonomous agent with a spec. Wherever you start is fine. But know where you are.",
+      "narrator_vo": "And there's a spectrum. Level one: copy-pasting from ChatGPT. Level two: an AI IDE like Cursor. Level three: an autonomous agent with a spec. Wherever you start is fine. But know where you are.",
+      "visual_goal": "Visual: Windsurf interface glimpse. 6 seconds.",
+      "duration_sec": 13.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And there's a spectrum. Level one: copy-pasting from ChatGPT. Level two: an AI IDE like Cursor. Level three: an autonomous agent with a spec. Wherever you start is fine. But know where you are.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B044",
+      "scene_id": "SEG05",
+      "text": "So here's the reframe. Vibe coding is not an easy button. It's not \"AI, do my job.\" It's a new skill — like learning to drive. The car does the moving. You do the steering.",
+      "narration_text": "So here's the reframe. Vibe coding is not an easy button. It's not \"AI, do my job.\" It's a new skill — like learning to drive. The car does the moving. You do the steering.",
+      "narrator_vo": "So here's the reframe. Vibe coding is not an easy button. It's not \"AI, do my job.\" It's a new skill — like learning to drive. The car does the moving. You do the steering.",
+      "visual_goal": "Synopsis: \"Not an easy button — a new skill\" → \"Judgment is the hardest part\" → EP02 bridge",
+      "duration_sec": 14.0,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "So here's the reframe. Vibe coding is not an easy button. It's not \"AI, do my job.\" It's a new skill — like learning to drive. The car does the moving. You do the steering.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B045",
+      "scene_id": "SEG05",
+      "text": "And the hardest part of this new skill isn't the typing. It's the judgment. Looking at what the AI made and knowing — is this good enough? Is this safe? Would I bet money on this working tomorrow?",
+      "narration_text": "And the hardest part of this new skill isn't the typing. It's the judgment. Looking at what the AI made and knowing — is this good enough? Is this safe? Would I bet money on this working tomorrow?",
+      "narrator_vo": "And the hardest part of this new skill isn't the typing. It's the judgment. Looking at what the AI made and knowing — is this good enough? Is this safe? Would I bet money on this working tomorrow?",
+      "visual_goal": "Visual: Whiteboard — \"easy button\" icon gets crossed out. Replaced by a steering wheel with two hands on it.",
+      "duration_sec": 15.2,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And the hardest part of this new skill isn't the typing. It's the judgment. Looking at what the AI made and knowing — is this good enough? Is this safe? Would I bet money on this working tomorrow?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B046",
+      "scene_id": "SEG05",
+      "text": "Professional developers do this every day. They review code. They test it. They ask: \"what could go wrong?\" That's not a coding skill. That's a thinking skill. And you already have it.",
+      "narration_text": "Professional developers do this every day. They review code. They test it. They ask: \"what could go wrong?\" That's not a coding skill. That's a thinking skill. And you already have it.",
+      "narrator_vo": "Professional developers do this every day. They review code. They test it. They ask: \"what could go wrong?\" That's not a coding skill. That's a thinking skill. And you already have it.",
+      "visual_goal": "Visual: A scale appears. One side: \"good enough?\" Other side: \"dangerous?\" The scale tips back and forth.",
+      "duration_sec": 12.8,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Professional developers do this every day. They review code. They test it. They ask: \"what could go wrong?\" That's not a coding skill. That's a thinking skill. And you already have it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B047",
+      "scene_id": "SEG05",
+      "text": "The starting point — the thing that makes all of this work — is knowing what you're building. Not how. What. That's where episode two picks up.",
+      "narration_text": "The starting point — the thing that makes all of this work — is knowing what you're building. Not how. What. That's where episode two picks up.",
+      "narrator_vo": "The starting point — the thing that makes all of this work — is knowing what you're building. Not how. What. That's where episode two picks up.",
+      "visual_goal": "Visual: A non-developer looking at a plate of food — \"would I serve this?\" Same judgment, different domain.",
+      "duration_sec": 10.8,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The starting point — the thing that makes all of this work — is knowing what you're building. Not how. What. That's where episode two picks up.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B048",
+      "scene_id": "SEG06",
+      "text": "Here's what you do today. Three things.",
+      "narration_text": "Here's what you do today. Three things.",
+      "narrator_vo": "Here's what you do today. Three things.",
+      "visual_goal": "Synopsis: Three things to do today — install, prompt, feel. Record the feeling.",
+      "duration_sec": 2.8,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Here's what you do today. Three things.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B049",
+      "scene_id": "SEG06",
+      "text": "One — pick a tool. Any tool. Cursor, Replit, Claude, whatever feels right. Install it.",
+      "narration_text": "One — pick a tool. Any tool. Cursor, Replit, Claude, whatever feels right. Install it.",
+      "narrator_vo": "One — pick a tool. Any tool. Cursor, Replit, Claude, whatever feels right. Install it.",
+      "visual_goal": "Visual: Desk scene — a sticky note appears with \"1, 2, 3\" written on it.",
+      "duration_sec": 6.0,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "One — pick a tool. Any tool. Cursor, Replit, Claude, whatever feels right. Install it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B050",
+      "scene_id": "SEG06",
+      "text": "Two — type one prompt. Anything. \"Make me a to-do app.\" \"Build a calculator.\" \"Create a personal website.\" Doesn't matter what.",
+      "narration_text": "Two — type one prompt. Anything. \"Make me a to-do app.\" \"Build a calculator.\" \"Create a personal website.\" Doesn't matter what.",
+      "narrator_vo": "Two — type one prompt. Anything. \"Make me a to-do app.\" \"Build a calculator.\" \"Create a personal website.\" Doesn't matter what.",
+      "visual_goal": "Visual: Download progress bar fills. App opens.",
+      "duration_sec": 8.4,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Two — type one prompt. Anything. \"Make me a to-do app.\" \"Build a calculator.\" \"Create a personal website.\" Doesn't matter what.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B051",
+      "scene_id": "SEG06",
+      "text": "Three — look at what comes out. And write down how you feel. Not what's wrong with it. How you feel. Frustrated? Confused? Excited? Disappointed?",
+      "narration_text": "Three — look at what comes out. And write down how you feel. Not what's wrong with it. How you feel. Frustrated? Confused? Excited? Disappointed?",
+      "narrator_vo": "Three — look at what comes out. And write down how you feel. Not what's wrong with it. How you feel. Frustrated? Confused? Excited? Disappointed?",
+      "visual_goal": "Visual: Prompt typed. Enter pressed. Something appears on screen.",
+      "duration_sec": 10.0,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Three — look at what comes out. And write down how you feel. Not what's wrong with it. How you feel. Frustrated? Confused? Excited? Disappointed?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B052",
+      "scene_id": "SEG06",
+      "text": "That feeling is data. If the answer is \"this isn't what I wanted\" — good. That frustration? That gap between what you imagined and what appeared? That's where it all begins.",
+      "narration_text": "That feeling is data. If the answer is \"this isn't what I wanted\" — good. That frustration? That gap between what you imagined and what appeared? That's where it all begins.",
+      "narrator_vo": "That feeling is data. If the answer is \"this isn't what I wanted\" — good. That frustration? That gap between what you imagined and what appeared? That's where it all begins.",
+      "visual_goal": "Visual: Vee looks at the result. She picks up a pen. Writes on a sticky note — not code, not feedback. A feeling.",
+      "duration_sec": 12.4,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "That feeling is data. If the answer is \"this isn't what I wanted\" — good. That frustration? That gap between what you imagined and what appeared? That's where it all begins.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B053",
+      "scene_id": "SEG06",
+      "text": "Next time — we give that feeling a name. And we turn it into the most powerful tool in vibe coding.",
+      "narration_text": "Next time — we give that feeling a name. And we turn it into the most powerful tool in vibe coding.",
+      "narrator_vo": "Next time — we give that feeling a name. And we turn it into the most powerful tool in vibe coding.",
+      "visual_goal": "Vee looks at the result. Head tilt. Then — a small smile. Not because it's good. Because she's starting. 1.5 seconds.",
+      "duration_sec": 8.4,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 5,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Next time — we give that feeling a name. And we turn it into the most powerful tool in vibe coding.",
+          "emotion": ""
+        }
+      ]
+    }
+  ]
+}

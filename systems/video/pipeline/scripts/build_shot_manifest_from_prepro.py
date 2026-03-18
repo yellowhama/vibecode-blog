@@ -14,12 +14,12 @@ Usage:
         --out-manifest ep01_shot_manifest_v5.json
 """
 
-from __future__ import annotations
-
 import argparse
 import json
 from pathlib import Path
 from typing import Any, Dict, List, Sequence
+
+import audio_catalog
 
 
 # ---------------------------------------------------------------------------
@@ -33,9 +33,9 @@ SEGMENT_PREFIX = {
     "REFRAME": "R",
     "OUTRO_CTA": "Z",
     # Backward compat (v5 stage names)
-    "PROBLEM": "M",
-    "APPLICATION": "R",
-    "OUTRO": "Z",
+    "PROBLEM": "P",
+    "APPLICATION": "A",
+    "OUTRO": "O",
 }
 
 # Default pipeline spec (Series Bible v5 D13)
@@ -337,6 +337,13 @@ def main() -> int:
     # Load character design prompts
     char_prompts = _load_character_prompts(args.character_design)
 
+    # Load audio catalog
+    try:
+        catalog = audio_catalog.load_catalog()
+    except Exception as e:
+        print(f"[WARN] Failed to load audio catalog: {e}")
+        catalog = {}
+
     take = min(len(beats), args.max_shots)
     pick_idx = _pick_even_indices(len(beats), take)
     selected = [beats[i] for i in pick_idx]
@@ -367,7 +374,17 @@ def main() -> int:
     shots: List[Dict[str, Any]] = []
 
     for i, beat in enumerate(selected):
-        segment = beat.get("segment", beat.get("narrative_stage", "CORE")).upper()
+        segment = beat.get("segment", beat.get("narrative_stage", "")).upper()
+        if not segment:
+            # Fallback to scene_id mapping
+            scene_id = beat.get("scene_id", "").upper()
+            if scene_id == "SEG01": segment = "HOOK"
+            elif scene_id == "SEG02": segment = "PROBLEM"
+            elif scene_id == "SEG03": segment = "CORE"
+            elif scene_id == "SEG04": segment = "APPLICATION"
+            elif scene_id == "SEG05": segment = "OUTRO"
+            else: segment = "CORE"
+
         prefix = _segment_prefix(segment)
 
         # Increment per-segment counter
@@ -406,6 +423,10 @@ def main() -> int:
 
         prompt_negative = _compose_negative_prompt(has_characters, char_prompts)
 
+        # Extract SFX for shot based on keywords
+        sfx_matches = audio_catalog.select_sfx_by_keywords(catalog, visual_goal, narrator_vo)
+        sfx_ids = [s["id"] for s in sfx_matches]
+
         shot: Dict[str, Any] = {
             "shot_id": shot_id,
             "segment": segment,
@@ -419,6 +440,7 @@ def main() -> int:
             "vee_reaction_number": vee_reaction_number,
             "extended_metaphor": extended_metaphor,
             "shorts_candidate": shorts_candidate,
+            "sfx": sfx_ids,
             "duration_sec": shot_durations[i],
             "prompt_positive": prompt_positive,
             "prompt_negative": prompt_negative,

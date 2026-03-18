@@ -1,0 +1,646 @@
+{
+  "project_id": "ep04_v5_v5",
+  "version": "6.0",
+  "style_lock": "2D flat vector Level 2.5 + narrator V.O. only + Vee silent",
+  "delivery_target": "16:9, 1280x720, YouTube",
+  "resolution": "1280x720",
+  "pipeline": {
+    "t2i": "Flux dev + SimpleVectorFlux LoRA",
+    "edit": "Flux Kontext",
+    "i2v": "Wan 2.2 MoE GGUF",
+    "tts": "Dia2-1B",
+    "bgm": "ACE-Step 1.5",
+    "diagrams": "Motion Canvas",
+    "assembly": "FFmpeg"
+  },
+  "shots": [
+    {
+      "shot_id": "H01",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Clean desk. Monitor shows the folder structure from EP03 — five color-coded domains, each neatly organized. On the desk, a row of beautifully wrapped gift boxes. Each box has a tag: AUTH, SYNC, PAY...",
+      "narrator_vo": "Vee built everything. Organized everything. She has five beautiful boxes and she hasn't opened a single one.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "sfx": [
+        "pop_appear",
+        "fury_typing_mechanical",
+        "meditative_hum_success"
+      ],
+      "duration_sec": 6.63,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Clean desk. Monitor shows the folder structure from EP03 — five color-coded domains, each neatly organized. On the desk, a row of beautifully wrapped gift boxes. Each box has a tag: AUTH, SYNC, PAYMENTS, SEARCH, DASHBOARD. Ribbons tied. Pristine., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500001,
+      "input_image": "H01_keyframe.png",
+      "output_name": "H01.mp4"
+    },
+    {
+      "shot_id": "H02",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Vee sits cross-legged in her chair, arms folded, admiring the boxes. She reaches toward the nearest one — AUTH — then pulls her hand back. Tucks both hands under her legs.",
+      "narrator_vo": "She's afraid of what's inside.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 1,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 2.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee sits cross-legged in her chair, arms folded, admiring the boxes. She reaches toward the nearest one — AUTH — then pulls her hand back. Tucks both hands under her legs., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500002,
+      "input_image": "H02_keyframe.png",
+      "output_name": "H02.mp4"
+    },
+    {
+      "shot_id": "M01",
+      "segment": "MISCONCEPTION",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "MONTAGE: A feature gets built. A gift box materializes on the desk, perfectly wrapped. Taped shut, ribbon tied, set aside. Another feature. Another box. Ribbon. Set aside. No lid is ever lifted.",
+      "narrator_vo": "Here's the rule she's been living by: if it didn't crash when you built it, don't touch it. Wrap it up. Move on. Build the next thing.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "swoosh_motion",
+        "system_explosion_glitch"
+      ],
+      "duration_sec": 10.53,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, MONTAGE: A feature gets built. A gift box materializes on the desk, perfectly wrapped. Taped shut, ribbon tied, set aside. Another feature. Another box. Ribbon. Set aside. No lid is ever lifted., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500003,
+      "input_image": "M01_keyframe.png",
+      "output_name": "M01.mp4"
+    },
+    {
+      "shot_id": "M02",
+      "segment": "MISCONCEPTION",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "The boxes stack up around her desk. A small pyramid of untouched gifts.",
+      "narrator_vo": "It feels like progress. Five features, five boxes, all sealed. Ship it.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 4.67,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, The boxes stack up around her desk. A small pyramid of untouched gifts., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500004,
+      "input_image": "M02_keyframe.png",
+      "output_name": "M02.mp4"
+    },
+    {
+      "shot_id": "M03",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Vee taps the side of a box with one mitten finger. Listens. Silence. She nods — good enough. Moves on.",
+      "narrator_vo": "But \"didn't crash\" and \"works\" are two very different things. She's about to find out how different.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 2,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "swoosh_motion",
+        "system_explosion_glitch"
+      ],
+      "duration_sec": 6.63,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee taps the side of a box with one mitten finger. Listens. Silence. She nods — good enough. Moves on., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500005,
+      "input_image": "M03_keyframe.png",
+      "output_name": "M03.mp4"
+    },
+    {
+      "shot_id": "K01",
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Split screen. Left side: the monitor — the app runs. Dashboard loads. Colors render. Everything perfect. Right side: a second monitor, different wallpaper, different computer. The same app — but th...",
+      "narrator_vo": "She showed it to someone. Their screen? White. Nothing. The app that ran perfectly on her machine ran perfectly on her machine only.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "pop_appear",
+        "system_explosion_glitch"
+      ],
+      "duration_sec": 8.97,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Split screen. Left side: the monitor — the app runs. Dashboard loads. Colors render. Everything perfect. Right side: a second monitor, different wallpaper, different computer. The same app — but the dashboard is blank. White screen. A single error icon spins., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500006,
+      "input_image": "K01_keyframe.png",
+      "output_name": "K01.mp4"
+    },
+    {
+      "shot_id": "K02",
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Vee stares at the split screen. Left: working. Right: broken. Her mouth falls open. She pushes her glasses up and looks again. Still broken.",
+      "narrator_vo": "\"Works on my machine\" isn't a status update. It's a confession. It means you never defined what \"working\" actually looks like.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 3,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "sfx": [
+        "system_explosion_glitch"
+      ],
+      "duration_sec": 8.19,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee stares at the split screen. Left: working. Right: broken. Her mouth falls open. She pushes her glasses up and looks again. Still broken., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500007,
+      "input_image": "K02_keyframe.png",
+      "output_name": "K02.mp4"
+    },
+    {
+      "shot_id": "K03",
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "The split screen collapses. Both monitors go dark. Only the row of sealed gift boxes glows faintly.",
+      "narrator_vo": "Every one of those boxes might be empty. She'd never know. She never looked.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 5.45,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, The split screen collapses. Both monitors go dark. Only the row of sealed gift boxes glows faintly., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500008,
+      "input_image": "K03_keyframe.png",
+      "output_name": "K03.mp4"
+    },
+    {
+      "shot_id": "C01",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "TRANSITION: Desk fades. Dark navy background brightens to deep midnight blue. Five gift boxes float in space, softly lit. Wrapped in different colors, ribbons intact. Beautiful. Untouched.",
+      "narrator_vo": "Let's talk about these boxes. You wrapped them. You're proud of them. And you won't open them because — what if they're empty? What if something's wrong inside?",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 10.92,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, TRANSITION: Desk fades. Dark navy background brightens to deep midnight blue. Five gift boxes float in space, softly lit. Wrapped in different colors, ribbons intact. Beautiful. Untouched., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500009,
+      "input_image": "C01_keyframe.png",
+      "output_name": "C01.mp4"
+    },
+    {
+      "shot_id": "C02",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "i2v",
+      "description": "The camera orbits the boxes slowly. Each one has a faint question mark hovering above it.",
+      "narrator_vo": "Here's the thing nobody says out loud: not opening the box doesn't make the contents better. If it's broken inside, it was broken before you looked. Opening the box doesn't create the problem. It just tells you the problem exists.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "sfx": [
+        "system_explosion_glitch"
+      ],
+      "duration_sec": 15.6,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The camera orbits the boxes slowly. Each one has a faint question mark hovering above it., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500010,
+      "input_image": "C02_keyframe.png",
+      "output_name": "C02.mp4"
+    },
+    {
+      "shot_id": "C03",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "BEAT. One second.",
+      "narrator_vo": "So let's open one.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 2.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, BEAT. One second., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500011,
+      "input_image": "C03_keyframe.png",
+      "output_name": "C03.mp4"
+    },
+    {
+      "shot_id": "C04",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "A mitten hand reaches in. Grabs the ribbon on the first box — AUTH. Hesitates. Pulls.",
+      "narrator_vo": "A cracked gear. Login crashes on an empty session token. That crack was always there. Opening the box didn't break it.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "sfx": [
+        "swoosh_motion",
+        "system_explosion_glitch"
+      ],
+      "duration_sec": 8.19,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A mitten hand reaches in. Grabs the ribbon on the first box — AUTH. Hesitates. Pulls., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500012,
+      "input_image": "C04_keyframe.png",
+      "output_name": "C04.mp4"
+    },
+    {
+      "shot_id": "C05",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "i2v",
+      "description": "The ribbon falls away. The lid lifts. Inside: a small cracked gear. It's trying to spin but catches on the crack. A label appears: \"empty token → crash.\"",
+      "narrator_vo": "Three-line fix. Done.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "sfx": [
+        "pop_appear",
+        "system_explosion_glitch",
+        "meditative_hum_success"
+      ],
+      "duration_sec": 2.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The ribbon falls away. The lid lifts. Inside: a small cracked gear. It's trying to spin but catches on the crack. A label appears: \"empty token → crash.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500013,
+      "input_image": "C05_keyframe.png",
+      "output_name": "C05.mp4"
+    },
+    {
+      "shot_id": "C06",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "A tiny wrench taps the gear. The crack seals. The gear spins smooth. Green checkmark.",
+      "narrator_vo": "Second box. It works. It was always fine. All that dread — wasted.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 5.06,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A tiny wrench taps the gear. The crack seals. The gear spins smooth. Green checkmark., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500014,
+      "input_image": "C06_keyframe.png",
+      "output_name": "C06.mp4"
+    },
+    {
+      "shot_id": "C07",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "Second box — SEARCH — opens. Inside: a perfectly healthy clockwork mechanism, ticking away. Green light.",
+      "narrator_vo": "Third box. Two functions calling each other in a loop. Would have crashed in production. On someone else's machine. In front of a real user paying real money.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": true,
+      "sfx": [
+        "system_explosion_glitch"
+      ],
+      "duration_sec": 10.92,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Second box — SEARCH — opens. Inside: a perfectly healthy clockwork mechanism, ticking away. Green light., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500015,
+      "input_image": "C07_keyframe.png",
+      "output_name": "C07.mp4"
+    },
+    {
+      "shot_id": "C08",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "i2v",
+      "description": "Third box — PAYMENTS — opens. Inside: two gears interlocked backwards. They grind against each other, sparks flying.",
+      "narrator_vo": "Twelve-minute fix. She would have spent twelve hours debugging it in production.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 4.67,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Third box — PAYMENTS — opens. Inside: two gears interlocked backwards. They grind against each other, sparks flying., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500016,
+      "input_image": "C08_keyframe.png",
+      "output_name": "C08.mp4"
+    },
+    {
+      "shot_id": "C09",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "The gears are separated, flipped, reconnected. They mesh perfectly. Green checkmark.",
+      "narrator_vo": "One bug. One clean bill of health. One disaster she caught before anyone else saw it. The scary part was never what's inside the box. The scary part was the not knowing.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "sfx": [
+        "meditative_hum_success"
+      ],
+      "duration_sec": 12.48,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The gears are separated, flipped, reconnected. They mesh perfectly. Green checkmark., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500017,
+      "input_image": "C09_keyframe.png",
+      "output_name": "C09.mp4"
+    },
+    {
+      "shot_id": "R01",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "render_method": "i2v",
+      "description": "Clean dark navy space. A single line of text fades in: \"What does 'working' mean?\"",
+      "narrator_vo": "Here's the reframe. Testing isn't bug hunting. Testing is answering one question: what does \"working\" actually mean?",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "meditative_hum_success"
+      ],
+      "duration_sec": 6.63,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Clean dark navy space. A single line of text fades in: \"What does 'working' mean?\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500018,
+      "input_image": "R01_keyframe.png",
+      "output_name": "R01.mp4"
+    },
+    {
+      "shot_id": "R02",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "render_method": "i2v",
+      "description": "Below the question, three simple statements appear, one at a time:",
+      "narrator_vo": "Each test is a contract. Not \"find what's broken.\" It's \"define what done looks like.\" A test says: this is how it should behave. If it doesn't behave this way, we have a problem. If it does — we're good.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "pop_appear",
+        "system_explosion_glitch",
+        "meditative_hum_success"
+      ],
+      "duration_sec": 15.61,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Below the question, three simple statements appear, one at a time:, flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500019,
+      "input_image": "R02_keyframe.png",
+      "output_name": "R02.mp4"
+    },
+    {
+      "shot_id": "R03",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "render_method": "i2v",
+      "description": "\"When the token is empty → reject the login.\"",
+      "narrator_vo": "You don't test to find bugs. You test to define reality. The test is the definition of \"works.\" Without it, \"works\" means \"didn't crash yet on my machine.\" With it, \"works\" means \"does exactly what I said it should.\"",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "system_explosion_glitch"
+      ],
+      "duration_sec": 15.22,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, \"When the token is empty → reject the login.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500020,
+      "input_image": "R03_keyframe.png",
+      "output_name": "R03.mp4"
+    },
+    {
+      "shot_id": "R04",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "render_method": "i2v",
+      "description": "\"When search finds nothing → show the empty state.\"",
+      "narrator_vo": "A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You already know the answer.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "pop_appear"
+      ],
+      "duration_sec": 10.93,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, \"When search finds nothing → show the empty state.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500021,
+      "input_image": "R04_keyframe.png",
+      "output_name": "R04.mp4"
+    },
+    {
+      "shot_id": "Z01",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Back to Vee's desk. The gift boxes are open now — lids off, green checkmarks sitting on top of each. Her terminal shows a short column of PASS results. The room is calm.",
+      "narrator_vo": "The boxes are open. She knows what's inside every one of them. No more guessing. No more \"works on my machine.\"",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "pop_appear"
+      ],
+      "duration_sec": 8.2,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Back to Vee's desk. The gift boxes are open now — lids off, green checkmarks sitting on top of each. Her terminal shows a short column of PASS results. The room is calm., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500022,
+      "input_image": "Z01_keyframe.png",
+      "output_name": "Z01.mp4"
+    },
+    {
+      "shot_id": "Z02",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Vee writes a new test. Three lines. Hits enter. PASS. Green. She nods once — not celebration, just confirmation.",
+      "narrator_vo": "Now she builds a feature and opens the box the same day. One test. Thirty seconds. No pile-up. No dread. The habit is the whole trick.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 5,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 10.15,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee writes a new test. Three lines. Hits enter. PASS. Green. She nods once — not celebration, just confirmation., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500023,
+      "input_image": "Z02_keyframe.png",
+      "output_name": "Z02.mp4"
+    },
+    {
+      "shot_id": "Z03",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Vee leans back. Pushes her glasses up. Looks at her clean terminal, her open boxes, her passing tests. Quiet confidence. She reaches for her coffee.",
+      "narrator_vo": "The code has structure. It has tests. She knows what works and what doesn't.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 6,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "fury_typing_mechanical",
+        "meditative_hum_success"
+      ],
+      "duration_sec": 5.46,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee leans back. Pushes her glasses up. Looks at her clean terminal, her open boxes, her passing tests. Quiet confidence. She reaches for her coffee., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500024,
+      "input_image": "Z03_keyframe.png",
+      "output_name": "Z03.mp4"
+    },
+    {
+      "shot_id": "Z04",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "BEAT.",
+      "narrator_vo": "But the code only knows what she told it. And she told it what the AI told her. What happens when the AI gets it wrong — and she can't tell the difference?",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "fury_typing_mechanical"
+      ],
+      "duration_sec": 12.88,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, BEAT., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500025,
+      "input_image": "Z04_keyframe.png",
+      "output_name": "Z04.mp4"
+    }
+  ],
+  "source_preproduction": "systems/video/preproduction/ep04/ep04_prepro_manifest_v6.json",
+  "selection_summary": {
+    "total_beats": 25,
+    "selected_beats": 25,
+    "target_duration_sec": 210.0,
+    "actual_duration_sec": 209.99,
+    "timing_source": "estimate"
+  }
+}

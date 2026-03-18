@@ -15,8 +15,8 @@
   },
   "shots": [
     {
-      "shot_id": "C01",
-      "segment": "CORE",
+      "shot_id": "H01",
+      "segment": "HOOK",
       "visual_type": "sitcom",
       "space": "desk",
       "render_method": "i2v",
@@ -29,19 +29,23 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": true,
-      "duration_sec": 7.06,
+      "sfx": [
+        "pop_appear",
+        "fury_typing_mechanical"
+      ],
+      "duration_sec": 6.85,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee celebrates → explosion. Show the result first., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500001,
-      "input_image": "C01_keyframe.png",
-      "output_name": "C01.mp4"
+      "input_image": "H01_keyframe.png",
+      "output_name": "H01.mp4"
     },
     {
-      "shot_id": "C02",
-      "segment": "CORE",
+      "shot_id": "H02",
+      "segment": "HOOK",
       "visual_type": "sitcom",
       "space": "desk",
-      "render_method": "motion_canvas",
+      "render_method": "i2v",
       "description": "Five monitors glow in a dark room. Vee leans back in her chair. Each screen shows code, dashboards, terminals — all running.",
       "narrator_vo": "You asked AI to build it. And it did. All of it.",
       "characters": [
@@ -51,19 +55,23 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 9.41,
+      "sfx": [
+        "pop_appear",
+        "fury_typing_mechanical"
+      ],
+      "duration_sec": 9.13,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Five monitors glow in a dark room. Vee leans back in her chair. Each screen shows code, dashboards, terminals — all running., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500002,
-      "input_image": "C02_keyframe.png",
-      "output_name": "C02.mp4"
+      "input_image": "H02_keyframe.png",
+      "output_name": "H02.mp4"
     },
     {
-      "shot_id": "C03",
-      "segment": "CORE",
+      "shot_id": "H03",
+      "segment": "HOOK",
       "visual_type": "sitcom",
       "space": "desk",
-      "render_method": "motion_canvas",
+      "render_method": "i2v",
       "description": "Vee throws both arms up. Eyes wide. Huge grin. \"BUILD SUCCESS\" flashes green on every screen.",
       "narrator_vo": "And then, three seconds later...",
       "characters": [
@@ -73,16 +81,19 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 3.92,
+      "sfx": [
+        "meditative_hum_success"
+      ],
+      "duration_sec": 3.8,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee throws both arms up. Eyes wide. Huge grin. \"BUILD SUCCESS\" flashes green on every screen., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500003,
-      "input_image": "C03_keyframe.png",
-      "output_name": "C03.mp4"
+      "input_image": "H03_keyframe.png",
+      "output_name": "H03.mp4"
     },
     {
-      "shot_id": "C04",
-      "segment": "CORE",
+      "shot_id": "H04",
+      "segment": "HOOK",
       "visual_type": "sitcom",
       "space": "desk",
       "render_method": "i2v",
@@ -95,19 +106,20 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 3.92,
+      "sfx": [],
+      "duration_sec": 3.8,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, BEAT: 1 second of silence. One monitor flickers., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500004,
-      "input_image": "C04_keyframe.png",
-      "output_name": "C04.mp4"
+      "input_image": "H04_keyframe.png",
+      "output_name": "H04.mp4"
     },
     {
-      "shot_id": "C05",
-      "segment": "CORE",
+      "shot_id": "P01",
+      "segment": "PROBLEM",
       "visual_type": "sitcom",
       "space": "desk",
-      "render_method": "motion_canvas",
+      "render_method": "i2v",
       "description": "Three days earlier. Vee's vibe coding montage. Bee's first appearance.",
       "narrator_vo": "Three days ago, Vee discovered something magical.",
       "characters": [
@@ -118,19 +130,22 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 5.49,
+      "sfx": [
+        "pop_appear"
+      ],
+      "duration_sec": 5.33,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Three days earlier. Vee's vibe coding montage. Bee's first appearance., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500005,
-      "input_image": "C05_keyframe.png",
-      "output_name": "C05.mp4"
+      "input_image": "P01_keyframe.png",
+      "output_name": "P01.mp4"
     },
     {
-      "shot_id": "C06",
-      "segment": "CORE",
+      "shot_id": "P02",
+      "segment": "PROBLEM",
       "visual_type": "sitcom",
       "space": "desk",
-      "render_method": "motion_canvas",
+      "render_method": "i2v",
       "description": "Bright room. Vee sits at her monitor. Terminal open.",
       "narrator_vo": "You type what you want. AI builds it. Five minutes. Done.",
       "characters": [
@@ -141,16 +156,20 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 8.62,
+      "sfx": [
+        "fury_typing_mechanical",
+        "meditative_hum_success"
+      ],
+      "duration_sec": 8.37,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Bright room. Vee sits at her monitor. Terminal open., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500006,
-      "input_image": "C06_keyframe.png",
-      "output_name": "C06.mp4"
+      "input_image": "P02_keyframe.png",
+      "output_name": "P02.mp4"
     },
     {
-      "shot_id": "C07",
-      "segment": "CORE",
+      "shot_id": "P03",
+      "segment": "PROBLEM",
       "visual_type": "sitcom",
       "space": "desk",
       "render_method": "i2v",
@@ -164,19 +183,24 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 8.62,
+      "sfx": [
+        "pop_appear",
+        "fury_typing_mechanical",
+        "meditative_hum_success"
+      ],
+      "duration_sec": 8.37,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee types. Files auto-generate on screen. Folders, code, packages — appearing from nothing., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500007,
-      "input_image": "C07_keyframe.png",
-      "output_name": "C07.mp4"
+      "input_image": "P03_keyframe.png",
+      "output_name": "P03.mp4"
     },
     {
-      "shot_id": "C08",
-      "segment": "CORE",
+      "shot_id": "P04",
+      "segment": "PROBLEM",
       "visual_type": "sitcom",
       "space": "desk",
-      "render_method": "motion_canvas",
+      "render_method": "i2v",
       "description": "Vee's eyes go wide. She jumps out of her chair.",
       "narrator_vo": "She thought she could build anything.",
       "characters": [
@@ -187,19 +211,20 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 4.7,
+      "sfx": [],
+      "duration_sec": 4.57,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee's eyes go wide. She jumps out of her chair., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500008,
-      "input_image": "C08_keyframe.png",
-      "output_name": "C08.mp4"
+      "input_image": "P04_keyframe.png",
+      "output_name": "P04.mp4"
     },
     {
-      "shot_id": "C09",
-      "segment": "CORE",
+      "shot_id": "P05",
+      "segment": "PROBLEM",
       "visual_type": "sitcom",
       "space": "desk",
-      "render_method": "motion_canvas",
+      "render_method": "i2v",
       "description": "MONTAGE: Rapid cuts. Vee types → app appears. Types → app appears. Types → app appears. Each time faster. Each time her grin gets bigger.",
       "narrator_vo": "But there was someone who'd seen this story before.",
       "characters": [
@@ -210,16 +235,20 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 7.05,
+      "sfx": [
+        "pop_appear",
+        "fury_typing_mechanical"
+      ],
+      "duration_sec": 6.85,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, MONTAGE: Rapid cuts. Vee types → app appears. Types → app appears. Types → app appears. Each time faster. Each time her grin gets bigger., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500009,
-      "input_image": "C09_keyframe.png",
-      "output_name": "C09.mp4"
+      "input_image": "P05_keyframe.png",
+      "output_name": "P05.mp4"
     },
     {
-      "shot_id": "C10",
-      "segment": "CORE",
+      "shot_id": "P06",
+      "segment": "PROBLEM",
       "visual_type": "sitcom",
       "space": "desk",
       "render_method": "i2v",
@@ -233,15 +262,16 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 3.92,
+      "sfx": [],
+      "duration_sec": 3.8,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee spins in her chair, arms crossed, nodding like a CEO., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500010,
-      "input_image": "C10_keyframe.png",
-      "output_name": "C10.mp4"
+      "input_image": "P06_keyframe.png",
+      "output_name": "P06.mp4"
     },
     {
-      "shot_id": "C11",
+      "shot_id": "C01",
       "segment": "CORE",
       "visual_type": "explainer",
       "space": "desk",
@@ -253,15 +283,16 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": true,
-      "duration_sec": 3.92,
+      "sfx": [],
+      "duration_sec": 3.8,
       "prompt_positive": "v3ct0r style, simple flat vector art, warm desk background, Transition to abstract world. \"Spec = Blueprint\" metaphor., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500011,
-      "input_image": "C11_keyframe.png",
-      "output_name": "C11.mp4"
+      "input_image": "C01_keyframe.png",
+      "output_name": "C01.mp4"
     },
     {
-      "shot_id": "C12",
+      "shot_id": "C02",
       "segment": "CORE",
       "visual_type": "explainer",
       "space": "desk",
@@ -273,15 +304,16 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 4.7,
+      "sfx": [],
+      "duration_sec": 4.57,
       "prompt_positive": "v3ct0r style, simple flat vector art, warm desk background, Wide, dark navy surface. Empty space in the center., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500012,
-      "input_image": "C12_keyframe.png",
-      "output_name": "C12.mp4"
+      "input_image": "C02_keyframe.png",
+      "output_name": "C02.mp4"
     },
     {
-      "shot_id": "C13",
+      "shot_id": "C03",
       "segment": "CORE",
       "visual_type": "explainer",
       "space": "desk",
@@ -293,15 +325,16 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 18.0,
+      "sfx": [],
+      "duration_sec": 17.5,
       "prompt_positive": "v3ct0r style, simple flat vector art, warm desk background, Left side: a blueprint unfolds. Blue lines trace the outline of a building., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500013,
-      "input_image": "C13_keyframe.png",
-      "output_name": "C13.mp4"
+      "input_image": "C03_keyframe.png",
+      "output_name": "C03.mp4"
     },
     {
-      "shot_id": "C14",
+      "shot_id": "C04",
       "segment": "CORE",
       "visual_type": "explainer",
       "space": "desk",
@@ -313,15 +346,18 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 3.92,
+      "sfx": [
+        "meditative_hum_success"
+      ],
+      "duration_sec": 3.8,
       "prompt_positive": "v3ct0r style, simple flat vector art, warm desk background, Foundation → frame → walls → roof. Geometric building assembles in sequence. Clean. Stable., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500014,
-      "input_image": "C14_keyframe.png",
-      "output_name": "C14.mp4"
+      "input_image": "C04_keyframe.png",
+      "output_name": "C04.mp4"
     },
     {
-      "shot_id": "C15",
+      "shot_id": "C05",
       "segment": "CORE",
       "visual_type": "explainer",
       "space": "desk",
@@ -333,15 +369,37 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 8.62,
+      "sfx": [],
+      "duration_sec": 8.37,
       "prompt_positive": "v3ct0r style, simple flat vector art, warm desk background, Right side: colorful blocks drop from above, piling randomly., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500015,
-      "input_image": "C15_keyframe.png",
-      "output_name": "C15.mp4"
+      "input_image": "C05_keyframe.png",
+      "output_name": "C05.mp4"
     },
     {
-      "shot_id": "C16",
+      "shot_id": "C06",
+      "segment": "CORE",
+      "visual_type": "explainer",
+      "space": "desk",
+      "render_method": "motion_canvas",
+      "description": "The pile grows taller. It starts leaning.",
+      "narrator_vo": "For a while, it looks like it's working.",
+      "characters": [],
+      "vee_expression": null,
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 6.09,
+      "prompt_positive": "v3ct0r style, simple flat vector art, warm desk background, The pile grows taller. It starts leaning., bold saturated colors, educational animation, flat color fill, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
+      "seed": 1500016,
+      "input_image": "C06_keyframe.png",
+      "output_name": "C06.mp4"
+    },
+    {
+      "shot_id": "C07",
       "segment": "CORE",
       "visual_type": "explainer",
       "space": "desk",
@@ -353,15 +411,16 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 3.92,
+      "sfx": [],
+      "duration_sec": 3.8,
       "prompt_positive": "v3ct0r style, simple flat vector art, warm desk background, The pile wobbles. Pauses., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500016,
-      "input_image": "C16_keyframe.png",
-      "output_name": "C16.mp4"
+      "seed": 1500017,
+      "input_image": "C07_keyframe.png",
+      "output_name": "C07.mp4"
     },
     {
-      "shot_id": "C17",
+      "shot_id": "C08",
       "segment": "CORE",
       "visual_type": "explainer",
       "space": "desk",
@@ -373,15 +432,16 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 13.32,
+      "sfx": [],
+      "duration_sec": 12.93,
       "prompt_positive": "v3ct0r style, simple flat vector art, warm desk background, Collapse. Blocks scatter everywhere., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500017,
-      "input_image": "C17_keyframe.png",
-      "output_name": "C17.mp4"
+      "seed": 1500018,
+      "input_image": "C08_keyframe.png",
+      "output_name": "C08.mp4"
     },
     {
-      "shot_id": "C18",
+      "shot_id": "C09",
       "segment": "CORE",
       "visual_type": "explainer",
       "space": "desk",
@@ -393,15 +453,18 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 6.27,
+      "sfx": [
+        "meditative_hum_success"
+      ],
+      "duration_sec": 6.09,
       "prompt_positive": "v3ct0r style, simple flat vector art, warm desk background, Back to the blueprint side. Clean building standing tall., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500018,
-      "input_image": "C18_keyframe.png",
-      "output_name": "C18.mp4"
+      "seed": 1500019,
+      "input_image": "C09_keyframe.png",
+      "output_name": "C09.mp4"
     },
     {
-      "shot_id": "C19",
+      "shot_id": "C10",
       "segment": "CORE",
       "visual_type": "explainer",
       "space": "desk",
@@ -413,15 +476,18 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 7.84,
+      "sfx": [
+        "pop_appear"
+      ],
+      "duration_sec": 7.61,
       "prompt_positive": "v3ct0r style, simple flat vector art, warm desk background, Text appears on the blueprint: \"I want to access my home computer from anywhere.\", bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500019,
-      "input_image": "C19_keyframe.png",
-      "output_name": "C19.mp4"
+      "seed": 1500020,
+      "input_image": "C10_keyframe.png",
+      "output_name": "C10.mp4"
     },
     {
-      "shot_id": "C20",
+      "shot_id": "C11",
       "segment": "CORE",
       "visual_type": "explainer",
       "space": "desk",
@@ -433,15 +499,16 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 12.54,
+      "sfx": [],
+      "duration_sec": 12.17,
       "prompt_positive": "v3ct0r style, simple flat vector art, warm desk background, New scene. A small skateboard rolls into frame., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500020,
-      "input_image": "C20_keyframe.png",
-      "output_name": "C20.mp4"
+      "seed": 1500021,
+      "input_image": "C11_keyframe.png",
+      "output_name": "C11.mp4"
     },
     {
-      "shot_id": "C21",
+      "shot_id": "C12",
       "segment": "CORE",
       "visual_type": "explainer",
       "space": "desk",
@@ -453,16 +520,17 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 6.27,
+      "sfx": [],
+      "duration_sec": 6.09,
       "prompt_positive": "v3ct0r style, simple flat vector art, warm desk background, Skateboard morphs into a bicycle. Bicycle morphs into a car., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500021,
-      "input_image": "C21_keyframe.png",
-      "output_name": "C21.mp4"
+      "seed": 1500022,
+      "input_image": "C12_keyframe.png",
+      "output_name": "C12.mp4"
     },
     {
-      "shot_id": "C22",
-      "segment": "CORE",
+      "shot_id": "A01",
+      "segment": "APPLICATION",
       "visual_type": "sitcom",
       "space": "desk",
       "render_method": "i2v",
@@ -476,19 +544,22 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 5.49,
+      "sfx": [
+        "system_explosion_glitch"
+      ],
+      "duration_sec": 5.33,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee alone. Stops coding. Writes frustrations on paper. Discovers what she's building., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500022,
-      "input_image": "C22_keyframe.png",
-      "output_name": "C22.mp4"
+      "seed": 1500023,
+      "input_image": "A01_keyframe.png",
+      "output_name": "A01.mp4"
     },
     {
-      "shot_id": "C23",
-      "segment": "CORE",
+      "shot_id": "A02",
+      "segment": "APPLICATION",
       "visual_type": "sitcom",
       "space": "desk",
-      "render_method": "motion_canvas",
+      "render_method": "i2v",
       "description": "Five monitors. Red errors. Vee's hands hover over the keyboard.",
       "narrator_vo": "And then she did something unusual. She stopped coding.",
       "characters": [
@@ -499,19 +570,23 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 7.05,
+      "sfx": [
+        "system_explosion_glitch",
+        "fury_typing_mechanical"
+      ],
+      "duration_sec": 6.85,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Five monitors. Red errors. Vee's hands hover over the keyboard., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500023,
-      "input_image": "C23_keyframe.png",
-      "output_name": "C23.mp4"
+      "seed": 1500024,
+      "input_image": "A02_keyframe.png",
+      "output_name": "A02.mp4"
     },
     {
-      "shot_id": "C24",
-      "segment": "CORE",
+      "shot_id": "A03",
+      "segment": "APPLICATION",
       "visual_type": "sitcom",
       "space": "desk",
-      "render_method": "motion_canvas",
+      "render_method": "i2v",
       "description": "Vee's fingers tremble. She doesn't know what to type.",
       "narrator_vo": "She started writing. Not code. Just... what was bothering her.",
       "characters": [
@@ -522,16 +597,19 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 7.84,
+      "sfx": [
+        "fury_typing_mechanical"
+      ],
+      "duration_sec": 7.61,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee's fingers tremble. She doesn't know what to type., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500024,
-      "input_image": "C24_keyframe.png",
-      "output_name": "C24.mp4"
+      "seed": 1500025,
+      "input_image": "A03_keyframe.png",
+      "output_name": "A03.mp4"
     },
     {
-      "shot_id": "C25",
-      "segment": "CORE",
+      "shot_id": "A04",
+      "segment": "APPLICATION",
       "visual_type": "sitcom",
       "space": "desk",
       "render_method": "i2v",
@@ -545,19 +623,20 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 7.05,
+      "sfx": [],
+      "duration_sec": 6.85,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, She pulls her hands back. Pushes the chair away from the desk., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500025,
-      "input_image": "C25_keyframe.png",
-      "output_name": "C25.mp4"
+      "seed": 1500026,
+      "input_image": "A04_keyframe.png",
+      "output_name": "A04.mp4"
     },
     {
-      "shot_id": "C26",
-      "segment": "CORE",
+      "shot_id": "A05",
+      "segment": "APPLICATION",
       "visual_type": "sitcom",
       "space": "desk",
-      "render_method": "motion_canvas",
+      "render_method": "i2v",
       "description": "Vee opens a desk drawer. Pulls out paper and a pencil. Turns her back to the monitors.",
       "narrator_vo": "Not features. Not tools. The reason. The one sentence that explains everything.",
       "characters": [
@@ -568,19 +647,20 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 9.4,
+      "sfx": [],
+      "duration_sec": 9.13,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee opens a desk drawer. Pulls out paper and a pencil. Turns her back to the monitors., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500026,
-      "input_image": "C26_keyframe.png",
-      "output_name": "C26.mp4"
+      "seed": 1500027,
+      "input_image": "A05_keyframe.png",
+      "output_name": "A05.mp4"
     },
     {
-      "shot_id": "C27",
-      "segment": "CORE",
+      "shot_id": "A06",
+      "segment": "APPLICATION",
       "visual_type": "sitcom",
       "space": "desk",
-      "render_method": "motion_canvas",
+      "render_method": "i2v",
       "description": "CU: Paper. Messy handwriting appears:",
       "narrator_vo": "The same errors. But now, one line makes sense.",
       "characters": [
@@ -591,16 +671,21 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 7.05,
+      "sfx": [
+        "pop_appear",
+        "system_explosion_glitch",
+        "fury_typing_mechanical"
+      ],
+      "duration_sec": 6.85,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, CU: Paper. Messy handwriting appears:, flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500027,
-      "input_image": "C27_keyframe.png",
-      "output_name": "C27.mp4"
+      "seed": 1500028,
+      "input_image": "A06_keyframe.png",
+      "output_name": "A06.mp4"
     },
     {
-      "shot_id": "C28",
-      "segment": "CORE",
+      "shot_id": "O01",
+      "segment": "OUTRO",
       "visual_type": "sitcom",
       "space": "desk",
       "render_method": "i2v",
@@ -614,19 +699,22 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": true,
-      "duration_sec": 3.92,
+      "sfx": [
+        "system_explosion_glitch"
+      ],
+      "duration_sec": 3.8,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Mirror of HOOK. Same room, same errors, different person., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500028,
-      "input_image": "C28_keyframe.png",
-      "output_name": "C28.mp4"
+      "seed": 1500029,
+      "input_image": "O01_keyframe.png",
+      "output_name": "O01.mp4"
     },
     {
-      "shot_id": "C29",
-      "segment": "CORE",
+      "shot_id": "O02",
+      "segment": "OUTRO",
       "visual_type": "sitcom",
       "space": "desk",
-      "render_method": "motion_canvas",
+      "render_method": "i2v",
       "description": "**Exact same composition as HOOK.** Five monitors. Red errors. Dark room.",
       "narrator_vo": "But now she knows what to fix.",
       "characters": [
@@ -637,19 +725,22 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 5.49,
+      "sfx": [
+        "system_explosion_glitch"
+      ],
+      "duration_sec": 5.33,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, **Exact same composition as HOOK.** Five monitors. Red errors. Dark room., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500029,
-      "input_image": "C29_keyframe.png",
-      "output_name": "C29.mp4"
+      "seed": 1500030,
+      "input_image": "O02_keyframe.png",
+      "output_name": "O02.mp4"
     },
     {
-      "shot_id": "C30",
-      "segment": "CORE",
+      "shot_id": "O03",
+      "segment": "OUTRO",
       "visual_type": "sitcom",
       "space": "desk",
-      "render_method": "motion_canvas",
+      "render_method": "i2v",
       "description": "Vee sits in her chair. The mug is in the same spot.",
       "narrator_vo": "...at least, she thinks she does.",
       "characters": [
@@ -660,20 +751,21 @@
       "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "duration_sec": 4.7,
+      "sfx": [],
+      "duration_sec": 4.57,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee sits in her chair. The mug is in the same spot., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500030,
-      "input_image": "C30_keyframe.png",
-      "output_name": "C30.mp4"
+      "seed": 1500031,
+      "input_image": "O03_keyframe.png",
+      "output_name": "O03.mp4"
     }
   ],
   "source_preproduction": "E:\\vibecode-blog\\systems\\video\\preproduction\\ep01\\ep01_prepro_manifest.json",
   "selection_summary": {
     "total_beats": 31,
-    "selected_beats": 30,
+    "selected_beats": 31,
     "target_duration_sec": 210.0,
-    "actual_duration_sec": 210.02,
+    "actual_duration_sec": 210.01,
     "timing_source": "estimate"
   }
 }

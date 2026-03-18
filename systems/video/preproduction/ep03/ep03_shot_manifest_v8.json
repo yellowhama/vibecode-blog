@@ -1,0 +1,749 @@
+{
+  "project_id": "ep03_v5",
+  "version": "6.0",
+  "style_lock": "2D flat vector Level 2.5 + narrator V.O. only + Vee silent",
+  "delivery_target": "16:9, 1280x720, YouTube",
+  "resolution": "1280x720",
+  "pipeline": {
+    "t2i": "Flux dev + SimpleVectorFlux LoRA",
+    "edit": "Flux Kontext",
+    "i2v": "Wan 2.2 MoE GGUF",
+    "tts": "Dia2-1B",
+    "bgm": "ACE-Step 1.5",
+    "diagrams": "Motion Canvas",
+    "assembly": "FFmpeg"
+  },
+  "shots": [
+    {
+      "shot_id": "H01",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Same desk as EP02. The PROJECT.md file glows on her monitor. Clean folder tree in the sidebar — but it's grown. Dozens of files. Vee sits tall, hoodie sleeves pushed up. She looks like someone who'...",
+      "narrator_vo": "브이는 한 줄을 고쳤다. 세 군데가 터졌다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "sfx": [
+        "meditative_hum_success"
+      ],
+      "duration_sec": 4.86,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Same desk as EP02. The PROJECT.md file glows on her monitor. Clean folder tree in the sidebar — but it's grown. Dozens of files. Vee sits tall, hoodie sleeves pushed up. She looks like someone who's figured things out., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500001,
+      "input_image": "H01_keyframe.png",
+      "output_name": "H01.mp4"
+    },
+    {
+      "shot_id": "H02",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "A cursor clicks one file. A small edit. Save. Three red error badges pop up in different parts of the sidebar.",
+      "narrator_vo": "주방만 건드렸는데 — 침실이 불탔다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 1,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "pop_appear",
+        "system_explosion_glitch"
+      ],
+      "duration_sec": 4.04,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, A cursor clicks one file. A small edit. Save. Three red error badges pop up in different parts of the sidebar., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500002,
+      "input_image": "H02_keyframe.png",
+      "output_name": "H02.mp4"
+    },
+    {
+      "shot_id": "M01",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "The file's line count ticks up in the corner: 2,400... 2,800... 3,100.",
+      "narrator_vo": "로그인, 결제, 알림, 파일 동기화. 전부 한 파일. 삼천 줄. 브이의 논리는 이랬다 — 파일 하나면 찾기 쉽잖아.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 9.18,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, The file's line count ticks up in the corner: 2,400... 2,800... 3,100., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500003,
+      "input_image": "M01_keyframe.png",
+      "output_name": "M01.mp4"
+    },
+    {
+      "shot_id": "M02",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Vee shrugs — a \"makes sense to me\" expression. She taps the single file proudly. One file. One truth. Simple. 1.5 seconds.",
+      "narrator_vo": "맞는 말이다. 하나니까 잃어버릴 것도 없다. 하나니까 관리도 쉽다. 하나니까 — 전부 연결되어 있다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 3,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 9.18,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee shrugs — a \"makes sense to me\" expression. She taps the single file proudly. One file. One truth. Simple. 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500004,
+      "input_image": "M02_keyframe.png",
+      "output_name": "M02.mp4"
+    },
+    {
+      "shot_id": "M03",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "BEAT. One second. The word \"연결\" lingers.",
+      "narrator_vo": "전부.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 2.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, BEAT. One second. The word \"연결\" lingers., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500005,
+      "input_image": "M03_keyframe.png",
+      "output_name": "M03.mp4"
+    },
+    {
+      "shot_id": "M04",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Visual: AI cursor moves through the file. Fixes one section. But the fix ripples — a changed variable name cascades through unrelated functions. Red highlights bloom across the file.",
+      "narrator_vo": "그리고 AI한테 \"결제 로직 고쳐줘\"라고 했다. AI는 성실했다. 결제 로직을 고쳤다. 그리고 같은 파일에 있던 로그인 코드도 건드렸다. 알림 코드도. AI는 잘못한 게 아니다 — 다 같은 파일이니까.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "swoosh_motion"
+      ],
+      "duration_sec": 9.18,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: AI cursor moves through the file. Fixes one section. But the fix ripples — a changed variable name cascades through unrelated functions. Red highlights bloom across the file., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500006,
+      "input_image": "M04_keyframe.png",
+      "output_name": "M04.mp4"
+    },
+    {
+      "shot_id": "K01",
+      "segment": "THE_CRACK",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "i2v",
+      "description": "Oil sizzles in a pan on the stove. Droplets arc through the air — nothing to stop them. They land on the bed. Grease stains bloom on white sheets.",
+      "narrator_vo": "아침을 요리한다. 기름이 튄다. 벽이 없으니까 — 침대에 떨어진다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 7.53,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Oil sizzles in a pan on the stove. Droplets arc through the air — nothing to stop them. They land on the bed. Grease stains bloom on white sheets., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500007,
+      "input_image": "K01_keyframe.png",
+      "output_name": "K01.mp4"
+    },
+    {
+      "shot_id": "K02",
+      "segment": "THE_CRACK",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "i2v",
+      "description": "The camera slides. Shower turns on. Water streams across the floor — no barrier — and reaches the desk. The computer sparks.",
+      "narrator_vo": "샤워를 한다. 물이 바닥을 타고 흘러서 — 컴퓨터에 닿는다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "pop_appear",
+        "swoosh_motion"
+      ],
+      "duration_sec": 6.71,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The camera slides. Shower turns on. Water streams across the floor — no barrier — and reaches the desk. The computer sparks., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500008,
+      "input_image": "K02_keyframe.png",
+      "output_name": "K02.mp4"
+    },
+    {
+      "shot_id": "K03",
+      "segment": "THE_CRACK",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "i2v",
+      "description": "The camera slides to the toilet. Full view from the kitchen table.",
+      "narrator_vo": "변기는? 식탁에서 보인다. 밥 먹으면서.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "swoosh_motion"
+      ],
+      "duration_sec": 4.45,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The camera slides to the toilet. Full view from the kitchen table., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500009,
+      "input_image": "K03_keyframe.png",
+      "output_name": "K03.mp4"
+    },
+    {
+      "shot_id": "K04",
+      "segment": "THE_CRACK",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "i2v",
+      "description": "BEAT. One disgusted second.",
+      "narrator_vo": "이게 브이의 코드다. 전부 한 파일이니까 — 결제 로직을 고치면 로그인이 터진다. 알림을 바꾸면 파일 동기화가 깨진다. 주방 기름이 침대에 묻는 거다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 9.18,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, BEAT. One disgusted second., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500010,
+      "input_image": "K04_keyframe.png",
+      "output_name": "K04.mp4"
+    },
+    {
+      "shot_id": "C01",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "A bright vertical line drops between the kitchen and the bedroom. THUD. The oil droplets hit the new wall and splatter harmlessly against it.",
+      "narrator_vo": "벽.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 2.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A bright vertical line drops between the kitchen and the bedroom. THUD. The oil droplets hit the new wall and splatter harmlessly against it., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500011,
+      "input_image": "C01_keyframe.png",
+      "output_name": "C01.mp4"
+    },
+    {
+      "shot_id": "C02",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "A second wall drops between the bathroom and the office. THUD. Water pools safely on the bathroom side.",
+      "narrator_vo": "주방과 침실 사이에 벽. 욕실과 서재 사이에 벽.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 5.48,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A second wall drops between the bathroom and the office. THUD. Water pools safely on the bathroom side., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500012,
+      "input_image": "C02_keyframe.png",
+      "output_name": "C02.mp4"
+    },
+    {
+      "shot_id": "C03",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "i2v",
+      "description": "A third wall hides the toilet. THUD.",
+      "narrator_vo": "변기와 나머지 세계 사이에 벽. 감사합니다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 4.86,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A third wall hides the toilet. THUD., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500013,
+      "input_image": "C03_keyframe.png",
+      "output_name": "C03.mp4"
+    },
+    {
+      "shot_id": "C04",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "The apartment morphs into a folder tree diagram. Each room becomes a labeled folder: `auth/`, `payments/`, `notifications/`, `sync/`, `ui/`. Clean lines connect them through small interface nodes —...",
+      "narrator_vo": "코드에서 벽은 — 폴더다. `auth/`는 로그인만 한다. `payments/`는 결제만 한다. 서로 직접 건드리지 않는다. 문을 통해서 — 인터페이스를 통해서 대화한다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "meditative_hum_success"
+      ],
+      "duration_sec": 9.18,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The apartment morphs into a folder tree diagram. Each room becomes a labeled folder: `auth/`, `payments/`, `notifications/`, `sync/`, `ui/`. Clean lines connect them through small interface nodes — the \"doors.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500014,
+      "input_image": "C04_keyframe.png",
+      "output_name": "C04.mp4"
+    },
+    {
+      "shot_id": "C05",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "One folder lights up red — an error in `payments/`. The error stays inside. Other folders remain green. The red pulses once, then resolves to green.",
+      "narrator_vo": "결제가 터지면 — 결제 문제다. 로그인은 모른다. 알림도 모른다. 각자의 방에서 각자의 일을 한다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "sfx": [
+        "system_explosion_glitch"
+      ],
+      "duration_sec": 9.18,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, One folder lights up red — an error in `payments/`. The error stays inside. Other folders remain green. The red pulses once, then resolves to green., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500015,
+      "input_image": "C05_keyframe.png",
+      "output_name": "C05.mp4"
+    },
+    {
+      "shot_id": "C06",
+      "segment": "CORE",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Quick flash: Vee's eyes go wide. Both hands come up — palms out, fingers spread. The universal \"oh THAT'S why\" gesture. Glasses flash. 1.5 seconds.",
+      "narrator_vo": "실제로 해보자. 브이의 삼천 줄짜리 앱을 분리하면 이렇게 된다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 6,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 7.12,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Quick flash: Vee's eyes go wide. Both hands come up — palms out, fingers spread. The universal \"oh THAT'S why\" gesture. Glasses flash. 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500016,
+      "input_image": "C06_keyframe.png",
+      "output_name": "C06.mp4"
+    },
+    {
+      "shot_id": "C07",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "Visual: The single app.js file icon appears on the left — massive, glowing red. An arrow points right. On the right, five small file icons appear one by one, each labeled.",
+      "narrator_vo": "`auth/` — 로그인과 회원가입. 삼백 줄.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "pop_appear"
+      ],
+      "duration_sec": 5.27,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Visual: The single app.js file icon appears on the left — massive, glowing red. An arrow points right. On the right, five small file icons appear one by one, each labeled., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500017,
+      "input_image": "C07_keyframe.png",
+      "output_name": "C07.mp4"
+    },
+    {
+      "shot_id": "C08",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "Visual: payments/ folder lights up. \"250 lines.\"",
+      "narrator_vo": "`notifications/` — 푸시 알림, 이메일. 이백 줄.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 7.33,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Visual: payments/ folder lights up. \"250 lines.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500018,
+      "input_image": "C08_keyframe.png",
+      "output_name": "C08.mp4"
+    },
+    {
+      "shot_id": "C09",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "i2v",
+      "description": "Visual: notifications/ folder. \"200 lines.\"",
+      "narrator_vo": "`sync/` — 파일 동기화. 삼백오십 줄.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 5.07,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Visual: notifications/ folder. \"200 lines.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500019,
+      "input_image": "C09_keyframe.png",
+      "output_name": "C09.mp4"
+    },
+    {
+      "shot_id": "C10",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "Visual: sync/ folder. \"350 lines.\"",
+      "narrator_vo": "`ui/` — 화면, 버튼, 레이아웃. 사백 줄.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 5.48,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Visual: sync/ folder. \"350 lines.\", flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500020,
+      "input_image": "C10_keyframe.png",
+      "output_name": "C10.mp4"
+    },
+    {
+      "shot_id": "C11",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "Visual: Side-by-side — left: 3,100-line single file, right: 5 folders totaling 1,500. The difference is stark.",
+      "narrator_vo": "그리고 이제 AI한테 말할 수 있다. \"payments/ 폴더의 환불 로직을 추가해줘.\" AI는 어디를 봐야 하는지 안다. 다른 폴더는 건드리지 않는다. 기름이 침대에 튀지 않는다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 9.18,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Visual: Side-by-side — left: 3,100-line single file, right: 5 folders totaling 1,500. The difference is stark., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500021,
+      "input_image": "C11_keyframe.png",
+      "output_name": "C11.mp4"
+    },
+    {
+      "shot_id": "C12",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "render_method": "i2v",
+      "description": "Vee's mouth forms a silent \"oh\". She counts on her fingers — five folders, five responsibilities. It makes sense now. 1.5 seconds.",
+      "narrator_vo": "어제 같은 요청을 했으면 — AI는 삼천 줄 전체를 읽고, 아무 데나 코드를 넣었을 거다. 오늘은 이백오십 줄만 읽고, 정확한 위치에 넣는다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 7,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 9.18,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Vee's mouth forms a silent \"oh\". She counts on her fingers — five folders, five responsibilities. It makes sense now. 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500022,
+      "input_image": "C12_keyframe.png",
+      "output_name": "C12.mp4"
+    },
+    {
+      "shot_id": "R01",
+      "segment": "REFRAME",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "The screen shows a refactored project. Five folders. Clean structure. Not code — the folder tree itself. Zoomed out. Bird's eye.",
+      "narrator_vo": "그리고 브이가 깨달은 진짜 교훈은 따로 있다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "pop_appear",
+        "fury_typing_mechanical",
+        "meditative_hum_success"
+      ],
+      "duration_sec": 5.07,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, The screen shows a refactored project. Five folders. Clean structure. Not code — the folder tree itself. Zoomed out. Bird's eye., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500023,
+      "input_image": "R01_keyframe.png",
+      "output_name": "R01.mp4"
+    },
+    {
+      "shot_id": "R02",
+      "segment": "REFRAME",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "BEAT. One second.",
+      "narrator_vo": "코드를 읽을 필요가 없다. 지도를 읽어라.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 4.66,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, BEAT. One second., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500024,
+      "input_image": "R02_keyframe.png",
+      "output_name": "R02.mp4"
+    },
+    {
+      "shot_id": "R03",
+      "segment": "REFRAME",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "The folder tree transforms into an actual map — a top-down city grid. Each folder becomes a building with a sign. `auth/` becomes a guard post. `payments/` becomes a bank. `notifications/` becomes...",
+      "narrator_vo": "AI한테 \"결제 로직 고쳐줘\"라고 말하면, AI도 어디를 봐야 하는지 안다. `payments/` 폴더. 끝. 삼천 줄을 읽을 필요가 없다. 이백오십 줄만 읽으면 된다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "meditative_hum_success"
+      ],
+      "duration_sec": 9.18,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, The folder tree transforms into an actual map — a top-down city grid. Each folder becomes a building with a sign. `auth/` becomes a guard post. `payments/` becomes a bank. `notifications/` becomes a post office. `sync/` becomes a satellite tower. Roads connect them — clean, one-way streets., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500025,
+      "input_image": "R03_keyframe.png",
+      "output_name": "R03.mp4"
+    },
+    {
+      "shot_id": "R04",
+      "segment": "REFRAME",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Visual: Each building on the map has a clear sign. No need to go inside to know what it does.",
+      "narrator_vo": "구조가 문서다. 폴더가 설계도다. 벽이 있으면 — 지도가 생긴다. 그리고 지도가 있으면 — 코딩을 몰라도 방향을 잡을 수 있다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "meditative_hum_success"
+      ],
+      "duration_sec": 9.18,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: Each building on the map has a clear sign. No need to go inside to know what it does., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500026,
+      "input_image": "R04_keyframe.png",
+      "output_name": "R04.mp4"
+    },
+    {
+      "shot_id": "R05",
+      "segment": "REFRAME",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Vee leans back. Arms behind her head. She looks at the folder tree on her monitor — not at code, at the MAP. A slow, knowing smile. She gets it now. 1.5 seconds.",
+      "narrator_vo": "프로 개발자들이 매일 하는 일이 이거다. 코드를 읽기 전에 구조를 읽는다. 폴더를 보고, 이름을 보고, 관계를 본다. 그 다음에 들어간다. 너도 똑같이 할 수 있다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 9,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "fury_typing_mechanical"
+      ],
+      "duration_sec": 9.18,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee leans back. Arms behind her head. She looks at the folder tree on her monitor — not at code, at the MAP. A slow, knowing smile. She gets it now. 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500027,
+      "input_image": "R05_keyframe.png",
+      "output_name": "R05.mp4"
+    },
+    {
+      "shot_id": "Z01",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Same composition. Vee at her desk. Five clean folders on screen. The old 3,100-line app.js is gone. She cracks her knuckles.",
+      "narrator_vo": "한 문장이 방향을 잡았다. 한 파일이 기억을 잡았다. 벽이 — 구조를 잡았다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "meditative_hum_success"
+      ],
+      "duration_sec": 8.77,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Same composition. Vee at her desk. Five clean folders on screen. The old 3,100-line app.js is gone. She cracks her knuckles., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500028,
+      "input_image": "Z01_keyframe.png",
+      "output_name": "Z01.mp4"
+    },
+    {
+      "shot_id": "Z02",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "The AI responds. Green checkmarks appear — but only in the `payments/` folder. The other folders don't move. Nothing breaks.",
+      "narrator_vo": "구조는 잡혔다. 벽은 세워졌다. 근데 — 이 방들이 진짜 작동하는지는? 한 번도 확인 안 했다. 벽은 있다. 근데 방 안에 뭐가 있는지 — 아직 모른다.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "pop_appear",
+        "swoosh_motion"
+      ],
+      "duration_sec": 9.18,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, The AI responds. Green checkmarks appear — but only in the `payments/` folder. The other folders don't move. Nothing breaks., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500029,
+      "input_image": "Z02_keyframe.png",
+      "output_name": "Z02.mp4"
+    },
+    {
+      "shot_id": "Z03",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Vee nods. Satisfied. She reaches for her coffee — then pauses. Looks at the green checkmarks. Squints. Tilts her head.",
+      "narrator_vo": "다음에 — 브이가 상자를 연다. 예쁘게 포장된 상자 다섯 개. 한 번도 열어본 적 없는. 안에 뭐가 있을까.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 10,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 9.19,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee nods. Satisfied. She reaches for her coffee — then pauses. Looks at the green checkmarks. Squints. Tilts her head., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 1500030,
+      "input_image": "Z03_keyframe.png",
+      "output_name": "Z03.mp4"
+    }
+  ],
+  "source_preproduction": "../../preproduction/ep03/ep03_prepro_manifest_v7.json",
+  "selection_summary": {
+    "total_beats": 38,
+    "selected_beats": 30,
+    "target_duration_sec": 210.0,
+    "actual_duration_sec": 210.05,
+    "timing_source": "estimate"
+  }
+}

@@ -63,6 +63,15 @@ def main():
     
     filter_complex = []
     
+    # 0. Format all inputs to stereo 48k to prevent amix/sidechaincompress mismatch errors
+    filter_complex.append("[0:a]aformat=sample_rates=48000:channel_layouts=stereo[vox_fmt]")
+    if bgm_count > 0:
+        for i in range(bgm_count):
+            filter_complex.append(f"[{bgm_start_idx + i}:a]aformat=sample_rates=48000:channel_layouts=stereo[bgm_fmt_{i}]")
+    for i in range(len(sfx_parsed)):
+        idx = sfx_start_idx + i
+        filter_complex.append(f"[{idx}:a]aformat=sample_rates=48000:channel_layouts=stereo[sfx_fmt_{i}]")
+
     # 1. BGM Crossfade or mix
     bgm_out = "[bgm_mixed]"
     if bgm_count == 0:
@@ -70,12 +79,12 @@ def main():
     elif bgm_count == 1:
         # Just one BGM, apply delay if needed and volume
         delay_ms = int(bgm_parsed[0][0] * 1000)
-        filter_complex.append(f"[{bgm_start_idx}:a]volume={args.bgm_volume},adelay={delay_ms}|{delay_ms}{bgm_out}")
+        filter_complex.append(f"[bgm_fmt_0]volume={args.bgm_volume},adelay={delay_ms}|{delay_ms}{bgm_out}")
     else:
         # Multiple BGMs: chain with acrossfade
-        last_out = f"[{bgm_start_idx}:a]"
+        last_out = f"[bgm_fmt_0]"
         for i in range(1, bgm_count):
-            curr = f"[{bgm_start_idx + i}:a]"
+            curr = f"[bgm_fmt_{i}]"
             next_out = f"[bgm_cf_{i}]"
             # crossfade duration 2 seconds
             filter_complex.append(f"{last_out}{curr}acrossfade=d=2:c1=tri:c2=tri{next_out}")
@@ -83,30 +92,33 @@ def main():
         filter_complex.append(f"{last_out}volume={args.bgm_volume}{bgm_out}")
 
     # 2. SFX Mix with Narration
-    vox_sfx_mix = "[vox_sfx]"
+    vox_sfx_raw = "[vox_sfx_raw]"
     if len(sfx_parsed) == 0:
-        filter_complex.append(f"[0:a]anull{vox_sfx_mix}")
+        filter_complex.append(f"[vox_fmt]anull{vox_sfx_raw}")
     else:
         sfx_labels = []
         for i, (t_sec, _) in enumerate(sfx_parsed):
             delay_ms = int(t_sec * 1000)
             lbl = f"[sfx_d_{i}]"
             sfx_labels.append(lbl)
-            filter_complex.append(f"[{sfx_start_idx + i}:a]adelay={delay_ms}|{delay_ms}{lbl}")
+            filter_complex.append(f"[sfx_fmt_{i}]adelay={delay_ms}|{delay_ms}{lbl}")
         
         inputs = "".join(sfx_labels)
-        filter_complex.append(f"[0:a]{inputs}amix=inputs={len(sfx_parsed)+1}:duration=first:dropout_transition=0{vox_sfx_mix}")
+        filter_complex.append(f"[vox_fmt]{inputs}amix=inputs={len(sfx_parsed)+1}:duration=first:dropout_transition=0{vox_sfx_raw}")
+
+    # Split the narration/sfx track into two: one for sidechain ref, one for final amix
+    vox_sfx1 = "[vox_sfx1]"
+    vox_sfx2 = "[vox_sfx2]"
+    filter_complex.append(f"{vox_sfx_raw}asplit=2{vox_sfx1}{vox_sfx2}")
 
     # 3. Sidechain Ducking
     if bgm_count > 0:
-        # threshold in linear or dB format depending on ffmpeg version. acompressor works well.
-        # [bgm][vox_sfx]sidechaincompress
         ratio = 4.0
         threshold = 0.08  # ~ -22dB
-        filter_complex.append(f"{bgm_out}{vox_sfx_mix}sidechaincompress=threshold={threshold}:ratio={ratio}:attack=5:release=300[bgm_ducked]")
-        filter_complex.append(f"{vox_sfx_mix}[bgm_ducked]amix=inputs=2:duration=first:dropout_transition=2[final]")
+        filter_complex.append(f"{bgm_out}{vox_sfx1}sidechaincompress=threshold={threshold}:ratio={ratio}:attack=5:release=300[bgm_ducked]")
+        filter_complex.append(f"{vox_sfx2}[bgm_ducked]amix=inputs=2:duration=first:dropout_transition=2[final]")
     else:
-        filter_complex.append(f"{vox_sfx_mix}anull[final]")
+        filter_complex.append(f"{vox_sfx1}anull[final]")
 
     # Join filtergraph
     filters = "; ".join(filter_complex)

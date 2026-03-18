@@ -1,0 +1,331 @@
+Title: EP02 — What Is Spec-Driven Dev?
+Credit: Written by
+Author: Vibecode Town
+Draft date: 2026-03-18
+Contact: vibecode.town
+
+/*
+SERIES: Vibecode Town — Season 1
+EPISODE: 02 — "Spec-Driven Dev가 뭔대" / "What Is Spec-Driven Dev?"
+VERSION: v7.0 (7:30 expansion)
+SEGMENT STRUCTURE: 6-segment (HOOK → MISCONCEPTION → THE_CRACK → CORE → REFRAME → OUTRO_CTA)
+TARGET DURATION: 7:00-7:30
+NARRATOR: English V.O. only. Vee is SILENT.
+SSOT: systems/video/SERIES_BIBLE.md
+WORD COUNT: ~1,100 narration words / 50-55 beats
+*/
+
+/* SEGMENT 1: HOOK [0:00-0:25] */
+# visual_mode: A
+# characters: vee
+# shorts_candidate: true
+# space: desk
+
+= Synopsis: EP01 recap callback → Vee tries for real → shows a specific broken result → five attempts, five different results.
+
+INT. VEE'S DESK - DAY
+
+NARRATOR (V.O.)
+Last time, Vee learned the first rule of vibe coding: you decide what, AI decides how.
+
+= Visual: Quick flash — EP01 ending. Vee's small smile. Sticky note on monitor reading "Frustrated" in amber glow.
+
+NARRATOR (V.O.)
+So she tried it. For real. She wanted a simple website — a candle shop. Browse candles, send a message, that's it.
+
+= Visual: Vee types a prompt. Hits enter. Result loads. It's a website — but the hero image is a stock photo of a birthday cake. The "Contact" button opens a shopping cart. The header says "Welcome to CandleStore" in Comic Sans.
+
+/* vee_reaction: 1/10 */
+= Vee stares at the screen. She blinks twice. Not anger — pure bewilderment. 1.5 seconds.
+
+NARRATOR (V.O.)
+She tried again. Five times. Five prompts. Same project.
+
+= Visual: Screen splits into five panels. Each shows a completely different result. Different colors, different layouts, different features.
+
+NARRATOR (V.O.)
+Five completely different things came back.
+
+/* vee_reaction: 2/10 */
+= Vee expression: mouth slightly open. She looks at Bee on the monitor corner. Bee's antennae droop. 1.5 seconds.
+
+/* SEGMENT 2: MISCONCEPTION [0:25-1:25] */
+# visual_mode: A
+# characters: vee
+# shorts_candidate: false
+# space: desk
+
+= Synopsis: "Describe the architecture" → two-page prompt → technically correct but completely wrong direction → "detail ≠ direction" lesson
+
+INT. VEE'S DESK - CONTINUOUS
+
+NARRATOR (V.O.)
+Last time she learned that being more specific didn't help. More detail, more mess. So she tried something different. She thought: what if I explain the architecture?
+
+= Visual: Vee opens a blank document. Starts writing — not a prompt, a technical document. Headers, bullet points, sub-sections.
+
+NARRATOR (V.O.)
+She wrote two pages. Component hierarchy. Data flow. State management. Color palette hex codes. Responsive breakpoints. Font stack. API endpoint naming conventions.
+
+= Visual: The document grows. And grows. Two full pages of structured technical writing. Impressive looking. Official.
+
+NARRATOR (V.O.)
+She was proud of it. Pasted the whole thing into the AI.
+
+= Visual: Vee copies the entire document, pastes it into an AI chat. The prompt scrolls and scrolls. She hits enter with confidence.
+
+NARRATOR (V.O.)
+The result was technically correct. Every component she described existed. Every color matched. The API endpoints were named exactly as specified. And the whole thing was completely wrong.
+
+= Visual: The result loads. It's polished. Professional looking. But the candle shop is now an enterprise SaaS dashboard. There's a user management panel. Role-based access control. An admin console. Beautiful — and absolutely not a candle shop.
+
+/* vee_reaction: 3/10 */
+= Vee's jaw drops. She looks at her two-page spec, looks at the result, back at the spec. She described a skyscraper when she wanted a cottage. 1.5 seconds.
+
+NARRATOR (V.O.)
+She described how to build a building. But never said what the building was for. Architecture without purpose. Detail without direction.
+
+= Bee on monitor edge, holding tiny placard: "WHERE ARE WE GOING?"
+
+NARRATOR (V.O.)
+Two pages of instructions. Zero lines about what the customer actually needs. That's the trap — you can be incredibly specific and completely wrong at the same time.
+
+/* SEGMENT 3: THE_CRACK [1:25-2:15] */
+# visual_mode: C
+# characters: []
+# shorts_candidate: true
+# space: screen
+
+= Synopsis: The numbers — 10,847 lines, 4,200 duplication → five agents, concrete examples → building metaphor bridge
+
+INT. SCREEN SPACE - CONTINUOUS
+
+NARRATOR (V.O.)
+Let's look at what actually happened inside the code.
+
+= Visual: A counter starts at zero. Rapidly climbs. Numbers rolling like a slot machine.
+
+NARRATOR (V.O.)
+Ten thousand, eight hundred, forty-seven lines of code.
+
+= Visual: Counter stops at 10,847. Big number. Holds for a beat.
+
+NARRATOR (V.O.)
+Almost half of them — four thousand two hundred lines — were duplicates.
+
+= Visual: The counter splits. 6,647 stays white. 4,200 turns red and visually separates — red blocks pulling away from white blocks.
+
+NARRATOR (V.O.)
+Five AI sessions built the same functions five different ways. Three different date formatters — each one converting dates into a different format. Two config parsers — reading the same settings file with different assumptions. Four input validators — checking the same email field four different ways.
+
+= Visual: Five small robot icons appear, each in their own box. Between them: concrete labels. "Date → MM/DD", "Date → DD-MM", "Date → ISO". "Config v1", "Config v2". "Email check #1, #2, #3, #4".
+
+NARRATOR (V.O.)
+None of them knew about the others. Five construction crews on the same lot. No blueprint. No foreman. Just... build.
+
+= Visual: Five tiny buildings, all different styles, crammed onto one lot. Leaning against each other. Unstable. A breeze blows — one wobbles.
+
+/* SEGMENT 4: CORE [2:15-5:45] */
+# visual_mode: B
+# characters: []
+# shorts_candidate: false
+# space: whiteboard
+
+= Synopsis: Building metaphor (30s) → 3-line spec → candle shop demo (45s) → "Spec = Contract" → approval gate → CLAUDE.md deep dive → spec-kit intro
+
+INT. WHITEBOARD SPACE - CONTINUOUS
+
+/* extended_metaphor_start */
+
+= Visual: A construction site. No blueprints visible. Workers stacking blocks randomly.
+
+NARRATOR (V.O.)
+Imagine building a house without a blueprint. You know you want a house. You start stacking bricks. Some go left, some go right. Eventually something stands up. But the bathroom is on the roof and there's no front door.
+
+= Visual: Chaotic building — bricks stacked randomly. Bathroom fixtures on top. No entrance. Building wobbles.
+
+NARRATOR (V.O.)
+Now imagine one piece of paper. Not a hundred-page document. One note. "Two bedrooms. One bathroom. Front door faces south."
+
+= Visual: A simple note card appears. Three lines of text. Clean. Small. The building re-assembles — this time in order. Foundation, walls, roof. Door faces the right way.
+
+NARRATOR (V.O.)
+Same workers. Same bricks. Completely different result. That note is a spec.
+
+/* extended_metaphor_end */
+
+= Visual: Building stands solid. Simple but correct. Transition.
+
+NARRATOR (V.O.)
+And a spec doesn't have to be complicated. Three lines is enough.
+
+= Visual: Template appears on whiteboard, building line by line:
+
+NARRATOR (V.O.)
+Line one: Goal. What are you building? "An online store that sells handmade candles."
+
+= Visual: "Goal: An online store that sells handmade candles" appears.
+
+NARRATOR (V.O.)
+Line two: Constraints. What are you NOT building? "No user accounts. No payment processing — just a catalog with a contact form."
+
+= Visual: "Constraints: No accounts, no payments. Catalog + contact form only." appears below.
+
+NARRATOR (V.O.)
+Line three: Done-when. How do you know it's finished? "When someone can browse candles by category and send a message."
+
+= Visual: "Done-when: Browse candles by category + send message" appears. Three lines. Clean.
+
+NARRATOR (V.O.)
+That's it. Three lines. Now watch what happens.
+
+= Visual: The three-line spec slides into an AI chat window. The same candle shop prompt — but this time with the spec above it.
+
+NARRATOR (V.O.)
+Same project. Same AI. But now it has the spec. First result: a clean catalog page. Three candle categories. A contact form at the bottom. No shopping cart. No admin panel. No enterprise dashboard.
+
+= Visual: The result loads. Clean. Simple. Actually a candle shop. Categories visible. Contact form at bottom. No extra features.
+
+/* vee_reaction: 4/10 */
+= Quick flash: Vee sees the result. Both eyebrows go up. Bee's antennae perk up. 1.5 seconds.
+
+NARRATOR (V.O.)
+Second attempt? Almost identical. Same layout, same features, minor styling differences. Twenty minutes total, instead of three hours of confusion.
+
+= Visual: Two results side by side. Nearly identical. Convergent. Green checkmarks appear on both.
+
+NARRATOR (V.O.)
+The spec didn't make AI smarter. It made your instructions clearer.
+
+= Visual: Before/After side by side — five chaotic results vs two clean ones. Clear visual difference. Hold for 3 seconds.
+
+NARRATOR (V.O.)
+And here's the frame that changes everything. A spec is a contract. Not a wish list — a contract. It says: this is what I'm buying. This is what I'm not buying. And here's how we both know when it's done.
+
+= Visual: The three-line spec transforms — the paper gets a border, a signature line at the bottom. It looks like a simple contract. "SPEC = CONTRACT" appears above.
+
+NARRATOR (V.O.)
+Which means — before the AI writes a single line of code, you can review the contract. "Wait, I said no payment processing, but I do want a price list." Fix it now. Not after five hundred lines of code exist.
+
+= Visual: A hand with a red pen crosses out one line, writes a new one. The spec updates. This happens BEFORE the AI starts building.
+
+NARRATOR (V.O.)
+That's an approval gate. Review the plan before executing the plan. Professional developers do this. Product managers do this. You can do this.
+
+= Visual: A simple gate diagram: SPEC → [REVIEW] → BUILD. The review step glows. Emphasis.
+
+NARRATOR (V.O.)
+And there are tools that make this persistent. CLAUDE dot MD — a file that lives in your project. Every time Claude opens your code, it reads this file first.
+
+= Visual: Screen space — a file tree. CLAUDE.md highlighted. Content visible:
+
+NARRATOR (V.O.)
+Your rules. Your constraints. Your context. "This is a candle shop. We don't do user accounts. The style is warm and minimal. Never add features I didn't ask for."
+
+= Visual: CLAUDE.md content scrolls — each rule visible. Clean dark-mode editor. The rules are specific and opinionated.
+
+NARRATOR (V.O.)
+It's like a note pinned to the kitchen wall. Every chef who walks in reads it first. "No cream in the carbonara. Ever."
+
+= Visual: A note pinned to a wall in the robot kitchen from EP01's metaphor. The robot reads it before cooking.
+
+NARRATOR (V.O.)
+Cursor has the same idea — dot cursor rules. Write your rules once, every AI session follows them.
+
+= Visual: .cursorrules file in Cursor IDE. Similar concept, different tool.
+
+NARRATOR (V.O.)
+And if you want a full workflow — spec-kit. Four steps: specify, plan, tasks, implement. Each step validates before moving to the next. You don't build until the plan is approved. You don't plan until the spec is approved.
+
+= Visual: Four-step flow diagram. Specify → Plan → Tasks → Implement. Arrows between them. Checkmarks at each gate. Gates glow.
+
+NARRATOR (V.O.)
+The point isn't which tool. The point is: write down what you want before you ask AI to build it.
+
+/* SEGMENT 5: REFRAME [5:45-6:45] */
+# visual_mode: B
+# characters: []
+# shorts_candidate: false
+# space: whiteboard
+
+= Synopsis: "Frustration IS the spec" → pro devs do this too → "you're learning to direct, not to code" → EP03 bridge
+
+INT. WHITEBOARD SPACE - CONTINUOUS
+
+NARRATOR (V.O.)
+Here's the part nobody tells you. That frustration you felt when AI made the wrong thing? When the store was neon pink and the login went to the cart? When you wrote two pages and got an enterprise dashboard instead of a candle shop?
+
+= Visual: Flashback montage — neon pink store, enterprise dashboard, Comic Sans header. Quick flashes.
+
+NARRATOR (V.O.)
+That's not failure. That's data.
+
+= Visual: The frustration — represented as messy red scribbles — transforms. The scribbles organize themselves into neat lines. Red becomes blue. Chaos becomes structure.
+
+NARRATOR (V.O.)
+Write down what annoyed you. "It should have done X but did Y." Congratulations. You just wrote a requirement. Organize your frustrations, and you've got a spec.
+
+= Visual: A notepad. Scribbled complaints morph into the three-line spec template. Goal. Constraints. Done-when.
+
+NARRATOR (V.O.)
+Frustration is the spec. Your annoyance, organized, is the blueprint.
+
+= Visual: The spec template glows. Transforms into a blueprint.
+
+NARRATOR (V.O.)
+And here's what might surprise you — professional developers do exactly this. Every day. They don't sit down and write perfect requirements from scratch. They build something, see what's wrong, and write the spec from the wreckage. That's not amateur hour. That's the process.
+
+= Visual: A "PRO DEV" badge appears next to the same frustration-to-spec flow. "You're already doing this."
+
+NARRATOR (V.O.)
+You're not learning to code. You're learning to direct. A director doesn't operate the camera. They say: "wider shot, warmer light, more emotion." The crew executes. The director decides.
+
+= Visual: A director's chair. A clapperboard. AI is the crew, you're the director.
+
+/* SEGMENT 6: OUTRO_CTA [6:45-7:30] */
+# visual_mode: A
+# characters: vee
+# shorts_candidate: false
+# space: desk
+
+= Synopsis: Actually write your first spec → give it to AI → compare → EP03 tease
+
+INT. VEE'S DESK - DAY
+
+NARRATOR (V.O.)
+Here's your homework. Before you type a single prompt — grab a piece of paper. Or open a blank file. And write three lines.
+
+= Visual: The three-line template appears on screen, large and clear:
+= "Goal: ___"
+= "Constraints: ___"
+= "Done-when: ___"
+
+NARRATOR (V.O.)
+Goal. Constraints. Done-when. Fill in the blanks. Anything — a to-do app, a birthday card generator, a recipe organizer. Then give it to the AI.
+
+= Visual: Vee at desk. She has the template on her monitor. She writes — pen on sticky note, three lines. Quick, confident strokes.
+
+NARRATOR (V.O.)
+And when the result comes back — hold your spec next to it. Does it match? Where does it match? Where doesn't it?
+
+= Visual: Vee sticks the note to her monitor. Types a prompt with the spec. Something appears on screen. She holds up her spec note next to the result. Looks back and forth. Some parts match. Some don't. She circles the differences.
+
+/* vee_reaction: 5/10 */
+= Vee nods — not perfect, but close. She knows WHY it's not perfect this time. That's different. 1.5 seconds.
+
+NARRATOR (V.O.)
+That gap — between spec and result — that's your next spec. The differences become the instructions. Every round gets closer.
+
+= Visual: The circled differences become new lines on a revised spec. Iteration. Convergence.
+
+= Bee appears on monitor corner, antenna up — approving stance. 0.5 seconds.
+
+NARRATOR (V.O.)
+But here's a question. The spec tells AI what to build. The code gets bigger. More files, more features, more complexity. How do you keep it organized? How do you stop one change from breaking everything else? Next time — we talk about walls.
+
+= Visual: Vee's monitor — the folder tree is growing. Files multiplying. A subtle crack appears between two folders. Fade to end card.
+
+/* vee_reaction: 6/10 */
+= Vee small smile. She notices the growing complexity. A flicker of concern crosses her face. Cut to black. 1.5 seconds.
+
+> END OF EPISODE 02

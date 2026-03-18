@@ -106,6 +106,8 @@
 | Cursor Blog | article | Fortune 500 채택률 |
 | AWS Kiro Launch (2025) | article | Spec-driven dev IDE |
 | DEV.to Vibe Coding threads | community | 커뮤니티 공감대, 안티패턴 |
+| IBM Technology — "What Is Vibe Coding? Building Software with Agentic AI" | YouTube | 바이브코딩 정의, 3-phase best practice (architect/implement/review), TDD→SDD 브릿지. [references/ibm_tech_vibe_coding_transcript.md](references/ibm_tech_vibe_coding_transcript.md) |
+| IBM Technology — "Spec-Driven Development: AI Assisted Coding Explained" | YouTube | EP02 참조. SDD vs vibe coding 대조, "spec = contract", SDLC 통합. [../ep02/references/ibm_tech_sdd_transcript.md](../ep02/references/ibm_tech_sdd_transcript.md) |
 
 ---
 

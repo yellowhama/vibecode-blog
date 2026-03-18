@@ -1,0 +1,2389 @@
+{
+  "project_id": "ep04",
+  "version": "6.0",
+  "title": "EP04 — 열기 무서운 상자",
+  "language": "en",
+  "total_duration_sec": 450,
+  "segment_count": 6,
+  "beat_count": 41,
+  "segments": [
+    "HOOK",
+    "MISCONCEPTION",
+    "THE_CRACK",
+    "CORE",
+    "REFRAME",
+    "OUTRO_CTA"
+  ],
+  "phases": [
+    {
+      "phase_id": "SEG01",
+      "phase_name": "HOOK",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "PRIDE → DREAD",
+      "narrative_stage": "HOOK",
+      "target_duration_sec": 25,
+      "beats": [
+        {
+          "beat_id": "SEG01_B001",
+          "scene_id": "SEG01",
+          "text": "Vee built everything. Organized everything. She has five beautiful boxes and she hasn't opened a single one.",
+          "narration_text": "Vee built everything. Organized everything. She has five beautiful boxes and she hasn't opened a single one.",
+          "narrator_vo": "Vee built everything. Organized everything. She has five beautiful boxes and she hasn't opened a single one.",
+          "visual_goal": "Clean desk. Monitor shows the folder structure from EP03 — five color-coded domains, each neatly organized. On the desk, a row of beautifully wrapped gift boxes. Each box has a tag: AUTH, SYNC, PAYMENTS, SEARCH, DASHBOARD. Ribbons tied. Pristine.",
+          "duration_sec": 6.8,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": true,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "PRIDE → DREAD",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Vee built everything. Organized everything. She has five beautiful boxes and she hasn't opened a single one.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG01_B002",
+          "scene_id": "SEG01",
+          "text": "She's afraid of what's inside.",
+          "narration_text": "She's afraid of what's inside.",
+          "narrator_vo": "She's afraid of what's inside.",
+          "visual_goal": "Vee sits cross-legged in her chair, arms folded, admiring the boxes. She reaches toward the nearest one — AUTH — then pulls her hand back. Tucks both hands under her legs. 1.5 seconds.",
+          "duration_sec": 2.0,
+          "segment": "HOOK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 1,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "HOOK",
+          "emotion_curve": "PRIDE → DREAD",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "She's afraid of what's inside.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG02",
+      "phase_name": "MISCONCEPTION",
+      "segment": "MISCONCEPTION",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "emotion_curve": "FALSE SAFETY → AVOIDANCE → DENIAL",
+      "narrative_stage": "MISCONCEPTION",
+      "target_duration_sec": 60,
+      "beats": [
+        {
+          "beat_id": "SEG02_B003",
+          "scene_id": "SEG02",
+          "text": "Here's the rule she's been living by: if it didn't crash when you built it, don't touch it. Wrap it up. Move on. Build the next thing.",
+          "narration_text": "Here's the rule she's been living by: if it didn't crash when you built it, don't touch it. Wrap it up. Move on. Build the next thing.",
+          "narrator_vo": "Here's the rule she's been living by: if it didn't crash when you built it, don't touch it. Wrap it up. Move on. Build the next thing.",
+          "visual_goal": "MONTAGE: A feature gets built. A gift box materializes on the desk, perfectly wrapped. Taped shut, ribbon tied, set aside. Another feature. Another box. Ribbon. Set aside. No lid is ever lifted.",
+          "duration_sec": 10.8,
+          "segment": "MISCONCEPTION",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "FALSE SAFETY → AVOIDANCE → DENIAL",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Here's the rule she's been living by: if it didn't crash when you built it, don't touch it. Wrap it up. Move on. Build the next thing.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B004",
+          "scene_id": "SEG02",
+          "text": "It feels like progress. Five features, five boxes, all sealed. Ship it.",
+          "narration_text": "It feels like progress. Five features, five boxes, all sealed. Ship it.",
+          "narrator_vo": "It feels like progress. Five features, five boxes, all sealed. Ship it.",
+          "visual_goal": "The boxes stack up around her desk. A small pyramid of untouched gifts.",
+          "duration_sec": 4.8,
+          "segment": "MISCONCEPTION",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "FALSE SAFETY → AVOIDANCE → DENIAL",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "It feels like progress. Five features, five boxes, all sealed. Ship it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B005",
+          "scene_id": "SEG02",
+          "text": "But \"didn't crash\" and \"works\" are two very different things.",
+          "narration_text": "But \"didn't crash\" and \"works\" are two very different things.",
+          "narrator_vo": "But \"didn't crash\" and \"works\" are two very different things.",
+          "visual_goal": "Vee taps the side of a box with one mitten finger. Listens. Silence. She nods — good enough. Moves on. 1.5 seconds.",
+          "duration_sec": 4.0,
+          "segment": "MISCONCEPTION",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 3,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "FALSE SAFETY → AVOIDANCE → DENIAL",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "But \"didn't crash\" and \"works\" are two very different things.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B006",
+          "scene_id": "SEG02",
+          "text": "\"Didn't crash\" means it ran once on your machine with your data and nothing exploded. \"Works\" means it handles the weird cases. The empty fields. The slow connections. The user who clicks the back button seventeen times. The person who types emoji in the phone number field.",
+          "narration_text": "\"Didn't crash\" means it ran once on your machine with your data and nothing exploded. \"Works\" means it handles the weird cases. The empty fields. The slow connections. The user who clicks the back button seventeen times. The person who types emoji in the phone number field.",
+          "narrator_vo": "\"Didn't crash\" means it ran once on your machine with your data and nothing exploded. \"Works\" means it handles the weird cases. The empty fields. The slow connections. The user who clicks the back button seventeen times. The person who types emoji in the phone number field.",
+          "visual_goal": "Visual: Two columns appear. Left: \"Didn't crash\" — a checkbox with a question mark. Right: \"Works\" — a solid green checkmark. The two are visibly different.",
+          "duration_sec": 18.8,
+          "segment": "MISCONCEPTION",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "FALSE SAFETY → AVOIDANCE → DENIAL",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "\"Didn't crash\" means it ran once on your machine with your data and nothing exploded. \"Works\" means it handles the weird cases. The empty fields. The slow connections. The user who clicks the back button seventeen times. The person who types emoji in the phone number field.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG02_B007",
+          "scene_id": "SEG02",
+          "text": "She never checked for any of that. She's about to find out what happens when you skip the check.",
+          "narration_text": "She never checked for any of that. She's about to find out what happens when you skip the check.",
+          "narrator_vo": "She never checked for any of that. She's about to find out what happens when you skip the check.",
+          "visual_goal": "Visual: Each scenario appears as a small icon — empty field, spinning wheel, frantic clicking, emoji in a phone input. Each one is a potential bomb.",
+          "duration_sec": 7.6,
+          "segment": "MISCONCEPTION",
+          "visual_type": "motion_graphic",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "MISCONCEPTION",
+          "emotion_curve": "FALSE SAFETY → AVOIDANCE → DENIAL",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "She never checked for any of that. She's about to find out what happens when you skip the check.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG03",
+      "phase_name": "THE_CRACK",
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "CONFIDENCE → PUBLIC HUMILIATION → REALIZATION",
+      "narrative_stage": "THE_CRACK",
+      "target_duration_sec": 50,
+      "beats": [
+        {
+          "beat_id": "SEG03_B008",
+          "scene_id": "SEG03",
+          "text": "She showed it to someone. Their screen? White. Nothing. The app that ran perfectly on her machine ran perfectly on her machine only.",
+          "narration_text": "She showed it to someone. Their screen? White. Nothing. The app that ran perfectly on her machine ran perfectly on her machine only.",
+          "narrator_vo": "She showed it to someone. Their screen? White. Nothing. The app that ran perfectly on her machine ran perfectly on her machine only.",
+          "visual_goal": "Split screen. Left side: the monitor — the app runs. Dashboard loads. Colors render. Everything perfect. Right side: a second monitor, different wallpaper, different computer. The same app — but the dashboard is blank. White screen. A single error icon spins.",
+          "duration_sec": 9.2,
+          "segment": "THE_CRACK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "CONFIDENCE → PUBLIC HUMILIATION → REALIZATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "She showed it to someone. Their screen? White. Nothing. The app that ran perfectly on her machine ran perfectly on her machine only.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B009",
+          "scene_id": "SEG03",
+          "text": "\"Works on my machine\" isn't a status update. It's a confession. It means you never defined what \"working\" actually looks like.",
+          "narration_text": "\"Works on my machine\" isn't a status update. It's a confession. It means you never defined what \"working\" actually looks like.",
+          "narrator_vo": "\"Works on my machine\" isn't a status update. It's a confession. It means you never defined what \"working\" actually looks like.",
+          "visual_goal": "Vee stares at the split screen. Left: working. Right: broken. Her mouth falls open. She pushes her glasses up and looks again. Still broken. 1.5 seconds.",
+          "duration_sec": 8.4,
+          "segment": "THE_CRACK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 4,
+          "extended_metaphor": false,
+          "shorts_candidate": true,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "CONFIDENCE → PUBLIC HUMILIATION → REALIZATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "\"Works on my machine\" isn't a status update. It's a confession. It means you never defined what \"working\" actually looks like.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B010",
+          "scene_id": "SEG03",
+          "text": "Her login worked because she was already logged in. Her search worked because she only searched words that existed. Her payments worked because she never tested what happens when a payment fails.",
+          "narration_text": "Her login worked because she was already logged in. Her search worked because she only searched words that existed. Her payments worked because she never tested what happens when a payment fails.",
+          "narrator_vo": "Her login worked because she was already logged in. Her search worked because she only searched words that existed. Her payments worked because she never tested what happens when a payment fails.",
+          "visual_goal": "Visual: The phrase \"Works on my machine\" appears — then a red stamp: \"CONFESSION\" lands on it.",
+          "duration_sec": 12.8,
+          "segment": "THE_CRACK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "CONFIDENCE → PUBLIC HUMILIATION → REALIZATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Her login worked because she was already logged in. Her search worked because she only searched words that existed. Her payments worked because she never tested what happens when a payment fails.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG03_B011",
+          "scene_id": "SEG03",
+          "text": "Every one of those boxes might be empty. She'd never know. She never looked.",
+          "narration_text": "Every one of those boxes might be empty. She'd never know. She never looked.",
+          "narrator_vo": "Every one of those boxes might be empty. She'd never know. She never looked.",
+          "visual_goal": "Visual: Three scenarios appear — each one with a \"lucky path\" (green) and a \"real path\" (red). The lucky paths are the only ones she tested.",
+          "duration_sec": 5.6,
+          "segment": "THE_CRACK",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "THE_CRACK",
+          "emotion_curve": "CONFIDENCE → PUBLIC HUMILIATION → REALIZATION",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Every one of those boxes might be empty. She'd never know. She never looked.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG04",
+      "phase_name": "CORE",
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "narrative_stage": "CORE",
+      "target_duration_sec": 210,
+      "beats": [
+        {
+          "beat_id": "SEG04_B012",
+          "scene_id": "SEG04",
+          "text": "Let's talk about these boxes. You wrapped them. You're proud of them. And you won't open them because — what if they're empty? What if something's wrong inside?",
+          "narration_text": "Let's talk about these boxes. You wrapped them. You're proud of them. And you won't open them because — what if they're empty? What if something's wrong inside?",
+          "narrator_vo": "Let's talk about these boxes. You wrapped them. You're proud of them. And you won't open them because — what if they're empty? What if something's wrong inside?",
+          "visual_goal": "TRANSITION: Desk fades. Dark navy background brightens to deep midnight blue. Five gift boxes float in space, softly lit. Wrapped in different colors, ribbons intact. Beautiful. Untouched.",
+          "duration_sec": 11.2,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Let's talk about these boxes. You wrapped them. You're proud of them. And you won't open them because — what if they're empty? What if something's wrong inside?",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B013",
+          "scene_id": "SEG04",
+          "text": "Here's the thing nobody says out loud: not opening the box doesn't make the contents better. If it's broken inside, it was broken before you looked. Opening the box doesn't create the problem. It just tells you the problem exists.",
+          "narration_text": "Here's the thing nobody says out loud: not opening the box doesn't make the contents better. If it's broken inside, it was broken before you looked. Opening the box doesn't create the problem. It just tells you the problem exists.",
+          "narrator_vo": "Here's the thing nobody says out loud: not opening the box doesn't make the contents better. If it's broken inside, it was broken before you looked. Opening the box doesn't create the problem. It just tells you the problem exists.",
+          "visual_goal": "The camera orbits the boxes slowly. Each one has a faint question mark hovering above it.",
+          "duration_sec": 16.0,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Here's the thing nobody says out loud: not opening the box doesn't make the contents better. If it's broken inside, it was broken before you looked. Opening the box doesn't create the problem. It just tells you the problem exists.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B014",
+          "scene_id": "SEG04",
+          "text": "So let's open one.",
+          "narration_text": "So let's open one.",
+          "narrator_vo": "So let's open one.",
+          "visual_goal": "BEAT. One second.",
+          "duration_sec": 1.6,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "So let's open one.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B015",
+          "scene_id": "SEG04",
+          "text": "A cracked gear. Login crashes on an empty session token. That crack was always there. Opening the box didn't break it.",
+          "narration_text": "A cracked gear. Login crashes on an empty session token. That crack was always there. Opening the box didn't break it.",
+          "narrator_vo": "A cracked gear. Login crashes on an empty session token. That crack was always there. Opening the box didn't break it.",
+          "visual_goal": "A mitten hand reaches in. Grabs the ribbon on the first box — AUTH. Hesitates. Pulls.",
+          "duration_sec": 8.4,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "A cracked gear. Login crashes on an empty session token. That crack was always there. Opening the box didn't break it.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B016",
+          "scene_id": "SEG04",
+          "text": "Three-line fix. Done.",
+          "narration_text": "Three-line fix. Done.",
+          "narrator_vo": "Three-line fix. Done.",
+          "visual_goal": "The ribbon falls away. The lid lifts. Inside: a small cracked gear. It's trying to spin but catches on the crack. A label appears: \"empty token → crash.\"",
+          "duration_sec": 1.5,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Three-line fix. Done.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B017",
+          "scene_id": "SEG04",
+          "text": "Second box. It works. It was always fine. All that dread — wasted.",
+          "narration_text": "Second box. It works. It was always fine. All that dread — wasted.",
+          "narrator_vo": "Second box. It works. It was always fine. All that dread — wasted.",
+          "visual_goal": "A tiny wrench taps the gear. The crack seals. The gear spins smooth. Green checkmark.",
+          "duration_sec": 5.2,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Second box. It works. It was always fine. All that dread — wasted.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B018",
+          "scene_id": "SEG04",
+          "text": "Third box. Two functions calling each other in a loop. Would have crashed in production. On someone else's machine. In front of a real user paying real money.",
+          "narration_text": "Third box. Two functions calling each other in a loop. Would have crashed in production. On someone else's machine. In front of a real user paying real money.",
+          "narrator_vo": "Third box. Two functions calling each other in a loop. Would have crashed in production. On someone else's machine. In front of a real user paying real money.",
+          "visual_goal": "Second box — SEARCH — opens. Inside: a perfectly healthy clockwork mechanism, ticking away. Green light.",
+          "duration_sec": 11.2,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": true,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Third box. Two functions calling each other in a loop. Would have crashed in production. On someone else's machine. In front of a real user paying real money.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B019",
+          "scene_id": "SEG04",
+          "text": "Twelve-minute fix. She would have spent twelve hours debugging it in production.",
+          "narration_text": "Twelve-minute fix. She would have spent twelve hours debugging it in production.",
+          "narrator_vo": "Twelve-minute fix. She would have spent twelve hours debugging it in production.",
+          "visual_goal": "Third box — PAYMENTS — opens. Inside: two gears interlocked backwards. They grind against each other, sparks flying.",
+          "duration_sec": 4.8,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Twelve-minute fix. She would have spent twelve hours debugging it in production.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B020",
+          "scene_id": "SEG04",
+          "text": "Fourth box. Sync works for one user. Add ten users and it crashes. The gear handles one rotation but grinds on the tenth. A ticking time bomb.",
+          "narration_text": "Fourth box. Sync works for one user. Add ten users and it crashes. The gear handles one rotation but grinds on the tenth. A ticking time bomb.",
+          "narrator_vo": "Fourth box. Sync works for one user. Add ten users and it crashes. The gear handles one rotation but grinds on the tenth. A ticking time bomb.",
+          "visual_goal": "The gears are separated, flipped, reconnected. They mesh perfectly. Green checkmark.",
+          "duration_sec": 10.8,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Fourth box. Sync works for one user. Add ten users and it crashes. The gear handles one rotation but grinds on the tenth. A ticking time bomb.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B021",
+          "scene_id": "SEG04",
+          "text": "Five-minute fix. Invisible until it's too late. Unless you look.",
+          "narration_text": "Five-minute fix. Invisible until it's too late. Unless you look.",
+          "narrator_vo": "Five-minute fix. Invisible until it's too late. Unless you look.",
+          "visual_goal": "Quick flash: Vee's face. Wide eyes. Not fear — surprise. The boxes weren't as scary as she thought. 1.5 seconds.",
+          "duration_sec": 4.0,
+          "segment": "CORE",
+          "visual_type": "character_reaction",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 5,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Five-minute fix. Invisible until it's too late. Unless you look.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B022",
+          "scene_id": "SEG04",
+          "text": "Fifth box. Perfect. Nothing wrong. Built right the first time. It happens.",
+          "narration_text": "Fifth box. Perfect. Nothing wrong. Built right the first time. It happens.",
+          "narrator_vo": "Fifth box. Perfect. Nothing wrong. Built right the first time. It happens.",
+          "visual_goal": "Fourth box — SYNC — opens. Inside: a clockwork mechanism that works... mostly. One small gear is slightly misaligned. It works now but will fail under load.",
+          "duration_sec": 4.8,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Fifth box. Perfect. Nothing wrong. Built right the first time. It happens.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B023",
+          "scene_id": "SEG04",
+          "text": "Two bugs. One time bomb. Two clean bills of health. The scary part was never what's inside the box. The scary part was the not knowing.",
+          "narration_text": "Two bugs. One time bomb. Two clean bills of health. The scary part was never what's inside the box. The scary part was the not knowing.",
+          "narrator_vo": "Two bugs. One time bomb. Two clean bills of health. The scary part was never what's inside the box. The scary part was the not knowing.",
+          "visual_goal": "A small adjustment — the gear is shimmed. Now it handles all rotations smoothly. Green checkmark.",
+          "duration_sec": 10.4,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Two bugs. One time bomb. Two clean bills of health. The scary part was never what's inside the box. The scary part was the not knowing.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B024",
+          "scene_id": "SEG04",
+          "text": "Now let's talk about how she actually opened them. Because \"opening the box\" has a name. It's called a test.",
+          "narration_text": "Now let's talk about how she actually opened them. Because \"opening the box\" has a name. It's called a test.",
+          "narrator_vo": "Now let's talk about how she actually opened them. Because \"opening the box\" has a name. It's called a test.",
+          "visual_goal": "Fifth box — DASHBOARD — opens. Inside: a perfect mechanism. Everything aligned, everything spinning, everything green.",
+          "duration_sec": 8.0,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": true,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Now let's talk about how she actually opened them. Because \"opening the box\" has a name. It's called a test.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B025",
+          "scene_id": "SEG04",
+          "text": "\"When the login token is empty — reject the login.\" That's a test. One sentence. One expectation. One checkmark.",
+          "narration_text": "\"When the login token is empty — reject the login.\" That's a test. One sentence. One expectation. One checkmark.",
+          "narrator_vo": "\"When the login token is empty — reject the login.\" That's a test. One sentence. One expectation. One checkmark.",
+          "visual_goal": "All five opened boxes in a row. Box 1: fixed gear (green). Box 2: healthy (green). Box 3: realigned gears (green). Box 4: shimmed gear (green). Box 5: perfect (green). Above them: \"2 bugs, 1 time bomb, 2 clean. All fixable. All knowable.\"",
+          "duration_sec": 7.6,
+          "segment": "CORE",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "\"When the login token is empty — reject the login.\" That's a test. One sentence. One expectation. One checkmark.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B026",
+          "scene_id": "SEG04",
+          "text": "\"When a payment fails — don't charge the card.\" Another test. Another sentence. Another checkmark.",
+          "narration_text": "\"When a payment fails — don't charge the card.\" Another test. Another sentence. Another checkmark.",
+          "narrator_vo": "\"When a payment fails — don't charge the card.\" Another test. Another sentence. Another checkmark.",
+          "visual_goal": "Vee exhales. She didn't realize she was holding her breath. 1.5 seconds.",
+          "duration_sec": 6.0,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 6,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "\"When a payment fails — don't charge the card.\" Another test. Another sentence. Another checkmark.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B027",
+          "scene_id": "SEG04",
+          "text": "\"When sync has ten users — don't crash.\" Third test. Third sentence.",
+          "narration_text": "\"When sync has ten users — don't crash.\" Third test. Third sentence.",
+          "narrator_vo": "\"When sync has ten users — don't crash.\" Third test. Third sentence.",
+          "visual_goal": "Visual: A simple code snippet appears — not real code, pseudocode that anyone can read:",
+          "duration_sec": 4.8,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "\"When sync has ten users — don't crash.\" Third test. Third sentence.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B028",
+          "scene_id": "SEG04",
+          "text": "Each test is one sentence you write before you build. \"This is what should happen.\" If it does — green. If it doesn't — you know before anyone else does. And here's the best part: you can ask the AI to write them.",
+          "narration_text": "Each test is one sentence you write before you build. \"This is what should happen.\" If it does — green. If it doesn't — you know before anyone else does. And here's the best part: you can ask the AI to write them.",
+          "narrator_vo": "Each test is one sentence you write before you build. \"This is what should happen.\" If it does — green. If it doesn't — you know before anyone else does. And here's the best part: you can ask the AI to write them.",
+          "visual_goal": "Visual: The sentence appears. Below it: `PASS ✓`. Green.",
+          "duration_sec": 17.2,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Each test is one sentence you write before you build. \"This is what should happen.\" If it does — green. If it doesn't — you know before anyone else does. And here's the best part: you can ask the AI to write them.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG04_B029",
+          "scene_id": "SEG04",
+          "text": "\"Write tests for payments/. It should handle failed payments, never double-charge, and reject negative amounts.\" Three expectations. Three tests. The AI writes the code, you wrote the contract.",
+          "narration_text": "\"Write tests for payments/. It should handle failed payments, never double-charge, and reject negative amounts.\" Three expectations. Three tests. The AI writes the code, you wrote the contract.",
+          "narrator_vo": "\"Write tests for payments/. It should handle failed payments, never double-charge, and reject negative amounts.\" Three expectations. Three tests. The AI writes the code, you wrote the contract.",
+          "visual_goal": "Visual: Second sentence. `PASS ✓`. Green.",
+          "duration_sec": 11.2,
+          "segment": "CORE",
+          "visual_type": "motion_graphic",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "CORE",
+          "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "\"Write tests for payments/. It should handle failed payments, never double-charge, and reject negative amounts.\" Three expectations. Three tests. The AI writes the code, you wrote the contract.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG05",
+      "phase_name": "REFRAME",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "emotion_curve": "INSIGHT → PARADIGM SHIFT",
+      "narrative_stage": "REFRAME",
+      "target_duration_sec": 60,
+      "beats": [
+        {
+          "beat_id": "SEG05_B030",
+          "scene_id": "SEG05",
+          "text": "Here's the reframe. Testing isn't bug hunting. Testing is answering one question: what does \"working\" actually mean?",
+          "narration_text": "Here's the reframe. Testing isn't bug hunting. Testing is answering one question: what does \"working\" actually mean?",
+          "narrator_vo": "Here's the reframe. Testing isn't bug hunting. Testing is answering one question: what does \"working\" actually mean?",
+          "visual_goal": "Clean dark navy space. A single line of text fades in: \"What does 'working' mean?\"",
+          "duration_sec": 6.8,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "INSIGHT → PARADIGM SHIFT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Here's the reframe. Testing isn't bug hunting. Testing is answering one question: what does \"working\" actually mean?",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B031",
+          "scene_id": "SEG05",
+          "text": "Each test is a contract. Not \"find what's broken.\" It's \"define what done looks like.\" A test says: this is how it should behave. If it doesn't behave this way, we have a problem. If it does — we're good.",
+          "narration_text": "Each test is a contract. Not \"find what's broken.\" It's \"define what done looks like.\" A test says: this is how it should behave. If it doesn't behave this way, we have a problem. If it does — we're good.",
+          "narrator_vo": "Each test is a contract. Not \"find what's broken.\" It's \"define what done looks like.\" A test says: this is how it should behave. If it doesn't behave this way, we have a problem. If it does — we're good.",
+          "visual_goal": "Below the question, three simple statements appear, one at a time:",
+          "duration_sec": 16.0,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "INSIGHT → PARADIGM SHIFT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Each test is a contract. Not \"find what's broken.\" It's \"define what done looks like.\" A test says: this is how it should behave. If it doesn't behave this way, we have a problem. If it does — we're good.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B032",
+          "scene_id": "SEG05",
+          "text": "You don't test to find bugs. You test to define reality. The test is the definition of \"works.\"",
+          "narration_text": "You don't test to find bugs. You test to define reality. The test is the definition of \"works.\"",
+          "narrator_vo": "You don't test to find bugs. You test to define reality. The test is the definition of \"works.\"",
+          "visual_goal": "\"When the token is empty → reject the login.\"",
+          "duration_sec": 7.2,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "INSIGHT → PARADIGM SHIFT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "You don't test to find bugs. You test to define reality. The test is the definition of \"works.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B033",
+          "scene_id": "SEG05",
+          "text": "Without tests, \"works\" means \"didn't crash yet on my machine.\" With tests, \"works\" means \"does exactly what I said it should.\" Two completely different sentences. Two completely different levels of confidence.",
+          "narration_text": "Without tests, \"works\" means \"didn't crash yet on my machine.\" With tests, \"works\" means \"does exactly what I said it should.\" Two completely different sentences. Two completely different levels of confidence.",
+          "narrator_vo": "Without tests, \"works\" means \"didn't crash yet on my machine.\" With tests, \"works\" means \"does exactly what I said it should.\" Two completely different sentences. Two completely different levels of confidence.",
+          "visual_goal": "\"When search finds nothing → show the empty state.\"",
+          "duration_sec": 12.4,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "INSIGHT → PARADIGM SHIFT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Without tests, \"works\" means \"didn't crash yet on my machine.\" With tests, \"works\" means \"does exactly what I said it should.\" Two completely different sentences. Two completely different levels of confidence.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B034",
+          "scene_id": "SEG05",
+          "text": "A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You already know the answer.",
+          "narration_text": "A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You already know the answer.",
+          "narrator_vo": "A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You already know the answer.",
+          "visual_goal": "\"When payment fails → don't charge the card.\"",
+          "duration_sec": 11.2,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "INSIGHT → PARADIGM SHIFT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You already know the answer.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG05_B035",
+          "scene_id": "SEG05",
+          "text": "And professional developers? They do this before they write the code. They open the box before anything's inside. \"This box should contain a gear that spins clockwise.\" Then they build the gear. Then they check. Green or red, no surprises.",
+          "narration_text": "And professional developers? They do this before they write the code. They open the box before anything's inside. \"This box should contain a gear that spins clockwise.\" Then they build the gear. Then they check. Green or red, no surprises.",
+          "narrator_vo": "And professional developers? They do this before they write the code. They open the box before anything's inside. \"This box should contain a gear that spins clockwise.\" Then they build the gear. Then they check. Green or red, no surprises.",
+          "visual_goal": "The three statements glow green. They connect to form a simple checklist.",
+          "duration_sec": 16.0,
+          "segment": "REFRAME",
+          "visual_type": "diagram",
+          "space": "whiteboard",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "REFRAME",
+          "emotion_curve": "INSIGHT → PARADIGM SHIFT",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "And professional developers? They do this before they write the code. They open the box before anything's inside. \"This box should contain a gear that spins clockwise.\" Then they build the gear. Then they check. Green or red, no surprises.",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "SEG06",
+      "phase_name": "OUTRO_CTA",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "emotion_curve": "CONFIDENCE → HABIT → open loop for EP05",
+      "narrative_stage": "OUTRO_CTA",
+      "target_duration_sec": 45,
+      "beats": [
+        {
+          "beat_id": "SEG06_B036",
+          "scene_id": "SEG06",
+          "text": "The boxes are open. She knows what's inside every one of them. No more guessing. No more \"works on my machine.\"",
+          "narration_text": "The boxes are open. She knows what's inside every one of them. No more guessing. No more \"works on my machine.\"",
+          "narrator_vo": "The boxes are open. She knows what's inside every one of them. No more guessing. No more \"works on my machine.\"",
+          "visual_goal": "Back to Vee's desk. The gift boxes are open now — lids off, green checkmarks sitting on top of each. Her terminal shows a short column of PASS results. The room is calm.",
+          "duration_sec": 8.4,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "CONFIDENCE → HABIT → open loop for EP05",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The boxes are open. She knows what's inside every one of them. No more guessing. No more \"works on my machine.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B037",
+          "scene_id": "SEG06",
+          "text": "Here's your homework. Next time you build something with AI, write three sentences before you start. \"When X happens, Y should happen.\" \"When A is empty, B should show an error.\" \"When someone clicks C, D should appear.\"",
+          "narration_text": "Here's your homework. Next time you build something with AI, write three sentences before you start. \"When X happens, Y should happen.\" \"When A is empty, B should show an error.\" \"When someone clicks C, D should appear.\"",
+          "narrator_vo": "Here's your homework. Next time you build something with AI, write three sentences before you start. \"When X happens, Y should happen.\" \"When A is empty, B should show an error.\" \"When someone clicks C, D should appear.\"",
+          "visual_goal": "Vee writes a new test. Three lines of expectations — not code, just sentences. Hits enter. PASS. Green. She nods once — not celebration, just confirmation. 1.5 seconds.",
+          "duration_sec": 15.2,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 9,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "CONFIDENCE → HABIT → open loop for EP05",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Here's your homework. Next time you build something with AI, write three sentences before you start. \"When X happens, Y should happen.\" \"When A is empty, B should show an error.\" \"When someone clicks C, D should appear.\"",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B038",
+          "scene_id": "SEG06",
+          "text": "Give those sentences to the AI. \"Write tests for these.\" The AI writes the checks. You wrote the definition of done. That's it. That's the whole trick.",
+          "narration_text": "Give those sentences to the AI. \"Write tests for these.\" The AI writes the checks. You wrote the definition of done. That's it. That's the whole trick.",
+          "narrator_vo": "Give those sentences to the AI. \"Write tests for these.\" The AI writes the checks. You wrote the definition of done. That's it. That's the whole trick.",
+          "visual_goal": "Visual: Three sentence templates appear on screen. Simple fill-in-the-blank format.",
+          "duration_sec": 10.8,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "CONFIDENCE → HABIT → open loop for EP05",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Give those sentences to the AI. \"Write tests for these.\" The AI writes the checks. You wrote the definition of done. That's it. That's the whole trick.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B039",
+          "scene_id": "SEG06",
+          "text": "Now she builds a feature and opens the box the same day. One test. Thirty seconds. No pile-up. No dread. The habit is the whole trick.",
+          "narration_text": "Now she builds a feature and opens the box the same day. One test. Thirty seconds. No pile-up. No dread. The habit is the whole trick.",
+          "narrator_vo": "Now she builds a feature and opens the box the same day. One test. Thirty seconds. No pile-up. No dread. The habit is the whole trick.",
+          "visual_goal": "Vee builds a new feature. A new box appears — but this time she opens it immediately. Green checkmark. No pile-up. No dread.",
+          "duration_sec": 10.4,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "CONFIDENCE → HABIT → open loop for EP05",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Now she builds a feature and opens the box the same day. One test. Thirty seconds. No pile-up. No dread. The habit is the whole trick.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B040",
+          "scene_id": "SEG06",
+          "text": "The code has structure. It has tests. She knows what works and what doesn't.",
+          "narration_text": "The code has structure. It has tests. She knows what works and what doesn't.",
+          "narrator_vo": "The code has structure. It has tests. She knows what works and what doesn't.",
+          "visual_goal": "Vee leans back. Pushes her glasses up. Looks at her clean terminal, her open boxes, her passing tests. Quiet confidence. She reaches for her coffee.",
+          "duration_sec": 5.6,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": 10,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "CONFIDENCE → HABIT → open loop for EP05",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "The code has structure. It has tests. She knows what works and what doesn't.",
+              "emotion": ""
+            }
+          ]
+        },
+        {
+          "beat_id": "SEG06_B041",
+          "scene_id": "SEG06",
+          "text": "But the code only knows what she told it. And she told it what the AI told her. What happens when the AI gets it wrong — and she can't tell the difference? What happens when the recipe is poison and the chef doesn't know?",
+          "narration_text": "But the code only knows what she told it. And she told it what the AI told her. What happens when the AI gets it wrong — and she can't tell the difference? What happens when the recipe is poison and the chef doesn't know?",
+          "narrator_vo": "But the code only knows what she told it. And she told it what the AI told her. What happens when the AI gets it wrong — and she can't tell the difference? What happens when the recipe is poison and the chef doesn't know?",
+          "visual_goal": "BEAT.",
+          "duration_sec": 18.0,
+          "segment": "OUTRO_CTA",
+          "visual_type": "character_reaction",
+          "space": "desk",
+          "characters": [
+            "vee"
+          ],
+          "vee_expression": "default",
+          "vee_reaction_number": null,
+          "extended_metaphor": false,
+          "shorts_candidate": false,
+          "narrative_stage": "OUTRO_CTA",
+          "emotion_curve": "CONFIDENCE → HABIT → open loop for EP05",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "But the code only knows what she told it. And she told it what the AI told her. What happens when the AI gets it wrong — and she can't tell the difference? What happens when the recipe is poison and the chef doesn't know?",
+              "emotion": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "beat_id": "SEG01_B001",
+      "scene_id": "SEG01",
+      "text": "Vee built everything. Organized everything. She has five beautiful boxes and she hasn't opened a single one.",
+      "narration_text": "Vee built everything. Organized everything. She has five beautiful boxes and she hasn't opened a single one.",
+      "narrator_vo": "Vee built everything. Organized everything. She has five beautiful boxes and she hasn't opened a single one.",
+      "visual_goal": "Clean desk. Monitor shows the folder structure from EP03 — five color-coded domains, each neatly organized. On the desk, a row of beautifully wrapped gift boxes. Each box has a tag: AUTH, SYNC, PAYMENTS, SEARCH, DASHBOARD. Ribbons tied. Pristine.",
+      "duration_sec": 6.8,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "PRIDE → DREAD",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Vee built everything. Organized everything. She has five beautiful boxes and she hasn't opened a single one.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG01_B002",
+      "scene_id": "SEG01",
+      "text": "She's afraid of what's inside.",
+      "narration_text": "She's afraid of what's inside.",
+      "narrator_vo": "She's afraid of what's inside.",
+      "visual_goal": "Vee sits cross-legged in her chair, arms folded, admiring the boxes. She reaches toward the nearest one — AUTH — then pulls her hand back. Tucks both hands under her legs. 1.5 seconds.",
+      "duration_sec": 2.0,
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 1,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "HOOK",
+      "emotion_curve": "PRIDE → DREAD",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "She's afraid of what's inside.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B003",
+      "scene_id": "SEG02",
+      "text": "Here's the rule she's been living by: if it didn't crash when you built it, don't touch it. Wrap it up. Move on. Build the next thing.",
+      "narration_text": "Here's the rule she's been living by: if it didn't crash when you built it, don't touch it. Wrap it up. Move on. Build the next thing.",
+      "narrator_vo": "Here's the rule she's been living by: if it didn't crash when you built it, don't touch it. Wrap it up. Move on. Build the next thing.",
+      "visual_goal": "MONTAGE: A feature gets built. A gift box materializes on the desk, perfectly wrapped. Taped shut, ribbon tied, set aside. Another feature. Another box. Ribbon. Set aside. No lid is ever lifted.",
+      "duration_sec": 10.8,
+      "segment": "MISCONCEPTION",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "FALSE SAFETY → AVOIDANCE → DENIAL",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Here's the rule she's been living by: if it didn't crash when you built it, don't touch it. Wrap it up. Move on. Build the next thing.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B004",
+      "scene_id": "SEG02",
+      "text": "It feels like progress. Five features, five boxes, all sealed. Ship it.",
+      "narration_text": "It feels like progress. Five features, five boxes, all sealed. Ship it.",
+      "narrator_vo": "It feels like progress. Five features, five boxes, all sealed. Ship it.",
+      "visual_goal": "The boxes stack up around her desk. A small pyramid of untouched gifts.",
+      "duration_sec": 4.8,
+      "segment": "MISCONCEPTION",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "FALSE SAFETY → AVOIDANCE → DENIAL",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "It feels like progress. Five features, five boxes, all sealed. Ship it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B005",
+      "scene_id": "SEG02",
+      "text": "But \"didn't crash\" and \"works\" are two very different things.",
+      "narration_text": "But \"didn't crash\" and \"works\" are two very different things.",
+      "narrator_vo": "But \"didn't crash\" and \"works\" are two very different things.",
+      "visual_goal": "Vee taps the side of a box with one mitten finger. Listens. Silence. She nods — good enough. Moves on. 1.5 seconds.",
+      "duration_sec": 4.0,
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 3,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "FALSE SAFETY → AVOIDANCE → DENIAL",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "But \"didn't crash\" and \"works\" are two very different things.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B006",
+      "scene_id": "SEG02",
+      "text": "\"Didn't crash\" means it ran once on your machine with your data and nothing exploded. \"Works\" means it handles the weird cases. The empty fields. The slow connections. The user who clicks the back button seventeen times. The person who types emoji in the phone number field.",
+      "narration_text": "\"Didn't crash\" means it ran once on your machine with your data and nothing exploded. \"Works\" means it handles the weird cases. The empty fields. The slow connections. The user who clicks the back button seventeen times. The person who types emoji in the phone number field.",
+      "narrator_vo": "\"Didn't crash\" means it ran once on your machine with your data and nothing exploded. \"Works\" means it handles the weird cases. The empty fields. The slow connections. The user who clicks the back button seventeen times. The person who types emoji in the phone number field.",
+      "visual_goal": "Visual: Two columns appear. Left: \"Didn't crash\" — a checkbox with a question mark. Right: \"Works\" — a solid green checkmark. The two are visibly different.",
+      "duration_sec": 18.8,
+      "segment": "MISCONCEPTION",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "FALSE SAFETY → AVOIDANCE → DENIAL",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "\"Didn't crash\" means it ran once on your machine with your data and nothing exploded. \"Works\" means it handles the weird cases. The empty fields. The slow connections. The user who clicks the back button seventeen times. The person who types emoji in the phone number field.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG02_B007",
+      "scene_id": "SEG02",
+      "text": "She never checked for any of that. She's about to find out what happens when you skip the check.",
+      "narration_text": "She never checked for any of that. She's about to find out what happens when you skip the check.",
+      "narrator_vo": "She never checked for any of that. She's about to find out what happens when you skip the check.",
+      "visual_goal": "Visual: Each scenario appears as a small icon — empty field, spinning wheel, frantic clicking, emoji in a phone input. Each one is a potential bomb.",
+      "duration_sec": 7.6,
+      "segment": "MISCONCEPTION",
+      "visual_type": "motion_graphic",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "MISCONCEPTION",
+      "emotion_curve": "FALSE SAFETY → AVOIDANCE → DENIAL",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "She never checked for any of that. She's about to find out what happens when you skip the check.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B008",
+      "scene_id": "SEG03",
+      "text": "She showed it to someone. Their screen? White. Nothing. The app that ran perfectly on her machine ran perfectly on her machine only.",
+      "narration_text": "She showed it to someone. Their screen? White. Nothing. The app that ran perfectly on her machine ran perfectly on her machine only.",
+      "narrator_vo": "She showed it to someone. Their screen? White. Nothing. The app that ran perfectly on her machine ran perfectly on her machine only.",
+      "visual_goal": "Split screen. Left side: the monitor — the app runs. Dashboard loads. Colors render. Everything perfect. Right side: a second monitor, different wallpaper, different computer. The same app — but the dashboard is blank. White screen. A single error icon spins.",
+      "duration_sec": 9.2,
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "CONFIDENCE → PUBLIC HUMILIATION → REALIZATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "She showed it to someone. Their screen? White. Nothing. The app that ran perfectly on her machine ran perfectly on her machine only.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B009",
+      "scene_id": "SEG03",
+      "text": "\"Works on my machine\" isn't a status update. It's a confession. It means you never defined what \"working\" actually looks like.",
+      "narration_text": "\"Works on my machine\" isn't a status update. It's a confession. It means you never defined what \"working\" actually looks like.",
+      "narrator_vo": "\"Works on my machine\" isn't a status update. It's a confession. It means you never defined what \"working\" actually looks like.",
+      "visual_goal": "Vee stares at the split screen. Left: working. Right: broken. Her mouth falls open. She pushes her glasses up and looks again. Still broken. 1.5 seconds.",
+      "duration_sec": 8.4,
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 4,
+      "extended_metaphor": false,
+      "shorts_candidate": true,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "CONFIDENCE → PUBLIC HUMILIATION → REALIZATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "\"Works on my machine\" isn't a status update. It's a confession. It means you never defined what \"working\" actually looks like.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B010",
+      "scene_id": "SEG03",
+      "text": "Her login worked because she was already logged in. Her search worked because she only searched words that existed. Her payments worked because she never tested what happens when a payment fails.",
+      "narration_text": "Her login worked because she was already logged in. Her search worked because she only searched words that existed. Her payments worked because she never tested what happens when a payment fails.",
+      "narrator_vo": "Her login worked because she was already logged in. Her search worked because she only searched words that existed. Her payments worked because she never tested what happens when a payment fails.",
+      "visual_goal": "Visual: The phrase \"Works on my machine\" appears — then a red stamp: \"CONFESSION\" lands on it.",
+      "duration_sec": 12.8,
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "CONFIDENCE → PUBLIC HUMILIATION → REALIZATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Her login worked because she was already logged in. Her search worked because she only searched words that existed. Her payments worked because she never tested what happens when a payment fails.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG03_B011",
+      "scene_id": "SEG03",
+      "text": "Every one of those boxes might be empty. She'd never know. She never looked.",
+      "narration_text": "Every one of those boxes might be empty. She'd never know. She never looked.",
+      "narrator_vo": "Every one of those boxes might be empty. She'd never know. She never looked.",
+      "visual_goal": "Visual: Three scenarios appear — each one with a \"lucky path\" (green) and a \"real path\" (red). The lucky paths are the only ones she tested.",
+      "duration_sec": 5.6,
+      "segment": "THE_CRACK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "THE_CRACK",
+      "emotion_curve": "CONFIDENCE → PUBLIC HUMILIATION → REALIZATION",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Every one of those boxes might be empty. She'd never know. She never looked.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B012",
+      "scene_id": "SEG04",
+      "text": "Let's talk about these boxes. You wrapped them. You're proud of them. And you won't open them because — what if they're empty? What if something's wrong inside?",
+      "narration_text": "Let's talk about these boxes. You wrapped them. You're proud of them. And you won't open them because — what if they're empty? What if something's wrong inside?",
+      "narrator_vo": "Let's talk about these boxes. You wrapped them. You're proud of them. And you won't open them because — what if they're empty? What if something's wrong inside?",
+      "visual_goal": "TRANSITION: Desk fades. Dark navy background brightens to deep midnight blue. Five gift boxes float in space, softly lit. Wrapped in different colors, ribbons intact. Beautiful. Untouched.",
+      "duration_sec": 11.2,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Let's talk about these boxes. You wrapped them. You're proud of them. And you won't open them because — what if they're empty? What if something's wrong inside?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B013",
+      "scene_id": "SEG04",
+      "text": "Here's the thing nobody says out loud: not opening the box doesn't make the contents better. If it's broken inside, it was broken before you looked. Opening the box doesn't create the problem. It just tells you the problem exists.",
+      "narration_text": "Here's the thing nobody says out loud: not opening the box doesn't make the contents better. If it's broken inside, it was broken before you looked. Opening the box doesn't create the problem. It just tells you the problem exists.",
+      "narrator_vo": "Here's the thing nobody says out loud: not opening the box doesn't make the contents better. If it's broken inside, it was broken before you looked. Opening the box doesn't create the problem. It just tells you the problem exists.",
+      "visual_goal": "The camera orbits the boxes slowly. Each one has a faint question mark hovering above it.",
+      "duration_sec": 16.0,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Here's the thing nobody says out loud: not opening the box doesn't make the contents better. If it's broken inside, it was broken before you looked. Opening the box doesn't create the problem. It just tells you the problem exists.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B014",
+      "scene_id": "SEG04",
+      "text": "So let's open one.",
+      "narration_text": "So let's open one.",
+      "narrator_vo": "So let's open one.",
+      "visual_goal": "BEAT. One second.",
+      "duration_sec": 1.6,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "So let's open one.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B015",
+      "scene_id": "SEG04",
+      "text": "A cracked gear. Login crashes on an empty session token. That crack was always there. Opening the box didn't break it.",
+      "narration_text": "A cracked gear. Login crashes on an empty session token. That crack was always there. Opening the box didn't break it.",
+      "narrator_vo": "A cracked gear. Login crashes on an empty session token. That crack was always there. Opening the box didn't break it.",
+      "visual_goal": "A mitten hand reaches in. Grabs the ribbon on the first box — AUTH. Hesitates. Pulls.",
+      "duration_sec": 8.4,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "A cracked gear. Login crashes on an empty session token. That crack was always there. Opening the box didn't break it.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B016",
+      "scene_id": "SEG04",
+      "text": "Three-line fix. Done.",
+      "narration_text": "Three-line fix. Done.",
+      "narrator_vo": "Three-line fix. Done.",
+      "visual_goal": "The ribbon falls away. The lid lifts. Inside: a small cracked gear. It's trying to spin but catches on the crack. A label appears: \"empty token → crash.\"",
+      "duration_sec": 1.5,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Three-line fix. Done.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B017",
+      "scene_id": "SEG04",
+      "text": "Second box. It works. It was always fine. All that dread — wasted.",
+      "narration_text": "Second box. It works. It was always fine. All that dread — wasted.",
+      "narrator_vo": "Second box. It works. It was always fine. All that dread — wasted.",
+      "visual_goal": "A tiny wrench taps the gear. The crack seals. The gear spins smooth. Green checkmark.",
+      "duration_sec": 5.2,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Second box. It works. It was always fine. All that dread — wasted.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B018",
+      "scene_id": "SEG04",
+      "text": "Third box. Two functions calling each other in a loop. Would have crashed in production. On someone else's machine. In front of a real user paying real money.",
+      "narration_text": "Third box. Two functions calling each other in a loop. Would have crashed in production. On someone else's machine. In front of a real user paying real money.",
+      "narrator_vo": "Third box. Two functions calling each other in a loop. Would have crashed in production. On someone else's machine. In front of a real user paying real money.",
+      "visual_goal": "Second box — SEARCH — opens. Inside: a perfectly healthy clockwork mechanism, ticking away. Green light.",
+      "duration_sec": 11.2,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": true,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Third box. Two functions calling each other in a loop. Would have crashed in production. On someone else's machine. In front of a real user paying real money.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B019",
+      "scene_id": "SEG04",
+      "text": "Twelve-minute fix. She would have spent twelve hours debugging it in production.",
+      "narration_text": "Twelve-minute fix. She would have spent twelve hours debugging it in production.",
+      "narrator_vo": "Twelve-minute fix. She would have spent twelve hours debugging it in production.",
+      "visual_goal": "Third box — PAYMENTS — opens. Inside: two gears interlocked backwards. They grind against each other, sparks flying.",
+      "duration_sec": 4.8,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Twelve-minute fix. She would have spent twelve hours debugging it in production.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B020",
+      "scene_id": "SEG04",
+      "text": "Fourth box. Sync works for one user. Add ten users and it crashes. The gear handles one rotation but grinds on the tenth. A ticking time bomb.",
+      "narration_text": "Fourth box. Sync works for one user. Add ten users and it crashes. The gear handles one rotation but grinds on the tenth. A ticking time bomb.",
+      "narrator_vo": "Fourth box. Sync works for one user. Add ten users and it crashes. The gear handles one rotation but grinds on the tenth. A ticking time bomb.",
+      "visual_goal": "The gears are separated, flipped, reconnected. They mesh perfectly. Green checkmark.",
+      "duration_sec": 10.8,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Fourth box. Sync works for one user. Add ten users and it crashes. The gear handles one rotation but grinds on the tenth. A ticking time bomb.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B021",
+      "scene_id": "SEG04",
+      "text": "Five-minute fix. Invisible until it's too late. Unless you look.",
+      "narration_text": "Five-minute fix. Invisible until it's too late. Unless you look.",
+      "narrator_vo": "Five-minute fix. Invisible until it's too late. Unless you look.",
+      "visual_goal": "Quick flash: Vee's face. Wide eyes. Not fear — surprise. The boxes weren't as scary as she thought. 1.5 seconds.",
+      "duration_sec": 4.0,
+      "segment": "CORE",
+      "visual_type": "character_reaction",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 5,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Five-minute fix. Invisible until it's too late. Unless you look.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B022",
+      "scene_id": "SEG04",
+      "text": "Fifth box. Perfect. Nothing wrong. Built right the first time. It happens.",
+      "narration_text": "Fifth box. Perfect. Nothing wrong. Built right the first time. It happens.",
+      "narrator_vo": "Fifth box. Perfect. Nothing wrong. Built right the first time. It happens.",
+      "visual_goal": "Fourth box — SYNC — opens. Inside: a clockwork mechanism that works... mostly. One small gear is slightly misaligned. It works now but will fail under load.",
+      "duration_sec": 4.8,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Fifth box. Perfect. Nothing wrong. Built right the first time. It happens.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B023",
+      "scene_id": "SEG04",
+      "text": "Two bugs. One time bomb. Two clean bills of health. The scary part was never what's inside the box. The scary part was the not knowing.",
+      "narration_text": "Two bugs. One time bomb. Two clean bills of health. The scary part was never what's inside the box. The scary part was the not knowing.",
+      "narrator_vo": "Two bugs. One time bomb. Two clean bills of health. The scary part was never what's inside the box. The scary part was the not knowing.",
+      "visual_goal": "A small adjustment — the gear is shimmed. Now it handles all rotations smoothly. Green checkmark.",
+      "duration_sec": 10.4,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Two bugs. One time bomb. Two clean bills of health. The scary part was never what's inside the box. The scary part was the not knowing.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B024",
+      "scene_id": "SEG04",
+      "text": "Now let's talk about how she actually opened them. Because \"opening the box\" has a name. It's called a test.",
+      "narration_text": "Now let's talk about how she actually opened them. Because \"opening the box\" has a name. It's called a test.",
+      "narrator_vo": "Now let's talk about how she actually opened them. Because \"opening the box\" has a name. It's called a test.",
+      "visual_goal": "Fifth box — DASHBOARD — opens. Inside: a perfect mechanism. Everything aligned, everything spinning, everything green.",
+      "duration_sec": 8.0,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Now let's talk about how she actually opened them. Because \"opening the box\" has a name. It's called a test.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B025",
+      "scene_id": "SEG04",
+      "text": "\"When the login token is empty — reject the login.\" That's a test. One sentence. One expectation. One checkmark.",
+      "narration_text": "\"When the login token is empty — reject the login.\" That's a test. One sentence. One expectation. One checkmark.",
+      "narrator_vo": "\"When the login token is empty — reject the login.\" That's a test. One sentence. One expectation. One checkmark.",
+      "visual_goal": "All five opened boxes in a row. Box 1: fixed gear (green). Box 2: healthy (green). Box 3: realigned gears (green). Box 4: shimmed gear (green). Box 5: perfect (green). Above them: \"2 bugs, 1 time bomb, 2 clean. All fixable. All knowable.\"",
+      "duration_sec": 7.6,
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "\"When the login token is empty — reject the login.\" That's a test. One sentence. One expectation. One checkmark.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B026",
+      "scene_id": "SEG04",
+      "text": "\"When a payment fails — don't charge the card.\" Another test. Another sentence. Another checkmark.",
+      "narration_text": "\"When a payment fails — don't charge the card.\" Another test. Another sentence. Another checkmark.",
+      "narrator_vo": "\"When a payment fails — don't charge the card.\" Another test. Another sentence. Another checkmark.",
+      "visual_goal": "Vee exhales. She didn't realize she was holding her breath. 1.5 seconds.",
+      "duration_sec": 6.0,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 6,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "\"When a payment fails — don't charge the card.\" Another test. Another sentence. Another checkmark.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B027",
+      "scene_id": "SEG04",
+      "text": "\"When sync has ten users — don't crash.\" Third test. Third sentence.",
+      "narration_text": "\"When sync has ten users — don't crash.\" Third test. Third sentence.",
+      "narrator_vo": "\"When sync has ten users — don't crash.\" Third test. Third sentence.",
+      "visual_goal": "Visual: A simple code snippet appears — not real code, pseudocode that anyone can read:",
+      "duration_sec": 4.8,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "\"When sync has ten users — don't crash.\" Third test. Third sentence.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B028",
+      "scene_id": "SEG04",
+      "text": "Each test is one sentence you write before you build. \"This is what should happen.\" If it does — green. If it doesn't — you know before anyone else does. And here's the best part: you can ask the AI to write them.",
+      "narration_text": "Each test is one sentence you write before you build. \"This is what should happen.\" If it does — green. If it doesn't — you know before anyone else does. And here's the best part: you can ask the AI to write them.",
+      "narrator_vo": "Each test is one sentence you write before you build. \"This is what should happen.\" If it does — green. If it doesn't — you know before anyone else does. And here's the best part: you can ask the AI to write them.",
+      "visual_goal": "Visual: The sentence appears. Below it: `PASS ✓`. Green.",
+      "duration_sec": 17.2,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Each test is one sentence you write before you build. \"This is what should happen.\" If it does — green. If it doesn't — you know before anyone else does. And here's the best part: you can ask the AI to write them.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG04_B029",
+      "scene_id": "SEG04",
+      "text": "\"Write tests for payments/. It should handle failed payments, never double-charge, and reject negative amounts.\" Three expectations. Three tests. The AI writes the code, you wrote the contract.",
+      "narration_text": "\"Write tests for payments/. It should handle failed payments, never double-charge, and reject negative amounts.\" Three expectations. Three tests. The AI writes the code, you wrote the contract.",
+      "narrator_vo": "\"Write tests for payments/. It should handle failed payments, never double-charge, and reject negative amounts.\" Three expectations. Three tests. The AI writes the code, you wrote the contract.",
+      "visual_goal": "Visual: Second sentence. `PASS ✓`. Green.",
+      "duration_sec": 11.2,
+      "segment": "CORE",
+      "visual_type": "motion_graphic",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "CORE",
+      "emotion_curve": "DREAD → RELUCTANT OPENING → RELIEF → INSIGHT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "\"Write tests for payments/. It should handle failed payments, never double-charge, and reject negative amounts.\" Three expectations. Three tests. The AI writes the code, you wrote the contract.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B030",
+      "scene_id": "SEG05",
+      "text": "Here's the reframe. Testing isn't bug hunting. Testing is answering one question: what does \"working\" actually mean?",
+      "narration_text": "Here's the reframe. Testing isn't bug hunting. Testing is answering one question: what does \"working\" actually mean?",
+      "narrator_vo": "Here's the reframe. Testing isn't bug hunting. Testing is answering one question: what does \"working\" actually mean?",
+      "visual_goal": "Clean dark navy space. A single line of text fades in: \"What does 'working' mean?\"",
+      "duration_sec": 6.8,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "INSIGHT → PARADIGM SHIFT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Here's the reframe. Testing isn't bug hunting. Testing is answering one question: what does \"working\" actually mean?",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B031",
+      "scene_id": "SEG05",
+      "text": "Each test is a contract. Not \"find what's broken.\" It's \"define what done looks like.\" A test says: this is how it should behave. If it doesn't behave this way, we have a problem. If it does — we're good.",
+      "narration_text": "Each test is a contract. Not \"find what's broken.\" It's \"define what done looks like.\" A test says: this is how it should behave. If it doesn't behave this way, we have a problem. If it does — we're good.",
+      "narrator_vo": "Each test is a contract. Not \"find what's broken.\" It's \"define what done looks like.\" A test says: this is how it should behave. If it doesn't behave this way, we have a problem. If it does — we're good.",
+      "visual_goal": "Below the question, three simple statements appear, one at a time:",
+      "duration_sec": 16.0,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "INSIGHT → PARADIGM SHIFT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Each test is a contract. Not \"find what's broken.\" It's \"define what done looks like.\" A test says: this is how it should behave. If it doesn't behave this way, we have a problem. If it does — we're good.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B032",
+      "scene_id": "SEG05",
+      "text": "You don't test to find bugs. You test to define reality. The test is the definition of \"works.\"",
+      "narration_text": "You don't test to find bugs. You test to define reality. The test is the definition of \"works.\"",
+      "narrator_vo": "You don't test to find bugs. You test to define reality. The test is the definition of \"works.\"",
+      "visual_goal": "\"When the token is empty → reject the login.\"",
+      "duration_sec": 7.2,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "INSIGHT → PARADIGM SHIFT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "You don't test to find bugs. You test to define reality. The test is the definition of \"works.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B033",
+      "scene_id": "SEG05",
+      "text": "Without tests, \"works\" means \"didn't crash yet on my machine.\" With tests, \"works\" means \"does exactly what I said it should.\" Two completely different sentences. Two completely different levels of confidence.",
+      "narration_text": "Without tests, \"works\" means \"didn't crash yet on my machine.\" With tests, \"works\" means \"does exactly what I said it should.\" Two completely different sentences. Two completely different levels of confidence.",
+      "narrator_vo": "Without tests, \"works\" means \"didn't crash yet on my machine.\" With tests, \"works\" means \"does exactly what I said it should.\" Two completely different sentences. Two completely different levels of confidence.",
+      "visual_goal": "\"When search finds nothing → show the empty state.\"",
+      "duration_sec": 12.4,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "INSIGHT → PARADIGM SHIFT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Without tests, \"works\" means \"didn't crash yet on my machine.\" With tests, \"works\" means \"does exactly what I said it should.\" Two completely different sentences. Two completely different levels of confidence.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B034",
+      "scene_id": "SEG05",
+      "text": "A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You already know the answer.",
+      "narration_text": "A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You already know the answer.",
+      "narrator_vo": "A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You already know the answer.",
+      "visual_goal": "\"When payment fails → don't charge the card.\"",
+      "duration_sec": 11.2,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "INSIGHT → PARADIGM SHIFT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You already know the answer.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG05_B035",
+      "scene_id": "SEG05",
+      "text": "And professional developers? They do this before they write the code. They open the box before anything's inside. \"This box should contain a gear that spins clockwise.\" Then they build the gear. Then they check. Green or red, no surprises.",
+      "narration_text": "And professional developers? They do this before they write the code. They open the box before anything's inside. \"This box should contain a gear that spins clockwise.\" Then they build the gear. Then they check. Green or red, no surprises.",
+      "narrator_vo": "And professional developers? They do this before they write the code. They open the box before anything's inside. \"This box should contain a gear that spins clockwise.\" Then they build the gear. Then they check. Green or red, no surprises.",
+      "visual_goal": "The three statements glow green. They connect to form a simple checklist.",
+      "duration_sec": 16.0,
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "REFRAME",
+      "emotion_curve": "INSIGHT → PARADIGM SHIFT",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "And professional developers? They do this before they write the code. They open the box before anything's inside. \"This box should contain a gear that spins clockwise.\" Then they build the gear. Then they check. Green or red, no surprises.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B036",
+      "scene_id": "SEG06",
+      "text": "The boxes are open. She knows what's inside every one of them. No more guessing. No more \"works on my machine.\"",
+      "narration_text": "The boxes are open. She knows what's inside every one of them. No more guessing. No more \"works on my machine.\"",
+      "narrator_vo": "The boxes are open. She knows what's inside every one of them. No more guessing. No more \"works on my machine.\"",
+      "visual_goal": "Back to Vee's desk. The gift boxes are open now — lids off, green checkmarks sitting on top of each. Her terminal shows a short column of PASS results. The room is calm.",
+      "duration_sec": 8.4,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "CONFIDENCE → HABIT → open loop for EP05",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The boxes are open. She knows what's inside every one of them. No more guessing. No more \"works on my machine.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B037",
+      "scene_id": "SEG06",
+      "text": "Here's your homework. Next time you build something with AI, write three sentences before you start. \"When X happens, Y should happen.\" \"When A is empty, B should show an error.\" \"When someone clicks C, D should appear.\"",
+      "narration_text": "Here's your homework. Next time you build something with AI, write three sentences before you start. \"When X happens, Y should happen.\" \"When A is empty, B should show an error.\" \"When someone clicks C, D should appear.\"",
+      "narrator_vo": "Here's your homework. Next time you build something with AI, write three sentences before you start. \"When X happens, Y should happen.\" \"When A is empty, B should show an error.\" \"When someone clicks C, D should appear.\"",
+      "visual_goal": "Vee writes a new test. Three lines of expectations — not code, just sentences. Hits enter. PASS. Green. She nods once — not celebration, just confirmation. 1.5 seconds.",
+      "duration_sec": 15.2,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 9,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "CONFIDENCE → HABIT → open loop for EP05",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Here's your homework. Next time you build something with AI, write three sentences before you start. \"When X happens, Y should happen.\" \"When A is empty, B should show an error.\" \"When someone clicks C, D should appear.\"",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B038",
+      "scene_id": "SEG06",
+      "text": "Give those sentences to the AI. \"Write tests for these.\" The AI writes the checks. You wrote the definition of done. That's it. That's the whole trick.",
+      "narration_text": "Give those sentences to the AI. \"Write tests for these.\" The AI writes the checks. You wrote the definition of done. That's it. That's the whole trick.",
+      "narrator_vo": "Give those sentences to the AI. \"Write tests for these.\" The AI writes the checks. You wrote the definition of done. That's it. That's the whole trick.",
+      "visual_goal": "Visual: Three sentence templates appear on screen. Simple fill-in-the-blank format.",
+      "duration_sec": 10.8,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "CONFIDENCE → HABIT → open loop for EP05",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Give those sentences to the AI. \"Write tests for these.\" The AI writes the checks. You wrote the definition of done. That's it. That's the whole trick.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B039",
+      "scene_id": "SEG06",
+      "text": "Now she builds a feature and opens the box the same day. One test. Thirty seconds. No pile-up. No dread. The habit is the whole trick.",
+      "narration_text": "Now she builds a feature and opens the box the same day. One test. Thirty seconds. No pile-up. No dread. The habit is the whole trick.",
+      "narrator_vo": "Now she builds a feature and opens the box the same day. One test. Thirty seconds. No pile-up. No dread. The habit is the whole trick.",
+      "visual_goal": "Vee builds a new feature. A new box appears — but this time she opens it immediately. Green checkmark. No pile-up. No dread.",
+      "duration_sec": 10.4,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "CONFIDENCE → HABIT → open loop for EP05",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Now she builds a feature and opens the box the same day. One test. Thirty seconds. No pile-up. No dread. The habit is the whole trick.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B040",
+      "scene_id": "SEG06",
+      "text": "The code has structure. It has tests. She knows what works and what doesn't.",
+      "narration_text": "The code has structure. It has tests. She knows what works and what doesn't.",
+      "narrator_vo": "The code has structure. It has tests. She knows what works and what doesn't.",
+      "visual_goal": "Vee leans back. Pushes her glasses up. Looks at her clean terminal, her open boxes, her passing tests. Quiet confidence. She reaches for her coffee.",
+      "duration_sec": 5.6,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 10,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "CONFIDENCE → HABIT → open loop for EP05",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "The code has structure. It has tests. She knows what works and what doesn't.",
+          "emotion": ""
+        }
+      ]
+    },
+    {
+      "beat_id": "SEG06_B041",
+      "scene_id": "SEG06",
+      "text": "But the code only knows what she told it. And she told it what the AI told her. What happens when the AI gets it wrong — and she can't tell the difference? What happens when the recipe is poison and the chef doesn't know?",
+      "narration_text": "But the code only knows what she told it. And she told it what the AI told her. What happens when the AI gets it wrong — and she can't tell the difference? What happens when the recipe is poison and the chef doesn't know?",
+      "narrator_vo": "But the code only knows what she told it. And she told it what the AI told her. What happens when the AI gets it wrong — and she can't tell the difference? What happens when the recipe is poison and the chef doesn't know?",
+      "visual_goal": "BEAT.",
+      "duration_sec": 18.0,
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "narrative_stage": "OUTRO_CTA",
+      "emotion_curve": "CONFIDENCE → HABIT → open loop for EP05",
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "But the code only knows what she told it. And she told it what the AI told her. What happens when the AI gets it wrong — and she can't tell the difference? What happens when the recipe is poison and the chef doesn't know?",
+          "emotion": ""
+        }
+      ]
+    }
+  ]
+}

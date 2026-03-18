@@ -4,11 +4,11 @@ Author: vibecode.town
 Series: Vibecode Town Season 1
 Source: Act 4 — "The Box You're Afraid to Open"
 Draft date: 2026-03-18
-Duration: 3:30-4:00
-Notes: v5 (6-segment format, narrator-only, 2D flat vector Kurzgesagt level, Vee solo, dark navy backgrounds). EP03 callback: Vee has clean structure now but has never verified it works. Word count target: 550-700 narration.
+Duration: 7:00-7:30 (~450 seconds)
+Notes: v6 (7:30 expansion, 6-segment format, narrator-only, 2D flat vector Kurzgesagt level, Vee solo, dark navy backgrounds). EP03 callback: Vee has clean structure now but has never verified it works. Word count target: ~1,100 narration.
 
 /* ================================================================ */
-/* SEGMENT 1: HOOK [0:00-0:15]                                       */
+/* SEGMENT 1: HOOK [0:00-0:25]                                       */
 /* emotion_curve: PRIDE → DREAD                                       */
 /* narrative_stage: HOOK                                               */
 /* open_loop: "She built everything. Does any of it work?"           */
@@ -22,9 +22,9 @@ INT. VEE'S ROOM - NIGHT
 
 = Clean desk. Monitor shows the folder structure from EP03 — five color-coded domains, each neatly organized. On the desk, a row of beautifully wrapped gift boxes. Each box has a tag: AUTH, SYNC, PAYMENTS, SEARCH, DASHBOARD. Ribbons tied. Pristine.
 
-/* vee_reaction: 1/6 */
+/* vee_reaction: 1/10 */
 
-= Vee sits cross-legged in her chair, arms folded, admiring the boxes. She reaches toward the nearest one — AUTH — then pulls her hand back. Tucks both hands under her legs.
+= Vee sits cross-legged in her chair, arms folded, admiring the boxes. She reaches toward the nearest one — AUTH — then pulls her hand back. Tucks both hands under her legs. 1.5 seconds.
 
 NARRATOR (V.O.)
 Vee built everything. Organized everything. She has five beautiful boxes and she hasn't opened a single one.
@@ -34,13 +34,16 @@ Vee built everything. Organized everything. She has five beautiful boxes and she
 NARRATOR (V.O.)
 She's afraid of what's inside.
 
+/* vee_reaction: 2/10 */
+= Vee's eyes dart to the boxes. She sits on her hands. The boxes sit there, glowing faintly, judging her. 1.5 seconds.
+
 > TITLE CARD: **열기 무서운 상자**
 
 ---
 
 /* ================================================================ */
-/* SEGMENT 2: MISCONCEPTION [0:15-0:45]                               */
-/* emotion_curve: FALSE SAFETY → AVOIDANCE                            */
+/* SEGMENT 2: MISCONCEPTION [0:25-1:25]                               */
+/* emotion_curve: FALSE SAFETY → AVOIDANCE → DENIAL                  */
 /* narrative_stage: MISCONCEPTION                                      */
 /* misconception: "돌아가면 건들지 마" (If it works, don't touch it)  */
 /* ================================================================ */
@@ -59,19 +62,29 @@ Here's the rule she's been living by: if it didn't crash when you built it, don'
 NARRATOR (V.O.)
 It feels like progress. Five features, five boxes, all sealed. Ship it.
 
-/* vee_reaction: 2/6 */
+/* vee_reaction: 3/10 */
 /* visual_type: character_reaction | space: desk */
 
-= Vee taps the side of a box with one mitten finger. Listens. Silence. She nods — good enough. Moves on.
+= Vee taps the side of a box with one mitten finger. Listens. Silence. She nods — good enough. Moves on. 1.5 seconds.
 
 NARRATOR (V.O.)
-But "didn't crash" and "works" are two very different things. She's about to find out how different.
+But "didn't crash" and "works" are two very different things.
+
+= Visual: Two columns appear. Left: "Didn't crash" — a checkbox with a question mark. Right: "Works" — a solid green checkmark. The two are visibly different.
+
+NARRATOR (V.O.)
+"Didn't crash" means it ran once on your machine with your data and nothing exploded. "Works" means it handles the weird cases. The empty fields. The slow connections. The user who clicks the back button seventeen times. The person who types emoji in the phone number field.
+
+= Visual: Each scenario appears as a small icon — empty field, spinning wheel, frantic clicking, emoji in a phone input. Each one is a potential bomb.
+
+NARRATOR (V.O.)
+She never checked for any of that. She's about to find out what happens when you skip the check.
 
 ---
 
 /* ================================================================ */
-/* SEGMENT 3: THE_CRACK [0:45-1:15]                                   */
-/* emotion_curve: CONFIDENCE → PUBLIC HUMILIATION                     */
+/* SEGMENT 3: THE_CRACK [1:25-2:15]                                   */
+/* emotion_curve: CONFIDENCE → PUBLIC HUMILIATION → REALIZATION       */
 /* narrative_stage: THE_CRACK                                          */
 /* crack: "네 컴퓨터에서만 돌아가는 거였어"                           */
 /* ================================================================ */
@@ -87,12 +100,19 @@ INT. VEE'S ROOM - NIGHT
 NARRATOR (V.O.)
 She showed it to someone. Their screen? White. Nothing. The app that ran perfectly on her machine ran perfectly on her machine only.
 
-/* vee_reaction: 3/6 */
+/* vee_reaction: 4/10 */
 
-= Vee stares at the split screen. Left: working. Right: broken. Her mouth falls open. She pushes her glasses up and looks again. Still broken.
+= Vee stares at the split screen. Left: working. Right: broken. Her mouth falls open. She pushes her glasses up and looks again. Still broken. 1.5 seconds.
 
 NARRATOR (V.O.)
 "Works on my machine" isn't a status update. It's a confession. It means you never defined what "working" actually looks like.
+
+= Visual: The phrase "Works on my machine" appears — then a red stamp: "CONFESSION" lands on it.
+
+NARRATOR (V.O.)
+Her login worked because she was already logged in. Her search worked because she only searched words that existed. Her payments worked because she never tested what happens when a payment fails.
+
+= Visual: Three scenarios appear — each one with a "lucky path" (green) and a "real path" (red). The lucky paths are the only ones she tested.
 
 = The split screen collapses. Both monitors go dark. Only the row of sealed gift boxes glows faintly.
 
@@ -102,10 +122,10 @@ Every one of those boxes might be empty. She'd never know. She never looked.
 ---
 
 /* ================================================================ */
-/* SEGMENT 4: CORE [1:15-3:00]                                        */
+/* SEGMENT 4: CORE [2:15-5:45]                                        */
 /* emotion_curve: DREAD → RELUCTANT OPENING → RELIEF → INSIGHT       */
 /* narrative_stage: CORE                                               */
-/* duration: ~90 seconds                                              */
+/* duration: ~210 seconds                                             */
 /* extended_metaphor: gift boxes = untested code, opening = testing   */
 /* ================================================================ */
 
@@ -161,24 +181,75 @@ Third box. Two functions calling each other in a loop. Would have crashed in pro
 NARRATOR (V.O.)
 Twelve-minute fix. She would have spent twelve hours debugging it in production.
 
-/* vee_reaction: 4/6 */
+/* vee_reaction: 5/10 */
 /* visual_type: character_reaction | space: whiteboard */
 
 = Quick flash: Vee's face. Wide eyes. Not fear — surprise. The boxes weren't as scary as she thought. 1.5 seconds.
 
-/* visual_type: diagram | space: whiteboard */
+/* visual_type: motion_graphic | space: whiteboard */
 
-= Three opened boxes in a row. Box 1: fixed gear (green). Box 2: healthy mechanism (green). Box 3: realigned gears (green). Above them: "1 bug, 1 fine, 1 near-disaster. All fixable."
+= Fourth box — SYNC — opens. Inside: a clockwork mechanism that works... mostly. One small gear is slightly misaligned. It works now but will fail under load.
 
 NARRATOR (V.O.)
-One bug. One clean bill of health. One disaster she caught before anyone else saw it. The scary part was never what's inside the box. The scary part was the not knowing.
+Fourth box. Sync works for one user. Add ten users and it crashes. The gear handles one rotation but grinds on the tenth. A ticking time bomb.
+
+= A small adjustment — the gear is shimmed. Now it handles all rotations smoothly. Green checkmark.
+
+NARRATOR (V.O.)
+Five-minute fix. Invisible until it's too late. Unless you look.
+
+= Fifth box — DASHBOARD — opens. Inside: a perfect mechanism. Everything aligned, everything spinning, everything green.
+
+NARRATOR (V.O.)
+Fifth box. Perfect. Nothing wrong. Built right the first time. It happens.
 
 /* extended_metaphor_end */
+
+/* visual_type: diagram | space: whiteboard */
+
+= All five opened boxes in a row. Box 1: fixed gear (green). Box 2: healthy (green). Box 3: realigned gears (green). Box 4: shimmed gear (green). Box 5: perfect (green). Above them: "2 bugs, 1 time bomb, 2 clean. All fixable. All knowable."
+
+NARRATOR (V.O.)
+Two bugs. One time bomb. Two clean bills of health. The scary part was never what's inside the box. The scary part was the not knowing.
+
+/* vee_reaction: 6/10 */
+= Vee exhales. She didn't realize she was holding her breath. 1.5 seconds.
+
+NARRATOR (V.O.)
+Now let's talk about how she actually opened them. Because "opening the box" has a name. It's called a test.
+
+= Visual: A simple code snippet appears — not real code, pseudocode that anyone can read:
+
+NARRATOR (V.O.)
+"When the login token is empty — reject the login." That's a test. One sentence. One expectation. One checkmark.
+
+= Visual: The sentence appears. Below it: `PASS ✓`. Green.
+
+NARRATOR (V.O.)
+"When a payment fails — don't charge the card." Another test. Another sentence. Another checkmark.
+
+= Visual: Second sentence. `PASS ✓`. Green.
+
+NARRATOR (V.O.)
+"When sync has ten users — don't crash." Third test. Third sentence.
+
+= Visual: Third sentence. `PASS ✓`. Green.
+
+/* vee_reaction: 7/10 */
+= Vee looks at the three tests. Three sentences. Three green checkmarks. She could have written these. They're not code — they're expectations. 1.5 seconds.
+
+NARRATOR (V.O.)
+Each test is one sentence you write before you build. "This is what should happen." If it does — green. If it doesn't — you know before anyone else does. And here's the best part: you can ask the AI to write them.
+
+= Visual: An AI chat: "Write tests for payments/ — it should handle failed payments and never double-charge." The AI generates three test descriptions. Clean. Simple.
+
+NARRATOR (V.O.)
+"Write tests for payments/. It should handle failed payments, never double-charge, and reject negative amounts." Three expectations. Three tests. The AI writes the code, you wrote the contract.
 
 ---
 
 /* ================================================================ */
-/* SEGMENT 5: REFRAME [3:00-3:30]                                     */
+/* SEGMENT 5: REFRAME [5:45-6:45]                                     */
 /* emotion_curve: INSIGHT → PARADIGM SHIFT                            */
 /* narrative_stage: REFRAME                                            */
 /* reframe: tests = definition of "working," not bug hunting         */
@@ -202,7 +273,12 @@ Each test is a contract. Not "find what's broken." It's "define what done looks 
 = The three statements glow green. They connect to form a simple checklist.
 
 NARRATOR (V.O.)
-You don't test to find bugs. You test to define reality. The test is the definition of "works." Without it, "works" means "didn't crash yet on my machine." With it, "works" means "does exactly what I said it should."
+You don't test to find bugs. You test to define reality. The test is the definition of "works."
+
+= Visual: Two signs appear. Left: "Works = didn't crash yet on my machine." Right: "Works = does exactly what I said it should." The left sign fades. The right sign glows.
+
+NARRATOR (V.O.)
+Without tests, "works" means "didn't crash yet on my machine." With tests, "works" means "does exactly what I said it should." Two completely different sentences. Two completely different levels of confidence.
 
 /* visual_type: motion_graphic | space: whiteboard */
 
@@ -211,11 +287,19 @@ You don't test to find bugs. You test to define reality. The test is the definit
 NARRATOR (V.O.)
 A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You already know the answer.
 
+/* vee_reaction: 8/10 */
+= Vee's expression shifts — from relief to quiet confidence. She nods once. Like she just leveled up. 1.5 seconds.
+
+NARRATOR (V.O.)
+And professional developers? They do this before they write the code. They open the box before anything's inside. "This box should contain a gear that spins clockwise." Then they build the gear. Then they check. Green or red, no surprises.
+
+= Visual: Reverse sequence — empty box → test label → build → check. Professional workflow.
+
 ---
 
 /* ================================================================ */
-/* SEGMENT 6: OUTRO_CTA [3:30-3:55]                                   */
-/* emotion_curve: CONFIDENCE → open loop for EP05                    */
+/* SEGMENT 6: OUTRO_CTA [6:45-7:30]                                   */
+/* emotion_curve: CONFIDENCE → HABIT → open loop for EP05            */
 /* narrative_stage: OUTRO_CTA                                          */
 /* ================================================================ */
 
@@ -228,14 +312,24 @@ INT. VEE'S ROOM - NIGHT (CONTINUOUS)
 NARRATOR (V.O.)
 The boxes are open. She knows what's inside every one of them. No more guessing. No more "works on my machine."
 
-/* vee_reaction: 5/6 */
+/* vee_reaction: 9/10 */
 
-= Vee writes a new test. Three lines. Hits enter. PASS. Green. She nods once — not celebration, just confirmation.
+= Vee writes a new test. Three lines of expectations — not code, just sentences. Hits enter. PASS. Green. She nods once — not celebration, just confirmation. 1.5 seconds.
+
+NARRATOR (V.O.)
+Here's your homework. Next time you build something with AI, write three sentences before you start. "When X happens, Y should happen." "When A is empty, B should show an error." "When someone clicks C, D should appear."
+
+= Visual: Three sentence templates appear on screen. Simple fill-in-the-blank format.
+
+NARRATOR (V.O.)
+Give those sentences to the AI. "Write tests for these." The AI writes the checks. You wrote the definition of done. That's it. That's the whole trick.
+
+= Vee builds a new feature. A new box appears — but this time she opens it immediately. Green checkmark. No pile-up. No dread.
 
 NARRATOR (V.O.)
 Now she builds a feature and opens the box the same day. One test. Thirty seconds. No pile-up. No dread. The habit is the whole trick.
 
-/* vee_reaction: 6/6 */
+/* vee_reaction: 10/10 */
 
 = Vee leans back. Pushes her glasses up. Looks at her clean terminal, her open boxes, her passing tests. Quiet confidence. She reaches for her coffee.
 
@@ -247,9 +341,9 @@ The code has structure. It has tests. She knows what works and what doesn't.
 = The camera slowly pulls back. The terminal glows green. But on a second monitor, a browser tab is open — an AI chat. The AI's response is highlighted. One line in the generated code is subtly different from what Vee asked for. She hasn't noticed.
 
 NARRATOR (V.O.)
-But the code only knows what she told it. And she told it what the AI told her. What happens when the AI gets it wrong — and she can't tell the difference?
+But the code only knows what she told it. And she told it what the AI told her. What happens when the AI gets it wrong — and she can't tell the difference? What happens when the recipe is poison and the chef doesn't know?
 
-= The highlighted line pulses once, faintly. Then the screen dims.
+= The highlighted line pulses once, faintly. Then twice. Then the screen dims.
 
 > TITLE CARD: **NEXT: EP05 — "What Even Is Vibe Coding?"**
 

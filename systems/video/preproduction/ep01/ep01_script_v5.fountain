@@ -1,0 +1,357 @@
+Title: EP01 — What Is Vibe Coding?
+Credit: Written by
+Author: Vibecode Town
+Draft date: 2026-03-18
+Contact: vibecode.town
+
+/*
+SERIES: Vibecode Town — Season 1
+EPISODE: 01 — "바이브코딩이 뭔가?" / "What Is Vibe Coding?"
+VERSION: v5.0 (7:30 expansion)
+SEGMENT STRUCTURE: 6-segment (HOOK → MISCONCEPTION → THE_CRACK → CORE → REFRAME → OUTRO_CTA)
+TARGET DURATION: 7:00-7:30
+NARRATOR: English V.O. only. Vee is SILENT.
+SSOT: systems/video/SERIES_BIBLE.md
+WORD COUNT: ~1,100 narration words / 50-55 beats
+*/
+
+/* SEGMENT 1: HOOK [0:00-0:25] */
+# visual_mode: A
+# characters: vee
+# shorts_candidate: true
+# space: desk
+
+= Synopsis: Social media ad montage → "the internet says anyone can do it" → Vee tries → something comes out → "...what is this?"
+
+INT. VEE'S DESK - DAY
+
+= Visual: Quick montage — fake social media ads flash across screen. "Build an app in 60 seconds." "No code needed." "AI does everything." Bold text, sparkly effects. TikTok-style swipe transitions.
+
+NARRATOR (V.O.)
+Build an app with one prompt. No code. No experience. Just vibes. The internet says anyone can do it.
+
+= Visual: More ads — a smiling influencer pointing at a laptop. "I made ten thousand dollars with one prompt." A countdown timer: "60 seconds to your first app."
+
+NARRATOR (V.O.)
+Every ad. Every thread. Every video. The message is the same: just type what you want, and AI will build it.
+
+= Visual: Desk scene — Vee's hands type a prompt on keyboard. She looks excited. Hits enter. Screen glows.
+
+NARRATOR (V.O.)
+Vee believed it. She typed a prompt. Hit enter.
+
+= Visual: Something appears on screen. Result loads — colorful but chaotic. A website, technically.
+
+NARRATOR (V.O.)
+Something came out. But...
+
+/* vee_reaction: 1/10 */
+= Vee squints — confused expression. Bee peeks from behind monitor, antennae flat. 1.5 seconds.
+
+/* SEGMENT 2: MISCONCEPTION [0:25-1:25] */
+# visual_mode: A
+# characters: vee
+# shorts_candidate: false
+# space: screen
+
+= Synopsis: "Make me a shopping mall" → wrong result → "be more specific" → even worse → "try a different tool" → same problem
+
+INT. SCREEN SPACE - CONTINUOUS
+
+NARRATOR (V.O.)
+She typed: "Make me an online store."
+
+= Visual: AI generates a website. It loads. It exists. It's... technically a website.
+
+NARRATOR (V.O.)
+And something appeared. A website. With a login button that goes to the shopping cart. A checkout page in neon pink and lime green. And a search bar that searches... nothing.
+
+= Visual: Close-up of the website — login button labeled "Cart," garish color scheme, empty search results. Each problem highlighted with a subtle red pulse.
+
+NARRATOR (V.O.)
+It didn't crash. It didn't throw an error. It just... wasn't what she wanted.
+
+/* vee_reaction: 2/10 */
+= Vee frozen expression — not angry, not sad. Just... "what?" 1.5 seconds.
+
+NARRATOR (V.O.)
+This is what most people don't tell you about vibe coding. The result doesn't explode. It comes out wrong. Low quality. Not what you asked for. And you can't explain why.
+
+= Visual: Close-up of the garish result — zoom on neon pink checkout page. Hold for effect.
+
+NARRATOR (V.O.)
+So she did what everyone does. She got more specific.
+
+= Visual: Vee typing. The prompt grows. And grows. Camera slowly zooms out — text extends beyond the screen.
+
+NARRATOR (V.O.)
+"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern sans-serif font, responsive layout, search bar with autocomplete..."
+
+= Visual: Prompt fills the entire screen. Tiny font. Endless instructions.
+
+NARRATOR (V.O.)
+The result?
+
+= Visual: The AI output appears. It's worse. The header is blue but covers everything. Categories overlap. Cart is on a different page entirely.
+
+NARRATOR (V.O.)
+Worse. More detail made it more confused. Because detail is not direction.
+
+/* vee_reaction: 3/10 */
+= Vee slumps back in chair. Hands drop from keyboard. She looks at Bee — Bee shrugs with tiny arms. 1.5 seconds.
+
+NARRATOR (V.O.)
+Okay, she thought. Maybe it's the tool. She switched tools. Three different AI assistants. Same prompt.
+
+= Visual: Three browser windows open side by side. Three different tools. Three different results. All wrong in different ways.
+
+NARRATOR (V.O.)
+Three tools. Three different wrong answers. The problem wasn't the tool. It was something else entirely.
+
+/* SEGMENT 3: THE_CRACK [1:25-2:15] */
+# visual_mode: C
+# characters: vee
+# shorts_candidate: true
+# space: screen
+
+= Synopsis: Same prompt, three runs → three different results → "AI doesn't understand — it predicts" → "she never read the code"
+
+INT. SCREEN SPACE - CONTINUOUS
+
+NARRATOR (V.O.)
+So she tried one more thing. Same prompt. Same tool. Three times in a row.
+
+= Visual: Screen splits into three panels. Each shows a different result. One purple-themed, one text-only, one mostly images. Completely different layouts.
+
+NARRATOR (V.O.)
+Three runs. Three completely different stores. Different layouts, different colors, different features. Same exact prompt.
+
+/* vee_reaction: 4/10 */
+= Vee looks left, right, left — head swiveling between the three screens. 1.5 seconds.
+
+NARRATOR (V.O.)
+Why? Because the AI isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly different. Like rolling dice with language.
+
+= Visual: Zoom into one screen — text appearing letter by letter, each letter a probability cloud, a dice roll. Not "understanding" — predicting.
+
+NARRATOR (V.O.)
+And here's the part that really matters. She never read what the AI actually wrote.
+
+= Visual: A code editor opens. Hundreds of lines of code scroll past. Vee's cursor doesn't move. She's looking at the preview, not the code. The code is a black box.
+
+NARRATOR (V.O.)
+Not the website. The code behind it. She looked at the result and said "that's wrong" — but she couldn't say why, because she never looked at the instructions the AI wrote to build it.
+
+= Visual: Split — left side shows the pretty preview, right side shows raw code with subtle bugs highlighted. The bugs pulse, unnoticed.
+
+NARRATOR (V.O.)
+The AI wrote the recipe. She tasted the dish. But she never checked the recipe.
+
+/* SEGMENT 4: CORE [2:15-5:45] */
+# visual_mode: B
+# characters: []
+# shorts_candidate: false
+# space: whiteboard
+
+= Synopsis: Extended cooking metaphor (120s) → "would you serve it to customers?" → vibe coding definition (Karpathy) → what it's good/bad at → tool tour (5 tools) → level spectrum
+
+INT. WHITEBOARD SPACE - CONTINUOUS
+
+/* extended_metaphor_start */
+
+= Visual: A robot wearing a chef's hat stands in a kitchen. No recipe in sight. Industrial kitchen, stainless steel, professional setup.
+
+NARRATOR (V.O.)
+Think of it like cooking. You walk into a restaurant and say: "Make me dinner." The chef — a very fast, very capable chef — starts cooking immediately.
+
+= Visual: Robot chef grabs random ingredients. Chops, fries, plates something. Puts it on the counter. It's... a thing. Not bad, not good. Just random.
+
+NARRATOR (V.O.)
+Something appears on the plate. It's food. Technically. But it's not what you wanted, because you never said what you wanted.
+
+= Visual: The plate sits on the counter. A fork pokes it. Confused reaction from a small figure silhouette.
+
+NARRATOR (V.O.)
+So you try again. "Make me dinner. Something Italian. Use pasta. Make it creamy."
+
+= Visual: More detail written on a notepad, slid across to the robot. Robot reads, nods enthusiastically.
+
+NARRATOR (V.O.)
+The chef gets excited. Grabs every Italian ingredient. Puts cream on everything. Adds four types of cheese. Pasta is swimming in a lake of sauce. Garlic bread is stuffed inside the pasta somehow.
+
+= Visual: The result is a mountain of food. Technically Italian. Technically creamy. Also completely inedible. Too much of everything.
+
+NARRATOR (V.O.)
+More detail. Same problem. Because you gave ingredients, not intent.
+
+= Visual: Transition — a hand slides a small card across the counter. Recipe card — simple, three lines. Robot chef reads it, nods once.
+
+NARRATOR (V.O.)
+Now imagine one card. "Pasta carbonara. Four ingredients. No cream. Serves two."
+
+= Visual: Robot chef follows the recipe. Controlled. Precise. Plating is clean. Result looks like actual carbonara.
+
+NARRATOR (V.O.)
+Same chef. Same kitchen. Completely different result. Consistent. Recognizable. Close to what you wanted.
+
+= Visual: Side-by-side — left: the chaotic cream mountain, right: clean carbonara. Clear difference.
+
+NARRATOR (V.O.)
+But here's the question nobody asks. Would you serve this to a customer?
+
+= Visual: The carbonara plate slides toward a dining table. A real person sits there. Menu, napkin, wine glass. This isn't practice anymore.
+
+NARRATOR (V.O.)
+Your friend's kitchen? Sure, experiment. A dinner party? Maybe. A restaurant? With paying customers? You'd want to taste it first. Check the seasoning. Make sure there's no raw egg. Make sure it doesn't make someone sick.
+
+= Visual: A health inspector appears with a clipboard. The robot chef nervously holds up the plate.
+
+NARRATOR (V.O.)
+AI is that chef. Fast, capable, ready to go. But without a recipe, it improvises. And when you're cooking for yourself, improvisation is fine. When you're cooking for others — for production, for users, for money — you need more than vibes.
+
+/* extended_metaphor_end */
+
+= Visual: Transition — whiteboard clears. New text appears, building word by word.
+
+NARRATOR (V.O.)
+In February twenty twenty-five, Andrej Karpathy — one of the founders of OpenAI — gave this a name. Vibe coding. Quote: "You just talk in natural language, run it, and most of the time it just works."
+
+= Visual: Karpathy quote appears on whiteboard, styled like a citation. Clean typography.
+
+NARRATOR (V.O.)
+But here's the word most people skip. "With." Vibe coding isn't AI coding for you. It's you coding with AI. The decisions — what to build, what's good enough, what's wrong — those are yours. The implementation — the actual code — that's the AI's job.
+
+= Visual: Two-column diagram. Left: "YOU" — decide, judge, direct. Right: "AI" — write, execute, generate. Arrow between them: "collaboration."
+
+NARRATOR (V.O.)
+Not outsourcing. Collaboration. That "with" is the hard part.
+
+= Visual: New section header: "What AI is good at"
+
+NARRATOR (V.O.)
+So what can AI actually do well? Prototypes. Quick experiments. "Show me what a dashboard could look like." Ten minutes, you have something to react to. Scripts and automations — rename five hundred files, convert data formats, generate boilerplate. Learning tools — "explain this code," "what does this function do," "show me an example."
+
+= Visual: Three panels appear — a prototype app mockup, a terminal running a script, a chat explaining code. Each with a green checkmark.
+
+NARRATOR (V.O.)
+What can't it do? Production systems — code that handles real users, real money, real data. Security — keeping attackers out, protecting passwords, encrypting sensitive information. Payment processing — where a bug means someone gets charged twice.
+
+= Visual: Three panels — a server with a warning sign, a lock icon with a crack, a credit card with an error. Each with a red X.
+
+NARRATOR (V.O.)
+Not "can't ever." Can't without supervision. Can't without someone checking the recipe before it reaches the customer.
+
+= Visual: Transition to tool tour. Five panels appear in a row.
+
+NARRATOR (V.O.)
+And you've got options. Cursor — an AI-powered code editor. You write alongside it. It suggests, you accept or reject.
+
+= Visual: Cursor IDE screenshot — code on left, AI chat on right. Quick 8-second glimpse.
+
+NARRATOR (V.O.)
+Claude Code — a terminal agent. It reads your entire project and makes changes across multiple files.
+
+= Visual: Terminal screen, commands flowing. Green text on dark background. 8 seconds.
+
+NARRATOR (V.O.)
+Replit — browser-based. No installation. Start building in thirty seconds flat.
+
+= Visual: Browser window, Replit interface. Colorful, friendly. 8 seconds.
+
+NARRATOR (V.O.)
+Kiro — from AWS. Spec-first. It writes requirements before touching code. We'll come back to that.
+
+= Visual: Kiro interface glimpse. Requirements panel visible. 8 seconds.
+
+NARRATOR (V.O.)
+Windsurf — another AI IDE. Similar to Cursor, different workflow. The point isn't which one.
+
+= Visual: Windsurf interface glimpse. 6 seconds.
+
+NARRATOR (V.O.)
+Different tools. Same principle. You decide what. AI decides how.
+
+= Visual: All five tools shrink into a row. Above them: "YOU decide WHAT. AI decides HOW."
+
+NARRATOR (V.O.)
+And there's a spectrum. Level one: copy-pasting from ChatGPT. Level two: an AI IDE like Cursor. Level three: an autonomous agent with a spec. Wherever you start is fine. But know where you are.
+
+= Visual: Three-step staircase diagram. L1 (bottom) → L2 (middle) → L3 (top). Each labeled. Arrow showing progression.
+
+/* SEGMENT 5: REFRAME [5:45-6:45] */
+# visual_mode: B
+# characters: []
+# shorts_candidate: false
+# space: whiteboard
+
+= Synopsis: "Not an easy button — a new skill" → "Judgment is the hardest part" → EP02 bridge
+
+INT. WHITEBOARD SPACE - CONTINUOUS
+
+NARRATOR (V.O.)
+So here's the reframe. Vibe coding is not an easy button. It's not "AI, do my job." It's a new skill — like learning to drive. The car does the moving. You do the steering.
+
+= Visual: Whiteboard — "easy button" icon gets crossed out. Replaced by a steering wheel with two hands on it.
+
+NARRATOR (V.O.)
+And the hardest part of this new skill isn't the typing. It's the judgment. Looking at what the AI made and knowing — is this good enough? Is this safe? Would I bet money on this working tomorrow?
+
+= Visual: A scale appears. One side: "good enough?" Other side: "dangerous?" The scale tips back and forth.
+
+NARRATOR (V.O.)
+Professional developers do this every day. They review code. They test it. They ask: "what could go wrong?" That's not a coding skill. That's a thinking skill. And you already have it.
+
+= Visual: A non-developer looking at a plate of food — "would I serve this?" Same judgment, different domain.
+
+NARRATOR (V.O.)
+The starting point — the thing that makes all of this work — is knowing what you're building. Not how. What. That's where episode two picks up.
+
+= Visual: A question mark floats: "What are you building?" — left unanswered. EP02 tease.
+
+/* SEGMENT 6: OUTRO_CTA [6:45-7:30] */
+# visual_mode: A
+# characters: vee
+# shorts_candidate: false
+# space: desk
+
+= Synopsis: Three things to do today — install, prompt, feel. Record the feeling.
+
+INT. VEE'S DESK - DAY
+
+NARRATOR (V.O.)
+Here's what you do today. Three things.
+
+= Visual: Desk scene — a sticky note appears with "1, 2, 3" written on it.
+
+NARRATOR (V.O.)
+One — pick a tool. Any tool. Cursor, Replit, Claude, whatever feels right. Install it.
+
+= Visual: Download progress bar fills. App opens.
+
+NARRATOR (V.O.)
+Two — type one prompt. Anything. "Make me a to-do app." "Build a calculator." "Create a personal website." Doesn't matter what.
+
+= Visual: Prompt typed. Enter pressed. Something appears on screen.
+
+NARRATOR (V.O.)
+Three — look at what comes out. And write down how you feel. Not what's wrong with it. How you feel. Frustrated? Confused? Excited? Disappointed?
+
+= Visual: Vee looks at the result. She picks up a pen. Writes on a sticky note — not code, not feedback. A feeling.
+
+/* vee_reaction: 5/10 */
+= Vee looks at the result. Head tilt. Then — a small smile. Not because it's good. Because she's starting. 1.5 seconds.
+
+NARRATOR (V.O.)
+That feeling is data. If the answer is "this isn't what I wanted" — good. That frustration? That gap between what you imagined and what appeared? That's where it all begins.
+
+= Visual: The sticky note gets pinned next to the monitor. On it: one word. "Frustrated." But it's glowing — not red, warm amber. It's useful.
+
+NARRATOR (V.O.)
+Next time — we give that feeling a name. And we turn it into the most powerful tool in vibe coding.
+
+= Visual: A second sticky note appears, blank. Waiting. A pen enters frame. Cut to black.
+
+/* vee_reaction: 6/10 */
+= Vee smiles — small, knowing. Bee does a tiny loop in the air. Fade out. 1.5 seconds.
+
+> END OF EPISODE 01

@@ -4,11 +4,11 @@ Author: vibecode.town
 Series: Vibecode Town Season 1
 Source: Act 3 — "Apartment Without Walls"
 Draft date: 2026-03-18
-Duration: 3:30-4:00 (~230 seconds)
-Notes: 2D flat vector style (Kurzgesagt level). Narrator V.O. only. Vee never speaks. Max 6 Vee reactions. Korean narration. v5 — 6-segment format, reframe-driven structure. ~620 words narration.
+Duration: 7:00-7:30 (~450 seconds)
+Notes: 2D flat vector style (Kurzgesagt level). Narrator V.O. only. Vee never speaks. Max 10 Vee reactions. Korean narration. v6 — 7:30 expansion, 6-segment format. ~1,100 words narration.
 
 /* ================================================================ */
-/* SEGMENT 1: HOOK [0:00–0:15]                                      */
+/* SEGMENT 1: HOOK [0:00–0:25]                                      */
 /* emotion_curve: PRIDE → DREAD                                     */
 /* narrative_stage: HOOK                                             */
 /* open_loop: "Why does fixing one thing break three others?"       */
@@ -22,20 +22,26 @@ INT. VEE'S DESK - NIGHT
 
 = Same desk as EP02. The PROJECT.md file glows on her monitor. Clean folder tree in the sidebar — but it's grown. Dozens of files. Vee sits tall, hoodie sleeves pushed up. She looks like someone who's figured things out.
 
-/* vee_reaction: 1/6 */
+/* vee_reaction: 1/10 */
 
 = A cursor clicks one file. A small edit. Save. Three red error badges pop up in different parts of the sidebar.
 
 NARRATOR (V.O.)
-브이는 한 줄을 고쳤다. 세 군데가 터졌다. 그녀는 아무것도 건드리지 않았다 — 주방만 빼고.
+브이는 한 줄을 고쳤다. 세 군데가 터졌다.
 
 = BEAT. Half a second.
+
+NARRATOR (V.O.)
+주방만 건드렸는데 — 침실이 불탔다.
+
+/* vee_reaction: 2/10 */
+= Vee freezes. Hands hover over keyboard. She's afraid to touch anything else. 1.5 seconds.
 
 > TITLE CARD: **벽 없는 아파트**
 
 /* ================================================================ */
-/* SEGMENT 2: MISCONCEPTION [0:15–0:45]                             */
-/* emotion_curve: PRIDE → FALSE LOGIC                               */
+/* SEGMENT 2: MISCONCEPTION [0:25–1:25]                             */
+/* emotion_curve: PRIDE → FALSE LOGIC → REGRET                     */
 /* narrative_stage: MISCONCEPTION                                   */
 /* misconception: "파일 하나에 다 넣으면 되지"                        */
 /* ================================================================ */
@@ -56,9 +62,9 @@ NARRATOR (V.O.)
 NARRATOR (V.O.)
 로그인, 결제, 알림, 파일 동기화. 전부 한 파일. 삼천 줄. 브이의 논리는 이랬다 — 파일 하나면 찾기 쉽잖아.
 
-/* vee_reaction: 2/6 */
+/* vee_reaction: 3/10 */
 
-= Vee shrugs — a "makes sense to me" expression. She taps the single file proudly. One file. One truth. Simple.
+= Vee shrugs — a "makes sense to me" expression. She taps the single file proudly. One file. One truth. Simple. 1.5 seconds.
 
 NARRATOR (V.O.)
 맞는 말이다. 하나니까 잃어버릴 것도 없다. 하나니까 관리도 쉽다. 하나니까 — 전부 연결되어 있다.
@@ -68,10 +74,18 @@ NARRATOR (V.O.)
 NARRATOR (V.O.)
 전부.
 
+NARRATOR (V.O.)
+그리고 AI한테 "결제 로직 고쳐줘"라고 했다. AI는 성실했다. 결제 로직을 고쳤다. 그리고 같은 파일에 있던 로그인 코드도 건드렸다. 알림 코드도. AI는 잘못한 게 아니다 — 다 같은 파일이니까.
+
+= Visual: AI cursor moves through the file. Fixes one section. But the fix ripples — a changed variable name cascades through unrelated functions. Red highlights bloom across the file.
+
+/* vee_reaction: 4/10 */
+= Vee watches the cascade of errors in slow horror. Her hand reaches for Ctrl+Z. 1.5 seconds.
+
 ---
 
 /* ================================================================ */
-/* SEGMENT 3: THE_CRACK [0:45–1:15]                                 */
+/* SEGMENT 3: THE_CRACK [1:25–2:15]                                 */
 /* emotion_curve: FALSE LOGIC → HORROR                              */
 /* narrative_stage: THE_CRACK                                       */
 /* crack: "주방 기름이 침대에"                                       */
@@ -102,7 +116,7 @@ NARRATOR (V.O.)
 
 = BEAT. One disgusted second.
 
-/* vee_reaction: 3/6 */
+/* vee_reaction: 5/10 */
 /* visual_type: character_reaction | space: desk */
 
 = Quick cut: Vee. Hood pulled up. Face scrunched — pure disgust. She pushes an invisible plate away. 1.5 seconds.
@@ -115,10 +129,10 @@ NARRATOR (V.O.)
 ---
 
 /* ================================================================ */
-/* SEGMENT 4: CORE [1:15–3:00]                                      */
+/* SEGMENT 4: CORE [2:15–5:45]                                      */
 /* emotion_curve: HORROR → REVELATION → SATISFACTION                */
 /* narrative_stage: CORE                                             */
-/* duration: ~90 seconds                                            */
+/* duration: ~210 seconds                                           */
 /* extended_metaphor: walls = module boundaries                     */
 /* ================================================================ */
 
@@ -167,15 +181,68 @@ NARRATOR (V.O.)
 NARRATOR (V.O.)
 결제가 터지면 — 결제 문제다. 로그인은 모른다. 알림도 모른다. 각자의 방에서 각자의 일을 한다.
 
-/* vee_reaction: 4/6 */
+/* vee_reaction: 6/10 */
 /* visual_type: character_reaction | space: desk */
 
 = Quick flash: Vee's eyes go wide. Both hands come up — palms out, fingers spread. The universal "oh THAT'S why" gesture. Glasses flash. 1.5 seconds.
 
+/* visual_type: diagram | space: whiteboard */
+
+NARRATOR (V.O.)
+실제로 해보자. 브이의 삼천 줄짜리 앱을 분리하면 이렇게 된다.
+
+= Visual: The single app.js file icon appears on the left — massive, glowing red. An arrow points right. On the right, five small file icons appear one by one, each labeled.
+
+NARRATOR (V.O.)
+`auth/` — 로그인과 회원가입. 삼백 줄.
+
+= Visual: auth/ folder lights up. "300 lines" appears. Clean.
+
+NARRATOR (V.O.)
+`payments/` — 결제 관련 전부. 이백오십 줄.
+
+= Visual: payments/ folder lights up. "250 lines."
+
+NARRATOR (V.O.)
+`notifications/` — 푸시 알림, 이메일. 이백 줄.
+
+= Visual: notifications/ folder. "200 lines."
+
+NARRATOR (V.O.)
+`sync/` — 파일 동기화. 삼백오십 줄.
+
+= Visual: sync/ folder. "350 lines."
+
+NARRATOR (V.O.)
+`ui/` — 화면, 버튼, 레이아웃. 사백 줄.
+
+= Visual: ui/ folder. "400 lines." Total: 1,500 lines. Half the original.
+
+NARRATOR (V.O.)
+삼천 줄이 천오백 줄이 됐다. 절반은 중복이었다. 같은 함수가 여러 번 쓰여 있었을 뿐이다. 벽을 세우니까 — 중복이 보였다. 중복을 지우니까 — 코드가 줄었다.
+
+= Visual: Side-by-side — left: 3,100-line single file, right: 5 folders totaling 1,500. The difference is stark.
+
+/* vee_reaction: 7/10 */
+= Vee's mouth forms a silent "oh". She counts on her fingers — five folders, five responsibilities. It makes sense now. 1.5 seconds.
+
+NARRATOR (V.O.)
+그리고 이제 AI한테 말할 수 있다. "payments/ 폴더의 환불 로직을 추가해줘." AI는 어디를 봐야 하는지 안다. 다른 폴더는 건드리지 않는다. 기름이 침대에 튀지 않는다.
+
+= Visual: An AI chat prompt — "payments/에 환불 로직 추가해줘". The AI's cursor moves ONLY within the payments/ folder. Other folders have tiny lock icons — untouched.
+
+NARRATOR (V.O.)
+어제 같은 요청을 했으면 — AI는 삼천 줄 전체를 읽고, 아무 데나 코드를 넣었을 거다. 오늘은 이백오십 줄만 읽고, 정확한 위치에 넣는다.
+
+= Visual: Before/after split. Left: AI cursor wandering through 3,100 lines, placing code randomly. Right: AI cursor focused on 250 lines, precise insertion.
+
+/* vee_reaction: 8/10 */
+= Vee nods slowly. She gets it — smaller context = better AI output. 1.5 seconds.
+
 ---
 
 /* ================================================================ */
-/* SEGMENT 5: REFRAME [3:00–3:30]                                   */
+/* SEGMENT 5: REFRAME [5:45–6:45]                                   */
 /* emotion_curve: SATISFACTION → PARADIGM SHIFT                     */
 /* narrative_stage: REFRAME                                         */
 /* reframe: "코드를 읽을 필요 없다. 지도를 읽어라"                    */
@@ -202,20 +269,30 @@ NARRATOR (V.O.)
 = The folder tree transforms into an actual map — a top-down city grid. Each folder becomes a building with a sign. `auth/` becomes a guard post. `payments/` becomes a bank. `notifications/` becomes a post office. `sync/` becomes a satellite tower. Roads connect them — clean, one-way streets.
 
 NARRATOR (V.O.)
-폴더 이름이 곧 건축이다. 이름만 보면 뭐가 어디 있는지 안다. 파일 하나 열지 않아도 — 구조를 안다. AI한테 "결제 로직 고쳐줘"라고 말하면, AI도 어디를 봐야 하는지 안다. `payments/` 폴더. 끝.
+폴더 이름이 곧 건축이다. 이름만 보면 뭐가 어디 있는지 안다. 파일 하나 열지 않아도 — 구조를 안다.
 
-/* vee_reaction: 5/6 */
-/* visual_type: character_reaction | space: desk */
-
-= Vee leans back. Arms behind her head. She looks at the folder tree on her monitor — not at code, at the MAP. A slow, knowing smile. She gets it now. Structure IS the documentation. 1.5 seconds.
+= Visual: Each building on the map has a clear sign. No need to go inside to know what it does.
 
 NARRATOR (V.O.)
-구조가 문서다. 폴더가 설계도다. 벽이 있으면 — 지도가 생긴다.
+AI한테 "결제 로직 고쳐줘"라고 말하면, AI도 어디를 봐야 하는지 안다. `payments/` 폴더. 끝. 삼천 줄을 읽을 필요가 없다. 이백오십 줄만 읽으면 된다.
+
+/* vee_reaction: 9/10 */
+/* visual_type: character_reaction | space: desk */
+
+= Vee leans back. Arms behind her head. She looks at the folder tree on her monitor — not at code, at the MAP. A slow, knowing smile. She gets it now. 1.5 seconds.
+
+NARRATOR (V.O.)
+구조가 문서다. 폴더가 설계도다. 벽이 있으면 — 지도가 생긴다. 그리고 지도가 있으면 — 코딩을 몰라도 방향을 잡을 수 있다.
+
+NARRATOR (V.O.)
+프로 개발자들이 매일 하는 일이 이거다. 코드를 읽기 전에 구조를 읽는다. 폴더를 보고, 이름을 보고, 관계를 본다. 그 다음에 들어간다. 너도 똑같이 할 수 있다.
+
+= Visual: A "PRO DEV" badge appears. The same folder-tree-first approach.
 
 ---
 
 /* ================================================================ */
-/* SEGMENT 6: OUTRO_CTA [3:30–3:55]                                 */
+/* SEGMENT 6: OUTRO_CTA [6:45–7:30]                                 */
 /* emotion_curve: PARADIGM SHIFT → CONFIDENCE → open loop EP04      */
 /* narrative_stage: OUTRO_CTA                                       */
 /* ================================================================ */
@@ -233,19 +310,24 @@ NARRATOR (V.O.)
 
 = The AI responds. Green checkmarks appear — but only in the `payments/` folder. The other folders don't move. Nothing breaks.
 
-/* vee_reaction: 6/6 */
+NARRATOR (V.O.)
+테스트까지 통과한다. payments/ 안에서만. 다른 건 모른다. 다른 건 건드리지 않는다.
+
+/* vee_reaction: 10/10 */
 
 = Vee nods. Satisfied. She reaches for her coffee — then pauses. Looks at the green checkmarks. Squints. Tilts her head.
 
 = She opens `sync/` folder. Types: "이 폴더 테스트해줘." Hits enter. Nothing happens. No tests exist. Zero coverage. The folder has never been tested.
 
 NARRATOR (V.O.)
-구조는 잡혔다. 벽은 세워졌다. 근데 — 이 방들이 진짜 작동하는지는? 한 번도 확인 안 했다.
+구조는 잡혔다. 벽은 세워졌다. 근데 — 이 방들이 진짜 작동하는지는? 한 번도 확인 안 했다. 벽은 있다. 근데 방 안에 뭐가 있는지 — 아직 모른다.
 
 = BEAT.
 
 NARRATOR (V.O.)
-다음에 — 브이가 상자를 연다. 안에 뭐가 있을까.
+다음에 — 브이가 상자를 연다. 예쁘게 포장된 상자 다섯 개. 한 번도 열어본 적 없는. 안에 뭐가 있을까.
+
+= Visual: Five gift boxes appear, wrapped in the colors of the five folders. Ribbons tied. Pristine. Untouched.
 
 > TITLE CARD: **NEXT: EP04 — "열기 무서운 상자"**
 
