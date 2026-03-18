@@ -43,9 +43,15 @@ def _load_yaml(path: Path) -> Dict[str, Any]:
 # Core transformation functions
 # ---------------------------------------------------------------------------
 
-def apply_pronunciation(text: str, rules: Dict[str, Any]) -> str:
-    """Apply pronunciation fixes: exact matches first, then regex patterns."""
-    pron = rules.get("pronunciation", {})
+def apply_pronunciation(text: str, rules: Dict[str, Any], lang: str = "en") -> str:
+    """Apply pronunciation fixes: exact matches first, then regex patterns.
+
+    Uses locale-specific rules when available (e.g. pronunciation_ko for Korean).
+    """
+    if lang == "ko":
+        pron = rules.get("pronunciation_ko", rules.get("pronunciation", {}))
+    else:
+        pron = rules.get("pronunciation", {})
 
     # Exact replacements (case-sensitive)
     for old, new in pron.get("exact", {}).items():
@@ -58,21 +64,30 @@ def apply_pronunciation(text: str, rules: Dict[str, Any]) -> str:
     return text
 
 
-def apply_pauses(text: str, rules: Dict[str, Any]) -> str:
-    """Insert pauses after quotes and before pivot words."""
+def apply_pauses(text: str, rules: Dict[str, Any], lang: str = "en") -> str:
+    """Insert pauses after quotes and before pivot words.
+
+    Uses locale-specific pivot_words when available (e.g. pivot_words_ko for Korean).
+    """
     pause_rules = rules.get("pauses", {})
 
     # After closing quote: "something" → "something"...
     after_pause = pause_rules.get("after_quote_pause", "...")
     if after_pause:
+        # Match both curly and straight quotes, plus Korean-style quotes
         text = re.sub(
-            r'(\u201c[^\u201d]+?\u201d|\u0022[^\u0022]+?\u0022)',
+            r'(\u201c[^\u201d]+?\u201d|\u0022[^\u0022]+?\u0022|\u300c[^\u300d]+?\u300d)',
             lambda m: m.group(0) + after_pause,
             text,
         )
 
-    # Pivot words: prefix pause before specific words/phrases
-    for p in pause_rules.get("pivot_words", []):
+    # Select locale-specific pivot words
+    if lang == "ko":
+        pivot_words = rules.get("pivot_words_ko", pause_rules.get("pivot_words", []))
+    else:
+        pivot_words = pause_rules.get("pivot_words", [])
+
+    for p in pivot_words:
         word = p["word"]
         prefix = p.get("prefix", "... ")
         # Only add prefix if not already present
@@ -136,6 +151,7 @@ def process_manifest(
 ) -> Dict[str, Any]:
     """Process all beats in manifest, returning a report dict."""
     beats = manifest.get("beats", [])
+    lang = manifest.get("language", "en")
     emotion_curves = rules.get("emotion_curves", {})
     default_curve = emotion_curves.get("_default", {"base": 0.5, "curve": "flat", "range": [0.5, 0.5]})
 
@@ -154,10 +170,10 @@ def process_manifest(
         if not original_text:
             continue
 
-        # Apply transformations
+        # Apply transformations (locale-aware)
         text = original_text
-        text = apply_pronunciation(text, rules)
-        text = apply_pauses(text, rules)
+        text = apply_pronunciation(text, rules, lang=lang)
+        text = apply_pauses(text, rules, lang=lang)
 
         # Compute emotion curve
         seg_label = get_segment_label(beat)
@@ -194,6 +210,7 @@ def process_manifest(
     report = {
         "generated_at": datetime.now().isoformat(),
         "rules_version": rules.get("version", "unknown"),
+        "language": lang,
         "total_beats": total,
         "beats_modified": len(modifications),
         "modification_rate": round(len(modifications) / max(1, total), 4),

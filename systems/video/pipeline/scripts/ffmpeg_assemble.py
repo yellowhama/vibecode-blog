@@ -1,135 +1,239 @@
 #!/usr/bin/env python3
-"""FFmpeg-based final assembly (fallback when Remotion not available)."""
+"""FFmpeg-based final assembly — shot manifest driven.
+
+Reads shot manifest for ordering and duration, finds keyframes/clips per shot,
+applies Ken Burns for stills, concatenates with audio and subtitles.
+"""
 import argparse, json, subprocess, sys, tempfile
 from pathlib import Path
 
 SYSTEMS = Path("/mnt/e/vibecode-blog/systems/video")
 
+
+def _find_latest(directory: Path, pattern: str) -> Path | None:
+    matches = sorted(directory.glob(pattern), key=lambda p: p.stat().st_mtime, reverse=True)
+    return matches[0] if matches else None
+
+
+def _find_audio(ep_out: Path) -> Path | None:
+    for name in ["audio/mixed_audio_v4.wav", "audio/mixed_audio.wav",
+                  "audio/narration_v3.wav", "audio/narration.wav"]:
+        p = ep_out / name
+        if p.exists():
+            return p
+    return None
+
+
+def _find_srt(ep_out: Path, ep: str) -> Path | None:
+    for name in [f"subtitles/ep{ep}_subtitles.srt", "subtitles/subtitles.srt"]:
+        p = ep_out / name
+        if p.exists():
+            return p
+    return None
+
+
+def _find_shot_asset(shot_id: str, ep_out: Path) -> tuple[str, Path] | None:
+    """Find the best visual asset for a shot. Returns (type, path)."""
+    # Priority: I2V clip > rendered keyframe > legacy keyframe
+    for clips_dir in [ep_out / "renders" / "clips", ep_out / "clips_i2v"]:
+        if clips_dir.exists():
+            for ext in ["*.mp4", "*.webm"]:
+                for f in clips_dir.glob(f"{shot_id}*{ext[1:]}"):
+                    return ("clip", f)
+
+    for kf_dir in [ep_out / "renders" / "keyframes", ep_out / "keyframes"]:
+        if kf_dir.exists():
+            for ext in ["*.png", "*.jpg", "*.webp"]:
+                for f in kf_dir.glob(f"{shot_id}*{ext[1:]}"):
+                    return ("image", f)
+
+    return None
+
+
+def _ken_burns_clip(image: Path, duration: float, output: Path, w: int, h: int, fps: int):
+    """Create a Ken Burns (zoom+pan) clip from a still image."""
+    # Gentle zoom: 1.0 → 1.08 over duration
+    vf = (
+        f"scale={w*2}:{h*2},"
+        f"zoompan=z='min(zoom+0.0008,1.08)':d={int(duration*fps)}:s={w}x{h}:fps={fps},"
+        f"format=yuv420p"
+    )
+    subprocess.run([
+        "ffmpeg", "-y", "-loop", "1", "-i", str(image),
+        "-vf", vf,
+        "-t", f"{duration:.3f}",
+        "-c:v", "libx264", "-preset", "fast", "-crf", "20",
+        "-pix_fmt", "yuv420p",
+        str(output),
+    ], capture_output=True, check=True)
+
+
+def _color_card_clip(duration: float, output: Path, w: int, h: int, fps: int,
+                     text: str = "", color: str = "0x1a1a2e"):
+    """Generate a solid color card clip, optionally with text overlay."""
+    # Escape text for FFmpeg drawtext filter
+    safe_text = text.replace("\\", "\\\\").replace("'", "").replace('"', '').replace(":", "\\:").replace("%", "%%")
+    vf = f"drawtext=text='{safe_text}':fontsize=28:fontcolor=white:x=(w-tw)/2:y=(h-th)/2" if safe_text else "null"
+    subprocess.run([
+        "ffmpeg", "-y",
+        "-f", "lavfi", "-i", f"color=c={color}:s={w}x{h}:d={duration:.3f}:r={fps}",
+        "-vf", vf,
+        "-t", f"{duration:.3f}",
+        "-c:v", "libx264", "-preset", "fast", "-crf", "20",
+        "-pix_fmt", "yuv420p",
+        str(output),
+    ], capture_output=True, check=True)
+
+
 def main():
-    parser = argparse.ArgumentParser(description="FFmpeg video assembler")
+    parser = argparse.ArgumentParser(description="FFmpeg video assembler (shot manifest driven)")
     parser.add_argument("--episode", "-e", required=True)
+    parser.add_argument("--shot-manifest", type=Path, default=None,
+                        help="Shot manifest JSON (auto-detected if omitted)")
     parser.add_argument("--output-dir", required=True)
-    parser.add_argument("--resolution", default="1920x1080")
+    parser.add_argument("--resolution", default="1280x720")
     parser.add_argument("--fps", type=int, default=30)
     args = parser.parse_args()
 
     ep = args.episode.zfill(2)
     outd = Path(args.output_dir)
     outd.mkdir(parents=True, exist_ok=True)
-
     ep_out = SYSTEMS / "output" / f"ep{ep}"
-    clips_dir = ep_out / "renders" / "clips"
-    explainer_dir = ep_out / "renders" / "explainer"
-    audio_file = ep_out / "audio" / "mixed_audio.wav"
-    if not audio_file.exists():
-        audio_file = ep_out / "audio" / "narration.wav"
-    srt_file = ep_out / "subtitles" / "subtitles.srt"
+    ep_prepro = SYSTEMS / "preproduction" / f"ep{ep}"
 
-    w, h = args.resolution.split("x")
+    w, h = [int(x) for x in args.resolution.split("x")]
 
-    # Collect all video clips in order
-    clips = sorted(clips_dir.glob("*.mp4")) if clips_dir.exists() else []
-
-    # Also collect explainer images if they exist
-    explainer_frames = sorted(explainer_dir.glob("*.png")) if explainer_dir.exists() else []
-
-    if not clips and not explainer_frames:
-        print("No clips or explainer frames found. Nothing to assemble.", file=sys.stderr)
+    # Find shot manifest (exclude handoff/sync_report variants)
+    manifest_path = args.shot_manifest
+    if not manifest_path:
+        candidates = sorted(
+            [p for p in ep_prepro.glob(f"ep{ep}_shot_manifest_v*.json")
+             if "handoff" not in p.name and "report" not in p.name and "timed" not in p.name],
+            key=lambda p: p.stat().st_mtime, reverse=True
+        )
+        manifest_path = candidates[0] if candidates else None
+    if not manifest_path or not manifest_path.exists():
+        print(f"[FAIL] No shot manifest found for ep{ep}", file=sys.stderr)
         sys.exit(1)
 
-    # Build concat file
-    scaled_clips = []
-    for i, clip in enumerate(clips):
-        scaled = Path(tempfile.mktemp(suffix=".mp4"))
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    shots = manifest.get("shots", [])
+    if not shots:
+        print("[FAIL] Shot manifest has no shots", file=sys.stderr)
+        sys.exit(1)
+
+    audio_file = _find_audio(ep_out)
+    srt_file = _find_srt(ep_out, ep)
+
+    print(f"[INFO] ep{ep}: {len(shots)} shots, {args.resolution}@{args.fps}fps")
+    print(f"[INFO] audio: {audio_file}")
+    print(f"[INFO] srt: {srt_file}")
+    print(f"[INFO] manifest: {manifest_path}")
+
+    # Generate per-shot clips
+    with tempfile.TemporaryDirectory(prefix=f"assemble_ep{ep}_") as td:
+        tmp = Path(td)
+        shot_clips: list[Path] = []
+        stats = {"clip": 0, "kenburns": 0, "placeholder": 0}
+
+        for i, shot in enumerate(shots):
+            shot_id = shot["shot_id"]
+            duration = float(shot.get("duration_sec", 5.0))
+            clip_path = tmp / f"{i:04d}_{shot_id}.mp4"
+
+            asset = _find_shot_asset(shot_id, ep_out)
+
+            if asset and asset[0] == "clip":
+                # Scale existing clip to target resolution + duration
+                subprocess.run([
+                    "ffmpeg", "-y", "-i", str(asset[1]),
+                    "-vf", f"scale={w}:{h}:force_original_aspect_ratio=decrease,pad={w}:{h}:(ow-iw)/2:(oh-ih)/2:black",
+                    "-t", f"{duration:.3f}",
+                    "-r", str(args.fps),
+                    "-c:v", "libx264", "-preset", "fast", "-an",
+                    str(clip_path),
+                ], capture_output=True)
+                stats["clip"] += 1
+            elif asset and asset[0] == "image":
+                # Ken Burns from keyframe
+                _ken_burns_clip(asset[1], duration, clip_path, w, h, args.fps)
+                stats["kenburns"] += 1
+            else:
+                # Color card placeholder
+                desc = shot.get("description", shot_id)[:60]
+                _color_card_clip(duration, clip_path, w, h, args.fps, text=desc)
+                stats["placeholder"] += 1
+
+            if clip_path.exists():
+                shot_clips.append(clip_path)
+            else:
+                print(f"  [WARN] Failed to create clip for {shot_id}")
+                _color_card_clip(duration, clip_path, w, h, args.fps, text=shot_id)
+                shot_clips.append(clip_path)
+                stats["placeholder"] += 1
+
+        print(f"[INFO] Clips: {stats['clip']} video, {stats['kenburns']} ken-burns, {stats['placeholder']} placeholder")
+
+        if not shot_clips:
+            print("[FAIL] No clips generated", file=sys.stderr)
+            sys.exit(1)
+
+        # Concat all clips
+        concat_txt = tmp / "concat.txt"
+        concat_txt.write_text("\n".join(f"file '{c}'" for c in shot_clips))
+        concat_raw = tmp / "concat_raw.mp4"
         subprocess.run([
-            "ffmpeg", "-y", "-i", str(clip),
-            "-vf", f"scale={w}:{h}:force_original_aspect_ratio=decrease,pad={w}:{h}:(ow-iw)/2:(oh-ih)/2:black",
-            "-r", str(args.fps), "-c:v", "libx264", "-preset", "fast",
-            str(scaled),
-        ], capture_output=True)
-        scaled_clips.append(scaled)
+            "ffmpeg", "-y", "-f", "concat", "-safe", "0",
+            "-i", str(concat_txt), "-c", "copy", str(concat_raw),
+        ], capture_output=True, check=True)
 
-    # If we have explainer frames, make a video from them
-    if explainer_frames:
-        explainer_video = Path(tempfile.mktemp(suffix=".mp4"))
-        # Use image sequence to video
-        subprocess.run([
-            "ffmpeg", "-y", "-framerate", str(args.fps),
-            "-i", str(explainer_dir / "%04d.png"),
-            "-vf", f"scale={w}:{h}:force_original_aspect_ratio=decrease,pad={w}:{h}:(ow-iw)/2:(oh-ih)/2:black",
-            "-c:v", "libx264", "-preset", "fast", "-pix_fmt", "yuv420p",
-            str(explainer_video),
-        ], capture_output=True)
-        scaled_clips.append(explainer_video)
+        # Add audio + subtitles
+        final_path = outd / f"EP{ep}_v4_FINAL.mp4"
+        cmd = ["ffmpeg", "-y", "-i", str(concat_raw)]
 
-    if not scaled_clips:
-        print("No processable content.", file=sys.stderr)
-        sys.exit(1)
+        if audio_file:
+            cmd.extend(["-i", str(audio_file)])
 
-    # Concat all clips
-    concat_file = Path(tempfile.mktemp(suffix=".txt"))
-    concat_file.write_text('\n'.join(f"file '{c}'" for c in scaled_clips))
+        vf_parts = []
+        if srt_file:
+            # Escape path for subtitles filter
+            srt_escaped = str(srt_file).replace("\\", "/").replace(":", "\\:")
+            vf_parts.append(
+                f"subtitles='{srt_escaped}':force_style="
+                f"'FontSize=20,FontName=Arial,PrimaryColour=&H00FFFFFF,"
+                f"OutlineColour=&H00000000,Outline=2,Shadow=1,MarginV=30'"
+            )
 
-    concat_video = Path(tempfile.mktemp(suffix=".mp4"))
-    subprocess.run([
-        "ffmpeg", "-y", "-f", "concat", "-safe", "0",
-        "-i", str(concat_file), "-c", "copy", str(concat_video),
-    ], capture_output=True)
+        if vf_parts:
+            cmd.extend(["-vf", ",".join(vf_parts)])
 
-    # Add audio and subtitles
-    final_path = outd / f"EP{ep}_FINAL.mp4"
-    cmd = ["ffmpeg", "-y", "-i", str(concat_video)]
+        if audio_file:
+            cmd.extend([
+                "-map", "0:v", "-map", "1:a",
+                "-c:v", "libx264", "-preset", "medium", "-crf", "18",
+                "-c:a", "aac", "-b:a", "192k",
+                "-shortest",
+            ])
+        else:
+            cmd.extend(["-c:v", "libx264", "-preset", "medium", "-crf", "18"])
 
-    if audio_file.exists():
-        cmd.extend(["-i", str(audio_file)])
+        cmd.extend(["-movflags", "+faststart", str(final_path)])
 
-    filter_parts = []
-    if srt_file.exists():
-        cmd.extend(["-vf", f"subtitles={srt_file}:force_style='FontSize=24,PrimaryColour=&H00FFFFFF'"])
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        if result.returncode != 0:
+            print(f"[FAIL] Assembly failed: {result.stderr[:500]}", file=sys.stderr)
+            sys.exit(1)
 
-    if audio_file.exists():
-        cmd.extend([
-            "-map", "0:v", "-map", "1:a",
-            "-c:v", "libx264", "-preset", "medium", "-crf", "18",
-            "-c:a", "aac", "-b:a", "192k",
-            "-shortest",
-        ])
-    else:
-        cmd.extend(["-c:v", "libx264", "-preset", "medium", "-crf", "18"])
-
-    cmd.append(str(final_path))
-
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    if result.returncode != 0:
-        print(f"Assembly failed: {result.stderr}", file=sys.stderr)
-        sys.exit(1)
-
-    # Cleanup temp files
-    for f in scaled_clips:
-        f.unlink(missing_ok=True)
-    concat_file.unlink(missing_ok=True)
-    concat_video.unlink(missing_ok=True)
-
-    print(f"Final video: {final_path}")
-
-    # Also generate shorts cuts
-    _generate_shorts(final_path, outd, ep)
-
-
-def _generate_shorts(final_path: Path, outd: Path, ep: str):
-    """Extract potential shorts clips (vertical 9:16, 60s max)."""
-    # Simple: take first 60s as a short
-    shorts_path = outd / f"EP{ep}_SHORTS_01.mp4"
-    subprocess.run([
-        "ffmpeg", "-y", "-i", str(final_path),
-        "-t", "58", "-vf", "crop=ih*9/16:ih,scale=1080:1920",
-        "-c:v", "libx264", "-preset", "medium", "-crf", "20",
-        "-c:a", "aac", "-b:a", "128k",
-        str(shorts_path),
-    ], capture_output=True)
-    if shorts_path.exists():
-        print(f"Shorts: {shorts_path}")
+    # Probe final
+    probe = subprocess.run([
+        "ffprobe", "-v", "error",
+        "-show_entries", "format=duration,size",
+        "-of", "default=noprint_wrappers=1", str(final_path),
+    ], capture_output=True, text=True)
+    print(f"[OK] Final video: {final_path}")
+    print(f"  {probe.stdout.strip()}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

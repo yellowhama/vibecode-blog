@@ -77,9 +77,22 @@ def main():
     if bgm_count == 0:
         pass
     elif bgm_count == 1:
-        # Just one BGM, apply delay if needed and volume
+        # One BGM: loop to match narration length, apply delay + volume
         delay_ms = int(bgm_parsed[0][0] * 1000)
-        filter_complex.append(f"[bgm_fmt_0]volume={args.bgm_volume},adelay={delay_ms}|{delay_ms}{bgm_out}")
+        # Get narration duration for apad/trim
+        probe = subprocess.run([
+            "ffprobe", "-v", "error", "-show_entries", "format=duration",
+            "-of", "default=noprint_wrappers=1:nokey=1", args.narration,
+        ], capture_output=True, text=True)
+        narr_dur = float(probe.stdout.strip()) if probe.stdout.strip() else 600.0
+        # aloop: loop enough times to exceed narration, then trim to exact length
+        loop_count = int(narr_dur / 10) + 2  # generous loop count
+        filter_complex.append(
+            f"[bgm_fmt_0]aloop=loop={loop_count}:size=2e+09,"
+            f"atrim=0:{narr_dur:.1f},asetpts=PTS-STARTPTS,"
+            f"afade=t=in:d=2,afade=t=out:st={narr_dur - 3:.1f}:d=3,"
+            f"volume={args.bgm_volume},adelay={delay_ms}|{delay_ms}{bgm_out}"
+        )
     else:
         # Multiple BGMs: chain with acrossfade
         last_out = f"[bgm_fmt_0]"

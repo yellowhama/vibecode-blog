@@ -48,3 +48,37 @@ emotion_curves:
   REFRAME:       { base: 0.65, curve: rising,   range: [0.5, 0.8] }
   OUTRO_CTA:     { base: 0.55, curve: falling,  range: [0.6, 0.45] }
   _default:      { base: 0.5,  curve: flat,      range: [0.5, 0.5] }
+
+# ---------------------------------------------------------------------------
+# Korean (ko) locale overrides
+# ---------------------------------------------------------------------------
+
+pronunciation_ko:
+  exact:
+    "LLM": "L L M"
+    "API": "A P I"
+    "CLI": "C L I"
+    "AI": "A I"
+    "MCP": "M C P"
+    "YAML": "야믈"
+    "JSON": "제이슨"
+    "MDX": "M D X"
+    "GPT-4": "G P T 포"
+    "GPT-4o": "G P T 포 오"
+    "ChatGPT": "챗 G P T"
+    "OpenAI": "오픈 A I"
+    "SSOT": "S S O T"
+    "n8n": "n 8 n"
+  regex:
+    - pattern: '\bv(\d+)\b'
+      replacement: '버전 \1'
+    - pattern: '\bEP(\d{2})\b'
+      replacement: '에피소드 \1'
+
+pivot_words_ko:
+  - { word: "하지만 ", prefix: "... " }
+  - { word: "왜냐하면 ", prefix: ", " }
+  - { word: "왜?", prefix: "... " }
+  - { word: "문제는 ", prefix: "... " }
+  - { word: "여기서 ", prefix: "... " }
+  - { word: "그래서 ", prefix: "... " }

@@ -1,0 +1,22 @@
+{
+  "ep01": {
+    "bgm": "fdd_fury_stomp",
+    "mood": "frustration → revelation",
+    "note": "CLAUDE.md — angry developer discovers spec-driven workflow"
+  },
+  "ep02": {
+    "bgm": "yak_shaving_machine",
+    "mood": "chaos → structure",
+    "note": "Spec-driven development — yak shaving into organized specs"
+  },
+  "ep03": {
+    "bgm": "cynical_indie_hacker",
+    "mood": "cool skepticism → acceptance",
+    "note": "Korean episode — indie hacker vibe, lo-fi"
+  },
+  "ep04": {
+    "bgm": "nike_insight_minimal",
+    "mood": "clarity → sovereignty",
+    "note": "Sovereignty manifesto — clean, resolute, minimalist"
+  }
+}

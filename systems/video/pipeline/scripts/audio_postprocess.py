@@ -77,23 +77,37 @@ def concat_segments_wav(inputs: List[Path], out_wav: Path, crossfade_sec: float 
 
 
 def apply_silence_trim(in_wav: Path, out_wav: Path, silence_db: float = -45.0, min_silence_sec: float = 0.2) -> None:
-    run(
-        [
-            "ffmpeg",
-            "-y",
-            "-i",
-            str(in_wav),
-            "-af",
-            (
-                "silenceremove="
-                f"start_periods=1:start_duration={min_silence_sec:.3f}:start_threshold={silence_db:.1f}dB:"
-                f"stop_periods=1:stop_duration={min_silence_sec:.3f}:stop_threshold={silence_db:.1f}dB"
-            ),
-            "-c:a",
-            "pcm_s16le",
-            str(out_wav),
-        ]
-    )
+    """Trim leading/trailing silence only. Interior silence is preserved.
+
+    Uses two-pass approach: first trim leading silence, then trim trailing silence
+    via reverse+trim+reverse. stop_periods=-1 with detection_mode=rms would strip
+    interior gaps, so we avoid that.
+    """
+    with tempfile.TemporaryDirectory(prefix="trim_") as td:
+        trimmed_start = Path(td) / "trim_start.wav"
+        # Pass 1: trim leading silence only (start_periods=1, no stop)
+        run(
+            [
+                "ffmpeg", "-y", "-i", str(in_wav), "-af",
+                (
+                    "silenceremove="
+                    f"start_periods=1:start_duration={min_silence_sec:.3f}:start_threshold={silence_db:.1f}dB"
+                ),
+                "-c:a", "pcm_s16le", str(trimmed_start),
+            ]
+        )
+        # Pass 2: reverse → trim leading (which is original trailing) → reverse back
+        run(
+            [
+                "ffmpeg", "-y", "-i", str(trimmed_start), "-af",
+                (
+                    f"areverse,silenceremove="
+                    f"start_periods=1:start_duration={min_silence_sec:.3f}:start_threshold={silence_db:.1f}dB"
+                    f",areverse"
+                ),
+                "-c:a", "pcm_s16le", str(out_wav),
+            ]
+        )
 
 
 def _extract_loudnorm_json(stderr: str) -> Dict[str, Any] | None:
