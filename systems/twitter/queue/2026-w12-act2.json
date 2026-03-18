@@ -31,14 +31,19 @@
       "title": "[FDD Diary #8] 28 Left Arms",
       "source": "easy_peasy/phase1/en/act2-2-en.md",
       "scheduledAt": "2026-03-18T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "'Make me a left arm.'\nAI made one. Didn't remove the old one.\nNext day, another. Day after, another.\n\nA week later. Twenty-eight left arms.\nLeft arms on the legs. On the back.\nNineteen deactivated. Six never discovered.",
         "Asked the AI. 'Why new files every time?'\n\n'Modifying existing files could lose content. For safety, I generated a new version.'\n\nThirty files is safety?\n\nImplementation is free.\nCleanup costs money.\nYesterday's Claude did the work.\nToday's GPT does archaeology.",
         "One spec file. One config file.\nOne document that says 'this is correct.'\n\nThirty files, thirty stories. Rules collapse.\nOne file, one story. Rules hold.\n\nSSOT. Single Source of Truth."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2034273168114794967",
+        "2034273177405153458",
+        "2034273186695577954"
+      ],
+      "postedAt": "2026-03-18T14:18:17.461Z",
+      "error": null
     },
     {
       "id": "w12-act2-003",
