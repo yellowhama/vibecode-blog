@@ -1,0 +1,233 @@
+Title: EP01 — What Is Vibe Coding?
+Credit: Written by
+Author: Vibecode Town
+Draft date: 2026-03-18
+Contact: vibecode.town
+
+/*
+SERIES: Vibecode Town — Season 1
+EPISODE: 01 — "바이브코딩이 뭔가?" / "What Is Vibe Coding?"
+VERSION: v4.0 (series reframe)
+SEGMENT STRUCTURE: 6-segment (HOOK → MISCONCEPTION → THE_CRACK → CORE → REFRAME → OUTRO_CTA)
+TARGET DURATION: 3:30-3:55
+NARRATOR: English V.O. only. Vee is SILENT.
+SSOT: systems/video/SERIES_BIBLE.md
+*/
+
+/* SEGMENT 1: HOOK [0:00-0:15] */
+# visual_mode: A
+# characters: vee
+# shorts_candidate: true
+# space: desk
+
+= Synopsis: Ad montage → Vee tries → something comes out → "...what is this?"
+
+INT. VEE'S DESK - DAY
+
+= Visual: Quick montage — fake social media ads flash across screen. "Build an app in 60 seconds." "No code needed." "AI does everything." Bold text, sparkly effects.
+
+NARRATOR (V.O.)
+Build an app with one prompt. No code. No experience. Just vibes.
+
+= Visual: Desk scene — hands type a prompt on keyboard. Hits enter. Screen glows.
+
+NARRATOR (V.O.)
+Sounds amazing, right? Vee thought so too.
+
+= Visual: Something appears on screen. Result loads — colorful but chaotic.
+
+NARRATOR (V.O.)
+Something came out. But...
+
+= Vee squints — confused expression. Bee peeks from behind monitor, antennae flat.
+
+/* SEGMENT 2: MISCONCEPTION [0:15-0:45] */
+# visual_mode: A
+# characters: vee
+# shorts_candidate: false
+# space: screen
+
+= Synopsis: Vee tries "make me a shopping mall" → result is wrong, not broken. Buttons go to wrong places, colors are neon chaos.
+
+INT. SCREEN SPACE - CONTINUOUS
+
+NARRATOR (V.O.)
+She typed: "Make me an online store."
+
+= Visual: AI generates a website. It loads. It exists. It's... technically a website.
+
+NARRATOR (V.O.)
+And something appeared. A website. With a login button that goes to the shopping cart. A checkout page in neon pink and lime green. And a search bar that searches... nothing.
+
+= Visual: Close-up of the website — login button labeled "Cart," garish color scheme, empty search results. Each problem highlighted with a subtle red pulse.
+
+NARRATOR (V.O.)
+It didn't crash. It didn't throw an error. It just... wasn't what she wanted.
+
+= Vee frozen expression — not angry, not sad. Just... "what?"
+
+NARRATOR (V.O.)
+This is what most people don't tell you about vibe coding. The result doesn't explode. It comes out wrong. Low quality. Not what you asked for. And you can't explain why.
+
+= Visual: Close-up of the garish result — zoom on neon pink checkout page. Hold for effect.
+
+/* SEGMENT 3: THE_CRACK [0:45-1:15] */
+# visual_mode: C
+# characters: vee
+# shorts_candidate: true
+# space: screen
+
+= Synopsis: Same prompt, three runs, three completely different results. Why?
+
+INT. SCREEN SPACE - CONTINUOUS
+
+NARRATOR (V.O.)
+So she tried again. Same prompt. Same words. Three times.
+
+= Visual: Screen splits into three panels. Each shows a different result. One is purple themed, one is text-only, one is mostly images. Completely different layouts.
+
+NARRATOR (V.O.)
+Three runs. Three completely different stores. Different layouts, different colors, different features. Same exact prompt.
+
+= Vee looks left, right, left — head swiveling between the three screens.
+
+NARRATOR (V.O.)
+Why? Because the AI isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly different. Like rolling dice with language.
+
+= Visual: Zoom into one screen — text appearing letter by letter, each letter a probability, a dice roll. Not "understanding" — predicting.
+
+/* SEGMENT 4: CORE [1:15-3:00] */
+# visual_mode: B
+# characters: []
+# shorts_candidate: false
+# space: whiteboard
+
+= Synopsis: Extended cooking metaphor (60s+) → vibe coding definition (Karpathy) → tool tour (35s) → level spectrum (15s)
+
+INT. WHITEBOARD SPACE - CONTINUOUS
+
+= Visual: A robot wearing a chef's hat stands in a kitchen. No recipe in sight.
+
+NARRATOR (V.O.)
+Think of it like cooking. You walk into a restaurant and say: "Make me dinner." The chef — a very fast, very capable chef — starts cooking immediately.
+
+= Visual: Robot chef grabs random ingredients. Chops, fries, plates something. Puts it on the counter. It's... a thing. Not bad, not good. Just random.
+
+NARRATOR (V.O.)
+Something appears on the plate. It's food. Technically. But it's not what you wanted, because you never said what you wanted.
+
+= Visual: The plate sits on the counter. A fork pokes it. Confused reaction from a small figure silhouette.
+
+NARRATOR (V.O.)
+Now imagine you hand the chef a recipe. "Pasta carbonara. Four ingredients. No cream."
+
+= Visual: A hand slides a small card across the counter. Recipe card — simple, three lines. Robot chef reads it, nods.
+
+NARRATOR (V.O.)
+Same chef. Same kitchen. Completely different result. Consistent. Recognizable. Close to what you wanted.
+
+= Visual: Robot chef follows the recipe. Plating is clean. Result looks like actual carbonara. Thumbs up from off-screen.
+
+NARRATOR (V.O.)
+AI is that chef. Fast, capable, ready to go. But without a recipe, it improvises. And improvisation means a different dish every time.
+
+= Visual: Side-by-side — left: random dish, right: carbonara. Clear difference.
+
+NARRATOR (V.O.)
+That recipe? In vibe coding, it's called a spec. We'll get to that next time. For now, here's the key insight.
+
+= Visual: Transition — whiteboard clears. New text appears, building word by word.
+
+NARRATOR (V.O.)
+In February twenty twenty-five, Andrej Karpathy — one of the founders of OpenAI — gave this a name. Vibe coding. Quote: "You just talk in natural language, run it, and most of the time it just works."
+
+= Visual: Karpathy quote appears on whiteboard, styled like a citation. Clean typography.
+
+NARRATOR (V.O.)
+But here's the word most people skip. "With." Vibe coding isn't AI coding for you. It's you coding with AI. The decisions — what to build, what's good enough, what's wrong — those are yours. The implementation — the actual code — that's the AI's job.
+
+= Visual: Two-column diagram. Left: "YOU" — decide, judge, direct. Right: "AI" — write, execute, generate. Arrow between them: "collaboration."
+
+NARRATOR (V.O.)
+Not outsourcing. Collaboration. That "with" is the hard part.
+
+= Visual: Transition to tool tour. Four panels appear.
+
+NARRATOR (V.O.)
+And you've got options. Cursor — an AI-powered code editor. You write alongside it.
+
+= Visual: Cursor IDE screenshot — code on left, AI chat on right. Quick 8-second glimpse.
+
+NARRATOR (V.O.)
+Claude Code — a terminal agent. It reads your entire project and makes changes autonomously.
+
+= Visual: Terminal screen, commands flowing. Green text on dark background. 8 seconds.
+
+NARRATOR (V.O.)
+Replit — browser-based. No installation. Start building in thirty seconds.
+
+= Visual: Browser window, Replit interface. Colorful, friendly. 8 seconds.
+
+NARRATOR (V.O.)
+Kiro — from AWS. Spec-first. It writes requirements before touching code. More on that in episode two.
+
+= Visual: Kiro interface glimpse. Requirements panel visible. 8 seconds.
+
+NARRATOR (V.O.)
+Different tools. Same principle. You decide what. AI decides how.
+
+= Visual: All four tools shrink into a row. Above them: "YOU decide WHAT. AI decides HOW."
+
+NARRATOR (V.O.)
+And there's a spectrum. Level one: copy-pasting from ChatGPT. Level two: an AI IDE like Cursor. Level three: an autonomous agent with a spec. Wherever you start is fine. But know where you are.
+
+= Visual: Three-step staircase diagram. L1 (bottom) → L2 (middle) → L3 (top). Each labeled. Arrow showing progression.
+
+/* SEGMENT 5: REFRAME [3:00-3:30] */
+# visual_mode: B
+# characters: []
+# shorts_candidate: false
+# space: whiteboard
+
+= Synopsis: "Vibe coding isn't an easy button. It's a new way of building." EP02 seed.
+
+INT. WHITEBOARD SPACE - CONTINUOUS
+
+NARRATOR (V.O.)
+So here's the reframe. Vibe coding is not an easy button. It's not "AI, do my job." It's a new way of making things — where you bring the judgment and AI brings the speed.
+
+= Visual: Whiteboard — "easy button" icon gets crossed out. Replaced by two figures (human + robot) building together.
+
+NARRATOR (V.O.)
+And the starting point — the thing that makes all of this work — is knowing what you're building. Not how. What. That's where episode two picks up.
+
+= Visual: A question mark floats: "What are you building?" — left unanswered. EP02 tease.
+
+/* SEGMENT 6: OUTRO_CTA [3:30-3:55] */
+# visual_mode: A
+# characters: vee
+# shorts_candidate: false
+# space: desk
+
+= Synopsis: Vee installs a tool, types first prompt. Something appears. She smiles — it's a beginning.
+
+INT. VEE'S DESK - DAY
+
+NARRATOR (V.O.)
+Here's what you do today. Pick a tool — any tool. Cursor, Replit, Claude, whatever. Install it. Open it. Type one prompt. Anything. "Make me a to-do app." "Build a calculator." Doesn't matter.
+
+= Visual: Desk scene — download progress bar fills. App opens. Prompt typed. Enter pressed.
+
+NARRATOR (V.O.)
+Look at what comes out. And ask yourself: is this what I wanted?
+
+= Vee looks at the result. Head tilt. Then — a small smile. Not because it's good. Because she's starting.
+
+NARRATOR (V.O.)
+If the answer is no — good. That feeling? That's where it all begins. Next time, we'll give that feeling a name.
+
+= Visual: A sticky note gets pinned next to the monitor. Blank. A pen enters frame. Cut to black.
+
+= Vee smiles — small, knowing. Fade out.
+
+> END OF EPISODE 01

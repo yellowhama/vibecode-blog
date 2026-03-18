@@ -1,6 +1,6 @@
 # Screenplay Writer Skill
 
-대본 작성 5단계 프로세스. 각 단계는 게이트 — 이전 단계 통과 전 다음 단계 진입 불가.
+대본 작성 6-세그먼트 프로세스. 각 단계는 게이트 — 이전 단계 통과 전 다음 단계 진입 불가.
 
 ## SSOT
 
@@ -54,11 +54,12 @@
 
 | 세그먼트 | 시간 | 용도 | 비주얼 모드 |
 |----------|------|------|------------|
-| **Hook** | 0:00-0:15 (15s) | 놀라운 사실 또는 "상상해봐" + 열린 루프 | Mode A or B |
-| **Problem** | 0:15-0:45 (30s) | 실패 장면, 왜 중요한지 | Mode A |
-| **Core** | 0:45-3:00 (135s) | 핵심 개념 2-3개 + 확장 비주얼 메타포 | Mode B primary, Mode A/C 교차 |
-| **Application** | 3:00-4:00 (60s) | 실제 적용법 | Mode C primary, Mode B 보조 |
-| **Outro** | 4:00-5:00 (60s) | 요약 + 구독 + 다음 에피소드 티저 | Mode A |
+| **Hook** | 0:00-0:15 (15s) | 역설적 사실 또는 반직관적 결과 + 열린 루프 | Mode A or B |
+| **Misconception** | 0:15-0:45 (30s) | 시청자의 잘못된 가정 → 실패 | Mode A |
+| **The_Crack** | 0:45-1:15 (30s) | 인지부조화 — "근데 이렇게 하면?" | Mode A → B 전환 |
+| **Core** | 1:15-3:00 (105s) | 올바른 방법 + 확장 비주얼 메타포 (60초+) + 시연 | Mode B primary, Mode A/C 교차 |
+| **Reframe** | 3:00-3:30 (30s) | "사실 더 큰 그림은..." + 다음 EP 씨앗 | Mode B |
+| **Outro_CTA** | 3:30-3:55 (25s) | Vee eureka + **Actionable Takeaway** + 다음 에피소드 | Mode A |
 
 **총 길이: 3-5분 (타겟 3분 30초)**
 
@@ -75,15 +76,16 @@
 에피소드의 내러티브 뼈대. 강의하지 않고 발견하게 한다.
 
 ```
-Question → Situation → Explanation → Application → Next Question
-(Hook)     (Problem)   (Core)        (Application)  (Outro)
+Belief → Crack → Mechanism → Method → Reframe → Action
+(Hook+Misconception) (The_Crack) (Core前半) (Core後半) (Reframe) (Outro_CTA)
 ```
 
-- **Question**: "이상하지 않아?" — 시청자의 호기심을 건드리는 열린 질문
-- **Situation**: "이런 일이 벌어졌어" — 공감 가능한 실패 상황
-- **Explanation**: "알고 보니 이거였어" — 아날로지 → 원리 → Aha 모먼트
-- **Application**: "이렇게 하면 돼" — 직접 적용할 수 있는 방법
-- **Next Question**: "근데 이건 어떻게?" — 다음 에피소드의 씨앗
+- **Belief**: "시청자가 믿는 것" — 잘못된 가정을 건드린다
+- **Crack**: "근데 이건 이상하지 않아?" — 증거로 가정을 깨뜨린다
+- **Mechanism**: "왜 그런지 알겠어?" — 메커니즘 설명 (아날로지 → 원리)
+- **Method**: "이렇게 하면 돼" — 올바른 방법 시연
+- **Reframe**: "더 큰 그림에서 보면" — 관점 전환
+- **Action**: "오늘 이거 해봐" — 바로 실행 가능한 행동 1개
 
 ---
 
@@ -116,26 +118,28 @@ Question → Situation → Explanation → Application → Next Question
 
 | 세그먼트 | Discovery Arc | 전달 내용 | 시간 |
 |----------|--------------|----------|------|
-| **Hook** | Question | 놀라운 사실 또는 "상상해봐" + 열린 루프 | 0:00-0:15 |
-| **Problem** | Situation | 실패 장면, 왜 중요한지 | 0:15-0:45 |
-| **Core** | Explanation | 핵심 개념 2-3개 + 확장 비주얼 메타포 (60초+) | 0:45-3:00 |
-| **Application** | Application | 실제 적용법 | 3:00-4:00 |
-| **Outro** | Next Question | 요약 + 구독 + 다음 에피소드 티저 | 4:00-5:00 |
+| **Hook** | Belief | 역설적 사실 또는 반직관적 결과 + 열린 루프 | 0:00-0:15 |
+| **Misconception** | Belief | 시청자의 잘못된 가정 → 실패 | 0:15-0:45 |
+| **The_Crack** | Crack | 인지부조화 — "근데 이렇게 하면?" | 0:45-1:15 |
+| **Core** | Mechanism+Method | 올바른 방법 + 확장 비주얼 메타포 (60초+) + 시연 | 1:15-3:00 |
+| **Reframe** | Reframe | "사실 더 큰 그림은..." + 다음 EP 씨앗 | 3:00-3:30 |
+| **Outro_CTA** | Action | Vee eureka + Actionable Takeaway + 다음 에피소드 | 3:30-3:55 |
 
 #### Step 4: 필수 요소 체크
 
 - [ ] **열린 루프 1개** — Hook에 심고, Core까지 답하지 않음 (최소 90초 잡아두기)
 - [ ] **확장 메타포 1개** — Core에서 60초 이상 사용 (에피소드의 시각적 시그니처)
 - [ ] **Aha 모먼트 1개** — 시청자가 "아!" 하는 순간
+- [ ] **Actionable Takeaway 1개** — Outro_CTA에서 시청자가 오늘 바로 실행할 수 있는 행동
 - [ ] **내러티브 구조 선택** — Problem-Solution (기본) 또는 Mystery-Reveal (개념 EP)
 
 #### Step 5: 블로그에서 양념을 뽑는다
 
 블로그 글(`content/blog/phase1/`)은 **양념 창고**. 순서대로 옮기는 게 아니라, 에피소드 구조에 맞는 데이터만 골라 쓴다.
 
-- Problem에 쓸 실패 맥락: [블로그에서 뽑기]
+- Misconception에 쓸 실패 맥락: [블로그에서 뽑기]
 - Core에 쓸 데이터: [블로그 숫자/인용 + 메타포]
-- Application에 쓸 변화: [블로그에서 뽑기]
+- Reframe에 쓸 관점 전환: [블로그에서 뽑기]
 
 ### 작성: 주제 카드
 
@@ -156,14 +160,15 @@ Question → Situation → Explanation → Application → Next Question
 
 | 세그먼트 | Arc 단계 | 내용 | 블로그 양념 | 시간 |
 |----------|---------|------|------------|------|
-| Hook | Question | [열린 루프 포함] | | 0:00-0:15 |
-| Problem | Situation | | | 0:15-0:45 |
-| Core | Explanation | [확장 메타포 ID: ] | | 0:45-3:00 |
-| Application | Application | | | 3:00-4:00 |
-| Outro | Next Question | [다음 EP 티저] | | 4:00-5:00 |
+| Hook | Belief | [열린 루프 포함] | | 0:00-0:15 |
+| Misconception | Belief | [잘못된 가정] | | 0:15-0:45 |
+| The_Crack | Crack | [인지부조화] | | 0:45-1:15 |
+| Core | Mechanism+Method | [확장 메타포 ID: ] | | 1:15-3:00 |
+| Reframe | Reframe | [더 큰 그림] | | 3:00-3:30 |
+| Outro_CTA | Action | [Actionable Takeaway + 다음 EP] | | 3:30-3:55 |
 
 ### 감정 곡선
-curiosity(Hook) → empathy(Problem) → frustration(Break) → clarity(Reveal) → discovery(Change)
+curiosity(Hook) → empathy(Misconception) → dissonance(The_Crack) → clarity(Core) → insight(Reframe) → discovery(Outro_CTA)
 
 ### 필수 요소
 - 열린 루프: [Hook에 심을 질문]
@@ -172,16 +177,16 @@ curiosity(Hook) → empathy(Problem) → frustration(Break) → clarity(Reveal) 
 
 ### Vee 리액션 (최대 6회, 각 1-2초)
 1. Hook 직후:
-2. Problem 중:
-3. Problem 중:
+2. Misconception 중:
+3. The_Crack 중:
 4. Core 중:
 5. Core 중:
-6. Outro:
+6. Outro_CTA:
 
 ### Bee 리액션 (3-4회, 플래카드/비주얼만)
-1. Problem 중 (코드 위에서 짜증):
+1. Misconception 중 (코드 위에서 짜증):
 2. Core 중 (코드 개선되면 반응):
-3. Application 중 (안정되면 기쁨):
+3. Reframe 중 (안정되면 기쁨):
 
 ### 쇼츠 추출 계획 (2-3개)
 1. Hook 클립 (처음 15초):
@@ -193,7 +198,7 @@ curiosity(Hook) → empathy(Problem) → frustration(Break) → clarity(Reveal) 
 
 - 실패 장면이 **시청자가 공감할** 수준으로 구체적
 - 3-5분 후 알게 되는 것이 한 줄
-- Discovery Arc 매핑 완료 (Question → Situation → Explanation → Application → Next Question)
+- Discovery Arc 매핑 완료 (Belief → Crack → Mechanism → Method → Reframe → Action)
 - 열린 루프, 확장 메타포, Aha 모먼트 정의
 - 쇼츠 추출 계획 2-3개
 - 내러티브 구조 선택 (Problem-Solution or Mystery-Reveal)
@@ -240,7 +245,7 @@ Phase 0 통과 후에만 진행. 주제를 **연구**하고 블로그에서 **�
 추출 대상:
 1. **숫자/메트릭** — 줄 수, 중복 비율, 시간, 에러 수 등 구체 수치
 2. **아하 모먼트** — 저자가 이 개념의 중요성을 깨달은 정확한 순간 (인용)
-3. **Discovery Arc 비트** — Question → Situation → Explanation → Application 매핑 가능한 데이터
+3. **Discovery Arc 비트** — Belief → Crack → Mechanism → Method → Reframe → Action 매핑 가능한 데이터
 
 > 핵심: 대본에 사용할 **구체적 사실**. "10,847줄" 같은 숫자가 "코드가 많아졌다"보다 100배 강력.
 
@@ -301,24 +306,25 @@ Phase 0.5 통과 후에만 진행. 주제 카드 + **토픽 브리프**를 바�
 
 #### A. Discovery Arc 워크시트
 
-SERIES_BIBLE.md C11 + Discovery Arc를 5세그먼트에 매핑.
+SERIES_BIBLE.md C11 + Discovery Arc를 6-세그먼트에 매핑.
 
 ```markdown
 ## Discovery Arc — EP{NN}
 
 ### 아크 흐름
-Question(Hook) → Situation(Problem) → Explanation(Core) → Application(Application) → Next Question(Outro)
+Belief(Hook+Misconception) → Crack(The_Crack) → Mechanism(Core前半) → Method(Core後半) → Reframe(Reframe) → Action(Outro_CTA)
 
 ### 감정 흐름
 curiosity → empathy → frustration → clarity → discovery
 
 | 세그먼트 | Arc 단계 | 감정 | Vee 리액션 | Bee 리액션 | 나레이터 톤 | 비주얼 모드 |
 |----------|---------|------|-----------|-----------|------------|-----------|
-| Hook (0:00-0:15) | Question | curiosity | [예: 고개 기울임] | — | 흥미로운 사실 툭 던짐 | A or B |
-| Problem (0:15-0:45) | Situation | empathy → frustration | [예: 후드 뒤집어씀] | [예: 코드 위에서 짜증] | "망했어. 왜인지 알아보자." | A |
-| Core (0:45-3:00) | Explanation | frustration → clarity | [예: 고개 기울임 → 눈 빛남] | [예: 코드 개선에 반응] | 아날로지 → 원리, 차근차근 | B primary |
-| Application (3:00-4:00) | Application | clarity | [예: 코딩존 몰입] | [예: 안정된 코드에 기쁨] | 직설적 적용 | C primary |
-| Outro (4:00-5:00) | Next Question | discovery | [예: 미소] | — | "알겠지? 근데 이건 어떻게?" | A |
+| Hook (0:00-0:15) | Belief | curiosity | [예: 고개 기울임] | — | 역설적 사실 툭 던짐 | A or B |
+| Misconception (0:15-0:45) | Belief | empathy → doubt | [예: 후드 뒤집어씀] | [예: 코드 위에서 짜증] | "다들 이렇게 하잖아. 근데..." | A |
+| The_Crack (0:45-1:15) | Crack | cognitive dissonance | [예: 멈칫] | [예: 물음표 플래카드] | "근데 이건 이상하지 않아?" | A → B |
+| Core (1:15-3:00) | Mechanism+Method | frustration → clarity | [예: 고개 기울임 → 눈 빛남] | [예: 코드 개선에 반응] | 아날로지 → 원리 → 시연 | B primary |
+| Reframe (3:00-3:30) | Reframe | insight | [예: 한 발 물러서 봄] | — | "더 큰 그림에서 보면..." | B |
+| Outro_CTA (3:30-3:55) | Action | discovery | [예: eureka 미소] | — | "오늘 이거 해봐" + 다음 EP | A |
 
 ### 열린 루프
 - Hook에서 심는 질문: [작성]
@@ -346,8 +352,8 @@ curiosity → empathy → frustration → clarity → discovery
 | # | 세그먼트 | 비트 내용 | 비주얼 모드 | 공간 | 시간(초) | 패턴 인터럽트 |
 |---|----------|----------|-----------|------|---------|-------------|
 | 1 | Hook | [나레이션 한 줄] | Mode A | desk | 3 | — |
-| 2 | Hook | [나레이션 한 줄] | Mode B | whiteboard | 4 | SFX |
-| 3 | Problem | [나레이션 한 줄] | Mode A | desk | 3 | 씬 전환 |
+| 2 | Misconception | [나레이션 한 줄] | Mode A | desk | 4 | SFX |
+| 3 | The_Crack | [나레이션 한 줄] | Mode A→B | whiteboard | 3 | 씬 전환 |
 | ... | | | | | | |
 
 총 비트 수: [12-20]
@@ -419,7 +425,7 @@ curiosity → empathy → frustration → clarity → discovery
 ### Phase 1 완료 조건
 
 - 4가지 문서 작성 완료 (Discovery Arc 워크시트, 비트맵, Pixar 공식, Shorts 추출)
-- Discovery Arc: Question → Situation → Explanation → Application → Next Question 매핑 완료
+- Discovery Arc: Belief → Crack → Mechanism → Method → Reframe → Action 매핑 완료
 - 비트맵: 12-20 비트, 총 180-300초
 - 패턴 인터럽트 20-30초 간격 확인
 - Vee 리액션 최대 6회, 각 1-2초
@@ -439,7 +445,7 @@ Phase 1 통과 후에만 진행. 비트맵의 각 비트를 Fountain 대본으�
 | 규칙 | 출처 |
 |------|------|
 | **전체 SSOT** | **`systems/video/SERIES_BIBLE.md`** |
-| 5세그먼트 구조 + 타이밍 | SERIES_BIBLE.md C8 |
+| 6-세그먼트 구조 + 타이밍 | SERIES_BIBLE.md C8 |
 | 나레이터 톤 + We Say/Never Say | SERIES_BIBLE.md A3 |
 | Vee 캐릭터 + 무언극 규칙 | SERIES_BIBLE.md B6 |
 | Bee 캐릭터 | `systems/video/assets/characters/bee/character_design.json` |
@@ -495,14 +501,14 @@ SERIES_BIBLE.md A3의 We Say / Never Say 테이블을 반드시 참조.
 ### 소재 활용 원칙
 
 **블로그는 양념 창고.** 순서대로 옮기는 게 아니라, 에피소드 구조에 맞는 데이터만 골라 쓴다.
-- Problem에 쓸 실패 맥락: 양념 창고에서 뽑기
+- Misconception에 쓸 실패 맥락: 양념 창고에서 뽑기
 - Core에 쓸 데이터: **토픽 브리프 Script Seeds** + 비주얼 메타포 시스템
-- Application에 쓸 변화: 양념 창고에서 뽑기
+- Reframe에 쓸 관점 전환: 양념 창고에서 뽑기
 
 ### 집필 원칙
 
 1. **Phase 1의 비트맵을 그대로 따른다** — 즉흥 추가/삭제 금지
-2. **Discovery Arc를 따른다** — Question → Situation → Explanation → Application → Next Question
+2. **Discovery Arc를 따른다** — Belief → Crack → Mechanism → Method → Reframe → Action
 3. **아날로지 퍼스트** — 추상적 설명으로 시작하지 않는다. 비유 → 원리 → 정의 순서
 4. **내레이터가 모든 정보를 전달한다** — 전 세그먼트 NARRATOR (V.O.) only
 5. **Vee는 절대 말하지 않는다** — 무언극. 표정, 몸짓만. 최대 6회, 각 1-2초
@@ -512,17 +518,20 @@ SERIES_BIBLE.md A3의 We Say / Never Say 테이블을 반드시 참조.
 9. **Mode B 장면**: 화이트보드 공간, 다이어그램/인포그래픽, NARRATOR only
 10. **Mode C 장면**: screen 공간, 코드/터미널 데모
 11. **Hook**: 강렬한 오프닝 + 열린 루프, 15초 이내
-12. **Outro**: 요약 + 구독 CTA + 다음 EP 티저 (Next Question)
-13. **전환**: 공간 전환 시 비주얼 변형 (1-2초)
-14. **패턴 인터럽트**: 20-30초마다 (씬 전환 / SFX / Vee 리액션 / 줌 / 비주얼 개그)
-15. **같은 공간 30초 이상 금지**
-16. **쇼츠 후보**: 비트맵의 쇼츠 계획에 해당하는 비트를 `shorts_candidate: true`로 마킹
-17. **Curse of Knowledge 체크**: "이 문장을 바이브코딩 안 해본 사람이 이해하는가?"
-18. **Core 데이터 규칙**: Topic Brief 증거 테이블의 구체적 데이터 포인트 **2개 이상** 반드시 포함
-19. **Core 연구 규칙**: Topic Brief의 연구 기반 설명 **1개 이상** 반드시 포함. 메타포만으로 구성 불가
-20. **확장 메타포**: Core에서 60초 이상 사용. 에피소드의 시각적 시그니처
-21. **비트 구조**: 12-20 비트, 각 2-5초. 총 180-300초 (3-5분)
-22. **비주얼 스타일**: 2D flat vector (Kurzgesagt level). 3D/claymation/clay 절대 금지
+12. **Misconception**: 시청자의 잘못된 가정 → 실패, 30초
+13. **The_Crack**: 인지부조화 — "근데 이렇게 하면?", 30초
+14. **Reframe**: "더 큰 그림에서 보면" + 다음 EP 씨앗, 30초
+15. **Outro_CTA**: Vee eureka + Actionable Takeaway + 다음 에피소드, 25초
+16. **전환**: 공간 전환 시 비주얼 변형 (1-2초)
+17. **패턴 인터럽트**: 20-30초마다 (씬 전환 / SFX / Vee 리액션 / 줌 / 비주얼 개그)
+18. **같은 공간 30초 이상 금지**
+19. **쇼츠 후보**: 비트맵의 쇼츠 계획에 해당하는 비트를 `shorts_candidate: true`로 마킹
+20. **Curse of Knowledge 체크**: "이 문장을 바이브코딩 안 해본 사람이 이해하는가?"
+21. **Core 데이터 규칙**: Topic Brief 증거 테이블의 구체적 데이터 포인트 **2개 이상** 반드시 포함
+22. **Core 연구 규칙**: Topic Brief의 연구 기반 설명 **1개 이상** 반드시 포함. 메타포만으로 구성 불가
+23. **확장 메타포**: Core에서 60초 이상 사용. 에피소드의 시각적 시그니처
+24. **비트 구조**: 12-20 비트, 각 2-5초. 총 180-300초 (3-5분)
+25. **비주얼 스타일**: 2D flat vector (Kurzgesagt level). 3D/claymation/clay 절대 금지
 
 ### 글쓰기 품질 규칙 (`craft-reference.md` 요약)
 
@@ -549,8 +558,8 @@ python systems/video/pipeline/scripts/validate_screenplay.py \
 
 `validate_screenplay.py` 자동 체크 항목:
 
-- 세그먼트 5개 존재 + 올바른 순서 (HOOK → PROBLEM → CORE → APPLICATION → OUTRO)
-- 각 세그먼트 타이밍 범위: Hook 15s, Problem 30s, Core 135s, Application 60s, Outro 60s
+- 세그먼트 6개 존재 + 올바른 순서 (HOOK → MISCONCEPTION → THE_CRACK → CORE → REFRAME → OUTRO_CTA)
+- 각 세그먼트 타이밍 범위: Hook 15s, Misconception 30s, The_Crack 30s, Core 105s, Reframe 30s, Outro_CTA 25s
 - 총 길이 180-300초 (3-5분)
 - **모든 세그먼트에 NARRATOR (V.O.) 존재** (내레이션 온리)
 - **Vee 음성 대사 없음** (Vee는 절대 말하지 않는다)
@@ -580,7 +589,7 @@ python systems/video/pipeline/scripts/validate_screenplay.py \
 [ ] 아날로지 퍼스트: 추상적 설명으로 시작하는 나레이션이 없는가?
     모든 개념이 비유 → 원리 → 정의 순서인가?
 
-[ ] Discovery Arc: Question → Situation → Explanation → Application → Next Question 흐름이 느껴지는가?
+[ ] Discovery Arc: Belief → Crack → Mechanism → Method → Reframe → Action 흐름이 느껴지는가?
 
 [ ] 열린 루프: Hook에 심은 질문이 90초 이상 유지되는가?
     열린 루프: ___________
@@ -603,6 +612,8 @@ python systems/video/pipeline/scripts/validate_screenplay.py \
     Bee 등장 횟수: _____ (3-4회 이내)
 
 [ ] Curse of Knowledge: 바이브코딩 안 해본 사람이 이해하는가?
+
+[ ] Actionable Takeaway: Outro_CTA에 오늘 바로 실행 가능한 행동 1개가 있는가?
 
 [ ] 쇼츠 추출: 계획한 2-3개 쇼츠가 실제로 독립적으로 작동하는가?
 

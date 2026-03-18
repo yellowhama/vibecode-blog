@@ -1,0 +1,262 @@
+Title: EP02 — What Is Spec-Driven Dev?
+Credit: Written by
+Author: Vibecode Town
+Draft date: 2026-03-18
+Contact: vibecode.town
+
+/*
+SERIES: Vibecode Town — Season 1
+EPISODE: 02 — "Spec-Driven Dev가 뭔대" / "What Is Spec-Driven Dev?"
+VERSION: v6.0 (series reframe)
+SEGMENT STRUCTURE: 6-segment (HOOK → MISCONCEPTION → THE_CRACK → CORE → REFRAME → OUTRO_CTA)
+TARGET DURATION: 3:30-3:55
+NARRATOR: English V.O. only. Vee is SILENT.
+SSOT: systems/video/SERIES_BIBLE.md
+*/
+
+/* SEGMENT 1: HOOK [0:00-0:15] */
+# visual_mode: A
+# characters: vee
+# shorts_candidate: true
+# space: desk
+
+= Synopsis: EP01 recap — Vee learned vibe coding = collaboration. Now she tries it for real. Five attempts, five different results.
+
+INT. VEE'S DESK - DAY
+
+NARRATOR (V.O.)
+Last time, Vee learned the first rule of vibe coding: you decide what, AI decides how.
+
+= Visual: Quick flash — EP01 ending. Vee's small smile. Sticky note on monitor.
+
+NARRATOR (V.O.)
+So she tried it. Five times. Five prompts. Same project.
+
+= Visual: Screen splits into five panels. Each shows a completely different result. Different colors, different layouts, different features. Vee stares.
+
+NARRATOR (V.O.)
+Five completely different things came back.
+
+= Vee expression: mouth slightly open. Not angry. Bewildered.
+
+/* SEGMENT 2: MISCONCEPTION [0:15-0:45] */
+# visual_mode: A
+# characters: vee
+# shorts_candidate: false
+# space: desk
+
+= Synopsis: "Be more specific" — Vee writes longer and longer prompts. Results get WORSE, not better.
+
+INT. VEE'S DESK - CONTINUOUS
+
+NARRATOR (V.O.)
+Okay, she thought. Maybe I wasn't specific enough. So she got specific.
+
+= Visual: Vee typing. The prompt grows. And grows. Camera slowly zooms out — the text extends beyond the screen, scrolling and scrolling.
+
+NARRATOR (V.O.)
+"Build me an online store with a blue header, three product categories, a shopping cart on the right side, login button top-left, use a modern font, make it responsive, add a search bar..."
+
+= Visual: Prompt text fills the entire screen. Tiny font. Endless words.
+
+NARRATOR (V.O.)
+The result?
+
+= Visual: The AI output appears. It's... worse. The header is blue but covers the entire page. Three categories exist but overlap each other. The cart is on the right — of a different page.
+
+NARRATOR (V.O.)
+Worse. More detail didn't help. It made things more confusing — for the AI. Because detail is not the same as direction.
+
+= Vee slumps back in chair. Hands drop from keyboard.
+
+NARRATOR (V.O.)
+More words. More mess. She was giving the AI a thousand instructions but zero purpose.
+
+= Bee on monitor edge, holding tiny placard: "WHERE ARE WE GOING?"
+
+/* SEGMENT 3: THE_CRACK [0:45-1:15] */
+# visual_mode: C
+# characters: []
+# shorts_candidate: true
+# space: screen
+
+= Synopsis: The numbers. 10,847 lines. 4,200 lines of duplication in red. Five agents, zero coordination.
+
+INT. SCREEN SPACE - CONTINUOUS
+
+NARRATOR (V.O.)
+Let's look at what actually happened inside the code.
+
+= Visual: A counter starts at zero. Rapidly climbs. Numbers rolling like a slot machine.
+
+NARRATOR (V.O.)
+Ten thousand, eight hundred, forty-seven lines of code.
+
+= Visual: Counter stops at 10,847. Big number. Holds for a beat.
+
+NARRATOR (V.O.)
+Almost half of them — four thousand two hundred lines — were duplicates.
+
+= Visual: The counter splits. 6,647 stays white. 4,200 turns red and visually separates — red blocks pulling away from white blocks. The gap is visceral.
+
+NARRATOR (V.O.)
+Five AI sessions built the same functions five different ways. Three date formatters. Two config parsers. Four ways to validate the same input. None of them knew about the others.
+
+= Visual: Five small robot icons appear, each in their own box. No lines connecting them. Each building something slightly different. Isolated.
+
+NARRATOR (V.O.)
+Five construction crews on the same lot. No blueprint. No foreman. Just... build.
+
+= Visual: Five tiny buildings, all different styles, crammed onto one lot. Leaning against each other. Unstable.
+
+/* SEGMENT 4: CORE [1:15-3:00] */
+# visual_mode: B
+# characters: []
+# shorts_candidate: false
+# space: whiteboard
+
+= Synopsis: Building metaphor (25s compressed) → 3-line spec definition → Before/After demo (30s) → CLAUDE.md screen (15s) → spec-kit intro (15s)
+
+INT. WHITEBOARD SPACE - CONTINUOUS
+
+= Visual: A construction site. No blueprints visible. Workers stacking blocks randomly.
+
+NARRATOR (V.O.)
+Imagine building a house without a blueprint. You know you want a house. You start stacking bricks. Some go left, some go right. Eventually something stands up. But the bathroom is on the roof and there's no front door.
+
+= Visual: Chaotic building — bricks stacked randomly. Bathroom fixtures on top. No entrance. Building wobbles.
+
+NARRATOR (V.O.)
+Now imagine one piece of paper. Not a hundred-page document. One note. "Two bedrooms. One bathroom. Front door faces south."
+
+= Visual: A simple note card appears. Three lines of text. Clean. Small. The building re-assembles — this time in order. Foundation, walls, roof. Door faces the right way.
+
+NARRATOR (V.O.)
+Same workers. Same bricks. Completely different result. That note is a spec.
+
+= Visual: Building stands solid. Simple but correct.
+
+NARRATOR (V.O.)
+And a spec doesn't have to be complicated. Three lines is enough.
+
+= Visual: Template appears on whiteboard, building line by line:
+
+NARRATOR (V.O.)
+Line one: Goal. What are you building? "An online store that sells handmade candles."
+
+= Visual: "Goal: An online store that sells handmade candles" appears.
+
+NARRATOR (V.O.)
+Line two: Constraints. What are you NOT building? "No user accounts. No payment processing — just a catalog with a contact form."
+
+= Visual: "Constraints: No accounts, no payments. Catalog + contact form only." appears below.
+
+NARRATOR (V.O.)
+Line three: Done-when. How do you know it's finished? "When someone can browse candles and send a message."
+
+= Visual: "Done-when: Browse candles + send message" appears. Three lines. Clean.
+
+NARRATOR (V.O.)
+That's it. Three lines. Write these before you write a single prompt.
+
+= Visual: The three lines glow briefly. Then transition.
+
+NARRATOR (V.O.)
+Now watch what happens. Same project. Without a spec — five sessions, five different stores.
+
+= Visual: Left panel — five chaotic results, all different. Messy. Arrows pointing everywhere.
+
+NARRATOR (V.O.)
+With a spec — first attempt is close. Second attempt nails it. Twenty minutes instead of three hours.
+
+= Visual: Right panel — two clean results, similar to each other. Convergent. Green checkmarks.
+
+NARRATOR (V.O.)
+The spec didn't make AI smarter. It made your instructions clearer.
+
+= Visual: Before/After side by side. Clear visual difference. Hold for 3 seconds.
+
+NARRATOR (V.O.)
+And there are tools that make this even easier. CLAUDE dot MD — a file that lives in your project. Every time Claude opens your code, it reads this file first. Your rules. Your constraints. Your context. Persistent.
+
+= Visual: Screen space — a file tree. CLAUDE.md highlighted. Content visible: project rules, constraints, tech stack. Clean dark-mode editor.
+
+NARRATOR (V.O.)
+Cursor has the same idea — dot cursor rules. Write your rules once, every AI session follows them.
+
+= Visual: .cursorrules file in Cursor IDE. Similar concept, different tool.
+
+NARRATOR (V.O.)
+And if you want a full workflow — GitHub's spec-kit. Four steps: specify, plan, tasks, implement. Each step validates before moving to the next.
+
+= Visual: Four-step flow diagram. Specify → Plan → Tasks → Implement. Arrows between them. Checkmarks at each gate.
+
+NARRATOR (V.O.)
+The point isn't which tool. The point is: write down what you want before you ask AI to build it.
+
+/* SEGMENT 5: REFRAME [3:00-3:30] */
+# visual_mode: B
+# characters: []
+# shorts_candidate: false
+# space: whiteboard
+
+= Synopsis: "Frustration IS the spec." Your annoyance, organized, becomes the blueprint.
+
+INT. WHITEBOARD SPACE - CONTINUOUS
+
+NARRATOR (V.O.)
+Here's the part nobody tells you. That frustration you felt when AI made the wrong thing? When the store was neon pink and the login went to the cart?
+
+= Visual: Flashback — the neon pink store from MISCONCEPTION. Quick flash.
+
+NARRATOR (V.O.)
+That's not failure. That's data.
+
+= Visual: The frustration — represented as messy red scribbles — transforms. The scribbles organize themselves into neat lines. Red becomes blue. Chaos becomes structure.
+
+NARRATOR (V.O.)
+Write down what annoyed you. "It should have done X but did Y." Congratulations. You just wrote a requirement. Organize your frustrations, and you've got a spec.
+
+= Visual: A notepad. Scribbled complaints morph into the three-line spec template. Goal. Constraints. Done-when.
+
+NARRATOR (V.O.)
+Frustration is the spec. Your annoyance, organized, is the blueprint.
+
+/* SEGMENT 6: OUTRO_CTA [3:30-3:55] */
+# visual_mode: A
+# characters: vee
+# shorts_candidate: false
+# space: desk
+
+= Synopsis: 3-line spec template on screen. Vee writes her first spec. "Next time you ask AI to build something, write these three lines first."
+
+INT. VEE'S DESK - DAY
+
+NARRATOR (V.O.)
+Here's your homework. Next time — before you type a single prompt — grab a piece of paper. Or open a blank file. And write three lines.
+
+= Visual: The three-line template appears on screen, large and clear:
+= "Goal: ___"
+= "Constraints: ___"
+= "Done-when: ___"
+
+NARRATOR (V.O.)
+Goal. Constraints. Done-when. Fill in the blanks. Then give it to the AI.
+
+= Visual: Vee at desk. She has the template on her monitor. She starts writing — pen on sticky note, filling in three lines. Quick, confident strokes.
+
+NARRATOR (V.O.)
+You'll be surprised how different the result is when AI knows where it's going.
+
+= Visual: Vee sticks the note to her monitor. Turns to type a prompt. Something appears on screen. She looks at it. Looks at her spec. Looks back at the screen. Nods — not perfect, but close.
+
+= Bee appears briefly on monitor corner, antenna up — approving stance. 0.5 seconds.
+
+NARRATOR (V.O.)
+Next time — how do you actually read the code AI writes? Even if you've never coded before. See you then.
+
+= Visual: Vee's monitor with the result + the spec note side by side. Fade to end card.
+
+= Vee small smile. Cut to black.
+
+> END OF EPISODE 02

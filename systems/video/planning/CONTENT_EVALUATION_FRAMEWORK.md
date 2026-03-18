@@ -96,9 +96,9 @@ Our target: **Vibe coders** — people who can't read code but build with AI. Th
 
 | Score | Criteria |
 |---|---|
-| **5** | Describes situations target directly experiences. Empathy + actionable takeaway. Shared vocabulary |
-| **4** | Relatable to target. Some universal appeal dilutes specificity |
-| **3** | Relevant but generic. Could be about any developer/non-developer |
+| **5** | Describes situations target directly experiences. Empathy + shared vocabulary + **오늘 바로 실행 가능한 구체적 행동 1개** |
+| **4** | Relatable to target. Actionable takeaway 있으나 제네릭 (구체적 도구/템플릿 없음) |
+| **3** | Relevant but generic. Could be about any developer/non-developer. 행동 없음 |
 | **2** | Tangentially related. Requires context to connect to target |
 | **1** | Irrelevant to target. Too technical or too abstract |
 
