@@ -1,7 +1,10 @@
 # YouTube Channel Strategy Research — "Vibe Coder's Chaotic Survival Guide"
 
-> Research date: 2026-03-11
-> Concept: Tech comedy/drama, 3D Pixar-style animated characters, targeting non-developer AI builders ("vibe coders")
+> **SUPERSEDED (2026-03-18)**: 이 문서는 `09-youtube-channel-research-v2.md`로 대체되었습니다.
+> 아래 내용은 아카이브 참조용으로 유지됩니다.
+>
+> ~~Research date: 2026-03-11~~
+> ~~Concept: Tech comedy/drama, 3D Pixar-style animated characters, targeting non-developer AI builders ("vibe coders")~~
 
 ---
 
