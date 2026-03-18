@@ -187,7 +187,94 @@ ComfyUI Flux dev + SimpleVectorFlux LoRA로 생성.
 | 5 | 파이프라인 스크립트 v5 | ✅ |
 | 6 | 보조 산출물 (소스 인덱스 v3, Bee 스펙) | ✅ |
 
-**다음**: EP05-10 대본 집필, TTS/I2V 렌더링, 최종 영상 조립
+---
+
+## 완료: Phase 6.5 — TTS 재생성 + 파이프라인 현행화 (2026-03-19, `1472e78`)
+
+### 6.5a — 한국어 TTS 전처리
+| 파일 | 변경 | 상태 |
+|------|------|------|
+| `tts_rules.yaml` | `pronunciation_ko` + `pivot_words_ko` 한국어 규칙 추가 | ✅ |
+| `prepare_tts_script.py` | `apply_pronunciation()`, `apply_pauses()` 로케일 분기 (lang 파라미터) | ✅ |
+| EP03 manifest | 34/38 beats modified, `tts_text` + `tts_exaggeration` 필드 생성 | ✅ |
+
+### 6.5b — 4에피소드 TTS 재생성
+| EP | Backend | Duration | Timing Violations | LUFS |
+|----|---------|----------|-------------------|------|
+| EP01 | Chatterbox | 362.8s | 10/53 | -16.17 |
+| EP02 | Chatterbox | 323.3s | 10/46 | -16.03 |
+| EP03 | Edge TTS (ko) | 339.3s | 37/38 | -15.98 |
+| EP04 | Chatterbox | 273.3s | 8/41 | -16.10 |
+
+### 6.5c — 파이프라인 현행화 (7개 스크립트 수정/신규)
+| 파일 | 변경 | 상태 |
+|------|------|------|
+| `sync_shots_to_audio.py` | 세그먼트 기반 beat→shot 매핑으로 재작성 | ✅ |
+| `audio_postprocess.py` | silence trim 버그 수정 (2-pass lead/trail) | ✅ |
+| `mix_audio.py` | BGM 자동 루프 (aloop+atrim+afade) | ✅ |
+| `ffmpeg_assemble.py` | shot manifest 기반 어셈블리 + Ken Burns fallback | ✅ |
+| `assemble_episode.py` | 8-stage 오케스트레이터 + validation gates + write-back | ✅ |
+| `manifest_validator.py` | **신규** — spec-driven 검증 게이트 | ✅ |
+| `export_multilang_audio.py` | **신규** — YouTube 다국어 오디오 pad/trim export | ✅ |
+| `run_tts_regen.sh` | **신규** — TTS 배치 러너 | ✅ |
+| `episode_audio_map.json` | **신규** — 에피소드별 BGM 매핑 | ✅ |
+
+### 6.5d — 4에피소드 영상 어셈블리
+| EP | Duration | Size | Visual | Audio |
+|----|----------|------|--------|-------|
+| EP01 | 6:03 | 16.3MB | 15 Ken Burns + 15 placeholder | narration + BGM + ducking |
+| EP02 | 5:24 | 11.5MB | 30 placeholder | narration + BGM + ducking |
+| EP03 | 5:39 | 8.9MB | 30 placeholder | narration + BGM + ducking |
+| EP04 | 4:34 | 9.7MB | 30 placeholder | narration + BGM + ducking |
+
+### 6.5e — YouTube 다국어 export + 문서화
+| 파일 | 내용 | 상태 |
+|------|------|------|
+| `mixed_audio_v4_en.wav` × 3 | EP01/02/04 EN 오디오 (비디오 길이 정확 매칭) | ✅ |
+| `mixed_audio_v4_ko.wav` × 1 | EP03 KO 오디오 (비디오 길이 정확 매칭) | ✅ |
+| `18-youtube-multilang-audio-guide.md` | YouTube 다국어 오디오/채널 설정 가이드 | ✅ |
+| `19-speckit-spec-driven-dev-reference.md` | SpecKit spec-driven dev 레퍼런스 | ✅ |
+
+### Spec-Driven 파이프라인 아키텍처 (SpecKit 적용)
+
+```
+Stage 1: TTS (Specify) ← prepro manifest SSOT
+  ↓ [GATE: language, beats[].narration_text]
+Stage 2: Whisper timing (Plan) ← shot manifest SSOT
+  ↓ [GATE: shots[].shot_id, duration_sec]
+Stage 3: Keyframes (Render) ← ComfyUI
+  ↓ [GATE: shots[].prompt_positive, render_method]
+Stage 4: I2V Animation (Render) ← Wan 2.2
+  ↓ [GATE: shots[].duration_sec]
+Stage 5: Diagrams (Render) ← Motion Canvas
+  ↓
+Stage 6: Audio mix (Mix) ← BGM catalog + narration
+  ↓ [GATE: language]
+Stage 7: Assembly (Implement) ← FFmpeg
+  ↓ [GATE: shots[].shot_id, duration_sec]
+Stage 8: Multi-lang export (Deliver) ← YouTube upload
+  ↓ [GATE: language]
+```
+
+Each gate validates manifest SSOT before execution.
+Each stage writes completion status back to manifest.
+
+---
+
+## 전체 완료 상태
+
+| Phase | 내용 | 상태 |
+|-------|------|------|
+| 1 | 소스 인덱스 + RAG | ✅ |
+| 2 | 채널 리브랜딩 | ✅ |
+| 2.5 | Series Bible + 2D 스타일 확정 | ✅ |
+| 3 | Vee 2D 골든 레퍼런스 + 표정 스톡 | ✅ |
+| 4 | EP01-04 대본 + 매니페스트 + 다이어그램 | ✅ |
+| 5 | 파이프라인 스크립트 v5 | ✅ |
+| 6 | 보조 산출물 (소스 인덱스 v3, Bee 스펙) | ✅ |
+| **6.5** | **TTS 재생성 + 파이프라인 현행화 + 다국어 + 검증 게이트** | **✅** |
+
+**다음**: Phase 7 — ComfyUI 키프레임 렌더 → placeholder 교체 → I2V 클립 → 프로덕션 영상
 
 ---
 
