@@ -17,7 +17,21 @@
 코딩 모르는 Vee가 AI로 뭔가 만들려다 매번 망하고, 그 과정에서 진짜 원리를 배우는 2D 애니메이션.
 
 **콤프**
-"Kurzgesagt meets Fireship, starring a Duolingo-style character"
+"Kurzgesagt meets Claudius Papirus, starring a Duolingo-style character"
+
+**레퍼런스 티어**
+
+| Tier | 채널 | 가져오는 것 |
+|------|------|------------|
+| **S (핵심 DNA)** | Kurzgesagt | 2D flat vector 비주얼 기준, 에피소드별 팔레트, 캐릭터 브랜딩 |
+| | Claudius Papirus | 마스코트+다크배경, 소스 기반 스크립트, 속보+깊이 |
+| **A (기법 채택)** | Veritasium | 오해-먼저 구조 (misconception-first), 색 코딩 오답/정답 |
+| | PolyMatter | 역설 훅, 미드포인트 리프레임, 솔로 flat vector 증명 |
+| **B (참고)** | Johnny Harris | 앵커-브릿지 사이클, 음악 3모드(thinky/feely/fun) |
+| | Wendover | 캐스케이드 리빌, 점진적 다이어그램 빌드 |
+| | RealLifeLore | 프랜차이즈 시리즈, "What If" 훅, 볼륨 전략 |
+
+> 상세: `systems/planning/09-youtube-channel-research-v2.md`
 
 **포맷**
 - 3-5분 에피소드 (타겟: 3분 30초)
@@ -257,13 +271,18 @@ default, curious, frustrated, eureka, coding_zone, happy
 
 ### C8. 에피소드 포맷 템플릿
 
-| 세그먼트 | 시간 | 용도 | 비주얼 |
-|----------|------|------|--------|
-| **Hook** | 0:00-0:15 | 놀라운 사실 또는 "상상해봐" | 강렬한 오프닝 이미지 또는 Vee 리액션 |
-| **Problem** | 0:15-0:45 | 실패 장면, 왜 중요한지 | Vee 좌절 + 에러 비주얼 |
-| **Core** | 0:45-3:00 | 핵심 개념 2-3개, 비주얼 메타포 | 화이트보드 공간, 다이어그램, 확장 메타포 |
-| **Application** | 3:00-4:00 | 실제 적용법 | 화면 안 공간, 코드/터미널 비주얼 |
-| **Outro+CTA** | 4:00-5:00 | 요약 + 구독 + 다음 에피소드 티저 | Vee 리액션 + 시리즈 엔드카드 |
+**기반 구조: 오해-먼저 (Veritasium) + 역설 훅 (PolyMatter)**
+
+매 에피소드는 시청자의 잘못된 가정을 먼저 보여주고, 깨뜨리고, 올바른 방법을 보여준다.
+
+| 세그먼트 | 시간 | 용도 | 비주얼 | 기법 출처 |
+|----------|------|------|--------|-----------|
+| **Hook** | 0:00-0:15 | 역설적 사실 또는 반직관적 결과 | 강렬한 오프닝 이미지 또는 Vee 리액션 | PolyMatter 역설 훅 |
+| **Misconception** | 0:15-0:45 | Vee의 잘못된 가정 → 실패 | Vee가 "당연히 되겠지" → 터짐 (빨간 색조) | Veritasium 오해-먼저 |
+| **The Crack** | 0:45-1:15 | 인지부조화 — "근데 이렇게 하면?" | 전환 장면, 색조 변화 (빨강→중립) | Veritasium |
+| **Core** | 1:15-3:00 | 올바른 방법, 비주얼 메타포 | 화이트보드 공간, 다이어그램 (초록 색조) | Wendover 점진적 빌드 |
+| **Reframe** | 3:00-3:30 | "사실 더 큰 그림은..." | 줌아웃, 시스템 뷰 | PolyMatter 미드포인트 리프레임 |
+| **Outro+CTA** | 3:30-4:00 | Vee eureka + 구독 + 다음 에피소드 | Vee 리액션 + 시리즈 엔드카드 | — |
 
 **패턴 인터럽트**
 - 20-30초마다 비주얼 전환, 사운드 큐, 또는 Vee 리액션
@@ -610,6 +629,7 @@ multiple characters, anime, sketch, rough
 
 | 파일 | 용도 |
 |------|------|
+| `systems/planning/09-youtube-channel-research-v2.md` | **채널 레퍼런스 리서치 v2 (SSOT)** — S/A/B/C 티어 분석 |
 | `systems/video/assets/characters/vee/character_design_2d.json` | Vee 2D 캐릭터 스펙 (v5.0) |
 | `systems/video/assets/characters/vee/character_design.json` | Vee 3D 캐릭터 스펙 (v4.0, archived) |
 | `systems/video/planning/season1_episode_guide.md` | 시즌1 10에피소드 상세 가이드 |
