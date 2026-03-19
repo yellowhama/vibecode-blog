@@ -116,13 +116,31 @@ python qa_checkpoint.py --stage "PuLID Keyframes v3" \
 
 ## STAGE 4: Wan 2.2 I2V 애니메이션 (6샷)
 
+### Option A: 최적화 워크플로 (권장 — ~10-15분/샷, 32fps)
+
+```bash
+python animate_shots.py \
+  --manifest /mnt/e/vibecode-blog/systems/video/preproduction/ep01/ep01_shot_manifest_v9.json \
+  --keyframes /mnt/e/vibecode-blog/systems/video/output/ep01/keyframes_v3/ \
+  --output /mnt/e/vibecode-blog/systems/video/output/ep01/clips_i2v_v3/ \
+  --workflow wan22_moe_i2v_optimized.json \
+  --comfyui-url http://127.0.0.1:8188
+```
+
+> Lightning LoRA(8 steps) + FBCache + RIFE(32fps). Q5_K_M 모델 + 커스텀 노드 필요.
+> 필수 설치: Comfy-WaveSpeed, ComfyUI-Frame-Interpolation, wan22_lightning LoRA
+
+### Option B: 기본 워크플로 (느림 — ~50분/샷, 16fps)
+
 ```bash
 python animate_shots.py \
   --manifest /mnt/e/vibecode-blog/systems/video/preproduction/ep01/ep01_shot_manifest_v9.json \
   --keyframes /mnt/e/vibecode-blog/systems/video/output/ep01/keyframes_v3/ \
   --output /mnt/e/vibecode-blog/systems/video/output/ep01/clips_i2v_v3/ \
   --comfyui-url http://127.0.0.1:8188
+```
 
+```bash
 python qa_checkpoint.py --stage "I2V Animation v3" \
   --artifacts-dir /mnt/e/vibecode-blog/systems/video/output/ep01/clips_i2v_v3 \
   --artifact-type video
@@ -130,6 +148,7 @@ python qa_checkpoint.py --stage "I2V Animation v3" \
 
 **예상**: 6 MP4 클립, 각 5초, 832x480, Wan 2.2 MoE
 **품질 체크**: 모션이 자연스러운지 (static zoom/pan 아닌 실제 움직임), 캐릭터 보존
+**A/B 비교**: 동일 샷(H01)으로 Option A vs B 비교 후 전체 렌더 진행
 
 ---
 

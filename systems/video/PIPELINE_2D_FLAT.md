@@ -24,7 +24,7 @@ python assemble_episode.py -e 01 --stage 1 --draft
 | 1. TTS | `kokoro_tts.py` / `dia2_tts.py` | Kokoro-82M / Dia2-1B | 0-7.4GB | 1-5min | **Dia2 production tested** — EP01 narration ✅ |
 | 2. Timing | `whisper_timing.py` | Whisper medium | 2GB | 3min | **Tested** — 87 entries SRT + timing.json ✅ |
 | 3. Keyframes | `render_keyframes.py` | Flux LoRA T2I (SimpleVectorFlux) | ~12GB | 30min | **EP01 complete** — 32 keyframes via `--workflow lora` ✅ |
-| 4. Animation | `animate_shots.py` | Wan 2.2 I2V-14B GGUF Q5 (ComfyUI) | 12-16GB | 60min | Available, deferred to v2 (Ken Burns v1) |
+| 4. Animation | `animate_shots.py` | Wan 2.2 I2V-14B GGUF Q5 (ComfyUI) | 12-16GB | 10-15min/shot | **Optimized** — Lightning LoRA + FBCache + RIFE (32fps) |
 | 5. Diagrams | Motion Canvas (`vibecode-diagrams/`) | TypeScript | 0 | 120min | **Active** — Dynamic 2D rendering routed for >=60% of CORE shots |
 | 6. BGM | `acestep_bgm.py` + `mix_audio.py` | ACE-Step 1.5 | <4GB | 1min | **Mixer upgraded** ✅ (ducking, crossfade, sfx) |
 | 7. Assembly | `ffmpeg_assemble.py` | FFmpeg | 0 | 10min | **EP01 complete** — concat + audio overlay ✅ |
@@ -37,8 +37,10 @@ python assemble_episode.py -e 01 --stage 1 --draft
 | TTS Prod | **Dia2-1B** | 1B | 7.4GB | Apache 2.0 | Multi-speaker dialogue, streaming |
 | TTS Backup | Chatterbox-Turbo | 350M | 4-6GB | MIT | Voice cloning SOTA |
 | T2I | **Flux.1-dev + Kontext** | 12B | 12GB (GGUF Q5) | Dev | Best LoRA ecosystem |
-| I2V | **Wan 2.2 I2V-14B MoE** | 14B | 12-16GB (GGUF Q5) | Apache 2.0 | MoE, 2D style preservation |
+| I2V | **Wan 2.2 I2V-14B MoE** | 14B | 12-16GB (GGUF Q3_K_M) | Apache 2.0 | MoE + Lightning LoRA + FBCache |
 | I2V Draft | Wan 2.2 5B | 5B | 8GB | Apache 2.0 | Fast iteration |
+| I2V Accel | **Lightning LoRA** | adapter | +0GB | Apache 2.0 | 20→8 steps (with Wan 2.2) |
+| Post-proc | **RIFE rife49** | VFI | <2GB | MIT | 16→32fps frame interpolation |
 | Music | **ACE-Step 1.5** | ~1B | <4GB | Apache 2.0 | ComfyUI native, full songs |
 | Lip Sync | **Rhubarb** | CPU | CPU | MIT | Phoneme-based, 2D optimal |
 
@@ -62,6 +64,24 @@ output/ep01/final/EP01_v2_FINAL.mp4      — Final assembled video
 - **All keyframes via LoRA T2I** — SimpleVectorFlux enforces v3ct0r flat vector style consistently
 - **Ken Burns v1** — Wan 2.2 I2V deferred to v2 for faster first completion
 - **BGM looped** — ACE-Step failed due to GPU contention, used existing bgm_real.wav looped
+
+### I2V Optimization Stack (Phase 7.5 — 2026-03-19)
+
+| Optimization | Before | After | Speedup |
+|-------------|--------|-------|---------|
+| Model | Q3_K_M (6.7GB) | Q3_K_M (6.7GB) | Q5 unavailable on HF; Q3 retained |
+| Steps | 20 (0→10, 10→20) | 4 (0→2, 2→4) | 5x fewer steps |
+| CFG | 3.5 | 1.0 | Lightning LoRA requirement |
+| Shift | 8.0 | 5.0 | Lightning LoRA requirement |
+| FBCache | None | WaveSpeed (threshold 0.12) | ~30-40% cache hits |
+| FPS | 16fps native | 32fps (RIFE x2) | 2x smoother motion |
+| Timeout | 600s (insufficient) | 3600s | No more render timeouts |
+| **Total** | **~50min/shot** | **~10-15min/shot** | **~3-5x faster** |
+
+Workflows:
+- `wan22_moe_i2v_full.json` — Baseline (20 steps, 16fps)
+- `wan22_moe_i2v_optimized.json` — Optimized (8 steps, 32fps via RIFE)
+- `wan22_moe_i2v_short.json` — Draft (2sec, 33 frames)
 
 ## Scripts Inventory (14 pipeline scripts + 2 validation)
 

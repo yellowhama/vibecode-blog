@@ -1,0 +1,43 @@
+{
+  "version": "2.0",
+  "workflow": "wan22_moe_i2v_optimized.json",
+  "description": "Optimized I2V 바인딩 — Lightning LoRA + FBCache + RIFE. 기존 바인딩과 호환.",
+  "node_mappings": {
+    "positive_prompt": { "node_id": "3", "field": "text" },
+    "negative_prompt": { "node_id": "7", "field": "text" },
+    "seed": { "node_id": "20", "field": "noise_seed" },
+    "input_image": { "node_id": "9", "field": "image" },
+    "video_duration": { "node_id": "50", "field": "length" },
+    "width": { "node_id": "50", "field": "width" },
+    "height": { "node_id": "50", "field": "height" },
+    "filename_prefix": { "node_id": "99", "field": "filename_prefix" }
+  },
+  "optimization_mappings": {
+    "lora_name_high": { "node_id": "12", "field": "lora_name" },
+    "lora_name_low": { "node_id": "13", "field": "lora_name" },
+    "lora_strength": { "node_id": "12", "field": "strength_model" },
+    "fbcache_threshold_high": { "node_id": "14", "field": "residual_diff_threshold" },
+    "fbcache_threshold_low": { "node_id": "15", "field": "residual_diff_threshold" },
+    "rife_multiplier": { "node_id": "60", "field": "multiplier" }
+  },
+  "notes": {
+    "duration": "length는 프레임 수. 16fps 기준: 33=2초, 49=3초, 65=4초, 81=5초",
+    "seed_sync": "node 20(HighNoise)과 21(LowNoise)의 seed를 동일하게 맞춰야 일관성 유지",
+    "input_image": "ComfyUI app/input/ 폴더에 이미지가 있어야 함",
+    "lightning": "Lightning LoRA Seko V1으로 4 steps (기존 20 대비 80% 감소). cfg 1.0, shift 5.0 필수. HighNoise/LowNoise 각각 별도 LoRA 파일.",
+    "fbcache": "threshold 0.12 (높을수록 빠르지만 품질 저하). 0.08-0.15 범위 권장.",
+    "rife": "x2 보간으로 16fps→32fps. 모션 부드러움 대폭 개선."
+  },
+  "defaults": {
+    "negative_prompt": "(2D, sketch, illustration:1.5), different character, ugly, deformed, flat, cartoon, anime, photorealistic, glossy, plastic, smooth CGI, blurry, low resolution, multiple characters.",
+    "width": 832,
+    "height": 480,
+    "note_resolution": "16:9 YouTube target. Wan 2.2 I2V supports 832x480.",
+    "length_short": 33,
+    "length_full": 81,
+    "steps": 4,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple"
+  }
+}

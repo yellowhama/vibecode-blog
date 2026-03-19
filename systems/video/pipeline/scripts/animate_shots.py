@@ -51,7 +51,7 @@ def main():
                         help="Skip diagram/motion_graphic shots (they go to Motion Canvas)")
     parser.add_argument("--width", type=int, default=DEFAULT_WIDTH)
     parser.add_argument("--height", type=int, default=DEFAULT_HEIGHT)
-    parser.add_argument("--timeout", type=int, default=600, help="Per-shot render timeout in seconds")
+    parser.add_argument("--timeout", type=int, default=3600, help="Per-shot render timeout in seconds")
     args = parser.parse_args()
 
     keyframes_dir = Path(args.keyframes)
@@ -226,7 +226,7 @@ def _inject_i2v(workflow: dict, image_filename: str, shot: dict, width: int, hei
             inputs["height"] = height
 
 
-def _queue_and_wait(base_url: str, workflow: dict, timeout: int = 600) -> dict | None:
+def _queue_and_wait(base_url: str, workflow: dict, timeout: int = 3600) -> dict | None:
     """Queue a workflow to ComfyUI and wait for completion."""
     import uuid
     client_id = str(uuid.uuid4())

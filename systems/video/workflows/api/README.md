@@ -148,17 +148,21 @@ ComfyUI/app/models/
 
 ### 워크플로우
 
-| 파일 | 용도 | 해상도 | 프레임 | 소요시간 |
-|------|------|--------|--------|----------|
-| `wan22_moe_i2v_short.json` | 짧은 영상 (모션테스트) | 768x768 | 33 (2초) | ~5분 |
-| `wan22_moe_i2v_full.json` | 프로덕션 영상 (본편 샷) | 768x768 | 81 (5초) | ~12분 |
-| `wan22_moe_t2i.json` | ~~이미지~~ **(사용 금지 — Flux 사용)** | 1024x1024 | 1 | ~3분 |
+| 파일 | 용도 | 해상도 | 프레임 | 출력 FPS | 소요시간 |
+|------|------|--------|--------|----------|----------|
+| `wan22_moe_i2v_short.json` | 짧은 영상 (모션테스트) | 768x768 | 33 (2초) | 16 | ~5분 |
+| `wan22_moe_i2v_full.json` | 프로덕션 영상 (기본) | 832x480 | 81 (5초) | 16 | ~50분 |
+| `wan22_moe_i2v_optimized.json` | **프로덕션 영상 (최적화)** | 832x480 | 81 (5초) | **32** | **~10-15분** |
+| `wan22_moe_t2i.json` | ~~이미지~~ **(사용 금지 — Flux 사용)** | 1024x1024 | 1 | - | ~3분 |
+
+> **권장: `wan22_moe_i2v_optimized.json`** — Lightning LoRA(8 steps) + FBCache + RIFE(32fps)
 
 ### 바인딩
 
 | 파일 | 대상 |
 |------|------|
 | `wan22_moe_i2v_bindings.json` | I2V 워크플로우 (short/full 공용) |
+| `wan22_moe_i2v_optimized_bindings.json` | **I2V 최적화 워크플로우** (Lightning + FBCache + RIFE 매핑 포함) |
 | `wan22_moe_t2i_bindings.json` | T2I (레거시, Flux로 대체) |
 
 ### MoE 노드 구조
@@ -176,10 +180,21 @@ UnetLoaderGGUF(LowNoise) → ModelSamplingSD3(shift=8)
 ```
 
 ### I2V 세팅
+
+**기본 (full.json)**:
 - sampler: `euler`, scheduler: `simple`
 - 20 steps (Stage1: 0→10, Stage2: 10→20)
 - cfg: 3.5 (양 stage 동일)
 - `KSamplerAdvanced`의 `noise_seed` 필드 사용
+
+**최적화 (optimized.json)**:
+- sampler: `euler`, scheduler: `simple`
+- **4 steps** (Stage1: 0→2, Stage2: 2→4) — Lightning LoRA (Seko V1)
+- **cfg: 1.0**, **shift: 5.0** — Lightning LoRA 필수 설정
+- 별도 LoRA: `high_noise_model.safetensors` + `low_noise_model.safetensors`
+- FBCache threshold: 0.12 (WaveSpeed)
+- RIFE rife49 x2 → 16fps→32fps 출력
+- 예상 속도: **~10-15분/샷** (기존 ~50분)
 
 ### 프레임 수 참고 (16fps)
 
@@ -198,7 +213,14 @@ ComfyUI/app/models/unet/
 ├── Wan2.2-I2V-A14B-HighNoise-Q3_K_M.gguf  (6.7GB)
 ├── Wan2.2-I2V-A14B-LowNoise-Q3_K_M.gguf   (6.7GB)
 └── Wan2.2-Animate-14B-Q3_K_M.gguf          (8.1GB, 미사용)
+
+ComfyUI/app/models/loras/wan22_lightning/
+└── Wan2.2-I2V-A14B-4steps-lora-rank64-Seko-V1/
+    ├── high_noise_model.safetensors         (1.2GB, Lightning LoRA)
+    └── low_noise_model.safetensors          (1.2GB, Lightning LoRA)
 ```
+
+> Q5_K_M GGUF는 현재 HuggingFace에 미존재. Q3_K_M 사용 중.
 
 ---
 
