@@ -1,7 +1,7 @@
 {
   "project_id": "ep01",
-  "prepro_manifest": "/mnt/e/vibecode-blog/systems/video/preproduction/ep01/ep01_prepro_manifest.json",
-  "generated_at": "2026-03-13T04:43:31.310135",
+  "prepro_manifest": "/mnt/e/vibecode-blog/systems/video/preproduction/ep01/ep01_prepro_manifest_v5.json",
+  "generated_at": "2026-03-19T00:36:32.873017",
   "backend_chain": [
     "chatterbox",
     "edge"
@@ -32,45 +32,13 @@
     }
   },
   "used_backend_synthesis_counts": {
-    "chatterbox": 0,
+    "chatterbox": 53,
     "edge": 0
   },
   "cache_hits": 0,
-  "failed_count": 31,
-  "failed_beat_ids": [
-    "SEG01_B001",
-    "SEG01_B002",
-    "SEG01_B003",
-    "SEG01_B004",
-    "SEG02_B005",
-    "SEG02_B006",
-    "SEG02_B007",
-    "SEG02_B008",
-    "SEG02_B009",
-    "SEG02_B010",
-    "SEG03_B011",
-    "SEG03_B012",
-    "SEG03_B013",
-    "SEG03_B014",
-    "SEG03_B015",
-    "SEG03_B016",
-    "SEG03_B017",
-    "SEG03_B018",
-    "SEG03_B019",
-    "SEG03_B020",
-    "SEG03_B021",
-    "SEG03_B022",
-    "SEG04_B023",
-    "SEG04_B024",
-    "SEG04_B025",
-    "SEG04_B026",
-    "SEG04_B027",
-    "SEG04_B028",
-    "SEG05_B029",
-    "SEG05_B030",
-    "SEG05_B031"
-  ],
-  "out_audio": "/mnt/e/vibecode-blog/systems/video/preproduction/ep01/tts_full_v2/voiceover_master.wav",
+  "failed_count": 0,
+  "failed_beat_ids": [],
+  "out_audio": "/mnt/e/vibecode-blog/systems/video/preproduction/ep01/voiceover_master_tts.wav",
   "timing_report": "/mnt/e/vibecode-blog/systems/video/preproduction/ep01/timing_alignment_report.json",
   "quality_report": "/mnt/e/vibecode-blog/systems/video/preproduction/ep01/voiceover_quality_report.json",
   "segments": [
@@ -78,714 +46,1326 @@
       "order": 1,
       "beat_id": "SEG01_B001",
       "scene_id": "SEG01",
-      "text": "This is the moment every vibe coder lives for.",
-      "expected_duration_sec": 3.6,
-      "actual_duration_sec": 3.6,
-      "backend": "silence_fallback",
+      "text": "Build an app with one prompt. No code. No experience. Just vibes. The internet says anyone can do it.",
+      "expected_duration_sec": 7.6,
+      "actual_duration_sec": 6.08,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.08,
+            "exaggeration": 0.4,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0001_SEG01_B001.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0001_SEG01_B001.wav"
     },
     {
       "order": 2,
       "beat_id": "SEG01_B002",
       "scene_id": "SEG01",
-      "text": "You asked AI to build it. And it did. All of it.",
-      "expected_duration_sec": 4.8,
-      "actual_duration_sec": 4.8,
-      "backend": "silence_fallback",
+      "text": "Every ad. Every thread. Every video. The message is the same: just type what you want, and A I will build it.",
+      "expected_duration_sec": 8.4,
+      "actual_duration_sec": 5.96,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.96,
+            "exaggeration": 0.5,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0003_SEG01_B002.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0003_SEG01_B002.wav"
     },
     {
       "order": 3,
       "beat_id": "SEG01_B003",
       "scene_id": "SEG01",
-      "text": "And then, three seconds later...",
-      "expected_duration_sec": 2.0,
-      "actual_duration_sec": 2.0,
-      "backend": "silence_fallback",
+      "text": "Vee believed it. She typed a prompt. Hit enter.",
+      "expected_duration_sec": 3.6,
+      "actual_duration_sec": 3.04,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 3.04,
+            "exaggeration": 0.6,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0005_SEG01_B003.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0005_SEG01_B003.wav"
     },
     {
       "order": 4,
       "beat_id": "SEG01_B004",
       "scene_id": "SEG01",
-      "text": "...it all falls apart.",
+      "text": "Something came out. But...",
       "expected_duration_sec": 1.6,
-      "actual_duration_sec": 1.6,
-      "backend": "silence_fallback",
+      "actual_duration_sec": 2.0,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 2.0,
+            "exaggeration": 0.7,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0007_SEG01_B004.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0007_SEG01_B004.wav"
     },
     {
       "order": 5,
       "beat_id": "SEG02_B005",
       "scene_id": "SEG02",
-      "text": "Three days ago, Vee discovered something magical.",
+      "text": "She typed: \"Make me an online store.\"...",
       "expected_duration_sec": 2.8,
-      "actual_duration_sec": 2.8,
-      "backend": "silence_fallback",
+      "actual_duration_sec": 2.68,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 2.68,
+            "exaggeration": 0.5,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0009_SEG02_B005.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0009_SEG02_B005.wav"
     },
     {
       "order": 6,
       "beat_id": "SEG02_B006",
       "scene_id": "SEG02",
-      "text": "You type what you want. AI builds it. Five minutes. Done.",
-      "expected_duration_sec": 4.4,
-      "actual_duration_sec": 4.4,
-      "backend": "silence_fallback",
+      "text": "And something appeared. A website. With a login button that goes to the shopping cart. A checkout page in neon pink and lime green. And a search bar that searches... nothing.",
+      "expected_duration_sec": 12.4,
+      "actual_duration_sec": 8.88,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 8.88,
+            "exaggeration": 0.533,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0011_SEG02_B006.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0011_SEG02_B006.wav"
     },
     {
       "order": 7,
       "beat_id": "SEG02_B007",
       "scene_id": "SEG02",
-      "text": "A to-do app. Done. A database. Done. A login page. Done.",
-      "expected_duration_sec": 4.4,
-      "actual_duration_sec": 4.4,
-      "backend": "silence_fallback",
+      "text": "It didn't crash. It didn't throw an error. It just... wasn't what she wanted.",
+      "expected_duration_sec": 5.6,
+      "actual_duration_sec": 3.56,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 3.56,
+            "exaggeration": 0.567,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0013_SEG02_B007.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0013_SEG02_B007.wav"
     },
     {
       "order": 8,
       "beat_id": "SEG02_B008",
       "scene_id": "SEG02",
-      "text": "She thought she could build anything.",
-      "expected_duration_sec": 2.4,
-      "actual_duration_sec": 2.4,
-      "backend": "silence_fallback",
+      "text": "This is what most people don't tell you about vibe coding. The result doesn't explode. It comes out wrong. Low quality. Not what you asked for. And you can't explain why.",
+      "expected_duration_sec": 12.4,
+      "actual_duration_sec": 7.24,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.24,
+            "exaggeration": 0.6,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0015_SEG02_B008.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0015_SEG02_B008.wav"
     },
     {
       "order": 9,
       "beat_id": "SEG02_B009",
       "scene_id": "SEG02",
-      "text": "But there was someone who'd seen this story before.",
-      "expected_duration_sec": 3.6,
-      "actual_duration_sec": 3.6,
-      "backend": "silence_fallback",
+      "text": "So she did what everyone does. She got more specific.",
+      "expected_duration_sec": 4.0,
+      "actual_duration_sec": 2.56,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 2.56,
+            "exaggeration": 0.633,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0017_SEG02_B009.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0017_SEG02_B009.wav"
     },
     {
       "order": 10,
       "beat_id": "SEG02_B010",
       "scene_id": "SEG02",
-      "text": "She couldn't answer.",
-      "expected_duration_sec": 1.5,
-      "actual_duration_sec": 1.5,
-      "backend": "silence_fallback",
+      "text": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern sans-serif font, responsive layout, search bar with autocomplete...\"...",
+      "expected_duration_sec": 12.0,
+      "actual_duration_sec": 9.12,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 9.12,
+            "exaggeration": 0.667,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0019_SEG02_B010.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0019_SEG02_B010.wav"
     },
     {
       "order": 11,
-      "beat_id": "SEG03_B011",
-      "scene_id": "SEG03",
-      "text": "Here's an empty lot.",
-      "expected_duration_sec": 1.6,
-      "actual_duration_sec": 1.6,
-      "backend": "silence_fallback",
+      "beat_id": "SEG02_B011",
+      "scene_id": "SEG02",
+      "text": "The result?",
+      "expected_duration_sec": 1.5,
+      "actual_duration_sec": 0.72,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 0.72,
+            "exaggeration": 0.7,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0021_SEG03_B011.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0021_SEG02_B011.wav"
     },
     {
       "order": 12,
-      "beat_id": "SEG03_B012",
-      "scene_id": "SEG03",
-      "text": "You want to build something here.",
-      "expected_duration_sec": 2.4,
-      "actual_duration_sec": 2.4,
-      "backend": "silence_fallback",
+      "beat_id": "SEG02_B012",
+      "scene_id": "SEG02",
+      "text": "Worse. More detail made it more confused. , Because detail is not direction.",
+      "expected_duration_sec": 4.8,
+      "actual_duration_sec": 4.52,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.52,
+            "exaggeration": 0.733,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0023_SEG03_B012.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0023_SEG02_B012.wav"
     },
     {
       "order": 13,
-      "beat_id": "SEG03_B013",
-      "scene_id": "SEG03",
-      "text": "With a blueprint, you start with the foundation. Then the frame. Then the walls. There's an order. Each piece knows where it goes.",
-      "expected_duration_sec": 9.2,
-      "actual_duration_sec": 9.2,
-      "backend": "silence_fallback",
+      "beat_id": "SEG02_B013",
+      "scene_id": "SEG02",
+      "text": "Okay, she thought. Maybe it's the tool. She switched tools. Three different A I assistants. Same prompt.",
+      "expected_duration_sec": 6.4,
+      "actual_duration_sec": 4.76,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.76,
+            "exaggeration": 0.767,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0025_SEG03_B013.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0025_SEG02_B013.wav"
     },
     {
       "order": 14,
-      "beat_id": "SEG03_B014",
-      "scene_id": "SEG03",
-      "text": "Without a blueprint?",
-      "expected_duration_sec": 1.5,
-      "actual_duration_sec": 1.5,
-      "backend": "silence_fallback",
+      "beat_id": "SEG02_B014",
+      "scene_id": "SEG02",
+      "text": "Three tools. Three different wrong answers. The problem wasn't the tool. It was something else entirely.",
+      "expected_duration_sec": 6.4,
+      "actual_duration_sec": 4.24,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.24,
+            "exaggeration": 0.8,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0027_SEG03_B014.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0027_SEG02_B014.wav"
     },
     {
       "order": 15,
       "beat_id": "SEG03_B015",
       "scene_id": "SEG03",
-      "text": "You just... stack. And it goes up. It actually goes up.",
-      "expected_duration_sec": 4.4,
-      "actual_duration_sec": 4.4,
-      "backend": "silence_fallback",
+      "text": "So she tried one more thing. Same prompt. Same tool. Three times in a row.",
+      "expected_duration_sec": 6.0,
+      "actual_duration_sec": 4.84,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.84,
+            "exaggeration": 0.5,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0029_SEG03_B015.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0029_SEG03_B015.wav"
     },
     {
       "order": 16,
       "beat_id": "SEG03_B016",
       "scene_id": "SEG03",
-      "text": "For a while, it looks like it's working.",
-      "expected_duration_sec": 3.2,
-      "actual_duration_sec": 3.2,
-      "backend": "silence_fallback",
+      "text": "Three runs. Three completely different stores. Different layouts, different colors, different features. Same exact prompt.",
+      "expected_duration_sec": 6.0,
+      "actual_duration_sec": 4.68,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.68,
+            "exaggeration": 0.82,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0031_SEG03_B016.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0031_SEG03_B016.wav"
     },
     {
       "order": 17,
       "beat_id": "SEG03_B017",
       "scene_id": "SEG03",
-      "text": "Then...",
-      "expected_duration_sec": 1.5,
-      "actual_duration_sec": 1.5,
-      "backend": "silence_fallback",
+      "text": "... Why? , Because the A I isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly different. Like rolling dice with language.",
+      "expected_duration_sec": 10.0,
+      "actual_duration_sec": 7.76,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.76,
+            "exaggeration": 0.98,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0033_SEG03_B017.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0033_SEG03_B017.wav"
     },
     {
       "order": 18,
       "beat_id": "SEG03_B018",
       "scene_id": "SEG03",
-      "text": "A spec is a blueprint. It's not a hundred-page document. It's one sentence: \"What am I building?\"",
-      "expected_duration_sec": 6.8,
-      "actual_duration_sec": 6.8,
-      "backend": "silence_fallback",
+      "text": "And here's the part that really matters. She never read what the A I actually wrote.",
+      "expected_duration_sec": 6.0,
+      "actual_duration_sec": 3.36,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 3.36,
+            "exaggeration": 0.98,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0035_SEG03_B018.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0035_SEG03_B018.wav"
     },
     {
       "order": 19,
       "beat_id": "SEG03_B019",
       "scene_id": "SEG03",
-      "text": "You don't need to know every detail upfront.",
-      "expected_duration_sec": 3.2,
-      "actual_duration_sec": 3.2,
-      "backend": "silence_fallback",
+      "text": "Not the website. The code behind it. She looked at the result and said \"that's wrong\"... — but she couldn't say why, because she never looked at the instructions the A I wrote to build it.",
+      "expected_duration_sec": 14.0,
+      "actual_duration_sec": 7.48,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.48,
+            "exaggeration": 0.82,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0037_SEG03_B019.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0037_SEG03_B019.wav"
     },
     {
       "order": 20,
       "beat_id": "SEG03_B020",
       "scene_id": "SEG03",
-      "text": "Start with a skateboard. Four wheels. It rolls. That's enough.",
-      "expected_duration_sec": 4.0,
-      "actual_duration_sec": 4.0,
-      "backend": "silence_fallback",
+      "text": "The A I wrote the recipe. She tasted the dish. ... But she never checked the recipe.",
+      "expected_duration_sec": 6.0,
+      "actual_duration_sec": 5.08,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.08,
+            "exaggeration": 0.5,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0039_SEG03_B020.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0039_SEG03_B020.wav"
     },
     {
       "order": 21,
-      "beat_id": "SEG03_B021",
-      "scene_id": "SEG03",
-      "text": "You can always make it bigger later. But you have to know what \"it\" is first.",
-      "expected_duration_sec": 6.4,
-      "actual_duration_sec": 6.4,
-      "backend": "silence_fallback",
+      "beat_id": "SEG04_B021",
+      "scene_id": "SEG04",
+      "text": "Think of it like cooking. You walk into a restaurant and say: \"Make me dinner.\"... The chef — a very fast, very capable chef — starts cooking immediately.",
+      "expected_duration_sec": 11.2,
+      "actual_duration_sec": 7.8,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.8,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0041_SEG03_B021.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0041_SEG04_B021.wav"
     },
     {
       "order": 22,
-      "beat_id": "SEG03_B022",
-      "scene_id": "SEG03",
-      "text": "That one line? That's where a spec starts.",
-      "expected_duration_sec": 3.2,
-      "actual_duration_sec": 3.2,
-      "backend": "silence_fallback",
+      "beat_id": "SEG04_B022",
+      "scene_id": "SEG04",
+      "text": "Something appears on the plate. It's food. Technically. ... But it's not what you wanted, because you never said what you wanted.",
+      "expected_duration_sec": 8.4,
+      "actual_duration_sec": 5.8,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.8,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0043_SEG03_B022.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0043_SEG04_B022.wav"
     },
     {
       "order": 23,
       "beat_id": "SEG04_B023",
       "scene_id": "SEG04",
-      "text": "Back in the present. Everything still broken.",
-      "expected_duration_sec": 2.8,
-      "actual_duration_sec": 2.8,
-      "backend": "silence_fallback",
+      "text": "So you try again. \"Make me dinner. Something Italian. Use pasta. Make it creamy.\"...",
+      "expected_duration_sec": 5.6,
+      "actual_duration_sec": 5.16,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.16,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0045_SEG04_B023.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0045_SEG04_B023.wav"
     },
     {
       "order": 24,
       "beat_id": "SEG04_B024",
       "scene_id": "SEG04",
-      "text": "And then she did something unusual. She stopped coding.",
-      "expected_duration_sec": 3.6,
-      "actual_duration_sec": 3.6,
-      "backend": "silence_fallback",
+      "text": "The chef gets excited. Grabs every Italian ingredient. Puts cream on everything. Adds four types of cheese. Pasta is swimming in a lake of sauce. Garlic bread is stuffed inside the pasta somehow.",
+      "expected_duration_sec": 13.2,
+      "actual_duration_sec": 10.68,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 10.68,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0047_SEG04_B024.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0047_SEG04_B024.wav"
     },
     {
       "order": 25,
       "beat_id": "SEG04_B025",
       "scene_id": "SEG04",
-      "text": "She started writing. Not code. Just... what was bothering her.",
+      "text": "More detail. Same problem. , Because you gave ingredients, not intent.",
       "expected_duration_sec": 4.0,
-      "actual_duration_sec": 4.0,
-      "backend": "silence_fallback",
+      "actual_duration_sec": 4.12,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.12,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0049_SEG04_B025.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0049_SEG04_B025.wav"
     },
     {
       "order": 26,
       "beat_id": "SEG04_B026",
       "scene_id": "SEG04",
-      "text": "And there it was. The question she'd been avoiding.",
-      "expected_duration_sec": 3.6,
-      "actual_duration_sec": 3.6,
-      "backend": "silence_fallback",
+      "text": "Now imagine one card. \"Pasta carbonara. Four ingredients. No cream. Serves two.\"...",
+      "expected_duration_sec": 4.8,
+      "actual_duration_sec": 5.36,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.36,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0051_SEG04_B026.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0051_SEG04_B026.wav"
     },
     {
       "order": 27,
       "beat_id": "SEG04_B027",
       "scene_id": "SEG04",
-      "text": "Not features. Not tools. The reason. The one sentence that explains everything.",
-      "expected_duration_sec": 4.8,
-      "actual_duration_sec": 4.8,
-      "backend": "silence_fallback",
+      "text": "Same chef. Same kitchen. Completely different result. Consistent. Recognizable. Close to what you wanted.",
+      "expected_duration_sec": 5.6,
+      "actual_duration_sec": 6.2,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.2,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0053_SEG04_B027.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0053_SEG04_B027.wav"
     },
     {
       "order": 28,
       "beat_id": "SEG04_B028",
       "scene_id": "SEG04",
-      "text": "The same errors. But now, one line makes sense.",
-      "expected_duration_sec": 3.6,
-      "actual_duration_sec": 3.6,
-      "backend": "silence_fallback",
+      "text": "... But here's the question nobody asks. Would you serve this to a customer?",
+      "expected_duration_sec": 5.2,
+      "actual_duration_sec": 3.44,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 3.44,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0055_SEG04_B028.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0055_SEG04_B028.wav"
     },
     {
       "order": 29,
-      "beat_id": "SEG05_B029",
-      "scene_id": "SEG05",
-      "text": "Everything is still broken.",
-      "expected_duration_sec": 1.6,
-      "actual_duration_sec": 1.6,
-      "backend": "silence_fallback",
+      "beat_id": "SEG04_B029",
+      "scene_id": "SEG04",
+      "text": "Your friend's kitchen? Sure, experiment. A dinner party? Maybe. A restaurant? With paying customers? You'd want to taste it first. Check the seasoning. Make sure there's no raw egg. Make sure it doesn't make someone sick.",
+      "expected_duration_sec": 14.4,
+      "actual_duration_sec": 10.72,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 10.72,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0057_SEG05_B029.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0057_SEG04_B029.wav"
     },
     {
       "order": 30,
-      "beat_id": "SEG05_B030",
-      "scene_id": "SEG05",
-      "text": "But now she knows what to fix.",
-      "expected_duration_sec": 2.8,
-      "actual_duration_sec": 2.8,
-      "backend": "silence_fallback",
+      "beat_id": "SEG04_B030",
+      "scene_id": "SEG04",
+      "text": "A I is that chef. Fast, capable, ready to go. ... But without a recipe, it improvises. And when you're cooking for yourself, improvisation is fine. When you're cooking for others — for production, for users, for money — you need more than vibes.",
+      "expected_duration_sec": 16.8,
+      "actual_duration_sec": 14.68,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 14.68,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0059_SEG05_B030.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0059_SEG04_B030.wav"
     },
     {
       "order": 31,
-      "beat_id": "SEG05_B031",
-      "scene_id": "SEG05",
-      "text": "...at least, she thinks she does.",
-      "expected_duration_sec": 2.4,
-      "actual_duration_sec": 2.4,
-      "backend": "silence_fallback",
+      "beat_id": "SEG04_B031",
+      "scene_id": "SEG04",
+      "text": "In February twenty twenty-five, Andrej Karpathy — one of the founders of Open A I — gave this a name. Vibe coding. Quote: \"You just talk in natural language, run it, and most of the time it just works.\"...",
+      "expected_duration_sec": 14.8,
+      "actual_duration_sec": 11.12,
+      "backend": "chatterbox",
       "cache_hit": false,
       "attempts": [
         {
           "backend": "chatterbox",
-          "ok": false,
-          "error": "TorchCodec is required for save_with_torchcodec. Please install torchcodec to use this function."
-        },
-        {
-          "backend": "edge",
-          "ok": false,
-          "error": "Invalid voice 'narrator'."
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 11.12,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
         }
       ],
-      "segment_path": "/tmp/tts_prepro_nrmw6t_r/0061_SEG05_B031.wav"
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0061_SEG04_B031.wav"
+    },
+    {
+      "order": 32,
+      "beat_id": "SEG04_B032",
+      "scene_id": "SEG04",
+      "text": "... But here's the word most people skip. \"With.\"... Vibe coding isn't A I coding for you. It's you coding with A I. The decisions — what to build, what's good enough, what's wrong — those are yours. The implementation — the actual code — that's the A I's job.",
+      "expected_duration_sec": 18.4,
+      "actual_duration_sec": 15.16,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 15.16,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0063_SEG04_B032.wav"
+    },
+    {
+      "order": 33,
+      "beat_id": "SEG04_B033",
+      "scene_id": "SEG04",
+      "text": "Not outsourcing. Collaboration. That \"with\"... is the hard part.",
+      "expected_duration_sec": 3.6,
+      "actual_duration_sec": 3.92,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 3.92,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0065_SEG04_B033.wav"
+    },
+    {
+      "order": 34,
+      "beat_id": "SEG04_B034",
+      "scene_id": "SEG04",
+      "text": "So what can A I actually do well? Prototypes. Quick experiments. \"Show me what a dashboard could look like.\"... Ten minutes, you have something to react to. Scripts and automations — rename five hundred files, convert data formats, generate boilerplate. Learning tools — \"explain this code,\"... \"what does this function do,\"... \"show me an example.\"...",
+      "expected_duration_sec": 21.6,
+      "actual_duration_sec": 16.92,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 16.92,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0067_SEG04_B034.wav"
+    },
+    {
+      "order": 35,
+      "beat_id": "SEG04_B035",
+      "scene_id": "SEG04",
+      "text": "What can't it do? Production systems — code that handles real users, real money, real data. Security — keeping attackers out, protecting passwords, encrypting sensitive information. Payment processing — where a bug means someone gets charged twice.",
+      "expected_duration_sec": 14.8,
+      "actual_duration_sec": 13.72,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 13.72,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0069_SEG04_B035.wav"
+    },
+    {
+      "order": 36,
+      "beat_id": "SEG04_B036",
+      "scene_id": "SEG04",
+      "text": "Not \"can't ever.\"... Can't without supervision. Can't without someone checking the recipe before it reaches the customer.",
+      "expected_duration_sec": 6.8,
+      "actual_duration_sec": 6.04,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.04,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0071_SEG04_B036.wav"
+    },
+    {
+      "order": 37,
+      "beat_id": "SEG04_B037",
+      "scene_id": "SEG04",
+      "text": "And you've got options. Cursor — an A I-powered code editor. You write alongside it. It suggests, you accept or reject.",
+      "expected_duration_sec": 8.0,
+      "actual_duration_sec": 8.16,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 8.16,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0073_SEG04_B037.wav"
+    },
+    {
+      "order": 38,
+      "beat_id": "SEG04_B038",
+      "scene_id": "SEG04",
+      "text": "Claude Code — a terminal agent. It reads your entire project and makes changes across multiple files.",
+      "expected_duration_sec": 6.8,
+      "actual_duration_sec": 6.04,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.04,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0075_SEG04_B038.wav"
+    },
+    {
+      "order": 39,
+      "beat_id": "SEG04_B039",
+      "scene_id": "SEG04",
+      "text": "Replit — browser-based. No installation. Start building in thirty seconds flat.",
+      "expected_duration_sec": 4.4,
+      "actual_duration_sec": 4.08,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.08,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0077_SEG04_B039.wav"
+    },
+    {
+      "order": 40,
+      "beat_id": "SEG04_B040",
+      "scene_id": "SEG04",
+      "text": "Kiro — from AWS. Spec-first. It writes requirements before touching code. We'll come back to that.",
+      "expected_duration_sec": 6.4,
+      "actual_duration_sec": 5.64,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.64,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0079_SEG04_B040.wav"
+    },
+    {
+      "order": 41,
+      "beat_id": "SEG04_B041",
+      "scene_id": "SEG04",
+      "text": "Windsurf — another A I IDE. Similar to Cursor, different workflow. The point isn't which one.",
+      "expected_duration_sec": 6.0,
+      "actual_duration_sec": 6.48,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.48,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0081_SEG04_B041.wav"
+    },
+    {
+      "order": 42,
+      "beat_id": "SEG04_B042",
+      "scene_id": "SEG04",
+      "text": "Different tools. Same principle. You decide what. A I decides how.",
+      "expected_duration_sec": 4.0,
+      "actual_duration_sec": 4.4,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.4,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0083_SEG04_B042.wav"
+    },
+    {
+      "order": 43,
+      "beat_id": "SEG04_B043",
+      "scene_id": "SEG04",
+      "text": "And there's a spectrum. Level one: copy-pasting from Chat G P T. Level two: an A I IDE like Cursor. Level three: an autonomous agent with a spec. Wherever you start is fine. ... But know where you are.",
+      "expected_duration_sec": 13.6,
+      "actual_duration_sec": 12.64,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 12.64,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0085_SEG04_B043.wav"
+    },
+    {
+      "order": 44,
+      "beat_id": "SEG05_B044",
+      "scene_id": "SEG05",
+      "text": "So here's the reframe. Vibe coding is not an easy button. It's not \"A I, do my job.\"... It's a new skill — like learning to drive. The car does the moving. You do the steering.",
+      "expected_duration_sec": 14.0,
+      "actual_duration_sec": 8.84,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 8.84,
+            "exaggeration": 0.5,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0087_SEG05_B044.wav"
+    },
+    {
+      "order": 45,
+      "beat_id": "SEG05_B045",
+      "scene_id": "SEG05",
+      "text": "And the hardest part of this new skill isn't the typing. It's the judgment. Looking at what the A I made and knowing — is this good enough? Is this safe? Would I bet money on this working tomorrow?",
+      "expected_duration_sec": 15.2,
+      "actual_duration_sec": 8.72,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 8.72,
+            "exaggeration": 0.6,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0089_SEG05_B045.wav"
+    },
+    {
+      "order": 46,
+      "beat_id": "SEG05_B046",
+      "scene_id": "SEG05",
+      "text": "Professional developers do this every day. They review code. They test it. They ask: \"what could go wrong?\"... That's not a coding skill. That's a thinking skill. And you already have it.",
+      "expected_duration_sec": 12.8,
+      "actual_duration_sec": 8.04,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 8.04,
+            "exaggeration": 0.7,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0091_SEG05_B046.wav"
+    },
+    {
+      "order": 47,
+      "beat_id": "SEG05_B047",
+      "scene_id": "SEG05",
+      "text": "The starting point — the thing that makes all of this work — is knowing what you're building. Not how. What. That's where episode two picks up.",
+      "expected_duration_sec": 10.8,
+      "actual_duration_sec": 6.44,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.44,
+            "exaggeration": 0.8,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0093_SEG05_B047.wav"
+    },
+    {
+      "order": 48,
+      "beat_id": "SEG06_B048",
+      "scene_id": "SEG06",
+      "text": "Here's what you do today. Three things.",
+      "expected_duration_sec": 2.8,
+      "actual_duration_sec": 2.12,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 2.12,
+            "exaggeration": 0.6,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0095_SEG06_B048.wav"
+    },
+    {
+      "order": 49,
+      "beat_id": "SEG06_B049",
+      "scene_id": "SEG06",
+      "text": "One — pick a tool. Any tool. Cursor, Replit, Claude, whatever feels right. Install it.",
+      "expected_duration_sec": 6.0,
+      "actual_duration_sec": 4.52,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.52,
+            "exaggeration": 0.57,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0097_SEG06_B049.wav"
+    },
+    {
+      "order": 50,
+      "beat_id": "SEG06_B050",
+      "scene_id": "SEG06",
+      "text": "Two — type one prompt. Anything. \"Make me a to-do app.\"... \"Build a calculator.\"... \"Create a personal website.\"... Doesn't matter what.",
+      "expected_duration_sec": 8.4,
+      "actual_duration_sec": 6.6,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.6,
+            "exaggeration": 0.54,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0099_SEG06_B050.wav"
+    },
+    {
+      "order": 51,
+      "beat_id": "SEG06_B051",
+      "scene_id": "SEG06",
+      "text": "Three — look at what comes out. And write down how you feel. Not what's wrong with it. How you feel. Frustrated? Confused? Excited? Disappointed?",
+      "expected_duration_sec": 10.0,
+      "actual_duration_sec": 7.48,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.48,
+            "exaggeration": 0.51,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0101_SEG06_B051.wav"
+    },
+    {
+      "order": 52,
+      "beat_id": "SEG06_B052",
+      "scene_id": "SEG06",
+      "text": "That feeling is data. If the answer is \"this isn't what I wanted\"... — good. That frustration? That gap between what you imagined and what appeared? That's where it all begins.",
+      "expected_duration_sec": 12.4,
+      "actual_duration_sec": 9.8,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 9.8,
+            "exaggeration": 0.48,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0103_SEG06_B052.wav"
+    },
+    {
+      "order": 53,
+      "beat_id": "SEG06_B053",
+      "scene_id": "SEG06",
+      "text": "Next time — we give that feeling a name. And we turn it into the most powerful tool in vibe coding.",
+      "expected_duration_sec": 8.4,
+      "actual_duration_sec": 5.56,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.56,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_12qr6vpz/0105_SEG06_B053.wav"
     }
   ]
 }

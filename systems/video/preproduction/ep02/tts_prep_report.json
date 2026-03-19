@@ -1,9 +1,23 @@
 {
-  "generated_at": "2026-03-18T23:27:03.349917",
-  "rules_version": "1.0",
+  "generated_at": "2026-03-19T02:12:21.992882",
+  "rules_version": "2.0",
+  "language": "en",
   "total_beats": 46,
   "beats_modified": 42,
   "modification_rate": 0.913,
+  "narration_quality": {
+    "avg_wpm": 152.2,
+    "wpm_range": [
+      150.0,
+      163.6
+    ],
+    "total_warnings": 0,
+    "warning_types": {
+      "wpm": 0,
+      "sentence_length": 0,
+      "jargon": 0
+    }
+  },
   "modifications": [
     {
       "beat_id": "SEG01_B001",
@@ -358,6 +372,6 @@
       }
     }
   ],
-  "prepro_manifest": "../../preproduction/ep02/ep02_prepro_manifest_v7.json",
+  "prepro_manifest": "/mnt/e/vibecode-blog/systems/video/preproduction/ep02/ep02_prepro_manifest_v7.json",
   "rules_file": "../config/tts_rules.yaml"
 }

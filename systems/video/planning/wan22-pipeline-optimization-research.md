@@ -1,9 +1,10 @@
 # Wan 2.2 I2V Pipeline 고도화 리서치
 
 > **Date**: 2026-03-19
-> **Status**: Phase 8 구현 완료 (sa_solver + TeaCache + LLM Prompt Enrichment)
+> **Status**: Phase 8 + 8.5 완료 (속도 최적화 + 프롬프트 A/B/C 비교)
 > **현재 상태**: RTX 5070 Ti 16GB, Wan 2.2 MoE 14B GGUF Q3_K_M, 샷당 ~7-12분 (4 steps, sa_solver + FBCache + TeaCache + RIFE)
-> **달성**: 50분/샷 → 7-12분/샷 (~5-7x), LLM 프롬프트 강화 옵션 추가
+> **달성**: 50분/샷 → 7-12분/샷 (~5-7x), Claude 수작업 프롬프트(A) 최우수 확인, Ollama 14b(C) 자동화 경로 검증
+> **리서치**: `ai-video-prompting-research.md` (518줄) — 카메라/모션/무드/스타일 프롬프팅 종합 레퍼런스
 
 ---
 

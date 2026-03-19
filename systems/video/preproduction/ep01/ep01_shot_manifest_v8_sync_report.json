@@ -1,0 +1,366 @@
+{
+  "generated_at": "2026-03-19T00:58:27.073115",
+  "shot_manifest": "../../preproduction/ep01/ep01_shot_manifest_v8.json",
+  "total_shots": 30,
+  "total_beats": 53,
+  "original_total_sec": 210.0,
+  "synced_total_sec": 362.9,
+  "delta_sec": 152.9,
+  "padding_per_shot": 0.15,
+  "gap_sec": 0.15,
+  "log": [
+    {
+      "shot_id": "H01",
+      "segment": "HOOK",
+      "status": "synced",
+      "original_duration_sec": 6.17,
+      "synced_duration_sec": 12.34,
+      "beat_count": 2,
+      "beat_ids": [
+        "SEG01_B001",
+        "SEG01_B002"
+      ]
+    },
+    {
+      "shot_id": "H02",
+      "segment": "HOOK",
+      "status": "synced",
+      "original_duration_sec": 2.92,
+      "synced_duration_sec": 5.34,
+      "beat_count": 2,
+      "beat_ids": [
+        "SEG01_B003",
+        "SEG01_B004"
+      ]
+    },
+    {
+      "shot_id": "M01",
+      "segment": "MISCONCEPTION",
+      "status": "synced",
+      "original_duration_sec": 2.27,
+      "synced_duration_sec": 2.83,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG02_B005"
+      ]
+    },
+    {
+      "shot_id": "M02",
+      "segment": "MISCONCEPTION",
+      "status": "synced",
+      "original_duration_sec": 10.06,
+      "synced_duration_sec": 9.03,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG02_B006"
+      ]
+    },
+    {
+      "shot_id": "M03",
+      "segment": "MISCONCEPTION",
+      "status": "synced",
+      "original_duration_sec": 10.06,
+      "synced_duration_sec": 3.71,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG02_B007"
+      ]
+    },
+    {
+      "shot_id": "M04",
+      "segment": "MISCONCEPTION",
+      "status": "synced",
+      "original_duration_sec": 9.74,
+      "synced_duration_sec": 7.39,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG02_B008"
+      ]
+    },
+    {
+      "shot_id": "M05",
+      "segment": "MISCONCEPTION",
+      "status": "synced",
+      "original_duration_sec": 3.89,
+      "synced_duration_sec": 2.71,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG02_B009"
+      ]
+    },
+    {
+      "shot_id": "M06",
+      "segment": "MISCONCEPTION",
+      "status": "synced",
+      "original_duration_sec": 5.19,
+      "synced_duration_sec": 24.11,
+      "beat_count": 5,
+      "beat_ids": [
+        "SEG02_B010",
+        "SEG02_B011",
+        "SEG02_B012",
+        "SEG02_B013",
+        "SEG02_B014"
+      ]
+    },
+    {
+      "shot_id": "K01",
+      "segment": "THE_CRACK",
+      "status": "synced",
+      "original_duration_sec": 4.87,
+      "synced_duration_sec": 9.82,
+      "beat_count": 2,
+      "beat_ids": [
+        "SEG03_B015",
+        "SEG03_B016"
+      ]
+    },
+    {
+      "shot_id": "K02",
+      "segment": "THE_CRACK",
+      "status": "synced",
+      "original_duration_sec": 8.11,
+      "synced_duration_sec": 11.42,
+      "beat_count": 2,
+      "beat_ids": [
+        "SEG03_B017",
+        "SEG03_B018"
+      ]
+    },
+    {
+      "shot_id": "K03",
+      "segment": "THE_CRACK",
+      "status": "synced",
+      "original_duration_sec": 11.36,
+      "synced_duration_sec": 12.86,
+      "beat_count": 2,
+      "beat_ids": [
+        "SEG03_B019",
+        "SEG03_B020"
+      ]
+    },
+    {
+      "shot_id": "C01",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 9.09,
+      "synced_duration_sec": 7.95,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B021"
+      ]
+    },
+    {
+      "shot_id": "C02",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 4.54,
+      "synced_duration_sec": 5.95,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B022"
+      ]
+    },
+    {
+      "shot_id": "C03",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 10.71,
+      "synced_duration_sec": 5.31,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B023"
+      ]
+    },
+    {
+      "shot_id": "C04",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 3.89,
+      "synced_duration_sec": 10.83,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B024"
+      ]
+    },
+    {
+      "shot_id": "C05",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 4.22,
+      "synced_duration_sec": 4.27,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B025"
+      ]
+    },
+    {
+      "shot_id": "C06",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 13.63,
+      "synced_duration_sec": 5.51,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B026"
+      ]
+    },
+    {
+      "shot_id": "C07",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 12.01,
+      "synced_duration_sec": 6.35,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B027"
+      ]
+    },
+    {
+      "shot_id": "C08",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 2.92,
+      "synced_duration_sec": 3.59,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B028"
+      ]
+    },
+    {
+      "shot_id": "C09",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 12.01,
+      "synced_duration_sec": 10.87,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B029"
+      ]
+    },
+    {
+      "shot_id": "C10",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 6.49,
+      "synced_duration_sec": 14.83,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B030"
+      ]
+    },
+    {
+      "shot_id": "C11",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 3.57,
+      "synced_duration_sec": 11.27,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B031"
+      ]
+    },
+    {
+      "shot_id": "C12",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 5.19,
+      "synced_duration_sec": 15.31,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B032"
+      ]
+    },
+    {
+      "shot_id": "C13",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 3.25,
+      "synced_duration_sec": 89.69,
+      "beat_count": 11,
+      "beat_ids": [
+        "SEG04_B033",
+        "SEG04_B034",
+        "SEG04_B035",
+        "SEG04_B036",
+        "SEG04_B037",
+        "SEG04_B038",
+        "SEG04_B039",
+        "SEG04_B040",
+        "SEG04_B041",
+        "SEG04_B042",
+        "SEG04_B043"
+      ]
+    },
+    {
+      "shot_id": "R01",
+      "segment": "REFRAME",
+      "status": "synced",
+      "original_duration_sec": 11.36,
+      "synced_duration_sec": 17.86,
+      "beat_count": 2,
+      "beat_ids": [
+        "SEG05_B044",
+        "SEG05_B045"
+      ]
+    },
+    {
+      "shot_id": "R02",
+      "segment": "REFRAME",
+      "status": "synced",
+      "original_duration_sec": 10.39,
+      "synced_duration_sec": 14.78,
+      "beat_count": 2,
+      "beat_ids": [
+        "SEG05_B046",
+        "SEG05_B047"
+      ]
+    },
+    {
+      "shot_id": "Z01",
+      "segment": "OUTRO_CTA",
+      "status": "synced",
+      "original_duration_sec": 2.27,
+      "synced_duration_sec": 2.27,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG06_B048"
+      ]
+    },
+    {
+      "shot_id": "Z02",
+      "segment": "OUTRO_CTA",
+      "status": "synced",
+      "original_duration_sec": 4.87,
+      "synced_duration_sec": 4.67,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG06_B049"
+      ]
+    },
+    {
+      "shot_id": "Z03",
+      "segment": "OUTRO_CTA",
+      "status": "synced",
+      "original_duration_sec": 8.11,
+      "synced_duration_sec": 6.75,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG06_B050"
+      ]
+    },
+    {
+      "shot_id": "Z04",
+      "segment": "OUTRO_CTA",
+      "status": "synced",
+      "original_duration_sec": 6.82,
+      "synced_duration_sec": 23.29,
+      "beat_count": 3,
+      "beat_ids": [
+        "SEG06_B051",
+        "SEG06_B052",
+        "SEG06_B053"
+      ]
+    }
+  ]
+}

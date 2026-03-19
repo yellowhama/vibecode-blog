@@ -1,0 +1,1196 @@
+{
+  "project_id": "ep02",
+  "prepro_manifest": "/mnt/e/vibecode-blog/systems/video/preproduction/ep02/ep02_prepro_manifest_v7.json",
+  "generated_at": "2026-03-19T00:44:47.423076",
+  "backend_chain": [
+    "chatterbox",
+    "edge"
+  ],
+  "offline_strict": false,
+  "backend_health": {
+    "chatterbox": {
+      "ok": true,
+      "msg": "chatterbox available, CUDA device: NVIDIA GeForce RTX 5070 Ti",
+      "is_local": true,
+      "registry": {
+        "module": "tts_backends.chatterbox_be",
+        "class": "ChatterboxBackend",
+        "description": "Resemble AI Chatterbox — local neural TTS with emotion control",
+        "is_local": true
+      }
+    },
+    "edge": {
+      "ok": true,
+      "msg": "edge_tts available",
+      "is_local": false,
+      "registry": {
+        "module": "tts_backends.edge",
+        "class": "EdgeBackend",
+        "description": "Microsoft Edge Neural Voices (online)",
+        "is_local": false
+      }
+    }
+  },
+  "used_backend_synthesis_counts": {
+    "chatterbox": 46,
+    "edge": 0
+  },
+  "cache_hits": 0,
+  "failed_count": 0,
+  "failed_beat_ids": [],
+  "out_audio": "/mnt/e/vibecode-blog/systems/video/preproduction/ep02/voiceover_master_tts.wav",
+  "timing_report": "/mnt/e/vibecode-blog/systems/video/preproduction/ep02/timing_alignment_report.json",
+  "quality_report": "/mnt/e/vibecode-blog/systems/video/preproduction/ep02/voiceover_quality_report.json",
+  "segments": [
+    {
+      "order": 1,
+      "beat_id": "SEG01_B001",
+      "scene_id": "SEG01",
+      "text": "Last time, Vee learned the first rule of vibe coding: you decide what, A I decides how.",
+      "expected_duration_sec": 6.4,
+      "actual_duration_sec": 6.4,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.4,
+            "exaggeration": 0.4,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0001_SEG01_B001.wav"
+    },
+    {
+      "order": 2,
+      "beat_id": "SEG01_B002",
+      "scene_id": "SEG01",
+      "text": "So she tried it. For real. She wanted a simple website — a candle shop. Browse candles, send a message, that's it.",
+      "expected_duration_sec": 8.8,
+      "actual_duration_sec": 6.8,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.8,
+            "exaggeration": 0.5,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0003_SEG01_B002.wav"
+    },
+    {
+      "order": 3,
+      "beat_id": "SEG01_B003",
+      "scene_id": "SEG01",
+      "text": "She tried again. Five times. Five prompts. Same project.",
+      "expected_duration_sec": 3.6,
+      "actual_duration_sec": 3.0,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 3.0,
+            "exaggeration": 0.6,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0005_SEG01_B003.wav"
+    },
+    {
+      "order": 4,
+      "beat_id": "SEG01_B004",
+      "scene_id": "SEG01",
+      "text": "Five completely different things came back.",
+      "expected_duration_sec": 2.4,
+      "actual_duration_sec": 2.4,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 2.4,
+            "exaggeration": 0.7,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0007_SEG01_B004.wav"
+    },
+    {
+      "order": 5,
+      "beat_id": "SEG02_B005",
+      "scene_id": "SEG02",
+      "text": "Last time she learned that being more specific didn't help. More detail, more mess. So she tried something different. She thought: what if I explain the architecture?",
+      "expected_duration_sec": 10.8,
+      "actual_duration_sec": 7.76,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.76,
+            "exaggeration": 0.5,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0009_SEG02_B005.wav"
+    },
+    {
+      "order": 6,
+      "beat_id": "SEG02_B006",
+      "scene_id": "SEG02",
+      "text": "She wrote two pages. Component hierarchy. Data flow. State management. Color palette hex codes. Responsive breakpoints. Font stack. A P I endpoint naming conventions.",
+      "expected_duration_sec": 8.8,
+      "actual_duration_sec": 9.12,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 9.12,
+            "exaggeration": 0.56,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0011_SEG02_B006.wav"
+    },
+    {
+      "order": 7,
+      "beat_id": "SEG02_B007",
+      "scene_id": "SEG02",
+      "text": "She was proud of it. Pasted the whole thing into the A I.",
+      "expected_duration_sec": 4.8,
+      "actual_duration_sec": 3.28,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 3.28,
+            "exaggeration": 0.62,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0013_SEG02_B007.wav"
+    },
+    {
+      "order": 8,
+      "beat_id": "SEG02_B008",
+      "scene_id": "SEG02",
+      "text": "The result was technically correct. Every component she described existed. Every color matched. The A P I endpoints were named exactly as specified. And the whole thing was completely wrong.",
+      "expected_duration_sec": 11.2,
+      "actual_duration_sec": 8.72,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 8.72,
+            "exaggeration": 0.68,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0015_SEG02_B008.wav"
+    },
+    {
+      "order": 9,
+      "beat_id": "SEG02_B009",
+      "scene_id": "SEG02",
+      "text": "She described how to build a building. ... But never said what the building was for. Architecture without purpose. Detail without direction.",
+      "expected_duration_sec": 8.4,
+      "actual_duration_sec": 5.36,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.36,
+            "exaggeration": 0.74,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0017_SEG02_B009.wav"
+    },
+    {
+      "order": 10,
+      "beat_id": "SEG02_B010",
+      "scene_id": "SEG02",
+      "text": "Two pages of instructions. Zero lines about what the customer actually needs. That's the trap — you can be incredibly specific and completely wrong at the same time.",
+      "expected_duration_sec": 11.2,
+      "actual_duration_sec": 7.12,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.12,
+            "exaggeration": 0.8,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0019_SEG02_B010.wav"
+    },
+    {
+      "order": 11,
+      "beat_id": "SEG03_B011",
+      "scene_id": "SEG03",
+      "text": "Let's look at what actually happened inside the code.",
+      "expected_duration_sec": 3.6,
+      "actual_duration_sec": 2.12,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 2.12,
+            "exaggeration": 0.5,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0021_SEG03_B011.wav"
+    },
+    {
+      "order": 12,
+      "beat_id": "SEG03_B012",
+      "scene_id": "SEG03",
+      "text": "Ten thousand, eight hundred, forty-seven lines of code.",
+      "expected_duration_sec": 3.2,
+      "actual_duration_sec": 1.84,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 1.84,
+            "exaggeration": 0.875,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0023_SEG03_B012.wav"
+    },
+    {
+      "order": 13,
+      "beat_id": "SEG03_B013",
+      "scene_id": "SEG03",
+      "text": "Almost half of them — four thousand two hundred lines — were duplicates.",
+      "expected_duration_sec": 5.2,
+      "actual_duration_sec": 3.12,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 3.12,
+            "exaggeration": 1.0,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0025_SEG03_B013.wav"
+    },
+    {
+      "order": 14,
+      "beat_id": "SEG03_B014",
+      "scene_id": "SEG03",
+      "text": "Five A I sessions built the same functions five different ways. Three different date formatters — each one converting dates into a different format. Two config parsers — reading the same settings file with different assumptions. Four input validators — checking the same email field four different ways.",
+      "expected_duration_sec": 18.8,
+      "actual_duration_sec": 11.4,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 11.4,
+            "exaggeration": 0.875,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0027_SEG03_B014.wav"
+    },
+    {
+      "order": 15,
+      "beat_id": "SEG03_B015",
+      "scene_id": "SEG03",
+      "text": "None of them knew about the others. Five construction crews on the same lot. No blueprint. No foreman. Just... build.",
+      "expected_duration_sec": 8.0,
+      "actual_duration_sec": 6.52,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.52,
+            "exaggeration": 0.5,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0029_SEG03_B015.wav"
+    },
+    {
+      "order": 16,
+      "beat_id": "SEG04_B016",
+      "scene_id": "SEG04",
+      "text": "Imagine building a house without a blueprint. You know you want a house. You start stacking bricks. Some go left, some go right. Eventually something stands up. ... But the bathroom is on the roof and there's no front door.",
+      "expected_duration_sec": 15.6,
+      "actual_duration_sec": 10.16,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 10.16,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0031_SEG04_B016.wav"
+    },
+    {
+      "order": 17,
+      "beat_id": "SEG04_B017",
+      "scene_id": "SEG04",
+      "text": "Now imagine one piece of paper. Not a hundred-page document. One note. \"Two bedrooms. One bathroom. Front door faces south.\"...",
+      "expected_duration_sec": 8.0,
+      "actual_duration_sec": 7.0,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.0,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0033_SEG04_B017.wav"
+    },
+    {
+      "order": 18,
+      "beat_id": "SEG04_B018",
+      "scene_id": "SEG04",
+      "text": "Same workers. Same bricks. Completely different result. That note is a spec.",
+      "expected_duration_sec": 4.8,
+      "actual_duration_sec": 4.52,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.52,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0035_SEG04_B018.wav"
+    },
+    {
+      "order": 19,
+      "beat_id": "SEG04_B019",
+      "scene_id": "SEG04",
+      "text": "And a spec doesn't have to be complicated. Three lines is enough.",
+      "expected_duration_sec": 4.8,
+      "actual_duration_sec": 3.64,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 3.64,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0037_SEG04_B019.wav"
+    },
+    {
+      "order": 20,
+      "beat_id": "SEG04_B020",
+      "scene_id": "SEG04",
+      "text": "Line one: Goal. What are you building? \"An online store that sells handmade candles.\"...",
+      "expected_duration_sec": 5.6,
+      "actual_duration_sec": 4.88,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.88,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0039_SEG04_B020.wav"
+    },
+    {
+      "order": 21,
+      "beat_id": "SEG04_B021",
+      "scene_id": "SEG04",
+      "text": "Line two: Constraints. What are you NOT building? \"No user accounts. No payment processing — just a catalog with a contact form.\"...",
+      "expected_duration_sec": 8.8,
+      "actual_duration_sec": 7.36,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.36,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0041_SEG04_B021.wav"
+    },
+    {
+      "order": 22,
+      "beat_id": "SEG04_B022",
+      "scene_id": "SEG04",
+      "text": "Line three: Done-when. How do you know it's finished? \"When someone can browse candles by category and send a message.\"...",
+      "expected_duration_sec": 8.0,
+      "actual_duration_sec": 6.28,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.28,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0043_SEG04_B022.wav"
+    },
+    {
+      "order": 23,
+      "beat_id": "SEG04_B023",
+      "scene_id": "SEG04",
+      "text": "That's it. Three lines. Now watch what happens.",
+      "expected_duration_sec": 3.2,
+      "actual_duration_sec": 2.84,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 2.84,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0045_SEG04_B023.wav"
+    },
+    {
+      "order": 24,
+      "beat_id": "SEG04_B024",
+      "scene_id": "SEG04",
+      "text": "Same project. Same A I. ... But now it has the spec. First result: a clean catalog page. Three candle categories. A contact form at the bottom. No shopping cart. No admin panel. No enterprise dashboard.",
+      "expected_duration_sec": 13.6,
+      "actual_duration_sec": 12.04,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 12.04,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0047_SEG04_B024.wav"
+    },
+    {
+      "order": 25,
+      "beat_id": "SEG04_B025",
+      "scene_id": "SEG04",
+      "text": "Second attempt? Almost identical. Same layout, same features, minor styling differences. Twenty minutes total, instead of three hours of confusion.",
+      "expected_duration_sec": 8.0,
+      "actual_duration_sec": 8.16,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 8.16,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0049_SEG04_B025.wav"
+    },
+    {
+      "order": 26,
+      "beat_id": "SEG04_B026",
+      "scene_id": "SEG04",
+      "text": "The spec didn't make A I smarter. It made your instructions clearer.",
+      "expected_duration_sec": 4.4,
+      "actual_duration_sec": 3.72,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 3.72,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0051_SEG04_B026.wav"
+    },
+    {
+      "order": 27,
+      "beat_id": "SEG04_B027",
+      "scene_id": "SEG04",
+      "text": "And here's the frame that changes everything. A spec is a contract. Not a wish list — a contract. It says: this is what I'm buying. This is what I'm not buying. And here's how we both know when it's done.",
+      "expected_duration_sec": 16.4,
+      "actual_duration_sec": 11.32,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 11.32,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0053_SEG04_B027.wav"
+    },
+    {
+      "order": 28,
+      "beat_id": "SEG04_B028",
+      "scene_id": "SEG04",
+      "text": "Which means — before the A I writes a single line of code, you can review the contract. \"Wait, I said no payment processing, but I do want a price list.\"... Fix it now. Not after five hundred lines of code exist.",
+      "expected_duration_sec": 16.4,
+      "actual_duration_sec": 10.88,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 10.88,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0055_SEG04_B028.wav"
+    },
+    {
+      "order": 29,
+      "beat_id": "SEG04_B029",
+      "scene_id": "SEG04",
+      "text": "That's an approval gate. Review the plan before executing the plan. Professional developers do this. Product managers do this. You can do this.",
+      "expected_duration_sec": 9.2,
+      "actual_duration_sec": 7.8,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.8,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0057_SEG04_B029.wav"
+    },
+    {
+      "order": 30,
+      "beat_id": "SEG04_B030",
+      "scene_id": "SEG04",
+      "text": "And there are tools that make this persistent. claude M D — a file that lives in your project. Every time Claude opens your code, it reads this file first.",
+      "expected_duration_sec": 12.0,
+      "actual_duration_sec": 7.76,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.76,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0059_SEG04_B030.wav"
+    },
+    {
+      "order": 31,
+      "beat_id": "SEG04_B031",
+      "scene_id": "SEG04",
+      "text": "Your rules. Your constraints. Your context. \"This is a candle shop. We don't do user accounts. The style is warm and minimal. Never add features I didn't ask for.\"...",
+      "expected_duration_sec": 11.6,
+      "actual_duration_sec": 9.24,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 9.24,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0061_SEG04_B031.wav"
+    },
+    {
+      "order": 32,
+      "beat_id": "SEG04_B032",
+      "scene_id": "SEG04",
+      "text": "It's like a note pinned to the kitchen wall. Every chef who walks in reads it first. \"No cream in the carbonara. Ever.\"...",
+      "expected_duration_sec": 9.2,
+      "actual_duration_sec": 6.12,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.12,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0063_SEG04_B032.wav"
+    },
+    {
+      "order": 33,
+      "beat_id": "SEG04_B033",
+      "scene_id": "SEG04",
+      "text": "Cursor has the same idea — dot cursor rules. Write your rules once, every A I session follows them.",
+      "expected_duration_sec": 7.2,
+      "actual_duration_sec": 6.68,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.68,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0065_SEG04_B033.wav"
+    },
+    {
+      "order": 34,
+      "beat_id": "SEG04_B034",
+      "scene_id": "SEG04",
+      "text": "And if you want a full workflow — spec kit. Four steps: specify, plan, tasks, implement. Each step validates before moving to the next. You don't build until the plan is approved. You don't plan until the spec is approved.",
+      "expected_duration_sec": 15.6,
+      "actual_duration_sec": 11.6,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 11.6,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0067_SEG04_B034.wav"
+    },
+    {
+      "order": 35,
+      "beat_id": "SEG04_B035",
+      "scene_id": "SEG04",
+      "text": "The point isn't which tool. The point is: write down what you want before you ask A I to build it.",
+      "expected_duration_sec": 8.0,
+      "actual_duration_sec": 5.64,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.64,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0069_SEG04_B035.wav"
+    },
+    {
+      "order": 36,
+      "beat_id": "SEG05_B036",
+      "scene_id": "SEG05",
+      "text": "... Here's the part nobody tells you. That frustration you felt when A I made the wrong thing? When the store was neon pink and the login went to the cart? When you wrote two pages and got an enterprise dashboard instead of a candle shop?",
+      "expected_duration_sec": 17.6,
+      "actual_duration_sec": 10.6,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 10.6,
+            "exaggeration": 0.5,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0071_SEG05_B036.wav"
+    },
+    {
+      "order": 37,
+      "beat_id": "SEG05_B037",
+      "scene_id": "SEG05",
+      "text": "That's not failure. That's data.",
+      "expected_duration_sec": 2.0,
+      "actual_duration_sec": 1.84,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 1.84,
+            "exaggeration": 0.56,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0073_SEG05_B037.wav"
+    },
+    {
+      "order": 38,
+      "beat_id": "SEG05_B038",
+      "scene_id": "SEG05",
+      "text": "Write down what annoyed you. \"It should have done X but did Y.\"... Congratulations. You just wrote a requirement. Organize your frustrations, and you've got a spec.",
+      "expected_duration_sec": 10.8,
+      "actual_duration_sec": 7.52,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.52,
+            "exaggeration": 0.62,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0075_SEG05_B038.wav"
+    },
+    {
+      "order": 39,
+      "beat_id": "SEG05_B039",
+      "scene_id": "SEG05",
+      "text": "Frustration is the spec. Your annoyance, organized, is the blueprint.",
+      "expected_duration_sec": 4.0,
+      "actual_duration_sec": 4.08,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.08,
+            "exaggeration": 0.68,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0077_SEG05_B039.wav"
+    },
+    {
+      "order": 40,
+      "beat_id": "SEG05_B040",
+      "scene_id": "SEG05",
+      "text": "And here's what might surprise you — professional developers do exactly this. Every day. They don't sit down and write perfect requirements from scratch. They build something, see what's wrong, and write the spec from the wreckage. That's not amateur hour. That's the process.",
+      "expected_duration_sec": 17.6,
+      "actual_duration_sec": 11.48,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 11.48,
+            "exaggeration": 0.74,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0079_SEG05_B040.wav"
+    },
+    {
+      "order": 41,
+      "beat_id": "SEG05_B041",
+      "scene_id": "SEG05",
+      "text": "You're not learning to code. You're learning to direct. A director doesn't operate the camera. They say: \"wider shot, warmer light, more emotion.\"... The crew executes. The director decides.",
+      "expected_duration_sec": 11.6,
+      "actual_duration_sec": 8.84,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 8.84,
+            "exaggeration": 0.8,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0081_SEG05_B041.wav"
+    },
+    {
+      "order": 42,
+      "beat_id": "SEG06_B042",
+      "scene_id": "SEG06",
+      "text": "Here's your homework. Before you type a single prompt — grab a piece of paper. Or open a blank file. And write three lines.",
+      "expected_duration_sec": 9.6,
+      "actual_duration_sec": 5.32,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.32,
+            "exaggeration": 0.6,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0083_SEG06_B042.wav"
+    },
+    {
+      "order": 43,
+      "beat_id": "SEG06_B043",
+      "scene_id": "SEG06",
+      "text": "Goal. Constraints. Done-when. Fill in the blanks. Anything — a to-do app, a birthday card generator, a recipe organizer. Then give it to the A I.",
+      "expected_duration_sec": 10.0,
+      "actual_duration_sec": 8.96,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 8.96,
+            "exaggeration": 0.562,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0085_SEG06_B043.wav"
+    },
+    {
+      "order": 44,
+      "beat_id": "SEG06_B044",
+      "scene_id": "SEG06",
+      "text": "And when the result comes back — hold your spec next to it. Does it match? Where does it match? Where doesn't it?",
+      "expected_duration_sec": 9.2,
+      "actual_duration_sec": 5.24,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.24,
+            "exaggeration": 0.525,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0087_SEG06_B044.wav"
+    },
+    {
+      "order": 45,
+      "beat_id": "SEG06_B045",
+      "scene_id": "SEG06",
+      "text": "That gap — between spec and result — that's your next spec. The differences become the instructions. Every round gets closer.",
+      "expected_duration_sec": 8.4,
+      "actual_duration_sec": 7.12,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.12,
+            "exaggeration": 0.487,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0089_SEG06_B045.wav"
+    },
+    {
+      "order": 46,
+      "beat_id": "SEG06_B046",
+      "scene_id": "SEG06",
+      "text": "... But here's a question. The spec tells A I what to build. The code gets bigger. More files, more features, more complexity. How do you keep it organized? How do you stop one change from breaking everything else? Next time — we talk about walls.",
+      "expected_duration_sec": 17.6,
+      "actual_duration_sec": 12.96,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 12.96,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_5i6g8ow8/0091_SEG06_B046.wav"
+    }
+  ]
+}

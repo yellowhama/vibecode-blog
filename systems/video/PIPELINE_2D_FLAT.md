@@ -108,6 +108,22 @@ python build_shot_manifest_from_prepro.py \
 - Falls back to templates if Ollama unavailable
 - Module: `pipeline/scripts/prompt_enricher.py` + `prompt_enricher_system.md`
 
+### Prompt A/B/C Comparison (Phase 8.5 — 2026-03-19)
+
+3가지 방법으로 EP01 16 i2v 샷 프롬프트를 생성하여 비교:
+
+| Metric | Template (v9) | A: Claude | B: 7b | C: 14b |
+|--------|---:|---:|---:|---:|
+| Diversity (Jaccard) | 0.219 | 0.588 | **0.763** | 0.724 |
+| Mood color match | 0.50 | **0.88** | 0.19 | 0.31 |
+| Camera variety | 0 | **14** | 7 | 6 |
+| Motion verbs | 7 | **21** | 15 | 17 |
+
+**결론**: EP01은 Claude 수작업 매니페스트(A) 사용. EP02+는 14b enricher + 개선된 시스템 프롬프트.
+- 비교 스크립트: `pipeline/scripts/compare_prompts.py`
+- 비교 리포트: `preproduction/ep01/ep01_prompt_comparison_report.md`
+- 프롬프팅 리서치: `planning/ai-video-prompting-research.md` (518줄)
+
 ## Scripts Inventory (14 pipeline scripts + 2 validation)
 
 | Script | Lines | Purpose |

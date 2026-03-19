@@ -32,17 +32,13 @@
       "sfx": [
         "fury_typing_mechanical"
       ],
-      "duration_sec": 12.34,
+      "duration_sec": 6.09,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Synopsis: Social media ad montage → \"the internet says anyone can do it\" → Vee tries → something comes out → \"...what is this?\", flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500001,
+      "seed": 2000001,
       "input_image": "H01_keyframe.png",
       "output_name": "H01.mp4",
-      "beat_ids": [
-        "SEG01_B001",
-        "SEG01_B002"
-      ],
-      "beat_count": 2
+      "storyboard_image": "H01_storyboard.png"
     },
     {
       "shot_id": "H02",
@@ -50,8 +46,8 @@
       "visual_type": "character_reaction",
       "space": "desk",
       "render_method": "i2v",
-      "description": "Visual: More ads — a smiling influencer pointing at a laptop. \"I made ten thousand dollars with one prompt.\" A countdown timer: \"60 seconds to your first app.\"",
-      "narrator_vo": "Vee believed it. She typed a prompt. Hit enter.",
+      "description": "Visual: Quick montage — fake social media ads flash across screen. \"Build an app in 60 seconds.\" \"No code needed.\" \"AI does everything.\" Bold text, sparkly effects. TikTok-style swipe transitions.",
+      "narrator_vo": "Every ad. Every thread. Every video. The message is the same: just type what you want, and AI will build it.",
       "characters": [
         "vee"
       ],
@@ -62,17 +58,39 @@
       "sfx": [
         "fury_typing_mechanical"
       ],
-      "duration_sec": 5.34,
-      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: More ads — a smiling influencer pointing at a laptop. \"I made ten thousand dollars with one prompt.\" A countdown timer: \"60 seconds to your first app.\", flat color fill, thin outline, clean design, no gradients",
+      "duration_sec": 6.73,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: Quick montage — fake social media ads flash across screen. \"Build an app in 60 seconds.\" \"No code needed.\" \"AI does everything.\" Bold text, sparkly effects. TikTok-style swipe transitions., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500002,
+      "seed": 2000002,
       "input_image": "H02_keyframe.png",
       "output_name": "H02.mp4",
-      "beat_ids": [
-        "SEG01_B003",
-        "SEG01_B004"
+      "storyboard_image": "H02_storyboard.png"
+    },
+    {
+      "shot_id": "H03",
+      "segment": "HOOK",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Visual: Desk scene — Vee's hands type a prompt on keyboard. She looks excited. Hits enter. Screen glows.",
+      "narrator_vo": "Something came out. But...",
+      "characters": [
+        "vee"
       ],
-      "beat_count": 2
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "fury_typing_mechanical"
+      ],
+      "duration_sec": 2.0,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: Desk scene — Vee's hands type a prompt on keyboard. She looks excited. Hits enter. Screen glows., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 2000003,
+      "input_image": "H03_keyframe.png",
+      "output_name": "H03.mp4",
+      "storyboard_image": "H03_storyboard.png"
     },
     {
       "shot_id": "M01",
@@ -80,7 +98,7 @@
       "visual_type": "character_reaction",
       "space": "screen",
       "render_method": "i2v",
-      "description": "Synopsis: \"Make me a shopping mall\" → wrong result → \"be more specific\" → even worse → \"try a different tool\" → same problem",
+      "description": "Synopsis: \"Make me a store\" → wrong → \"be more specific\" → worse → \"try different tools\" → same problem",
       "narrator_vo": "She typed: \"Make me an online store.\"",
       "characters": [
         "vee"
@@ -92,16 +110,13 @@
       "sfx": [
         "fury_typing_mechanical"
       ],
-      "duration_sec": 2.83,
-      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Synopsis: \"Make me a shopping mall\" → wrong result → \"be more specific\" → even worse → \"try a different tool\" → same problem, flat color fill, thin outline, clean design, no gradients",
+      "duration_sec": 2.23,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Synopsis: \"Make me a store\" → wrong → \"be more specific\" → worse → \"try different tools\" → same problem, flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500003,
+      "seed": 2000004,
       "input_image": "M01_keyframe.png",
       "output_name": "M01.mp4",
-      "beat_ids": [
-        "SEG02_B005"
-      ],
-      "beat_count": 1
+      "storyboard_image": "M01_storyboard.png"
     },
     {
       "shot_id": "M02",
@@ -121,16 +136,13 @@
       "sfx": [
         "pop_appear"
       ],
-      "duration_sec": 9.03,
+      "duration_sec": 9.95,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Visual: AI generates a website. It loads. It exists. It's... technically a website., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500004,
+      "seed": 2000005,
       "input_image": "M02_keyframe.png",
       "output_name": "M02.mp4",
-      "beat_ids": [
-        "SEG02_B006"
-      ],
-      "beat_count": 1
+      "storyboard_image": "M02_storyboard.png"
     },
     {
       "shot_id": "M03",
@@ -139,7 +151,7 @@
       "space": "screen",
       "render_method": "i2v",
       "description": "Vee frozen expression — not angry, not sad. Just... \"what?\" 1.5 seconds.",
-      "narrator_vo": "This is what most people don't tell you about vibe coding. The result doesn't explode. It comes out wrong. Low quality. Not what you asked for. And you can't explain why.",
+      "narrator_vo": "So she got more specific. A blue header. Categories on the left. Cart icon top right. Modern font. Responsive layout. Autocomplete search.",
       "characters": [
         "vee"
       ],
@@ -148,16 +160,13 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 3.71,
+      "duration_sec": 7.06,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Vee frozen expression — not angry, not sad. Just... \"what?\" 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500005,
+      "seed": 2000006,
       "input_image": "M03_keyframe.png",
       "output_name": "M03.mp4",
-      "beat_ids": [
-        "SEG02_B007"
-      ],
-      "beat_count": 1
+      "storyboard_image": "M03_storyboard.png"
     },
     {
       "shot_id": "M04",
@@ -165,8 +174,8 @@
       "visual_type": "character_reaction",
       "space": "screen",
       "render_method": "i2v",
-      "description": "Visual: Vee typing. The prompt grows. And grows. Camera slowly zooms out — text extends beyond the screen.",
-      "narrator_vo": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern sans-serif font, responsive layout, search bar with autocomplete...\"",
+      "description": "Visual: Prompt grows on screen. Camera slowly zooms out — text extends beyond the screen. Tiny font. Endless instructions.",
+      "narrator_vo": "The result? Worse. More detail made it more confused. Because detail is not direction.",
       "characters": [
         "vee"
       ],
@@ -175,16 +184,13 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 7.39,
-      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Visual: Vee typing. The prompt grows. And grows. Camera slowly zooms out — text extends beyond the screen., flat color fill, thin outline, clean design, no gradients",
+      "duration_sec": 4.48,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Visual: Prompt grows on screen. Camera slowly zooms out — text extends beyond the screen. Tiny font. Endless instructions., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500006,
+      "seed": 2000007,
       "input_image": "M04_keyframe.png",
       "output_name": "M04.mp4",
-      "beat_ids": [
-        "SEG02_B008"
-      ],
-      "beat_count": 1
+      "storyboard_image": "M04_storyboard.png"
     },
     {
       "shot_id": "M05",
@@ -192,8 +198,58 @@
       "visual_type": "character_reaction",
       "space": "screen",
       "render_method": "i2v",
-      "description": "Visual: The AI output appears. It's worse. The header is blue but covers everything. Categories overlap. Cart is on a different page entirely.",
-      "narrator_vo": "Worse. More detail made it more confused. Because detail is not direction.",
+      "description": "Vee slumps back in chair. Hands drop from keyboard. She looks at Bee — Bee shrugs with tiny arms. 1.5 seconds.",
+      "narrator_vo": "She switched tools. Three different AI assistants. Same prompt. Three different wrong answers.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": 3,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "fury_typing_mechanical"
+      ],
+      "duration_sec": 4.16,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Vee slumps back in chair. Hands drop from keyboard. She looks at Bee — Bee shrugs with tiny arms. 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 2000008,
+      "input_image": "M05_keyframe.png",
+      "output_name": "M05.mp4",
+      "storyboard_image": "M05_storyboard.png"
+    },
+    {
+      "shot_id": "M06",
+      "segment": "MISCONCEPTION",
+      "visual_type": "character_reaction",
+      "space": "screen",
+      "render_method": "i2v",
+      "description": "Visual: Three browser windows open side by side. Three different tools. Three different results. All wrong in different ways.",
+      "narrator_vo": "The problem wasn't the tool. It was something else entirely.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 3.2,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Visual: Three browser windows open side by side. Three different tools. Three different results. All wrong in different ways., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 2000009,
+      "input_image": "M06_keyframe.png",
+      "output_name": "M06.mp4",
+      "storyboard_image": "M06_storyboard.png"
+    },
+    {
+      "shot_id": "K01",
+      "segment": "THE_CRACK",
+      "visual_type": "screen_demo",
+      "space": "screen",
+      "render_method": "i2v",
+      "description": "Visual: Screen splits into three panels. Each shows a different result. One purple-themed, one text-only, one mostly images. Completely different layouts.",
+      "narrator_vo": "Three completely different stores. Same exact prompt. Why? Because the AI isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly different. Like rolling dice with language.",
       "characters": [
         "vee"
       ],
@@ -204,77 +260,13 @@
       "sfx": [
         "pop_appear"
       ],
-      "duration_sec": 2.71,
-      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Visual: The AI output appears. It's worse. The header is blue but covers everything. Categories overlap. Cart is on a different page entirely., flat color fill, thin outline, clean design, no gradients",
+      "duration_sec": 10.27,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Visual: Screen splits into three panels. Each shows a different result. One purple-themed, one text-only, one mostly images. Completely different layouts., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500007,
-      "input_image": "M05_keyframe.png",
-      "output_name": "M05.mp4",
-      "beat_ids": [
-        "SEG02_B009"
-      ],
-      "beat_count": 1
-    },
-    {
-      "shot_id": "M06",
-      "segment": "MISCONCEPTION",
-      "visual_type": "character_reaction",
-      "space": "screen",
-      "render_method": "i2v",
-      "description": "Visual: Three browser windows open side by side. Three different tools. Three different results. All wrong in different ways.",
-      "narrator_vo": "Three tools. Three different wrong answers. The problem wasn't the tool. It was something else entirely.",
-      "characters": [
-        "vee"
-      ],
-      "vee_expression": "default",
-      "vee_reaction_number": null,
-      "extended_metaphor": false,
-      "shorts_candidate": false,
-      "sfx": [],
-      "duration_sec": 24.11,
-      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Visual: Three browser windows open side by side. Three different tools. Three different results. All wrong in different ways., flat color fill, thin outline, clean design, no gradients",
-      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500008,
-      "input_image": "M06_keyframe.png",
-      "output_name": "M06.mp4",
-      "beat_ids": [
-        "SEG02_B010",
-        "SEG02_B011",
-        "SEG02_B012",
-        "SEG02_B013",
-        "SEG02_B014"
-      ],
-      "beat_count": 5
-    },
-    {
-      "shot_id": "K01",
-      "segment": "THE_CRACK",
-      "visual_type": "screen_demo",
-      "space": "screen",
-      "render_method": "i2v",
-      "description": "Synopsis: Same prompt, three runs → three different results → \"AI doesn't understand — it predicts\" → \"she never read the code\"",
-      "narrator_vo": "So she tried one more thing. Same prompt. Same tool. Three times in a row.",
-      "characters": [
-        "vee"
-      ],
-      "vee_expression": "default",
-      "vee_reaction_number": null,
-      "extended_metaphor": false,
-      "shorts_candidate": false,
-      "sfx": [
-        "fury_typing_mechanical"
-      ],
-      "duration_sec": 9.82,
-      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Synopsis: Same prompt, three runs → three different results → \"AI doesn't understand — it predicts\" → \"she never read the code\", flat color fill, thin outline, clean design, no gradients",
-      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500009,
+      "seed": 2000010,
       "input_image": "K01_keyframe.png",
       "output_name": "K01.mp4",
-      "beat_ids": [
-        "SEG03_B015",
-        "SEG03_B016"
-      ],
-      "beat_count": 2
+      "storyboard_image": "K01_storyboard.png"
     },
     {
       "shot_id": "K02",
@@ -282,27 +274,26 @@
       "visual_type": "screen_demo",
       "space": "screen",
       "render_method": "i2v",
-      "description": "Vee looks left, right, left — head swiveling between the three screens. 1.5 seconds.",
-      "narrator_vo": "Why? Because the AI isn't reading your prompt and understanding it. It's predicting the next word. Every time, slightly different. Like rolling dice with language.",
+      "description": "Visual: Zoom into one screen — text appearing letter by letter, each letter a probability cloud, a dice roll. Not \"understanding\" — predicting.",
+      "narrator_vo": "Think of it like cooking. You walk into a restaurant and say: \"Make me dinner.\" The chef starts cooking immediately.",
       "characters": [
         "vee"
       ],
       "vee_expression": "default",
-      "vee_reaction_number": 4,
+      "vee_reaction_number": null,
       "extended_metaphor": false,
       "shorts_candidate": false,
-      "sfx": [],
-      "duration_sec": 11.42,
-      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Vee looks left, right, left — head swiveling between the three screens. 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
+      "sfx": [
+        "pop_appear",
+        "swoosh_motion"
+      ],
+      "duration_sec": 6.41,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Visual: Zoom into one screen — text appearing letter by letter, each letter a probability cloud, a dice roll. Not \"understanding\" — predicting., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500010,
+      "seed": 2000011,
       "input_image": "K02_keyframe.png",
       "output_name": "K02.mp4",
-      "beat_ids": [
-        "SEG03_B017",
-        "SEG03_B018"
-      ],
-      "beat_count": 2
+      "storyboard_image": "K02_storyboard.png"
     },
     {
       "shot_id": "K03",
@@ -310,30 +301,25 @@
       "visual_type": "screen_demo",
       "space": "screen",
       "render_method": "i2v",
-      "description": "Visual: A code editor opens. Hundreds of lines of code scroll past. Vee's cursor doesn't move. She's looking at the preview, not the code. The code is a black box.",
-      "narrator_vo": "Not the website. The code behind it. She looked at the result and said \"that's wrong\" — but she couldn't say why, because she never looked at the instructions the AI wrote to build it.",
+      "description": "Vee looks left, right, left — head swiveling between the three screens. 1.5 seconds.",
+      "narrator_vo": "Something appears on the plate. It's food. Technically. But it's not what you wanted, because you never said what you wanted.",
       "characters": [
         "vee"
       ],
       "vee_expression": "default",
-      "vee_reaction_number": null,
+      "vee_reaction_number": 4,
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [
-        "swoosh_motion",
-        "fury_typing_mechanical"
+        "pop_appear"
       ],
-      "duration_sec": 12.86,
-      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Visual: A code editor opens. Hundreds of lines of code scroll past. Vee's cursor doesn't move. She's looking at the preview, not the code. The code is a black box., flat color fill, thin outline, clean design, no gradients",
+      "duration_sec": 6.74,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, dark background, digital interface elements, code, Vee looks left, right, left — head swiveling between the three screens. 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500011,
+      "seed": 2000012,
       "input_image": "K03_keyframe.png",
       "output_name": "K03.mp4",
-      "beat_ids": [
-        "SEG03_B019",
-        "SEG03_B020"
-      ],
-      "beat_count": 2
+      "storyboard_image": "K03_storyboard.png"
     },
     {
       "shot_id": "C01",
@@ -341,26 +327,23 @@
       "visual_type": "diagram",
       "space": "whiteboard",
       "render_method": "motion_canvas",
-      "description": "Synopsis: Extended cooking metaphor (120s) → \"would you serve it to customers?\" → vibe coding definition (Karpathy) → what it's good/bad at → tool tour (5 tools) → level spectrum",
-      "narrator_vo": "Think of it like cooking. You walk into a restaurant and say: \"Make me dinner.\" The chef — a very fast, very capable chef — starts cooking immediately.",
+      "description": "Synopsis: Cooking metaphor continues (detail vs intent → recipe card → customer question) → Karpathy definition → good/bad at → tool montage (15s) → level spectrum",
+      "narrator_vo": "So you try again. \"Something Italian. Pasta. Creamy.\" The chef gets excited. Four types of cheese. Pasta swimming in sauce. Garlic bread stuffed inside the pasta somehow.",
       "characters": [],
       "vee_expression": null,
       "vee_reaction_number": null,
-      "extended_metaphor": false,
+      "extended_metaphor": true,
       "shorts_candidate": false,
       "sfx": [
-        "swoosh_motion"
+        "fury_typing_mechanical"
       ],
-      "duration_sec": 7.95,
-      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Synopsis: Extended cooking metaphor (120s) → \"would you serve it to customers?\" → vibe coding definition (Karpathy) → what it's good/bad at → tool tour (5 tools) → level spectrum, bold saturated colors, educational animation, flat color fill, no gradients",
+      "duration_sec": 8.67,
+      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Synopsis: Cooking metaphor continues (detail vs intent → recipe card → customer question) → Karpathy definition → good/bad at → tool montage (15s) → level spectrum, bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500012,
+      "seed": 2000013,
       "input_image": "C01_keyframe.png",
       "output_name": "C01.mp4",
-      "beat_ids": [
-        "SEG04_B021"
-      ],
-      "beat_count": 1
+      "storyboard_image": "C01_storyboard.png"
     },
     {
       "shot_id": "C02",
@@ -368,8 +351,30 @@
       "visual_type": "diagram",
       "space": "whiteboard",
       "render_method": "motion_canvas",
-      "description": "Visual: Robot chef grabs random ingredients. Chops, fries, plates something. Puts it on the counter. It's... a thing. Not bad, not good. Just random.",
-      "narrator_vo": "So you try again. \"Make me dinner. Something Italian. Use pasta. Make it creamy.\"",
+      "description": "Visual: The result is a mountain of food. Technically Italian. Technically creamy. Also completely inedible.",
+      "narrator_vo": "More detail. Same problem. Because you gave ingredients, not intent.",
+      "characters": [],
+      "vee_expression": null,
+      "vee_reaction_number": null,
+      "extended_metaphor": true,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 3.21,
+      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: The result is a mountain of food. Technically Italian. Technically creamy. Also completely inedible., bold saturated colors, educational animation, flat color fill, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
+      "seed": 2000014,
+      "input_image": "C02_keyframe.png",
+      "output_name": "C02.mp4",
+      "storyboard_image": "C02_storyboard.png"
+    },
+    {
+      "shot_id": "C03",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "Visual: Transition — a hand slides a small card across the counter. Recipe card — simple, three lines.",
+      "narrator_vo": "Now imagine one card. \"Pasta carbonara. Four ingredients. No cream. Serves two.\"",
       "characters": [],
       "vee_expression": null,
       "vee_reaction_number": null,
@@ -378,44 +383,13 @@
       "sfx": [
         "swoosh_motion"
       ],
-      "duration_sec": 5.95,
-      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Robot chef grabs random ingredients. Chops, fries, plates something. Puts it on the counter. It's... a thing. Not bad, not good. Just random., bold saturated colors, educational animation, flat color fill, no gradients",
+      "duration_sec": 3.85,
+      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Transition — a hand slides a small card across the counter. Recipe card — simple, three lines., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500013,
-      "input_image": "C02_keyframe.png",
-      "output_name": "C02.mp4",
-      "beat_ids": [
-        "SEG04_B022"
-      ],
-      "beat_count": 1
-    },
-    {
-      "shot_id": "C03",
-      "segment": "CORE",
-      "visual_type": "diagram",
-      "space": "whiteboard",
-      "render_method": "motion_canvas",
-      "description": "Visual: The plate sits on the counter. A fork pokes it. Confused reaction from a small figure silhouette.",
-      "narrator_vo": "The chef gets excited. Grabs every Italian ingredient. Puts cream on everything. Adds four types of cheese. Pasta is swimming in a lake of sauce. Garlic bread is stuffed inside the pasta somehow.",
-      "characters": [],
-      "vee_expression": null,
-      "vee_reaction_number": null,
-      "extended_metaphor": true,
-      "shorts_candidate": false,
-      "sfx": [
-        "swoosh_motion",
-        "fury_typing_mechanical"
-      ],
-      "duration_sec": 5.31,
-      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: The plate sits on the counter. A fork pokes it. Confused reaction from a small figure silhouette., bold saturated colors, educational animation, flat color fill, no gradients",
-      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500014,
+      "seed": 2000015,
       "input_image": "C03_keyframe.png",
       "output_name": "C03.mp4",
-      "beat_ids": [
-        "SEG04_B023"
-      ],
-      "beat_count": 1
+      "storyboard_image": "C03_storyboard.png"
     },
     {
       "shot_id": "C04",
@@ -423,32 +397,7 @@
       "visual_type": "diagram",
       "space": "whiteboard",
       "render_method": "motion_canvas",
-      "description": "Visual: The result is a mountain of food. Technically Italian. Technically creamy. Also completely inedible. Too much of everything.",
-      "narrator_vo": "Now imagine one card. \"Pasta carbonara. Four ingredients. No cream. Serves two.\"",
-      "characters": [],
-      "vee_expression": null,
-      "vee_reaction_number": null,
-      "extended_metaphor": true,
-      "shorts_candidate": false,
-      "sfx": [],
-      "duration_sec": 10.83,
-      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: The result is a mountain of food. Technically Italian. Technically creamy. Also completely inedible. Too much of everything., bold saturated colors, educational animation, flat color fill, no gradients",
-      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500015,
-      "input_image": "C04_keyframe.png",
-      "output_name": "C04.mp4",
-      "beat_ids": [
-        "SEG04_B024"
-      ],
-      "beat_count": 1
-    },
-    {
-      "shot_id": "C05",
-      "segment": "CORE",
-      "visual_type": "diagram",
-      "space": "whiteboard",
-      "render_method": "motion_canvas",
-      "description": "Visual: Robot chef follows the recipe. Controlled. Precise. Plating is clean. Result looks like actual carbonara.",
+      "description": "Visual: Side-by-side — left: the chaotic cream mountain, right: clean carbonara.",
       "narrator_vo": "But here's the question nobody asks. Would you serve this to a customer?",
       "characters": [],
       "vee_expression": null,
@@ -458,25 +407,22 @@
       "sfx": [
         "meditative_hum_success"
       ],
-      "duration_sec": 4.27,
-      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Robot chef follows the recipe. Controlled. Precise. Plating is clean. Result looks like actual carbonara., bold saturated colors, educational animation, flat color fill, no gradients",
+      "duration_sec": 4.17,
+      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Side-by-side — left: the chaotic cream mountain, right: clean carbonara., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500016,
-      "input_image": "C05_keyframe.png",
-      "output_name": "C05.mp4",
-      "beat_ids": [
-        "SEG04_B025"
-      ],
-      "beat_count": 1
+      "seed": 2000016,
+      "input_image": "C04_keyframe.png",
+      "output_name": "C04.mp4",
+      "storyboard_image": "C04_storyboard.png"
     },
     {
-      "shot_id": "C06",
+      "shot_id": "C05",
       "segment": "CORE",
       "visual_type": "diagram",
       "space": "whiteboard",
       "render_method": "motion_canvas",
-      "description": "Visual: The carbonara plate slides toward a dining table. A real person sits there. Menu, napkin, wine glass. This isn't practice anymore.",
-      "narrator_vo": "AI is that chef. Fast, capable, ready to go. But without a recipe, it improvises. And when you're cooking for yourself, improvisation is fine. When you're cooking for others — for production, for users, for money — you need more than vibes.",
+      "description": "Visual: The carbonara plate slides toward a dining table. A real person sits there. Menu, napkin, wine glass.",
+      "narrator_vo": "Your friend's kitchen? Sure, experiment. A restaurant with paying customers? You'd want to taste it first. Check the seasoning. Make sure it doesn't make someone sick.",
       "characters": [],
       "vee_expression": null,
       "vee_reaction_number": null,
@@ -485,25 +431,22 @@
       "sfx": [
         "swoosh_motion"
       ],
-      "duration_sec": 5.51,
-      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: The carbonara plate slides toward a dining table. A real person sits there. Menu, napkin, wine glass. This isn't practice anymore., bold saturated colors, educational animation, flat color fill, no gradients",
+      "duration_sec": 8.35,
+      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: The carbonara plate slides toward a dining table. A real person sits there. Menu, napkin, wine glass., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500017,
-      "input_image": "C06_keyframe.png",
-      "output_name": "C06.mp4",
-      "beat_ids": [
-        "SEG04_B026"
-      ],
-      "beat_count": 1
+      "seed": 2000017,
+      "input_image": "C05_keyframe.png",
+      "output_name": "C05.mp4",
+      "storyboard_image": "C05_storyboard.png"
     },
     {
-      "shot_id": "C07",
+      "shot_id": "C06",
       "segment": "CORE",
       "visual_type": "diagram",
       "space": "whiteboard",
       "render_method": "motion_canvas",
       "description": "Visual: A health inspector appears with a clipboard. The robot chef nervously holds up the plate.",
-      "narrator_vo": "In February twenty twenty-five, Andrej Karpathy — one of the founders of OpenAI — gave this a name. Vibe coding. Quote: \"You just talk in natural language, run it, and most of the time it just works.\"",
+      "narrator_vo": "AI is that chef. Fast, capable, ready to go. But without a recipe, it improvises. When you're cooking for yourself, improvisation is fine. When you're cooking for others — you need more than vibes.",
       "characters": [],
       "vee_expression": null,
       "vee_reaction_number": null,
@@ -512,25 +455,22 @@
       "sfx": [
         "pop_appear"
       ],
-      "duration_sec": 6.35,
+      "duration_sec": 10.92,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: A health inspector appears with a clipboard. The robot chef nervously holds up the plate., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500018,
-      "input_image": "C07_keyframe.png",
-      "output_name": "C07.mp4",
-      "beat_ids": [
-        "SEG04_B027"
-      ],
-      "beat_count": 1
+      "seed": 2000018,
+      "input_image": "C06_keyframe.png",
+      "output_name": "C06.mp4",
+      "storyboard_image": "C06_storyboard.png"
     },
     {
-      "shot_id": "C08",
+      "shot_id": "C07",
       "segment": "CORE",
       "visual_type": "diagram",
       "space": "whiteboard",
       "render_method": "motion_canvas",
       "description": "Visual: Karpathy quote appears on whiteboard, styled like a citation. Clean typography.",
-      "narrator_vo": "Not outsourcing. Collaboration. That \"with\" is the hard part.",
+      "narrator_vo": "But here's the word most people skip. \"With.\" Vibe coding isn't AI coding for you. It's you coding with AI. The decisions — what to build, what's good enough, what's wrong — those are yours. The implementation — that's the AI's job.",
       "characters": [],
       "vee_expression": null,
       "vee_reaction_number": null,
@@ -540,16 +480,37 @@
         "pop_appear",
         "meditative_hum_success"
       ],
-      "duration_sec": 3.59,
+      "duration_sec": 13.5,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Karpathy quote appears on whiteboard, styled like a citation. Clean typography., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500019,
+      "seed": 2000019,
+      "input_image": "C07_keyframe.png",
+      "output_name": "C07.mp4",
+      "storyboard_image": "C07_storyboard.png"
+    },
+    {
+      "shot_id": "C08",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "Visual: Two-column diagram. Left: \"YOU\" — decide, judge, direct. Right: \"AI\" — write, execute, generate. Arrow between them: \"collaboration.\"",
+      "narrator_vo": "Not outsourcing. Collaboration. And fourteen months after Karpathy named it, a quarter of Y Combinator's latest batch shipped products with ninety-five percent AI-generated code. This isn't a prediction. It's already happening.",
+      "characters": [],
+      "vee_expression": null,
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "fury_typing_mechanical"
+      ],
+      "duration_sec": 9.96,
+      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Two-column diagram. Left: \"YOU\" — decide, judge, direct. Right: \"AI\" — write, execute, generate. Arrow between them: \"collaboration.\", bold saturated colors, educational animation, flat color fill, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
+      "seed": 2000020,
       "input_image": "C08_keyframe.png",
       "output_name": "C08.mp4",
-      "beat_ids": [
-        "SEG04_B028"
-      ],
-      "beat_count": 1
+      "storyboard_image": "C08_storyboard.png"
     },
     {
       "shot_id": "C09",
@@ -557,178 +518,8 @@
       "visual_type": "diagram",
       "space": "whiteboard",
       "render_method": "motion_canvas",
-      "description": "Visual: New section header: \"What AI is good at\"",
-      "narrator_vo": "What can't it do? Production systems — code that handles real users, real money, real data. Security — keeping attackers out, protecting passwords, encrypting sensitive information. Payment processing — where a bug means someone gets charged twice.",
-      "characters": [],
-      "vee_expression": null,
-      "vee_reaction_number": null,
-      "extended_metaphor": false,
-      "shorts_candidate": false,
-      "sfx": [
-        "fury_typing_mechanical"
-      ],
-      "duration_sec": 10.87,
-      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: New section header: \"What AI is good at\", bold saturated colors, educational animation, flat color fill, no gradients",
-      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500020,
-      "input_image": "C09_keyframe.png",
-      "output_name": "C09.mp4",
-      "beat_ids": [
-        "SEG04_B029"
-      ],
-      "beat_count": 1
-    },
-    {
-      "shot_id": "C10",
-      "segment": "CORE",
-      "visual_type": "diagram",
-      "space": "whiteboard",
-      "render_method": "motion_canvas",
-      "description": "Visual: Three panels — a server with a warning sign, a lock icon with a crack, a credit card with an error. Each with a red X.",
-      "narrator_vo": "And you've got options. Cursor — an AI-powered code editor. You write alongside it. It suggests, you accept or reject.",
-      "characters": [],
-      "vee_expression": null,
-      "vee_reaction_number": null,
-      "extended_metaphor": false,
-      "shorts_candidate": false,
-      "sfx": [
-        "system_explosion_glitch",
-        "fury_typing_mechanical"
-      ],
-      "duration_sec": 14.83,
-      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Three panels — a server with a warning sign, a lock icon with a crack, a credit card with an error. Each with a red X., bold saturated colors, educational animation, flat color fill, no gradients",
-      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500021,
-      "input_image": "C10_keyframe.png",
-      "output_name": "C10.mp4",
-      "beat_ids": [
-        "SEG04_B030"
-      ],
-      "beat_count": 1
-    },
-    {
-      "shot_id": "C11",
-      "segment": "CORE",
-      "visual_type": "diagram",
-      "space": "whiteboard",
-      "render_method": "motion_canvas",
-      "description": "Visual: Cursor IDE screenshot — code on left, AI chat on right. Quick 8-second glimpse.",
-      "narrator_vo": "Replit — browser-based. No installation. Start building in thirty seconds flat.",
-      "characters": [],
-      "vee_expression": null,
-      "vee_reaction_number": null,
-      "extended_metaphor": false,
-      "shorts_candidate": false,
-      "sfx": [
-        "fury_typing_mechanical"
-      ],
-      "duration_sec": 11.27,
-      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Cursor IDE screenshot — code on left, AI chat on right. Quick 8-second glimpse., bold saturated colors, educational animation, flat color fill, no gradients",
-      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500022,
-      "input_image": "C11_keyframe.png",
-      "output_name": "C11.mp4",
-      "beat_ids": [
-        "SEG04_B031"
-      ],
-      "beat_count": 1
-    },
-    {
-      "shot_id": "C12",
-      "segment": "CORE",
-      "visual_type": "diagram",
-      "space": "whiteboard",
-      "render_method": "motion_canvas",
-      "description": "Visual: Terminal screen, commands flowing. Green text on dark background. 8 seconds.",
-      "narrator_vo": "Kiro — from AWS. Spec-first. It writes requirements before touching code. We'll come back to that.",
-      "characters": [],
-      "vee_expression": null,
-      "vee_reaction_number": null,
-      "extended_metaphor": false,
-      "shorts_candidate": false,
-      "sfx": [
-        "fury_typing_mechanical"
-      ],
-      "duration_sec": 15.31,
-      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Terminal screen, commands flowing. Green text on dark background. 8 seconds., bold saturated colors, educational animation, flat color fill, no gradients",
-      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500023,
-      "input_image": "C12_keyframe.png",
-      "output_name": "C12.mp4",
-      "beat_ids": [
-        "SEG04_B032"
-      ],
-      "beat_count": 1
-    },
-    {
-      "shot_id": "C13",
-      "segment": "CORE",
-      "visual_type": "diagram",
-      "space": "whiteboard",
-      "render_method": "motion_canvas",
-      "description": "Visual: Kiro interface glimpse. Requirements panel visible. 8 seconds.",
-      "narrator_vo": "Different tools. Same principle. You decide what. AI decides how.",
-      "characters": [],
-      "vee_expression": null,
-      "vee_reaction_number": null,
-      "extended_metaphor": false,
-      "shorts_candidate": false,
-      "sfx": [],
-      "duration_sec": 89.69,
-      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Kiro interface glimpse. Requirements panel visible. 8 seconds., bold saturated colors, educational animation, flat color fill, no gradients",
-      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500024,
-      "input_image": "C13_keyframe.png",
-      "output_name": "C13.mp4",
-      "beat_ids": [
-        "SEG04_B033",
-        "SEG04_B034",
-        "SEG04_B035",
-        "SEG04_B036",
-        "SEG04_B037",
-        "SEG04_B038",
-        "SEG04_B039",
-        "SEG04_B040",
-        "SEG04_B041",
-        "SEG04_B042",
-        "SEG04_B043"
-      ],
-      "beat_count": 11
-    },
-    {
-      "shot_id": "R01",
-      "segment": "REFRAME",
-      "visual_type": "diagram",
-      "space": "whiteboard",
-      "render_method": "motion_canvas",
-      "description": "Synopsis: \"Not an easy button — a new skill\" → \"Judgment is the hardest part\" → EP02 bridge",
-      "narrator_vo": "So here's the reframe. Vibe coding is not an easy button. It's not \"AI, do my job.\" It's a new skill — like learning to drive. The car does the moving. You do the steering.",
-      "characters": [],
-      "vee_expression": null,
-      "vee_reaction_number": null,
-      "extended_metaphor": false,
-      "shorts_candidate": false,
-      "sfx": [],
-      "duration_sec": 17.86,
-      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Synopsis: \"Not an easy button — a new skill\" → \"Judgment is the hardest part\" → EP02 bridge, bold saturated colors, educational animation, flat color fill, no gradients",
-      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500025,
-      "input_image": "R01_keyframe.png",
-      "output_name": "R01.mp4",
-      "beat_ids": [
-        "SEG05_B044",
-        "SEG05_B045"
-      ],
-      "beat_count": 2
-    },
-    {
-      "shot_id": "R02",
-      "segment": "REFRAME",
-      "visual_type": "diagram",
-      "space": "whiteboard",
-      "render_method": "motion_canvas",
-      "description": "Visual: A scale appears. One side: \"good enough?\" Other side: \"dangerous?\" The scale tips back and forth.",
-      "narrator_vo": "Professional developers do this every day. They review code. They test it. They ask: \"what could go wrong?\" That's not a coding skill. That's a thinking skill. And you already have it.",
+      "description": "Visual: YC logo + \"95% AI-generated\" stat appears. Bar chart showing rapid adoption curve.",
+      "narrator_vo": "So what can AI actually do well? Prototypes — ten minutes, you have something to react to. Scripts and automations. Learning tools — \"explain this code,\" \"show me an example.\"",
       "characters": [],
       "vee_expression": null,
       "vee_reaction_number": null,
@@ -738,17 +529,130 @@
         "pop_appear",
         "fury_typing_mechanical"
       ],
-      "duration_sec": 14.78,
-      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: A scale appears. One side: \"good enough?\" Other side: \"dangerous?\" The scale tips back and forth., bold saturated colors, educational animation, flat color fill, no gradients",
+      "duration_sec": 9.64,
+      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: YC logo + \"95% AI-generated\" stat appears. Bar chart showing rapid adoption curve., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
-      "seed": 1500026,
+      "seed": 2000021,
+      "input_image": "C09_keyframe.png",
+      "output_name": "C09.mp4",
+      "storyboard_image": "C09_storyboard.png"
+    },
+    {
+      "shot_id": "C10",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "Visual: Three panels — a server with a warning sign, a lock with a crack, a credit card with an error. Each with a red X.",
+      "narrator_vo": "Cursor, Claude Code, Replit, Kiro, Windsurf — five tools, same idea. Different interfaces. Same principle. You decide what. AI decides how.",
+      "characters": [],
+      "vee_expression": null,
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "chime_idea",
+        "system_explosion_glitch",
+        "fury_typing_mechanical"
+      ],
+      "duration_sec": 6.74,
+      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Three panels — a server with a warning sign, a lock with a crack, a credit card with an error. Each with a red X., bold saturated colors, educational animation, flat color fill, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
+      "seed": 2000022,
+      "input_image": "C10_keyframe.png",
+      "output_name": "C10.mp4",
+      "storyboard_image": "C10_storyboard.png"
+    },
+    {
+      "shot_id": "C11",
+      "segment": "CORE",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "Visual: Transition — five tool logos flash in quick succession, 2 seconds each.",
+      "narrator_vo": "And there's a spectrum. Level one: copy-pasting from ChatGPT. Level two: an AI IDE like Cursor. Level three: an autonomous agent with a spec. Wherever you start is fine. But know where you are.",
+      "characters": [],
+      "vee_expression": null,
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "fury_typing_mechanical",
+        "meditative_hum_success"
+      ],
+      "duration_sec": 10.92,
+      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Transition — five tool logos flash in quick succession, 2 seconds each., bold saturated colors, educational animation, flat color fill, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
+      "seed": 2000023,
+      "input_image": "C11_keyframe.png",
+      "output_name": "C11.mp4",
+      "storyboard_image": "C11_storyboard.png"
+    },
+    {
+      "shot_id": "R01",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "Synopsis: \"Not an easy button — a new skill\" → data anchor → \"Judgment is the hardest part\" → EP02 bridge",
+      "narrator_vo": "So here's the reframe. Vibe coding is not an easy button. It's a new skill — like learning to drive. The car does the moving. You do the steering.",
+      "characters": [],
+      "vee_expression": null,
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 9.32,
+      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Synopsis: \"Not an easy button — a new skill\" → data anchor → \"Judgment is the hardest part\" → EP02 bridge, bold saturated colors, educational animation, flat color fill, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
+      "seed": 2000024,
+      "input_image": "R01_keyframe.png",
+      "output_name": "R01.mp4",
+      "storyboard_image": "R01_storyboard.png"
+    },
+    {
+      "shot_id": "R02",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "Visual: Whiteboard — \"easy button\" icon gets crossed out. Replaced by a steering wheel with two hands on it.",
+      "narrator_vo": "And the hardest part isn't the typing. It's the judgment. Looking at what the AI made and knowing — is this good enough? Is this safe? Would I bet money on this working tomorrow?",
+      "characters": [],
+      "vee_expression": null,
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 10.92,
+      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Whiteboard — \"easy button\" icon gets crossed out. Replaced by a steering wheel with two hands on it., bold saturated colors, educational animation, flat color fill, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
+      "seed": 2000025,
       "input_image": "R02_keyframe.png",
       "output_name": "R02.mp4",
-      "beat_ids": [
-        "SEG05_B046",
-        "SEG05_B047"
-      ],
-      "beat_count": 2
+      "storyboard_image": "R02_storyboard.png"
+    },
+    {
+      "shot_id": "R03",
+      "segment": "REFRAME",
+      "visual_type": "diagram",
+      "space": "whiteboard",
+      "render_method": "motion_canvas",
+      "description": "Visual: A non-developer looking at a plate of food — \"would I serve this?\" Same judgment, different domain.",
+      "narrator_vo": "The starting point — the thing that makes all of this work — is knowing what you're building. Not how. What. That's where episode two picks up.",
+      "characters": [],
+      "vee_expression": null,
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [],
+      "duration_sec": 8.67,
+      "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: A non-developer looking at a plate of food — \"would I serve this?\" Same judgment, different domain., bold saturated colors, educational animation, flat color fill, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
+      "seed": 2000026,
+      "input_image": "R03_keyframe.png",
+      "output_name": "R03.mp4",
+      "storyboard_image": "R03_storyboard.png"
     },
     {
       "shot_id": "Z01",
@@ -756,7 +660,7 @@
       "visual_type": "character_reaction",
       "space": "desk",
       "render_method": "i2v",
-      "description": "Synopsis: Three things to do today — install, prompt, feel. Record the feeling.",
+      "description": "Synopsis: Three concrete actions → install, prompt, write the gap → that gap is EP02",
       "narrator_vo": "Here's what you do today. Three things.",
       "characters": [
         "vee"
@@ -766,16 +670,13 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 2.27,
-      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Synopsis: Three things to do today — install, prompt, feel. Record the feeling., flat color fill, thin outline, clean design, no gradients",
+      "duration_sec": 2.24,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Synopsis: Three concrete actions → install, prompt, write the gap → that gap is EP02, flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500027,
+      "seed": 2000027,
       "input_image": "Z01_keyframe.png",
       "output_name": "Z01.mp4",
-      "beat_ids": [
-        "SEG06_B048"
-      ],
-      "beat_count": 1
+      "storyboard_image": "Z01_storyboard.png"
     },
     {
       "shot_id": "Z02",
@@ -784,7 +685,61 @@
       "space": "desk",
       "render_method": "i2v",
       "description": "Visual: Desk scene — a sticky note appears with \"1, 2, 3\" written on it.",
-      "narrator_vo": "One — pick a tool. Any tool. Cursor, Replit, Claude, whatever feels right. Install it.",
+      "narrator_vo": "One — pick a tool. Cursor, Replit, Claude Code. Install it.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "pop_appear",
+        "fury_typing_mechanical"
+      ],
+      "duration_sec": 3.53,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: Desk scene — a sticky note appears with \"1, 2, 3\" written on it., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 2000028,
+      "input_image": "Z02_keyframe.png",
+      "output_name": "Z02.mp4",
+      "storyboard_image": "Z02_storyboard.png"
+    },
+    {
+      "shot_id": "Z03",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Visual: Prompt typed. Enter pressed. Something appears on screen.",
+      "narrator_vo": "Three — before you close the tab, write down what you wanted, what you got, and the gap between them.",
+      "characters": [
+        "vee"
+      ],
+      "vee_expression": "default",
+      "vee_reaction_number": null,
+      "extended_metaphor": false,
+      "shorts_candidate": false,
+      "sfx": [
+        "pop_appear",
+        "fury_typing_mechanical"
+      ],
+      "duration_sec": 6.42,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: Prompt typed. Enter pressed. Something appears on screen., flat color fill, thin outline, clean design, no gradients",
+      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
+      "seed": 2000029,
+      "input_image": "Z03_keyframe.png",
+      "output_name": "Z03.mp4",
+      "storyboard_image": "Z03_storyboard.png"
+    },
+    {
+      "shot_id": "Z04",
+      "segment": "OUTRO_CTA",
+      "visual_type": "character_reaction",
+      "space": "desk",
+      "render_method": "i2v",
+      "description": "Visual: Vee looks at the result. She picks up a pen. Writes on a sticky note — three words in three rows.",
+      "narrator_vo": "That gap — between what you imagined and what appeared — is where it all begins. Next time, we turn that gap into the most powerful tool in vibe coding.",
       "characters": [
         "vee"
       ],
@@ -795,86 +750,21 @@
       "sfx": [
         "pop_appear"
       ],
-      "duration_sec": 4.67,
-      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: Desk scene — a sticky note appears with \"1, 2, 3\" written on it., flat color fill, thin outline, clean design, no gradients",
+      "duration_sec": 9.64,
+      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: Vee looks at the result. She picks up a pen. Writes on a sticky note — three words in three rows., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500028,
-      "input_image": "Z02_keyframe.png",
-      "output_name": "Z02.mp4",
-      "beat_ids": [
-        "SEG06_B049"
-      ],
-      "beat_count": 1
-    },
-    {
-      "shot_id": "Z03",
-      "segment": "OUTRO_CTA",
-      "visual_type": "character_reaction",
-      "space": "desk",
-      "render_method": "i2v",
-      "description": "Visual: Prompt typed. Enter pressed. Something appears on screen.",
-      "narrator_vo": "Three — look at what comes out. And write down how you feel. Not what's wrong with it. How you feel. Frustrated? Confused? Excited? Disappointed?",
-      "characters": [
-        "vee"
-      ],
-      "vee_expression": "default",
-      "vee_reaction_number": null,
-      "extended_metaphor": false,
-      "shorts_candidate": false,
-      "sfx": [
-        "pop_appear",
-        "fury_typing_mechanical"
-      ],
-      "duration_sec": 6.75,
-      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: Prompt typed. Enter pressed. Something appears on screen., flat color fill, thin outline, clean design, no gradients",
-      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500029,
-      "input_image": "Z03_keyframe.png",
-      "output_name": "Z03.mp4",
-      "beat_ids": [
-        "SEG06_B050"
-      ],
-      "beat_count": 1
-    },
-    {
-      "shot_id": "Z04",
-      "segment": "OUTRO_CTA",
-      "visual_type": "character_reaction",
-      "space": "desk",
-      "render_method": "i2v",
-      "description": "Vee looks at the result. Head tilt. Then — a small smile. Not because it's good. Because she's starting. 1.5 seconds.",
-      "narrator_vo": "Next time — we give that feeling a name. And we turn it into the most powerful tool in vibe coding.",
-      "characters": [
-        "vee"
-      ],
-      "vee_expression": "default",
-      "vee_reaction_number": 5,
-      "extended_metaphor": false,
-      "shorts_candidate": false,
-      "sfx": [],
-      "duration_sec": 23.29,
-      "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee looks at the result. Head tilt. Then — a small smile. Not because it's good. Because she's starting. 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
-      "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
-      "seed": 1500030,
+      "seed": 2000030,
       "input_image": "Z04_keyframe.png",
       "output_name": "Z04.mp4",
-      "beat_ids": [
-        "SEG06_B051",
-        "SEG06_B052",
-        "SEG06_B053"
-      ],
-      "beat_count": 3
+      "storyboard_image": "Z04_storyboard.png"
     }
   ],
-  "source_preproduction": "../../preproduction/ep01/ep01_prepro_manifest_v5.json",
+  "source_preproduction": "/mnt/e/vibecode-blog/systems/video/preproduction/ep01/ep01_prepro_manifest_v9.json",
   "selection_summary": {
-    "total_beats": 53,
+    "total_beats": 39,
     "selected_beats": 30,
     "target_duration_sec": 210.0,
-    "actual_duration_sec": 209.98,
+    "actual_duration_sec": 209.99,
     "timing_source": "estimate"
-  },
-  "total_duration_sec": 362.9,
-  "synchronized_with_audio": true,
-  "sync_timestamp": "2026-03-19T00:58:27.065255"
+  }
 }

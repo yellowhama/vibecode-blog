@@ -1,0 +1,357 @@
+{
+  "summary": {
+    "total": 38,
+    "violations": 37,
+    "violation_rate": 0.973684,
+    "max_mismatch_ratio": 0.62557,
+    "tolerance_ratio": 0.35
+  },
+  "rows": [
+    {
+      "beat_id": "SEG01_B001",
+      "scene_id": "SEG01",
+      "expected_duration_sec": 9.6,
+      "actual_duration_sec": 4.656,
+      "mismatch_sec": -4.944,
+      "mismatch_ratio": 0.515,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG01_B002",
+      "scene_id": "SEG01",
+      "expected_duration_sec": 8.0,
+      "actual_duration_sec": 3.384,
+      "mismatch_sec": -4.616,
+      "mismatch_ratio": 0.577,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG02_B003",
+      "scene_id": "SEG02",
+      "expected_duration_sec": 29.6,
+      "actual_duration_sec": 12.792,
+      "mismatch_sec": -16.808,
+      "mismatch_ratio": 0.5678,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG02_B004",
+      "scene_id": "SEG02",
+      "expected_duration_sec": 25.6,
+      "actual_duration_sec": 11.592,
+      "mismatch_sec": -14.008,
+      "mismatch_ratio": 0.5472,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG02_B005",
+      "scene_id": "SEG02",
+      "expected_duration_sec": 22.4,
+      "actual_duration_sec": 9.984,
+      "mismatch_sec": -12.416,
+      "mismatch_ratio": 0.5543,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG02_B006",
+      "scene_id": "SEG02",
+      "expected_duration_sec": 1.5,
+      "actual_duration_sec": 1.224,
+      "mismatch_sec": -0.276,
+      "mismatch_ratio": 0.184,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG02_B007",
+      "scene_id": "SEG02",
+      "expected_duration_sec": 44.8,
+      "actual_duration_sec": 19.416,
+      "mismatch_sec": -25.384,
+      "mismatch_ratio": 0.5666,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG03_B008",
+      "scene_id": "SEG03",
+      "expected_duration_sec": 18.4,
+      "actual_duration_sec": 8.832,
+      "mismatch_sec": -9.568,
+      "mismatch_ratio": 0.52,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG03_B009",
+      "scene_id": "SEG03",
+      "expected_duration_sec": 14.8,
+      "actual_duration_sec": 6.792,
+      "mismatch_sec": -8.008,
+      "mismatch_ratio": 0.5411,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG03_B010",
+      "scene_id": "SEG03",
+      "expected_duration_sec": 13.2,
+      "actual_duration_sec": 5.616,
+      "mismatch_sec": -7.584,
+      "mismatch_ratio": 0.5745,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG03_B011",
+      "scene_id": "SEG03",
+      "expected_duration_sec": 8.8,
+      "actual_duration_sec": 4.992,
+      "mismatch_sec": -3.808,
+      "mismatch_ratio": 0.4327,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG03_B012",
+      "scene_id": "SEG03",
+      "expected_duration_sec": 33.6,
+      "actual_duration_sec": 14.04,
+      "mismatch_sec": -19.56,
+      "mismatch_ratio": 0.5821,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B013",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 7.6,
+      "actual_duration_sec": 3.6,
+      "mismatch_sec": -4.0,
+      "mismatch_ratio": 0.5263,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B014",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 1.5,
+      "actual_duration_sec": 0.912,
+      "mismatch_sec": -0.588,
+      "mismatch_ratio": 0.392,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B015",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 10.8,
+      "actual_duration_sec": 4.176,
+      "mismatch_sec": -6.624,
+      "mismatch_ratio": 0.6133,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B016",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 9.6,
+      "actual_duration_sec": 3.864,
+      "mismatch_sec": -5.736,
+      "mismatch_ratio": 0.5975,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B017",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 37.6,
+      "actual_duration_sec": 15.984,
+      "mismatch_sec": -21.616,
+      "mismatch_ratio": 0.5749,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B018",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 38.0,
+      "actual_duration_sec": 15.048,
+      "mismatch_sec": -22.952,
+      "mismatch_ratio": 0.604,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B019",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 22.0,
+      "actual_duration_sec": 10.128,
+      "mismatch_sec": -11.872,
+      "mismatch_ratio": 0.5396,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B020",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 14.0,
+      "actual_duration_sec": 6.096,
+      "mismatch_sec": -7.904,
+      "mismatch_ratio": 0.5646,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B021",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 10.4,
+      "actual_duration_sec": 4.728,
+      "mismatch_sec": -5.672,
+      "mismatch_ratio": 0.5454,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B022",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 12.4,
+      "actual_duration_sec": 5.352,
+      "mismatch_sec": -7.048,
+      "mismatch_ratio": 0.5684,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B023",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 14.4,
+      "actual_duration_sec": 5.592,
+      "mismatch_sec": -8.808,
+      "mismatch_ratio": 0.6117,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B024",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 10.0,
+      "actual_duration_sec": 4.92,
+      "mismatch_sec": -5.08,
+      "mismatch_ratio": 0.508,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B025",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 10.8,
+      "actual_duration_sec": 5.496,
+      "mismatch_sec": -5.304,
+      "mismatch_ratio": 0.4911,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B026",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 36.0,
+      "actual_duration_sec": 14.928,
+      "mismatch_sec": -21.072,
+      "mismatch_ratio": 0.5853,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B027",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 40.4,
+      "actual_duration_sec": 16.416,
+      "mismatch_sec": -23.984,
+      "mismatch_ratio": 0.5937,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG04_B028",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 31.6,
+      "actual_duration_sec": 11.832,
+      "mismatch_sec": -19.768,
+      "mismatch_ratio": 0.6256,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG05_B029",
+      "scene_id": "SEG05",
+      "expected_duration_sec": 10.0,
+      "actual_duration_sec": 3.864,
+      "mismatch_sec": -6.136,
+      "mismatch_ratio": 0.6136,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG05_B030",
+      "scene_id": "SEG05",
+      "expected_duration_sec": 9.2,
+      "actual_duration_sec": 4.2,
+      "mismatch_sec": -5.0,
+      "mismatch_ratio": 0.5435,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG05_B031",
+      "scene_id": "SEG05",
+      "expected_duration_sec": 23.2,
+      "actual_duration_sec": 9.12,
+      "mismatch_sec": -14.08,
+      "mismatch_ratio": 0.6069,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG05_B032",
+      "scene_id": "SEG05",
+      "expected_duration_sec": 37.6,
+      "actual_duration_sec": 14.304,
+      "mismatch_sec": -23.296,
+      "mismatch_ratio": 0.6196,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG05_B033",
+      "scene_id": "SEG05",
+      "expected_duration_sec": 28.4,
+      "actual_duration_sec": 11.904,
+      "mismatch_sec": -16.496,
+      "mismatch_ratio": 0.5808,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG05_B034",
+      "scene_id": "SEG05",
+      "expected_duration_sec": 36.8,
+      "actual_duration_sec": 15.24,
+      "mismatch_sec": -21.56,
+      "mismatch_ratio": 0.5859,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG06_B035",
+      "scene_id": "SEG06",
+      "expected_duration_sec": 17.2,
+      "actual_duration_sec": 7.872,
+      "mismatch_sec": -9.328,
+      "mismatch_ratio": 0.5423,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG06_B036",
+      "scene_id": "SEG06",
+      "expected_duration_sec": 20.8,
+      "actual_duration_sec": 8.856,
+      "mismatch_sec": -11.944,
+      "mismatch_ratio": 0.5742,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG06_B037",
+      "scene_id": "SEG06",
+      "expected_duration_sec": 34.0,
+      "actual_duration_sec": 15.168,
+      "mismatch_sec": -18.832,
+      "mismatch_ratio": 0.5539,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG06_B038",
+      "scene_id": "SEG06",
+      "expected_duration_sec": 24.0,
+      "actual_duration_sec": 10.824,
+      "mismatch_sec": -13.176,
+      "mismatch_ratio": 0.549,
+      "over_tolerance": true
+    }
+  ],
+  "policy": "warn",
+  "generated_at": "2026-03-19T00:40:00.147224",
+  "prepro_manifest": "../../preproduction/ep03/ep03_prepro_manifest_v7.json",
+  "voiceover_audio": "../../preproduction/ep03/voiceover_master_tts.wav"
+}

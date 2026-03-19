@@ -33,12 +33,16 @@
         "pop_appear",
         "system_explosion_glitch"
       ],
-      "duration_sec": 5.16,
+      "duration_sec": 6.55,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Synopsis: EP01 recap callback → Vee tries for real → shows a specific broken result → five attempts, five different results., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500001,
       "input_image": "H01_keyframe.png",
-      "output_name": "H01.mp4"
+      "output_name": "H01.mp4",
+      "beat_ids": [
+        "SEG01_B001"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "H02",
@@ -58,12 +62,16 @@
       "sfx": [
         "fury_typing_mechanical"
       ],
-      "duration_sec": 2.89,
+      "duration_sec": 6.95,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: Vee types a prompt. Hits enter. Result loads. It's a website — but the hero image is a stock photo of a birthday cake. The \"Contact\" button opens a shopping cart. The header says \"Welcome to CandleStore\" in Comic Sans., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500002,
       "input_image": "H02_keyframe.png",
-      "output_name": "H02.mp4"
+      "output_name": "H02.mp4",
+      "beat_ids": [
+        "SEG01_B002"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "H03",
@@ -81,12 +89,17 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 2.0,
+      "duration_sec": 5.7,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee stares at the screen. She blinks twice. Not anger — pure bewilderment. 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500003,
       "input_image": "H03_keyframe.png",
-      "output_name": "H03.mp4"
+      "output_name": "H03.mp4",
+      "beat_ids": [
+        "SEG01_B003",
+        "SEG01_B004"
+      ],
+      "beat_count": 2
     },
     {
       "shot_id": "M01",
@@ -106,12 +119,16 @@
       "sfx": [
         "fury_typing_mechanical"
       ],
-      "duration_sec": 7.1,
+      "duration_sec": 7.91,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: Vee opens a blank document. Starts writing — not a prompt, a technical document. Headers, bullet points, sub-sections., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500004,
       "input_image": "M01_keyframe.png",
-      "output_name": "M01.mp4"
+      "output_name": "M01.mp4",
+      "beat_ids": [
+        "SEG02_B005"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "M02",
@@ -131,12 +148,16 @@
       "sfx": [
         "fury_typing_mechanical"
       ],
-      "duration_sec": 3.86,
+      "duration_sec": 9.27,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: The document grows. And grows. Two full pages of structured technical writing. Impressive looking. Official., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500005,
       "input_image": "M02_keyframe.png",
-      "output_name": "M02.mp4"
+      "output_name": "M02.mp4",
+      "beat_ids": [
+        "SEG02_B006"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "M03",
@@ -154,12 +175,16 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 6.78,
+      "duration_sec": 3.43,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: The result loads. It's polished. Professional looking. But the candle shop is now an enterprise SaaS dashboard. There's a user management panel. Role-based access control. An admin console. Beautiful — and absolutely not a candle shop., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500006,
       "input_image": "M03_keyframe.png",
-      "output_name": "M03.mp4"
+      "output_name": "M03.mp4",
+      "beat_ids": [
+        "SEG02_B007"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "M04",
@@ -177,12 +202,18 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 9.04,
+      "duration_sec": 21.65,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee's jaw drops. She looks at her two-page spec, looks at the result, back at the spec. She described a skyscraper when she wanted a cottage. 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500007,
       "input_image": "M04_keyframe.png",
-      "output_name": "M04.mp4"
+      "output_name": "M04.mp4",
+      "beat_ids": [
+        "SEG02_B008",
+        "SEG02_B009",
+        "SEG02_B010"
+      ],
+      "beat_count": 3
     },
     {
       "shot_id": "K01",
@@ -200,12 +231,16 @@
       "sfx": [
         "fury_typing_mechanical"
       ],
-      "duration_sec": 2.57,
+      "duration_sec": 2.27,
       "prompt_positive": "v3ct0r style, simple flat vector art, dark navy background (#0D1B2A), Visual: A counter starts at zero. Rapidly climbs. Numbers rolling like a slot machine., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500008,
       "input_image": "K01_keyframe.png",
-      "output_name": "K01.mp4"
+      "output_name": "K01.mp4",
+      "beat_ids": [
+        "SEG03_B011"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "K02",
@@ -221,12 +256,16 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 4.19,
+      "duration_sec": 1.99,
       "prompt_positive": "v3ct0r style, simple flat vector art, dark navy background (#0D1B2A), Visual: Counter stops at 10,847. Big number. Holds for a beat., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500009,
       "input_image": "K02_keyframe.png",
-      "output_name": "K02.mp4"
+      "output_name": "K02.mp4",
+      "beat_ids": [
+        "SEG03_B012"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "K03",
@@ -244,12 +283,18 @@
       "sfx": [
         "pop_appear"
       ],
-      "duration_sec": 6.45,
+      "duration_sec": 21.49,
       "prompt_positive": "v3ct0r style, simple flat vector art, dark navy background (#0D1B2A), Visual: Five small robot icons appear, each in their own box. Between them: concrete labels. \"Date → MM/DD\", \"Date → DD-MM\", \"Date → ISO\". \"Config v1\", \"Config v2\". \"Email check #1, #2, #3, #4\"., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500010,
       "input_image": "K03_keyframe.png",
-      "output_name": "K03.mp4"
+      "output_name": "K03.mp4",
+      "beat_ids": [
+        "SEG03_B013",
+        "SEG03_B014",
+        "SEG03_B015"
+      ],
+      "beat_count": 3
     },
     {
       "shot_id": "C01",
@@ -265,12 +310,16 @@
       "extended_metaphor": true,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 6.45,
+      "duration_sec": 10.31,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: A construction site. No blueprints visible. Workers stacking blocks randomly., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500011,
       "input_image": "C01_keyframe.png",
-      "output_name": "C01.mp4"
+      "output_name": "C01.mp4",
+      "beat_ids": [
+        "SEG04_B016"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C02",
@@ -286,12 +335,16 @@
       "extended_metaphor": true,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 3.86,
+      "duration_sec": 7.15,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Chaotic building — bricks stacked randomly. Bathroom fixtures on top. No entrance. Building wobbles., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500012,
       "input_image": "C02_keyframe.png",
-      "output_name": "C02.mp4"
+      "output_name": "C02.mp4",
+      "beat_ids": [
+        "SEG04_B017"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C03",
@@ -307,12 +360,16 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 4.51,
+      "duration_sec": 4.67,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Building stands solid. Simple but correct. Transition., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500013,
       "input_image": "C03_keyframe.png",
-      "output_name": "C03.mp4"
+      "output_name": "C03.mp4",
+      "beat_ids": [
+        "SEG04_B018"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C04",
@@ -330,12 +387,16 @@
       "sfx": [
         "pop_appear"
       ],
-      "duration_sec": 7.1,
+      "duration_sec": 3.79,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Template appears on whiteboard, building line by line:, bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500014,
       "input_image": "C04_keyframe.png",
-      "output_name": "C04.mp4"
+      "output_name": "C04.mp4",
+      "beat_ids": [
+        "SEG04_B019"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C05",
@@ -353,12 +414,16 @@
       "sfx": [
         "pop_appear"
       ],
-      "duration_sec": 2.57,
+      "duration_sec": 5.03,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: \"Constraints: No accounts, no payments. Catalog + contact form only.\" appears below., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500015,
       "input_image": "C05_keyframe.png",
-      "output_name": "C05.mp4"
+      "output_name": "C05.mp4",
+      "beat_ids": [
+        "SEG04_B020"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C06",
@@ -377,12 +442,16 @@
         "pop_appear",
         "meditative_hum_success"
       ],
-      "duration_sec": 10.98,
+      "duration_sec": 7.51,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: \"Done-when: Browse candles by category + send message\" appears. Three lines. Clean., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500016,
       "input_image": "C06_keyframe.png",
-      "output_name": "C06.mp4"
+      "output_name": "C06.mp4",
+      "beat_ids": [
+        "SEG04_B021"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C07",
@@ -400,12 +469,16 @@
       "sfx": [
         "meditative_hum_success"
       ],
-      "duration_sec": 3.54,
+      "duration_sec": 6.43,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: The result loads. Clean. Simple. Actually a candle shop. Categories visible. Contact form at bottom. No extra features., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500017,
       "input_image": "C07_keyframe.png",
-      "output_name": "C07.mp4"
+      "output_name": "C07.mp4",
+      "beat_ids": [
+        "SEG04_B022"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C08",
@@ -423,12 +496,16 @@
       "sfx": [
         "meditative_hum_success"
       ],
-      "duration_sec": 13.26,
+      "duration_sec": 2.99,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Quick flash: Vee sees the result. Both eyebrows go up. Bee's antennae perk up. 1.5 seconds., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500018,
       "input_image": "C08_keyframe.png",
-      "output_name": "C08.mp4"
+      "output_name": "C08.mp4",
+      "beat_ids": [
+        "SEG04_B023"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C09",
@@ -446,12 +523,16 @@
       "sfx": [
         "meditative_hum_success"
       ],
-      "duration_sec": 7.43,
+      "duration_sec": 12.19,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Before/After side by side — five chaotic results vs two clean ones. Clear visual difference. Hold for 3 seconds., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500019,
       "input_image": "C09_keyframe.png",
-      "output_name": "C09.mp4"
+      "output_name": "C09.mp4",
+      "beat_ids": [
+        "SEG04_B024"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C10",
@@ -470,12 +551,16 @@
         "pop_appear",
         "fury_typing_mechanical"
       ],
-      "duration_sec": 9.7,
+      "duration_sec": 8.31,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: The three-line spec transforms — the paper gets a border, a signature line at the bottom. It looks like a simple contract. \"SPEC = CONTRACT\" appears above., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500020,
       "input_image": "C10_keyframe.png",
-      "output_name": "C10.mp4"
+      "output_name": "C10.mp4",
+      "beat_ids": [
+        "SEG04_B025"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C11",
@@ -493,12 +578,16 @@
       "sfx": [
         "swoosh_motion"
       ],
-      "duration_sec": 7.43,
+      "duration_sec": 3.87,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: A simple gate diagram: SPEC → [REVIEW] → BUILD. The review step glows. Emphasis., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500021,
       "input_image": "C11_keyframe.png",
-      "output_name": "C11.mp4"
+      "output_name": "C11.mp4",
+      "beat_ids": [
+        "SEG04_B026"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C12",
@@ -516,12 +605,16 @@
       "sfx": [
         "meditative_hum_success"
       ],
-      "duration_sec": 12.61,
+      "duration_sec": 11.47,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: CLAUDE.md content scrolls — each rule visible. Clean dark-mode editor. The rules are specific and opinionated., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500022,
       "input_image": "C12_keyframe.png",
-      "output_name": "C12.mp4"
+      "output_name": "C12.mp4",
+      "beat_ids": [
+        "SEG04_B027"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C13",
@@ -537,12 +630,23 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 6.46,
+      "duration_sec": 66.92,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: A note pinned to a wall in the robot kitchen from EP01's metaphor. The robot reads it before cooking., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500023,
       "input_image": "C13_keyframe.png",
-      "output_name": "C13.mp4"
+      "output_name": "C13.mp4",
+      "beat_ids": [
+        "SEG04_B028",
+        "SEG04_B029",
+        "SEG04_B030",
+        "SEG04_B031",
+        "SEG04_B032",
+        "SEG04_B033",
+        "SEG04_B034",
+        "SEG04_B035"
+      ],
+      "beat_count": 8
     },
     {
       "shot_id": "R01",
@@ -560,12 +664,16 @@
       "sfx": [
         "system_explosion_glitch"
       ],
-      "duration_sec": 2.0,
+      "duration_sec": 10.75,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: Flashback montage — neon pink store, enterprise dashboard, Comic Sans header. Quick flashes., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500024,
       "input_image": "R01_keyframe.png",
-      "output_name": "R01.mp4"
+      "output_name": "R01.mp4",
+      "beat_ids": [
+        "SEG05_B036"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "R02",
@@ -583,12 +691,16 @@
       "sfx": [
         "meditative_hum_success"
       ],
-      "duration_sec": 8.73,
+      "duration_sec": 1.99,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: The frustration — represented as messy red scribbles — transforms. The scribbles organize themselves into neat lines. Red becomes blue. Chaos becomes structure., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500025,
       "input_image": "R02_keyframe.png",
-      "output_name": "R02.mp4"
+      "output_name": "R02.mp4",
+      "beat_ids": [
+        "SEG05_B037"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "R03",
@@ -604,12 +716,16 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 14.23,
+      "duration_sec": 7.67,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: The spec template glows. Transforms into a blueprint., bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500026,
       "input_image": "R03_keyframe.png",
-      "output_name": "R03.mp4"
+      "output_name": "R03.mp4",
+      "beat_ids": [
+        "SEG05_B038"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "R04",
@@ -628,12 +744,18 @@
         "pop_appear",
         "fury_typing_mechanical"
       ],
-      "duration_sec": 9.37,
+      "duration_sec": 24.85,
       "prompt_positive": "v3ct0r style, simple flat vector art, clean white background, Visual: A \"PRO DEV\" badge appears next to the same frustration-to-spec flow. \"You're already doing this.\", bold saturated colors, educational animation, flat color fill, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough, characters, people, faces",
       "seed": 1500027,
       "input_image": "R04_keyframe.png",
-      "output_name": "R04.mp4"
+      "output_name": "R04.mp4",
+      "beat_ids": [
+        "SEG05_B039",
+        "SEG05_B040",
+        "SEG05_B041"
+      ],
+      "beat_count": 3
     },
     {
       "shot_id": "Z01",
@@ -654,12 +776,16 @@
         "pop_appear",
         "meditative_hum_success"
       ],
-      "duration_sec": 8.08,
+      "duration_sec": 5.47,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: The three-line template appears on screen, large and clear:, flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500028,
       "input_image": "Z01_keyframe.png",
-      "output_name": "Z01.mp4"
+      "output_name": "Z01.mp4",
+      "beat_ids": [
+        "SEG06_B042"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "Z02",
@@ -677,12 +803,16 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 7.43,
+      "duration_sec": 9.11,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, \"Goal: ___\", flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500029,
       "input_image": "Z02_keyframe.png",
-      "output_name": "Z02.mp4"
+      "output_name": "Z02.mp4",
+      "beat_ids": [
+        "SEG06_B043"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "Z03",
@@ -703,12 +833,18 @@
         "fury_typing_mechanical",
         "meditative_hum_success"
       ],
-      "duration_sec": 14.23,
+      "duration_sec": 25.77,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, \"Done-when: ___\", flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500030,
       "input_image": "Z03_keyframe.png",
-      "output_name": "Z03.mp4"
+      "output_name": "Z03.mp4",
+      "beat_ids": [
+        "SEG06_B044",
+        "SEG06_B045",
+        "SEG06_B046"
+      ],
+      "beat_count": 3
     }
   ],
   "source_preproduction": "../../preproduction/ep02/ep02_prepro_manifest_v7.json",
@@ -718,5 +854,8 @@
     "target_duration_sec": 210.0,
     "actual_duration_sec": 210.01,
     "timing_source": "estimate"
-  }
+  },
+  "total_duration_sec": 323.5,
+  "synchronized_with_audio": true,
+  "sync_timestamp": "2026-03-19T00:58:27.174696"
 }

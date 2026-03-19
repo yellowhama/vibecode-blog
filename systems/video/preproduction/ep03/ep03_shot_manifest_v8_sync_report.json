@@ -1,0 +1,351 @@
+{
+  "generated_at": "2026-03-19T00:58:27.296589",
+  "shot_manifest": "../../preproduction/ep03/ep03_shot_manifest_v8.json",
+  "total_shots": 30,
+  "total_beats": 38,
+  "original_total_sec": 210.1,
+  "synced_total_sec": 339.4,
+  "delta_sec": 129.4,
+  "padding_per_shot": 0.15,
+  "gap_sec": 0.15,
+  "log": [
+    {
+      "shot_id": "H01",
+      "segment": "HOOK",
+      "status": "synced",
+      "original_duration_sec": 4.86,
+      "synced_duration_sec": 4.806,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG01_B001"
+      ]
+    },
+    {
+      "shot_id": "H02",
+      "segment": "HOOK",
+      "status": "synced",
+      "original_duration_sec": 4.04,
+      "synced_duration_sec": 3.534,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG01_B002"
+      ]
+    },
+    {
+      "shot_id": "M01",
+      "segment": "MISCONCEPTION",
+      "status": "synced",
+      "original_duration_sec": 9.18,
+      "synced_duration_sec": 12.942,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG02_B003"
+      ]
+    },
+    {
+      "shot_id": "M02",
+      "segment": "MISCONCEPTION",
+      "status": "synced",
+      "original_duration_sec": 9.18,
+      "synced_duration_sec": 11.742,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG02_B004"
+      ]
+    },
+    {
+      "shot_id": "M03",
+      "segment": "MISCONCEPTION",
+      "status": "synced",
+      "original_duration_sec": 2.0,
+      "synced_duration_sec": 10.134,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG02_B005"
+      ]
+    },
+    {
+      "shot_id": "M04",
+      "segment": "MISCONCEPTION",
+      "status": "synced",
+      "original_duration_sec": 9.18,
+      "synced_duration_sec": 20.94,
+      "beat_count": 2,
+      "beat_ids": [
+        "SEG02_B006",
+        "SEG02_B007"
+      ]
+    },
+    {
+      "shot_id": "K01",
+      "segment": "THE_CRACK",
+      "status": "synced",
+      "original_duration_sec": 7.53,
+      "synced_duration_sec": 8.982,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG03_B008"
+      ]
+    },
+    {
+      "shot_id": "K02",
+      "segment": "THE_CRACK",
+      "status": "synced",
+      "original_duration_sec": 6.71,
+      "synced_duration_sec": 6.942,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG03_B009"
+      ]
+    },
+    {
+      "shot_id": "K03",
+      "segment": "THE_CRACK",
+      "status": "synced",
+      "original_duration_sec": 4.45,
+      "synced_duration_sec": 5.766,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG03_B010"
+      ]
+    },
+    {
+      "shot_id": "K04",
+      "segment": "THE_CRACK",
+      "status": "synced",
+      "original_duration_sec": 9.18,
+      "synced_duration_sec": 19.332,
+      "beat_count": 2,
+      "beat_ids": [
+        "SEG03_B011",
+        "SEG03_B012"
+      ]
+    },
+    {
+      "shot_id": "C01",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 2.0,
+      "synced_duration_sec": 3.75,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B013"
+      ]
+    },
+    {
+      "shot_id": "C02",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 5.48,
+      "synced_duration_sec": 1.062,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B014"
+      ]
+    },
+    {
+      "shot_id": "C03",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 4.86,
+      "synced_duration_sec": 4.326,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B015"
+      ]
+    },
+    {
+      "shot_id": "C04",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 9.18,
+      "synced_duration_sec": 4.014,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B016"
+      ]
+    },
+    {
+      "shot_id": "C05",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 9.18,
+      "synced_duration_sec": 16.134,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B017"
+      ]
+    },
+    {
+      "shot_id": "C06",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 7.12,
+      "synced_duration_sec": 15.198,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B018"
+      ]
+    },
+    {
+      "shot_id": "C07",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 5.27,
+      "synced_duration_sec": 10.278,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B019"
+      ]
+    },
+    {
+      "shot_id": "C08",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 7.33,
+      "synced_duration_sec": 6.246,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B020"
+      ]
+    },
+    {
+      "shot_id": "C09",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 5.07,
+      "synced_duration_sec": 4.878,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B021"
+      ]
+    },
+    {
+      "shot_id": "C10",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 5.48,
+      "synced_duration_sec": 5.502,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B022"
+      ]
+    },
+    {
+      "shot_id": "C11",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 9.18,
+      "synced_duration_sec": 5.742,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG04_B023"
+      ]
+    },
+    {
+      "shot_id": "C12",
+      "segment": "CORE",
+      "status": "synced",
+      "original_duration_sec": 9.18,
+      "synced_duration_sec": 54.342,
+      "beat_count": 5,
+      "beat_ids": [
+        "SEG04_B024",
+        "SEG04_B025",
+        "SEG04_B026",
+        "SEG04_B027",
+        "SEG04_B028"
+      ]
+    },
+    {
+      "shot_id": "R01",
+      "segment": "REFRAME",
+      "status": "synced",
+      "original_duration_sec": 5.07,
+      "synced_duration_sec": 4.014,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG05_B029"
+      ]
+    },
+    {
+      "shot_id": "R02",
+      "segment": "REFRAME",
+      "status": "synced",
+      "original_duration_sec": 4.66,
+      "synced_duration_sec": 4.35,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG05_B030"
+      ]
+    },
+    {
+      "shot_id": "R03",
+      "segment": "REFRAME",
+      "status": "synced",
+      "original_duration_sec": 9.18,
+      "synced_duration_sec": 9.27,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG05_B031"
+      ]
+    },
+    {
+      "shot_id": "R04",
+      "segment": "REFRAME",
+      "status": "synced",
+      "original_duration_sec": 9.18,
+      "synced_duration_sec": 14.454,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG05_B032"
+      ]
+    },
+    {
+      "shot_id": "R05",
+      "segment": "REFRAME",
+      "status": "synced",
+      "original_duration_sec": 9.18,
+      "synced_duration_sec": 27.444,
+      "beat_count": 2,
+      "beat_ids": [
+        "SEG05_B033",
+        "SEG05_B034"
+      ]
+    },
+    {
+      "shot_id": "Z01",
+      "segment": "OUTRO_CTA",
+      "status": "synced",
+      "original_duration_sec": 8.77,
+      "synced_duration_sec": 8.022,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG06_B035"
+      ]
+    },
+    {
+      "shot_id": "Z02",
+      "segment": "OUTRO_CTA",
+      "status": "synced",
+      "original_duration_sec": 9.18,
+      "synced_duration_sec": 9.006,
+      "beat_count": 1,
+      "beat_ids": [
+        "SEG06_B036"
+      ]
+    },
+    {
+      "shot_id": "Z03",
+      "segment": "OUTRO_CTA",
+      "status": "synced",
+      "original_duration_sec": 9.19,
+      "synced_duration_sec": 26.292,
+      "beat_count": 2,
+      "beat_ids": [
+        "SEG06_B037",
+        "SEG06_B038"
+      ]
+    }
+  ]
+}

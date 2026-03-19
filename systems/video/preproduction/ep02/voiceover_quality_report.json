@@ -1,0 +1,41 @@
+{
+  "audio_path": "/mnt/e/vibecode-blog/systems/video/preproduction/ep02/voiceover_master_tts.wav",
+  "duration_sec": 323.31,
+  "target": {
+    "integrated_lufs": -16.0,
+    "lra": 11.0,
+    "true_peak_dbtp": -1.5
+  },
+  "loudnorm_measurement": {
+    "input_i": "-16.12",
+    "input_tp": "-1.50",
+    "input_lra": "2.60",
+    "input_thresh": "-26.44",
+    "output_i": "-16.03",
+    "output_tp": "-1.50",
+    "output_lra": "2.60",
+    "output_thresh": "-26.35",
+    "normalization_type": "dynamic",
+    "target_offset": "0.03"
+  },
+  "volumedetect": {
+    "mean_volume_db": -16.0,
+    "max_volume_db": -1.5
+  },
+  "generated_at": "2026-03-19T00:44:47.404314",
+  "loudnorm_applied": true,
+  "loudnorm_first_pass": {
+    "input_i": "-17.78",
+    "input_tp": "0.18",
+    "input_lra": "2.60",
+    "input_thresh": "-28.11",
+    "output_i": "-16.44",
+    "output_tp": "-1.50",
+    "output_lra": "2.60",
+    "output_thresh": "-26.76",
+    "normalization_type": "dynamic",
+    "target_offset": "0.44",
+    "second_pass_mode": "two_pass"
+  },
+  "trim_silence": false
+}

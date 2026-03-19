@@ -1,9 +1,23 @@
 {
-  "generated_at": "2026-03-18T23:26:57.421658",
-  "rules_version": "1.0",
+  "generated_at": "2026-03-19T02:09:59.731154",
+  "rules_version": "2.0",
+  "language": "en",
   "total_beats": 53,
   "beats_modified": 52,
   "modification_rate": 0.9811,
+  "narration_quality": {
+    "avg_wpm": 151.8,
+    "wpm_range": [
+      80.0,
+      167.6
+    ],
+    "total_warnings": 1,
+    "warning_types": {
+      "wpm": 0,
+      "sentence_length": 1,
+      "jargon": 0
+    }
+  },
   "modifications": [
     {
       "beat_id": "SEG01_B001",
@@ -75,7 +89,10 @@
       "text_diff": {
         "original": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern",
         "transformed": "\"Make me an online store with a blue header, product categories on the left, shopping cart icon in the top right, modern"
-      }
+      },
+      "warnings": [
+        "Long sentence (30 words > 25): \"\"Make me an online store with a blue header, product categor...\""
+      ]
     },
     {
       "beat_id": "SEG02_B011",
@@ -428,7 +445,7 @@
       "exaggeration": 0.48,
       "text_diff": {
         "original": "That feeling is data. If the answer is \"this isn't what I wanted\" — good. That frustration? That gap between what you im",
-        "transformed": "That feeling is data. If the answer is \"this isn't what I wanted\"... — good. That frustration? That gap between what you"
+        "transformed": "That feeling is data. If ... the answer is \"this isn't what I wanted\"... — good. That frustration? That gap between what"
       }
     },
     {

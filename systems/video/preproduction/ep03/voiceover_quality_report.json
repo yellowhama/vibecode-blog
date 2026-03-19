@@ -1,0 +1,41 @@
+{
+  "audio_path": "../../preproduction/ep03/voiceover_master_tts.wav",
+  "duration_sec": 339.294,
+  "target": {
+    "integrated_lufs": -16.0,
+    "lra": 11.0,
+    "true_peak_dbtp": -1.5
+  },
+  "loudnorm_measurement": {
+    "input_i": "-16.01",
+    "input_tp": "-1.50",
+    "input_lra": "2.50",
+    "input_thresh": "-26.57",
+    "output_i": "-15.98",
+    "output_tp": "-1.50",
+    "output_lra": "2.50",
+    "output_thresh": "-26.54",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.02"
+  },
+  "volumedetect": {
+    "mean_volume_db": -16.2,
+    "max_volume_db": -1.5
+  },
+  "generated_at": "2026-03-19T00:40:10.081216",
+  "loudnorm_applied": true,
+  "loudnorm_first_pass": {
+    "input_i": "-18.54",
+    "input_tp": "-3.07",
+    "input_lra": "2.60",
+    "input_thresh": "-29.06",
+    "output_i": "-15.95",
+    "output_tp": "-1.50",
+    "output_lra": "2.50",
+    "output_thresh": "-26.51",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.05",
+    "second_pass_mode": "two_pass"
+  },
+  "trim_silence": false
+}

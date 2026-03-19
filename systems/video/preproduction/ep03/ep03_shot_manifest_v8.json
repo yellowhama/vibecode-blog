@@ -32,12 +32,16 @@
       "sfx": [
         "meditative_hum_success"
       ],
-      "duration_sec": 4.86,
+      "duration_sec": 4.806,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Same desk as EP02. The PROJECT.md file glows on her monitor. Clean folder tree in the sidebar — but it's grown. Dozens of files. Vee sits tall, hoodie sleeves pushed up. She looks like someone who's figured things out., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500001,
       "input_image": "H01_keyframe.png",
-      "output_name": "H01.mp4"
+      "output_name": "H01.mp4",
+      "beat_ids": [
+        "SEG01_B001"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "H02",
@@ -58,12 +62,16 @@
         "pop_appear",
         "system_explosion_glitch"
       ],
-      "duration_sec": 4.04,
+      "duration_sec": 3.534,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, A cursor clicks one file. A small edit. Save. Three red error badges pop up in different parts of the sidebar., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500002,
       "input_image": "H02_keyframe.png",
-      "output_name": "H02.mp4"
+      "output_name": "H02.mp4",
+      "beat_ids": [
+        "SEG01_B002"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "M01",
@@ -81,12 +89,16 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 9.18,
+      "duration_sec": 12.942,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, The file's line count ticks up in the corner: 2,400... 2,800... 3,100., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500003,
       "input_image": "M01_keyframe.png",
-      "output_name": "M01.mp4"
+      "output_name": "M01.mp4",
+      "beat_ids": [
+        "SEG02_B003"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "M02",
@@ -104,12 +116,16 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 9.18,
+      "duration_sec": 11.742,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee shrugs — a \"makes sense to me\" expression. She taps the single file proudly. One file. One truth. Simple. 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500004,
       "input_image": "M02_keyframe.png",
-      "output_name": "M02.mp4"
+      "output_name": "M02.mp4",
+      "beat_ids": [
+        "SEG02_B004"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "M03",
@@ -127,12 +143,16 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 2.0,
+      "duration_sec": 10.134,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, BEAT. One second. The word \"연결\" lingers., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500005,
       "input_image": "M03_keyframe.png",
-      "output_name": "M03.mp4"
+      "output_name": "M03.mp4",
+      "beat_ids": [
+        "SEG02_B005"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "M04",
@@ -152,12 +172,17 @@
       "sfx": [
         "swoosh_motion"
       ],
-      "duration_sec": 9.18,
+      "duration_sec": 20.94,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: AI cursor moves through the file. Fixes one section. But the fix ripples — a changed variable name cascades through unrelated functions. Red highlights bloom across the file., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500006,
       "input_image": "M04_keyframe.png",
-      "output_name": "M04.mp4"
+      "output_name": "M04.mp4",
+      "beat_ids": [
+        "SEG02_B006",
+        "SEG02_B007"
+      ],
+      "beat_count": 2
     },
     {
       "shot_id": "K01",
@@ -175,12 +200,16 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 7.53,
+      "duration_sec": 8.982,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Oil sizzles in a pan on the stove. Droplets arc through the air — nothing to stop them. They land on the bed. Grease stains bloom on white sheets., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500007,
       "input_image": "K01_keyframe.png",
-      "output_name": "K01.mp4"
+      "output_name": "K01.mp4",
+      "beat_ids": [
+        "SEG03_B008"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "K02",
@@ -201,12 +230,16 @@
         "pop_appear",
         "swoosh_motion"
       ],
-      "duration_sec": 6.71,
+      "duration_sec": 6.942,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The camera slides. Shower turns on. Water streams across the floor — no barrier — and reaches the desk. The computer sparks., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500008,
       "input_image": "K02_keyframe.png",
-      "output_name": "K02.mp4"
+      "output_name": "K02.mp4",
+      "beat_ids": [
+        "SEG03_B009"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "K03",
@@ -226,12 +259,16 @@
       "sfx": [
         "swoosh_motion"
       ],
-      "duration_sec": 4.45,
+      "duration_sec": 5.766,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The camera slides to the toilet. Full view from the kitchen table., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500009,
       "input_image": "K03_keyframe.png",
-      "output_name": "K03.mp4"
+      "output_name": "K03.mp4",
+      "beat_ids": [
+        "SEG03_B010"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "K04",
@@ -249,12 +286,17 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 9.18,
+      "duration_sec": 19.332,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, BEAT. One disgusted second., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500010,
       "input_image": "K04_keyframe.png",
-      "output_name": "K04.mp4"
+      "output_name": "K04.mp4",
+      "beat_ids": [
+        "SEG03_B011",
+        "SEG03_B012"
+      ],
+      "beat_count": 2
     },
     {
       "shot_id": "C01",
@@ -272,12 +314,16 @@
       "extended_metaphor": true,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 2.0,
+      "duration_sec": 3.75,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A bright vertical line drops between the kitchen and the bedroom. THUD. The oil droplets hit the new wall and splatter harmlessly against it., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500011,
       "input_image": "C01_keyframe.png",
-      "output_name": "C01.mp4"
+      "output_name": "C01.mp4",
+      "beat_ids": [
+        "SEG04_B013"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C02",
@@ -295,12 +341,16 @@
       "extended_metaphor": true,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 5.48,
+      "duration_sec": 1.062,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A second wall drops between the bathroom and the office. THUD. Water pools safely on the bathroom side., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500012,
       "input_image": "C02_keyframe.png",
-      "output_name": "C02.mp4"
+      "output_name": "C02.mp4",
+      "beat_ids": [
+        "SEG04_B014"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C03",
@@ -318,12 +368,16 @@
       "extended_metaphor": true,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 4.86,
+      "duration_sec": 4.326,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, A third wall hides the toilet. THUD., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500013,
       "input_image": "C03_keyframe.png",
-      "output_name": "C03.mp4"
+      "output_name": "C03.mp4",
+      "beat_ids": [
+        "SEG04_B015"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C04",
@@ -343,12 +397,16 @@
       "sfx": [
         "meditative_hum_success"
       ],
-      "duration_sec": 9.18,
+      "duration_sec": 4.014,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, The apartment morphs into a folder tree diagram. Each room becomes a labeled folder: `auth/`, `payments/`, `notifications/`, `sync/`, `ui/`. Clean lines connect them through small interface nodes — the \"doors.\", flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500014,
       "input_image": "C04_keyframe.png",
-      "output_name": "C04.mp4"
+      "output_name": "C04.mp4",
+      "beat_ids": [
+        "SEG04_B016"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C05",
@@ -368,12 +426,16 @@
       "sfx": [
         "system_explosion_glitch"
       ],
-      "duration_sec": 9.18,
+      "duration_sec": 16.134,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, One folder lights up red — an error in `payments/`. The error stays inside. Other folders remain green. The red pulses once, then resolves to green., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500015,
       "input_image": "C05_keyframe.png",
-      "output_name": "C05.mp4"
+      "output_name": "C05.mp4",
+      "beat_ids": [
+        "SEG04_B017"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C06",
@@ -391,12 +453,16 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 7.12,
+      "duration_sec": 15.198,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Quick flash: Vee's eyes go wide. Both hands come up — palms out, fingers spread. The universal \"oh THAT'S why\" gesture. Glasses flash. 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500016,
       "input_image": "C06_keyframe.png",
-      "output_name": "C06.mp4"
+      "output_name": "C06.mp4",
+      "beat_ids": [
+        "SEG04_B018"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C07",
@@ -416,12 +482,16 @@
       "sfx": [
         "pop_appear"
       ],
-      "duration_sec": 5.27,
+      "duration_sec": 10.278,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Visual: The single app.js file icon appears on the left — massive, glowing red. An arrow points right. On the right, five small file icons appear one by one, each labeled., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500017,
       "input_image": "C07_keyframe.png",
-      "output_name": "C07.mp4"
+      "output_name": "C07.mp4",
+      "beat_ids": [
+        "SEG04_B019"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C08",
@@ -439,12 +509,16 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 7.33,
+      "duration_sec": 6.246,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Visual: payments/ folder lights up. \"250 lines.\", flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500018,
       "input_image": "C08_keyframe.png",
-      "output_name": "C08.mp4"
+      "output_name": "C08.mp4",
+      "beat_ids": [
+        "SEG04_B020"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C09",
@@ -462,12 +536,16 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 5.07,
+      "duration_sec": 4.878,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Visual: notifications/ folder. \"200 lines.\", flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500019,
       "input_image": "C09_keyframe.png",
-      "output_name": "C09.mp4"
+      "output_name": "C09.mp4",
+      "beat_ids": [
+        "SEG04_B021"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C10",
@@ -485,12 +563,16 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 5.48,
+      "duration_sec": 5.502,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Visual: sync/ folder. \"350 lines.\", flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500020,
       "input_image": "C10_keyframe.png",
-      "output_name": "C10.mp4"
+      "output_name": "C10.mp4",
+      "beat_ids": [
+        "SEG04_B022"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C11",
@@ -508,12 +590,16 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 9.18,
+      "duration_sec": 5.742,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Visual: Side-by-side — left: 3,100-line single file, right: 5 folders totaling 1,500. The difference is stark., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500021,
       "input_image": "C11_keyframe.png",
-      "output_name": "C11.mp4"
+      "output_name": "C11.mp4",
+      "beat_ids": [
+        "SEG04_B023"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "C12",
@@ -531,12 +617,20 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 9.18,
+      "duration_sec": 54.342,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, clean white background, educational diagram space, Vee's mouth forms a silent \"oh\". She counts on her fingers — five folders, five responsibilities. It makes sense now. 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500022,
       "input_image": "C12_keyframe.png",
-      "output_name": "C12.mp4"
+      "output_name": "C12.mp4",
+      "beat_ids": [
+        "SEG04_B024",
+        "SEG04_B025",
+        "SEG04_B026",
+        "SEG04_B027",
+        "SEG04_B028"
+      ],
+      "beat_count": 5
     },
     {
       "shot_id": "R01",
@@ -558,12 +652,16 @@
         "fury_typing_mechanical",
         "meditative_hum_success"
       ],
-      "duration_sec": 5.07,
+      "duration_sec": 4.014,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, The screen shows a refactored project. Five folders. Clean structure. Not code — the folder tree itself. Zoomed out. Bird's eye., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500023,
       "input_image": "R01_keyframe.png",
-      "output_name": "R01.mp4"
+      "output_name": "R01.mp4",
+      "beat_ids": [
+        "SEG05_B029"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "R02",
@@ -581,12 +679,16 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 4.66,
+      "duration_sec": 4.35,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, BEAT. One second., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500024,
       "input_image": "R02_keyframe.png",
-      "output_name": "R02.mp4"
+      "output_name": "R02.mp4",
+      "beat_ids": [
+        "SEG05_B030"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "R03",
@@ -606,12 +708,16 @@
       "sfx": [
         "meditative_hum_success"
       ],
-      "duration_sec": 9.18,
+      "duration_sec": 9.27,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, The folder tree transforms into an actual map — a top-down city grid. Each folder becomes a building with a sign. `auth/` becomes a guard post. `payments/` becomes a bank. `notifications/` becomes a post office. `sync/` becomes a satellite tower. Roads connect them — clean, one-way streets., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500025,
       "input_image": "R03_keyframe.png",
-      "output_name": "R03.mp4"
+      "output_name": "R03.mp4",
+      "beat_ids": [
+        "SEG05_B031"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "R04",
@@ -631,12 +737,16 @@
       "sfx": [
         "meditative_hum_success"
       ],
-      "duration_sec": 9.18,
+      "duration_sec": 14.454,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Visual: Each building on the map has a clear sign. No need to go inside to know what it does., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500026,
       "input_image": "R04_keyframe.png",
-      "output_name": "R04.mp4"
+      "output_name": "R04.mp4",
+      "beat_ids": [
+        "SEG05_B032"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "R05",
@@ -656,12 +766,17 @@
       "sfx": [
         "fury_typing_mechanical"
       ],
-      "duration_sec": 9.18,
+      "duration_sec": 27.444,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee leans back. Arms behind her head. She looks at the folder tree on her monitor — not at code, at the MAP. A slow, knowing smile. She gets it now. 1.5 seconds., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500027,
       "input_image": "R05_keyframe.png",
-      "output_name": "R05.mp4"
+      "output_name": "R05.mp4",
+      "beat_ids": [
+        "SEG05_B033",
+        "SEG05_B034"
+      ],
+      "beat_count": 2
     },
     {
       "shot_id": "Z01",
@@ -681,12 +796,16 @@
       "sfx": [
         "meditative_hum_success"
       ],
-      "duration_sec": 8.77,
+      "duration_sec": 8.022,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Same composition. Vee at her desk. Five clean folders on screen. The old 3,100-line app.js is gone. She cracks her knuckles., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500028,
       "input_image": "Z01_keyframe.png",
-      "output_name": "Z01.mp4"
+      "output_name": "Z01.mp4",
+      "beat_ids": [
+        "SEG06_B035"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "Z02",
@@ -707,12 +826,16 @@
         "pop_appear",
         "swoosh_motion"
       ],
-      "duration_sec": 9.18,
+      "duration_sec": 9.006,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, The AI responds. Green checkmarks appear — but only in the `payments/` folder. The other folders don't move. Nothing breaks., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500029,
       "input_image": "Z02_keyframe.png",
-      "output_name": "Z02.mp4"
+      "output_name": "Z02.mp4",
+      "beat_ids": [
+        "SEG06_B036"
+      ],
+      "beat_count": 1
     },
     {
       "shot_id": "Z03",
@@ -730,12 +853,17 @@
       "extended_metaphor": false,
       "shorts_candidate": false,
       "sfx": [],
-      "duration_sec": 9.19,
+      "duration_sec": 26.292,
       "prompt_positive": "v3ct0r style, simple flat vector art, isolated on white bg, young woman character, bright yellow hoodie, round black glasses, brown bob hair, warm cream skin, minimal detail, clean design, character asset, clip art, educational animation character, friendly approachable design, no gradients, flat color fill, thin outline, slight smile, relaxed pose, one hand on hip, at desk with glowing monitor, warm room, Vee nods. Satisfied. She reaches for her coffee — then pauses. Looks at the green checkmarks. Squints. Tilts her head., flat color fill, thin outline, clean design, no gradients",
       "prompt_negative": "3D, photorealistic, gradient, shading, texture, clay, claymation, fingerprint, detailed, complex, thin lines, realistic hands, fingers, text, watermark, speech bubble, multiple characters, anime, sketch, rough",
       "seed": 1500030,
       "input_image": "Z03_keyframe.png",
-      "output_name": "Z03.mp4"
+      "output_name": "Z03.mp4",
+      "beat_ids": [
+        "SEG06_B037",
+        "SEG06_B038"
+      ],
+      "beat_count": 2
     }
   ],
   "source_preproduction": "../../preproduction/ep03/ep03_prepro_manifest_v7.json",
@@ -745,5 +873,8 @@
     "target_duration_sec": 210.0,
     "actual_duration_sec": 210.05,
     "timing_source": "estimate"
-  }
+  },
+  "total_duration_sec": 339.4,
+  "synchronized_with_audio": true,
+  "sync_timestamp": "2026-03-19T00:58:27.288997"
 }

@@ -1,0 +1,1071 @@
+{
+  "project_id": "ep04",
+  "prepro_manifest": "/mnt/e/vibecode-blog/systems/video/preproduction/ep04/ep04_prepro_manifest_v7.json",
+  "generated_at": "2026-03-19T00:51:52.617830",
+  "backend_chain": [
+    "chatterbox",
+    "edge"
+  ],
+  "offline_strict": false,
+  "backend_health": {
+    "chatterbox": {
+      "ok": true,
+      "msg": "chatterbox available, CUDA device: NVIDIA GeForce RTX 5070 Ti",
+      "is_local": true,
+      "registry": {
+        "module": "tts_backends.chatterbox_be",
+        "class": "ChatterboxBackend",
+        "description": "Resemble AI Chatterbox — local neural TTS with emotion control",
+        "is_local": true
+      }
+    },
+    "edge": {
+      "ok": true,
+      "msg": "edge_tts available",
+      "is_local": false,
+      "registry": {
+        "module": "tts_backends.edge",
+        "class": "EdgeBackend",
+        "description": "Microsoft Edge Neural Voices (online)",
+        "is_local": false
+      }
+    }
+  },
+  "used_backend_synthesis_counts": {
+    "chatterbox": 41,
+    "edge": 0
+  },
+  "cache_hits": 0,
+  "failed_count": 0,
+  "failed_beat_ids": [],
+  "out_audio": "/mnt/e/vibecode-blog/systems/video/preproduction/ep04/voiceover_master_tts.wav",
+  "timing_report": "/mnt/e/vibecode-blog/systems/video/preproduction/ep04/timing_alignment_report.json",
+  "quality_report": "/mnt/e/vibecode-blog/systems/video/preproduction/ep04/voiceover_quality_report.json",
+  "segments": [
+    {
+      "order": 1,
+      "beat_id": "SEG01_B001",
+      "scene_id": "SEG01",
+      "text": "Vee built everything. Organized everything. She has five beautiful boxes and she hasn't opened a single one.",
+      "expected_duration_sec": 6.8,
+      "actual_duration_sec": 5.4,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.4,
+            "exaggeration": 0.4,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0001_SEG01_B001.wav"
+    },
+    {
+      "order": 2,
+      "beat_id": "SEG01_B002",
+      "scene_id": "SEG01",
+      "text": "She's afraid of what's inside.",
+      "expected_duration_sec": 2.0,
+      "actual_duration_sec": 1.48,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 1.48,
+            "exaggeration": 0.7,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0003_SEG01_B002.wav"
+    },
+    {
+      "order": 3,
+      "beat_id": "SEG02_B003",
+      "scene_id": "SEG02",
+      "text": "... Here's the rule she's been living by: if it didn't crash when you built it, don't touch it. Wrap it up. Move on. Build the next thing.",
+      "expected_duration_sec": 10.8,
+      "actual_duration_sec": 6.48,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.48,
+            "exaggeration": 0.5,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0005_SEG02_B003.wav"
+    },
+    {
+      "order": 4,
+      "beat_id": "SEG02_B004",
+      "scene_id": "SEG02",
+      "text": "It feels like progress. Five features, five boxes, all sealed. Ship it.",
+      "expected_duration_sec": 4.8,
+      "actual_duration_sec": 4.32,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.32,
+            "exaggeration": 0.575,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0007_SEG02_B004.wav"
+    },
+    {
+      "order": 5,
+      "beat_id": "SEG02_B005",
+      "scene_id": "SEG02",
+      "text": "... But \"didn't crash\"... and \"works\"... are two very different things.",
+      "expected_duration_sec": 4.0,
+      "actual_duration_sec": 3.84,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 3.84,
+            "exaggeration": 0.65,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0009_SEG02_B005.wav"
+    },
+    {
+      "order": 6,
+      "beat_id": "SEG02_B006",
+      "scene_id": "SEG02",
+      "text": "\"Didn't crash\"... means it ran once on your machine with your data and nothing exploded. \"Works\"... means it handles the weird cases. The empty fields. The slow connections. The user who clicks the back button seventeen times. The person who types emoji in the phone number field.",
+      "expected_duration_sec": 18.8,
+      "actual_duration_sec": 12.44,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 12.44,
+            "exaggeration": 0.725,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0011_SEG02_B006.wav"
+    },
+    {
+      "order": 7,
+      "beat_id": "SEG02_B007",
+      "scene_id": "SEG02",
+      "text": "She never checked for any of that. She's about to find out what happens when you skip the check.",
+      "expected_duration_sec": 7.6,
+      "actual_duration_sec": 3.92,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 3.92,
+            "exaggeration": 0.8,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0013_SEG02_B007.wav"
+    },
+    {
+      "order": 8,
+      "beat_id": "SEG03_B008",
+      "scene_id": "SEG03",
+      "text": "She showed it to someone. Their screen? White. Nothing. The app that ran perfectly on her machine ran perfectly on her machine only.",
+      "expected_duration_sec": 9.2,
+      "actual_duration_sec": 7.0,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.0,
+            "exaggeration": 0.5,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0015_SEG03_B008.wav"
+    },
+    {
+      "order": 9,
+      "beat_id": "SEG03_B009",
+      "scene_id": "SEG03",
+      "text": "\"Works on my machine\"... isn't a status update. It's a confession. It means you never defined what \"working\"... actually looks like.",
+      "expected_duration_sec": 8.4,
+      "actual_duration_sec": 5.28,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.28,
+            "exaggeration": 0.944,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0017_SEG03_B009.wav"
+    },
+    {
+      "order": 10,
+      "beat_id": "SEG03_B010",
+      "scene_id": "SEG03",
+      "text": "Her login worked because she was already logged in. Her search worked because she only searched words that existed. Her payments worked because she never tested what happens when a payment fails.",
+      "expected_duration_sec": 12.8,
+      "actual_duration_sec": 6.64,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.64,
+            "exaggeration": 0.944,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0019_SEG03_B010.wav"
+    },
+    {
+      "order": 11,
+      "beat_id": "SEG03_B011",
+      "scene_id": "SEG03",
+      "text": "Every one of those boxes might be empty. She'd never know. She never looked.",
+      "expected_duration_sec": 5.6,
+      "actual_duration_sec": 4.04,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.04,
+            "exaggeration": 0.5,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0021_SEG03_B011.wav"
+    },
+    {
+      "order": 12,
+      "beat_id": "SEG04_B012",
+      "scene_id": "SEG04",
+      "text": "Let's talk about these boxes. You wrapped them. You're proud of them. And you won't open them because — what if they're empty? What if something's wrong inside?",
+      "expected_duration_sec": 11.2,
+      "actual_duration_sec": 7.68,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.68,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0023_SEG04_B012.wav"
+    },
+    {
+      "order": 13,
+      "beat_id": "SEG04_B013",
+      "scene_id": "SEG04",
+      "text": "... Here's the thing nobody says out loud: not opening the box doesn't make the contents better. If it's broken inside, it was broken before you looked. Opening the box doesn't create the problem. It just tells you the problem exists.",
+      "expected_duration_sec": 16.0,
+      "actual_duration_sec": 11.2,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 11.2,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0025_SEG04_B013.wav"
+    },
+    {
+      "order": 14,
+      "beat_id": "SEG04_B014",
+      "scene_id": "SEG04",
+      "text": "So let's open one.",
+      "expected_duration_sec": 1.6,
+      "actual_duration_sec": 1.4,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 1.4,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0027_SEG04_B014.wav"
+    },
+    {
+      "order": 15,
+      "beat_id": "SEG04_B015",
+      "scene_id": "SEG04",
+      "text": "A cracked gear. Login crashes on an empty session token. That crack was always there. Opening the box didn't break it.",
+      "expected_duration_sec": 8.4,
+      "actual_duration_sec": 6.24,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.24,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0029_SEG04_B015.wav"
+    },
+    {
+      "order": 16,
+      "beat_id": "SEG04_B016",
+      "scene_id": "SEG04",
+      "text": "Three-line fix. Done.",
+      "expected_duration_sec": 1.5,
+      "actual_duration_sec": 1.76,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 1.76,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0031_SEG04_B016.wav"
+    },
+    {
+      "order": 17,
+      "beat_id": "SEG04_B017",
+      "scene_id": "SEG04",
+      "text": "Second box. It works. It was always fine. All that dread — wasted.",
+      "expected_duration_sec": 5.2,
+      "actual_duration_sec": 4.8,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.8,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0033_SEG04_B017.wav"
+    },
+    {
+      "order": 18,
+      "beat_id": "SEG04_B018",
+      "scene_id": "SEG04",
+      "text": "Third box. Two functions calling each other in a loop. Would have crashed in production. On someone else's machine. In front of a real user paying real money.",
+      "expected_duration_sec": 11.2,
+      "actual_duration_sec": 8.12,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 8.12,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0035_SEG04_B018.wav"
+    },
+    {
+      "order": 19,
+      "beat_id": "SEG04_B019",
+      "scene_id": "SEG04",
+      "text": "Twelve-minute fix. She would have spent twelve hours debugging it in production.",
+      "expected_duration_sec": 4.8,
+      "actual_duration_sec": 3.96,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 3.96,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0037_SEG04_B019.wav"
+    },
+    {
+      "order": 20,
+      "beat_id": "SEG04_B020",
+      "scene_id": "SEG04",
+      "text": "Fourth box. Sync works for one user. Add ten users and it crashes. The gear handles one rotation but grinds on the tenth. A ticking time bomb.",
+      "expected_duration_sec": 10.8,
+      "actual_duration_sec": 7.84,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.84,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0039_SEG04_B020.wav"
+    },
+    {
+      "order": 21,
+      "beat_id": "SEG04_B021",
+      "scene_id": "SEG04",
+      "text": "Five-minute fix. Invisible until it's too late. Unless you look.",
+      "expected_duration_sec": 4.0,
+      "actual_duration_sec": 3.44,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 3.44,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0041_SEG04_B021.wav"
+    },
+    {
+      "order": 22,
+      "beat_id": "SEG04_B022",
+      "scene_id": "SEG04",
+      "text": "Fifth box. Perfect. Nothing wrong. Built right the first time. It happens.",
+      "expected_duration_sec": 4.8,
+      "actual_duration_sec": 4.44,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.44,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0043_SEG04_B022.wav"
+    },
+    {
+      "order": 23,
+      "beat_id": "SEG04_B023",
+      "scene_id": "SEG04",
+      "text": "Two bugs. One time bomb. Two clean bills of health. The scary part was never what's inside the box. The scary part was the not knowing.",
+      "expected_duration_sec": 10.4,
+      "actual_duration_sec": 7.56,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.56,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0045_SEG04_B023.wav"
+    },
+    {
+      "order": 24,
+      "beat_id": "SEG04_B024",
+      "scene_id": "SEG04",
+      "text": "Now let's talk about how she actually opened them. , Because \"opening the box\"... has a name. It's called a test.",
+      "expected_duration_sec": 8.0,
+      "actual_duration_sec": 5.88,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.88,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0047_SEG04_B024.wav"
+    },
+    {
+      "order": 25,
+      "beat_id": "SEG04_B025",
+      "scene_id": "SEG04",
+      "text": "\"When the login token is empty — reject the login.\"... That's a test. One sentence. One expectation. One checkmark.",
+      "expected_duration_sec": 7.6,
+      "actual_duration_sec": 6.84,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.84,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0049_SEG04_B025.wav"
+    },
+    {
+      "order": 26,
+      "beat_id": "SEG04_B026",
+      "scene_id": "SEG04",
+      "text": "\"When a payment fails — don't charge the card.\"... Another test. Another sentence. Another checkmark.",
+      "expected_duration_sec": 6.0,
+      "actual_duration_sec": 4.96,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.96,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0051_SEG04_B026.wav"
+    },
+    {
+      "order": 27,
+      "beat_id": "SEG04_B027",
+      "scene_id": "SEG04",
+      "text": "\"When sync has ten users — don't crash.\"... Third test. Third sentence.",
+      "expected_duration_sec": 4.8,
+      "actual_duration_sec": 3.96,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 3.96,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0053_SEG04_B027.wav"
+    },
+    {
+      "order": 28,
+      "beat_id": "SEG04_B028",
+      "scene_id": "SEG04",
+      "text": "Each test is one sentence you write before you build. \"This is what should happen.\"... If it does — green. If it doesn't — you know before anyone else does. And here's the best part: you can ask the A I to write them.",
+      "expected_duration_sec": 17.2,
+      "actual_duration_sec": 11.36,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 11.36,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0055_SEG04_B028.wav"
+    },
+    {
+      "order": 29,
+      "beat_id": "SEG04_B029",
+      "scene_id": "SEG04",
+      "text": "\"Write tests for payments/. It should handle failed payments, never double-charge, and reject negative amounts.\"... Three expectations. Three tests. The A I writes the code, you wrote the contract.",
+      "expected_duration_sec": 11.2,
+      "actual_duration_sec": 10.16,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 10.16,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0057_SEG04_B029.wav"
+    },
+    {
+      "order": 30,
+      "beat_id": "SEG05_B030",
+      "scene_id": "SEG05",
+      "text": "... Here's the reframe. Testing isn't bug hunting. Testing is answering one question: what does \"working\"... actually mean?",
+      "expected_duration_sec": 6.8,
+      "actual_duration_sec": 5.92,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.92,
+            "exaggeration": 0.5,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0059_SEG05_B030.wav"
+    },
+    {
+      "order": 31,
+      "beat_id": "SEG05_B031",
+      "scene_id": "SEG05",
+      "text": "Each test is a contract. Not \"find what's broken.\"... It's \"define what done looks like.\"... A test says: this is how it should behave. If it doesn't behave this way, we have a problem. If it does — we're good.",
+      "expected_duration_sec": 16.0,
+      "actual_duration_sec": 11.72,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 11.72,
+            "exaggeration": 0.56,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0061_SEG05_B031.wav"
+    },
+    {
+      "order": 32,
+      "beat_id": "SEG05_B032",
+      "scene_id": "SEG05",
+      "text": "You don't test to find bugs. You test to define reality. The test is the definition of \"works.\"...",
+      "expected_duration_sec": 7.2,
+      "actual_duration_sec": 5.24,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 5.24,
+            "exaggeration": 0.62,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0063_SEG05_B032.wav"
+    },
+    {
+      "order": 33,
+      "beat_id": "SEG05_B033",
+      "scene_id": "SEG05",
+      "text": "Without tests, \"works\"... means \"didn't crash yet on my machine.\"... With tests, \"works\"... means \"does exactly what I said it should.\"... Two completely different sentences. Two completely different levels of confidence.",
+      "expected_duration_sec": 12.4,
+      "actual_duration_sec": 9.68,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 9.68,
+            "exaggeration": 0.68,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0065_SEG05_B033.wav"
+    },
+    {
+      "order": 34,
+      "beat_id": "SEG05_B034",
+      "scene_id": "SEG05",
+      "text": "A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You already know the answer.",
+      "expected_duration_sec": 11.2,
+      "actual_duration_sec": 6.68,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 6.68,
+            "exaggeration": 0.74,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0067_SEG05_B034.wav"
+    },
+    {
+      "order": 35,
+      "beat_id": "SEG05_B035",
+      "scene_id": "SEG05",
+      "text": "And professional developers? They do this before they write the code. They open the box before anything's inside. \"This box should contain a gear that spins clockwise.\"... Then they build the gear. Then they check. Green or red, no surprises.",
+      "expected_duration_sec": 16.0,
+      "actual_duration_sec": 9.56,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 9.56,
+            "exaggeration": 0.8,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0069_SEG05_B035.wav"
+    },
+    {
+      "order": 36,
+      "beat_id": "SEG06_B036",
+      "scene_id": "SEG06",
+      "text": "The boxes are open. She knows what's inside every one of them. No more guessing. No more \"works on my machine.\"...",
+      "expected_duration_sec": 8.4,
+      "actual_duration_sec": 4.92,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.92,
+            "exaggeration": 0.6,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0071_SEG06_B036.wav"
+    },
+    {
+      "order": 37,
+      "beat_id": "SEG06_B037",
+      "scene_id": "SEG06",
+      "text": "Here's your homework. Next time you build something with A I, write three sentences before you start. \"When X happens, Y should happen.\"... \"When A is empty, B should show an error.\"... \"When someone clicks C, D should appear.\"...",
+      "expected_duration_sec": 15.2,
+      "actual_duration_sec": 10.8,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 10.8,
+            "exaggeration": 0.57,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0073_SEG06_B037.wav"
+    },
+    {
+      "order": 38,
+      "beat_id": "SEG06_B038",
+      "scene_id": "SEG06",
+      "text": "Give those sentences to the A I. \"Write tests for these.\"... The A I writes the checks. You wrote the definition of done. That's it. That's the whole trick.",
+      "expected_duration_sec": 10.8,
+      "actual_duration_sec": 8.32,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 8.32,
+            "exaggeration": 0.54,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0075_SEG06_B038.wav"
+    },
+    {
+      "order": 39,
+      "beat_id": "SEG06_B039",
+      "scene_id": "SEG06",
+      "text": "Now she builds a feature and opens the box the same day. One test. Thirty seconds. No pile-up. No dread. The habit is the whole trick.",
+      "expected_duration_sec": 10.4,
+      "actual_duration_sec": 7.28,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 7.28,
+            "exaggeration": 0.51,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0077_SEG06_B039.wav"
+    },
+    {
+      "order": 40,
+      "beat_id": "SEG06_B040",
+      "scene_id": "SEG06",
+      "text": "The code has structure. It has tests. She knows what works and what doesn't.",
+      "expected_duration_sec": 5.6,
+      "actual_duration_sec": 4.4,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 4.4,
+            "exaggeration": 0.48,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0079_SEG06_B040.wav"
+    },
+    {
+      "order": 41,
+      "beat_id": "SEG06_B041",
+      "scene_id": "SEG06",
+      "text": "... But the code only knows what she told it. And she told it what the A I told her. What happens when the A I gets it wrong — and she can't tell the difference? What happens when the recipe is poison and the chef doesn't know?",
+      "expected_duration_sec": 18.0,
+      "actual_duration_sec": 10.32,
+      "backend": "chatterbox",
+      "cache_hit": false,
+      "attempts": [
+        {
+          "backend": "chatterbox",
+          "ok": true,
+          "cache_hit": false,
+          "meta": {
+            "backend": "chatterbox",
+            "duration_sec": 10.32,
+            "exaggeration": 0.45,
+            "cfg_weight": 0.5,
+            "speaker_wav": null
+          }
+        }
+      ],
+      "segment_path": "/tmp/tts_prepro_dae7mkq8/0081_SEG06_B041.wav"
+    }
+  ]
+}

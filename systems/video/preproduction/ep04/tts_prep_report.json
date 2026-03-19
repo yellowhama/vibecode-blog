@@ -1,9 +1,23 @@
 {
-  "generated_at": "2026-03-18T23:27:03.811698",
-  "rules_version": "1.0",
+  "generated_at": "2026-03-19T02:12:22.389644",
+  "rules_version": "2.0",
+  "language": "en",
   "total_beats": 41,
   "beats_modified": 39,
   "modification_rate": 0.9512,
+  "narration_quality": {
+    "avg_wpm": 150.2,
+    "wpm_range": [
+      120.0,
+      161.1
+    ],
+    "total_warnings": 0,
+    "warning_types": {
+      "wpm": 0,
+      "sentence_length": 0,
+      "jargon": 0
+    }
+  },
   "modifications": [
     {
       "beat_id": "SEG01_B001",
@@ -255,7 +269,11 @@
       "beat_id": "SEG05_B034",
       "segment": "REFRAME",
       "position": 0.8,
-      "exaggeration": 0.74
+      "exaggeration": 0.74,
+      "text_diff": {
+        "original": "A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You alr",
+        "transformed": "A box with a test isn't scary. It's a box with a label that says exactly what should be inside. Open it anytime. You alr"
+      }
     },
     {
       "beat_id": "SEG05_B035",
@@ -320,6 +338,6 @@
       }
     }
   ],
-  "prepro_manifest": "../../preproduction/ep04/ep04_prepro_manifest_v7.json",
+  "prepro_manifest": "/mnt/e/vibecode-blog/systems/video/preproduction/ep04/ep04_prepro_manifest_v7.json",
   "rules_file": "../config/tts_rules.yaml"
 }

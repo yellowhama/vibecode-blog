@@ -1,285 +1,492 @@
 {
   "summary": {
-    "total": 30,
-    "violations": 7,
-    "violation_rate": 0.233333,
-    "max_mismatch_ratio": 0.68,
+    "total": 53,
+    "violations": 10,
+    "violation_rate": 0.188679,
+    "max_mismatch_ratio": 0.52,
     "tolerance_ratio": 0.35
   },
   "rows": [
     {
       "beat_id": "SEG01_B001",
       "scene_id": "SEG01",
-      "expected_duration_sec": 4.8,
-      "actual_duration_sec": 6.336,
-      "mismatch_sec": 1.536,
-      "mismatch_ratio": 0.32,
+      "expected_duration_sec": 7.6,
+      "actual_duration_sec": 6.08,
+      "mismatch_sec": -1.52,
+      "mismatch_ratio": 0.2,
       "over_tolerance": false
     },
     {
       "beat_id": "SEG01_B002",
       "scene_id": "SEG01",
-      "expected_duration_sec": 2.8,
-      "actual_duration_sec": 3.528,
-      "mismatch_sec": 0.728,
-      "mismatch_ratio": 0.26,
+      "expected_duration_sec": 8.4,
+      "actual_duration_sec": 5.96,
+      "mismatch_sec": -2.44,
+      "mismatch_ratio": 0.2905,
       "over_tolerance": false
     },
     {
       "beat_id": "SEG01_B003",
       "scene_id": "SEG01",
-      "expected_duration_sec": 1.6,
-      "actual_duration_sec": 2.688,
-      "mismatch_sec": 1.088,
-      "mismatch_ratio": 0.68,
-      "over_tolerance": true
+      "expected_duration_sec": 3.6,
+      "actual_duration_sec": 3.04,
+      "mismatch_sec": -0.56,
+      "mismatch_ratio": 0.1556,
+      "over_tolerance": false
     },
     {
-      "beat_id": "SEG02_B004",
-      "scene_id": "SEG02",
-      "expected_duration_sec": 2.8,
-      "actual_duration_sec": 2.376,
-      "mismatch_sec": -0.424,
-      "mismatch_ratio": 0.1514,
+      "beat_id": "SEG01_B004",
+      "scene_id": "SEG01",
+      "expected_duration_sec": 1.6,
+      "actual_duration_sec": 2.0,
+      "mismatch_sec": 0.4,
+      "mismatch_ratio": 0.25,
       "over_tolerance": false
     },
     {
       "beat_id": "SEG02_B005",
       "scene_id": "SEG02",
-      "expected_duration_sec": 12.4,
-      "actual_duration_sec": 10.44,
-      "mismatch_sec": -1.96,
-      "mismatch_ratio": 0.1581,
+      "expected_duration_sec": 2.8,
+      "actual_duration_sec": 2.68,
+      "mismatch_sec": -0.12,
+      "mismatch_ratio": 0.0429,
       "over_tolerance": false
     },
     {
       "beat_id": "SEG02_B006",
       "scene_id": "SEG02",
-      "expected_duration_sec": 5.6,
-      "actual_duration_sec": 5.496,
-      "mismatch_sec": -0.104,
-      "mismatch_ratio": 0.0186,
+      "expected_duration_sec": 12.4,
+      "actual_duration_sec": 8.88,
+      "mismatch_sec": -3.52,
+      "mismatch_ratio": 0.2839,
       "over_tolerance": false
     },
     {
       "beat_id": "SEG02_B007",
       "scene_id": "SEG02",
-      "expected_duration_sec": 12.4,
-      "actual_duration_sec": 11.304,
-      "mismatch_sec": -1.096,
-      "mismatch_ratio": 0.0884,
-      "over_tolerance": false
-    },
-    {
-      "beat_id": "SEG03_B008",
-      "scene_id": "SEG03",
-      "expected_duration_sec": 4.0,
-      "actual_duration_sec": 5.88,
-      "mismatch_sec": 1.88,
-      "mismatch_ratio": 0.47,
+      "expected_duration_sec": 5.6,
+      "actual_duration_sec": 3.56,
+      "mismatch_sec": -2.04,
+      "mismatch_ratio": 0.3643,
       "over_tolerance": true
     },
     {
-      "beat_id": "SEG03_B009",
+      "beat_id": "SEG02_B008",
+      "scene_id": "SEG02",
+      "expected_duration_sec": 12.4,
+      "actual_duration_sec": 7.24,
+      "mismatch_sec": -5.16,
+      "mismatch_ratio": 0.4161,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG02_B009",
+      "scene_id": "SEG02",
+      "expected_duration_sec": 4.0,
+      "actual_duration_sec": 2.56,
+      "mismatch_sec": -1.44,
+      "mismatch_ratio": 0.36,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG02_B010",
+      "scene_id": "SEG02",
+      "expected_duration_sec": 12.0,
+      "actual_duration_sec": 9.12,
+      "mismatch_sec": -2.88,
+      "mismatch_ratio": 0.24,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG02_B011",
+      "scene_id": "SEG02",
+      "expected_duration_sec": 1.5,
+      "actual_duration_sec": 0.72,
+      "mismatch_sec": -0.78,
+      "mismatch_ratio": 0.52,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG02_B012",
+      "scene_id": "SEG02",
+      "expected_duration_sec": 4.8,
+      "actual_duration_sec": 4.52,
+      "mismatch_sec": -0.28,
+      "mismatch_ratio": 0.0583,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG02_B013",
+      "scene_id": "SEG02",
+      "expected_duration_sec": 6.4,
+      "actual_duration_sec": 4.76,
+      "mismatch_sec": -1.64,
+      "mismatch_ratio": 0.2563,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG02_B014",
+      "scene_id": "SEG02",
+      "expected_duration_sec": 6.4,
+      "actual_duration_sec": 4.24,
+      "mismatch_sec": -2.16,
+      "mismatch_ratio": 0.3375,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG03_B015",
       "scene_id": "SEG03",
       "expected_duration_sec": 6.0,
-      "actual_duration_sec": 8.28,
-      "mismatch_sec": 2.28,
-      "mismatch_ratio": 0.38,
-      "over_tolerance": true
+      "actual_duration_sec": 4.84,
+      "mismatch_sec": -1.16,
+      "mismatch_ratio": 0.1933,
+      "over_tolerance": false
     },
     {
-      "beat_id": "SEG03_B010",
+      "beat_id": "SEG03_B016",
+      "scene_id": "SEG03",
+      "expected_duration_sec": 6.0,
+      "actual_duration_sec": 4.68,
+      "mismatch_sec": -1.32,
+      "mismatch_ratio": 0.22,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG03_B017",
       "scene_id": "SEG03",
       "expected_duration_sec": 10.0,
-      "actual_duration_sec": 10.296,
-      "mismatch_sec": 0.296,
-      "mismatch_ratio": 0.0296,
+      "actual_duration_sec": 7.76,
+      "mismatch_sec": -2.24,
+      "mismatch_ratio": 0.224,
       "over_tolerance": false
     },
     {
-      "beat_id": "SEG04_B011",
-      "scene_id": "SEG04",
-      "expected_duration_sec": 11.2,
-      "actual_duration_sec": 8.256,
-      "mismatch_sec": -2.944,
-      "mismatch_ratio": 0.2629,
-      "over_tolerance": false
-    },
-    {
-      "beat_id": "SEG04_B012",
-      "scene_id": "SEG04",
-      "expected_duration_sec": 8.4,
-      "actual_duration_sec": 7.728,
-      "mismatch_sec": -0.672,
-      "mismatch_ratio": 0.08,
-      "over_tolerance": false
-    },
-    {
-      "beat_id": "SEG04_B013",
-      "scene_id": "SEG04",
-      "expected_duration_sec": 5.6,
-      "actual_duration_sec": 7.224,
-      "mismatch_sec": 1.624,
-      "mismatch_ratio": 0.29,
-      "over_tolerance": false
-    },
-    {
-      "beat_id": "SEG04_B014",
-      "scene_id": "SEG04",
-      "expected_duration_sec": 5.6,
-      "actual_duration_sec": 9.312,
-      "mismatch_sec": 3.712,
-      "mismatch_ratio": 0.6629,
+      "beat_id": "SEG03_B018",
+      "scene_id": "SEG03",
+      "expected_duration_sec": 6.0,
+      "actual_duration_sec": 3.36,
+      "mismatch_sec": -2.64,
+      "mismatch_ratio": 0.44,
       "over_tolerance": true
     },
     {
-      "beat_id": "SEG04_B015",
-      "scene_id": "SEG04",
-      "expected_duration_sec": 9.2,
-      "actual_duration_sec": 9.312,
-      "mismatch_sec": 0.112,
-      "mismatch_ratio": 0.0122,
-      "over_tolerance": false
-    },
-    {
-      "beat_id": "SEG04_B016",
-      "scene_id": "SEG04",
-      "expected_duration_sec": 8.4,
-      "actual_duration_sec": 7.608,
-      "mismatch_sec": -0.792,
-      "mismatch_ratio": 0.0943,
-      "over_tolerance": false
-    },
-    {
-      "beat_id": "SEG04_B017",
-      "scene_id": "SEG04",
-      "expected_duration_sec": 14.8,
-      "actual_duration_sec": 10.392,
-      "mismatch_sec": -4.408,
-      "mismatch_ratio": 0.2978,
-      "over_tolerance": false
-    },
-    {
-      "beat_id": "SEG04_B018",
-      "scene_id": "SEG04",
-      "expected_duration_sec": 18.4,
-      "actual_duration_sec": 14.424,
-      "mismatch_sec": -3.976,
-      "mismatch_ratio": 0.2161,
-      "over_tolerance": false
-    },
-    {
-      "beat_id": "SEG04_B019",
-      "scene_id": "SEG04",
-      "expected_duration_sec": 3.6,
-      "actual_duration_sec": 4.92,
-      "mismatch_sec": 1.32,
-      "mismatch_ratio": 0.3667,
+      "beat_id": "SEG03_B019",
+      "scene_id": "SEG03",
+      "expected_duration_sec": 14.0,
+      "actual_duration_sec": 7.48,
+      "mismatch_sec": -6.52,
+      "mismatch_ratio": 0.4657,
       "over_tolerance": true
     },
     {
-      "beat_id": "SEG04_B020",
-      "scene_id": "SEG04",
-      "expected_duration_sec": 5.6,
-      "actual_duration_sec": 5.76,
-      "mismatch_sec": 0.16,
-      "mismatch_ratio": 0.0286,
+      "beat_id": "SEG03_B020",
+      "scene_id": "SEG03",
+      "expected_duration_sec": 6.0,
+      "actual_duration_sec": 5.08,
+      "mismatch_sec": -0.92,
+      "mismatch_ratio": 0.1533,
       "over_tolerance": false
     },
     {
       "beat_id": "SEG04_B021",
       "scene_id": "SEG04",
-      "expected_duration_sec": 6.0,
-      "actual_duration_sec": 5.328,
-      "mismatch_sec": -0.672,
-      "mismatch_ratio": 0.112,
+      "expected_duration_sec": 11.2,
+      "actual_duration_sec": 7.8,
+      "mismatch_sec": -3.4,
+      "mismatch_ratio": 0.3036,
       "over_tolerance": false
     },
     {
       "beat_id": "SEG04_B022",
       "scene_id": "SEG04",
-      "expected_duration_sec": 4.0,
-      "actual_duration_sec": 5.592,
-      "mismatch_sec": 1.592,
-      "mismatch_ratio": 0.398,
-      "over_tolerance": true
+      "expected_duration_sec": 8.4,
+      "actual_duration_sec": 5.8,
+      "mismatch_sec": -2.6,
+      "mismatch_ratio": 0.3095,
+      "over_tolerance": false
     },
     {
       "beat_id": "SEG04_B023",
       "scene_id": "SEG04",
-      "expected_duration_sec": 6.8,
-      "actual_duration_sec": 7.968,
-      "mismatch_sec": 1.168,
-      "mismatch_ratio": 0.1718,
+      "expected_duration_sec": 5.6,
+      "actual_duration_sec": 5.16,
+      "mismatch_sec": -0.44,
+      "mismatch_ratio": 0.0786,
       "over_tolerance": false
     },
     {
       "beat_id": "SEG04_B024",
       "scene_id": "SEG04",
-      "expected_duration_sec": 4.0,
-      "actual_duration_sec": 6.192,
-      "mismatch_sec": 2.192,
-      "mismatch_ratio": 0.548,
-      "over_tolerance": true
+      "expected_duration_sec": 13.2,
+      "actual_duration_sec": 10.68,
+      "mismatch_sec": -2.52,
+      "mismatch_ratio": 0.1909,
+      "over_tolerance": false
     },
     {
       "beat_id": "SEG04_B025",
       "scene_id": "SEG04",
-      "expected_duration_sec": 13.6,
-      "actual_duration_sec": 13.248,
-      "mismatch_sec": -0.352,
-      "mismatch_ratio": 0.0259,
+      "expected_duration_sec": 4.0,
+      "actual_duration_sec": 4.12,
+      "mismatch_sec": 0.12,
+      "mismatch_ratio": 0.03,
       "over_tolerance": false
     },
     {
-      "beat_id": "SEG05_B026",
+      "beat_id": "SEG04_B026",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 4.8,
+      "actual_duration_sec": 5.36,
+      "mismatch_sec": 0.56,
+      "mismatch_ratio": 0.1167,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B027",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 5.6,
+      "actual_duration_sec": 6.2,
+      "mismatch_sec": 0.6,
+      "mismatch_ratio": 0.1071,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B028",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 5.2,
+      "actual_duration_sec": 3.44,
+      "mismatch_sec": -1.76,
+      "mismatch_ratio": 0.3385,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B029",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 14.4,
+      "actual_duration_sec": 10.72,
+      "mismatch_sec": -3.68,
+      "mismatch_ratio": 0.2556,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B030",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 16.8,
+      "actual_duration_sec": 14.68,
+      "mismatch_sec": -2.12,
+      "mismatch_ratio": 0.1262,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B031",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 14.8,
+      "actual_duration_sec": 11.12,
+      "mismatch_sec": -3.68,
+      "mismatch_ratio": 0.2486,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B032",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 18.4,
+      "actual_duration_sec": 15.16,
+      "mismatch_sec": -3.24,
+      "mismatch_ratio": 0.1761,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B033",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 3.6,
+      "actual_duration_sec": 3.92,
+      "mismatch_sec": 0.32,
+      "mismatch_ratio": 0.0889,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B034",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 21.6,
+      "actual_duration_sec": 16.92,
+      "mismatch_sec": -4.68,
+      "mismatch_ratio": 0.2167,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B035",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 14.8,
+      "actual_duration_sec": 13.72,
+      "mismatch_sec": -1.08,
+      "mismatch_ratio": 0.073,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B036",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 6.8,
+      "actual_duration_sec": 6.04,
+      "mismatch_sec": -0.76,
+      "mismatch_ratio": 0.1118,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B037",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 8.0,
+      "actual_duration_sec": 8.16,
+      "mismatch_sec": 0.16,
+      "mismatch_ratio": 0.02,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B038",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 6.8,
+      "actual_duration_sec": 6.04,
+      "mismatch_sec": -0.76,
+      "mismatch_ratio": 0.1118,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B039",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 4.4,
+      "actual_duration_sec": 4.08,
+      "mismatch_sec": -0.32,
+      "mismatch_ratio": 0.0727,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B040",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 6.4,
+      "actual_duration_sec": 5.64,
+      "mismatch_sec": -0.76,
+      "mismatch_ratio": 0.1188,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B041",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 6.0,
+      "actual_duration_sec": 6.48,
+      "mismatch_sec": 0.48,
+      "mismatch_ratio": 0.08,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B042",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 4.0,
+      "actual_duration_sec": 4.4,
+      "mismatch_sec": 0.4,
+      "mismatch_ratio": 0.1,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG04_B043",
+      "scene_id": "SEG04",
+      "expected_duration_sec": 13.6,
+      "actual_duration_sec": 12.64,
+      "mismatch_sec": -0.96,
+      "mismatch_ratio": 0.0706,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG05_B044",
       "scene_id": "SEG05",
       "expected_duration_sec": 14.0,
-      "actual_duration_sec": 9.888,
-      "mismatch_sec": -4.112,
-      "mismatch_ratio": 0.2937,
-      "over_tolerance": false
+      "actual_duration_sec": 8.84,
+      "mismatch_sec": -5.16,
+      "mismatch_ratio": 0.3686,
+      "over_tolerance": true
     },
     {
-      "beat_id": "SEG05_B027",
+      "beat_id": "SEG05_B045",
       "scene_id": "SEG05",
-      "expected_duration_sec": 11.2,
-      "actual_duration_sec": 8.232,
-      "mismatch_sec": -2.968,
-      "mismatch_ratio": 0.265,
+      "expected_duration_sec": 15.2,
+      "actual_duration_sec": 8.72,
+      "mismatch_sec": -6.48,
+      "mismatch_ratio": 0.4263,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG05_B046",
+      "scene_id": "SEG05",
+      "expected_duration_sec": 12.8,
+      "actual_duration_sec": 8.04,
+      "mismatch_sec": -4.76,
+      "mismatch_ratio": 0.3719,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG05_B047",
+      "scene_id": "SEG05",
+      "expected_duration_sec": 10.8,
+      "actual_duration_sec": 6.44,
+      "mismatch_sec": -4.36,
+      "mismatch_ratio": 0.4037,
+      "over_tolerance": true
+    },
+    {
+      "beat_id": "SEG06_B048",
+      "scene_id": "SEG06",
+      "expected_duration_sec": 2.8,
+      "actual_duration_sec": 2.12,
+      "mismatch_sec": -0.68,
+      "mismatch_ratio": 0.2429,
       "over_tolerance": false
     },
     {
-      "beat_id": "SEG06_B028",
+      "beat_id": "SEG06_B049",
       "scene_id": "SEG06",
-      "expected_duration_sec": 13.2,
-      "actual_duration_sec": 15.936,
-      "mismatch_sec": 2.736,
-      "mismatch_ratio": 0.2073,
+      "expected_duration_sec": 6.0,
+      "actual_duration_sec": 4.52,
+      "mismatch_sec": -1.48,
+      "mismatch_ratio": 0.2467,
       "over_tolerance": false
     },
     {
-      "beat_id": "SEG06_B029",
+      "beat_id": "SEG06_B050",
       "scene_id": "SEG06",
-      "expected_duration_sec": 5.2,
-      "actual_duration_sec": 4.104,
-      "mismatch_sec": -1.096,
-      "mismatch_ratio": 0.2108,
+      "expected_duration_sec": 8.4,
+      "actual_duration_sec": 6.6,
+      "mismatch_sec": -1.8,
+      "mismatch_ratio": 0.2143,
       "over_tolerance": false
     },
     {
-      "beat_id": "SEG06_B030",
+      "beat_id": "SEG06_B051",
       "scene_id": "SEG06",
-      "expected_duration_sec": 8.8,
-      "actual_duration_sec": 7.368,
-      "mismatch_sec": -1.432,
-      "mismatch_ratio": 0.1627,
+      "expected_duration_sec": 10.0,
+      "actual_duration_sec": 7.48,
+      "mismatch_sec": -2.52,
+      "mismatch_ratio": 0.252,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG06_B052",
+      "scene_id": "SEG06",
+      "expected_duration_sec": 12.4,
+      "actual_duration_sec": 9.8,
+      "mismatch_sec": -2.6,
+      "mismatch_ratio": 0.2097,
+      "over_tolerance": false
+    },
+    {
+      "beat_id": "SEG06_B053",
+      "scene_id": "SEG06",
+      "expected_duration_sec": 8.4,
+      "actual_duration_sec": 5.56,
+      "mismatch_sec": -2.84,
+      "mismatch_ratio": 0.3381,
       "over_tolerance": false
     }
   ],
   "policy": "warn",
-  "generated_at": "2026-03-18T21:10:47.347386",
-  "prepro_manifest": "systems/video/preproduction/ep01/ep01_prepro_manifest_v4.json",
-  "voiceover_audio": "systems/video/preproduction/ep01/tts_full_v4/voiceover_master.wav"
+  "generated_at": "2026-03-19T00:36:24.414381",
+  "prepro_manifest": "/mnt/e/vibecode-blog/systems/video/preproduction/ep01/ep01_prepro_manifest_v5.json",
+  "voiceover_audio": "/mnt/e/vibecode-blog/systems/video/preproduction/ep01/voiceover_master_tts.wav"
 }

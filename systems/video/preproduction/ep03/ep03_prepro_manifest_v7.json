@@ -1179,6 +1179,14 @@
           "text": "브이는 한 줄을 고쳤다. 세 군데가 터졌다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 4.656,
+      "tts_text": "브이는 한 줄을 고쳤다. 세 군데가 터졌다.",
+      "tts_exaggeration": 0.4,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 43.8,
+      "tts_warnings": [
+        "WPM too slow (44 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1207,6 +1215,14 @@
           "text": "주방만 건드렸는데 — 침실이 불탔다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 3.384,
+      "tts_text": "주방만 건드렸는데 — 침실이 불탔다.",
+      "tts_exaggeration": 0.7,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 37.5,
+      "tts_warnings": [
+        "WPM too slow (38 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1235,6 +1251,14 @@
           "text": "일주일 전. 브이의 프로젝트는 잘 돌아가고 있었다. 스펙도 있고. 문서도 있고. 문제는 — 코드가 전부 한 파일에 들어있었다는 거다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 12.792,
+      "tts_text": "일주일 전. 브이의 프로젝트는 잘 돌아가고 있었다. 스펙도 있고. 문서도 있고. ... 문제는 — 코드가 전부 한 파일에 들어있었다는 거다.",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 38.5,
+      "tts_warnings": [
+        "WPM too slow (39 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1263,6 +1287,14 @@
           "text": "로그인, 결제, 알림, 파일 동기화. 전부 한 파일. 삼천 줄. 브이의 논리는 이랬다 — 파일 하나면 찾기 쉽잖아.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 11.592,
+      "tts_text": "로그인, 결제, 알림, 파일 동기화. 전부 한 파일. 삼천 줄. 브이의 논리는 이랬다 — 파일 하나면 찾기 쉽잖아.",
+      "tts_exaggeration": 0.575,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 42.2,
+      "tts_warnings": [
+        "WPM too slow (42 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1291,6 +1323,14 @@
           "text": "맞는 말이다. 하나니까 잃어버릴 것도 없다. 하나니까 관리도 쉽다. 하나니까 — 전부 연결되어 있다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 9.984,
+      "tts_text": "맞는 말이다. 하나니까 잃어버릴 것도 없다. 하나니까 관리도 쉽다. 하나니까 — 전부 연결되어 있다.",
+      "tts_exaggeration": 0.65,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 37.5,
+      "tts_warnings": [
+        "WPM too slow (38 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1319,7 +1359,12 @@
           "text": "전부.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 1.224,
+      "tts_text": "전부.",
+      "tts_exaggeration": 0.725,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 40.0
     },
     {
       "beat_id": "SEG02_B007",
@@ -1347,6 +1392,14 @@
           "text": "그리고 AI한테 \"결제 로직 고쳐줘\"라고 했다. AI는 성실했다. 결제 로직을 고쳤다. 그리고 같은 파일에 있던 로그인 코드도 건드렸다. 알림 코드도. AI는 잘못한 게 아니다 — 다 같은 파일이니까.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 19.416,
+      "tts_text": "그리고 A I한테 \"결제 로직 고쳐줘\"...라고 했다. A I는 성실했다. 결제 로직을 고쳤다. 그리고 같은 파일에 있던 로그인 코드도 건드렸다. 알림 코드도. A I는 잘못한 게 아니다 — 다 같은 파일이니까.",
+      "tts_exaggeration": 0.8,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 41.5,
+      "tts_warnings": [
+        "WPM too slow (42 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1375,6 +1428,14 @@
           "text": "아파트가 하나 있다. 벽이 없다. 주방, 침실, 욕실, 서재 — 전부 한 공간이다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 8.832,
+      "tts_text": "아파트가 하나 있다. 벽이 없다. 주방, 침실, 욕실, 서재 — 전부 한 공간이다.",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 42.4,
+      "tts_warnings": [
+        "WPM too slow (42 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1403,6 +1464,14 @@
           "text": "아침을 요리한다. 기름이 튄다. 벽이 없으니까 — 침대에 떨어진다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 6.792,
+      "tts_text": "아침을 요리한다. 기름이 튄다. 벽이 없으니까 — 침대에 떨어진다.",
+      "tts_exaggeration": 0.875,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 36.5,
+      "tts_warnings": [
+        "WPM too slow (36 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1431,6 +1500,14 @@
           "text": "샤워를 한다. 물이 바닥을 타고 흘러서 — 컴퓨터에 닿는다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 5.616,
+      "tts_text": "샤워를 한다. 물이 바닥을 타고 흘러서 — 컴퓨터에 닿는다.",
+      "tts_exaggeration": 1.0,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 40.9,
+      "tts_warnings": [
+        "WPM too slow (41 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1459,6 +1536,14 @@
           "text": "변기는? 식탁에서 보인다. 밥 먹으면서.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 4.992,
+      "tts_text": "변기는? 식탁에서 보인다. 밥 먹으면서.",
+      "tts_exaggeration": 0.875,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 34.1,
+      "tts_warnings": [
+        "WPM too slow (34 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1487,6 +1572,14 @@
           "text": "이게 브이의 코드다. 전부 한 파일이니까 — 결제 로직을 고치면 로그인이 터진다. 알림을 바꾸면 파일 동기화가 깨진다. 주방 기름이 침대에 묻는 거다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 14.04,
+      "tts_text": "이게 브이의 코드다. 전부 한 파일이니까 — 결제 로직을 고치면 로그인이 터진다. 알림을 바꾸면 파일 동기화가 깨진다. 주방 기름이 침대에 묻는 거다.",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 39.3,
+      "tts_warnings": [
+        "WPM too slow (39 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1515,6 +1608,14 @@
           "text": "해결법은 지금 당장 보이는 그거다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 3.6,
+      "tts_text": "해결법은 지금 당장 보이는 그거다.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 39.5,
+      "tts_warnings": [
+        "WPM too slow (39 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1543,7 +1644,12 @@
           "text": "벽.",
           "emotion": ""
         }
-      ]
+      ],
+      "actual_duration_sec": 0.912,
+      "tts_text": "벽.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 40.0
     },
     {
       "beat_id": "SEG04_B015",
@@ -1571,6 +1677,14 @@
           "text": "주방과 침실 사이에 벽. 욕실과 서재 사이에 벽.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 4.176,
+      "tts_text": "주방과 침실 사이에 벽. 욕실과 서재 사이에 벽.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 44.4,
+      "tts_warnings": [
+        "WPM too slow (44 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1599,6 +1713,14 @@
           "text": "변기와 나머지 세계 사이에 벽. 감사합니다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 3.864,
+      "tts_text": "변기와 나머지 세계 사이에 벽. 감사합니다.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 37.5,
+      "tts_warnings": [
+        "WPM too slow (38 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1627,6 +1749,14 @@
           "text": "이제 주방은 주방이다. 침실은 침실이다. 각 방에는 하나의 역할이 있고, 하나의 문이 있다. 문을 통해서만 오갈 수 있다. 기름은 날아가지 않는다. 물은 흐르지 않는다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 15.984,
+      "tts_text": "이제 주방은 주방이다. 침실은 침실이다. 각 방에는 하나의 역할이 있고, 하나의 문이 있다. 문을 통해서만 오갈 수 있다. 기름은 날아가지 않는다. 물은 흐르지 않는다.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 38.3,
+      "tts_warnings": [
+        "WPM too slow (38 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1655,6 +1785,14 @@
           "text": "코드에서 벽은 — 폴더다. `auth/`는 로그인만 한다. `payments/`는 결제만 한다. 서로 직접 건드리지 않는다. 문을 통해서 — 인터페이스를 통해서 대화한다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 15.048,
+      "tts_text": "코드에서 벽은 — 폴더다. `auth/`는 로그인만 한다. `payments/`는 결제만 한다. 서로 직접 건드리지 않는다. 문을 통해서 — 인터페이스를 통해서 대화한다.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 31.6,
+      "tts_warnings": [
+        "WPM too slow (32 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1683,6 +1821,14 @@
           "text": "결제가 터지면 — 결제 문제다. 로그인은 모른다. 알림도 모른다. 각자의 방에서 각자의 일을 한다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 10.128,
+      "tts_text": "결제가 터지면 — 결제 문제다. 로그인은 모른다. 알림도 모른다. 각자의 방에서 각자의 일을 한다.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 38.2,
+      "tts_warnings": [
+        "WPM too slow (38 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1711,6 +1857,14 @@
           "text": "실제로 해보자. 브이의 삼천 줄짜리 앱을 분리하면 이렇게 된다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 6.096,
+      "tts_text": "실제로 해보자. 브이의 삼천 줄짜리 앱을 분리하면 이렇게 된다.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 38.6,
+      "tts_warnings": [
+        "WPM too slow (39 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1739,6 +1893,14 @@
           "text": "`auth/` — 로그인과 회원가입. 삼백 줄.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 4.728,
+      "tts_text": "`auth/` — 로그인과 회원가입. 삼백 줄.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 34.6,
+      "tts_warnings": [
+        "WPM too slow (35 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1767,6 +1929,14 @@
           "text": "`payments/` — 결제 관련 전부. 이백오십 줄.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 5.352,
+      "tts_text": "`payments/` — 결제 관련 전부. 이백오십 줄.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 33.9,
+      "tts_warnings": [
+        "WPM too slow (34 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1795,6 +1965,14 @@
           "text": "`notifications/` — 푸시 알림, 이메일. 이백 줄.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 5.592,
+      "tts_text": "`notifications/` — 푸시 알림, 이메일. 이백 줄.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 29.2,
+      "tts_warnings": [
+        "WPM too slow (29 < 30): text may be too short for duration"
       ]
     },
     {
@@ -1823,6 +2001,14 @@
           "text": "`sync/` — 파일 동기화. 삼백오십 줄.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 4.92,
+      "tts_text": "`sync/` — 파일 동기화. 삼백오십 줄.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 36.0,
+      "tts_warnings": [
+        "WPM too slow (36 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1851,6 +2037,14 @@
           "text": "`ui/` — 화면, 버튼, 레이아웃. 사백 줄.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 5.496,
+      "tts_text": "`ui/` — 화면, 버튼, 레이아웃. 사백 줄.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 38.9,
+      "tts_warnings": [
+        "WPM too slow (39 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1879,6 +2073,14 @@
           "text": "삼천 줄이 천오백 줄이 됐다. 절반은 중복이었다. 같은 함수가 여러 번 쓰여 있었을 뿐이다. 벽을 세우니까 — 중복이 보였다. 중복을 지우니까 — 코드가 줄었다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 14.928,
+      "tts_text": "삼천 줄이 천오백 줄이 됐다. 절반은 중복이었다. 같은 함수가 여러 번 쓰여 있었을 뿐이다. 벽을 세우니까 — 중복이 보였다. 중복을 지우니까 — 코드가 줄었다.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 40.0,
+      "tts_warnings": [
+        "WPM too slow (40 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1907,6 +2109,14 @@
           "text": "그리고 이제 AI한테 말할 수 있다. \"payments/ 폴더의 환불 로직을 추가해줘.\" AI는 어디를 봐야 하는지 안다. 다른 폴더는 건드리지 않는다. 기름이 침대에 튀지 않는다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 16.416,
+      "tts_text": "그리고 이제 A I한테 말할 수 있다. \"payments/ 폴더의 환불 로직을 추가해줘.\"... A I는 어디를 봐야 하는지 안다. 다른 폴더는 건드리지 않는다. 기름이 침대에 튀지 않는다.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 38.6,
+      "tts_warnings": [
+        "WPM too slow (39 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1935,6 +2145,14 @@
           "text": "어제 같은 요청을 했으면 — AI는 삼천 줄 전체를 읽고, 아무 데나 코드를 넣었을 거다. 오늘은 이백오십 줄만 읽고, 정확한 위치에 넣는다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 11.832,
+      "tts_text": "어제 같은 요청을 했으면 — A I는 삼천 줄 전체를 읽고, 아무 데나 코드를 넣었을 거다. 오늘은 이백오십 줄만 읽고, 정확한 위치에 넣는다.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 43.7,
+      "tts_warnings": [
+        "WPM too slow (44 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1963,6 +2181,14 @@
           "text": "그리고 브이가 깨달은 진짜 교훈은 따로 있다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 3.864,
+      "tts_text": "그리고 브이가 깨달은 진짜 교훈은 따로 있다.",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 42.0,
+      "tts_warnings": [
+        "WPM too slow (42 < 140): text may be too short for duration"
       ]
     },
     {
@@ -1991,6 +2217,14 @@
           "text": "코드를 읽을 필요가 없다. 지도를 읽어라.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 4.2,
+      "tts_text": "코드를 읽을 필요가 없다. 지도를 읽어라.",
+      "tts_exaggeration": 0.56,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 39.1,
+      "tts_warnings": [
+        "WPM too slow (39 < 140): text may be too short for duration"
       ]
     },
     {
@@ -2019,6 +2253,14 @@
           "text": "폴더 이름이 곧 건축이다. 이름만 보면 뭐가 어디 있는지 안다. 파일 하나 열지 않아도 — 구조를 안다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 9.12,
+      "tts_text": "폴더 이름이 곧 건축이다. 이름만 보면 뭐가 어디 있는지 안다. 파일 하나 열지 않아도 — 구조를 안다.",
+      "tts_exaggeration": 0.62,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 44.0,
+      "tts_warnings": [
+        "WPM too slow (44 < 140): text may be too short for duration"
       ]
     },
     {
@@ -2047,6 +2289,14 @@
           "text": "AI한테 \"결제 로직 고쳐줘\"라고 말하면, AI도 어디를 봐야 하는지 안다. `payments/` 폴더. 끝. 삼천 줄을 읽을 필요가 없다. 이백오십 줄만 읽으면 된다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 14.304,
+      "tts_text": "A I한테 \"결제 로직 고쳐줘\"...라고 말하면, A I도 어디를 봐야 하는지 안다. `payments/` 폴더. 끝. 삼천 줄을 읽을 필요가 없다. 이백오십 줄만 읽으면 된다.",
+      "tts_exaggeration": 0.68,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 38.3,
+      "tts_warnings": [
+        "WPM too slow (38 < 140): text may be too short for duration"
       ]
     },
     {
@@ -2075,6 +2325,14 @@
           "text": "구조가 문서다. 폴더가 설계도다. 벽이 있으면 — 지도가 생긴다. 그리고 지도가 있으면 — 코딩을 몰라도 방향을 잡을 수 있다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 11.904,
+      "tts_text": "구조가 문서다. 폴더가 설계도다. 벽이 있으면 — 지도가 생긴다. 그리고 지도가 있으면 — 코딩을 몰라도 방향을 잡을 수 있다.",
+      "tts_exaggeration": 0.74,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 40.1,
+      "tts_warnings": [
+        "WPM too slow (40 < 140): text may be too short for duration"
       ]
     },
     {
@@ -2103,6 +2361,14 @@
           "text": "프로 개발자들이 매일 하는 일이 이거다. 코드를 읽기 전에 구조를 읽는다. 폴더를 보고, 이름을 보고, 관계를 본다. 그 다음에 들어간다. 너도 똑같이 할 수 있다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 15.24,
+      "tts_text": "프로 개발자들이 매일 하는 일이 이거다. 코드를 읽기 전에 구조를 읽는다. 폴더를 보고, 이름을 보고, 관계를 본다. 그 다음에 들어간다. 너도 똑같이 할 수 있다.",
+      "tts_exaggeration": 0.8,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 40.8,
+      "tts_warnings": [
+        "WPM too slow (41 < 140): text may be too short for duration"
       ]
     },
     {
@@ -2131,6 +2397,14 @@
           "text": "한 문장이 방향을 잡았다. 한 파일이 기억을 잡았다. 벽이 — 구조를 잡았다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 7.872,
+      "tts_text": "한 문장이 방향을 잡았다. 한 파일이 기억을 잡았다. 벽이 — 구조를 잡았다.",
+      "tts_exaggeration": 0.6,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 41.9,
+      "tts_warnings": [
+        "WPM too slow (42 < 140): text may be too short for duration"
       ]
     },
     {
@@ -2159,6 +2433,14 @@
           "text": "테스트까지 통과한다. payments/ 안에서만. 다른 건 모른다. 다른 건 건드리지 않는다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 8.856,
+      "tts_text": "테스트까지 통과한다. payments/ 안에서만. 다른 건 모른다. 다른 건 건드리지 않는다.",
+      "tts_exaggeration": 0.55,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 31.7,
+      "tts_warnings": [
+        "WPM too slow (32 < 140): text may be too short for duration"
       ]
     },
     {
@@ -2187,6 +2469,14 @@
           "text": "구조는 잡혔다. 벽은 세워졌다. 근데 — 이 방들이 진짜 작동하는지는? 한 번도 확인 안 했다. 벽은 있다. 근데 방 안에 뭐가 있는지 — 아직 모른다.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 15.168,
+      "tts_text": "구조는 잡혔다. 벽은 세워졌다. 근데 — 이 방들이 진짜 작동하는지는? 한 번도 확인 안 했다. 벽은 있다. 근데 방 안에 뭐가 있는지 — 아직 모른다.",
+      "tts_exaggeration": 0.5,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 44.1,
+      "tts_warnings": [
+        "WPM too slow (44 < 140): text may be too short for duration"
       ]
     },
     {
@@ -2215,6 +2505,14 @@
           "text": "다음에 — 브이가 상자를 연다. 예쁘게 포장된 상자 다섯 개. 한 번도 열어본 적 없는. 안에 뭐가 있을까.",
           "emotion": ""
         }
+      ],
+      "actual_duration_sec": 10.824,
+      "tts_text": "다음에 — 브이가 상자를 연다. 예쁘게 포장된 상자 다섯 개. 한 번도 열어본 적 없는. 안에 뭐가 있을까.",
+      "tts_exaggeration": 0.45,
+      "tts_cfg_weight": 0.5,
+      "tts_estimated_wpm": 45.0,
+      "tts_warnings": [
+        "WPM too slow (45 < 140): text may be too short for duration"
       ]
     }
   ]
