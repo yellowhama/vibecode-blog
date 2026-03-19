@@ -330,11 +330,116 @@ eyes with light reflections, white background
 
 ---
 
-## 8. 다음 단계
+## 8. 캐릭터 ID 보존 기술 종합 가이드
+
+캐릭터를 한 번 디자인하면, 30+ 샷에서 **동일 인물로 인식**되어야 함.
+아래는 오픈소스 기술을 난이도순으로 정리한 것.
+
+### Tier 1: 제로샷 (훈련 불필요, 레퍼런스 이미지만)
+
+| 기술 | 원리 | 일관성 | Flux 지원 | ComfyUI 노드 |
+|------|------|--------|-----------|-------------|
+| **Flux Kontext** | 레퍼런스 이미지를 latent로 인코딩, 편집 지시문으로 장면 변경 | ★★★★☆ (70-85%) | ✅ 네이티브 | `FluxKontextImageScale` + `ReferenceLatent` |
+| **IP-Adapter** | 레퍼런스에서 시각 특징 추출 → cross-attention 주입 | ★★★☆☆ (70-80%) | △ 개발 중 | `ComfyUI-IPAdapter-Flux` |
+| **PuLID** | InsightFace 얼굴 임베딩 → 모델 가중치 수정 | ★★★★☆ (80-85%) | ✅ | `ComfyUI-PuLID-Flux` (설치됨) |
+| **InstantID** | 얼굴 임베딩 + IdentityNet (공간 제어) | ★★★★☆ (80-85%) | △ SDXL 중심 | `ComfyUI-InstantID` |
+
+> **Vee 문제**: PuLID/InstantID는 **실사 얼굴만 인식** → 2D 애니메 캐릭터에서 작동 안 함
+> **해결**: Ultra Real Anime LoRA로 실사형 캐릭터 생성 → PuLID 작동 가능
+
+### Tier 2: 캐릭터 시트 기반 (턴어라운드)
+
+| 기술 | 방법 | 일관성 |
+|------|------|--------|
+| **Flux Kontext Turnaround Sheet LoRA** | 1장 일러스트 → 5포즈 자동 생성 (front/3q/side/back/3q) | ★★★★☆ |
+| **Flux Consistent Character Sheet** | 프롬프트로 "character sheet, multiple views" 생성 | ★★★☆☆ |
+| **ControlNet OpenPose** | 포즈 스켈레톤 + 캐릭터 레퍼런스 조합 | ★★★★☆ |
+
+**Kontext Turnaround 워크플로**:
+1. 스타일 LoRA로 Vee 기본 일러스트 1장 생성 (정면, 전신)
+2. Kontext Turnaround Sheet LoRA 적용 → 5포즈 시트 자동 생성
+3. 시트를 Kontext reference로 모든 키프레임에서 참조
+
+소스: [Flux Kontext Character Turnaround Sheet LoRA](https://civitai.com/models/1753109/flux-kontext-character-turnaround-sheet-lora) — Ostris AI Toolkit으로 훈련됨
+
+### Tier 3: 커스텀 LoRA 훈련 (최강 일관성)
+
+**일관성 85-95%** — 가장 높지만 훈련 필요.
+
+| 항목 | 값 |
+|------|-----|
+| 필요 이미지 | 15~30장 (다양한 포즈, 표정, 각도) |
+| 배경 | 흰 배경 권장 |
+| 캡셔닝 | 자연어 서술 (Flux 특화) |
+| 훈련 도구 | **SimpleTuner** (안정, 문서 최고) / **AI-Toolkit** (빠름) / **Kohya SS** (GUI) |
+| 훈련 스텝 | 1,500~2,000 (캐릭터 LoRA 기준) |
+| network_dim | 32 (캐릭터 스위트스팟) |
+| GPU | 12GB+ (RTX 5070 Ti 16GB → 충분) |
+| 훈련 시간 | 2~6시간 |
+| 결과 파일 | ~18-150MB .safetensors |
+
+**훈련 파이프라인**:
+```
+1. 스타일 LoRA로 Vee 이미지 30장 생성 (다양한 포즈/표정/각도)
+2. 수동 큐레이션 → 일관된 15~25장 선별
+3. 자연어 캡셔닝 (각 이미지별 묘사)
+4. SimpleTuner/Kohya로 Vee 전용 LoRA 훈련
+5. 훈련된 LoRA = Vee의 "얼굴 ID"
+```
+
+**장점**: 트리거 워드만 넣으면 어떤 장면에서든 Vee로 생성
+**단점**: 훈련 시간 + 이미지 준비 필요
+
+소스:
+- [Flux 2 LoRA Training Guide (SimpleTuner & AI-Toolkit)](https://apatero.com/blog/flux-2-lora-training-complete-guide-2025)
+- [Kohya SS LoRA Training on 8GB GPU](https://github.com/FurkanGozukara/Stable-Diffusion/wiki/FLUX-LoRA-Training-Simplified-From-Zero-to-Hero-with-Kohya-SS-GUI-8GB-GPU-Windows-Tutorial-Guide)
+- [Train Cartoon Style LoRA Guide](https://apatero.com/blog/train-cartoon-lora-complete-guide-2025)
+
+### Tier 4: 멀티 레퍼런스 (Flux 2 전용)
+
+Flux 2는 **레퍼런스 이미지 최대 10장**을 네이티브로 지원:
+- 별도 노드/LoRA 불필요
+- 캐릭터 시트 여러 장을 직접 입력
+- 가장 간단하면서 높은 일관성
+
+> **현재 상태**: Flux 2 GGUF Q2_K 다운로드 중 (12.9GB)
+> 16GB VRAM에서 사용 가능하나, LoRA 호환성 미확인
+
+### 기술별 비교 요약
+
+| 기술 | 훈련 | 일관성 | 난이도 | 애니메 호환 | Flux 지원 |
+|------|------|--------|--------|-----------|-----------|
+| Flux Kontext (ref) | 불필요 | ★★★★☆ | 낮음 | ✅ | ✅ |
+| PuLID | 불필요 | ★★★★☆ | 낮음 | ❌ (실사만) | ✅ |
+| IP-Adapter | 불필요 | ★★★☆☆ | 낮음 | ✅ | △ |
+| Turnaround Sheet | 불필요 | ★★★★☆ | 중간 | ✅ | ✅ |
+| **커스텀 LoRA** | **2-6시간** | **★★★★★** | **높음** | **✅** | **✅** |
+| Flux 2 멀티레퍼런스 | 불필요 | ★★★★☆ | 낮음 | ✅ | Flux 2 전용 |
+
+### 우리 파이프라인 추천 경로
+
+```
+[지금] 스타일 LoRA 확정 (Vee3 테스트)
+  ↓
+[단기] Kontext Turnaround Sheet → 5포즈 캐릭터 시트
+  ↓
+[단기] Kontext reference로 30샷 키프레임 (훈련 불필요)
+  ↓
+[중기] 키프레임 30장 큐레이션 → Vee 전용 LoRA 훈련 (SimpleTuner)
+  ↓
+[중기] Vee LoRA + 스타일 LoRA 듀얼로 모든 에피소드 일관성 확보
+  ↓
+[장기] Flux 2 전환 시 멀티레퍼런스로 단순화
+```
+
+---
+
+## 9. 다음 단계
 
 1. Vee3 15장 테스트 결과 육안 비교
 2. 스타일 1개 확정
-3. 확정된 스타일로 Vee 캐릭터 시트 생성 (턴어라운드 5포즈)
-4. Flux Kontext Turnaround Sheet LoRA로 자동 확장
-5. 캐릭터 시트를 reference로 30샷 키프레임 재생성
-6. (선택) Flux 2로 전환 시 LoRA 호환성 확인
+3. 확정된 스타일로 Vee 기본 일러스트 1장 생성 (최고 품질)
+4. Flux Kontext Turnaround Sheet LoRA로 5포즈 시트 자동 생성
+5. Kontext reference로 30샷 키프레임 재생성
+6. (중기) 키프레임 큐레이션 → Vee 전용 LoRA 훈련
+7. (장기) Flux 2 멀티레퍼런스 전환
