@@ -274,8 +274,10 @@ Each stage writes completion status back to manifest.
 | 4 | EP01-04 대본 + 매니페스트 + 다이어그램 | ✅ |
 | 5 | 파이프라인 스크립트 v5 | ✅ |
 | 6 | 보조 산출물 (소스 인덱스 v3, Bee 스펙) | ✅ |
-| **6.5** | **TTS 재생성 + 파이프라인 현행화 + 다국어 + 검증 게이트** | **✅** |
-| **6.6** | **나레이션 리서치 원칙 파이프라인 통합 (25개 자동 검증)** | **✅** |
+| 6.5 | TTS 재생성 + 파이프라인 현행화 + 다국어 + 검증 게이트 | ✅ |
+| 6.6 | 나레이션 리서치 원칙 파이프라인 통합 (25개 자동 검증) | ✅ |
+| 6.7 | Validation Precision + Pre-production Gap Fill (EP02-04) | ✅ |
+| **6.8** | **EP01 Revision + 5-Min Cut System + v3 Render Runbook** | **✅** |
 
 ---
 
@@ -338,7 +340,89 @@ Stage 8: Multi-lang export ← YouTube upload
 | Beat count | 53 beats (12-20 범위 초과 — v5 스크립트가 길어서 정상) |
 | Pre-production | P4-P5 PASS, P1-P2 FAIL (EP01 topic card 한국어 헤딩 미적용) |
 
-**다음**: Phase 7 — ComfyUI 키프레임 렌더 → placeholder 교체 → I2V 클립 → 프로덕션 영상
+**다음**: Phase 6.7 → Phase 7
+
+---
+
+## 완료: Phase 6.7 — Validation Precision + Pre-production Gap Fill (2026-03-19)
+
+검증 정밀도 3건 수정 + EP02-04 사전기획 공백 해소 + CI 리포트 플래그 추가.
+
+### 6.7a — Validation Precision Fixes (3건)
+
+| 체크 | 문제 | 수정 | 결과 |
+|------|------|------|------|
+| Check 22 (Show vs Tell) | 나레이터 대사가 action_lines에 포함 → false positive | `in_dialogue` 플래그로 대사 블록 제외 | PASS |
+| Check 17 (Beat Count) | fallback이 raw NARRATOR 큐 카운트 (53) | 나레이터 그룹 카운트로 변경 (~20) | PASS |
+| P1/P2 (Topic Card) | 한국어 헤딩만 매칭 | 이중언어 매칭 (착각/Failure, 깨달음/Outcome 등) | PASS |
+
+### 6.7b — EP02-04 Topic Card/Brief 생성 (5개 신규)
+
+| 파일 | 내용 | 상태 |
+|------|------|------|
+| `ep02/ep02_topic_card.md` | 스펙 기반 개발 — 착각/깨달음/3막/쇼츠/내러티브 구조 | ✅ |
+| `ep03/ep03_topic_card.md` | 도메인 분리 — 아파트 메타포, 벽 없는 아파트 | ✅ |
+| `ep04/ep04_topic_card.md` | 테스팅/QA — 선물 상자 메타포, 열기 무서운 상자 | ✅ |
+| `ep03/ep03_topic_brief.md` | 리서치 7 데이터 포인트 + 3 script seeds | ✅ |
+| `ep04/ep04_topic_brief.md` | 리서치 7 데이터 포인트 + 4 script seeds | ✅ |
+
+### 6.7c — CI Report + Documentation
+
+| 파일 | 변경 | 상태 |
+|------|------|------|
+| `validate_screenplay.py` | `--report <path>` 플래그 + `generate_report()` markdown 출력 | ✅ |
+| `PIPELINE_2D_FLAT.md` | Scripts Inventory 업데이트, Phase 6.7 기록 | ✅ |
+| `09-youtube-channel-research-v2.md` | Better Stack B-tier 프로파일 추가 | ✅ |
+| `13-screenplay-pipeline-plan.md` | Phase 6.7 완료 섹션 추가 | ✅ |
+
+**다음**: Phase 7 — v3 렌더 실행 (`EP01_V3_RENDER_RUNBOOK.md`)
+
+---
+
+## 완료: Phase 6.8 — EP01 Revision + 5-Min Cut System + v3 Render Runbook (2026-03-19)
+
+레퍼런스 채널 비교 평가에서 3가지 우선순위 이슈 해결.
+평가 등급: 파이프라인 A, EP02-04 대본 A, **EP01 대본 B→A-**, 아웃풋 C+(렌더 런북 준비)
+
+### 6.8a — EP01 v6 Script Revision
+
+| 변경 | 내용 | 효과 |
+|------|------|------|
+| 요리 메타포 이동 | CORE(2:15) → THE_CRACK(1:20) | Veritasium 리듬 매칭 (1분대 메커니즘 진입) |
+| 도구 투어 압축 | 5도구×8초(40초) → 1문장 몽타주(15초) | 25초 절약, 카탈로그→원칙 |
+| 데이터 앵커 3개 | YC 95% AI코드, Fortune 500 Cursor, 14개월 채택 | EP02 수준 숫자 밀도 |
+| CTA 구체화 | "감정 적어봐" → "원한 것/나온 것/갭 적어봐" | EP02 패턴 미러링 |
+
+**결과**: 7:30 → 6:30, 22/29 PASS (0 FAIL, 7 WARN)
+
+### 6.8b — 5-Min Cut System
+
+| 파일 | 내용 | 상태 |
+|------|------|------|
+| `parse_fountain_to_prepro.py` | `--cut-manifest` 플래그 + `apply_cut_manifest()` | ✅ |
+| `ep01/ep01_cut_5min.json` | 300s 타겟, 7 beats 제거 | ✅ |
+| `ep02/ep02_cut_5min.json` | spec-kit 상세 건너뛰기 | ✅ |
+| `ep03/ep03_cut_5min.json` | 5폴더 중 3개 건너뛰기 | ✅ |
+| `ep04/ep04_cut_5min.json` | Knight Capital 건너뛰기 | ✅ |
+
+**아키텍처**: Fountain SSOT(풀 버전) + cut manifest JSON(제거할 비트 인덱스) → 축약 prepro manifest
+5분 컷은 풀 스크립트에서 파생되므로 별도 검증 불필요.
+
+### 6.8c — v3 Render Runbook
+
+**파일**: `systems/video/EP01_V3_RENDER_RUNBOOK.md`
+
+6단계 실행 시퀀스 문서화:
+- STAGE 0: 대본 확정 + 매니페스트 재생성
+- STAGE 1: TTS 생성
+- STAGE 2: Motion Canvas 다이어그램 렌더
+- STAGE 3: PuLID 캐릭터 키프레임 (Vee 6샷)
+- STAGE 4: Wan 2.2 I2V (6샷)
+- STAGE 5: 하이브리드 어셈블리 (클립 우선순위: I2V > 다이어그램 > Ken Burns)
+
+**예상**: Ken Burns 100% → 20% 실제 애니메이션, GPU ~2시간
+
+**다음**: Phase 7 — v3 렌더 실행 (`EP01_V3_RENDER_RUNBOOK.md`)
 
 ---
 

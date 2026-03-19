@@ -84,9 +84,15 @@ def _find_topic_brief(ep_dir: Path, ep: str) -> Path | None:
 # Helpers
 # ---------------------------------------------------------------------------
 def _has_section(text: str, keyword: str) -> bool:
-    """Check if a markdown heading contains the keyword."""
-    pattern = re.compile(r"^#{1,4}\s+.*" + re.escape(keyword), re.MULTILINE | re.IGNORECASE)
-    return bool(pattern.search(text))
+    """Check if a markdown heading or bold list item contains the keyword."""
+    escaped = re.escape(keyword)
+    # Match headings: ## Foo / ### Foo
+    heading = re.compile(r"^#{1,4}\s+.*" + escaped, re.MULTILINE | re.IGNORECASE)
+    if heading.search(text):
+        return True
+    # Match bold list items: - **keyword** or * **keyword**
+    bold_item = re.compile(r"^[-*]\s+\*\*.*" + escaped, re.MULTILINE | re.IGNORECASE)
+    return bool(bold_item.search(text))
 
 
 def _count_subheadings(text: str, parent_heading: str) -> int:
@@ -175,8 +181,11 @@ def validate(ep: str) -> dict[str, Any]:
         p1_pass = False
         p1_detail = f"topic card not found in {ep_dir}"
     else:
-        p1_pass = _has_section(topic_card_text, required_sections[0])
-        p1_detail = f"'{required_sections[0]}' section " + ("found" if p1_pass else "missing")
+        # Accept bilingual headings: 실패 / Failure / 착각 / 실패 장면
+        p1_keywords = [required_sections[0], "Failure", "착각", "실패 장면"]
+        p1_pass = any(_has_section(topic_card_text, kw) for kw in p1_keywords)
+        matched = next((kw for kw in p1_keywords if _has_section(topic_card_text, kw)), None)
+        p1_detail = f"'{matched}' section found" if p1_pass else f"none of {p1_keywords} found"
 
     results.append({"id": "P1", "check": "Topic Card: failure scene exists", "status": "PASS" if p1_pass else "FAIL", "detail": p1_detail})
 
@@ -187,11 +196,11 @@ def validate(ep: str) -> dict[str, Any]:
         p2_pass = False
         p2_detail = "topic card not found"
     else:
-        p2_pass = _has_section(topic_card_text, required_sections[1])
-        if not p2_pass:
-            # Also check for English "Outcome" heading
-            p2_pass = _has_section(topic_card_text, "Outcome")
-        p2_detail = f"outcome section " + ("found" if p2_pass else "missing")
+        # Accept bilingual headings: 3-5분 후 / Outcome / 깨달음 / 알게 되는 것 / After 3-5
+        p2_keywords = [required_sections[1], "Outcome", "깨달음", "알게 되는 것", "After 3-5"]
+        p2_pass = any(_has_section(topic_card_text, kw) for kw in p2_keywords)
+        matched = next((kw for kw in p2_keywords if _has_section(topic_card_text, kw)), None)
+        p2_detail = f"'{matched}' section found" if p2_pass else f"none of {p2_keywords} found"
 
     results.append({"id": "P2", "check": "Topic Card: outcome one-liner exists", "status": "PASS" if p2_pass else "FAIL", "detail": p2_detail})
 

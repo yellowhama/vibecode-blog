@@ -63,11 +63,14 @@ output/ep01/final/EP01_v2_FINAL.mp4      — Final assembled video
 - **Ken Burns v1** — Wan 2.2 I2V deferred to v2 for faster first completion
 - **BGM looped** — ACE-Step failed due to GPU contention, used existing bgm_real.wav looped
 
-## Scripts Inventory (12 pipeline scripts)
+## Scripts Inventory (14 pipeline scripts + 2 validation)
 
 | Script | Lines | Purpose |
 |--------|-------|---------|
-| `assemble_episode.py` | 200 | Master orchestrator (7 stages) |
+| `assemble_episode.py` | 208 | Master orchestrator (8 stages) + Stage 0 gate |
+| `validate_preproduction.py` | 350 | Pre-production gate (P1-P7): topic card + brief + eval |
+| `validate_screenplay.py` | 1050 | Screenplay validation (24 checks) + `--report` CI output |
+| `manifest_validator.py` | 280 | Stage-driven manifest validation (Stage 0-8) |
 | `animate_shots.py` | 178 | ComfyUI I2V (Wan 2.2 MoE) |
 | `render_keyframes.py` | 142 | ComfyUI T2I (Flux Kontext) |
 | `ffmpeg_assemble.py` | 135 | FFmpeg final assembly + shorts |
@@ -122,17 +125,53 @@ python generate_tts_from_prepro.py --tts-backend edge ...
 - `vibecode-diagrams/` — Motion Canvas 3.x + Vite 5 (Kurzgesagt-style diagrams)
 - `vibecode-assembler/` — Remotion 4.x (programmatic video composition)
 
+## Validation Pipeline (Phase 6.6-6.7)
+
+3-script validation model enforces quality before and during production:
+
+```
+validate_preproduction.py (P1-P7)  ← Before screenplay (Stage 0)
+  ↓ [GATE: topic card + brief + eval >= 18/25]
+validate_screenplay.py (1-24)     ← After screenplay (Phase 3)
+  ↓ [24 automated + 6 manual checks, --report for CI]
+manifest_validator.py (Stage 0-8) ← Each production stage
+  ↓ [extended: vee_expression, motion_type, thumbnail, title]
+assemble_episode.py               ← Stage 0 gate → Stage 1-8
+```
+
+### Phase 6.7 Precision Fixes (2026-03-19)
+- **Show vs Tell (Check 22)**: Narrator dialogue excluded from action_lines (was causing false positives)
+- **Beat Count (Check 17)**: Fallback uses narrator group count (~20) instead of raw cue count (53)
+- **Bilingual P1/P2**: Topic card headings accept Korean + English variants (착각/Failure, 깨달음/Outcome)
+- **CI Report**: `--report <path>` flag generates markdown validation report
+
+## 5-Min Cut System (Phase 6.8)
+
+Full scripts remain the SSOT. Cut manifests define which beats to skip for shorter versions.
+
+```
+ep{NN}_script_v6.fountain          ← Full script (SSOT)
+ep{NN}_cut_5min.json               ← Beat indices to skip per segment
+  ↓
+parse_fountain_to_prepro.py --cut-manifest ep{NN}_cut_5min.json
+  ↓
+ep{NN}_prepro_5min.json            ← 300s manifest (derived, not maintained)
+```
+
+Cut manifest format: `segment_adjustments.{SEGMENT}.skip_narrator_indices` (0-indexed narrator beats to remove).
+
 ## Next Steps
 
-### EP01 v3 Upgrade (Current State)
-1. **Script Validation** — `validate_screenplay.py` enforces 15 rules (Tone, Discovery Arc, 80/20 diagram ratio).
-2. **Audio Mix** — `mix_audio.py` features sidechain ducking, multiple BGM crossfades, and 6 new SFX synced.
-3. **Motion Canvas** — `build_shot_manifest_from_prepro.py` forces >=60% motion canvas routing for CORE beats.
+### EP01 v3 Render (Ready — see `EP01_V3_RENDER_RUNBOOK.md`)
+1. Motion Canvas diagram render (building metaphor)
+2. PuLID character-consistent keyframes (6 Vee shots)
+3. Wan 2.2 I2V animation (6 shots)
+4. Hybrid assembly (I2V > diagram > Ken Burns fallback)
 
 ### EP02 Production
-4. Script writing → Fountain format
-5. Shot manifest generation
-6. Full pipeline run (same 7-stage flow)
+5. Script writing → Fountain format
+6. Shot manifest generation
+7. Full pipeline run (same 7-stage flow)
 
 ## Prerequisites
 

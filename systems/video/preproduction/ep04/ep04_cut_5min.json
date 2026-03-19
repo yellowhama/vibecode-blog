@@ -1,0 +1,13 @@
+{
+  "source_script": "ep04_script_v6.fountain",
+  "target_duration_sec": 300,
+  "description": "5-minute cut — skip Knight Capital case, keep 5 gift box sequence",
+  "segment_adjustments": {
+    "HOOK": { "target_sec": 20, "skip_narrator_indices": [] },
+    "MISCONCEPTION": { "target_sec": 40, "skip_narrator_indices": [2] },
+    "THE_CRACK": { "target_sec": 40, "skip_narrator_indices": [2] },
+    "CORE": { "target_sec": 125, "skip_narrator_indices": [4, 8, 11, 14] },
+    "REFRAME": { "target_sec": 40, "skip_narrator_indices": [1] },
+    "OUTRO_CTA": { "target_sec": 35, "skip_narrator_indices": [] }
+  }
+}

@@ -588,6 +588,63 @@ def segments_to_prepro_manifest(
     }
 
 
+def apply_cut_manifest(manifest: dict[str, Any], cut_path: Path) -> dict[str, Any]:
+    """Apply a cut manifest to filter beats and adjust timing for shorter versions.
+
+    Cut manifest format:
+    {
+      "target_duration_sec": 300,
+      "segment_adjustments": {
+        "HOOK": { "target_sec": 20, "skip_narrator_indices": [] },
+        "CORE": { "target_sec": 120, "skip_narrator_indices": [5, 8, 12] }
+      }
+    }
+
+    skip_narrator_indices: 0-indexed narrator beat positions within each segment to remove.
+    """
+    cut = json.loads(cut_path.read_text(encoding="utf-8"))
+    adjustments = cut.get("segment_adjustments", {})
+
+    new_beats = []
+    for phase in manifest.get("phases", []):
+        seg_name = phase.get("segment", phase.get("phase_name", ""))
+        adj = adjustments.get(seg_name)
+        if not adj:
+            new_beats.extend(phase["beats"])
+            continue
+
+        skip = set(adj.get("skip_narrator_indices", []))
+        if skip:
+            narrator_idx = 0
+            kept = []
+            for beat in phase["beats"]:
+                speaker = beat.get("dialogue", [{}])[0].get("speaker", "") if beat.get("dialogue") else ""
+                is_narrator = speaker == "narrator" or beat.get("narrator_vo", "")
+                if is_narrator:
+                    if narrator_idx not in skip:
+                        kept.append(beat)
+                    narrator_idx += 1
+                else:
+                    kept.append(beat)
+            phase["beats"] = kept
+        else:
+            kept = phase["beats"]
+
+        # Adjust target duration
+        if "target_sec" in adj:
+            phase["target_duration_sec"] = adj["target_sec"]
+
+        new_beats.extend(phase["beats"])
+
+    # Recalculate totals
+    manifest["beats"] = new_beats
+    manifest["beat_count"] = len(new_beats)
+    manifest["total_duration_sec"] = round(
+        sum(p.get("target_duration_sec", 0) for p in manifest["phases"]), 1
+    )
+    return manifest
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Parse Fountain script to v6 prepro manifest")
     parser.add_argument("--input", required=True, type=Path, help="Fountain script file")
@@ -595,6 +652,8 @@ def main() -> int:
     parser.add_argument("--project-id", default=None, help="Project ID (default: filename stem)")
     parser.add_argument("--language", default="auto", choices=["auto", "en", "ko"],
                         help="Script language (auto-detected if not specified)")
+    parser.add_argument("--cut-manifest", type=Path, default=None,
+                        help="Cut manifest JSON for shorter versions (filters beats, adjusts timing)")
     args = parser.parse_args()
 
     if not args.input.exists():
@@ -619,6 +678,11 @@ def main() -> int:
     print(f"[OK] Language: {language}")
 
     manifest = segments_to_prepro_manifest(segments, project_id, title_line, language=language)
+
+    if args.cut_manifest and args.cut_manifest.exists():
+        manifest = apply_cut_manifest(manifest, args.cut_manifest)
+        print(f"[OK] Applied cut manifest: {args.cut_manifest.name}")
+        print(f"[OK] Cut duration: {manifest['total_duration_sec']}s, {manifest['beat_count']} beats")
 
     output = args.output or args.input.with_suffix(".prepro_manifest.json")
     output.parent.mkdir(parents=True, exist_ok=True)

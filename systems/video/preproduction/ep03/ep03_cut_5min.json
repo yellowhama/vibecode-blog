@@ -1,0 +1,13 @@
+{
+  "source_script": "ep03_script_v6.fountain",
+  "target_duration_sec": 300,
+  "description": "5-minute cut — skip 3 of 5 folder intros in CORE, keep apartment metaphor",
+  "segment_adjustments": {
+    "HOOK": { "target_sec": 20, "skip_narrator_indices": [] },
+    "MISCONCEPTION": { "target_sec": 40, "skip_narrator_indices": [3] },
+    "THE_CRACK": { "target_sec": 45, "skip_narrator_indices": [] },
+    "CORE": { "target_sec": 120, "skip_narrator_indices": [5, 7, 9, 12, 15] },
+    "REFRAME": { "target_sec": 40, "skip_narrator_indices": [1] },
+    "OUTRO_CTA": { "target_sec": 35, "skip_narrator_indices": [] }
+  }
+}

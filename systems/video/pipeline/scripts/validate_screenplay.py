@@ -260,6 +260,7 @@ def parse_segments(text: str) -> list[dict[str, Any]]:
     lines = text.split("\n")
     segments: list[dict[str, Any]] = []
     current: dict[str, Any] | None = None
+    in_dialogue = False  # Track whether we're inside a character's dialogue block
 
     for line in lines:
         seg_match = _match_segment(line)
@@ -281,6 +282,7 @@ def parse_segments(text: str) -> list[dict[str, Any]]:
                 "action_lines": [],
             }
             segments.append(current)
+            in_dialogue = False
             continue
 
         if current is None:
@@ -289,8 +291,14 @@ def parse_segments(text: str) -> list[dict[str, Any]]:
         # Track all lines
         current["lines"].append(line)
 
+        stripped = line.strip()
+
+        # Blank line resets dialogue tracking
+        if not stripped:
+            in_dialogue = False
+
         # Narrator detection
-        if re.match(r"^NARRATOR\s*\(V\.O\.\)\s*$", line.strip()):
+        if re.match(r"^NARRATOR\s*\(V\.O\.\)\s*$", stripped):
             current["has_narrator"] = True
 
         # Character cue detection
@@ -300,26 +308,27 @@ def parse_segments(text: str) -> list[dict[str, Any]]:
             current["characters_found"].add(name)
             if name == "NARRATOR":
                 current["has_narrator"] = True
+            in_dialogue = True  # Lines after a character cue are dialogue
 
         # Vee dialogue cue detection (Vee should never speak)
         if VEE_DIALOGUE_RE.match(line):
-            current["vee_dialogue_lines"].append(line.strip())
+            current["vee_dialogue_lines"].append(stripped)
 
         # Transition / pattern interrupt detection
         for pat in INTERRUPT_PATTERNS:
             if pat.search(line):
-                current["transitions"].append(line.strip())
+                current["transitions"].append(stripped)
                 break
 
         # Vee reaction detection (in action lines)
         if VEE_REACTION_RE.search(line):
-            current["vee_reactions"].append(line.strip())
+            current["vee_reactions"].append(stripped)
 
-        # Track action lines
-        stripped = line.strip()
+        # Track action lines (exclude dialogue lines following character cues)
         if (
             stripped
             and not char_match
+            and not in_dialogue
             and not _match_segment(line)
             and not META_RE.match(line)
             and not TRANSITION_RE.match(line)
@@ -721,11 +730,19 @@ def validate(fountain_path: Path, manifest_path: Path | None = None) -> dict:
             pass
 
     if beat_count == 0:
-        # Fallback: count NARRATOR blocks in fountain
-        beat_count = sum(
-            1 for line in text.split("\n")
-            if re.match(r"^NARRATOR\s*\(V\.O\.\)\s*$", line.strip())
-        )
+        # Fallback: count narrator dialogue groups (beat ≈ one thought unit).
+        # A group = consecutive narrator dialogue block separated by
+        # transitions, action lines, or blank lines.
+        groups = 0
+        in_narr = False
+        for line in text.split("\n"):
+            if re.match(r"^NARRATOR\s*\(V\.O\.\)", line.strip()):
+                if not in_narr:
+                    groups += 1
+                    in_narr = True
+            elif not line.strip():
+                in_narr = False
+        beat_count = groups
 
     check_17 = beat_min <= beat_count <= beat_max
     results.append({
@@ -889,6 +906,49 @@ def validate(fountain_path: Path, manifest_path: Path | None = None) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Report generation
+# ---------------------------------------------------------------------------
+def generate_report(validation: dict, report_path: Path) -> None:
+    """Write a markdown validation report to disk (for CI artifacts)."""
+    lines: list[str] = []
+    lines.append(f"# Screenplay Validation Report\n")
+    lines.append(f"- **File**: `{validation['file']}`")
+    lines.append(f"- **Segments**: {validation['segments_found']}/6")
+    lines.append(f"- **Duration**: {validation['total_duration_sec']:.0f}s "
+                 f"({validation['total_duration_sec'] / 60:.1f}min)")
+    lines.append(f"- **Generated**: {__import__('datetime').datetime.now().isoformat(timespec='seconds')}\n")
+
+    # Results table
+    lines.append("| # | Check | Status | Detail |")
+    lines.append("|---|-------|--------|--------|")
+    for r in validation["results"]:
+        detail = r["detail"].replace("|", "\\|")
+        lines.append(f"| {r['id']} | {r['check']} | **{r['status']}** | {detail} |")
+
+    # Summary
+    counts = {"PASS": 0, "FAIL": 0, "WARN": 0}
+    for r in validation["results"]:
+        counts[r["status"]] = counts.get(r["status"], 0) + 1
+    total = len(validation["results"])
+    lines.append(f"\n## Summary\n")
+    lines.append(f"**{counts['PASS']}/{total} PASS** | {counts['FAIL']} FAIL | {counts['WARN']} WARN\n")
+
+    # Manual checklist
+    lines.append("## Manual Review Checklist\n")
+    for item in [
+        'Tone feels like Kurzgesagt + Fireship? (not corporate, not lecture)',
+        'Discovery Arc emotional flow feels natural?',
+        'Aha moment lands clearly in Core?',
+        'Curse of Knowledge: would a non-developer understand this?',
+        'Shorts clips work as standalone content?',
+        'Emotion curve peaks/valleys feel right?',
+    ]:
+        lines.append(f"- [ ] {item}")
+
+    report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+# ---------------------------------------------------------------------------
 # Output
 # ---------------------------------------------------------------------------
 def print_results(validation: dict) -> int:
@@ -981,6 +1041,7 @@ def main():
     )
     parser.add_argument("--json", action="store_true", help="Output as JSON")
     parser.add_argument("--manifest", default=None, help="Path to prepro manifest JSON (for beat counts)")
+    parser.add_argument("--report", default=None, help="Write markdown report to this path (CI artifact)")
     args = parser.parse_args()
 
     # Resolve fountain file path (positional or --input)
@@ -995,6 +1056,10 @@ def main():
 
     manifest_path = Path(args.manifest) if args.manifest else None
     validation = validate(fountain_path, manifest_path=manifest_path)
+
+    if args.report:
+        generate_report(validation, Path(args.report))
+        print(f"Report written to {args.report}")
 
     if args.json:
         # Serialize sets for JSON
