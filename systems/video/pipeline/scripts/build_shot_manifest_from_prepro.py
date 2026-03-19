@@ -428,6 +428,7 @@ def main() -> int:
 
         has_vee = "vee" in characters
         has_characters = len(characters) > 0
+        enrichment_extra: Dict[str, str] = {}
 
         if visual_type in ("diagram", "motion_graphic") and not has_characters:
             prompt_positive = _compose_diagram_prompt(visual_goal, space)
@@ -450,8 +451,12 @@ def main() -> int:
                     beat, char_prompts, shot_context,
                     model=args.enrich_model, cache=enrichment_cache,
                 )
-                if enriched:
-                    prompt_positive = enriched
+                if enriched and isinstance(enriched, dict):
+                    prompt_positive = enriched["prompt_positive"]
+                    enrichment_extra = {
+                        k: enriched[k] for k in ("camera", "motion", "color_mood")
+                        if k in enriched and enriched[k]
+                    }
                 else:
                     prompt_positive = _compose_character_prompt(
                         visual_goal, vee_expression or "default", space, char_prompts,
@@ -496,6 +501,8 @@ def main() -> int:
             "input_image": f"{shot_id}_keyframe.png",
             "output_name": f"{shot_id}.mp4",
         }
+        if enrichment_extra:
+            shot.update(enrichment_extra)
         shots.append(shot)
 
     manifest: Dict[str, Any] = {

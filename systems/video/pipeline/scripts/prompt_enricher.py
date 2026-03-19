@@ -64,7 +64,7 @@ def _call_ollama(system: str, user: str, model: str = DEFAULT_MODEL) -> Optional
         method="POST",
     )
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        with urllib.request.urlopen(req, timeout=120) as resp:
             result = json.loads(resp.read().decode())
             response_text = result.get("response", "")
             return json.loads(response_text)
@@ -201,11 +201,11 @@ def enrich_shot_prompt(
     *,
     model: str = DEFAULT_MODEL,
     cache: Optional[Dict[str, Any]] = None,
-) -> Optional[str]:
+) -> Optional[Dict[str, str]]:
     """Enrich a single shot prompt using Ollama LLM.
 
-    Returns the enriched prompt_positive string, or None if LLM fails
-    (caller should fall back to template).
+    Returns a dict with keys: prompt_positive, camera, motion, color_mood.
+    Returns None if LLM fails (caller should fall back to template).
     """
     key = _cache_key(beat)
 
@@ -213,7 +213,7 @@ def enrich_shot_prompt(
     if cache is not None and key in cache:
         cached = cache[key]
         if isinstance(cached, dict) and "prompt_positive" in cached:
-            return cached["prompt_positive"]
+            return cached
 
     system = _build_system_prompt()
     user = _build_user_prompt(beat, char_prompts, shot_context)
@@ -230,4 +230,4 @@ def enrich_shot_prompt(
     if cache is not None:
         cache[key] = enrichment
 
-    return enrichment["prompt_positive"]
+    return enrichment
