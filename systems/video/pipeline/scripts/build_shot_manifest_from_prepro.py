@@ -20,6 +20,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Sequence
 
 import audio_catalog
+import prompt_enricher
 
 
 # ---------------------------------------------------------------------------
@@ -324,6 +325,10 @@ def main() -> int:
     parser.add_argument("--tts-padding-min", type=float, default=0.2)
     parser.add_argument("--tts-padding-max", type=float, default=2.0)
     parser.add_argument("--seed-base", type=int, default=1500001)
+    parser.add_argument("--enrich", action="store_true",
+                        help="Use Ollama LLM to enrich prompts")
+    parser.add_argument("--enrich-model", default="qwen2.5:7b-instruct",
+                        help="Ollama model for prompt enrichment")
     args = parser.parse_args()
 
     if not args.prepro_manifest.exists():
@@ -336,6 +341,25 @@ def main() -> int:
 
     # Load character design prompts
     char_prompts = _load_character_prompts(args.character_design)
+
+    # LLM enrichment setup
+    enrichment_cache: Dict[str, Any] = {}
+    cache_path: Path | None = None
+    if args.enrich:
+        if prompt_enricher.is_available(args.enrich_model):
+            print(f"[OK] Ollama available, model: {args.enrich_model}")
+            if args.out_manifest:
+                cache_path = args.out_manifest.parent / ".prompt_enrichment_cache.json"
+            else:
+                cache_path = (
+                    Path(__file__).resolve().parent.parent / "manifests"
+                    / ".prompt_enrichment_cache.json"
+                )
+            enrichment_cache = prompt_enricher.load_cache(cache_path)
+            print(f"[OK] Enrichment cache: {len(enrichment_cache)} entries loaded")
+        else:
+            print(f"[WARN] Ollama not available (model: {args.enrich_model}), falling back to templates")
+            args.enrich = False
 
     # Load audio catalog
     try:
@@ -409,9 +433,33 @@ def main() -> int:
             prompt_positive = _compose_diagram_prompt(visual_goal, space)
             render_method = "motion_canvas"
         elif has_vee:
-            prompt_positive = _compose_character_prompt(
-                visual_goal, vee_expression or "default", space, char_prompts,
-            )
+            if args.enrich:
+                shot_context = {
+                    "prev_visual_goal": (
+                        str(selected[i - 1].get("visual_goal", ""))
+                        if i > 0 else None
+                    ),
+                    "next_visual_goal": (
+                        str(selected[i + 1].get("visual_goal", ""))
+                        if i < len(selected) - 1 else None
+                    ),
+                    "shot_index": i,
+                    "total_shots": len(selected),
+                }
+                enriched = prompt_enricher.enrich_shot_prompt(
+                    beat, char_prompts, shot_context,
+                    model=args.enrich_model, cache=enrichment_cache,
+                )
+                if enriched:
+                    prompt_positive = enriched
+                else:
+                    prompt_positive = _compose_character_prompt(
+                        visual_goal, vee_expression or "default", space, char_prompts,
+                    )
+            else:
+                prompt_positive = _compose_character_prompt(
+                    visual_goal, vee_expression or "default", space, char_prompts,
+                )
             render_method = "i2v"
         else:
             prompt_positive = _compose_diagram_prompt(visual_goal, space)
@@ -465,8 +513,14 @@ def main() -> int:
             "target_duration_sec": args.target_duration_sec,
             "actual_duration_sec": round(sum(shot_durations), 2),
             "timing_source": args.timing_source,
+            "enrichment": "llm" if args.enrich else "template",
         },
     }
+
+    # Save enrichment cache
+    if args.enrich and enrichment_cache and cache_path:
+        prompt_enricher.save_cache(cache_path, enrichment_cache)
+        print(f"[OK] Enrichment cache saved: {len(enrichment_cache)} entries → {cache_path}")
 
     if args.out_manifest:
         out_manifest = args.out_manifest

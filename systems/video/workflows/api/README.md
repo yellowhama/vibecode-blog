@@ -152,10 +152,10 @@ ComfyUI/app/models/
 |------|------|--------|--------|----------|----------|
 | `wan22_moe_i2v_short.json` | 짧은 영상 (모션테스트) | 768x768 | 33 (2초) | 16 | ~5분 |
 | `wan22_moe_i2v_full.json` | 프로덕션 영상 (기본) | 832x480 | 81 (5초) | 16 | ~50분 |
-| `wan22_moe_i2v_optimized.json` | **프로덕션 영상 (최적화)** | 832x480 | 81 (5초) | **32** | **~10-15분** |
+| `wan22_moe_i2v_optimized.json` | **프로덕션 영상 (최적화)** | 832x480 | 81 (5초) | **32** | **~7-12분** |
 | `wan22_moe_t2i.json` | ~~이미지~~ **(사용 금지 — Flux 사용)** | 1024x1024 | 1 | - | ~3분 |
 
-> **권장: `wan22_moe_i2v_optimized.json`** — Lightning LoRA(8 steps) + FBCache + RIFE(32fps)
+> **권장: `wan22_moe_i2v_optimized.json`** — Lightning LoRA(4 steps) + sa_solver + FBCache + TeaCache + RIFE(32fps)
 
 ### 바인딩
 
@@ -188,13 +188,16 @@ UnetLoaderGGUF(LowNoise) → ModelSamplingSD3(shift=8)
 - `KSamplerAdvanced`의 `noise_seed` 필드 사용
 
 **최적화 (optimized.json)**:
-- sampler: `euler`, scheduler: `simple`
+- sampler: **`sa_solver`**, scheduler: `simple`
 - **4 steps** (Stage1: 0→2, Stage2: 2→4) — Lightning LoRA (Seko V1)
 - **cfg: 1.0**, **shift: 5.0** — Lightning LoRA 필수 설정
 - 별도 LoRA: `high_noise_model.safetensors` + `low_noise_model.safetensors`
 - FBCache threshold: 0.12 (WaveSpeed)
+- **TeaCache threshold: 0.3** (conservative, try 0.4-0.5 if quality holds)
 - RIFE rife49 x2 → 16fps→32fps 출력
-- 예상 속도: **~10-15분/샷** (기존 ~50분)
+- 예상 속도: **~7-12분/샷** (기존 ~50분)
+
+> **TeaCache 주의**: 4 steps에서 캐시가 공격적일 수 있음. A/B 비교 후 품질 확인. 문제 시 threshold↓ 또는 노드 제거.
 
 ### 프레임 수 참고 (16fps)
 

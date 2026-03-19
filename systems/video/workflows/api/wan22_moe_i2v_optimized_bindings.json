@@ -18,7 +18,14 @@
     "lora_strength": { "node_id": "12", "field": "strength_model" },
     "fbcache_threshold_high": { "node_id": "14", "field": "residual_diff_threshold" },
     "fbcache_threshold_low": { "node_id": "15", "field": "residual_diff_threshold" },
-    "rife_multiplier": { "node_id": "60", "field": "multiplier" }
+    "rife_multiplier": { "node_id": "60", "field": "multiplier" },
+    "teacache_threshold_high": { "node_id": "16", "field": "rel_l1_thresh" },
+    "teacache_threshold_low": { "node_id": "17", "field": "rel_l1_thresh" }
+  },
+  "teacache_notes": {
+    "threshold": "0.3 = conservative. Quality OK → try 0.4, 0.5 for more speed. Quality drop → remove TeaCache nodes.",
+    "model_type": "wan2.1_i2v_480p_14B works for Wan 2.2 MoE models",
+    "risk": "At 4 steps, TeaCache may be too aggressive. A/B test with same seed."
   },
   "notes": {
     "duration": "length는 프레임 수. 16fps 기준: 33=2초, 49=3초, 65=4초, 81=5초",
@@ -37,7 +44,7 @@
     "length_full": 81,
     "steps": 4,
     "cfg": 1.0,
-    "sampler": "euler",
+    "sampler": "sa_solver",
     "scheduler": "simple"
   }
 }

@@ -65,23 +65,48 @@ output/ep01/final/EP01_v2_FINAL.mp4      — Final assembled video
 - **Ken Burns v1** — Wan 2.2 I2V deferred to v2 for faster first completion
 - **BGM looped** — ACE-Step failed due to GPU contention, used existing bgm_real.wav looped
 
-### I2V Optimization Stack (Phase 7.5 — 2026-03-19)
+### I2V Optimization Stack (Phase 8 — 2026-03-19)
 
 | Optimization | Before | After | Speedup |
 |-------------|--------|-------|---------|
 | Model | Q3_K_M (6.7GB) | Q3_K_M (6.7GB) | Q5 unavailable on HF; Q3 retained |
 | Steps | 20 (0→10, 10→20) | 4 (0→2, 2→4) | 5x fewer steps |
+| Sampler | euler | **sa_solver** | Better convergence at low steps |
 | CFG | 3.5 | 1.0 | Lightning LoRA requirement |
 | Shift | 8.0 | 5.0 | Lightning LoRA requirement |
 | FBCache | None | WaveSpeed (threshold 0.12) | ~30-40% cache hits |
+| **TeaCache** | None | **threshold 0.3** | ~30% additional cache hits |
 | FPS | 16fps native | 32fps (RIFE x2) | 2x smoother motion |
 | Timeout | 600s (insufficient) | 3600s | No more render timeouts |
-| **Total** | **~50min/shot** | **~10-15min/shot** | **~3-5x faster** |
+| **Total** | **~50min/shot** | **~7-12min/shot** | **~4-7x faster** |
 
 Workflows:
 - `wan22_moe_i2v_full.json` — Baseline (20 steps, 16fps)
-- `wan22_moe_i2v_optimized.json` — Optimized (8 steps, 32fps via RIFE)
+- `wan22_moe_i2v_optimized.json` — Optimized (4 steps, sa_solver, FBCache+TeaCache, 32fps RIFE)
 - `wan22_moe_i2v_short.json` — Draft (2sec, 33 frames)
+
+### LLM Prompt Enrichment (Phase 8 — Track B)
+
+`--enrich` flag on `build_shot_manifest_from_prepro.py` uses local Ollama to generate
+rich, context-aware prompts instead of template concatenation.
+
+```bash
+# Enriched prompts (requires Ollama + qwen2.5:7b-instruct)
+python build_shot_manifest_from_prepro.py \
+  --prepro-manifest ep01_prepro_manifest.json \
+  --enrich --out-manifest ep01_shot_manifest_enriched.json
+
+# Custom model
+python build_shot_manifest_from_prepro.py \
+  --prepro-manifest ep01_prepro_manifest.json \
+  --enrich --enrich-model qwen2.5:14b-instruct
+```
+
+- Uses segment mood mapping (HOOK=warm, MISCONCEPTION=cool, etc.)
+- Generates: prompt_positive, camera, motion, color_mood per shot
+- SHA256 cache prevents re-calling LLM on rebuild
+- Falls back to templates if Ollama unavailable
+- Module: `pipeline/scripts/prompt_enricher.py` + `prompt_enricher_system.md`
 
 ## Scripts Inventory (14 pipeline scripts + 2 validation)
 

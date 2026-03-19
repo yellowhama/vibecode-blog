@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "title": "Wan 2.2 GGUF MoE — Image to Video (Optimized, Lightning + FBCache + RIFE)",
-    "description": "최적화 렌더링. Lightning LoRA(4 steps, shift 5) + FBCache(WaveSpeed) + RIFE(16→32fps). 50분→10-15분/샷.",
+    "title": "Wan 2.2 GGUF MoE — Image to Video (Optimized, Lightning + FBCache + TeaCache + RIFE)",
+    "description": "최적화 렌더링. Lightning LoRA(4 steps, shift 5) + FBCache(WaveSpeed) + TeaCache(0.3) + RIFE(16→32fps). 50분→7-12분/샷.",
     "model": "Wan2.2-I2V-A14B (HighNoise + LowNoise) Q3_K_M GGUF + Lightning LoRA",
     "resolution": "832x480",
     "frames": 81,
@@ -9,7 +9,7 @@
     "fps_output": 32,
     "duration_sec": 5,
     "tested": "2026-03-19",
-    "optimizations": ["Lightning LoRA (4 steps, shift 5)", "FBCache (threshold 0.12)", "RIFE x2 (16→32fps)"],
+    "optimizations": ["Lightning LoRA (4 steps, shift 5)", "FBCache (threshold 0.12)", "TeaCache (threshold 0.3)", "RIFE x2 (16→32fps)"],
     "usage": "python animate_shots.py --workflow wan22_moe_i2v_optimized.json ..."
   },
   "prompt": {
@@ -65,13 +65,37 @@
       "class_type": "ApplyFBCacheOnModel",
       "_meta": { "title": "FBCache — LowNoise (threshold 0.12)" }
     },
+    "16": {
+      "inputs": {
+        "model": ["14", 0],
+        "model_type": "wan2.1_i2v_480p_14B",
+        "rel_l1_thresh": 0.3,
+        "start_percent": 0.0,
+        "end_percent": 1.0,
+        "cache_device": "cuda"
+      },
+      "class_type": "TeaCache",
+      "_meta": { "title": "TeaCache — HighNoise (threshold 0.3)" }
+    },
+    "17": {
+      "inputs": {
+        "model": ["15", 0],
+        "model_type": "wan2.1_i2v_480p_14B",
+        "rel_l1_thresh": 0.3,
+        "start_percent": 0.0,
+        "end_percent": 1.0,
+        "cache_device": "cuda"
+      },
+      "class_type": "TeaCache",
+      "_meta": { "title": "TeaCache — LowNoise (threshold 0.3)" }
+    },
     "30": {
-      "inputs": { "shift": 5.0, "model": ["14", 0] },
+      "inputs": { "shift": 5.0, "model": ["16", 0] },
       "class_type": "ModelSamplingSD3",
       "_meta": { "title": "HighNoise Shift" }
     },
     "31": {
-      "inputs": { "shift": 5.0, "model": ["15", 0] },
+      "inputs": { "shift": 5.0, "model": ["17", 0] },
       "class_type": "ModelSamplingSD3",
       "_meta": { "title": "LowNoise Shift" }
     },
@@ -120,7 +144,7 @@
         "noise_seed": 42,
         "steps": 4,
         "cfg": 1.0,
-        "sampler_name": "euler",
+        "sampler_name": "sa_solver",
         "scheduler": "simple",
         "start_at_step": 0,
         "end_at_step": 2,
@@ -139,7 +163,7 @@
         "noise_seed": 42,
         "steps": 4,
         "cfg": 1.0,
-        "sampler_name": "euler",
+        "sampler_name": "sa_solver",
         "scheduler": "simple",
         "start_at_step": 2,
         "end_at_step": 4,
