@@ -6,5 +6,17 @@
   "explainer": {
     "workflow": "flux_dev_t2i.json",
     "bindings": "flux_dev_t2i_bindings.json"
+  },
+  "klein_t2i": {
+    "workflow": "flux2_klein_9b_t2i.json",
+    "bindings": "flux2_klein_9b_t2i_bindings.json"
+  },
+  "klein_t2i_nolora": {
+    "workflow": "flux2_klein_9b_t2i_nolora.json",
+    "bindings": "flux2_klein_9b_t2i_bindings.json"
+  },
+  "ultrareal": {
+    "workflow": "flux1_ultrareal_t2i.json",
+    "bindings": "flux1_ultrareal_t2i_bindings.json"
   }
 }

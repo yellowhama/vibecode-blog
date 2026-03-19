@@ -186,7 +186,107 @@ cute friendly expression, slight smile, white background, anime style
 
 ---
 
-## 5. 스타일 비교 요약
+## 5. UltraReal Fine-Tune v4 (실사 체크포인트)
+
+**Civitai**: https://civitai.com/models/978314/ultrareal-fine-tune
+
+| 항목 | 값 |
+|------|-----|
+| 파일 | `ultrarealFineTune_v4.gguf` (12GB) |
+| 타입 | **파인튠 체크포인트** (LoRA 아님 — UNET 교체) |
+| Base | Flux.1 Dev |
+| 트리거 워드 | 없음 |
+| 데이터셋 | 1800+ 이미지 |
+
+### v4 변경사항
+- 미감(aesthetic) 향상
+- 나이 다양성 + 아시안 피처 개선
+- **손이 약간 불안정해짐** (v3 대비)
+
+### 제작자 권장 세팅
+
+| 파라미터 | 값 | 비고 |
+|----------|-----|------|
+| Sampler | **DPM++ 2M** | smooth/consistent |
+| Scheduler | **Beta** | 필수 |
+| Steps | **30–50** | 40 권장 |
+| CFG Scale | **3.0** (FluxGuidance) | v3부터 2.5→3.0 상향 |
+| CFG (KSampler) | 1.0 | Flux 고정 |
+
+### LoRA 호환
+
+| LoRA | 호환 | 비고 |
+|------|------|------|
+| **Realism Amplifier** | ✅ 권장 | 리얼리즘 강화 |
+| **2000s Analog Core** | ✅ 권장 | 빈티지 스타일 |
+| ~~UltraRealPhoto~~ | ❌ 사용 금지 | 오버베이크됨 (효과가 이미 체크포인트에 내장) |
+| 스타일 LoRA 일반 | ✅ | 스타일 베이스로 설계됨 |
+
+### 사용법
+UNET을 `flux1-dev-Q5_K_S.gguf` 대신 `ultrarealFineTune_v4.gguf` 로 교체.
+나머지 파이프라인 (DualCLIP, VAE, FluxGuidance) 동일.
+
+```
+# 프롬프트 스타일: 복잡하고 디테일한 콤마 구분
+high-resolution, a young woman sitting at a desk, warm ambient lighting,
+soft shadows, detailed skin texture, brown bob hair with subtle highlights,
+round black glasses, yellow hoodie, natural expression, bokeh background,
+professional photography, 85mm lens
+```
+
+### 적합한 용도
+- 실사 캐릭터 렌더링 (Vee 리얼 버전)
+- 포토리얼 키프레임 (I2V 입력으로 최적)
+- 스타일 LoRA의 베이스 체크포인트
+
+### 워크플로
+- `workflows/api/flux1_ultrareal_t2i.json`
+- `workflows/api/flux1_ultrareal_t2i_bindings.json`
+
+---
+
+## 6. Blue Archive Style (블루아카이브 애니메)
+
+**Civitai**: https://civitai.com/models/677392/flux-anime-blue-archive-style
+
+| 항목 | 값 |
+|------|-----|
+| 파일 | `BastylrV2_blue_archive.safetensors` (74MB) |
+| Base | Flux.1 Dev |
+| 트리거 워드 | **없음** |
+| 권장 해상도 | 숏사이드 1152+, 롱사이드 1920+ |
+| 훈련 | kohya-ss/sd-scripts, 200 epoch, 자동 파이프라인 |
+
+### 특성
+- 블루아카이브 게임 스타일 — 깔끔한 셀쉐이딩, 밝은 색감, 대형 눈
+- 가로: 배경/씬 중심, 세로: 캐릭터 중심
+- Hires repair 1.5~2x 옵션 (선택)
+- 100% 자동 훈련 파이프라인 (DeepGHS Team)
+- 아트 스타일 재현 정확도는 수동 훈련 대비 낮을 수 있음
+
+### 사용법
+```
+# 트리거 워드 없음 — 프롬프트만으로 스타일 적용
+a cute young woman, yellow oversized hoodie, round black glasses,
+brown bob hair, gentle smile, school hallway background,
+bright lighting, anime illustration
+```
+
+### 권장 해상도
+| 방향 | 해상도 | 용도 |
+|------|--------|------|
+| 세로 (캐릭터) | 1152×1920 | 캐릭터 시트, 전신 |
+| 가로 (씬) | 1920×1152 | 배경 중심 장면 |
+| 정방 | 1152×1152 | 범용 |
+
+### 적합한 용도
+- 게임 스타일 캐릭터 일러스트
+- 밝고 깔끔한 애니메 스타일 Vee
+- 블루아카이브/학원물 느낌 키프레임
+
+---
+
+## 스타일 비교 요약
 
 | 축 | Flat Anime | Juaner Cartoon | Ultra Real Anime | FC Busts |
 |----|-----------|----------------|-----------------|----------|
@@ -199,7 +299,7 @@ cute friendly expression, slight smile, white background, anime style
 | **파일 크기** | 18MB | 146MB | 164MB | 1.2GB |
 | **교육 콘텐츠 적합** | ★★★★★ | ★★★★☆ | ★★★☆☆ | ★★☆☆☆ |
 
-## 6. Flux LoRA 공통 세팅 가이드
+## Flux LoRA 공통 세팅 가이드
 
 ### Flux.1 Dev 아키텍처 핵심 이해
 
@@ -266,7 +366,7 @@ Civitai 189장 비교 테스트 + 커뮤니티 검증 결과:
 
 ---
 
-## 7. 테스트 매트릭스
+## 테스트 매트릭스
 
 ### 테스트 라운드 (v3 — 최종)
 
@@ -330,7 +430,7 @@ eyes with light reflections, white background
 
 ---
 
-## 8. 캐릭터 ID 보존 기술 종합 가이드
+## 캐릭터 ID 보존 기술 종합 가이드
 
 캐릭터를 한 번 디자인하면, 30+ 샷에서 **동일 인물로 인식**되어야 함.
 아래는 오픈소스 기술을 난이도순으로 정리한 것.
@@ -434,12 +534,66 @@ Flux 2는 **레퍼런스 이미지 최대 10장**을 네이티브로 지원:
 
 ---
 
-## 9. 다음 단계
+## Flux 2 Klein 9B 셋업 (Phase 9.5 — 2026-03-19)
 
-1. Vee3 15장 테스트 결과 육안 비교
-2. 스타일 1개 확정
-3. 확정된 스타일로 Vee 기본 일러스트 1장 생성 (최고 품질)
-4. Flux Kontext Turnaround Sheet LoRA로 5포즈 시트 자동 생성
-5. Kontext reference로 30샷 키프레임 재생성
-6. (중기) 키프레임 큐레이션 → Vee 전용 LoRA 훈련
-7. (장기) Flux 2 멀티레퍼런스 전환
+### Klein 9B vs Flux 1 핵심 차이
+
+| 항목 | Flux 1 Dev | Flux 2 Klein 9B |
+|------|-----------|-----------------|
+| UNET | `flux1-dev-Q5_K_S.gguf` (7.8GB) | `flux-2-klein-9b-Q5_K_M.gguf` (7GB) |
+| Text Encoder | DualCLIPLoaderGGUF (T5-XXL + CLIP-L, type="flux") | CLIPLoader (Qwen 3 8B FP8, type="flux2") |
+| Guidance | FluxGuidance 노드 (3.5), cfg=1.0 고정 | CFGGuider (cfg=5.0) — 실제 CFG 사용 |
+| Latent | EmptySD3LatentImage | EmptyFlux2LatentImage |
+| Scheduler | KSampler 내장 (scheduler="simple") | Flux2Scheduler → SamplerCustomAdvanced |
+| Sampler | KSampler | SamplerCustomAdvanced + KSamplerSelect + RandomNoise |
+| VAE | `ae.safetensors` (320MB) | `flux2-vae.safetensors` (321MB) |
+| LoRA 호환 | Flux 1 전용 LoRA만 | **Klein 전용 LoRA만** (Flux 1 LoRA 호환 안 됨!) |
+| 속도 | 베이스라인 | ~47x 빠름 (step-distilled) |
+
+### Klein 9B 모델 파일
+
+| 파일 | 경로 | 크기 | 소스 |
+|------|------|------|------|
+| UNET | `unet/flux-2-klein-9b-Q5_K_M.gguf` | 7GB | [unsloth/FLUX.2-klein-9B-GGUF](https://huggingface.co/unsloth/FLUX.2-klein-9B-GGUF) |
+| Text Encoder | `text_encoders/qwen_3_8b_fp8mixed.safetensors` | 8.7GB | [Comfy-Org/vae-text-encorder-for-flux-klein-9b](https://huggingface.co/Comfy-Org/vae-text-encorder-for-flux-klein-9b) |
+| VAE | `vae/flux2-vae.safetensors` | 321MB | ✅ 이미 다운됨 |
+
+> **참고**: Flux 2 Dev 모델 (`flux2-dev-Q2_K.gguf` + `mistral_3_small_flux2_fp8.safetensors`)은 Klein과 별개. 삭제하지 말 것.
+
+### Klein용 LoRA 후보
+
+| LoRA | 트리거 | Base | 용도 | URL |
+|------|--------|------|------|-----|
+| Flat Anime Style (Klein) | `F14TV3CT0R` | Flux2Klein_9B | 플랫 벡터 애니메 | civitai.com/models/2472987 |
+| AniEdit (Klein) | TBD | Flux2Klein | 애니메 편집 | civitai.com/models/2332320 |
+| Klein Anime/Real Slider | TBD | Flux2Klein | 애니메↔리얼 조절 | civitai.com/models/2332657 |
+
+> ⚠️ Civitai LoRA는 수동 다운로드 필요 (인증)
+
+### Klein 워크플로
+
+- `workflows/api/flux2_klein_9b_t2i.json` — T2I + LoRA (API format)
+- `workflows/api/flux2_klein_9b_t2i_bindings.json` — 바인딩 + Flux1↔Klein 비교표
+
+### Klein 최적 세팅 (리서치 + 공식 템플릿 기반)
+
+| 파라미터 | 값 | 비고 |
+|----------|-----|------|
+| Sampler | `euler` | KSamplerSelect |
+| CFG | 5.0 | CFGGuider (FluxGuidance 아님) |
+| Steps | 20 | Flux2Scheduler |
+| 해상도 | 832×1216 (세로) / 1024×1024 (정방) | EmptyFlux2LatentImage |
+| LoRA strength | 0.85 | Klein 전용 LoRA |
+
+---
+
+## 다음 단계
+
+1. ~~Vee3 15장 테스트 결과 육안 비교~~ ✅ (13/15 완료)
+2. Klein 9B + Klein Flat Anime LoRA 테스트 (3장)
+3. Flux 1 vs Klein 비교 → 최종 모델 확정
+4. 확정된 모델로 Vee 기본 일러스트 1장 생성 (최고 품질)
+5. Flux Kontext Turnaround Sheet LoRA로 5포즈 시트 자동 생성
+6. Kontext reference로 30샷 키프레임 재생성
+7. (중기) 키프레임 큐레이션 → Vee 전용 LoRA 훈련
+8. (장기) Flux 2 멀티레퍼런스 전환

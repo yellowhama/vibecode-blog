@@ -37,6 +37,7 @@ python assemble_episode.py -e 01 --stage 1 --draft
 | TTS Prod | **Dia2-1B** | 1B | 7.4GB | Apache 2.0 | Multi-speaker dialogue, streaming |
 | TTS Backup | Chatterbox-Turbo | 350M | 4-6GB | MIT | Voice cloning SOTA |
 | T2I | **Flux.1-dev + Kontext** | 12B | 12GB (GGUF Q5) | Dev | Best LoRA ecosystem |
+| T2I Alt | **Flux.2 Klein 9B** | 9B | ~14GB (GGUF Q5 + Qwen3 8B) | Dev | 47x faster, step-distilled, Klein-specific LoRAs |
 | I2V | **Wan 2.2 I2V-14B MoE** | 14B | 12-16GB (GGUF Q3_K_M) | Apache 2.0 | MoE + Lightning LoRA + FBCache |
 | I2V Draft | Wan 2.2 5B | 5B | 8GB | Apache 2.0 | Fast iteration |
 | I2V Accel | **Lightning LoRA** | adapter | +0GB | Apache 2.0 | 20→8 steps (with Wan 2.2) |
@@ -84,6 +85,24 @@ Workflows:
 - `wan22_moe_i2v_full.json` — Baseline (20 steps, 16fps)
 - `wan22_moe_i2v_optimized.json` — Optimized (4 steps, sa_solver, FBCache+TeaCache, 32fps RIFE)
 - `wan22_moe_i2v_short.json` — Draft (2sec, 33 frames)
+
+### Flux 2 Klein 9B T2I (Phase 9.5 — 2026-03-19)
+
+Klein 9B = step-distilled 9B flow model + Qwen 3 8B text encoder. Flux 1과 아키텍처 다름.
+
+| 항목 | Flux 1 Dev | Klein 9B |
+|------|-----------|----------|
+| Guidance | FluxGuidance (3.5) | CFGGuider (cfg=5.0) |
+| Sampler | KSampler | SamplerCustomAdvanced |
+| Latent | EmptySD3LatentImage | EmptyFlux2LatentImage |
+| Scheduler | KSampler 내장 | Flux2Scheduler → sigmas |
+| Text Encoder | T5-XXL + CLIP-L (Dual) | Qwen 3 8B (Single) |
+| LoRA 호환 | Flux 1 전용 | **Klein 전용** (Flux 1 LoRA 안 됨) |
+
+Workflows:
+- `flux2_klein_9b_t2i.json` — Klein T2I + LoRA (API format)
+- `flux2_klein_9b_t2i_nolora.json` — Klein T2I 기본 (LoRA 없음)
+- `flux2_klein_9b_t2i_bindings.json` — 바인딩 + 비교표
 
 ### LLM Prompt Enrichment (Phase 8 — Track B)
 

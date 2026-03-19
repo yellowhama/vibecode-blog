@@ -1,0 +1,586 @@
+{
+  "1": {
+    "inputs": {
+      "unet_name": "Flux\\flux1-dev-kontext_fp8_scaled.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "2": {
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5xxl_fp8_e4m3fn_scaled.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "3": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "4": {
+    "inputs": {
+      "text": [
+        "17",
+        0
+      ],
+      "clip": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "5": {
+    "inputs": {
+      "guidance": 2.5,
+      "conditioning": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
+  },
+  "6": {
+    "inputs": {
+      "conditioning": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "ConditioningZeroOut"
+    }
+  },
+  "8": {
+    "inputs": {
+      "seed": 934387914945087,
+      "steps": 25,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "6",
+        0
+      ],
+      "latent_image": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "9": {
+    "inputs": {
+      "samples": [
+        "8",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "12": {
+    "inputs": {
+      "pixels": [
+        "19",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "13": {
+    "inputs": {
+      "conditioning": [
+        "4",
+        0
+      ],
+      "latent": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "ReferenceLatent"
+    }
+  },
+  "14": {
+    "inputs": {
+      "sharpen_radius": 1,
+      "sigma": 0.3,
+      "alpha": 0.3,
+      "image": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "ImageSharpen",
+    "_meta": {
+      "title": "Image Sharpen"
+    }
+  },
+  "16": {
+    "inputs": {
+      "text": [
+        "17",
+        0
+      ],
+      "font_size": 32,
+      "font": "ariblk.ttf",
+      "fill_color_hex": "#FFFFFF",
+      "stroke_color_hex": "#000000",
+      "stroke_thickness": 0.2,
+      "padding": 30,
+      "horizontal_alignment": "center",
+      "vertical_alignment": "middle",
+      "x_shift": 0,
+      "y_shift": 0,
+      "line_spacing": 4,
+      "image": [
+        "28",
+        0
+      ]
+    },
+    "class_type": "Text Overlay",
+    "_meta": {
+      "title": "Text Overlay"
+    }
+  },
+  "17": {
+    "inputs": {
+      "String": "in the style of a manga panel, black and white, detailed line art"
+    },
+    "class_type": "KepStringLiteral",
+    "_meta": {
+      "title": "String"
+    }
+  },
+  "19": {
+    "inputs": {
+      "width": [
+        "29",
+        0
+      ],
+      "height": [
+        "30",
+        0
+      ],
+      "upscale_method": "bicubic",
+      "keep_proportion": "crop",
+      "pad_color": "0, 0, 0",
+      "crop_position": "center",
+      "divisible_by": 2,
+      "device": "cpu",
+      "image": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJv2",
+    "_meta": {
+      "title": "Resize Image v2"
+    }
+  },
+  "20": {
+    "inputs": {
+      "text": "Original Image",
+      "font_size": 28,
+      "font": "ariblk.ttf",
+      "fill_color_hex": "#FFFFFF",
+      "stroke_color_hex": "#000000",
+      "stroke_thickness": 0.2,
+      "padding": 30,
+      "horizontal_alignment": "center",
+      "vertical_alignment": "middle",
+      "x_shift": 0,
+      "y_shift": 0,
+      "line_spacing": 3,
+      "image": [
+        "28",
+        0
+      ]
+    },
+    "class_type": "Text Overlay",
+    "_meta": {
+      "title": "Text Overlay"
+    }
+  },
+  "21": {
+    "inputs": {
+      "direction": "down",
+      "match_image_size": true,
+      "spacing_width": 2,
+      "spacing_color": "white",
+      "image1": [
+        "19",
+        0
+      ],
+      "image2": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "ImageStitch",
+    "_meta": {
+      "title": "Image Stitch"
+    }
+  },
+  "23": {
+    "inputs": {
+      "image": "E:\\Uploaded\\SD\\224 FLUX.1 Kontext Image Edit\\Sample\\Flux.1 Kontext Sample (10).png"
+    },
+    "class_type": "LoadImageFromPath",
+    "_meta": {
+      "title": "Load Image From Path"
+    }
+  },
+  "24": {
+    "inputs": {
+      "images": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "27": {
+    "inputs": {
+      "String": "Transform the image into an American superhero comic style"
+    },
+    "class_type": "KepStringLiteral",
+    "_meta": {
+      "title": "String"
+    }
+  },
+  "28": {
+    "inputs": {
+      "width": [
+        "29",
+        0
+      ],
+      "height": 140,
+      "batch_size": 1,
+      "color": 0
+    },
+    "class_type": "EmptyImage",
+    "_meta": {
+      "title": "EmptyImage"
+    }
+  },
+  "29": {
+    "inputs": {
+      "Number": "688"
+    },
+    "class_type": "Int",
+    "_meta": {
+      "title": "Width"
+    }
+  },
+  "30": {
+    "inputs": {
+      "Number": "960"
+    },
+    "class_type": "Int",
+    "_meta": {
+      "title": "Height"
+    }
+  },
+  "48": {
+    "inputs": {
+      "direction": "down",
+      "match_image_size": true,
+      "spacing_width": 2,
+      "spacing_color": "white",
+      "image1": [
+        "14",
+        0
+      ],
+      "image2": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "ImageStitch",
+    "_meta": {
+      "title": "Image Stitch"
+    }
+  },
+  "55": {
+    "inputs": {
+      "guidance": 2.5,
+      "conditioning": [
+        "57",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
+  },
+  "56": {
+    "inputs": {
+      "conditioning": [
+        "61",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "ConditioningZeroOut"
+    }
+  },
+  "57": {
+    "inputs": {
+      "conditioning": [
+        "61",
+        0
+      ],
+      "latent": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "ReferenceLatent"
+    }
+  },
+  "58": {
+    "inputs": {
+      "seed": 914920298886917,
+      "steps": 25,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "55",
+        0
+      ],
+      "negative": [
+        "56",
+        0
+      ],
+      "latent_image": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "59": {
+    "inputs": {
+      "sharpen_radius": 1,
+      "sigma": 0.3,
+      "alpha": 0.3,
+      "image": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "ImageSharpen",
+    "_meta": {
+      "title": "Image Sharpen"
+    }
+  },
+  "61": {
+    "inputs": {
+      "text": [
+        "27",
+        0
+      ],
+      "clip": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "62": {
+    "inputs": {
+      "samples": [
+        "58",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "67": {
+    "inputs": {
+      "text": [
+        "27",
+        0
+      ],
+      "font_size": 32,
+      "font": "ariblk.ttf",
+      "fill_color_hex": "#FFFFFF",
+      "stroke_color_hex": "#000000",
+      "stroke_thickness": 0.2,
+      "padding": 30,
+      "horizontal_alignment": "center",
+      "vertical_alignment": "middle",
+      "x_shift": 0,
+      "y_shift": 0,
+      "line_spacing": 4,
+      "image": [
+        "28",
+        0
+      ]
+    },
+    "class_type": "Text Overlay",
+    "_meta": {
+      "title": "Text Overlay"
+    }
+  },
+  "69": {
+    "inputs": {
+      "direction": "down",
+      "match_image_size": true,
+      "spacing_width": 2,
+      "spacing_color": "white",
+      "image1": [
+        "59",
+        0
+      ],
+      "image2": [
+        "67",
+        0
+      ]
+    },
+    "class_type": "ImageStitch",
+    "_meta": {
+      "title": "Image Stitch"
+    }
+  },
+  "71": {
+    "inputs": {
+      "direction": "right",
+      "match_image_size": true,
+      "spacing_width": 2,
+      "spacing_color": "white",
+      "image1": [
+        "21",
+        0
+      ],
+      "image2": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "ImageStitch",
+    "_meta": {
+      "title": "Image Stitch"
+    }
+  },
+  "72": {
+    "inputs": {
+      "direction": "right",
+      "match_image_size": true,
+      "spacing_width": 2,
+      "spacing_color": "white",
+      "image1": [
+        "71",
+        0
+      ],
+      "image2": [
+        "69",
+        0
+      ]
+    },
+    "class_type": "ImageStitch",
+    "_meta": {
+      "title": "Image Stitch"
+    }
+  },
+  "73": {
+    "inputs": {
+      "images": [
+        "72",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "83": {
+    "inputs": {
+      "filename_prefix": "myout\\flux conver real to anime",
+      "images": [
+        "72",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

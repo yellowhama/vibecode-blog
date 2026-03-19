@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "workflow": "flux2_klein_9b_t2i.json",
+  "description": "Flux 2 Klein 9B GGUF T2I + LoRA 바인딩 — Flux 1과 아키텍처 다름",
+  "node_mappings": {
+    "positive_prompt": { "node_id": "6", "field": "text" },
+    "negative_prompt": { "node_id": "7", "field": "text", "default": "" },
+    "seed": { "node_id": "23", "field": "noise_seed" },
+    "cfg": { "node_id": "20", "field": "cfg" },
+    "steps": { "node_id": "22", "field": "steps" },
+    "width": [
+      { "node_id": "22", "field": "width" },
+      { "node_id": "25", "field": "width" }
+    ],
+    "height": [
+      { "node_id": "22", "field": "height" },
+      { "node_id": "25", "field": "height" }
+    ],
+    "lora_name": { "node_id": "40", "field": "lora_name" },
+    "lora_strength_model": { "node_id": "40", "field": "strength_model" },
+    "lora_strength_clip": { "node_id": "40", "field": "strength_clip" },
+    "sampler_name": { "node_id": "21", "field": "sampler_name" },
+    "filename_prefix": { "node_id": "9", "field": "filename_prefix" }
+  },
+  "notes": {
+    "architecture": "Klein은 SamplerCustomAdvanced + CFGGuider + Flux2Scheduler 사용. KSampler 호환 안 됨.",
+    "cfg_vs_guidance": "Flux 1은 FluxGuidance 노드 (cfg=1.0 고정), Klein은 CFGGuider로 실제 CFG 사용 (기본 5.0).",
+    "text_encoder": "Qwen 3 8B (단일 encoder). Flux 1의 DualCLIP (T5+CLIP_L)과 다름.",
+    "latent": "EmptyFlux2LatentImage 사용 (EmptySD3LatentImage 아님).",
+    "scheduler": "Flux2Scheduler가 width/height를 받아 sigmas 계산. KSampler의 내장 scheduler 불필요.",
+    "lora_compat": "Flux 1 LoRA는 Klein에서 작동 안 함. Klein 전용 LoRA만 사용.",
+    "width_height_sync": "width/height는 Flux2Scheduler와 EmptyFlux2LatentImage 양쪽에 동일 값 필요.",
+    "no_lora": "LoRA 없이 사용 시: node 40 제거하고 node 6/7의 clip을 ['11', 0], node 20의 model을 ['10', 0]으로 변경."
+  },
+  "defaults": {
+    "cfg": 5.0,
+    "steps": 20,
+    "width": 832,
+    "height": 1216,
+    "sampler_name": "euler",
+    "lora_strength_model": 0.85,
+    "lora_strength_clip": 0.85
+  },
+  "klein_vs_flux1": {
+    "latent_node": { "flux1": "EmptySD3LatentImage", "klein": "EmptyFlux2LatentImage" },
+    "text_encoder": { "flux1": "DualCLIPLoaderGGUF (T5+CLIP_L, type=flux)", "klein": "CLIPLoader (Qwen3 8B, type=flux2)" },
+    "scheduler": { "flux1": "KSampler 내장 (scheduler=simple)", "klein": "Flux2Scheduler → SamplerCustomAdvanced" },
+    "guidance": { "flux1": "FluxGuidance 노드 (3.5)", "klein": "CFGGuider (5.0)" },
+    "sampler": { "flux1": "KSampler", "klein": "SamplerCustomAdvanced + KSamplerSelect + RandomNoise" },
+    "unet": { "flux1": "flux1-dev-Q5_K_S.gguf", "klein": "flux-2-klein-9b-Q5_K_M.gguf" },
+    "vae": { "flux1": "ae.safetensors", "klein": "flux2-vae.safetensors" }
+  }
+}

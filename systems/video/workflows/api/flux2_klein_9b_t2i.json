@@ -1,0 +1,107 @@
+{
+  "_meta": {
+    "title": "Flux.2 Klein 9B GGUF — T2I + LoRA",
+    "description": "Klein 9B (GGUF Q5) + Qwen3 8B text encoder. SamplerCustomAdvanced + CFGGuider + Flux2Scheduler 아키텍처. Klein은 Flux 1과 달리 실제 CFG 사용 (cfg=5 기본).",
+    "model": "flux-2-klein-9b-Q5_K_M.gguf + qwen_3_8b_fp8mixed.safetensors + flux2-vae.safetensors",
+    "resolution": "832x1216 (portrait) / 1024x1024 (square)",
+    "vram": "~14GB (Klein 7GB + Qwen3 8B + VAE + LoRA)",
+    "notes": "Flux 2 Klein은 Flux 1과 노드 구조 다름: EmptyFlux2LatentImage, Flux2Scheduler, CFGGuider, SamplerCustomAdvanced. KSampler 사용 불가."
+  },
+  "prompt": {
+    "10": {
+      "inputs": { "unet_name": "flux-2-klein-9b-Q5_K_M.gguf" },
+      "class_type": "UnetLoaderGGUF",
+      "_meta": { "title": "Klein 9B GGUF UNET" }
+    },
+    "11": {
+      "inputs": {
+        "clip_name": "qwen_3_8b_fp8mixed.safetensors",
+        "type": "flux2",
+        "weight_dtype": "default"
+      },
+      "class_type": "CLIPLoader",
+      "_meta": { "title": "Qwen 3 8B FP8 (type=flux2)" }
+    },
+    "12": {
+      "inputs": { "vae_name": "flux2-vae.safetensors" },
+      "class_type": "VAELoader",
+      "_meta": { "title": "Flux 2 VAE" }
+    },
+    "40": {
+      "inputs": {
+        "lora_name": "LORA_NAME_HERE",
+        "strength_model": 0.85,
+        "strength_clip": 0.85,
+        "model": ["10", 0],
+        "clip": ["11", 0]
+      },
+      "class_type": "LoraLoader",
+      "_meta": { "title": "LoRA (Klein용 — Flux 1 LoRA 호환 안 됨!)" }
+    },
+    "6": {
+      "inputs": { "text": "POSITIVE_PROMPT_HERE", "clip": ["40", 1] },
+      "class_type": "CLIPTextEncode",
+      "_meta": { "title": "Positive Prompt" }
+    },
+    "7": {
+      "inputs": { "text": "", "clip": ["40", 1] },
+      "class_type": "CLIPTextEncode",
+      "_meta": { "title": "Negative Prompt (빈 문자열 기본)" }
+    },
+    "20": {
+      "inputs": {
+        "cfg": 5.0,
+        "model": ["40", 0],
+        "positive": ["6", 0],
+        "negative": ["7", 0]
+      },
+      "class_type": "CFGGuider",
+      "_meta": { "title": "CFG Guider (Klein은 실제 CFG 사용, 기본 5.0)" }
+    },
+    "21": {
+      "inputs": { "sampler_name": "euler" },
+      "class_type": "KSamplerSelect",
+      "_meta": { "title": "Sampler Select (euler 권장)" }
+    },
+    "22": {
+      "inputs": {
+        "steps": 20,
+        "width": 832,
+        "height": 1216
+      },
+      "class_type": "Flux2Scheduler",
+      "_meta": { "title": "Flux2 Scheduler (해상도 기반 sigmas 계산)" }
+    },
+    "23": {
+      "inputs": { "noise_seed": 42 },
+      "class_type": "RandomNoise",
+      "_meta": { "title": "Random Noise (seed)" }
+    },
+    "25": {
+      "inputs": { "width": 832, "height": 1216, "batch_size": 1 },
+      "class_type": "EmptyFlux2LatentImage",
+      "_meta": { "title": "Empty Flux2 Latent (EmptySD3LatentImage 아님!)" }
+    },
+    "24": {
+      "inputs": {
+        "noise": ["23", 0],
+        "guider": ["20", 0],
+        "sampler": ["21", 0],
+        "sigmas": ["22", 0],
+        "latent_image": ["25", 0]
+      },
+      "class_type": "SamplerCustomAdvanced",
+      "_meta": { "title": "Advanced Sampler (KSampler 대신 사용)" }
+    },
+    "8": {
+      "inputs": { "samples": ["24", 0], "vae": ["12", 0] },
+      "class_type": "VAEDecode",
+      "_meta": { "title": "VAE Decode" }
+    },
+    "9": {
+      "inputs": { "filename_prefix": "Klein_T2I", "images": ["8", 0] },
+      "class_type": "SaveImage",
+      "_meta": { "title": "Save Output" }
+    }
+  }
+}

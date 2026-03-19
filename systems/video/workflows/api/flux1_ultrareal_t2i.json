@@ -1,0 +1,100 @@
+{
+  "_meta": {
+    "title": "UltraReal Fine-Tune v4 GGUF — Photorealistic T2I (Pro Grade)",
+    "description": "Flux.1 Dev 파인튠 + Pro Grade 아키텍처. BasicGuider + SamplerCustomAdvanced. 제작자 권장: DPM++ 2M, 30-50 steps.",
+    "model": "ultrarealFineTune_v4.gguf + T5-v1.1-XXL Q5_K_M + CLIP-L",
+    "resolution": "832x1216 (portrait) / 1024x1024 (square)",
+    "vram": "~14GB (12GB GGUF + T5 + CLIP-L)",
+    "notes": "Pro Grade v6 아키텍처 반영: BasicGuider + SamplerCustomAdvanced + BasicScheduler. UltraRealPhoto LoRA 사용 금지."
+  },
+  "prompt": {
+    "10": {
+      "inputs": { "unet_name": "ultrarealFineTune_v4.gguf" },
+      "class_type": "UnetLoaderGGUF",
+      "_meta": { "title": "UltraReal Fine-Tune v4 GGUF" }
+    },
+    "11": {
+      "inputs": {
+        "clip_name1": "t5-v1_1-xxl-encoder-Q5_K_M.gguf",
+        "clip_name2": "clip_l.safetensors",
+        "type": "flux"
+      },
+      "class_type": "DualCLIPLoaderGGUF",
+      "_meta": { "title": "Dual CLIP (T5-XXL GGUF + CLIP-L)" }
+    },
+    "12": {
+      "inputs": { "vae_name": "ae.safetensors" },
+      "class_type": "VAELoader",
+      "_meta": { "title": "Flux VAE" }
+    },
+    "6": {
+      "inputs": { "text": "POSITIVE_PROMPT_HERE", "clip": ["11", 0] },
+      "class_type": "CLIPTextEncode",
+      "_meta": { "title": "Positive Prompt" }
+    },
+    "7": {
+      "inputs": { "text": "", "clip": ["11", 0] },
+      "class_type": "CLIPTextEncode",
+      "_meta": { "title": "Negative (empty — ConditioningZeroOut 대용)" }
+    },
+    "26": {
+      "inputs": { "guidance": 3.5, "conditioning": ["6", 0] },
+      "class_type": "FluxGuidance",
+      "_meta": { "title": "FluxGuidance (3.5 기본)" }
+    },
+    "20": {
+      "inputs": {
+        "model": ["10", 0],
+        "conditioning": ["26", 0]
+      },
+      "class_type": "BasicGuider",
+      "_meta": { "title": "BasicGuider (Pro Grade 아키텍처)" }
+    },
+    "21": {
+      "inputs": { "sampler_name": "dpmpp_2m" },
+      "class_type": "KSamplerSelect",
+      "_meta": { "title": "Sampler: DPM++ 2M (제작자+ProGrade 공통 권장)" }
+    },
+    "22": {
+      "inputs": {
+        "scheduler": "beta",
+        "steps": 30,
+        "denoise": 1.0,
+        "model": ["10", 0]
+      },
+      "class_type": "BasicScheduler",
+      "_meta": { "title": "BasicScheduler (beta, 30 steps)" }
+    },
+    "23": {
+      "inputs": { "noise_seed": 42 },
+      "class_type": "RandomNoise",
+      "_meta": { "title": "Random Noise (seed)" }
+    },
+    "5": {
+      "inputs": { "width": 832, "height": 1216, "batch_size": 1 },
+      "class_type": "EmptySD3LatentImage",
+      "_meta": { "title": "Empty Latent" }
+    },
+    "13": {
+      "inputs": {
+        "noise": ["23", 0],
+        "guider": ["20", 0],
+        "sampler": ["21", 0],
+        "sigmas": ["22", 0],
+        "latent_image": ["5", 0]
+      },
+      "class_type": "SamplerCustomAdvanced",
+      "_meta": { "title": "SamplerCustomAdvanced (Pro Grade)" }
+    },
+    "8": {
+      "inputs": { "samples": ["13", 0], "vae": ["12", 0] },
+      "class_type": "VAEDecode",
+      "_meta": { "title": "VAE Decode" }
+    },
+    "9": {
+      "inputs": { "filename_prefix": "UltraReal_Pro", "images": ["8", 0] },
+      "class_type": "SaveImage",
+      "_meta": { "title": "Save Output" }
+    }
+  }
+}
