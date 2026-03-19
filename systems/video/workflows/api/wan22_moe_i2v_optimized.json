@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "title": "Wan 2.2 GGUF MoE — Image to Video (Optimized, Lightning + FBCache + TeaCache + RIFE)",
-    "description": "최적화 렌더링. Lightning LoRA(4 steps, shift 5) + FBCache(WaveSpeed) + TeaCache(0.3) + RIFE(16→32fps). 50분→7-12분/샷.",
+    "title": "Wan 2.2 GGUF MoE — Image to Video (Optimized, Lightning + FBCache + TeaCache + NAG + RIFE)",
+    "description": "최적화 렌더링. Lightning LoRA(4 steps, shift 5) + FBCache + TeaCache(0.3) + NAG(scale 11) + RIFE(16→32fps). 50분→7-12분/샷.",
     "model": "Wan2.2-I2V-A14B (HighNoise + LowNoise) Q3_K_M GGUF + Lightning LoRA",
     "resolution": "832x480",
     "frames": 81,
@@ -9,7 +9,7 @@
     "fps_output": 32,
     "duration_sec": 5,
     "tested": "2026-03-19",
-    "optimizations": ["Lightning LoRA (4 steps, shift 5)", "FBCache (threshold 0.12)", "TeaCache (threshold 0.3)", "RIFE x2 (16→32fps)"],
+    "optimizations": ["Lightning LoRA (4 steps, shift 5)", "FBCache (threshold 0.12)", "TeaCache (threshold 0.3)", "NAG (scale 11, tau 2.5, alpha 0.25)", "RIFE x2 (16→32fps)"],
     "usage": "python animate_shots.py --workflow wan22_moe_i2v_optimized.json ..."
   },
   "prompt": {
@@ -144,6 +144,10 @@
         "noise_seed": 42,
         "steps": 4,
         "cfg": 1.0,
+        "nag_scale": 11.0,
+        "nag_tau": 2.5,
+        "nag_alpha": 0.25,
+        "nag_sigma_end": 0.0,
         "sampler_name": "sa_solver",
         "scheduler": "simple",
         "start_at_step": 0,
@@ -152,10 +156,11 @@
         "model": ["30", 0],
         "positive": ["50", 0],
         "negative": ["50", 1],
+        "nag_negative": ["50", 1],
         "latent_image": ["50", 2]
       },
-      "class_type": "KSamplerAdvanced",
-      "_meta": { "title": "Stage 1 — HighNoise Lightning (steps 0→2, cfg 1.0)" }
+      "class_type": "KSamplerWithNAG (Advanced)",
+      "_meta": { "title": "Stage 1 — HighNoise Lightning + NAG (steps 0→2, cfg 1.0)" }
     },
     "21": {
       "inputs": {
@@ -163,6 +168,10 @@
         "noise_seed": 42,
         "steps": 4,
         "cfg": 1.0,
+        "nag_scale": 11.0,
+        "nag_tau": 2.5,
+        "nag_alpha": 0.25,
+        "nag_sigma_end": 0.0,
         "sampler_name": "sa_solver",
         "scheduler": "simple",
         "start_at_step": 2,
@@ -171,10 +180,11 @@
         "model": ["31", 0],
         "positive": ["50", 0],
         "negative": ["50", 1],
+        "nag_negative": ["50", 1],
         "latent_image": ["20", 0]
       },
-      "class_type": "KSamplerAdvanced",
-      "_meta": { "title": "Stage 2 — LowNoise Lightning (steps 2→4, cfg 1.0)" }
+      "class_type": "KSamplerWithNAG (Advanced)",
+      "_meta": { "title": "Stage 2 — LowNoise Lightning + NAG (steps 2→4, cfg 1.0)" }
     },
     "8": {
       "inputs": { "samples": ["21", 0], "vae": ["2", 0] },

@@ -20,7 +20,11 @@
     "fbcache_threshold_low": { "node_id": "15", "field": "residual_diff_threshold" },
     "rife_multiplier": { "node_id": "60", "field": "multiplier" },
     "teacache_threshold_high": { "node_id": "16", "field": "rel_l1_thresh" },
-    "teacache_threshold_low": { "node_id": "17", "field": "rel_l1_thresh" }
+    "teacache_threshold_low": { "node_id": "17", "field": "rel_l1_thresh" },
+    "nag_scale_high": { "node_id": "20", "field": "nag_scale" },
+    "nag_scale_low": { "node_id": "21", "field": "nag_scale" },
+    "nag_tau": { "node_id": "20", "field": "nag_tau" },
+    "nag_alpha": { "node_id": "20", "field": "nag_alpha" }
   },
   "teacache_notes": {
     "threshold": "0.3 = conservative. Quality OK → try 0.4, 0.5 for more speed. Quality drop → remove TeaCache nodes.",

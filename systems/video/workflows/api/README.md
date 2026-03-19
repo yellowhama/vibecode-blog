@@ -155,7 +155,7 @@ ComfyUI/app/models/
 | `wan22_moe_i2v_optimized.json` | **프로덕션 영상 (최적화)** | 832x480 | 81 (5초) | **32** | **~7-12분** |
 | `wan22_moe_t2i.json` | ~~이미지~~ **(사용 금지 — Flux 사용)** | 1024x1024 | 1 | - | ~3분 |
 
-> **권장: `wan22_moe_i2v_optimized.json`** — Lightning LoRA(4 steps) + sa_solver + FBCache + TeaCache + RIFE(32fps)
+> **권장: `wan22_moe_i2v_optimized.json`** — Lightning LoRA(4 steps) + sa_solver + FBCache + TeaCache + NAG + RIFE(32fps)
 
 ### 바인딩
 
@@ -194,10 +194,12 @@ UnetLoaderGGUF(LowNoise) → ModelSamplingSD3(shift=8)
 - 별도 LoRA: `high_noise_model.safetensors` + `low_noise_model.safetensors`
 - FBCache threshold: 0.12 (WaveSpeed)
 - **TeaCache threshold: 0.3** (conservative, try 0.4-0.5 if quality holds)
+- **NAG**: scale 11.0, tau 2.5, alpha 0.25 — 프레임 일관성 + 플리커 감소
 - RIFE rife49 x2 → 16fps→32fps 출력
-- 예상 속도: **~7-12분/샷** (기존 ~50분)
+- 예상 속도: **~7-12분/샷** (기존 ~50분, NAG 추론 2x 오버헤드 있을 수 있음)
 
 > **TeaCache 주의**: 4 steps에서 캐시가 공격적일 수 있음. A/B 비교 후 품질 확인. 문제 시 threshold↓ 또는 노드 제거.
+> **NAG 주의**: `KSamplerWithNAG (Advanced)` 노드 필요 (ComfyUI-NAG 설치). nag_negative에 별도 conditioning 연결 필수.
 
 ### 프레임 수 참고 (16fps)
 
