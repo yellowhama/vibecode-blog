@@ -52,14 +52,19 @@
       "title": "[FDD Diary #9] The Blind Genius",
       "source": "easy_peasy/phase1/en/act2-2-en.md",
       "scheduledAt": "2026-03-20T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "AI is a genius with no eyes.\n\nThree eggs in the fridge.\nNo shopping list. Buy three more.\nCome home to six.\n\nAI isn't dumb.\nThere's no shopping list.",
         "Had the AI scan every file. Catalog what exists.\nFive minutes.\n\n'Build this.' AI checks first.\n'Something similar already exists. Modify it?'\n\nNever heard that before.\nBecause the AI didn't know what was there.\n\nWith docs: genius.\nWithout docs: blind genius.",
         "Update the list every day.\nOne source of truth.\nGot it.\n\nBut all of this. Me opening the spec.\nMe fixing it. Me saying 'read this first.'\n\nEvery. Single. Time.\n\nMy hands were the automation."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2035003505061044285",
+        "2035003514397638830",
+        "2035003523675349128"
+      ],
+      "postedAt": "2026-03-20T14:40:23.364Z",
+      "error": null
     }
   ]
 }
