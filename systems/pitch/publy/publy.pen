@@ -1,0 +1,2697 @@
+{
+  "version": "2.9",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "사과 상세페이지",
+      "clip": true,
+      "width": 780,
+      "height": 4200,
+      "fill": "$bg",
+      "layout": "vertical",
+      "padding": [
+        40,
+        32
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "10bMJ",
+          "name": "Hero",
+          "width": "fill_container",
+          "fill": "$surface",
+          "cornerRadius": 12,
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            48,
+            32
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "OD6s0",
+              "name": "IMG-HERO-01",
+              "width": "fill_container",
+              "height": 280,
+              "fill": "#D1D5DB",
+              "cornerRadius": 8,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "32vZt",
+                  "name": "imgHeroLabel",
+                  "fill": "#6B7280",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "IMG-HERO-01\n박스 + 사과 정면샷",
+                  "lineHeight": 1.5,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aL41V",
+              "name": "badge",
+              "fill": "$accent",
+              "cornerRadius": 20,
+              "padding": [
+                6,
+                16
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "pKT2n",
+                  "name": "badgeText",
+                  "fill": "#FFFFFF",
+                  "content": "부사 사과",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "568Eh",
+              "name": "headline",
+              "fill": "$text",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "2kg(10과) 부사 사과, 한 박스로 준비",
+              "lineHeight": 1.3,
+              "fontFamily": "Inter",
+              "fontSize": 32,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "CYaiN",
+              "name": "body",
+              "fill": "$muted",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "부사 사과입니다. 2kg(10과) 박스 구성입니다. 가격은 12,900원입니다.",
+              "lineHeight": 1.6,
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "QL1zY",
+              "name": "Hero Bullets",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "en9mc",
+                  "name": "b1",
+                  "fill": "$text",
+                  "content": "✓ 구성: 2kg(10과)",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "OdvlO",
+                  "name": "b2",
+                  "fill": "$text",
+                  "content": "✓ 원산지: 경북 부사 (라벨 기준)",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "jHzIG",
+                  "name": "b3",
+                  "fill": "$text",
+                  "content": "✓ 배송: 상온 택배, 산지 직송",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qqEah",
+              "name": "ctaBtn",
+              "fill": "$accent2",
+              "cornerRadius": 8,
+              "padding": [
+                14,
+                32
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "IQUN9",
+                  "name": "ctaLabel",
+                  "fill": "#FFFFFF",
+                  "content": "구매 정보 확인",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "HaPpp",
+          "name": "USP",
+          "width": "fill_container",
+          "fill": "$bg",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            48,
+            32
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "14BTq",
+              "name": "uspTitle",
+              "fill": "$text",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "구매 이유 3가지",
+              "lineHeight": 1.3,
+              "fontFamily": "Inter",
+              "fontSize": 26,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "zASU9",
+              "name": "uspSub",
+              "fill": "$muted",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "구성/사용/정책을 한 번에 이해하게 만듭니다.",
+              "lineHeight": 1.5,
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "nrTKk",
+              "name": "USP Cards",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "0MGyO",
+                  "name": "Card 구성",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": 10,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "H37Oz",
+                      "name": "c1title",
+                      "fill": "$text",
+                      "content": "📦 2kg(10과) 박스 구성",
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "L7WEI",
+                      "name": "c1body",
+                      "fill": "$muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "한 박스에 10과. 가정용 간식으로 딱 맞는 양입니다.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "qXOiS",
+                      "name": "IMG-USP-01",
+                      "width": "fill_container",
+                      "height": 160,
+                      "fill": "#D1D5DB",
+                      "cornerRadius": 6,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Lad7b",
+                          "name": "imgUsp1Label",
+                          "fill": "#6B7280",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "IMG-USP-01\n손에 든 사과 크기 비교",
+                          "lineHeight": 1.4,
+                          "textAlign": "center",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Q0ba3",
+                  "name": "Card 사용",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": 10,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "zFCMu",
+                      "name": "c2title",
+                      "fill": "$text",
+                      "content": "🍎 씻어서 바로 먹기",
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "hL5QS",
+                      "name": "c2body",
+                      "fill": "$muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "세척 후 바로 섭취. 별도 조리 없이 간편하게.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "TzWXu",
+                      "name": "IMG-USP-02",
+                      "width": "fill_container",
+                      "height": 160,
+                      "fill": "#D1D5DB",
+                      "cornerRadius": 6,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Rz7HK",
+                          "name": "imgUsp2Label",
+                          "fill": "#6B7280",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "IMG-USP-02\n사과 단면 디테일",
+                          "lineHeight": 1.4,
+                          "textAlign": "center",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ENXZB",
+                  "name": "Card 정책",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": 10,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "LzXaE",
+                      "name": "c3title",
+                      "fill": "$text",
+                      "content": "📋 파손/변질 사진 접수",
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "IHJCZ",
+                      "name": "c3body",
+                      "fill": "$muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "배송 중 파손 시 24시간 이내 사진 접수로 교환/환불.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ydnmE",
+          "name": "Proof",
+          "width": "fill_container",
+          "fill": "$surface",
+          "cornerRadius": 12,
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            48,
+            32
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "Spyir",
+              "name": "proofTitle",
+              "fill": "$text",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "라벨과 표로 증명합니다",
+              "lineHeight": 1.3,
+              "fontFamily": "Inter",
+              "fontSize": 26,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "PxuGN",
+              "name": "proofSub",
+              "fill": "$muted",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "원산지/등급은 라벨 사진으로 확인합니다. 구성/가격/정책은 표로 정리합니다.",
+              "lineHeight": 1.5,
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "5pe4Q",
+              "name": "Spec Table",
+              "clip": true,
+              "width": "fill_container",
+              "cornerRadius": 8,
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Qx0rd",
+                  "name": "tHead",
+                  "width": "fill_container",
+                  "fill": "$accent",
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "wMVf6",
+                      "name": "th1",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "항목",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "6PfCb",
+                      "name": "th2",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "내용",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "6RA2N",
+                  "name": "r1",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "SVvw4",
+                      "name": "r1c1",
+                      "fill": "$text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "구성",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "5hx0x",
+                      "name": "r1c2",
+                      "fill": "$text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "2kg (10과)",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "jMFlq",
+                  "name": "r2",
+                  "width": "fill_container",
+                  "fill": "$bg",
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "l6yXt",
+                      "name": "r2c1",
+                      "fill": "$text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "가격",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "K4TQE",
+                      "name": "r2c2",
+                      "fill": "$text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "12,900원",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "hkQjx",
+                  "name": "r3",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "w9avL",
+                      "name": "r3c1",
+                      "fill": "$text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "원산지",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "o1rCG",
+                      "name": "r3c2",
+                      "fill": "$text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "경북 부사 (라벨 기준)",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "dGAs5",
+                  "name": "r4",
+                  "width": "fill_container",
+                  "fill": "$bg",
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "FoTdE",
+                      "name": "r4c1",
+                      "fill": "$text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "배송",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "AvE0s",
+                      "name": "r4c2",
+                      "fill": "$text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "상온 택배, 1~2영업일 출고",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "XvHG8",
+                  "name": "r5",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Limp2",
+                      "name": "r5c1",
+                      "fill": "$text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "교환/환불",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "CKeOJ",
+                      "name": "r5c2",
+                      "fill": "$text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "24시간 내 사진 접수",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "K8HtF",
+              "name": "safeNote",
+              "fill": "$warning",
+              "content": "※ 수치/효과는 근거 없으면 쓰지 않습니다.",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "500"
+            },
+            {
+              "type": "frame",
+              "id": "AarnZ",
+              "name": "IMG-PROOF-01",
+              "width": "fill_container",
+              "height": 200,
+              "fill": "#D1D5DB",
+              "cornerRadius": 8,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "90flf",
+                  "name": "imgProof1Label",
+                  "fill": "#6B7280",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "IMG-PROOF-01\n라벨 클로즈업 (원산지/등급)",
+                  "lineHeight": 1.4,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "iAeXD",
+              "name": "IMG-PROOF-02",
+              "width": "fill_container",
+              "height": 200,
+              "fill": "#D1D5DB",
+              "cornerRadius": 8,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "8KYze",
+                  "name": "imgProof2Label",
+                  "fill": "#6B7280",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "IMG-PROOF-02\n당도 측정 (근거 필요)",
+                  "lineHeight": 1.4,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "AorGi",
+          "name": "FAQ",
+          "width": "fill_container",
+          "fill": "$bg",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            48,
+            32
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "j6H96",
+              "name": "faqTitle",
+              "fill": "$text",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "자주 묻는 질문",
+              "lineHeight": 1.3,
+              "fontFamily": "Inter",
+              "fontSize": 26,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "83KCa",
+              "name": "faqSub",
+              "fill": "$muted",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "질문은 실제로 많이 물어보는 것만 넣습니다.",
+              "lineHeight": 1.5,
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "Inf8S",
+              "name": "FAQ 배송",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": 8,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                20,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "L7fyt",
+                  "name": "q1t",
+                  "fill": "$text",
+                  "content": "Q. 배송은 어떻게 되나요?",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "7hlsY",
+                  "name": "q1a",
+                  "fill": "$muted",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "상온 택배, 주문 후 1~2영업일 출고됩니다.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "uEmyI",
+              "name": "FAQ 교환",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": 8,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                20,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "XNbil",
+                  "name": "q2t",
+                  "fill": "$text",
+                  "content": "Q. 교환/환불은 어떻게 하나요?",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "PcG1J",
+                  "name": "q2a",
+                  "fill": "$muted",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "수령 후 24시간 이내 파손/변질 사진 접수 시 교환 또는 환불 처리됩니다.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "jtHLu",
+              "name": "FAQ 보관",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": 8,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                20,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "FDEeJ",
+                  "name": "q3t",
+                  "fill": "$text",
+                  "content": "Q. 보관은 어떻게 하나요?",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "LkZ1m",
+                  "name": "q3a",
+                  "fill": "$warning",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "TODO — 판매처 확인 후 안내 예정",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "LpQOt",
+              "name": "faqNote",
+              "fill": "$muted",
+              "content": "※ 정확한 정책은 판매처에서 확인해 주세요.",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "uAafj",
+          "name": "CTA",
+          "width": "fill_container",
+          "fill": "$accent",
+          "cornerRadius": 12,
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            48,
+            32
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "IAKS6",
+              "name": "ctaTitle",
+              "fill": "#FFFFFF",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "확인하고 편하게 구매하세요",
+              "lineHeight": 1.3,
+              "fontFamily": "Inter",
+              "fontSize": 26,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "bhCMF",
+              "name": "ctaSub",
+              "fill": "#FFFFFFCC",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "구성(2kg/10과)과 정책을 확인하면, 오해로 인한 컴플레인을 줄일 수 있습니다.",
+              "lineHeight": 1.5,
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "6LiBb",
+              "name": "CTA Checks",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VIYGL",
+                  "name": "ck1",
+                  "fill": "#FFFFFF",
+                  "content": "✓ 구성/가격 확인",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "rx3eD",
+                  "name": "ck2",
+                  "fill": "#FFFFFF",
+                  "content": "✓ 정책(배송/교환/환불) 확인",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "AbB4a",
+                  "name": "ck3",
+                  "fill": "#FFFFFF",
+                  "content": "✓ 보관/세척 확인",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "MJbFh",
+              "name": "ctaBtn2",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 8,
+              "padding": [
+                16,
+                32
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Nvd9B",
+                  "name": "ctaBtnLabel",
+                  "fill": "$accent",
+                  "content": "구매 페이지로",
+                  "fontFamily": "Inter",
+                  "fontSize": 17,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "eek12",
+              "name": "IMG-CTA-01",
+              "width": "fill_container",
+              "height": 200,
+              "fill": "#FFFFFF33",
+              "cornerRadius": 8,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "INW0W",
+                  "name": "imgCtaLabel",
+                  "fill": "#FFFFFFAA",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "IMG-CTA-01\n사과 10과 구성 사진",
+                  "lineHeight": 1.4,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "y5LKP",
+          "name": "origLabel",
+          "fill": "$muted",
+          "content": "원본 — 트렌드 내추럴 (올리브/크림 계열)",
+          "textAlign": "center",
+          "fontFamily": "Inter",
+          "fontSize": 12,
+          "fontWeight": "600"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "mVhCf",
+      "x": 850,
+      "y": 0,
+      "name": "변형 A: 모던 클린",
+      "width": 780,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "padding": [
+        40,
+        32
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "UQpxt",
+          "name": "Hero",
+          "width": "fill_container",
+          "fill": "#F0F4FF",
+          "cornerRadius": 12,
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            48,
+            32
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "CTBeK",
+              "name": "IMG-HERO-01",
+              "width": "fill_container",
+              "height": 240,
+              "fill": "#CBD5E1",
+              "cornerRadius": 8,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "CC5gN",
+                  "name": "imgML",
+                  "fill": "#64748B",
+                  "content": "IMG-HERO-01",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "SNYdq",
+              "name": "badgeM",
+              "fill": "#2563EB",
+              "cornerRadius": 16,
+              "padding": [
+                6,
+                14
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "D89ly",
+                  "name": "badgeMT",
+                  "fill": "#FFFFFF",
+                  "content": "부사 사과",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "B2V8e",
+              "name": "headM",
+              "fill": "#0F172A",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "2kg(10과) 부사 사과, 한 박스로 준비",
+              "lineHeight": 1.3,
+              "fontFamily": "Inter",
+              "fontSize": 30,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "eu7fK",
+              "name": "bodyM",
+              "fill": "#475569",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "부사 사과입니다. 2kg(10과) 박스 구성. 12,900원.",
+              "lineHeight": 1.5,
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "SIw4f",
+              "name": "bullM",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "QvLxi",
+                  "name": "bm1",
+                  "fill": "#1E293B",
+                  "content": "✓ 구성: 2kg(10과)",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "7qCHn",
+                  "name": "bm2",
+                  "fill": "#1E293B",
+                  "content": "✓ 원산지: 경북 부사",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "eDgvF",
+                  "name": "bm3",
+                  "fill": "#1E293B",
+                  "content": "✓ 배송: 상온 택배",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "yunWe",
+              "name": "ctaM",
+              "fill": "#2563EB",
+              "cornerRadius": 8,
+              "padding": [
+                14,
+                28
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "HqjKs",
+                  "name": "ctaML",
+                  "fill": "#FFFFFF",
+                  "content": "구매 정보 확인",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ufVkz",
+          "name": "USP",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            48,
+            32
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "TcmK2",
+              "name": "uspMTitle",
+              "fill": "#0F172A",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "구매 이유 3가지",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "VfdkI",
+              "name": "Cards",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "FxWGW",
+                  "name": "cm1",
+                  "width": "fill_container",
+                  "fill": "#F0F4FF",
+                  "cornerRadius": 8,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "62Amf",
+                      "name": "cm1t",
+                      "fill": "#1E40AF",
+                      "content": "📦 2kg(10과) 박스",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "okJfM",
+                      "name": "cm1b",
+                      "fill": "#475569",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "가정용 간식으로 딱 맞는 양",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rADLX",
+                  "name": "cm2",
+                  "width": "fill_container",
+                  "fill": "#F0F4FF",
+                  "cornerRadius": 8,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "puPYc",
+                      "name": "cm2t",
+                      "fill": "#1E40AF",
+                      "content": "🍎 세척 후 바로 섭취",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "HZmKf",
+                      "name": "cm2b",
+                      "fill": "#475569",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "별도 조리 없이 간편하게",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "EVEwl",
+                  "name": "cm3",
+                  "width": "fill_container",
+                  "fill": "#F0F4FF",
+                  "cornerRadius": 8,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "wpNYA",
+                      "name": "cm3t",
+                      "fill": "#1E40AF",
+                      "content": "📋 파손 시 사진 접수",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "sAkJq",
+                      "name": "cm3b",
+                      "fill": "#475569",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "24시간 이내 교환/환불",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "l617H",
+          "name": "labelM",
+          "fill": "#64748B",
+          "content": "변형 A — 모던 클린 (블루 계열)",
+          "textAlign": "center",
+          "fontFamily": "Inter",
+          "fontSize": 12,
+          "fontWeight": "600"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "JghDX",
+      "x": 1700,
+      "y": 0,
+      "name": "변형 B: 프리미엄 다크",
+      "width": 780,
+      "fill": "#0F0F0F",
+      "layout": "vertical",
+      "padding": [
+        40,
+        32
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "tLCUo",
+          "name": "Hero",
+          "width": "fill_container",
+          "fill": "#1A1A1A",
+          "cornerRadius": 12,
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            48,
+            32
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "YuhzS",
+              "name": "IMG-HERO-01",
+              "width": "fill_container",
+              "height": 240,
+              "fill": "#2A2A2A",
+              "cornerRadius": 8,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "xQuZc",
+                  "name": "imgDL",
+                  "fill": "#666666",
+                  "content": "IMG-HERO-01",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "7oZIp",
+              "name": "badgeD",
+              "fill": "#B8860B",
+              "cornerRadius": 16,
+              "padding": [
+                6,
+                14
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "gsgVx",
+                  "name": "badgeDT",
+                  "fill": "#FFFFFF",
+                  "content": "부사 사과",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "UXDVO",
+              "name": "headD",
+              "fill": "#F5F5F0",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "2kg(10과) 부사 사과, 한 박스로 준비",
+              "lineHeight": 1.3,
+              "fontFamily": "Inter",
+              "fontSize": 30,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "Abljy",
+              "name": "bodyD",
+              "fill": "#999999",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "부사 사과입니다. 2kg(10과) 박스 구성. 12,900원.",
+              "lineHeight": 1.5,
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "h4DI6",
+              "name": "bullD",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "wu37o",
+                  "name": "bd1",
+                  "fill": "#CCCCCC",
+                  "content": "✓ 구성: 2kg(10과)",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "vaB3K",
+                  "name": "bd2",
+                  "fill": "#CCCCCC",
+                  "content": "✓ 원산지: 경북 부사",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "8arM2",
+                  "name": "bd3",
+                  "fill": "#CCCCCC",
+                  "content": "✓ 배송: 상온 택배",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Wl7OV",
+              "name": "ctaD",
+              "fill": "#B8860B",
+              "cornerRadius": 8,
+              "padding": [
+                14,
+                28
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "MWils",
+                  "name": "ctaDL",
+                  "fill": "#FFFFFF",
+                  "content": "구매 정보 확인",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "D53lt",
+          "name": "USP",
+          "width": "fill_container",
+          "fill": "#0F0F0F",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            48,
+            32
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "Xgtfs",
+              "name": "uspDTitle",
+              "fill": "#F5F5F0",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "구매 이유 3가지",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "bujIE",
+              "name": "Cards",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "zYBGC",
+                  "name": "cd1",
+                  "width": "fill_container",
+                  "fill": "#1A1A1A",
+                  "cornerRadius": 8,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "k2gp5",
+                      "name": "cd1t",
+                      "fill": "#B8860B",
+                      "content": "📦 2kg(10과) 박스",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "mAA3E",
+                      "name": "cd1b",
+                      "fill": "#999999",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "가정용 간식으로 딱 맞는 양",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "90aFT",
+                  "name": "cd2",
+                  "width": "fill_container",
+                  "fill": "#1A1A1A",
+                  "cornerRadius": 8,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "uedpk",
+                      "name": "cd2t",
+                      "fill": "#B8860B",
+                      "content": "🍎 세척 후 바로 섭취",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "UfS8V",
+                      "name": "cd2b",
+                      "fill": "#999999",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "별도 조리 없이 간편하게",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "VY071",
+                  "name": "cd3",
+                  "width": "fill_container",
+                  "fill": "#1A1A1A",
+                  "cornerRadius": 8,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "dtQ0N",
+                      "name": "cd3t",
+                      "fill": "#B8860B",
+                      "content": "📋 파손 시 사진 접수",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "5VLVT",
+                      "name": "cd3b",
+                      "fill": "#999999",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "24시간 이내 교환/환불",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "Z9WGr",
+          "name": "labelD",
+          "fill": "#666666",
+          "content": "변형 B — 프리미엄 다크 (골드 계열)",
+          "textAlign": "center",
+          "fontFamily": "Inter",
+          "fontSize": 12,
+          "fontWeight": "600"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ksYyM",
+      "x": 0,
+      "y": 4400,
+      "name": "템플릿 C: Apple 제품 랜딩",
+      "width": 1440,
+      "fill": "#000000",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "ZfvUP",
+          "name": "Hero",
+          "width": "fill_container",
+          "height": 800,
+          "fill": "#000000",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            120,
+            160,
+            80,
+            160
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "5sgkB",
+              "name": "appleTag",
+              "fill": "#FF6B35",
+              "content": "NEW",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "600",
+              "letterSpacing": 3
+            },
+            {
+              "type": "text",
+              "id": "GBOIO",
+              "name": "appleH1",
+              "fill": "#FFFFFF",
+              "content": "부사 사과",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 96,
+              "fontWeight": "700",
+              "letterSpacing": -2
+            },
+            {
+              "type": "text",
+              "id": "aXRN8",
+              "name": "appleH2",
+              "fill": "#999999",
+              "content": "한 박스로 준비하세요.",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 32,
+              "fontWeight": "300"
+            },
+            {
+              "type": "frame",
+              "id": "KHLSo",
+              "name": "appleCtas",
+              "gap": 16,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Gfw60",
+                  "name": "appleCta1",
+                  "fill": "#2997FF",
+                  "cornerRadius": 24,
+                  "padding": [
+                    14,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "m9THt",
+                      "name": "appleCta1T",
+                      "fill": "#FFFFFF",
+                      "content": "구매하기",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "qBYDV",
+                  "name": "appleCta2",
+                  "fill": "#00000000",
+                  "cornerRadius": 24,
+                  "padding": [
+                    14,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "YxK3c",
+                      "name": "appleCta2T",
+                      "fill": "#2997FF",
+                      "content": "더 알아보기 >",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "JDdPq",
+          "name": "Hero Image",
+          "width": "fill_container",
+          "height": 600,
+          "fill": "#111111",
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "xjtv1",
+              "name": "appleImgL",
+              "fill": "#444444",
+              "textGrowth": "fixed-width",
+              "width": 500,
+              "content": "HERO IMAGE\n제품 클로즈업, 어두운 배경, 드라마틱 라이팅",
+              "lineHeight": 1.5,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ooGrq",
+          "name": "Feature 1",
+          "width": "fill_container",
+          "height": 600,
+          "fill": "#0A0A0A",
+          "gap": 80,
+          "padding": [
+            80,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "IZxfQ",
+              "name": "feat1Text",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "AlO0m",
+                  "name": "feat1Tag",
+                  "fill": "#FF6B35",
+                  "content": "구성",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "6yGgr",
+                  "name": "feat1H",
+                  "fill": "#FFFFFF",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "2kg, 10과.\n딱 맞는 양.",
+                  "lineHeight": 1.15,
+                  "fontFamily": "Inter",
+                  "fontSize": 56,
+                  "fontWeight": "700",
+                  "letterSpacing": -1
+                },
+                {
+                  "type": "text",
+                  "id": "i36RI",
+                  "name": "feat1B",
+                  "fill": "#888888",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "한 박스에 10과. 가정용 간식으로 부담 없는 양입니다. 세척 후 바로 드세요.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hbqFf",
+              "name": "IMG-FEAT-01",
+              "width": 500,
+              "height": 440,
+              "fill": "#1A1A1A",
+              "cornerRadius": 16,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "1qhbX",
+                  "name": "feat1ImgL",
+                  "fill": "#444444",
+                  "textGrowth": "fixed-width",
+                  "width": 300,
+                  "content": "사과 10과\n정렬 클로즈업",
+                  "lineHeight": 1.4,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "gj0HH",
+          "name": "Feature 2",
+          "width": "fill_container",
+          "height": 600,
+          "fill": "#000000",
+          "gap": 80,
+          "padding": [
+            80,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "6joD8",
+              "name": "IMG-FEAT-02",
+              "width": 500,
+              "height": 440,
+              "fill": "#1A1A1A",
+              "cornerRadius": 16,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Dwxza",
+                  "name": "feat2ImgL",
+                  "fill": "#444444",
+                  "textGrowth": "fixed-width",
+                  "width": 300,
+                  "content": "라벨 클로즈업\n원산지/등급",
+                  "lineHeight": 1.4,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "VPOWf",
+              "name": "feat2Text",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "xYrLN",
+                  "name": "feat2Tag",
+                  "fill": "#FF6B35",
+                  "content": "신뢰",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "KbxGQ",
+                  "name": "feat2H",
+                  "fill": "#FFFFFF",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "라벨 그대로.\n과장 없이.",
+                  "lineHeight": 1.15,
+                  "fontFamily": "Inter",
+                  "fontSize": 56,
+                  "fontWeight": "700",
+                  "letterSpacing": -1
+                },
+                {
+                  "type": "text",
+                  "id": "nelfo",
+                  "name": "feat2B",
+                  "fill": "#888888",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "원산지와 등급은 라벨 사진으로 확인합니다. 근거 없는 수치는 쓰지 않습니다.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "2xgMr",
+          "name": "Final CTA",
+          "width": "fill_container",
+          "height": 400,
+          "fill": "#0A0A0A",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            80,
+            160
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "b9Ucx",
+              "name": "acH",
+              "fill": "#FFFFFF",
+              "content": "지금 주문하세요.",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 48,
+              "fontWeight": "700",
+              "letterSpacing": -1
+            },
+            {
+              "type": "text",
+              "id": "zXXZP",
+              "name": "acS",
+              "fill": "#888888",
+              "content": "12,900원 · 산지 직송 · 상온 택배",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "c1sd8",
+              "name": "acBtn",
+              "fill": "#2997FF",
+              "cornerRadius": 28,
+              "padding": [
+                16,
+                36
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "xgPkk",
+                  "name": "acBtnT",
+                  "fill": "#FFFFFF",
+                  "content": "구매하기",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "vtjm9",
+          "name": "acLabel",
+          "width": "fill_container",
+          "fill": "#000000",
+          "layout": "vertical",
+          "padding": [
+            20,
+            0
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "4Cuf0",
+              "name": "acLabelT",
+              "fill": "#555555",
+              "content": "템플릿 C — Apple 스타일 제품 랜딩 (다크, 풀와이드 1440px)",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "600"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "szMa3",
+      "x": 1520,
+      "y": 4400,
+      "name": "템플릿 D: SaaS 랜딩",
+      "width": 1440,
+      "fill": "#FAFAFA",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "9tHvp",
+          "name": "Nav",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "padding": [
+            16,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "6a5fu",
+              "name": "saasLogo",
+              "fill": "#111827",
+              "content": "FreshBox",
+              "fontFamily": "Inter",
+              "fontSize": 20,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "gBvmI",
+              "name": "saasNavR",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "aSm6p",
+                  "name": "saasN1",
+                  "fill": "#6B7280",
+                  "content": "기능",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "5hfCQ",
+                  "name": "saasN2",
+                  "fill": "#6B7280",
+                  "content": "가격",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "0L2UI",
+                  "name": "saasN3",
+                  "fill": "#6B7280",
+                  "content": "후기",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "iyA2Y",
+                  "name": "saasNavBtn",
+                  "fill": "#4F46E5",
+                  "cornerRadius": 8,
+                  "padding": [
+                    10,
+                    20
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "GuGrC",
+                      "name": "saasNavBtnT",
+                      "fill": "#FFFFFF",
+                      "content": "시작하기",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "QTlmZ",
+          "name": "Hero",
+          "width": "fill_container",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 180,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#EEF2FF",
+                "position": 0
+              },
+              {
+                "color": "#FAFAFA",
+                "position": 1
+              }
+            ]
+          },
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            80,
+            200,
+            60,
+            200
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "heOWK",
+              "name": "saasBadge",
+              "fill": "#EEF2FF",
+              "cornerRadius": 20,
+              "padding": [
+                6,
+                16
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ammXj",
+                  "name": "saasBadgeT",
+                  "fill": "#4F46E5",
+                  "content": "✨ 신선한 과일, 정기 배송",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "PHKXE",
+              "name": "saasH1",
+              "fill": "#111827",
+              "textGrowth": "fixed-width",
+              "width": 800,
+              "content": "과일 구독,\n이제 공장처럼 돌아갑니다.",
+              "lineHeight": 1.2,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 52,
+              "fontWeight": "800",
+              "letterSpacing": -1
+            },
+            {
+              "type": "text",
+              "id": "0PYar",
+              "name": "saasH2",
+              "fill": "#6B7280",
+              "textGrowth": "fixed-width",
+              "width": 600,
+              "content": "제품 정보 한 장이면 상세페이지부터 검수까지. 매번 처음부터가 아니라, 매번 같은 라인이 돌아갑니다.",
+              "lineHeight": 1.6,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "TutkH",
+              "name": "saasCtaRow",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "lpYZw",
+                  "name": "saasC1",
+                  "fill": "#4F46E5",
+                  "cornerRadius": 8,
+                  "padding": [
+                    14,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "vepri",
+                      "name": "saasC1T",
+                      "fill": "#FFFFFF",
+                      "content": "무료로 시작하기",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "lkuVb",
+                  "name": "saasC2",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 8,
+                  "padding": [
+                    14,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "3CTKq",
+                      "name": "saasC2T",
+                      "fill": "#374151",
+                      "content": "데모 보기",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "lodaq",
+              "name": "Product Screenshot",
+              "width": 900,
+              "height": 500,
+              "fill": "#E5E7EB",
+              "cornerRadius": 12,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "KGQ2Y",
+                  "name": "saasScreenL",
+                  "fill": "#9CA3AF",
+                  "textGrowth": "fixed-width",
+                  "width": 400,
+                  "content": "PRODUCT SCREENSHOT\n대시보드 / 에디터 화면",
+                  "lineHeight": 1.5,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "GpuEo",
+          "name": "Features",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            80,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "OC4m6",
+              "name": "saasFeatH",
+              "fill": "#4F46E5",
+              "content": "왜 FreshBox인가",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "600",
+              "letterSpacing": 2
+            },
+            {
+              "type": "text",
+              "id": "wqerh",
+              "name": "saasFeatH2",
+              "fill": "#111827",
+              "textGrowth": "fixed-width",
+              "width": 600,
+              "content": "모든 기능이 하나의 흐름으로",
+              "lineHeight": 1.3,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 36,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "mhKI8",
+              "name": "Feature Grid",
+              "width": "fill_container",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Kwwwu",
+                  "name": "sg1",
+                  "width": "fill_container",
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 12,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    32,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "5qXF7",
+                      "name": "sg1h",
+                      "fill": "#111827",
+                      "content": "재료 한 장",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "MFfmJ",
+                      "name": "sg1b",
+                      "fill": "#6B7280",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "제품 정보를 적으면 AI가 11개 파일을 생성합니다.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "eReJ1",
+                  "name": "sg2",
+                  "width": "fill_container",
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 12,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    32,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "6REmg",
+                      "name": "sg2h",
+                      "fill": "#111827",
+                      "content": "자동 검수",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "diEMC",
+                      "name": "sg2b",
+                      "fill": "#6B7280",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "금칙어, 근거 없는 수치, 필수 고지 누락을 자동으로 잡습니다.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "dSM96",
+                  "name": "sg3",
+                  "width": "fill_container",
+                  "fill": "#F9FAFB",
+                  "cornerRadius": 12,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    32,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "8BBa0",
+                      "name": "sg3h",
+                      "fill": "#111827",
+                      "content": "페이지 조립",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "c8nbv",
+                      "name": "sg3b",
+                      "fill": "#6B7280",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "카피 + 컬러 + 이미지 슬롯이 눈에 보이는 페이지로 조립됩니다.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "NDLHD",
+          "name": "Final CTA",
+          "width": "fill_container",
+          "fill": "#4F46E5",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            80,
+            200
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "KU4nJ",
+              "name": "saasCtaH",
+              "fill": "#FFFFFF",
+              "content": "지금 시작하세요",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 40,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "nh3iv",
+              "name": "saasCtaS",
+              "fill": "#C7D2FE",
+              "textGrowth": "fixed-width",
+              "width": 500,
+              "content": "재료 한 장이면 됩니다. 무료로 체험해 보세요.",
+              "lineHeight": 1.5,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "Yzq2o",
+              "name": "saasCtaBtn",
+              "fill": "#FFFFFF",
+              "cornerRadius": 8,
+              "padding": [
+                16,
+                36
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fyYzk",
+                  "name": "saasCtaBtnT",
+                  "fill": "#4F46E5",
+                  "content": "무료로 시작하기",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "SsN2f",
+          "name": "saasLabel",
+          "width": "fill_container",
+          "fill": "#FAFAFA",
+          "layout": "vertical",
+          "padding": [
+            20,
+            0
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "Teje4",
+              "name": "saasLabelT",
+              "fill": "#9CA3AF",
+              "content": "템플릿 D — SaaS 랜딩 (라이트, 그라디언트 히어로, 1440px)",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "600"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "accent": {
+      "type": "color",
+      "value": "#4F6F52"
+    },
+    "accent2": {
+      "type": "color",
+      "value": "#C26A5A"
+    },
+    "bg": {
+      "type": "color",
+      "value": "#FAF7F2"
+    },
+    "border": {
+      "type": "color",
+      "value": "#E7E0D7"
+    },
+    "muted": {
+      "type": "color",
+      "value": "#6B7280"
+    },
+    "success": {
+      "type": "color",
+      "value": "#2F7A64"
+    },
+    "surface": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "text": {
+      "type": "color",
+      "value": "#1F2937"
+    },
+    "warning": {
+      "type": "color",
+      "value": "#B45309"
+    }
+  }
+}
