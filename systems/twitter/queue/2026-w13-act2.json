@@ -10,14 +10,19 @@
       "title": "[FDD Diary #10] Running Everything by Hand",
       "source": "easy_peasy/phase1/en/act2-3-en.md",
       "scheduledAt": "2026-03-23T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Yesterday the AI built it in Python.\nToday, same project. TypeScript.\n\n'Yesterday was Python.'\n'Yes. Python was more suitable yesterday.'\n\nSame project. Different language. Every day.",
         "'Build the agent system.'\nAI dumped a thousand lines. Ran it. Blew up.\nNo idea where.\n\nTwo things missing between spec and code.\nTech decisions. Task breakdown.\n\nI had the 'what.'\nDidn't have the 'how' or the 'in what order.'",
         "Wrote it down before throwing it at the AI.\n'TypeScript. Rust runtime. Existing transport module.'\n\nPython stopped showing up.\n\nBroke the big thing into small pieces.\nOne piece breaks? Fix that piece. Rest stays.\n\nSpecify. Plan. Tasks. Implement.\nFour steps."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2036083136019284003",
+        "2036083145326432280",
+        "2036083154583228691"
+      ],
+      "postedAt": "2026-03-23T14:10:27.432Z",
+      "error": null
     },
     {
       "id": "w13-act2-002",
