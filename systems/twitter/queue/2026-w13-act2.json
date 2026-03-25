@@ -31,14 +31,19 @@
       "title": "[FDD Diary #11] Words Evaporate",
       "source": "easy_peasy/phase1/en/act2-3-en.md",
       "scheduledAt": "2026-03-25T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Made one file. Named it CLAUDE.md.\nPut three rules in it.\nThe AI read it automatically.\n\nNext morning, everything was different.",
         "Before CLAUDE.md:\n'Build this.' AI starts from scratch.\n'Read the spec first.' Every time. By hand.\n\nAfter CLAUDE.md:\n'Build this.' AI checks the spec.\nAsks about what's missing.\nFollows the plan.\n\nSame AI. Different environment.",
         "Words evaporate.\nEnvironment stays.\n\nNo matter how good your prompts are.\nOne well-placed file beats them all.\n\nNot 'I told the AI what to do.'\n'The environment tells the AI what to do.'\n\nThat's the difference between a prompt and a system."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2036808946862670178",
+        "2036808956106940760",
+        "2036808965518979237"
+      ],
+      "postedAt": "2026-03-25T14:14:34.267Z",
+      "error": null
     },
     {
       "id": "w13-act2-003",
