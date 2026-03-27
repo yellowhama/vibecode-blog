@@ -52,14 +52,19 @@
       "title": "[FDD Diary #12] The Loop Clicks",
       "source": "easy_peasy/phase1/en/act2-4-en.md",
       "scheduledAt": "2026-03-27T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Same feature. Forty-five minutes.\nUsed to take a week.\n\nNot because I got better.\nBecause PROBLEMS.md existed.\nBecause SSOT existed.\nBecause the AI stopped guessing.",
         "Error rate dropped. 40% to 5%.\nCode stopped colliding.\nAI checks existing code before building.\n\nWrote rules in CLAUDE.md.\n'No coding without decisions. Spec first.'\n\nThe AI changed.\nStopped building from scratch.\nA system was running.",
         "But the code kept growing.\nFive thousand lines. Ten thousand. Twenty thousand.\n\nOpened the user settings screen.\nAgent status was showing there.\n\nWhy is this here?"
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2037541162714628526",
+        "2037541172063674865",
+        "2037541181488234731"
+      ],
+      "postedAt": "2026-03-27T14:44:08.140Z",
+      "error": null
     }
   ]
 }
