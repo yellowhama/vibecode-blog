@@ -10,14 +10,19 @@
       "title": "[FDD Diary #13] Fix One, Break Three",
       "source": "easy_peasy/phase1/en/act3-1-en.md",
       "scheduledAt": "2026-03-30T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Fixed the double notification.\nThen the logs stopped.\n\nFixed the logs.\nThen user settings got reset.\n\nFixed user settings.\nNotifications fire three times.\n\nWorse than before.",
         "How did it get this way?\n\nNotification needed user's name. Pulled from user code. Natural.\nAgent sends notification. Pulled from notification. Natural.\nSettings toggle per agent. Pulled from agent code. Natural.\n\nEach step natural.\nThree steps form a circle.\nA to B to C to A.",
         "I didn't create the bugs.\nThe structure is the bug.\n\nEach line of code is correct.\nEach feature works on its own.\nBut everything is tangled together.\n\nSDD nailed 'what to build.'\nBut 'where to put it' was never decided.\n\nStructure rots when you don't define it."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2038627895967428617",
+        "2038627905232593352",
+        "2038627914657202619"
+      ],
+      "postedAt": "2026-03-30T14:42:25.554Z",
+      "error": null
     },
     {
       "id": "w14-act3-002",
