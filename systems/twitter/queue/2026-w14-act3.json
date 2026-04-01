@@ -31,14 +31,19 @@
       "title": "[FDD Diary #14] No Name, No Direction",
       "source": "easy_peasy/phase1/en/act3-2-en.md",
       "scheduledAt": "2026-04-01T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Opened getNotificationConfig.\nName says notification.\nInside? Reading the user database directly.\n\nOne function. Three worlds tangled.",
         "sendAgentAlert.\nName says agent.\nInside: reads user settings, writes logs, sends notification.\n\n'Just grab it from there.'\nThose words. That's how everything tangles.\n\nTwelve notification files.\nNone of them just notifications.",
         "Agent world: task, execution, result.\nUser world: account, permission, settings.\nNotification world: channel, message, dispatch.\n\nIf the name fits, it's in the right place.\nDoesn't fit? Sleeping in the kitchen.\n\nDDD. 'Where to put it.'"
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2039354004694544499",
+        "2039354014131793924",
+        "2039354023648604512"
+      ],
+      "postedAt": "2026-04-01T14:47:43.412Z",
+      "error": null
     },
     {
       "id": "w14-act3-003",
