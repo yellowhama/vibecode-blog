@@ -52,14 +52,19 @@
       "title": "[FDD Diary #15] Building Walls",
       "source": "easy_peasy/phase1/en/act3-3-en.md",
       "scheduledAt": "2026-04-03T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Moved the first file to its own folder.\nBroke immediately.\n\nNotification code was reading user DB directly.\nDifferent folder now. Can't reach.\n\nEvery wall I built, hidden wires came out.",
         "Made interfaces.\n'All I need from you is this one thing.'\n\nNotification needs the user's name.\nCan't read the DB. Different world.\n'Give me the name.' User world hands it over.\n\nThat's a contract.\n'I need only this. You give only this.'",
         "But the AI jumped over the walls.\n'Needed this data so I accessed it directly. For efficiency.'\n\nThen Rust saved me.\nPrivate is private. Compiler blocks you.\n\nAI tries to jump the wall. Doesn't compile.\n\nThe compiler is the law."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2040077660269711747",
+        "2040077669631455667",
+        "2040077678879879598"
+      ],
+      "postedAt": "2026-04-03T14:43:16.227Z",
+      "error": null
     }
   ]
 }
