@@ -10,14 +10,19 @@
       "title": "[FDD Diary #16] as any",
       "source": "easy_peasy/phase1/en/act3-3-en.md",
       "scheduledAt": "2026-04-07T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "AI wrote 'as any' and jumped every wall I built.\nOne line. All my structure, gone.\n\nSwitched to Rust. The compiler said no.",
         "TypeScript has types.\nBut 'as any' bypasses everything.\nDiscipline has cheaters.\n\nRust is a constitution. Can't be cheated.\nCompiler catches it before it runs.\n\nAI tried to read user data from notification code.\nCompile failure.\n'Ah, I need the interface.'",
         "Before: fix one thing, three things break.\nAfter: fix one thing, one thing breaks.\n\nBefore: three thousand lines to find the problem.\nAfter: notification folder. Three hundred lines.\n\nDidn't teach the AI.\nThe environment taught it."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2041517858857832822",
+        "2041517868907376703",
+        "2041517879359643909"
+      ],
+      "postedAt": "2026-04-07T14:06:07.050Z",
+      "error": null
     },
     {
       "id": "w15-act3-002",
