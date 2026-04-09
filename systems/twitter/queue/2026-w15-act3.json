@@ -31,14 +31,19 @@
       "title": "[FDD Diary #17] Names Made a Map",
       "source": "easy_peasy/phase1/en/act3-4-en.md",
       "scheduledAt": "2026-04-09T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Something broke.\nLooked at the folder names.\nFound the bug in thirty seconds.\n\nBefore, that was three thousand lines of searching.\nNow it's one folder.",
         "The AI changed too.\n'Build this.' AI asks first.\n'Which world does this belong to?'\n\nOne folder? Never asked that.\nSplit folders? Decides on its own.\n'Notification-related. Notification folder.'\n\nWrite 'socks' on a drawer. Socks go in.\nFolder names are the rules.",
         "Spec is direction.\nStructure is terrain.\n\nDirection alone, you know where you're going.\nTerrain too, you know where you're standing.\n\nBoth together, you don't get lost."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2042257039913529466",
+        "2042257049254260768",
+        "2042257058901188705"
+      ],
+      "postedAt": "2026-04-09T15:03:21.026Z",
+      "error": null
     },
     {
       "id": "w15-act3-003",
