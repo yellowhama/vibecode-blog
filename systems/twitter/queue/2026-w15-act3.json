@@ -52,14 +52,19 @@
       "title": "[FDD Diary #18] Structure Isn't Enough",
       "source": "easy_peasy/phase1/en/act3-4-en.md",
       "scheduledAt": "2026-04-11T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Friday night.\nChanged the settings screen.\nWorks fine. Checked it.\n\nMonday morning.\nAgent is dead.",
         "Settings affected agent initialization.\nFriday it was running. Didn't notice.\nMonday it started fresh. Broke.\n\nDo features still work? Does notification fire once? Do settings save?\n\nCheck manually every time.\nMore features, more to check.\nMore to check, more you miss.",
         "Every time I change code.\n'What's going to break this time.'\n\nThat fear stops you from touching the code.\n\nStructure doesn't kill the fear.\nCan't verify 'it's correct'? Can't change it.\nCan't change it? Can't grow.\n\nThe code hardens."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2042973610109800658",
+        "2042973619559567544",
+        "2042973628870938721"
+      ],
+      "postedAt": "2026-04-11T14:30:44.514Z",
+      "error": null
     }
   ]
 }
