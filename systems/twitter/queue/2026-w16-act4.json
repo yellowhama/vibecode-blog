@@ -10,14 +10,19 @@
       "title": "[FDD Diary #19] Manual Testing Hell",
       "source": "easy_peasy/phase1/en/act4-1-en.md",
       "scheduledAt": "2026-04-14T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Manual testing isn't a time problem.\nIt's a willpower problem.\n\nFifth check, focus drops.\nTenth, skimming.\nTwentieth, you stop looking.\n\nThat's exactly the door bugs walk through.",
         "Changed the notification text.\nCheck everything. Login. Agent. Settings.\nThirty minutes.\n\nAnother fix. Everything again. Thirty minutes.\nAnother fix. Thirty minutes.\n\n'This one probably didn't break.'\nSkip it.\n\nDead cat stays in the box.",
         "Fifty features. Fifty boxes to open.\n\nDon't want to? 'Probably fine.' Skip.\n\nGets discovered later.\nAt the worst possible moment.\nAlways.\n\nNeeded a way out."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2044061661900734958",
+        "2044061671241515213",
+        "2044061680494166119"
+      ],
+      "postedAt": "2026-04-14T14:34:16.240Z",
+      "error": null
     },
     {
       "id": "w16-act4-002",
