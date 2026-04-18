@@ -52,14 +52,19 @@
       "title": "[FDD Diary #21] 6,260 Safety Nets",
       "source": "easy_peasy/phase1/en/act4-3-en.md",
       "scheduledAt": "2026-04-18T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Five tests became fifty.\nFifty became five hundred.\nFive hundred became 6,260.\n\nRun them all. One minute. Every feature checked.\n\nChanged code. Something break?\nThirty seconds. The answer's there.",
         "'Can I delete this function?'\nRun tests. All pass. Yes.\n\n'Can I restructure this?'\nThree fail. Fix three. Run again. All pass. Yes.\n\nToo scared to touch code before.\nNow I cut without hesitation.\n\nTests aren't verification.\nThey're courage.",
         "All 6,260 passed. Pushed to production.\n69 issues in the real world.\n\nTests only check what I thought of.\n\nBut those 69? Not panic. A list.\nFixed one by one. Added a test each time.\n6,260 became 6,329.\n\nNot perfect. 6,260 times better than nothing."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2045506192982581535",
+        "2045506202214219972",
+        "2045506211525673437"
+      ],
+      "postedAt": "2026-04-18T14:14:19.300Z",
+      "error": null
     }
   ]
 }
