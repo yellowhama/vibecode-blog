@@ -10,14 +10,19 @@
       "title": "[FDD Diary #22] Change, Confirm, Breathe",
       "source": "easy_peasy/phase1/en/act4-3-en.md",
       "scheduledAt": "2026-04-21T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Rewrote the notification handler.\nHit run. 6,260 tests. Thirty seconds.\n\nAll green.\n\nFirst time I changed code without holding my breath.",
         "Before: change code, check everything by hand, miss something, find out Monday.\n\nAfter: change code, run tests, thirty seconds, done.\n\nThe fear didn't vanish.\nGot a way to check it.\n\n'Something broke?'\nRun tests.\n'Nothing broke.'\nKeep going.",
         "Change. Confirm. Breathe. Change again.\n\nThat loop spins now.\nWithout fear.\n\nScared? Run the tests.\nThirty seconds later, the answer's there.\n\nThat's freedom."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2046598255346110955",
+        "2046598264590373343",
+        "2046598273905873025"
+      ],
+      "postedAt": "2026-04-21T14:33:47.220Z",
+      "error": null
     },
     {
       "id": "w17-act4-002",
