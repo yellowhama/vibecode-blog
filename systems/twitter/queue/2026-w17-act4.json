@@ -31,14 +31,19 @@
       "title": "[FDD Diary #23] Three Things Become One",
       "source": "easy_peasy/phase1/en/act4-4-en.md",
       "scheduledAt": "2026-04-23T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "New feature: QUIC drops, auto-switch to HTTP.\nUser doesn't notice.\n\nWrote the spec first.\nNamed the place: transport folder.\nWrote the tests: switch in 3 seconds, no data loss.\n\nThree days. Done. Clean.",
         "All tests passed. No other features broke.\n6,260 — all green.\n\nLanded clean inside transport.\nDidn't touch notification code. Didn't touch user code.\n\nBefore? No spec. AI shoves network logic inside notifications.\nTwo weeks. Three blowups.",
         "Lock down the what. SDD.\nLock down the where. DDD.\nLock down the done. TDD.\n\nLock them down and the AI sprints inside the rails.\nFast. Accurate. Consistent.\n\nDon't lock them down and the AI wanders.\nFast. Convincing. Different every time."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2047325709056839967",
+        "2047325718238183914",
+        "2047325727461355810"
+      ],
+      "postedAt": "2026-04-23T14:44:25.675Z",
+      "error": null
     },
     {
       "id": "w17-act4-003",
