@@ -52,14 +52,19 @@
       "title": "[FDD Diary #24] Yak Shaving Built the System",
       "source": "easy_peasy/phase1/en/act4-4-en.md",
       "scheduledAt": "2026-04-25T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Didn't learn any of this from textbooks.\n\nBuilds blew up. Twenty-eight left arms.\nFix one, three more break.\nLying awake thinking 'is this even right?'\n\nThe rabbit holes created the questions.\nQuestions found the concepts.",
         "SDD came from builds exploding.\nDDD came from code tangling.\nTDD came from Monday morning dead agents.\n\nEvery framework was born from a specific pain.\nNamed after the frustration that created it.",
         "Write down what you're building first.\nName where it goes.\nSet the bar for done.\n\nThree things. That's the system.\n\nWithout them, it's luck.\nWith them, it's repeatable."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2048043350717001728",
+        "2048043359969673221",
+        "2048043369222250954"
+      ],
+      "postedAt": "2026-04-25T14:16:04.793Z",
+      "error": null
     }
   ]
 }
