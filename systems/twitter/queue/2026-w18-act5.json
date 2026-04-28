@@ -10,14 +10,19 @@
       "title": "[FDD Diary #25] The Trap After the Spec",
       "source": "easy_peasy/phase1/en/act5-1-en.md",
       "scheduledAt": "2026-04-28T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Had the spec. Had the process. Had the tests.\nBuilt six features at once.\n\nAll six blew up at once.\n\nFile sync hit remote commands.\nGPU tangled with monitoring.\nAlerts had nothing to connect to.",
         "A spec is a map.\nCan't walk every road at the same time.\n\nWhat should I build first?\nEverything's important.\n\nWent back to the beginning.\nWhat did I want?\nSend a job from laptop to desktop. Get the result back.\nThat's it.\n\nGPU sharing? Later.\nAuto-recovery? Later.",
         "'Start small.'\nHeard it a hundred times.\nNobody says what 'small' means.\n\nFewest features? No.\n\nSmallest = the moment the experience I wanted happens once.\n\nTen features, no experience? Nothing.\nOne feature, that experience? Beginning."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2049130308809711796",
+        "2049130318104326272",
+        "2049130327361085790"
+      ],
+      "postedAt": "2026-04-28T14:15:15.812Z",
+      "error": null
     },
     {
       "id": "w18-act5-002",
