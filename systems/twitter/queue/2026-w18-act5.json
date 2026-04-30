@@ -31,14 +31,19 @@
       "title": "[FDD Diary #26] The Cafe Test",
       "source": "easy_peasy/phase1/en/act5-2-en.md",
       "scheduledAt": "2026-04-30T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Opened my laptop at the cafe.\nNeeded a file from home.\nNot there.\n\nShit.\n\nThat moment.\nEliminating that moment.\nThat's the whole product.",
         "Spec says 'file sync.'\nUX says 'open it at the cafe, it's there.'\n\nBuild from the system side:\n'Sync success: 1,247 files. 3 conflicts.'\nFeature works. Infuriating.\n\nBuild from the human side:\nOpen laptop. File's there. Done.\n\nSpec can be right and UX can still be wrong.",
         "Never read a line of code in my life.\nBut experience review?\n\n'Opened at the cafe. File there?'\nThere? Pass. Not there? Fail.\n\nAnswered 'is this what I wanted?' without touching the code.\n\nThat's the weapon."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2049861688372178993",
+        "2049861697549291920",
+        "2049861706659356750"
+      ],
+      "postedAt": "2026-04-30T14:41:30.213Z",
+      "error": null
     },
     {
       "id": "w18-act5-003",
