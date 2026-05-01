@@ -52,14 +52,19 @@
       "title": "[FDD Diary #27] AI Gives You Boundaries",
       "source": "easy_peasy/phase1/en/act5-3-en.md",
       "scheduledAt": "2026-05-01T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "'SSH?' 'Yes. Not behind NAT.'\n'Port forwarding?' 'Yes. Security risk.'\n'VPN?' 'Yes. Slow.'\n'QUIC?' 'Yes. Blocked on some networks.'\n\nTwenty rounds of ping-pong.\n\nAI doesn't give you the answer.\nIt gives you a boundary.\n\nEvery boundary turned out to be a requirement.",
         "Twenty rounds. Chat gets long.\nMost people open a new chat.\nStart from scratch.\n\nWrong.\n\nThe conversation is the research.\nThe fight is the data.\nDon't throw it away.\n\nNew chat — AI is a new hire.\nSame chat with context — AI is a colleague.\nSame AI. Different context.",
         "Conversation history = research data.\n'Won't work' = requirement.\nTwenty rounds = twenty boundaries = twenty spec conditions.\n\nDon't throw it away.\nDon't open a new chat.\nTake the fight records and go back."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2050214423135170759",
+        "2050214432362635567",
+        "2050214441564946721"
+      ],
+      "postedAt": "2026-05-01T14:03:08.791Z",
+      "error": null
     }
   ]
 }
