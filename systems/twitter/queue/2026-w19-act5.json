@@ -10,14 +10,19 @@
       "title": "[FDD Diary #28] It Worked",
       "source": "easy_peasy/phase1/en/act5-4-en.md",
       "scheduledAt": "2026-05-05T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Sent a job from my laptop.\nResult came back from the desktop at home.\n\nIt worked.\n\nUgly. Rough. Half the features missing.\nDidn't care.\n\nIt worked.",
         "MVP isn't minimum features.\nMVP is minimum experience.\n\n'Oh. It works.'\nThat one moment.\n\nDoesn't have to be perfect.\nDoesn't have to do everything.\nJust has to deliver that feeling once.\n\nEverything else gets bolted on after.",
         "Frustration's real name:\nthe experience I want doesn't exist.\n\nQuestions to AI.\nAI gave boundaries.\nBoundaries became specs.\nShortest path became the MVP.\n\nFrustration. Questions. Boundaries. Spec. MVP.\nThat's the loop."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2051686980790935756",
+        "2051686990039421120",
+        "2051686999317201176"
+      ],
+      "postedAt": "2026-05-05T15:34:33.940Z",
+      "error": null
     },
     {
       "id": "w19-act5-002",
