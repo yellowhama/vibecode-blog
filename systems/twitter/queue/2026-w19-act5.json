@@ -31,14 +31,19 @@
       "title": "[FDD Diary #29] Not Done",
       "source": "easy_peasy/phase1/en/act5-4-en.md",
       "scheduledAt": "2026-05-07T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "Five frameworks. Thirty threads.\nShould feel like victory.\n\nIt doesn't.\nThere's still a thing I can't solve.",
         "The system works.\nSpec, structure, tests, UX — all running.\n\nBut every morning I open the laptop and fight the same fight.\nAI still surprises me.\nStill breaks things I thought were solid.\n\nThe frameworks don't eliminate the chaos.\nThey make it survivable.",
         "FDD. SDD. DDD. TDD. XDD.\nFive stages. Each one born from a specific pain.\n\nNone of them finished.\nThe loop keeps running.\n\nFrustration doesn't end.\nIt just gets a better name."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2052391908304130309",
+        "2052391917485523200",
+        "2052391926721351753"
+      ],
+      "postedAt": "2026-05-07T14:15:41.699Z",
+      "error": null
     },
     {
       "id": "w19-act5-003",
