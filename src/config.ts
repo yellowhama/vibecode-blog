@@ -12,11 +12,11 @@ export const SITE = {
   showArchives: true,
   showBackButton: true,
   editPost: {
-    enabled: false,
-    text: "",
-    url: "",
+    enabled: true,
+    text: "Edit on GitHub",
+    url: "https://github.com/yellowhama/vibecode-blog/edit/main/src/data/blog",
   },
-  dynamicOgImage: true,
+  dynamicOgImage: false, // disabled: Vercel free tier OOM with satori+resvg
   dir: "ltr",
   lang: "en",
   timezone: "Asia/Seoul",
