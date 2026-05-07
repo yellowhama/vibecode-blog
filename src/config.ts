@@ -1,12 +1,12 @@
 export const SITE = {
   website: "https://vibecode.town",
-  author: "Hama",
+  author: "Hugh",
   profile: "https://github.com/yellowhama",
-  desc: "AI-native development insights for vibe coders",
+  desc: "Building with AI agents. No hype. Just what works.",
   title: "vibecode",
   ogImage: "vibecode-og.jpg",
   lightAndDarkMode: true,
-  postPerIndex: 4,
+  postPerIndex: 5,
   postPerPage: 10,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: true,
@@ -21,10 +21,9 @@ export const SITE = {
   lang: "en",
   timezone: "Asia/Seoul",
   links: {
-    github: "https://github.com/yellowhama/Musu",
-    docs: "https://github.com/yellowhama/Musu/tree/main/docs/product",
-    pricing:
-      "https://github.com/yellowhama/Musu/blob/main/docs/product/website-copy/pricing.md",
-    windowsDownload: "https://github.com/yellowhama/Musu/releases/latest",
+    github: "https://github.com/yellowhama/musu-bee",
+    docs: "https://musu.pro",
+    pricing: "https://musu.pro/pricing",
+    windowsDownload: "https://github.com/yellowhama/musu-bee/releases/latest",
   },
 } as const;

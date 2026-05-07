@@ -5,37 +5,38 @@
 
 /* ─── Editorial Design Tokens ──────────────────────────────────── */
 
+/* MUSU Brand: Cocoa Brown + Yellow + Off-White */
 :root,
 html[data-theme="light"] {
-  --background: #F9F7F2;
-  --bg-secondary: #F2EFE8;
-  --bg-tertiary: #EBE8E0;
+  --background: #FDFCF0;
+  --bg-secondary: #F5F3E8;
+  --bg-tertiary: #EDEBE0;
   --bg-elevated: #FFFFFF;
-  --foreground: #1a1a1a;
-  --text-secondary: rgba(26, 26, 26, 0.65);
-  --text-muted: rgba(26, 26, 26, 0.45);
-  --accent: #C4654A;
-  --accent-dim: #A8513A;
-  --accent-glow: rgba(196, 101, 74, 0.15);
-  --muted: #EBE8E0;
-  --border: rgba(26, 26, 26, 0.12);
-  --border-strong: rgba(26, 26, 26, 0.25);
+  --foreground: #2D1D19;
+  --text-secondary: rgba(45, 29, 25, 0.65);
+  --text-muted: rgba(45, 29, 25, 0.45);
+  --accent: #D4A030;
+  --accent-dim: #B8891A;
+  --accent-glow: rgba(255, 209, 102, 0.2);
+  --muted: #EDEBE0;
+  --border: rgba(45, 29, 25, 0.12);
+  --border-strong: rgba(45, 29, 25, 0.25);
 }
 
 html[data-theme="dark"] {
-  --background: #141821;
-  --bg-secondary: #1C2029;
-  --bg-tertiary: #242832;
-  --bg-elevated: #1C2029;
-  --foreground: #C8C8C8;
-  --text-secondary: rgba(200, 200, 200, 0.7);
-  --text-muted: rgba(200, 200, 200, 0.45);
-  --accent: #4A9EC4;
-  --accent-dim: #3A88AD;
-  --accent-glow: rgba(74, 158, 196, 0.15);
+  --background: #0A0A0A;
+  --bg-secondary: #141414;
+  --bg-tertiary: #1A1A1A;
+  --bg-elevated: #141414;
+  --foreground: #E0E0E0;
+  --text-secondary: rgba(224, 224, 224, 0.7);
+  --text-muted: rgba(224, 224, 224, 0.45);
+  --accent: #FFD166;
+  --accent-dim: #D4A030;
+  --accent-glow: rgba(255, 209, 102, 0.15);
   --muted: rgba(255, 255, 255, 0.06);
-  --border: rgba(200, 200, 200, 0.1);
-  --border-strong: rgba(200, 200, 200, 0.2);
+  --border: rgba(224, 224, 224, 0.1);
+  --border-strong: rgba(224, 224, 224, 0.2);
 }
 
 @theme inline {

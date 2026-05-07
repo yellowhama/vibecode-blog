@@ -1,0 +1,14 @@
+{
+  "schema_version": "v1",
+  "name": "vibecode.town",
+  "description": "AI-native development blog — building with MUSU",
+  "url": "https://vibecode.town",
+  "capabilities": {
+    "tools": [
+      {"name": "list_posts", "endpoint": "/api/mcp?action=list_posts"},
+      {"name": "read_post", "endpoint": "/api/mcp?action=read_post&slug={slug}"},
+      {"name": "search_posts", "endpoint": "/api/mcp?action=search_posts&q={query}"}
+    ]
+  },
+  "links": {"rss": "/rss.xml", "github": "https://github.com/yellowhama/musu-bee"}
+}

@@ -3,27 +3,25 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-## Hama
+## vibecode
 
-I build things with AI and write about what actually works.
+Building with AI agents. No hype. Just what works.
 
-Currently building [MUSU](https://musu.pro) — an agent runtime for vibe coders.
-This blog is where I document the process. What breaks, what ships, what I'd do differently.
+## MUSU
 
-No hype. No hand-waving. If I haven't tested it, I don't write about it.
+I'm building [MUSU](https://github.com/yellowhama/musu-bee) — an agent runtime that turns idle computers into an AI workforce. Delegate tasks from one machine, they run across your mesh using Claude, Gemini, or Codex.
 
-### What you'll find here
+**Why?** 3 computers. 2 always idle. That's dumb.
 
-- **Vibe to Production** — guides for turning AI-generated prototypes into real software
-- **MCP & Agentic Engineering** — tutorials nobody else is writing yet
-- **Build logs** — transparent progress reports, including the failures
-- **Hot takes** — opinions backed by experience, not engagement metrics
+## What's here
 
-### Subscribe
+- Multi-machine AI orchestration in practice
+- Token optimization (70% reduction)
+- Dogfooding — MUSU's marketing done by MUSU's own agents
+- Honest takes on what works and what doesn't
 
-If this sounds useful, [subscribe to the newsletter](/). Weekly. No spam. Unsubscribe anytime.
+## Links
 
-### Connect
-
-- GitHub: [@yellowhama](https://github.com/yellowhama)
-- X: [@yellowhama](https://x.com/yellowhama)
+- [GitHub](https://github.com/yellowhama/musu-bee)
+- [MUSU Docs](https://musu.pro)
+- [RSS](/rss.xml)
