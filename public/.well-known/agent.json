@@ -5,10 +5,17 @@
   "url": "https://vibecode.town",
   "capabilities": {
     "tools": [
-      {"name": "list_posts", "endpoint": "/api/mcp?action=list_posts"},
-      {"name": "read_post", "endpoint": "/api/mcp?action=read_post&slug={slug}"},
-      {"name": "search_posts", "endpoint": "/api/mcp?action=search_posts&q={query}"}
+      {"name": "list_posts", "endpoint": "/api/mcp.json"},
+      {"name": "read_post", "description": "Read full post at /posts/{slug}"},
+      {"name": "search", "description": "Use /search page with Pagefind"}
     ]
   },
-  "links": {"rss": "/rss.xml", "github": "https://github.com/yellowhama/musu-bee"}
+  "feeds": {
+    "rss": "/rss.xml",
+    "sitemap": "/sitemap-index.xml"
+  },
+  "links": {
+    "github": "https://github.com/yellowhama/musu-bee",
+    "docs": "https://musu.pro"
+  }
 }
