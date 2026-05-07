@@ -9,5 +9,8 @@ log
 docs
 .gstack
 scripts
+vibecode-assembler
+vibecode-diagrams
+systems
 *.db
 *.log
