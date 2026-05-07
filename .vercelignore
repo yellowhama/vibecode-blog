@@ -1,0 +1,13 @@
+node_modules
+.git
+.cache
+dist
+.astro
+work
+blog-research
+log
+docs
+.gstack
+scripts
+*.db
+*.log
