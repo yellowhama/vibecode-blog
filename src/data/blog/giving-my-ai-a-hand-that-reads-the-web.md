@@ -35,11 +35,7 @@ There was no shortage of material.
 
 **I just wasn't feeding it.**
 
-Systems don't run on motivation.
-
-Motivation evaporates.
-
-Structure stays.
+I ran out of motivation in two weeks. The folders were still there. Nothing was in them.
 
 So if the warehouse was going to survive, it needed two things.
 
@@ -118,17 +114,11 @@ Built a Research Agent script.
 
 Configured it to save Source Notes matching my Wiki folder structure.
 
-I just gave the goal.
+I gave the goal. Claude Code handled the rest.
 
-Never memorized an install command.
+What mattered wasn't the installation.
 
-Never debugged an error myself.
-
-That's Claude Code's job now.
-
-What I gave Claude Code wasn't an installation task.
-
-It was a role.
+It was the role I was assigning.
 
 The Research Agent had three jobs.
 

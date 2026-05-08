@@ -46,7 +46,7 @@ It took two days. What I found was not pretty.
 
 Three different date formatting functions. Two config parsers that didn't know about each other. Four ways to validate input, each used in different parts of the project. A utility file with 14 functions, 6 of which were never called by anything.
 
-The AI had been solving each problem from scratch. Every time I asked for something, it created a fresh solution. It never checked if a solution already existed. It never asked "didn't we already build this?"
+The AI had been solving each problem from scratch. Every time I asked for something, it created a fresh solution. It never checked if one already existed.
 
 I had a project with 28 left arms and no right arm.
 
@@ -123,7 +123,7 @@ If you're vibe coding anything past the toy stage, here's the health check I wis
 
 **5. Rule file.** Do you have a CLAUDE.md, .cursorrules, or any file that tells the AI where things go? If not, the AI is making architecture decisions by guessing. And it guesses differently every time.
 
-None of these require programming knowledge. I don't have programming knowledge. These are just the things I check now because I got burned by not checking them.
+None of these require programming knowledge. These are just the things I check now because I got burned by not checking them.
 
 The project is still not done. Things still break. But now when something breaks, I know where to look.
 

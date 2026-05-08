@@ -88,7 +88,7 @@ They produced. It was garbage. But it was my garbage. They followed my instructi
 
 I read a marketing textbook.
 
-Seriously. I stopped everything and spent two days reading about positioning (April Dunford), value exchange (Seth Godin), and developer marketing specifically.
+I stopped everything and spent two days reading. One book about positioning rearranged my brain. Another one about what readers actually trade their attention for. Then I went looking for anything specifically about developer marketing.
 
 Then I came back and rewrote every agent's instructions from scratch. Not "write a tweet." Instead: "Write for the developer who was me three months ago. Talk about what actually happened, not what sounds impressive. Every sentence must be something I'd send to a friend without cringing."
 
