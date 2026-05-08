@@ -132,6 +132,8 @@ Now it's a camp with a perimeter.
 
 The jungle is still out there. But I know where the edges are.
 
+That's what this blog is. A castaway's journal from the island of vibe coding. I'm not writing from the mountaintop. I'm writing from the camp.
+
 ---
 
 *Implementation got cheap. Decisions got expensive. That is the one sentence summary of what I learned in six months of vibe coding.*

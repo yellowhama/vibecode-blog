@@ -10,9 +10,11 @@ tags:
 description: "A bloated system prompt, a retrieval system reading 75 files per question, and a heartbeat checking every 5 minutes with nothing to do. Three things I set up months ago and never looked at again."
 ---
 
-Three things were burning my tokens. All three were things I set up months ago and never looked at again.
+Three things were draining supplies from the camp and I didn't know it.
 
-None of them were broken. They were all doing exactly what I told them to do. That was the problem.
+A bloated instruction sheet. A search party that brought back the entire forest. A guard who woke up every five minutes to check an empty horizon.
+
+All three were things I set up months ago and never looked at again. None of them were broken. They were all doing exactly what I told them to do. That was the problem.
 
 ---
 
@@ -32,7 +34,7 @@ with coding tasks. You should always be accurate, helpful, and thorough.
 When given a task, think step by step. Always consider edge cases...
 ```
 
-This went on for 496 more words.
+This went on for 496 more words. It was a 20-page employee handbook for someone who's been working here for ten years.
 
 It's not wrong. It's just useless. Telling Claude to "be accurate" is like telling a calculator to "get the math right." Every token spent on this sentence is a token not spent on the actual task.
 

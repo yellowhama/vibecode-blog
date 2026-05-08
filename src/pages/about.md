@@ -13,7 +13,9 @@ Features duplicated. Documents multiplied. The AI forgot where truth lived. Ever
 
 ## What this blog is
 
-This is a survival log.
+This is a castaway's journal.
+
+I washed up on the island of vibe coding with no map and no experience. I'm building shelter, making crude tools, and writing down what I find so the next person who lands here doesn't step on the same traps.
 
 Not a tutorial. Not a success story. Not "10 tips from an AI expert."
 

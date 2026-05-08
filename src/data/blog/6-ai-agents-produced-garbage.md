@@ -66,6 +66,8 @@ I caught it manually. By accident. Because I happened to look at the preview.
 
 A blog post with "DO NOT PUBLISH" in the body was about to go live on a real website with my name on it.
 
+It was like a restaurant serving a plate with "NOT FOR CUSTOMERS" written on the steak. And the kitchen passed it.
+
 ---
 
 ## What was actually wrong
@@ -78,7 +80,7 @@ The agents did exactly what I asked. The problem was that I did not know marketi
 
 I hadn't thought about positioning. I hadn't thought about value exchange — what does the reader get for giving me their attention? I hadn't thought about who the audience actually was, what they cared about, or why they would spend 5 minutes reading anything I wrote.
 
-I set up a factory with no blueprint. Gave everyone a job title. Told them to produce.
+I tried to build a village before I understood the terrain. Gave everyone a role. Told them to produce.
 
 They produced. It was garbage. But it was my garbage. They followed my instructions perfectly.
 
