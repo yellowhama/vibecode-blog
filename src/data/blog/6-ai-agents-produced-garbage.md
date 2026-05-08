@@ -7,6 +7,7 @@ draft: false
 tags:
   - war-stories
   - structure-over-prompts
+ogImage: /images/blog/6-ai-agents/pipeline-failure.png
 description: "6 agents. 5 AI models. 2 weeks of operation. The result was content I would not send to my worst enemy."
 ---
 
@@ -51,6 +52,8 @@ Because the rubric was wrong. I wrote it. The criteria were things like "Is the 
 The Editor was scoring against criteria that were too vague to fail anything. It was the world's most agreeable quality gate.
 
 ---
+
+![The pipeline that approved garbage — Editor scored 8.5, DO NOT PUBLISH went live](/images/blog/6-ai-agents/pipeline-failure.png)
 
 ## The "DO NOT PUBLISH" incident
 

@@ -3,6 +3,8 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
+![The island — camp, wiki warehouse, scout outpost, tools, and the unexplored web](/images/about/island-map.png)
+
 ## I can't code.
 
 I started vibe coding about six months ago. Zero programming background. I told AI to write code, and AI wrote code. For a while it felt like magic.

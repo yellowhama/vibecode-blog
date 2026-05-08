@@ -8,6 +8,7 @@ tags:
   - war-stories
   - structure-over-prompts
   - tool-notes
+ogImage: /images/blog/wiki-starving/flywheel.png
 description: "My LLM Wiki stopped growing because I stopped feeding it. So I gave my Research Agent a web-reading hand called Crawl4AI. Here's what broke, and what I built to fix it."
 ---
 
@@ -354,6 +355,8 @@ That's what the conflict tag is. An escape route. A marker on the map that says:
 Most knowledge systems don't do this. They pile up agreeable facts. The Wiki grows, everyone feels smart, and then one day the foundation cracks and nobody can trace where the wrong turn happened.
 
 I'd rather have a small Wiki with conflict tags than a big Wiki full of comfortable lies.
+
+![The flywheel — write, research, conflict, investigate, experience, repeat](/images/blog/wiki-starving/flywheel.png)
 
 And here's the thing I didn't expect.
 

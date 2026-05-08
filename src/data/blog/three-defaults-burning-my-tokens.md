@@ -7,6 +7,7 @@ draft: false
 tags:
   - token-economics
   - structure-over-prompts
+ogImage: /images/blog/three-defaults/before-after.png
 description: "A bloated system prompt, a retrieval system reading 75 files per question, and a heartbeat checking every 5 minutes with nothing to do. Three things I set up months ago and never looked at again."
 ---
 
@@ -124,6 +125,8 @@ async def heartbeat(agent_id: str):
 Stretched the interval to 30 minutes. Added idle-skip. **83% reduction.**
 
 ---
+
+![Three defaults: system prompt 670→174, retrieval 75→3 files, heartbeat 12→2 checks/hr](/images/blog/three-defaults/before-after.png)
 
 ## The pattern
 

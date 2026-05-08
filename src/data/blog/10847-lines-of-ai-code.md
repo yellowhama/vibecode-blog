@@ -7,6 +7,7 @@ draft: false
 tags:
   - war-stories
   - structure-over-prompts
+ogImage: /images/blog/10847-lines/codebase-jungle.png
 description: "I had 10,847 lines of code. I wrote zero of them. I could not explain what half of them did. That is where this story starts."
 ---
 
@@ -37,6 +38,8 @@ I'd fix one thing. Three things would break. I'd fix those three things. Two mor
 The worst part: I couldn't tell if the code was good or bad. I didn't write it. I didn't understand half of it. I just knew it used to work and now it didn't.
 
 ---
+
+![From jungle to camp — 47 files became 10,847 lines of structural chaos](/images/blog/10847-lines/codebase-jungle.png)
 
 ## The archaeology
 
