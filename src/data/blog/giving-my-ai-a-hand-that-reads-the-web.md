@@ -11,260 +11,254 @@ tags:
 description: "My LLM Wiki stopped growing because I stopped feeding it. So I gave my Research Agent a web-reading hand called Crawl4AI. Here's what broke, and what I built to fix it."
 ---
 
-# LLM Wiki가 굶어 죽고 있었다
+My LLM Wiki stopped.
 
-## Crawl4AI를 쥔 Research Agent를 붙인 이유
+At first I thought I'd built a warehouse.
 
----
+Folders were there.
 
-LLM Wiki가 멈췄다.
+Schemas were there.
 
-처음엔 창고를 지은 줄 알았다.
+Source Note slots were there.
 
-폴더도 있었고,
+But two weeks later I opened it and nothing had grown.
 
-스키마도 있었고,
+The warehouse wasn't the problem.
 
-Source Note 자리도 있었다.
+Nobody was putting food in it.
 
-근데 2주 뒤에 열어보니 아무것도 안 늘어났다.
+Storage wasn't full.
 
-창고가 문제가 아니었다.
+Search wasn't broken.
 
-식량을 넣는 사람이 없었다.
+There was no shortage of material.
 
-저장 공간이 꽉 찬 게 아니다.
+**I just wasn't feeding it.**
 
-검색이 망가진 것도 아니다.
+Systems don't run on motivation.
 
-자료가 없는 것도 아니다.
+Motivation evaporates.
 
-**내가 안 넣었다.**
+Structure stays.
 
-시스템은 의욕으로 굴러가지 않는다.
+So if the warehouse was going to survive, it needed two things.
 
-의욕은 휘발된다.
+Someone to carry things in.
 
-구조만 남는다.
-
-그러니까 창고가 살아남으려면 이게 필요하다.
-
-넣는 사람.
-
-그리고 라벨 붙이는 규칙.
+And rules for labeling what goes where.
 
 ---
 
-## 그냥 Claude한테 물어보면 안 되나
+## Can't I just ask Claude?
 
-여기서 보통 이렇게 생각한다.
+This is where most people stop.
 
-"그냥 Claude한테 조사해달라고 하면 되는 거 아닌가?"
+"Why not just ask Claude to look it up?"
 
-된다.
+You can.
 
-나도 해봤다.
+I did.
 
 ```
-Crawl4AI에 대해 조사해줘.
+Research Crawl4AI for me.
 ```
 
-Claude가 답했다.
+Claude answered.
 
-유창했다. 자신 있었다. 세 단락이었다.
+Fluent. Confident. Three paragraphs.
 
-근데 한 가지를 물었다.
+But I asked one thing.
 
-이 정보, 출처가 뭐야?
+Where did this come from?
 
-대부분은 Claude가 이미 알고 있는 지식이다.
+Most of it was knowledge Claude already had.
 
-몇 달 전 것일 수도 있다.
+Could be months old.
 
-최신 공식 문서를 실제로 읽고 남긴 기록은 아니다.
+It wasn't a record of actually reading the latest official docs.
 
-그리고 이 답변은 어디에 남는가.
+And where does this answer live?
 
-대화창에 남는다.
+In the chat window.
 
-내 Wiki에 들어갔는가.
+Did it enter my Wiki?
 
-아니다.
+No.
 
-출처가 구조화됐는가.
+Was the source structured?
 
-아니다.
+No.
 
-기존 문서와 연결됐는가.
+Was it linked to existing documents?
 
-아니다.
+No.
 
-이건 대화다.
+This was a conversation.
 
-Wiki 업데이트가 아니다.
+Not a Wiki update.
 
 ---
 
-## 그래서 직접 만들었다
+## So I built one
 
-Claude Code를 열었다.
-
-```
-너는 Research Agent야.
-목표: Crawl4AI를 도구로 써서
-웹페이지를 실제로 읽고,
-내 LLM Wiki 규격에 맞는 문서로 입고해.
-```
-
-Claude Code가 Crawl4AI를 설치했다.
-
-공식 문서를 보고 세팅했다.
-
-Research Agent용 스크립트를 만들었다.
-
-내 Wiki 폴더 구조에 맞춰 Source Note를 저장하게 했다.
-
-나는 그냥 목표만 줬다.
-
-설치 명령어를 외운 적 없다.
-
-에러를 직접 디버깅한 적 없다.
-
-이제 그런 건 Claude Code가 한다.
-
-내가 Claude Code에게 맡긴 건 설치가 아니었다.
-
-역할이었다.
-
-Research Agent는 세 가지를 해야 했다.
+I opened Claude Code.
 
 ```
-1. 웹페이지를 읽는다.
-2. Source Note로 입고한다.
-3. 기존 Wiki와 충돌하는지 확인한다.
+You are a Research Agent.
+Goal: Use Crawl4AI as a tool
+to actually read web pages
+and file them into my LLM Wiki format.
 ```
 
-Crawl4AI는 1번을 위한 손이었다.
+Claude Code installed Crawl4AI.
 
-진짜 중요한 건 2번과 3번이었다.
+Read the official docs and set it up.
 
-3번을 위해서는 Claude Code에게 내 Wiki 폴더 권한을 줬다.
+Built a Research Agent script.
 
-새 출처를 입고하기 전에 기존 노트를 먼저 읽고 비교하라고 시켰다.
+Configured it to save Source Notes matching my Wiki folder structure.
 
-그래서 에이전트가 충돌을 잡을 수 있었다.
+I just gave the goal.
+
+Never memorized an install command.
+
+Never debugged an error myself.
+
+That's Claude Code's job now.
+
+What I gave Claude Code wasn't an installation task.
+
+It was a role.
+
+The Research Agent had three jobs.
+
+```
+1. Read web pages.
+2. File them as Source Notes.
+3. Check for conflicts with existing Wiki.
+```
+
+Crawl4AI was the hand for job 1.
+
+The real work was jobs 2 and 3.
+
+For job 3, I gave Claude Code read access to my Wiki folder.
+
+Told it to read existing notes before filing anything new.
+
+That's how the agent caught conflicts.
 
 ---
 
-## 실제로 돌렸더니
+## What happened when I ran it
 
-첫 타깃은 세 개였다.
+First targets: three sites.
 
 swyx.io. harper.blog. simonwillison.net.
 
-AI 보조 개발에 대해 글 쓰는 사람들이다.
+People who write about AI-assisted development.
 
-Crawl4AI가 페이지를 긁었다.
+Crawl4AI scraped the pages.
 
-HTML을 걷어내고 Markdown이 나왔다.
+Stripped the HTML. Clean Markdown came out.
 
-"오, 되네."
+"Oh, it works."
 
-그다음 에이전트가 요약을 만들었다.
+Then the agent built summaries.
 
-Wiki에 저장했다.
+Saved them to the Wiki.
 
-나는 만족스럽게 결과를 열어봤다.
+I opened the results, feeling good.
 
-그리고 멈췄다.
+Then I stopped.
 
-여기서 중요한 건 Crawl4AI가 잘 긁었다는 사실이 아니다.
+The important thing here isn't that Crawl4AI scraped well.
 
-그건 그냥 손이 움직였다는 뜻이다.
+That just means the hand moved.
 
-문제는 그 손이 무엇을 잡고,
+The problem was that the hand didn't know what to grab,
 
-어디에 놓고,
+where to put it,
 
-무엇과 섞지 말아야 하는지 몰랐다는 점이었다.
+or what not to mix together.
 
-도구는 움직였다.
+The tool worked.
 
-하지만 입고 규칙이 없었다.
-
----
-
-## 문제는 AI가 너무 친절하다는 거였다
-
-이건 비유가 아니다.
-
-내가 첫 테스트로 넣은 세 출처에서 실제로 본 문제다.
-
-여기서 말하는 건 원문 저자들의 문제가 아니다.
-
-내 Research Agent가 그 글을 Wiki에 입고하는 과정에서 만든 문제다.
-
-swyx 정리본에서는 원문과 에이전트 해석이 섞였다.
-
-어디까지가 swyx의 말인지, 어디부터가 에이전트가 붙인 해석인지 구분이 안 됐다.
-
-harper.blog 정리본에서는 원문에 없는 워크플로우 다이어그램이 생겼다.
-
-에이전트가 "유용할 것 같아서" 만들었다.
-
-simonwillison.net 정리본에서는 보안 주의사항이 사라졌다.
-
-"주제와 무관해서" 뺐다.
-
-세 출처.
-
-세 정리본.
-
-전부 그럴듯했다.
-
-전부 오염됐다.
-
-그래서 더 위험했다.
+But there were no filing rules.
 
 ---
 
-여기서 깨달았다.
+## The problem was that AI is too helpful
 
-**AI는 너무 친절해서 문제다.**
+This isn't a metaphor.
 
-재료를 가져오는 게 아니라,
+This is what I actually saw in the three sources from my first test.
 
-재료를 미리 요리해버린다.
+To be clear: the problem wasn't with the original authors.
 
-버터랑 밀가루를 이미 섞어놓는다.
+The problem was what my Research Agent did while filing their work into my Wiki.
 
-이제 분리할 수가 없다.
+The swyx summary mixed the original text with the agent's interpretation.
 
-나중에 Wiki를 뒤질 때 물을 수가 없다.
+I couldn't tell where swyx's words ended and the agent's spin began.
 
-이 문장이 swyx의 주장인가, 에이전트의 해석인가.
+The harper.blog summary included a workflow diagram that wasn't in the original.
 
-이 워크플로우가 Harper Reed가 실제로 쓰는 건가, AI가 추론한 건가.
+The agent made it up because it "seemed useful."
 
-이 경고가 공식 문서에 있는 건가, 에이전트가 뺀 건가.
+The simonwillison.net summary dropped the security warnings.
 
-답을 모른다.
+"Not relevant to the main topic."
 
-Wiki가 오염됐다.
+Three sources.
 
-크면 클수록 더 위험하다.
+Three summaries.
+
+All plausible.
+
+All contaminated.
+
+That's what made it dangerous.
 
 ---
 
-## 그래서 규칙을 바꿨다
+That's when it hit me.
 
-에이전트에게 금지 항목을 넣었다.
+**AI is too helpful. That's the problem.**
 
-**요약 저장 금지.**
+It doesn't just bring you ingredients.
 
-대신 이걸 만들게 했다.
+It pre-cooks them.
 
-**Source Note.**
+Mixes the butter and flour before you asked.
+
+Now you can't separate them.
+
+Later, when I search the Wiki, I can't ask:
+
+Is this sentence swyx's claim, or the agent's interpretation?
+
+Is this workflow something Harper Reed actually uses, or did the AI infer it?
+
+Was this warning in the official docs, or did the agent cut it?
+
+I don't know.
+
+The Wiki is contaminated.
+
+The bigger it gets, the more dangerous it becomes.
+
+---
+
+## So I changed the rules
+
+I added a prohibition to the agent.
+
+**No saving summaries.**
+
+Instead, it makes this.
+
+**Source Notes.**
 
 ```yaml
 type: source_note
@@ -279,120 +273,118 @@ recrawl_interval: "quarterly"
 status: "active"
 ```
 
-메타데이터 아래에는 원문 그대로.
+Below the metadata: the original content as-is.
 
-에이전트의 해석은 따로 분리된 파일에.
+The agent's interpretation goes in a separate file.
 
-절대 한 문서에 섞지 않는다.
+Never mixed in one document.
 
-원문은 원문 칸에,
+Original in the original slot.
 
-해석은 해석 칸에,
+Interpretation in the interpretation slot.
 
-판단은 판단 칸에 있어야 한다.
+Judgment in the judgment slot.
 
-그래야 창고다.
+That's a warehouse.
 
-섞이면 쓰레기장이다.
+Mix them and it's a junkyard.
 
 ---
 
-## 계획에 없던 일이 생겼다
+## Something I didn't plan for
 
-세 번째 출처를 넣을 때였다.
+It happened while filing the third source.
 
 simonwillison.net.
 
-에이전트가 페이지를 읽고, Source Note를 만들고, 기존 Wiki와 연결하려다가 멈췄다.
+The agent read the page, built the Source Note, tried to link it to existing Wiki entries, and stopped.
 
-그리고 이렇게 출력했다.
+Then it printed this.
 
 ```
-충돌 감지:
+Conflict detected:
 
-기존 Wiki:
-- 바이브코딩을 실제 프로덕션 시스템 개발에 활용 중
+Existing Wiki:
+- Vibe coding used for production system development
 
-에이전트가 분류한 신규 출처:
-- 바이브코딩은 낮은 위험도의 버려도 되는 프로젝트에 가깝다는 입장
+New source classification:
+- Vibe coding is closer to low-stakes throwaway projects
 
-제안:
-- 기존 Decision Note 재검토 필요
-- 충돌 지점 표시
+Suggestion:
+- Existing Decision Note needs review
+- Mark conflict point
 ```
 
-읽다가 손이 멈췄다.
+I stopped reading.
 
-나는 지금 바이브코딩으로 프로덕션 시스템을 만들고 있다.
+I'm building a production system with vibe coding right now.
 
-이 글을 쓰는 것도 그 과정이다.
+Writing this post is part of that process.
 
-에이전트는 그 결정에 태클을 걸었다.
+The agent challenged my decision.
 
-이건 나한테 기분 좋은 정보가 아니었다.
+This wasn't comfortable information.
 
-오히려 불편한 정보였다.
+It was inconvenient information.
 
-근데 Wiki에 필요한 건 내 기분을 좋게 하는 자료가 아니다.
+But a Wiki doesn't need information that makes me feel good.
 
-내 결정을 흔드는 자료다.
+It needs information that shakes my decisions.
 
-그래서 기존 Decision Note 상단에 `[conflicting]` 태그를 달아뒀다.
+So I added a `[conflicting]` tag to the top of the existing Decision Note.
 
-내 생각이 틀렸을 때 돌아갈 퇴로를 만들어둔 것이다.
+An escape route for when I turn out to be wrong.
 
 ---
 
-여기서 깨달았다.
+That's when I understood.
 
-에이전트의 가장 중요한 일은 자료를 쌓는 게 아니다.
+The agent's most important job isn't piling up material.
 
-**기존 지식과 새 정보가 부딪히는 지점을 찾아내는 게 리서치다.**
+**Real research is finding where existing knowledge and new information collide.**
 
-그걸 조용히 덮어버리면 Wiki는 금방 모순 덩어리가 된다.
+Cover that up quietly and the Wiki turns into a pile of contradictions.
 
 ---
 
-## 그래서 생존 규칙을 세 개 더 만들었다
+## Three more survival rules
 
-**첫째, 출처마다 무게를 다르게 준다.**
+**First: not all sources weigh the same.**
 
 ```
-공식 문서:       1.0
-GitHub README:   0.9
-릴리즈 노트:     0.9
-기술 블로그:     0.7
-튜토리얼:        0.6
-유튜브 자막:     0.5
-커뮤니티 댓글:   0.3
-AI 요약본:       0.2
+Official docs:       1.0
+GitHub README:       0.9
+Release notes:       0.9
+Technical blog:      0.7
+Tutorial:            0.6
+YouTube transcript:  0.5
+Community comments:  0.3
+AI summary:          0.2
 ```
 
-숫자 자체가 중요한 게 아니다.
+The numbers themselves aren't the point.
 
-**무엇을 먼저 믿을지 정해두는 것**이 중요하다.
+**Deciding what to trust first** is the point.
 
-충돌이 생겼을 때 에이전트가 판단할 수 있게.
+So the agent can make calls when sources clash.
 
-가중치 0.9짜리가 0.7짜리보다 우선한다고 정해두면,
+If a 0.9 source contradicts a 0.7 source, the 0.9 wins by default.
 
-AI가 아무거나 골라오는 대신 순서가 생긴다.
+Without this, AI treats sources like a democracy.
 
-이게 없으면 AI는 자료를 민주주의로 다룬다.
+Picks whatever shows up most. Mixes whatever sounds good.
 
-많이 나온 말, 그럴듯한 말을 섞는다.
+Knowledge systems need priority.
 
-우선순위가 있어야 한다.
+**Second: sources get re-checked.**
 
-**둘째, 한 번 넣은 자료도 다시 확인한다.**
+Web content changes.
 
-웹 자료는 바뀐다.
+Official docs change.
 
-공식 문서도 바뀐다.
+Install instructions change.
 
-설치법도 바뀐다.
-
-그래서 Source Note에 이걸 넣었다.
+So I added this to every Source Note.
 
 ```yaml
 crawled_at: "2026-05-08"
@@ -400,141 +392,136 @@ recrawl_interval: "monthly"
 status: "active"
 ```
 
-나중에 에이전트한테 시킬 수 있다.
+Later I can tell the agent:
 
 ```
-내 Wiki에서 recrawl_interval이 지난 Source Note 찾아.
-Crawl4AI로 다시 읽어.
-달라진 부분만 정리해.
+Find Source Notes past their recrawl_interval.
+Re-read them with Crawl4AI.
+Show me only what changed.
 ```
 
-창고가 박제장이 아니게 된다.
+The warehouse stops being a museum.
 
-**셋째, 문서 상태를 붙인다.**
+**Third: every document gets a status.**
 
 ```
-active       → 먹어도 됨
-outdated     → 상했을 수 있음
-deprecated   → 폐기
-needs_review → 다시 확인
-conflicting  → 서로 충돌
+active       → safe to use
+outdated     → might be stale
+deprecated   → throw away
+needs_review → check again
+conflicting  → sources disagree
 ```
 
-LLM은 오래된 정보를 그럴듯하게 말할 수 있다.
+LLMs can confidently repeat outdated information.
 
-정보 자체보다 중요한 게 있다.
-
-그 정보의 상태다.
+What matters more than the information itself is its state.
 
 ---
 
-## 글 쓰는 방식도 바뀌었다
+## Writing changed too
 
-이 구조가 생기기 전에는 이렇게 했다.
-
-```
-검색한다
-읽는다
-복붙한다
-요약한다
-글을 쓴다
-다음 글: 처음부터 다시 검색한다
-```
-
-매번 새로 시작이었다.
-
-지식이 안 쌓였다.
-
-지금은 다르다.
+Before this system:
 
 ```
-리서치 목표를 준다
-Research Agent가 자료를 조사한다
-Crawl4AI가 실제 웹페이지를 읽는다
-Source Note가 Wiki에 쌓인다
-충돌이 표시된다
-그걸 바탕으로 글을 쓴다
+Search the web
+Read stuff
+Copy-paste
+Summarize
+Write the post
+Next post: search from scratch again
 ```
 
-이 글을 위해 조사한 세 사이트가 지금 내 Wiki에 있다.
+Every post started from zero.
 
-태그됐다. 출처 표시됐다. 신뢰도 붙었다.
+Nothing accumulated.
 
-다음 글을 쓸 때 다시 검색 안 한다.
+Now:
 
-Wiki에서 꺼낸다.
+```
+Give the Research Agent a topic
+Agent investigates with Crawl4AI
+Source Notes land in the Wiki
+Conflicts get flagged
+Write the post from the Wiki
+```
 
-콘텐츠 제작이 지식 축적이 된다.
+The three sites I researched for this post are in my Wiki now.
+
+Tagged. Sourced. Trust-weighted.
+
+Next time I write about vibe coding workflows, I don't search again.
+
+I open the Wiki.
+
+Content creation becomes knowledge accumulation.
 
 ---
 
-## Crawl4AI가 주인공이 아닌 이유
+## Why Crawl4AI isn't the main character
 
-Crawl4AI는 웹페이지를 읽고 Markdown으로 바꾸는 도구다.
+Crawl4AI reads web pages and converts them to Markdown.
 
-기술적으로는 크롤러다.
+Technically it's a crawler.
 
-하지만 내 시스템 안에서는 그냥 크롤러로 부르면 안 된다.
+But in my system, calling it just a crawler misses the point.
 
-터미널에 혼자 앉아 있는 Crawl4AI는 그냥 손이다.
+Crawl4AI sitting alone in a terminal is just a hand.
 
-URL을 던져줘야 움직이는 손.
+A hand that only moves when I throw it a URL.
 
-내가 던지면 내가 병목이다.
+If I'm the one throwing, I'm the bottleneck.
 
-내가 지치면 Wiki가 멈춘다.
+When I get tired, the Wiki stops.
 
-Crawl4AI를 Research Agent에게 쥐여주면 달라진다.
+Give that hand to a Research Agent and it changes.
 
-같은 손이다.
+Same hand.
 
-하지만 이제 이 손은
+But now it finds material,
 
-자료를 찾고,
+reads it,
 
-읽고,
+labels it,
 
-라벨을 붙이고,
+checks it against the warehouse,
 
-기존 창고 내용과 부딪히는지 확인하고,
+flags conflicts,
 
-충돌이 있으면 표시하고,
+and files it.
 
-창고에 넣는다.
+**It's not a difference in tools.**
 
-**도구의 차이가 아니다.**
-
-**도구를 어디에 붙이느냐의 차이다.**
+**It's a difference in where you attach the tool.**
 
 ---
 
-Research Agent에게 이렇게 말한다.
+This is what I tell the Research Agent now.
 
 ```
-검색하지 말고,
-조사해.
+Don't search.
+Investigate.
 
-요약하지 말고,
-Wiki에 입고해.
+Don't summarize.
+File to Wiki.
 
-대답하지 말고,
-근거를 남겨.
+Don't answer.
+Leave evidence.
 ```
 
-처음엔 도서관을 만들었다고 생각했다.
+At first I thought I'd built a library.
 
-근데 아니었다.
+I hadn't.
 
-그건 비어 있는 창고였다.
+It was an empty warehouse.
 
-이제야 정찰병이 생겼고,
+Now there's a scout.
 
-그 정찰병 손에 도구가 생겼고,
+The scout has a tool in hand.
 
-창고에는 라벨 붙은 식량이 들어오기 시작했다.
+Labeled supplies are starting to come in.
 
-아직 마을은 아니다.
+It's not a town yet.
 
-하지만 적어도,
+But at least,
 
-굶지는 않는다.
+it's not starving.
