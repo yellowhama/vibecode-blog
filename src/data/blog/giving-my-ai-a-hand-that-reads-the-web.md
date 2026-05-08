@@ -355,6 +355,34 @@ Most knowledge systems don't do this. They pile up agreeable facts. The Wiki gro
 
 I'd rather have a small Wiki with conflict tags than a big Wiki full of comfortable lies.
 
+And here's the thing I didn't expect.
+
+That conflict tag didn't just sit there. It pulled me into the next problem.
+
+Willison says vibe coding is for throwaway projects. I'm using it for production. So I had to ask: why does he say that? His reasons are specific — security, maintainability, code you can't explain to someone else. Those are real concerns. I had to actually look at my own system and ask: do I have answers for these?
+
+Some I did. QA loops. SSOT. Test suites. Some I didn't. And that gap became the next thing to investigate.
+
+One conflict tag led to a research question. The research question led to a gap in my system. The gap led to a new build. The build will lead to the next post.
+
+That's the loop I didn't design but got for free:
+
+```
+Write a post
+→ Research turns up a conflict
+→ The conflict demands investigation
+→ The investigation reveals a gap
+→ Filling the gap creates new experience
+→ The experience becomes the next post
+→ Repeat
+```
+
+The Wiki doesn't just store information. It generates questions. The questions generate work. The work generates posts. The posts generate research. It's a flywheel that runs on conflicts, not on agreement.
+
+I thought the value of a Wiki was having answers in one place. I was wrong.
+
+The value is that the answers argue with each other. And each argument gives me something to do next.
+
 ---
 
 ## Three more survival rules
@@ -532,6 +560,8 @@ Labeled supplies are starting to come in.
 
 It's not a town yet.
 
-But at least,
+But it's not starving anymore.
 
-it's not starving.
+And the supplies are starting to argue with each other.
+
+That's when I knew the system was working.
