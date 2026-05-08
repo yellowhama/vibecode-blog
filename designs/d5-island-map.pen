@@ -1,0 +1,102 @@
+{
+  "version": "2.8",
+  "variables": {
+    "ink": {"type": "color", "value": "#2D1D19"},
+    "paper": {"type": "color", "value": "#FDFCF0"},
+    "paper-warm": {"type": "color", "value": "#F4E5C2"},
+    "rule-line": {"type": "color", "value": "#D8CFB8"},
+    "yellow": {"type": "color", "value": "#FFD166"},
+    "red-stamp": {"type": "color", "value": "#E8645A"},
+    "green-camp": {"type": "color", "value": "#A8D5BA"},
+    "ink-faded": {"type": "color", "value": "#6B5C58"}
+  },
+  "children": [
+    {
+      "type": "frame", "id": "39gCL", "name": "v2/05-island-map",
+      "x": 0, "y": 0, "width": 1200, "height": 630,
+      "fill": "$paper-warm", "layout": "none",
+      "children": [
+        {"type": "text", "x": 60, "y": 50,
+         "content": "FIELD JOURNAL — THE ISLAND OF VIBE CODING",
+         "fill": "$ink-faded", "fontFamily": "IBM Plex Mono",
+         "fontSize": 13, "fontWeight": "500", "letterSpacing": 2},
+        {"type": "text", "x": 800, "y": 50,
+         "content": "lat. unknown.  long. unknown.",
+         "fill": "$ink-faded", "fontFamily": "IBM Plex Mono",
+         "fontSize": 13, "fontWeight": "500", "letterSpacing": 2},
+        {"type": "line", "x": 60, "y": 90, "width": 1080, "height": 1,
+         "stroke": {"thickness": 1, "fill": "$rule-line"}},
+        {
+          "type": "frame", "id": "MEJBH",
+          "x": 60, "y": 110, "width": 1080, "height": 460,
+          "fill": {"type": "image", "url": "./images/generated-1778253698341.png", "mode": "fill", "enabled": true},
+          "stroke": {"thickness": 4, "fill": "$ink", "cap": "round", "join": "round"},
+          "effect": {"type": "shadow", "shadowType": "outer", "color": "$ink", "offset": {"x": 6, "y": 6}},
+          "layout": "none",
+          "children": [
+            {"type": "frame", "x": 200, "y": 130, "width": 200, "height": 70,
+             "rotation": -2, "fill": "$yellow",
+             "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+             "layout": "vertical", "padding": 8, "gap": 2,
+             "alignItems": "center", "justifyContent": "center",
+             "children": [
+               {"type": "text", "content": "△ CAMP", "fill": "$ink",
+                "fontFamily": "IBM Plex Mono", "fontSize": 14, "fontWeight": "700", "letterSpacing": 2},
+               {"type": "text", "content": "I live here.", "fill": "$ink",
+                "fontFamily": "Playfair Display", "fontSize": 14, "fontStyle": "italic"}
+             ]},
+            {"type": "frame", "x": 460, "y": 100, "width": 220, "height": 70,
+             "rotation": 1.5, "fill": "$green-camp",
+             "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+             "layout": "vertical", "padding": 8, "gap": 2,
+             "alignItems": "center", "justifyContent": "center",
+             "children": [
+               {"type": "text", "content": "□ WIKI WAREHOUSE", "fill": "$ink",
+                "fontFamily": "IBM Plex Mono", "fontSize": 14, "fontWeight": "700", "letterSpacing": 2},
+               {"type": "text", "content": "Source Notes.", "fill": "$ink",
+                "fontFamily": "Playfair Display", "fontSize": 14, "fontStyle": "italic"}
+             ]},
+            {"type": "frame", "x": 750, "y": 170, "width": 220, "height": 70,
+             "rotation": -1.5, "fill": "$red-stamp",
+             "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+             "layout": "vertical", "padding": 8, "gap": 2,
+             "alignItems": "center", "justifyContent": "center",
+             "children": [
+               {"type": "text", "content": "○ SCOUT OUTPOST", "fill": "$paper",
+                "fontFamily": "IBM Plex Mono", "fontSize": 14, "fontWeight": "700", "letterSpacing": 2},
+               {"type": "text", "content": "Research Agent.", "fill": "$paper",
+                "fontFamily": "Playfair Display", "fontSize": 14, "fontStyle": "italic"}
+             ]},
+            {"type": "frame", "x": 360, "y": 290, "width": 220, "height": 70,
+             "rotation": 0.8, "fill": "$paper",
+             "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+             "layout": "vertical", "padding": 8, "gap": 2,
+             "alignItems": "center", "justifyContent": "center",
+             "children": [
+               {"type": "text", "content": "✕ CRUDE TOOLS", "fill": "$ink",
+                "fontFamily": "IBM Plex Mono", "fontSize": 14, "fontWeight": "700", "letterSpacing": 2},
+               {"type": "text", "content": "Crawl4AI · MCP.", "fill": "$ink",
+                "fontFamily": "Playfair Display", "fontSize": 14, "fontStyle": "italic"}
+             ]},
+            {"type": "text", "x": 880, "y": 360,
+             "content": "✕", "fill": "$red-stamp",
+             "fontFamily": "Playfair Display", "fontSize": 36, "fontWeight": "700"},
+            {"type": "text", "x": 770, "y": 410,
+             "content": "I washed up here.", "fill": "$ink",
+             "fontFamily": "Playfair Display", "fontSize": 16, "fontStyle": "italic"},
+            {"type": "path", "x": 470, "y": 250, "width": 430, "height": 130,
+             "geometry": "M0 0q100-10 200 30 100 30 230 100",
+             "fill": "transparent",
+             "stroke": {"thickness": 2, "fill": "$ink-faded", "cap": "round", "join": "round"}}
+          ]
+        },
+        {"type": "line", "x": 60, "y": 590, "width": 1080, "height": 1,
+         "stroke": {"thickness": 1, "fill": "$rule-line"}},
+        {"type": "text", "x": 60, "y": 605,
+         "content": "vibecode.town  ·  field notes from a vibe coding castaway",
+         "fill": "$ink-faded", "fontFamily": "IBM Plex Mono",
+         "fontSize": 12, "fontWeight": "500", "letterSpacing": 2}
+      ]
+    }
+  ]
+}

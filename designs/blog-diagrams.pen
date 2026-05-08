@@ -1,0 +1,15 @@
+{
+  "version": "2.8",
+  "variables": {
+    "ink": {"type": "color", "value": "#2D1D19"},
+    "paper": {"type": "color", "value": "#FDFCF0"},
+    "paper-warm": {"type": "color", "value": "#F4E5C2"},
+    "rule-line": {"type": "color", "value": "#D8CFB8"},
+    "yellow": {"type": "color", "value": "#FFD166"},
+    "red-stamp": {"type": "color", "value": "#E8645A"},
+    "green-camp": {"type": "color", "value": "#A8D5BA"},
+    "ocean": {"type": "color", "value": "#A8D5E8"},
+    "ink-faded": {"type": "color", "value": "#6B5C58"}
+  },
+  "children": []
+}

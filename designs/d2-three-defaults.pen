@@ -1,0 +1,163 @@
+{
+  "version": "2.8",
+  "variables": {
+    "ink": {"type": "color", "value": "#2D1D19"},
+    "paper": {"type": "color", "value": "#FDFCF0"},
+    "rule-line": {"type": "color", "value": "#D8CFB8"},
+    "red-stamp": {"type": "color", "value": "#E8645A"},
+    "green-camp": {"type": "color", "value": "#A8D5BA"},
+    "ink-faded": {"type": "color", "value": "#6B5C58"}
+  },
+  "children": [
+    {
+      "type": "frame", "id": "kCBNn", "name": "v2/02-three-defaults",
+      "x": 0, "y": 0, "width": 1200, "height": 630,
+      "fill": "$paper", "layout": "none",
+      "children": [
+        {
+          "type": "frame", "id": "mZlUf",
+          "x": 60, "y": 50, "width": 1080, "height": 40,
+          "justifyContent": "space_between", "alignItems": "center",
+          "children": [
+            {"type": "text", "content": "FIELD JOURNAL — TOKEN BURN AUDIT",
+             "fill": "$ink-faded", "fontFamily": "IBM Plex Mono",
+             "fontSize": 13, "fontWeight": "500", "letterSpacing": 2},
+            {"type": "text", "content": "3 defaults.",
+             "fill": "$ink-faded", "fontFamily": "IBM Plex Mono",
+             "fontSize": 13, "fontWeight": "500", "letterSpacing": 2}
+          ]
+        },
+        {"type": "line", "x": 60, "y": 105, "width": 1080, "height": 1,
+         "stroke": {"thickness": 1, "fill": "$rule-line"}},
+        {"type": "text", "x": 60, "y": 130,
+         "content": "Three defaults that were burning my tokens.",
+         "fill": "$ink", "fontFamily": "Playfair Display", "fontSize": 36},
+        {"type": "text", "x": 60, "y": 200,
+         "content": "BEFORE   →   AFTER",
+         "fill": "$ink-faded", "fontFamily": "IBM Plex Mono",
+         "fontSize": 12, "fontWeight": "500", "letterSpacing": 3},
+        {
+          "type": "frame", "id": "Q4Ssz",
+          "x": 60, "y": 230, "width": 1080, "height": 280,
+          "layout": "vertical", "gap": 20,
+          "children": [
+            {
+              "type": "frame", "name": "row1",
+              "width": "fill_container", "height": 70,
+              "gap": 24, "alignItems": "center",
+              "children": [
+                {"type": "text", "content": "PROMPT", "fill": "$ink",
+                 "fontFamily": "IBM Plex Mono", "fontSize": 16, "fontWeight": "700",
+                 "letterSpacing": 2, "textGrowth": "fixed-width", "width": 140},
+                {"type": "frame", "rotation": -0.7, "width": 360, "height": 50,
+                 "fill": "$red-stamp",
+                 "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+                 "effect": {"type": "shadow", "shadowType": "outer", "color": "$ink", "offset": {"x": 3, "y": 3}},
+                 "justifyContent": "center", "alignItems": "center",
+                 "children": [{"type": "text", "content": "670", "fill": "$paper",
+                               "fontFamily": "IBM Plex Mono", "fontSize": 22, "fontWeight": "700", "letterSpacing": 2}]},
+                {"type": "frame", "width": 120, "height": 40, "layout": "none", "fill": "transparent",
+                 "children": [
+                   {"type": "path", "x": 0, "y": 18, "width": 100, "height": 6,
+                    "geometry": "M0 4q25-4 50 0t50 0", "fill": "transparent",
+                    "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"}},
+                   {"type": "path", "x": 88, "y": 8, "width": 24, "height": 24,
+                    "geometry": "M0 0l16 12-16 12", "fill": "transparent",
+                    "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"}}
+                 ]},
+                {"type": "frame", "rotation": 0.7, "width": 100, "height": 50,
+                 "fill": "$green-camp",
+                 "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+                 "effect": {"type": "shadow", "shadowType": "outer", "color": "$ink", "offset": {"x": 3, "y": 3}},
+                 "justifyContent": "center", "alignItems": "center",
+                 "children": [{"type": "text", "content": "174", "fill": "$ink",
+                               "fontFamily": "IBM Plex Mono", "fontSize": 22, "fontWeight": "700", "letterSpacing": 2}]},
+                {"type": "text", "content": "−74%", "fill": "$ink",
+                 "fontFamily": "Playfair Display", "fontSize": 28, "fontWeight": "700",
+                 "textAlign": "right", "textGrowth": "fixed-width", "width": 120}
+              ]
+            },
+            {
+              "type": "frame", "name": "row2",
+              "width": "fill_container", "height": 70,
+              "gap": 24, "alignItems": "center",
+              "children": [
+                {"type": "text", "content": "SEARCH", "fill": "$ink",
+                 "fontFamily": "IBM Plex Mono", "fontSize": 16, "fontWeight": "700",
+                 "letterSpacing": 2, "textGrowth": "fixed-width", "width": 140},
+                {"type": "frame", "rotation": 0.5, "width": 360, "height": 50,
+                 "fill": "$red-stamp",
+                 "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+                 "effect": {"type": "shadow", "shadowType": "outer", "color": "$ink", "offset": {"x": 3, "y": 3}},
+                 "justifyContent": "center", "alignItems": "center",
+                 "children": [{"type": "text", "content": "75", "fill": "$paper",
+                               "fontFamily": "IBM Plex Mono", "fontSize": 22, "fontWeight": "700", "letterSpacing": 2}]},
+                {"type": "frame", "width": 120, "height": 40, "layout": "none", "fill": "transparent",
+                 "children": [
+                   {"type": "path", "x": 0, "y": 18, "width": 100, "height": 6,
+                    "geometry": "M0 4q25-4 50 0t50 0", "fill": "transparent",
+                    "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"}},
+                   {"type": "path", "x": 88, "y": 8, "width": 24, "height": 24,
+                    "geometry": "M0 0l16 12-16 12", "fill": "transparent",
+                    "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"}}
+                 ]},
+                {"type": "frame", "rotation": -1, "width": 30, "height": 50,
+                 "fill": "$green-camp",
+                 "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+                 "effect": {"type": "shadow", "shadowType": "outer", "color": "$ink", "offset": {"x": 3, "y": 3}},
+                 "justifyContent": "center", "alignItems": "center",
+                 "children": [{"type": "text", "content": "3", "fill": "$ink",
+                               "fontFamily": "IBM Plex Mono", "fontSize": 16, "fontWeight": "700"}]},
+                {"type": "text", "content": "−96%", "fill": "$ink",
+                 "fontFamily": "Playfair Display", "fontSize": 28, "fontWeight": "700",
+                 "textAlign": "right", "textGrowth": "fixed-width", "width": 120}
+              ]
+            },
+            {
+              "type": "frame", "name": "row3",
+              "width": "fill_container", "height": 70,
+              "gap": 24, "alignItems": "center",
+              "children": [
+                {"type": "text", "content": "HEARTBEAT", "fill": "$ink",
+                 "fontFamily": "IBM Plex Mono", "fontSize": 16, "fontWeight": "700",
+                 "letterSpacing": 2, "textGrowth": "fixed-width", "width": 140},
+                {"type": "frame", "rotation": -0.4, "width": 200, "height": 50,
+                 "fill": "$red-stamp",
+                 "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+                 "effect": {"type": "shadow", "shadowType": "outer", "color": "$ink", "offset": {"x": 3, "y": 3}},
+                 "justifyContent": "center", "alignItems": "center",
+                 "children": [{"type": "text", "content": "12", "fill": "$paper",
+                               "fontFamily": "IBM Plex Mono", "fontSize": 22, "fontWeight": "700", "letterSpacing": 2}]},
+                {"type": "frame", "width": 120, "height": 40, "layout": "none", "fill": "transparent",
+                 "children": [
+                   {"type": "path", "x": 0, "y": 18, "width": 100, "height": 6,
+                    "geometry": "M0 4q25-4 50 0t50 0", "fill": "transparent",
+                    "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"}},
+                   {"type": "path", "x": 88, "y": 8, "width": 24, "height": 24,
+                    "geometry": "M0 0l16 12-16 12", "fill": "transparent",
+                    "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"}}
+                 ]},
+                {"type": "frame", "rotation": 1.2, "width": 40, "height": 50,
+                 "fill": "$green-camp",
+                 "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+                 "effect": {"type": "shadow", "shadowType": "outer", "color": "$ink", "offset": {"x": 3, "y": 3}},
+                 "justifyContent": "center", "alignItems": "center",
+                 "children": [{"type": "text", "content": "2", "fill": "$ink",
+                               "fontFamily": "IBM Plex Mono", "fontSize": 18, "fontWeight": "700"}]},
+                {"type": "text", "content": "−83%", "fill": "$ink",
+                 "fontFamily": "Playfair Display", "fontSize": 28, "fontWeight": "700",
+                 "textAlign": "right", "textGrowth": "fixed-width", "width": 120}
+              ]
+            }
+          ]
+        },
+        {"type": "line", "x": 60, "y": 555, "width": 1080, "height": 1,
+         "stroke": {"thickness": 1, "fill": "$rule-line"}},
+        {"type": "text", "x": 60, "y": 575,
+         "content": "vibecode.town  ·  field notes from a vibe coding castaway",
+         "fill": "$ink-faded", "fontFamily": "IBM Plex Mono",
+         "fontSize": 12, "fontWeight": "500", "letterSpacing": 2}
+      ]
+    }
+  ]
+}

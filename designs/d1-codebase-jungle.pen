@@ -1,0 +1,177 @@
+{
+  "version": "2.8",
+  "variables": {
+    "ink": {"type": "color", "value": "#2D1D19"},
+    "paper": {"type": "color", "value": "#FDFCF0"},
+    "paper-warm": {"type": "color", "value": "#F4E5C2"},
+    "rule-line": {"type": "color", "value": "#D8CFB8"},
+    "yellow": {"type": "color", "value": "#FFD166"},
+    "red-stamp": {"type": "color", "value": "#E8645A"},
+    "green-camp": {"type": "color", "value": "#A8D5BA"},
+    "ocean": {"type": "color", "value": "#A8D5E8"},
+    "ink-faded": {"type": "color", "value": "#6B5C58"}
+  },
+  "children": [
+    {
+      "type": "frame",
+      "id": "KcIl4",
+      "name": "v2/01-codebase-jungle",
+      "x": 0, "y": 0,
+      "width": 1200, "height": 630,
+      "fill": "$paper",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "qs9Pl", "name": "d1Header",
+          "x": 60, "y": 50, "width": 1080, "height": 40,
+          "justifyContent": "space_between", "alignItems": "center",
+          "children": [
+            {"type": "text", "id": "mVvcK",
+             "content": "FIELD JOURNAL — Day 1 to Month 6",
+             "fill": "$ink-faded", "fontFamily": "IBM Plex Mono",
+             "fontSize": 13, "fontWeight": "500", "letterSpacing": 2},
+            {"type": "text", "id": "Dl7r",
+             "content": "10,847 lines.",
+             "fill": "$ink-faded", "fontFamily": "IBM Plex Mono",
+             "fontSize": 13, "fontWeight": "500", "letterSpacing": 2}
+          ]
+        },
+        {
+          "type": "line", "id": "VWrsN",
+          "x": 60, "y": 105, "width": 1080, "height": 1,
+          "stroke": {"thickness": 1, "fill": "$rule-line"}
+        },
+        {
+          "type": "text", "id": "LIcBU",
+          "x": 60, "y": 130,
+          "content": "From camp to jungle to clearing.",
+          "fill": "$ink", "fontFamily": "Playfair Display",
+          "fontSize": 38
+        },
+        {
+          "type": "frame",
+          "id": "XBplT", "name": "d1Stages",
+          "x": 60, "y": 210, "width": 1080, "height": 320,
+          "gap": 30, "justifyContent": "space_between", "alignItems": "center",
+          "children": [
+            {
+              "type": "frame", "id": "n6Ktm", "name": "stage1",
+              "rotation": -1.5, "width": 300, "height": 300,
+              "layout": "vertical", "gap": 14, "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame", "id": "aDj9K",
+                  "width": 280, "height": 200,
+                  "fill": {"type": "image", "url": "./images/generated-1778252868274.png", "mode": "fill", "enabled": true},
+                  "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+                  "effect": {"type": "shadow", "shadowType": "outer", "color": "$ink", "offset": {"x": 4, "y": 4}}
+                },
+                {"type": "text", "id": "oZCD0",
+                 "content": "Day 1", "fill": "$ink",
+                 "fontFamily": "Playfair Display", "fontSize": 26, "fontWeight": "700"},
+                {"type": "text", "id": "c0LGE",
+                 "content": "200 LINES", "fill": "$ink-faded",
+                 "fontFamily": "IBM Plex Mono", "fontSize": 13, "fontWeight": "500", "letterSpacing": 2}
+              ]
+            },
+            {
+              "type": "frame", "id": "arr1Wrap",
+              "width": 120, "height": 40, "layout": "none",
+              "fill": "transparent",
+              "children": [
+                {
+                  "type": "path", "id": "arr1Shaft",
+                  "x": 0, "y": 18, "width": 100, "height": 6,
+                  "geometry": "M0 4q25-4 50 0t50 0",
+                  "fill": "transparent",
+                  "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"}
+                },
+                {
+                  "type": "path", "id": "arr1Head",
+                  "x": 88, "y": 8, "width": 24, "height": 24,
+                  "geometry": "M0 0l16 12-16 12",
+                  "fill": "transparent",
+                  "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"}
+                }
+              ]
+            },
+            {
+              "type": "frame", "id": "RZNQt", "name": "stage2",
+              "rotation": 1.2, "width": 300, "height": 300,
+              "layout": "vertical", "gap": 14, "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame", "id": "o9SwO",
+                  "width": 280, "height": 200,
+                  "fill": {"type": "image", "url": "./images/generated-1778252921519.png", "mode": "fill", "enabled": true},
+                  "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+                  "effect": {"type": "shadow", "shadowType": "outer", "color": "$ink", "offset": {"x": 4, "y": 4}}
+                },
+                {"type": "text", "id": "ZoEaC",
+                 "content": "Month 6", "fill": "$ink",
+                 "fontFamily": "Playfair Display", "fontSize": 26, "fontWeight": "700"},
+                {"type": "text", "id": "JPF8C",
+                 "content": "10,847 LINES — TANGLED", "fill": "$red-stamp",
+                 "fontFamily": "IBM Plex Mono", "fontSize": 13, "fontWeight": "500", "letterSpacing": 2}
+              ]
+            },
+            {
+              "type": "frame", "id": "arr2Wrap",
+              "width": 120, "height": 40, "layout": "none",
+              "fill": "transparent",
+              "children": [
+                {
+                  "type": "path", "id": "arr2Shaft",
+                  "x": 0, "y": 18, "width": 100, "height": 6,
+                  "geometry": "M0 4q25-4 50 0t50 0",
+                  "fill": "transparent",
+                  "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"}
+                },
+                {
+                  "type": "path", "id": "arr2Head",
+                  "x": 88, "y": 8, "width": 24, "height": 24,
+                  "geometry": "M0 0l16 12-16 12",
+                  "fill": "transparent",
+                  "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"}
+                }
+              ]
+            },
+            {
+              "type": "frame", "id": "rgHX8", "name": "stage3",
+              "rotation": -0.8, "width": 300, "height": 300,
+              "layout": "vertical", "gap": 14, "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame", "id": "Zhb",
+                  "width": 280, "height": 200,
+                  "fill": {"type": "image", "url": "./images/generated-1778252950197.png", "mode": "fill", "enabled": true},
+                  "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+                  "effect": {"type": "shadow", "shadowType": "outer", "color": "$ink", "offset": {"x": 4, "y": 4}}
+                },
+                {"type": "text", "id": "G8gkl",
+                 "content": "After cleanup", "fill": "$ink",
+                 "fontFamily": "Playfair Display", "fontSize": 26, "fontWeight": "700"},
+                {"type": "text", "id": "ZbhK5",
+                 "content": "CLEAR CAMP", "fill": "$ink-faded",
+                 "fontFamily": "IBM Plex Mono", "fontSize": 13, "fontWeight": "500", "letterSpacing": 2}
+              ]
+            }
+          ]
+        },
+        {
+          "type": "line", "id": "kH5KN",
+          "x": 60, "y": 555, "width": 1080, "height": 1,
+          "stroke": {"thickness": 1, "fill": "$rule-line"}
+        },
+        {
+          "type": "text", "id": "xTJj",
+          "x": 60, "y": 575,
+          "content": "vibecode.town  ·  field notes from a vibe coding castaway",
+          "fill": "$ink-faded", "fontFamily": "IBM Plex Mono",
+          "fontSize": 12, "fontWeight": "500", "letterSpacing": 2
+        }
+      ]
+    }
+  ]
+}

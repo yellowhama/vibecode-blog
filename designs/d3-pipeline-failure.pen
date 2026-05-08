@@ -1,0 +1,124 @@
+{
+  "version": "2.8",
+  "variables": {
+    "ink": {"type": "color", "value": "#2D1D19"},
+    "paper": {"type": "color", "value": "#FDFCF0"},
+    "rule-line": {"type": "color", "value": "#D8CFB8"},
+    "red-stamp": {"type": "color", "value": "#E8645A"},
+    "green-camp": {"type": "color", "value": "#A8D5BA"},
+    "ink-faded": {"type": "color", "value": "#6B5C58"}
+  },
+  "children": [
+    {
+      "type": "frame", "id": "WKzfH", "name": "v2/03-pipeline-failure",
+      "x": 0, "y": 0, "width": 1200, "height": 630,
+      "fill": "$paper", "layout": "none",
+      "children": [
+        {"type": "text", "x": 60, "y": 60,
+         "content": "FIELD JOURNAL — 6-AGENT POSTMORTEM",
+         "fill": "$ink-faded", "fontFamily": "IBM Plex Mono",
+         "fontSize": 13, "fontWeight": "500", "letterSpacing": 2},
+        {"type": "text", "x": 760, "y": 60,
+         "content": "score: 8.5/10. result: garbage.",
+         "fill": "$ink-faded", "fontFamily": "IBM Plex Mono",
+         "fontSize": 13, "fontWeight": "500", "letterSpacing": 2},
+        {"type": "line", "x": 60, "y": 105, "width": 1080, "height": 1,
+         "stroke": {"thickness": 1, "fill": "$rule-line"}},
+        {"type": "text", "x": 60, "y": 130,
+         "content": "The pipeline that lied to me.",
+         "fill": "$ink", "fontFamily": "Playfair Display", "fontSize": 38},
+        {
+          "type": "frame", "id": "GlYZW",
+          "x": 60, "y": 220, "width": 1080, "height": 200,
+          "gap": 20, "justifyContent": "space_between", "alignItems": "center",
+          "children": [
+            {"type": "frame", "rotation": -1.5, "width": 240, "height": 160,
+             "fill": "$paper",
+             "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+             "effect": {"type": "shadow", "shadowType": "outer", "color": "$ink", "offset": {"x": 4, "y": 4}},
+             "layout": "vertical", "padding": 18, "gap": 8,
+             "alignItems": "center", "justifyContent": "center",
+             "children": [
+               {"type": "text", "content": "01", "fill": "$ink-faded",
+                "fontFamily": "IBM Plex Mono", "fontSize": 12, "fontWeight": "500", "letterSpacing": 2},
+               {"type": "text", "content": "Strategist", "fill": "$ink",
+                "fontFamily": "Playfair Display", "fontSize": 24, "fontWeight": "700"},
+               {"type": "text", "content": "OUTLINE", "fill": "$ink-faded",
+                "fontFamily": "IBM Plex Mono", "fontSize": 12, "fontWeight": "500", "letterSpacing": 2}
+             ]},
+            {"type": "frame", "width": 120, "height": 40, "layout": "none", "fill": "transparent",
+             "children": [
+               {"type": "path", "x": 0, "y": 18, "width": 100, "height": 6,
+                "geometry": "M0 4q25-4 50 0t50 0", "fill": "transparent",
+                "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"}},
+               {"type": "path", "x": 88, "y": 8, "width": 24, "height": 24,
+                "geometry": "M0 0l16 12-16 12", "fill": "transparent",
+                "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"}}
+             ]},
+            {"type": "frame", "rotation": 1.2, "width": 240, "height": 160,
+             "fill": "$paper",
+             "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+             "effect": {"type": "shadow", "shadowType": "outer", "color": "$ink", "offset": {"x": 4, "y": 4}},
+             "layout": "vertical", "padding": 18, "gap": 8,
+             "alignItems": "center", "justifyContent": "center",
+             "children": [
+               {"type": "text", "content": "02", "fill": "$ink-faded",
+                "fontFamily": "IBM Plex Mono", "fontSize": 12, "fontWeight": "500", "letterSpacing": 2},
+               {"type": "text", "content": "Creator", "fill": "$ink",
+                "fontFamily": "Playfair Display", "fontSize": 24, "fontWeight": "700"},
+               {"type": "text", "content": "DRAFT", "fill": "$ink-faded",
+                "fontFamily": "IBM Plex Mono", "fontSize": 12, "fontWeight": "500", "letterSpacing": 2}
+             ]},
+            {"type": "frame", "width": 120, "height": 40, "layout": "none", "fill": "transparent",
+             "children": [
+               {"type": "path", "x": 0, "y": 18, "width": 100, "height": 6,
+                "geometry": "M0 4q25-4 50 0t50 0", "fill": "transparent",
+                "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"}},
+               {"type": "path", "x": 88, "y": 8, "width": 24, "height": 24,
+                "geometry": "M0 0l16 12-16 12", "fill": "transparent",
+                "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"}}
+             ]},
+            {"type": "frame", "rotation": -0.8, "width": 240, "height": 160,
+             "fill": "$green-camp",
+             "stroke": {"thickness": 3, "fill": "$ink", "cap": "round", "join": "round"},
+             "effect": {"type": "shadow", "shadowType": "outer", "color": "$ink", "offset": {"x": 4, "y": 4}},
+             "layout": "vertical", "padding": 18, "gap": 8,
+             "alignItems": "center", "justifyContent": "center",
+             "children": [
+               {"type": "text", "content": "03", "fill": "$ink-faded",
+                "fontFamily": "IBM Plex Mono", "fontSize": 12, "fontWeight": "500", "letterSpacing": 2},
+               {"type": "text", "content": "Editor", "fill": "$ink",
+                "fontFamily": "Playfair Display", "fontSize": 24, "fontWeight": "700"},
+               {"type": "text", "content": "✓  8.5 / 10", "fill": "$ink",
+                "fontFamily": "IBM Plex Mono", "fontSize": 14, "fontWeight": "700", "letterSpacing": 1}
+             ]}
+          ]
+        },
+        {
+          "type": "frame", "id": "stampInline",
+          "x": 330, "y": 380, "width": 540, "height": 90,
+          "fill": "transparent",
+          "stroke": {"thickness": 5, "fill": "$red-stamp", "cap": "round", "join": "round"},
+          "rotation": -6, "opacity": 0.9,
+          "padding": 20, "alignItems": "center", "justifyContent": "center",
+          "children": [
+            {"type": "text", "content": "DO NOT PUBLISH",
+             "fill": "$red-stamp", "fontFamily": "IBM Plex Mono",
+             "fontSize": 38, "fontWeight": "700", "letterSpacing": 4}
+          ]
+        },
+        {"type": "text", "x": 240, "y": 510,
+         "content": "8.5/10 from the AI editor.\nA human read it. It was garbage.",
+         "fill": "$ink", "fontFamily": "Playfair Display",
+         "fontSize": 18, "fontStyle": "italic", "lineHeight": 1.4,
+         "textAlign": "center", "textGrowth": "fixed-width", "width": 720},
+        {"type": "line", "x": 60, "y": 575, "width": 1080, "height": 1,
+         "stroke": {"thickness": 1, "fill": "$rule-line"}},
+        {"type": "text", "x": 60, "y": 595,
+         "content": "vibecode.town  ·  field notes from a vibe coding castaway",
+         "fill": "$ink-faded", "fontFamily": "IBM Plex Mono",
+         "fontSize": 12, "fontWeight": "500", "letterSpacing": 2}
+      ]
+    }
+  ]
+}
