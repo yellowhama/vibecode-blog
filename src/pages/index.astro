@@ -20,25 +20,31 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
   <Header />
 
   <!-- Hero — full-bleed island map -->
-  <section class="hero">
-    <div class="hero-meta">
-      <span class="hero-meta-label">FIELD JOURNAL &middot; log no. 04 &middot; 2026.05</span>
-      <span class="hero-meta-rule"></span>
-      <span class="hero-meta-coords">vibe coding castaway</span>
+    <header class="page-header border-b border-border py-12">
+    <div class="app-layout py-12">
+      <div class="flex items-center gap-4 mb-8 text-[0.7rem] tracking-[0.2em] font-mono text-text-muted uppercase">
+        <span>FIELD JOURNAL &middot; log no. 04</span>
+        <span class="h-px w-8 bg-border-strong"></span>
+        <span>2026.05</span>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-serif italic mb-6 leading-tight max-w-4xl text-foreground">
+        I started vibe coding six months ago. The project hit <em class="not-italic text-accent">10,847 lines</em> I couldn't explain.
+      </h1>
+      <p class="text-lg md:text-xl text-text-secondary font-serif leading-relaxed max-w-2xl mb-8">
+        These are the field notes of a castaway finding order in the jungle of AI-generated code.
+      </p>
+      <div class="flex gap-6">
+        <a href="/posts/" class="font-mono text-xs tracking-widest uppercase border-b-2 border-foreground pb-1 hover:text-accent hover:border-accent transition-colors">
+          Read the Journal &rarr;
+        </a>
+        <a href="/about/" class="font-mono text-xs tracking-widest uppercase text-text-muted hover:text-foreground transition-colors">
+          About the project
+        </a>
+      </div>
     </div>
-    <h1 class="hero-title">
-      I started vibe coding six months ago. The project hit <em>10,847 lines</em> I couldn't explain.
-    </h1>
-    <p class="hero-tagline">
-      These are the field notes.
-    </p>
-    <a href="/posts/" class="hero-cta">Read the field journal →</a>
-    <figure class="hero-figure">
-      <img src="/images/home/hero-desk.png" alt="Writer's desk - field journal" />
-    </figure>
-  </section>
+  </header>
 
-  <main id="main-content" class="app-layout">
+  <main id="main-content" class="app-layout py-12">
     {featuredPosts.length > 0 && (
       <section class="pb-10">
         <header class="section-header">

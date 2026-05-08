@@ -8,8 +8,8 @@
 /* MUSU Brand: Cocoa Brown + Yellow + Off-White */
 :root,
 html[data-theme="light"] {
-  --background: #FDFCF0;
-  --bg-secondary: #F5F3E8;
+  --background: #FAF9F6;
+  --bg-secondary: #F0EEE4;
   --bg-tertiary: #EDEBE0;
   --bg-elevated: #FFFFFF;
   --foreground: #2D1D19;
@@ -85,7 +85,7 @@ html[data-theme="dark"] {
 }
 
 @utility max-w-app {
-  @apply max-w-3xl;
+  @apply max-w-4xl;
 }
 
 @utility app-layout {
@@ -103,55 +103,53 @@ html[data-theme="dark"] {
 /* ─── Editorial Component Classes ──────────────────────────────── */
 
 @layer components {
-    /* Card — field journal tone */
-  .blog-card {
+        /* Card — clean magazine style */
+  .blog-card, .blog-card-featured {
     position: relative;
-    padding: 1.25rem;
-    border: 1px solid var(--foreground);
-    background: var(--background);
-    border-radius: 0;
-    box-shadow: 4px 4px 0 0 var(--foreground);
-    margin-bottom: 1rem;
-    transition: transform 120ms ease, box-shadow 120ms ease;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: all 200ms ease;
     counter-increment: card-counter;
   }
-  .blog-card::before {
-    content: "no. " counter(card-counter, decimal-leading-zero);
-    position: absolute;
-    top: 1.25rem;
-    right: 1.25rem;
-    font-family: ui-monospace, "IBM Plex Mono", monospace;
-    font-size: 0.75rem;
-    color: var(--text-muted);
+  .blog-card:last-child {
+    border-bottom: none;
   }
-  .blog-card:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 0 var(--foreground);
+  .blog-card h2, .blog-card h3, 
+  .blog-card-featured h2, .blog-card-featured h3 {
+    @apply font-serif text-3xl mb-3 leading-tight;
+  }
+  .blog-card p, .blog-card-featured p {
+    @apply text-text-secondary leading-relaxed max-w-2xl text-lg;
+  }
+  .blog-card::before, .blog-card-featured::before {
+    content: counter(card-counter, decimal-leading-zero);
+    position: absolute;
+    left: -4rem;
+    top: 2.75rem;
+    font-family: ui-monospace, "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+  @media (max-width: 1200px) {
+    .blog-card::before, .blog-card-featured::before {
+      position: static;
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+  .blog-card:hover h2, .blog-card:hover h3,
+  .blog-card-featured:hover h2, .blog-card-featured:hover h3 {
+    @apply text-accent-dim underline underline-offset-4 decoration-accent/30;
   }
 
-  /* Featured Card — paper-warm */
+  /* Featured Styling */
   .blog-card-featured {
-    position: relative;
-    padding: 1.25rem;
-    border: 1px solid var(--foreground);
-    background: #F4E5C2;
-    border-radius: 0;
-    box-shadow: 4px 4px 0 0 var(--foreground);
-    margin-bottom: 1rem;
-    transition: transform 120ms ease, box-shadow 120ms ease;
+    border-bottom: 2px solid var(--foreground);
   }
-  .blog-card-featured::before {
-    content: "no. 00";
-    position: absolute;
-    top: 1.25rem;
-    right: 1.25rem;
-    font-family: ui-monospace, "IBM Plex Mono", monospace;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-  }
-  .blog-card-featured:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 0 var(--foreground);
+  .blog-card-featured::after {
+    content: "FEATURED PIECE";
+    @apply absolute top-0 right-0 font-mono text-[0.6rem] tracking-[0.3em] px-2 py-1 bg-foreground text-background uppercase;
   }
 
   /* Panel (prev/next, related posts) */
