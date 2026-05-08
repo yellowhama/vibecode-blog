@@ -2,7 +2,7 @@ export const SITE = {
   website: "https://vibecode.town",
   author: "Hugh",
   profile: "https://github.com/yellowhama",
-  desc: "Building with AI agents. No hype. Just what works.",
+  desc: "Vibe coding in practice. What works, what breaks, what I learned.",
   title: "vibecode",
   ogImage: "vibecode-og.jpg",
   lightAndDarkMode: true,

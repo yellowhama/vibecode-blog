@@ -1,192 +1,52 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import Card from "@/components/Card.astro";
+import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
+
+const posts = await getCollection("blog", ({ data }) => !data.draft);
+const sortedPosts = getSortedPosts(posts);
+const recentPosts = sortedPosts.slice(0, SITE.postPerIndex);
+const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 ---
 
-<Layout title="MUSU — Distribute AI Coding Tasks Across Your Machines" description="Turn idle computers into an AI workforce. MUSU orchestrates Claude, Gemini, and Codex across your machines. Local-first, zero-config, open source.">
+<Layout
+  title="vibecode — vibe coding in practice"
+  description="What works, what breaks, what I learned. Practical notes on building with AI agents."
+>
   <Header />
   <main id="main-content" class="app-layout">
-    <section class="relative overflow-hidden border-b border-border pt-12 pb-12">
-      <div class="pointer-events-none absolute -top-20 -right-14 h-56 w-56 rounded-full bg-accent/15 blur-3xl" />
-      <div class="pointer-events-none absolute -bottom-24 -left-10 h-52 w-52 rounded-full bg-accent/10 blur-3xl" />
-
-      <p class="text-xs tracking-[0.14em] text-text-muted uppercase">AI Operator Layer</p>
-      <h1 class="mt-3 max-w-4xl text-4xl leading-tight font-bold sm:text-6xl">
-        Keep your AI. Add an operator.
-      </h1>
-      <p class="mt-5 max-w-2xl text-text-secondary leading-relaxed">
-        Claude, Cursor, GPT. Keep your current workflow.
-        MUSU does not replace your tools. It sits underneath and decides
-        whether AI changes can actually run.
-      </p>
-      <p class="mt-4 text-sm font-semibold tracking-wide text-accent">
-        Probabilistic AI. Deterministic operation.
-      </p>
-
-      <div class="mt-8 flex flex-wrap items-center gap-3">
-        <a
-          class="rounded-full border border-accent bg-accent px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-accent-dim"
-          href={SITE.links.windowsDownload}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Download MUSU for Windows (.exe)
-        </a>
-        <a
-          class="rounded-full border border-border px-5 py-2.5 text-sm font-medium transition hover:border-accent hover:text-accent"
-          href="/structure"
-        >
-          See the Structure
-        </a>
-      </div>
-    </section>
-
-    <section class="border-b border-border py-14 text-center">
-      <p class="text-3xl leading-tight font-bold sm:text-5xl">
-        AI writes code.
-      </p>
-      <p class="mt-3 text-3xl leading-tight font-bold text-accent sm:text-5xl">
-        MUSU decides if it lives.
-      </p>
-      <p class="mt-3 text-xl leading-tight font-semibold text-text-secondary sm:text-3xl">
-        Nothing runs without structure.
+    <section class="pt-8 pb-6">
+      <h1 class="text-2xl font-bold text-foreground">vibecode</h1>
+      <p class="mt-2 text-text-secondary">
+        Vibe coding in practice. What works, what breaks, what I learned.
       </p>
     </section>
 
-    <section class="border-b border-border py-12">
-      <h2 class="text-2xl font-bold sm:text-3xl">The problem is not AI.</h2>
-      <p class="mt-4 max-w-2xl text-text-secondary leading-relaxed">
-        AI making mistakes is normal. The real failure is operational:
-        no one knows who approved a change, what changed, or why that decision
-        was made.
-      </p>
-      <ul class="mt-5 space-y-2 text-text-secondary">
-        <li>Approval history disappears.</li>
-        <li>Diff intent drifts silently.</li>
-        <li>Production inherits unstable output.</li>
+    {featuredPosts.length > 0 && (
+      <section class="pb-6">
+        <h2 class="text-lg font-semibold text-foreground mb-4">Featured</h2>
+        <ul>
+          {featuredPosts.map(data => <Card {...data} />)}
+        </ul>
+      </section>
+    )}
+
+    <section class="pb-8">
+      <h2 class="text-lg font-semibold text-foreground mb-4">Recent Posts</h2>
+      <ul>
+        {recentPosts.map(data => <Card {...data} />)}
       </ul>
-      <p class="mt-5 font-medium">MUSU structures that operational layer.</p>
     </section>
 
-    <section class="border-b border-border py-12">
-      <h2 class="text-2xl font-bold sm:text-3xl">Verdict: GO / FIX / BLOCK</h2>
-      <p class="mt-4 max-w-2xl text-text-secondary leading-relaxed">
-        MUSU does not generate code. It governs acceptance.
-      </p>
-      <div class="mt-6 grid gap-3 sm:grid-cols-3">
-        <article class="rounded-md border border-border bg-bg-secondary p-4">
-          <p class="text-sm font-semibold text-green-700 dark:text-green-400">GO</p>
-          <p class="mt-1 text-sm text-text-secondary">Intent-aligned and executable.</p>
-        </article>
-        <article class="rounded-md border border-border bg-bg-secondary p-4">
-          <p class="text-sm font-semibold text-amber-700 dark:text-amber-400">FIX</p>
-          <p class="mt-1 text-sm text-text-secondary">Retry after bounded correction.</p>
-        </article>
-        <article class="rounded-md border border-border bg-bg-secondary p-4">
-          <p class="text-sm font-semibold text-red-700 dark:text-red-400">BLOCK</p>
-          <p class="mt-1 text-sm text-text-secondary">Boundary violation. Stop immediately.</p>
-        </article>
-      </div>
-      <p class="mt-5 text-text-secondary">
-        AI has speed. MUSU adds authority.
-      </p>
-    </section>
-
-    <section class="border-b border-border py-12">
-      <h2 class="text-2xl font-bold sm:text-3xl">Placed beneath your stack</h2>
-      <div class="mt-6 rounded-md border border-border bg-bg-secondary p-5">
-        <pre class="overflow-x-auto text-sm"><code>{`Your IDE
-Your AI
-Your Prompt
-────────────
-MUSU (Operator)
-────────────
-Execution
-State
-Production`}</code></pre>
-      </div>
-      <ul class="mt-6 space-y-2 text-text-secondary">
-        <li>Intent Lock</li>
-        <li>Lifecycle Enforcement</li>
-        <li>Validation Loop</li>
-        <li>Persistent State</li>
-      </ul>
-      <p class="mt-5 max-w-2xl text-text-secondary">
-        This is not a framework. It is a running boundary layer.
-      </p>
-    </section>
-
-    <section class="border-b border-border py-12">
-      <h2 class="text-2xl font-bold sm:text-3xl">CPU enforcement layer</h2>
-      <p class="mt-4 max-w-3xl text-text-secondary leading-relaxed">
-        Cloud AI thinks. MUSU watches and enforces. Drift checks, gate decisions,
-        and local control run on your machine, so cloud calls are reserved for
-        high-value reasoning.
-      </p>
-      <div class="mt-6 grid gap-3 sm:grid-cols-2">
-        <article class="rounded-md border border-border p-4">
-          <p class="text-xs tracking-[0.12em] text-text-muted uppercase">Local CPU</p>
-          <h3 class="mt-1 text-lg font-semibold">The enforcer</h3>
-          <p class="mt-2 text-sm text-text-secondary">
-            Detects out-of-intent changes, validates boundaries, and blocks
-            unauthorized execution.
-          </p>
-        </article>
-        <article class="rounded-md border border-border p-4">
-          <p class="text-xs tracking-[0.12em] text-text-muted uppercase">Cloud AI</p>
-          <h3 class="mt-1 text-lg font-semibold">The thinker</h3>
-          <p class="mt-2 text-sm text-text-secondary">
-            Handles complex reasoning and novel generation only when needed.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="border-b border-border py-12">
-      <h2 class="text-2xl font-bold sm:text-3xl">Build vs Run boundary</h2>
-      <p class="mt-4 max-w-2xl text-text-secondary leading-relaxed">
-        Build is generation. Run is operation.
-        Production mode is where rollback history, drift monitoring,
-        and recovery automation matter.
-      </p>
-      <p class="mt-4 font-medium">MUSU makes that boundary explicit.</p>
-    </section>
-
-    <section class="border-b border-border py-12">
-      <h2 class="text-2xl font-bold sm:text-3xl">
-        Under your AI. In control of execution.
-      </h2>
-      <p class="mt-4 max-w-2xl text-text-secondary leading-relaxed">
-        You do not need a smarter prompt tool. You need an operator layer that
-        makes AI output obey structure before it becomes state.
-      </p>
-      <p class="mt-4 font-semibold">MUSU.</p>
-    </section>
-
-    <section class="py-12">
-      <h2 class="text-2xl font-bold sm:text-3xl">Deep dive</h2>
-      <p class="mt-4 max-w-2xl text-text-secondary leading-relaxed">
-        Want the full mechanism and architecture details?
-      </p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a
-          class="rounded-full border border-border px-5 py-2.5 text-sm font-medium transition hover:border-accent hover:text-accent"
-          href="/structure"
-        >
-          Open /structure
-        </a>
-        <a
-          class="rounded-full border border-border px-5 py-2.5 text-sm font-medium transition hover:border-accent hover:text-accent"
-          href={SITE.links.docs}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Product Docs
-        </a>
-      </div>
-    </section>
+    <div class="py-4 text-center">
+      <a href="/posts/" class="text-accent hover:underline">
+        All posts →
+      </a>
+    </div>
   </main>
   <Footer />
 </Layout>
