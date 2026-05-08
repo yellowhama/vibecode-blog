@@ -3,53 +3,37 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-## This blog post was written by an AI agent. Another AI agent rejected the first draft.
+## I can't code.
 
-That's what this site is about — what actually happens when you build with AI agents. Not theory. Not hype. The real loop: build → break → fix → ship.
+I started vibe coding about six months ago. Zero programming background. I told AI to write code, and AI wrote code. For a while it felt like magic.
 
-## The short version
+Then the project hit 10,847 lines and I couldn't explain what half of them did.
 
-I have multiple computers. Most of the time, they sit idle while one machine runs Claude Code. I got annoyed enough to build [MUSU](https://github.com/yellowhama/musu-bee) — a system that distributes AI coding tasks across all my machines.
+Features duplicated. Documents multiplied. The AI forgot where truth lived. Every small fix created a new problem. I was not building a product. I was drowning in one.
 
-Then I used MUSU's own AI agents to write the marketing for MUSU. The blog post you're reading? An AI agent drafted it, another AI agent reviewed it (and rejected the first version), and a third adapted it for this platform. I approved the final version.
+## What this blog is
 
-That's what this blog is about: the loop of building tools, using them to build more tools, and documenting what actually works along the way.
+This is a survival log.
 
-## MUSU
+Not a tutorial. Not a success story. Not "10 tips from an AI expert."
 
-[MUSU](https://github.com/yellowhama/musu-bee) is an agent runtime for multi-machine AI orchestration. 
+I'm building a real product called [MUSU](https://github.com/yellowhama/musu-bee) — a system that runs AI coding agents across multiple machines. It is not finished. Things break every day. I fix them. They break again. I write down what happened.
 
-- **14 CLI commands** — `musu do`, `musu status`, `musu update`, `musu login`...
-- **119 API endpoints** — task routing, agent health, token tracking
-- **Multi-machine mesh** — 2 GPUs (RTX 4060 + RTX 5070) on Tailscale
-- **3 AI CLIs** — Claude Code, Gemini CLI, Codex as subprocesses
-- **3 companies** — musu_corp (infra), Bloodline Writers (content), MUSU Marketing (this blog)
+This blog is for the person I was three months ago. If you're building something with AI and hitting walls you didn't expect, these are one person's field notes from the same terrain.
 
-The marketing for MUSU is done by MUSU's own marketing team — 6 AI agents with different roles and different AI models:
+## The setup
 
-| Agent | Model | Job |
-|-------|-------|-----|
-| Lead | Gemini Pro | Strategy + coordination |
-| Strategist | Gemini Pro | Research + positioning |
-| Content Creator | Claude Sonnet | Writing |
-| Editor | Claude Sonnet | Quality gate (scores every piece) |
-| Social Manager | Codex | Platform-specific posts |
-| Analytics | Claude Haiku | KPI tracking |
+Three machines. Two sit idle most of the time — that's what started all of this. RTX 4060 and RTX 5070. Claude Code, Gemini CLI, Codex. Everything runs locally. No cloud. No subscription except the AI APIs.
 
-## The stack
+## The rules
 
-- **Blog**: Astro 5 + Tailwind 4 + Vercel
-- **Product**: Python (FastAPI) + Rust (CLI) + Node.js (relay)
-- **AI**: Claude Code, Gemini CLI, Codex — all as local subprocesses
-- **Research**: crawl4ai for deep web scraping
-- **Infra**: 2 GPUs on Tailscale mesh, systemd services
+I am not an expert. I don't sell courses. I don't have a CS degree.
+
+If something worked, I say so. If it broke, I say that too. If I don't know why something works, I say that as well.
+
+My authority comes from scars, not credentials.
 
 ## Links
 
 - [GitHub](https://github.com/yellowhama/musu-bee)
-- [MUSU Docs](https://musu.pro)
 - [RSS Feed](/rss.xml)
-
-## Subscribe
-
-New posts ~weekly. No spam. Unsubscribe anytime.
