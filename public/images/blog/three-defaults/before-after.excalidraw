@@ -1,0 +1,34 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "vibecode.town",
+  "elements": [
+    {"id": "title", "type": "text", "x": 150, "y": 10, "width": 350, "height": 30, "text": "Three Defaults Burning Tokens", "fontSize": 22, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+
+    {"id": "h-before", "type": "text", "x": 80, "y": 55, "width": 80, "height": 20, "text": "BEFORE", "fontSize": 14, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+    {"id": "h-after", "type": "text", "x": 420, "y": 55, "width": 80, "height": 20, "text": "AFTER", "fontSize": 14, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+
+    {"id": "prompt-before", "type": "rectangle", "x": 20, "y": 90, "width": 200, "height": 60, "strokeColor": "#2D1D19", "backgroundColor": "#FFD166", "fillStyle": "hachure", "roughness": 1, "strokeWidth": 2},
+    {"id": "prompt-before-text", "type": "text", "x": 40, "y": 105, "width": 160, "height": 30, "text": "670 words\n\"be helpful, be accurate\"", "fontSize": 12, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+    {"id": "arrow-prompt", "type": "arrow", "x": 230, "y": 120, "width": 120, "height": 0, "strokeColor": "#2D1D19", "strokeWidth": 2, "roughness": 1, "points": [[0, 0], [120, 0]]},
+    {"id": "prompt-after", "type": "rectangle", "x": 360, "y": 100, "width": 100, "height": 40, "strokeColor": "#2D1D19", "backgroundColor": "#FFD166", "fillStyle": "hachure", "roughness": 1, "strokeWidth": 2},
+    {"id": "prompt-after-text", "type": "text", "x": 370, "y": 110, "width": 80, "height": 20, "text": "174 words", "fontSize": 12, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+    {"id": "prompt-savings", "type": "text", "x": 470, "y": 108, "width": 50, "height": 20, "text": "-75%", "fontSize": 16, "fontFamily": 4, "strokeColor": "#FFD166", "textAlign": "center"},
+
+    {"id": "search-before", "type": "rectangle", "x": 20, "y": 175, "width": 200, "height": 60, "strokeColor": "#2D1D19", "backgroundColor": "#FFD166", "fillStyle": "hachure", "roughness": 1, "strokeWidth": 2},
+    {"id": "search-before-text", "type": "text", "x": 40, "y": 190, "width": 160, "height": 30, "text": "75 files per query\n\"get relevant context\"", "fontSize": 12, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+    {"id": "arrow-search", "type": "arrow", "x": 230, "y": 205, "width": 120, "height": 0, "strokeColor": "#2D1D19", "strokeWidth": 2, "roughness": 1, "points": [[0, 0], [120, 0]]},
+    {"id": "search-after", "type": "rectangle", "x": 380, "y": 190, "width": 60, "height": 30, "strokeColor": "#2D1D19", "backgroundColor": "#FFD166", "fillStyle": "hachure", "roughness": 1, "strokeWidth": 2},
+    {"id": "search-after-text", "type": "text", "x": 385, "y": 197, "width": 50, "height": 20, "text": "3 files", "fontSize": 12, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+    {"id": "search-savings", "type": "text", "x": 470, "y": 193, "width": 50, "height": 20, "text": "-96%", "fontSize": 16, "fontFamily": 4, "strokeColor": "#FFD166", "textAlign": "center"},
+
+    {"id": "hb-before", "type": "rectangle", "x": 20, "y": 260, "width": 200, "height": 60, "strokeColor": "#2D1D19", "backgroundColor": "#FFD166", "fillStyle": "hachure", "roughness": 1, "strokeWidth": 2},
+    {"id": "hb-before-text", "type": "text", "x": 40, "y": 275, "width": 160, "height": 30, "text": "12 checks/hour\n75% idle", "fontSize": 12, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+    {"id": "arrow-hb", "type": "arrow", "x": 230, "y": 290, "width": 120, "height": 0, "strokeColor": "#2D1D19", "strokeWidth": 2, "roughness": 1, "points": [[0, 0], [120, 0]]},
+    {"id": "hb-after", "type": "rectangle", "x": 370, "y": 275, "width": 80, "height": 30, "strokeColor": "#2D1D19", "backgroundColor": "#FFD166", "fillStyle": "hachure", "roughness": 1, "strokeWidth": 2},
+    {"id": "hb-after-text", "type": "text", "x": 375, "y": 282, "width": 70, "height": 20, "text": "2 checks/hr", "fontSize": 12, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+    {"id": "hb-savings", "type": "text", "x": 470, "y": 278, "width": 50, "height": 20, "text": "-83%", "fontSize": 16, "fontFamily": 4, "strokeColor": "#FFD166", "textAlign": "center"}
+  ],
+  "appState": {"viewBackgroundColor": "#FDFCF0", "gridSize": null},
+  "files": {}
+}

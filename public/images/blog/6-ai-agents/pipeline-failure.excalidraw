@@ -1,0 +1,37 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "vibecode.town",
+  "elements": [
+    {"id": "title", "type": "text", "x": 120, "y": 10, "width": 400, "height": 30, "text": "The Pipeline That Approved Garbage", "fontSize": 22, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+
+    {"id": "strategist", "type": "rectangle", "x": 20, "y": 80, "width": 100, "height": 50, "strokeColor": "#2D1D19", "backgroundColor": "#FFD166", "fillStyle": "hachure", "roughness": 1, "strokeWidth": 2},
+    {"id": "strategist-text", "type": "text", "x": 30, "y": 95, "width": 80, "height": 20, "text": "Strategist", "fontSize": 14, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+
+    {"id": "a1", "type": "arrow", "x": 120, "y": 105, "width": 30, "height": 0, "strokeColor": "#2D1D19", "strokeWidth": 2, "roughness": 1, "points": [[0,0],[30,0]]},
+
+    {"id": "creator", "type": "rectangle", "x": 155, "y": 80, "width": 100, "height": 50, "strokeColor": "#2D1D19", "backgroundColor": "#FFD166", "fillStyle": "hachure", "roughness": 1, "strokeWidth": 2},
+    {"id": "creator-text", "type": "text", "x": 170, "y": 95, "width": 70, "height": 20, "text": "Creator", "fontSize": 14, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+
+    {"id": "a2", "type": "arrow", "x": 255, "y": 105, "width": 30, "height": 0, "strokeColor": "#2D1D19", "strokeWidth": 2, "roughness": 1, "points": [[0,0],[30,0]]},
+
+    {"id": "editor", "type": "rectangle", "x": 290, "y": 80, "width": 100, "height": 50, "strokeColor": "#2D1D19", "backgroundColor": "#FFD166", "fillStyle": "hachure", "roughness": 1, "strokeWidth": 2},
+    {"id": "editor-text", "type": "text", "x": 300, "y": 88, "width": 80, "height": 30, "text": "Editor\n✓ 8.5/10", "fontSize": 14, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+
+    {"id": "a3", "type": "arrow", "x": 390, "y": 105, "width": 30, "height": 0, "strokeColor": "#2D1D19", "strokeWidth": 2, "roughness": 1, "points": [[0,0],[30,0]]},
+
+    {"id": "social", "type": "rectangle", "x": 425, "y": 80, "width": 100, "height": 50, "strokeColor": "#2D1D19", "backgroundColor": "#FFD166", "fillStyle": "hachure", "roughness": 1, "strokeWidth": 2},
+    {"id": "social-text", "type": "text", "x": 440, "y": 95, "width": 70, "height": 20, "text": "Social", "fontSize": 14, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+
+    {"id": "a4", "type": "arrow", "x": 525, "y": 105, "width": 30, "height": 0, "strokeColor": "#2D1D19", "strokeWidth": 2, "roughness": 1, "points": [[0,0],[30,0]]},
+
+    {"id": "publish", "type": "rectangle", "x": 560, "y": 70, "width": 130, "height": 70, "strokeColor": "#2D1D19", "backgroundColor": "#FDFCF0", "fillStyle": "solid", "roughness": 2, "strokeWidth": 3},
+    {"id": "publish-text", "type": "text", "x": 570, "y": 80, "width": 110, "height": 50, "text": "DO NOT\nPUBLISH\n⚠️", "fontSize": 16, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+
+    {"id": "output-label", "type": "text", "x": 155, "y": 155, "width": 350, "height": 20, "text": "\"MUSU is a revolutionary AI agent runtime that leverages...\"", "fontSize": 11, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+
+    {"id": "question", "type": "text", "x": 200, "y": 190, "width": 300, "height": 40, "text": "The Editor scored everything 8.5.\nThe rubric was too vague to fail anything.", "fontSize": 13, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"}
+  ],
+  "appState": {"viewBackgroundColor": "#FDFCF0", "gridSize": null},
+  "files": {}
+}
