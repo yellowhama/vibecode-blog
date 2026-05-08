@@ -2,6 +2,15 @@
 
 > "이렇게 쓰지 마라"만으로는 부족하다. 실물 비교가 있어야 판단할 수 있다.
 > 이야기 구조는 `narrative.md` 참조.
+> 말맛 레퍼런스(실제 문장 비교)는 wiki `215_WRITING_VOICE_REFERENCES` 참조.
+
+### 현재 라이브 포스트 기준 (2026-05)
+- Post 1: "10,847 Lines of AI Code I Couldn't Explain" — 오리진/캐릭터 확립
+- Post 2: "Three Defaults That Were Burning My Tokens" — 토큰 최적화 통합
+- Post 3: "I Built a Marketing Team With 6 AI Agents. It Produced Garbage." — 위임 실패
+- Post 4: "My LLM Wiki Was Starving" — 리서치 시스템/플라이휠
+
+Post 3, 4가 현재 최고 벤치마크 (스코어카드 92/120).
 
 ---
 

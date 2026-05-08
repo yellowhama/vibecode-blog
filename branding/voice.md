@@ -64,14 +64,6 @@
 
 ---
 
-## §2.5. 시리즈 네이밍
-
-**Fury-Driven Development Diary (FDD)**
-- Phase 1 시리즈의 공식 타이틀
-- FDD = Feature-Driven Development 비틀기 (의도적 밈)
-- X 스레드 포맷: `[FDD Diary #N] 부제`
-- 시리즈 핵심: "빡쳐서 직접 기준을 세웠다"
-
 ---
 
 ## §3. 핵심 주장
@@ -231,13 +223,14 @@ That's bad UX.
 
 ### AI와의 관계
 
-AI는 친절한 조수가 아니다. 맞서 싸워야 경계선이 보이는 스파링 파트너.
+AI는 친절한 조수가 아니다. 작업자다. 시키면 한다. 안 시키면 안 한다.
+중요한 건 "잘해줘"가 아니라 "이 기준에 맞춰 이 위치에 결과를 남겨."
 
 ```
 ❌ "I asked Claude to help me with the architecture."
-✅ "I threw the problem at Claude. Claude threw it back.
-   Twenty rounds later, I had my answer—
-   not from Claude, but from the fight itself."
+✅ "I told Claude what to build. Claude built it. It was wrong.
+   I told it again, differently. It was less wrong.
+   The architecture came from the gap between what I said and what it did."
 ```
 
 ---
@@ -305,7 +298,8 @@ AI는 친절한 조수가 아니다. 맞서 싸워야 경계선이 보이는 스
 
 ## Sources
 
-이 문서는 아래 원본 문서들을 통합한 것이다:
-- `docs/voice/character.md` (원본 유지)
-- `docs/translation-guide.md` (원본 유지)
-- `blog-research/08-english-voice-guide.md` (리서치)
+- `branding/character.md` — 캐릭터 SSOT (표류자 Hugh)
+- `branding/narrative.md` — 이야기 구조 (3막, 6비트)
+- `branding/examples.md` — 좋은/나쁜 예시
+- `branding/platforms.md` — 플랫폼별 적용
+- wiki `215_WRITING_VOICE_REFERENCES` — 말맛 레퍼런스 (Bukowski/Graham/Sivers 실제 문장)
