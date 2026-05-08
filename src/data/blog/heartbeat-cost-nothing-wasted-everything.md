@@ -108,8 +108,6 @@ Once a month I ask three questions:
 
 These are not clever questions. They are obvious questions that I didn't ask for six months because the system was "working."
 
-It was working. It was also wasting 83% of its heartbeat tokens. Both things were true at the same time.
-
-The system was "working." It was also wasting 83% of its heartbeat budget. Both things were true at the same time.
+It was working. It was also wasting 83% of its heartbeat budget. Both were true at the same time.
 
 I just hadn't looked.

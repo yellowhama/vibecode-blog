@@ -36,13 +36,11 @@ I had told it: "get relevant context." It interpreted "relevant" as "everything 
 
 ## Three months of this
 
-The bill was high. I assumed the agent was working hard. It was working hard — on the wrong 72 files.
+The bill was high. I assumed the agent was working hard.
 
-It was working hard. Just not on the right things. Most of the "work" was reading 72 files it didn't need.
+It was. Just not on the right things.
 
-The clue came when I started measuring individual requests. One simple query — "what does the health check endpoint return?" — was consuming more tokens than a full code generation task. That made no sense.
-
-I traced it. 75 files loaded into context. For a health check function that lived in a single file.
+I didn't notice until I started measuring individual requests. The health check query from above? It was consuming more tokens than a full code generation task. That's what made me check the logs in the first place.
 
 ---
 
