@@ -25,16 +25,13 @@ html[data-theme="dark"] {
   --background: #0A0A0A;
   --bg-secondary: #141414;
   --bg-tertiary: #1A1A1A;
-  --bg-elevated: #141414;
-  --foreground: #E0E0E0;
-  --text-secondary: rgba(224, 224, 224, 0.7);
-  --text-muted: rgba(224, 224, 224, 0.45);
+  --foreground: #FDFCF0; /* 다크모드에서도 Paper 색상으로 텍스트 가독성 확보 */
+  --text-secondary: rgba(253, 252, 240, 0.8);
+  --text-muted: rgba(253, 252, 240, 0.5);
   --accent: #FFD166;
   --accent-dim: #D4A030;
-  --accent-glow: rgba(255, 209, 102, 0.15);
-  --muted: rgba(255, 255, 255, 0.06);
-  --border: rgba(224, 224, 224, 0.1);
-  --border-strong: rgba(224, 224, 224, 0.2);
+  --border: rgba(253, 252, 240, 0.15);
+  --border-strong: rgba(253, 252, 240, 0.3);
 }
 
 @theme inline {
@@ -220,3 +217,26 @@ html[data-theme="dark"] {
   .text-ink-faded { color: #6B5C58; }
   .font-mono { font-family: ui-monospace, "IBM Plex Mono", monospace; }
   .font-serif { font-family: var(--font-lora); }
+
+  /* Visual Interest for Boring Landing */
+  .hero-journal-wrap {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--background);
+    border-bottom: 2px solid var(--foreground);
+  }
+  .hero-journal-img {
+    position: absolute;
+    right: -10%;
+    top: -10%;
+    width: 60%;
+    height: 120%;
+    object-fit: contain;
+    opacity: 0.15;
+    pointer-events: none;
+    filter: sepia(0.5);
+  }
+  [data-theme="dark"] .hero-journal-img {
+    opacity: 0.08;
+    filter: invert(1) sepia(0.2) brightness(1.2);
+  }

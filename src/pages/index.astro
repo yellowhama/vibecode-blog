@@ -19,10 +19,30 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 >
   <Header />
 
-  <header class="masthead py-16 mb-4 border-b border-ink/5">
-    <div class="app-layout flex flex-col items-center">
-      <div class="text-[0.65rem] tracking-[0.4em] font-mono text-ink-faded uppercase mb-4">Field Journal / Dispatch</div>
-      <div class="text-6xl md:text-8xl font-serif italic text-ink tracking-tighter">vibecode.town</div>
+    <header class="hero-journal-wrap py-24 mb-16">
+    <img src="/images/home/hero-journal.png" class="hero-journal-img" alt="" />
+    <div class="app-layout relative z-10">
+      <div class="flex items-center gap-4 mb-10 text-[0.8rem] tracking-[0.4em] font-mono text-ink-faded uppercase">
+        <span>FIELD JOURNAL · NO. 04</span>
+        <span class="h-px w-12 bg-accent"></span>
+        <span>2026.05</span>
+      </div>
+      <h1 class="text-5xl md:text-8xl font-serif italic text-ink tracking-tighter leading-[0.95] mb-10 max-w-4xl">
+        I started vibe coding <br/> six months ago.
+      </h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+        <p class="text-xl md:text-2xl text-text-secondary font-serif leading-relaxed italic">
+          "The project hit 10,847 lines I couldn't explain. These are the field notes of a castaway finding order in the jungle."
+        </p>
+        <div class="flex flex-col items-start gap-4">
+          <a href="/posts/" class="group flex items-center gap-4 font-mono text-xs tracking-[0.3em] uppercase bg-ink text-background px-6 py-4 hover:bg-accent transition-colors">
+            Enter the Journal <span>&rarr;</span>
+          </a>
+          <a href="/about/" class="font-mono text-[0.65rem] tracking-[0.2em] uppercase text-ink-faded hover:text-ink underline underline-offset-4">
+            About the Vibe Coding project
+          </a>
+        </div>
+      </div>
     </div>
   </header>
 
