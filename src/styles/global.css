@@ -8,19 +8,17 @@
 /* MUSU Brand: Cocoa Brown + Yellow + Off-White */
 :root,
 html[data-theme="light"] {
-  --background: #FAF9F6;
-  --bg-secondary: #F0EEE4;
+  --background: #FDFCF0;
+  --bg-secondary: #F4E5C2;
   --bg-tertiary: #EDEBE0;
   --bg-elevated: #FFFFFF;
   --foreground: #2D1D19;
-  --text-secondary: rgba(45, 29, 25, 0.65);
-  --text-muted: rgba(45, 29, 25, 0.45);
+  --text-secondary: rgba(45, 29, 25, 0.75);
+  --text-muted: rgba(45, 29, 25, 0.5);
   --accent: #D4A030;
   --accent-dim: #B8891A;
-  --accent-glow: rgba(255, 209, 102, 0.2);
-  --muted: #EDEBE0;
-  --border: rgba(45, 29, 25, 0.12);
-  --border-strong: rgba(45, 29, 25, 0.25);
+  --border: rgba(45, 29, 25, 0.1);
+  --border-strong: rgba(45, 29, 25, 0.2);
 }
 
 html[data-theme="dark"] {
@@ -202,3 +200,23 @@ html[data-theme="dark"] {
     border-color: var(--accent);
   }
 }
+
+  /* Magazine / Field Journal styles */
+  .font-serif { font-family: var(--font-lora); }
+  .text-ink { color: #2D1D19; }
+  .text-ink-faded { color: #6B5C58; }
+  .bg-paper-warm { background-color: #F4E5C2; }
+  .border-ink { border-color: #2D1D19; }
+
+  /* Utility for magazine feel */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
+  /* Magazine Helpers */
+  .text-ink { color: #2D1D19; }
+  .text-ink-faded { color: #6B5C58; }
+  .font-mono { font-family: ui-monospace, "IBM Plex Mono", monospace; }
+  .font-serif { font-family: var(--font-lora); }

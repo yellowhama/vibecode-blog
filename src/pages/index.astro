@@ -15,219 +15,91 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 
 <Layout
   title="vibecode — field notes from a vibe coding castaway"
-  description="I started vibe coding six months ago with zero programming background. The project hit 10,847 lines I couldn't explain. These are the field notes."
+  description="I started vibe coding six months ago with zero programming background."
 >
   <Header />
 
-  <!-- Hero — full-bleed island map -->
-    <header class="page-header border-b border-border py-12">
-    <div class="app-layout py-12">
-      <div class="flex items-center gap-4 mb-8 text-[0.7rem] tracking-[0.2em] font-mono text-text-muted uppercase">
-        <span>FIELD JOURNAL &middot; log no. 04</span>
-        <span class="h-px w-8 bg-border-strong"></span>
-        <span>2026.05</span>
-      </div>
-      <h1 class="text-4xl md:text-6xl font-serif italic mb-6 leading-tight max-w-4xl text-foreground">
-        I started vibe coding six months ago. The project hit <em class="not-italic text-accent">10,847 lines</em> I couldn't explain.
-      </h1>
-      <p class="text-lg md:text-xl text-text-secondary font-serif leading-relaxed max-w-2xl mb-8">
-        These are the field notes of a castaway finding order in the jungle of AI-generated code.
-      </p>
-      <div class="flex gap-6">
-        <a href="/posts/" class="font-mono text-xs tracking-widest uppercase border-b-2 border-foreground pb-1 hover:text-accent hover:border-accent transition-colors">
-          Read the Journal &rarr;
-        </a>
-        <a href="/about/" class="font-mono text-xs tracking-widest uppercase text-text-muted hover:text-foreground transition-colors">
-          About the project
-        </a>
-      </div>
+  <header class="masthead py-16 mb-4 border-b border-ink/5">
+    <div class="app-layout flex flex-col items-center">
+      <div class="text-[0.65rem] tracking-[0.4em] font-mono text-ink-faded uppercase mb-4">Field Journal / Dispatch</div>
+      <div class="text-6xl md:text-8xl font-serif italic text-ink tracking-tighter">vibecode.town</div>
     </div>
   </header>
 
   <main id="main-content" class="app-layout py-12">
-    {featuredPosts.length > 0 && (
-      <section class="pb-10">
-        <header class="section-header">
-          <span class="section-eyebrow">FEATURED</span>
-          <h2 class="section-title">Start here.</h2>
-        </header>
-        <ul style="counter-reset: card-counter;">
-          {featuredPosts.map(data => <Card {...data} />)}
-        </ul>
-      </section>
-    )}
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <!-- Left: Featured Content (The "Magazine" Lead) -->
+      <div class="lg:col-span-8 space-y-16">
+        {featuredPosts.length > 0 && (
+          <section class="featured-lead">
+            <div class="text-mono text-[0.7rem] tracking-[0.3em] text-accent-dim uppercase mb-6 font-bold">Featured Dispatch</div>
+            <a href={`/posts/${featuredPosts[0].id}`} class="group block no-underline">
+              <h2 class="text-4xl md:text-6xl font-serif italic mb-8 leading-[1.1] group-hover:underline decoration-accent/30 text-ink">
+                {featuredPosts[0].data.title}
+              </h2>
+              <p class="text-xl md:text-2xl text-text-secondary font-serif leading-relaxed mb-10 max-w-2xl">
+                {featuredPosts[0].data.description}
+              </p>
+              <span class="inline-block font-mono text-xs tracking-widest uppercase border-b-2 border-ink pb-1 group-hover:text-accent group-hover:border-accent transition-colors">
+                Read full entry &rarr;
+              </span>
+            </a>
+          </section>
+        )}
 
-    <section class="pb-10">
-      <header class="section-header">
-        <span class="section-eyebrow">LATEST</span>
-        <h2 class="section-title">Recent posts.</h2>
-      </header>
-      <ul style="counter-reset: card-counter;">
-        {recentPosts.map(data => <Card {...data} />)}
-      </ul>
-      <div class="pt-4">
-        <a href="/posts/" class="text-accent hover:underline">
-          All posts →
-        </a>
+        <hr class="border-ink/5" />
+
+        <section class="other-featured pt-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {featuredPosts.slice(1).map(post => (
+              <a href={`/posts/${post.id}`} class="group block no-underline border border-ink/10 p-8 hover:bg-paper-warm transition-colors">
+                <div class="text-mono text-[0.6rem] tracking-widest text-ink-faded uppercase mb-4">Featured</div>
+                <h3 class="text-2xl font-serif italic mb-4 text-ink group-hover:underline decoration-accent/30">{post.data.title}</h3>
+                <p class="text-base text-text-secondary font-serif leading-relaxed line-clamp-3">{post.data.description}</p>
+              </a>
+            ))}
+          </div>
+        </section>
       </div>
-    </section>
 
-    <!-- Manifesto / about strip -->
-    <section class="manifesto">
-      <p>
-        Not a tutorial. Not a success story. Not <em>"10 tips from an AI expert."</em>
-      </p>
-      <p>
-        I'm building a real product called <a href="https://github.com/yellowhama/musu-bee">MUSU</a> — a system that runs AI coding agents across multiple machines.
-        It is not finished. Things break every day. I fix them. They break again.
-        I write down what happened.
-      </p>
-      <p class="manifesto-foot">
-        — for the person I was three months ago.
-      </p>
-    </section>
+      <!-- Right: Sidebar Dispatches (Recent list) -->
+      <aside class="lg:col-span-4 border-t lg:border-t-0 lg:border-l border-ink/10 pt-16 lg:pt-0 lg:pl-16">
+        <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10">Recent Logs</h2>
+        <ul class="space-y-10">
+          {recentPosts.map(post => (
+            <li class="relative pl-0 group">
+              <div class="font-mono text-[0.6rem] tracking-widest text-ink-faded uppercase mb-2">
+                {new Date(post.data.pubDatetime).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+              </div>
+              <a href={`/posts/${post.id}`} class="block no-underline">
+                <h4 class="text-xl font-serif italic group-hover:text-accent-dim leading-tight text-ink">{post.data.title}</h4>
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div class="mt-20 pt-10 border-t-2 border-ink">
+          <div class="text-[0.7rem] tracking-[0.3em] font-mono text-ink uppercase mb-6 font-bold">The Manifesto</div>
+          <p class="text-lg font-serif italic leading-relaxed text-ink/80">
+            "Not a tutorial. Not a success story. Not 10 tips from an AI expert. Just field notes from the jungle of AI-generated code."
+          </p>
+          <a href="/about" class="inline-block mt-8 text-[0.7rem] font-mono tracking-widest uppercase border-b border-ink/30 hover:border-ink transition-colors">Learn More</a>
+        </div>
+      </aside>
+    </div>
   </main>
 
   <Footer />
 </Layout>
 
 <style>
-  .hero {
-    background: var(--bg-secondary);
-    border-bottom: 1px solid var(--border);
-    padding: 3rem 1rem 4rem;
-    text-align: center;
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
   }
-  @media (min-width: 768px) {
-    .hero { padding: 4.5rem 2rem 5rem; }
-  }
-
-  .hero-meta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    font-family: ui-monospace, "IBM Plex Mono", "JetBrains Mono", monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-  }
-  .hero-meta-rule {
-    flex: 0 0 1.5rem;
-    height: 1px;
-    background: var(--border-strong);
-  }
-
-  .hero-title {
-    font-family: var(--font-app);
-    font-size: clamp(2rem, 6vw, 3.75rem);
-    font-weight: 400;
-    line-height: 1.1;
-    color: var(--foreground);
-    max-width: 56rem;
-    margin: 0 auto 1.5rem;
-  }
-  .hero-title em {
-    font-style: italic;
-    color: var(--accent-dim);
-  }
-
-  .hero-tagline {
-    font-family: var(--font-app);
-    font-size: clamp(1.05rem, 2vw, 1.25rem);
-    line-height: 1.55;
-    color: var(--text-secondary);
-    max-width: 38rem;
-    margin: 0 auto 2.25rem;
-  }
-
-  .hero-cta {
-    display: inline-block;
-    font-family: ui-monospace, "IBM Plex Mono", monospace;
-    font-size: 0.85rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--foreground);
-    background: var(--background);
-    border: 2px solid var(--foreground);
-    padding: 0.85rem 1.6rem;
-    text-decoration: none;
-    box-shadow: 6px 6px 0 0 var(--foreground);
-    transition: transform 120ms ease, box-shadow 120ms ease;
-  }
-  .hero-cta:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 4px 4px 0 0 var(--foreground);
-  }
-
-  .hero-figure {
-    margin: 4rem auto 0;
-    max-width: min(72rem, calc(100vw - 2rem));
-  }
-  .hero-figure img {
-    width: 100%;
-    height: auto;
-    border: 3px solid var(--foreground);
-    box-shadow: 10px 10px 0 0 var(--foreground);
-    background: var(--background);
-    display: block;
-  }
-  .hero-figure figcaption {
-    margin-top: 0.75rem;
-    font-family: var(--font-app);
-    font-size: 0.875rem;
-    font-style: italic;
-    color: var(--text-muted);
-    text-align: center;
-  }
-
-  /* Section headers */
-  .section-header {
-    margin-bottom: 1.5rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid var(--border);
-  }
-  .section-eyebrow {
-    display: block;
-    font-family: ui-monospace, "IBM Plex Mono", monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    color: var(--text-muted);
-    margin-bottom: 0.5rem;
-  }
-  .section-title {
-    font-family: var(--font-app);
-    font-size: 1.75rem;
-    font-weight: 400;
-    color: var(--foreground);
-    margin: 0;
-  }
-
-  /* Manifesto strip */
-  .manifesto {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    padding: 2.5rem 1.5rem;
-    margin: 2rem 0 3rem;
-    font-family: var(--font-app);
-    font-size: 1.05rem;
-    line-height: 1.65;
-    color: var(--foreground);
-  }
-  .manifesto p { margin: 0 0 1rem; }
-  .manifesto p:last-child { margin: 0; }
-  .manifesto em { font-style: italic; color: var(--text-secondary); }
-  .manifesto a {
-    color: var(--accent-dim);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-  .manifesto-foot {
-    font-family: ui-monospace, "IBM Plex Mono", monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    color: var(--text-muted);
-    margin-top: 1.5rem !important;
+  .masthead {
+    background-color: var(--background);
   }
 </style>
