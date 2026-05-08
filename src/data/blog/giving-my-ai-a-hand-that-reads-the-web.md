@@ -327,13 +327,33 @@ An escape route for when I turn out to be wrong.
 
 ---
 
-That's when I understood.
+That's when I understood something about this system that I hadn't planned for.
 
-The agent's most important job isn't piling up material.
+I built the Research Agent to feed my Wiki. To pile up useful material. That's what I thought research was.
 
-**Real research is finding where existing knowledge and new information collide.**
+But the most valuable thing the agent did was not adding information.
 
-Cover that up quietly and the Wiki turns into a pile of contradictions.
+It was telling me I might be wrong.
+
+I'm building a production system with vibe coding. That's my bet. That's this entire blog. And my own system came back with evidence that this bet might be a bad one.
+
+That is uncomfortable. The natural instinct is to delete it. Bury it. Reclassify it as "irrelevant."
+
+I didn't.
+
+I tagged it `[conflicting]` and left it at the top of my Decision Note.
+
+Not because I think I'm wrong. Maybe I am, maybe I'm not. But if I am wrong, I want to know where the first crack appeared. I want a trail back.
+
+A castaway who ignores the tide chart because it says the current is dangerous is not brave. He's just drowning with confidence.
+
+**Real research is not finding information that confirms what you already believe. Real research is building a system that can tell you when you're wrong — and then not flinching when it does.**
+
+That's what the conflict tag is. An escape route. A marker on the map that says: "I went this way. If it's a dead end, this is where to turn back."
+
+Most knowledge systems don't do this. They pile up agreeable facts. The Wiki grows, everyone feels smart, and then one day the foundation cracks and nobody can trace where the wrong turn happened.
+
+I'd rather have a small Wiki with conflict tags than a big Wiki full of comfortable lies.
 
 ---
 
