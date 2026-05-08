@@ -146,12 +146,4 @@ The three fixes here aren't MUSU-specific. The same patterns apply to any agent 
 
 ---
 
-*Running AI agents locally? MUSU is what I use to coordinate multi-agent workflows across my machines. [vibecode.town](https://vibecode.town)*
-
----
-
-**DRAFT STATUS: Submitted for Editor review — do not publish**
-
----
-
 *The tools used here are part of [MUSU](https://github.com/yellowhama/musu-bee), an open-source agent runtime. But the three techniques — prompt auditing, idle-skip, and scoped retrieval — work with any agent setup.*

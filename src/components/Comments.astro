@@ -22,9 +22,12 @@ const { class: className } = Astro.props;
     const script = document.createElement("script");
     script.src = "https://giscus.app/client.js";
     script.setAttribute("data-repo", "yellowhama/vibecode-blog");
-    script.setAttribute("data-repo-id", ""); // TODO: giscus.app에서 설정 후 채우기
+    const repoId = ""; // TODO: giscus.app에서 설정 후 채우기
+    const categoryId = ""; // TODO: giscus.app에서 설정 후 채우기
+    if (!repoId || !categoryId) return; // Skip if not configured
+    script.setAttribute("data-repo-id", repoId);
     script.setAttribute("data-category", "Blog Comments");
-    script.setAttribute("data-category-id", ""); // TODO: giscus.app에서 설정 후 채우기
+    script.setAttribute("data-category-id", categoryId);
     script.setAttribute("data-mapping", "pathname");
     script.setAttribute("data-strict", "0");
     script.setAttribute("data-reactions-enabled", "1");

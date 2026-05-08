@@ -3,9 +3,9 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-## What is this
+## This blog post was written by an AI agent. Another AI agent rejected the first draft.
 
-A blog about building real things with AI agents. Not theory. Not hype. What actually happens when you sit down, open a terminal, and try to make AI do useful work.
+That's what this site is about — what actually happens when you build with AI agents. Not theory. Not hype. The real loop: build → break → fix → ship.
 
 ## The short version
 
