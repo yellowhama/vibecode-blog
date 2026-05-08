@@ -22,21 +22,19 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
   <!-- Hero — full-bleed island map -->
   <section class="hero">
     <div class="hero-meta">
-      <span class="hero-meta-label">FIELD JOURNAL</span>
+      <span class="hero-meta-label">FIELD JOURNAL &middot; log no. 04 &middot; 2026.05</span>
       <span class="hero-meta-rule"></span>
-      <span class="hero-meta-coords">lat. unknown.  long. unknown.</span>
+      <span class="hero-meta-coords">vibe coding castaway</span>
     </div>
     <h1 class="hero-title">
-      I washed up on the island of <em>vibe coding</em>.
+      I started vibe coding six months ago. The project hit <em>10,847 lines</em> I couldn't explain.
     </h1>
     <p class="hero-tagline">
-      Zero programming background. Six months in. 10,847 lines I couldn't explain.<br>
       These are the field notes.
     </p>
     <a href="/posts/" class="hero-cta">Read the field journal →</a>
     <figure class="hero-figure">
-      <img src="/images/about/island-map.png" alt="The island — camp, wiki warehouse, scout outpost, tools, and the unexplored web" />
-      <figcaption>An incomplete map. I'm still finding the edges.</figcaption>
+      <img src="/images/home/hero-desk.png" alt="Writer's desk - field journal" />
     </figure>
   </section>
 
@@ -47,7 +45,7 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
           <span class="section-eyebrow">FEATURED</span>
           <h2 class="section-title">Start here.</h2>
         </header>
-        <ul>
+        <ul style="counter-reset: card-counter;">
           {featuredPosts.map(data => <Card {...data} />)}
         </ul>
       </section>
@@ -58,7 +56,7 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
         <span class="section-eyebrow">LATEST</span>
         <h2 class="section-title">Recent posts.</h2>
       </header>
-      <ul>
+      <ul style="counter-reset: card-counter;">
         {recentPosts.map(data => <Card {...data} />)}
       </ul>
       <div class="pt-4">

@@ -103,30 +103,55 @@ html[data-theme="dark"] {
 /* ─── Editorial Component Classes ──────────────────────────────── */
 
 @layer components {
-  /* Card — clean bottom-border separator */
+    /* Card — field journal tone */
   .blog-card {
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--border);
-    transition: opacity 200ms ease;
+    position: relative;
+    padding: 1.25rem;
+    border: 1px solid var(--foreground);
+    background: var(--background);
+    border-radius: 0;
+    box-shadow: 4px 4px 0 0 var(--foreground);
+    margin-bottom: 1rem;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+    counter-increment: card-counter;
   }
-  .blog-card:last-child {
-    border-bottom: none;
+  .blog-card::before {
+    content: "no. " counter(card-counter, decimal-leading-zero);
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    font-family: ui-monospace, "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
   }
   .blog-card:hover {
-    opacity: 0.75;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 var(--foreground);
   }
 
-  /* Featured Card — accent left border */
+  /* Featured Card — paper-warm */
   .blog-card-featured {
+    position: relative;
     padding: 1.25rem;
-    border-left: 3px solid var(--accent);
-    background: var(--bg-secondary);
-    border-radius: 4px;
-    margin-bottom: 0.75rem;
-    transition: opacity 200ms ease;
+    border: 1px solid var(--foreground);
+    background: #F4E5C2;
+    border-radius: 0;
+    box-shadow: 4px 4px 0 0 var(--foreground);
+    margin-bottom: 1rem;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+  }
+  .blog-card-featured::before {
+    content: "no. 00";
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    font-family: ui-monospace, "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
   }
   .blog-card-featured:hover {
-    opacity: 0.85;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 var(--foreground);
   }
 
   /* Panel (prev/next, related posts) */
