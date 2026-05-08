@@ -1,6 +1,6 @@
 ---
 author: Hugh
-pubDatetime: 2026-05-13T00:00:00Z
+pubDatetime: 2026-05-05T00:00:00Z
 title: "10,847 Lines of AI Code I Couldn't Explain"
 featured: true
 draft: false

@@ -1,6 +1,6 @@
 ---
 author: Hugh
-pubDatetime: 2026-05-16T00:00:00Z
+pubDatetime: 2026-05-06T00:00:00Z
 title: "Three Defaults That Were Burning My Tokens"
 featured: false
 draft: false

@@ -1,6 +1,6 @@
 ---
 author: Hugh
-pubDatetime: 2026-05-30T00:00:00Z
+pubDatetime: 2026-05-08T00:00:00Z
 title: "My LLM Wiki Was Starving"
 featured: false
 draft: false

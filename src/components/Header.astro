@@ -76,14 +76,6 @@ const isActive = (path: string) => {
           </a>
         </li>
         <li class="col-span-2">
-          <a
-            href="/structure"
-            class:list={{ "active-nav": isActive("/structure") }}
-          >
-            Structure
-          </a>
-        </li>
-        <li class="col-span-2">
           <a href="/posts" class:list={{ "active-nav": isActive("/posts") }}>
             Posts
           </a>
@@ -91,34 +83,6 @@ const isActive = (path: string) => {
         <li class="col-span-2">
           <a href="/about" class:list={{ "active-nav": isActive("/about") }}>
             About
-          </a>
-        </li>
-        <li class="col-span-2">
-          <a
-            href={SITE.links.windowsDownload}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="font-semibold text-accent"
-          >
-            Download .exe
-          </a>
-        </li>
-        <li class="col-span-2">
-          <a
-            href={SITE.links.docs}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Docs
-          </a>
-        </li>
-        <li class="col-span-2">
-          <a
-            href={SITE.links.pricing}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Pricing
           </a>
         </li>
         <li class="col-span-1 flex items-center justify-center">

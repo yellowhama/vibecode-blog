@@ -1,6 +1,6 @@
 ---
 author: Hugh
-pubDatetime: 2026-05-20T00:00:00Z
+pubDatetime: 2026-05-07T00:00:00Z
 title: "I Built a Marketing Team With 6 AI Agents. It Produced Garbage."
 featured: false
 draft: false
