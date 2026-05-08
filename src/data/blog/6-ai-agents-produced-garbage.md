@@ -7,7 +7,7 @@ draft: false
 tags:
   - war-stories
   - structure-over-prompts
-ogImage: /images/blog/6-ai-agents/pipeline-failure.png
+ogImage: "https://vibecode.town/images/blog/6-ai-agents/pipeline-failure.png"
 description: "6 agents. 5 AI models. 2 weeks of operation. The result was content I would not send to my worst enemy."
 ---
 

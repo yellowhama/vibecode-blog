@@ -7,7 +7,7 @@ draft: false
 tags:
   - token-economics
   - structure-over-prompts
-ogImage: /images/blog/three-defaults/before-after.png
+ogImage: "https://vibecode.town/images/blog/three-defaults/before-after.png"
 description: "A bloated system prompt, a retrieval system reading 75 files per question, and a heartbeat checking every 5 minutes with nothing to do. Three things I set up months ago and never looked at again."
 ---
 

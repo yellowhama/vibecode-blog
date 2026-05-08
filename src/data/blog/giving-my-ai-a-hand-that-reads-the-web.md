@@ -8,7 +8,7 @@ tags:
   - war-stories
   - structure-over-prompts
   - tool-notes
-ogImage: /images/blog/wiki-starving/flywheel.png
+ogImage: "https://vibecode.town/images/blog/wiki-starving/flywheel.png"
 description: "My LLM Wiki stopped growing because I stopped feeding it. So I gave my Research Agent a web-reading hand called Crawl4AI. Here's what broke, and what I built to fix it."
 ---
 
