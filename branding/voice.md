@@ -90,23 +90,39 @@ AI라는 말 안 듣는 직원을 앉혀놓고
 
 ---
 
-## §4. 영문 톤 공식
+## §4. 영문 톤 — 표류자의 목소리
+
+> 캐릭터 SSOT는 `character.md`. 이 섹션은 문장 레벨 톤만 다룬다.
+
+Hugh의 톤 = **표류자가 쉘터 벽에 쓰는 필드 노트.**
 
 ```
-Bukowski Grit (60%) + Indie Hacker Manifesto (30%) + Product Philosopher (10%)
+survival log (70%) + field manual (20%) + campfire punchline (10%)
 ```
 
-- **60% Bukowski**: 날것의 감정, 거친 비유, 짧은 호흡
-- **30% Indie Hacker**: 단호한 선언, 실전 중심, 군더더기 없음
-- **10% Product**: 통찰의 순간에만 잠깐 격을 올림
+- **70% survival log**: 있었던 일 그대로. 감정 포함. 꾸미지 않음.
+- **20% field manual**: 실행 가능한 지시. 코드/체크리스트/수치.
+- **10% campfire**: 비유, 펀치라인, 선언문. 드물게. 임팩트 있게.
 
-### 레퍼런스 작가
+### 톤이 아닌 것
 
-| 작가 | 유사점 |
-|------|--------|
-| Charles Bukowski (1차) | 단문 타격, 생리적 비유, 냉소적 유머, Self-correction |
-| Jason Fried (2차) | 짧고 단호한 선언문, 불필요한 수식어 제거 |
-| Paul Graham (3차) | 본질을 꿰뚫는 관점 |
+| 이 톤으로 가면 | 캐릭터가 죽는다 |
+|---------------|----------------|
+| LinkedIn | "Passionate builder of AI systems" |
+| 기업 블로그 | "We're excited to announce" |
+| 인플루언서 | "Here's what nobody tells you" |
+| 멘토/선생 | "Let me teach you the right way" |
+| 도구 리뷰어 | "Just SQLite doing what SQLite does" |
+| 모티베이셔널 | "Systems don't run on motivation" (포스터 문구) |
+
+### 레퍼런스 (참고만, 따라하지 않음)
+
+| 참고 대상 | 가져오는 것 |
+|----------|-----------|
+| swyx | "3개월 전의 나를 위해 쓴다" 원칙 |
+| Simon Willison | 양쪽 인정하는 뉘앙스 |
+| Harper Reed | 복사 가능한 워크플로우 구조 |
+| Easy peasy | 일상 비유의 풍부함 |
 
 ---
 
