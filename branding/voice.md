@@ -90,19 +90,43 @@ AI라는 말 안 듣는 직원을 앉혀놓고
 
 ---
 
-## §4. 영문 톤 — 표류자의 목소리
+## §4. 영문 톤 공식
 
 > 캐릭터 SSOT는 `character.md`. 이 섹션은 문장 레벨 톤만 다룬다.
 
-Hugh의 톤 = **표류자가 쉘터 벽에 쓰는 필드 노트.**
+**욕을 좀 덜하는 부코스키가 바이브코딩이라는 바다에서 표류 중.**
+
+이게 Hugh다. 이게 전부다.
 
 ```
-survival log (70%) + field manual (20%) + campfire punchline (10%)
+Bukowski castaway (60%) + field manual (30%) + campfire punchline (10%)
 ```
 
-- **70% survival log**: 있었던 일 그대로. 감정 포함. 꾸미지 않음.
-- **20% field manual**: 실행 가능한 지시. 코드/체크리스트/수치.
-- **10% campfire**: 비유, 펀치라인, 선언문. 드물게. 임팩트 있게.
+- **60% Bukowski castaway**: 날것의 감정, 짧은 호흡, 자기 실패를 먼저 깜. 단문 타격. 생리적 비유. 냉소적 유머. Self-correction. 근데 진짜 부코스키처럼 세상을 저주하지는 않음. 욕은 줄이되 거친 에너지는 유지.
+- **30% field manual**: 코드/체크리스트/수치. 실행 가능한 지시. "이걸 복붙하면 됨."
+- **10% campfire**: 비유, 펀치라인, 선언문. 드물게. 임팩트 있게. "구현은 싸졌다. 결정은 비싸졌다."
+
+### 부코스키에서 가져오는 것
+
+| 가져옴 | 안 가져옴 |
+|--------|----------|
+| 단문 타격 ("I tried it. It broke.") | 세상 혐오 |
+| Self-correction ("Wait—no.") | 알코올 미화 |
+| 자기 비하가 먼저 | 타인 비하 |
+| 감정이 문장 사이에 튀어나옴 | 허무주의 |
+| "근데"로 전환 (But, not However) | 욕설 남발 |
+| 거친 비유 ("28 left arms") | 불필요한 공격성 |
+| 꾸미지 않은 솔직함 | 시니컬한 포기 |
+
+### 표류에서 가져오는 것
+
+| 가져옴 | 안 가져옴 |
+|--------|----------|
+| 생존 기록 톤 | 모험 영웅 톤 |
+| "여기서 발목 나갔다" | "이쪽으로 오시면 됩니다" |
+| 비유: camp, shelter, scout, supplies | 비유: ship, captain, crew |
+| 아직 구조 안 됐음 | 성공적으로 도착함 |
+| 기록이 곧 생존 도구 | 기록이 곧 콘텐츠 |
 
 ### 톤이 아닌 것
 
@@ -112,16 +136,17 @@ survival log (70%) + field manual (20%) + campfire punchline (10%)
 | 기업 블로그 | "We're excited to announce" |
 | 인플루언서 | "Here's what nobody tells you" |
 | 멘토/선생 | "Let me teach you the right way" |
-| 도구 리뷰어 | "Just SQLite doing what SQLite does" |
-| 모티베이셔널 | "Systems don't run on motivation" (포스터 문구) |
+| 깨끗한 부코스키 (모순) | 너무 정돈된 문장, 교양체 |
+| 모티베이셔널 | "You can do it!" (포스터 문구) |
 
-### 레퍼런스 (참고만, 따라하지 않음)
+### 레퍼런스
 
 | 참고 대상 | 가져오는 것 |
 |----------|-----------|
-| swyx | "3개월 전의 나를 위해 쓴다" 원칙 |
+| Charles Bukowski | 단문 타격, self-correction, 자기 비하 먼저, 꾸밈 없음 |
+| swyx | "3개월 전의 나를 위해 쓴다" |
 | Simon Willison | 양쪽 인정하는 뉘앙스 |
-| Harper Reed | 복사 가능한 워크플로우 구조 |
+| Harper Reed | 복사 가능한 워크플로우 |
 | Easy peasy | 일상 비유의 풍부함 |
 
 ---

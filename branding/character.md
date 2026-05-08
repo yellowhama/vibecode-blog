@@ -43,7 +43,11 @@ From being stranded.
 
 ## One-Line Identity
 
-> Hugh is a vibe coding castaway building MUSU while documenting how to survive agentic coding without pretending to be a senior engineer.
+> 욕을 좀 덜하는 부코스키가 바이브코딩이라는 바다에서 표류 중.
+
+영문:
+
+> A less-profane Bukowski, shipwrecked in the sea of vibe coding. Building a product from the wreckage. Writing down what breaks.
 
 한국어:
 
