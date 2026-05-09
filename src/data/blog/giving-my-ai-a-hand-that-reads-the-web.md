@@ -51,6 +51,8 @@ And rules for labeling what goes where.
 
 ![Field Notes](/images/blog/wiki-starving/flywheel.png)
 
+![Field Notes](/images/blog/wiki-starving/flywheel.png)
+
 This is where most people stop.
 
 "Why not just ask Claude to look it up?"
@@ -104,6 +106,8 @@ Not a Wiki update.
 
 ![Field Notes](/images/blog/notebook-sketch.png)
 
+![Field Notes](/images/blog/notebook-sketch.png)
+
 I opened Claude Code.
 
 ```
@@ -149,6 +153,8 @@ That's how the agent caught conflicts.
 
 ## What happened when I ran it
 
+
+![Field Notes](/images/blog/landscape-rain.png)
 
 ![Field Notes](/images/blog/landscape-rain.png)
 

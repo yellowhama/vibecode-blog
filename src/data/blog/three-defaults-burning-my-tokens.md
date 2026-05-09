@@ -24,6 +24,8 @@ All three were things I set up months ago and never looked at again. None of the
 
 ![Field Notes](/images/blog/three-defaults/before-after.png)
 
+![Field Notes](/images/blog/three-defaults/before-after.png)
+
 I hadn't looked at my system prompt in two months. When I finally did, it was 670 words.
 
 Half the sentences said some version of "be helpful, be accurate, be thorough." The other half described behavior the model already does by default.
@@ -66,6 +68,8 @@ The rule I apply now: **if deleting a sentence doesn't change the AI's behavior,
 
 ![Field Notes](/images/blog/notebook-sketch.png)
 
+![Field Notes](/images/blog/notebook-sketch.png)
+
 I asked my agent one question: "What does the health check endpoint return?"
 
 Simple question. One function. One file.
@@ -101,6 +105,8 @@ I didn't add a smarter engine. I added a limit. "Get the 5 most relevant files" 
 
 ## 3. The heartbeat running on autopilot
 
+
+![Field Notes](/images/blog/landscape-rain.png)
 
 ![Field Notes](/images/blog/landscape-rain.png)
 

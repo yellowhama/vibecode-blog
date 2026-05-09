@@ -28,6 +28,8 @@ The result was content I would not send to my worst enemy.
 
 ![Field Notes](/images/blog/6-ai-agents/pipeline-failure.png)
 
+![Field Notes](/images/blog/6-ai-agents/pipeline-failure.png)
+
 The Strategist did research. Sort of. It scraped some competitor pages and produced a "competitive analysis" that was mostly a list of company names with one-sentence descriptions pulled from their homepages. No actual positioning. No insight into what made any of them successful or vulnerable.
 
 The Content Creator received this "research" and wrote blog posts. The posts were grammatically perfect. They hit every SEO keyword. They contained sentences like "MUSU is a revolutionary AI agent runtime that leverages cutting-edge technology to unlock the power of distributed computing."
@@ -40,6 +42,8 @@ The Editor scored everything 8 or 9 out of 10.
 
 ## The Editor that approved everything
 
+
+![Field Notes](/images/blog/notebook-sketch.png)
 
 ![Field Notes](/images/blog/notebook-sketch.png)
 
@@ -63,6 +67,8 @@ The Editor was scoring against criteria that were too vague to fail anything. It
 
 ## The "DO NOT PUBLISH" incident
 
+
+![Field Notes](/images/blog/landscape-rain.png)
 
 ![Field Notes](/images/blog/landscape-rain.png)
 
