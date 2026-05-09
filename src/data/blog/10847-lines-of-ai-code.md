@@ -7,7 +7,7 @@ draft: false
 tags:
   - war-stories
   - structure-over-prompts
-ogImage: "https://vibecode.town/images/blog/10847-lines/codebase-jungle.png"
+ogImage: ""
 description: "I had 10,847 lines of code. I wrote zero of them. I could not explain what half of them did. That is where this story starts."
 ---
 
