@@ -29,6 +29,9 @@ I told Claude Code what I wanted. Claude wrote the code. Files appeared. Functio
 
 ## The jungle
 
+
+![Field Notes](/images/blog/10847-lines/codebase-jungle.png)
+
 By week four the project had 47 files. By week eight it had 130. By month three I stopped counting.
 
 I couldn't add a feature without breaking something else. I'd ask Claude to add a health check endpoint. It would add the endpoint, create a new utility function, import a library I'd never heard of, and silently change the behavior of two other endpoints that happened to share a module.
@@ -43,6 +46,9 @@ The worst part: I couldn't tell if the code was good or bad. I didn't write it. 
 
 ## The archaeology
 
+
+![Field Notes](/images/blog/notebook-sketch.png)
+
 One day I decided to actually read the code. All of it.
 
 It took two days. What I found was not pretty.
@@ -56,6 +62,9 @@ I had a project with 28 left arms and no right arm.
 ---
 
 ## The wrong question
+
+
+![Field Notes](/images/blog/landscape-rain.png)
 
 My first instinct was to blame the AI.
 
