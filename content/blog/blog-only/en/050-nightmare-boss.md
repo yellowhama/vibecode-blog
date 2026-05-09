@@ -1,3 +1,5 @@
+![The Garbage Factory](/images/blog/6-ai-agents/hero.png)
+
 # AI Isn't Stupid. You're the Nightmare Boss.
 
 When you vibe code long enough, a weird moment comes.

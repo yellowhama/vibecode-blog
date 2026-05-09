@@ -1,3 +1,5 @@
+![The Code Jungle](/images/blog/10847-lines/hero.png)
+
 # I Followed the Tutorial. I Failed.
 
 ## Why doing exactly what the course says still blows up in your face

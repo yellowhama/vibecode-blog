@@ -1,3 +1,5 @@
+![Atmospheric Sketch](/images/blog/landscape-rain.png)
+
 # "AI, You Write All the Code" -- The Vibe Coding Era Is Here
 
 ## AI writes the code now. So what do developers do?

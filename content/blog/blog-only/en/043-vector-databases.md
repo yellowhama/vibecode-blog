@@ -1,3 +1,5 @@
+![The Starving Wiki](/images/blog/wiki-starving/hero.png)
+
 # In the RAG Era, You Can't Talk About AI Without Vector Databases
 
 Follow any AI conversation lately and one word keeps coming up.

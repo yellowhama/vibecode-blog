@@ -1,3 +1,5 @@
+![Burning Tokens](/images/blog/three-defaults/hero.png)
+
 # You're Prompting Wrong.
 
 ## The AI isn't stupid. You are.

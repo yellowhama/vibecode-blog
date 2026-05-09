@@ -1,3 +1,5 @@
+![Field Notebook Sketch](/images/blog/notebook-sketch.png)
+
 # Frustration Is the Spec
 
 ---
