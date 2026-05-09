@@ -52,14 +52,19 @@
       "title": "[FDD Diary #30] Built It Anyway",
       "source": "easy_peasy/phase1/en/act5-en.md",
       "scheduledAt": "2026-05-09T14:00:00Z",
-      "status": "approved",
+      "status": "posted",
       "content": [
         "I can't code. Still can't.\nBuilt it anyway.",
         "Better prompts aren't the answer.\nBetter AI tools aren't the answer.\n\nWhat to build. How it should feel.\n\nThat answer doesn't come out clean.\nYou get pissed. Ask questions. Fight.\nOrganize. Get pissed again.",
         "Frustration becomes the spec.\nThe spec becomes the system.\nThe system becomes freedom.\n\nPhase 1: Complete."
       ],
-      "postedIds": [],
-      "postedAt": null
+      "postedIds": [
+        "2053113413786612170",
+        "2053113422955295054",
+        "2053113432228909555"
+      ],
+      "postedAt": "2026-05-09T14:02:42.000Z",
+      "error": null
     }
   ]
 }
