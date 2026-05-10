@@ -1,14 +1,20 @@
 ---
-title: "020  RAG"
-description: "Field notes from the trenches: Exploring 020  rag through the lens of vibe coding."
-pubDatetime: 2026-05-09T08:19:15.000Z
+title: '020  RAG'
+description: 'Field notes from the trenches: Exploring 020  rag through the lens of'
+pubDatetime: 2026-05-09 08:19:15+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of 020  rag. Real scars, no slop.
 

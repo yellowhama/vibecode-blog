@@ -1,16 +1,21 @@
 ---
-author: Hugh
-pubDatetime: 2026-05-08T00:00:00Z
-title: "My LLM Wiki Was Starving"
+title: 'My LLM Wiki Was Starving'
+description: 'My LLM Wiki stopped growing because I stopped feeding it. So I gave my'
+pubDatetime: 2026-05-08 00:00:00+00:00
 featured: false
 draft: false
 tags:
-  - war-stories
-  - structure-over-prompts
-  - tool-notes
+- war-stories
+- structure-over-prompts
+- tool-notes
 ogImage: ""
-description: "My LLM Wiki stopped growing because I stopped feeding it. So I gave my Research Agent a web-reading hand called Crawl4AI. Here's what broke, and what I built to fix it."
 ---
+
+
+
+
+
+
 
 My LLM Wiki stopped.
 
@@ -269,7 +274,7 @@ Instead, it makes this.
 ```yaml
 type: source_note
 source_url: "https://www.swyx.io/learn-in-public"
-source_title: "Learn In Public"
+source_title: 'Learn In Public'
 source_type: "blog_post"
 crawled_at: "2026-05-08"
 tool_used: "crawl4ai"

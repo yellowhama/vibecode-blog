@@ -1,14 +1,20 @@
 ---
-title: "AI Hallucinates. Every. Single. Time."
-description: "Field notes from the trenches: Exploring ai hallucinates. every. single. time. through the lens of vibe coding."
-pubDatetime: 2026-05-09T08:19:14.000Z
+title: 'AI Hallucinates. Every. Single. Time.'
+description: 'Field notes from the trenches: Exploring ai hallucinates. every. single.'
+pubDatetime: 2026-05-09 08:19:14+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of ai hallucinates. every. single. time.. Real scars, no slop.
 

@@ -1,14 +1,20 @@
 ---
-title: "Building a US Stock Screener in 2 Days with Claude Code (Rust+PyO3+WSL)"
-description: "Field notes from the trenches: Exploring building a us stock screener in 2 days with claude code (rust+pyo3+wsl) through the lens of vibe coding."
-pubDatetime: 2026-05-09T07:25:50.000Z
+title: 'Building a US Stock Screener in 2 Days with Claude Code (Rust+PyO3+WSL)'
+description: 'Field notes from the trenches: Exploring building a us stock screener'
+pubDatetime: 2026-05-09 07:25:50+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of building a us stock screener in 2 days with claude code (rust+pyo3+wsl). Real scars, no slop.
 

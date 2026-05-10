@@ -1,14 +1,20 @@
 ---
-title: "Boksuni's Major Surgery: From Spaghetti Code to a System"
-description: "Field notes from the trenches: Exploring boksuni's major surgery: from spaghetti code to a system through the lens of vibe coding."
-pubDatetime: 2026-05-09T07:25:50.000Z
+title: 'Boksuni''''''''''''''''''''''''''''''''s Major Surgery: From Spaghetti Code to a System'
+description: 'Field notes from the trenches: Exploring boksuni''''''''''''''''''''''''''''''''s major'
+pubDatetime: 2026-05-09 07:25:50+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of boksuni's major surgery: from spaghetti code to a system. Real scars, no slop.
 

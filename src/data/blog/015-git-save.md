@@ -1,14 +1,20 @@
 ---
-title: "015 Git Is Your Save System"
-description: "Field notes from the trenches: Exploring 015 git is your save system through the lens of vibe coding."
-pubDatetime: 2026-05-09T08:19:14.000Z
+title: '015 Git Is Your Save System'
+description: 'Field notes from the trenches: Exploring 015 git is your save system'
+pubDatetime: 2026-05-09 08:19:14+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of 015 git is your save system. Real scars, no slop.
 

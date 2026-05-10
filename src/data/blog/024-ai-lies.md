@@ -1,14 +1,20 @@
 ---
-title: "024  AI Lie Detection"
-description: "Field notes from the trenches: Exploring 024  ai lie detection through the lens of vibe coding."
-pubDatetime: 2026-05-09T08:19:16.000Z
+title: '024  AI Lie Detection'
+description: 'Field notes from the trenches: Exploring 024  ai lie detection through'
+pubDatetime: 2026-05-09 08:19:16+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of 024  ai lie detection. Real scars, no slop.
 

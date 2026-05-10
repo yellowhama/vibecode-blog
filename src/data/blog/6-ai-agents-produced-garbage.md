@@ -1,15 +1,20 @@
 ---
-author: Hugh
-pubDatetime: 2026-05-07T00:00:00Z
-title: "I Built a Marketing Team With 6 AI Agents. It Produced Garbage."
+title: 'I Built a Marketing Team With 6 AI Agents. It Produced Garbage.'
+description: '6 agents. 5 AI models. 2 weeks of operation. The result was content I'
+pubDatetime: 2026-05-07 00:00:00+00:00
 featured: false
 draft: false
 tags:
-  - war-stories
-  - structure-over-prompts
+- war-stories
+- structure-over-prompts
 ogImage: ""
-description: "6 agents. 5 AI models. 2 weeks of operation. The result was content I would not send to my worst enemy."
 ---
+
+
+
+
+
+
 
 I gave 6 AI agents job titles.
 

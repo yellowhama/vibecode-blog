@@ -1,14 +1,20 @@
 ---
-title: "010 Five-Minute Docs: How to 5x Your AI Vibe Coding"
-description: "Field notes from the trenches: Exploring 010 five-minute docs: how to 5x your ai vibe coding through the lens of vibe coding."
-pubDatetime: 2026-05-09T07:25:51.000Z
+title: '010 Five-Minute Docs: How to 5x Your AI Vibe Coding'
+description: 'Field notes from the trenches: Exploring 010 five-minute docs: how to'
+pubDatetime: 2026-05-09 07:25:51+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of 010 five-minute docs: how to 5x your ai vibe coding. Real scars, no slop.
 

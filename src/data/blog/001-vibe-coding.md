@@ -1,14 +1,20 @@
 ---
-title: "001 Vibe Coding"
-description: "Field notes from the trenches: Exploring 001 vibe coding through the lens of vibe coding."
-pubDatetime: 2026-05-09T07:25:49.000Z
+title: '001 Vibe Coding'
+description: 'Field notes from the trenches: Exploring 001 vibe coding through the'
+pubDatetime: 2026-05-09 07:25:49+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of 001 vibe coding. Real scars, no slop.
 

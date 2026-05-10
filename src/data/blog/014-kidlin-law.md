@@ -1,14 +1,20 @@
 ---
-title: "014 Write It Down. 90% Solved. — Kidlin's Law for AI Coding"
-description: "Field notes from the trenches: Exploring 014 write it down. 90% solved. — kidlin's law for ai coding through the lens of vibe coding."
-pubDatetime: 2026-05-09T08:19:14.000Z
+title: '014 Write It Down. 90% Solved. — Kidlin''s Law for AI Coding'
+description: 'Field notes from the trenches: Exploring 014 write it down. 90% solved.'
+pubDatetime: 2026-05-09 08:19:14+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of 014 write it down. 90% solved. — kidlin's law for ai coding. Real scars, no slop.
 

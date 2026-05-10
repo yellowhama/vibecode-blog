@@ -105,37 +105,28 @@ html[data-theme="dark"] {
     border-bottom: 1px solid var(--border);
     transition: all 200ms ease;
     counter-increment: card-counter;
-  }
-  .blog-card:last-child {
-    border-bottom: none;
-  }
-  .blog-card h2, .blog-card h3, 
-  .blog-card-featured h2, .blog-card-featured h3 {
-    @apply font-serif text-3xl mb-3 leading-tight;
-  }
-  .blog-card p, .blog-card-featured p {
-    @apply text-text-secondary leading-relaxed max-w-2xl text-lg;
+    display: flex;
+    flex-direction: column;
   }
   .blog-card::before, .blog-card-featured::before {
     content: counter(card-counter, decimal-leading-zero);
-    position: absolute;
-    left: -4rem;
-    top: 2.75rem;
     font-family: ui-monospace, "IBM Plex Mono", monospace;
     font-size: 0.8rem;
     color: var(--text-muted);
     letter-spacing: 0.1em;
+    margin-bottom: 1rem;
   }
-  @media (max-width: 1200px) {
-    .blog-card::before, .blog-card-featured::before {
-      position: static;
-      display: block;
-      margin-bottom: 1rem;
+  @media (min-width: 1200px) {
+    .blog-card, .blog-card-featured {
+      flex-direction: row;
+      padding-left: 4rem;
     }
-  }
-  .blog-card:hover h2, .blog-card:hover h3,
-  .blog-card-featured:hover h2, .blog-card-featured:hover h3 {
-    @apply text-accent-dim underline underline-offset-4 decoration-accent/30;
+    .blog-card::before, .blog-card-featured::before {
+      position: absolute;
+      left: 0;
+      top: 2.75rem;
+      margin-bottom: 0;
+    }
   }
 
   /* Featured Styling */

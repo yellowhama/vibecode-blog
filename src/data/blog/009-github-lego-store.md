@@ -1,14 +1,20 @@
 ---
-title: "Stop Building. Start Shopping."
-description: "Field notes from the trenches: Exploring stop building. start shopping. through the lens of vibe coding."
-pubDatetime: 2026-05-09T07:25:51.000Z
+title: 'Stop Building. Start Shopping.'
+description: 'Field notes from the trenches: Exploring stop building. start shopping.'
+pubDatetime: 2026-05-09 07:25:51+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of stop building. start shopping.. Real scars, no slop.
 

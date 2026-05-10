@@ -1,15 +1,20 @@
 ---
-author: Hugh
-pubDatetime: 2026-05-06T00:00:00Z
-title: "Three Defaults That Were Burning My Tokens"
+title: 'Three Defaults That Were Burning My Tokens'
+description: 'A bloated system prompt, a retrieval system reading 75 files per question,'
+pubDatetime: 2026-05-06 00:00:00+00:00
 featured: false
 draft: false
 tags:
-  - token-economics
-  - structure-over-prompts
+- token-economics
+- structure-over-prompts
 ogImage: ""
-description: "A bloated system prompt, a retrieval system reading 75 files per question, and a heartbeat checking every 5 minutes with nothing to do. Three things I set up months ago and never looked at again."
 ---
+
+
+
+
+
+
 
 Three things were draining supplies from the camp and I didn't know it.
 

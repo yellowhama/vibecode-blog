@@ -1,14 +1,20 @@
 ---
-title: "CLAUDE.md: From 500 Lines to 87"
-description: "Field notes from the trenches: Exploring claude.md: from 500 lines to 87 through the lens of vibe coding."
-pubDatetime: 2026-05-09T07:25:49.000Z
+title: 'CLAUDE.md: From 500 Lines to 87'
+description: 'Field notes from the trenches: Exploring claude.md: from 500 lines to'
+pubDatetime: 2026-05-09 07:25:49+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of claude.md: from 500 lines to 87. Real scars, no slop.
 

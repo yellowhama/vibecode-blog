@@ -1,14 +1,20 @@
 ---
-title: "018 Three-Stage Vibe Coding vs GitHub Spec Kit"
-description: "Field notes from the trenches: Exploring 018 three-stage vibe coding vs github spec kit through the lens of vibe coding."
-pubDatetime: 2026-05-09T08:19:15.000Z
+title: '018 Three-Stage Vibe Coding vs GitHub Spec Kit'
+description: 'Field notes from the trenches: Exploring 018 three-stage vibe coding'
+pubDatetime: 2026-05-09 08:19:15+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of 018 three-stage vibe coding vs github spec kit. Real scars, no slop.
 

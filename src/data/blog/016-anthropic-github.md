@@ -1,14 +1,20 @@
 ---
-title: "016 Don't Learn Claude Code. Let It Learn Itself."
-description: "Field notes from the trenches: Exploring 016 don't learn claude code. let it learn itself. through the lens of vibe coding."
-pubDatetime: 2026-05-09T08:19:14.000Z
+title: '016 Don''t Learn Claude Code. Let It Learn Itself.'
+description: 'Field notes from the trenches: Exploring 016 don''''''''''''''''''''''''''''''''t learn'
+pubDatetime: 2026-05-09 08:19:14+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of 016 don't learn claude code. let it learn itself.. Real scars, no slop.
 

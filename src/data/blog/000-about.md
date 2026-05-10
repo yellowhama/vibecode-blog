@@ -1,14 +1,20 @@
 ---
-title: "Prologue: Stop Copying."
-description: "Field notes from the trenches: Exploring prologue: stop copying. through the lens of vibe coding."
-pubDatetime: 2026-05-09T07:25:49.000Z
+title: 'Prologue: Stop Copying.'
+description: 'Field notes from the trenches: Exploring prologue: stop copying. through'
+pubDatetime: 2026-05-09 07:25:49+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of prologue: stop copying.. Real scars, no slop.
 

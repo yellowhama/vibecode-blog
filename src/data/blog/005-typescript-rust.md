@@ -1,14 +1,20 @@
 ---
-title: "What a Non-Coder Learned Vibe Coding -- Python or TypeScript?"
-description: "Field notes from the trenches: Exploring what a non-coder learned vibe coding -- python or typescript? through the lens of vibe coding."
-pubDatetime: 2026-05-09T07:25:50.000Z
+title: 'What a Non-Coder Learned Vibe Coding -- Python or TypeScript?'
+description: 'Field notes from the trenches: Exploring what a non-coder learned vibe'
+pubDatetime: 2026-05-09 07:25:50+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of what a non-coder learned vibe coding -- python or typescript?. Real scars, no slop.
 

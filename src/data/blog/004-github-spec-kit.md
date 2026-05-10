@@ -1,14 +1,20 @@
 ---
-title: "GitHub Fixed What AI Coding Couldn't"
-description: "Field notes from the trenches: Exploring github fixed what ai coding couldn't through the lens of vibe coding."
-pubDatetime: 2026-05-09T07:25:49.000Z
+title: 'GitHub Fixed What AI Coding Couldn''t'
+description: 'Field notes from the trenches: Exploring github fixed what ai coding'
+pubDatetime: 2026-05-09 07:25:49+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of github fixed what ai coding couldn't. Real scars, no slop.
 

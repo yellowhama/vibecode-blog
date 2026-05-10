@@ -1,14 +1,20 @@
 ---
-title: "Making a Game in 30 Hours"
-description: "Field notes from the trenches: Exploring making a game in 30 hours through the lens of vibe coding."
-pubDatetime: 2026-05-09T07:25:50.000Z
+title: 'Making a Game in 30 Hours'
+description: 'Field notes from the trenches: Exploring making a game in 30 hours through'
+pubDatetime: 2026-05-09 07:25:50+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of making a game in 30 hours. Real scars, no slop.
 

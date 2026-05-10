@@ -1,14 +1,20 @@
 ---
-title: "012 Everybody Has a Plan Until They Get Punched — Spec Kit Field Report"
-description: "Field notes from the trenches: Exploring 012 everybody has a plan until they get punched — spec kit field report through the lens of vibe coding."
-pubDatetime: 2026-05-09T08:19:13.000Z
+title: '012 Everybody Has a Plan Until They Get Punched — Spec Kit Field Report'
+description: 'Field notes from the trenches: Exploring 012 everybody has a plan until'
+pubDatetime: 2026-05-09 08:19:13+00:00
 featured: false
 draft: false
 tags:
-  - vibe coding
-  - field report
+- vibe coding
+- field report
 ogImage: ""
 ---
+
+
+
+
+
+
 
 > **TL;DR**: An excavation of 012 everybody has a plan until they get punched — spec kit field report. Real scars, no slop.
 
