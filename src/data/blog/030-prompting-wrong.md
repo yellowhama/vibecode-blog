@@ -18,7 +18,7 @@ ogImage: ""
 
 > **TL;DR**: An excavation of 030 prompting wrong. Real scars, no slop.
 
-![Burning Tokens](/images/blog/three-defaults/hero.png)
+![Burning Tokens](../../../public/images/blog/three-defaults/hero.png)
 
 # You're Prompting Wrong.
 

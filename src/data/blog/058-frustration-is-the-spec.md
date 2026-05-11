@@ -18,7 +18,7 @@ ogImage: ""
 
 > **TL;DR**: An excavation of 058 frustration is the spec. Real scars, no slop.
 
-![Field Notebook Sketch](/images/blog/notebook-sketch.png)
+![Field Notebook Sketch](../../../public/images/blog/notebook-sketch.png)
 
 # Frustration Is the Spec
 

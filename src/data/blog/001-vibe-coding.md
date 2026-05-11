@@ -18,7 +18,7 @@ ogImage: ""
 
 > **TL;DR**: An excavation of 001 vibe coding. Real scars, no slop.
 
-![Atmospheric Sketch](/images/blog/landscape-rain.png)
+![Atmospheric Sketch](../../../public/images/blog/landscape-rain.png)
 
 # "AI, You Write All the Code" -- The Vibe Coding Era Is Here
 

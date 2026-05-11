@@ -27,9 +27,9 @@ All three were things I set up months ago and never looked at again. None of the
 ## 1. The system prompt nobody audited
 
 
-![Field Notes](/images/blog/three-defaults/before-after.png)
+![Field Notes](../../../public/images/blog/three-defaults/before-after.png)
 
-![Field Notes](/images/blog/three-defaults/before-after.png)
+![Field Notes](../../../public/images/blog/three-defaults/before-after.png)
 
 I hadn't looked at my system prompt in two months. When I finally did, it was 670 words.
 
@@ -71,9 +71,9 @@ The rule I apply now: **if deleting a sentence doesn't change the AI's behavior,
 ## 2. The retrieval that read everything
 
 
-![Field Notes](/images/blog/notebook-sketch.png)
+![Field Notes](../../../public/images/blog/notebook-sketch.png)
 
-![Field Notes](/images/blog/notebook-sketch.png)
+![Field Notes](../../../public/images/blog/notebook-sketch.png)
 
 I asked my agent one question: "What does the health check endpoint return?"
 
@@ -111,9 +111,9 @@ I didn't add a smarter engine. I added a limit. "Get the 5 most relevant files" 
 ## 3. The heartbeat running on autopilot
 
 
-![Field Notes](/images/blog/landscape-rain.png)
+![Field Notes](../../../public/images/blog/landscape-rain.png)
 
-![Field Notes](/images/blog/landscape-rain.png)
+![Field Notes](../../../public/images/blog/landscape-rain.png)
 
 My agent checked in every 5 minutes. I looked at the logs:
 
@@ -146,7 +146,7 @@ Stretched the interval to 30 minutes. Added idle-skip. **83% reduction.**
 
 ---
 
-![Three defaults: system prompt 670→174, retrieval 75→3 files, heartbeat 12→2 checks/hr](/images/blog/three-defaults/before-after.png)
+![Three defaults: system prompt 670→174, retrieval 75→3 files, heartbeat 12→2 checks/hr](../../../public/images/blog/three-defaults/before-after.png)
 
 ## The pattern
 

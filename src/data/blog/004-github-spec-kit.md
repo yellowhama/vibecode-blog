@@ -7,7 +7,7 @@ draft: false
 tags:
 - vibe coding
 - field report
-ogImage: ""
+ogImage: "../../../public/images/blog/004-github-spec-kit/hero.png"
 ---
 
 
@@ -22,9 +22,15 @@ ogImage: ""
 
 ## TL;DR
 
+![Sketch 1](../../../public/images/blog/004-github-spec-kit/sketch-1.png)
+
+
 GitHub open-sourced a toolkit called **"Spec Kit"** to fix the problems of building with AI. The goal: move past the limits of "vibe coding" into spec-driven development that makes AI coding accurate and trustworthy.
 
 ## AI Writes Code Now, But Something's Off
+
+![Sketch 2](../../../public/images/blog/004-github-spec-kit/sketch-2.png)
+
 
 AI coding is everywhere. "ChatGPT, build me a shopping mall." Code appears. But when you actually run it... it doesn't work. Or it works, but it's not what you wanted.
 

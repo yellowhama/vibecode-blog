@@ -18,7 +18,7 @@ ogImage: ""
 
 > **TL;DR**: An excavation of 050 nightmare boss. Real scars, no slop.
 
-![The Garbage Factory](/images/blog/6-ai-agents/hero.png)
+![The Garbage Factory](../../../public/images/blog/6-ai-agents/hero.png)
 
 # AI Isn't Stupid. You're the Nightmare Boss.
 

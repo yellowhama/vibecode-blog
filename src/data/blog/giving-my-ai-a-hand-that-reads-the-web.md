@@ -54,9 +54,9 @@ And rules for labeling what goes where.
 ## Can't I just ask Claude?
 
 
-![Field Notes](/images/blog/wiki-starving/flywheel.png)
+![Field Notes](../../../public/images/blog/wiki-starving/flywheel.png)
 
-![Field Notes](/images/blog/wiki-starving/flywheel.png)
+![Field Notes](../../../public/images/blog/wiki-starving/flywheel.png)
 
 This is where most people stop.
 
@@ -109,9 +109,9 @@ Not a Wiki update.
 ## So I built one
 
 
-![Field Notes](/images/blog/notebook-sketch.png)
+![Field Notes](../../../public/images/blog/notebook-sketch.png)
 
-![Field Notes](/images/blog/notebook-sketch.png)
+![Field Notes](../../../public/images/blog/notebook-sketch.png)
 
 I opened Claude Code.
 
@@ -159,9 +159,9 @@ That's how the agent caught conflicts.
 ## What happened when I ran it
 
 
-![Field Notes](/images/blog/landscape-rain.png)
+![Field Notes](../../../public/images/blog/landscape-rain.png)
 
-![Field Notes](/images/blog/landscape-rain.png)
+![Field Notes](../../../public/images/blog/landscape-rain.png)
 
 First targets: three sites.
 
@@ -376,7 +376,7 @@ Most knowledge systems don't do this. They pile up agreeable facts. The Wiki gro
 
 I'd rather have a small Wiki with conflict tags than a big Wiki full of comfortable lies.
 
-![The flywheel — write, research, conflict, investigate, experience, repeat](/images/blog/wiki-starving/flywheel.png)
+![The flywheel — write, research, conflict, investigate, experience, repeat](../../../public/images/blog/wiki-starving/flywheel.png)
 
 And here's the thing I didn't expect.
 

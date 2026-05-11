@@ -18,7 +18,7 @@ ogImage: ""
 
 > **TL;DR**: An excavation of 049 vibe coding failure. Real scars, no slop.
 
-![The Code Jungle](/images/blog/10847-lines/hero.png)
+![The Code Jungle](../../../public/images/blog/10847-lines/hero.png)
 
 # I Followed the Tutorial. I Failed.
 

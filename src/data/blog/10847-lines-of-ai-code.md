@@ -35,9 +35,9 @@ I told Claude Code what I wanted. Claude wrote the code. Files appeared. Functio
 ## The jungle
 
 
-![Field Notes](/images/blog/10847-lines/codebase-jungle.png)
+![Field Notes](../../../public/images/blog/10847-lines/codebase-jungle.png)
 
-![Field Notes](/images/blog/10847-lines/codebase-jungle.png)
+![Field Notes](../../../public/images/blog/10847-lines/codebase-jungle.png)
 
 By week four the project had 47 files. By week eight it had 130. By month three I stopped counting.
 
@@ -49,14 +49,14 @@ The worst part: I couldn't tell if the code was good or bad. I didn't write it. 
 
 ---
 
-![From jungle to camp — 47 files became 10,847 lines of structural chaos](/images/blog/10847-lines/codebase-jungle.png)
+![From jungle to camp — 47 files became 10,847 lines of structural chaos](../../../public/images/blog/10847-lines/codebase-jungle.png)
 
 ## The archaeology
 
 
-![Field Notes](/images/blog/notebook-sketch.png)
+![Field Notes](../../../public/images/blog/notebook-sketch.png)
 
-![Field Notes](/images/blog/notebook-sketch.png)
+![Field Notes](../../../public/images/blog/notebook-sketch.png)
 
 One day I decided to actually read the code. All of it.
 
@@ -73,9 +73,9 @@ I had a project with 28 left arms and no right arm.
 ## The wrong question
 
 
-![Field Notes](/images/blog/landscape-rain.png)
+![Field Notes](../../../public/images/blog/landscape-rain.png)
 
-![Field Notes](/images/blog/landscape-rain.png)
+![Field Notes](../../../public/images/blog/landscape-rain.png)
 
 My first instinct was to blame the AI.
 

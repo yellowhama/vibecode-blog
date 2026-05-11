@@ -7,7 +7,7 @@ draft: false
 tags:
 - vibe coding
 - field report
-ogImage: ""
+ogImage: "../../../public/images/blog/003-claude-md/hero.png"
 ---
 
 
@@ -22,11 +22,17 @@ ogImage: ""
 
 ## TL;DR
 
+![Sketch 1](../../../public/images/blog/003-claude-md/sketch-1.png)
+
+
 - **CLAUDE.md is the "user manual for this human" that Claude Code reads every time.**
 - Strip it to essentials -- 500 lines down to 87 -- and you save tokens and kill repetitive explanations.
 - Update it as your project evolves, and AI becomes a partner that actually knows you.
 
 ## What Even Is CLAUDE.md?
+
+![Sketch 2](../../../public/images/blog/003-claude-md/sketch-2.png)
+
 
 One file in your project root. Claude reads it automatically every session.
 

@@ -25,7 +25,7 @@ ogImage: ""
 
 > **TL;DR**: An excavation of 043 vector databases. Real scars, no slop.
 
-![The Starving Wiki](/images/blog/wiki-starving/hero.png)
+![The Starving Wiki](../../../public/images/blog/wiki-starving/hero.png)
 
 # In the RAG Era, You Can't Talk About AI Without Vector Databases
 
