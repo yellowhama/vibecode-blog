@@ -13,7 +13,17 @@ const { title, description, featured, ogImage, ...props } = data;
 const cardClass = featured ? "blog-card-featured" : "blog-card";
 
 // Ensure we have a valid image path. If ogImage is missing, use a fallback based on the slug.
-const thumbnail = ogImage ? ogImage : `/images/blog/${id.split('/').pop().replace('.md', '')}/hero.png`;
+
+// Advanced Placeholder Strategy
+const getPlaceholder = (slug: string) => {
+  const hashes = slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const variants = ['blueprint', 'sketch', 'wiring', 'manuscript', 'gear'];
+  const variant = variants[hashes % variants.length];
+  return `/images/placeholders/${variant}.png`;
+};
+
+const thumbnail = ogImage && ogImage !== "" ? ogImage : getPlaceholder(id);
+
 ---
 
 <li class="list-none group">
@@ -33,7 +43,8 @@ const thumbnail = ogImage ? ogImage : `/images/blog/${id.split('/').pop().replac
       <p class="mt-4 text-base leading-relaxed text-text-secondary line-clamp-3">{description}</p>
     </div>
     
-    <div class="w-full md:w-1/3 aspect-[4/3] md:aspect-square border border-ink/10 bg-paper-warm overflow-hidden shrink-0 mt-6 md:mt-0">
+    <div class="w-full md:w-1/3 aspect-[4/3] md:aspect-square border border-ink/10 bg-paper-warm overflow-hidden shrink-0 mt-6 md:mt-0 relative group-hover:border-accent/40 transition-colors duration-500 shadow-sm">
+      <div class="absolute inset-0 bg-paper-texture opacity-20 pointer-events-none mix-blend-overlay"></div>
       <img 
         src={thumbnail} 
         alt={title} 
