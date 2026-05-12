@@ -1,21 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <!-- Deep Cocoa Background (Optional for transparency) -->
-  <rect width="32" height="32" rx="6" fill="#1A110C" />
+  <!-- Solid Bold Hexagon (Stronger Foundation) -->
+  <path d="M16 2 L28 9 L28 23 L16 30 L4 23 L4 9 Z" 
+        fill="#1A110C" 
+        stroke="#FFF133" 
+        stroke-width="2.5" />
   
-  <!-- Hexagon Frame (Agentic Data Structure) -->
-  <path d="M16 4 L26 10 L26 22 L16 28 L6 22 L6 10 Z" 
+  <!-- Bold V-Pulse (High Visibility) -->
+  <path d="M8 13 L16 23 L24 9" 
         fill="none" 
-        stroke="#FFD166" 
-        stroke-width="1.5" 
-        stroke-opacity="0.3" />
-  
-  <!-- The Pulse (Vibe / Execute) -->
-  <path d="M8 12 L16 24 L24 8" 
-        fill="none" 
-        stroke="#FFD166" 
-        stroke-width="2.5" 
+        stroke="#FFF133" 
+        stroke-width="4" 
         stroke-linecap="round" 
-        stroke-linejoin="round">
-    <animate attributeName="stroke-dasharray" from="0, 50" to="50, 0" dur="2s" repeatCount="indefinite" />
-  </path>
+        stroke-linejoin="round" />
 </svg>
