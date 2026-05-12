@@ -4,17 +4,9 @@ description: 'Field notes from the trenches: Exploring 029 through the lens of v
 pubDatetime: 2026-05-10 13:24:33+00:00
 featured: false
 draft: false
-tags:
-- vibe coding
-- field report
+tags: []
 ogImage: ""
 ---
-
-
-
-
-
-
 
 > **TL;DR**: An excavation of 029. Real scars, no slop.
 
@@ -194,23 +186,3 @@ Google didn't hand out one tool. **They handed out the entire factory.** A resea
 No more excuses. The tools are here. They're free. And 99% of the world doesn't even know they exist.
 
 **But now you do.**
-
----
-
-## Tool Links
-
-- **NotebookLM**: notebooklm.google
-- **Gemini**: gemini.google.com
-- **Google AI Studio**: aistudio.google.com
-- **Stitch**: labs.google/stitch
-- **Pomelli**: labs.google.com/pomelli
-- **Opal**: opal.google
-
----
-
-### References
-
-- Google Developers Blog: "Introducing Opal: describe, create, and share your AI mini-apps"
-- Google Blog: "Create on-brand marketing content for your business with Pomelli"
-- Learn Prompting: "Google I/O 2025 Recap"
-- Google Blog: "Building with AI: highlights for developers at Google I/O"

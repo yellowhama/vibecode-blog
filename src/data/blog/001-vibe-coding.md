@@ -4,17 +4,9 @@ description: 'Field notes from the trenches: Exploring 001 vibe coding through t
 pubDatetime: 2026-05-09 07:25:49+00:00
 featured: false
 draft: false
-tags:
-- vibe coding
-- field report
+tags: []
 ogImage: ""
 ---
-
-
-
-
-
-
 
 > **TL;DR**: An excavation of 001 vibe coding. Real scars, no slop.
 

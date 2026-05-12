@@ -4,17 +4,9 @@ description: 'Field notes from the trenches: Exploring 010 five-minute docs: how
 pubDatetime: 2026-05-09 07:25:51+00:00
 featured: false
 draft: false
-tags:
-- vibe coding
-- field report
+tags: []
 ogImage: ""
 ---
-
-
-
-
-
-
 
 > **TL;DR**: An excavation of 010 five-minute docs: how to 5x your ai vibe coding. Real scars, no slop.
 

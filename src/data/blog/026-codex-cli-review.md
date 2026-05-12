@@ -4,17 +4,9 @@ description: 'Field notes from the trenches: Exploring 026  codex cli code revie
 pubDatetime: 2026-05-10 13:24:33+00:00
 featured: false
 draft: false
-tags:
-- vibe coding
-- field report
+tags: []
 ogImage: ""
 ---
-
-
-
-
-
-
 
 > **TL;DR**: An excavation of 026  codex cli code review. Real scars, no slop.
 

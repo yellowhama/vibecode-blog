@@ -1,0 +1,116 @@
+--- a/src/data/blog/003-claude-md.md
++++ b/src/data/blog/003-claude-md.md
+@@ -466,6 +466,6 @@
+ *"Claude codes. I just say OK."*
+ 
+ How many lines is your CLAUDE.md? Go trim it right now.
+-\n![Sketch 3](../../../public/images/blog/003-claude-md/sketch-3.png)
+-\n![Sketch 4](../../../public/images/blog/003-claude-md/sketch-4.png)
+-\n![Sketch 5](../../../public/images/blog/003-claude-md/sketch-5.png)
++
++
++![Sketch 3](../../../public/images/blog/003-claude-md/sketch-3.png)
+--- a/src/data/blog/004-github-spec-kit.md
++++ b/src/data/blog/004-github-spec-kit.md
+@@ -121,6 +121,6 @@
+ ---
+ 
+ **Source**: [GitHub Blog - Spec-driven development with AI](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/)
+-\n![Sketch 3](../../../public/images/blog/004-github-spec-kit/sketch-3.png)
+-\n![Sketch 4](../../../public/images/blog/004-github-spec-kit/sketch-4.png)
+-\n![Sketch 5](../../../public/images/blog/004-github-spec-kit/sketch-5.png)
++
++
++![Sketch 3](../../../public/images/blog/004-github-spec-kit/sketch-3.png)
+--- a/src/data/blog/005-typescript-rust.md
++++ b/src/data/blog/005-typescript-rust.md
+@@ -20,9 +20,15 @@
+ 
+ ## My Vibe Coding Saga as a Complete Outsider
+ 
++![Sketch 1](../../../public/images/blog/005-typescript-rust/sketch-1.png)
++
++
+ When I first met Claude Code, I was blown away. Describe something in plain language and code just appears. It runs. It felt like magic.
+ 
+ ## Reality Hits: The Endless War with Errors
++
++![Sketch 2](../../../public/images/blog/005-typescript-rust/sketch-2.png)
++
+ 
+ But reality was different.
+ 
+@@ -215,6 +221,9 @@
+ 3-5 thousand lines in a few hours? Without breaking anything?
+ 
+ ## What Is a Typed Language? (For Beginners Like Me)
++
++![Sketch 3](../../../public/images/blog/005-typescript-rust/sketch-3.png)
++
+ 
+ I didn't really know what a typed language was, so I looked it up.
+ 
+--- a/src/data/blog/006-refactoring-case-study.md
++++ b/src/data/blog/006-refactoring-case-study.md
+@@ -20,6 +20,9 @@
+ 
+ ## TL;DR
+ 
++![Sketch 1](../../../public/images/blog/006-refactoring-case-study/sketch-1.png)
++
++
+ - **Problem**: 5 local LLM agents ("Boksuni") on a 16GB GPU. 45-minute runtime. 30% failure rate. 10,000+ lines of spaghetti.
+ - **Fix**: GitHub Spec Kit for a real specification. Shared modules. Collect/evaluate split. Auto GPU unloading. 3-level error system.
+ - **Results**: Runtime **45min to 12min**. Codebase **10,847 to 3,562 lines**. Failure rate **30% to 3%**. Adding a new source **2 days to 2 hours**.
+@@ -48,6 +51,9 @@
+ 
+ ## What's Boksuni?
+ 
++![Sketch 2](../../../public/images/blog/006-refactoring-case-study/sketch-2.png)
++
++
+ Boksuni is my squad of five AI agents. Born to save me from drowning in the sea of information.
+ 
+ Every morning, they each work in their own domain.
+@@ -111,6 +117,9 @@
+ ---
+ 
+ ## The Surgery Begins
++
++![Sketch 3](../../../public/images/blog/006-refactoring-case-study/sketch-3.png)
++
+ 
+ Started refactoring based on the spec. Claude Code led. I pointed the direction.
+ 
+--- a/src/data/blog/007-stock-screener.md
++++ b/src/data/blog/007-stock-screener.md
+@@ -20,6 +20,9 @@
+ 
+ ## TL;DR
+ 
++![Sketch 1](../../../public/images/blog/007-stock-screener/sketch-1.png)
++
++
+ - Used Claude Code for the full **instruct, generate, execute** loop to build **Lazy Quant Screener**
+ - Screens 586 stocks across **QVG/Value/Tenbagger** -- 3 strategies, top 20-30 picks each
+ - Python prototype, then **async batching**, then **Rust+PyO3 optimization (3-5 min)**
+@@ -88,6 +91,9 @@
+ ---
+ 
+ ## Terminal Magic
++
++![Sketch 2](../../../public/images/blog/007-stock-screener/sketch-2.png)
++
+ 
+ Opened Claude Code. Navigated to my project directory. Said:
+ 
+@@ -129,6 +135,9 @@
+ 
+ ## Implementing Investment Strategies
+ 
++![Sketch 3](../../../public/images/blog/007-stock-screener/sketch-3.png)
++
++
+ "Don't just fetch data. Apply investment strategies. Warren Buffett style, Benjamin Graham style, Peter Lynch style."
+ 
+ Claude Code built scoring logic for each strategy. QVG balances Quality, Value, and Growth. Low PER gets points. High ROE gets points. That kind of thing.

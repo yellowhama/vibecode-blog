@@ -4,11 +4,10 @@ description: 'Field notes from the trenches: Exploring 95% fail. 88% double down
 pubDatetime: 2026-05-10 13:24:33+00:00
 featured: false
 draft: false
-tags:
-- vibe coding
-- field report
+tags: []
 ogImage: ""
 ---
+
 :::info{title="2026 Technical Update"}
 **Note**: This post contains legacy concepts (detected: May 2026).  
 **Update Requirements**: Legacy Methodology: Focus on manual Prompt Engineering. 2026 standard emphasizes Agentic Workflows.  
@@ -142,7 +141,3 @@ Both are right. What matters is which road you choose. And whichever you pick, b
 2026. AI budgets are pouring in. For the prepared, it's opportunity. For the unprepared, it's just noise.
 
 Which side are you on?
-
----
-
-*P.S. If this post was helpful, your company probably needs AI training too. Not a joke. Dead serious.*

@@ -4,25 +4,29 @@ description: 'Field notes from the trenches: Exploring what a non-coder learned 
 pubDatetime: 2026-05-09 07:25:50+00:00
 featured: false
 draft: false
-tags:
-- vibe coding
-- field report
+tags: []
 ogImage: ""
 ---
 
+![Sketch 1](../../../public/images/blog/005-typescript-rust/sketch-1.png)
 
+![Sketch 2](../../../public/images/blog/005-typescript-rust/sketch-2.png)
 
-
-
-
+![Sketch 3](../../../public/images/blog/005-typescript-rust/sketch-3.png)
 
 > **TL;DR**: An excavation of what a non-coder learned vibe coding -- python or typescript?. Real scars, no slop.
 
 ## My Vibe Coding Saga as a Complete Outsider
 
+![Sketch 1](../../../public/images/blog/005-typescript-rust/sketch-1.png)
+
+
 When I first met Claude Code, I was blown away. Describe something in plain language and code just appears. It runs. It felt like magic.
 
 ## Reality Hits: The Endless War with Errors
+
+![Sketch 2](../../../public/images/blog/005-typescript-rust/sketch-2.png)
+
 
 But reality was different.
 
@@ -215,6 +219,9 @@ And the most striking part:
 3-5 thousand lines in a few hours? Without breaking anything?
 
 ## What Is a Typed Language? (For Beginners Like Me)
+
+![Sketch 3](../../../public/images/blog/005-typescript-rust/sketch-3.png)
+
 
 I didn't really know what a typed language was, so I looked it up.
 

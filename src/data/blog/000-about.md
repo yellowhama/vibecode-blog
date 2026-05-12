@@ -4,17 +4,9 @@ description: 'Field notes from the trenches: Exploring prologue: stop copying. t
 pubDatetime: 2026-05-09 07:25:49+00:00
 featured: false
 draft: false
-tags:
-- vibe coding
-- field report
+tags: []
 ogImage: ""
 ---
-
-
-
-
-
-
 
 > **TL;DR**: An excavation of prologue: stop copying.. Real scars, no slop.
 
@@ -135,57 +127,3 @@ Past the toy projects. Past the demos. All the way to something you can sell.
 That's where we're headed.
 
 The direction starts here.
-
----
-
-## Who This Is For
-
-**Sick of copy-pasting code from ChatGPT and Claude:**
-
-- Error messages make you freeze
-- You've asked "how do I fix this?" a hundred times and counting
-
-**Curious about automation but scared of code:**
-
-- Hit the ceiling with Notion and Zapier
-- Even n8n looks like a wall
-- Want your own automation tools, built your way
-
-**Want to build with AI but don't know where to start:**
-
-- "AI writes code -- but how?" That question keeps nagging you
-- Want something that actually runs
-
-**Not a developer but need development:**
-
-- Founders. Product managers. Designers.
-- Interested in automated stock or crypto trading
-- Office workers drowning in manual work
-
-**Vibes-first INTP/ENTP types:**
-
-- Plans are for later. Action is for now.
-- Five hours of googling? No. Just run it.
-
-## Especially For
-
-People who want to finish a real project with AI. Zero coding knowledge required.
-
-People who tried GPT and Claude but want more than copy-paste experiments. Real stability. Real reliability.
-
-People building automation, data tools, investment bots -- and need production-grade quality.
-
-People who want AI as a development partner, not a chatbot.
-
-Solo founders, side-project builders, and office workers who want to turn a project into revenue.
-
-## Not For You If
-
-- You want perfect code and academic rigor
-- You follow traditional dev methodologies religiously
-- You want to code without AI
-- You want to become a "real developer" -- this isn't a training program, it's a field manual
-
----
-
-**For everyone who got tired of copy-pasting and just wanted to say: "Handle it."**

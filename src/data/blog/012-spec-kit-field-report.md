@@ -4,17 +4,9 @@ description: 'Field notes from the trenches: Exploring 012 everybody has a plan 
 pubDatetime: 2026-05-09 08:19:13+00:00
 featured: false
 draft: false
-tags:
-- vibe coding
-- field report
+tags: []
 ogImage: ""
 ---
-
-
-
-
-
-
 
 > **TL;DR**: An excavation of 012 everybody has a plan until they get punched — spec kit field report. Real scars, no slop.
 

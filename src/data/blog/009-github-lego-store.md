@@ -4,17 +4,9 @@ description: 'Field notes from the trenches: Exploring stop building. start shop
 pubDatetime: 2026-05-09 07:25:51+00:00
 featured: false
 draft: false
-tags:
-- vibe coding
-- field report
+tags: []
 ogImage: ""
 ---
-
-
-
-
-
-
 
 > **TL;DR**: An excavation of stop building. start shopping.. Real scars, no slop.
 
@@ -241,11 +233,3 @@ That's it.
 And that's enough.
 
 Players don't care who wrote the code. If it's fun, it's fun.
-
----
-
-Don't reinvent the wheel. Find it on GitHub.
-
-That's what hour 31 taught me.
-
-**P.S.** Wish someone would put this post on GitHub too. `how-to-stop-being-stupid.md` -- MIT License.
