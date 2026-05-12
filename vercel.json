@@ -1,5 +1,12 @@
 {
-  "framework": "astro",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  "rewrites": [
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml"
+    },
+    {
+      "source": "/install.sh",
+      "destination": "https://raw.githubusercontent.com/yellowhama/musu-bee/main/install.sh"
+    }
+  ]
 }
