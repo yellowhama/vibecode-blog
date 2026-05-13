@@ -98,6 +98,33 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
     </div>
   </main>
 
+  
+    <!-- Newsletter Signup -->
+    <section class="mt-24 border-y border-ink/10 py-16 bg-accent/5">
+      <div class="app-layout max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-serif italic mb-4 text-ink">Get notified on launch</h2>
+        <p class="text-text-secondary font-serif italic mb-8">
+          The journal is just the beginning. I'm building tools to help us all vibe better.
+          Enter your email to join the inner circle.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-4">
+          <input 
+            type="email" 
+            placeholder="your@email.com" 
+            class="flex-1 px-6 py-4 bg-background border border-ink/20 font-serif italic focus:outline-none focus:border-accent"
+            required
+          />
+          <button 
+            type="submit" 
+            class="bg-ink text-background px-8 py-4 font-mono text-xs tracking-[0.3em] uppercase font-black hover:bg-ink/90 transition-colors"
+          >
+            Join the Vibe
+          </button>
+        </form>
+        <p class="mt-4 text-[10px] font-mono text-ink-faded uppercase tracking-widest">No spam. Only deep vibes.</p>
+      </div>
+    </section>
+
   <Footer />
 
   <script is:inline>
