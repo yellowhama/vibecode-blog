@@ -3,15 +3,20 @@
 <div class="vibe-explorer p-8 my-12 border-2 border-ink/10 rounded-2xl bg-paper-warm/10 backdrop-blur-sm relative overflow-hidden group">
   <div class="absolute -right-4 -top-4 w-24 h-24 bg-accent/5 rounded-full blur-2xl group-hover:bg-accent/10 transition-colors"></div>
   
-  <h3 class="text-xl font-serif italic mb-6 text-ink flex items-center gap-3">
-    Vibe Explorer
-    <span class="text-[8px] font-mono bg-accent/20 text-accent px-2 py-0.5 rounded-full not-italic tracking-widest">EXPERIMENTAL</span>
-  </h3>
-  
+  <header class="mb-6">
+    <h3 class="text-xl font-serif italic text-ink flex items-center gap-3">
+      Vibe Coding Intensity
+      <span class="text-[8px] font-mono bg-accent/20 text-accent px-2 py-0.5 rounded-full not-italic tracking-widest uppercase">Simulator</span>
+    </h3>
+    <p class="text-[10px] font-mono text-ink-faded mt-1 leading-relaxed">
+      A visual metaphor for "Vibe Coding" — where intent fluidity meets deterministic boundaries.
+    </p>
+  </header>
+
   <div class="flex flex-col gap-8 relative z-10">
     <div>
       <div class="flex justify-between items-end mb-4">
-        <label class="text-[10px] font-mono uppercase tracking-[0.2em] text-ink-faded">Intent Fluidity (Vibe Level)</label>
+        <label class="text-[10px] font-mono uppercase tracking-[0.2em] text-ink-faded font-bold">Vibe Level (Intent Fluidity)</label>
         <span id="vibe-pct" class="text-xs font-mono font-bold">20%</span>
       </div>
       <input type="range" min="0" max="100" value="20" class="vibe-slider w-full accent-accent cursor-pointer" id="vibe-range" />
@@ -19,12 +24,12 @@
 
     <div class="grid grid-cols-2 gap-4">
       <div class="p-4 bg-background/50 border border-ink/5 rounded-xl shadow-sm">
-        <span class="block text-[8px] font-mono text-ink-faded mb-1 uppercase tracking-tighter">Hallucination Risk</span>
-        <span class="text-xl font-mono text-ink font-black" id="risk-val">LOW</span>
+        <span class="block text-[8px] font-mono text-ink-faded mb-1 uppercase tracking-tighter font-bold">Hallucination Risk</span>
+        <span class="text-lg font-mono text-ink font-black" id="risk-val">LOW</span>
       </div>
       <div class="p-4 bg-background/50 border border-ink/5 rounded-xl shadow-sm">
-        <span class="block text-[8px] font-mono text-ink-faded mb-1 uppercase tracking-tighter">Boundary Req.</span>
-        <span class="text-xl font-mono text-accent font-black" id="boundary-val">STRICT</span>
+        <span class="block text-[8px] font-mono text-ink-faded mb-1 uppercase tracking-tighter font-bold">Boundary Requirement</span>
+        <span class="text-lg font-mono text-accent font-black" id="boundary-val">STRICT</span>
       </div>
     </div>
 
