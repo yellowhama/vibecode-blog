@@ -1,0 +1,67 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Scribble from "@/components/Scribble.astro";
+
+const title = "About the Vibe Coding Project";
+const description = "The story of a coding outsider finding order in the jungle.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main id="main-content" class="app-layout py-24">
+    <div class="max-w-2xl mx-auto">
+      <header class="mb-16">
+        <div class="font-mono text-[0.7rem] tracking-[0.4em] text-accent-dim uppercase mb-6 font-bold">THE PROLOGUE</div>
+        <h1 class="text-5xl md:text-7xl font-serif italic text-ink tracking-tighter leading-[0.95] mb-8">
+          Stop <Scribble type="circle">Copying.</Scribble> <br/> Start Commanding.
+        </h1>
+        <p class="text-xl text-text-secondary font-serif italic leading-relaxed">
+          "The age of copy-paste is dead. This is the story of how I stopped being a slave to the slop and started building real products."
+        </p>
+      </header>
+
+      <div class="prose prose-ink max-w-none font-serif text-lg leading-relaxed">
+        <p>
+          <strong>June 24, 2025.</strong> Anthropic shipped Claude Code. I'd been messing with AI code tools before that, but this was a different planet.
+        </p>
+        <p>
+          Before Claude Code, my days looked like a repetitive loop of ChatGPT, copy, paste, error, repeat. I was hunting bugs through 10,000 lines of tangled spaghetti with zero coding background.
+        </p>
+        <p>
+          Then I found the <Scribble type="underline">Warden</Scribble> mindset. Stop asking for code. Start defining boundaries. Start using the terminal.
+        </p>
+        <p>
+          This journal is the field manual for that journey. From zero to monetization, bypassing the "junior developer" trap by using AI correctly.
+        </p>
+        
+        <div class="my-16 p-8 border-l-4 border-accent bg-accent/5 italic">
+          "AI is just a fast junior developer. You need to be the Senior Architect from day one."
+        </div>
+
+        <h3 class="text-3xl font-serif italic text-ink mt-12 mb-6">The Castaway Ethos</h3>
+        <p>
+          I'm an INTP. I live by feel. Andrej Karpathy called it "Vibe Coding." I just call it survival.
+        </p>
+        <p>
+          I've built stock screeners that scan thousands of stocks and agents that collect massive datasets. All with zero CS degree.
+        </p>
+        
+        <h3 class="text-3xl font-serif italic text-ink mt-12 mb-6">What you'll find here</h3>
+        <ul>
+          <li><strong>Field Reports:</strong> Real scars from building production-grade tools.</li>
+          <li><strong>Spec Kit:</strong> How to set deterministic boundaries so AI doesn't produce garbage.</li>
+          <li><strong>Guru Insights:</strong> Opinionated takes on the shifting landscape of development.</li>
+        </ul>
+
+        <div class="mt-20">
+          <a href="/posts" class="bg-ink text-background px-8 py-4 font-mono text-xs tracking-[0.3em] uppercase font-black hover:bg-ink/90 transition-colors inline-block">
+            Explore the Logs
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
