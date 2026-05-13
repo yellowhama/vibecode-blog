@@ -1,0 +1,21 @@
+{
+  "morning": {
+    "type": "Magnet",
+    "topic": "The MCP USB-C Moment: Connecting Your First Server",
+    "urls": [
+      "https://modelcontextprotocol.io/introduction"
+    ]
+  },
+  "lunch": {
+    "type": "Beacon",
+    "topic": "Deconstructing Software 3.0: Karpathy's New Model",
+    "urls": [
+      "https://karpathy.ai/blog/software-3.0"
+    ]
+  },
+  "evening": {
+    "type": "FieldLog",
+    "topic": "Day 247: Scaling the RAG Wall with MUSU",
+    "urls": []
+  }
+}
