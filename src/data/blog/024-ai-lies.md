@@ -3,7 +3,7 @@ title: '024  AI Lie Detection'
 description: 'Field notes from the trenches: Exploring 024  ai lie detection through'
 pubDatetime: 2026-05-09 08:19:16+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -12,7 +12,7 @@ ogImage: ""
 
 # **You Thought AI Would Tell You the Truth?**
 
-**— What deception-detection research reveals about generative AI**
+**??What deception-detection research reveals about generative AI**
 
 ###
 
@@ -35,3 +35,4 @@ showed them real human video and audio,
 and asked them to pick "truth or lie."
 
 The results were rough.
+

@@ -3,7 +3,7 @@ title: 'Implementation Is Free.'
 description: 'Field notes from the trenches: Exploring implementation is free. through'
 pubDatetime: 2026-05-10 13:24:39+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -45,3 +45,4 @@ This isn't a problem of AI doing bad work.
 It's a problem of AI being too diligent.
 
 **Implementation is free. Orchestration is the cost.**
+

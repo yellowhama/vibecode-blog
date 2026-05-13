@@ -3,7 +3,7 @@ title: 'It''s the Sequence, Stupid.'
 description: 'Field notes from the trenches: Exploring it''s the sequence,'
 pubDatetime: 2026-05-10 13:24:39+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -29,3 +29,4 @@ At first I blamed the AI.
 But the more I used it, the real problem became clear.
 
 **We were throwing the conclusion at AI way too fast.**
+

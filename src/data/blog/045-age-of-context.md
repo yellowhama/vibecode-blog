@@ -3,7 +3,7 @@ title: 'The End of the Prompt Era, the Start of the Context Era'
 description: 'Field notes from the trenches: Exploring the end of the prompt era,'
 pubDatetime: 2026-05-10 13:24:37+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -35,3 +35,4 @@ Here's the bottom line.
 And their message is pretty direct.
 
 > "The era of writing good prompts is over. The era of designing context has begun."
+

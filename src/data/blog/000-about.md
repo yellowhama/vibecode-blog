@@ -3,7 +3,7 @@ title: 'Prologue: Stop Copying.'
 description: 'Field notes from the trenches: Exploring prologue: stop copying. through'
 pubDatetime: 2026-05-09 07:25:49+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -127,3 +127,4 @@ Past the toy projects. Past the demos. All the way to something you can sell.
 That's where we're headed.
 
 The direction starts here.
+

@@ -3,7 +3,7 @@ title: '049 Vibe Coding Failure'
 description: 'Field notes from the trenches: Exploring 049 vibe coding failure through'
 pubDatetime: 2026-05-10 13:24:38+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -29,3 +29,4 @@ So... I could do it too, right?
 The video was friendly.
 
 Friendly is nice. But friendly isn't always right.
+

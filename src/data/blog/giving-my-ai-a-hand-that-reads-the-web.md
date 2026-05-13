@@ -3,7 +3,7 @@ title: 'My LLM Wiki Was Starving'
 description: 'My LLM Wiki stopped growing because I stopped feeding it. So I gave my'
 pubDatetime: 2026-05-08 00:00:00+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -39,3 +39,4 @@ So if the warehouse was going to survive, it needed two things.
 Someone to carry things in.
 
 And rules for labeling what goes where.
+

@@ -1,22 +1,22 @@
 ---
-title: '012 Everybody Has a Plan Until They Get Punched — Spec Kit Field Report'
+title: '012 Everybody Has a Plan Until They Get Punched ??Spec Kit Field Report'
 description: 'Field notes from the trenches: Exploring 012 everybody has a plan until'
 pubDatetime: 2026-05-09 08:19:13+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
 
-> **TL;DR**: An excavation of 012 everybody has a plan until they get punched — spec kit field report. Real scars, no slop.
+> **TL;DR**: An excavation of 012 everybody has a plan until they get punched ??spec kit field report. Real scars, no slop.
 
-# Everybody Has a Plan Until They Get Punched — Spec Kit Field Report
+# Everybody Has a Plan Until They Get Punched ??Spec Kit Field Report
 
 ## TL;DR
 
-- **Plans are just plans** — Build timeouts, code conflicts, performance drops. Reality punches first.
-- **AI three-way collab** — Claude Code (executes), GPT (analyzes), Cursor (cleans up). Solve, record, evolve.
-- **The real lesson** — No plan is perfect. But document, record, find patterns, and AI coding gets faster and more stable.
+- **Plans are just plans** ??Build timeouts, code conflicts, performance drops. Reality punches first.
+- **AI three-way collab** ??Claude Code (executes), GPT (analyzes), Cursor (cleans up). Solve, record, evolve.
+- **The real lesson** ??No plan is perfect. But document, record, find patterns, and AI coding gets faster and more stable.
 
 ## The Perfect Plan: Spec Kit
 
@@ -82,7 +82,7 @@ GPT gave the prescription. Pin the version. Use build cache.
 >
 > - Installed sccache for build caching
 > - Switched to rust-lld linker for faster linking
-> - Result: 2-minute timeout → 28 seconds. Done.
+> - Result: 2-minute timeout ??28 seconds. Done.
 
 Back to Claude Code. Ran it. 28 seconds. Success.
 
@@ -200,7 +200,7 @@ Cursor tidied up the whole codebase.
 >     needs_redraw = false
 > ```
 >
-> Result: 45fps → 60fps.
+> Result: 45fps ??60fps.
 
 ## Key Realization: Write It Down
 
@@ -224,7 +224,7 @@ That's when I started recording every problem and its fix.
 >   1. Pin godot to version 0.3.5
 >   2. Install sccache (or use build_without_sccache.sh)
 >   3. Enable rust-lld linker
-> - Result: 2min+ → 28 seconds
+> - Result: 2min+ ??28 seconds
 > ```
 
 A week later, same problem popped up. Fixed it in 5 seconds.
@@ -234,7 +234,7 @@ A week later, same problem popped up. Fixed it in 5 seconds.
 After doing this a few times, a pattern emerged.
 
 ```
-Problem → Claude Code (diagnose) → GPT (analyze) → Claude Code (execute) → Cursor (clean up)
+Problem ??Claude Code (diagnose) ??GPT (analyze) ??Claude Code (execute) ??Cursor (clean up)
 ```
 
 Each one had its strength:
@@ -284,11 +284,11 @@ Different from the plan. But a more solid foundation.
 
 When things break:
 
-1. **Don't panic** — Every developer deals with this.
-2. **Be specific with AI** — "This doesn't work" needs details.
-3. **Use multiple AIs** — They're each good at different things.
-4. **Record the fix** — You'll need it again.
-5. **Plans change. That's fine.** — No plan survives contact with reality.
+1. **Don't panic** ??Every developer deals with this.
+2. **Be specific with AI** ??"This doesn't work" needs details.
+3. **Use multiple AIs** ??They're each good at different things.
+4. **Record the fix** ??You'll need it again.
+5. **Plans change. That's fine.** ??No plan survives contact with reality.
 
 > **Problem-solving process:**
 >
@@ -312,3 +312,4 @@ That's when the AIs find detours. And if you write those detours down, next time
 Get punched. Fix it. Write it down.
 
 The AI handles that part too.
+

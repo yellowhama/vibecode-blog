@@ -3,7 +3,7 @@ title: 'What Vibe Coding Actually Is'
 description: 'Field notes from the trenches: Exploring what vibe coding actually is'
 pubDatetime: 2026-05-10 13:24:40+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -37,3 +37,4 @@ You don't need to have read them.
 "So what is vibe coding, exactly?"
 
 Answering that one question is the entire point of this post.
+

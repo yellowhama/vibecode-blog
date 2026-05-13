@@ -3,7 +3,7 @@ title: 'Things You Must Do Before Using Claude Code'
 description: 'Field notes from the trenches: Exploring things you must do before using'
 pubDatetime: 2026-05-10 13:24:37+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -37,3 +37,4 @@ This isn't a feature guide.
 It's not a tutorial.
 
 **It's the routine the people who built Claude Code follow every time they start a project** -- rewritten for non-developers.
+

@@ -3,7 +3,7 @@ title: '95% Fail. 88% Double Down.'
 description: 'Field notes from the trenches: Exploring 95% fail. 88% double down.'
 pubDatetime: 2026-05-10 13:24:33+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -46,7 +46,7 @@ What Wharton studied was general-purpose AI tools. Giving employees ChatGPT, Cla
 
 Building an automated kitchen is harder than downloading an app. Obviously. The problem is, many companies can't tell the difference.
 
-Why does custom AI fail 95% of the time? Development takes six weeks, but optimization takes eight more. Tuning outlasts building. Then employees push back. "Is AI taking my job?" System integration is a nightmare. "This doesn't work with our ERP." And the data — orders say shipped, inventory says empty.
+Why does custom AI fail 95% of the time? Development takes six weeks, but optimization takes eight more. Tuning outlasts building. Then employees push back. "Is AI taking my job?" System integration is a nightmare. "This doesn't work with our ERP." And the data ??orders say shipped, inventory says empty.
 
 Off-the-shelf AI is different. Install in five minutes. Train in two hours. Documents get written 50% faster. Analysis runs 70% faster. There's nothing to fail at. It's just one more tool.
 
@@ -56,15 +56,15 @@ MIT was watching the miners. Wharton was watching the people selling shovels to 
 
 ## Small Companies Move 10x Faster Than Enterprises
 
-Here's where the data gets interesting. Mid-size companies — $50M to $250M revenue — see ROI within 90 days of investing in AI. Enterprises? Nine months.
+Here's where the data gets interesting. Mid-size companies ??$50M to $250M revenue ??see ROI within 90 days of investing in AI. Enterprises? Nine months.
 
-Why the gap? At a small company, the CEO says "let's try it" and they try it. If it fails, "okay, didn't work" — on to the next. Enterprises are different. Meetings, reviews, approvals, more meetings. Six months before anything starts, and if it fails, someone has to take the blame.
+Why the gap? At a small company, the CEO says "let's try it" and they try it. If it fails, "okay, didn't work" ??on to the next. Enterprises are different. Meetings, reviews, approvals, more meetings. Six months before anything starts, and if it fails, someone has to take the blame.
 
 Even more striking: partnering with external firms doubles the success rate. Internal teams fall into the trap of "we know our own company best." They drag things out with "let's do this perfectly." They dodge responsibility with "every department has to sign off."
 
 External partners are different. They write "results in three months" in the contract. They carry the weight of "this is industry best practice." No results? Contract gets killed. So they're all-in. That's why the success rate doubles.
 
-## Wait — Who Actually Got Rich in the Gold Rush?
+## Wait ??Who Actually Got Rich in the Gold Rush?
 
 1849. California. Hundreds of thousands rushing to find gold.
 
@@ -72,7 +72,7 @@ But the people who actually got rich weren't the miners.
 
 **Levi Strauss** never mined a single grain. He sold miners pants that wouldn't rip. That's how Levi's started.
 
-**Wells Fargo** moved the gold. Price up, price down — didn't matter. They collected the shipping fee every time. Now they're one of America's four biggest banks.
+**Wells Fargo** moved the gold. Price up, price down ??didn't matter. They collected the shipping fee every time. Now they're one of America's four biggest banks.
 
 **Sam Brannan** was even shrewder. The moment he heard gold was found, he bought up every shovel, pickaxe, and pan in the area. Sold them at 10x markup. Became the richest man in California.
 
@@ -100,13 +100,13 @@ Now for the part that actually matters. 88% are increasing AI budgets next year.
 
 Charge $5K-$10K per workshop. "ChatGPT for Marketing Teams." "AI Tool Master Class for Sales." Customize by department and you can charge more. One solid deck, a handful of case studies, and you're in.
 
-**Second: the AI talent market.** 49% of companies can't find AI talent. Not just AI engineers — they can't even find regular employees who know how to use the tools. Two opportunities here.
+**Second: the AI talent market.** 49% of companies can't find AI talent. Not just AI engineers ??they can't even find regular employees who know how to use the tools. Two opportunities here.
 
 One is headhunting. Find capable people in Discord and developer communities, connect them to companies, take 20-30% of salary as a fee. The other is training-to-placement. Build an AI literacy bootcamp, train people, supply graduates to companies.
 
 **Third: custom AI development.** The hardest path, but where the biggest money moves. Single projects range from $50K to $5M. Building customer service AI agents. Document automation systems.
 
-Be prepared. Four weeks building. Eight weeks tuning. Maintenance runs forever. Client requirements change a hundred times. "Oh, could it also do this?" But nail one project and that reference is powerful. "We built the AI system for Company A" — that one sentence gets you halfway to closing any deal.
+Be prepared. Four weeks building. Eight weeks tuning. Maintenance runs forever. Client requirements change a hundred times. "Oh, could it also do this?" But nail one project and that reference is powerful. "We built the AI system for Company A" ??that one sentence gets you halfway to closing any deal.
 
 ## The Temperature Gap Between Execs and Workers Is Your Opportunity
 
@@ -128,7 +128,7 @@ And raise your prices. Doing AI work on the cheap is advertising: "We're proud m
 
 Long-term, aim to become a full-stack AI partner. Start with training, expand to consulting, eventually build. Work with the same companies over time. Let trust compound.
 
-And collect failure stories. Knowing why 95% fail — that's the real competitive edge. "Don't make this mistake" consulting is worth more than "do this." In this era, avoiding failure matters more than chasing success.
+And collect failure stories. Knowing why 95% fail ??that's the real competitive edge. "Don't make this mistake" consulting is worth more than "do this." In this era, avoiding failure matters more than chasing success.
 
 ## The Real Point
 
@@ -141,3 +141,4 @@ Both are right. What matters is which road you choose. And whichever you pick, b
 2026. AI budgets are pouring in. For the prepared, it's opportunity. For the unprepared, it's just noise.
 
 Which side are you on?
+

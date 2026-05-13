@@ -3,7 +3,7 @@ title: 'Make It Blow Its Own Nose.'
 description: 'Field notes from the trenches: Exploring make it blow its own nose.'
 pubDatetime: 2026-05-10 13:24:39+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -25,3 +25,4 @@ ogImage: ""
 > **TL;DR**: An excavation of make it blow its own nose.. Real scars, no slop.
 
 ## Not prompts. Environment.
+

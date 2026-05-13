@@ -3,7 +3,7 @@ title: '030 Prompting Wrong'
 description: 'Field notes from the trenches: Exploring 030 prompting wrong through'
 pubDatetime: 2026-05-10 13:24:34+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -29,3 +29,4 @@ Prompt engineer Joseph Thacker nails it: **"Bad AI output? That's a skill issue.
 So one YouTuber lost his mind. Took every prompting course on Coursera. Read every official doc from Anthropic, Google, OpenAI. Tracked down the best prompt engineers--Daniel Miessler, Eric Pope, Joseph Thacker--and asked them directly.
 
 The answer? Prompting isn't about technique. It's about **clarity of thought**.
+

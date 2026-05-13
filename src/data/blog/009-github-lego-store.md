@@ -3,7 +3,7 @@ title: 'Stop Building. Start Shopping.'
 description: 'Field notes from the trenches: Exploring stop building. start shopping.'
 pubDatetime: 2026-05-09 07:25:51+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -233,3 +233,4 @@ That's it.
 And that's enough.
 
 Players don't care who wrote the code. If it's fun, it's fun.
+

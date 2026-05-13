@@ -3,7 +3,7 @@ title: 'Building a US Stock Screener in 2 Days with Claude Code (Rust+PyO3+WSL)'
 description: 'Field notes from the trenches: Exploring building a us stock screener'
 pubDatetime: 2026-05-09 07:25:50+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -66,3 +66,4 @@ Took two days.
 About 6 hours of actual work? Someone who knows code could probably do it in 30 minutes.
 
 I felt my way through it blind, touching everything one piece at a time.
+

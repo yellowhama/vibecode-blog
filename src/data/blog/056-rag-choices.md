@@ -3,7 +3,7 @@ title: 'I Added RAG. Then the Real Problem Showed Up.'
 description: 'Field notes from the trenches: Exploring i added rag. then the real'
 pubDatetime: 2026-05-10 13:24:40+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -25,3 +25,4 @@ ogImage: ""
 > **TL;DR**: An excavation of i added rag. then the real problem showed up.. Real scars, no slop.
 
 **RAG isn't search. It's selection.**
+

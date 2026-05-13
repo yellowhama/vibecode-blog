@@ -3,14 +3,14 @@ title: '029'
 description: 'Field notes from the trenches: Exploring 029 through the lens of vibe'
 pubDatetime: 2026-05-10 13:24:33+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
 
 > **TL;DR**: An excavation of 029. Real scars, no slop.
 
-# "Google's Free AI Bomb" — You Can Stop Paying for ChatGPT Now
+# "Google's Free AI Bomb" ??You Can Stop Paying for ChatGPT Now
 
 ## While Everyone Argued Over $20 Chatbots, Google Gave Away the Whole Store
 
@@ -22,7 +22,7 @@ This isn't email autocomplete. These are tools that do in seconds what used to t
 
 Let's break them down.
 
-## 1. NotebookLM — Your Savior the Night Before an Exam
+## 1. NotebookLM ??Your Savior the Night Before an Exam
 
 It's 10 PM. Exam tomorrow. 5 chapters, 30 papers, 100-page PDF study notes staring you in the face. Think you're screwed?
 
@@ -42,7 +42,7 @@ Exam morning. 2 hours left. No time to re-listen. Click **Mind Map**. All 5 chap
 
 **Free.** What have you done, Google.
 
-## 2. Gemini — The AI That Reads Your Life
+## 2. Gemini ??The AI That Reads Your Life
 
 OK, so NotebookLM is the exam hack. But what about everyday work? One tool for images, one for writing, one for video, one for email... 10 subscriptions bleeding money.
 
@@ -78,7 +78,7 @@ Got the perfect product shot. But it's 2025. You need video for ads, for social 
 
 Done. 1080p high-quality video clip. Ready for social media ads.
 
-## 3. Google AI Studio — Turning Your Idea Into an App
+## 3. Google AI Studio ??Turning Your Idea Into an App
 
 Gemini handled creative work. Now the building part. **Google AI Studio** is the new free custom productivity engine.
 
@@ -104,7 +104,7 @@ Open screen share view and click chat. "Studio, look at my screen. This website 
 
 **It actually does it.** Looks over your shoulder and tells you how to do your work better.
 
-## 4. Stitch — Making Your Idea Look Good
+## 4. Stitch ??Making Your Idea Look Good
 
 AI Studio is a beast. Builds custom tools in seconds. But let's be 100% honest. It's ugly. Functional but ugly. Can't put it on a website.
 
@@ -122,7 +122,7 @@ There's **a workflow nobody talks about**. You have the ugly app from AI Studio.
 
 **A true zero-coder stack.** Build logic in Studio. Build UI in Stitch. Combine and you've got a world-class product in 10 minutes.
 
-## 5. Pomelli — A Marketing Agency in a Box
+## 5. Pomelli ??A Marketing Agency in a Box
 
 OK, now you have a product and a website. The hard part is done. But now you have to sell it. This is where it usually gets expensive. Hire an agency, use freelancers, or burn out guessing what to post.
 
@@ -142,7 +142,7 @@ Done. Images use the right brand colors. Captions use the right tone. One click 
 
 **A free marketing agency inside a box.**
 
-## 6. Opal — The AI Tool That Makes AI Tools
+## 6. Opal ??The AI Tool That Makes AI Tools
 
 We've gone from research to creative to building to design to marketing. A 5-tool stack. That alone is an insane free workflow.
 
@@ -186,3 +186,4 @@ Google didn't hand out one tool. **They handed out the entire factory.** A resea
 No more excuses. The tools are here. They're free. And 99% of the world doesn't even know they exist.
 
 **But now you do.**
+

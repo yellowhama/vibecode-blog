@@ -3,7 +3,7 @@ title: 'The Prompt Era Is Over'
 description: 'Field notes from the trenches: Exploring the prompt era is over through'
 pubDatetime: 2026-05-10 13:24:37+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -19,3 +19,4 @@ That's not because you're bad at AI.
 Most of the time, the problem is much simpler.
 
 **You're using AI in the wrong place.**
+

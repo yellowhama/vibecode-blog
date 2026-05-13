@@ -3,14 +3,14 @@ title: '026  Codex CLI Code Review'
 description: 'Field notes from the trenches: Exploring 026  codex cli code review'
 pubDatetime: 2026-05-10 13:24:33+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
 
 > **TL;DR**: An excavation of 026  codex cli code review. Real scars, no slop.
 
-# Fix 13 — How I Stopped the Chain Reaction of Breaking Three Things Every Time I Fixed One
+# Fix 13 ??How I Stopped the Chain Reaction of Breaking Three Things Every Time I Fixed One
 
 ## The Game Finally Worked
 
@@ -54,11 +54,11 @@ Fix one spot, another one bursts.
 Kept a log.
 
 ```
-Attempt 1: Fix TacticsManager → WeekHub error
-Attempt 2: Fix WeekHub → GameManager error
-Attempt 3: Fix GameManager → PlayerStats error
+Attempt 1: Fix TacticsManager ??WeekHub error
+Attempt 2: Fix WeekHub ??GameManager error
+Attempt 3: Fix GameManager ??PlayerStats error
 ...
-Attempt 13: Fix PlayerStats → TacticsManager error
+Attempt 13: Fix PlayerStats ??TacticsManager error
 ```
 
 Attempt 13 brought me back to square one.
@@ -168,12 +168,12 @@ Why: Fix one spot, chain explosion
 ## 2. Duplicate time management
 
 GameCore.gd and WeekHub.gd both managing time
-→ Root cause of weekly training running twice
+??Root cause of weekly training running twice
 
 ## 3. Synchronous I/O inside game loop
 
 SaveManager.gd line 234: file save in _process()
-→ Root cause of 60fps drops
+??Root cause of 60fps drops
 ```
 
 Made from actually reading my code.
@@ -209,7 +209,7 @@ Finally. "Fix this and that breaks" -- told to me in advance.
 $ codex "I'm about to modify TacticsManager.gd, anything dangerous?"
 
 Codex: Lines 45, 89, 134 are tangled with other files.
-Especially line 45 — could blow up WeekHub. Be careful.
+Especially line 45 ??could blow up WeekHub. Be careful.
 ```
 
 ### 2. After modifying
@@ -241,12 +241,12 @@ Old way:
 
 ```
 Fix TacticsManager
-→ Run
-→ WeekHub blows up
-→ Fix WeekHub
-→ Run
-→ GameManager blows up
-→ (give up 3 hours later)
+??Run
+??WeekHub blows up
+??Fix WeekHub
+??Run
+??GameManager blows up
+??(give up 3 hours later)
 ```
 
 New way:
@@ -260,7 +260,7 @@ Codex: WeekHub and GameCore could break.
 (done in 30 minutes)
 ```
 
-## 3 Weeks In — Actual Numbers
+## 3 Weeks In ??Actual Numbers
 
 **Before:**
 
@@ -334,3 +334,4 @@ open the terminal and ask Codex.
 
 Ten seconds for an answer.
 Beats three hours of rabbit holes.
+

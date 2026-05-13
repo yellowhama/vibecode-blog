@@ -3,7 +3,7 @@ title: 'Making a Game in 30 Hours'
 description: 'Field notes from the trenches: Exploring making a game in 30 hours through'
 pubDatetime: 2026-05-09 07:25:50+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -135,3 +135,4 @@ Beginner's luck? The paradox of vibe coding?
 Either way, in 30 hours I'd built what amounts to a mid-size project architecture. Couldn't have done it alone. AI said "of course it's possible," so I assumed it was normal and did it.
 
 That might be the beauty of vibe coding. You don't know what's hard, so you just do it. And sometimes that gives you better results.
+

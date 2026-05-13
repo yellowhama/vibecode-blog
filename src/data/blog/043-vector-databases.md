@@ -3,7 +3,7 @@ title: '043 Vector Databases'
 description: 'Field notes from the trenches: Exploring 043 vector databases through'
 pubDatetime: 2026-05-10 13:24:36+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -48,6 +48,7 @@ The problem isn't RAG itself.
 
 There's one core point I want to cover in this post:
 
-> The essence of RAG is not generation — it's retrieval.
+> The essence of RAG is not generation ??it's retrieval.
 >
 > And the substance of that retrieval is the vector database.
+

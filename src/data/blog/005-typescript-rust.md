@@ -3,7 +3,7 @@ title: 'What a Non-Coder Learned Vibe Coding -- Python or TypeScript?'
 description: 'Field notes from the trenches: Exploring what a non-coder learned vibe'
 pubDatetime: 2026-05-09 07:25:50+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -314,3 +314,4 @@ What I needed wasn't a smarter AI. It was a smarter language.
 TypeScript first? Or install Rust?
 
 **If you're a vibe coding beginner, start with a typed language like TypeScript, Rust, or Go instead of Python. The language itself becomes your first safety net.**
+

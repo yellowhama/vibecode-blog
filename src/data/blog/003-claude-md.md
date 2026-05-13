@@ -3,7 +3,7 @@ title: 'CLAUDE.md: From 500 Lines to 87'
 description: 'Field notes from the trenches: Exploring claude.md: from 500 lines to'
 pubDatetime: 2026-05-09 07:25:49+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: "../../../public/images/blog/003-claude-md/hero.png"
 ---
@@ -448,3 +448,4 @@ A diary of how I change.
 Look at your CLAUDE.md a year from now and you'll see how far you've come.
 
 Don't update? You're coding as last year's you.
+

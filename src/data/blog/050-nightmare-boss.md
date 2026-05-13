@@ -3,7 +3,7 @@ title: '050 Nightmare Boss'
 description: 'Field notes from the trenches: Exploring 050 nightmare boss through'
 pubDatetime: 2026-05-10 13:24:38+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -27,3 +27,4 @@ Now you're just... watching from the side.
 "What am I even building right now?"
 
 The moment that question shows up, you're already one step behind.
+

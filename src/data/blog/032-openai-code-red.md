@@ -3,14 +3,14 @@ title: '032  OpenAI ''Code Red'
 description: 'Field notes from the trenches: Exploring 032  openai ''code'
 pubDatetime: 2026-05-10 13:24:34+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
 
 > **TL;DR**: An excavation of 032  openai 'code red'. Real scars, no slop.
 
-# OpenAI Declares 'Code Red' — The AI Throne Game Flips After 3 Years
+# OpenAI Declares 'Code Red' ??The AI Throne Game Flips After 3 Years
 
 # ChatGPT Got Outrun for the First Time: The Real Reason Behind OpenAI's Code Red
 
@@ -29,3 +29,4 @@ When ChatGPT launched in November 2022, Sundar Pichai declared 'Code Red' at Goo
 Three years later, the one shouting 'Code Red' is OpenAI.
 
 What happened?
+

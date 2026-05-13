@@ -3,7 +3,7 @@ title: '001 Vibe Coding'
 description: 'Field notes from the trenches: Exploring 001 vibe coding through the'
 pubDatetime: 2026-05-09 07:25:49+00:00
 featured: false
-draft: false
+draft: true
 tags: ["vibe-coding"]
 ogImage: ""
 references:
@@ -183,3 +183,4 @@ Shall we build something?
 - SLR paper (*Software*, 2025): [MDPI](https://www.mdpi.com/2674-113X/4/1/6)
 - Mono2Micro paper (ACM FSE'21): [arXiv](https://arxiv.org/pdf/2107.09698)
 - SEMGROMI paper (PeerJ Computer Science): [PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC10280387/)
+

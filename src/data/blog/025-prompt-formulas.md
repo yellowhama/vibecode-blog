@@ -3,7 +3,7 @@ title: '025  2025 Prompt Formulas'
 description: 'Field notes from the trenches: Exploring 025  2025 prompt formulas through'
 pubDatetime: 2026-05-10 13:24:32+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -26,7 +26,7 @@ ogImage: ""
 
 **2025 Prompt Formulas**
 
-**— Talk less. Let AI do the organizing.**
+**??Talk less. Let AI do the organizing.**
 
 Everyone uses AI these days.
 
@@ -55,3 +55,4 @@ Let's break this down for organizing documents specifically.
 Meeting notes, YouTube transcripts, articles, reports.
 
 The goal: throw it at AI, and you just review.
+

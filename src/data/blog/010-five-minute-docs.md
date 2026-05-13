@@ -3,7 +3,7 @@ title: '010 Five-Minute Docs: How to 5x Your AI Vibe Coding'
 description: 'Field notes from the trenches: Exploring 010 five-minute docs: how to'
 pubDatetime: 2026-05-09 07:25:51+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: ""
 ---
@@ -86,10 +86,10 @@ Five minutes later.
 
 ## Folder Structure
 scripts/
-├── core/          # Core managers
-├── ui/            # UI controllers
-├── data/          # Data classes
-└── utils/         # Utility functions
+?��??� core/          # Core managers
+?��??� ui/            # UI controllers
+?��??� data/          # Data classes
+?��??� utils/         # Utility functions
 ```
 
 Wait, it found everything?
@@ -168,13 +168,13 @@ One week in, it looked like this:
 # README.md (Main Hub)
 
 ## Doc Locations
-- Structure → STRUCTURE.md
-- Art/UI → ART.md
-- Story → STORY.md
-- Error Fixes → ERRORS.md
-- Open Source → OPENSOURCE.md
-- Changes → CHANGELOG.md
-- To-do → TODO.md
+- Structure ??STRUCTURE.md
+- Art/UI ??ART.md
+- Story ??STORY.md
+- Error Fixes ??ERRORS.md
+- Open Source ??OPENSOURCE.md
+- Changes ??CHANGELOG.md
+- To-do ??TODO.md
 ```
 
 Each doc has a clear job:
@@ -222,7 +222,7 @@ AI: "3 docs updated:
 
 ```
 Me: "Clean up the docs. Remove duplicates, merge."
-AI: "37 docs → 19 docs. Done."
+AI: "37 docs ??19 docs. Done."
 ```
 
 **Every time you find new open source:**
@@ -236,15 +236,15 @@ AI: "Added. MIT license, usage, integration code examples included."
 
 ### Before
 
-- "Where's that feature?" → Digging through files, searching, 30 minutes gone.
-- "I've seen this error before..." → Googling, Stack Overflow, 1 hour gone.
-- "I don't remember what I built." → Re-reading code, trying to understand my own work.
+- "Where's that feature?" ??Digging through files, searching, 30 minutes gone.
+- "I've seen this error before..." ??Googling, Stack Overflow, 1 hour gone.
+- "I don't remember what I built." ??Re-reading code, trying to understand my own work.
 
 ### Now
 
-- "Check STRUCTURE.md" → Found in one second.
-- "Check ERRORS.md" → Fix is right there.
-- "Check CHANGELOG.md" → Every change recorded.
+- "Check STRUCTURE.md" ??Found in one second.
+- "Check ERRORS.md" ??Fix is right there.
+- "Check CHANGELOG.md" ??Every change recorded.
 
 Docs are AI's memory. Without docs, AI blanks out every time. With docs, it remembers perfectly.
 
@@ -254,10 +254,10 @@ And the most important part? **You don't write them yourself.** Just say "organi
 
 Remember these:
 
-1. **"Analyze and make a doc."** — First time setup.
-2. **"Add this to the doc."** — Every time you build something new.
-3. **"Clean up the docs."** — Once a week.
-4. **"Remove duplicates."** — When docs pile up.
+1. **"Analyze and make a doc."** ??First time setup.
+2. **"Add this to the doc."** ??Every time you build something new.
+3. **"Clean up the docs."** ??Once a week.
+4. **"Remove duplicates."** ??When docs pile up.
 
 ## Real Results
 
@@ -295,3 +295,4 @@ And during the work, you keep updating them. When? Every breathing moment. New f
 And when it writes code, you make it check the docs line by line. Put a checklist in the doc. Make it check off each line as it finishes. Sounds like a pain?
 
 **"AI writes the docs. You just give the order."**
+

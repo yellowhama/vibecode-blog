@@ -3,7 +3,7 @@ title: 'GitHub Fixed What AI Coding Couldn''t'
 description: 'Field notes from the trenches: Exploring github fixed what ai coding'
 pubDatetime: 2026-05-09 07:25:49+00:00
 featured: false
-draft: false
+draft: true
 tags: []
 ogImage: "../../../public/images/blog/004-github-spec-kit/hero.png"
 ---
@@ -109,3 +109,4 @@ Next time you build something with AI, try Spec Kit. Simple to install. Compatib
 Vibe coding is fun. "Something like this" and AI builds it -- that's cool. But to build something actually useful, it's time for a more structured approach. AI is smart enough already. Now we need to be smarter about using it.
 
 Spec-driven development doesn't solve everything. But it solves the biggest problem of building with AI -- **wishing AI could read your mind.** Stop wishing. Just tell it clearly. Then AI builds what you actually want.
+
