@@ -15,24 +15,15 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 ---
 
 <Layout
-  title="vibecode — field notes from a vibe coding castaway"
+  title="vibecode · field notes from a vibe coding castaway"
   description="I started vibe coding six months ago with zero programming background."
 >
   <Header />
 
   <header class="hero-journal-wrap py-24 mb-16 relative overflow-hidden">
     <img src="/images/home/hero-journal.png" class="hero-journal-img opacity-20" alt="" />
-    
-    <div class="app-layout relative z-10">
-      
-        <div id="simulator-output" class="font-mono text-sm text-ink/80 min-h-[80px] leading-relaxed">
-          > System initialized. Awaiting vibe...
-        </div>
-        <button id="run-demo-btn" class="mt-4 px-4 py-2 bg-accent text-ink text-[10px] font-black uppercase tracking-tighter hover:scale-105 transition-transform">
-          Trigger Agent Pulse
-        </button>
-      </div>
 
+    <div class="app-layout relative z-10">
       <div class="flex items-center gap-4 mb-10 text-[0.8rem] tracking-[0.4em] font-mono text-ink-faded uppercase">
         <span>FIELD JOURNAL · NO. 04</span>
         <span class="h-px w-12 bg-accent"></span>
@@ -58,9 +49,9 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
   </header>
 
   <main id="main-content" class="app-layout py-12">
-    <!-- Existing Content (Featured & Recent) -->
     <VibeExplorer />
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mt-24">
       <div class="lg:col-span-8 space-y-16">
         {featuredPosts.length > 0 && (
           <section class="featured-lead">
@@ -75,51 +66,58 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
             </a>
           </section>
         )}
+        
+        {featuredPosts.length === 0 && (
+           <div class="py-20 border-2 border-dashed border-ink/10 rounded-2xl text-center">
+             <p class="font-serif italic text-ink-faded">The tide is out. New logs coming soon.</p>
+           </div>
+        )}
       </div>
 
-      <aside class="lg:col-span-4 border-t lg:border-t-0 lg:border-l border-ink/10 pt-16 lg:pt-0 lg:pl-16">
+      <aside class="lg:col-span-4 border-t lg:border-t-0 lg:border-l border-ink/10 pt-16 lg:pt-0 lg:pl-16"> 
         <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10">Recent Logs</h2>
         <ul class="space-y-10">
-          {recentPosts.map(post => (
-            <li class="relative pl-0 group">
-              <a href={`/posts/${post.id}`} class="block no-underline">
-                <h4 class="text-xl font-serif italic group-hover:text-accent-dim leading-tight text-ink">{post.data.title}</h4>
-              </a>
-            </li>
-          ))}
+          {recentPosts.length > 0 ? (
+            recentPosts.map(post => (
+              <li class="relative pl-0 group">
+                <a href={`/posts/${post.id}`} class="block no-underline">
+                  <h4 class="text-xl font-serif italic group-hover:text-accent-dim leading-tight text-ink">{post.data.title}</h4>
+                </a>
+              </li>
+            ))
+          ) : (
+            <li class="text-xs font-mono text-ink-faded uppercase tracking-widest">Awaiting the next wave...</li>
+          )}
         </ul>
       </aside>
     </div>
   </main>
 
-  
-    <!-- Newsletter Signup -->
-    <section class="mt-24 border-y border-ink/10 py-16 bg-accent/5">
-      <div class="app-layout max-w-2xl mx-auto text-center">
-        <h2 class="text-3xl font-serif italic mb-4 text-ink">Get notified on launch</h2>
-        <p class="text-text-secondary font-serif italic mb-8">
-          The journal is just the beginning. I'm building tools to help us all vibe better.
-          Enter your email to join the inner circle.
-        </p>
-        <form class="flex flex-col sm:flex-row gap-4">
-          <input 
-            type="email" 
-            placeholder="your@email.com" 
-            class="flex-1 px-6 py-4 bg-background border border-ink/20 font-serif italic focus:outline-none focus:border-accent"
-            required
-          />
-          <button 
-            type="submit" 
-            class="bg-ink text-background px-8 py-4 font-mono text-xs tracking-[0.3em] uppercase font-black hover:bg-ink/90 transition-colors"
-          >
-            Join the Vibe
-          </button>
-        </form>
-        <p class="mt-4 text-[10px] font-mono text-ink-faded uppercase tracking-widest">No spam. Only deep vibes.</p>
-      </div>
-    </section>
+  <!-- Newsletter Signup -->
+  <section class="mt-24 border-y border-ink/10 py-16 bg-accent/5">
+    <div class="app-layout max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl font-serif italic mb-4 text-ink">Get notified on launch</h2>
+      <p class="text-text-secondary font-serif italic mb-8">
+        The journal is just the beginning. I'm building tools to help us all vibe better.
+        Enter your email to join the inner circle.
+      </p>
+      <form class="flex flex-col sm:flex-row gap-4">
+        <input
+          type="email"
+          placeholder="your@email.com"
+          class="flex-1 px-6 py-4 bg-background border border-ink/20 font-serif italic focus:outline-none focus:border-accent"
+          required
+        />
+        <button
+          type="submit"
+          class="bg-ink text-background px-8 py-4 font-mono text-xs tracking-[0.3em] uppercase font-black hover:bg-ink/90 transition-colors"
+        >
+          Join the Vibe
+        </button>
+      </form>
+      <p class="mt-4 text-[10px] font-mono text-ink-faded uppercase tracking-widest">No spam. Only deep vibes.</p>
+    </div>
+  </section>
 
   <Footer />
-
-  
 </Layout>
