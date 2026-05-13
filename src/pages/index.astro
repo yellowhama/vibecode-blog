@@ -24,16 +24,7 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
     <img src="/images/home/hero-journal.png" class="hero-journal-img opacity-20" alt="" />
     
     <div class="app-layout relative z-10">
-      <!-- Interactive Demo Section -->
-      <div id="demo-simulator" class="mb-12 p-6 bg-ink/5 border border-ink/10 rounded-xl backdrop-blur-md max-w-xl">
-        <div class="flex items-center justify-between mb-4">
-          <div class="flex gap-2">
-            <span class="w-3 h-3 rounded-full bg-red-500/50"></span>
-            <span class="w-3 h-3 rounded-full bg-yellow-500/50"></span>
-            <span class="w-3 h-3 rounded-full bg-green-500/50"></span>
-          </div>
-          <div class="text-[10px] font-mono text-ink/40 uppercase tracking-widest">Live Agent Simulator</div>
-        </div>
+      
         <div id="simulator-output" class="font-mono text-sm text-ink/80 min-h-[80px] leading-relaxed">
           > System initialized. Awaiting vibe...
         </div>
@@ -130,36 +121,5 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 
   <Footer />
 
-  <script is:inline>
-    const btn = document.querySelector('#run-demo-btn');
-    const output = document.querySelector('#simulator-output');
-    const logs = [
-      "> Scanning workspace components...",
-      "> Identified 12 architectural debt points.",
-      "> Drafting surgical implementation plan...",
-      "> Executing vibe-coding pulse...",
-      "> SUCCESS: VMG Intelligence Layer deployed."
-    ];
-
-    if (btn && output) {
-      btn.addEventListener('click', () => {
-        let i = 0;
-        output.innerHTML = "";
-        btn.disabled = true;
-        btn.innerText = "Simulating...";
-        
-        const timer = setInterval(() => {
-          if (i < logs.length) {
-            output.innerHTML += `<div>${logs[i]}</div>`;
-            i++;
-          } else {
-            clearInterval(timer);
-            btn.disabled = false;
-            btn.innerText = "Pulse Complete";
-            setTimeout(() => { btn.innerText = "Trigger Agent Pulse"; }, 3000);
-          }
-        }, 800);
-      });
-    }
-  </script>
+  
 </Layout>
