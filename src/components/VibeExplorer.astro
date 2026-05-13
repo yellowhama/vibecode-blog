@@ -1,0 +1,102 @@
+---
+---
+<div class="vibe-explorer p-8 my-12 border-2 border-ink/10 rounded-2xl bg-paper-warm/10 backdrop-blur-sm relative overflow-hidden group">
+  <div class="absolute -right-4 -top-4 w-24 h-24 bg-accent/5 rounded-full blur-2xl group-hover:bg-accent/10 transition-colors"></div>
+  
+  <h3 class="text-xl font-serif italic mb-6 text-ink flex items-center gap-3">
+    Vibe Explorer
+    <span class="text-[8px] font-mono bg-accent/20 text-accent px-2 py-0.5 rounded-full not-italic tracking-widest">EXPERIMENTAL</span>
+  </h3>
+  
+  <div class="flex flex-col gap-8 relative z-10">
+    <div>
+      <div class="flex justify-between items-end mb-4">
+        <label class="text-[10px] font-mono uppercase tracking-[0.2em] text-ink-faded">Intent Fluidity (Vibe Level)</label>
+        <span id="vibe-pct" class="text-xs font-mono font-bold">20%</span>
+      </div>
+      <input type="range" min="0" max="100" value="20" class="vibe-slider w-full accent-accent cursor-pointer" id="vibe-range" />
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div class="p-4 bg-background/50 border border-ink/5 rounded-xl shadow-sm">
+        <span class="block text-[8px] font-mono text-ink-faded mb-1 uppercase tracking-tighter">Hallucination Risk</span>
+        <span class="text-xl font-mono text-ink font-black" id="risk-val">LOW</span>
+      </div>
+      <div class="p-4 bg-background/50 border border-ink/5 rounded-xl shadow-sm">
+        <span class="block text-[8px] font-mono text-ink-faded mb-1 uppercase tracking-tighter">Boundary Req.</span>
+        <span class="text-xl font-mono text-accent font-black" id="boundary-val">STRICT</span>
+      </div>
+    </div>
+
+    <div class="p-4 bg-ink/95 text-background rounded-xl font-mono text-[10px] leading-relaxed min-h-[100px] shadow-inner relative">
+       <div class="absolute top-3 right-3 flex gap-1.5">
+         <div class="w-2 h-2 rounded-full bg-red-500/30"></div>
+         <div class="w-2 h-2 rounded-full bg-yellow-500/30"></div>
+         <div class="w-2 h-2 rounded-full bg-green-500/30"></div>
+       </div>
+       <div id="vibe-log" class="opacity-70">
+         > SESSION: VIBE_INIT <br/>
+         > ANALYZING INTENT VECTORS... <br/>
+         > SYSTEM: OPTIMAL BOUNDARY DETECTED.
+       </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .vibe-slider {
+    -webkit-appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(45, 29, 25, 0.1);
+  }
+  .vibe-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-accent, #FFF133);
+    border: 2px solid var(--color-ink, #2D1D19);
+    cursor: pointer;
+    box-shadow: 2px 2px 0px var(--color-ink);
+  }
+</style>
+
+<script>
+  function initExplorer() {
+    const slider = document.getElementById('vibe-range') as HTMLInputElement;
+    const pct = document.getElementById('vibe-pct');
+    const risk = document.getElementById('risk-val');
+    const boundary = document.getElementById('boundary-val');
+    const log = document.getElementById('vibe-log');
+
+    if (!slider || !risk || !boundary || !log || !pct) return;
+
+    slider.addEventListener('input', (e) => {
+      const val = parseInt((e.target as HTMLInputElement).value);
+      pct.innerText = `${val}%`;
+
+      if (val < 35) {
+        risk.innerText = "LOW";
+        risk.style.color = "inherit";
+        boundary.innerText = "STRICT";
+        log.innerHTML = "> STATUS: STABLE <br/>> MINIMAL CONTEXT DRIFT. <br/>> PROCEED WITH STANDARD SPEC.";
+      } else if (val < 75) {
+        risk.innerText = "ELEVATED";
+        risk.style.color = "#FFD166";
+        boundary.innerText = "DYNAMIC";
+        log.innerHTML = "> STATUS: CAUTION <br/>> INTENT AMBIGUITY DETECTED. <br/>> ENFORCING ADAPTIVE LINTING.";
+      } else {
+        risk.innerText = "CRITICAL";
+        risk.style.color = "#EF476F";
+        boundary.innerText = "ENFORCED";
+        log.innerHTML = "> STATUS: DANGER <br/>> HIGH VIBE TURBULENCE. <br/>> ACTIVATING DETERMINISTIC LOCK.";
+      }
+    });
+  }
+
+  // Handle View Transitions
+  initExplorer();
+  document.addEventListener('astro:after-swap', initExplorer);
+</script>

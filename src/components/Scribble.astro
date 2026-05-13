@@ -1,0 +1,67 @@
+---
+export interface Props {
+  type?: "underline" | "circle" | "highlight";
+  color?: string;
+  className?: string;
+}
+
+const { type = "underline", color = "var(--color-accent)", className = "" } = Astro.props;
+---
+
+<span class={`relative inline-block scribble-container ${className}`}>
+  <slot />
+  <svg class="scribble-svg" viewBox="0 0 200 40" preserveAspectRatio="none">
+    {type === "underline" && (
+      <path 
+        d="M10,30 C50,35 150,25 190,32" 
+        stroke={color} 
+        stroke-width="4" 
+        fill="none" 
+        stroke-linecap="round" 
+        class="scribble-path"
+      />
+    )}
+    {type === "circle" && (
+      <path 
+        d="M100,20 C100,5 5,5 5,20 C5,35 195,35 195,20 C195,5 100,5 105,8" 
+        stroke={color} 
+        stroke-width="2" 
+        fill="none" 
+        stroke-linecap="round" 
+        class="scribble-path"
+      />
+    )}
+  </svg>
+</span>
+
+<style>
+  .scribble-container {
+    z-index: 1;
+  }
+  .scribble-svg {
+    position: absolute;
+    top: -10%;
+    left: -5%;
+    width: 110%;
+    height: 120%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: visible;
+  }
+  .scribble-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: scribble-draw 1s ease-out forwards;
+    filter: url(#rough-filter);
+  }
+  @keyframes scribble-draw {
+    to { stroke-dashoffset: 0; }
+  }
+</style>
+
+<svg style="position: absolute; width: 0; height: 0;">
+  <filter id="rough-filter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+  </filter>
+</svg>

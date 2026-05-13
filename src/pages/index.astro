@@ -2,6 +2,8 @@
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
+import Scribble from "@/components/Scribble.astro";
+import VibeExplorer from "@/components/VibeExplorer.astro";
 import Footer from "@/components/Footer.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
@@ -46,7 +48,7 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
         <span>2026.05</span>
       </div>
       <h1 class="text-5xl md:text-8xl font-serif italic text-ink tracking-tighter leading-[0.95] mb-10 max-w-4xl">
-        I started vibe coding <br/> six months ago.
+        I started <Scribble type="underline">vibe coding</Scribble> <br/> six months ago.
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
         <p class="text-xl md:text-2xl text-text-secondary font-serif leading-relaxed italic">
@@ -66,6 +68,7 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 
   <main id="main-content" class="app-layout py-12">
     <!-- Existing Content (Featured & Recent) -->
+    <VibeExplorer />
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
       <div class="lg:col-span-8 space-y-16">
         {featuredPosts.length > 0 && (
