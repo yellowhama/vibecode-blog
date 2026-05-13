@@ -11,6 +11,7 @@ import NewsletterSignup from "@/components/NewsletterSignup.astro";
 import Comments from "@/components/Comments.astro";
 import BackButton from "@/components/BackButton.astro";
 import BackToTopButton from "@/components/BackToTopButton.astro";
+import PostReferences from "@/components/PostReferences.astro";
 import { getPath } from "@/utils/getPath";
 import { slugifyStr } from "@/utils/slugify";
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
@@ -122,6 +123,8 @@ const nextPost =
     >
       <Content />
     </article>
+
+    <PostReferences references={references} />
 
     <hr class="my-8 border-dashed" />
 

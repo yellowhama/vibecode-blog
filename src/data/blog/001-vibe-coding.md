@@ -4,8 +4,15 @@ description: 'Field notes from the trenches: Exploring 001 vibe coding through t
 pubDatetime: 2026-05-09 07:25:49+00:00
 featured: false
 draft: false
-tags: []
+tags: ["vibe-coding"]
 ogImage: ""
+references:
+  - name: "Vibe Coding (Video)"
+    url: "https://x.com/karpathy/status/1881035515259121950"
+    guru: "Andrej Karpathy"
+  - name: "The Age of AI-First Development"
+    url: "https://simonwillison.net/2024/Jan/20/ai-first-development/"
+    guru: "Simon Willison"
 ---
 
 > **TL;DR**: An excavation of 001 vibe coding. Real scars, no slop.

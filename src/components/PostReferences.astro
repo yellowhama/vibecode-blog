@@ -1,0 +1,55 @@
+---
+import { slugifyStr } from "@/utils/slugify";
+
+export interface Reference {
+  name: string;
+  url: string;
+  guru?: string;
+}
+
+export interface Props {
+  references?: Reference[];
+}
+
+const { references = [] } = Astro.props;
+---
+
+{references.length > 0 && (
+  <div class="post-references mt-16 p-8 border-2 border-ink/10 rounded-2xl bg-paper-warm/5 relative overflow-hidden group">
+    <div class="absolute -right-4 -top-4 w-24 h-24 bg-accent/5 rounded-full blur-2xl group-hover:bg-accent/10 transition-colors"></div>
+    
+    <h3 class="text-xl font-serif italic mb-6 text-ink flex items-center gap-3">
+      The Beacons
+      <span class="text-[8px] font-mono bg-accent/20 text-accent px-2 py-0.5 rounded-full not-italic tracking-widest uppercase">Guru References</span>
+    </h3>
+    
+    <ul class="space-y-4 relative z-10">
+      {references.map((ref) => (
+        <li class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 group/ref">
+          <span class="text-[10px] font-mono text-ink-faded uppercase tracking-wider min-w-[120px]">
+            {ref.guru || "Source"}
+          </span>
+          <a 
+            href={ref.url} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="text-sm font-serif italic text-ink hover:text-accent decoration-accent/30 underline underline-offset-4 transition-colors"
+          >
+            {ref.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+    
+    <p class="mt-8 text-[9px] font-mono text-ink-faded italic leading-relaxed">
+      * Note: As a student of the drift, I ground my logs in the teachings of these gurus. 
+      Their insights are the light, I am just the mirror.
+    </p>
+  </div>
+)}
+
+<style>
+  .post-references {
+    /* Style consistency with VibeExplorer */
+  }
+</style>
