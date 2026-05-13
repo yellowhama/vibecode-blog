@@ -51,11 +51,12 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
   <main id="main-content" class="app-layout py-12">
     <VibeExplorer client:visible />
     
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mt-24">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mt-32">
       <div class="lg:col-span-8 space-y-16">
-        {featuredPosts.length > 0 && (
+        <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10 border-b border-ink/5 pb-4">Featured Dispatch</h2>
+        
+        {featuredPosts.length > 0 ? (
           <section class="featured-lead">
-            <div class="text-mono text-[0.7rem] tracking-[0.3em] text-accent-dim uppercase mb-6 font-bold">Featured Dispatch</div>
             <a href={`/posts/${featuredPosts[0].id}`} class="group block no-underline">
               <h2 class="text-4xl md:text-6xl font-serif italic mb-8 leading-[1.1] group-hover:underline decoration-accent/30 text-ink">
                 {featuredPosts[0].data.title}
@@ -65,11 +66,9 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
               </p>
             </a>
           </section>
-        )}
-        
-        {featuredPosts.length === 0 && (
-           <div class="py-20 border-2 border-dashed border-ink/10 rounded-2xl text-center">
-             <p class="font-serif italic text-ink-faded">The tide is out. New logs coming soon.</p>
+        ) : (
+           <div class="py-20 border-2 border-dashed border-ink/10 rounded-2xl text-center bg-accent/[0.02]">
+             <p class="font-serif italic text-ink/40 text-lg">The tide is out. The next transmission is forming in the drift.</p>
            </div>
         )}
       </div>
@@ -86,36 +85,36 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
               </li>
             ))
           ) : (
-            <li class="text-xs font-mono text-ink-faded uppercase tracking-widest">Awaiting the next wave...</li>
+            <li class="text-xs font-mono text-ink-faded uppercase tracking-widest italic">Awaiting the next wave...</li>
           )}
         </ul>
       </aside>
     </div>
   </main>
 
-  <!-- Newsletter Signup -->
-  <section class="mt-24 border-y border-ink/10 py-16 bg-accent/5">
-    <div class="app-layout max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl font-serif italic mb-4 text-ink">Get notified on launch</h2>
-      <p class="text-text-secondary font-serif italic mb-8">
-        The journal is just the beginning. I'm building tools to help us all vibe better.
-        Enter your email to join the inner circle.
+  <section class="mt-32 border-y border-ink/10 py-24 bg-accent/5 relative overflow-hidden">
+    <div class="absolute -right-20 -top-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl opacity-50"></div>
+    <div class="app-layout max-w-2xl mx-auto text-center relative z-10">
+      <h2 class="text-3xl md:text-4xl font-serif italic mb-4 text-ink">Join the Inner Circle</h2>
+      <p class="text-lg text-text-secondary font-serif italic mb-10">
+        I'm building an engine to survive the AI ocean. <br/> Leave your email to get the field manual.
       </p>
       <form class="flex flex-col sm:flex-row gap-4">
         <input
           type="email"
-          placeholder="your email address"
-          class="flex-1 px-6 py-4 bg-background border border-ink/20 font-serif italic focus:outline-none focus:border-accent"
+          name="email"
+          placeholder="Enter your address"
+          class="flex-1 px-8 py-4 bg-background border-2 border-ink/10 font-serif italic focus:outline-none focus:border-accent text-lg rounded-xl transition-all"
           required
         />
         <button
           type="submit"
-          class="bg-ink text-background px-8 py-4 font-mono text-xs tracking-[0.3em] uppercase font-black hover:bg-ink/90 transition-colors"
+          class="bg-ink text-background px-10 py-4 font-mono text-xs tracking-[0.3em] uppercase font-black hover:bg-ink/90 transition-all rounded-xl shadow-lg active:scale-95"
         >
-          Join the Vibe
+          Subscribe
         </button>
       </form>
-      <p class="mt-4 text-[10px] font-mono text-ink-faded uppercase tracking-widest">No spam. Only deep vibes.</p>
+      <p class="mt-6 text-[10px] font-mono text-ink-faded uppercase tracking-[0.2em] font-bold">Safe harbor. No spam. Only signal.</p>
     </div>
   </section>
 
