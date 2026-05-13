@@ -1,41 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
   <style>
-    .symbol-stroke { stroke: #FFD166; }
     .text-main { fill: #2D1D19; }
-    .text-sub { fill: #B38600; }
-    
-    @media (prefers-color-scheme: dark) {
-      .text-main { fill: #FDFCF0; }
-      .text-sub { fill: #FFE266; }
-      .symbol-stroke { stroke: #FFE266; }
-    }
-    
-    /* Astro specific data-theme override */
-    [data-theme='dark'] .text-main { fill: #FDFCF0; }
-    [data-theme='dark'] .text-sub { fill: #FFE266; }
-    [data-theme='dark'] .symbol-stroke { stroke: #FFE266; }
-  </style>
+    .text-sub { fill: #8B6B00; }
+    .symbol-stroke { stroke: #FFD166; }
 
-  <!-- Symbol -->
+    /* Astro and musu-bee standard theme attributes */
+    :root[data-theme='dark'] .text-main { fill: #FDFCF0 !important; }
+    :root[data-theme='dark'] .text-sub { fill: #FFF133 !important; }
+    :root[data-theme='dark'] .symbol-stroke { stroke: #FFF133 !important; }
+    
+    :root[data-theme='light'] .text-main { fill: #2D1D19 !important; }
+    :root[data-theme='light'] .text-sub { fill: #8B6B00 !important; }
+    :root[data-theme='light'] .symbol-stroke { stroke: #FFD166 !important; }
+  </style>
   <g transform="translate(10, 9) scale(1.1)">
-    <path d="M16 4 L26 10 L26 22 L16 28 L6 22 L6 10 Z" 
-          fill="none" 
-          class="symbol-stroke"
-          stroke-width="1.2" 
-          stroke-opacity="0.4" />
-    <path d="M8 12 L16 24 L24 8" 
-          fill="none" 
-          class="symbol-stroke"
-          stroke-width="2.8" 
-          stroke-linecap="round" 
-          stroke-linejoin="round" />
+    <path d="M16 4 L26 10 L26 22 L16 28 L6 22 L6 10 Z" fill="none" class="symbol-stroke" stroke-width="1.2" stroke-opacity="0.4" />
+    <path d="M8 12 L16 24 L24 8" fill="none" class="symbol-stroke" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
   </g>
-  
-  <!-- Wordmark -->
-  <text x="55" y="32" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="800" class="text-main" letter-spacing="-1">
-    VIBECODE
-  </text>
-  <text x="148" y="32" font-family="'Nunito', sans-serif" font-size="18" font-weight="300" class="text-sub">
-    TOWN
-  </text>
+  <text x="55" y="32" font-family="sans-serif" font-size="20" font-weight="800" class="text-main" letter-spacing="-1">VIBECODE</text>
+  <text x="148" y="32" font-family="sans-serif" font-size="18" font-weight="300" class="text-sub">TOWN</text>
 </svg>
