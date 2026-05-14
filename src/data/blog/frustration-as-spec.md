@@ -1,6 +1,6 @@
 ---
 title: "Frustration as the Specification: The High-Signal Debugging Model"
-pubDatetime: 2026-05-14T22:00:00Z
+pubDatetime: 2026-05-10T22:00:00Z
 description: "Why your emotional friction is the most honest technical metric you have, and how to deconstruct it into a hard system contract."
 draft: false
 tags: ["engineering", "observability", "debugging", "slop-detection"]
@@ -32,7 +32,7 @@ When you hit the wall, you feel **Frustration.** In traditional engineering, we 
 
 But in the agentic era, **Frustration IS the Spec.**
 
-Every moment of annoyance is a signal that your **Technical Contract** is underspecified. If you are angry that the AI "didn't understand" a UI requirement, it?™s not because the AI is stupid?”it?™s because you haven't defined the constraint as a hard signal.
+Every moment of annoyance is a signal that your **Technical Contract** is underspecified. If you are angry that the AI "didn't understand" a UI requirement, it?s not because the AI is stupid?it?s because you haven't defined the constraint as a hard signal.
 
 ---
 

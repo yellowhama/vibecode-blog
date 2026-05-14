@@ -1,6 +1,6 @@
 ---
 title: "What Vibe Coding Actually Is: A Technical Deconstruction"
-pubDatetime: 2026-05-14T21:45:00Z
+pubDatetime: 2026-05-10T21:45:00Z
 description: "Stripping the paint off the hype: Deconstructing Software 3.0, the slop backlash, and the role of the technical contract."
 draft: false
 tags: ["engineering", "vibe-coding", "agentic-engineering", "karpathy"]
@@ -17,7 +17,7 @@ references:
 
 The Instagram ads lied to you. 
 
-You¡¯ve seen the videos: a guy in a hoodie, a dark room, a prompt like *"Make me a SaaS that scans LinkedIn,"* and 30 seconds later, 10,000 lines of code appear in Cursor. The narrator promises that "coding is dead" and you can now build products by simply describing them. 
+Youve seen the videos: a guy in a hoodie, a dark room, a prompt like *"Make me a SaaS that scans LinkedIn,"* and 30 seconds later, 10,000 lines of code appear in Cursor. The narrator promises that "coding is dead" and you can now build products by simply describing them. 
 
 I fell for it. I tried to "vibe" my way into a production-grade data aggregator for MUSU. I failed 50 times in a row. 
 
@@ -41,7 +41,7 @@ The physics changed: implementation is now cheap and ephemeral. But, as Karpathy
 
 ## 2. The Backlash: Why "Real" Developers Hate Your Vibes
 
-If you spend any time on Hacker News or Reddit, you¡¯ll see the backlash. Seasoned engineers call it **"AI Slop."** And for the most part, they are right.
+If you spend any time on Hacker News or Reddit, youll see the backlash. Seasoned engineers call it **"AI Slop."** And for the most part, they are right.
 
 The problem with pure "vibe coding" is the **One-Shot Illusion**. It is easy to vibe out a landing page or a todo app. But the moment you hit a breaking change in a dependency, the conversation collapses into a loop of incompetence.
 
@@ -82,7 +82,7 @@ I fed *that* to the AI. It fixed the bug in one shot. 150 tokens. 0 slop.
 
 "Vibe coding" is an exploratory phase, but it is a dangerous trap for production systems. 
 
-The true craft in 2026 isn't about knowing how to type `for-loops`. It¡¯s about **Context Engineering**. It¡¯s about understanding the technical contracts between your systems so you can **Verify** the AI's output.
+The true craft in 2026 isn't about knowing how to type `for-loops`. Its about **Context Engineering**. Its about understanding the technical contracts between your systems so you can **Verify** the AI's output.
 
 I am no longer a "Vibe Coder." I am an **Agentic Engineer**. I define the **Cage** (The Contract), and I let the LLM provide the **Flight** (The Implementation).
 
