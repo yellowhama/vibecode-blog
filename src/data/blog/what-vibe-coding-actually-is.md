@@ -1,6 +1,6 @@
 ---
 title: "What Vibe Coding Actually Is: A Technical Deconstruction"
-pubDatetime: 2026-05-10T21:45:00Z
+pubDatetime: 2026-05-10T10:00:00Z
 description: "Stripping the paint off the hype: Deconstructing Software 3.0, the slop backlash, and the role of the technical contract."
 draft: false
 tags: ["engineering", "vibe-coding", "agentic-engineering", "karpathy"]

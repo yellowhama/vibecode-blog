@@ -1,6 +1,6 @@
 ---
 title: "Frustration as the Specification: The High-Signal Debugging Model"
-pubDatetime: 2026-05-10T22:00:00Z
+pubDatetime: 2026-05-10T10:00:00Z
 description: "Why your emotional friction is the most honest technical metric you have, and how to deconstruct it into a hard system contract."
 draft: false
 tags: ["engineering", "observability", "debugging", "slop-detection"]
