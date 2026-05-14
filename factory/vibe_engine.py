@@ -15,6 +15,8 @@ def router(topic):
     log(f"--- v6.1 AGENTIC ROUTER: Perceiving topic '{topic}' ---")
     if "Software 3.0" in topic or "Karpathy" in topic:
         return "LLM_WIKI: GLOBAL/GURUS"
+    elif "Pencil" in topic or "OSS" in topic or "Tools" in topic:
+        return "LLM_WIKI: GLOBAL/TOOLS"
     elif "MCP" in topic or "Next.js" in topic:
         return "LLM_WIKI: GLOBAL/SPECS"
     else:

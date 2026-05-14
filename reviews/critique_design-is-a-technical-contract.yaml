@@ -1,0 +1,19 @@
+schema: critique_revision_recheck
+projectId: vibecode-town
+workId: design-is-a-technical-contract.md
+created_at: '2026-05-15T04:15:22.724129'
+owner: vibe_critic
+draft_path: F:\Aisaak\Projects\vibecode-town\src\data\blog\design-is-a-technical-contract.md
+verdict: pass
+structure_rhythm_mouth_gate:
+  structure:
+    verdict: pass
+    findings: []
+  rhythm:
+    verdict: pass
+    findings: []
+  mouthfeel:
+    verdict: pass
+    findings: []
+findings: []
+revision_tasks: []
