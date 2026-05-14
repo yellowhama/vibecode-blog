@@ -1,6 +1,6 @@
 ---
 title: "Deconstructing Software 3.0: The LLM Kernel Model"
-pubDatetime: 2026-05-14T12:00:00Z
+pubDatetime: 2026-05-13T12:00:00Z
 description: "Analyzing Andrej Karpathy's Software 3.0 framework: Why the industry is shifting from code syntax to context orchestration."
 draft: false
 tags: ["guru-breakdown", "software-3.0", "karpathy"]

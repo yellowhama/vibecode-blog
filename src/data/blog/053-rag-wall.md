@@ -1,6 +1,6 @@
 ---
 title: "Incident Report: The Next.js 15 Wall and the Warden's Watch"
-pubDatetime: 2026-05-14T19:00:00Z
+pubDatetime: 2026-05-13T19:00:00Z
 description: "A technical autopsy of a production failure caused by Next.js 15 async params and how a deterministic Warden layer saved the project."
 draft: false
 tags: ["incident-report", "nextjs", "musu", "scars"]

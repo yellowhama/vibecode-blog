@@ -1,6 +1,6 @@
 ---
 title: "The MCP Implementation Guide: Standardizing Context Transport"
-pubDatetime: 2026-05-14T08:00:00Z
+pubDatetime: 2026-05-13T08:00:00Z
 description: "A pragmatic guide to implementing Model Context Protocol (MCP) servers for data-driven agent orchestration."
 draft: false
 tags: ["engineering", "mcp", "automation"]
