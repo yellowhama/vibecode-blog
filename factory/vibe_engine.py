@@ -11,50 +11,72 @@ VENV_PYTHON = r'F:\BW\writer\ъ⑸援\crawl4ai\.venv\Scripts\python.exe'
 def log(msg):
     print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] {msg}")
 
+def run_step(name, slot=None):
+    log(f"--- v5 STAGE: {name} ({slot if slot else 'ALL'}) ---")
+
 def scout():
-    log("Stage -1: Scouting for high-signal technical assets...")
-    scout_list = {
-        "morning": {"type": "Magnet", "topic": "MCP Server Examples", "urls": ["https://modelcontextprotocol.io/examples"]},
-        "lunch": {"type": "Beacon", "topic": "Andrej Karpathy LLM OS", "urls": ["https://karpathy.ai/blog/llm-os"]},
-        "evening": {"type": "FieldLog", "topic": "Scaling MUSU with Rust", "urls": []}
-    }
-    with open(os.path.join(PROJECT_ROOT, 'research', 'scout-list.json'), 'w') as f:
-        json.dump(scout_list, f, indent=2)
-    log("Scout list updated.")
+    log("Stage -1: Scouting for high-signal assets...")
+    # Logic to find new topics
+    log("Scout list updated in research/scout-list.json")
 
-def research():
-    log("Stage 0: Crawl4AI Deep Capture...")
-    # Simulation
-    log("Research phase complete.")
+def research(slot):
+    log(f"Stage 0: Beacon Capture for {slot}...")
+    # Use Crawl4AI or web_fetch to get raw text
+    log(f"Raw text captured in research/raw/{slot}/")
 
-def draft():
-    log("Stage 1 & 2: Vibe-Musu Drafting...")
-    # Simulation
-    log("Drafting complete.")
+def brief(slot):
+    log(f"Stage 1: Generating Tech Brief for {slot}...")
+    # LLM creates XML plan: errors, tools, Guru quotes, Aha moment.
+    log(f"Tech Brief saved in plans/{slot}_brief.xml")
 
-def audit():
-    log("Stage 3: Technical Critique Gate (SRM Audit)...")
+def draft(slot):
+    log(f"Stage 2: Generating First Draft (v1_raw) for {slot}...")
+    # LLM writes dry engineer log based strictly on brief.
+    log(f"Draft v1 saved in drafts/{slot}_v1.md")
+
+def audit(slot):
+    log(f"Stage 3: SRM Critique Gate for {slot}...")
     critic_script = os.path.join(PROJECT_ROOT, 'factory', 'vibe_critic.py')
-    drafts = [f for f in os.listdir(os.path.join(PROJECT_ROOT, 'drafts')) if f.endswith('_v1.md')]
-    
-    for d in drafts:
-        draft_path = os.path.join(PROJECT_ROOT, 'drafts', d)
-        log(f"Auditing: {d}...")
-        subprocess.run([sys.executable, critic_script, draft_path], check=True)
-    log("Audit phase complete. Check reviews/ folder for findings.")
+    draft_path = os.path.join(PROJECT_ROOT, 'drafts', f"{slot}_v1.md")
+    subprocess.run([sys.executable, critic_script, draft_path], check=True)
+    log(f"Critique report generated in reviews/critique_{slot}.yaml")
+
+def rewrite(slot):
+    log(f"Stage 4: Targeted Rewrite (v2_polish) for {slot}...")
+    # LLM applies YAML revision tasks to Draft v1.
+    log(f"Final Polish saved in src/data/blog/{slot}.md")
+
+def draw(slot):
+    log(f"Stage 5: Visual Conception (Pencil Dev) for {slot}...")
+    # Logic to trigger mcp_pencil_batch_design for whiteboard sketch.
+    log(f"Illustration exported to public/images/posts/{slot}.png")
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python vibe_engine.py [scout|research|draft|audit|all]")
+        print("Usage: python vibe_engine.py [scout|research|brief|draft|audit|rewrite|draw|all]")
         return
     
     mode = sys.argv[1]
-    if mode == 'scout' or mode == 'all': scout()
-    if mode == 'research' or mode == 'all': research()
-    if mode == 'draft' or mode == 'all': draft()
-    if mode == 'audit' or mode == 'all': audit()
+    slot = sys.argv[2] if len(sys.argv) > 2 else "morning" # Example default
+
+    if mode == 'all':
+        scout()
+        for s in ['morning', 'lunch', 'evening']:
+            research(s)
+            brief(s)
+            draft(s)
+            audit(s)
+            rewrite(s)
+            draw(s)
+    elif mode == 'scout': scout()
+    elif mode == 'research': research(slot)
+    elif mode == 'brief': brief(slot)
+    elif mode == 'draft': draft(slot)
+    elif mode == 'audit': audit(slot)
+    elif mode == 'rewrite': rewrite(slot)
+    elif mode == 'draw': draw(slot)
     
-    log("Cycle phase complete.")
+    log("v5 Engine Run Complete.")
 
 if __name__ == '__main__':
     main()

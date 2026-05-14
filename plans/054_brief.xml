@@ -1,0 +1,21 @@
+<tech_brief id="054">
+  <topic>The Reality of Vibe Coding: Why I Failed 50 Times</topic>
+  <guru_beacon>
+    <name>Andrej Karpathy</name>
+    <quote>You can outsource your thinking, but you cannot outsource your understanding.</quote>
+    <mental_model>The Verifiability Thesis: AI is for execution, Humans are for verification.</mental_model>
+  </guru_beacon>
+  <implementation_scars>
+    <error>Repeated 500 errors in 'Cursor Composer' runs when dependencies were mismatched.</error>
+    <failure_mode>Assuming the LLM understood the project versioning (Next.js 15 vs 14).</failure_mode>
+    <slop_count>80,000 tokens wasted on prompt-hacking instead of spec-writing.</slop_count>
+  </implementation_scars>
+  <aha_moment>
+    <old_model>Prompt -> Money (The Instagram Myth)</old_model>
+    <new_model>Technical Contract -> AI Execution -> Verification (The Engineering Reality)</new_model>
+  </aha_moment>
+  <visual_concept>
+    <name>Hype vs Reality whiteboard sketch</name>
+    <details>A split diagram showing a 'magic wand' (Hype) being snapped by a 'Technical Contract' (Reality).</details>
+  </visual_concept>
+</tech_brief>
