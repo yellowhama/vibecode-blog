@@ -1,0 +1,17 @@
+[
+  {
+    "title": "context-engineering-standards.md",
+    "snippet": "# SPEC: Context Engineering Standards (v1)\n\n## Overview\nContext Engineering is the process of pruning and re-ranking raw retrieval data to increase signal-to-noise ratio (SNR) in AI prompts.\n\n## Workflow\n1. **Chunking:** Divide raw text into 500-word logical blocks.\n2. **Scoring:** Rank blocks based",
+    "path": "C:\\Users\\empty\\llm-wiki\\global\\specs\\context-engineering-standards.md"
+  },
+  {
+    "title": "musu-warden-loop.md",
+    "snippet": "# SPEC: MUSU Warden Agentic Loop\n\n## Overview\nThe MUSU Warden implements a security loop based on the IBM \"Perceive-Reason-Act-Observe\" model. It ensures that AI agents operate within a deterministic technical contract.\n\n## The Loop\n- **Perceive:** Intercept command intent via middleware.\n- **Reason",
+    "path": "C:\\Users\\empty\\llm-wiki\\global\\specs\\musu-warden-loop.md"
+  },
+  {
+    "title": "vibe-engine-agentic-rag.md",
+    "snippet": "# SPEC: Vibe Engine Agentic RAG\n\n## Overview\nThe Vibe Engine (v6) implements an Agentic RAG pattern for high-fidelity technical content generation. It moves beyond passive retrieval by introducing a decision-making \"Router\" layer.\n\n## Architecture\n1. **Perception:** The engine perceives the intent o",
+    "path": "C:\\Users\\empty\\llm-wiki\\global\\specs\\vibe-engine-agentic-rag.md"
+  }
+]

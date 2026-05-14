@@ -14,7 +14,7 @@ class VibeCritic:
             print(f"Draft not found: {draft_path}")
             return
 
-        with open(draft_path, 'r', encoding='utf-8') as f:
+        with open(draft_path, 'r', encoding='utf-8', errors='ignore') as f:
             content = f.read()
 
         # Auditor System Prompt (Internal Reference)
@@ -59,7 +59,7 @@ class VibeCritic:
         report_name = f"critique_{os.path.basename(draft_path).split('.')[0]}.yaml"
         report_path = os.path.join(self.output_dir, report_name)
         
-        with open(report_path, 'w', encoding='utf-8') as f:
+        with open(report_path, 'w', encoding='utf-8', errors='ignore') as f:
             yaml.dump(report, f, sort_keys=False)
         
         print(f"Critique Report generated: {report_path}")
@@ -72,3 +72,4 @@ if __name__ == "__main__":
         
     critic = VibeCritic(r'F:\Aisaak\Projects\vibecode-town')
     critic.run_critique(sys.argv[1])
+
