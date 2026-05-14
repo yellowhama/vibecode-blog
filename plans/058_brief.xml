@@ -1,0 +1,37 @@
+<tech_brief id="058">
+  <metadata>
+    <title>Frustration as the Specification: The High-Signal Debugging Model</title>
+    <author_persona>Cynical Senior Engineer</author_persona>
+    <target_audience>The "Cynical Kim" Avatar</target_audience>
+  </metadata>
+
+  <viewpoints>
+    <viewpoint id="guru">
+      <source>Hamel Husain</source>
+      <core_concept>Unit Tests for LLMs (Evals)</core_concept>
+      <mental_model>Observability-Driven Development (ODD). If you can't measure the slop, you can't fix it.</mental_model>
+    </viewpoint>
+    
+    <viewpoint id="developer">
+      <consensus>Skepticism of "Vibe-only" flows.</consensus>
+      <core_critique>The "Tangled Spaghetti" wall. Projects fail when the AI can't navigate the mess it built.</core_critique>
+    </viewpoint>
+
+    <viewpoint id="castaway">
+      <perspective>The Reactive Engineer</perspective>
+      <core_realization>Emotional friction (frustration) is the most honest metric for system failure.</core_realization>
+      <scar>Three-hour loop trying to explain a UI bug until I realized I hadn't defined the CSS contract.</scar>
+    </viewpoint>
+  </viewpoints>
+
+  <aha_moment>
+    Stop treating frustration as a mood to be managed. Treat it as a **Technical Signal**. Every time you are annoyed by an AI's output, it means a **Specification** is missing. Deconstruct the emotion into a hard constraint (an Eval).
+  </aha_moment>
+
+  <structure_beats>
+    <beat index="1">The 3-Month Wall: Why vibe coding eventually dies.</beat>
+    <beat index="2">The Signal: Why "this sucks" is the most important data point in your terminal.</beat>
+    <beat index="3">The Deconstruction: Turning emotional friction into hard constraints (IBM Loop: Observe -> Perceive).</beat>
+    <beat index="4">The Implementation: Building a 'Frustration-to-Spec' pipeline.</beat>
+  </structure_beats>
+</tech_brief>
