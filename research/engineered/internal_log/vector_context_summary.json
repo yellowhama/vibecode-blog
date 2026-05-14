@@ -1,0 +1,10 @@
+[
+  {
+    "score": 0.8385934233665466,
+    "text": "Software 3.0 is a shift in how we manage compute. The human role is not to write loops. \n    It is to verify that the LLM Kernel is operating within the correct technical contract.\n    If you lose your understanding, you lose your authority over the system."
+  },
+  {
+    "score": 0.8757946491241455,
+    "text": "Software 3.0 represents the shift to the LLM as the kernel. \n    Memory in Software 3.0 is the KV cache and context window.\n    The primary developer role is now verification and spec design.\n    Don't forget to implement standard protocols like MCP.\n    Marketing fluff: This will change the world forever and make you rich."
+  }
+]

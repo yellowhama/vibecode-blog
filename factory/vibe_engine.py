@@ -11,49 +11,42 @@ def log(msg):
     print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] {msg}")
 
 def router(topic):
-    """
-    Simulates the IBM 'Agentic RAG' Router.
-    """
-    log(f"--- AGENTIC ROUTER: Perceiving topic '{topic}' ---")
+    log(f"--- v6 AGENTIC ROUTER: Perceiving topic '{topic}' ---")
+    # Routing now maps to LLM-Wiki categories
     if "Software 3.0" in topic or "Karpathy" in topic:
-        return "DATABASE_A: GURU_INSIGHTS"
+        return "LLM_WIKI: GLOBAL/GURUS"
     elif "MCP" in topic or "Next.js" in topic:
-        return "DATABASE_B: TECH_SPECS"
+        return "LLM_WIKI: GLOBAL/SPECS"
     else:
         return "FAILSAFE: SCOPE_DENIED"
 
-def research_with_context_engineering(slot, topic, raw_content):
+def research_with_wiki_context(slot, topic):
     """
-    Stage 0 & 0.5: Beacon Capture + Context Engineering
+    Stage 0.5: Context Engineering using the existing LLM-Wiki.
     """
-    log(f"Stage 0: Beacon Capture for {slot}...")
+    log(f"Stage 0.5: Engineering Context from LLM-Wiki for {slot}...")
     
-    # Import the newly created tool
     sys.path.append(os.path.join(PROJECT_ROOT, 'factory'))
-    from context_engineer import ContextEngineer
+    from context_engineer import WikiContextEngineer
     
-    engineer = ContextEngineer(PROJECT_ROOT)
-    engineered_context = engineer.chunk_and_rerank(slot, raw_content, topic)
+    engineer = WikiContextEngineer(PROJECT_ROOT)
+    # Using the real LLM-Wiki search method
+    engineered_context = engineer.search_wiki_and_rerank(slot, topic)
     
     return engineered_context
 
 def main():
-    log("=== VIBECODE-TOWN CONTENT ENGINE v6 (AGENTIC RAG EDITION) ===")
+    log("=== VIBECODE-TOWN CONTENT ENGINE v6 (LLM-WIKI EDITION) ===")
     
-    # Example Slot run
-    topic = "Next.js 15 Async Params Breaking Changes"
+    topic = "Vibe Coding Technical Contracts in LLM-Wiki"
     route = router(topic)
-    log(f"Route Selected: {route}")
     
     if "FAILSAFE" in route:
-        log("Failsafe triggered. Terminating loop.")
         return
 
-    # Simulation of raw capture
-    raw_content = "Some long text about Next.js 15...\\n\\nBreaking: params is now a Promise.\\n\\nOther irrelevant marketing stuff."
-    engineered = research_with_context_engineering("morning", topic, raw_content)
-    
-    log(f"Cycle Phase Complete. {len(engineered)} high-signal chunks ready for Tech Brief.")
+    # Now we search the actual LLM-Wiki
+    engineered = research_with_wiki_context("internal_automation", topic)
+    log(f"Phase Complete. Agentic RAG is now powered by the LLM-Wiki.")
 
 if __name__ == '__main__':
     main()
