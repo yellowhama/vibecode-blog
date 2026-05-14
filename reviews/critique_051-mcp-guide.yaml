@@ -1,0 +1,35 @@
+schema: critique_revision_recheck
+projectId: vibecode-town
+workId: 051-mcp-guide.md
+created_at: '2026-05-14T19:15:54.205797'
+owner: vibe_critic
+draft_path: F:\Aisaak\Projects\vibecode-town\src\data\blog\051-mcp-guide.md
+verdict: fix required
+structure_rhythm_mouth_gate:
+  structure:
+    verdict: pass
+    functional_part_check: Verified against Guru sources.
+    arbitrary_detail_contamination: ''
+    findings: []
+  rhythm:
+    verdict: fail
+    literal_clarity_check: Section 2 is too dense.
+    transition_breath_check: Needs more H3 breaks.
+    findings:
+    - C01
+  mouthfeel:
+    verdict: pass
+    character_voice_check: Engineering voice maintained.
+    slop_check: Clean.
+    findings: []
+findings:
+- finding_id: C01
+  severity: major
+  evidence: Paragraph 4 has 150+ words without a break.
+  required_change: Split into bullet points or use an H3 header.
+  owner: vibe_writer
+revision_tasks:
+- task_id: R01
+  source_finding: C01
+  instruction: Refactor the 'Kernel Architecture' section for mobile scannability.
+  done: false

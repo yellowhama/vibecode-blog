@@ -1,17 +1,60 @@
 ---
-title: "Day 247: Scaling the RAG Wall with MUSU"
+title: "Day 247: The Next.js 15 Wall and the Warden's Watch"
 pubDatetime: 2026-05-14T19:00:00Z
-description: "A gritty field log of a failed agentic run and how deterministic boundaries saved the project."
+description: "Real field notes from the trenches: Dealing with Next.js 15 breaking changes and why manual RAG still beats autonomous slop."
 draft: false
-tags: ["fieldlog", "rag", "musu", "warden"]
+tags: ["fieldlog", "nextjs", "musu", "scars"]
 ---
 
-# Day 247: Scaling the RAG Wall with MUSU
+# Day 247: The Next.js 15 Wall and the Warden's Watch
 
-The AI ocean was heavy today. I gave my agents access to 10 different vector DBs and told them to "vibe" out a synthesis. **The result: Pure Slop.**
+The "Vibe" hit a brick wall today. It wasn't an AI hallucination—it was a version bump.
 
-I forged a new **Warden** rule in MUSU: **No autonomous dispatch without a verified architectural lock.**
+I was pushing the latest log streaming feature for MUSU. Everything worked on the dev server. I pushed to production, and the logs route went dark. **HTTP 500.** 
 
-By the end of the day, with MUSU Warden active, the same task that failed with 2.8M tokens was completed with just 4,000. The tighter the cage, the faster the bird flies.
+---
 
+## The Scar: Async Params in Next.js 15
+
+If you're vibe coding without reading the migration guides, Next.js 15 will destroy you. I spent three hours hunting a ghost in `src/app/api/bridge/tasks/[id]/logs/route.ts`.
+
+The culprit? `params` is now a **Promise**. 
+
+```typescript
+// THE BUG (Commit 358fb4c)
+export async function GET(
+  request: Request,
+  { params }: { params: { id: string } } // <-- THIS BROKE
+) {
+  const taskId = params.id; // Sync access failed
+```
+
+I had to refactor the entire bridge API to handle async params. It felt like "slop" because the AI didn't catch the version mismatch until I forced it to look at the build logs.
+
+---
+
+## The Warden: Enforcing Architecture over Intent
+
+While fixing the API, my agents tried to "help" by rewriting the `warden.repo.ts`. They wanted to add a complex caching layer that we didn't ask for. 
+
+I saw the proposed change in the terminal: **+450 lines of unsupported machinery.**
+
+This is where the **MUSU Warden** philosophy saved me. I didn't let the agent "vibe" out a solution. I enforced a strict **SRM Gate**:
+1. **Structure:** Does this repository follow the existing Supabase service pattern?
+2. **Rhythm:** Can I read this connection logic in 5 seconds?
+3. **Mouthfeel:** Does it sound like our technical canon?
+
+The agent failed the gate. I rejected the PR. I manually wrote the 15-line fix instead.
+
+---
+
+## Forged in the Drift
+
+Today's lesson was expensive (80,000 tokens of debugging). But it proved why I'm building MUSU.
+
+We don't need agents that write more code. We need agents that **respect the boundaries** we set. I'm taking the scars from today and turning them into new Warden rules.
+
+**The Lesson:** The tighter the cage, the faster the bird flies.
+
+---
 [Survive the AI ocean with MUSU Engine](https://musu.pro)
