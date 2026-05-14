@@ -1,22 +1,19 @@
-# Vibe-Musu Visual Language Guide (2026)
+# Vibe-Musu Visual Language Guide (2026 - Pencil Dev Edition)
 
 ## 1. Aesthetic Identity
-- **Gritty Journal:** Low saturation, paper textures, ink-bleed effects.
-- **Blueprint Technical:** Dark backgrounds, neon-accented connection lines, grid overlays.
-- **The Castaway:** Hand-drawn icons, charcoal sketches, Polaroid-style framing.
+- **The Excalidraw Aesthetic:** Hand-drawn, rough, schematic style. It should look like an engineer hastily sketched it on a whiteboard during a heated architectural debate.
+- **High-Signal, Low-Noise:** Focus on nodes, connections, constraints, and data flow. No decorative elements.
 
-## 2. Prompt Templates for Image AI
-### A. The Magnet (Practical/SEO)
-> "A technical blueprint of [TOPIC], cyberpunk aesthetic, high-contrast dark theme, grid background, schematic diagrams, 8k resolution, cinematic lighting."
+## 2. Implementation Workflow (Pencil Dev)
+We no longer use code-based SVGs or DALL-E for technical diagrams. All visuals must be generated using `mcp_pencil_batch_design` for authentic, editable `.pen` files, exported to `.png`.
 
-### B. The Beacon (Guru/Theoretical)
-> "A master study sketch of [CONCEPT], da Vinci journal style, sepia tones, handwritten annotations, complex geometric overlays, high-detail texture."
+1.  **Open Pencil Dev:** Use `mcp_pencil_open_document` to create a new `.pen` file in the `designs/` directory.
+2.  **Batch Design:** Use `mcp_pencil_batch_design` to draw the diagram. Use basic shapes (rectangles, ellipses), connection lines, and mono-spaced text.
+3.  **Export:** Export the final design to `.png` using `mcp_pencil_export_nodes`.
+4.  **Placement:** Save as `public/images/posts/[slug].png` and link in the markdown frontmatter.
 
-### C. The Field Log (Narrative)
-> "A charcoal drawing of a lonely terminal on a beach, waves of data slop in the background, gritty, dramatic shadows, realistic textures, cinematic composition."
-
-## 3. Implementation Workflow
-1.  **Extract Keywords:** Engine pulls 3 core keywords from the draft.
-2.  **Generate Prompt:** Engine formats the keywords into the templates above.
-3.  **Human/AI Synthesis:** (Currently manual trigger or automated DALL-E call).
-4.  **Placement:** Save as `public/images/posts/[slug].png`.
+## 3. Visual Tropes
+- **Nodes:** Rough rectangles for servers/services.
+- **Edges:** Dashed lines for RPC/network calls, solid lines for direct dependencies.
+- **Labels:** Monospaced, all-caps text.
+- **Annotations:** Use "handwritten" (marker style) text to point out flaws, bottlenecks, or Aha moments.
