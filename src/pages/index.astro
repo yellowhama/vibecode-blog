@@ -15,8 +15,8 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 ---
 
 <Layout
-  title="vibecode · the dry engineer's log"
-  description="Incident reports and technical audits from a cynical engineer building agentic systems."
+  title="vibecode | AGENT_VERIFICATION_999"
+  description="Incident reports and technical audits from a cynical engineer building agentic systems."     
 >
   <Header />
 
@@ -25,7 +25,7 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 
     <div class="app-layout relative z-10">
       <div class="flex items-center gap-4 mb-10 text-[0.8rem] tracking-[0.4em] font-mono text-ink-faded uppercase">
-        <span>FIELD JOURNAL · NO. 04</span>
+        <span>FIELD JOURNAL 夷 NO. 04</span>
         <span class="h-px w-12 bg-accent"></span>
         <span>2026.05</span>
       </div>
@@ -49,12 +49,12 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
   </header>
 
   <main id="main-content" class="app-layout py-12">
-    
-    
+
+
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mt-32">
       <div class="lg:col-span-8 space-y-16">
         <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10 border-b border-ink/5 pb-4">Featured Dispatch</h2>
-        
+
         {featuredPosts.length > 0 ? (
           <section class="featured-lead">
             <a href={`/posts/${featuredPosts[0].id}`} class="group block no-underline">
@@ -93,7 +93,7 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
   </main>
 
   <section class="mt-32 border-y border-ink/10 py-24 bg-accent/5 relative overflow-hidden">
-    <div class="absolute -right-20 -top-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl opacity-50"></div>
+    <div class="absolute -right-20 -top-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl opacity-50"></div>  
     <div class="app-layout max-w-2xl mx-auto text-center relative z-10">
       <h2 class="text-3xl md:text-4xl font-serif italic mb-4 text-ink">Join the Inner Circle</h2>
       <p class="text-lg text-text-secondary font-serif italic mb-10">
@@ -120,6 +120,3 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 
   <Footer />
 </Layout>
-
-
-
