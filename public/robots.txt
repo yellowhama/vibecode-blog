@@ -1,1 +1,0 @@
-User-agent: *\nAllow: /\n\nSitemap: https://vibecode.town/sitemap.xml\nSitemap: https://vibecode.town/sitemap-index.xml

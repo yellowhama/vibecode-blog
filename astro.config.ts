@@ -58,17 +58,14 @@ export default defineConfig({
       }),
     },
   },
-  experimental: {
-    preserveScriptOrder: true,
-    fonts: [
-      {
-        name: "Lora",
-        cssVariable: "--font-lora",
-        provider: fontProviders.google(),
-        fallbacks: ["Georgia", "serif"],
-        weights: [400, 500, 600, 700],
-        styles: ["normal", "italic"],
-      },
-    ],
-  },
+  fonts: [
+    {
+      name: "Lora",
+      cssVariable: "--font-lora",
+      provider: fontProviders.google(),
+      fallbacks: ["Georgia", "serif"],
+      weights: [400, 500, 600, 700],
+      styles: ["normal", "italic"],
+    },
+  ],
 });
