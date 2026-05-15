@@ -1,0 +1,12 @@
+[
+  {
+    "title": "musu-warden-loop.md",
+    "snippet": "# SPEC: MUSU Warden Agentic Loop\n\n## Overview\nThe MUSU Warden implements a security loop based on the IBM \"Perceive-Reason-Act-Observe\" model. It ensures that AI agents operate within a deterministic technical contract.\n\n## The Loop\n- **Perceive:** Intercept command intent via middleware.\n- **Reason",
+    "path": "C:\\Users\\empty\\llm-wiki\\global\\specs\\musu-warden-loop.md"
+  },
+  {
+    "title": "reader-avatar.md",
+    "snippet": "# The Vibecode Reader Avatar: \"Cynical Senior Engineer\"\n\nTo win in the 2026 AI era, we do not write for \"everyone.\" We write for one specific human. When he reads a log, he should feel like it was extracted directly from his own terminal.\n\n---\n\n## 1. Demographic & Context\n- **Name:** Team Lead \"Cyni",
+    "path": "C:\\Users\\empty\\llm-wiki\\global\\specs\\reader-avatar.md"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "title": "operations-sop.md",
+    "snippet": "# SOP: Vibecode-Musu Autonomous Operations\n\nThis document defines the **Standard Operating Procedures (SOPs)** for the Vibe-Musu \"Full-Auto\" Company. This is the source of truth for the **Agentic COO** (`vibe_autopilot.py`).\n\n---\n\n## 1. The Circadian Rhythm\nThe company operates on a 3-slot daily sch",
+    "path": "C:\\Users\\empty\\llm-wiki\\companies\\global\\operations-sop.md"
+  },
+  {
+    "title": "context-engineering-standards.md",
+    "snippet": "# SPEC: Context Engineering Standards (v1)\n\n## Overview\nContext Engineering is the process of pruning and re-ranking raw retrieval data to increase signal-to-noise ratio (SNR) in AI prompts.\n\n## Workflow\n1. **Chunking:** Divide raw text into 500-word logical blocks.\n2. **Scoring:** Rank blocks based",
+    "path": "C:\\Users\\empty\\llm-wiki\\global\\specs\\context-engineering-standards.md"
+  },
+  {
+    "title": "critique-gate.md",
+    "snippet": "# Vibecode Technical Critique Gate (BW-Derived)\n\nBased on the **Bloodline Writers (BW)** production standard, this gate ensures that every post meets the highest standards of technical authority and readability, devoid of marketing fluff and poetry.\n\n---\n\n## 1. The SRM Gate (Structural - Rhythmic - ",
+    "path": "C:\\Users\\empty\\llm-wiki\\global\\specs\\critique-gate.md"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "title": "operations-sop.md",
+    "snippet": "# SOP: Vibecode-Musu Autonomous Operations\n\nThis document defines the **Standard Operating Procedures (SOPs)** for the Vibe-Musu \"Full-Auto\" Company. This is the source of truth for the **Agentic COO** (`vibe_autopilot.py`).\n\n---\n\n## 1. The Circadian Rhythm\nThe company operates on a 3-slot daily sch",
+    "path": "C:\\Users\\empty\\llm-wiki\\companies\\global\\operations-sop.md"
+  },
+  {
+    "title": "reader-avatar.md",
+    "snippet": "# The Vibecode Reader Avatar: \"Cynical Senior Engineer\"\n\nTo win in the 2026 AI era, we do not write for \"everyone.\" We write for one specific human. When he reads a log, he should feel like it was extracted directly from his own terminal.\n\n---\n\n## 1. Demographic & Context\n- **Name:** Team Lead \"Cyni",
+    "path": "C:\\Users\\empty\\llm-wiki\\global\\specs\\reader-avatar.md"
+  }
+]
