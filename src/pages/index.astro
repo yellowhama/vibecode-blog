@@ -8,14 +8,23 @@ import Footer from "@/components/Footer.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
 
-const posts = await getCollection("blog", ({ data }) => !data.draft);
-const sortedPosts = getSortedPosts(posts);
+// FORCE LOAD ALL POSTS WITHOUT FILTERS
+const posts = await getCollection("blog");
+const sortedPosts = posts.sort(
+  (a, b) =>
+    Math.floor(
+      new Date(b.data.modDatetime ?? b.data.pubDatetime).getTime() / 1000
+    ) -
+    Math.floor(
+      new Date(a.data.modDatetime ?? a.data.pubDatetime).getTime() / 1000
+    )
+);
 const recentPosts = sortedPosts.slice(0, SITE.postPerIndex);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
+const featuredPosts = sortedPosts.slice(0, 1); // Just take the latest as featured
 ---
 
 <Layout
-  title="vibecode | AGENT_VERIFICATION_999"
+  title="vibecode | FORCED_VISIBILITY"
   description="Incident reports and technical audits from a cynical engineer building agentic systems."     
 >
   <Header />
