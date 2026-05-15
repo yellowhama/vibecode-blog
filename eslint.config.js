@@ -14,5 +14,17 @@ export default [
     },
   },
   { rules: { "no-console": "error" } },
-  { ignores: ["dist/**", ".astro", "public/pagefind/**"] },
+  {
+    ignores: [
+      "node_modules/**",
+      "node_modules_*/**",
+      "dist/**",
+      ".astro/**",
+      ".vercel/**",
+      "public/pagefind/**",
+      "systems/**",
+      "vibecode-assembler/**",
+      "vibecode-diagrams/**",
+    ],
+  },
 ];
