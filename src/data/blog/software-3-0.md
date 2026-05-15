@@ -43,7 +43,7 @@ As shown in the sketch above, the LLM sits at the center of the stack. It doesn'
 
 The most cynical (and accurate) realization of the Software 3.0 era is what we call the **Verifiability Thesis**.
 
-Karpathy¡¯s famous warning, *"You can outsource your thinking, but you cannot outsource your understanding,"* has become the primary constraint of our craft. In a world where Claude 4.7 can output 10,000 lines of code in seconds, the bottleneck is no longer **Creation**?it is **Verification**.
+Karpathys famous warning, *"You can outsource your thinking, but you cannot outsource your understanding,"* has become the primary constraint of our craft. In a world where Claude 4.7 can output 10,000 lines of code in seconds, the bottleneck is no longer **Creation**?it is **Verification**.
 
 If you don't understand the **Technical Contract** (the Spec) of your system, you are not an engineer. You are a babysitter for technical debt. 
 
