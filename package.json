@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && pagefind --site dist && node scripts/copy-pagefind.mjs",
+    "verify:dist": "node scripts/verify-dist.mjs",
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",
