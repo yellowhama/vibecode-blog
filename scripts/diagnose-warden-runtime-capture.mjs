@@ -40,7 +40,7 @@ async function loadEnvFiles(paths) {
     try {
       const vars = parseEnv(await readFile(resolve(path), "utf8"));
       for (const [name, value] of Object.entries(vars)) {
-        if (process.env[name] === undefined) {
+        if (value.trim() && process.env[name] === undefined) {
           process.env[name] = value;
         }
       }
