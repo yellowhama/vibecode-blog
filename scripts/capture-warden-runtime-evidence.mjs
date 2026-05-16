@@ -20,6 +20,31 @@ function npmCommand() {
   return "npm";
 }
 
+function parseEnv(text) {
+  const vars = {};
+  for (const line of text.split(/\r?\n/)) {
+    const match = line.match(/^(?:export\s+)?([A-Za-z_][A-Za-z0-9_]*)=(.*)$/);
+    if (!match) continue;
+    vars[match[1]] = match[2].trim().replace(/^["']|["']$/g, "");
+  }
+  return vars;
+}
+
+async function loadEnvFiles(paths) {
+  for (const path of paths) {
+    try {
+      const vars = parseEnv(await readFile(resolve(path), "utf8"));
+      for (const [name, value] of Object.entries(vars)) {
+        if (process.env[name] === undefined) {
+          process.env[name] = value;
+        }
+      }
+    } catch {
+      // Optional local env files are intentionally ignored when absent.
+    }
+  }
+}
+
 function timestampSlug() {
   return new Date().toISOString().replace(/[:.]/g, "-");
 }
@@ -180,7 +205,17 @@ async function main() {
     return 0;
   }
 
+  await loadEnvFiles([
+    ".env.warden-runtime.local",
+    ".env.local",
+  ]);
+
   const musuRepo = resolve(getArg("--musu-repo") ?? process.env.MUSU_REPO_PATH ?? DEFAULT_MUSU_REPO);
+  await loadEnvFiles([
+    resolve(musuRepo, ".env.warden-runtime.local"),
+    resolve(musuRepo, ".env.local"),
+  ]);
+
   const inputsOk = await validateInputs(musuRepo);
   if (!inputsOk) {
     return 1;

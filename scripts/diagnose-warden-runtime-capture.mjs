@@ -20,6 +20,34 @@ function printStatus(name, pass, detail = "") {
   process.stdout.write(`${name}=${value}${detail ? ` ${detail}` : ""}\n`);
 }
 
+function parseEnv(text) {
+  const vars = {};
+  for (const line of text.split(/\r?\n/)) {
+    const match = line.match(/^(?:export\s+)?([A-Za-z_][A-Za-z0-9_]*)=(.*)$/);
+    if (!match) continue;
+    vars[match[1]] = match[2].trim().replace(/^["']|["']$/g, "");
+  }
+  return vars;
+}
+
+async function loadEnvFiles(paths) {
+  let loaded = 0;
+  for (const path of paths) {
+    try {
+      const vars = parseEnv(await readFile(resolve(path), "utf8"));
+      for (const [name, value] of Object.entries(vars)) {
+        if (process.env[name] === undefined) {
+          process.env[name] = value;
+        }
+      }
+      loaded += 1;
+    } catch {
+      // Optional local env files are intentionally ignored when absent.
+    }
+  }
+  return loaded;
+}
+
 function envStatus(name) {
   const value = process.env[name];
   return typeof value === "string" && value.trim().length > 0;
@@ -54,7 +82,16 @@ function hasScript(packageJson, scriptName) {
 }
 
 async function main() {
+  const localEnvFilesLoaded = await loadEnvFiles([
+    ".env.warden-runtime.local",
+    ".env.local",
+  ]);
   const musuRepo = resolve(getArg("--musu-repo") ?? process.env.MUSU_REPO_PATH ?? DEFAULT_MUSU_REPO);
+  const musuEnvFilesLoaded = await loadEnvFiles([
+    resolve(musuRepo, ".env.warden-runtime.local"),
+    resolve(musuRepo, ".env.local"),
+  ]);
+  const loadedEnvFiles = localEnvFilesLoaded + musuEnvFilesLoaded;
   const musuPackagePath = resolve(musuRepo, "package.json");
   const vibecodePackagePath = resolve("package.json");
   const musuPackage = await readPackageJson(musuPackagePath);
@@ -62,6 +99,7 @@ async function main() {
 
   process.stdout.write(`diagnostic_date=${new Date().toISOString()}\n`);
   process.stdout.write(`musu_repo=${musuRepo}\n`);
+  process.stdout.write(`local_env_files_loaded=${loadedEnvFiles}\n`);
 
   printStatus("musu_repo_exists", existsSync(musuPackagePath));
   printStatus("musu_prepare_script", hasScript(musuPackage, "prepare:warden:migrations"));
