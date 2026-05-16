@@ -5,6 +5,7 @@ description: "Stripping the paint off the hype: Deconstructing Software 3.0, the
 draft: false
 featured: true
 series: "AI Explainer"
+workflow: "legacy"
 tags: ["engineering", "vibe-coding", "agentic-engineering", "karpathy"]
 ogImage: "/images/posts/054-what-vibe-coding-is.png"
 references:

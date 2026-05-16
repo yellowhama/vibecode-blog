@@ -4,6 +4,7 @@ pubDatetime: 2026-05-10T10:00:00Z
 description: "Why your emotional friction is the most honest technical metric you have, and how to deconstruct it into a hard system contract."
 draft: false
 series: "MUSU Build Log"
+workflow: "legacy"
 tags: ["engineering", "observability", "debugging", "slop-detection"]
 ogImage: "/images/posts/058-frustration-is-the-spec.png"
 references:

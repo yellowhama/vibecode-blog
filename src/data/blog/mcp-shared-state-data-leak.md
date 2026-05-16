@@ -5,6 +5,7 @@ description: "MCP SDK 보안 권고가 보여준 핵심은 단순한 패키지 �
 draft: false
 featured: true
 series: "AI Market Watch"
+workflow: "legacy"
 lang: "ko"
 tags: ["engineering", "mcp", "security", "ai-agents"]
 ogImage: "/images/posts/pencil-mcp-loop.png"

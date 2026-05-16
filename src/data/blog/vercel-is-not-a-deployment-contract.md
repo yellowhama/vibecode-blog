@@ -5,6 +5,7 @@ description: "A Coolify migration audit exposed two hidden Vercel assumptions: r
 draft: false
 featured: true
 series: "MUSU Build Log"
+workflow: "legacy"
 tags: ["engineering", "deployment", "coolify", "technical-contracts"]
 ogImage: "/images/posts/pencil-technical-contract.png"
 references:

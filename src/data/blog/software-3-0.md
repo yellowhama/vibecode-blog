@@ -4,6 +4,7 @@ pubDatetime: 2026-05-13T12:00:00Z
 description: "Why we stopped writing code and started designing kernels. A deep dive into Software 3.0 with Claude Opus 4.7 and GPT-5.5."
 draft: false
 series: "AI Explainer"
+workflow: "legacy"
 tags: ["engineering", "software-3.0", "karpathy", "agentic-os"]
 ogImage: "/images/posts/052-software-3-0.png"
 references:

@@ -5,6 +5,7 @@ description: "The end of the Figma handoff. Why storing designs as .pen files in
 draft: false
 featured: true
 series: "MUSU Build Log"
+workflow: "legacy"
 tags: ["engineering", "pencil-dev", "agentic-design", "mcp"]
 ogImage: "/images/posts/pencil-handoff-pain.png"
 references:
