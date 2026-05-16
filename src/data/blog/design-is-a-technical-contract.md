@@ -4,6 +4,7 @@ pubDatetime: 2026-05-13T18:00:00Z
 description: "The end of the Figma handoff. Why storing designs as .pen files in Git is the only way to scale agentic frontend engineering."
 draft: false
 featured: true
+series: "MUSU Build Log"
 tags: ["engineering", "pencil-dev", "agentic-design", "mcp"]
 ogImage: "/images/posts/pencil-handoff-pain.png"
 references:

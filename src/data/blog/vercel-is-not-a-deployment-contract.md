@@ -4,6 +4,7 @@ pubDatetime: 2026-05-16T03:20:00Z
 description: "A Coolify migration audit exposed two hidden Vercel assumptions: rewrites that only existed in vercel.json and a build script that depended on a Unix shell."
 draft: false
 featured: true
+series: "MUSU Build Log"
 tags: ["engineering", "deployment", "coolify", "technical-contracts"]
 ogImage: "/images/posts/pencil-technical-contract.png"
 references:

@@ -4,6 +4,7 @@ pubDatetime: 2026-05-16T06:00:00Z
 description: "AI 에이전트가 매 세션마다 같은 설명을 다시 요구하지 않게 하려면, 프롬프트가 아니라 source, spec, handoff, index로 작업 기억을 고정해야 한다."
 draft: false
 featured: true
+series: "AI Explainer"
 lang: "ko"
 tags: ["engineering", "ai-agents", "llm-wiki", "technical-contracts"]
 ogImage: "/images/posts/pencil-handoff-pain.png"

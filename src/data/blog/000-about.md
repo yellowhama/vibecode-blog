@@ -3,6 +3,7 @@ title: "The Vibe Coding Project: A Guru Student's Log"
 pubDatetime: 2026-05-09T08:00:00Z
 description: "Why I'm deconstructing the agentic era and building deterministic cages for wild reasoning kernels."
 draft: false
+series: "About"
 tags: ["philosophy", "vibe-coding"]
 ---
 

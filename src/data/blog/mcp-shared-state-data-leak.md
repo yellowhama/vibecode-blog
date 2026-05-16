@@ -4,6 +4,7 @@ pubDatetime: 2026-05-16T08:00:00Z
 description: "MCP SDK 보안 권고가 보여준 핵심은 단순한 패키지 업데이트가 아니다. agent tool 서버에서 server와 transport의 생명주기를 계약으로 고정해야 한다."
 draft: false
 featured: true
+series: "AI Market Watch"
 lang: "ko"
 tags: ["engineering", "mcp", "security", "ai-agents"]
 ogImage: "/images/posts/pencil-mcp-loop.png"

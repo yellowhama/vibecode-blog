@@ -4,6 +4,7 @@ pubDatetime: 2026-05-10T10:00:00Z
 description: "Stripping the paint off the hype: Deconstructing Software 3.0, the slop backlash, and the role of the technical contract."
 draft: false
 featured: true
+series: "AI Explainer"
 tags: ["engineering", "vibe-coding", "agentic-engineering", "karpathy"]
 ogImage: "/images/posts/054-what-vibe-coding-is.png"
 references:

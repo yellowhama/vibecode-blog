@@ -19,6 +19,7 @@ const blog = defineCollection({
       tags: z.array(z.string()).default(["others"]),
       ogImage: z.string().or(image()).optional(),
       description: z.string(),
+      series: z.enum(["About", "MUSU Build Log", "AI Explainer", "AI Tool Note", "AI Market Watch"]).optional(),
       lang: z.string().optional(),
       canonicalURL: z.string().optional(),
       hideEditPost: z.boolean().optional(),
