@@ -20,6 +20,15 @@ function hasResolvedEvidence(text) {
   );
 }
 
+function hasDashboardResolutionEvidence(text) {
+  return (
+    text.includes("Resolution transport: dashboard_api") ||
+    text.includes('"resolution_transport": "dashboard_api"') ||
+    text.includes("Dashboard UI") ||
+    text.includes("dashboard screenshot")
+  );
+}
+
 function scoreIncident(file, text) {
   const failures = [];
 
@@ -48,6 +57,10 @@ function scoreIncident(file, text) {
 
   if (!hasResolvedEvidence(text)) {
     failures.push("missing resolved_at or approved/denied dashboard resolution evidence");
+  }
+
+  if (!hasDashboardResolutionEvidence(text)) {
+    failures.push("missing dashboard API/UI resolution evidence");
   }
 
   if (text.includes("dashboard resolution evidence still preferred")) {

@@ -61,6 +61,7 @@ function buildIncident(evidence) {
   const httpStatus = response.http_status ?? "unknown";
   const resolvedAt = evidence.resolution?.row?.resolved_at ?? event.resolved_at ?? "";
   const resolutionStatus = evidence.resolution?.row?.status ?? event.status;
+  const resolutionTransport = evidence.resolution?.transport ?? "";
   const outputName = `${date}-warden-blocked-watchdog-command.md`;
 
   const markdown = `# ${date} Warden Blocked Watchdog Command
@@ -118,6 +119,7 @@ function buildIncident(evidence) {
 
 ## Closure
 - Resolution: ${resolvedAt ? `${resolutionStatus} at ${resolvedAt}` : "Blocked event captured; dashboard resolution evidence still preferred."}
+- Resolution transport: ${resolutionTransport || "missing"}
 - Verification command: \`npm run verify:warden:product\`
 - Follow-up: Attach sanitized evidence JSON and dashboard screenshot before publishing.
 - Linked post/brief:
@@ -135,6 +137,7 @@ ${JSON.stringify(
       status,
       http_status: httpStatus,
       resolved_at: resolvedAt || null,
+      resolution_transport: resolutionTransport || null,
     },
     null,
     2
