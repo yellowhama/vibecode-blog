@@ -1,11 +1,12 @@
 import { existsSync } from "node:fs";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
+import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
+import { basename, dirname, resolve } from "node:path";
 import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
 
 const DEFAULT_MUSU_REPO = String.raw`F:\Aisaak\Projects\musu-pro`;
 const DEFAULT_EVIDENCE_DIR = String.raw`C:\Users\empty\llm-wiki\companies\vibecode-town\incidents\evidence`;
+const DEFAULT_ARCHIVE_DIR = String.raw`F:\Aisaak\CompanyArtifacts\runtime-evidence`;
 
 function getArg(name) {
   const index = process.argv.indexOf(name);
@@ -110,6 +111,7 @@ Optional environment forwarded to MUSU verifier:
   WARDEN_VERIFY_DECISION
   WARDEN_VERIFY_USER_ID
   WARDEN_SQL_EVIDENCE_FILE
+  WARDEN_EVIDENCE_ARCHIVE_DIR
 `);
 }
 
@@ -296,6 +298,22 @@ async function attachMigrationApplicationEvidence(evidenceFile) {
   await writeFile(target, `${JSON.stringify(evidence, null, 2)}\n`, "utf8");
 }
 
+async function archiveEvidenceFiles(evidenceFile) {
+  const archiveDir = resolve(process.env.WARDEN_EVIDENCE_ARCHIVE_DIR ?? DEFAULT_ARCHIVE_DIR);
+  await mkdir(archiveDir, { recursive: true });
+
+  const evidenceTarget = resolve(archiveDir, basename(evidenceFile));
+  await copyFile(resolve(evidenceFile), evidenceTarget);
+  process.stdout.write(`evidence_archive_file=${evidenceTarget}\n`);
+
+  if (process.env.WARDEN_SQL_EVIDENCE_FILE) {
+    const sqlEvidenceSource = resolve(process.env.WARDEN_SQL_EVIDENCE_FILE);
+    const sqlEvidenceTarget = resolve(archiveDir, basename(sqlEvidenceSource));
+    await copyFile(sqlEvidenceSource, sqlEvidenceTarget);
+    process.stdout.write(`sql_evidence_archive_file=${sqlEvidenceTarget}\n`);
+  }
+}
+
 async function main() {
   if (hasFlag("--help")) {
     printHelp();
@@ -392,6 +410,7 @@ async function main() {
   }
 
   await attachMigrationApplicationEvidence(evidenceFile);
+  await archiveEvidenceFiles(evidenceFile);
 
   const incidentCode = await run(npmCommand(), ["run", "incident:warden"], {
     cwd: process.cwd(),
