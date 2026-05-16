@@ -1,0 +1,41 @@
+name: Site Quality Gates
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Verify content contract
+        run: npm run verify:content
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Verify static artifact
+        run: npm run verify:dist
+
+      - name: Verify Warden Field Log gate shape
+        run: npm run test:warden-field-log-gate
