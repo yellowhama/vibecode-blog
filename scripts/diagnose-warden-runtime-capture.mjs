@@ -371,18 +371,23 @@ async function main() {
   }
 
   const sqlEvidenceReady = await verifySqlEvidenceIfProvided(musuRepo, musuPackage);
+  const hasSqlEvidenceInput = envStatus("WARDEN_SQL_EVIDENCE_FILE");
+  const directApplyInputsReady = validDatabaseUrl && process.env.WARDEN_APPLY_MIGRATIONS === "1";
+  const sqlEditorApplyEvidenceReady = hasSqlEvidenceInput && sqlEvidenceReady;
+  const migrationApplicationEvidenceReady = directApplyInputsReady || sqlEditorApplyEvidenceReady;
+  printStatus("direct_migration_apply_inputs_ready", directApplyInputsReady);
+  printStatus("sql_editor_migration_evidence_ready", sqlEditorApplyEvidenceReady);
+  printStatus("migration_application_evidence_ready", migrationApplicationEvidenceReady);
 
-  const inputsReady = validDatabaseUrl
-    && process.env.WARDEN_APPLY_MIGRATIONS === "1"
+  const inputsReady = migrationApplicationEvidenceReady
     && envStatus("WARDEN_VERIFY_NODE")
-    && hasCookie
-    && sqlEvidenceReady;
+    && hasCookie;
 
   printStatus("warden_runtime_inputs_ready", inputsReady);
   if (hasFlag("--inputs-only")) {
     const nextStep = inputsReady
-      ? "Run npm run diagnose:warden-runtime, then npm run capture:warden-runtime -- --preflight --apply-migrations."
-      : "Fill WARDEN_DATABASE_URL, WARDEN_APPLY_MIGRATIONS=1, WARDEN_VERIFY_NODE, a non-empty dashboard cookie, and a valid WARDEN_SQL_EVIDENCE_FILE if provided before running full diagnostics.";
+      ? "Run npm run diagnose:warden-runtime, then run capture with either --apply-migrations for guarded direct apply or WARDEN_SQL_EVIDENCE_FILE for SQL Editor apply."
+      : "Provide either WARDEN_DATABASE_URL plus WARDEN_APPLY_MIGRATIONS=1, or a valid WARDEN_SQL_EVIDENCE_FILE from Supabase SQL Editor apply; also provide WARDEN_VERIFY_NODE and a non-empty dashboard cookie before running full diagnostics.";
     if (!inputsReady) {
       process.stdout.write(`next_step=${nextStep}\n`);
     }
@@ -426,14 +431,16 @@ async function main() {
   const captureReady = envStatus("WARDEN_VERIFY_NODE")
     && hasCookie
     && packetCode === 0
+    && (guardedApplyReady || sqlEditorApplyEvidenceReady)
     && runtimeCode === 0;
 
   printStatus("guarded_migration_apply_ready", guardedApplyReady);
+  printStatus("sql_editor_migration_apply_ready", sqlEditorApplyEvidenceReady);
   printStatus("warden_runtime_capture_ready", captureReady);
   printStatus("warden_field_log_currently_ready", fieldLogCode === 0);
   const nextStep = captureReady
-    ? "Run npm run capture:warden-runtime -- --apply-migrations, then draft the Field Log only after the gate passes."
-    : "Provide WARDEN_DATABASE_URL, WARDEN_APPLY_MIGRATIONS=1, WARDEN_VERIFY_NODE, and dashboard cookie; then run npm run capture:warden-runtime -- --preflight --apply-migrations.";
+    ? "Run npm run capture:warden-runtime with the same migration evidence mode, then draft the Field Log only after the gate passes."
+    : "Provide either WARDEN_DATABASE_URL plus WARDEN_APPLY_MIGRATIONS=1, or WARDEN_SQL_EVIDENCE_FILE from SQL Editor apply; also provide WARDEN_VERIFY_NODE and dashboard cookie, then run npm run capture:warden-runtime -- --preflight.";
   if (!captureReady) {
     process.stdout.write(`next_step=${nextStep}\n`);
   }
