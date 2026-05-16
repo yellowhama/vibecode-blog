@@ -53,6 +53,44 @@ function envStatus(name) {
   return typeof value === "string" && value.trim().length > 0;
 }
 
+function getDatabaseUrl() {
+  return process.env.WARDEN_DATABASE_URL
+    ?? process.env.SUPABASE_DB_URL
+    ?? process.env.DATABASE_URL
+    ?? "";
+}
+
+function isValidPostgresUrl(value) {
+  if (!value.trim()) return false;
+  try {
+    const url = new URL(value);
+    const database = decodeURIComponent(url.pathname.replace(/^\//, ""));
+    return (url.protocol === "postgres:" || url.protocol === "postgresql:")
+      && Boolean(url.hostname)
+      && Boolean(url.username)
+      && Boolean(database);
+  } catch {
+    return false;
+  }
+}
+
+async function cookieFileStatus(path) {
+  const cookiePath = resolve(path);
+  if (!existsSync(cookiePath)) {
+    return { ok: false, detail: "source=file path_exists=false" };
+  }
+
+  try {
+    const text = await readFile(cookiePath, "utf8");
+    return {
+      ok: text.trim().length > 0,
+      detail: `source=file path_exists=true non_empty=${text.trim().length > 0}`,
+    };
+  } catch {
+    return { ok: false, detail: "source=file path_exists=true readable=false" };
+  }
+}
+
 function run(command, args, options = {}) {
   return new Promise((resolveRun) => {
     const useShell = process.platform === "win32";
@@ -109,16 +147,21 @@ async function main() {
   printStatus("vibecode_capture_script", hasScript(vibecodePackage, "capture:warden-runtime"));
   printStatus("vibecode_field_log_gate", hasScript(vibecodePackage, "verify:warden-field-log"));
 
-  const hasDatabaseUrl = envStatus("WARDEN_DATABASE_URL") || envStatus("SUPABASE_DB_URL") || envStatus("DATABASE_URL");
+  const databaseUrl = getDatabaseUrl();
+  const hasDatabaseUrl = databaseUrl.trim().length > 0;
+  const validDatabaseUrl = isValidPostgresUrl(databaseUrl);
   printStatus("database_url_available", hasDatabaseUrl);
+  printStatus("database_url_valid", validDatabaseUrl);
   printStatus("warden_apply_armed", process.env.WARDEN_APPLY_MIGRATIONS === "1");
   printStatus("warden_node_available", envStatus("WARDEN_VERIFY_NODE"));
 
+  let hasCookie = envStatus("WARDEN_VERIFY_COOKIE");
   if (envStatus("WARDEN_VERIFY_COOKIE_FILE")) {
-    const cookiePath = resolve(process.env.WARDEN_VERIFY_COOKIE_FILE);
-    printStatus("warden_cookie_available", existsSync(cookiePath), `source=file path_exists=${existsSync(cookiePath)}`);
+    const status = await cookieFileStatus(process.env.WARDEN_VERIFY_COOKIE_FILE);
+    hasCookie = status.ok;
+    printStatus("warden_cookie_available", status.ok, status.detail);
   } else {
-    printStatus("warden_cookie_available", envStatus("WARDEN_VERIFY_COOKIE"), envStatus("WARDEN_VERIFY_COOKIE") ? "source=inline" : "");
+    printStatus("warden_cookie_available", hasCookie, hasCookie ? "source=inline" : "");
   }
 
   if (!existsSync(musuPackagePath)) {
@@ -148,11 +191,12 @@ async function main() {
   printStatus("warden_field_log_gate", fieldLogCode === 0);
 
   const guardedApplyReady = hasDatabaseUrl
+    && validDatabaseUrl
     && process.env.WARDEN_APPLY_MIGRATIONS === "1"
     && packetCode === 0;
 
   const captureReady = envStatus("WARDEN_VERIFY_NODE")
-    && (envStatus("WARDEN_VERIFY_COOKIE") || envStatus("WARDEN_VERIFY_COOKIE_FILE"))
+    && hasCookie
     && packetCode === 0
     && runtimeCode === 0;
 
