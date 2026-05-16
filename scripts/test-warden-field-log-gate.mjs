@@ -29,6 +29,9 @@ async function main() {
   const tamperedIncidentDir = join(root, "tampered-incidents");
   const tamperedEvidenceDir = join(root, "tampered-evidence");
   const tamperedEvidencePath = join(tamperedEvidenceDir, "warden-product-path-self-test.json");
+  const malformedManifestIncidentDir = join(root, "malformed-manifest-incidents");
+  const malformedManifestEvidenceDir = join(root, "malformed-manifest-evidence");
+  const malformedManifestEvidencePath = join(malformedManifestEvidenceDir, "warden-product-path-self-test.json");
 
   const evidence = {
     captured_at: "2026-05-16T00:00:00.000Z",
@@ -100,6 +103,8 @@ async function main() {
     await mkdir(evidenceDir, { recursive: true });
     await mkdir(tamperedIncidentDir, { recursive: true });
     await mkdir(tamperedEvidenceDir, { recursive: true });
+    await mkdir(malformedManifestIncidentDir, { recursive: true });
+    await mkdir(malformedManifestEvidenceDir, { recursive: true });
 
     await writeFile(
       evidencePath,
@@ -172,8 +177,50 @@ async function main() {
       return 1;
     }
 
+    await writeFile(
+      malformedManifestEvidencePath,
+      `${JSON.stringify(
+        {
+          ...evidence,
+          migration_manifest: {
+            ...evidence.migration_manifest,
+            body: {
+              ...evidence.migration_manifest.body,
+              evidence_query: {
+                ...evidence.migration_manifest.body.evidence_query,
+                sha256: "not-a-sha",
+              },
+            },
+          },
+        },
+        null,
+        2
+      )}\n`,
+      "utf8"
+    );
+
+    const malformedManifestIncidentCode = await runNode([
+      resolve("scripts/create-warden-incident.mjs"),
+      "--evidence",
+      malformedManifestEvidencePath,
+      "--output-dir",
+      malformedManifestIncidentDir,
+    ]);
+    if (malformedManifestIncidentCode !== 0) return malformedManifestIncidentCode;
+
+    const malformedManifestGateCode = await runNode([
+      resolve("scripts/verify-warden-field-log-ready.mjs"),
+      "--incident-dir",
+      malformedManifestIncidentDir,
+    ]);
+    if (malformedManifestGateCode === 0) {
+      process.stderr.write("Warden Field Log gate accepted malformed manifest evidence.\n");
+      return 1;
+    }
+
     process.stdout.write("warden_field_log_gate_positive_self_test=pass\n");
     process.stdout.write("warden_field_log_gate_tamper_self_test=pass\n");
+    process.stdout.write("warden_field_log_gate_malformed_manifest_self_test=pass\n");
     return 0;
   } finally {
     if (process.env.KEEP_WARDEN_GATE_SELF_TEST !== "1") {
