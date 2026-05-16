@@ -1,5 +1,5 @@
 import { existsSync } from "node:fs";
-import { mkdir } from "node:fs/promises";
+import { mkdir, readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { spawn } from "node:child_process";
 
@@ -79,6 +79,47 @@ async function checkAppUrl(appUrl) {
   }
 }
 
+async function getCookieHeader() {
+  if (process.env.WARDEN_VERIFY_COOKIE) {
+    return process.env.WARDEN_VERIFY_COOKIE;
+  }
+  if (process.env.WARDEN_VERIFY_COOKIE_FILE) {
+    return (await readFile(resolve(process.env.WARDEN_VERIFY_COOKIE_FILE), "utf8")).trim();
+  }
+  return null;
+}
+
+async function checkDashboardSession(appUrl) {
+  const cookie = await getCookieHeader();
+  if (!cookie) {
+    process.stderr.write("dashboard_session=missing_cookie\n");
+    return false;
+  }
+
+  const endpoint = new URL("/api/dashboard/warden", appUrl);
+  try {
+    const response = await fetch(endpoint, {
+      method: "GET",
+      headers: { Cookie: cookie },
+      signal: AbortSignal.timeout(5000),
+    });
+    process.stdout.write(`dashboard_warden_status=${response.status}\n`);
+    if (response.status === 200) {
+      process.stdout.write("dashboard_session=authenticated\n");
+      return true;
+    }
+    if (response.status === 503) {
+      process.stderr.write("dashboard_session=authenticated_but_warden_store_unavailable\n");
+      return false;
+    }
+    process.stderr.write("dashboard_session=not_authenticated_or_unavailable\n");
+    return false;
+  } catch (error) {
+    process.stderr.write(`dashboard_session_check_failed=${error instanceof Error ? error.message : String(error)}\n`);
+    return false;
+  }
+}
+
 async function validateInputs(musuRepo) {
   let ok = true;
   const packagePath = resolve(musuRepo, "package.json");
@@ -130,6 +171,7 @@ async function main() {
   if (hasFlag("--preflight")) {
     const appUrl = (process.env.WARDEN_VERIFY_APP_URL ?? "http://localhost:3000").replace(/\/$/, "");
     const appOk = await checkAppUrl(appUrl);
+    const dashboardOk = await checkDashboardSession(appUrl);
     const preflightEnv = {
       ...process.env,
       WARDEN_VERIFY_CHECK_INTEGRITY: process.env.WARDEN_VERIFY_CHECK_INTEGRITY ?? "1",
@@ -138,7 +180,7 @@ async function main() {
       cwd: musuRepo,
       env: preflightEnv,
     });
-    if (appOk && migrationCode === 0) {
+    if (appOk && dashboardOk && migrationCode === 0) {
       process.stdout.write("warden_capture_preflight=pass\n");
       return 0;
     }
