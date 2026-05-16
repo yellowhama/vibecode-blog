@@ -1,9 +1,18 @@
-import { mkdtemp, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
 
 const verifier = "scripts/verify-source-workflow-packets.mjs";
+const REQUIRED_PACKET_SUFFIXES = [
+  "reader-pressure",
+  "title-angle",
+  "evidence-bundle",
+  "brief",
+  "gate-0",
+  "draft-critique",
+];
 
 function run(args) {
   return spawnSync(process.execPath, [verifier, ...args], {
@@ -26,19 +35,21 @@ async function writePackets(wikiRoot, slug) {
   await writeFile(join(planDir, `${slug}-draft-critique.md`), "# Draft Critique\n", "utf8");
 }
 
-async function writeManifest(path, slug) {
-  const files = [
-    "reader-pressure",
-    "title-angle",
-    "evidence-bundle",
-    "brief",
-    "gate-0",
-    "draft-critique",
-  ].map((suffix) => ({
-    suffix,
-    path: `companies/vibecode-town/plans/${slug}-${suffix}.md`,
-    sha256: "a".repeat(64),
-  }));
+async function sha256File(path) {
+  const buffer = await readFile(path);
+  return createHash("sha256").update(buffer).digest("hex");
+}
+
+async function writeManifest(path, wikiRoot, slug, hashOverride, pathOverride) {
+  const files = [];
+  for (const suffix of REQUIRED_PACKET_SUFFIXES) {
+    const packetPath = join(wikiRoot, "companies", "vibecode-town", "plans", `${slug}-${suffix}.md`);
+    files.push({
+      suffix,
+      path: pathOverride?.(suffix) ?? `companies/vibecode-town/plans/${slug}-${suffix}.md`,
+      sha256: hashOverride ?? (await sha256File(packetPath)),
+    });
+  }
 
   await writeFile(path, JSON.stringify({ packets: { [slug]: { files } } }, null, 2), "utf8");
 }
@@ -68,8 +79,10 @@ pubDatetime: 2026-05-18T00:00:00Z
 draft: false
 series: "AI Explainer"
 description: Packet-backed.
-`);
+    `);
     await writePackets(wikiRoot, "packet-post");
+    const manifestFile = join(root, "source-workflow-packets.json");
+    await writeManifest(manifestFile, wikiRoot, "packet-post");
 
     await writePost(blogDir, "legacy-post.md", `
 title: Legacy Post
@@ -80,14 +93,12 @@ workflow: "legacy"
 description: Legacy.
 `);
 
-    const pass = run(["--blog-dir", blogDir, "--wiki-root", wikiRoot]);
+    const pass = run(["--blog-dir", blogDir, "--wiki-root", wikiRoot, "--manifest", manifestFile]);
     if (pass.status !== 0 || !pass.stdout.includes("source_workflow_gate=pass")) {
       throw new Error(`expected pass\nstdout:\n${pass.stdout}\nstderr:\n${pass.stderr}`);
     }
 
-    const manifestFile = join(root, "source-workflow-packets.json");
     const missingWikiRoot = join(root, "missing-wiki");
-    await writeManifest(manifestFile, "packet-post");
 
     const manifestPass = run(["--blog-dir", blogDir, "--wiki-root", missingWikiRoot, "--manifest", manifestFile]);
     if (
@@ -97,6 +108,36 @@ description: Legacy.
       !manifestPass.stdout.includes("source_workflow_gate=pass")
     ) {
       throw new Error(`expected manifest fallback pass\nstdout:\n${manifestPass.stdout}\nstderr:\n${manifestPass.stderr}`);
+    }
+
+    const staleManifestFile = join(root, "stale-source-workflow-packets.json");
+    await writeManifest(staleManifestFile, wikiRoot, "packet-post", "a".repeat(64));
+    const staleManifest = run(["--blog-dir", blogDir, "--wiki-root", wikiRoot, "--manifest", staleManifestFile]);
+    if (
+      staleManifest.status === 0 ||
+      !staleManifest.stdout.includes("source_workflow_gate=fail") ||
+      !staleManifest.stderr.includes("manifest hash mismatch")
+    ) {
+      throw new Error(`expected stale manifest failure\nstdout:\n${staleManifest.stdout}\nstderr:\n${staleManifest.stderr}`);
+    }
+
+    const badPathManifestFile = join(root, "bad-path-source-workflow-packets.json");
+    await writeManifest(
+      badPathManifestFile,
+      wikiRoot,
+      "packet-post",
+      undefined,
+      (suffix) => suffix === "reader-pressure"
+        ? "companies/vibecode-town/plans/wrong-reader-pressure.md"
+        : `companies/vibecode-town/plans/packet-post-${suffix}.md`,
+    );
+    const badPathManifest = run(["--blog-dir", blogDir, "--wiki-root", wikiRoot, "--manifest", badPathManifestFile]);
+    if (
+      badPathManifest.status === 0 ||
+      !badPathManifest.stdout.includes("source_workflow_gate=fail") ||
+      !badPathManifest.stderr.includes("unexpected path")
+    ) {
+      throw new Error(`expected bad manifest path failure\nstdout:\n${badPathManifest.stdout}\nstderr:\n${badPathManifest.stderr}`);
     }
 
     await writePost(blogDir, "missing-packet.md", `

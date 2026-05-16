@@ -1,5 +1,6 @@
 import { access, readdir, readFile } from "node:fs/promises";
 import { constants } from "node:fs";
+import { createHash } from "node:crypto";
 import { join, resolve } from "node:path";
 
 const DEFAULT_BLOG_DIR = "src/data/blog";
@@ -66,7 +67,18 @@ async function loadManifest(path) {
   return JSON.parse(text);
 }
 
-function validateManifestPacket(manifest, slug) {
+async function sha256File(path) {
+  const buffer = await readFile(path);
+  return createHash("sha256").update(buffer).digest("hex");
+}
+
+function manifestEntry(manifest, slug, suffix) {
+  const packet = manifest?.packets?.[slug];
+  const files = Array.isArray(packet?.files) ? packet.files : [];
+  return files.find((file) => file?.suffix === suffix);
+}
+
+function validateManifestPacketShape(manifest, slug) {
   const packet = manifest?.packets?.[slug];
   if (!packet) {
     return [`manifest is missing packet entry for ${slug}`];
@@ -86,6 +98,37 @@ function validateManifestPacket(manifest, slug) {
     }
     if (!/^[a-f0-9]{64}$/.test(entry.sha256 ?? "")) {
       failures.push(`manifest packet ${slug}/${suffix} is missing lowercase sha256`);
+    }
+  }
+
+  return failures;
+}
+
+async function validateWikiPacketFiles(wikiRoot, manifest, slug) {
+  const failures = [];
+  for (const suffix of REQUIRED_PACKET_SUFFIXES) {
+    const requiredPath = packetPath(wikiRoot, slug, suffix);
+    if (!(await fileExists(requiredPath))) {
+      failures.push(requiredPath);
+      continue;
+    }
+
+    if (!manifest) continue;
+    const entry = manifestEntry(manifest, slug, suffix);
+    if (!entry) {
+      failures.push(`manifest packet ${slug} is missing suffix ${suffix}`);
+      continue;
+    }
+
+    const expectedPath = manifestPath(slug, suffix);
+    if (entry.path !== expectedPath) {
+      failures.push(`manifest packet ${slug}/${suffix} has unexpected path ${entry.path}`);
+      continue;
+    }
+
+    const actualHash = await sha256File(requiredPath);
+    if (entry.sha256 !== actualHash) {
+      failures.push(`manifest hash mismatch for ${entry.path}: expected ${entry.sha256}, actual ${actualHash}`);
     }
   }
 
@@ -140,14 +183,12 @@ async function main() {
 
     const missing = [];
     if (wikiRootExists) {
-      for (const suffix of REQUIRED_PACKET_SUFFIXES) {
-        const requiredPath = packetPath(wikiRoot, slug, suffix);
-        if (!(await fileExists(requiredPath))) {
-          missing.push(requiredPath);
-        }
+      const wikiFailures = await validateWikiPacketFiles(wikiRoot, manifest, slug);
+      for (const failure of wikiFailures) {
+        missing.push(failure);
       }
     } else {
-      const manifestFailures = validateManifestPacket(manifest, slug);
+      const manifestFailures = validateManifestPacketShape(manifest, slug);
       for (const failure of manifestFailures) {
         missing.push(failure);
       }
