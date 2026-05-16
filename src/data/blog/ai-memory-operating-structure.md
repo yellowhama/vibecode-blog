@@ -8,6 +8,16 @@ series: "AI Explainer"
 lang: "ko"
 tags: ["engineering", "ai-agents", "llm-wiki", "technical-contracts"]
 ogImage: "/images/posts/pencil-handoff-pain.png"
+references:
+  - name: "Conversation state"
+    url: "https://developers.openai.com/api/docs/guides/conversation-state"
+    guru: "OpenAI"
+  - name: "Compaction"
+    url: "https://developers.openai.com/api/docs/guides/compaction"
+    guru: "OpenAI"
+  - name: "MCP Resources"
+    url: "https://modelcontextprotocol.io/docs/concepts/resources"
+    guru: "Model Context Protocol"
 ---
 
 # AI가 기억을 잃지 않게 하는 운영 구조

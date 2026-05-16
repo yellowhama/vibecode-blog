@@ -62,9 +62,9 @@ function validateUrlSyntax(file, url, failures) {
   }
 }
 
-async function fetchStatus(url) {
+async function fetchStatusOnce(url) {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 8000);
+  const timeout = setTimeout(() => controller.abort(), 15000);
 
   try {
     let response = await fetch(url, {
@@ -87,6 +87,17 @@ async function fetchStatus(url) {
   }
 }
 
+async function fetchStatus(url) {
+  try {
+    return await fetchStatusOnce(url);
+  } catch (error) {
+    if (error instanceof Error && error.name === "AbortError") {
+      return await fetchStatusOnce(url);
+    }
+    throw error;
+  }
+}
+
 async function main() {
   const checkHttp = hasArg("--check-http");
   const files = (await readdir(BLOG_DIR))
@@ -96,6 +107,7 @@ async function main() {
   const failures = [];
   let checked = 0;
   let referencesChecked = 0;
+  let postsWithFrontmatterReferences = 0;
   const allReferenceUrls = new Set();
 
   for (const file of files) {
@@ -107,6 +119,13 @@ async function main() {
     const referenceUrls = extractReferenceUrls(frontmatter);
     const combined = `${frontmatter}\n${body}`;
     const urls = [...new Set([...referenceUrls, ...extractAllUrls(body)])];
+    const isAbout = /^series:\s*["']?About["']?\s*$/m.test(frontmatter);
+
+    if (referenceUrls.length > 0) {
+      postsWithFrontmatterReferences += 1;
+    } else if (!isAbout) {
+      failures.push(`${file}: non-About public posts must include frontmatter references`);
+    }
 
     for (const url of referenceUrls) {
       referencesChecked += 1;
@@ -139,6 +158,7 @@ async function main() {
   }
 
   process.stdout.write(`source_reference_posts_checked=${checked}\n`);
+  process.stdout.write(`source_reference_posts_with_frontmatter_references=${postsWithFrontmatterReferences}\n`);
   process.stdout.write(`source_reference_frontmatter_urls_checked=${referencesChecked}\n`);
 
   if (failures.length > 0) {
