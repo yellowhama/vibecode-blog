@@ -6,6 +6,8 @@ import { spawn } from "node:child_process";
 const DEFAULT_MUSU_REPO = String.raw`F:\Aisaak\Projects\musu-pro`;
 const DEFAULT_REPORT_PATH = String.raw`C:\Users\empty\llm-wiki\companies\vibecode-town\plans\warden-runtime-readiness-latest.md`;
 const statusRecords = [];
+const envFileRecords = [];
+const envSources = new Map();
 
 function getArg(name) {
   const index = process.argv.indexOf(name);
@@ -41,6 +43,68 @@ function statusTableRows() {
     .join("\n");
 }
 
+function envFileTableRows() {
+  if (envFileRecords.length === 0) {
+    return "| _none_ | not_checked | 0 | 0 |";
+  }
+
+  return envFileRecords
+    .map((record) => `| \`${record.path}\` | ${record.status} | ${record.applied} | ${record.blank} |`)
+    .join("\n");
+}
+
+function envSource(name) {
+  if (!envStatus(name)) return "missing";
+  return envSources.get(name) ?? "process_env";
+}
+
+function databaseUrlSource() {
+  for (const name of ["WARDEN_DATABASE_URL", "SUPABASE_DB_URL", "DATABASE_URL"]) {
+    if (envStatus(name)) {
+      return `${name} from ${envSource(name)}`;
+    }
+  }
+  return "missing";
+}
+
+function inputTableRows() {
+  const cookieSource = envStatus("WARDEN_VERIFY_COOKIE_FILE")
+    ? `WARDEN_VERIFY_COOKIE_FILE from ${envSource("WARDEN_VERIFY_COOKIE_FILE")}`
+    : envStatus("WARDEN_VERIFY_COOKIE")
+      ? `WARDEN_VERIFY_COOKIE from ${envSource("WARDEN_VERIFY_COOKIE")}`
+      : "missing";
+
+  return [
+    [
+      "database_url",
+      envStatus("WARDEN_DATABASE_URL") || envStatus("SUPABASE_DB_URL") || envStatus("DATABASE_URL")
+        ? "present"
+        : "missing",
+      databaseUrlSource(),
+    ],
+    [
+      "WARDEN_APPLY_MIGRATIONS",
+      process.env.WARDEN_APPLY_MIGRATIONS === "1" ? "present" : "missing",
+      envSource("WARDEN_APPLY_MIGRATIONS"),
+    ],
+    ["WARDEN_VERIFY_NODE", envStatus("WARDEN_VERIFY_NODE") ? "present" : "missing", envSource("WARDEN_VERIFY_NODE")],
+    [
+      "dashboard_cookie",
+      envStatus("WARDEN_VERIFY_COOKIE_FILE") || envStatus("WARDEN_VERIFY_COOKIE") ? "present" : "missing",
+      cookieSource,
+    ],
+    [
+      "WARDEN_SQL_EVIDENCE_FILE",
+      envStatus("WARDEN_SQL_EVIDENCE_FILE")
+        ? (existsSync(resolve(process.env.WARDEN_SQL_EVIDENCE_FILE)) ? "present" : "missing_file")
+        : "optional",
+      envStatus("WARDEN_SQL_EVIDENCE_FILE") ? envSource("WARDEN_SQL_EVIDENCE_FILE") : "optional",
+    ],
+  ]
+    .map(([name, state, source]) => `| \`${name}\` | ${state} | ${source} |`)
+    .join("\n");
+}
+
 async function writeReadinessReport({
   diagnosticDate,
   musuRepo,
@@ -67,6 +131,16 @@ ${verdict}
 | MUSU repo | \`${musuRepo}\` |
 | Loaded env files | ${loadedEnvFiles} |
 | Exit code | ${exitCode} |
+
+## Env Files
+| Path | Status | Applied non-empty keys | Blank keys |
+| :--- | :--- | ---: | ---: |
+${envFileTableRows()}
+
+## Required Runtime Inputs
+| Input | State | Source |
+| :--- | :--- | :--- |
+${inputTableRows()}
 
 ## Statuses
 | Check | Status | Detail |
@@ -106,15 +180,24 @@ function parseEnv(text) {
 async function loadEnvFiles(paths) {
   let loaded = 0;
   for (const path of paths) {
+    const resolvedPath = resolve(path);
     try {
-      const vars = parseEnv(await readFile(resolve(path), "utf8"));
+      const vars = parseEnv(await readFile(resolvedPath, "utf8"));
+      let applied = 0;
+      let blank = 0;
       for (const [name, value] of Object.entries(vars)) {
         if (value.trim() && process.env[name] === undefined) {
           process.env[name] = value;
+          envSources.set(name, resolvedPath);
+          applied += 1;
+        } else if (!value.trim()) {
+          blank += 1;
         }
       }
+      envFileRecords.push({ path: resolvedPath, status: "loaded", applied, blank });
       loaded += 1;
     } catch {
+      envFileRecords.push({ path: resolvedPath, status: "absent", applied: 0, blank: 0 });
       // Optional local env files are intentionally ignored when absent.
     }
   }
