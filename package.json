@@ -12,6 +12,7 @@
     "verify:warden-field-log": "node scripts/verify-warden-field-log-ready.mjs",
     "incident:warden": "node scripts/create-warden-incident.mjs",
     "capture:warden-runtime": "node scripts/capture-warden-runtime-evidence.mjs",
+    "test:warden-field-log-gate": "node scripts/test-warden-field-log-gate.mjs",
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",
