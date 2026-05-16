@@ -87,6 +87,10 @@ async function main() {
           },
         ],
         bundle_sha256: "a60f6703b1a7f059e56d682818561907f011b78b37605b93ff7043e1119396ce",
+        evidence_query: {
+          path: "docs/migrations/verify_warden_events.sql",
+          sha256: "1111111111111111111111111111111111111111111111111111111111111111",
+        },
       },
     },
   };

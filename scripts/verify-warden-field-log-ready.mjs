@@ -45,6 +45,13 @@ function hasMigrationManifest(evidence) {
     return false;
   }
 
+  if (
+    body.evidence_query?.path !== "docs/migrations/verify_warden_events.sql" ||
+    typeof body.evidence_query?.sha256 !== "string"
+  ) {
+    return false;
+  }
+
   const paths = Array.isArray(body.apply_order)
     ? body.apply_order.map((item) => item?.path)
     : [];
