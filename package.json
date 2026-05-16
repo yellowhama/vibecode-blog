@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro build && pagefind --site dist && node scripts/copy-pagefind.mjs",
     "verify:dist": "node scripts/verify-dist.mjs",
+    "verify:warden-field-log": "node scripts/verify-warden-field-log-ready.mjs",
     "incident:warden": "node scripts/create-warden-incident.mjs",
     "preview": "astro preview",
     "sync": "astro sync",
