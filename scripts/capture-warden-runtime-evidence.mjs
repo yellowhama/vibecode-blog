@@ -47,6 +47,11 @@ async function loadEnvFiles(paths) {
   }
 }
 
+function envStatus(name) {
+  const value = process.env[name];
+  return typeof value === "string" && value.trim().length > 0;
+}
+
 function timestampSlug() {
   return new Date().toISOString().replace(/[:.]/g, "-");
 }
@@ -112,6 +117,9 @@ Optional environment forwarded to MUSU verifier:
   WARDEN_VERIFY_USER_ID
   WARDEN_SQL_EVIDENCE_FILE
   WARDEN_EVIDENCE_ARCHIVE_DIR
+
+Migration application evidence:
+  Use either --apply-migrations for guarded direct apply, or WARDEN_SQL_EVIDENCE_FILE for a saved Supabase SQL Editor all-pass export.
 `);
 }
 
@@ -207,6 +215,12 @@ async function validateInputs(musuRepo) {
   } else {
     process.stderr.write("WARDEN_VERIFY_COOKIE or WARDEN_VERIFY_COOKIE_FILE is required.\n");
     process.stderr.write("Use an authenticated MUSU dashboard session for the user that owns WARDEN_VERIFY_NODE.\n");
+    ok = false;
+  }
+
+  if (!hasFlag("--apply-migrations") && !envStatus("WARDEN_SQL_EVIDENCE_FILE")) {
+    process.stderr.write("Migration application evidence is required before Warden runtime capture.\n");
+    process.stderr.write("Set WARDEN_SQL_EVIDENCE_FILE to a saved Supabase SQL Editor all-pass export, or rerun with --apply-migrations.\n");
     ok = false;
   }
 
