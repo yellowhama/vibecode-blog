@@ -156,6 +156,28 @@ async function validateInputs(musuRepo) {
   return ok;
 }
 
+async function writeAndVerifyMigrationBundle(musuRepo) {
+  const migrationBundleCode = await run(npmCommand(), ["run", "write:warden:migrations"], {
+    cwd: musuRepo,
+    env: process.env,
+  });
+  if (migrationBundleCode !== 0) {
+    process.stderr.write("Failed to write Warden migration bundle and manifest.\n");
+    return migrationBundleCode;
+  }
+
+  const migrationVerifyCode = await run(npmCommand(), ["run", "verify:warden:migrations"], {
+    cwd: musuRepo,
+    env: process.env,
+  });
+  if (migrationVerifyCode !== 0) {
+    process.stderr.write("Warden migration bundle verification failed. Stop before runtime checks.\n");
+    return migrationVerifyCode;
+  }
+
+  return 0;
+}
+
 async function main() {
   if (hasFlag("--help")) {
     printHelp();
@@ -170,6 +192,7 @@ async function main() {
 
   if (hasFlag("--preflight")) {
     const appUrl = (process.env.WARDEN_VERIFY_APP_URL ?? "http://localhost:3000").replace(/\/$/, "");
+    const migrationBundleOk = (await writeAndVerifyMigrationBundle(musuRepo)) === 0;
     const appOk = await checkAppUrl(appUrl);
     const dashboardOk = await checkDashboardSession(appUrl);
     const preflightEnv = {
@@ -180,7 +203,7 @@ async function main() {
       cwd: musuRepo,
       env: preflightEnv,
     });
-    if (appOk && dashboardOk && migrationCode === 0) {
+    if (migrationBundleOk && appOk && dashboardOk && migrationCode === 0) {
       process.stdout.write("warden_capture_preflight=pass\n");
       return 0;
     }
@@ -207,12 +230,8 @@ async function main() {
   process.stdout.write(`evidence_file=${evidenceFile}\n`);
   process.stdout.write(`musu_repo=${musuRepo}\n`);
 
-  const migrationBundleCode = await run(npmCommand(), ["run", "write:warden:migrations"], {
-    cwd: musuRepo,
-    env: process.env,
-  });
+  const migrationBundleCode = await writeAndVerifyMigrationBundle(musuRepo);
   if (migrationBundleCode !== 0) {
-    process.stderr.write("Failed to write Warden migration bundle and manifest.\n");
     return migrationBundleCode;
   }
 
