@@ -1,9 +1,11 @@
 import { existsSync } from "node:fs";
-import { readFile } from "node:fs/promises";
-import { resolve } from "node:path";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { dirname, resolve } from "node:path";
 import { spawn } from "node:child_process";
 
 const DEFAULT_MUSU_REPO = String.raw`F:\Aisaak\Projects\musu-pro`;
+const DEFAULT_REPORT_PATH = String.raw`C:\Users\empty\llm-wiki\companies\vibecode-town\plans\warden-runtime-readiness-latest.md`;
+const statusRecords = [];
 
 function getArg(name) {
   const index = process.argv.indexOf(name);
@@ -21,7 +23,74 @@ function npmCommand() {
 
 function printStatus(name, pass, detail = "") {
   const value = pass ? "pass" : "fail";
+  statusRecords.push({ name, value, detail });
   process.stdout.write(`${name}=${value}${detail ? ` ${detail}` : ""}\n`);
+}
+
+function shouldWriteReport() {
+  return hasFlag("--write-report") || process.argv.includes("--report");
+}
+
+function reportPath() {
+  return resolve(getArg("--report") ?? DEFAULT_REPORT_PATH);
+}
+
+function statusTableRows() {
+  return statusRecords
+    .map((record) => `| \`${record.name}\` | ${record.value} | ${record.detail || ""} |`)
+    .join("\n");
+}
+
+async function writeReadinessReport({
+  diagnosticDate,
+  musuRepo,
+  loadedEnvFiles,
+  mode,
+  nextStep,
+  exitCode,
+}) {
+  if (!shouldWriteReport()) return;
+
+  const destination = reportPath();
+  await mkdir(dirname(destination), { recursive: true });
+  const verdict = exitCode === 0 ? "ready" : "blocked";
+  const body = `# Warden Runtime Readiness Latest
+
+## Verdict
+${verdict}
+
+## Diagnostic
+| Field | Value |
+| :--- | :--- |
+| Diagnostic date | ${diagnosticDate} |
+| Mode | ${mode} |
+| MUSU repo | \`${musuRepo}\` |
+| Loaded env files | ${loadedEnvFiles} |
+| Exit code | ${exitCode} |
+
+## Statuses
+| Check | Status | Detail |
+| :--- | :--- | :--- |
+${statusTableRows()}
+
+## Next Step
+${nextStep || "Run the Warden runtime capture sequence."}
+
+## Secret Handling
+This report is intentionally secret-free. It records only pass/fail readiness, not database URLs, cookies, Supabase keys, browser storage, or request headers.
+
+## Capture Gate
+Do not draft the Warden Field Log until:
+
+\`\`\`txt
+cd F:\\Aisaak\\Projects\\vibecode-town
+npm run verify:warden-field-log
+\`\`\`
+
+passes against a generated Warden runtime incident and sanitized raw evidence JSON.
+`;
+  await writeFile(destination, body, "utf8");
+  process.stdout.write(`readiness_report=${destination}\n`);
 }
 
 function parseEnv(text) {
@@ -139,7 +208,8 @@ async function main() {
   const musuPackage = await readPackageJson(musuPackagePath);
   const vibecodePackage = await readPackageJson(vibecodePackagePath);
 
-  process.stdout.write(`diagnostic_date=${new Date().toISOString()}\n`);
+  const diagnosticDate = new Date().toISOString();
+  process.stdout.write(`diagnostic_date=${diagnosticDate}\n`);
   process.stdout.write(`musu_repo=${musuRepo}\n`);
   process.stdout.write(`local_env_files_loaded=${loadedEnvFiles}\n`);
 
@@ -180,9 +250,20 @@ async function main() {
 
   printStatus("warden_runtime_inputs_ready", inputsReady);
   if (hasFlag("--inputs-only")) {
+    const nextStep = inputsReady
+      ? "Run npm run diagnose:warden-runtime, then npm run capture:warden-runtime -- --preflight --apply-migrations."
+      : "Fill WARDEN_DATABASE_URL, WARDEN_APPLY_MIGRATIONS=1, WARDEN_VERIFY_NODE, and a non-empty dashboard cookie before running full diagnostics.";
     if (!inputsReady) {
-      process.stdout.write("next_step=Fill WARDEN_DATABASE_URL, WARDEN_APPLY_MIGRATIONS=1, WARDEN_VERIFY_NODE, and a non-empty dashboard cookie before running full diagnostics.\n");
+      process.stdout.write(`next_step=${nextStep}\n`);
     }
+    await writeReadinessReport({
+      diagnosticDate,
+      musuRepo,
+      loadedEnvFiles,
+      mode: "inputs-only",
+      nextStep,
+      exitCode: inputsReady ? 0 : 1,
+    });
     return inputsReady ? 0 : 1;
   }
 
@@ -220,9 +301,21 @@ async function main() {
   printStatus("guarded_migration_apply_ready", guardedApplyReady);
   printStatus("warden_runtime_capture_ready", captureReady);
   printStatus("warden_field_log_currently_ready", fieldLogCode === 0);
+  const nextStep = captureReady
+    ? "Run npm run capture:warden-runtime -- --apply-migrations, then draft the Field Log only after the gate passes."
+    : "Provide WARDEN_DATABASE_URL, WARDEN_APPLY_MIGRATIONS=1, WARDEN_VERIFY_NODE, and dashboard cookie; then run npm run capture:warden-runtime -- --preflight --apply-migrations.";
   if (!captureReady) {
-    process.stdout.write("next_step=Provide WARDEN_DATABASE_URL, WARDEN_APPLY_MIGRATIONS=1, WARDEN_VERIFY_NODE, and dashboard cookie; then run npm run capture:warden-runtime -- --preflight --apply-migrations.\n");
+    process.stdout.write(`next_step=${nextStep}\n`);
   }
+
+  await writeReadinessReport({
+    diagnosticDate,
+    musuRepo,
+    loadedEnvFiles,
+    mode: "full",
+    nextStep,
+    exitCode: captureReady ? 0 : 1,
+  });
 
   return captureReady ? 0 : 1;
 }
