@@ -49,6 +49,27 @@ function timestampSlug() {
   return new Date().toISOString().replace(/[:.]/g, "-");
 }
 
+function getDatabaseUrl() {
+  return process.env.WARDEN_DATABASE_URL
+    ?? process.env.SUPABASE_DB_URL
+    ?? process.env.DATABASE_URL
+    ?? "";
+}
+
+function isValidPostgresUrl(value) {
+  if (!value.trim()) return false;
+  try {
+    const url = new URL(value);
+    const database = decodeURIComponent(url.pathname.replace(/^\//, ""));
+    return (url.protocol === "postgres:" || url.protocol === "postgresql:")
+      && Boolean(url.hostname)
+      && Boolean(url.username)
+      && Boolean(database);
+  } catch {
+    return false;
+  }
+}
+
 function run(command, args, options = {}) {
   return new Promise((resolveRun) => {
     const useShell = process.platform === "win32";
@@ -169,7 +190,13 @@ async function validateInputs(musuRepo) {
       process.stderr.write(`WARDEN_VERIFY_COOKIE_FILE not found: ${cookiePath}\n`);
       ok = false;
     } else {
-      process.stdout.write(`cookie_file=${cookiePath}\n`);
+      const cookieText = await readFile(cookiePath, "utf8");
+      if (!cookieText.trim()) {
+        process.stderr.write(`WARDEN_VERIFY_COOKIE_FILE is empty: ${cookiePath}\n`);
+        ok = false;
+      } else {
+        process.stdout.write(`cookie_file=${cookiePath}\n`);
+      }
     }
   } else if (process.env.WARDEN_VERIFY_COOKIE) {
     process.stdout.write("cookie=provided_inline\n");
@@ -177,6 +204,22 @@ async function validateInputs(musuRepo) {
     process.stderr.write("WARDEN_VERIFY_COOKIE or WARDEN_VERIFY_COOKIE_FILE is required.\n");
     process.stderr.write("Use an authenticated MUSU dashboard session for the user that owns WARDEN_VERIFY_NODE.\n");
     ok = false;
+  }
+
+  if (hasFlag("--apply-migrations")) {
+    const databaseUrl = getDatabaseUrl();
+    if (!databaseUrl.trim()) {
+      process.stderr.write("WARDEN_DATABASE_URL, SUPABASE_DB_URL, or DATABASE_URL is required when --apply-migrations is set.\n");
+      ok = false;
+    } else if (!isValidPostgresUrl(databaseUrl)) {
+      process.stderr.write("WARDEN_DATABASE_URL, SUPABASE_DB_URL, or DATABASE_URL must be a valid PostgreSQL URL when --apply-migrations is set.\n");
+      ok = false;
+    }
+
+    if (process.env.WARDEN_APPLY_MIGRATIONS !== "1") {
+      process.stderr.write("WARDEN_APPLY_MIGRATIONS=1 is required when --apply-migrations is set.\n");
+      ok = false;
+    }
   }
 
   return ok;
