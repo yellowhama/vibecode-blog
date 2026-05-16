@@ -60,6 +60,7 @@ Optional environment forwarded to MUSU verifier:
   WARDEN_VERIFY_APP_URL
   WARDEN_VERIFY_COMMAND
   WARDEN_VERIFY_DECISION
+  WARDEN_VERIFY_USER_ID
 `);
 }
 
@@ -129,9 +130,13 @@ async function main() {
   if (hasFlag("--preflight")) {
     const appUrl = (process.env.WARDEN_VERIFY_APP_URL ?? "http://localhost:3000").replace(/\/$/, "");
     const appOk = await checkAppUrl(appUrl);
+    const preflightEnv = {
+      ...process.env,
+      WARDEN_VERIFY_CHECK_INTEGRITY: process.env.WARDEN_VERIFY_CHECK_INTEGRITY ?? "1",
+    };
     const migrationCode = await run(npmCommand(), ["run", "verify:warden"], {
       cwd: musuRepo,
-      env: process.env,
+      env: preflightEnv,
     });
     if (appOk && migrationCode === 0) {
       process.stdout.write("warden_capture_preflight=pass\n");
