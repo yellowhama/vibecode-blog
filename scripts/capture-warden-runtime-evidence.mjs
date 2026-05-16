@@ -108,6 +108,7 @@ Optional environment forwarded to MUSU verifier:
   WARDEN_VERIFY_COMMAND
   WARDEN_VERIFY_DECISION
   WARDEN_VERIFY_USER_ID
+  WARDEN_SQL_EVIDENCE_FILE
 `);
 }
 
@@ -242,6 +243,28 @@ async function prepareOrApplyMigrationPacket(musuRepo) {
   return 0;
 }
 
+async function verifySqlEditorEvidenceIfProvided(musuRepo) {
+  const evidenceFile = process.env.WARDEN_SQL_EVIDENCE_FILE;
+  if (!evidenceFile) {
+    return 0;
+  }
+
+  const evidencePath = resolve(evidenceFile);
+  if (!existsSync(evidencePath)) {
+    process.stderr.write(`WARDEN_SQL_EVIDENCE_FILE not found: ${evidencePath}\n`);
+    return 1;
+  }
+
+  const code = await run(npmCommand(), ["run", "verify:warden:sql-evidence", "--", evidencePath], {
+    cwd: musuRepo,
+    env: process.env,
+  });
+  if (code !== 0) {
+    process.stderr.write("Warden SQL Editor evidence verification failed. Stop before runtime checks.\n");
+  }
+  return code;
+}
+
 async function main() {
   if (hasFlag("--help")) {
     printHelp();
@@ -268,6 +291,11 @@ async function main() {
     const appUrl = (process.env.WARDEN_VERIFY_APP_URL ?? "http://localhost:3000").replace(/\/$/, "");
     const migrationPacketOk = (await prepareOrApplyMigrationPacket(musuRepo)) === 0;
     if (!migrationPacketOk) {
+      process.stderr.write("warden_capture_preflight=fail\n");
+      return 1;
+    }
+    const sqlEvidenceOk = (await verifySqlEditorEvidenceIfProvided(musuRepo)) === 0;
+    if (!sqlEvidenceOk) {
       process.stderr.write("warden_capture_preflight=fail\n");
       return 1;
     }
@@ -312,6 +340,11 @@ async function main() {
   const migrationPacketCode = await prepareOrApplyMigrationPacket(musuRepo);
   if (migrationPacketCode !== 0) {
     return migrationPacketCode;
+  }
+
+  const sqlEvidenceCode = await verifySqlEditorEvidenceIfProvided(musuRepo);
+  if (sqlEvidenceCode !== 0) {
+    return sqlEvidenceCode;
   }
 
   const verifyCode = await run(npmCommand(), ["run", "verify:warden:product"], {
