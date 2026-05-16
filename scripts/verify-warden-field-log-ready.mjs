@@ -1,5 +1,6 @@
 import { readdir, readFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
+import { createHash } from "node:crypto";
 
 const DEFAULT_INCIDENT_DIR = String.raw`C:\Users\empty\llm-wiki\companies\vibecode-town\incidents`;
 
@@ -68,6 +69,52 @@ function hasMigrationManifest(evidence) {
   );
 }
 
+function sha256(buffer) {
+  return createHash("sha256").update(buffer).digest("hex");
+}
+
+async function scoreMigrationApplicationEvidence(evidence) {
+  const application = evidence.migration_application_evidence;
+  const sha256Pattern = /^[a-f0-9]{64}$/;
+  const failures = [];
+  if (application?.status !== "pass") {
+    return ["sanitized evidence JSON migration application evidence status is not pass"];
+  }
+
+  if (application.source === "sql_editor_export") {
+    if (application.verifier !== "npm run verify:warden:sql-evidence") {
+      failures.push("migration application evidence verifier is not npm run verify:warden:sql-evidence");
+    }
+    if (typeof application.file !== "string" || application.file.trim() === "") {
+      failures.push("migration application evidence SQL Editor export file is missing");
+    }
+    if (typeof application.sha256 !== "string" || !sha256Pattern.test(application.sha256)) {
+      failures.push("migration application evidence SQL Editor export SHA-256 is missing or invalid");
+    }
+
+    if (failures.length === 0) {
+      try {
+        const file = await readFile(resolve(application.file));
+        if (sha256(file) !== application.sha256) {
+          failures.push("migration application evidence SQL Editor export SHA-256 does not match file");
+        }
+      } catch (error) {
+        failures.push(`migration application evidence SQL Editor export is not readable: ${error instanceof Error ? error.message : String(error)}`);
+      }
+    }
+
+    return failures;
+  }
+
+  if (application.source === "guarded_direct_apply") {
+    return application.verifier === "npm run apply:warden:migrations"
+      ? []
+      : ["migration application evidence verifier is not npm run apply:warden:migrations"];
+  }
+
+  return ["migration application evidence source is missing or unsupported"];
+}
+
 async function scoreEvidenceFile(text) {
   const failures = [];
   const evidencePath = extractEvidencePath(text);
@@ -116,6 +163,8 @@ async function scoreEvidenceFile(text) {
     failures.push("sanitized evidence JSON does not include Warden migration manifest for 019 and 020");
   }
 
+  failures.push(...await scoreMigrationApplicationEvidence(evidence));
+
   return failures;
 }
 
@@ -128,6 +177,7 @@ async function scoreIncident(file, text) {
 
   if (!hasAll(text, [
     "Warden event row",
+    "Warden migration application evidence",
     "Verification command: `npm run verify:warden:product`",
     "What this proves:",
     "What this does not prove:",

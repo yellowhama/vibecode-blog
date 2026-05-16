@@ -2,9 +2,16 @@ import { mkdir, mkdtemp, readdir, readFile, rm, writeFile } from "node:fs/promis
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { spawn } from "node:child_process";
+import { createHash } from "node:crypto";
 
 const eventId = "11111111-1111-4111-8111-111111111111";
 const tamperedEventId = "33333333-3333-4333-8333-333333333333";
+const sqlEvidenceText = [
+  "row_type,check_name,status",
+  "summary,all Warden migration checks pass,pass",
+  "check,warden_events table exists,pass",
+].join("\n");
+const sqlEvidenceSha = createHash("sha256").update(sqlEvidenceText).digest("hex");
 
 function runNode(args, options = {}) {
   return new Promise((resolveRun) => {
@@ -32,6 +39,10 @@ async function main() {
   const malformedManifestIncidentDir = join(root, "malformed-manifest-incidents");
   const malformedManifestEvidenceDir = join(root, "malformed-manifest-evidence");
   const malformedManifestEvidencePath = join(malformedManifestEvidenceDir, "warden-product-path-self-test.json");
+  const missingApplicationIncidentDir = join(root, "missing-application-incidents");
+  const missingApplicationEvidenceDir = join(root, "missing-application-evidence");
+  const missingApplicationEvidencePath = join(missingApplicationEvidenceDir, "warden-product-path-self-test.json");
+  const sqlEvidencePath = join(root, "warden-sql-evidence.csv");
 
   const evidence = {
     captured_at: "2026-05-16T00:00:00.000Z",
@@ -96,6 +107,13 @@ async function main() {
         },
       },
     },
+    migration_application_evidence: {
+      source: "sql_editor_export",
+      status: "pass",
+      verifier: "npm run verify:warden:sql-evidence",
+      file: sqlEvidencePath,
+      sha256: sqlEvidenceSha,
+    },
   };
 
   try {
@@ -105,6 +123,9 @@ async function main() {
     await mkdir(tamperedEvidenceDir, { recursive: true });
     await mkdir(malformedManifestIncidentDir, { recursive: true });
     await mkdir(malformedManifestEvidenceDir, { recursive: true });
+    await mkdir(missingApplicationIncidentDir, { recursive: true });
+    await mkdir(missingApplicationEvidenceDir, { recursive: true });
+    await writeFile(sqlEvidencePath, sqlEvidenceText, "utf8");
 
     await writeFile(
       evidencePath,
@@ -218,9 +239,37 @@ async function main() {
       return 1;
     }
 
+    const missingApplicationEvidence = { ...evidence };
+    delete missingApplicationEvidence.migration_application_evidence;
+    await writeFile(
+      missingApplicationEvidencePath,
+      `${JSON.stringify(missingApplicationEvidence, null, 2)}\n`,
+      "utf8"
+    );
+
+    const missingApplicationIncidentCode = await runNode([
+      resolve("scripts/create-warden-incident.mjs"),
+      "--evidence",
+      missingApplicationEvidencePath,
+      "--output-dir",
+      missingApplicationIncidentDir,
+    ]);
+    if (missingApplicationIncidentCode !== 0) return missingApplicationIncidentCode;
+
+    const missingApplicationGateCode = await runNode([
+      resolve("scripts/verify-warden-field-log-ready.mjs"),
+      "--incident-dir",
+      missingApplicationIncidentDir,
+    ]);
+    if (missingApplicationGateCode === 0) {
+      process.stderr.write("Warden Field Log gate accepted missing migration application evidence.\n");
+      return 1;
+    }
+
     process.stdout.write("warden_field_log_gate_positive_self_test=pass\n");
     process.stdout.write("warden_field_log_gate_tamper_self_test=pass\n");
     process.stdout.write("warden_field_log_gate_malformed_manifest_self_test=pass\n");
+    process.stdout.write("warden_field_log_gate_missing_application_evidence_self_test=pass\n");
     return 0;
   } finally {
     if (process.env.KEEP_WARDEN_GATE_SELF_TEST !== "1") {

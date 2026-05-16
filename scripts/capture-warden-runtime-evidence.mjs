@@ -1,7 +1,8 @@
 import { existsSync } from "node:fs";
-import { mkdir, readFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { spawn } from "node:child_process";
+import { createHash } from "node:crypto";
 
 const DEFAULT_MUSU_REPO = String.raw`F:\Aisaak\Projects\musu-pro`;
 const DEFAULT_EVIDENCE_DIR = String.raw`C:\Users\empty\llm-wiki\companies\vibecode-town\incidents\evidence`;
@@ -265,6 +266,36 @@ async function verifySqlEditorEvidenceIfProvided(musuRepo) {
   return code;
 }
 
+async function sha256File(path) {
+  return createHash("sha256").update(await readFile(path)).digest("hex");
+}
+
+async function attachMigrationApplicationEvidence(evidenceFile) {
+  const target = resolve(evidenceFile);
+  const evidence = JSON.parse(await readFile(target, "utf8"));
+  const sqlEvidenceFile = process.env.WARDEN_SQL_EVIDENCE_FILE
+    ? resolve(process.env.WARDEN_SQL_EVIDENCE_FILE)
+    : "";
+
+  if (sqlEvidenceFile) {
+    evidence.migration_application_evidence = {
+      source: "sql_editor_export",
+      status: "pass",
+      verifier: "npm run verify:warden:sql-evidence",
+      file: sqlEvidenceFile,
+      sha256: await sha256File(sqlEvidenceFile),
+    };
+  } else if (hasFlag("--apply-migrations")) {
+    evidence.migration_application_evidence = {
+      source: "guarded_direct_apply",
+      status: "pass",
+      verifier: "npm run apply:warden:migrations",
+    };
+  }
+
+  await writeFile(target, `${JSON.stringify(evidence, null, 2)}\n`, "utf8");
+}
+
 async function main() {
   if (hasFlag("--help")) {
     printHelp();
@@ -359,6 +390,8 @@ async function main() {
     process.stderr.write("Warden product-path evidence capture failed. Stop before incident generation.\n");
     return verifyCode;
   }
+
+  await attachMigrationApplicationEvidence(evidenceFile);
 
   const incidentCode = await run(npmCommand(), ["run", "incident:warden"], {
     cwd: process.cwd(),
