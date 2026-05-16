@@ -28,17 +28,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Lint
-        run: npm run lint
-
-      - name: Verify content contract
-        run: npm run verify:content
-
-      - name: Build static site
-        run: npm run build
-
-      - name: Verify static artifact
-        run: npm run verify:dist
-
-      - name: Verify Warden Field Log gate shape
-        run: npm run test:warden-field-log-gate
+      - name: Verify site quality
+        run: npm run verify:site-quality
