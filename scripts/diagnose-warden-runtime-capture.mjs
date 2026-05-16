@@ -319,15 +319,20 @@ async function verifySqlEvidenceIfProvided(musuRepo, musuPackage) {
 }
 
 async function main() {
-  const localEnvFilesLoaded = await loadEnvFiles([
-    ".env.warden-runtime.local",
-    ".env.local",
-  ]);
+  const skipEnvFiles = hasFlag("--skip-env-files");
+  const localEnvFilesLoaded = skipEnvFiles
+    ? 0
+    : await loadEnvFiles([
+      ".env.warden-runtime.local",
+      ".env.local",
+    ]);
   const musuRepo = resolve(getArg("--musu-repo") ?? process.env.MUSU_REPO_PATH ?? DEFAULT_MUSU_REPO);
-  const musuEnvFilesLoaded = await loadEnvFiles([
-    resolve(musuRepo, ".env.warden-runtime.local"),
-    resolve(musuRepo, ".env.local"),
-  ]);
+  const musuEnvFilesLoaded = skipEnvFiles
+    ? 0
+    : await loadEnvFiles([
+      resolve(musuRepo, ".env.warden-runtime.local"),
+      resolve(musuRepo, ".env.local"),
+    ]);
   const loadedEnvFiles = localEnvFilesLoaded + musuEnvFilesLoaded;
   const musuPackagePath = resolve(musuRepo, "package.json");
   const vibecodePackagePath = resolve("package.json");

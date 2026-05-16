@@ -20,6 +20,7 @@
     "diagnose:warden-runtime": "node scripts/diagnose-warden-runtime-capture.mjs",
     "init:warden-runtime-env": "node scripts/init-warden-runtime-env.mjs",
     "test:warden-field-log-gate": "node scripts/test-warden-field-log-gate.mjs",
+    "test:warden-runtime-diagnose": "node scripts/test-warden-runtime-diagnose.mjs",
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",
