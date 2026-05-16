@@ -58,6 +58,9 @@ const featuredPosts = sortedPosts.slice(0, 1); // Just take the latest as featur
         {featuredPosts.length > 0 ? (
           <section class="featured-lead">
             <a href={`/posts/${featuredPosts[0].id}`} class="group block no-underline">
+              <p class="mb-4 font-mono text-[0.65rem] font-bold uppercase tracking-[0.28em] text-ink-faded">
+                {featuredPosts[0].data.series ?? "Field Journal"}
+              </p>
               <h2 class="text-4xl md:text-6xl font-serif italic mb-8 leading-[1.1] group-hover:underline decoration-accent/30 text-ink">
                 {featuredPosts[0].data.title}
               </h2>
@@ -80,6 +83,9 @@ const featuredPosts = sortedPosts.slice(0, 1); // Just take the latest as featur
             recentPosts.map(post => (
               <li class="relative pl-0 group">
                 <a href={`/posts/${post.id}`} class="block no-underline">
+                  <p class="mb-2 font-mono text-[0.6rem] font-bold uppercase tracking-[0.22em] text-ink-faded">
+                    {post.data.series ?? "Field Journal"}
+                  </p>
                   <h4 class="text-xl font-serif italic group-hover:text-accent-dim leading-tight text-ink">{post.data.title}</h4>
                 </a>
               </li>

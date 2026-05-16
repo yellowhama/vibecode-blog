@@ -35,6 +35,7 @@ const {
   modDatetime,
   timezone,
   lang,
+  series,
   tags,
   hideEditPost,
   references,
@@ -103,7 +104,7 @@ const nextPost =
     class:list={["app-layout pb-12", { "mt-8": !SITE.showBackButton }]}
     data-pagefind-body
   >
-    <span class="block mb-2 font-mono text-[0.7rem] tracking-[0.2em] text-text-muted uppercase">FIELD JOURNAL &middot; {tags[0] || "LOG"} &middot; {new Date(pubDatetime).toISOString().slice(0,7).replace("-", ".")}</span>
+    <span class="block mb-2 font-mono text-[0.7rem] tracking-[0.2em] text-text-muted uppercase">{series ?? "Field Journal"} &middot; {tags[0] || "LOG"} &middot; {new Date(pubDatetime).toISOString().slice(0,7).replace("-", ".")}</span>
     <h1 transition:name={slugifyStr(title.replaceAll(".", "-"))}
       class="inline-block text-2xl font-bold text-foreground sm:text-3xl"
     >
@@ -160,6 +161,9 @@ const nextPost =
                   class="blog-panel block p-4 no-underline"
                 >
                   <h3 class="text-sm font-bold text-foreground">{rp.data.title}</h3>
+                  <p class="mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
+                    {rp.data.series ?? "Field Journal"}
+                  </p>
                   <p class="mt-1 line-clamp-2 text-xs leading-relaxed text-text-secondary">
                     {rp.data.description}
                   </p>
