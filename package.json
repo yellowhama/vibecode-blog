@@ -13,6 +13,7 @@
     "incident:warden": "node scripts/create-warden-incident.mjs",
     "capture:warden-runtime": "node scripts/capture-warden-runtime-evidence.mjs",
     "diagnose:warden-runtime": "node scripts/diagnose-warden-runtime-capture.mjs",
+    "init:warden-runtime-env": "node scripts/init-warden-runtime-env.mjs",
     "test:warden-field-log-gate": "node scripts/test-warden-field-log-gate.mjs",
     "preview": "astro preview",
     "sync": "astro sync",
