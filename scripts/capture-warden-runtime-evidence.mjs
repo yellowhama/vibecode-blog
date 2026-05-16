@@ -50,6 +50,7 @@ Options:
   --musu-repo <path>   MUSU Pro repo path. Default: ${DEFAULT_MUSU_REPO}
   --evidence <path>    Evidence JSON output path. Default: llm-wiki incidents/evidence timestamp file.
   --preflight          Check repo/env/app/database readiness without creating evidence or incident files.
+  --apply-migrations   Run MUSU guarded migration apply before runtime checks. Requires WARDEN_APPLY_MIGRATIONS=1 and a PostgreSQL URL.
   --help              Show this help.
 
 Required environment:
@@ -156,23 +157,18 @@ async function validateInputs(musuRepo) {
   return ok;
 }
 
-async function writeAndVerifyMigrationBundle(musuRepo) {
-  const migrationBundleCode = await run(npmCommand(), ["run", "write:warden:migrations"], {
-    cwd: musuRepo,
-    env: process.env,
-  });
-  if (migrationBundleCode !== 0) {
-    process.stderr.write("Failed to write Warden migration bundle and manifest.\n");
-    return migrationBundleCode;
-  }
+async function prepareOrApplyMigrationPacket(musuRepo) {
+  const scriptName = hasFlag("--apply-migrations")
+    ? "apply:warden:migrations"
+    : "prepare:warden:migrations";
 
-  const migrationVerifyCode = await run(npmCommand(), ["run", "verify:warden:migrations"], {
+  const migrationPacketCode = await run(npmCommand(), ["run", scriptName], {
     cwd: musuRepo,
     env: process.env,
   });
-  if (migrationVerifyCode !== 0) {
-    process.stderr.write("Warden migration bundle verification failed. Stop before runtime checks.\n");
-    return migrationVerifyCode;
+  if (migrationPacketCode !== 0) {
+    process.stderr.write("Warden migration packet preparation or apply failed. Stop before runtime checks.\n");
+    return migrationPacketCode;
   }
 
   return 0;
@@ -192,7 +188,12 @@ async function main() {
 
   if (hasFlag("--preflight")) {
     const appUrl = (process.env.WARDEN_VERIFY_APP_URL ?? "http://localhost:3000").replace(/\/$/, "");
-    const migrationBundleOk = (await writeAndVerifyMigrationBundle(musuRepo)) === 0;
+    const migrationPacketOk = (await prepareOrApplyMigrationPacket(musuRepo)) === 0;
+    if (!migrationPacketOk) {
+      process.stderr.write("warden_capture_preflight=fail\n");
+      return 1;
+    }
+
     const appOk = await checkAppUrl(appUrl);
     const dashboardOk = await checkDashboardSession(appUrl);
     const preflightEnv = {
@@ -203,7 +204,7 @@ async function main() {
       cwd: musuRepo,
       env: preflightEnv,
     });
-    if (migrationBundleOk && appOk && dashboardOk && migrationCode === 0) {
+    if (appOk && dashboardOk && migrationCode === 0) {
       process.stdout.write("warden_capture_preflight=pass\n");
       return 0;
     }
@@ -230,9 +231,9 @@ async function main() {
   process.stdout.write(`evidence_file=${evidenceFile}\n`);
   process.stdout.write(`musu_repo=${musuRepo}\n`);
 
-  const migrationBundleCode = await writeAndVerifyMigrationBundle(musuRepo);
-  if (migrationBundleCode !== 0) {
-    return migrationBundleCode;
+  const migrationPacketCode = await prepareOrApplyMigrationPacket(musuRepo);
+  if (migrationPacketCode !== 0) {
+    return migrationPacketCode;
   }
 
   const verifyCode = await run(npmCommand(), ["run", "verify:warden:product"], {
