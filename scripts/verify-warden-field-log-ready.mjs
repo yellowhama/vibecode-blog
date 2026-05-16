@@ -41,20 +41,27 @@ function extractEvidencePath(text) {
 function hasMigrationManifest(evidence) {
   const manifest = evidence.migration_manifest;
   const body = manifest?.body;
-  if (!manifest?.path || typeof body?.bundle_sha256 !== "string") {
+  const sha256Pattern = /^[a-f0-9]{64}$/;
+  if (!manifest?.path || typeof body?.bundle_sha256 !== "string" || !sha256Pattern.test(body.bundle_sha256)) {
     return false;
   }
 
   if (
     body.evidence_query?.path !== "docs/migrations/verify_warden_events.sql" ||
-    typeof body.evidence_query?.sha256 !== "string"
+    typeof body.evidence_query?.sha256 !== "string" ||
+    !sha256Pattern.test(body.evidence_query.sha256)
   ) {
     return false;
   }
 
-  const paths = Array.isArray(body.apply_order)
-    ? body.apply_order.map((item) => item?.path)
+  const applyOrder = Array.isArray(body.apply_order)
+    ? body.apply_order
     : [];
+  const paths = applyOrder.map((item) => item?.path);
+  if (applyOrder.some((item) => typeof item?.sha256 !== "string" || !sha256Pattern.test(item.sha256))) {
+    return false;
+  }
+
   return (
     paths.includes("docs/migrations/019_warden_events.sql") &&
     paths.includes("docs/migrations/020_warden_event_integrity.sql")
