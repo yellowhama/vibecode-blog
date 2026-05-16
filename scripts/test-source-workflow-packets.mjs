@@ -26,6 +26,23 @@ async function writePackets(wikiRoot, slug) {
   await writeFile(join(planDir, `${slug}-draft-critique.md`), "# Draft Critique\n", "utf8");
 }
 
+async function writeManifest(path, slug) {
+  const files = [
+    "reader-pressure",
+    "title-angle",
+    "evidence-bundle",
+    "brief",
+    "gate-0",
+    "draft-critique",
+  ].map((suffix) => ({
+    suffix,
+    path: `companies/vibecode-town/plans/${slug}-${suffix}.md`,
+    sha256: "a".repeat(64),
+  }));
+
+  await writeFile(path, JSON.stringify({ packets: { [slug]: { files } } }, null, 2), "utf8");
+}
+
 async function main() {
   const root = await mkdtemp(join(tmpdir(), "vibecode-source-workflow-"));
   const blogDir = join(root, "blog");
@@ -66,6 +83,20 @@ description: Legacy.
     const pass = run(["--blog-dir", blogDir, "--wiki-root", wikiRoot]);
     if (pass.status !== 0 || !pass.stdout.includes("source_workflow_gate=pass")) {
       throw new Error(`expected pass\nstdout:\n${pass.stdout}\nstderr:\n${pass.stderr}`);
+    }
+
+    const manifestFile = join(root, "source-workflow-packets.json");
+    const missingWikiRoot = join(root, "missing-wiki");
+    await writeManifest(manifestFile, "packet-post");
+
+    const manifestPass = run(["--blog-dir", blogDir, "--wiki-root", missingWikiRoot, "--manifest", manifestFile]);
+    if (
+      manifestPass.status !== 0 ||
+      !manifestPass.stdout.includes("source_workflow_wiki_root_available=no") ||
+      !manifestPass.stdout.includes("source_workflow_manifest_available=yes") ||
+      !manifestPass.stdout.includes("source_workflow_gate=pass")
+    ) {
+      throw new Error(`expected manifest fallback pass\nstdout:\n${manifestPass.stdout}\nstderr:\n${manifestPass.stderr}`);
     }
 
     await writePost(blogDir, "missing-packet.md", `

@@ -4,6 +4,7 @@ import { join, resolve } from "node:path";
 
 const DEFAULT_BLOG_DIR = "src/data/blog";
 const DEFAULT_WIKI_ROOT = process.env.LLM_WIKI_ROOT ?? "C:\\Users\\empty\\llm-wiki";
+const DEFAULT_MANIFEST = "source-workflow-packets.json";
 const ENFORCEMENT_DATE = new Date("2026-05-17T00:00:00Z");
 const REQUIRED_PACKET_SUFFIXES = [
   "reader-pressure",
@@ -40,6 +41,10 @@ function packetPath(wikiRoot, slug, suffix) {
   return join(wikiRoot, "companies", "vibecode-town", "plans", `${slug}-${suffix}.md`);
 }
 
+function manifestPath(slug, suffix) {
+  return `companies/vibecode-town/plans/${slug}-${suffix}.md`;
+}
+
 async function fileExists(path) {
   try {
     await access(path, constants.R_OK);
@@ -55,9 +60,44 @@ function parseDate(dateText) {
   return Number.isNaN(date.getTime()) ? null : date;
 }
 
+async function loadManifest(path) {
+  if (!(await fileExists(path))) return null;
+  const text = await readFile(path, "utf8");
+  return JSON.parse(text);
+}
+
+function validateManifestPacket(manifest, slug) {
+  const packet = manifest?.packets?.[slug];
+  if (!packet) {
+    return [`manifest is missing packet entry for ${slug}`];
+  }
+
+  const files = Array.isArray(packet.files) ? packet.files : [];
+  const failures = [];
+  for (const suffix of REQUIRED_PACKET_SUFFIXES) {
+    const expectedPath = manifestPath(slug, suffix);
+    const entry = files.find((file) => file?.suffix === suffix);
+    if (!entry) {
+      failures.push(`manifest packet ${slug} is missing suffix ${suffix}`);
+      continue;
+    }
+    if (entry.path !== expectedPath) {
+      failures.push(`manifest packet ${slug}/${suffix} has unexpected path ${entry.path}`);
+    }
+    if (!/^[a-f0-9]{64}$/.test(entry.sha256 ?? "")) {
+      failures.push(`manifest packet ${slug}/${suffix} is missing lowercase sha256`);
+    }
+  }
+
+  return failures;
+}
+
 async function main() {
   const blogDir = getArg("--blog-dir") ?? DEFAULT_BLOG_DIR;
   const wikiRoot = resolve(getArg("--wiki-root") ?? DEFAULT_WIKI_ROOT);
+  const manifestFile = getArg("--manifest") ?? DEFAULT_MANIFEST;
+  const manifest = await loadManifest(manifestFile);
+  const wikiRootExists = await fileExists(wikiRoot);
   const files = (await readdir(blogDir))
     .filter((file) => file.endsWith(".md"))
     .sort();
@@ -99,10 +139,17 @@ async function main() {
     }
 
     const missing = [];
-    for (const suffix of REQUIRED_PACKET_SUFFIXES) {
-      const requiredPath = packetPath(wikiRoot, slug, suffix);
-      if (!(await fileExists(requiredPath))) {
-        missing.push(requiredPath);
+    if (wikiRootExists) {
+      for (const suffix of REQUIRED_PACKET_SUFFIXES) {
+        const requiredPath = packetPath(wikiRoot, slug, suffix);
+        if (!(await fileExists(requiredPath))) {
+          missing.push(requiredPath);
+        }
+      }
+    } else {
+      const manifestFailures = validateManifestPacket(manifest, slug);
+      for (const failure of manifestFailures) {
+        missing.push(failure);
       }
     }
 
@@ -115,6 +162,9 @@ async function main() {
 
   process.stdout.write(`source_workflow_blog_dir=${blogDir}\n`);
   process.stdout.write(`source_workflow_wiki_root=${wikiRoot}\n`);
+  process.stdout.write(`source_workflow_wiki_root_available=${wikiRootExists ? "yes" : "no"}\n`);
+  process.stdout.write(`source_workflow_manifest=${manifestFile}\n`);
+  process.stdout.write(`source_workflow_manifest_available=${manifest ? "yes" : "no"}\n`);
   process.stdout.write(`source_workflow_posts_checked=${checked}\n`);
   process.stdout.write(`source_workflow_packet_backed_posts=${packetBacked}\n`);
   process.stdout.write(`source_workflow_legacy_posts=${legacy}\n`);

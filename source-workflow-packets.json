@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-05-17T00:00:00Z",
+  "source": "C:\\Users\\empty\\llm-wiki",
+  "packets": {
+    "ai-memory-operating-structure": {
+      "files": [
+        {
+          "suffix": "reader-pressure",
+          "path": "companies/vibecode-town/plans/ai-memory-operating-structure-reader-pressure.md",
+          "sha256": "ba4f99f39b7d32f7dde56876842040e10fe1e9b5a6f05a0fb54d2ea209562dfc"
+        },
+        {
+          "suffix": "title-angle",
+          "path": "companies/vibecode-town/plans/ai-memory-operating-structure-title-angle.md",
+          "sha256": "8a72d7d712b1cd4ad37eab40240ff4b0214d529ce32f22ae404d4d1a46f1c766"
+        },
+        {
+          "suffix": "evidence-bundle",
+          "path": "companies/vibecode-town/plans/ai-memory-operating-structure-evidence-bundle.md",
+          "sha256": "fdc772ebf46c67191f9d66f03690eab314feeefad65571f26b5d79b09aeb80c7"
+        },
+        {
+          "suffix": "brief",
+          "path": "companies/vibecode-town/plans/ai-memory-operating-structure-brief.md",
+          "sha256": "189f849c8b0f830d99be5f40729ffdc90657cd961725d31ebebc17f637cf9b1d"
+        },
+        {
+          "suffix": "gate-0",
+          "path": "companies/vibecode-town/plans/ai-memory-operating-structure-gate-0.md",
+          "sha256": "febada44fb85b3ce322b57fb5445a344315ca3248e63f02823e74c5fb35561ef"
+        },
+        {
+          "suffix": "draft-critique",
+          "path": "companies/vibecode-town/plans/ai-memory-operating-structure-draft-critique.md",
+          "sha256": "a3dd6b10d872d8fcbc46ceff6ff23bb9ee2ee177492b1837caaa0ab7f60a65b9"
+        }
+      ]
+    }
+  }
+}
