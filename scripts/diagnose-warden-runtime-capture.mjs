@@ -164,6 +164,24 @@ async function cookieFileStatus(path) {
   }
 }
 
+async function fileStatus(path, label) {
+  const targetPath = resolve(path);
+  if (!existsSync(targetPath)) {
+    return { ok: false, detail: `${label}=file path_exists=false` };
+  }
+
+  try {
+    const text = await readFile(targetPath, "utf8");
+    return {
+      ok: text.trim().length > 0,
+      detail: `${label}=file path_exists=true non_empty=${text.trim().length > 0}`,
+      path: targetPath,
+    };
+  } catch {
+    return { ok: false, detail: `${label}=file path_exists=true readable=false` };
+  }
+}
+
 function run(command, args, options = {}) {
   return new Promise((resolveRun) => {
     const useShell = process.platform === "win32";
@@ -192,6 +210,31 @@ function hasScript(packageJson, scriptName) {
   return typeof packageJson?.scripts?.[scriptName] === "string";
 }
 
+async function verifySqlEvidenceIfProvided(musuRepo, musuPackage) {
+  if (!envStatus("WARDEN_SQL_EVIDENCE_FILE")) {
+    printStatus("warden_sql_evidence_file", true, "source=not_provided optional=true");
+    return true;
+  }
+
+  const status = await fileStatus(process.env.WARDEN_SQL_EVIDENCE_FILE, "source");
+  printStatus("warden_sql_evidence_file", status.ok, status.detail);
+  if (!status.ok) {
+    return false;
+  }
+
+  if (!hasScript(musuPackage, "verify:warden:sql-evidence")) {
+    return false;
+  }
+
+  process.stdout.write("running_sql_evidence_verify=1\n");
+  const verifyCode = await run(npmCommand(), ["run", "--silent", "verify:warden:sql-evidence", "--", status.path], {
+    cwd: musuRepo,
+    env: process.env,
+  });
+  printStatus("warden_sql_evidence_verify", verifyCode === 0);
+  return verifyCode === 0;
+}
+
 async function main() {
   const localEnvFilesLoaded = await loadEnvFiles([
     ".env.warden-runtime.local",
@@ -218,6 +261,7 @@ async function main() {
   printStatus("musu_apply_script", hasScript(musuPackage, "apply:warden:migrations"));
   printStatus("musu_runtime_verify_script", hasScript(musuPackage, "verify:warden"));
   printStatus("musu_product_verify_script", hasScript(musuPackage, "verify:warden:product"));
+  printStatus("musu_sql_evidence_verify_script", hasScript(musuPackage, "verify:warden:sql-evidence"));
   printStatus("vibecode_capture_script", hasScript(vibecodePackage, "capture:warden-runtime"));
   printStatus("vibecode_field_log_gate", hasScript(vibecodePackage, "verify:warden-field-log"));
 
@@ -243,16 +287,19 @@ async function main() {
     return 1;
   }
 
+  const sqlEvidenceReady = await verifySqlEvidenceIfProvided(musuRepo, musuPackage);
+
   const inputsReady = validDatabaseUrl
     && process.env.WARDEN_APPLY_MIGRATIONS === "1"
     && envStatus("WARDEN_VERIFY_NODE")
-    && hasCookie;
+    && hasCookie
+    && sqlEvidenceReady;
 
   printStatus("warden_runtime_inputs_ready", inputsReady);
   if (hasFlag("--inputs-only")) {
     const nextStep = inputsReady
       ? "Run npm run diagnose:warden-runtime, then npm run capture:warden-runtime -- --preflight --apply-migrations."
-      : "Fill WARDEN_DATABASE_URL, WARDEN_APPLY_MIGRATIONS=1, WARDEN_VERIFY_NODE, and a non-empty dashboard cookie before running full diagnostics.";
+      : "Fill WARDEN_DATABASE_URL, WARDEN_APPLY_MIGRATIONS=1, WARDEN_VERIFY_NODE, a non-empty dashboard cookie, and a valid WARDEN_SQL_EVIDENCE_FILE if provided before running full diagnostics.";
     if (!inputsReady) {
       process.stdout.write(`next_step=${nextStep}\n`);
     }
