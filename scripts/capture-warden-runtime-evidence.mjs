@@ -49,6 +49,7 @@ function printHelp() {
 Options:
   --musu-repo <path>   MUSU Pro repo path. Default: ${DEFAULT_MUSU_REPO}
   --evidence <path>    Evidence JSON output path. Default: llm-wiki incidents/evidence timestamp file.
+  --preflight          Check repo/env/app/database readiness without creating evidence or incident files.
   --help              Show this help.
 
 Required environment:
@@ -62,6 +63,57 @@ Optional environment forwarded to MUSU verifier:
 `);
 }
 
+async function checkAppUrl(appUrl) {
+  try {
+    const response = await fetch(appUrl, {
+      method: "GET",
+      signal: AbortSignal.timeout(3000),
+    });
+    process.stdout.write(`app_url_status=${response.status}\n`);
+    return true;
+  } catch (error) {
+    process.stderr.write(`app_url_unreachable=${appUrl}\n`);
+    process.stderr.write(`${error instanceof Error ? error.message : String(error)}\n`);
+    return false;
+  }
+}
+
+async function validateInputs(musuRepo) {
+  let ok = true;
+  const packagePath = resolve(musuRepo, "package.json");
+  if (!existsSync(packagePath)) {
+    process.stderr.write(`MUSU repo package.json not found: ${packagePath}\n`);
+    ok = false;
+  } else {
+    process.stdout.write(`musu_repo=${musuRepo}\n`);
+  }
+
+  if (!process.env.WARDEN_VERIFY_NODE) {
+    process.stderr.write("WARDEN_VERIFY_NODE is required.\n");
+    ok = false;
+  } else {
+    process.stdout.write(`warden_node=${process.env.WARDEN_VERIFY_NODE}\n`);
+  }
+
+  if (process.env.WARDEN_VERIFY_COOKIE_FILE) {
+    const cookiePath = resolve(process.env.WARDEN_VERIFY_COOKIE_FILE);
+    if (!existsSync(cookiePath)) {
+      process.stderr.write(`WARDEN_VERIFY_COOKIE_FILE not found: ${cookiePath}\n`);
+      ok = false;
+    } else {
+      process.stdout.write(`cookie_file=${cookiePath}\n`);
+    }
+  } else if (process.env.WARDEN_VERIFY_COOKIE) {
+    process.stdout.write("cookie=provided_inline\n");
+  } else {
+    process.stderr.write("WARDEN_VERIFY_COOKIE or WARDEN_VERIFY_COOKIE_FILE is required.\n");
+    process.stderr.write("Use an authenticated MUSU dashboard session for the user that owns WARDEN_VERIFY_NODE.\n");
+    ok = false;
+  }
+
+  return ok;
+}
+
 async function main() {
   if (hasFlag("--help")) {
     printHelp();
@@ -69,20 +121,23 @@ async function main() {
   }
 
   const musuRepo = resolve(getArg("--musu-repo") ?? process.env.MUSU_REPO_PATH ?? DEFAULT_MUSU_REPO);
-  const packagePath = resolve(musuRepo, "package.json");
-  if (!existsSync(packagePath)) {
-    process.stderr.write(`MUSU repo package.json not found: ${packagePath}\n`);
+  const inputsOk = await validateInputs(musuRepo);
+  if (!inputsOk) {
     return 1;
   }
 
-  if (!process.env.WARDEN_VERIFY_NODE) {
-    process.stderr.write("WARDEN_VERIFY_NODE is required.\n");
-    return 1;
-  }
-
-  if (!process.env.WARDEN_VERIFY_COOKIE && !process.env.WARDEN_VERIFY_COOKIE_FILE) {
-    process.stderr.write("WARDEN_VERIFY_COOKIE or WARDEN_VERIFY_COOKIE_FILE is required.\n");
-    process.stderr.write("Use an authenticated MUSU dashboard session for the user that owns WARDEN_VERIFY_NODE.\n");
+  if (hasFlag("--preflight")) {
+    const appUrl = (process.env.WARDEN_VERIFY_APP_URL ?? "http://localhost:3000").replace(/\/$/, "");
+    const appOk = await checkAppUrl(appUrl);
+    const migrationCode = await run(npmCommand(), ["run", "verify:warden"], {
+      cwd: musuRepo,
+      env: process.env,
+    });
+    if (appOk && migrationCode === 0) {
+      process.stdout.write("warden_capture_preflight=pass\n");
+      return 0;
+    }
+    process.stderr.write("warden_capture_preflight=fail\n");
     return 1;
   }
 
