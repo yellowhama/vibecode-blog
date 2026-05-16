@@ -29,7 +29,63 @@ function hasDashboardResolutionEvidence(text) {
   );
 }
 
-function scoreIncident(file, text) {
+function extractIncidentId(text) {
+  return text.match(/Incident id:\s+([0-9a-f-]{36})/i)?.[1] ?? null;
+}
+
+function extractEvidencePath(text) {
+  const match = text.match(/Sanitized evidence JSON\s*\|\s*`([^`]+\.json)`/);
+  return match?.[1] ?? null;
+}
+
+async function scoreEvidenceFile(text) {
+  const failures = [];
+  const evidencePath = extractEvidencePath(text);
+  if (!evidencePath) {
+    return ["missing sanitized evidence JSON file reference"];
+  }
+
+  let evidence;
+  try {
+    evidence = JSON.parse(await readFile(resolve(evidencePath), "utf8"));
+  } catch (error) {
+    return [`sanitized evidence JSON is not readable: ${error instanceof Error ? error.message : String(error)}`];
+  }
+
+  const incidentId = extractIncidentId(text);
+  const event = evidence.warden_event ?? {};
+  const response = evidence.blocked_response ?? {};
+  const resolution = evidence.resolution ?? {};
+  const resolutionRow = resolution.row ?? {};
+
+  if (!incidentId || event.id !== incidentId) {
+    failures.push("sanitized evidence JSON event id does not match incident id");
+  }
+
+  if (response.http_status !== 423) {
+    failures.push("sanitized evidence JSON does not prove HTTP 423 block");
+  }
+
+  if (event.action_type !== "watchdog_command") {
+    failures.push("sanitized evidence JSON action_type is not watchdog_command");
+  }
+
+  if (event.status !== "blocked") {
+    failures.push("sanitized evidence JSON initial Warden row is not blocked");
+  }
+
+  if (resolution.transport !== "dashboard_api") {
+    failures.push("sanitized evidence JSON resolution transport is not dashboard_api");
+  }
+
+  if (!["approved", "denied"].includes(resolutionRow.status) || !resolutionRow.resolved_at) {
+    failures.push("sanitized evidence JSON does not contain approved/denied resolved row");
+  }
+
+  return failures;
+}
+
+async function scoreIncident(file, text) {
   const failures = [];
 
   if (!text.includes("Status: Content-ready")) {
@@ -67,6 +123,8 @@ function scoreIncident(file, text) {
     failures.push("incident still says dashboard resolution evidence is preferred/missing");
   }
 
+  failures.push(...await scoreEvidenceFile(text));
+
   return { file, failures };
 }
 
@@ -86,7 +144,7 @@ async function main() {
   const reports = [];
   for (const file of incidentFiles) {
     const text = await readFile(join(incidentDir, file), "utf8");
-    reports.push(scoreIncident(file, text));
+    reports.push(await scoreIncident(file, text));
   }
 
   const passing = reports.find((report) => report.failures.length === 0);

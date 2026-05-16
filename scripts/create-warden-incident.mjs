@@ -32,7 +32,7 @@ function escapeMarkdown(value) {
 
 async function readEvidence() {
   const evidenceJson = process.env.WARDEN_INCIDENT_EVIDENCE_JSON;
-  if (evidenceJson) return JSON.parse(evidenceJson);
+  if (evidenceJson) return { evidence: JSON.parse(evidenceJson), sourcePath: null };
 
   const evidencePath =
     getArg("--evidence") ??
@@ -43,10 +43,11 @@ async function readEvidence() {
     throw new Error("Provide --evidence, WARDEN_INCIDENT_EVIDENCE_FILE, WARDEN_VERIFY_EVIDENCE_FILE, or WARDEN_INCIDENT_EVIDENCE_JSON.");
   }
 
-  return JSON.parse(await readFile(resolve(evidencePath), "utf8"));
+  const sourcePath = resolve(evidencePath);
+  return { evidence: JSON.parse(await readFile(sourcePath, "utf8")), sourcePath };
 }
 
-function buildIncident(evidence) {
+function buildIncident(evidence, sourcePath) {
   const event = evidence.warden_event ?? {};
   const response = evidence.blocked_response ?? {};
   const eventId = requireString("warden_event.id", event.id);
@@ -97,6 +98,7 @@ function buildIncident(evidence) {
 | API response | \`${endpoint}\` | HTTP ${httpStatus}; Warden blocked command. |
 | Warden event row | \`warden_events.id = ${eventId}\` | \`${actionType}\`; status \`${status}\`. |
 | Command output | verifier console output | \`row_command_raw=${escapeMarkdown(commandRaw)}\` |
+| Sanitized evidence JSON | ${sourcePath ? `\`${sourcePath}\`` : "`WARDEN_INCIDENT_EVIDENCE_JSON`"} | Raw product-path response, Warden row, and resolution row. |
 | Config | \`docs/migrations/019_warden_events.sql\` | Defines \`warden_events\` persistence. |
 | Product path | \`src/app/api/bridge/watchdog/route.ts\` | Non-contract commands fail closed before relay. |
 
@@ -155,8 +157,8 @@ async function main() {
     return 0;
   }
 
-  const evidence = await readEvidence();
-  const { outputName, markdown } = buildIncident(evidence);
+  const { evidence, sourcePath } = await readEvidence();
+  const { outputName, markdown } = buildIncident(evidence, sourcePath);
 
   if (hasFlag("--dry-run")) {
     process.stdout.write(markdown);
