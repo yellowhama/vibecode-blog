@@ -42,6 +42,7 @@ async function main() {
   const missingApplicationIncidentDir = join(root, "missing-application-incidents");
   const missingApplicationEvidenceDir = join(root, "missing-application-evidence");
   const missingApplicationEvidencePath = join(missingApplicationEvidenceDir, "warden-product-path-self-test.json");
+  const draftOutputDir = join(root, "drafts");
   const sqlEvidencePath = join(root, "warden-sql-evidence.csv");
 
   const evidence = {
@@ -125,6 +126,7 @@ async function main() {
     await mkdir(malformedManifestEvidenceDir, { recursive: true });
     await mkdir(missingApplicationIncidentDir, { recursive: true });
     await mkdir(missingApplicationEvidenceDir, { recursive: true });
+    await mkdir(draftOutputDir, { recursive: true });
     await writeFile(sqlEvidencePath, sqlEvidenceText, "utf8");
 
     await writeFile(
@@ -148,6 +150,37 @@ async function main() {
       incidentDir,
     ]);
     if (gateCode !== 0) return gateCode;
+
+    const draftCode = await runNode([
+      resolve("scripts/generate-warden-field-log-draft.mjs"),
+      "--incident-dir",
+      incidentDir,
+      "--output-dir",
+      draftOutputDir,
+    ]);
+    if (draftCode !== 0) return draftCode;
+
+    const draftFile = (await readdir(draftOutputDir))
+      .find((name) => name.endsWith("-warden-stops-command-before-relay.md"));
+    if (!draftFile) {
+      process.stderr.write("Warden Field Log draft was not generated.\n");
+      return 1;
+    }
+
+    const draftText = await readFile(join(draftOutputDir, draftFile), "utf8");
+    for (const required of [
+      'draft: true',
+      'series: "MUSU Build Log"',
+      "npm run verify:warden-field-log",
+      `incident_id=${eventId}`,
+      `evidence_json=${evidencePath}`,
+      "Do not expand this into a claim that Warden controls every agent action.",
+    ]) {
+      if (!draftText.includes(required)) {
+        process.stderr.write(`Warden Field Log draft is missing required text: ${required}\n`);
+        return 1;
+      }
+    }
 
     await writeFile(
       tamperedEvidencePath,
@@ -267,6 +300,7 @@ async function main() {
     }
 
     process.stdout.write("warden_field_log_gate_positive_self_test=pass\n");
+    process.stdout.write("warden_field_log_draft_self_test=pass\n");
     process.stdout.write("warden_field_log_gate_tamper_self_test=pass\n");
     process.stdout.write("warden_field_log_gate_malformed_manifest_self_test=pass\n");
     process.stdout.write("warden_field_log_gate_missing_application_evidence_self_test=pass\n");
