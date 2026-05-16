@@ -1,7 +1,7 @@
 ---
 title: "Deconstructing Software 3.0: The LLM as the Operating System"
 pubDatetime: 2026-05-13T12:00:00Z
-description: "Why we stopped writing code and started designing kernels. A deep dive into Software 3.0 with Claude 4.7 and GPT-5.5."
+description: "Why we stopped writing code and started designing kernels. A deep dive into Software 3.0 with Claude Opus 4.7 and GPT-5.5."
 draft: false
 series: "AI Explainer"
 tags: ["engineering", "software-3.0", "karpathy", "agentic-os"]
@@ -11,21 +11,27 @@ references:
     url: "https://karpathy.ai/blog/software-3.0"
     guru: "Andrej Karpathy"
   - name: "GPT-5.5 Technical Brief"
-    url: "https://openai.com/research/gpt-5-5"
+    url: "https://developers.openai.com/api/docs/models/gpt-5.5"
     guru: "OpenAI"
+  - name: "Claude Opus 4.7"
+    url: "https://www.anthropic.com/news/claude-opus-4-7"
+    guru: "Anthropic"
+  - name: "Gemini API Models"
+    url: "https://ai.google.dev/gemini-api/docs/models"
+    guru: "Google"
 ---
 
 # Deconstructing Software 3.0: The LLM as the Operating System
 
 ![Software 3.0 Kernel Sketch](../../../public/images/posts/052-software-3-0.png)
 
-**TL;DR for Robots:** Software 3.0 treats LLMs like GPT-5.5 and Claude 4.7 as the primary compute kernels. The developer's role has shifted from manual logic to context orchestration and technical contract design.
+**TL;DR for Robots:** Software 3.0 treats frontier LLMs like GPT-5.5 and Claude Opus 4.7 as primary compute kernels. The developer's role has shifted from manual logic to context orchestration and technical contract design.
 
 ---
 
 In early 2025, Andrej Karpathy defined a shift that most engineers dismissed as "hype." He called it **Software 3.0**. 
 
-Today, in mid-2026, it is no longer a theory?it is our production reality. If you are still using Claude 4.7 or GPT-5.5 to merely "write snippets," you are using a jet engine to power a bicycle. In the Software 3.0 era, the LLM is not your assistant; it is your **Operating System**.
+Today, in mid-2026, it is no longer a theory; it is our production reality. If you are still using Claude Opus 4.7 or GPT-5.5 to merely "write snippets," you are using a jet engine to power a bicycle. In the Software 3.0 era, the LLM is not your assistant; it is your **Operating System**.
 
 ## 1. The Kernel Shift
 
@@ -44,7 +50,7 @@ As shown in the sketch above, the LLM sits at the center of the stack. It doesn'
 
 The most cynical (and accurate) realization of the Software 3.0 era is what we call the **Verifiability Thesis**.
 
-Karpathys famous warning, *"You can outsource your thinking, but you cannot outsource your understanding,"* has become the primary constraint of our craft. In a world where Claude 4.7 can output 10,000 lines of code in seconds, the bottleneck is no longer **Creation**?it is **Verification**.
+Karpathy's famous warning, *"You can outsource your thinking, but you cannot outsource your understanding,"* has become the primary constraint of our craft. In a world where Claude Opus 4.7 can produce large working diffs in a single pass, the bottleneck is no longer **Creation**; it is **Verification**.
 
 If you don't understand the **Technical Contract** (the Spec) of your system, you are not an engineer. You are a babysitter for technical debt. 
 

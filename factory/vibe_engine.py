@@ -25,28 +25,39 @@ def router(topic):
 def generate_production_draft(slot, data):
     """
     Hardened v6.1 Drafting stage. 
-    Outputs production-ready markdown with correct frontmatter.
+    Outputs gated draft markdown with correct frontmatter.
     """
     slug = data['topic'].lower().replace(' ', '-').replace(':', '').replace('.', '')
     draft_path = os.path.join(PROJECT_ROOT, 'src', 'data', 'blog', f"{slug}.md")
     os.makedirs(os.path.dirname(draft_path), exist_ok=True)
+    series_by_type = {
+        "MAGNET": "AI Tool Note",
+        "BEACON": "AI Explainer",
+        "FIELD_LOG": "MUSU Build Log",
+    }
+    series = series_by_type.get(data['type'].upper(), "AI Explainer")
+    context_path = f"research/engineered/{slot}/vector_context_summary.json"
     
     content = f"""---
 title: "{data['topic']}"
 pubDatetime: {datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')}
 description: "High-fidelity field log deconstructing {data['topic']}."
-draft: false
+draft: true
+series: "{series}"
 tags: ["engineering", "{data['type'].lower()}"]
 ogImage: "/images/posts/{slug}.png"
-references: []
+references:
+  - name: "Vector context summary"
+    url: "{context_path}"
+    guru: "LLM-Wiki"
 ---
 
 # {data['topic']}
 
 [SYSTEM INSTRUCTION]: Use the {data['type']} prompt from factory/prompts.md.
-Reference research/engineered/{slot}/vector_context_summary.json for deconstruction.
+Reference {context_path} for deconstruction.
 
-[PRODUCTION READY DRAFT START]
+[GATED DRAFT START]
 """
     with open(draft_path, 'w', encoding='utf-8') as f:
         f.write(content)

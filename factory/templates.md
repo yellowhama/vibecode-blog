@@ -20,9 +20,9 @@
 
 ## 3. THE FIELD LOG (Evening - Narrative/MUSU)
 **Goal:** Fandom and conversion.
-**Voice:** Castaway, gritty implementation scars.
+**Voice:** Dry engineering incident report, grounded in implementation scars.
 **Structure:**
-1.  **The Drift:** A personal story of a failure or discovery.
-2.  **The Forging:** How MUSU was used (or built) to solve it.
-3.  **The Lesson:** What I learned about the AI ocean.
+1.  **The Failure:** The exact system failure or discovery.
+2.  **The Contract:** How MUSU was used or built to make the boundary explicit.
+3.  **The Evidence:** Logs, commands, screenshots, diffs, or runtime artifacts.
 4.  **The Engine CTA:** Link to musu.pro.

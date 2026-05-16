@@ -8,7 +8,7 @@ tags: ["engineering", "observability", "debugging", "slop-detection"]
 ogImage: "/images/posts/058-frustration-is-the-spec.png"
 references:
   - name: "LLMs Demand Observability-Driven Development"
-    url: "https://www.honeycomb.io/blog/llms-observability-driven-development"
+    url: "https://www.honeycomb.io/blog/llms-demand-observability-driven-development"
     guru: "Charity Majors"
   - name: "Creating a search and discovery engine for LLM evals"
     url: "https://hamel.dev/blog/posts/evals/"

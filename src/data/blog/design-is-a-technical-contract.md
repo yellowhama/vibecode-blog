@@ -14,6 +14,9 @@ references:
   - name: "Model Context Protocol Specification"
     url: "https://modelcontextprotocol.io"
     guru: "Anthropic"
+  - name: "Claude Opus 4.7"
+    url: "https://www.anthropic.com/news/claude-opus-4-7"
+    guru: "Anthropic"
 ---
 
 # Design is a Technical Contract: Why Pencil Dev Changes Everything
@@ -29,7 +32,7 @@ We’ve all lived it: a designer spends 40 hours pushing pixels in a proprietary
 
 The breakthrough of **Pencil Dev** isn't just that it’s an IDE-native canvas. It’s the **Pencil MCP Server**.
 
-By exposing the design canvas via the Model Context Protocol (MCP), Pencil gives your AI agents "eyes." When I tell Claude 4.7 to *"Implement the hero section from the design,"* it doesn't guess. It calls `read_canvas`, perceives the exact flexbox layouts, padding tokens, and color variables, and compiles them into production React code.
+By exposing the design canvas via the Model Context Protocol (MCP), Pencil gives your AI agents "eyes." When I tell Claude Opus 4.7 to *"Implement the hero section from the design,"* it doesn't guess. It calls `read_canvas`, perceives the exact flexbox layouts, padding tokens, and color variables, and compiles them into production React code.
 
 ![The Agentic Loop](../../../public/images/posts/pencil-mcp-loop.png)
 *Fig 1.2: The Pencil MCP visual context loop.*
