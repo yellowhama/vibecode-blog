@@ -11,6 +11,10 @@ function getArg(name) {
   return process.argv[index + 1] ?? null;
 }
 
+function hasFlag(name) {
+  return process.argv.includes(name);
+}
+
 function npmCommand() {
   return "npm";
 }
@@ -167,6 +171,19 @@ async function main() {
   if (!existsSync(musuPackagePath)) {
     process.stderr.write("Cannot run MUSU diagnostics because package.json is missing.\n");
     return 1;
+  }
+
+  const inputsReady = validDatabaseUrl
+    && process.env.WARDEN_APPLY_MIGRATIONS === "1"
+    && envStatus("WARDEN_VERIFY_NODE")
+    && hasCookie;
+
+  printStatus("warden_runtime_inputs_ready", inputsReady);
+  if (hasFlag("--inputs-only")) {
+    if (!inputsReady) {
+      process.stdout.write("next_step=Fill WARDEN_DATABASE_URL, WARDEN_APPLY_MIGRATIONS=1, WARDEN_VERIFY_NODE, and a non-empty dashboard cookie before running full diagnostics.\n");
+    }
+    return inputsReady ? 0 : 1;
   }
 
   process.stdout.write("running_migration_packet_dry_run=1\n");
