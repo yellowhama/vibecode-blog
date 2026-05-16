@@ -207,9 +207,21 @@ async function main() {
   process.stdout.write(`evidence_file=${evidenceFile}\n`);
   process.stdout.write(`musu_repo=${musuRepo}\n`);
 
+  const migrationBundleCode = await run(npmCommand(), ["run", "write:warden:migrations"], {
+    cwd: musuRepo,
+    env: process.env,
+  });
+  if (migrationBundleCode !== 0) {
+    process.stderr.write("Failed to write Warden migration bundle and manifest.\n");
+    return migrationBundleCode;
+  }
+
   const verifyCode = await run(npmCommand(), ["run", "verify:warden:product"], {
     cwd: musuRepo,
-    env: verifierEnv,
+    env: {
+      ...verifierEnv,
+      WARDEN_VERIFY_MIGRATION_MANIFEST_FILE: resolve(musuRepo, "warden-migrations.manifest.json"),
+    },
   });
 
   if (verifyCode !== 0) {

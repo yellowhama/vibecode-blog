@@ -38,6 +38,22 @@ function extractEvidencePath(text) {
   return match?.[1] ?? null;
 }
 
+function hasMigrationManifest(evidence) {
+  const manifest = evidence.migration_manifest;
+  const body = manifest?.body;
+  if (!manifest?.path || typeof body?.bundle_sha256 !== "string") {
+    return false;
+  }
+
+  const paths = Array.isArray(body.apply_order)
+    ? body.apply_order.map((item) => item?.path)
+    : [];
+  return (
+    paths.includes("docs/migrations/019_warden_events.sql") &&
+    paths.includes("docs/migrations/020_warden_event_integrity.sql")
+  );
+}
+
 async function scoreEvidenceFile(text) {
   const failures = [];
   const evidencePath = extractEvidencePath(text);
@@ -80,6 +96,10 @@ async function scoreEvidenceFile(text) {
 
   if (!["approved", "denied"].includes(resolutionRow.status) || !resolutionRow.resolved_at) {
     failures.push("sanitized evidence JSON does not contain approved/denied resolved row");
+  }
+
+  if (!hasMigrationManifest(evidence)) {
+    failures.push("sanitized evidence JSON does not include Warden migration manifest for 019 and 020");
   }
 
   return failures;

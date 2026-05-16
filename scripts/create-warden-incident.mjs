@@ -63,6 +63,9 @@ function buildIncident(evidence, sourcePath) {
   const resolvedAt = evidence.resolution?.row?.resolved_at ?? event.resolved_at ?? "";
   const resolutionStatus = evidence.resolution?.row?.status ?? event.status;
   const resolutionTransport = evidence.resolution?.transport ?? "";
+  const migrationManifest = evidence.migration_manifest ?? null;
+  const migrationManifestPath = migrationManifest?.path ?? "";
+  const migrationBundleHash = migrationManifest?.body?.bundle_sha256 ?? "";
   const outputName = `${date}-warden-blocked-watchdog-command.md`;
 
   const markdown = `# ${date} Warden Blocked Watchdog Command
@@ -99,6 +102,7 @@ function buildIncident(evidence, sourcePath) {
 | Warden event row | \`warden_events.id = ${eventId}\` | \`${actionType}\`; status \`${status}\`. |
 | Command output | verifier console output | \`row_command_raw=${escapeMarkdown(commandRaw)}\` |
 | Sanitized evidence JSON | ${sourcePath ? `\`${sourcePath}\`` : "`WARDEN_INCIDENT_EVIDENCE_JSON`"} | Raw product-path response, Warden row, and resolution row. |
+| Warden migration manifest | ${migrationManifestPath ? `\`${migrationManifestPath}\`` : "`missing`"} | Bundle SHA-256: \`${migrationBundleHash || "missing"}\`. |
 | Config | \`docs/migrations/019_warden_events.sql\` | Defines \`warden_events\` persistence. |
 | Product path | \`src/app/api/bridge/watchdog/route.ts\` | Non-contract commands fail closed before relay. |
 
@@ -140,6 +144,8 @@ ${JSON.stringify(
       http_status: httpStatus,
       resolved_at: resolvedAt || null,
       resolution_transport: resolutionTransport || null,
+      migration_manifest_path: migrationManifestPath || null,
+      migration_bundle_sha256: migrationBundleHash || null,
     },
     null,
     2

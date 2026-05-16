@@ -72,6 +72,23 @@ async function main() {
         resolved_at: "2026-05-16T00:01:00.000Z",
       },
     },
+    migration_manifest: {
+      path: join(root, "warden-migrations.manifest.json"),
+      body: {
+        generated_at: "2026-05-16T00:00:00.000Z",
+        apply_order: [
+          {
+            path: "docs/migrations/019_warden_events.sql",
+            sha256: "85b9fc55180c208292e767b0d6769f5dc31867d08626b0de3fa4458beaea7faa",
+          },
+          {
+            path: "docs/migrations/020_warden_event_integrity.sql",
+            sha256: "3c59bf908f174e5bf6c1cabcb9f3dec088c04bb9529b773e7b88cc589dd424eb",
+          },
+        ],
+        bundle_sha256: "a60f6703b1a7f059e56d682818561907f011b78b37605b93ff7043e1119396ce",
+      },
+    },
   };
 
   try {
