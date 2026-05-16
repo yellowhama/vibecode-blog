@@ -1,7 +1,7 @@
 import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-const BLOG_DIR = "src/data/blog";
+const DEFAULT_BLOG_DIR = "src/data/blog";
 
 const CLAIM_REFERENCE_RULES = [
   {
@@ -30,6 +30,12 @@ const KNOWN_BAD_REFERENCE_URLS = new Set([
 
 function hasArg(name) {
   return process.argv.includes(name);
+}
+
+function getArg(name) {
+  const index = process.argv.indexOf(name);
+  if (index === -1) return undefined;
+  return process.argv[index + 1];
 }
 
 function parseMarkdown(text) {
@@ -100,7 +106,8 @@ async function fetchStatus(url) {
 
 async function main() {
   const checkHttp = hasArg("--check-http");
-  const files = (await readdir(BLOG_DIR))
+  const blogDir = getArg("--blog-dir") ?? DEFAULT_BLOG_DIR;
+  const files = (await readdir(blogDir))
     .filter((file) => file.endsWith(".md"))
     .sort();
 
@@ -111,7 +118,7 @@ async function main() {
   const allReferenceUrls = new Set();
 
   for (const file of files) {
-    const text = await readFile(join(BLOG_DIR, file), "utf8");
+    const text = await readFile(join(blogDir, file), "utf8");
     const { frontmatter, body } = parseMarkdown(text);
     if (isDraft(frontmatter)) continue;
 
@@ -157,6 +164,7 @@ async function main() {
     }
   }
 
+  process.stdout.write(`source_reference_blog_dir=${blogDir}\n`);
   process.stdout.write(`source_reference_posts_checked=${checked}\n`);
   process.stdout.write(`source_reference_posts_with_frontmatter_references=${postsWithFrontmatterReferences}\n`);
   process.stdout.write(`source_reference_frontmatter_urls_checked=${referencesChecked}\n`);
