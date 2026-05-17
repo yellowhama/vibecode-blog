@@ -1,7 +1,7 @@
-import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
-import { tmpdir } from "node:os";
+import { mkdir, rm, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
+import { makeTestTempDir } from "./test-temp-root.mjs";
 
 const verifier = resolve("scripts/verify-source-references.mjs");
 
@@ -35,7 +35,7 @@ async function writePost(dir, name, frontmatter, body = "Body with a technical c
 }
 
 async function main() {
-  const root = await mkdtemp(join(tmpdir(), "vibecode-source-references-"));
+  const root = await makeTestTempDir("vibecode-source-references-");
   try {
     const passDir = join(root, "pass");
     const missingRefsDir = join(root, "missing-refs");

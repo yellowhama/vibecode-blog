@@ -1,8 +1,8 @@
-import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { readFile, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { tmpdir } from "node:os";
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
+import { makeTestTempDir } from "./test-temp-root.mjs";
 
 const verifier = "scripts/verify-source-workflow-packets.mjs";
 const REQUIRED_PACKET_SUFFIXES = [
@@ -55,7 +55,7 @@ async function writeManifest(path, wikiRoot, slug, hashOverride, pathOverride) {
 }
 
 async function main() {
-  const root = await mkdtemp(join(tmpdir(), "vibecode-source-workflow-"));
+  const root = await makeTestTempDir("vibecode-source-workflow-");
   const blogDir = join(root, "blog");
   const wikiRoot = join(root, "wiki");
   const planDir = join(wikiRoot, "companies", "vibecode-town", "plans");

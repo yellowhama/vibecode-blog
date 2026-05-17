@@ -1,8 +1,8 @@
-import { mkdir, mkdtemp, readdir, readFile, rm, writeFile } from "node:fs/promises";
-import { tmpdir } from "node:os";
+import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
+import { makeTestTempDir } from "./test-temp-root.mjs";
 
 const eventId = "11111111-1111-4111-8111-111111111111";
 const tamperedEventId = "33333333-3333-4333-8333-333333333333";
@@ -29,7 +29,7 @@ function runNode(args, options = {}) {
 }
 
 async function main() {
-  const root = await mkdtemp(join(tmpdir(), "vibecode-warden-gate-"));
+  const root = await makeTestTempDir("vibecode-warden-gate-");
   const incidentDir = join(root, "incidents");
   const evidenceDir = join(root, "evidence");
   const evidencePath = join(evidenceDir, "warden-product-path-self-test.json");
