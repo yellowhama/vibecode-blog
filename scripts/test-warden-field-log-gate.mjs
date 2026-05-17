@@ -12,6 +12,19 @@ const sqlEvidenceText = [
   "check,warden_events table exists,pass",
 ].join("\n");
 const sqlEvidenceSha = createHash("sha256").update(sqlEvidenceText).digest("hex");
+const directApplyEvidenceText = `${JSON.stringify([
+  {
+    row_type: "summary",
+    check_name: "all Warden migration checks pass",
+    status: "pass",
+  },
+  {
+    row_type: "check",
+    check_name: "warden_events table exists",
+    status: "pass",
+  },
+], null, 2)}\n`;
+const directApplyEvidenceSha = createHash("sha256").update(directApplyEvidenceText).digest("hex");
 
 function runNode(args, options = {}) {
   return new Promise((resolveRun) => {
@@ -42,8 +55,15 @@ async function main() {
   const missingApplicationIncidentDir = join(root, "missing-application-incidents");
   const missingApplicationEvidenceDir = join(root, "missing-application-evidence");
   const missingApplicationEvidencePath = join(missingApplicationEvidenceDir, "warden-product-path-self-test.json");
+  const directApplyIncidentDir = join(root, "direct-apply-incidents");
+  const directApplyEvidenceDir = join(root, "direct-apply-evidence");
+  const directApplyEvidencePath = join(directApplyEvidenceDir, "warden-product-path-self-test.json");
+  const missingDirectApplyFileIncidentDir = join(root, "missing-direct-apply-file-incidents");
+  const missingDirectApplyFileEvidenceDir = join(root, "missing-direct-apply-file-evidence");
+  const missingDirectApplyFileEvidencePath = join(missingDirectApplyFileEvidenceDir, "warden-product-path-self-test.json");
   const draftOutputDir = join(root, "drafts");
   const sqlEvidencePath = join(root, "warden-sql-evidence.csv");
+  const directApplyRowsPath = join(root, "warden-direct-apply-evidence.json");
 
   const evidence = {
     captured_at: "2026-05-16T00:00:00.000Z",
@@ -126,8 +146,13 @@ async function main() {
     await mkdir(malformedManifestEvidenceDir, { recursive: true });
     await mkdir(missingApplicationIncidentDir, { recursive: true });
     await mkdir(missingApplicationEvidenceDir, { recursive: true });
+    await mkdir(directApplyIncidentDir, { recursive: true });
+    await mkdir(directApplyEvidenceDir, { recursive: true });
+    await mkdir(missingDirectApplyFileIncidentDir, { recursive: true });
+    await mkdir(missingDirectApplyFileEvidenceDir, { recursive: true });
     await mkdir(draftOutputDir, { recursive: true });
     await writeFile(sqlEvidencePath, sqlEvidenceText, "utf8");
+    await writeFile(directApplyRowsPath, directApplyEvidenceText, "utf8");
 
     await writeFile(
       evidencePath,
@@ -299,11 +324,87 @@ async function main() {
       return 1;
     }
 
+    await writeFile(
+      directApplyEvidencePath,
+      `${JSON.stringify(
+        {
+          ...evidence,
+          migration_application_evidence: {
+            source: "guarded_direct_apply",
+            status: "pass",
+            verifier: "npm run apply:warden:migrations",
+            file: directApplyRowsPath,
+            sha256: directApplyEvidenceSha,
+          },
+        },
+        null,
+        2
+      )}\n`,
+      "utf8"
+    );
+
+    const directApplyIncidentCode = await runNode([
+      resolve("scripts/create-warden-incident.mjs"),
+      "--evidence",
+      directApplyEvidencePath,
+      "--output-dir",
+      directApplyIncidentDir,
+    ]);
+    if (directApplyIncidentCode !== 0) return directApplyIncidentCode;
+
+    const directApplyGateCode = await runNode([
+      resolve("scripts/verify-warden-field-log-ready.mjs"),
+      "--incident-dir",
+      directApplyIncidentDir,
+    ]);
+    if (directApplyGateCode !== 0) {
+      process.stderr.write("Warden Field Log gate rejected valid guarded direct apply evidence.\n");
+      return directApplyGateCode;
+    }
+
+    await writeFile(
+      missingDirectApplyFileEvidencePath,
+      `${JSON.stringify(
+        {
+          ...evidence,
+          migration_application_evidence: {
+            source: "guarded_direct_apply",
+            status: "pass",
+            verifier: "npm run apply:warden:migrations",
+          },
+        },
+        null,
+        2
+      )}\n`,
+      "utf8"
+    );
+
+    const missingDirectApplyFileIncidentCode = await runNode([
+      resolve("scripts/create-warden-incident.mjs"),
+      "--evidence",
+      missingDirectApplyFileEvidencePath,
+      "--output-dir",
+      missingDirectApplyFileIncidentDir,
+    ]);
+    if (missingDirectApplyFileIncidentCode !== 0) return missingDirectApplyFileIncidentCode;
+
+    const missingDirectApplyFileGateCode = await runNode([
+      resolve("scripts/verify-warden-field-log-ready.mjs"),
+      "--incident-dir",
+      missingDirectApplyFileIncidentDir,
+    ]);
+    if (missingDirectApplyFileGateCode === 0) {
+      process.stderr.write("Warden Field Log gate accepted direct apply evidence without file output.\n");
+      return 1;
+    }
+
     process.stdout.write("warden_field_log_gate_positive_self_test=pass\n");
     process.stdout.write("warden_field_log_draft_self_test=pass\n");
     process.stdout.write("warden_field_log_gate_tamper_self_test=pass\n");
     process.stdout.write("warden_field_log_gate_malformed_manifest_self_test=pass\n");
     process.stdout.write("warden_field_log_gate_missing_application_evidence_self_test=pass\n");
+    process.stdout.write("warden_field_log_gate_direct_apply_evidence_self_test=pass\n");
+    process.stdout.write("warden_field_log_gate_missing_direct_apply_file_self_test=pass\n");
     return 0;
   } finally {
     if (process.env.KEEP_WARDEN_GATE_SELF_TEST !== "1") {

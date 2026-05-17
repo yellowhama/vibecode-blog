@@ -243,12 +243,17 @@ async function validateInputs(musuRepo) {
   return ok;
 }
 
-async function prepareOrApplyMigrationPacket(musuRepo) {
+async function prepareOrApplyMigrationPacket(musuRepo, directApplyEvidenceOut = "") {
   const scriptName = hasFlag("--apply-migrations")
     ? "apply:warden:migrations"
     : "prepare:warden:migrations";
 
-  const migrationPacketCode = await run(npmCommand(), ["run", scriptName], {
+  const args = ["run", scriptName];
+  if (hasFlag("--apply-migrations") && directApplyEvidenceOut) {
+    args.push("--", "--evidence-out", directApplyEvidenceOut);
+  }
+
+  const migrationPacketCode = await run(npmCommand(), args, {
     cwd: musuRepo,
     env: process.env,
   });
@@ -286,11 +291,14 @@ async function sha256File(path) {
   return createHash("sha256").update(await readFile(path)).digest("hex");
 }
 
-async function attachMigrationApplicationEvidence(evidenceFile) {
+async function attachMigrationApplicationEvidence(evidenceFile, directApplyEvidenceOut = "") {
   const target = resolve(evidenceFile);
   const evidence = JSON.parse(await readFile(target, "utf8"));
   const sqlEvidenceFile = process.env.WARDEN_SQL_EVIDENCE_FILE
     ? resolve(process.env.WARDEN_SQL_EVIDENCE_FILE)
+    : "";
+  const directApplyEvidenceFile = directApplyEvidenceOut
+    ? resolve(directApplyEvidenceOut)
     : "";
 
   if (sqlEvidenceFile) {
@@ -306,13 +314,15 @@ async function attachMigrationApplicationEvidence(evidenceFile) {
       source: "guarded_direct_apply",
       status: "pass",
       verifier: "npm run apply:warden:migrations",
+      file: directApplyEvidenceFile,
+      sha256: await sha256File(directApplyEvidenceFile),
     };
   }
 
   await writeFile(target, `${JSON.stringify(evidence, null, 2)}\n`, "utf8");
 }
 
-async function archiveEvidenceFiles(evidenceFile) {
+async function archiveEvidenceFiles(evidenceFile, directApplyEvidenceOut = "") {
   const archiveDir = resolve(process.env.WARDEN_EVIDENCE_ARCHIVE_DIR ?? DEFAULT_ARCHIVE_DIR);
   await mkdir(archiveDir, { recursive: true });
 
@@ -325,6 +335,13 @@ async function archiveEvidenceFiles(evidenceFile) {
     const sqlEvidenceTarget = resolve(archiveDir, basename(sqlEvidenceSource));
     await copyFile(sqlEvidenceSource, sqlEvidenceTarget);
     process.stdout.write(`sql_evidence_archive_file=${sqlEvidenceTarget}\n`);
+  }
+
+  if (directApplyEvidenceOut) {
+    const directApplySource = resolve(directApplyEvidenceOut);
+    const directApplyTarget = resolve(archiveDir, basename(directApplySource));
+    await copyFile(directApplySource, directApplyTarget);
+    process.stdout.write(`direct_apply_evidence_archive_file=${directApplyTarget}\n`);
   }
 }
 
@@ -386,6 +403,9 @@ async function main() {
       process.env.WARDEN_VERIFY_EVIDENCE_FILE ??
       resolve(DEFAULT_EVIDENCE_DIR, `warden-product-path-${timestampSlug()}.json`)
   );
+  const directApplyEvidenceFile = hasFlag("--apply-migrations")
+    ? evidenceFile.replace(/\.json$/i, ".migration-apply.json")
+    : "";
 
   await mkdir(dirname(evidenceFile), { recursive: true });
 
@@ -400,7 +420,7 @@ async function main() {
   process.stdout.write(`evidence_file=${evidenceFile}\n`);
   process.stdout.write(`musu_repo=${musuRepo}\n`);
 
-  const migrationPacketCode = await prepareOrApplyMigrationPacket(musuRepo);
+  const migrationPacketCode = await prepareOrApplyMigrationPacket(musuRepo, directApplyEvidenceFile);
   if (migrationPacketCode !== 0) {
     return migrationPacketCode;
   }
@@ -423,8 +443,8 @@ async function main() {
     return verifyCode;
   }
 
-  await attachMigrationApplicationEvidence(evidenceFile);
-  await archiveEvidenceFiles(evidenceFile);
+  await attachMigrationApplicationEvidence(evidenceFile, directApplyEvidenceFile);
+  await archiveEvidenceFiles(evidenceFile, directApplyEvidenceFile);
 
   const incidentCode = await run(npmCommand(), ["run", "incident:warden"], {
     cwd: process.cwd(),

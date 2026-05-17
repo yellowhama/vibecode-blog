@@ -107,9 +107,39 @@ async function scoreMigrationApplicationEvidence(evidence) {
   }
 
   if (application.source === "guarded_direct_apply") {
-    return application.verifier === "npm run apply:warden:migrations"
-      ? []
-      : ["migration application evidence verifier is not npm run apply:warden:migrations"];
+    if (application.verifier !== "npm run apply:warden:migrations") {
+      failures.push("migration application evidence verifier is not npm run apply:warden:migrations");
+    }
+    if (typeof application.file !== "string" || application.file.trim() === "") {
+      failures.push("migration application evidence direct apply output file is missing");
+    }
+    if (typeof application.sha256 !== "string" || !sha256Pattern.test(application.sha256)) {
+      failures.push("migration application evidence direct apply output SHA-256 is missing or invalid");
+    }
+
+    if (failures.length === 0) {
+      try {
+        const file = await readFile(resolve(application.file));
+        if (sha256(file) !== application.sha256) {
+          failures.push("migration application evidence direct apply output SHA-256 does not match file");
+        }
+
+        const rows = JSON.parse(file.toString("utf8"));
+        const rowFailures = Array.isArray(rows)
+          ? rows.filter((row) => row?.status !== "pass")
+          : [];
+        const summary = Array.isArray(rows)
+          ? rows.find((row) => row?.row_type === "summary")
+          : null;
+        if (!Array.isArray(rows) || !summary || summary.status !== "pass" || rowFailures.length > 0) {
+          failures.push("migration application evidence direct apply output does not contain all-pass rows");
+        }
+      } catch (error) {
+        failures.push(`migration application evidence direct apply output is not readable: ${error instanceof Error ? error.message : String(error)}`);
+      }
+    }
+
+    return failures;
   }
 
   return ["migration application evidence source is missing or unsupported"];
