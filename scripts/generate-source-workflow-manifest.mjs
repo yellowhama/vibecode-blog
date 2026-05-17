@@ -123,6 +123,11 @@ async function main() {
   const checkOnly = hasArg("--check");
 
   if (!(await fileExists(wikiRoot))) {
+    if (checkOnly) {
+      process.stdout.write("source_workflow_manifest_check=skip\n");
+      process.stdout.write(`source_workflow_manifest_skip_reason=llm_wiki_unreadable:${wikiRoot}\n`);
+      return 0;
+    }
     throw new Error(`LLM-Wiki root is not readable: ${wikiRoot}`);
   }
 

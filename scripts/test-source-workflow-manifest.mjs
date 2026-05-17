@@ -86,6 +86,25 @@ description: Packet-backed.
       throw new Error(`expected manifest check pass\nstdout:\n${checkResult.stdout}\nstderr:\n${checkResult.stderr}`);
     }
 
+    const missingWikiCheckResult = run([
+      "--blog-dir",
+      blogDir,
+      "--wiki-root",
+      join(root, "missing-wiki"),
+      "--manifest",
+      manifestFile,
+      "--check",
+    ]);
+    if (
+      missingWikiCheckResult.status !== 0 ||
+      !missingWikiCheckResult.stdout.includes("source_workflow_manifest_check=skip") ||
+      !missingWikiCheckResult.stdout.includes("source_workflow_manifest_skip_reason=llm_wiki_unreadable")
+    ) {
+      throw new Error(
+        `expected missing wiki check skip\nstdout:\n${missingWikiCheckResult.stdout}\nstderr:\n${missingWikiCheckResult.stderr}`,
+      );
+    }
+
     await writeFile(
       join(wikiRoot, "companies", "vibecode-town", "plans", "packet-post-brief.md"),
       "# Packet Post Brief changed\n",
