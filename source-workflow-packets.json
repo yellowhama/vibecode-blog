@@ -2,6 +2,40 @@
   "generated_at": "2026-05-17T00:00:00Z",
   "source": "C:\\Users\\empty\\llm-wiki",
   "packets": {
+    "ai-agent-work-disk-contract": {
+      "files": [
+        {
+          "suffix": "reader-pressure",
+          "path": "companies/vibecode-town/plans/ai-agent-work-disk-contract-reader-pressure.md",
+          "sha256": "39aa4b61db931cb796da9d35fd31601972701e9c3ad22738ecbf73ce82c17741"
+        },
+        {
+          "suffix": "title-angle",
+          "path": "companies/vibecode-town/plans/ai-agent-work-disk-contract-title-angle.md",
+          "sha256": "0712bb3d9acd8a91bed51b2305a270d6f2d0b334dc62121ab7fad58108581151"
+        },
+        {
+          "suffix": "evidence-bundle",
+          "path": "companies/vibecode-town/plans/ai-agent-work-disk-contract-evidence-bundle.md",
+          "sha256": "b7d3e744bb22e64ff450ceb3655d2ca234e53351c186585859b8fa106a1eda6a"
+        },
+        {
+          "suffix": "brief",
+          "path": "companies/vibecode-town/plans/ai-agent-work-disk-contract-brief.md",
+          "sha256": "b17130c1b2a1e0d2ef5b902ff34b0cf152d4f8b33e1e31367574f90cff9ef139"
+        },
+        {
+          "suffix": "gate-0",
+          "path": "companies/vibecode-town/plans/ai-agent-work-disk-contract-gate-0.md",
+          "sha256": "0136627ddda166218109c9b7f7ded1e5d0960d03144cfef685162d4b700904b7"
+        },
+        {
+          "suffix": "draft-critique",
+          "path": "companies/vibecode-town/plans/ai-agent-work-disk-contract-draft-critique.md",
+          "sha256": "5dcf48a1ea9220123bf7898c5e710913b43b103c12d450940f26fc1519ff55c9"
+        }
+      ]
+    },
     "ai-memory-operating-structure": {
       "files": [
         {
