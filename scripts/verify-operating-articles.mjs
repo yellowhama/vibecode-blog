@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-const BLOG_DIR = "src/data/blog";
+const DEFAULT_BLOG_DIR = "src/data/blog";
 
 const REQUIRED_ARTICLES = [
   {
@@ -47,6 +47,17 @@ const REQUIRED_ARTICLES = [
   },
 ];
 
+function parseArgs(argv) {
+  const options = { blogDir: DEFAULT_BLOG_DIR };
+  for (let index = 0; index < argv.length; index += 1) {
+    if (argv[index] === "--blog-dir") {
+      options.blogDir = argv[index + 1];
+      index += 1;
+    }
+  }
+  return options;
+}
+
 function parseMarkdown(text) {
   const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
   if (!match) return { frontmatter: "", body: text };
@@ -63,8 +74,8 @@ function isDraft(frontmatter) {
   return /^draft:\s*true\s*$/m.test(frontmatter);
 }
 
-async function checkArticle(article) {
-  const text = await readFile(join(BLOG_DIR, article.file), "utf8");
+async function checkArticle(blogDir, article) {
+  const text = await readFile(join(blogDir, article.file), "utf8");
   const { frontmatter, body } = parseMarkdown(text);
   const combined = `${frontmatter}\n${body}`;
   const failures = [];
@@ -86,12 +97,14 @@ async function checkArticle(article) {
 }
 
 async function main() {
+  const { blogDir } = parseArgs(process.argv.slice(2));
   const results = [];
   for (const article of REQUIRED_ARTICLES) {
-    results.push(await checkArticle(article));
+    results.push(await checkArticle(blogDir, article));
   }
 
   const failures = results.filter((result) => result.failures.length > 0);
+  process.stdout.write(`operating_articles_blog_dir=${blogDir}\n`);
   process.stdout.write(`operating_articles_checked=${results.length}\n`);
   process.stdout.write(`operating_articles_required=${REQUIRED_ARTICLES.map((article) => article.file).join(",")}\n`);
 
