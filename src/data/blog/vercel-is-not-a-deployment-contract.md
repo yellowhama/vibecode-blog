@@ -4,7 +4,7 @@ pubDatetime: 2026-05-16T03:20:00Z
 description: "A Coolify migration audit exposed two hidden Vercel assumptions: rewrites that only existed in vercel.json and a build script that depended on a Unix shell."
 draft: false
 featured: true
-series: "MUSU Build Log"
+series: "Field Log"
 workflow: "legacy"
 tags: ["engineering", "deployment", "coolify", "technical-contracts"]
 ogImage: "/images/posts/pencil-technical-contract.png"
@@ -58,13 +58,13 @@ The second failure was quieter:
     },
     {
       "source": "/install.sh",
-      "destination": "https://raw.githubusercontent.com/yellowhama/musu-bee/main/install.sh"
+      "destination": "https://raw.githubusercontent.com/example/install/main/install.sh"
     }
   ]
 }
 ```
 
-Those routes existed only because Vercel interpreted `vercel.json`. A static host serving `dist` would not know that `/sitemap.xml` should point at `/sitemap-index.xml`, or that `/install.sh` should route to the MUSU installer.
+Those routes existed only because Vercel interpreted `vercel.json`. A static host serving `dist` would not know that `/sitemap.xml` should point at `/sitemap-index.xml`, or that `/install.sh` should route to a remote installer.
 
 ## Bad Default
 
@@ -159,5 +159,3 @@ If a route exists only in the host dashboard, it is not part of the app.
 If a build works only because the host shell happens to support a command, it is not portable.
 
 The contract has to live in the repo. Coolify did not create this rule. It just made the missing contract visible.
-
-[Read the MUSU technical contract direction](https://musu.pro)

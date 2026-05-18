@@ -4,10 +4,10 @@ import { join } from "node:path";
 const BLOG_DIR = "src/data/blog";
 
 const CONTRACT_ANCHOR =
-  /\b(technical contract|contract|boundary|deterministic|local-first|audit trail|control surface|policy|evidence|source-backed|verified|warden|musu)\b/i;
+  /\b(technical contract|contract|boundary|deterministic|local-first|audit trail|control surface|policy|evidence|source-backed|verified|warden)\b/i;
 
 const PROOF_ROUTE =
-  /https:\/\/musu\.pro|github\.com\/yellowhama|musu|warden|field log|technical contract|install\.sh/i;
+  /github\.com\/yellowhama|warden|field log|technical contract|install\.sh|source-backed|evidence|verified/i;
 
 const EVIDENCE_ANCHOR =
   /references:\s*(?:\r?\n\s*-|$)|https?:\/\/|```|`[^`]+`|verified fix|real failure|source-backed|audit|advisory|log|command|config|screenshot|diff|evidence/i;
@@ -60,10 +60,10 @@ async function checkPost(file, text) {
   if (!title) failures.push("missing title");
   if (!description) failures.push("missing description");
   if (!CONTRACT_ANCHOR.test(combined)) {
-    failures.push("missing technical-contract, boundary, evidence, Warden, or MUSU anchor");
+    failures.push("missing technical-contract, boundary, evidence, Warden, or source-backed anchor");
   }
   if (!PROOF_ROUTE.test(combined)) {
-    failures.push("missing natural route to MUSU, Warden, GitHub, Field Log, install, or technical-contract proof");
+    failures.push("missing natural route to Warden, GitHub, Field Log, install, source-backed evidence, or technical-contract proof");
   }
   if (!EVIDENCE_ANCHOR.test(combined)) {
     failures.push("missing source/evidence anchor such as references, URL, command, config, audit, log, or code block");

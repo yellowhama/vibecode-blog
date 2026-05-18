@@ -69,7 +69,7 @@ The implementation is deliberately boring. Scripts read repo-specific temp varia
 
 ```txt
 VIBECODE_TEST_TEMP_DIR
-MUSU_TEST_TEMP_DIR
+PROJECT_TEST_TEMP_DIR
 TEST_TEMP_DIR
 F:\Aisaak\CompanyArtifacts\test-temp
 os.tmpdir()
@@ -110,6 +110,6 @@ Agent speed cuts both ways. It accelerates useful work, and it accelerates accid
 
 A work disk contract makes that speed survivable. The agent can still create files, run tests, and collect evidence, but the system knows where each class of artifact belongs.
 
-That is the same operating principle behind [MUSU Pro](https://musu.pro): the agent is allowed to move fast only inside explicit boundaries.
+The operating principle is simple: the agent is allowed to move fast only inside explicit boundaries.
 
 No boundary, no trust.

@@ -22,7 +22,7 @@ The Instagram ads lied to you.
 
 Youve seen the videos: a guy in a hoodie, a dark room, a prompt like *"Make me a SaaS that scans LinkedIn,"* and 30 seconds later, 10,000 lines of code appear in Cursor. The narrator promises that "coding is dead" and you can now build products by simply describing them. 
 
-I fell for it. I tried to "vibe" my way into a production-grade data aggregator for MUSU. I failed 50 times in a row. 
+I fell for it. I tried to "vibe" my way into a production-grade data aggregator. I failed 50 times in a row. 
 
 This post is the technical autopsy of those failures. To understand why I failed, you have to understand the difference between the **cultural reaction** (Vibe Coding) and the **architectural physics** (Software 3.0).
 
@@ -90,6 +90,3 @@ The true craft in 2026 isn't about knowing how to type `for-loops`. Its about **
 I am no longer a "Vibe Coder." I am an **Agentic Engineer**. I define the **Cage** (The Contract), and I let the LLM provide the **Flight** (The Implementation).
 
 The tighter the cage, the faster the bird flies.
-
----
-[Enforce your own boundaries with the Contract-Led approach in MUSU](https://musu.pro)

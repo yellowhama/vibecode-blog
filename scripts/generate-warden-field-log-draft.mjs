@@ -92,12 +92,12 @@ function buildDraft({ incidentText, incidentPath, evidence, evidencePath }) {
   const markdown = `---
 title: "${yamlEscape(title)}"
 pubDatetime: ${new Date(capturedAt).toISOString()}
-description: "A Warden Field Log draft generated only after a verified MUSU runtime incident proved an HTTP 423 block, a persisted Warden event, migration application evidence, and dashboard resolution."
+description: "A Warden Field Log draft generated only after a verified runtime incident proved an HTTP 423 block, a persisted Warden event, migration application evidence, and dashboard resolution."
 draft: true
 featured: false
-series: "MUSU Build Log"
+series: "Field Log"
 lang: "en"
-tags: ["engineering", "musu", "warden", "technical-contracts"]
+tags: ["engineering", "warden", "technical-contracts"]
 references:
   - name: "Verified Warden runtime incident"
     url: "${yamlEscape(incidentPath)}"
@@ -181,7 +181,7 @@ ${boundary || "This proves the watchdog bridge path for this event. It does not 
 
 Do not expand this into a claim that Warden controls every agent action. This incident proves one concrete product path: non-contract watchdog commands can fail closed before relay forwarding.
 
-## Route To MUSU
+## Product Boundary
 
 The product question is not whether an AI agent can act.
 

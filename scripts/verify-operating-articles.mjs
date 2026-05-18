@@ -15,7 +15,7 @@ const REQUIRED_ARTICLES = [
       "Operating Memory Stack",
       "Audit Checklist",
       "source, spec, handoff, index",
-      "https://musu.pro",
+      "evidence gates before Field Logs",
     ],
   },
   {
@@ -28,7 +28,7 @@ const REQUIRED_ARTICLES = [
       "Control Contract",
       "Operator Checklist",
       "Technical Verdict",
-      "https://musu.pro",
+      'should not trust "stateless" as a label',
     ],
   },
   {
@@ -41,8 +41,8 @@ const REQUIRED_ARTICLES = [
       "Work Disk Contract",
       "Practical Checklist",
       "VIBECODE_TEST_TEMP_DIR",
-      "MUSU_TEST_TEMP_DIR",
-      "https://musu.pro",
+      "PROJECT_TEST_TEMP_DIR",
+      "No boundary, no trust.",
     ],
   },
 ];

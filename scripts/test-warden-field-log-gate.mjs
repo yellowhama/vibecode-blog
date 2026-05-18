@@ -195,7 +195,7 @@ async function main() {
     const draftText = await readFile(join(draftOutputDir, draftFile), "utf8");
     for (const required of [
       'draft: true',
-      'series: "MUSU Build Log"',
+      'series: "Field Log"',
       "npm run verify:warden-field-log",
       `incident_id=${eventId}`,
       `evidence_json=${evidencePath}`,

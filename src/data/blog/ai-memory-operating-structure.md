@@ -104,6 +104,6 @@ Are unverified product claims marked as unverified?
 
 If three of those are missing, the issue may not be model quality. It is missing operating memory.
 
-Vibecode uses this pattern for the MUSU Pro trust engine: source-backed content, explicit specs, current handoffs, searchable wiki indexes, and evidence gates before Field Logs. The public writing is only the visible surface. The real asset is the memory contract behind it.
+Vibecode uses this pattern for source-backed content: source notes, explicit specs, current handoffs, searchable wiki indexes, and evidence gates before Field Logs. The public writing is only the visible surface. The real asset is the memory contract behind it.
 
-That is also the natural route to [MUSU Pro](https://musu.pro): agent systems should not depend on vibes, hidden state, or optimistic prompts. They should run on evidence, handoff, and verifiable boundaries.
+Agent systems should not depend on vibes, hidden state, or optimistic prompts. They should run on evidence, handoff, and verifiable boundaries.

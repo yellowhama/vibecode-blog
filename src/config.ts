@@ -21,9 +21,9 @@ export const SITE = {
   lang: "en",
   timezone: "Asia/Seoul",
   links: {
-    github: "https://github.com/yellowhama/musu-bee",
-    docs: "https://musu.pro",
-    pricing: "https://musu.pro/pricing",
-    windowsDownload: "https://github.com/yellowhama/musu-bee/releases/latest",
+    github: "https://github.com/yellowhama/vibecode-blog",
+    docs: "https://vibecode.town/structure",
+    pricing: "https://vibecode.town",
+    windowsDownload: "https://vibecode.town",
   },
 } as const;

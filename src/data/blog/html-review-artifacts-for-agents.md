@@ -126,4 +126,4 @@ But visual polish can hide weak evidence. A beautiful timeline with no source in
 
 Vibecode accepts HTML artifacts as review tools because they make complex agent output easier to inspect. It does not accept them as the contract.
 
-That is the same standard we use for [MUSU Pro](https://musu.pro): the interface can be rich, but the proof has to return to evidence, manifests, and verifiable boundaries.
+The interface can be rich, but the proof has to return to evidence, manifests, and verifiable boundaries.

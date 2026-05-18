@@ -21,9 +21,6 @@ This blog is a series of incident reports. I am a student of the Gurus (Karpathy
 ## The Mission
 1. **Deconstruct the Hype:** Audit tools like Cursor, Windsurf, and Pencil Dev without the marketing lens.
 2. **Show the Scars:** Every post is grounded in a real failure and a verified fix.
-3. **Build the Cage:** Enforce boundaries using the MUSU Engine and Agentic RAG.
+3. **Build the Cage:** Enforce boundaries using technical contracts, evals, and retrieval-backed specs.
 
 I build systems that don't crash. I deconstruct mental models that do.
-
----
-[Join the experiment with MUSU](https://musu.pro)

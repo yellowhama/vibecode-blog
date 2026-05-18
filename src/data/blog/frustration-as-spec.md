@@ -3,7 +3,7 @@ title: "Frustration as the Specification: The High-Signal Debugging Model"
 pubDatetime: 2026-05-10T10:00:00Z
 description: "Why your emotional friction is the most honest technical metric you have, and how to deconstruct it into a hard system contract."
 draft: false
-series: "MUSU Build Log"
+series: "Field Log"
 workflow: "legacy"
 tags: ["engineering", "observability", "debugging", "slop-detection"]
 ogImage: "/images/posts/058-frustration-is-the-spec.png"
@@ -54,7 +54,7 @@ By deconstructing the "feeling" of suck into a hard technical requirement, you m
 
 ## 3. Implementation: The Frustration-to-Spec Pipeline
 
-In the MUSU Engine, we formalize this via the **Warden Boundary.**
+In a governed agent workflow, this becomes a **Warden Boundary.**
 
 Instead of letting an agent "guess" the implementation of a complex RAG loop, we instrument the reasoning path. We use **Evals** (Automated Evaluations) to score the agent's output. If the "Hallucination Risk" score rises above a certain threshold, the Warden triggers an architectural lock.
 
@@ -69,6 +69,3 @@ If your codebase is a mess of AI slop, it is because you allowed your frustratio
 Stop being a "User" of AI. Be a **Governor of Constraints.** Take the things that annoy you about your current implementation and turn them into the **Hard Contracts** of the next version.
 
 The tighter the cage, the faster the bird flies.
-
----
-[Enforce your own boundaries with the MUSU Engine](https://musu.pro)

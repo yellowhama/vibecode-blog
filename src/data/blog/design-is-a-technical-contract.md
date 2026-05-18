@@ -4,7 +4,7 @@ pubDatetime: 2026-05-13T18:00:00Z
 description: "The end of the Figma handoff. Why storing designs as .pen files in Git is the only way to scale agentic frontend engineering."
 draft: false
 featured: true
-series: "MUSU Build Log"
+series: "Field Log"
 workflow: "legacy"
 tags: ["engineering", "pencil-dev", "agentic-design", "mcp"]
 ogImage: "/images/posts/pencil-handoff-pain.png"
@@ -54,9 +54,9 @@ When you commit a design change, you are committing a **Visual Specification**.
 - **Verifiable:** The CI/CD pipeline can audit the implementation against the `.pen` data.
 - **Scalable:** Multiple agents can "swarm" on a single design file because it follows a machine-readable schema.
 
-## 3. The Implementation: Building the MUSU Dashboard
+## 3. The Implementation: Building a Dashboard
 
-I used this workflow to build the latest MUSU node-monitoring dashboard. 
+I used this workflow to build a node-monitoring dashboard. 
 1.  **Sketch:** I drew a rough layout in Pencil Dev directly next to my `dashboard.tsx`.
 2.  **Verify:** I invited a sub-agent to audit the layout for accessibility compliance.
 3.  **Execute:** I gave the mission goal: *"Build the React component that satisfies this .pen contract."*
@@ -70,6 +70,3 @@ If you are still copy-pasting CSS from Figma to Cursor, you are generating techn
 **Stop being a pixel-pusher. Be a Contract Designer.** Use Pencil Dev to define the visual boundaries of your system, and let the reasoning kernel provide the flight.
 
 The tighter the cage, the faster the bird flies.
-
----
-[Build your own technical contracts with the MUSU Engine](https://musu.pro)

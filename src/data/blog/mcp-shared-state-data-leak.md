@@ -101,4 +101,4 @@ This is not an argument against MCP. It is the opposite. As MCP becomes a seriou
 
 Vibecode treats this as the same class of problem as Warden evidence and source-backed content: invisible state must be turned into a technical contract.
 
-That is the route to [MUSU Pro](https://musu.pro): agent operations should not trust "stateless" as a label. They should verify ownership, boundaries, and evidence.
+Agent operations should not trust "stateless" as a label. They should verify ownership, boundaries, and evidence.

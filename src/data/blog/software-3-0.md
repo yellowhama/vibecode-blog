@@ -59,7 +59,7 @@ If you don't understand the **Technical Contract** (the Spec) of your system, yo
 
 By May 2026, "Prompt Engineering" is a dead term. We now practice **Context Engineering**. 
 
-With models like **Gemini 3.1** supporting 2-million token native context windows, the challenge isn't "how to ask," but "how to curate." We use tools like **MUSU Warden** to enforce boundaries because we know that an unconstrained Software 3.0 kernel will eventually drift into "hallucination slop" without a hard contract.
+With models like **Gemini 3.1** supporting 2-million token native context windows, the challenge isn't "how to ask," but "how to curate." We use policy gates, evals, and evidence checks to enforce boundaries because we know that an unconstrained Software 3.0 kernel will eventually drift into "hallucination slop" without a hard contract.
 
 ## Technical Verdict
 
@@ -69,6 +69,3 @@ Software 3.0 is the physics of the 2026 industry. You can fight it by sticking t
 - **Start:** Defining high-density technical specs that the kernel can't ignore.
 
 The tighter the cage, the faster the bird flies.
-
----
-[Master the Software 3.0 stack with the MUSU Engine](https://musu.pro)

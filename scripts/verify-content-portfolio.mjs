@@ -4,13 +4,13 @@ import { join } from "node:path";
 const BLOG_DIR = "src/data/blog";
 const ALLOWED_SERIES = new Set([
   "About",
-  "MUSU Build Log",
+  "Field Log",
   "AI Explainer",
   "AI Tool Note",
   "AI Market Watch",
 ]);
 const TRAFFIC_SERIES = new Set(["AI Explainer", "AI Tool Note", "AI Market Watch"]);
-const PROOF_SERIES = new Set(["MUSU Build Log"]);
+const PROOF_SERIES = new Set(["Field Log"]);
 const MAX_TRAFFIC_TO_PROOF_RATIO = 3;
 
 function parseMarkdown(text) {
@@ -87,7 +87,7 @@ async function main() {
   const unknownPosts = contentPosts.filter((post) => !PROOF_SERIES.has(post.series) && !TRAFFIC_SERIES.has(post.series));
 
   if (contentPosts.length > 0 && proofPosts.length === 0) {
-    failures.push("no MUSU Build Log exists in the public content portfolio");
+    failures.push("no Field Log exists in the public content portfolio");
   }
   if (unknownPosts.length > 0) {
     failures.push(`unknown portfolio role for ${unknownPosts.map((post) => post.file).join(", ")}`);
@@ -104,7 +104,7 @@ async function main() {
 
   for (const [month, bucket] of monthly.entries()) {
     if (bucket.traffic > 0 && bucket.proof === 0) {
-      failures.push(`${month}: traffic posts exist without a MUSU Build Log`);
+      failures.push(`${month}: traffic posts exist without a Field Log`);
       continue;
     }
     if (bucket.proof > 0 && bucket.traffic / bucket.proof > MAX_TRAFFIC_TO_PROOF_RATIO) {
