@@ -1,9 +1,20 @@
 import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-const BLOG_DIR = "src/data/blog";
+const DEFAULT_BLOG_DIR = "src/data/blog";
 const MUSU_MARKDOWN_LINK =
   /\[[^\]]+\]\((https:\/\/musu\.pro[^)]*|https:\/\/github\.com\/yellowhama[^)]*|https:\/\/raw\.githubusercontent\.com\/yellowhama[^)]*|\/install\.sh[^)]*)\)/g;
+
+function parseArgs(argv) {
+  const options = { blogDir: DEFAULT_BLOG_DIR };
+  for (let index = 0; index < argv.length; index += 1) {
+    if (argv[index] === "--blog-dir") {
+      options.blogDir = argv[index + 1];
+      index += 1;
+    }
+  }
+  return options;
+}
 
 function parseMarkdown(text) {
   const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
@@ -26,7 +37,8 @@ function countRoutes(text) {
 }
 
 async function main() {
-  const files = (await readdir(BLOG_DIR))
+  const { blogDir } = parseArgs(process.argv.slice(2));
+  const files = (await readdir(blogDir))
     .filter((file) => file.endsWith(".md"))
     .sort();
   const failures = [];
@@ -34,7 +46,7 @@ async function main() {
   let checked = 0;
 
   for (const file of files) {
-    const text = await readFile(join(BLOG_DIR, file), "utf8");
+    const text = await readFile(join(blogDir, file), "utf8");
     const { frontmatter, body } = parseMarkdown(text);
     if (isDraft(frontmatter)) continue;
 
@@ -51,6 +63,7 @@ async function main() {
     }
   }
 
+  process.stdout.write(`musu_routing_blog_dir=${blogDir}\n`);
   process.stdout.write(`musu_routing_posts_checked=${checked}\n`);
   process.stdout.write(`musu_routing_routes=${routeCounts.join(" ")}\n`);
 
