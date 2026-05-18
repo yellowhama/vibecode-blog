@@ -1,12 +1,29 @@
 import { existsSync } from "node:fs";
 import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
-import { basename, dirname, resolve } from "node:path";
+import { basename, dirname, isAbsolute, relative, resolve } from "node:path";
 import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
 
 const DEFAULT_MUSU_REPO = String.raw`F:\Aisaak\Projects\musu-pro`;
 const DEFAULT_EVIDENCE_DIR = String.raw`C:\Users\empty\llm-wiki\companies\vibecode-town\incidents\evidence`;
 const DEFAULT_ARCHIVE_DIR = String.raw`F:\Aisaak\CompanyArtifacts\runtime-evidence`;
+const DEFAULT_SQL_EVIDENCE_DIR = String.raw`F:\Aisaak\CompanyArtifacts\runtime-evidence\sql-editor-results`;
+const SQL_EVIDENCE_REFERENCE_FILE_NAMES = new Set([
+  "EXPECTED_RESULT_SHAPE.md",
+  "README.md",
+  "SAMPLE_RESULT_PASS.csv",
+]);
+const SAMPLE_SQL_EVIDENCE_TEXT = [
+  "row_type,check_name,status",
+  "summary,all Warden migration checks pass,pass",
+  "check,owner_select policy exists,pass",
+  "check,required columns exist,pass",
+  "check,status/resolution consistency constraint exists,pass",
+  "check,warden_events RLS enabled,pass",
+  "check,warden_events table exists,pass",
+  "check,warden_events_node_created index exists,pass",
+  "check,warden_events_user_status_created index exists,pass",
+].join("\n");
 
 function getArg(name) {
   const index = process.argv.indexOf(name);
@@ -77,6 +94,50 @@ function isValidPostgresUrl(value) {
   }
 }
 
+function getSqlEvidenceDir() {
+  return resolve(process.env.WARDEN_SQL_EVIDENCE_DIR ?? DEFAULT_SQL_EVIDENCE_DIR);
+}
+
+function isPathInside(filePath, directoryPath) {
+  const relationship = relative(directoryPath, filePath);
+  return Boolean(relationship) && !relationship.startsWith("..") && !isAbsolute(relationship);
+}
+
+function normalizeEvidenceText(text) {
+  return text.trim().replace(/\r\n/g, "\n");
+}
+
+async function validateSqlEditorEvidencePath(evidenceFile) {
+  const evidenceDir = getSqlEvidenceDir();
+  const evidencePath = resolve(evidenceFile);
+
+  if (!isPathInside(evidencePath, evidenceDir)) {
+    process.stderr.write(`WARDEN_SQL_EVIDENCE_FILE must be inside WARDEN_SQL_EVIDENCE_DIR: ${evidenceDir}\n`);
+    process.stderr.write("sql_evidence_file_status=outside_intake_dir\n");
+    return null;
+  }
+
+  if (SQL_EVIDENCE_REFERENCE_FILE_NAMES.has(basename(evidencePath))) {
+    process.stderr.write(`WARDEN_SQL_EVIDENCE_FILE cannot be a guide or sample file: ${basename(evidencePath)}\n`);
+    process.stderr.write("sql_evidence_file_status=reference_file\n");
+    return null;
+  }
+
+  if (!existsSync(evidencePath)) {
+    process.stderr.write(`WARDEN_SQL_EVIDENCE_FILE not found: ${evidencePath}\n`);
+    return null;
+  }
+
+  const text = await readFile(evidencePath, "utf8");
+  if (normalizeEvidenceText(text) === SAMPLE_SQL_EVIDENCE_TEXT) {
+    process.stderr.write("WARDEN_SQL_EVIDENCE_FILE cannot be a renamed copy of SAMPLE_RESULT_PASS.csv.\n");
+    process.stderr.write("sql_evidence_file_status=sample_copy\n");
+    return null;
+  }
+
+  return evidencePath;
+}
+
 function run(command, args, options = {}) {
   return new Promise((resolveRun) => {
     const useShell = process.platform === "win32";
@@ -116,10 +177,11 @@ Optional environment forwarded to MUSU verifier:
   WARDEN_VERIFY_DECISION
   WARDEN_VERIFY_USER_ID
   WARDEN_SQL_EVIDENCE_FILE
+  WARDEN_SQL_EVIDENCE_DIR
   WARDEN_EVIDENCE_ARCHIVE_DIR
 
 Migration application evidence:
-  Use either --apply-migrations for guarded direct apply, or WARDEN_SQL_EVIDENCE_FILE for a saved Supabase SQL Editor all-pass export.
+  Use either --apply-migrations for guarded direct apply, or WARDEN_SQL_EVIDENCE_FILE for a saved Supabase SQL Editor all-pass export inside WARDEN_SQL_EVIDENCE_DIR.
 `);
 }
 
@@ -222,6 +284,11 @@ async function validateInputs(musuRepo) {
     process.stderr.write("Migration application evidence is required before Warden runtime capture.\n");
     process.stderr.write("Set WARDEN_SQL_EVIDENCE_FILE to a saved Supabase SQL Editor all-pass export, or rerun with --apply-migrations.\n");
     ok = false;
+  } else if (envStatus("WARDEN_SQL_EVIDENCE_FILE")) {
+    const sqlEvidencePath = await validateSqlEditorEvidencePath(process.env.WARDEN_SQL_EVIDENCE_FILE);
+    if (!sqlEvidencePath) {
+      ok = false;
+    }
   }
 
   if (hasFlag("--apply-migrations")) {
@@ -271,9 +338,8 @@ async function verifySqlEditorEvidenceIfProvided(musuRepo) {
     return 0;
   }
 
-  const evidencePath = resolve(evidenceFile);
-  if (!existsSync(evidencePath)) {
-    process.stderr.write(`WARDEN_SQL_EVIDENCE_FILE not found: ${evidencePath}\n`);
+  const evidencePath = await validateSqlEditorEvidencePath(evidenceFile);
+  if (!evidencePath) {
     return 1;
   }
 

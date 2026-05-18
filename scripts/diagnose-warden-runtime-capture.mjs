@@ -1,10 +1,27 @@
 import { existsSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
+import { basename, dirname, isAbsolute, relative, resolve } from "node:path";
 import { spawn } from "node:child_process";
 
 const DEFAULT_MUSU_REPO = String.raw`F:\Aisaak\Projects\musu-pro`;
 const DEFAULT_REPORT_PATH = String.raw`C:\Users\empty\llm-wiki\companies\vibecode-town\plans\warden-runtime-readiness-latest.md`;
+const DEFAULT_SQL_EVIDENCE_DIR = String.raw`F:\Aisaak\CompanyArtifacts\runtime-evidence\sql-editor-results`;
+const SQL_EVIDENCE_REFERENCE_FILE_NAMES = new Set([
+  "EXPECTED_RESULT_SHAPE.md",
+  "README.md",
+  "SAMPLE_RESULT_PASS.csv",
+]);
+const SAMPLE_SQL_EVIDENCE_TEXT = [
+  "row_type,check_name,status",
+  "summary,all Warden migration checks pass,pass",
+  "check,owner_select policy exists,pass",
+  "check,required columns exist,pass",
+  "check,status/resolution consistency constraint exists,pass",
+  "check,warden_events RLS enabled,pass",
+  "check,warden_events table exists,pass",
+  "check,warden_events_node_created index exists,pass",
+  "check,warden_events_user_status_created index exists,pass",
+].join("\n");
 const statusRecords = [];
 const envFileRecords = [];
 const envSources = new Map();
@@ -247,21 +264,57 @@ async function cookieFileStatus(path) {
   }
 }
 
-async function fileStatus(path, label) {
+function getSqlEvidenceDir() {
+  return resolve(process.env.WARDEN_SQL_EVIDENCE_DIR ?? DEFAULT_SQL_EVIDENCE_DIR);
+}
+
+function isPathInside(filePath, directoryPath) {
+  const relationship = relative(directoryPath, filePath);
+  return Boolean(relationship) && !relationship.startsWith("..") && !isAbsolute(relationship);
+}
+
+function normalizeEvidenceText(text) {
+  return text.trim().replace(/\r\n/g, "\n");
+}
+
+async function sqlEvidenceFileStatus(path) {
+  const evidenceDir = getSqlEvidenceDir();
   const targetPath = resolve(path);
+
+  if (!isPathInside(targetPath, evidenceDir)) {
+    return {
+      ok: false,
+      detail: `source=file status=outside_intake_dir allowed_dir=${evidenceDir}`,
+    };
+  }
+
+  if (SQL_EVIDENCE_REFERENCE_FILE_NAMES.has(basename(targetPath))) {
+    return {
+      ok: false,
+      detail: `source=file status=reference_file name=${basename(targetPath)}`,
+    };
+  }
+
   if (!existsSync(targetPath)) {
-    return { ok: false, detail: `${label}=file path_exists=false` };
+    return { ok: false, detail: "source=file path_exists=false" };
   }
 
   try {
     const text = await readFile(targetPath, "utf8");
+    if (normalizeEvidenceText(text) === SAMPLE_SQL_EVIDENCE_TEXT) {
+      return {
+        ok: false,
+        detail: "source=file status=sample_copy",
+      };
+    }
+
     return {
       ok: text.trim().length > 0,
-      detail: `${label}=file path_exists=true non_empty=${text.trim().length > 0}`,
+      detail: `source=file path_exists=true non_empty=${text.trim().length > 0}`,
       path: targetPath,
     };
   } catch {
-    return { ok: false, detail: `${label}=file path_exists=true readable=false` };
+    return { ok: false, detail: "source=file path_exists=true readable=false" };
   }
 }
 
@@ -299,7 +352,7 @@ async function verifySqlEvidenceIfProvided(musuRepo, musuPackage) {
     return true;
   }
 
-  const status = await fileStatus(process.env.WARDEN_SQL_EVIDENCE_FILE, "source");
+  const status = await sqlEvidenceFileStatus(process.env.WARDEN_SQL_EVIDENCE_FILE);
   printStatus("warden_sql_evidence_file", status.ok, status.detail);
   if (!status.ok) {
     return false;

@@ -1,6 +1,8 @@
 import { existsSync } from "node:fs";
-import { resolve } from "node:path";
+import { mkdir, rm, writeFile } from "node:fs/promises";
+import { join, resolve } from "node:path";
 import { spawn } from "node:child_process";
+import { makeTestTempDir } from "./test-temp-root.mjs";
 
 const DEFAULT_MUSU_REPO = String.raw`F:\Aisaak\Projects\musu-pro`;
 
@@ -76,3 +78,60 @@ assertOutput(missingMigrationEvidence, "warden_runtime_capture_missing_migration
   "Migration application evidence is required before Warden runtime capture.",
   "Set WARDEN_SQL_EVIDENCE_FILE to a saved Supabase SQL Editor all-pass export, or rerun with --apply-migrations.",
 ]);
+
+const root = await makeTestTempDir("vibecode-warden-capture-inputs-");
+
+try {
+  const sqlEvidenceDir = join(root, "sql-editor-results");
+  await mkdir(sqlEvidenceDir, { recursive: true });
+  const sampleSqlEvidenceText = [
+    "row_type,check_name,status",
+    "summary,all Warden migration checks pass,pass",
+    "check,owner_select policy exists,pass",
+    "check,required columns exist,pass",
+    "check,status/resolution consistency constraint exists,pass",
+    "check,warden_events RLS enabled,pass",
+    "check,warden_events table exists,pass",
+    "check,warden_events_node_created index exists,pass",
+    "check,warden_events_user_status_created index exists,pass",
+  ].join("\n");
+  const realSqlEvidenceText = [
+    "row_type,check_name,status",
+    "summary,all Warden migration checks pass,pass",
+    "check,warden_events table exists,pass",
+    "check,warden_events RLS enabled,pass",
+    "check,owner_select policy exists,pass",
+    "check,warden_events_user_status_created index exists,pass",
+    "check,warden_events_node_created index exists,pass",
+    "check,status/resolution consistency constraint exists,pass",
+    "check,required columns exist,pass",
+  ].join("\n");
+
+  const renamedSample = join(sqlEvidenceDir, "renamed-sample.csv");
+  await writeFile(renamedSample, sampleSqlEvidenceText, "utf8");
+  const renamedSampleResult = await runCapture(["--preflight"], baseEnv({
+    WARDEN_SQL_EVIDENCE_DIR: sqlEvidenceDir,
+    WARDEN_SQL_EVIDENCE_FILE: renamedSample,
+    WARDEN_VERIFY_NODE: "capture-node",
+    WARDEN_VERIFY_COOKIE: "session=capture",
+  }));
+  assertOutput(renamedSampleResult, "warden_runtime_capture_renamed_sample_self_test", 1, [
+    "WARDEN_SQL_EVIDENCE_FILE cannot be a renamed copy of SAMPLE_RESULT_PASS.csv.",
+    "sql_evidence_file_status=sample_copy",
+  ]);
+
+  const outsideEvidence = join(root, "outside-sql-evidence.csv");
+  await writeFile(outsideEvidence, realSqlEvidenceText, "utf8");
+  const outsideEvidenceResult = await runCapture(["--preflight"], baseEnv({
+    WARDEN_SQL_EVIDENCE_DIR: sqlEvidenceDir,
+    WARDEN_SQL_EVIDENCE_FILE: outsideEvidence,
+    WARDEN_VERIFY_NODE: "capture-node",
+    WARDEN_VERIFY_COOKIE: "session=capture",
+  }));
+  assertOutput(outsideEvidenceResult, "warden_runtime_capture_outside_sql_evidence_dir_self_test", 1, [
+    "WARDEN_SQL_EVIDENCE_FILE must be inside WARDEN_SQL_EVIDENCE_DIR:",
+    "sql_evidence_file_status=outside_intake_dir",
+  ]);
+} finally {
+  await rm(root, { recursive: true, force: true });
+}
