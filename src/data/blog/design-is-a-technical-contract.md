@@ -26,7 +26,7 @@ The traditional Figma-to-Code handoff is a legacy bottleneck.
 
 We’ve all lived it: a designer spends 40 hours pushing pixels in a proprietary cloud silo, then "hands off" a series of static images and CSS snippets to an engineer. In the agentic era, this is a recipe for disaster. If your agent can't "see" the design, it will hallucinate the implementation.
 
-![The Handoff Pain](../../../public/images/posts/pencil-handoff-pain.png)
+![The Handoff Pain](/images/posts/pencil-handoff-pain.png)
 *Fig 1.1: The information loss during the traditional Figma handoff.*
 
 ## 1. The Retina: Agents Need Spatial Context
@@ -35,7 +35,7 @@ The breakthrough of **Pencil Dev** isn't just that it’s an IDE-native canvas. 
 
 By exposing the design canvas via the Model Context Protocol (MCP), Pencil gives your AI agents "eyes." When I tell Claude Opus 4.7 to *"Implement the hero section from the design,"* it doesn't guess. It calls `read_canvas`, perceives the exact flexbox layouts, padding tokens, and color variables, and compiles them into production React code.
 
-![The Agentic Loop](../../../public/images/posts/pencil-mcp-loop.png)
+![The Agentic Loop](/images/posts/pencil-mcp-loop.png)
 *Fig 1.2: The Pencil MCP visual context loop.*
 
 Without this spatial intelligence, the agent is flying blind. You spend 5,000 tokens trying to explain a "slightly more centered" button. With Pencil, the spatial context is the source of truth.
@@ -46,7 +46,7 @@ The most cynical (and brilliant) feature of Pencil is the **.pen file**.
 
 Designs are no longer stored in a black-box cloud. They live in your repository as JSON-based `.pen` files. This transforms the design from a "suggestion" into a **Technical Contract**.
 
-![The .pen Contract](../../../public/images/posts/pencil-technical-contract.png)
+![The .pen Contract](/images/posts/pencil-technical-contract.png)
 *Fig 1.3: The design file as a deterministic physical constraint in the Git tree.*
 
 When you commit a design change, you are committing a **Visual Specification**. 

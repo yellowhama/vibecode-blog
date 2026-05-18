@@ -1,12 +1,12 @@
 ---
-title: "MCP 서버는 stateless여도 shared state를 재사용하면 안 된다"
+title: "Stateless MCP Servers Can Still Leak Shared State"
 pubDatetime: 2026-05-16T08:00:00Z
-description: "MCP SDK 보안 권고가 보여준 핵심은 단순한 패키지 업데이트가 아니다. agent tool 서버에서 server와 transport의 생명주기를 계약으로 고정해야 한다."
+description: "The MCP SDK advisory is not just a package update. It is a server and transport lifecycle contract for agent tool infrastructure."
 draft: false
 featured: true
 series: "AI Market Watch"
 workflow: "legacy"
-lang: "ko"
+lang: "en"
 tags: ["engineering", "mcp", "security", "ai-agents"]
 ogImage: "/images/posts/pencil-mcp-loop.png"
 references:
@@ -15,116 +15,90 @@ references:
     guru: "GitHub Advisory Database"
 ---
 
-# MCP 서버는 stateless여도 shared state를 재사용하면 안 된다
+# Stateless MCP Servers Can Still Leak Shared State
 
-MCP 서버를 만들 때 가장 위험한 착각은 "HTTP니까 stateless겠지"다.
+The most dangerous sentence in an MCP server review is: "It is HTTP, so it is stateless."
 
-HTTP 요청은 stateless일 수 있다. 하지만 서버 코드가 같은 `McpServer` 인스턴스나 같은 transport 인스턴스를 여러 클라이언트 사이에서 재사용하면, 상태는 이미 공유되고 있다.
+The HTTP request may be stateless. The application object may not be. If one `McpServer` instance or one `StreamableHTTPServerTransport` instance is reused across clients, the agent boundary is already weaker than it looks.
 
-그 공유 상태가 agent tool 서버에서는 보안 경계가 된다.
+That shared state is not an implementation detail. In an agent tool server, shared state is a security boundary.
 
-![MCP loop sketch](../../../public/images/posts/pencil-mcp-loop.png)
+![MCP loop sketch](/images/posts/pencil-mcp-loop.png)
 
 ## What Changed
 
-GitHub Advisory `GHSA-345p-7cg4-v4c7`은 `@modelcontextprotocol/sdk`의 cross-client data leak 문제를 다룬다.
+GitHub Advisory `GHSA-345p-7cg4-v4c7` covers a cross-client data leak in `@modelcontextprotocol/sdk`.
 
-공식 권고의 핵심은 두 가지다.
+The important part is not only the version range. The operational lesson is this:
 
 ```txt
-StreamableHTTPServerTransport를 여러 요청 사이에서 재사용하지 말 것
-McpServer 또는 Server 인스턴스를 여러 transport/client 사이에서 재사용하지 말 것
+Do not reuse StreamableHTTPServerTransport across requests.
+Do not reuse one McpServer or Server instance across multiple transports or clients.
 ```
 
-영향 범위는 `@modelcontextprotocol/sdk` `1.10.0`부터 `1.25.3`까지이고, patched version은 `1.26.0`이다.
-
-이건 단순히 "패키지 업데이트 하세요"로 끝낼 문제가 아니다. MCP 서버를 어떻게 구성하는지에 대한 계약 문제다.
+That makes the fix more than "run npm update." It is a lifecycle contract.
 
 ## Why It Matters
 
-MCP는 agent에게 tool을 붙이는 표준 인터페이스가 되고 있다. 그러면 MCP 서버는 단순한 API 서버가 아니다.
-
-그 서버는 이런 것들을 다룬다.
+MCP is becoming a standard surface for agent tools. That means an MCP server may carry:
 
 ```txt
-tool call
-resource read
-prompt get
-progress notification
-server-to-client message
+tool calls
+resource reads
+prompt fetches
+progress notifications
+server-to-client messages
+sampling or elicitation flows
 ```
 
-여기서 응답이 다른 클라이언트로 잘못 가면 문제는 UI 버그가 아니다. 다른 사용자의 tool 결과, resource 내용, agent 진행 상태가 섞일 수 있다.
+If a response is delivered to the wrong client, the bug is not cosmetic. Tool results, resource contents, and agent progress can cross a boundary that operators assumed was isolated.
 
-agent infrastructure에서 가장 나쁜 실패는 조용한 실패다. 터지는 에러보다 위험한 건 잘못된 클라이언트에게 정상 응답처럼 도착하는 데이터다.
+Silent cross-client success is worse than a loud failure. A 500 tells you something broke. A normal response delivered to the wrong client can look like the system worked.
 
-## Bad Default
+## Control Contract
 
-나쁜 기본값은 singleton으로 MCP 서버를 만들어 두고 모든 요청이 그걸 쓰게 하는 것이다.
-
-대략 이런 식이다.
+The bad pattern is a module-level singleton:
 
 ```txt
 global server = new McpServer(...)
 global transport = new StreamableHTTPServerTransport(...)
-
-request A -> server/transport
-request B -> same server/transport
 ```
 
-일반 웹 서버에서는 이런 구조가 성능 최적화처럼 보일 수 있다. 하지만 MCP에서는 server와 transport가 단순 설정 객체가 아니다. 요청, transport, client, message lifecycle을 붙잡는 실행 상태다.
+That can look like a harmless optimization in a normal web service. In MCP, the server and transport are not just configuration. They carry message lifecycle and client state.
 
-그러면 stateless HTTP라는 말은 별 의미가 없어진다. 애플리케이션 객체가 stateful이면 배포 모드가 stateless여도 경계는 이미 깨졌다.
-
-## Control Contract
-
-MCP 서버의 최소 계약은 이거다.
+The minimum control contract is:
 
 ```txt
-한 request 또는 session은 자기 server/transport lifecycle을 가져야 한다.
-서로 다른 client가 같은 transport를 공유하면 안 된다.
-서로 다른 transport가 같은 connected server/protocol 인스턴스를 덮어쓰면 안 된다.
-SDK는 patched version으로 올린다.
-릴리즈 전에 dependency audit를 gate로 돌린다.
+one request or session owns its server/transport lifecycle
+different clients do not share transport state
+different transports do not overwrite one connected server/protocol instance
+the SDK is patched
+dependency audit is a release gate
 ```
 
-stateless 배포라면 request마다 fresh server와 fresh transport를 만든다.
+For stateless deployment, create fresh server and transport instances per request. For stateful sessions, separate ownership per session.
 
-stateful session을 쓴다면 session마다 server와 transport를 분리한다.
-
-중요한 건 "어디까지 공유해도 되는가"를 코드 리뷰 감으로 넘기지 않는 것이다. MCP에서는 생명주기 자체가 보안 계약이다.
+The important question is not "does the endpoint return 200?" The question is "what object owns client state, and can another client reach it?"
 
 ## Operator Checklist
 
-지금 MCP 서버를 운영하거나 만들고 있다면 이것부터 확인하면 된다.
+Before shipping an MCP tool server, check:
 
 ```txt
-@modelcontextprotocol/sdk version이 1.26.0 이상인가?
-McpServer 또는 Server 인스턴스를 module-level singleton으로 두고 있지 않은가?
-StreamableHTTPServerTransport를 여러 request에 재사용하지 않는가?
-sessionIdGenerator를 쓴다면 session별 server/transport ownership이 분리되어 있는가?
-tool handler가 progress notification, sampling, elicitation을 보내는가?
-CI에서 npm audit 또는 equivalent advisory scan이 high severity에서 실패하는가?
+Is @modelcontextprotocol/sdk patched?
+Is McpServer constructed per request or per isolated session?
+Is StreamableHTTPServerTransport reused anywhere?
+Can progress, sampling, or elicitation messages cross sessions?
+Does CI fail on relevant security advisories?
+Does the code review include lifecycle ownership, not only route handlers?
 ```
 
-하나라도 모호하면 "동작하니까 괜찮다"가 아니라 "상태 경계가 문서화되지 않았다"로 봐야 한다.
-
-## Boundary
-
-이 글은 MCP가 위험하다는 말이 아니다.
-
-오히려 반대다. MCP가 agent tool 연결의 표준 표면이 될수록, 서버 생명주기와 transport ownership을 더 명확히 해야 한다.
-
-또 이 글은 특정 서비스에서 실제 데이터 유출을 관측했다는 뜻도 아니다. 보안 권고와 로컬 dependency audit가 말하는 것은 위험한 구성의 가능성과 패치 범위다.
-
-업그레이드는 필요하다. 하지만 업그레이드만으로 코드 구조가 자동으로 좋아지지는 않는다.
+If any answer is unclear, the system does not have a control surface. It has a hope.
 
 ## Technical Verdict
 
-Agent tool 서버에서 state는 보안 경계다.
+This is not an argument against MCP. It is the opposite. As MCP becomes a serious agent infrastructure layer, server lifecycle has to become explicit.
 
-MCP 서버를 stateless로 배포하더라도, `McpServer`와 transport를 공유하면 운영자는 이미 stateful한 위험을 만든 것이다.
+Vibecode treats this as the same class of problem as Warden evidence and source-backed content: invisible state must be turned into a technical contract.
 
-패키지를 올려라. 그리고 lifecycle을 계약으로 박아라.
-
-[Read the MUSU technical contract direction](https://musu.pro)
+That is the route to [MUSU Pro](https://musu.pro): agent operations should not trust "stateless" as a label. They should verify ownership, boundaries, and evidence.

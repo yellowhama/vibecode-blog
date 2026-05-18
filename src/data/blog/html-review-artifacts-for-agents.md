@@ -1,12 +1,12 @@
 ---
-title: "에이전트가 쓴 긴 계획서를 HTML로 검토하는 법"
+title: "Use HTML to Review Agent Output, Not to Replace the Contract"
 pubDatetime: 2026-05-18T15:00:00Z
-description: "Claude Code가 긴 계획서와 PR 설명을 HTML로 만들면 읽기는 쉬워진다. 하지만 원본 계약은 Markdown이나 JSON에 남겨야 한다."
+description: "Claude Code can make long plans, PR explainers, and reports easier to read as HTML. The source of truth still has to return to Markdown, JSON, or evidence files."
 draft: false
 featured: false
 series: "AI Tool Note"
 workflow: "packet"
-lang: "ko"
+lang: "en"
 tags: ["ai-tools", "claude-code", "agentic-engineering", "technical-contracts"]
 ogImage: "/images/posts/pencil-technical-contract.png"
 references:
@@ -21,42 +21,38 @@ references:
     guru: "Simon Willison"
 ---
 
-# 에이전트가 쓴 긴 계획서를 HTML로 검토하는 법
+# Use HTML to Review Agent Output, Not to Replace the Contract
 
-AI 코딩 에이전트가 계획을 못 써서 문제가 생기는 게 아니다.
+AI coding agents no longer struggle to write plans. The newer failure mode is that they write plans nobody reads.
 
-요즘 더 흔한 문제는 계획을 너무 길게 잘 쓴다는 것이다. 200줄짜리 Markdown 계획서가 생기고, PR 설명이 길어지고, 리서치 요약이 표와 코드와 다이어그램을 한꺼번에 품으려 한다. 그리고 사람은 조용히 스크롤을 내린다. 읽은 척한다. 다음 프롬프트로 넘어간다.
+A 200-line Markdown plan appears. The PR explanation gets longer. The research summary includes tables, diffs, timelines, snippets, and caveats. The human scrolls, nods, and moves to the next prompt.
 
-이건 문서 포맷 취향 문제가 아니다.
+That is not a writing problem. It is a review-surface problem.
 
-검토 표면이 깨진 것이다.
-
-![Technical contract sketch](../../../public/images/posts/pencil-technical-contract.png)
+![Technical contract sketch](/images/posts/pencil-technical-contract.png)
 
 ## The Skipped Plan Problem
 
-Thariq Shihipar가 Claude Code에서 Markdown 대신 HTML artifact를 선호한다는 글을 올렸다. 함께 공개된 예시 페이지에는 exploration, PR review, design system, prototype, incident report, prompt tuner 같은 20개 HTML 산출물이 정리돼 있다.
+Thariq Shihipar argues for using HTML artifacts with Claude Code because HTML can carry more information density: tables, SVG diagrams, layouts, interactive controls, code snippets, visual grouping, and shareable browser pages.
 
-핵심은 "HTML이 예쁘다"가 아니다.
+The point is not that HTML is prettier than Markdown.
 
-에이전트가 만든 결과물을 사람이 실제로 읽고, 비교하고, 조작하고, 결정할 수 있게 만드는 것이다.
+The point is that some agent outputs need to be compared, scanned, manipulated, and reviewed visually. Markdown is excellent for durable text. It is weaker when the reviewer needs a module map, annotated diff, incident timeline, design variant grid, or small throwaway editor.
 
-Markdown은 기록하기 좋다. diff가 쉽고, 어디서나 열리고, 에이전트도 잘 쓴다. 하지만 긴 계획서, annotated diff, module map, incident timeline, design variant 같은 산출물은 평평한 텍스트로 들어가면 검토 비용이 커진다.
-
-그 순간 필요한 것은 더 좋은 문장이 아니라 더 좋은 review surface다.
+When the review surface is wrong, the artifact may be technically complete and still operationally useless.
 
 ## Keep Markdown As Canon
 
-여기서 바로 "그럼 Markdown 버리자"로 가면 안 된다.
+The wrong conclusion is: "Replace Markdown with HTML."
 
-Vibecode 기준은 반대다.
+Vibecode's rule is narrower:
 
 ```txt
 Markdown is the contract.
 HTML is the review surface.
 ```
 
-원본 계약은 Markdown이나 JSON에 남아야 한다.
+Canon still belongs in durable, diffable formats:
 
 ```txt
 source note
@@ -68,48 +64,36 @@ manifest
 runtime evidence JSON
 ```
 
-이런 것들은 오래 남고, 검색되고, diff되고, 다음 에이전트가 다시 읽어야 한다. HTML만 남기면 예쁘게 보이지만 운영 기억으로는 약해질 수 있다. 특히 generated HTML은 diff가 시끄럽고, CSS와 JS가 섞이면 나중에 무엇이 결정이고 무엇이 장식인지 흐려진다.
+Those files need to be searchable, reviewable in Git, and reusable by the next agent. Generated HTML is noisy in version control, especially once CSS and JavaScript are mixed into the document.
 
-그래서 HTML은 canon이 아니라 review artifact로 써야 한다.
+So HTML should sit above the contract, not replace it.
 
-## When HTML Wins
+## Where HTML Wins
 
-HTML이 이기는 순간은 분명하다.
-
-```txt
-비교해야 한다
-탐색해야 한다
-시각 구조가 중요하다
-작은 인터랙션이 필요하다
-다른 사람에게 링크로 보여줘야 한다
-```
-
-예를 들어 에이전트에게 "이 PR 설명 써줘"라고 하면 Markdown이 나올 것이다. 그런데 streaming/backpressure 로직을 잘 모르는 리뷰어에게 보여줘야 한다면 HTML artifact가 더 낫다.
+HTML is useful when the human needs to do one of these:
 
 ```txt
-annotated diff
-severity labels
-module map
-jump links
-risk table
-review checklist
+compare options side by side
+inspect a flow visually
+review annotated diffs
+scan an incident timeline
+tune a prompt or animation with controls
+share a readable report with another person
 ```
 
-이런 구조는 GitHub diff나 긴 Markdown보다 빨리 읽힌다.
+For example, "write a PR description" can be Markdown. But "explain streaming and backpressure to a reviewer who does not know this subsystem" is often better as an HTML artifact with callouts, diagrams, and highlighted code snippets.
 
-기획도 마찬가지다. "온보딩 화면 방향 6개"를 Markdown으로 받으면 사람은 머릿속에서 여섯 화면을 상상해야 한다. HTML grid로 받으면 각 방향의 density, tone, layout, tradeoff를 한 화면에서 비교할 수 있다.
+Planning works the same way. Six onboarding directions in Markdown force the reader to imagine six screens. Six directions in an HTML grid let the reader compare density, tone, layout, and tradeoff at once.
 
-이건 장식이 아니다. 의사결정 속도다.
+That is not decoration. It is decision speed.
 
 ## The Export Rule
 
-HTML artifact에서 가장 중요한 규칙은 export다.
+Interactive HTML artifacts need one hard requirement: export.
 
-인터랙티브한 HTML은 좋다. 슬라이더로 애니메이션 속도를 조절하고, drag-and-drop으로 티켓 우선순위를 바꾸고, prompt template을 live preview로 튜닝할 수 있다.
+If a slider tunes animation timing, if a drag-and-drop board reprioritizes tickets, or if a prompt editor previews filled templates, the final decision cannot stay trapped in the browser.
 
-하지만 결정이 HTML 안에만 갇히면 운영이 망가진다.
-
-그래서 모든 interactive artifact는 마지막에 이 중 하나를 가져야 한다.
+Every interactive review artifact should export one of these:
 
 ```txt
 copy as Markdown
@@ -119,79 +103,27 @@ copy as patch checklist
 copy as decision record
 ```
 
-사람이 브라우저에서 결정한다. 그 결정은 다시 canon으로 돌아간다.
+Without export, HTML becomes hidden state. With export, the human can decide in the browser and send the result back into the durable contract.
 
-이 export가 없으면 HTML은 검토 도구가 아니라 숨은 상태가 된다.
+## Prompt Pattern
 
-## A Practical Prompt
-
-Claude Code나 Codex에 이렇게 요청하면 된다.
+Ask for the review surface and the return path:
 
 ```txt
-Create a single-file HTML review artifact from these source files.
-
-Purpose:
-- help a senior engineer inspect and decide, not admire the design.
-
-Include:
-- source inventory;
-- TL;DR;
-- decision surface;
-- evidence map;
-- risk table;
-- annotated diff or code snippets if relevant;
-- visual map or timeline if useful;
-- open questions;
-- explicit non-claims;
-- copy-as-Markdown decision record.
-
-Constraints:
-- no external network calls;
-- no secrets;
-- no unsupported claims;
-- keep the canonical source in Markdown/JSON;
-- do not make the HTML artifact the source of truth.
+Create a single HTML review artifact for this PR.
+Read the source files and show the data flow, the risky diff chunks, and the acceptance checks.
+Add a copy button that exports the final review notes as Markdown.
+Do not make the HTML the source of truth.
 ```
 
-중요한 건 "HTML로 예쁘게 만들어줘"가 아니다.
+That last sentence is the important part.
 
-무엇을 결정해야 하는지, 어떤 source를 읽었는지, 어떤 export가 필요한지 먼저 정해야 한다.
+## Technical Verdict
 
-## Boundary
+Agent output needs UX. If people do not read the plan, the plan is not doing its job.
 
-HTML artifact는 위험도 있다.
+But visual polish can hide weak evidence. A beautiful timeline with no source inventory is still a guess. A dashboard with no export path is still hidden state.
 
-첫째, generated JavaScript를 너무 쉽게 믿게 된다. copy button이나 filter 정도는 괜찮을 수 있지만, remote call, file mutation, credential handling이 들어가면 더 이상 문서가 아니다. 작은 앱이다. 작은 앱이면 리뷰가 필요하다.
+Vibecode accepts HTML artifacts as review tools because they make complex agent output easier to inspect. It does not accept them as the contract.
 
-둘째, visual polish가 약한 근거를 가릴 수 있다. 카드, 색상, timeline이 있으면 분석이 탄탄해 보인다. 하지만 source inventory가 없고 non-claims가 없으면 그냥 잘 꾸민 추측이다.
-
-셋째, 버전 관리가 약해진다. Markdown diff는 읽을 수 있지만 HTML diff는 금방 소음이 된다.
-
-그래서 HTML artifact에는 이 경계가 필요하다.
-
-```txt
-No secrets.
-No external network calls.
-No HTML-only source of truth.
-No unsupported product claims.
-No hidden state without export.
-```
-
-## Vibecode Verdict
-
-에이전트가 만든 긴 문서를 사람이 읽지 않는다면, 그건 작은 운영 장애다.
-
-Markdown을 더 길게 만들면 해결되지 않는다. 에이전트 output에도 UX가 필요하다.
-
-다만 source of truth는 여전히 차갑고 지루해야 한다. Markdown, JSON, manifest, evidence bundle. 검색되고 diff되고 다음 세션이 재사용할 수 있어야 한다.
-
-HTML은 그 위에 놓는 cockpit이다.
-
-계획을 읽게 만들고, diff를 이해하게 만들고, incident를 timeline으로 보게 만들고, prompt나 config를 조작하게 만든다. 그리고 마지막에는 결정을 다시 canon으로 export한다.
-
-그게 Vibecode가 이 패턴을 받아들이는 방식이다.
-
-HTML은 계약을 대체하지 않는다. 계약을 검토 가능하게 만든다.
-
-[Read the MUSU technical contract direction](https://musu.pro)
-
+That is the same standard we use for [MUSU Pro](https://musu.pro): the interface can be rich, but the proof has to return to evidence, manifests, and verifiable boundaries.

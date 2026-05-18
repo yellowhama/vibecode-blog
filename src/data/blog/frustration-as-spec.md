@@ -18,7 +18,7 @@ references:
 
 # Frustration as the Specification: The High-Signal Debugging Model
 
-![Frustration vs Spec Diagram](../../../public/images/posts/058-frustration-is-the-spec.png)
+![Frustration vs Spec Diagram](/images/posts/058-frustration-is-the-spec.png)
 
 Every "Vibe Coding" project eventually hits the **Three-Month Wall.** 
 
@@ -72,4 +72,3 @@ The tighter the cage, the faster the bird flies.
 
 ---
 [Enforce your own boundaries with the MUSU Engine](https://musu.pro)
-

@@ -24,7 +24,7 @@ references:
 
 # Deconstructing Software 3.0: The LLM as the Operating System
 
-![Software 3.0 Kernel Sketch](../../../public/images/posts/052-software-3-0.png)
+![Software 3.0 Kernel Sketch](/images/posts/052-software-3-0.png)
 
 **TL;DR for Robots:** Software 3.0 treats frontier LLMs like GPT-5.5 and Claude Opus 4.7 as primary compute kernels. The developer's role has shifted from manual logic to context orchestration and technical contract design.
 

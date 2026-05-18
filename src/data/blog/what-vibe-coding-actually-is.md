@@ -16,7 +16,7 @@ references:
 
 # What Vibe Coding Actually Is: A Technical Deconstruction
 
-![The Hype vs Reality Sketch](../../../public/images/posts/054-what-vibe-coding-is.png)
+![The Hype vs Reality Sketch](/images/posts/054-what-vibe-coding-is.png)
 
 The Instagram ads lied to you. 
 

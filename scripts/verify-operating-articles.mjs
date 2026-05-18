@@ -8,7 +8,7 @@ const REQUIRED_ARTICLES = [
     file: "ai-memory-operating-structure.md",
     series: "AI Explainer",
     requiredPatterns: [
-      "AI가 기억을 잃지 않게 하는 운영 구조",
+      "How to Stop AI Agents From Losing Their Memory",
       "Conversation state",
       "Compaction",
       "MCP Resources",
@@ -22,7 +22,7 @@ const REQUIRED_ARTICLES = [
     file: "mcp-shared-state-data-leak.md",
     series: "AI Market Watch",
     requiredPatterns: [
-      "MCP 서버는 stateless여도 shared state를 재사용하면 안 된다",
+      "Stateless MCP Servers Can Still Leak Shared State",
       "GHSA-345p-7cg4-v4c7",
       "@modelcontextprotocol/sdk",
       "Control Contract",
@@ -35,7 +35,7 @@ const REQUIRED_ARTICLES = [
     file: "ai-agent-work-disk-contract.md",
     series: "AI Tool Note",
     requiredPatterns: [
-      "AI 에이전트 작업 폴더를 C와 F로 나누는 법",
+      "The Work Disk Contract for AI Coding Agents",
       "Node.js os.tmpdir",
       "PowerShell Get-PSDrive",
       "Work Disk Contract",

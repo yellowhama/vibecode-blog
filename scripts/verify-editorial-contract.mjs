@@ -1,16 +1,19 @@
-import { readdir, readFile } from "node:fs/promises";
+import { access, readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 
 const BLOG_DIR = "src/data/blog";
 
 const CONTRACT_ANCHOR =
-  /\b(technical contract|contract|boundary|deterministic|local-first|audit trail|control surface|policy|evidence|source-backed|verified|warden|musu)\b|계약|경계|증거|검증|감사|출처/i;
+  /\b(technical contract|contract|boundary|deterministic|local-first|audit trail|control surface|policy|evidence|source-backed|verified|warden|musu)\b/i;
 
 const PROOF_ROUTE =
   /https:\/\/musu\.pro|github\.com\/yellowhama|musu|warden|field log|technical contract|install\.sh/i;
 
 const EVIDENCE_ANCHOR =
-  /references:\s*(?:\r?\n\s*-|$)|https?:\/\/|```|`[^`]+`|verified fix|real failure|source-backed|audit|advisory|log|command|config|screenshot|diff|evidence|증거|출처|검증/i;
+  /references:\s*(?:\r?\n\s*-|$)|https?:\/\/|```|`[^`]+`|verified fix|real failure|source-backed|audit|advisory|log|command|config|screenshot|diff|evidence/i;
+
+const HANGUL = /[\u3131-\u318e\uac00-\ud7a3]/;
+const MARKDOWN_IMAGE = /!\[[^\]]+\]\(([^)]+)\)/g;
 
 function parseMarkdown(text) {
   const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
@@ -30,10 +33,27 @@ function isDraft(frontmatter) {
   return /^draft:\s*true\s*$/m.test(frontmatter);
 }
 
-function checkPost(file, text) {
+function publicImagePathToFile(path) {
+  const cleanPath = path.split(/[?#]/)[0];
+  if (!cleanPath.startsWith("/images/")) return null;
+  return join("public", cleanPath.slice(1));
+}
+
+async function exists(path) {
+  try {
+    await access(path);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function checkPost(file, text) {
   const { frontmatter, body } = parseMarkdown(text);
   const title = getFrontmatterValue(frontmatter, "title");
   const description = getFrontmatterValue(frontmatter, "description");
+  const lang = getFrontmatterValue(frontmatter, "lang");
+  const ogImage = getFrontmatterValue(frontmatter, "ogImage");
   const combined = `${frontmatter}\n${body}`;
   const failures = [];
 
@@ -47,6 +67,41 @@ function checkPost(file, text) {
   }
   if (!EVIDENCE_ANCHOR.test(combined)) {
     failures.push("missing source/evidence anchor such as references, URL, command, config, audit, log, or code block");
+  }
+  if (HANGUL.test(combined)) {
+    failures.push("public posts must be English; Hangul text is not allowed");
+  }
+  if (lang && lang.toLowerCase() !== "en") {
+    failures.push(`public posts must use lang "en" when lang is set, got "${lang}"`);
+  }
+  if (!ogImage) {
+    failures.push("missing ogImage");
+  } else if (ogImage.startsWith("http://") || ogImage.startsWith("https://")) {
+    failures.push("ogImage must be a local /images/... asset");
+  } else {
+    const ogImageFile = publicImagePathToFile(ogImage);
+    if (!ogImageFile) {
+      failures.push(`ogImage must use a public image path starting with /images/: ${ogImage}`);
+    } else if (!(await exists(ogImageFile))) {
+      failures.push(`ogImage file does not exist: ${ogImage}`);
+    }
+  }
+
+  const markdownImages = [...body.matchAll(MARKDOWN_IMAGE)].map((match) => match[1].trim());
+  if (markdownImages.length === 0) {
+    failures.push("missing in-body markdown image");
+  }
+  for (const imagePath of markdownImages) {
+    if (imagePath.includes("public/images") || imagePath.startsWith("../")) {
+      failures.push(`markdown image must use browser path /images/..., not source path: ${imagePath}`);
+      continue;
+    }
+    const imageFile = publicImagePathToFile(imagePath);
+    if (!imageFile) {
+      failures.push(`markdown image must use a local /images/... asset: ${imagePath}`);
+    } else if (!(await exists(imageFile))) {
+      failures.push(`markdown image file does not exist: ${imagePath}`);
+    }
   }
 
   return {
@@ -65,7 +120,7 @@ async function main() {
   const results = [];
   for (const file of files) {
     const text = await readFile(join(BLOG_DIR, file), "utf8");
-    const result = checkPost(file, text);
+    const result = await checkPost(file, text);
     if (!result.draft) {
       results.push(result);
     }

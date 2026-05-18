@@ -30,7 +30,7 @@ package.json depended on cp -r
 
 That is not a deployment contract. That is a hosting habit.
 
-![Deployment contract sketch](../../../public/images/posts/pencil-technical-contract.png)
+![Deployment contract sketch](/images/posts/pencil-technical-contract.png)
 
 ## Broken System
 

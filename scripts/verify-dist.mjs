@@ -23,6 +23,7 @@ const contentChecks = [
 ];
 
 const failures = [];
+const HANGUL = /[\u3131-\u318e\uac00-\ud7a3]/;
 
 async function exists(path) {
   try {
@@ -79,6 +80,26 @@ if (await exists(pagefindDir)) {
   const info = await stat(pagefindDir);
   if (!info.isDirectory()) {
     failures.push("pagefind is not a directory");
+  }
+}
+
+const postsDir = join(distDir, "posts");
+if (await exists(postsDir)) {
+  const entries = await readdir(postsDir, { withFileTypes: true });
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const postHtmlPath = join(postsDir, entry.name, "index.html");
+    if (!(await exists(postHtmlPath))) continue;
+    const text = await readFile(postHtmlPath, "utf8");
+    if (HANGUL.test(text)) {
+      failures.push(`posts/${entry.name}/index.html contains Hangul; public posts must be English`);
+    }
+    if (text.includes("public/images") || text.includes("../../../public/images")) {
+      failures.push(`posts/${entry.name}/index.html contains source image path instead of public /images path`);
+    }
+    if (!/<img\b[^>]+src="\/images\//.test(text)) {
+      failures.push(`posts/${entry.name}/index.html has no rendered /images/ asset`);
+    }
   }
 }
 
