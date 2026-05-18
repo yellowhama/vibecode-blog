@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T13:44:47.292Z",
+  "generated_at": "2026-05-18T14:05:05.810Z",
   "source": "F:\\Aisaak\\CompanyArtifacts\\llm-wiki-completed",
   "packets": {
     "ai-agent-work-disk-contract": {
@@ -67,6 +67,40 @@
           "suffix": "draft-critique",
           "path": "companies/vibecode-town/plans/ai-memory-operating-structure-draft-critique.md",
           "sha256": "a3dd6b10d872d8fcbc46ceff6ff23bb9ee2ee177492b1837caaa0ab7f60a65b9"
+        }
+      ]
+    },
+    "html-review-artifacts-for-agents": {
+      "files": [
+        {
+          "suffix": "reader-pressure",
+          "path": "companies/vibecode-town/plans/html-review-artifacts-for-agents-reader-pressure.md",
+          "sha256": "db1e5e8c5a781d7351d34ff783851775b596dccf332fc59478fbbcb9a42eb93b"
+        },
+        {
+          "suffix": "title-angle",
+          "path": "companies/vibecode-town/plans/html-review-artifacts-for-agents-title-angle.md",
+          "sha256": "b1edb239738aa7162b11de448c6935b0ef5759c413eba94312a461fc6603c1aa"
+        },
+        {
+          "suffix": "evidence-bundle",
+          "path": "companies/vibecode-town/plans/html-review-artifacts-for-agents-evidence-bundle.md",
+          "sha256": "0a0554cb62fc3e92babbd0badc03c56a9c4ddd1d314d5c6cbb5118a68d325848"
+        },
+        {
+          "suffix": "brief",
+          "path": "companies/vibecode-town/plans/html-review-artifacts-for-agents-brief.md",
+          "sha256": "1764ffd19cd37ecb9de4e4e65af10a5113f617f7b53a8a9bfebfed1829e063fd"
+        },
+        {
+          "suffix": "gate-0",
+          "path": "companies/vibecode-town/plans/html-review-artifacts-for-agents-gate-0.md",
+          "sha256": "5286393e631e27dd0fc205b6945d832c5f41eadd44c473dbca3e8c240ad6d210"
+        },
+        {
+          "suffix": "draft-critique",
+          "path": "companies/vibecode-town/plans/html-review-artifacts-for-agents-draft-critique.md",
+          "sha256": "5a57528647939046c73fd9c75d4b070dba70aaf4f52c0256159397da047cbebd"
         }
       ]
     }
