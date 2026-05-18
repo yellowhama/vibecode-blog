@@ -19,11 +19,17 @@ const contentChecks = [
   ["rss.xml", "<rss"],
   ["robots.txt", "Sitemap:"],
   ["sitemap.xml", "<sitemapindex"],
-  ["install.sh", "raw.githubusercontent.com"],
+  ["install.sh", "vibecode.town install route is intentionally inert"],
 ];
 
 const failures = [];
 const HANGUL = /[\u3131-\u318e\uac00-\ud7a3]/;
+const FORBIDDEN_PRODUCT_MENTIONS = [
+  { label: "musu.pro", pattern: /musu\.pro/i },
+  { label: "MUSU Pro", pattern: /\bMUSU\s+Pro\b/i },
+  { label: "MUSU", pattern: /\bMUSU\b/ },
+  { label: "musu-bee", pattern: /\bmusu-bee\b/i },
+];
 
 async function exists(path) {
   try {
@@ -59,6 +65,12 @@ if (await exists(postsJsonPath)) {
     const payload = JSON.parse(await readFile(postsJsonPath, "utf8"));
     if (!Array.isArray(payload.posts) || payload.posts.length === 0) {
       failures.push("api/posts.json has no posts array");
+    } else {
+      for (const post of payload.posts) {
+        if (!post.ogImage || typeof post.ogImage !== "string" || !post.ogImage.startsWith("/images/")) {
+          failures.push(`api/posts.json post "${post.slug ?? post.title ?? "unknown"}" is missing local ogImage`);
+        }
+      }
     }
   } catch (error) {
     failures.push(`api/posts.json is invalid JSON: ${error.message}`);
@@ -102,6 +114,27 @@ if (await exists(postsDir)) {
     }
   }
 }
+
+async function scanForbiddenText(root) {
+  if (!(await exists(root))) return;
+  const entries = await readdir(root, { withFileTypes: true });
+  for (const entry of entries) {
+    const path = join(root, entry.name);
+    if (entry.isDirectory()) {
+      await scanForbiddenText(path);
+      continue;
+    }
+    if (!/\.(?:css|excalidraw|html|json|js|svg|txt|xml)$/i.test(entry.name)) continue;
+    const text = await readFile(path, "utf8");
+    for (const forbidden of FORBIDDEN_PRODUCT_MENTIONS) {
+      if (forbidden.pattern.test(text)) {
+        failures.push(`${path} contains forbidden public product mention "${forbidden.label}"`);
+      }
+    }
+  }
+}
+
+await scanForbiddenText(distDir);
 
 if (failures.length > 0) {
   process.stderr.write("Static artifact verification failed:\n");

@@ -4,7 +4,7 @@
     .text-sub { fill: #8B6B00; }
     .symbol-stroke { stroke: #FFD166; }
 
-    /* Astro and musu-bee standard theme attributes */
+    /* AstroPaper-compatible theme attributes */
     :root[data-theme='dark'] .text-main { fill: #FDFCF0 !important; }
     :root[data-theme='dark'] .text-sub { fill: #FFF133 !important; }
     :root[data-theme='dark'] .symbol-stroke { stroke: #FFF133 !important; }

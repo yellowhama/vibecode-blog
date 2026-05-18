@@ -1,7 +1,7 @@
 {
   "schema_version": "v1",
   "name": "vibecode.town",
-  "description": "Practical notes on running AI coding agents across machines — by the builder of MUSU.",
+  "description": "Practical notes on AI coding agents, operating memory, source-backed publishing, and technical contracts.",
   "url": "https://vibecode.town",
   "author": {
     "name": "Hugh",
@@ -26,7 +26,7 @@
     "sitemap": "/sitemap-index.xml"
   },
   "links": {
-    "github": "https://github.com/yellowhama/musu-bee",
-    "docs": "https://musu.pro"
+    "github": "https://github.com/yellowhama/vibecode-blog",
+    "docs": "https://vibecode.town/about"
   }
 }

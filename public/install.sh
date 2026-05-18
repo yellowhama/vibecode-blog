@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 set -eu
 
-# Canonical MUSU installer source:
-# https://github.com/yellowhama/musu-bee/blob/main/install.sh
-curl -fsSL https://raw.githubusercontent.com/yellowhama/musu-bee/main/install.sh | sh
+# Static route fixture used by the deployment-contract article.
+# Replace this with a real installer only when the target product and owner are explicit.
+printf '%s\n' "vibecode.town install route is intentionally inert."

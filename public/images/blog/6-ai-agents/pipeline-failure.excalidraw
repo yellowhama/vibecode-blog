@@ -28,7 +28,7 @@
     {"id": "publish", "type": "rectangle", "x": 560, "y": 70, "width": 130, "height": 70, "strokeColor": "#2D1D19", "backgroundColor": "#FDFCF0", "fillStyle": "solid", "roughness": 2, "strokeWidth": 3},
     {"id": "publish-text", "type": "text", "x": 570, "y": 80, "width": 110, "height": 50, "text": "DO NOT\nPUBLISH\n⚠️", "fontSize": 16, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
 
-    {"id": "output-label", "type": "text", "x": 155, "y": 155, "width": 350, "height": 20, "text": "\"MUSU is a revolutionary AI agent runtime that leverages...\"", "fontSize": 11, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
+    {"id": "output-label", "type": "text", "x": 155, "y": 155, "width": 350, "height": 20, "text": "\"Our AI agent runtime is a revolutionary platform...\"", "fontSize": 11, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"},
 
     {"id": "question", "type": "text", "x": 200, "y": 190, "width": 300, "height": 40, "text": "The Editor scored everything 8.5.\nThe rubric was too vague to fail anything.", "fontSize": 13, "fontFamily": 4, "strokeColor": "#2D1D19", "textAlign": "center"}
   ],
