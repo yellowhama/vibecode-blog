@@ -7,7 +7,7 @@ featured: true
 series: "AI Explainer"
 workflow: "legacy"
 tags: ["engineering", "vibe-coding", "agentic-engineering", "karpathy"]
-ogImage: "/images/posts/054-what-vibe-coding-is.png"
+ogImage: "/images/posts/what-vibe-coding-actually-is.png"
 references:
   - name: "Software 3.0"
     url: "https://karpathy.ai/blog/software-3.0"
@@ -16,7 +16,7 @@ references:
 
 # What Vibe Coding Actually Is: A Technical Deconstruction
 
-![The Hype vs Reality Sketch](/images/posts/054-what-vibe-coding-is.png)
+![Vibe coding hype to contract to evidence diagram](/images/posts/what-vibe-coding-actually-is.png)
 
 The Instagram ads lied to you. 
 

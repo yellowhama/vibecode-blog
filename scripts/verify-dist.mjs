@@ -79,10 +79,21 @@ if (await exists(postsJsonPath)) {
     if (!Array.isArray(payload.posts) || payload.posts.length === 0) {
       failures.push("api/posts.json has no posts array");
     } else {
+      const imageOwners = new Map();
       for (const post of payload.posts) {
+        const slug = String(post.slug ?? post.title ?? "unknown").split("/").filter(Boolean).pop();
+        const expectedImage = `/images/posts/${slug}.png`;
         if (!post.ogImage || typeof post.ogImage !== "string" || !post.ogImage.startsWith("/images/")) {
           failures.push(`api/posts.json post "${post.slug ?? post.title ?? "unknown"}" is missing local ogImage`);
+        } else if (post.ogImage !== expectedImage) {
+          failures.push(`api/posts.json post "${post.slug ?? post.title ?? "unknown"}" must use post-specific ogImage ${expectedImage}, got ${post.ogImage}`);
         } else {
+          const previousOwner = imageOwners.get(post.ogImage);
+          if (previousOwner) {
+            failures.push(`api/posts.json post "${post.slug ?? post.title ?? "unknown"}" reuses ogImage from ${previousOwner}: ${post.ogImage}`);
+          } else {
+            imageOwners.set(post.ogImage, post.slug ?? post.title ?? "unknown");
+          }
           await checkImageAsset(`api/posts.json post "${post.slug ?? post.title ?? "unknown"}"`, post.ogImage);
         }
       }

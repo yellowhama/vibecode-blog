@@ -8,7 +8,7 @@ series: "AI Tool Note"
 workflow: "packet"
 lang: "en"
 tags: ["ai-tools", "engineering", "local-first", "technical-contracts"]
-ogImage: "/images/posts/pencil-technical-contract.png"
+ogImage: "/images/posts/ai-agent-work-disk-contract.png"
 references:
   - name: "Node.js os.tmpdir"
     url: "https://nodejs.org/api/os.html#ostmpdir"
@@ -31,7 +31,7 @@ If all of that falls into the operating system default temp folder, the agent is
 
 The problem is not "the C drive is small." The problem is that there is no work disk contract.
 
-![Technical contract sketch](/images/posts/pencil-technical-contract.png)
+![AI work disk contract diagram](/images/posts/ai-agent-work-disk-contract.png)
 
 ## Bad Default
 

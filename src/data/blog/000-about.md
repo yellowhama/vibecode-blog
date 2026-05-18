@@ -5,7 +5,7 @@ description: "Why I'm deconstructing the agentic era and building deterministic 
 draft: false
 series: "About"
 tags: ["philosophy", "vibe-coding"]
-ogImage: "/images/posts/pencil-technical-contract.png"
+ogImage: "/images/posts/000-about.png"
 ---
 
 # The Vibe Coding Project
@@ -16,7 +16,7 @@ Like everyone else, I was seduced by the promise of Software 3.0: talk to a micr
 
 This blog is a series of incident reports. I am a student of the Gurus (Karpathy, Willison, Husain), trying to find the equilibrium between the stochastic power of LLMs and the deterministic requirements of production engineering.
 
-![Technical contract sketch](/images/posts/pencil-technical-contract.png)
+![Vibe Coding Project operating log diagram](/images/posts/000-about.png)
 
 ## The Mission
 1. **Deconstruct the Hype:** Audit tools like Cursor, Windsurf, and Pencil Dev without the marketing lens.

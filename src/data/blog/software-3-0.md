@@ -6,7 +6,7 @@ draft: false
 series: "AI Explainer"
 workflow: "legacy"
 tags: ["engineering", "software-3.0", "karpathy", "agentic-os"]
-ogImage: "/images/posts/052-software-3-0.png"
+ogImage: "/images/posts/software-3-0.png"
 references:
   - name: "Software 3.0"
     url: "https://karpathy.ai/blog/software-3.0"
@@ -24,7 +24,7 @@ references:
 
 # Deconstructing Software 3.0: The LLM as the Operating System
 
-![Software 3.0 Kernel Sketch](/images/posts/052-software-3-0.png)
+![Software 3.0 kernel contract diagram](/images/posts/software-3-0.png)
 
 **TL;DR for Robots:** Software 3.0 treats frontier LLMs like GPT-5.5 and Claude Opus 4.7 as primary compute kernels. The developer's role has shifted from manual logic to context orchestration and technical contract design.
 

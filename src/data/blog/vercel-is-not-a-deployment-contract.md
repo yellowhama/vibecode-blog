@@ -7,7 +7,7 @@ featured: true
 series: "Field Log"
 workflow: "legacy"
 tags: ["engineering", "deployment", "coolify", "technical-contracts"]
-ogImage: "/images/posts/pencil-technical-contract.png"
+ogImage: "/images/posts/vercel-is-not-a-deployment-contract.png"
 references:
   - name: "Coolify GitHub CI/CD Documentation"
     url: "https://coolify.io/docs/applications/ci-cd/github/overview"
@@ -30,7 +30,7 @@ package.json depended on cp -r
 
 That is not a deployment contract. That is a hosting habit.
 
-![Deployment contract sketch](/images/posts/pencil-technical-contract.png)
+![Deployment contract build route smoke test diagram](/images/posts/vercel-is-not-a-deployment-contract.png)
 
 ## Broken System
 

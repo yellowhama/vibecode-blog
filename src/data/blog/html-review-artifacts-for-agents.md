@@ -8,7 +8,7 @@ series: "AI Tool Note"
 workflow: "packet"
 lang: "en"
 tags: ["ai-tools", "claude-code", "agentic-engineering", "technical-contracts"]
-ogImage: "/images/posts/pencil-technical-contract.png"
+ogImage: "/images/posts/html-review-artifacts-for-agents.png"
 references:
   - name: "Thariq X post"
     url: "https://x.com/trq212/status/2052809885763747935"
@@ -29,7 +29,7 @@ A 200-line Markdown plan appears. The PR explanation gets longer. The research s
 
 That is not a writing problem. It is a review-surface problem.
 
-![Technical contract sketch](/images/posts/pencil-technical-contract.png)
+![HTML review artifact export loop diagram](/images/posts/html-review-artifacts-for-agents.png)
 
 ## The Skipped Plan Problem
 

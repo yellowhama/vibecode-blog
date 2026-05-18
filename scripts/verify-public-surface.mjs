@@ -1,6 +1,6 @@
 import { access, readdir, readFile } from "node:fs/promises";
 import { stat } from "node:fs/promises";
-import { join } from "node:path";
+import { basename, join } from "node:path";
 
 const SCAN_ROOTS = ["src/data/blog", "public"];
 const TEXT_FILE_EXTENSIONS = new Set([
@@ -99,11 +99,13 @@ function findForbiddenMentions(file, text) {
   return failures;
 }
 
-async function checkPublishedPost(file, text) {
+async function checkPublishedPost(file, text, imageOwners) {
   const { frontmatter, body } = parseMarkdown(text);
   if (isDraft(frontmatter)) return [];
 
   const failures = [];
+  const slug = basename(file, ".md");
+  const expectedImage = `/images/posts/${slug}.png`;
   const lang = getFrontmatterValue(frontmatter, "lang");
   const ogImage = getFrontmatterValue(frontmatter, "ogImage");
   const bodyImages = [...body.matchAll(/!\[[^\]]*\]\(([^)]+)\)/g)]
@@ -116,12 +118,26 @@ async function checkPublishedPost(file, text) {
     failures.push(`${file}: published post is missing ogImage`);
   } else if (!PUBLIC_IMAGE_PATH.test(ogImage)) {
     failures.push(`${file}: ogImage must be a local /images/... asset`);
+  } else if (ogImage !== expectedImage) {
+    failures.push(`${file}: ogImage must be the post-specific image ${expectedImage}, got ${ogImage}`);
   } else {
     await assertImageFile(publicPathToFile(ogImage), ogImage, failures, file);
   }
 
-  if (bodyImages.length === 0) {
-    failures.push(`${file}: published post is missing an in-body markdown image`);
+  if (ogImage) {
+    const previousOwner = imageOwners.get(ogImage);
+    if (previousOwner) {
+      failures.push(`${file}: ogImage is reused by ${previousOwner}; every published post needs its own image`);
+    } else {
+      imageOwners.set(ogImage, file);
+    }
+  }
+
+  if (bodyImages.length !== 1) {
+    failures.push(`${file}: published posts must have exactly one in-body markdown image, got ${bodyImages.length}`);
+  }
+  if (bodyImages.length === 1 && bodyImages[0] !== ogImage) {
+    failures.push(`${file}: in-body markdown image must match ogImage ${ogImage}, got ${bodyImages[0]}`);
   }
   for (const imagePath of bodyImages) {
     if (!PUBLIC_IMAGE_PATH.test(imagePath)) {
@@ -138,6 +154,7 @@ async function main() {
   const failures = [];
   let filesScanned = 0;
   let publishedPostsChecked = 0;
+  const imageOwners = new Map();
 
   for (const root of SCAN_ROOTS) {
     const files = await collectFiles(root);
@@ -148,7 +165,7 @@ async function main() {
       if (file.startsWith("src\\data\\blog") || file.startsWith("src/data/blog")) {
         const { frontmatter } = parseMarkdown(text);
         if (!isDraft(frontmatter)) publishedPostsChecked += 1;
-        failures.push(...await checkPublishedPost(file, text));
+        failures.push(...await checkPublishedPost(file, text, imageOwners));
       }
     }
   }

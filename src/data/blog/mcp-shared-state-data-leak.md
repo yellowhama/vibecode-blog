@@ -8,7 +8,7 @@ series: "AI Market Watch"
 workflow: "legacy"
 lang: "en"
 tags: ["engineering", "mcp", "security", "ai-agents"]
-ogImage: "/images/posts/pencil-mcp-loop.png"
+ogImage: "/images/posts/mcp-shared-state-data-leak.png"
 references:
   - name: "GitHub Advisory GHSA-345p-7cg4-v4c7"
     url: "https://github.com/advisories/GHSA-345p-7cg4-v4c7"
@@ -23,7 +23,7 @@ The HTTP request may be stateless. The application object may not be. If one `Mc
 
 That shared state is not an implementation detail. In an agent tool server, shared state is a security boundary.
 
-![MCP loop sketch](/images/posts/pencil-mcp-loop.png)
+![MCP shared state boundary diagram](/images/posts/mcp-shared-state-data-leak.png)
 
 ## What Changed
 

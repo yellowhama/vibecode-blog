@@ -1,5 +1,5 @@
 import { access, readdir, readFile } from "node:fs/promises";
-import { join } from "node:path";
+import { basename, join } from "node:path";
 
 const BLOG_DIR = "src/data/blog";
 
@@ -50,6 +50,8 @@ async function exists(path) {
 
 async function checkPost(file, text) {
   const { frontmatter, body } = parseMarkdown(text);
+  const slug = basename(file, ".md");
+  const expectedImage = `/images/posts/${slug}.png`;
   const title = getFrontmatterValue(frontmatter, "title");
   const description = getFrontmatterValue(frontmatter, "description");
   const lang = getFrontmatterValue(frontmatter, "lang");
@@ -78,6 +80,8 @@ async function checkPost(file, text) {
     failures.push("missing ogImage");
   } else if (ogImage.startsWith("http://") || ogImage.startsWith("https://")) {
     failures.push("ogImage must be a local /images/... asset");
+  } else if (ogImage !== expectedImage) {
+    failures.push(`ogImage must be the post-specific image ${expectedImage}, got ${ogImage}`);
   } else {
     const ogImageFile = publicImagePathToFile(ogImage);
     if (!ogImageFile) {
@@ -88,8 +92,11 @@ async function checkPost(file, text) {
   }
 
   const markdownImages = [...body.matchAll(MARKDOWN_IMAGE)].map((match) => match[1].trim());
-  if (markdownImages.length === 0) {
-    failures.push("missing in-body markdown image");
+  if (markdownImages.length !== 1) {
+    failures.push(`published posts must have exactly one in-body markdown image, got ${markdownImages.length}`);
+  }
+  if (markdownImages.length === 1 && markdownImages[0] !== ogImage) {
+    failures.push(`in-body markdown image must match ogImage ${ogImage}, got ${markdownImages[0]}`);
   }
   for (const imagePath of markdownImages) {
     if (imagePath.includes("public/images") || imagePath.startsWith("../")) {
@@ -106,7 +113,9 @@ async function checkPost(file, text) {
 
   return {
     file,
+    slug,
     title,
+    ogImage,
     failures,
     draft: isDraft(frontmatter),
   };
@@ -118,10 +127,19 @@ async function main() {
     .sort();
 
   const results = [];
+  const imageOwners = new Map();
   for (const file of files) {
     const text = await readFile(join(BLOG_DIR, file), "utf8");
     const result = await checkPost(file, text);
     if (!result.draft) {
+      if (result.ogImage) {
+        const previousOwner = imageOwners.get(result.ogImage);
+        if (previousOwner) {
+          result.failures.push(`ogImage is reused by ${previousOwner}; every published post needs its own image`);
+        } else {
+          imageOwners.set(result.ogImage, result.file);
+        }
+      }
       results.push(result);
     }
   }

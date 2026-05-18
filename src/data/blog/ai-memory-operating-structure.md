@@ -7,7 +7,7 @@ featured: true
 series: "AI Explainer"
 lang: "en"
 tags: ["engineering", "ai-agents", "llm-wiki", "technical-contracts"]
-ogImage: "/images/posts/pencil-handoff-pain.png"
+ogImage: "/images/posts/ai-memory-operating-structure.png"
 references:
   - name: "Conversation state"
     url: "https://developers.openai.com/api/docs/guides/conversation-state"
@@ -28,7 +28,7 @@ So the operator repeats the same constraints. The prompt gets longer. The next s
 
 That is not memory. That is temporary context taped to the side of the task.
 
-![Agent memory handoff sketch](/images/posts/pencil-handoff-pain.png)
+![AI memory operating structure diagram](/images/posts/ai-memory-operating-structure.png)
 
 ## The Broken Default
 

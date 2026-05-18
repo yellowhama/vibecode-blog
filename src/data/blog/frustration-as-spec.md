@@ -6,7 +6,7 @@ draft: false
 series: "Field Log"
 workflow: "legacy"
 tags: ["engineering", "observability", "debugging", "slop-detection"]
-ogImage: "/images/posts/058-frustration-is-the-spec.png"
+ogImage: "/images/posts/frustration-as-spec.png"
 references:
   - name: "LLMs Demand Observability-Driven Development"
     url: "https://www.honeycomb.io/blog/llms-demand-observability-driven-development"
@@ -18,7 +18,7 @@ references:
 
 # Frustration as the Specification: The High-Signal Debugging Model
 
-![Frustration vs Spec Diagram](/images/posts/058-frustration-is-the-spec.png)
+![Frustration into specification signal diagram](/images/posts/frustration-as-spec.png)
 
 Every "Vibe Coding" project eventually hits the **Three-Month Wall.** 
 
