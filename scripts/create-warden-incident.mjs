@@ -119,7 +119,7 @@ function buildIncident(evidence, sourcePath) {
 ## Impact
 - User or operator impact: The product creates a human-reviewable Warden artifact instead of silently forwarding an unknown command.
 - Product risk: Without this boundary, an unexpected watchdog command could cross from dashboard/API intent into relay behavior.
-- Content value: This is first-party product evidence for a MUSU Build Log / Field Log.
+- Content value: This is first-party product evidence for a Field Log.
 - Reader pressure: Senior engineers need to know whether AI-agent control surfaces fail closed when the command is outside contract.
 
 ## Boundary
@@ -128,7 +128,7 @@ function buildIncident(evidence, sourcePath) {
 - Product claim that must not be made: Do not claim Warden controls every possible agent action from this single watchdog-path artifact.
 
 ## Routing
-- Content route: MUSU Build Log
+- Content route: Field Log
 - MUSU backlog candidate: Expand command classification beyond watchdog allowlist and capture dashboard UI resolution evidence.
 - Required owner: MUSU Pro owner for product proof; Vibecode editor for Field Log.
 - Next action: Resolve the event through dashboard UI if not already resolved, then draft using \`companies/vibecode-town/plans/warden-field-log-plan.md\`.
@@ -137,7 +137,7 @@ function buildIncident(evidence, sourcePath) {
 - Resolution: ${resolvedAt ? `${resolutionStatus} at ${resolvedAt}` : "Blocked event captured; dashboard resolution evidence still preferred."}
 - Resolution transport: ${resolutionTransport || "missing"}
 - Verification command: \`npm run verify:warden:product\`
-- Follow-up: Attach sanitized evidence JSON and dashboard screenshot before publishing.
+- Follow-up: Attach sanitized evidence JSON plus dashboard API/UI resolution evidence before publishing.
 - Linked post/brief:
 
 ## Raw Evidence Summary
