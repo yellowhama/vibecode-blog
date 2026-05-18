@@ -24,6 +24,7 @@ const contentChecks = [
 
 const failures = [];
 const HANGUL = /[\u3131-\u318e\uac00-\ud7a3]/;
+const MIN_PUBLIC_IMAGE_BYTES = 12_000;
 const FORBIDDEN_PRODUCT_MENTIONS = [
   { label: "musu.pro", pattern: /musu\.pro/i },
   { label: "MUSU Pro", pattern: /\bMUSU\s+Pro\b/i },
@@ -37,6 +38,18 @@ async function exists(path) {
     return true;
   } catch {
     return false;
+  }
+}
+
+async function checkImageAsset(owner, imagePath) {
+  const target = join(distDir, imagePath.split(/[?#]/)[0]);
+  if (!(await exists(target))) {
+    failures.push(`${owner} references missing image asset: ${imagePath}`);
+    return;
+  }
+  const info = await stat(target);
+  if (info.size < MIN_PUBLIC_IMAGE_BYTES) {
+    failures.push(`${owner} references suspiciously small image asset (${info.size} bytes): ${imagePath}`);
   }
 }
 
@@ -69,6 +82,8 @@ if (await exists(postsJsonPath)) {
       for (const post of payload.posts) {
         if (!post.ogImage || typeof post.ogImage !== "string" || !post.ogImage.startsWith("/images/")) {
           failures.push(`api/posts.json post "${post.slug ?? post.title ?? "unknown"}" is missing local ogImage`);
+        } else {
+          await checkImageAsset(`api/posts.json post "${post.slug ?? post.title ?? "unknown"}"`, post.ogImage);
         }
       }
     }
@@ -111,6 +126,9 @@ if (await exists(postsDir)) {
     }
     if (!/<img\b[^>]+src="\/images\//.test(text)) {
       failures.push(`posts/${entry.name}/index.html has no rendered /images/ asset`);
+    }
+    for (const match of text.matchAll(/<img\b[^>]*src="(\/images\/[^"]+)"/g)) {
+      await checkImageAsset(`posts/${entry.name}/index.html`, match[1]);
     }
   }
 }

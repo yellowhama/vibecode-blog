@@ -1,4 +1,5 @@
 import { access, readdir, readFile } from "node:fs/promises";
+import { stat } from "node:fs/promises";
 import { join } from "node:path";
 
 const SCAN_ROOTS = ["src/data/blog", "public"];
@@ -23,6 +24,7 @@ const FORBIDDEN_PRODUCT_MENTIONS = [
 ];
 
 const PUBLIC_IMAGE_PATH = /^\/images\/[^?#]+\.(?:avif|gif|jpe?g|png|svg|webp)(?:[?#].*)?$/i;
+const MIN_PUBLIC_IMAGE_BYTES = 12_000;
 
 function parseMarkdown(text) {
   const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
@@ -52,6 +54,19 @@ async function exists(path) {
     return true;
   } catch {
     return false;
+  }
+}
+
+async function assertImageFile(file, imagePath, failures, owner) {
+  if (!(await exists(file))) {
+    failures.push(`${owner}: image file does not exist: ${imagePath}`);
+    return;
+  }
+  const info = await stat(file);
+  if (info.size < MIN_PUBLIC_IMAGE_BYTES) {
+    failures.push(
+      `${owner}: image asset is suspiciously small (${info.size} bytes): ${imagePath}`
+    );
   }
 }
 
@@ -101,8 +116,8 @@ async function checkPublishedPost(file, text) {
     failures.push(`${file}: published post is missing ogImage`);
   } else if (!PUBLIC_IMAGE_PATH.test(ogImage)) {
     failures.push(`${file}: ogImage must be a local /images/... asset`);
-  } else if (!(await exists(publicPathToFile(ogImage)))) {
-    failures.push(`${file}: ogImage file does not exist: ${ogImage}`);
+  } else {
+    await assertImageFile(publicPathToFile(ogImage), ogImage, failures, file);
   }
 
   if (bodyImages.length === 0) {
@@ -111,8 +126,8 @@ async function checkPublishedPost(file, text) {
   for (const imagePath of bodyImages) {
     if (!PUBLIC_IMAGE_PATH.test(imagePath)) {
       failures.push(`${file}: markdown image must be a local /images/... asset: ${imagePath}`);
-    } else if (!(await exists(publicPathToFile(imagePath)))) {
-      failures.push(`${file}: markdown image file does not exist: ${imagePath}`);
+    } else {
+      await assertImageFile(publicPathToFile(imagePath), imagePath, failures, file);
     }
   }
 
