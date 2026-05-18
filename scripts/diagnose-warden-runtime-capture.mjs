@@ -4,7 +4,7 @@ import { basename, dirname, isAbsolute, relative, resolve } from "node:path";
 import { spawn } from "node:child_process";
 
 const DEFAULT_MUSU_REPO = String.raw`F:\Aisaak\Projects\musu-pro`;
-const DEFAULT_REPORT_PATH = String.raw`C:\Users\empty\llm-wiki\companies\vibecode-town\plans\warden-runtime-readiness-latest.md`;
+const DEFAULT_REPORT_PATH = String.raw`F:\Aisaak\CompanyArtifacts\llm-wiki-completed\companies\vibecode-town\plans\warden-runtime-readiness-latest.md`;
 const DEFAULT_SQL_EVIDENCE_DIR = String.raw`F:\Aisaak\CompanyArtifacts\runtime-evidence\sql-editor-results`;
 const SQL_EVIDENCE_REFERENCE_FILE_NAMES = new Set([
   "EXPECTED_RESULT_SHAPE.md",

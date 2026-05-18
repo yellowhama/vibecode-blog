@@ -4,7 +4,7 @@ import json
 class WikiContextEngineer:
     def __init__(self, project_root):
         self.project_root = project_root
-        self.wiki_root = r'C:\Users\empty\llm-wiki'
+        self.wiki_root = r'F:\Aisaak\CompanyArtifacts\llm-wiki-completed'
 
     def search_wiki(self, slot, intent_query):
         print(f"[WikiContextEngineer] Searching LLM-Wiki for '{intent_query}'...")

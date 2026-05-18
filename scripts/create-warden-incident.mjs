@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
-const DEFAULT_OUTPUT_DIR = String.raw`C:\Users\empty\llm-wiki\companies\vibecode-town\incidents`;
+const DEFAULT_OUTPUT_DIR = String.raw`F:\Aisaak\CompanyArtifacts\llm-wiki-completed\companies\vibecode-town\incidents`;
 
 function getArg(name) {
   const index = process.argv.indexOf(name);

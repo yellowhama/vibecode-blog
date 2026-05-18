@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-17T02:04:19.445Z",
-  "source": "C:\\Users\\empty\\llm-wiki",
+  "generated_at": "2026-05-18T13:44:47.292Z",
+  "source": "F:\\Aisaak\\CompanyArtifacts\\llm-wiki-completed",
   "packets": {
     "ai-agent-work-disk-contract": {
       "files": [
@@ -51,7 +51,7 @@
         {
           "suffix": "evidence-bundle",
           "path": "companies/vibecode-town/plans/ai-memory-operating-structure-evidence-bundle.md",
-          "sha256": "fdc772ebf46c67191f9d66f03690eab314feeefad65571f26b5d79b09aeb80c7"
+          "sha256": "e36ccdaac7f760633abd13397e89ccf7bc28c4c8ffa9c3b0aef33fc62e16a8f0"
         },
         {
           "suffix": "brief",

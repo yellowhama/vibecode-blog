@@ -2,7 +2,7 @@ import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { spawn } from "node:child_process";
 
-const DEFAULT_INCIDENT_DIR = String.raw`C:\Users\empty\llm-wiki\companies\vibecode-town\incidents`;
+const DEFAULT_INCIDENT_DIR = String.raw`F:\Aisaak\CompanyArtifacts\llm-wiki-completed\companies\vibecode-town\incidents`;
 const DEFAULT_OUTPUT_DIR = "src/data/blog";
 
 function getArg(name) {

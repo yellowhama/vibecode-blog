@@ -2,7 +2,7 @@ import { readdir, readFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { createHash } from "node:crypto";
 
-const DEFAULT_INCIDENT_DIR = String.raw`C:\Users\empty\llm-wiki\companies\vibecode-town\incidents`;
+const DEFAULT_INCIDENT_DIR = String.raw`F:\Aisaak\CompanyArtifacts\llm-wiki-completed\companies\vibecode-town\incidents`;
 
 function getArg(name) {
   const index = process.argv.indexOf(name);

@@ -4,7 +4,8 @@ import { createHash } from "node:crypto";
 import { join, resolve } from "node:path";
 
 const DEFAULT_BLOG_DIR = "src/data/blog";
-const DEFAULT_WIKI_ROOT = process.env.LLM_WIKI_ROOT ?? "C:\\Users\\empty\\llm-wiki";
+const DEFAULT_WIKI_ROOT =
+  process.env.LLM_WIKI_ROOT ?? String.raw`F:\Aisaak\CompanyArtifacts\llm-wiki-completed`;
 const DEFAULT_MANIFEST = "source-workflow-packets.json";
 const ENFORCEMENT_DATE = new Date("2026-05-17T00:00:00Z");
 const REQUIRED_PACKET_SUFFIXES = [
