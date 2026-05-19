@@ -12,6 +12,9 @@ references:
   - name: "Not all AI-assisted programming is vibe coding"
     url: "https://simonwillison.net/2025/Mar/19/vibe-coding/"
     guru: "Simon Willison"
+  - name: "Andrej Karpathy: Software Is Changing Again"
+    url: "https://www.youtube.com/watch?v=LCEmiRjPEtQ"
+    guru: "Andrej Karpathy"
 ---
 
 # What Vibe Coding Actually Is
@@ -29,6 +32,8 @@ The decision is simple: use vibe coding to find the shape of a system; switch to
 ## The Useful Part
 
 Simon Willison's useful correction is that not all AI-assisted programming is vibe coding. That distinction matters because the word gets used for two different workflows.
+
+Karpathy's Software 3.0 framing points in the same direction from the other side: natural language can become part of the programming surface, but engineering does not disappear. It moves into context, constraints, and verification.
 
 The first workflow is exploration:
 
@@ -58,6 +63,16 @@ The agent needs the source, boundary, and verifier before it edits.
 ```
 
 Most failed "vibe coding" stories are really a mode error. The operator kept behaving as if the work was exploratory after the work had become contractual.
+
+The practical taxonomy is this:
+
+| Mode | Good use | Stop when |
+| --- | --- | --- |
+| Prompt sketching | Find a shape | Output needs to survive |
+| Vibe coding | Explore by reacting to generated code | The system has contracts |
+| Agentic engineering | Change a real system | No verifier or receipt exists |
+
+The trap is treating those as maturity levels. They are modes. A senior engineer can vibe-code a disposable prototype. A beginner can damage production with a very serious-sounding prompt.
 
 ## The Failure Mode
 
@@ -103,6 +118,20 @@ Markdown changed without a fresh human publication approval hash.
 
 The repair was not a longer prompt. It was a contract stack in code:
 
+The operational boundary is `scripts/verify-public-page-review.mjs`, `scripts/verify-post-image-contracts.mjs`, `scripts/verify-rendered-pages.mjs`, `scripts/verify-publication-approvals.mjs`, and `npm run verify:site-quality`.
+
+```txt
+scripts/verify-public-page-review.mjs
+scripts/verify-post-image-contracts.mjs
+scripts/verify-rendered-pages.mjs
+scripts/verify-publication-approvals.mjs
+npm run verify:site-quality
+```
+
+Those files turned the public surface into something the agent could fail.
+
+The relevant commit chain shows the same pattern:
+
 ```txt
 bc23231 Harden public page review gate
 64eece2 Add post image contract gate
@@ -111,13 +140,22 @@ bc23231 Harden public page review gate
 bf86204 Require human publication approvals
 ```
 
+The later writing-quality loop continued the same rule:
+
+```txt
+6730995 Improve DESIGN.md article evidence
+5f939db Improve Software 3.0 verification mechanism
+f7076c0 Correct Software 3.0 approval loop ref
+```
+
 The current receipt is concrete:
 
 ```txt
 packet_backed_posts=9
 packet_files=54
-rendered screenshots=20
-publication approval records=10
+post_image_contracts_checked=10
+rendered_viewport_checks=24
+publication_approval_records=10
 ```
 
 That is the production shift. The agent is still allowed to draft, rewrite, and generate images. But the output cannot remain public unless the source packet, image contract, rendered screenshot, and exact Markdown hash agree.
@@ -147,6 +185,16 @@ This is why "AI slop" is often a process problem. The model may be wrong, but th
 ## Reader Decision
 
 Before the next agent session, decide which mode you are in.
+
+Use this decision matrix:
+
+| If the work is... | Use this mode | Required artifact |
+| --- | --- | --- |
+| Disposable, local, reversible | Vibe coding | A thing to react to |
+| Unclear prototype | Vibe coding, then stop | Notes on what changed |
+| Product change | Contract-driven agent work | Source, boundary, check |
+| Public post | Contract-driven agent work | Packet, image contract, approval hash |
+| Security, billing, data, deploy | Contract-driven agent work | Failing test or verifier |
 
 Use vibe coding when all three are true:
 
