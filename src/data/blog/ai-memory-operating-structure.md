@@ -1,7 +1,7 @@
 ---
 title: "How to Stop AI Agents From Losing Their Memory"
 pubDatetime: 2026-05-16T06:00:00Z
-description: "Long prompts are not operating memory. Agent work needs source notes, specs, handoffs, indexes, and explicit remaining-work queues."
+description: "Long prompts are not operating memory because agent work needs source notes, specs, handoffs, indexes, and explicit remaining-work queues."
 draft: false
 featured: true
 series: "AI Explainer"
@@ -22,6 +22,8 @@ references:
 ---
 
 # How to Stop AI Agents From Losing Their Memory
+
+On 2026-05-20, this site could restart from `companies/vibecode-town/code-index.md`, `F:\Aisaak\CompanyArtifacts\vibecode-reference-writing-audit\latest.json`, `src/data/publication-approvals.json`, and `wiki_fts.db`. That matters because the next agent needs evidence, not a confident story about what probably happened.
 
 The expensive failure in long agent work is not forgetting a fact. It is forgetting the status of a fact.
 
@@ -79,6 +81,20 @@ The handoff is the current state. It should tell the next session what passed, w
 
 The index makes the memory searchable. The remaining-work queue turns documents back into action.
 
+In this repo, the stack is concrete:
+
+```txt
+companies/vibecode-town/sources/raw
+companies/vibecode-town/sources/processed
+companies/vibecode-town/plans
+companies/vibecode-town/code-index.md
+F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
+```
+
+The verification side is concrete too: `python reindex_wiki.py`, `archive_completed_artifacts.ps1`, `check_vibecode_completion_audit_sync.ps1`, and `check_company_artifacts_archive.ps1`.
+
+That is the useful test for memory. If the next agent cannot name the file, command, or receipt that proves the state, it is probably carrying a story, not memory.
+
 ## Prompt, Skill, Wiki, or Memory
 
 Not every instruction belongs in the same place.
@@ -126,11 +142,11 @@ Usable restart surface:
 
 ```txt
 Goal: make public posts source-backed, English, image-backed, and approval-bound.
-Current status: product commit bf86204 is pushed.
-Verified evidence: verify:site-quality passed; 10 posts, 20 rendered screenshots, 10 approval records.
-Files changed: publication approval manifest, rendered audit script, post image contract gate, operator writing gate.
-Known boundary: writing is verified but not yet top-tier memorable.
-Next action: add concrete examples, screenshots, failure logs, before/after, and numbers to the post bodies.
+Recent status: product commit dd3565e is pushed.
+Verified evidence: verify:site-quality passed; 10 posts, 24 rendered viewport checks, 10 approval records.
+Files changed: publication approval manifest, rendered audit script, post image contract gate, reference-writing audit.
+Known boundary: the writing floor is much stronger, but some posts still need sharper openings and artifacts.
+Next action: improve the lowest-scoring post, then refresh approval hash, wiki index, and archive checks.
 Completion is not proven until: site-quality, wiki reindex, and archive checks pass again.
 ```
 
