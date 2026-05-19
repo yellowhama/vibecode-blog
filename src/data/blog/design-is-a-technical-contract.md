@@ -110,7 +110,9 @@ This is the operator value: the agent can be creative inside the roles, but it c
 
 The same pattern is now used for Vibecode post imagery.
 
-The public image contract is not "make the post look nice." It is structured data:
+On 2026-05-20, this site had 10 public post image contracts and 10 hash-bound publication approvals. That is not a giant design system. It is small enough to inspect by hand, which makes it a useful test case: if the contract cannot keep 10 posts honest, it definitely will not keep a 200-screen product honest.
+
+The public image contract is not "make the post look nice." It lives in `src/data/post-image-contracts.json` as structured data:
 
 ```json
 {
@@ -122,16 +124,37 @@ The public image contract is not "make the post look nice." It is structured dat
 }
 ```
 
-The verifier then checks the contract instead of taste:
+Two scripts then check the contract instead of taste:
+
+```txt
+scripts/verify-post-image-contracts.mjs
+scripts/verify-rendered-pages.mjs
+```
+
+The checks are boring in the exact way useful contracts are boring:
 
 ```txt
 body image must match ogImage
 image must be 1200x630
 image must not be reused by another post
 semantic anchors must appear in the post text
+expected image should render on the post page
+```
+
+The latest full site-quality run after the reference-writing gate integration reported this receipt:
+
+```txt
+npm run verify:site-quality=pass
+post_image_contracts_checked=10
+rendered_page_viewports_checked=24
+publication_approval_records_checked=10
+reference_writing_average_score=94
+latest_gate_commit=93c5139
 ```
 
 That is a design-system lesson in miniature. A visual decision becomes a named role, the role becomes data, and the data becomes lintable. The agent can still generate the image, but it cannot silently use a generic asset that has no relationship to the article.
+
+Without the contract, a generic "abstract design system" hero could pass a human glance. With the contract, it has to match the slug, the `ogImage`, the dimensions, the anchors, the rendered page, and the approval hash. That is the difference between taste as a suggestion and taste as an operating surface.
 
 ## Reader Decision
 
@@ -155,6 +178,17 @@ one-off screenshot guesses
 temporary mood boards
 visual polish that has not been decided yet
 ```
+
+The practical decision matrix is this:
+
+| Situation | Use DESIGN.md? | Reason |
+| --- | --- | --- |
+| Reused brand, type, spacing, or component role | Yes | Durable decision. |
+| More pages in the same visual system | Yes | Shared memory before generation. |
+| Hover or variant changes one property | Yes | Token reference keeps lineage. |
+| Screenshot with no agreed rules | Not yet | Decide before encoding. |
+| Final in-browser quality judgment | No | Use screenshots, review, and QA. |
+| One-off mood exploration | Usually no | Do not store temporary sketches. |
 
 ## Boundary
 
