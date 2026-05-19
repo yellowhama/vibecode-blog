@@ -52,15 +52,48 @@ What artifact survives the session?
 What condition makes the agent stop?
 ```
 
+## The Mechanism
+
+Software 3.0 fails in a repeatable shape:
+
+```txt
+prompt expands intent
+agent creates a plausible diff
+diff touches more surfaces than the prompt named
+operator sees the result after the blast radius already exists
+team argues about taste, safety, or correctness by inspection
+```
+
+The fix is not a longer prompt. The fix is moving the rejection path earlier:
+
+```txt
+source -> contract -> diff -> verifier -> durable receipt -> approval
+```
+
+That sequence matters because each step changes who is allowed to guess.
+
+| Step | What it prevents |
+| --- | --- |
+| Source | The agent inventing authority from memory |
+| Contract | The feature becoming an open-ended rewrite |
+| Diff | The change hiding outside the named surface |
+| Verifier | A plausible result becoming accepted without evidence |
+| Receipt | The next session losing what was actually proven |
+| Approval | The agent silently publishing its own work |
+
+The practical rule: generation can be probabilistic, but acceptance cannot be.
+
+A useful test is whether the next operator can reject the change without asking the original agent what it meant. If the answer is no, the system is still running on conversation memory. That is fine for a demo. It is not fine for a product surface.
+
 ## The Work Shift
 
 | Old center of gravity | New center of gravity |
 | --- | --- |
-| Writing every line | Defining the boundary the generated diff must satisfy |
-| Remembering project context in your head | Supplying source notes, specs, and handoffs |
-| Reviewing code after the fact | Designing checks before the agent starts |
-| Asking for "the feature" | Giving acceptance criteria, failure modes, and test commands |
-| Trusting a green local result | Keeping build, content, archive, and evidence gates repeatable |
+| Writing lines | Defining boundaries |
+| Holding context in your head | Supplying source notes |
+| Reviewing after the fact | Designing checks first |
+| Asking for "the feature" | Naming criteria and failure modes |
+| Trusting one green result | Keeping repeatable gates |
 
 That table is the useful Software 3.0 model. Not "the LLM is literally the operating system." The useful model is that the model has become a fast execution surface, and every fast execution surface needs contracts.
 
@@ -93,26 +126,26 @@ That is the practical meaning of Software 3.0 for an operator: do not celebrate 
 
 ## The Receipt
 
-The current Vibecode Town receipt is small enough to inspect:
+One verified Vibecode Town receipt is small enough to inspect:
 
 ```txt
-current commit: bf86204 Require human publication approvals
 published posts checked: 10
 packet-backed posts: 9
-source workflow packet files: 54
-rendered page screenshots: 20
+post image contracts checked: 10
+rendered viewport checks: 24
 publication approval records: 10
+reference-writing average score: 94
 ```
 
 The before/after is the important part.
 
 | Before | After |
 | --- | --- |
-| A public post could change without a matching approval record | `verify:publication-approvals` checks the current Markdown SHA256 |
-| An image could exist without proving it matched the post | `verify:post-image-contracts` checks path, dimensions, byte size, uniqueness, and semantic anchors |
-| A page could build while the rendered article still broke on mobile | `verify:rendered-pages` captures desktop and mobile screenshots |
-| A source-inspired post could skip the packet trail | `verify:source-workflow` requires six packet files per non-About post |
-| A product mention could leak into every post by habit | `verify:public-page-review` rejects forbidden public product mentions |
+| Post changed silently | `verify:publication-approvals` checks Markdown SHA256 |
+| Image existed but did not fit the post | `verify:post-image-contracts` checks path, size, uniqueness, and anchors |
+| Page built but broke when rendered | `verify:rendered-pages` captures desktop and mobile screenshots |
+| Source trail was skipped | `verify:source-workflow` requires packet files |
+| Product mention leaked by habit | `verify:public-page-review` rejects forbidden public product mentions |
 
 This is what changed: generation became cheap enough that the site needed an explicit rejection path for writing, images, rendering, and approval.
 
