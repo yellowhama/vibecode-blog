@@ -5,7 +5,7 @@ description: "DESIGN.md works because it keeps design reasoning and token values
 draft: false
 featured: true
 series: "Field Log"
-workflow: "legacy"
+workflow: "packet"
 tags: ["engineering", "design-md", "agentic-design", "technical-contracts"]
 ogImage: "/images/posts/design-is-a-technical-contract.png"
 references:

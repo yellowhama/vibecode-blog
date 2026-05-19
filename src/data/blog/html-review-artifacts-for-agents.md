@@ -131,7 +131,7 @@ That last sentence is the important part.
 
 ## Boundary
 
-HTML can make weak evidence look finished. A beautiful timeline with no source inventory is still a guess. A dashboard with no export path is still hidden state.
+HTML can make weak evidence look finished. A polished timeline with no source inventory is still a guess. A dashboard with no export path is still hidden state.
 
 Vibecode accepts HTML artifacts as review tools because they make complex agent output easier to inspect. It does not accept them as the contract.
 

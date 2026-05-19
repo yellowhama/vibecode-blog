@@ -4,7 +4,7 @@ pubDatetime: 2026-05-13T12:00:00Z
 description: "The useful Software 3.0 lesson is not that LLMs replace engineering. It is that faster generation moves the bottleneck to context, review, and evidence."
 draft: false
 series: "AI Explainer"
-workflow: "legacy"
+workflow: "packet"
 tags: ["engineering", "software-3.0", "agentic-engineering", "verification"]
 ogImage: "/images/posts/software-3-0.png"
 references:
@@ -50,7 +50,7 @@ The agent may create the implementation, but the operator still owns the contrac
 | Asking for "the feature" | Giving acceptance criteria, failure modes, and test commands |
 | Trusting a green local result | Keeping build, content, archive, and evidence gates repeatable |
 
-That table is the useful Software 3.0 model. Not "the LLM is literally the operating system." The useful metaphor is that the model has become a powerful execution surface, and every powerful execution surface needs contracts.
+That table is the useful Software 3.0 model. Not "the LLM is literally the operating system." The useful metaphor is that the model has become a fast execution surface, and every fast execution surface needs contracts.
 
 ## A Concrete Example
 

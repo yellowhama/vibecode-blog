@@ -5,7 +5,7 @@ description: "A Coolify migration audit exposed two hidden Vercel assumptions: r
 draft: false
 featured: true
 series: "Field Log"
-workflow: "legacy"
+workflow: "packet"
 tags: ["engineering", "deployment", "coolify", "technical-contracts"]
 ogImage: "/images/posts/vercel-is-not-a-deployment-contract.png"
 references:

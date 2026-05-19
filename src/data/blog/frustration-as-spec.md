@@ -4,7 +4,7 @@ pubDatetime: 2026-05-10T10:00:00Z
 description: "The useful move is not to vent at the agent. It is to turn repeated irritation into a contract, a verifier, and evidence."
 draft: false
 series: "Field Log"
-workflow: "legacy"
+workflow: "packet"
 tags: ["engineering", "observability", "debugging", "slop-detection"]
 ogImage: "/images/posts/frustration-as-spec.png"
 references:

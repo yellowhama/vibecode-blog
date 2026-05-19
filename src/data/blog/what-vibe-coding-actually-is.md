@@ -5,7 +5,7 @@ description: "Vibe coding is useful for exploration, but production work starts 
 draft: false
 featured: true
 series: "AI Explainer"
-workflow: "legacy"
+workflow: "packet"
 tags: ["engineering", "vibe-coding", "agentic-engineering", "technical-contracts"]
 ogImage: "/images/posts/what-vibe-coding-actually-is.png"
 references:

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T23:11:00.459Z",
+  "generated_at": "2026-05-19T17:52:50.203Z",
   "source": "F:\\Aisaak\\CompanyArtifacts\\llm-wiki-completed",
   "packets": {
     "ai-agent-work-disk-contract": {
@@ -70,6 +70,74 @@
         }
       ]
     },
+    "design-is-a-technical-contract": {
+      "files": [
+        {
+          "suffix": "reader-pressure",
+          "path": "companies/vibecode-town/plans/design-is-a-technical-contract-reader-pressure.md",
+          "sha256": "83c6e53b1bbddff94af66262c764b633922ee872d69428a28d16973180ba5834"
+        },
+        {
+          "suffix": "title-angle",
+          "path": "companies/vibecode-town/plans/design-is-a-technical-contract-title-angle.md",
+          "sha256": "97b76b25e5b0f13076c51ab2c53ea2232410ab2cd01ab2c2280e39f585edfdd0"
+        },
+        {
+          "suffix": "evidence-bundle",
+          "path": "companies/vibecode-town/plans/design-is-a-technical-contract-evidence-bundle.md",
+          "sha256": "eca6b2279a3d38434760ce82763a1726c62007c4174a02e2c6f70319e861c770"
+        },
+        {
+          "suffix": "brief",
+          "path": "companies/vibecode-town/plans/design-is-a-technical-contract-brief.md",
+          "sha256": "8862e5d91ea8b8bd32fc6581ec197fc6fb9a1a4114f6243cfb67871301e441d3"
+        },
+        {
+          "suffix": "gate-0",
+          "path": "companies/vibecode-town/plans/design-is-a-technical-contract-gate-0.md",
+          "sha256": "8bfec89fa0d3a377bf2e30f5807b2b7b543048128cee7adab58bfefe06f721b4"
+        },
+        {
+          "suffix": "draft-critique",
+          "path": "companies/vibecode-town/plans/design-is-a-technical-contract-draft-critique.md",
+          "sha256": "128201ef348cb06b658988977dfa1b8c83a2d2a5c545a53c19bb8735f9ff21c1"
+        }
+      ]
+    },
+    "frustration-as-spec": {
+      "files": [
+        {
+          "suffix": "reader-pressure",
+          "path": "companies/vibecode-town/plans/frustration-as-spec-reader-pressure.md",
+          "sha256": "18b04369a917680c4809da3448e45a158f6250dd1b22f9f06f004264cad9b217"
+        },
+        {
+          "suffix": "title-angle",
+          "path": "companies/vibecode-town/plans/frustration-as-spec-title-angle.md",
+          "sha256": "cf9349f52b0f0a47501c07927f40fce6cdb9f9e6572b47eee35ca50c6b36d118"
+        },
+        {
+          "suffix": "evidence-bundle",
+          "path": "companies/vibecode-town/plans/frustration-as-spec-evidence-bundle.md",
+          "sha256": "710e4f11f4193286c59120414bea018d07b5d4cd00ff60ea41acb4713054019c"
+        },
+        {
+          "suffix": "brief",
+          "path": "companies/vibecode-town/plans/frustration-as-spec-brief.md",
+          "sha256": "87333e3ca25432ea015366919dafb1889ad2976434dba5e9a4a91fa821cef6d8"
+        },
+        {
+          "suffix": "gate-0",
+          "path": "companies/vibecode-town/plans/frustration-as-spec-gate-0.md",
+          "sha256": "1f9ecadcd6d7247859e5248a5b32ef45a70015fe0478fcb884bcf4f36cf8834a"
+        },
+        {
+          "suffix": "draft-critique",
+          "path": "companies/vibecode-town/plans/frustration-as-spec-draft-critique.md",
+          "sha256": "1835baca0a8cf172d1390a3b4eaabd9d1e4e1cfac555febae8d3c23b06caab5d"
+        }
+      ]
+    },
     "html-review-artifacts-for-agents": {
       "files": [
         {
@@ -135,6 +203,108 @@
           "suffix": "draft-critique",
           "path": "companies/vibecode-town/plans/mcp-shared-state-data-leak-draft-critique.md",
           "sha256": "38c8780051029dabdb5a25f31a8e8ac83320a5a88439305cbfb0ee1a1fd3219d"
+        }
+      ]
+    },
+    "software-3-0": {
+      "files": [
+        {
+          "suffix": "reader-pressure",
+          "path": "companies/vibecode-town/plans/software-3-0-reader-pressure.md",
+          "sha256": "70d01a722d49cb73a53d293032d846149bc506d9ed64fa42dda35cca74ba74a8"
+        },
+        {
+          "suffix": "title-angle",
+          "path": "companies/vibecode-town/plans/software-3-0-title-angle.md",
+          "sha256": "75e9c0393564c6df7d710202915f76902cc710f2c14cdcb7d57c1d237f86f627"
+        },
+        {
+          "suffix": "evidence-bundle",
+          "path": "companies/vibecode-town/plans/software-3-0-evidence-bundle.md",
+          "sha256": "09342dfdf1d2e7bf08f52d9c7feda4b83e2e65e81cf9cf602dcb4b12c708d754"
+        },
+        {
+          "suffix": "brief",
+          "path": "companies/vibecode-town/plans/software-3-0-brief.md",
+          "sha256": "8db51c0ef8808517ccd8b1fafcd2b1e9ab9106f61a3470048a7afa75d2fe2faf"
+        },
+        {
+          "suffix": "gate-0",
+          "path": "companies/vibecode-town/plans/software-3-0-gate-0.md",
+          "sha256": "33ac08edcf20ec45382ea2b064bf3334b6147ac332956b7a858dd9892ac86daa"
+        },
+        {
+          "suffix": "draft-critique",
+          "path": "companies/vibecode-town/plans/software-3-0-draft-critique.md",
+          "sha256": "2d6a209f66abf1371b4a1a71489ec42f5d1879927b605b21e5ecce3677795b50"
+        }
+      ]
+    },
+    "vercel-is-not-a-deployment-contract": {
+      "files": [
+        {
+          "suffix": "reader-pressure",
+          "path": "companies/vibecode-town/plans/vercel-is-not-a-deployment-contract-reader-pressure.md",
+          "sha256": "97c473cddd18056896c0a43c788f09e796608a28695d4d824bf78753e757bcaf"
+        },
+        {
+          "suffix": "title-angle",
+          "path": "companies/vibecode-town/plans/vercel-is-not-a-deployment-contract-title-angle.md",
+          "sha256": "9daa28f3996def74cc958d93d9b479323300e3bbd8e839850e1761b30961c16b"
+        },
+        {
+          "suffix": "evidence-bundle",
+          "path": "companies/vibecode-town/plans/vercel-is-not-a-deployment-contract-evidence-bundle.md",
+          "sha256": "199b17884fe585fe15945b2fc37b8005b5cde8afa7ce8a85693634163dbc6477"
+        },
+        {
+          "suffix": "brief",
+          "path": "companies/vibecode-town/plans/vercel-is-not-a-deployment-contract-brief.md",
+          "sha256": "fd90b60d1cf83f9d394ee1aaee0adb5272dd61b66ad0187ac7a865e99fea86ed"
+        },
+        {
+          "suffix": "gate-0",
+          "path": "companies/vibecode-town/plans/vercel-is-not-a-deployment-contract-gate-0.md",
+          "sha256": "c27004893478d0f5afe0a7045b980844d8156f73caa56ddb68b53e8a7a02c520"
+        },
+        {
+          "suffix": "draft-critique",
+          "path": "companies/vibecode-town/plans/vercel-is-not-a-deployment-contract-draft-critique.md",
+          "sha256": "e61dc14bff0f4007f71fc786654cebf04b5a7744d9461d549691745925f5d88a"
+        }
+      ]
+    },
+    "what-vibe-coding-actually-is": {
+      "files": [
+        {
+          "suffix": "reader-pressure",
+          "path": "companies/vibecode-town/plans/what-vibe-coding-actually-is-reader-pressure.md",
+          "sha256": "9bfbea357a889edf0232f0a9d9d695be584d28690892025a336cb08c878fc2e7"
+        },
+        {
+          "suffix": "title-angle",
+          "path": "companies/vibecode-town/plans/what-vibe-coding-actually-is-title-angle.md",
+          "sha256": "ecaf72b4d0607cfd70548e93e890a180a928dca41bca5ca8defb8dab4193f852"
+        },
+        {
+          "suffix": "evidence-bundle",
+          "path": "companies/vibecode-town/plans/what-vibe-coding-actually-is-evidence-bundle.md",
+          "sha256": "6801f8b6495ed87fc9556abe6bc2b2c31d6e47babe3766560281178344d72596"
+        },
+        {
+          "suffix": "brief",
+          "path": "companies/vibecode-town/plans/what-vibe-coding-actually-is-brief.md",
+          "sha256": "216e148000e2a4e2d7f3201fc72547d5626427c13b153fb384ee1587e589937f"
+        },
+        {
+          "suffix": "gate-0",
+          "path": "companies/vibecode-town/plans/what-vibe-coding-actually-is-gate-0.md",
+          "sha256": "770652dc62454bbc5c621f2810aff6322f6b634f61502b9296b9720dea91a1c1"
+        },
+        {
+          "suffix": "draft-critique",
+          "path": "companies/vibecode-town/plans/what-vibe-coding-actually-is-draft-critique.md",
+          "sha256": "cb6cd8673bb12d5137aac3c707be72b013ef26be98283983283b95619347b9ed"
         }
       ]
     }

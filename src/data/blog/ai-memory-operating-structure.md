@@ -5,6 +5,7 @@ description: "Long prompts are not operating memory. Agent work needs source not
 draft: false
 featured: true
 series: "AI Explainer"
+workflow: "packet"
 lang: "en"
 tags: ["engineering", "ai-agents", "llm-wiki", "technical-contracts"]
 ogImage: "/images/posts/ai-memory-operating-structure.png"
