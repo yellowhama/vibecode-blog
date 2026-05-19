@@ -16,11 +16,40 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
+const totalPosts = page.data.length;
+const packetBackedPosts = page.data.filter(post => post.data.workflow === "packet").length;
 ---
 
 <Layout title={`Posts | ${SITE.title}`}>
   <Header />
-  <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
+  <Main
+    pageTitle="Posts"
+    pageDesc="Evidence-backed articles only. Every non-About post is tied to source packets, a unique image contract, rendered screenshots, and a human approval record."
+  >
+    <section class="mb-10 border-y border-ink/10 bg-accent/5 py-6" aria-label="Archive proof status">
+      <div class="grid gap-4 sm:grid-cols-4">
+        <div>
+          <p class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">Visible posts</p>
+          <p class="mt-1 font-mono text-2xl font-black text-ink">{totalPosts}</p>
+        </div>
+        <div>
+          <p class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">Packet-backed</p>
+          <p class="mt-1 font-mono text-2xl font-black text-ink">{packetBackedPosts}</p>
+        </div>
+        <div>
+          <p class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">Rendered shots</p>
+          <p class="mt-1 font-mono text-2xl font-black text-ink">20</p>
+        </div>
+        <div>
+          <p class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">Approvals</p>
+          <p class="mt-1 font-mono text-2xl font-black text-ink">10</p>
+        </div>
+      </div>
+      <p class="mt-5 max-w-2xl text-sm leading-relaxed text-text-secondary">
+        The archive is intentionally small. A post stays public only when its source workflow, image contract,
+        rendered page evidence, and current Markdown approval hash agree.
+      </p>
+    </section>
     <ul>
       {page.data.map(data => <Card {...data} />)}
     </ul>

@@ -22,6 +22,29 @@ const VIEWPORTS = [
   { name: "mobile", width: 390, height: 844, mobile: true },
 ];
 
+const SURFACE_ROUTES = [
+  {
+    slug: "surface-home",
+    label: "homepage",
+    path: "/",
+    expectedImage: "/images/home/hero-journal.png",
+    requiredTexts: ["Evidence-backed field notes", "Public posts", "Hash-bound approvals"],
+    requiredLink: "/posts/",
+    requirePostLink: false,
+    requireContractImage: false,
+  },
+  {
+    slug: "surface-posts-index",
+    label: "posts index",
+    path: "/posts/",
+    expectedImage: null,
+    requiredTexts: ["Evidence-backed articles only", "Packet-backed", "Approvals"],
+    requiredLink: null,
+    requirePostLink: true,
+    requireContractImage: true,
+  },
+];
+
 const MIME_TYPES = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -287,6 +310,122 @@ function pageAuditExpression(expectedImagePath) {
   })()`;
 }
 
+function surfaceAuditExpression(spec, contractImagePaths) {
+  return `(() => {
+    const spec = ${JSON.stringify(spec)};
+    const contractImagePaths = ${JSON.stringify(contractImagePaths)};
+    const viewport = { width: window.innerWidth, height: window.innerHeight };
+    const bodyText = (document.body.innerText || "").replace(/\\s+/g, " ").trim();
+    const normalizedBodyText = bodyText.toLowerCase();
+    const h1 = document.querySelector("h1");
+    const h1Rect = h1 ? h1.getBoundingClientRect() : null;
+    const links = Array.from(document.querySelectorAll("a")).map(link => ({
+      href: new URL(link.getAttribute("href") || "", location.href).pathname,
+      text: (link.textContent || "").replace(/\\s+/g, " ").trim().slice(0, 120),
+      rect: (() => {
+        const rect = link.getBoundingClientRect();
+        return {
+          top: Math.round(rect.top),
+          bottom: Math.round(rect.bottom),
+          width: Math.round(rect.width),
+          height: Math.round(rect.height)
+        };
+      })()
+    }));
+    const images = Array.from(document.querySelectorAll("img")).map(img => {
+      const rect = img.getBoundingClientRect();
+      return {
+        src: new URL(img.currentSrc || img.src, location.href).pathname,
+        alt: img.getAttribute("alt") || "",
+        complete: img.complete,
+        naturalWidth: img.naturalWidth,
+        naturalHeight: img.naturalHeight,
+        rect: {
+          x: Math.round(rect.x),
+          y: Math.round(rect.y),
+          width: Math.round(rect.width),
+          height: Math.round(rect.height),
+          top: Math.round(rect.top),
+          bottom: Math.round(rect.bottom)
+        }
+      };
+    });
+    const overflowX = Math.max(
+      document.documentElement.scrollWidth,
+      document.body.scrollWidth
+    ) - window.innerWidth;
+    const badWideElements = Array.from(document.querySelectorAll("body *"))
+      .filter(element => {
+        const rect = element.getBoundingClientRect();
+        if (rect.width < 1 || rect.height < 1) return false;
+        return rect.left < -2 || rect.right > window.innerWidth + 2;
+      })
+      .slice(0, 8)
+      .map(element => ({
+        tag: element.tagName.toLowerCase(),
+        text: (element.textContent || "").trim().slice(0, 80),
+        rect: {
+          left: Math.round(element.getBoundingClientRect().left),
+          right: Math.round(element.getBoundingClientRect().right),
+          width: Math.round(element.getBoundingClientRect().width)
+        }
+      }));
+    const expectedSurfaceImage = spec.expectedImage
+      ? images.find(image => image.src === spec.expectedImage) || null
+      : null;
+    const contractImages = images.filter(image => contractImagePaths.includes(image.src));
+    const visibleContractImages = contractImages.filter(image =>
+      image.complete &&
+      image.naturalWidth >= 300 &&
+      image.naturalHeight >= 150 &&
+      image.rect.width >= 120 &&
+      image.rect.height >= 80
+    );
+    const firstScreenContractImages = visibleContractImages.filter(image =>
+      image.rect.top < window.innerHeight &&
+      image.rect.bottom > 0
+    );
+    return {
+      title: document.title,
+      h1: h1 ? h1.innerText.trim() : "",
+      h1InFirstViewport: Boolean(h1Rect && h1Rect.top >= 0 && h1Rect.top < window.innerHeight),
+      topTextLength: bodyText.slice(0, 700).length,
+      requiredTexts: spec.requiredTexts.map(text => ({ text, present: normalizedBodyText.includes(text.toLowerCase()) })),
+      requiredLink: spec.requiredLink,
+      requiredLinkVisible: !spec.requiredLink || links.some(link =>
+        link.href === spec.requiredLink &&
+        link.rect.width >= 20 &&
+        link.rect.height >= 10 &&
+        link.rect.bottom > 0 &&
+        link.rect.top < window.innerHeight
+      ),
+      postLinkVisible: !spec.requirePostLink || links.some(link =>
+        /^\\/posts\\/[^/]+\\/?$/.test(link.href) &&
+        link.rect.width >= 20 &&
+        link.rect.height >= 10 &&
+        link.rect.bottom > 0 &&
+        link.rect.top < window.innerHeight
+      ),
+      overflowX,
+      badWideElements,
+      images,
+      expectedSurfaceImage,
+      expectedSurfaceImageVisible: Boolean(
+        expectedSurfaceImage &&
+        expectedSurfaceImage.complete &&
+        expectedSurfaceImage.naturalWidth >= 300 &&
+        expectedSurfaceImage.naturalHeight >= 150 &&
+        expectedSurfaceImage.rect.width >= 80 &&
+        expectedSurfaceImage.rect.height >= 80
+      ),
+      contractImages,
+      visibleContractImages,
+      firstScreenContractImages,
+      viewport
+    };
+  })()`;
+}
+
 async function auditPage(chromePort, baseUrl, outputDir, contract, viewport) {
   const url = `${baseUrl}/posts/${contract.slug}/`;
   const target = await createTarget(chromePort, url);
@@ -343,6 +482,74 @@ async function auditPage(chromePort, baseUrl, outputDir, contract, viewport) {
   }
 }
 
+async function auditSurfaceRoute(chromePort, baseUrl, outputDir, spec, viewport, contractImagePaths) {
+  const url = `${baseUrl}${spec.path}`;
+  const target = await createTarget(chromePort, url);
+  const cdp = openCdp(target.webSocketDebuggerUrl);
+  await cdp.ready;
+
+  try {
+    await cdp.command("Page.enable");
+    await cdp.command("Runtime.enable");
+    await cdp.command("Emulation.setDeviceMetricsOverride", {
+      width: viewport.width,
+      height: viewport.height,
+      deviceScaleFactor: viewport.mobile ? 2 : 1,
+      mobile: viewport.mobile,
+    });
+
+    const loaded = cdp.waitFor("Page.loadEventFired", 12000);
+    await cdp.command("Page.navigate", { url });
+    await loaded;
+    await new Promise(resolveDelay => setTimeout(resolveDelay, 500));
+
+    const evaluation = await cdp.command("Runtime.evaluate", {
+      expression: surfaceAuditExpression(spec, contractImagePaths),
+      returnByValue: true,
+      awaitPromise: true,
+    });
+    const audit = evaluation.result.result.value;
+
+    const screenshot = await cdp.command("Page.captureScreenshot", {
+      format: "png",
+      captureBeyondViewport: false,
+    });
+    const screenshotPath = join(outputDir, `${spec.slug}-${viewport.name}.png`);
+    await writeFile(screenshotPath, Buffer.from(screenshot.result.data, "base64"));
+
+    const failures = [];
+    if (!audit.h1InFirstViewport) failures.push("h1 is not visible in the first viewport");
+    if (audit.topTextLength < 160) failures.push("first viewport has too little readable text");
+    if (audit.overflowX > 2) failures.push(`page has horizontal overflow of ${audit.overflowX}px`);
+    for (const textResult of audit.requiredTexts) {
+      if (!textResult.present) failures.push(`surface is missing required text: ${textResult.text}`);
+    }
+    if (!audit.requiredLinkVisible) failures.push(`surface is missing visible link to ${spec.requiredLink}`);
+    if (!audit.postLinkVisible) failures.push("surface is missing a visible post card link");
+    if (spec.expectedImage && !audit.expectedSurfaceImageVisible) {
+      failures.push(`surface expected image did not render visibly: ${spec.expectedImage}`);
+    }
+    if (spec.requireContractImage && audit.visibleContractImages.length < 1) {
+      failures.push("surface has no visible post contract image");
+    }
+    if (spec.requireContractImage && audit.firstScreenContractImages.length < 1) {
+      failures.push("surface has no first-screen post contract image");
+    }
+
+    return {
+      slug: spec.slug,
+      label: spec.label,
+      viewport: viewport.name,
+      url,
+      screenshotPath,
+      audit,
+      failures,
+    };
+  } finally {
+    cdp.close();
+  }
+}
+
 async function main() {
   if (!existsSync(DIST_DIR)) {
     throw new Error("dist does not exist. Run npm run build before verify:rendered-pages.");
@@ -373,11 +580,13 @@ async function main() {
   });
 
   const results = [];
+  const surfaceResults = [];
   const failures = [];
 
   try {
     await waitForChrome(chromePort);
     const baseUrl = `http://127.0.0.1:${sitePort}`;
+    const contractImagePaths = contracts.map(contract => contract.image);
     for (const contract of contracts) {
       for (const viewport of VIEWPORTS) {
         const result = await auditPage(chromePort, baseUrl, outputDir, contract, viewport);
@@ -387,19 +596,49 @@ async function main() {
         }
       }
     }
+    for (const spec of SURFACE_ROUTES) {
+      for (const viewport of VIEWPORTS) {
+        const result = await auditSurfaceRoute(chromePort, baseUrl, outputDir, spec, viewport, contractImagePaths);
+        surfaceResults.push(result);
+        for (const failure of result.failures) {
+          failures.push(`${spec.slug} (${viewport.name}): ${failure}`);
+        }
+      }
+    }
+
+    const firstScreenImageStats = {
+      postDetailDesktopExpectedImagesInFirstScreen: results.filter(
+        result => result.viewport === "desktop" && result.audit.expectedImageInFirstScreen,
+      ).length,
+      postDetailMobileExpectedImagesInFirstScreen: results.filter(
+        result => result.viewport === "mobile" && result.audit.expectedImageInFirstScreen,
+      ).length,
+      postDetailDesktopCount: results.filter(result => result.viewport === "desktop").length,
+      postDetailMobileCount: results.filter(result => result.viewport === "mobile").length,
+    };
 
     const summary = {
       generatedAt: new Date().toISOString(),
       screenshotsDir: outputDir,
       postsChecked: contracts.length,
-      viewportsChecked: results.length,
+      indexRoutesChecked: SURFACE_ROUTES.length,
+      viewportsChecked: results.length + surfaceResults.length,
+      firstScreenImageStats,
       failures,
       results,
+      surfaceResults,
     };
     await writeFile(join(outputDir, "summary.json"), JSON.stringify(summary, null, 2));
 
     process.stdout.write(`rendered_page_posts_checked=${contracts.length}\n`);
-    process.stdout.write(`rendered_page_viewports_checked=${results.length}\n`);
+    process.stdout.write(`rendered_page_index_routes_checked=${SURFACE_ROUTES.length}\n`);
+    process.stdout.write(`rendered_page_viewports_checked=${results.length + surfaceResults.length}\n`);
+    process.stdout.write(
+      `rendered_page_post_detail_first_screen_images_desktop=${firstScreenImageStats.postDetailDesktopExpectedImagesInFirstScreen}/${firstScreenImageStats.postDetailDesktopCount}\n`,
+    );
+    process.stdout.write(
+      `rendered_page_post_detail_first_screen_images_mobile=${firstScreenImageStats.postDetailMobileExpectedImagesInFirstScreen}/${firstScreenImageStats.postDetailMobileCount}\n`,
+    );
     process.stdout.write(`rendered_page_screenshots_dir=${outputDir}\n`);
 
     if (failures.length > 0) {

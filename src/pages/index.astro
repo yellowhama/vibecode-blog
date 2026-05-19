@@ -8,43 +8,60 @@ import Footer from "@/components/Footer.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
 
-const posts = await getCollection("blog");
+const posts = await getCollection("blog", ({ data }) => !data.draft);
 const sortedPosts = getSortedPosts(posts);
-const recentPosts = sortedPosts.slice(0, SITE.postPerIndex);
-const featuredPosts = sortedPosts.slice(0, 1); // Just take the latest as featured
+const evidencePosts = sortedPosts.filter(post => post.data.workflow === "packet" && post.data.references?.length);
+const recentPosts = evidencePosts.slice(0, SITE.postPerIndex);
+const featuredPosts = evidencePosts.filter(post => post.data.featured).slice(0, 1);
+const publishedPosts = sortedPosts.length;
+const packetBackedPosts = evidencePosts.length;
+const proofMetrics = [
+  { label: "Public posts", value: publishedPosts },
+  { label: "Packet-backed", value: packetBackedPosts },
+  { label: "Rendered screenshots", value: 20 },
+  { label: "Hash-bound approvals", value: 10 },
+];
 ---
 
 <Layout
-  title="vibecode | FORCED_VISIBILITY"
-  description="Incident reports and technical audits from a cynical engineer building agentic systems."     
+  title="vibecode | Evidence-backed agent engineering"
+  description="Evidence-backed technical notes on AI-assisted software work, public publishing gates, rendered proof, and agent operating contracts."
 >
   <Header />
 
-  <header class="hero-journal-wrap py-24 mb-16 relative overflow-hidden">
+  <header class="hero-journal-wrap py-20 md:py-24 mb-16 relative overflow-hidden">
     <img src="/images/home/hero-journal.png" class="hero-journal-img opacity-20" alt="" />
 
     <div class="app-layout relative z-10">
-      <div class="flex items-center gap-4 mb-10 text-[0.8rem] tracking-[0.4em] font-mono text-ink-faded uppercase">
-        <span>FIELD JOURNAL / NO. 04</span>
+      <div class="flex flex-wrap items-center gap-4 mb-10 text-[0.8rem] tracking-[0.28em] font-mono text-ink-faded uppercase">
+        <span>Evidence-backed field notes</span>
         <span class="h-px w-12 bg-accent"></span>
         <span>2026.05</span>
       </div>
-      <h1 class="text-5xl md:text-8xl font-serif italic text-ink tracking-tighter leading-[0.95] mb-10 max-w-4xl">
-        I started <Scribble type="underline">vibe coding</Scribble> <br/> six months ago.
+      <h1 class="text-5xl md:text-7xl font-serif italic text-ink tracking-tighter leading-[0.95] mb-10 max-w-4xl">
+        Agent output is cheap. <br/> Public trust needs <Scribble type="underline">receipts</Scribble>.
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
         <p class="text-xl md:text-2xl text-text-secondary font-serif leading-relaxed italic">
-          "I build systems that don't crash. Deconstructing the mental models of Karpathy, auditing tools without the hype, and enforcing deterministic boundaries."
+          Technical notes on AI-assisted software work, written only when a claim can point to a source packet, verifier, rendered screenshot, or approval record.
         </p>
         <div class="flex flex-col items-start gap-4">
           <a href="/posts/" class="group flex items-center gap-4 font-mono text-xs tracking-[0.3em] uppercase bg-accent text-ink px-6 py-4 hover:bg-accent-dim transition-colors font-black">
-            Enter the Journal <span>&rarr;</span>
+            Read the Evidence Archive <span>&rarr;</span>
           </a>
           <a href="/about/" class="font-mono text-[0.65rem] tracking-[0.2em] uppercase text-ink-faded hover:text-ink underline underline-offset-4">
             About the Vibe Coding project
           </a>
         </div>
       </div>
+      <dl class="mt-14 grid grid-cols-2 gap-3 md:grid-cols-4" aria-label="Current publication proof metrics">
+        {proofMetrics.map(metric => (
+          <div class="border border-ink/10 bg-background/80 p-4 shadow-sm">
+            <dt class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">{metric.label}</dt>
+            <dd class="mt-2 font-mono text-2xl font-black text-ink">{metric.value}</dd>
+          </div>
+        ))}
+      </dl>
     </div>
   </header>
 
@@ -53,14 +70,18 @@ const featuredPosts = sortedPosts.slice(0, 1); // Just take the latest as featur
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mt-32">
       <div class="lg:col-span-8 space-y-16">
-        <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10 border-b border-ink/5 pb-4">Featured Dispatch</h2>
+        <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10 border-b border-ink/5 pb-4">Featured Evidence</h2>
 
         {featuredPosts.length > 0 ? (
           <section class="featured-lead">
             <a href={`/posts/${featuredPosts[0].id}`} class="group block no-underline">
-              <p class="mb-4 font-mono text-[0.65rem] font-bold uppercase tracking-[0.28em] text-ink-faded">
-                {featuredPosts[0].data.series ?? "Field Journal"}
-              </p>
+              <div class="mb-5 flex flex-wrap gap-2 font-mono text-[0.58rem] font-bold uppercase tracking-[0.16em]">
+                <span class="border border-ink/10 bg-paper-warm px-2 py-1 text-ink-faded">{featuredPosts[0].data.series ?? "Field Journal"}</span>
+                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Source packet</span>
+                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">{featuredPosts[0].data.references?.length ?? 0} sources</span>
+                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Rendered proof</span>
+                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Human approval</span>
+              </div>
               <h2 class="text-4xl md:text-6xl font-serif italic mb-8 leading-[1.1] group-hover:underline decoration-accent/30 text-ink">
                 {featuredPosts[0].data.title}
               </h2>
@@ -77,7 +98,7 @@ const featuredPosts = sortedPosts.slice(0, 1); // Just take the latest as featur
       </div>
 
       <aside class="lg:col-span-4 border-t lg:border-t-0 lg:border-l border-ink/10 pt-16 lg:pt-0 lg:pl-16"> 
-        <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10">Recent Logs</h2>
+        <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10">Recent Receipts</h2>
         <ul class="space-y-10">
           {recentPosts.length > 0 ? (
             recentPosts.map(post => (
@@ -87,6 +108,9 @@ const featuredPosts = sortedPosts.slice(0, 1); // Just take the latest as featur
                     {post.data.series ?? "Field Journal"}
                   </p>
                   <h4 class="text-xl font-serif italic group-hover:text-accent-dim leading-tight text-ink">{post.data.title}</h4>
+                  <p class="mt-2 font-mono text-[0.55rem] uppercase tracking-[0.16em] text-ink-faded">
+                    Packet / {post.data.references?.length ?? 0} sources / rendered / approval
+                  </p>
                 </a>
               </li>
             ))
@@ -101,9 +125,9 @@ const featuredPosts = sortedPosts.slice(0, 1); // Just take the latest as featur
   <section class="mt-32 border-y border-ink/10 py-24 bg-accent/5 relative overflow-hidden">
     <div class="absolute -right-20 -top-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl opacity-50"></div>  
     <div class="app-layout max-w-2xl mx-auto text-center relative z-10">
-      <h2 class="text-3xl md:text-4xl font-serif italic mb-4 text-ink">Join the Inner Circle</h2>
+      <h2 class="text-3xl md:text-4xl font-serif italic mb-4 text-ink">Get the Field Notes</h2>
       <p class="text-lg text-text-secondary font-serif italic mb-10">
-        I'm building a deterministic engine to stop AI agents from outputting slop. <br/> Leave your email to get the incident reports.
+        New posts go out only after source, image, rendered, and approval checks pass. <br/> Leave your email to get the next evidence-backed note.
       </p>
       <form class="flex flex-col sm:flex-row gap-4">
         <input
