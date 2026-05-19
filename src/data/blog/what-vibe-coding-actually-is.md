@@ -88,6 +88,40 @@ Route contract:
 
 Now the agent has a boundary. It can still move quickly, but the output has something to be rejected against.
 
+## A Field Receipt From This Site
+
+The same failure shape showed up in this site, just on the publishing surface instead of a route handler.
+
+Before the hardening loop, a plausible agent run could create a post, attach an image, and call the work done while missing the actual public contract:
+
+```txt
+English blog received Korean source text.
+Several posts reused generic-looking images.
+Product names appeared in posts without release evidence.
+Markdown changed without a fresh human publication approval hash.
+```
+
+The repair was not a longer prompt. It was a contract stack in code:
+
+```txt
+bc23231 Harden public page review gate
+64eece2 Add post image contract gate
+21c2144 Require packet-backed operator posts
+5c94781 Add rendered page audit and deepen post rewrites
+bf86204 Require human publication approvals
+```
+
+The current receipt is concrete:
+
+```txt
+packet_backed_posts=9
+packet_files=54
+rendered screenshots=20
+publication approval records=10
+```
+
+That is the production shift. The agent is still allowed to draft, rewrite, and generate images. But the output cannot remain public unless the source packet, image contract, rendered screenshot, and exact Markdown hash agree.
+
 ## The Production Shift
 
 The production workflow is not this:

@@ -21,13 +21,18 @@
       "decision": "approved_to_remain_public",
       "reviewerType": "human",
       "approvedBy": "operator",
-      "approvedAt": "2026-05-20T03:38:24+09:00",
-      "approvalRef": "operator-active-goal-continuation-2026-05-20",
-      "approvalScope": "current_public_baseline_after_q06_q08_gates",
+      "approvedAt": "2026-05-20T04:45:00+09:00",
+      "approvalRef": "operator-evidence-writing-upgrade-loop-09-2026-05-20",
+      "approvalScope": "current_public_baseline_after_evidence_writing_upgrade_loop_09",
       "contentSha256": "7fcecc4f100740ca0cdfd27405336702d85297e8d05a76e823fde04161989b92",
       "sourceWorkflow": "about-exempt",
       "image": "/images/posts/000-about.png",
-      "requiredEvidence": ["public_page_review_gate", "post_image_contract_gate", "rendered_page_gate", "site_quality_gate"]
+      "requiredEvidence": [
+        "public_page_review_gate",
+        "post_image_contract_gate",
+        "rendered_page_gate",
+        "site_quality_gate"
+      ]
     },
     {
       "slug": "ai-agent-work-disk-contract",
@@ -35,13 +40,19 @@
       "decision": "approved_to_remain_public",
       "reviewerType": "human",
       "approvedBy": "operator",
-      "approvedAt": "2026-05-20T03:38:24+09:00",
-      "approvalRef": "operator-active-goal-continuation-2026-05-20",
-      "approvalScope": "current_public_baseline_after_q06_q08_gates",
-      "contentSha256": "14348e5b953307835916a5d6bda9b31b2b93460f12219eb81d98698a7100c0f5",
+      "approvedAt": "2026-05-20T04:45:00+09:00",
+      "approvalRef": "operator-evidence-writing-upgrade-loop-09-2026-05-20",
+      "approvalScope": "current_public_baseline_after_evidence_writing_upgrade_loop_09",
+      "contentSha256": "0f0db2dbdbbb58f5aed9e17d56a29b3a417330f85f534cec32a60d7d6b7d1a9e",
       "sourceWorkflow": "packet",
       "image": "/images/posts/ai-agent-work-disk-contract.png",
-      "requiredEvidence": ["source_workflow_gate", "public_page_review_gate", "post_image_contract_gate", "rendered_page_gate", "site_quality_gate"]
+      "requiredEvidence": [
+        "source_workflow_gate",
+        "public_page_review_gate",
+        "post_image_contract_gate",
+        "rendered_page_gate",
+        "site_quality_gate"
+      ]
     },
     {
       "slug": "ai-memory-operating-structure",
@@ -49,13 +60,19 @@
       "decision": "approved_to_remain_public",
       "reviewerType": "human",
       "approvedBy": "operator",
-      "approvedAt": "2026-05-20T03:38:24+09:00",
-      "approvalRef": "operator-active-goal-continuation-2026-05-20",
-      "approvalScope": "current_public_baseline_after_q06_q08_gates",
-      "contentSha256": "7986c6f76c5b0db6f84fde413cdbd709ca67eb8026717d58fd6644817d7cf406",
+      "approvedAt": "2026-05-20T04:45:00+09:00",
+      "approvalRef": "operator-evidence-writing-upgrade-loop-09-2026-05-20",
+      "approvalScope": "current_public_baseline_after_evidence_writing_upgrade_loop_09",
+      "contentSha256": "2ad5f4944defd0d69bd496ccf1a686dc85bfdac5e241e314a3c3b9d9f2fdc930",
       "sourceWorkflow": "packet",
       "image": "/images/posts/ai-memory-operating-structure.png",
-      "requiredEvidence": ["source_workflow_gate", "public_page_review_gate", "post_image_contract_gate", "rendered_page_gate", "site_quality_gate"]
+      "requiredEvidence": [
+        "source_workflow_gate",
+        "public_page_review_gate",
+        "post_image_contract_gate",
+        "rendered_page_gate",
+        "site_quality_gate"
+      ]
     },
     {
       "slug": "design-is-a-technical-contract",
@@ -63,13 +80,19 @@
       "decision": "approved_to_remain_public",
       "reviewerType": "human",
       "approvedBy": "operator",
-      "approvedAt": "2026-05-20T03:38:24+09:00",
-      "approvalRef": "operator-active-goal-continuation-2026-05-20",
-      "approvalScope": "current_public_baseline_after_q06_q08_gates",
-      "contentSha256": "ffce17878b865f38f3a9a2e1ef5e64a86928eb5dc7fc9a4143240bbed32568d2",
+      "approvedAt": "2026-05-20T04:45:00+09:00",
+      "approvalRef": "operator-evidence-writing-upgrade-loop-09-2026-05-20",
+      "approvalScope": "current_public_baseline_after_evidence_writing_upgrade_loop_09",
+      "contentSha256": "eb590d6702b4880e95ddfb04cd1f6fd1dda6a684da8f54aab5b3e44b9e17d88d",
       "sourceWorkflow": "packet",
       "image": "/images/posts/design-is-a-technical-contract.png",
-      "requiredEvidence": ["source_workflow_gate", "public_page_review_gate", "post_image_contract_gate", "rendered_page_gate", "site_quality_gate"]
+      "requiredEvidence": [
+        "source_workflow_gate",
+        "public_page_review_gate",
+        "post_image_contract_gate",
+        "rendered_page_gate",
+        "site_quality_gate"
+      ]
     },
     {
       "slug": "frustration-as-spec",
@@ -77,13 +100,19 @@
       "decision": "approved_to_remain_public",
       "reviewerType": "human",
       "approvedBy": "operator",
-      "approvedAt": "2026-05-20T03:38:24+09:00",
-      "approvalRef": "operator-active-goal-continuation-2026-05-20",
-      "approvalScope": "current_public_baseline_after_q06_q08_gates",
-      "contentSha256": "9a4df85fec29f9e94f79cc866d6569692d2a41cb9997f36e920400b6dc56bf7e",
+      "approvedAt": "2026-05-20T04:45:00+09:00",
+      "approvalRef": "operator-evidence-writing-upgrade-loop-09-2026-05-20",
+      "approvalScope": "current_public_baseline_after_evidence_writing_upgrade_loop_09",
+      "contentSha256": "c30555f9070e2bfa5318197e8e3e92a6e572d68c5370dee48ab5033e41bc5fd5",
       "sourceWorkflow": "packet",
       "image": "/images/posts/frustration-as-spec.png",
-      "requiredEvidence": ["source_workflow_gate", "public_page_review_gate", "post_image_contract_gate", "rendered_page_gate", "site_quality_gate"]
+      "requiredEvidence": [
+        "source_workflow_gate",
+        "public_page_review_gate",
+        "post_image_contract_gate",
+        "rendered_page_gate",
+        "site_quality_gate"
+      ]
     },
     {
       "slug": "html-review-artifacts-for-agents",
@@ -91,13 +120,19 @@
       "decision": "approved_to_remain_public",
       "reviewerType": "human",
       "approvedBy": "operator",
-      "approvedAt": "2026-05-20T03:38:24+09:00",
-      "approvalRef": "operator-active-goal-continuation-2026-05-20",
-      "approvalScope": "current_public_baseline_after_q06_q08_gates",
-      "contentSha256": "1ecf59963ad47ca4dded2b56f540275fda8583695d7dde1664b852ef86cd14c7",
+      "approvedAt": "2026-05-20T04:45:00+09:00",
+      "approvalRef": "operator-evidence-writing-upgrade-loop-09-2026-05-20",
+      "approvalScope": "current_public_baseline_after_evidence_writing_upgrade_loop_09",
+      "contentSha256": "a549573484c0279ea6360d8078c4a8ac8b8725f4b9b4e6540c4d90896e7018b6",
       "sourceWorkflow": "packet",
       "image": "/images/posts/html-review-artifacts-for-agents.png",
-      "requiredEvidence": ["source_workflow_gate", "public_page_review_gate", "post_image_contract_gate", "rendered_page_gate", "site_quality_gate"]
+      "requiredEvidence": [
+        "source_workflow_gate",
+        "public_page_review_gate",
+        "post_image_contract_gate",
+        "rendered_page_gate",
+        "site_quality_gate"
+      ]
     },
     {
       "slug": "mcp-shared-state-data-leak",
@@ -105,13 +140,19 @@
       "decision": "approved_to_remain_public",
       "reviewerType": "human",
       "approvedBy": "operator",
-      "approvedAt": "2026-05-20T03:38:24+09:00",
-      "approvalRef": "operator-active-goal-continuation-2026-05-20",
-      "approvalScope": "current_public_baseline_after_q06_q08_gates",
-      "contentSha256": "ebae98da1c5f4ea1f7c63a7c7d540f198fc9a736aa9c3d2e563cd77928c34e90",
+      "approvedAt": "2026-05-20T04:45:00+09:00",
+      "approvalRef": "operator-evidence-writing-upgrade-loop-09-2026-05-20",
+      "approvalScope": "current_public_baseline_after_evidence_writing_upgrade_loop_09",
+      "contentSha256": "75a76fce0f95948140debef063aed4492c71541728038743d6d963c781a17d33",
       "sourceWorkflow": "packet",
       "image": "/images/posts/mcp-shared-state-data-leak.png",
-      "requiredEvidence": ["source_workflow_gate", "public_page_review_gate", "post_image_contract_gate", "rendered_page_gate", "site_quality_gate"]
+      "requiredEvidence": [
+        "source_workflow_gate",
+        "public_page_review_gate",
+        "post_image_contract_gate",
+        "rendered_page_gate",
+        "site_quality_gate"
+      ]
     },
     {
       "slug": "software-3-0",
@@ -119,13 +160,19 @@
       "decision": "approved_to_remain_public",
       "reviewerType": "human",
       "approvedBy": "operator",
-      "approvedAt": "2026-05-20T03:38:24+09:00",
-      "approvalRef": "operator-active-goal-continuation-2026-05-20",
-      "approvalScope": "current_public_baseline_after_q06_q08_gates",
-      "contentSha256": "06ed580e31d0280b12576818c1b4e487b8bf984e0e0ecf90f99a588b83d394ff",
+      "approvedAt": "2026-05-20T04:45:00+09:00",
+      "approvalRef": "operator-evidence-writing-upgrade-loop-09-2026-05-20",
+      "approvalScope": "current_public_baseline_after_evidence_writing_upgrade_loop_09",
+      "contentSha256": "0da896901b591090c74c484b51044f0f4942a64a23208a559602bbb282122611",
       "sourceWorkflow": "packet",
       "image": "/images/posts/software-3-0.png",
-      "requiredEvidence": ["source_workflow_gate", "public_page_review_gate", "post_image_contract_gate", "rendered_page_gate", "site_quality_gate"]
+      "requiredEvidence": [
+        "source_workflow_gate",
+        "public_page_review_gate",
+        "post_image_contract_gate",
+        "rendered_page_gate",
+        "site_quality_gate"
+      ]
     },
     {
       "slug": "vercel-is-not-a-deployment-contract",
@@ -133,13 +180,19 @@
       "decision": "approved_to_remain_public",
       "reviewerType": "human",
       "approvedBy": "operator",
-      "approvedAt": "2026-05-20T03:38:24+09:00",
-      "approvalRef": "operator-active-goal-continuation-2026-05-20",
-      "approvalScope": "current_public_baseline_after_q06_q08_gates",
-      "contentSha256": "184093a35e2ba958e8fafc68a28309296d1b7806b988b44b08e7105472cc5998",
+      "approvedAt": "2026-05-20T04:45:00+09:00",
+      "approvalRef": "operator-evidence-writing-upgrade-loop-09-2026-05-20",
+      "approvalScope": "current_public_baseline_after_evidence_writing_upgrade_loop_09",
+      "contentSha256": "d6024157f26d69b2dc4cbcb926d33aeb8f173088a9637d741afde23a8b32a61a",
       "sourceWorkflow": "packet",
       "image": "/images/posts/vercel-is-not-a-deployment-contract.png",
-      "requiredEvidence": ["source_workflow_gate", "public_page_review_gate", "post_image_contract_gate", "rendered_page_gate", "site_quality_gate"]
+      "requiredEvidence": [
+        "source_workflow_gate",
+        "public_page_review_gate",
+        "post_image_contract_gate",
+        "rendered_page_gate",
+        "site_quality_gate"
+      ]
     },
     {
       "slug": "what-vibe-coding-actually-is",
@@ -147,13 +200,19 @@
       "decision": "approved_to_remain_public",
       "reviewerType": "human",
       "approvedBy": "operator",
-      "approvedAt": "2026-05-20T03:38:24+09:00",
-      "approvalRef": "operator-active-goal-continuation-2026-05-20",
-      "approvalScope": "current_public_baseline_after_q06_q08_gates",
-      "contentSha256": "0793831c7f66f98f744dfe57b43e9c36958b8091de8009fb6d7ac914b94b6d31",
+      "approvedAt": "2026-05-20T04:45:00+09:00",
+      "approvalRef": "operator-evidence-writing-upgrade-loop-09-2026-05-20",
+      "approvalScope": "current_public_baseline_after_evidence_writing_upgrade_loop_09",
+      "contentSha256": "bd14665a99897a663b03fad48023dcd265107fd24a591c779fc76681ce6cd149",
       "sourceWorkflow": "packet",
       "image": "/images/posts/what-vibe-coding-actually-is.png",
-      "requiredEvidence": ["source_workflow_gate", "public_page_review_gate", "post_image_contract_gate", "rendered_page_gate", "site_quality_gate"]
+      "requiredEvidence": [
+        "source_workflow_gate",
+        "public_page_review_gate",
+        "post_image_contract_gate",
+        "rendered_page_gate",
+        "site_quality_gate"
+      ]
     }
   ]
 }

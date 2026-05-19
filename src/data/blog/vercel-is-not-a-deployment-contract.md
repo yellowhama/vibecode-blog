@@ -149,6 +149,27 @@ That is the standard Vibecode Town should use before moving a site to Coolify.
 
 The reader version is the same: test the artifact, not the platform dashboard.
 
+## Field Receipt
+
+The portability lesson now has a repeatable site-level receipt:
+
+```txt
+npm run verify:site-quality
+```
+
+That command does more than build the Astro site. It runs the public content gates, builds `dist`, indexes Pagefind, captures rendered post screenshots, checks publication approvals, verifies deploy artifacts, and runs the field-log gate.
+
+The latest completed run produced the shape this article argues for:
+
+```txt
+static pages built: 41
+public posts rendered: 10
+rendered viewports checked: 20
+publication approvals checked: 10
+```
+
+That is the deployment-contract mindset applied back to the blog itself: the dashboard is not the proof. The artifact and the verifier are the proof.
+
 ## Boundary
 
 This does not prove Coolify production is ready.

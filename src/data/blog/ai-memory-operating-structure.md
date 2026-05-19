@@ -114,6 +114,36 @@ Completion is not proven until:
 
 The last line matters. Without it, the next session tends to convert partial progress into a finished story.
 
+Here is the difference in the current Vibecode workflow.
+
+Bad restart surface:
+
+```txt
+We improved the blog and fixed the gates. Continue from there.
+```
+
+Usable restart surface:
+
+```txt
+Goal: make public posts source-backed, English, image-backed, and approval-bound.
+Current status: product commit bf86204 is pushed.
+Verified evidence: verify:site-quality passed; 10 posts, 20 rendered screenshots, 10 approval records.
+Files changed: publication approval manifest, rendered audit script, post image contract gate, operator writing gate.
+Known boundary: writing is verified but not yet top-tier memorable.
+Next action: add concrete examples, screenshots, failure logs, before/after, and numbers to the post bodies.
+Completion is not proven until: site-quality, wiki reindex, and archive checks pass again.
+```
+
+The packet trail behind that handoff is also countable:
+
+```txt
+packet-backed public posts: 9
+required packet files per post: 6
+total packet files: 54
+```
+
+That is what the next agent can use without re-reading the whole chat. It can tell which work is complete, which work is only a qualitative weakness, and which command has to prove the next change.
+
 ## Audit Checklist
 
 Before trusting an agent workflow, ask:

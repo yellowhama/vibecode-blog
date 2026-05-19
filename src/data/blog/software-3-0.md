@@ -91,6 +91,31 @@ The agent can still move fast. The difference is that every public surface now h
 
 That is the practical meaning of Software 3.0 for an operator: do not celebrate faster generation until the rejection path is at least as real as the creation path.
 
+## The Receipt
+
+The current Vibecode Town receipt is small enough to inspect:
+
+```txt
+current commit: bf86204 Require human publication approvals
+published posts checked: 10
+packet-backed posts: 9
+source workflow packet files: 54
+rendered page screenshots: 20
+publication approval records: 10
+```
+
+The before/after is the important part.
+
+| Before | After |
+| --- | --- |
+| A public post could change without a matching approval record | `verify:publication-approvals` checks the current Markdown SHA256 |
+| An image could exist without proving it matched the post | `verify:post-image-contracts` checks path, dimensions, byte size, uniqueness, and semantic anchors |
+| A page could build while the rendered article still broke on mobile | `verify:rendered-pages` captures desktop and mobile screenshots |
+| A source-inspired post could skip the packet trail | `verify:source-workflow` requires six packet files per non-About post |
+| A product mention could leak into every post by habit | `verify:public-page-review` rejects forbidden public product mentions |
+
+This is what changed: generation became cheap enough that the site needed an explicit rejection path for writing, images, rendering, and approval.
+
 ## Reader Decision
 
 If an agent is only producing disposable prototypes, a prompt may be enough.

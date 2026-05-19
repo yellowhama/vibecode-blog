@@ -67,6 +67,38 @@ discover the active machine state is now part of the task
 
 That is not an agent intelligence problem. It is an operations boundary problem.
 
+## Current Machine Receipt
+
+The active workstation makes the disk-role issue visible:
+
+```txt
+Get-PSDrive -Name C,F
+
+Name          Used          Free
+C     473489145856  525797683200
+F    1195198464000 6806346575872
+```
+
+The point is not that F is always the right disk. The point is that this machine has a clear archive/work volume, and the agent was still being corrected for using C in places where completed company artifacts belonged on F.
+
+The current contract names the durable locations:
+
+```txt
+product repo: F:\Aisaak\Projects\vibecode-town
+LLM wiki: F:\Aisaak\CompanyArtifacts\llm-wiki-completed
+rendered evidence: F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest
+```
+
+The archive receipt from the latest wiki sync was:
+
+```txt
+archive_files_copied=256
+source_markdown_count=224
+archive_markdown_count=224
+```
+
+That is why the path contract matters. Without it, an agent can pass a test while leaving the evidence trail in the wrong place.
+
 ## Work Disk Contract
 
 Vibecode uses the contract this way:

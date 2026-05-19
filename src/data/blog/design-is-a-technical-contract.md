@@ -106,6 +106,33 @@ That turns design from a preference conversation into an inspectable workflow. I
 
 This is the operator value: the agent can be creative inside the roles, but it cannot silently replace the roles.
 
+## A Small Operator Loop
+
+The same pattern is now used for Vibecode post imagery.
+
+The public image contract is not "make the post look nice." It is structured data:
+
+```json
+{
+  "slug": "design-is-a-technical-contract",
+  "image": "/images/posts/design-is-a-technical-contract.png",
+  "signal": "roles -> components -> lint",
+  "motif": "tokens",
+  "anchors": ["design md", "tokens", "linter"]
+}
+```
+
+The verifier then checks the contract instead of taste:
+
+```txt
+body image must match ogImage
+image must be 1200x630
+image must not be reused by another post
+semantic anchors must appear in the post text
+```
+
+That is a design-system lesson in miniature. A visual decision becomes a named role, the role becomes data, and the data becomes lintable. The agent can still generate the image, but it cannot silently use a generic asset that has no relationship to the article.
+
 ## Reader Decision
 
 Use DESIGN.md when a design decision needs to survive more than one prompt.

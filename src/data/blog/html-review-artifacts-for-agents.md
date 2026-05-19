@@ -75,6 +75,37 @@ HTML: the diff is annotated in the margin with the exact concern.
 
 That is the bar. If HTML only turns a memo into a nicer memo, keep the Markdown. If it makes the decision visible, use HTML.
 
+## A Rendered Review Receipt
+
+The current site hardening loop used HTML's older cousin: rendered browser proof.
+
+Markdown alone could say:
+
+```txt
+All public posts have images and render correctly.
+```
+
+That is not enough. The rendered audit left inspectable artifacts:
+
+```txt
+vibecode-rendered-audit/latest/summary.json
+vibecode-rendered-audit/latest/*-desktop.png
+vibecode-rendered-audit/latest/*-mobile.png
+```
+
+The summary records the decision surface:
+
+```txt
+postsChecked=10
+viewportsChecked=20
+failures=[]
+expectedImageVisible=true for each rendered result
+```
+
+That is why review artifacts matter. A human no longer has to trust a paragraph that says the posts have images. The reviewer can inspect the desktop and mobile screenshots and see whether the expected image actually appeared.
+
+The same rule applies to generated HTML explainers: the artifact should make a review decision easier, and the result has to return to a durable receipt.
+
 ## Decision Matrix
 
 | Use case | Best surface | Why |

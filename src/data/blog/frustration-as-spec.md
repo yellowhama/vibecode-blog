@@ -52,6 +52,38 @@ That table is the real specification work. The feeling points to the gap; the co
 
 The standard is not "the operator is annoyed." The standard is "the same correction happened often enough that it deserves a durable boundary."
 
+## The Receipt Behind the Complaints
+
+The useful complaints were specific:
+
+```txt
+The English blog cannot receive Korean content.
+The post has an image, but the image does not match the article.
+Do not mention the product in every post.
+The writing says the right things, but it does not show evidence.
+```
+
+Each complaint became a public rejection path:
+
+| Complaint | Current rejection path |
+| --- | --- |
+| Korean text on an English public surface | `verify:public-page-review` scans public source for CJK/Hangul text |
+| Generic or reused images | `verify:post-image-contracts` checks one slug-specific image, uniqueness, dimensions, and anchors |
+| Product name drift | `verify:public-page-review` rejects forbidden product mentions |
+| Unsupported public post | `verify:source-workflow` requires packet evidence for non-About posts |
+| Agent approves its own publication | `verify:publication-approvals` rejects agent-like reviewer names and stale hashes |
+
+The current field receipt is:
+
+```txt
+public posts checked: 10
+packet-backed posts: 9
+rendered screenshots: 20
+publication approval records: 10
+```
+
+That is the difference between a vent and a spec. The operator can still be annoyed. The repo now has a way to say no.
+
 ## Why Observability Matters
 
 Observability-driven development is useful here because agent failures are often process failures, not single-line bugs. A vague "the output is bad" complaint does not help the next session. A recorded failure mode does.

@@ -128,16 +128,20 @@ async function waitForChrome(port) {
 }
 
 async function removeWithRetry(path) {
+  let lastError;
   for (let attempt = 0; attempt < 8; attempt += 1) {
     try {
       await rm(path, { recursive: true, force: true });
       return;
     } catch (error) {
       if (!["EBUSY", "EPERM", "ENOTEMPTY"].includes(error?.code)) throw error;
+      lastError = error;
       await new Promise(resolveDelay => setTimeout(resolveDelay, 250));
     }
   }
-  await rm(path, { recursive: true, force: true });
+  process.stderr.write(
+    `rendered_page_cleanup_warning=${path}: ${lastError?.code || "unknown"} ${lastError?.message || ""}\n`,
+  );
 }
 
 async function createTarget(port, url) {

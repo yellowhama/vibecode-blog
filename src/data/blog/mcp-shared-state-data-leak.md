@@ -69,6 +69,54 @@ Both can route data to the wrong client under the wrong ownership model.
 
 The failure does not require an obviously malicious tool. A progress message, sampling response, elicitation flow, or pending request can become attached to the wrong client if the lifecycle boundary is wrong.
 
+## Minimal Audit Evidence
+
+A useful MCP review should leave evidence, not only a package version note.
+
+Start with the risky pattern:
+
+```ts
+const server = new McpServer(serverConfig);
+const transport = new StreamableHTTPServerTransport(options);
+
+app.post("/mcp", async (request, response) => {
+  await server.connect(transport);
+  await transport.handleRequest(request, response);
+});
+```
+
+Then make the ownership visible:
+
+```ts
+app.post("/mcp", async (request, response) => {
+  const server = new McpServer(serverConfig);
+  const transport = new StreamableHTTPServerTransport(options);
+
+  await server.connect(transport);
+  await transport.handleRequest(request, response);
+});
+```
+
+The code review command is deliberately plain:
+
+```bash
+rg "new McpServer|new StreamableHTTPServerTransport" .
+```
+
+The reviewer is not only asking whether the SDK is patched. The reviewer is asking where those constructors live. A match at module scope is a different risk than a match inside a request or isolated session owner.
+
+The release receipt should include:
+
+```txt
+SDK version checked
+constructor locations reviewed
+singleton reuse rejected or justified
+session ownership documented
+dependency advisory gate run
+```
+
+Without that receipt, "we updated the package" is too weak for agent infrastructure.
+
 ## Control Contract
 
 The minimum control contract is:
