@@ -1,0 +1,112 @@
+[
+  {
+    "slug": "000-about",
+    "image": "/images/posts/000-about.png",
+    "title": "About Vibecode Town",
+    "subtitle": "Evidence-backed field notes",
+    "signal": "failure -> contract -> proof",
+    "accent": "#B95B36",
+    "motif": "stack",
+    "rationale": "The stack motif shows the site contract: failures become durable contracts and then proof artifacts.",
+    "anchors": ["evidence-backed field notes", "failure", "publishing contract"]
+  },
+  {
+    "slug": "design-is-a-technical-contract",
+    "image": "/images/posts/design-is-a-technical-contract.png",
+    "title": "DESIGN.md",
+    "subtitle": "Reasoning and tokens in one file",
+    "signal": "roles -> components -> lint",
+    "accent": "#8E4C9E",
+    "motif": "tokens",
+    "rationale": "The token motif ties the article's DESIGN.md argument to color roles, component references, and lintable decisions.",
+    "anchors": ["design md", "tokens", "linter"]
+  },
+  {
+    "slug": "ai-agent-work-disk-contract",
+    "image": "/images/posts/ai-agent-work-disk-contract.png",
+    "title": "AI Work Disk Contract",
+    "subtitle": "Temp paths become part of the system",
+    "signal": "scratch -> build -> archive",
+    "accent": "#2E6F7E",
+    "motif": "disk",
+    "rationale": "The disk motif visualizes the article's operational path from scratch space to build output to durable archive.",
+    "anchors": ["work disk", "archive paths", "archive"]
+  },
+  {
+    "slug": "frustration-as-spec",
+    "image": "/images/posts/frustration-as-spec.png",
+    "title": "Frustration Signal",
+    "subtitle": "Repeated correction becomes a gate",
+    "signal": "complaint -> contract -> verifier",
+    "accent": "#B04444",
+    "motif": "signal",
+    "rationale": "The signal motif makes the post's argument visible: repeated irritation is telemetry that should become a verifier.",
+    "anchors": ["frustration", "repeated correction", "verifier"]
+  },
+  {
+    "slug": "ai-memory-operating-structure",
+    "image": "/images/posts/ai-memory-operating-structure.png",
+    "title": "AI Memory Structure",
+    "subtitle": "Long prompts are not memory",
+    "signal": "notes -> index -> handoff",
+    "accent": "#526E35",
+    "motif": "memory",
+    "rationale": "The memory grid motif matches the post's operating-memory claim: notes, indexes, and handoffs beat long prompts.",
+    "anchors": ["long prompts are not operating memory", "indexes", "handoffs"]
+  },
+  {
+    "slug": "mcp-shared-state-data-leak",
+    "image": "/images/posts/mcp-shared-state-data-leak.png",
+    "title": "MCP Shared State Leak",
+    "subtitle": "Per-request lifecycle boundaries",
+    "signal": "session A | boundary | B",
+    "accent": "#2F5D9B",
+    "motif": "network",
+    "rationale": "The network motif shows the boundary problem in the advisory: two sessions must not share lifecycle state.",
+    "anchors": ["shared state", "lifecycle", "boundary"]
+  },
+  {
+    "slug": "software-3-0",
+    "image": "/images/posts/software-3-0.png",
+    "title": "Software 3.0",
+    "subtitle": "Faster generation shifts proof to review",
+    "signal": "context -> diff -> evidence",
+    "accent": "#6857A8",
+    "motif": "kernel",
+    "rationale": "The kernel motif anchors the article's point that Software 3.0 changes the review bottleneck, not the need for evidence.",
+    "anchors": ["software 3 0", "review", "evidence"]
+  },
+  {
+    "slug": "html-review-artifacts-for-agents",
+    "image": "/images/posts/html-review-artifacts-for-agents.png",
+    "title": "HTML Review Artifacts",
+    "subtitle": "Readable review surfaces, not canon",
+    "signal": "canon -> html -> export",
+    "accent": "#C7772F",
+    "motif": "html",
+    "rationale": "The HTML motif reinforces the article's boundary: HTML is a readable review surface, while canon returns to durable files.",
+    "anchors": ["html", "review", "export"]
+  },
+  {
+    "slug": "vercel-is-not-a-deployment-contract",
+    "image": "/images/posts/vercel-is-not-a-deployment-contract.png",
+    "title": "Deployment Contract",
+    "subtitle": "A host is not a guarantee",
+    "signal": "build / routes / smoke test",
+    "accent": "#2B7560",
+    "motif": "deploy",
+    "rationale": "The deploy motif maps the article's failure chain: build command, route behavior, and smoke test must be portable.",
+    "anchors": ["deployment contract", "vercel", "smoke test"]
+  },
+  {
+    "slug": "what-vibe-coding-actually-is",
+    "image": "/images/posts/what-vibe-coding-actually-is.png",
+    "title": "Vibe Coding",
+    "subtitle": "Exploration is not production",
+    "signal": "intent -> contract -> verification",
+    "accent": "#A35F2B",
+    "motif": "deconstruct",
+    "rationale": "The deconstruct motif supports the distinction between exploration and production verification.",
+    "anchors": ["vibe coding", "exploration", "verification"]
+  }
+]

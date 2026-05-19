@@ -1,93 +1,13 @@
 param(
-  [string]$OutDir = "public/images/posts"
+  [string]$OutDir = "public/images/posts",
+  [string]$ContractPath = "src/data/post-image-contracts.json"
 )
 
 $ErrorActionPreference = "Stop"
 
 Add-Type -AssemblyName System.Drawing
 
-$items = @(
-  @{
-    Slug = "000-about"
-    Title = "About Vibecode Town"
-    Subtitle = "Evidence-backed field notes"
-    Signal = "failure -> contract -> proof"
-    Accent = "#B95B36"
-    Motif = "stack"
-  },
-  @{
-    Slug = "design-is-a-technical-contract"
-    Title = "DESIGN.md"
-    Subtitle = "Reasoning and tokens in one file"
-    Signal = "roles -> components -> lint"
-    Accent = "#8E4C9E"
-    Motif = "tokens"
-  },
-  @{
-    Slug = "ai-agent-work-disk-contract"
-    Title = "AI Work Disk Contract"
-    Subtitle = "Temp paths become part of the system"
-    Signal = "scratch -> build -> archive"
-    Accent = "#2E6F7E"
-    Motif = "disk"
-  },
-  @{
-    Slug = "frustration-as-spec"
-    Title = "Frustration Signal"
-    Subtitle = "Repeated correction becomes a gate"
-    Signal = "complaint -> contract -> verifier"
-    Accent = "#B04444"
-    Motif = "signal"
-  },
-  @{
-    Slug = "ai-memory-operating-structure"
-    Title = "AI Memory Structure"
-    Subtitle = "Long prompts are not memory"
-    Signal = "notes -> index -> handoff"
-    Accent = "#526E35"
-    Motif = "memory"
-  },
-  @{
-    Slug = "mcp-shared-state-data-leak"
-    Title = "MCP Shared State Leak"
-    Subtitle = "Per-request lifecycle boundaries"
-    Signal = "session A | boundary | B"
-    Accent = "#2F5D9B"
-    Motif = "network"
-  },
-  @{
-    Slug = "software-3-0"
-    Title = "Software 3.0"
-    Subtitle = "Faster generation shifts proof to review"
-    Signal = "context -> diff -> evidence"
-    Accent = "#6857A8"
-    Motif = "kernel"
-  },
-  @{
-    Slug = "html-review-artifacts-for-agents"
-    Title = "HTML Review Artifacts"
-    Subtitle = "Readable review surfaces, not canon"
-    Signal = "canon -> html -> export"
-    Accent = "#C7772F"
-    Motif = "html"
-  },
-  @{
-    Slug = "vercel-is-not-a-deployment-contract"
-    Title = "Deployment Contract"
-    Subtitle = "A host is not a guarantee"
-    Signal = "build / routes / smoke test"
-    Accent = "#2B7560"
-    Motif = "deploy"
-  },
-  @{
-    Slug = "what-vibe-coding-actually-is"
-    Title = "Vibe Coding"
-    Subtitle = "Exploration is not production"
-    Signal = "intent -> contract -> verification"
-    Accent = "#A35F2B"
-    Motif = "deconstruct"
-  }
-)
+$items = Get-Content -Raw -LiteralPath $ContractPath | ConvertFrom-Json
 
 function ColorFromHex([string]$hex) {
   $clean = $hex.TrimStart("#")
