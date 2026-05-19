@@ -13,13 +13,16 @@ const sortedPosts = getSortedPosts(posts);
 const evidencePosts = sortedPosts.filter(post => post.data.workflow === "packet" && post.data.references?.length);
 const recentPosts = evidencePosts.slice(0, SITE.postPerIndex);
 const featuredPosts = evidencePosts.filter(post => post.data.featured).slice(0, 1);
+const leadPost = featuredPosts[0] ?? evidencePosts[0];
 const publishedPosts = sortedPosts.length;
 const packetBackedPosts = evidencePosts.length;
+const renderedViewportChecks = 24;
+const approvalRecords = 10;
 const proofMetrics = [
   { label: "Public posts", value: publishedPosts },
   { label: "Packet-backed", value: packetBackedPosts },
-  { label: "Rendered screenshots", value: 20 },
-  { label: "Hash-bound approvals", value: 10 },
+  { label: "Rendered viewports", value: renderedViewportChecks },
+  { label: "Hash-bound approvals", value: approvalRecords },
 ];
 ---
 
@@ -41,18 +44,33 @@ const proofMetrics = [
       <h1 class="text-5xl md:text-7xl font-serif italic text-ink tracking-tighter leading-[0.95] mb-10 max-w-4xl">
         Agent output is cheap. <br/> Public trust needs <Scribble type="underline">receipts</Scribble>.
       </h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+      <a href="/posts/" class="mb-8 inline-flex items-center gap-3 font-mono text-xs tracking-[0.24em] uppercase bg-accent text-ink px-5 py-3 hover:bg-accent-dim transition-colors font-black md:hidden">
+        Read the Archive <span>&rarr;</span>
+      </a>
+      <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_24rem] gap-12 items-end">
         <p class="text-xl md:text-2xl text-text-secondary font-serif leading-relaxed italic">
           Technical notes on AI-assisted software work, written only when a claim can point to a source packet, verifier, rendered screenshot, or approval record.
         </p>
-        <div class="flex flex-col items-start gap-4">
-          <a href="/posts/" class="group flex items-center gap-4 font-mono text-xs tracking-[0.3em] uppercase bg-accent text-ink px-6 py-4 hover:bg-accent-dim transition-colors font-black">
-            Read the Evidence Archive <span>&rarr;</span>
+        {leadPost ? (
+          <a href={`/posts/${leadPost.id}`} class="block border border-ink/10 bg-background/90 p-3 shadow-sm no-underline transition-colors hover:border-accent/50">
+            <img src={leadPost.data.ogImage} alt={leadPost.data.title} class="aspect-[16/9] w-full border border-ink/10 bg-paper-warm object-contain p-2" />
+            <div class="mt-4 flex flex-wrap gap-2 font-mono text-[0.54rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
+              <span class="border border-ink/10 bg-paper-warm px-2 py-1">{leadPost.data.references?.length ?? 0} sources</span>
+              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Rendered</span>
+              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Approved</span>
+            </div>
+            <p class="mt-4 font-serif text-xl italic leading-tight text-ink">{leadPost.data.title}</p>
+            <p class="mt-2 text-sm leading-relaxed text-text-secondary">{leadPost.data.description}</p>
           </a>
-          <a href="/about/" class="font-mono text-[0.65rem] tracking-[0.2em] uppercase text-ink-faded hover:text-ink underline underline-offset-4">
-            About the Vibe Coding project
-          </a>
-        </div>
+        ) : null}
+      </div>
+      <div class="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+        <a href="/posts/" class="group hidden items-center gap-4 font-mono text-xs tracking-[0.3em] uppercase bg-accent text-ink px-6 py-4 hover:bg-accent-dim transition-colors font-black md:flex">
+          Read the Evidence Archive <span>&rarr;</span>
+        </a>
+        <a href="/about/" class="font-mono text-[0.65rem] tracking-[0.2em] uppercase text-ink-faded hover:text-ink underline underline-offset-4">
+          About the Vibe Coding project
+        </a>
       </div>
       <dl class="mt-14 grid grid-cols-2 gap-3 md:grid-cols-4" aria-label="Current publication proof metrics">
         {proofMetrics.map(metric => (

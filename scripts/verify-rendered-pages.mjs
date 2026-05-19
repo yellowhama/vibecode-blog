@@ -418,6 +418,11 @@ function surfaceAuditExpression(spec, contractImagePaths) {
         expectedSurfaceImage.rect.width >= 80 &&
         expectedSurfaceImage.rect.height >= 80
       ),
+      expectedSurfaceImageInFirstScreen: Boolean(
+        expectedSurfaceImage &&
+        expectedSurfaceImage.rect.top < window.innerHeight &&
+        expectedSurfaceImage.rect.bottom > 0
+      ),
       contractImages,
       visibleContractImages,
       firstScreenContractImages,
@@ -529,6 +534,9 @@ async function auditSurfaceRoute(chromePort, baseUrl, outputDir, spec, viewport,
     if (spec.expectedImage && !audit.expectedSurfaceImageVisible) {
       failures.push(`surface expected image did not render visibly: ${spec.expectedImage}`);
     }
+    if (spec.expectedImage && !audit.expectedSurfaceImageInFirstScreen) {
+      failures.push(`surface expected image is not in the first screen: ${spec.expectedImage}`);
+    }
     if (spec.requireContractImage && audit.visibleContractImages.length < 1) {
       failures.push("surface has no visible post contract image");
     }
@@ -606,6 +614,11 @@ async function main() {
       }
     }
 
+    const surfaceSpecsBySlug = new Map(SURFACE_ROUTES.map(spec => [spec.slug, spec]));
+    const contractImageSurfaceResults = surfaceResults.filter(
+      result => surfaceSpecsBySlug.get(result.slug)?.requireContractImage,
+    );
+
     const firstScreenImageStats = {
       postDetailDesktopExpectedImagesInFirstScreen: results.filter(
         result => result.viewport === "desktop" && result.audit.expectedImageInFirstScreen,
@@ -615,6 +628,18 @@ async function main() {
       ).length,
       postDetailDesktopCount: results.filter(result => result.viewport === "desktop").length,
       postDetailMobileCount: results.filter(result => result.viewport === "mobile").length,
+      surfaceExpectedImagesInFirstScreen: surfaceResults.filter(
+        result => result.audit.expectedSurfaceImageInFirstScreen,
+      ).length,
+      surfaceExpectedImagesRequired: SURFACE_ROUTES.filter(spec => spec.expectedImage).length * VIEWPORTS.length,
+      surfaceContractImagesInFirstScreen: contractImageSurfaceResults.reduce(
+        (count, result) => count + result.audit.firstScreenContractImages.length,
+        0,
+      ),
+      surfaceRoutesWithFirstScreenContractImages: contractImageSurfaceResults.filter(
+        result => result.audit.firstScreenContractImages.length > 0,
+      ).length,
+      surfaceRoutesRequiringContractImages: SURFACE_ROUTES.filter(spec => spec.requireContractImage).length * VIEWPORTS.length,
     };
 
     const summary = {
@@ -638,6 +663,12 @@ async function main() {
     );
     process.stdout.write(
       `rendered_page_post_detail_first_screen_images_mobile=${firstScreenImageStats.postDetailMobileExpectedImagesInFirstScreen}/${firstScreenImageStats.postDetailMobileCount}\n`,
+    );
+    process.stdout.write(
+      `rendered_page_surface_expected_images_first_screen=${firstScreenImageStats.surfaceExpectedImagesInFirstScreen}/${firstScreenImageStats.surfaceExpectedImagesRequired}\n`,
+    );
+    process.stdout.write(
+      `rendered_page_surface_contract_image_routes_first_screen=${firstScreenImageStats.surfaceRoutesWithFirstScreenContractImages}/${firstScreenImageStats.surfaceRoutesRequiringContractImages}\n`,
     );
     process.stdout.write(`rendered_page_screenshots_dir=${outputDir}\n`);
 
