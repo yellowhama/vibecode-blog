@@ -180,4 +180,8 @@ Evidence to keep:
 
 A technical contract does not make an agent correct. It only makes the agent's output easier to inspect, test, and reject.
 
+This does not prove that vibe coding is bad. It proves that vibe coding has a boundary. It is useful while the work is cheap to discard and dangerous when the work already has contracts the agent can violate.
+
+The caveat is that teams often cross that boundary gradually. A prototype gets users. A demo becomes a workflow. A local script starts touching real data. That is the moment to stop asking for better vibes and start writing the contract.
+
 That is the point. Vibe coding gets you motion. Contracts decide whether the motion belongs in the system.

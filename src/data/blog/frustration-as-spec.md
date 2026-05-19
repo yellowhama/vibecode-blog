@@ -141,6 +141,8 @@ That is the reader move: do not preserve frustration as a quote. Preserve the co
 
 Frustration is not proof. Sometimes the operator is wrong. Sometimes the correction belongs in taste, not code. Sometimes the fix is documentation, not a test.
 
-But repeated frustration is a high-signal input. Do not leave it as a chat complaint. Convert it into a contract the system can carry forward.
+The caveat is important because a bad operator can turn personal preference into fake policy. A useful frustration-to-spec loop needs evidence: the same failure recurring, the same review time being wasted, or the same public mistake escaping again.
+
+But repeated frustration is a high-signal input. Do not leave it as a chat complaint. Convert it into a contract the system can carry forward, then check whether the next run actually stops repeating the mistake.
 
 The goal is not to manage the agent's vibe. The goal is to make the next failure harder to repeat.

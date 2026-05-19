@@ -156,7 +156,9 @@ The reader decision is direct: upgrade the SDK, then grep for singleton server o
 
 This does not mean every MCP server leaked data. Single-client local development is a different risk profile. A server that already creates fresh server and transport instances per request or per isolated session is not the same as a singleton deployment.
 
-It also means upgrading alone is not the full lesson. The patch turns bad reuse into clearer runtime errors, but operators still need to audit ownership.
+It also does not prove that every shared object is unsafe. Configuration, schemas, and immutable tool definitions can be shared safely when they do not own client lifecycle or pending message state.
+
+The caveat is that upgrading alone is not the full lesson. The patch turns bad reuse into clearer runtime errors, but operators still need to audit ownership. If the review cannot say which object owns which client, the security claim is still too vague.
 
 ## Technical Verdict
 

@@ -158,6 +158,10 @@ visual polish that has not been decided yet
 
 ## Boundary
 
-DESIGN.md does not replace design review, browser screenshots, or implementation QA. It gives agents a shared design contract so their first pass starts from the same rules as the humans.
+DESIGN.md does not prove that the resulting interface is good. A weak brand system written in a tidy file is still a weak brand system.
+
+It also does not replace design review, browser screenshots, or implementation QA. The file can tell an agent which roles exist, but it cannot decide whether the final screen feels trustworthy, whether the hierarchy lands in the browser, or whether a component works under real content.
+
+The limit is simple: use DESIGN.md to preserve decisions, not to avoid making them. If the team has not agreed on the role, token, or component behavior, the file should expose that gap instead of letting an agent invent taste silently.
 
 The contract is not the final UI. It is the memory that keeps the next UI from starting over.

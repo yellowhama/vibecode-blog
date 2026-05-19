@@ -144,4 +144,8 @@ next action
 
 Software 3.0 is a useful frame, not a license to mystify the work. LLMs are not magic operating systems. They are fast, probabilistic execution partners.
 
+This does not prove that every task needs a heavy agent harness. A throwaway prototype, a one-off script, or a visual sketch may still be better served by fast generation and human inspection.
+
+The limit appears when the output has to survive contact with users, money, security, deployment, or another agent session. At that point, speed without a rejection path becomes a liability.
+
 The engineering discipline is still the same shape: define the system, constrain the change, verify the result. The difference is that now the unverified output arrives much faster.
