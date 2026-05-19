@@ -25,9 +25,11 @@ references:
 
 The expensive failure in long agent work is not forgetting a fact. It is forgetting the status of a fact.
 
-Was that source real or just a summary? Was the feature done or only planned? Did the previous agent run the verifier, or did it only say the verifier should exist? When a resumed session cannot answer those questions, the operator starts repeating the same corrections and the prompt becomes a junk drawer.
+Was that source real or just a summary? Was the feature done or only planned? Did the previous agent run the verifier, or did it only say the verifier should exist?
 
-That is not memory. That is temporary context taped to the side of the task.
+When a resumed session cannot answer those questions, the operator starts repeating the same corrections. The prompt becomes a junk drawer. The next agent inherits confidence without provenance.
+
+This is why long prompts are not operating memory. They can carry context for a while, but they do not prove what happened, what changed, or what remains unsafe.
 
 ![AI memory operating structure diagram](/images/posts/ai-memory-operating-structure.png)
 
@@ -39,7 +41,7 @@ At first, it works. Tell the model the policy, paste the previous decision, add 
 
 Two things break.
 
-First, people stop reviewing it. Important decisions and temporary instructions live in the same wall of text.
+First, people stop reviewing it. Important decisions and temporary instructions live in the same wall of text, so the operator skims the exact material that should constrain the work.
 
 Second, agents stop retrieving it cleanly. They cannot tell which line is source evidence, which line is interpretation, and which line is a stale assumption from a previous session.
 
@@ -62,7 +64,14 @@ remaining-work queue
 
 Raw source is the preserved input: transcript, log, command output, diff, research link, support ticket, or field note.
 
-The processed source note is not a summary for humans. It extracts reusable pressure: what the source changes, what it does not prove, what rule it implies, and where it can mislead the next agent.
+The processed source note is not a summary for humans. It extracts reusable pressure:
+
+```txt
+what the source changes
+what it does not prove
+what rule it implies
+where it can mislead the next agent
+```
 
 The spec is the repeatable contract. It says what the system must keep doing even when a different agent enters the repo.
 
@@ -86,6 +95,24 @@ Not every instruction belongs in the same place.
 OpenAI's Conversation state and Compaction docs describe the practical reality: context is managed, summarized, and bounded. That is normal. It also means durable operating memory cannot live only inside a chat window.
 
 MCP Resources point in the same direction. If tools and agents need reusable context, that context should be addressable and explicit.
+
+## A Usable Handoff Shape
+
+A useful handoff is not a diary. It is a restart surface.
+
+```txt
+Goal:
+Current status:
+Verified evidence:
+Files changed:
+Commands run:
+Known blockers:
+Do not repeat:
+Next action:
+Completion is not proven until:
+```
+
+The last line matters. Without it, the next session tends to convert partial progress into a finished story.
 
 ## Audit Checklist
 

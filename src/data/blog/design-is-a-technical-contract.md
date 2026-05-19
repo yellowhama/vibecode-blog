@@ -26,7 +26,9 @@ The problem with the normal design handoff is that it fails agents for the same 
 
 A screenshot says what a screen looked like. It does not reliably say why the primary color exists, which type scale owns body copy, what a button hover variant is allowed to change, or which contrast rule should block a bad component.
 
-That is why DESIGN.md matters. It turns design taste into a technical contract the agent can read.
+That is why DESIGN.md matters. It turns design taste into a technical contract the agent can read, edit, and lint.
+
+The point is not to make every agent a designer. The point is to stop every new design pass from starting with a blank visual memory.
 
 ![Design contract token and component diagram](/images/posts/design-is-a-technical-contract.png)
 
@@ -42,6 +44,21 @@ config file: hex values, font sizes, spacing, component tokens
 Those two files drift. A human can sometimes repair the gap by memory. An agent cannot. It needs the reason and the value close enough that the next decision can use both.
 
 DESIGN.md solves that by keeping prose and tokens in one persistent file.
+
+That changes the prompt from this:
+
+```txt
+Make it look like the reference.
+```
+
+to this:
+
+```txt
+Use the primary ink role for headlines.
+Use the accent role for action.
+Keep body copy on the defined type role.
+Do not invent a new component variant unless the token file gets updated.
+```
 
 ## Tokens Are Decisions
 
@@ -86,6 +103,8 @@ agent repairs the decision or documents an override
 ```
 
 That turns design from a preference conversation into an inspectable workflow. If an agent picks a low-contrast foreground/background pair, the linter can catch the failure before the choice becomes production UI.
+
+This is the operator value: the agent can be creative inside the roles, but it cannot silently replace the roles.
 
 ## Reader Decision
 

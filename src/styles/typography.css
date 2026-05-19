@@ -99,6 +99,17 @@
 
     pre {
       @apply focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-dashed;
+      max-width: 100%;
+      overflow-x: clip;
+      white-space: pre-wrap;
+    }
+
+    pre code,
+    .astro-code code,
+    .astro-code span {
+      overflow-wrap: anywhere;
+      white-space: pre-wrap;
+      word-break: break-word;
     }
   }
 

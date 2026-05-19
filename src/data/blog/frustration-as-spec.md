@@ -34,7 +34,7 @@ Do not insert product mentions into every article.
 Do not call a clean-looking essay good if it has no evidence.
 ```
 
-Those complaints were not specs. They were signals pointing at missing specs.
+Those complaints were not specs. They were signals pointing at missing specs. Leaving them in chat would guarantee the next agent repeats the same miss.
 
 ## From Complaint to Contract
 
@@ -49,6 +49,8 @@ The repair pattern is simple:
 | Essays sounded polished but weak | Public posts need source, evidence, artifact, boundary, and reader decision | per-post quality critique |
 
 That table is the real specification work. The feeling points to the gap; the contract closes it.
+
+The standard is not "the operator is annoyed." The standard is "the same correction happened often enough that it deserves a durable boundary."
 
 ## Why Observability Matters
 
@@ -65,6 +67,17 @@ what evidence proves the repair
 ```
 
 This is also how eval thinking helps. The point is not to invent a magical score. The point is to turn a repeated subjective complaint into a repeatable test or review gate.
+
+The output should become boring:
+
+```txt
+Complaint: repeated image mismatch.
+Contract: image must be slug-specific, visible, and semantically tied to the post.
+Verifier: manifest check plus rendered page audit.
+Evidence: screenshot or image contract record.
+```
+
+Once the complaint has that shape, another agent can enforce it without needing to remember the argument.
 
 ## The Frustration-to-Spec Pipeline
 
@@ -89,6 +102,8 @@ Verifier: editorial contract plus public-surface gate plus browser screenshot.
 ```
 
 The second version is actionable. Another agent can enforce it without guessing your mood.
+
+That is the reader move: do not preserve frustration as a quote. Preserve the contract it forced you to discover.
 
 ## Boundary
 

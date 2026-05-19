@@ -21,7 +21,7 @@ The most dangerous sentence in an MCP server review is: "It is HTTP, so it is st
 
 The HTTP request may be stateless. The application object may not be. If one `McpServer` instance or one `StreamableHTTPServerTransport` instance is reused across clients, the agent boundary is already weaker than it looks.
 
-That shared state is not an implementation detail. In an agent tool server, shared state is a security boundary.
+That shared state is not an implementation detail. In an agent tool server, shared state is a security boundary. A route handler can look clean while the object graph behind it still connects two clients that should never meet.
 
 ![MCP shared state boundary diagram](/images/posts/mcp-shared-state-data-leak.png)
 
@@ -45,6 +45,8 @@ Do not reuse one McpServer or Server instance across multiple transports or clie
 
 That makes the fix more than "run npm update." It is a lifecycle contract.
 
+If the review stops at dependency version, it misses the operating lesson. The patched SDK matters; the ownership model still has to be reviewed.
+
 ## Unsafe Lifecycle
 
 The risky pattern is a module-level singleton:
@@ -65,6 +67,8 @@ server/protocol re-use across multiple transports
 
 Both can route data to the wrong client under the wrong ownership model.
 
+The failure does not require an obviously malicious tool. A progress message, sampling response, elicitation flow, or pending request can become attached to the wrong client if the lifecycle boundary is wrong.
+
 ## Control Contract
 
 The minimum control contract is:
@@ -81,6 +85,8 @@ For stateless deployment, create fresh server and transport instances per reques
 
 The important question is not "does the endpoint return 200?" The question is "what object owns client state, and can another client reach it?"
 
+That question belongs in code review, not only in incident response.
+
 ## Operator Checklist
 
 Before shipping an MCP tool server, check:
@@ -95,6 +101,8 @@ Does the code review include lifecycle ownership, not only route handlers?
 ```
 
 If any answer is unclear, the system does not have a control surface. It has a hope.
+
+The reader decision is direct: upgrade the SDK, then grep for singleton server or transport construction before calling the system reviewed.
 
 ## Boundary
 

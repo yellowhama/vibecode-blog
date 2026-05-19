@@ -25,9 +25,11 @@ references:
 
 AI coding agents no longer struggle to write plans. The newer failure mode is that they write plans nobody reads.
 
-A 200-line Markdown plan appears. The PR explanation gets longer. The research summary includes tables, diffs, timelines, snippets, and caveats. The human scrolls, nods, and moves to the next prompt.
+A 200-line Markdown plan appears. The PR explanation gets longer. The research summary includes tables, diffs, timelines, snippets, and caveats. The human scrolls, nods, and moves to the next prompt without actually reviewing the work.
 
 That is not a writing problem. It is a review-surface problem.
+
+HTML helps when the human decision depends on layout, comparison, sequence, or annotation. It fails when the team starts treating a polished artifact as the source of truth.
 
 ![HTML review artifact export loop diagram](/images/posts/html-review-artifacts-for-agents.png)
 
@@ -55,6 +57,23 @@ runtime evidence JSON
 ```
 
 Generated HTML is allowed to help the human see. It is not allowed to become hidden truth.
+
+## Where HTML Actually Changes the Review
+
+HTML is worth the extra generation time when it changes what the reviewer can notice.
+
+```txt
+Markdown: a paragraph says module A calls module B.
+HTML: a diagram shows A, B, retry path, backpressure, and the risky edge.
+
+Markdown: a list says three design options exist.
+HTML: the options sit side by side at the same viewport size.
+
+Markdown: a PR summary says one diff is risky.
+HTML: the diff is annotated in the margin with the exact concern.
+```
+
+That is the bar. If HTML only turns a memo into a nicer memo, keep the Markdown. If it makes the decision visible, use HTML.
 
 ## Decision Matrix
 
@@ -94,6 +113,13 @@ copyable review notes
 ```
 
 For example, "write a PR description" can be Markdown. But "explain streaming and backpressure to a reviewer who does not know this subsystem" is often better as an HTML artifact with callouts, a data-flow diagram, and the three code snippets that matter.
+
+The reviewer should be able to answer two questions within a minute:
+
+```txt
+What am I being asked to approve?
+Which evidence would make me say no?
+```
 
 ## The Export Rule
 

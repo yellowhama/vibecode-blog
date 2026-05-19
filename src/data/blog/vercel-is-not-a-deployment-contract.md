@@ -21,7 +21,9 @@ references:
 
 The Coolify migration audit failed before Coolify ever touched the site.
 
-The portability test was local: build the repo, inspect the static artifact, and ask whether the same behavior would exist on a plain host serving `dist`. The repo looked portable. It was an Astro static site. It had a normal build command. But two hidden contracts fell out of the wall:
+The portability test was local: build the repo, inspect the static artifact, and ask whether the same behavior would exist on a plain host serving `dist`.
+
+The repo looked portable. It was an Astro static site. It had a normal build command. But two hidden contracts fell out of the wall:
 
 ```txt
 vercel.json owned two production routes
@@ -29,6 +31,8 @@ package.json depended on cp -r
 ```
 
 That is not a deployment contract. That is a hosting habit.
+
+The practical rule is simple: if production behavior only exists because one host knows a special file, the repo does not own that behavior yet.
 
 ![Deployment contract build route smoke test diagram](/images/posts/vercel-is-not-a-deployment-contract.png)
 
@@ -46,6 +50,8 @@ operable program or batch file.
 ```
 
 The site could build on Linux because `cp -r` exists there. It failed on Windows because the build script was shell-specific. Coolify would probably survive this because its builder is Linux, but that is the wrong standard. A build contract should be explicit, not accidentally compatible with one host.
+
+The local failure was useful because it proved the build script had an unstated operating system dependency.
 
 The second failure was quieter:
 
@@ -65,6 +71,8 @@ The second failure was quieter:
 ```
 
 Those routes existed only because Vercel interpreted `vercel.json`. A static host serving `dist` would not know that `/sitemap.xml` should point at `/sitemap-index.xml`, or that `/install.sh` should route to a remote installer.
+
+That is exactly the kind of gap an agent can miss. It sees a working URL and calls the site deployed. The artifact says otherwise.
 
 ## Hidden Contract Table
 
@@ -111,6 +119,8 @@ public/install.sh
 
 Now `/sitemap.xml` is produced by the app, and `/install.sh` is a real file in the deploy artifact.
 
+The important change is ownership. The behavior moved from host interpretation into source-controlled code and files.
+
 ## Deployment Contract Checklist
 
 Before calling a site portable, verify:
@@ -136,6 +146,8 @@ Portable routes: /sitemap.xml and /install.sh generated into dist
 ```
 
 That is the standard Vibecode Town should use before moving a site to Coolify.
+
+The reader version is the same: test the artifact, not the platform dashboard.
 
 ## Boundary
 

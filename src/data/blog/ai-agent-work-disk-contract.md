@@ -27,7 +27,9 @@ AI coding agents do not only edit source files.
 
 They build. They test. They create fixtures. They write indexes. They generate logs. They produce evidence bundles, compare outputs, and sometimes leave large temp trees behind.
 
-If all of that falls into the operating system default temp folder, the agent is changing code while quietly pressuring the workstation. The problem is not "the C drive is small." The problem is that there is no work disk contract.
+If all of that falls into the operating system default temp folder, the agent is changing code while quietly pressuring the workstation. The problem is not "the C drive is small." The problem is that nobody told the agent which disk role each artifact belongs to.
+
+A work disk contract answers that before the next long run starts.
 
 ![AI work disk contract diagram](/images/posts/ai-agent-work-disk-contract.png)
 
@@ -51,6 +53,19 @@ self-test temp root
 ```
 
 If those roles are not explicit, cleanup becomes a manual judgment call. That is where long-running agent work gets messy.
+
+The failure pattern is easy to miss:
+
+```txt
+run tests
+generate screenshots
+write indexes
+archive evidence
+resume tomorrow
+discover the active machine state is now part of the task
+```
+
+That is not an agent intelligence problem. It is an operations boundary problem.
 
 ## Work Disk Contract
 
@@ -77,6 +92,8 @@ The point is not that these exact names are universal. They are not. The point i
 
 This pattern is fixed in the Vibecode repo through a [real commit](https://github.com/yellowhama/vibecode-blog/commit/1e62c79c62d0b3b0b1cf2c13d334b0bef80b341d), not just a note in a prompt.
 
+That distinction matters. A prompt reminder can be missed. A script-level path contract can be tested.
+
 ## Practical Checklist
 
 Before handing a repo to an AI coding agent, define:
@@ -101,6 +118,8 @@ public evidence gates reject samples and templates
 ```
 
 That last line matters. A sample result is useful documentation. It is not evidence.
+
+The reader action is not to copy these path names. It is to name the roles in your own repo and make scripts resolve them in that order.
 
 ## Boundary
 

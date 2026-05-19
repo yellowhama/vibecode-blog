@@ -20,25 +20,37 @@ references:
 
 ![Software 3.0 kernel contract diagram](/images/posts/software-3-0.png)
 
-The easy take on Software 3.0 is that natural language became code.
+The easy take on Software 3.0 is that natural language became code. That is the least useful part of the idea.
 
-That is catchy, but it is not the part that changes day-to-day engineering. The practical shift is harsher: generation got cheaper, so verification became the bottleneck.
+The part that changes daily engineering is harsher: generation got cheaper, so verification became the bottleneck.
 
-An agent can produce a diff faster than a human can understand its consequences. That does not remove engineering work. It moves the work from typing implementation to defining context, checking boundaries, and proving the output belongs in the system.
+An agent can produce a diff faster than a human can understand its consequences. That does not remove engineering work. It moves the work from typing implementation to deciding what evidence would make the implementation acceptable.
+
+If your process still treats "the agent wrote code" as the hard part, the process is behind the tooling.
 
 ## What Actually Changed
 
-The old workflow assumed that writing code was the expensive step. The new workflow often makes writing the cheapest step.
+The old workflow assumed that writing code was the expensive step. The new workflow often makes writing the cheapest step and review the scarce step.
 
 ```txt
 Before:
 read docs -> design -> write code -> test -> ship
 
 With agents:
-read docs -> define contract -> generate diff -> inspect evidence -> reject or ship
+read docs -> define contract -> generate diff -> inspect evidence -> accept or reject
 ```
 
-The agent may create the implementation, but the operator still owns the contract.
+The agent may create the implementation. The operator still owns the contract.
+
+That contract has to answer five questions before the diff exists:
+
+```txt
+Which source is authoritative?
+What behavior must stay unchanged?
+What command proves the claim?
+What artifact survives the session?
+What condition makes the agent stop?
+```
 
 ## The Work Shift
 
@@ -50,11 +62,11 @@ The agent may create the implementation, but the operator still owns the contrac
 | Asking for "the feature" | Giving acceptance criteria, failure modes, and test commands |
 | Trusting a green local result | Keeping build, content, archive, and evidence gates repeatable |
 
-That table is the useful Software 3.0 model. Not "the LLM is literally the operating system." The useful metaphor is that the model has become a fast execution surface, and every fast execution surface needs contracts.
+That table is the useful Software 3.0 model. Not "the LLM is literally the operating system." The useful model is that the model has become a fast execution surface, and every fast execution surface needs contracts.
 
 ## A Concrete Example
 
-On this site, the agent was allowed to create posts, images, API output, and build artifacts. That speed created new failure modes:
+On this site, the agent was allowed to create posts, images, API output, and build artifacts. The speed was useful. It also created failures that did not look like normal coding bugs:
 
 ```txt
 English blog receiving Korean content
@@ -64,7 +76,7 @@ stale generated JSON drifting from source posts
 archive counts becoming part of handoff truth
 ```
 
-The fix was not a better prompt. The fix was gates:
+Those failures were not solved by asking for "better writing" or "cleaner output." They were solved by adding gates that could reject public work:
 
 ```txt
 verify:editorial-contract
@@ -75,7 +87,9 @@ reindex_wiki.py
 archive_completed_artifacts.ps1
 ```
 
-The agent can still move fast. The difference is that every public surface has a checker that can say no.
+The agent can still move fast. The difference is that every public surface now has a checker that can say no.
+
+That is the practical meaning of Software 3.0 for an operator: do not celebrate faster generation until the rejection path is at least as real as the creation path.
 
 ## Reader Decision
 
@@ -89,6 +103,16 @@ What must not change?
 What command proves the result?
 What artifact survives for the next session?
 What boundary makes the agent stop?
+```
+
+Then require the run to leave a receipt:
+
+```txt
+commands run
+files changed
+checks passed or failed
+known boundary
+next action
 ```
 
 ## Boundary

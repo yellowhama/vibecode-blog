@@ -18,19 +18,28 @@ references:
 
 ![Vibe coding hype to contract to evidence diagram](/images/posts/what-vibe-coding-actually-is.png)
 
-The failure did not look dramatic. A route returned 500, the agent tried three different fixes, and each answer sounded plausible.
+The failure did not look dramatic.
 
-The real problem was simpler: the agent did not know the contract of the framework version it was editing. I kept asking it to fix a symptom. It kept guessing inside the wrong mental model.
+A route returned 500. The agent tried three fixes. Each answer sounded plausible. None of them touched the actual problem: the framework version had changed the route contract, and the agent was still editing from the old mental model.
 
-That is the line between vibe coding and engineering with agents. Vibe coding is intent-first exploration. You describe the shape of a thing and let the model push pixels, routes, and files around until a prototype appears. It is fast, useful, and sometimes exactly the right move.
+That is the line this article cares about. Vibe coding is useful when the job is discovery. It is dangerous when the job is production and the agent does not know which contracts must not move.
 
-It is not a production method by itself.
+The decision is simple: use vibe coding to find the shape of a system; switch to contract-driven agent work before the system has users, money, data, or deployment behavior attached to it.
 
 ## The Useful Part
 
-Simon Willison makes the important distinction: not all AI-assisted programming is vibe coding. The useful version of vibe coding is exploratory. You are trying to find the shape of an idea before you know the hard constraints.
+Simon Willison's useful correction is that not all AI-assisted programming is vibe coding. That distinction matters because the word gets used for two different workflows.
 
-That mode is good for:
+The first workflow is exploration:
+
+```txt
+I have an idea.
+I do not know the shape yet.
+Generate something I can react to.
+I will inspect, steer, or throw it away.
+```
+
+That workflow is often the right one for:
 
 ```txt
 rough prototypes
@@ -40,7 +49,15 @@ first-pass copy
 scaffolding a workflow you plan to inspect
 ```
 
-The mistake is carrying that same posture into a system with versions, auth, migrations, routes, data ownership, and deployment behavior. Once a system has contracts, the agent needs those contracts in front of it.
+The second workflow is production:
+
+```txt
+The system already has contracts.
+The output must preserve them.
+The agent needs the source, boundary, and verifier before it edits.
+```
+
+Most failed "vibe coding" stories are really a mode error. The operator kept behaving as if the work was exploratory after the work had become contractual.
 
 ## The Failure Mode
 
@@ -57,7 +74,7 @@ export async function GET(
 }
 ```
 
-If the framework expects `params` to be resolved asynchronously, this code can look reasonable while still violating the route contract. A prompt like "fix the 500 error" gives the model too much room to guess. It may change error handling, response shape, imports, or logging while missing the one thing that matters.
+If the framework expects `params` to be resolved asynchronously, this code can look reasonable while still violating the route contract. A prompt like "fix the 500 error" gives the model too much room. It may change error handling, response shape, imports, logging, or file layout while missing the one rule that matters.
 
 The fix is not a better vibe. The fix is a better contract.
 
@@ -69,29 +86,41 @@ Route contract:
 - Add a smoke test that fails if id extraction breaks.
 ```
 
-Now the agent has a boundary. It can still implement quickly, but the output has something to be checked against.
+Now the agent has a boundary. It can still move quickly, but the output has something to be rejected against.
 
 ## The Production Shift
 
-The production workflow is not:
+The production workflow is not this:
 
 ```txt
 prompt -> code -> hope
 ```
 
-It is:
+It is this:
 
 ```txt
-intent -> source check -> contract -> implementation -> verification
+intent
+-> source check
+-> contract
+-> implementation
+-> verification
 ```
 
 That middle part is the craft. The contract can be a migration note, a route rule, a schema, a design token file, a deployment checklist, or a failing test. The format matters less than the function: it turns vague intent into a reviewable boundary.
 
-This is why "AI slop" is often a process problem. The model may be wrong, but the operator also failed to define what correctness meant.
+This is why "AI slop" is often a process problem. The model may be wrong, but the operator also failed to define what correctness meant before asking for the diff.
 
 ## Reader Decision
 
-Use vibe coding when the cost of being wrong is low and discovery is the goal.
+Before the next agent session, decide which mode you are in.
+
+Use vibe coding when all three are true:
+
+```txt
+the cost of being wrong is low
+the output is easy to throw away
+the main goal is to discover shape
+```
 
 Switch to contract-driven agent work when any of these become true:
 
@@ -101,6 +130,16 @@ the fix depends on a specific framework version
 the output must survive deployment
 another agent will continue the work
 security, billing, or user trust is involved
+```
+
+Then write the contract first:
+
+```txt
+Source:
+Boundary:
+Acceptance check:
+Forbidden changes:
+Evidence to keep:
 ```
 
 ## Boundary

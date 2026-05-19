@@ -14,6 +14,8 @@ Vibecode Town is a field log for AI-assisted software work.
 
 The site tracks what changes when agents write code, operate tools, produce evidence, and touch public surfaces. The standard is not hype. The standard is whether a claim can be tied to a source, a command, a failure, a verifier, or a durable artifact.
 
+If a post cannot show why the issue matters, what changed, and what the reader should do next, it does not belong here yet.
+
 ![Vibe Coding Project operating log diagram](/images/posts/000-about.png)
 
 ## Publishing Contract
