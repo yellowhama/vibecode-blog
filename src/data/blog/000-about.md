@@ -16,7 +16,7 @@ The site tracks what changes when agents write code, operate tools, produce evid
 
 ![Vibe Coding Project operating log diagram](/images/posts/000-about.png)
 
-## The Publishing Contract
+## Publishing Contract
 
 1. **Show the failure.** Start from the bug, handoff gap, bad deploy, weak article, or unsafe assumption.
 2. **Name the contract.** Turn the lesson into a boundary another agent can follow.

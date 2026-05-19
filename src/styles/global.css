@@ -5,17 +5,17 @@
 
 /* ─── Editorial Design Tokens ──────────────────────────────────── */
 
-/* MUSU Brand: Cocoa Brown + Yellow + Off-White */
+/* Editorial palette: cocoa brown, amber, and off-white */
 :root,
 html[data-theme="light"] {
   --background: #FDFCF0;
   --bg-secondary: #F4E5C2;
   --bg-tertiary: #EDEBE0;
   --bg-elevated: #FFFFFF;
-  --foreground: #432c1c; /* 지정된 깊은 브라운 */
+  --foreground: #432c1c; /* deep cocoa ink */
   --text-secondary: rgba(67, 44, 28, 0.75);
   --text-muted: rgba(67, 44, 28, 0.5);
-  --accent: #ffa602;      /* 지정된 엠버 오렌지 */
+  --accent: #ffa602;      /* amber accent */
   --accent-dim: #e69500;
   --border: rgba(67, 44, 28, 0.12);
   --border-strong: rgba(67, 44, 28, 0.25);
@@ -28,7 +28,7 @@ html[data-theme="dark"] {
   --foreground: #FDFCF0;
   --text-secondary: rgba(253, 252, 240, 0.8);
   --text-muted: rgba(253, 252, 240, 0.5);
-  --accent: #ffa602;      /* 다크모드에서도 오렌지 액센트 유지 */
+  --accent: #ffa602;      /* keep amber accent in dark mode */
   --accent-dim: #d48b00;
   --border: rgba(253, 252, 240, 0.15);
   --border-strong: rgba(253, 252, 240, 0.3);

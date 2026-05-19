@@ -22,7 +22,7 @@ references:
 
 # DESIGN.md Turns Visual Taste Into an Agent Contract
 
-The normal design handoff fails agents for the same reason vague prompts fail them: too much context lives in someone's head.
+The problem with the normal design handoff is that it fails agents for the same reason vague prompts fail them: too much context lives in someone's head.
 
 A screenshot says what a screen looked like. It does not reliably say why the primary color exists, which type scale owns body copy, what a button hover variant is allowed to change, or which contrast rule should block a bad component.
 

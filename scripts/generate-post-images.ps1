@@ -50,7 +50,7 @@ $items = @(
   @{
     Slug = "mcp-shared-state-data-leak"
     Title = "MCP Shared State Leak"
-    Subtitle = "Stateless servers can still leak lifecycle state"
+    Subtitle = "Per-request lifecycle boundaries"
     Signal = "session A | boundary | B"
     Accent = "#2F5D9B"
     Motif = "network"
@@ -58,7 +58,7 @@ $items = @(
   @{
     Slug = "software-3-0"
     Title = "Software 3.0"
-    Subtitle = "Generation got cheap; review did not"
+    Subtitle = "Faster generation shifts proof to review"
     Signal = "context -> diff -> evidence"
     Accent = "#6857A8"
     Motif = "kernel"

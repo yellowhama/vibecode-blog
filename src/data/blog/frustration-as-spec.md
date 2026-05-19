@@ -20,7 +20,7 @@ references:
 
 ![Frustration into specification signal diagram](/images/posts/frustration-as-spec.png)
 
-The useful moment is not when the agent makes a mistake. The useful moment is when you correct the same mistake twice.
+The problem is not that the agent makes a mistake. The useful moment is when you correct the same mistake twice.
 
 That is the point where frustration stops being a mood and starts being telemetry. Something in the system is under-specified. The agent is not seeing a boundary that the operator assumed was obvious.
 
