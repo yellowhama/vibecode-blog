@@ -1,71 +1,98 @@
 ---
-title: "Deconstructing Software 3.0: The LLM as the Operating System"
+title: "Software 3.0 Is a Verification Problem"
 pubDatetime: 2026-05-13T12:00:00Z
-description: "Why we stopped writing code and started designing kernels. A deep dive into Software 3.0 with Claude Opus 4.7 and GPT-5.5."
+description: "The useful Software 3.0 lesson is not that LLMs replace engineering. It is that faster generation moves the bottleneck to context, review, and evidence."
 draft: false
 series: "AI Explainer"
 workflow: "legacy"
-tags: ["engineering", "software-3.0", "karpathy", "agentic-os"]
+tags: ["engineering", "software-3.0", "agentic-engineering", "verification"]
 ogImage: "/images/posts/software-3-0.png"
 references:
-  - name: "Software 3.0"
-    url: "https://karpathy.ai/blog/software-3.0"
+  - name: "Andrej Karpathy: Software Is Changing Again"
+    url: "https://www.youtube.com/watch?v=LCEmiRjPEtQ"
     guru: "Andrej Karpathy"
-  - name: "GPT-5.5 Technical Brief"
-    url: "https://developers.openai.com/api/docs/models/gpt-5.5"
-    guru: "OpenAI"
-  - name: "Claude Opus 4.7"
-    url: "https://www.anthropic.com/news/claude-opus-4-7"
-    guru: "Anthropic"
-  - name: "Gemini API Models"
-    url: "https://ai.google.dev/gemini-api/docs/models"
-    guru: "Google"
+  - name: "Not all AI-assisted programming is vibe coding"
+    url: "https://simonwillison.net/2025/Mar/19/vibe-coding/"
+    guru: "Simon Willison"
 ---
 
-# Deconstructing Software 3.0: The LLM as the Operating System
+# Software 3.0 Is a Verification Problem
 
 ![Software 3.0 kernel contract diagram](/images/posts/software-3-0.png)
 
-**TL;DR for Robots:** Software 3.0 treats frontier LLMs like GPT-5.5 and Claude Opus 4.7 as primary compute kernels. The developer's role has shifted from manual logic to context orchestration and technical contract design.
+The easy take on Software 3.0 is that natural language became code.
 
----
+That is catchy, but it is not the part that changes day-to-day engineering. The practical shift is harsher: generation got cheaper, so verification became the bottleneck.
 
-In early 2025, Andrej Karpathy defined a shift that most engineers dismissed as "hype." He called it **Software 3.0**. 
+An agent can produce a diff faster than a human can understand its consequences. That does not remove engineering work. It moves the work from typing implementation to defining context, checking boundaries, and proving the output belongs in the system.
 
-Today, in mid-2026, it is no longer a theory; it is our production reality. If you are still using Claude Opus 4.7 or GPT-5.5 to merely "write snippets," you are using a jet engine to power a bicycle. In the Software 3.0 era, the LLM is not your assistant; it is your **Operating System**.
+## What Actually Changed
 
-## 1. The Kernel Shift
+The old workflow assumed that writing code was the expensive step. The new workflow often makes writing the cheapest step.
 
-Traditional software (1.0) relied on explicit logic. Software 3.0 relies on **Reasoning Kernels**. 
+```txt
+Before:
+read docs -> design -> write code -> test -> ship
 
-| Layer | Software 1.0 (Legacy) | Software 3.0 (2026) |
-| :--- | :--- | :--- |
-| **Logic** | Manual Code (Python/Rust) | Reasoning Chunks (LLM) |
-| **Memory** | RAM / Disk | Context Window / KV Cache |
-| **Scheduling** | OS Kernel (Linux/Darwin) | Agentic Router (GPT-5.5) |
-| **I/O** | Drivers / APIs | Protocols (MCP) |
+With agents:
+read docs -> define contract -> generate diff -> inspect evidence -> reject or ship
+```
 
-As shown in the sketch above, the LLM sits at the center of the stack. It doesn't just generate text; it manages system resources, executes tools via MCP, and maintains state across complex agentic loops.
+The agent may create the implementation, but the operator still owns the contract.
 
-## 2. The Verifiability Thesis
+## The Work Shift
 
-The most cynical (and accurate) realization of the Software 3.0 era is what we call the **Verifiability Thesis**.
+| Old center of gravity | New center of gravity |
+| --- | --- |
+| Writing every line | Defining the boundary the generated diff must satisfy |
+| Remembering project context in your head | Supplying source notes, specs, and handoffs |
+| Reviewing code after the fact | Designing checks before the agent starts |
+| Asking for "the feature" | Giving acceptance criteria, failure modes, and test commands |
+| Trusting a green local result | Keeping build, content, archive, and evidence gates repeatable |
 
-Karpathy's famous warning, *"You can outsource your thinking, but you cannot outsource your understanding,"* has become the primary constraint of our craft. In a world where Claude Opus 4.7 can produce large working diffs in a single pass, the bottleneck is no longer **Creation**; it is **Verification**.
+That table is the useful Software 3.0 model. Not "the LLM is literally the operating system." The useful metaphor is that the model has become a powerful execution surface, and every powerful execution surface needs contracts.
 
-If you don't understand the **Technical Contract** (the Spec) of your system, you are not an engineer. You are a babysitter for technical debt. 
+## A Concrete Example
 
-## 3. Beyond Prompting: Context Engineering
+On this site, the agent was allowed to create posts, images, API output, and build artifacts. That speed created new failure modes:
 
-By May 2026, "Prompt Engineering" is a dead term. We now practice **Context Engineering**. 
+```txt
+English blog receiving Korean content
+generic images reused across posts
+public product mentions appearing before the product was ready
+stale generated JSON drifting from source posts
+archive counts becoming part of handoff truth
+```
 
-With models like **Gemini 3.1** supporting 2-million token native context windows, the challenge isn't "how to ask," but "how to curate." We use policy gates, evals, and evidence checks to enforce boundaries because we know that an unconstrained Software 3.0 kernel will eventually drift into "hallucination slop" without a hard contract.
+The fix was not a better prompt. The fix was gates:
 
-## Technical Verdict
+```txt
+verify:editorial-contract
+verify:public-surface
+verify:content
+verify:dist
+reindex_wiki.py
+archive_completed_artifacts.ps1
+```
 
-Software 3.0 is the physics of the 2026 industry. You can fight it by sticking to manual logic, or you can master it by becoming a **Contract Designer**.
+The agent can still move fast. The difference is that every public surface has a checker that can say no.
 
-- **Stop:** Building "plumbing" frameworks.
-- **Start:** Defining high-density technical specs that the kernel can't ignore.
+## Reader Decision
 
-The tighter the cage, the faster the bird flies.
+If an agent is only producing disposable prototypes, a prompt may be enough.
+
+If the agent is changing a product, publishing a post, touching deployment behavior, or producing evidence, ask for the contract before the implementation:
+
+```txt
+What source is authoritative?
+What must not change?
+What command proves the result?
+What artifact survives for the next session?
+What boundary makes the agent stop?
+```
+
+## Boundary
+
+Software 3.0 is a useful frame, not a license to mystify the work. LLMs are not magic operating systems. They are fast, probabilistic execution partners.
+
+The engineering discipline is still the same shape: define the system, constrain the change, verify the result. The difference is that now the unverified output arrives much faster.

@@ -22,9 +22,9 @@ references:
 
 # How to Stop AI Agents From Losing Their Memory
 
-AI agents usually fail long projects for a boring reason: they cannot reliably recover why yesterday's decision was made, which evidence was real, and which claim was still unverified.
+The expensive failure in long agent work is not forgetting a fact. It is forgetting the status of a fact.
 
-So the operator repeats the same constraints. The prompt gets longer. The next session starts with a pile of corrections instead of a working memory system.
+Was that source real or just a summary? Was the feature done or only planned? Did the previous agent run the verifier, or did it only say the verifier should exist? When a resumed session cannot answer those questions, the operator starts repeating the same corrections and the prompt becomes a junk drawer.
 
 That is not memory. That is temporary context taped to the side of the task.
 
@@ -46,7 +46,7 @@ A long prompt is not an audit trail. It is unstructured state.
 
 ## Operating Memory Stack
 
-Agent work needs a small operating memory stack:
+Agent work needs a small Operating Memory Stack.
 
 The short version is source, spec, handoff, index.
 
@@ -69,24 +69,22 @@ The handoff is the current state. It should tell the next session what passed, w
 
 The index makes the memory searchable. The remaining-work queue turns documents back into action.
 
-## Why This Is a Contract
+## Prompt, Skill, Wiki, or Memory
+
+Not every instruction belongs in the same place.
+
+| Need | Put it here |
+| --- | --- |
+| One-off instruction | Prompt |
+| Repeatable tool workflow | Skill or script |
+| Cross-session project fact | Wiki/spec |
+| Source evidence | Raw note plus processed note |
+| Current state | Handoff |
+| Next action | Remaining-work queue |
 
 OpenAI's Conversation state and Compaction docs describe the practical reality: context is managed, summarized, and bounded. That is normal. It also means durable operating memory cannot live only inside a chat window.
 
 MCP Resources point in the same direction. If tools and agents need reusable context, that context should be addressable and explicit.
-
-The minimum contract is simple:
-
-```txt
-source is preserved
-interpretation is separated from source
-specs are reusable
-handoffs are current
-indexes are searchable
-remaining work is explicit
-```
-
-Without that contract, every new agent behaves like a new hire with partial notes. With it, the agent can at least ask the right question before changing the system.
 
 ## Audit Checklist
 
@@ -106,4 +104,8 @@ If three of those are missing, the issue may not be model quality. It is missing
 
 Vibecode uses this pattern for source-backed content: source notes, explicit specs, current handoffs, searchable wiki indexes, and evidence gates before Field Logs. The public writing is only the visible surface. The real asset is the memory contract behind it.
 
-Agent systems should not depend on vibes, hidden state, or optimistic prompts. They should run on evidence, handoff, and verifiable boundaries.
+## Boundary
+
+Operating memory does not make a model truthful. It does not remove the need for review. It does not prove the work is complete.
+
+It lowers the repeated context tax and makes the next agent's starting point inspectable. Agent systems should not depend on vibes, hidden state, or optimistic prompts. They should run on evidence, handoff, and verifiable boundaries.

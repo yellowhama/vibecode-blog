@@ -27,9 +27,7 @@ AI coding agents do not only edit source files.
 
 They build. They test. They create fixtures. They write indexes. They generate logs. They produce evidence bundles, compare outputs, and sometimes leave large temp trees behind.
 
-If all of that falls into the operating system default temp folder, the agent is changing code while quietly pressuring the workstation.
-
-The problem is not "the C drive is small." The problem is that there is no work disk contract.
+If all of that falls into the operating system default temp folder, the agent is changing code while quietly pressuring the workstation. The problem is not "the C drive is small." The problem is that there is no work disk contract.
 
 ![AI work disk contract diagram](/images/posts/ai-agent-work-disk-contract.png)
 
@@ -58,12 +56,12 @@ If those roles are not explicit, cleanup becomes a manual judgment call. That is
 
 Vibecode uses the contract this way:
 
-```txt
-source repo: the code under active change
-operating memory: current handoff, status, and searchable index
-completed archive: durable artifacts another agent can trust later
-self-test temp: disposable test output
-```
+| Role | Example |
+| --- | --- |
+| source repo | code under active change |
+| operating memory | current handoff, status, searchable index |
+| completed archive | durable artifacts another agent can trust later |
+| self-test temp | disposable test output |
 
 The implementation is deliberately boring. Scripts read repo-specific temp variables first, then shared temp variables, then a large local archive drive, and only then fall back to the OS default.
 
@@ -75,7 +73,7 @@ F:\Aisaak\CompanyArtifacts\test-temp
 os.tmpdir()
 ```
 
-The point is not that these exact names are universal. They are not. The point is that every repo has to decide where agent-created files are allowed to land.
+The point is not that these exact names are universal. They are not. The point is that every repo has to decide where agent-created files are allowed to land, and scripts have to honor that decision.
 
 This pattern is fixed in the Vibecode repo through a [real commit](https://github.com/yellowhama/vibecode-blog/commit/1e62c79c62d0b3b0b1cf2c13d334b0bef80b341d), not just a note in a prompt.
 
@@ -103,6 +101,12 @@ public evidence gates reject samples and templates
 ```
 
 That last line matters. A sample result is useful documentation. It is not evidence.
+
+## Boundary
+
+A work disk contract does not prove the work is correct. It does not make a runtime receipt real. It does not turn a sample artifact into evidence.
+
+It only makes filesystem behavior explicit enough that other gates can trust where artifacts are supposed to live.
 
 ## Why This Belongs in the Trust Engine
 

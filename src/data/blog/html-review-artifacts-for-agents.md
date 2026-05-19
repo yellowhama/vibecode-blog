@@ -33,19 +33,9 @@ That is not a writing problem. It is a review-surface problem.
 
 ## The Skipped Plan Problem
 
-Thariq Shihipar argues for using HTML artifacts with Claude Code because HTML can carry more information density: tables, SVG diagrams, layouts, interactive controls, code snippets, visual grouping, and shareable browser pages.
+Thariq Shihipar's HTML examples make the point in the medium itself: some agent outputs are easier to review when they can use tables, SVG diagrams, tabs, grids, annotations, and small interactive controls.
 
-The point is not that HTML is prettier than Markdown.
-
-The point is that some agent outputs need to be compared, scanned, manipulated, and reviewed visually. Markdown is excellent for durable text. It is weaker when the reviewer needs a module map, annotated diff, incident timeline, design variant grid, or small throwaway editor.
-
-When the review surface is wrong, the artifact may be technically complete and still operationally useless.
-
-## Keep Markdown As Canon
-
-The wrong conclusion is: "Replace Markdown with HTML."
-
-Vibecode's rule is narrower:
+The useful conclusion is not "HTML is better than Markdown." The useful conclusion is narrower:
 
 ```txt
 Markdown is the contract.
@@ -64,28 +54,46 @@ manifest
 runtime evidence JSON
 ```
 
-Those files need to be searchable, reviewable in Git, and reusable by the next agent. Generated HTML is noisy in version control, especially once CSS and JavaScript are mixed into the document.
+Generated HTML is allowed to help the human see. It is not allowed to become hidden truth.
 
-So HTML should sit above the contract, not replace it.
+## Decision Matrix
 
-## Where HTML Wins
+| Use case | Best surface | Why |
+| --- | --- | --- |
+| Durable spec | Markdown | Diffable, searchable, easy for agents to ingest |
+| Evidence packet | JSON or files | Machine-checkable and repeatable |
+| PR or incident explainer | HTML | Diagrams, annotations, timelines, and links reduce review load |
+| Design variant comparison | HTML | Multiple options can be seen side by side |
+| Prompt or config tuning | HTML with export | Controls help exploration, but output must return to canon |
 
-HTML is useful when the human needs to do one of these:
+This is where HTML wins: it makes the review faster without pretending to be the system of record.
+
+## The Review Artifact Contract
+
+A useful HTML artifact should declare its own inputs.
 
 ```txt
-compare options side by side
-inspect a flow visually
-review annotated diffs
-scan an incident timeline
-tune a prompt or animation with controls
-share a readable report with another person
+source files read
+diffs inspected
+wiki packets used
+external links included
+files intentionally excluded
+secrets redacted
+network calls disabled
 ```
 
-For example, "write a PR description" can be Markdown. But "explain streaming and backpressure to a reviewer who does not know this subsystem" is often better as an HTML artifact with callouts, diagrams, and highlighted code snippets.
+Then it should make the human decision easier:
 
-Planning works the same way. Six onboarding directions in Markdown force the reader to imagine six screens. Six directions in an HTML grid let the reader compare density, tone, layout, and tradeoff at once.
+```txt
+module map
+annotated risky snippets
+timeline
+before/after comparison
+open questions
+copyable review notes
+```
 
-That is not decoration. It is decision speed.
+For example, "write a PR description" can be Markdown. But "explain streaming and backpressure to a reviewer who does not know this subsystem" is often better as an HTML artifact with callouts, a data-flow diagram, and the three code snippets that matter.
 
 ## The Export Rule
 
@@ -110,19 +118,20 @@ Without export, HTML becomes hidden state. With export, the human can decide in 
 Ask for the review surface and the return path:
 
 ```txt
-Create a single HTML review artifact for this PR.
-Read the source files and show the data flow, the risky diff chunks, and the acceptance checks.
+Create a single local HTML review artifact for this PR.
+Read the source files and list the exact files used.
+Show the data flow, risky diff chunks, acceptance checks, and unresolved questions.
+Do not make network calls.
+Do not embed secrets.
 Add a copy button that exports the final review notes as Markdown.
 Do not make the HTML the source of truth.
 ```
 
 That last sentence is the important part.
 
-## Technical Verdict
+## Boundary
 
-Agent output needs UX. If people do not read the plan, the plan is not doing its job.
-
-But visual polish can hide weak evidence. A beautiful timeline with no source inventory is still a guess. A dashboard with no export path is still hidden state.
+HTML can make weak evidence look finished. A beautiful timeline with no source inventory is still a guess. A dashboard with no export path is still hidden state.
 
 Vibecode accepts HTML artifacts as review tools because they make complex agent output easier to inspect. It does not accept them as the contract.
 

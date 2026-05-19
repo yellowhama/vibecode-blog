@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T14:05:05.810Z",
+  "generated_at": "2026-05-18T23:11:00.459Z",
   "source": "F:\\Aisaak\\CompanyArtifacts\\llm-wiki-completed",
   "packets": {
     "ai-agent-work-disk-contract": {
@@ -101,6 +101,40 @@
           "suffix": "draft-critique",
           "path": "companies/vibecode-town/plans/html-review-artifacts-for-agents-draft-critique.md",
           "sha256": "5a57528647939046c73fd9c75d4b070dba70aaf4f52c0256159397da047cbebd"
+        }
+      ]
+    },
+    "mcp-shared-state-data-leak": {
+      "files": [
+        {
+          "suffix": "reader-pressure",
+          "path": "companies/vibecode-town/plans/mcp-shared-state-data-leak-reader-pressure.md",
+          "sha256": "d2a23cb3dbe1f3ce4f79906200c8bade44a4df722d8e48828dc4fdc76a7fbaed"
+        },
+        {
+          "suffix": "title-angle",
+          "path": "companies/vibecode-town/plans/mcp-shared-state-data-leak-title-angle.md",
+          "sha256": "77d2274feec5c62059fe952449e91a0bbc405a0ebcb6593da9db13097caa4872"
+        },
+        {
+          "suffix": "evidence-bundle",
+          "path": "companies/vibecode-town/plans/mcp-shared-state-data-leak-evidence-bundle.md",
+          "sha256": "baa802579e14c10c6ceb7d912d133689a03e9cc2d94ed57cbcca0b317a206e82"
+        },
+        {
+          "suffix": "brief",
+          "path": "companies/vibecode-town/plans/mcp-shared-state-data-leak-brief.md",
+          "sha256": "8d2ad2f76dbac9651bdb6b0f9b6c09de1a8ee24b7480c123926db2ba6c7cbc26"
+        },
+        {
+          "suffix": "gate-0",
+          "path": "companies/vibecode-town/plans/mcp-shared-state-data-leak-gate-0.md",
+          "sha256": "3bb0d990335529175cc84f20211ce4d4f54ad08025b11b7ceafd9ca6eb990f3d"
+        },
+        {
+          "suffix": "draft-critique",
+          "path": "companies/vibecode-town/plans/mcp-shared-state-data-leak-draft-critique.md",
+          "sha256": "38c8780051029dabdb5a25f31a8e8ac83320a5a88439305cbfb0ee1a1fd3219d"
         }
       ]
     }

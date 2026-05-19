@@ -9,17 +9,17 @@ Add-Type -AssemblyName System.Drawing
 $items = @(
   @{
     Slug = "000-about"
-    Title = "The Vibe Coding Project"
-    Subtitle = "A guru student's operating log"
-    Signal = "memory / contract / proof"
+    Title = "About Vibecode Town"
+    Subtitle = "Evidence-backed field notes"
+    Signal = "failure -> contract -> proof"
     Accent = "#B95B36"
     Motif = "stack"
   },
   @{
     Slug = "design-is-a-technical-contract"
-    Title = "Design Contract"
-    Subtitle = ".pen in Git, not a handoff screenshot"
-    Signal = "tokens -> components"
+    Title = "DESIGN.md"
+    Subtitle = "Reasoning and tokens in one file"
+    Signal = "roles -> components -> lint"
     Accent = "#8E4C9E"
     Motif = "tokens"
   },
@@ -33,9 +33,9 @@ $items = @(
   },
   @{
     Slug = "frustration-as-spec"
-    Title = "Frustration As Specification"
-    Subtitle = "Emotional friction becomes a hard contract"
-    Signal = "pain -> signal -> spec"
+    Title = "Frustration Signal"
+    Subtitle = "Repeated correction becomes a gate"
+    Signal = "complaint -> contract -> verifier"
     Accent = "#B04444"
     Motif = "signal"
   },
@@ -58,8 +58,8 @@ $items = @(
   @{
     Slug = "software-3-0"
     Title = "Software 3.0"
-    Subtitle = "The LLM as an operating kernel"
-    Signal = "model -> tools -> contracts"
+    Subtitle = "Generation got cheap; review did not"
+    Signal = "context -> diff -> evidence"
     Accent = "#6857A8"
     Motif = "kernel"
   },
@@ -81,9 +81,9 @@ $items = @(
   },
   @{
     Slug = "what-vibe-coding-actually-is"
-    Title = "What Vibe Coding Is"
-    Subtitle = "Hype stripped down to technical contracts"
-    Signal = "taste -> contract -> proof"
+    Title = "Vibe Coding"
+    Subtitle = "Exploration is not production"
+    Signal = "intent -> contract -> verification"
     Accent = "#A35F2B"
     Motif = "deconstruct"
   }

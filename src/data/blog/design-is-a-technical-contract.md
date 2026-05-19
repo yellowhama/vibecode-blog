@@ -1,66 +1,117 @@
 ---
-title: "Design is a Technical Contract: Why Pencil Dev Changes Everything"
+title: "DESIGN.md Turns Visual Taste Into an Agent Contract"
 pubDatetime: 2026-05-13T18:00:00Z
-description: "The end of the Figma handoff. Why storing designs as .pen files in Git is the only way to scale agentic frontend engineering."
+description: "DESIGN.md works because it keeps design reasoning and token values together, then gives agents a file they can read, edit, and lint."
 draft: false
 featured: true
 series: "Field Log"
 workflow: "legacy"
-tags: ["engineering", "pencil-dev", "agentic-design", "mcp"]
+tags: ["engineering", "design-md", "agentic-design", "technical-contracts"]
 ogImage: "/images/posts/design-is-a-technical-contract.png"
 references:
-  - name: "Pencil Dev Documentation"
-    url: "https://pencil.dev/docs"
-    guru: "Pencil Labs"
-  - name: "Model Context Protocol Specification"
-    url: "https://modelcontextprotocol.io"
-    guru: "Anthropic"
-  - name: "Claude Opus 4.7"
-    url: "https://www.anthropic.com/news/claude-opus-4-7"
-    guru: "Anthropic"
+  - name: "Google Labs Stitch DESIGN.md announcement"
+    url: "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-design-md/"
+    guru: "Google Labs"
+  - name: "DESIGN.md specification"
+    url: "https://github.com/google-labs-code/design.md/blob/main/docs/spec.md"
+    guru: "Google Labs Code"
+  - name: "DESIGN.md repository"
+    url: "https://github.com/google-labs-code/design.md"
+    guru: "Google Labs Code"
 ---
 
-# Design is a Technical Contract: Why Pencil Dev Changes Everything
+# DESIGN.md Turns Visual Taste Into an Agent Contract
 
-The traditional Figma-to-Code handoff is a legacy bottleneck. 
+The normal design handoff fails agents for the same reason vague prompts fail them: too much context lives in someone's head.
 
-We’ve all lived it: a designer spends 40 hours pushing pixels in a proprietary cloud silo, then "hands off" a series of static images and CSS snippets to an engineer. In the agentic era, this is a recipe for disaster. If your agent can't "see" the design, it will hallucinate the implementation.
+A screenshot says what a screen looked like. It does not reliably say why the primary color exists, which type scale owns body copy, what a button hover variant is allowed to change, or which contrast rule should block a bad component.
+
+That is why DESIGN.md matters. It turns design taste into a technical contract the agent can read.
 
 ![Design contract token and component diagram](/images/posts/design-is-a-technical-contract.png)
-*Fig 1.1: Design only becomes agent-safe when visual decisions are stored as a contract.*
 
-## 1. The Retina: Agents Need Spatial Context
+## The Real Problem
 
-The breakthrough of **Pencil Dev** isn't just that it’s an IDE-native canvas. It’s the **Pencil MCP Server**.
+Design systems usually split reasoning from values.
 
-By exposing the design canvas via the Model Context Protocol (MCP), Pencil gives your AI agents "eyes." When I tell Claude Opus 4.7 to *"Implement the hero section from the design,"* it doesn't guess. It calls `read_canvas`, perceives the exact flexbox layouts, padding tokens, and color variables, and compiles them into production React code.
+```txt
+style guide: why the design feels this way
+config file: hex values, font sizes, spacing, component tokens
+```
 
-Without this spatial intelligence, the agent is flying blind. You spend 5,000 tokens trying to explain a "slightly more centered" button. With Pencil, the spatial context is the source of truth.
+Those two files drift. A human can sometimes repair the gap by memory. An agent cannot. It needs the reason and the value close enough that the next decision can use both.
 
-## 2. The Git-Native Moat: .pen Files are Specs
+DESIGN.md solves that by keeping prose and tokens in one persistent file.
 
-The most cynical (and brilliant) feature of Pencil is the **.pen file**.
+## Tokens Are Decisions
 
-Designs are no longer stored in a black-box cloud. They live in your repository as JSON-based `.pen` files. This transforms the design from a "suggestion" into a **Technical Contract**.
+The important idea is not "put hex codes in Markdown." The important idea is that tokens are named roles.
 
-When you commit a design change, you are committing a **Visual Specification**. 
-- **Deterministic:** The layout is locked in Git.
-- **Verifiable:** The CI/CD pipeline can audit the implementation against the `.pen` data.
-- **Scalable:** Multiple agents can "swarm" on a single design file because it follows a machine-readable schema.
+```txt
+primary: the main ink for text and headlines
+neutral: the canvas or emotionally quiet surface
+accent: the action color
+body.main: the default body-copy role
+button.primary: the component role that consumes token roles
+```
 
-## 3. The Implementation: Building a Dashboard
+The current value can change. The role survives.
 
-I used this workflow to build a node-monitoring dashboard. 
-1.  **Sketch:** I drew a rough layout in Pencil Dev directly next to my `dashboard.tsx`.
-2.  **Verify:** I invited a sub-agent to audit the layout for accessibility compliance.
-3.  **Execute:** I gave the mission goal: *"Build the React component that satisfies this .pen contract."*
+That matters for agents because the instruction is no longer "make it greenish." The instruction is "use the primary ink role" or "do not create a new accent unless the system needs a new decision."
 
-It worked in one shot. No CSS inconsistency. No "it looked different in Figma" excuses.
+## Components Need References, Not Guesswork
 
-## Technical Verdict
+The DESIGN.md spec direction is especially useful for components. A button token can point to a color role instead of hard-coding another hex value.
 
-If you are still copy-pasting CSS from Figma to Cursor, you are generating technical debt. 
+```txt
+button.primary.background -> color.accent
+button.primary.text -> color.neutral
+button.primary.hover.background -> color.accent.hover
+```
 
-**Stop being a pixel-pusher. Be a Contract Designer.** Use Pencil Dev to define the visual boundaries of your system, and let the reasoning kernel provide the flight.
+Now a component is not a pile of style values. It is a small dependency graph. If the role changes, the component follows the role.
 
-The tighter the cage, the faster the bird flies.
+That is exactly the kind of structure agents need. They are good at applying explicit relationships. They are much worse at inferring unstated taste from a screenshot.
+
+## The Linter Loop
+
+The strongest part of the DESIGN.md update is not the file name. It is the validation loop.
+
+```txt
+agent reads DESIGN.md
+agent edits a token or component
+CLI lints the file
+contrast or format issue is caught
+agent repairs the decision or documents an override
+```
+
+That turns design from a preference conversation into an inspectable workflow. If an agent picks a low-contrast foreground/background pair, the linter can catch the failure before the choice becomes production UI.
+
+## Reader Decision
+
+Use DESIGN.md when a design decision needs to survive more than one prompt.
+
+Good candidates:
+
+```txt
+brand color roles
+type hierarchy
+spacing rhythm
+component variants
+accessibility requirements
+design tone and forbidden patterns
+```
+
+Bad candidates:
+
+```txt
+one-off screenshot guesses
+temporary mood boards
+visual polish that has not been decided yet
+```
+
+## Boundary
+
+DESIGN.md does not replace design review, browser screenshots, or implementation QA. It gives agents a shared design contract so their first pass starts from the same rules as the humans.
+
+The contract is not the final UI. It is the memory that keeps the next UI from starting over.

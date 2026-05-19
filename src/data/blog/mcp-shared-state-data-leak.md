@@ -1,13 +1,13 @@
 ---
 title: "Stateless MCP Servers Can Still Leak Shared State"
-pubDatetime: 2026-05-16T08:00:00Z
+pubDatetime: 2026-05-18T07:30:00Z
 description: "The MCP SDK advisory is not just a package update. It is a server and transport lifecycle contract for agent tool infrastructure."
 draft: false
-featured: true
+featured: false
 series: "AI Market Watch"
-workflow: "legacy"
+workflow: "packet"
 lang: "en"
-tags: ["engineering", "mcp", "security", "ai-agents"]
+tags: ["ai-security", "mcp", "agent-infrastructure", "technical-contracts"]
 ogImage: "/images/posts/mcp-shared-state-data-leak.png"
 references:
   - name: "GitHub Advisory GHSA-345p-7cg4-v4c7"
@@ -27,7 +27,14 @@ That shared state is not an implementation detail. In an agent tool server, shar
 
 ## What Changed
 
-GitHub Advisory `GHSA-345p-7cg4-v4c7` covers a cross-client data leak in `@modelcontextprotocol/sdk`.
+GitHub Advisory `GHSA-345p-7cg4-v4c7` covers CVE-2026-25536, a high-severity cross-client data leak in `@modelcontextprotocol/sdk`.
+
+The advisory lists affected versions as:
+
+```txt
+@modelcontextprotocol/sdk >= 1.10.0, <= 1.25.3
+patched in 1.26.0
+```
 
 The important part is not only the version range. The operational lesson is this:
 
@@ -38,33 +45,27 @@ Do not reuse one McpServer or Server instance across multiple transports or clie
 
 That makes the fix more than "run npm update." It is a lifecycle contract.
 
-## Why It Matters
+## Unsafe Lifecycle
 
-MCP is becoming a standard surface for agent tools. That means an MCP server may carry:
-
-```txt
-tool calls
-resource reads
-prompt fetches
-progress notifications
-server-to-client messages
-sampling or elicitation flows
-```
-
-If a response is delivered to the wrong client, the bug is not cosmetic. Tool results, resource contents, and agent progress can cross a boundary that operators assumed was isolated.
-
-Silent cross-client success is worse than a loud failure. A 500 tells you something broke. A normal response delivered to the wrong client can look like the system worked.
-
-## Control Contract
-
-The bad pattern is a module-level singleton:
+The risky pattern is a module-level singleton:
 
 ```txt
 global server = new McpServer(...)
 global transport = new StreamableHTTPServerTransport(...)
 ```
 
-That can look like a harmless optimization in a normal web service. In MCP, the server and transport are not just configuration. They carry message lifecycle and client state.
+That can look like a harmless optimization in a normal web service. In MCP, the server and transport are not just configuration. They can carry message lifecycle and client state.
+
+The advisory describes two related issues:
+
+```txt
+transport re-use across client requests
+server/protocol re-use across multiple transports
+```
+
+Both can route data to the wrong client under the wrong ownership model.
+
+## Control Contract
 
 The minimum control contract is:
 
@@ -85,7 +86,7 @@ The important question is not "does the endpoint return 200?" The question is "w
 Before shipping an MCP tool server, check:
 
 ```txt
-Is @modelcontextprotocol/sdk patched?
+Is @modelcontextprotocol/sdk patched to 1.26.0 or later?
 Is McpServer constructed per request or per isolated session?
 Is StreamableHTTPServerTransport reused anywhere?
 Can progress, sampling, or elicitation messages cross sessions?
@@ -95,10 +96,14 @@ Does the code review include lifecycle ownership, not only route handlers?
 
 If any answer is unclear, the system does not have a control surface. It has a hope.
 
+## Boundary
+
+This does not mean every MCP server leaked data. Single-client local development is a different risk profile. A server that already creates fresh server and transport instances per request or per isolated session is not the same as a singleton deployment.
+
+It also means upgrading alone is not the full lesson. The patch turns bad reuse into clearer runtime errors, but operators still need to audit ownership.
+
 ## Technical Verdict
 
 This is not an argument against MCP. It is the opposite. As MCP becomes a serious agent infrastructure layer, server lifecycle has to become explicit.
-
-Vibecode treats this as the same class of problem as Warden evidence and source-backed content: invisible state must be turned into a technical contract.
 
 Agent operations should not trust "stateless" as a label. They should verify ownership, boundaries, and evidence.

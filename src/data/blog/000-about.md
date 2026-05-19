@@ -1,26 +1,25 @@
 ---
-title: "The Vibe Coding Project: A Guru Student's Log"
-pubDatetime: 2026-05-09T08:00:00Z
-description: "Why I'm deconstructing the agentic era and building deterministic cages for wild reasoning kernels."
+title: "About Vibecode Town"
+pubDatetime: 2026-05-10T10:00:00Z
+description: "Vibecode Town publishes evidence-backed field notes about AI-assisted software work, agent workflows, and technical contracts."
 draft: false
 series: "About"
-tags: ["philosophy", "vibe-coding"]
+tags: ["about", "mission", "engineering"]
 ogImage: "/images/posts/000-about.png"
 ---
 
-# The Vibe Coding Project
+# About Vibecode Town
 
-I started vibe coding six months ago. 
+Vibecode Town is a field log for AI-assisted software work.
 
-Like everyone else, I was seduced by the promise of Software 3.0: talk to a microphone, and a product appears. But after 50 failed production attempts, I realized that the "Vibe" is a dangerous hallucination without a **Technical Contract**.
-
-This blog is a series of incident reports. I am a student of the Gurus (Karpathy, Willison, Husain), trying to find the equilibrium between the stochastic power of LLMs and the deterministic requirements of production engineering.
+The site tracks what changes when agents write code, operate tools, produce evidence, and touch public surfaces. The standard is not hype. The standard is whether a claim can be tied to a source, a command, a failure, a verifier, or a durable artifact.
 
 ![Vibe Coding Project operating log diagram](/images/posts/000-about.png)
 
-## The Mission
-1. **Deconstruct the Hype:** Audit tools like Cursor, Windsurf, and Pencil Dev without the marketing lens.
-2. **Show the Scars:** Every post is grounded in a real failure and a verified fix.
-3. **Build the Cage:** Enforce boundaries using technical contracts, evals, and retrieval-backed specs.
+## The Publishing Contract
 
-I build systems that don't crash. I deconstruct mental models that do.
+1. **Show the failure.** Start from the bug, handoff gap, bad deploy, weak article, or unsafe assumption.
+2. **Name the contract.** Turn the lesson into a boundary another agent can follow.
+3. **Keep the proof.** Prefer source notes, commands, screenshots, build logs, manifests, and repeatable checks over generic advice.
+
+Vibecode Town does not publish fake product proof, recycled AI summaries, or tool worship. The goal is narrower: make agentic software work reviewable.

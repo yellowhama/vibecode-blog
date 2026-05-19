@@ -1,6 +1,6 @@
 ---
 title: "Vercel Is Not a Deployment Contract"
-pubDatetime: 2026-05-16T03:20:00Z
+pubDatetime: 2026-05-16T09:00:00Z
 description: "A Coolify migration audit exposed two hidden Vercel assumptions: rewrites that only existed in vercel.json and a build script that depended on a Unix shell."
 draft: false
 featured: true
@@ -21,7 +21,7 @@ references:
 
 The Coolify migration audit failed before Coolify ever touched the site.
 
-The repo looked portable. It was an Astro static site. It had a `dist` folder. It had a normal build command. But the moment I treated `vibecode.town` as something that should build on any host, two hidden contracts fell out of the wall:
+The portability test was local: build the repo, inspect the static artifact, and ask whether the same behavior would exist on a plain host serving `dist`. The repo looked portable. It was an Astro static site. It had a normal build command. But two hidden contracts fell out of the wall:
 
 ```txt
 vercel.json owned two production routes
@@ -66,25 +66,14 @@ The second failure was quieter:
 
 Those routes existed only because Vercel interpreted `vercel.json`. A static host serving `dist` would not know that `/sitemap.xml` should point at `/sitemap-index.xml`, or that `/install.sh` should route to a remote installer.
 
-## Bad Default
+## Hidden Contract Table
 
-The bad default is assuming a platform feature is part of the app.
-
-If a deployment agent reads only `package.json`, it sees this:
-
-```txt
-Install: npm ci
-Build: npm run build
-Publish: dist
-```
-
-That is not enough. The actual production behavior also depended on:
-
-```txt
-vercel.json rewrites
-Unix cp command
-Vercel Analytics injection
-```
+| Hidden dependency | Why it mattered | Repo-owned replacement |
+| --- | --- | --- |
+| Vercel rewrite for `/sitemap.xml` | Static hosts would miss the expected route | `src/pages/sitemap.xml.ts` |
+| Vercel rewrite for `/install.sh` | The deploy artifact did not contain the file | `public/install.sh` |
+| Unix `cp -r` | Windows build failed | Node copy script |
+| Host analytics injection | Platform behavior was not app behavior | Accepted Vercel-only boundary |
 
 This is exactly how agentic operations produce slop. The agent says "Astro static site, deployable anywhere." The repo says "not quite."
 
@@ -122,15 +111,19 @@ public/install.sh
 
 Now `/sitemap.xml` is produced by the app, and `/install.sh` is a real file in the deploy artifact.
 
-## Result
+## Deployment Contract Checklist
 
-The deployment contract is now testable without guessing what Vercel will do:
+Before calling a site portable, verify:
 
 ```txt
 npm ci
 npm run build
 npm run lint
 npm audit --audit-level=high
+static artifact contains expected routes
+host rewrites are either removed or reproduced in repo-owned files
+build scripts avoid host-specific shell assumptions
+platform-only behavior is named as a boundary
 ```
 
 Current state:

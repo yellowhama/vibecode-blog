@@ -1,92 +1,110 @@
 ---
-title: "What Vibe Coding Actually Is: A Technical Deconstruction"
+title: "What Vibe Coding Actually Is"
 pubDatetime: 2026-05-10T10:00:00Z
-description: "Stripping the paint off the hype: Deconstructing Software 3.0, the slop backlash, and the role of the technical contract."
+description: "Vibe coding is useful for exploration, but production work starts when intent becomes a technical contract the agent can verify against."
 draft: false
 featured: true
 series: "AI Explainer"
 workflow: "legacy"
-tags: ["engineering", "vibe-coding", "agentic-engineering", "karpathy"]
+tags: ["engineering", "vibe-coding", "agentic-engineering", "technical-contracts"]
 ogImage: "/images/posts/what-vibe-coding-actually-is.png"
 references:
-  - name: "Software 3.0"
-    url: "https://karpathy.ai/blog/software-3.0"
-    guru: "Andrej Karpathy"
+  - name: "Not all AI-assisted programming is vibe coding"
+    url: "https://simonwillison.net/2025/Mar/19/vibe-coding/"
+    guru: "Simon Willison"
 ---
 
-# What Vibe Coding Actually Is: A Technical Deconstruction
+# What Vibe Coding Actually Is
 
 ![Vibe coding hype to contract to evidence diagram](/images/posts/what-vibe-coding-actually-is.png)
 
-The Instagram ads lied to you. 
+The failure did not look dramatic. A route returned 500, the agent tried three different fixes, and each answer sounded plausible.
 
-Youve seen the videos: a guy in a hoodie, a dark room, a prompt like *"Make me a SaaS that scans LinkedIn,"* and 30 seconds later, 10,000 lines of code appear in Cursor. The narrator promises that "coding is dead" and you can now build products by simply describing them. 
+The real problem was simpler: the agent did not know the contract of the framework version it was editing. I kept asking it to fix a symptom. It kept guessing inside the wrong mental model.
 
-I fell for it. I tried to "vibe" my way into a production-grade data aggregator. I failed 50 times in a row. 
+That is the line between vibe coding and engineering with agents. Vibe coding is intent-first exploration. You describe the shape of a thing and let the model push pixels, routes, and files around until a prototype appears. It is fast, useful, and sometimes exactly the right move.
 
-This post is the technical autopsy of those failures. To understand why I failed, you have to understand the difference between the **cultural reaction** (Vibe Coding) and the **architectural physics** (Software 3.0).
+It is not a production method by itself.
 
----
+## The Useful Part
 
-## 1. The Physics: Deconstructing Software 3.0
+Simon Willison makes the important distinction: not all AI-assisted programming is vibe coding. The useful version of vibe coding is exploratory. You are trying to find the shape of an idea before you know the hard constraints.
 
-Andrej Karpathy, who coined the term "Vibe Coding" in early 2025, wasn't just talking about being descriptive. He was describing a shift in the fundamental stack of computing.
+That mode is good for:
 
-- **Software 1.0:** Explicit logic written by humans (C++, Python). The developer specifies the *how*.
-- **Software 2.0:** Weights optimized by gradient descent (Neural Networks). The developer specifies the *loss function*.
-- **Software 3.0:** The LLM is the **Kernel/OS**. Natural language is the **Source Code**. The Prompt is the **Program**. 
+```txt
+rough prototypes
+throwaway UI directions
+small scripts
+first-pass copy
+scaffolding a workflow you plan to inspect
+```
 
-In Software 3.0, the developer specifies the **Intent**. The reasoning engine (the LLM) then compiles that intent into the machine-readable data we call "code." 
+The mistake is carrying that same posture into a system with versions, auth, migrations, routes, data ownership, and deployment behavior. Once a system has contracts, the agent needs those contracts in front of it.
 
-The physics changed: implementation is now cheap and ephemeral. But, as Karpathy warns: <Scribble type="circle">"You can outsource your thinking, but you cannot outsource your understanding."</Scribble>
+## The Failure Mode
 
----
+Here is the kind of bug that exposes the difference.
 
-## 2. The Backlash: Why "Real" Developers Hate Your Vibes
+```ts
+// Wrong contract for a newer route API.
+export async function GET(
+  request: Request,
+  { params }: { params: { id: string } }
+) {
+  const taskId = params.id;
+  return Response.json({ taskId });
+}
+```
 
-If you spend any time on Hacker News or Reddit, youll see the backlash. Seasoned engineers call it **"AI Slop."** And for the most part, they are right.
+If the framework expects `params` to be resolved asynchronously, this code can look reasonable while still violating the route contract. A prompt like "fix the 500 error" gives the model too much room to guess. It may change error handling, response shape, imports, or logging while missing the one thing that matters.
 
-The problem with pure "vibe coding" is the **One-Shot Illusion**. It is easy to vibe out a landing page or a todo app. But the moment you hit a breaking change in a dependency, the conversation collapses into a loop of incompetence.
+The fix is not a better vibe. The fix is a better contract.
 
-Real engineers hate vibe coding because it generates **Hidden Liabilities**:
-- **Fragile Architecture:** Code that works today but fails the moment you try to scale.
-- **Security Flaws:** AI agents putting API keys in client-side code because it was the shortest path to implementation.
-- **Complexity Bloat:** 450 lines of caching logic for a problem that only required a 5-line version bump.
+```txt
+Route contract:
+- Treat params as async route input.
+- Resolve params before reading id.
+- Do not change response shape.
+- Add a smoke test that fails if id extraction breaks.
+```
 
-The consensus is clear: Vibe coding without a mental model is just high-speed technical debt creation.
+Now the agent has a boundary. It can still implement quickly, but the output has something to be checked against.
 
----
+## The Production Shift
 
-## 3. The Bridge: Technical Contracts in Agentic Workflows
+The production workflow is not:
 
-I am not a "developer" in the Software 1.0 sense. I am a student of the AI landscape. But I realized that to survive, I had to stop being a "Prompter" and start being a **Contract Designer.**
+```txt
+prompt -> code -> hope
+```
 
-The "Aha Moment" came during the **Next.js 15 Incident**. 
+It is:
 
-I was trying to build a log-streaming route. I "vibed" the prompt: *"Fix the 500 error in my logs route."* The AI kept generating synchronous code because it didn't "understand" that in Next.js 15, dynamic route `params` are now **Promises**.
+```txt
+intent -> source check -> contract -> implementation -> verification
+```
 
-`	ypescript
-// THE FATAL VIBE FAILURE (Sync Slop)
-export async function GET(request: Request, { params }: { params: { id: string } }) {
-  const taskId = params.id; // Fails in production Next.js 15
-`
+That middle part is the craft. The contract can be a migration note, a route rule, a schema, a design token file, a deployment checklist, or a failing test. The format matters less than the function: it turns vague intent into a reviewable boundary.
 
-I spent three hours prompt-hacking. I was trying to "vibe" the AI into knowing its own environment. It was a delusion. The AI didn't know the version was 15.
+This is why "AI slop" is often a process problem. The model may be wrong, but the operator also failed to define what correctness meant.
 
-The fix? I stopped prompting. I read the migration guide. I wrote a **Technical Contract** (a Spec) for the route:
+## Reader Decision
 
-> "The `params` object in this route is a Promise. You must await it before destructuring `id`. Implement this contract strictly."
+Use vibe coding when the cost of being wrong is low and discovery is the goal.
 
-I fed *that* to the AI. It fixed the bug in one shot. 150 tokens. 0 slop.
+Switch to contract-driven agent work when any of these become true:
 
----
+```txt
+the code touches production data
+the fix depends on a specific framework version
+the output must survive deployment
+another agent will continue the work
+security, billing, or user trust is involved
+```
 
-## 4. Final Verdict: The Birth of Agentic Engineering
+## Boundary
 
-"Vibe coding" is an exploratory phase, but it is a dangerous trap for production systems. 
+A technical contract does not make an agent correct. It only makes the agent's output easier to inspect, test, and reject.
 
-The true craft in 2026 isn't about knowing how to type `for-loops`. Its about **Context Engineering**. Its about understanding the technical contracts between your systems so you can **Verify** the AI's output.
-
-I am no longer a "Vibe Coder." I am an **Agentic Engineer**. I define the **Cage** (The Contract), and I let the LLM provide the **Flight** (The Implementation).
-
-The tighter the cage, the faster the bird flies.
+That is the point. Vibe coding gets you motion. Contracts decide whether the motion belongs in the system.
