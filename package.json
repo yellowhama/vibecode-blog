@@ -33,6 +33,7 @@
     "write:source-workflow-packet": "node scripts/create-source-workflow-packet.mjs",
     "draft:source-workflow-post": "node scripts/create-source-workflow-draft.mjs",
     "draft:review-artifact": "node scripts/generate-draft-review-artifact.mjs",
+    "draft:review-artifact:proof": "npm run draft:review-artifact && node scripts/capture-draft-review-artifact.mjs",
     "verify:source-links": "node scripts/verify-source-references.mjs --check-http",
     "verify:factory-contract": "node scripts/verify-factory-contract.mjs",
     "verify:operating-articles": "node scripts/verify-operating-articles.mjs",
