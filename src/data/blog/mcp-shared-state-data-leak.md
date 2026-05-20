@@ -23,7 +23,7 @@ references:
 
 # Stateless MCP Servers Can Still Leak Shared State
 
-On 2026-05-20, I opened GitHub Advisory `GHSA-345p-7cg4-v4c7`, checked the GitLab mirror, and compared both against the MCP Streamable HTTP transport spec. The most dangerous sentence in that review was not in the advisory.
+At 1:54 a.m. on 2026-05-21, I opened GitHub Advisory `GHSA-345p-7cg4-v4c7`, checked the GitLab mirror again, and compared both against the MCP Streamable HTTP transport spec. The most dangerous sentence in that review was not in the advisory.
 
 It was the sentence an engineer says right before skipping the real check: "It is HTTP, so it is stateless."
 
@@ -32,6 +32,8 @@ The HTTP request may be stateless. The application object may not be. If one `Mc
 That shared state is not an implementation detail. In an agent tool server, shared state is a security boundary. A route handler can look clean while the object graph behind it still connects two clients that should never meet.
 
 The annoying part is that the bug hides in the place reviewers skim past. Not the tool description. Not the auth middleware. The constructor location.
+
+That is the part I would put in red ink on the review: do not tell me the route is authenticated until you can tell me where the server and transport are constructed.
 
 Two users can hit the same `/mcp` endpoint, both can look properly authenticated, and the leak can still come from a reused transport object quietly carrying request-to-stream state from one client into another.
 
@@ -105,6 +107,37 @@ The message reaches the wrong stream or the wrong client times out.
 
 That is why the advisory is uncomfortable. The leak is not "someone forgot auth." It is "auth succeeded, but the object that routes messages was shared."
 
+## The Review That Catches It
+
+The review that would catch this bug is almost embarrassingly small.
+
+It does not start with a security architecture diagram. It starts with a grep result and one uncomfortable line number:
+
+```txt
+rg "new McpServer|new Server|new StreamableHTTPServerTransport" src
+
+src/mcp/server.ts:8:const server = new McpServer(...)
+src/mcp/server.ts:9:const transport = new StreamableHTTPServerTransport(...)
+src/mcp/routes.ts:42:await server.connect(transport)
+```
+
+That output should stop the release.
+
+Not because every global object is bad. Because these are not just global objects. They are the objects that own client message routing. A singleton cache is one thing. A singleton transport that remembers `requestId -> stream` is a different animal entirely.
+
+The good review produces a different shape:
+
+```txt
+src/mcp/routes.ts:39:const server = new McpServer(...)
+src/mcp/routes.ts:40:const transport = new StreamableHTTPServerTransport(...)
+src/mcp/routes.ts:52:await server.connect(transport)
+src/mcp/routes.ts:53:await transport.handleRequest(request, response)
+```
+
+That does not prove the whole server is secure. It proves the reviewer looked at the right layer. The route can still need auth, origin validation, session ownership, and dependency gates. But at least the review is no longer staring at the front door while the hallway connects two apartments.
+
+This is the writing lesson and the security lesson at the same time: a claim is weak until it points at the exact object that would make it false.
+
 ## Minimal Audit Evidence
 
 A useful MCP review should leave evidence, not only a package version note.
@@ -173,11 +206,17 @@ body image: /images/posts/mcp-shared-state-data-leak.png
 ogImage: /images/posts/mcp-shared-state-data-leak.png
 rendered summary: F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
 desktop first-screen image check: 10/10
-mobile first-screen image check: 4/10
+mobile first-screen image check: 10/10
 surface expected images: 2/2
+surface contract image routes: 4/4
+surface evidence card routes: 4/4
 ```
 
 That is not decoration. A post about shared state needs a visual boundary that is also checked in the rendered browser output. Otherwise the article says "verify the boundary" while the page itself asks the reader to trust an unchecked illustration.
+
+The stale receipt was the useful failure here. An older version of this article still said the mobile first-screen image check was `4/10` after the public surface had already been hardened. That is the same class of mistake as the MCP bug at a smaller scale: the sentence sounded official, but the underlying state had moved.
+
+A stale proof number is not a cosmetic issue. It teaches the reader to trust the article less.
 
 The image contract is deliberately boring: one slug-specific diagram, no casual reuse across posts, and a rendered audit that records whether the expected image actually appears. Security writing needs this same discipline. Evidence that only exists as a sentence is easy to polish and hard to trust.
 
