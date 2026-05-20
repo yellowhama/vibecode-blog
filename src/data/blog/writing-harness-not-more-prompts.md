@@ -26,6 +26,8 @@ source_workflow_quality_gate=pass
 source_workflow_slug=writing-harness-not-more-prompts
 publication_state=draft_only
 approval_required=true
+approval_candidate=false
+candidate_blockers=human_critique,rendered_candidate,hash_approval,image_contract
 ```
 
 ## Opening Pressure
@@ -145,6 +147,12 @@ Use this decision table before automating any agent writing workflow:
 | A strong article body | Add image/rendered proof and approval | Publishing from local markdown alone |
 
 The rule is simple: prompts can suggest prose, but the harness decides whether the prose deserved to exist.
+
+## Approval Candidate Verdict
+
+Do not promote this draft yet.
+
+It is a useful internal example because the harness improved the article in visible steps: packet, draft, critique, visual. It is not a public candidate until a human critique says the piece works for a reader who has not followed the build history, a rendered candidate screenshot exists, an image contract is added, and the final markdown hash has an approval record.
 
 ## Boundary
 
