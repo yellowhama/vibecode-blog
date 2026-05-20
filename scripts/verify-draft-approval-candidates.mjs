@@ -4,6 +4,7 @@ import { basename, join } from "node:path";
 import sharp from "sharp";
 
 const DEFAULT_BLOG_DIR = "src/data/blog";
+const DEFAULT_DECISIONS_PATH = "src/data/draft-editorial-decisions.json";
 const MIN_DRAFT_WORDS = 800;
 const REQUIRED_FALSE_BLOCKERS = [
   "human_critique",
@@ -155,11 +156,83 @@ async function validateDraft(file, text) {
   return { slug, skipped: false, failures };
 }
 
+function asArray(value) {
+  return Array.isArray(value) ? value : [];
+}
+
+function validateDecision({ file, slug, body, approvalCandidate, blockers }, decision, failures) {
+  if (!decision) {
+    failures.push(`${file}: missing draft editorial decision record`);
+    return;
+  }
+
+  if (!["keep_internal_example", "promote_to_approval_candidate"].includes(decision.decision)) {
+    failures.push(`${file}: editorial decision must be keep_internal_example or promote_to_approval_candidate`);
+  }
+  if (!decision.decidedAt || Number.isNaN(Date.parse(decision.decidedAt))) {
+    failures.push(`${file}: editorial decision decidedAt must be an ISO timestamp`);
+  }
+  if (!["editorial-system", "human"].includes(decision.reviewerType)) {
+    failures.push(`${file}: editorial decision reviewerType must be editorial-system or human`);
+  }
+  if (!decision.rationale || String(decision.rationale).trim().length < 80) {
+    failures.push(`${file}: editorial decision rationale is too thin`);
+  }
+  if (asArray(decision.requiredNextActions).length < 2) {
+    failures.push(`${file}: editorial decision must include requiredNextActions`);
+  }
+  if (typeof decision.approvalCandidate !== "boolean") {
+    failures.push(`${file}: editorial decision approvalCandidate must be boolean`);
+  } else if (decision.approvalCandidate !== (approvalCandidate === "true")) {
+    failures.push(`${file}: editorial decision approvalCandidate must match body receipt`);
+  }
+  if (asArray(decision.evidence).length < 2) {
+    failures.push(`${file}: editorial decision must cite at least two evidence artifacts`);
+  }
+
+  if (decision.decision === "keep_internal_example" && approvalCandidate !== "false") {
+    failures.push(`${file}: keep_internal_example requires approval_candidate=false`);
+  }
+  if (decision.decision === "promote_to_approval_candidate") {
+    if (approvalCandidate !== "true") {
+      failures.push(`${file}: promote_to_approval_candidate requires approval_candidate=true`);
+    }
+    if (decision.reviewerType !== "human") {
+      failures.push(`${file}: promotion to approval candidate requires a human editorial reviewer`);
+    }
+  }
+
+  const decisionReceipt = receiptValue(body, "editorial_decision");
+  if (decisionReceipt !== decision.decision) {
+    failures.push(`${file}: body editorial_decision receipt must match decision manifest`);
+  }
+  const decisionRef = receiptValue(body, "editorial_decision_ref");
+  if (!decisionRef.endsWith(`#${slug}`)) {
+    failures.push(`${file}: body editorial_decision_ref must point at the decision slug`);
+  }
+
+  const decisionBlockers = asArray(decision.candidateBlockers);
+  for (const blocker of blockers) {
+    if (!decisionBlockers.includes(blocker)) {
+      failures.push(`${file}: editorial decision missing candidate blocker ${blocker}`);
+    }
+  }
+}
+
 async function main() {
   const blogDir = getArg("--blog-dir") ?? DEFAULT_BLOG_DIR;
+  const decisionsPath = getArg("--decisions") ?? DEFAULT_DECISIONS_PATH;
   if (!(await fileExists(blogDir))) {
     throw new Error(`blog directory not found: ${blogDir}`);
   }
+  if (!(await fileExists(decisionsPath))) {
+    throw new Error(`draft editorial decisions file not found: ${decisionsPath}`);
+  }
+
+  const decisionsDocument = JSON.parse(await readFile(decisionsPath, "utf8"));
+  const decisions = asArray(decisionsDocument.decisions);
+  const decisionsBySlug = new Map(decisions.map((decision) => [decision.slug, decision]));
+  const decisionSlugs = decisions.map((decision) => decision.slug).filter(Boolean);
 
   const files = (await readdir(blogDir))
     .filter((file) => file.endsWith(".md"))
@@ -167,17 +240,49 @@ async function main() {
   const results = [];
   const failures = [];
 
+  if (decisionsDocument.policy?.requiredForPacketDrafts !== true) {
+    failures.push("draft editorial decisions policy must declare requiredForPacketDrafts=true");
+  }
+  if (decisionsBySlug.size !== decisionSlugs.length) {
+    failures.push("draft editorial decisions file contains duplicate or missing slugs");
+  }
+
   for (const file of files) {
     const text = await readFile(join(blogDir, file), "utf8");
     const result = await validateDraft(file, text);
+    if (!result.skipped) {
+      const { frontmatter, body } = parseMarkdown(text);
+      validateDecision(
+        {
+          file,
+          slug: result.slug,
+          body,
+          approvalCandidate: receiptValue(body, "approval_candidate"),
+          blockers: receiptValue(body, "candidate_blockers")
+            .split(/[,;]/)
+            .map((item) => item.trim())
+            .filter(Boolean),
+          frontmatter,
+        },
+        decisionsBySlug.get(result.slug),
+        failures,
+      );
+    }
     results.push(result);
     failures.push(...result.failures);
+  }
+
+  for (const decision of decisionsBySlug.values()) {
+    if (!results.some((result) => result.slug === decision.slug && !result.skipped)) {
+      failures.push(`draft editorial decision has stale or non-packet-draft slug: ${decision.slug}`);
+    }
   }
 
   const checked = results.filter((result) => !result.skipped).length;
   const skipped = results.filter((result) => result.skipped).length;
   process.stdout.write(`draft_approval_candidates_checked=${checked}\n`);
   process.stdout.write(`draft_approval_candidates_skipped=${skipped}\n`);
+  process.stdout.write(`draft_editorial_decisions_checked=${decisions.length}\n`);
 
   if (failures.length > 0) {
     process.stderr.write("Draft approval candidate gate failed.\n");

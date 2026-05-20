@@ -27,6 +27,8 @@ source_workflow_slug=writing-harness-not-more-prompts
 publication_state=draft_only
 approval_required=true
 approval_candidate=false
+editorial_decision=keep_internal_example
+editorial_decision_ref=src/data/draft-editorial-decisions.json#writing-harness-not-more-prompts
 candidate_blockers=human_critique,rendered_candidate,hash_approval,image_contract
 ```
 

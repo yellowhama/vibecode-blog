@@ -44,6 +44,14 @@ async function writeDraft(dir, slug, receiptExtra = "", extraBody = "") {
   );
 }
 
+async function writeDecisions(path, decisions) {
+  await writeFile(
+    path,
+    `${JSON.stringify({ policy: { requiredForPacketDrafts: true }, decisions }, null, 2)}\n`,
+    "utf8",
+  );
+}
+
 async function main() {
   const root = await makeTestTempDir("vibecode-draft-approval-candidates-");
   const generatedImages = [
@@ -58,17 +66,55 @@ async function main() {
     await writeDraft(
       blogDir,
       "draft-review-system",
-      "approval_candidate=false\ncandidate_blockers=human_critique,rendered_candidate,hash_approval",
+      "approval_candidate=false\neditorial_decision=keep_internal_example\neditorial_decision_ref=fixture-decisions.json#draft-review-system\ncandidate_blockers=human_critique,rendered_candidate,hash_approval",
     );
-    let result = run(["--blog-dir", blogDir]);
+    const decisionsPath = join(root, "draft-decisions.json");
+    await writeDecisions(decisionsPath, [
+      {
+        slug: "draft-review-system",
+        decision: "keep_internal_example",
+        approvalCandidate: false,
+        reviewerType: "editorial-system",
+        decidedAt: "2026-05-20T00:00:00.000Z",
+        rationale: "The fixture remains an internal example until human critique, rendered candidate proof, and hash approval exist.",
+        candidateBlockers: ["human_critique", "rendered_candidate", "hash_approval"],
+        requiredNextActions: ["Run human critique.", "Capture rendered candidate proof."],
+        evidence: ["fixture-draft.md", "fixture-critique.md"],
+      },
+    ]);
+    let result = run(["--blog-dir", blogDir, "--decisions", decisionsPath]);
     if (result.status !== 0 || !result.stdout.includes("draft_approval_candidate_gate=pass")) {
       process.stderr.write(result.stdout + result.stderr);
       throw new Error("expected complete draft approval candidate fixture to pass");
     }
     process.stdout.write("draft_approval_candidate_positive_self_test=pass\n");
 
-    await writeDraft(blogDir, "bad-draft-review-system", "approval_candidate=false\ncandidate_blockers=human_critique");
-    result = run(["--blog-dir", blogDir]);
+    await writeDraft(blogDir, "bad-draft-review-system", "approval_candidate=false\neditorial_decision=keep_internal_example\neditorial_decision_ref=fixture-decisions.json#bad-draft-review-system\ncandidate_blockers=human_critique");
+    await writeDecisions(decisionsPath, [
+      {
+        slug: "draft-review-system",
+        decision: "keep_internal_example",
+        approvalCandidate: false,
+        reviewerType: "editorial-system",
+        decidedAt: "2026-05-20T00:00:00.000Z",
+        rationale: "The fixture remains an internal example until human critique, rendered candidate proof, and hash approval exist.",
+        candidateBlockers: ["human_critique", "rendered_candidate", "hash_approval"],
+        requiredNextActions: ["Run human critique.", "Capture rendered candidate proof."],
+        evidence: ["fixture-draft.md", "fixture-critique.md"],
+      },
+      {
+        slug: "bad-draft-review-system",
+        decision: "keep_internal_example",
+        approvalCandidate: false,
+        reviewerType: "editorial-system",
+        decidedAt: "2026-05-20T00:00:00.000Z",
+        rationale: "The bad fixture intentionally omits blockers in the body so the verifier can reject it.",
+        candidateBlockers: ["human_critique"],
+        requiredNextActions: ["Run human critique.", "Capture rendered candidate proof."],
+        evidence: ["fixture-draft.md", "fixture-critique.md"],
+      },
+    ]);
+    result = run(["--blog-dir", blogDir, "--decisions", decisionsPath]);
     if (result.status === 0 || !result.stderr.includes("rendered_candidate")) {
       process.stderr.write(result.stdout + result.stderr);
       throw new Error("expected incomplete blocker list to fail");
@@ -77,8 +123,22 @@ async function main() {
 
     const trueDir = join(root, "true-blog");
     await mkdir(trueDir, { recursive: true });
-    await writeDraft(trueDir, "approval-ready-draft", "approval_candidate=true", "## Publication Evidence\n\nrendered_page_gate=pass\ncontentSha256=0123456789abcdef\n");
-    result = run(["--blog-dir", trueDir]);
+    await writeDraft(trueDir, "approval-ready-draft", "approval_candidate=true\neditorial_decision=promote_to_approval_candidate\neditorial_decision_ref=fixture-decisions.json#approval-ready-draft", "## Publication Evidence\n\nrendered_page_gate=pass\ncontentSha256=0123456789abcdef\n");
+    const trueDecisionsPath = join(root, "true-draft-decisions.json");
+    await writeDecisions(trueDecisionsPath, [
+      {
+        slug: "approval-ready-draft",
+        decision: "promote_to_approval_candidate",
+        approvalCandidate: true,
+        reviewerType: "human",
+        decidedAt: "2026-05-20T00:00:00.000Z",
+        rationale: "A human reviewer has marked this fixture as ready for approval-candidate handling after rendered and hash evidence exists.",
+        candidateBlockers: [],
+        requiredNextActions: ["Create approval record.", "Run final rendered audit."],
+        evidence: ["rendered-page-gate.log", "content-hash-approval.json"],
+      },
+    ]);
+    result = run(["--blog-dir", trueDir, "--decisions", trueDecisionsPath]);
     if (result.status !== 0) {
       process.stderr.write(result.stdout + result.stderr);
       throw new Error("expected approval_candidate=true fixture with publication evidence to pass");
