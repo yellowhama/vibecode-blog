@@ -56,6 +56,8 @@ config file: hex values, font sizes, spacing, component tokens
 
 Those two files drift. A human can sometimes repair the gap by memory. An agent cannot. It needs the reason and the value close enough that the next decision can use both.
 
+The cost shows up one review later. Someone pastes a finished-looking Stitch screenshot into the next prompt, the agent makes a plausible button, and now the reviewer is not checking a token diff or a contrast lint result. They are hunting through screenshots trying to remember whether this orange was the accent role, a hover state, or one lucky mockup.
+
 DESIGN.md solves that by keeping prose and tokens in one persistent file.
 
 That changes the prompt from this:
@@ -280,6 +282,8 @@ The review question is blunt:
 ```txt
 If another agent reads this file tomorrow, will it know what to preserve, what to change, and what to refuse?
 ```
+
+Forward this to the builder who says, "just paste the Stitch screenshot into the next prompt." The decision is narrow: can this visual choice become a named role with a lintable value, or is it still review material that should stay outside the durable design memory?
 
 If the answer is yes, encode the role. If the answer is no, keep the artifact in review until the decision becomes specific enough to lint.
 
