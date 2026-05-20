@@ -1,6 +1,6 @@
 {
-  "averageScore": 91,
-  "generatedAt": "2026-05-21T07:45:00+09:00",
+  "averageScore": 93,
+  "generatedAt": "2026-05-21T07:59:51+09:00",
   "minScore": 80,
   "minAverage": 82,
   "status": "writing_pulse_ready",
@@ -31,9 +31,9 @@
       "gaps": ["reader action in opening", "dated/count/hash receipts"]
     },
     "mcp-shared-state-data-leak": {
-      "score": 81,
-      "grade": "blogger-pulse-pass",
-      "gaps": ["explicit judgment lines", "dated/count/hash receipts", "ending boundary"]
+      "score": 98,
+      "grade": "blogger-pulse-strong",
+      "gaps": []
     },
     "software-3-0": {
       "score": 86,
@@ -52,8 +52,8 @@
     }
   },
   "weakestQueue": [
-    "mcp-shared-state-data-leak",
     "ai-memory-operating-structure",
-    "software-3-0"
+    "software-3-0",
+    "html-review-artifacts-for-agents"
   ]
 }
