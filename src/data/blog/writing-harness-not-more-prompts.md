@@ -29,7 +29,7 @@ approval_required=true
 approval_candidate=false
 editorial_decision=keep_internal_example
 editorial_decision_ref=src/data/draft-editorial-decisions.json#writing-harness-not-more-prompts
-candidate_blockers=human_critique,rendered_candidate,hash_approval,image_contract
+candidate_blockers=human_critique,real_failed_draft_evidence,rendered_candidate,hash_approval,image_contract
 ```
 
 ## Opening Pressure
@@ -398,6 +398,37 @@ That last row is the real upgrade.
 
 Once the failure condition is concrete, the agent can improve the next draft without pretending that taste is a magic spell.
 
+## What Still Blocks Promotion
+
+The latest review packet made the next decision sharper, not easier.
+
+It now points at this draft through a separate hash-bound summary:
+
+```txt
+human_promotion_review_packet=F:\Aisaak\CompanyArtifacts\vibecode-draft-review-artifacts\writing-harness-not-more-prompts-human-promotion-review.html
+human_promotion_review_summary=F:\Aisaak\CompanyArtifacts\vibecode-draft-review-artifacts\writing-harness-not-more-prompts-human-promotion-review-summary.json
+promotionAllowedWithoutHuman=false
+```
+
+That packet asks the embarrassing question the draft cannot answer by itself:
+
+```txt
+Are the synthetic examples strong enough, or does publication require a real failed draft/session screenshot?
+```
+
+Right now, the honest answer is: not yet.
+
+The weak paragraph is useful because it isolates the failure. The review-desk example is useful because it shows the replacement behavior. But both are still constructed examples. A public candidate should show at least one real failed draft review, failed session trace, screenshot, or log where the harness caught a paragraph that otherwise would have shipped.
+
+That requirement is not bureaucracy. It is the difference between an essay about a writing system and a reported piece proving the system changed a real review.
+
+Until that evidence exists, the promotion blocker stays explicit:
+
+```txt
+real_failed_draft_evidence=missing
+candidate_decision=keep_internal_example
+```
+
 ## Reader Transfer
 
 Use this decision table before automating any agent writing workflow:
@@ -419,9 +450,9 @@ The harder rule is more useful: if the draft cannot show the trace that produced
 
 Current verdict: keep as an internal example.
 
-This draft is now readable enough to teach the harness idea, and it includes two before/after artifacts: a weak prompt-only paragraph with its packet rejection, and a real revision trace from this draft's own opening. Loop 40 added the cold-reader red-pen test so the artifacts transfer to a reader's own draft instead of only documenting this internal run. Loop 41 added the one-minute paragraph autopsy so the reader has a concrete form to fill before asking for more style. Loop 45 revised the opening around the bad-draft scene, added the real-time editorial rejection moment, sharpened the AutoAgent comparison into a harness-to-harness mapping, and added an inline visual-proof table for the weak paragraph/rejection/autopsy stack. Loop 50 added the review-desk protocol so the reader can see exactly how a vague style review turns into source, decision, artifact, and reject-condition fields.
+This draft is now readable enough to teach the harness idea, and it includes two before/after artifacts: a weak prompt-only paragraph with its packet rejection, and a real revision trace from this draft's own opening. Loop 40 added the cold-reader red-pen test so the artifacts transfer to a reader's own draft instead of only documenting this internal run. Loop 41 added the one-minute paragraph autopsy so the reader has a concrete form to fill before asking for more style. Loop 45 revised the opening around the bad-draft scene, added the real-time editorial rejection moment, sharpened the AutoAgent comparison into a harness-to-harness mapping, and added an inline visual-proof table for the weak paragraph/rejection/autopsy stack. Loop 50 added the review-desk protocol so the reader can see exactly how a vague style review turns into source, decision, artifact, and reject-condition fields. Loop 53 keeps the remaining weakness visible: the draft still needs real failed-draft/session evidence before it should ask for public-candidate review.
 
-It is closer to a public candidate now, but still not approved as a reference blog post because the synthetic examples, review-desk protocol, and visual-proof table need human critique and rendered-candidate review.
+It is closer to a public candidate now, but still not approved as a reference blog post because the synthetic examples, review-desk protocol, and visual-proof table need human critique, real failed-draft evidence, and rendered-candidate review.
 
 The article should be promoted only after a human reviewer says the before/after artifact is strong enough for a cold reader.
 
@@ -429,7 +460,7 @@ The article should be promoted only after a human reviewer says the before/after
 
 Do not promote this draft yet.
 
-It is a useful internal example because the harness improved the article in visible steps: packet, draft, critique, visual. It is not a public candidate until a human critique says the piece works for a reader who has not followed the build history, a rendered candidate screenshot exists, an image contract is added, and the final markdown hash has an approval record.
+It is a useful internal example because the harness improved the article in visible steps: packet, draft, critique, visual. It is not a public candidate until a human critique says the piece works for a reader who has not followed the build history, real failed-draft/session evidence exists, a rendered candidate screenshot exists, an image contract is added, and the final markdown hash has an approval record.
 
 ## Boundary
 
@@ -442,4 +473,4 @@ It is a useful internal example because the harness improved the article in visi
 
 The draft can sound like a summary of the source instead of a sharp blog post with a visible scene and reader transfer.
 
-Current status: stronger than a scaffold, still not publication-ready. Before this can become public, it needs human critique of the synthetic example, real revision trace, cold-reader red-pen test, and paragraph autopsy form; rendered candidate proof; an image contract; and an approval record bound to the final markdown hash.
+Current status: stronger than a scaffold, still not publication-ready. Before this can become public, it needs human critique of the synthetic example, real revision trace, cold-reader red-pen test, and paragraph autopsy form; real failed-draft/session evidence; rendered candidate proof; an image contract; and an approval record bound to the final markdown hash.
