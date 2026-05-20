@@ -136,6 +136,8 @@ hope the next run does not do it again
 
 That is not a contract. That is a cleanup chore with better naming.
 
+The cost arrives in the next session. The wiki says the archive is current, the rendered audit points at F, but the screenshot or temp fixture that justified the claim was born on C and copied later by hand. Now the reviewer is not checking the work. They are checking whether the cleanup story was true.
+
 The better version is:
 
 ```txt
@@ -262,6 +264,8 @@ Before trusting an agent-produced receipt, ask:
 ```txt
 If a new agent starts tomorrow, where will it search for this artifact?
 ```
+
+Forward this to the operator who says, "just move the C files to F after the run." The decision is narrow: can they accept the receipt as operating memory, or must the agent rerun with repo, wiki, rendered proof, and test temp roots already pointed at the durable work disk?
 
 If the answer is "the chat," "Downloads," or "whatever temp folder the SDK picked," the receipt is not operational memory. It is debris.
 
