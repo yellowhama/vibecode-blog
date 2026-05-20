@@ -123,3 +123,19 @@ npm run write:source-workflow-packet -- \
 The generator writes all six packet files and then runs the source workflow quality gate against a temporary validation post. If the packet set does not pass, the command fails and the draft should not start.
 
 It refuses accidental overwrite unless `--overwrite` is supplied.
+
+## Draft Command
+
+After the packet passes, generate a private draft scaffold with:
+
+```bash
+npm run draft:source-workflow-post -- \
+  --slug agent-writing-system \
+  --title "The Agent Writing System Needs Evidence Before Drafting" \
+  --description "A packet-backed draft for the agent writing system." \
+  --tags "ai-agents,writing,verification"
+```
+
+This command reruns the source workflow quality gate before writing anything. It only writes `draft: true`, includes a packet receipt, and refuses publication flags such as `--publish` or `--draft`.
+
+Publication still requires the separate human approval workflow.
