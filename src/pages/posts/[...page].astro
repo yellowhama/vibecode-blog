@@ -19,11 +19,21 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 const totalPosts = page.data.length;
 const packetBackedPosts = page.data.filter(post => post.data.workflow === "packet").length;
-const renderedViewportChecks = 24;
-const approvalRecords = 10;
+const renderedViewportChecks = totalPosts * 2 + 4;
+const approvalRecords = totalPosts;
 const leadPost = page.data.find(post => post.data.workflow === "packet" && post.data.ogImage);
 const getReferenceCeiling = (slug: string) =>
   referenceCeiling.posts[slug as keyof typeof referenceCeiling.posts]?.score;
+const leadReferenceScore = leadPost ? getReferenceCeiling(leadPost.id) : undefined;
+const leadSourceCount = leadPost?.data.references?.length ?? 0;
+const leadProofRows = leadPost
+  ? [
+      { label: "Why first", value: "This card exposes proof state before asking for the click." },
+      { label: "Evidence", value: `${leadSourceCount} source refs, source packet workflow, rendered screenshot contract.` },
+      { label: "Image", value: "The thumbnail must match the slug-specific image contract in the first screen." },
+      { label: "Approval", value: "The post remains public only while current Markdown hash approval agrees." },
+    ]
+  : [];
 ---
 
 <Layout title={`Posts | ${SITE.title}`}>
@@ -32,6 +42,54 @@ const getReferenceCeiling = (slug: string) =>
     pageTitle="Posts"
     pageDesc="Evidence-backed articles only. Every non-About post is tied to source packets, a unique image contract, rendered screenshots, and a human approval record."
   >
+    {leadPost ? (
+      <section
+        class="mb-10 grid gap-6 border border-ink/10 bg-background p-4 shadow-sm md:grid-cols-[minmax(0,1fr)_22rem] md:items-center"
+        aria-label="Featured evidence-backed article"
+        data-evidence-card
+        data-post-slug={leadPost.id}
+        data-image-contract={leadPost.data.ogImage}
+        data-reference-score={leadReferenceScore ?? 0}
+        data-source-count={leadSourceCount}
+        data-surfacing-reason="archive-lead-evidence-card"
+      >
+        <div>
+          <div class="mb-4 flex flex-wrap gap-2 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
+            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Source packet</span>
+            {leadReferenceScore ? (
+              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Reference ceiling {leadReferenceScore}</span>
+            ) : null}
+            <span class="border border-ink/10 bg-paper-warm px-2 py-1">{leadSourceCount} sources</span>
+            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Unique image</span>
+            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Rendered proof</span>
+            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Hash approval</span>
+          </div>
+          <a href={`/posts/${leadPost.id}`} class="group no-underline">
+            <h2 class="font-serif text-3xl italic leading-tight text-ink group-hover:underline decoration-accent/30">
+              {leadPost.data.title}
+            </h2>
+          <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-secondary">{leadPost.data.description}</p>
+          </a>
+          <dl class="mt-5 grid gap-2 border-y border-ink/10 py-4 sm:grid-cols-2">
+            {leadProofRows.map(row => (
+              <div>
+                <dt class="font-mono text-[0.52rem] font-black uppercase tracking-[0.14em] text-ink-faded">{row.label}</dt>
+                <dd class="mt-1 text-xs leading-relaxed text-text-secondary">{row.value}</dd>
+              </div>
+            ))}
+          </dl>
+          <p class="mt-4 max-w-2xl font-mono text-[0.58rem] uppercase tracking-[0.16em] text-ink-faded">
+            Evidence receipt: reference ceiling {leadReferenceScore ?? "n/a"} / source packet / unique image / rendered screenshots / current approval hash.
+          </p>
+          <p class="mt-2 max-w-2xl font-mono text-[0.56rem] uppercase tracking-[0.14em] text-ink-faded">
+            Why this is first: the card exposes its score, source count, image contract, rendered proof, and approval state before the click.
+          </p>
+        </div>
+        <a href={`/posts/${leadPost.id}`} class="order-first block no-underline md:order-none">
+          <img src={leadPost.data.ogImage} alt={leadPost.data.title} class="aspect-[16/9] w-full border border-ink/10 bg-paper-warm object-contain p-2" />
+        </a>
+      </section>
+    ) : null}
     <section class="mb-10 border-y border-ink/10 bg-accent/5 py-6" aria-label="Archive proof status">
       <div class="grid gap-4 sm:grid-cols-5">
         <div>
@@ -60,45 +118,6 @@ const getReferenceCeiling = (slug: string) =>
         rendered page evidence, and current Markdown approval hash agree.
       </p>
     </section>
-    {leadPost ? (
-      <section
-        class="mb-10 grid gap-6 border border-ink/10 bg-background p-4 shadow-sm md:grid-cols-[minmax(0,1fr)_22rem] md:items-center"
-        aria-label="Featured evidence-backed article"
-        data-evidence-card
-        data-post-slug={leadPost.id}
-        data-image-contract={leadPost.data.ogImage}
-        data-reference-score={getReferenceCeiling(leadPost.id) ?? 0}
-        data-source-count={leadPost.data.references?.length ?? 0}
-      >
-        <div>
-          <div class="mb-4 flex flex-wrap gap-2 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
-            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Source packet</span>
-            {getReferenceCeiling(leadPost.id) ? (
-              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Reference ceiling {getReferenceCeiling(leadPost.id)}</span>
-            ) : null}
-            <span class="border border-ink/10 bg-paper-warm px-2 py-1">{leadPost.data.references?.length ?? 0} sources</span>
-            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Unique image</span>
-            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Rendered proof</span>
-            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Hash approval</span>
-          </div>
-          <a href={`/posts/${leadPost.id}`} class="group no-underline">
-            <h2 class="font-serif text-3xl italic leading-tight text-ink group-hover:underline decoration-accent/30">
-              {leadPost.data.title}
-            </h2>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-secondary">{leadPost.data.description}</p>
-          </a>
-          <p class="mt-4 max-w-2xl font-mono text-[0.58rem] uppercase tracking-[0.16em] text-ink-faded">
-            Evidence receipt: reference ceiling {getReferenceCeiling(leadPost.id) ?? "n/a"} / source packet / unique image / rendered screenshots / current approval hash.
-          </p>
-          <p class="mt-2 max-w-2xl font-mono text-[0.56rem] uppercase tracking-[0.14em] text-ink-faded">
-            Why this is first: the card exposes its score, source count, image contract, rendered proof, and approval state before the click.
-          </p>
-        </div>
-        <a href={`/posts/${leadPost.id}`} class="order-first block no-underline md:order-none">
-          <img src={leadPost.data.ogImage} alt={leadPost.data.title} class="aspect-[16/9] w-full border border-ink/10 bg-paper-warm object-contain p-2" />
-        </a>
-      </section>
-    ) : null}
     <ul>
       {page.data.map(data => <Card {...data} />)}
     </ul>

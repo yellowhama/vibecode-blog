@@ -359,12 +359,14 @@ function surfaceAuditExpression(spec, contractImagePaths) {
     }));
     const images = Array.from(document.querySelectorAll("img")).map(img => {
       const rect = img.getBoundingClientRect();
+      const visibleHeight = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0));
       return {
         src: new URL(img.currentSrc || img.src, location.href).pathname,
         alt: img.getAttribute("alt") || "",
         complete: img.complete,
         naturalWidth: img.naturalWidth,
         naturalHeight: img.naturalHeight,
+        visibleHeight: Math.round(visibleHeight),
         rect: {
           x: Math.round(rect.x),
           y: Math.round(rect.y),
@@ -412,9 +414,12 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       image.rect.height >= 80
     );
     const firstScreenContractImages = visibleContractImages.filter(image =>
-      image.rect.top < window.innerHeight &&
+      image.visibleHeight >= 80 &&
+      image.rect.top >= 0 &&
+      image.rect.top < window.innerHeight * 0.85 &&
       image.rect.bottom > 0
     );
+    const firstScreenContractImagePaths = Array.from(new Set(firstScreenContractImages.map(image => image.src)));
     const evidenceCards = Array.from(document.querySelectorAll("[data-evidence-card]")).map(card => {
       const rect = card.getBoundingClientRect();
       const text = (card.textContent || "").replace(/\\s+/g, " ").trim().toLowerCase();
@@ -430,6 +435,7 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       });
       const cardImages = Array.from(card.querySelectorAll("img")).map(img => {
         const imageRect = img.getBoundingClientRect();
+        const visibleHeight = Math.max(0, Math.min(imageRect.bottom, window.innerHeight) - Math.max(imageRect.top, 0));
         return {
           src: new URL(img.currentSrc || img.src, location.href).pathname,
           alt: img.getAttribute("alt") || "",
@@ -438,7 +444,11 @@ function surfaceAuditExpression(spec, contractImagePaths) {
             img.naturalHeight >= 150 &&
             imageRect.width >= 120 &&
             imageRect.height >= 80,
-          inFirstScreen: imageRect.top < window.innerHeight && imageRect.bottom > 0,
+          inFirstScreen: visibleHeight >= 80 &&
+            imageRect.top >= 0 &&
+            imageRect.top < window.innerHeight * 0.85 &&
+            imageRect.bottom > 0,
+          visibleHeight: Math.round(visibleHeight),
           rect: {
             top: Math.round(imageRect.top),
             bottom: Math.round(imageRect.bottom),
@@ -448,12 +458,14 @@ function surfaceAuditExpression(spec, contractImagePaths) {
         };
       });
       const expectedContractImage = card.getAttribute("data-image-contract") || "";
+      const surfacingReason = card.getAttribute("data-surfacing-reason") || "";
       const matchingContractImage = cardImages.find(image => image.src === expectedContractImage) || null;
       const referenceScore = Number.parseInt(card.getAttribute("data-reference-score") || "0", 10);
       const sourceCount = Number.parseInt(card.getAttribute("data-source-count") || "0", 10);
       return {
         slug: card.getAttribute("data-post-slug") || "",
         expectedContractImage,
+        surfacingReason,
         referenceScore,
         sourceCount,
         rect: {
@@ -469,6 +481,10 @@ function surfaceAuditExpression(spec, contractImagePaths) {
         hasRenderedProof: text.includes("rendered proof") || text.includes("rendered"),
         hasHashApproval: text.includes("hash approval") || text.includes("hash approved") || text.includes("human approval"),
         hasReferenceCeiling: text.includes("reference ceiling"),
+        explainsSurfacing: text.includes("why this is first") ||
+          text.includes("start here") ||
+          text.includes("surfaced because") ||
+          surfacingReason.length > 0,
         hasReferenceScoreData: Number.isFinite(referenceScore) && referenceScore >= 88,
         hasSourceCountData: Number.isFinite(sourceCount) && sourceCount >= 1,
         matchingContractImage,
@@ -484,6 +500,7 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       card.hasRenderedProof &&
       card.hasHashApproval &&
       card.hasReferenceCeiling &&
+      card.explainsSurfacing &&
       card.hasReferenceScoreData &&
       card.hasSourceCountData &&
       card.matchingContractImageVisible &&
@@ -530,6 +547,7 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       contractImages,
       visibleContractImages,
       firstScreenContractImages,
+      firstScreenContractImagePaths,
       evidenceCards,
       firstScreenEvidenceCards,
       viewport
@@ -671,8 +689,11 @@ async function auditSurfaceRoute(chromePort, baseUrl, outputDir, spec, viewport,
     if (spec.requireContractImage && audit.firstScreenContractImages.length < 1) {
       failures.push("surface has no first-screen post contract image");
     }
+    if (spec.requireContractImage && audit.firstScreenContractImagePaths.length < 1) {
+      failures.push("surface has no distinct first-screen post contract image");
+    }
     if (spec.requireContractImage && audit.firstScreenEvidenceCards.length < 1) {
-      failures.push("surface has no first-screen evidence card with source, image, rendered, approval, link, and matching image");
+      failures.push("surface has no first-screen evidence card with source, image, rendered, approval, surfacing reason, link, and matching image");
     }
 
     return {
