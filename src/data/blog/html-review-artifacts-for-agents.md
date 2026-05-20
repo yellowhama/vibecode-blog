@@ -143,6 +143,50 @@ In the actual file, the useful controls were boring and inspectable: `design-md-
 
 That is the level of implementation detail a review artifact needs. If the only artifact you can name is "the page," you do not have a review system. You have a nice screenshot.
 
+## Approval Proof Chain
+
+Here is the failure pattern to reject before an HTML artifact reaches a teammate.
+
+Bad output:
+
+```txt
+The agent produces a polished local HTML page.
+The reviewer says it looks good.
+No source inventory is exported.
+No negative condition is written down.
+No Markdown or JSON decision record receives the approval.
+The next agent treats the page as canon because it is the prettiest artifact in the folder.
+```
+
+Gate added:
+
+```txt
+npm run verify:rendered-pages
+npm run verify:reference-blogger-review-manifest
+npm run verify:reported-proof
+```
+
+Then ask the artifact to prove four boring things:
+
+```txt
+Source: exact files, links, diffs, packets, and screenshots used.
+Accept only when: the HTML names those sources, shows what would make the reviewer say no, and exports the decision back to Markdown, JSON, a prompt, or a patch checklist.
+Reject when: the page is the only proof, the copy button exports only praise, or the approval cannot be found after deleting the HTML file.
+Boundary: HTML may be the review surface; it may not be the approval state.
+```
+
+After:
+
+```txt
+accepted review result exists
+zero-item revision plan exists
+publication approval hash matches contentSha256
+rendered desktop/mobile receipts still pass
+the exported decision survives without the HTML page
+```
+
+That chain is the difference between "the artifact looked impressive" and "the approval state is recoverable." The cost of skipping it is review debt: a public article, PR, or design decision can inherit a polished page with no rejection criteria and no durable record of what was actually approved.
+
 ## The Before/After
 
 Before the artifact, the review path looked like this:
