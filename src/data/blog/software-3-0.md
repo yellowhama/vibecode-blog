@@ -32,6 +32,8 @@ An agent can produce a diff faster than a human can understand its consequences.
 
 If your process still treats "the agent wrote code" as the hard part, the process is behind the tooling.
 
+The wrong standard is "did the agent make the thing?" The useful standard is "can the team reject the thing before it touches users?"
+
 ## What Actually Changed
 
 The old workflow assumed that writing code was the expensive step. The new workflow often makes writing the cheapest step and review the scarce step.
@@ -45,6 +47,8 @@ read docs -> define contract -> generate diff -> inspect evidence -> accept or r
 ```
 
 The agent may create the implementation. The operator still owns the contract.
+
+That is the trap in Software 3.0: the output arrives with the emotional shape of completion. It has files, screenshots, tests, maybe even a nice commit message. But if the rejection path was invented after the diff, the team is already negotiating with a finished-looking object.
 
 That contract has to answer five questions before the diff exists:
 
@@ -89,6 +93,8 @@ The practical rule: generation can be probabilistic, but acceptance cannot be.
 
 A useful test is whether the next operator can reject the change without asking the original agent what it meant. If the answer is no, the system is still running on conversation memory. That is fine for a demo. It is not fine for a product surface.
 
+The rule is blunt: if you cannot name the source, boundary, verifier, receipt, and approval owner before the agent starts, the agent is not accelerating engineering. It is accelerating ambiguity.
+
 ## The Work Shift
 
 | Old center of gravity | New center of gravity |
@@ -131,6 +137,10 @@ That is the expensive part of cheap generation: the mistake arrives looking fini
 The agent can still move fast. The difference is that every public surface now has a checker that can say no.
 
 That is the practical meaning of Software 3.0 for an operator: do not celebrate faster generation until the rejection path is at least as real as the creation path.
+
+On the current site, that rejection path is no longer a diagram. The latest proof packet checked 9 non-About posts, 10 public pages, 24 rendered viewports, 10 approval records, 348 indexed wiki markdown files, and 380 archived files before the site could keep the current article state.
+
+The 2026-05-21 receipt is intentionally small: 9 posts, 10 pages, 24 viewports, 10 records, 348 files indexed, and 380 files archived. Those counts make the claim inspectable instead of theatrical.
 
 ## The Case File
 
@@ -184,6 +194,8 @@ The second workflow is slower in the moment and faster over the week. It prevent
 
 The best Software 3.0 systems will not feel like magic. They will feel like fewer mysteries.
 
+The point is not to slow the agent down. The point is to stop turning every fast output into a human archaeology project.
+
 ## The Receipt
 
 One verified Vibecode Town receipt is small enough to inspect:
@@ -209,6 +221,8 @@ The before/after is the important part.
 | Product mention leaked by habit | `verify:public-page-review` rejects forbidden public product mentions |
 
 This is what changed: generation became cheap enough that the site needed an explicit rejection path for writing, images, rendering, and approval.
+
+Use this as the acceptance line: accept generated work only when the rejection path is visible before the result. Reject it when the only reason to accept is that the output looks complete.
 
 ## Reader Decision
 
@@ -245,3 +259,5 @@ This does not prove that every task needs a heavy agent harness. A throwaway pro
 The limit appears when the output has to survive contact with users, money, security, deployment, or another agent session. At that point, speed without a rejection path becomes a liability.
 
 The engineering discipline is still the same shape: define the system, constrain the change, verify the result. The difference is that now the unverified output arrives much faster.
+
+Before shipping agent-written work, ask one final question: "What would have stopped this output?" If the answer is "I would have noticed," the process is still Software 2.0 review wearing Software 3.0 speed. If the answer is a source, boundary, verifier, receipt, and approval hash, the system has a real contract.
