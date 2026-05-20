@@ -44,6 +44,25 @@ function allCodeBlocks(text) {
   return [...text.matchAll(/```(?:txt)?\r?\n([\s\S]*?)```/g)].map((match) => match[1].trim());
 }
 
+function allImageRefs(text) {
+  return [...text.matchAll(/!\[([^\]]*)\]\(([^)]+)\)/g)].map((match) => ({
+    alt: match[1].trim(),
+    src: match[2].trim(),
+  }));
+}
+
+function receiptValue(block, key) {
+  const match = block.match(new RegExp(`^${key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}=(.+)$`, "m"));
+  return match ? match[1].trim() : "";
+}
+
+function localImageSrc(path) {
+  if (!path) return "";
+  if (/^[a-z]+:\/\//i.test(path)) return path;
+  if (/^[A-Za-z]:[\\/]/.test(path)) return `file:///${path.replaceAll("\\", "/")}`;
+  return path;
+}
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -294,13 +313,20 @@ function buildGenericHtml({ slug, title, description, sha256, body }) {
   const verdict = section(body, "Approval Candidate Verdict");
   const boundary = section(body, "Boundary");
   const risk = section(body, "Draft Risk");
+  const visual = section(body, "Visual Evidence");
   const codeBlocks = allCodeBlocks(body);
   const tables = tableBlocks(body);
   const headings = allHeadings(body);
+  const imageRefs = allImageRefs(body);
   const firstCode = codeBlocks[0] ?? "missing";
   const sourceMap = codeBlocks.find((block) => block.includes("skill:") || block.includes("Research Scout")) ?? "missing";
   const beforeAfter = codeBlocks.find((block) => block.includes("before:") && block.includes("after:")) ?? "missing";
   const receipt = codeBlocks.find((block) => block.includes("approval_candidate=false")) ?? "missing";
+  const visualReceipt =
+    codeBlocks.find((block) => block.includes("visual_artifact=") || block.includes("source_draft_visual_sha256=")) ??
+    "missing";
+  const visualArtifact = receiptValue(visualReceipt, "visual_artifact");
+  const visualArtifactSrc = localImageSrc(visualArtifact || imageRefs[0]?.src || "");
   const transferTable = tables[0] ?? "missing";
 
   return `<!doctype html>
@@ -348,6 +374,8 @@ function buildGenericHtml({ slug, title, description, sha256, body }) {
     .card.accent { border-top: 5px solid var(--accent); }
     .pull { background: var(--ink); color: var(--paper); border-radius: 8px; padding: 22px; font-family: Georgia, serif; font-size: 28px; line-height: 1.2; }
     .muted { color: var(--muted); }
+    .visual-img { display: block; width: 100%; max-height: 420px; object-fit: contain; background: #ece0d2; border: 1px solid var(--line); border-radius: 8px; margin-bottom: 14px; }
+    .image-list { margin-top: 12px; font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
     ul { margin: 0; padding-left: 20px; }
     li { margin: 5px 0; }
     @media (max-width: 860px) {
@@ -411,6 +439,26 @@ function buildGenericHtml({ slug, title, description, sha256, body }) {
         <h2>Reader Transfer Table</h2>
         <p>${escapeHtml(paragraph(transfer))}</p>
         <pre>${escapeHtml(transferTable)}</pre>
+      </article>
+    </section>
+
+    <section class="section">
+      <article class="card good">
+        <h2>Visual Evidence</h2>
+        ${
+          visualArtifactSrc
+            ? `<img class="visual-img" src="${escapeHtml(visualArtifactSrc)}" alt="Source draft visual artifact preview" />`
+            : ""
+        }
+        <p>${escapeHtml(paragraph(visual))}</p>
+        <pre>${escapeHtml(visualReceipt)}</pre>
+        ${
+          imageRefs.length > 0
+            ? `<div class="image-list"><strong>Markdown image refs:</strong><ul>${imageRefs
+                .map((image) => `<li>${escapeHtml(image.alt || "untitled")} - <code>${escapeHtml(image.src)}</code></li>`)
+                .join("")}</ul></div>`
+            : ""
+        }
       </article>
     </section>
 
