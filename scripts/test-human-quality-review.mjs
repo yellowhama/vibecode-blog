@@ -7,6 +7,7 @@ const templateGenerator = "scripts/generate-human-quality-review-template.mjs";
 const reviewEditorGenerator = "scripts/generate-human-quality-review-editor.mjs";
 const resultVerifier = "scripts/verify-human-quality-review-result.mjs";
 const revisionQueueGenerator = "scripts/generate-human-quality-revision-queue.mjs";
+const revisionPlanGenerator = "scripts/generate-human-quality-revision-plan.mjs";
 
 function run(script, args) {
   return spawnSync(process.execPath, [resolve(script), ...args], {
@@ -277,11 +278,41 @@ async function main() {
     if (
       queue.queueStatus !== "revision_required" ||
       queue.items.length !== 1 ||
-      queue.items[0].scorecardLabel !== "Evidence density"
+      queue.items[0].scorecardLabel !== "Evidence density" ||
+      queue.items[0].evidenceAnchor?.id !== "opening-1"
     ) {
-      throw new Error("expected revision queue to contain the rejected Evidence density row");
+      throw new Error("expected revision queue to contain the rejected Evidence density row and anchor");
     }
     process.stdout.write("human_quality_revision_queue_reject_self_test=pass\n");
+
+    const planPath = join(root, "revision-plan.json");
+    result = run(revisionPlanGenerator, ["--queue", queuePath, "--draft", draftPath, "--output", planPath]);
+    if (
+      result.status !== 0 ||
+      !result.stdout.includes("human_quality_revision_plan=pass") ||
+      !result.stdout.includes("human_quality_revision_plan_items=1")
+    ) {
+      process.stderr.write(result.stdout + result.stderr);
+      throw new Error("expected anchored human quality revision queue to produce revision plan");
+    }
+    const plan = JSON.parse(await readFile(planPath, "utf8"));
+    if (
+      plan.planStatus !== "ready_for_body_revision" ||
+      plan.items.length !== 1 ||
+      plan.items[0].evidenceAnchor?.id !== "opening-1" ||
+      plan.items[0].anchorFoundInDraft !== true ||
+      !plan.items[0].rewriteBrief.some((line) => line.includes("smallest body area"))
+    ) {
+      throw new Error("expected revision plan to preserve the anchor and constrain body rewrite scope");
+    }
+    process.stdout.write("human_quality_revision_plan_reject_self_test=pass\n");
+
+    result = run(revisionPlanGenerator, ["--check", "--queue", queuePath, "--draft", draftPath, "--output", planPath]);
+    if (result.status !== 0 || !result.stdout.includes("human_quality_revision_plan=pass")) {
+      process.stderr.write(result.stdout + result.stderr);
+      throw new Error("expected fresh human quality revision plan check to pass");
+    }
+    process.stdout.write("human_quality_revision_plan_check_self_test=pass\n");
 
     result = run(revisionQueueGenerator, ["--check", "--summary", summaryPath, "--review", reviewPath, "--output", queuePath]);
     if (result.status !== 0 || !result.stdout.includes("human_quality_revision_queue=pass")) {
