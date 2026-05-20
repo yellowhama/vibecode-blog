@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T17:52:50.203Z",
+  "generated_at": "2026-05-20T03:41:27.729Z",
   "source": "F:\\Aisaak\\CompanyArtifacts\\llm-wiki-completed",
   "packets": {
     "ai-agent-work-disk-contract": {
@@ -7,32 +7,32 @@
         {
           "suffix": "reader-pressure",
           "path": "companies/vibecode-town/plans/ai-agent-work-disk-contract-reader-pressure.md",
-          "sha256": "39aa4b61db931cb796da9d35fd31601972701e9c3ad22738ecbf73ce82c17741"
+          "sha256": "1b684810dac3f01aa0edac5f713a54ce929efb087fe37adf5892023b56679ee4"
         },
         {
           "suffix": "title-angle",
           "path": "companies/vibecode-town/plans/ai-agent-work-disk-contract-title-angle.md",
-          "sha256": "0712bb3d9acd8a91bed51b2305a270d6f2d0b334dc62121ab7fad58108581151"
+          "sha256": "7f872fe8a0567363f1a23f4d2b891ef8fce6aadb67ddd620e044094887ab267d"
         },
         {
           "suffix": "evidence-bundle",
           "path": "companies/vibecode-town/plans/ai-agent-work-disk-contract-evidence-bundle.md",
-          "sha256": "b7d3e744bb22e64ff450ceb3655d2ca234e53351c186585859b8fa106a1eda6a"
+          "sha256": "5fb0f5ed3da91df6e5ed165f56148191bf087d2926b34cd8b6aec56069c5e692"
         },
         {
           "suffix": "brief",
           "path": "companies/vibecode-town/plans/ai-agent-work-disk-contract-brief.md",
-          "sha256": "b17130c1b2a1e0d2ef5b902ff34b0cf152d4f8b33e1e31367574f90cff9ef139"
+          "sha256": "381b02bf791e878ade30ea78568956d7efa885ad13f94a1a1fdc3596bf8f53c1"
         },
         {
           "suffix": "gate-0",
           "path": "companies/vibecode-town/plans/ai-agent-work-disk-contract-gate-0.md",
-          "sha256": "0136627ddda166218109c9b7f7ded1e5d0960d03144cfef685162d4b700904b7"
+          "sha256": "f3afbdc8c1aaadabc6fab15d623805c54591aedad96e26ed4718733343f3cd38"
         },
         {
           "suffix": "draft-critique",
           "path": "companies/vibecode-town/plans/ai-agent-work-disk-contract-draft-critique.md",
-          "sha256": "5dcf48a1ea9220123bf7898c5e710913b43b103c12d450940f26fc1519ff55c9"
+          "sha256": "dc986687699fb1d7cf99df9633b7c635b589ac5c8f688304977cf2448d736697"
         }
       ]
     },
@@ -41,32 +41,32 @@
         {
           "suffix": "reader-pressure",
           "path": "companies/vibecode-town/plans/ai-memory-operating-structure-reader-pressure.md",
-          "sha256": "ba4f99f39b7d32f7dde56876842040e10fe1e9b5a6f05a0fb54d2ea209562dfc"
+          "sha256": "8026ef46cd815f145a447aa96b0414e07098d768570162b4e26851818db0b126"
         },
         {
           "suffix": "title-angle",
           "path": "companies/vibecode-town/plans/ai-memory-operating-structure-title-angle.md",
-          "sha256": "8a72d7d712b1cd4ad37eab40240ff4b0214d529ce32f22ae404d4d1a46f1c766"
+          "sha256": "a88d7e26e585ce5b3c8c389bde5af7f5938ac5ecbd1fb7a690b6ca74bfb67692"
         },
         {
           "suffix": "evidence-bundle",
           "path": "companies/vibecode-town/plans/ai-memory-operating-structure-evidence-bundle.md",
-          "sha256": "e36ccdaac7f760633abd13397e89ccf7bc28c4c8ffa9c3b0aef33fc62e16a8f0"
+          "sha256": "ef96c62a379ba70b66e4e3dd60117a0a8c468fc51be05ded13571f407813d5c9"
         },
         {
           "suffix": "brief",
           "path": "companies/vibecode-town/plans/ai-memory-operating-structure-brief.md",
-          "sha256": "189f849c8b0f830d99be5f40729ffdc90657cd961725d31ebebc17f637cf9b1d"
+          "sha256": "3d615b124de07848b02b3bd90cd0ef5150ac8ff0103fcf86c524b91a78c92f6f"
         },
         {
           "suffix": "gate-0",
           "path": "companies/vibecode-town/plans/ai-memory-operating-structure-gate-0.md",
-          "sha256": "febada44fb85b3ce322b57fb5445a344315ca3248e63f02823e74c5fb35561ef"
+          "sha256": "1e400afe75a3e36ba81a090f0f71ce82eacf02356a8ac4cc10331543227d997d"
         },
         {
           "suffix": "draft-critique",
           "path": "companies/vibecode-town/plans/ai-memory-operating-structure-draft-critique.md",
-          "sha256": "a3dd6b10d872d8fcbc46ceff6ff23bb9ee2ee177492b1837caaa0ab7f60a65b9"
+          "sha256": "5d4a4de56f9f89f90a74a2801c047627f6c67096cf22d93941d14f8c313b5480"
         }
       ]
     },
@@ -75,32 +75,32 @@
         {
           "suffix": "reader-pressure",
           "path": "companies/vibecode-town/plans/design-is-a-technical-contract-reader-pressure.md",
-          "sha256": "83c6e53b1bbddff94af66262c764b633922ee872d69428a28d16973180ba5834"
+          "sha256": "9f8491f0338febe03014d35efb036b097ff87e703094061cacedad7797d0ff44"
         },
         {
           "suffix": "title-angle",
           "path": "companies/vibecode-town/plans/design-is-a-technical-contract-title-angle.md",
-          "sha256": "97b76b25e5b0f13076c51ab2c53ea2232410ab2cd01ab2c2280e39f585edfdd0"
+          "sha256": "6a4998223eaaef0f197b16e160e720ba92b7ee4ddbdfdeb01ea23a6ae6a05e31"
         },
         {
           "suffix": "evidence-bundle",
           "path": "companies/vibecode-town/plans/design-is-a-technical-contract-evidence-bundle.md",
-          "sha256": "eca6b2279a3d38434760ce82763a1726c62007c4174a02e2c6f70319e861c770"
+          "sha256": "1b38b482a4765da48f9fbe11be4c4fa765ce7d63d2b8692bbf178fbe271449a5"
         },
         {
           "suffix": "brief",
           "path": "companies/vibecode-town/plans/design-is-a-technical-contract-brief.md",
-          "sha256": "8862e5d91ea8b8bd32fc6581ec197fc6fb9a1a4114f6243cfb67871301e441d3"
+          "sha256": "c3ee34bdfb9d9aea2ac4d628ca8a911f7a4788da880b35e8f9eed0d9490e3e91"
         },
         {
           "suffix": "gate-0",
           "path": "companies/vibecode-town/plans/design-is-a-technical-contract-gate-0.md",
-          "sha256": "8bfec89fa0d3a377bf2e30f5807b2b7b543048128cee7adab58bfefe06f721b4"
+          "sha256": "fe381696e4ed43e9fb731a710125fb50ef37bfb743b5d3e7d87f78f40f564c18"
         },
         {
           "suffix": "draft-critique",
           "path": "companies/vibecode-town/plans/design-is-a-technical-contract-draft-critique.md",
-          "sha256": "128201ef348cb06b658988977dfa1b8c83a2d2a5c545a53c19bb8735f9ff21c1"
+          "sha256": "62b2fc7692ca7247c665c0afccee2977ae544881e6e6219f798ffbdd601d3e59"
         }
       ]
     },
@@ -109,32 +109,32 @@
         {
           "suffix": "reader-pressure",
           "path": "companies/vibecode-town/plans/frustration-as-spec-reader-pressure.md",
-          "sha256": "18b04369a917680c4809da3448e45a158f6250dd1b22f9f06f004264cad9b217"
+          "sha256": "967418077b8bcb96b3fa71fa5ab612b1e32422b3fb3fc3ae56f6960c6be0a5d7"
         },
         {
           "suffix": "title-angle",
           "path": "companies/vibecode-town/plans/frustration-as-spec-title-angle.md",
-          "sha256": "cf9349f52b0f0a47501c07927f40fce6cdb9f9e6572b47eee35ca50c6b36d118"
+          "sha256": "04fee70e005dcad6b1239e7adcb2aa02e1ebd03edc24f2b5e280a0f124624aed"
         },
         {
           "suffix": "evidence-bundle",
           "path": "companies/vibecode-town/plans/frustration-as-spec-evidence-bundle.md",
-          "sha256": "710e4f11f4193286c59120414bea018d07b5d4cd00ff60ea41acb4713054019c"
+          "sha256": "21b15c0affa2bd147ebec8a407fdd212b71701dc564766d712b837945ad47699"
         },
         {
           "suffix": "brief",
           "path": "companies/vibecode-town/plans/frustration-as-spec-brief.md",
-          "sha256": "87333e3ca25432ea015366919dafb1889ad2976434dba5e9a4a91fa821cef6d8"
+          "sha256": "ccdf62c66a10f9e6907778c3392456d4f4ce9b6463c4b4a8b309180adc72c680"
         },
         {
           "suffix": "gate-0",
           "path": "companies/vibecode-town/plans/frustration-as-spec-gate-0.md",
-          "sha256": "1f9ecadcd6d7247859e5248a5b32ef45a70015fe0478fcb884bcf4f36cf8834a"
+          "sha256": "eae2ae0f6ae0b48a57b598465c073cc09b1c48a9a815533029ff0a71a185a6c3"
         },
         {
           "suffix": "draft-critique",
           "path": "companies/vibecode-town/plans/frustration-as-spec-draft-critique.md",
-          "sha256": "1835baca0a8cf172d1390a3b4eaabd9d1e4e1cfac555febae8d3c23b06caab5d"
+          "sha256": "261d912b9e61f68d335bcb7363f9ce6448973736828025d5f0d9f9212321a73d"
         }
       ]
     },
@@ -143,32 +143,32 @@
         {
           "suffix": "reader-pressure",
           "path": "companies/vibecode-town/plans/html-review-artifacts-for-agents-reader-pressure.md",
-          "sha256": "db1e5e8c5a781d7351d34ff783851775b596dccf332fc59478fbbcb9a42eb93b"
+          "sha256": "2b8e6a90e14b5e422dbce1c1edada1b26a48a1ed39a7e92c5cc2de7757849332"
         },
         {
           "suffix": "title-angle",
           "path": "companies/vibecode-town/plans/html-review-artifacts-for-agents-title-angle.md",
-          "sha256": "b1edb239738aa7162b11de448c6935b0ef5759c413eba94312a461fc6603c1aa"
+          "sha256": "a7769119f89a034d08be95bf403ac50dc585fbe1e8c1ae050375be5e1124ee3c"
         },
         {
           "suffix": "evidence-bundle",
           "path": "companies/vibecode-town/plans/html-review-artifacts-for-agents-evidence-bundle.md",
-          "sha256": "0a0554cb62fc3e92babbd0badc03c56a9c4ddd1d314d5c6cbb5118a68d325848"
+          "sha256": "20ac0131c1c8da3b98ad99020841282b2cb275256e23f7bf9ba3aec8c583da26"
         },
         {
           "suffix": "brief",
           "path": "companies/vibecode-town/plans/html-review-artifacts-for-agents-brief.md",
-          "sha256": "1764ffd19cd37ecb9de4e4e65af10a5113f617f7b53a8a9bfebfed1829e063fd"
+          "sha256": "5f12abf338958ee62d400c250c2a4d01d86f7e6148270fdb3d1687cfa66f0650"
         },
         {
           "suffix": "gate-0",
           "path": "companies/vibecode-town/plans/html-review-artifacts-for-agents-gate-0.md",
-          "sha256": "5286393e631e27dd0fc205b6945d832c5f41eadd44c473dbca3e8c240ad6d210"
+          "sha256": "421a87bb59f4c62ce6ea85324d4e401b301a3fd5794fdbdf2b493853a39c11d4"
         },
         {
           "suffix": "draft-critique",
           "path": "companies/vibecode-town/plans/html-review-artifacts-for-agents-draft-critique.md",
-          "sha256": "5a57528647939046c73fd9c75d4b070dba70aaf4f52c0256159397da047cbebd"
+          "sha256": "cb4bca6ecf9fc4a903159880a3c0c4333c9e8ef370fb767f66e27cc51c3d8209"
         }
       ]
     },
@@ -177,32 +177,32 @@
         {
           "suffix": "reader-pressure",
           "path": "companies/vibecode-town/plans/mcp-shared-state-data-leak-reader-pressure.md",
-          "sha256": "d2a23cb3dbe1f3ce4f79906200c8bade44a4df722d8e48828dc4fdc76a7fbaed"
+          "sha256": "f96c1dbcf29147b846fdae6498f4647ea9dedf66500362b49d999bacf79eba4b"
         },
         {
           "suffix": "title-angle",
           "path": "companies/vibecode-town/plans/mcp-shared-state-data-leak-title-angle.md",
-          "sha256": "77d2274feec5c62059fe952449e91a0bbc405a0ebcb6593da9db13097caa4872"
+          "sha256": "0a6670468e8cc1e6097807c27278d5c651f223db17882ad018f493bf0e69d3ba"
         },
         {
           "suffix": "evidence-bundle",
           "path": "companies/vibecode-town/plans/mcp-shared-state-data-leak-evidence-bundle.md",
-          "sha256": "baa802579e14c10c6ceb7d912d133689a03e9cc2d94ed57cbcca0b317a206e82"
+          "sha256": "75f63f0164e048819e10d53bdbb1ee62673b66881ffd6576b7edb3e645671b0e"
         },
         {
           "suffix": "brief",
           "path": "companies/vibecode-town/plans/mcp-shared-state-data-leak-brief.md",
-          "sha256": "8d2ad2f76dbac9651bdb6b0f9b6c09de1a8ee24b7480c123926db2ba6c7cbc26"
+          "sha256": "46110abbad189f68fd241f25cdf44b8017dd999974ea031c6b6bda3c7d2f2443"
         },
         {
           "suffix": "gate-0",
           "path": "companies/vibecode-town/plans/mcp-shared-state-data-leak-gate-0.md",
-          "sha256": "3bb0d990335529175cc84f20211ce4d4f54ad08025b11b7ceafd9ca6eb990f3d"
+          "sha256": "960b857180d7d8f63b87538338003748cc11bd763c23f32053aea31492c2d7ba"
         },
         {
           "suffix": "draft-critique",
           "path": "companies/vibecode-town/plans/mcp-shared-state-data-leak-draft-critique.md",
-          "sha256": "38c8780051029dabdb5a25f31a8e8ac83320a5a88439305cbfb0ee1a1fd3219d"
+          "sha256": "648196b226d56982f8411d34ed80760a0ac1e8fcfca5d764e1befaf283ca879b"
         }
       ]
     },
@@ -211,32 +211,32 @@
         {
           "suffix": "reader-pressure",
           "path": "companies/vibecode-town/plans/software-3-0-reader-pressure.md",
-          "sha256": "70d01a722d49cb73a53d293032d846149bc506d9ed64fa42dda35cca74ba74a8"
+          "sha256": "177ed270094152a45ca2f3adfb365fe26451772fa78f5af755fba7b6bb5dd01d"
         },
         {
           "suffix": "title-angle",
           "path": "companies/vibecode-town/plans/software-3-0-title-angle.md",
-          "sha256": "75e9c0393564c6df7d710202915f76902cc710f2c14cdcb7d57c1d237f86f627"
+          "sha256": "8eeb79fe2b475cae8d50bceb8d4c20e52b92dc126de40e89817b4478876a5fa3"
         },
         {
           "suffix": "evidence-bundle",
           "path": "companies/vibecode-town/plans/software-3-0-evidence-bundle.md",
-          "sha256": "09342dfdf1d2e7bf08f52d9c7feda4b83e2e65e81cf9cf602dcb4b12c708d754"
+          "sha256": "91d16bcd6895f497bdd2d37684185c3b008faed1bdee3f02afc1494d9b541b86"
         },
         {
           "suffix": "brief",
           "path": "companies/vibecode-town/plans/software-3-0-brief.md",
-          "sha256": "8db51c0ef8808517ccd8b1fafcd2b1e9ab9106f61a3470048a7afa75d2fe2faf"
+          "sha256": "ac25a5352e60e1eb710cced300db09e10ebd65a8bacf9f595db978ae476dd4f8"
         },
         {
           "suffix": "gate-0",
           "path": "companies/vibecode-town/plans/software-3-0-gate-0.md",
-          "sha256": "33ac08edcf20ec45382ea2b064bf3334b6147ac332956b7a858dd9892ac86daa"
+          "sha256": "7b4436025af966c1aba984e5e3d1e19dd264d716a4e8fa4af565127f7e629284"
         },
         {
           "suffix": "draft-critique",
           "path": "companies/vibecode-town/plans/software-3-0-draft-critique.md",
-          "sha256": "2d6a209f66abf1371b4a1a71489ec42f5d1879927b605b21e5ecce3677795b50"
+          "sha256": "da17aceae7b924de3b134a849f7061df86995f41096f68ad175ea49949cdc5e3"
         }
       ]
     },
@@ -245,32 +245,32 @@
         {
           "suffix": "reader-pressure",
           "path": "companies/vibecode-town/plans/vercel-is-not-a-deployment-contract-reader-pressure.md",
-          "sha256": "97c473cddd18056896c0a43c788f09e796608a28695d4d824bf78753e757bcaf"
+          "sha256": "21e95c625dfb16517a5f2dc262aad79e66ca2330496c3fa813e3a7b14c1137e5"
         },
         {
           "suffix": "title-angle",
           "path": "companies/vibecode-town/plans/vercel-is-not-a-deployment-contract-title-angle.md",
-          "sha256": "9daa28f3996def74cc958d93d9b479323300e3bbd8e839850e1761b30961c16b"
+          "sha256": "6c5db54c25d6c18ba3864afbf7d73a56a5075f35a184ec0e7f811586528c7f10"
         },
         {
           "suffix": "evidence-bundle",
           "path": "companies/vibecode-town/plans/vercel-is-not-a-deployment-contract-evidence-bundle.md",
-          "sha256": "199b17884fe585fe15945b2fc37b8005b5cde8afa7ce8a85693634163dbc6477"
+          "sha256": "afa6b2cba6ca550e44bb57a1dc0ac9db0739939fd8a5715a1690710c72d1692d"
         },
         {
           "suffix": "brief",
           "path": "companies/vibecode-town/plans/vercel-is-not-a-deployment-contract-brief.md",
-          "sha256": "fd90b60d1cf83f9d394ee1aaee0adb5272dd61b66ad0187ac7a865e99fea86ed"
+          "sha256": "8032a1fd207958b12bc7834fa5b201d01c997c0c4e1f01ffc3ab4a01efaa2be8"
         },
         {
           "suffix": "gate-0",
           "path": "companies/vibecode-town/plans/vercel-is-not-a-deployment-contract-gate-0.md",
-          "sha256": "c27004893478d0f5afe0a7045b980844d8156f73caa56ddb68b53e8a7a02c520"
+          "sha256": "6bbd79c1b5689af6f61ea86341ec4a878260f81495b5eef3393fcb44256c8b2f"
         },
         {
           "suffix": "draft-critique",
           "path": "companies/vibecode-town/plans/vercel-is-not-a-deployment-contract-draft-critique.md",
-          "sha256": "e61dc14bff0f4007f71fc786654cebf04b5a7744d9461d549691745925f5d88a"
+          "sha256": "a14a8733df1caf1eb1ca22e5a44ca77faffc34d3b3490d1ed28618d3dd2f5086"
         }
       ]
     },
@@ -279,32 +279,32 @@
         {
           "suffix": "reader-pressure",
           "path": "companies/vibecode-town/plans/what-vibe-coding-actually-is-reader-pressure.md",
-          "sha256": "9bfbea357a889edf0232f0a9d9d695be584d28690892025a336cb08c878fc2e7"
+          "sha256": "d54bfae987c48279943a01588fa9b6753f46cd7b129e3ac9b38c64fcb3fb62fd"
         },
         {
           "suffix": "title-angle",
           "path": "companies/vibecode-town/plans/what-vibe-coding-actually-is-title-angle.md",
-          "sha256": "ecaf72b4d0607cfd70548e93e890a180a928dca41bca5ca8defb8dab4193f852"
+          "sha256": "159066984f1f67dd419b5f6e74051a9d6284745e3c4ef5f92c373fd8bc3832f8"
         },
         {
           "suffix": "evidence-bundle",
           "path": "companies/vibecode-town/plans/what-vibe-coding-actually-is-evidence-bundle.md",
-          "sha256": "6801f8b6495ed87fc9556abe6bc2b2c31d6e47babe3766560281178344d72596"
+          "sha256": "a9673ff8e173a99146c7a6a3a05d30754674d748b6d3eae9eea17e88d645dd2f"
         },
         {
           "suffix": "brief",
           "path": "companies/vibecode-town/plans/what-vibe-coding-actually-is-brief.md",
-          "sha256": "216e148000e2a4e2d7f3201fc72547d5626427c13b153fb384ee1587e589937f"
+          "sha256": "ad3ff34939549225c0b5722d554b981dc001b1b126531a67e18fa8b45cb7286b"
         },
         {
           "suffix": "gate-0",
           "path": "companies/vibecode-town/plans/what-vibe-coding-actually-is-gate-0.md",
-          "sha256": "770652dc62454bbc5c621f2810aff6322f6b634f61502b9296b9720dea91a1c1"
+          "sha256": "e9e66e0170a2a14bb3696403d4c110b60254f3f1dbf045e2d567e7c56114700b"
         },
         {
           "suffix": "draft-critique",
           "path": "companies/vibecode-town/plans/what-vibe-coding-actually-is-draft-critique.md",
-          "sha256": "cb6cd8673bb12d5137aac3c707be72b013ef26be98283983283b95619347b9ed"
+          "sha256": "cc5ebf5fb7da9d5a4c103a112b65f403c4a59a2401b9c61e0b45c7b7d2c32986"
         }
       ]
     }
