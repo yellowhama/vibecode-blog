@@ -71,15 +71,17 @@ For this site, the memory receipt is not "the agent said it updated the wiki." T
 
 ```txt
 python .\reindex_wiki.py
-Indexed 245 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
+Indexed 333 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
 
-powershell -ExecutionPolicy Bypass -File .\archive_completed_artifacts.ps1 -SkipGoalStatusRefresh
-archive_files_copied=277
-source_markdown_count=245
-archive_markdown_count=245
+.\archive_completed_artifacts.ps1
+archive_files_copied=365
+source_markdown_count=333
+archive_markdown_count=333
 ```
 
 That is the difference between memory as a vibe and memory as an operating surface. One asks the next agent to believe. The other gives it a place to look.
+
+The cost is not abstract. If the next agent says "wiki is current" while the index still says 245 files, the reviewer has to audit the story before auditing the work. If the public body changed but the approval hash still points at yesterday's markdown, the page is not approved. It is wearing an old receipt.
 
 ## Operating Memory Stack
 
@@ -204,6 +206,8 @@ Before accepting an agent's memory claim, use this decision matrix.
 | "Images are handled." | One slug-matched image renders on desktop/mobile. | The image is generic or duplicated. |
 
 The rule is simple: accept artifacts, reject vibes.
+
+Forward this to the agent lead who says the chat summary is enough for the next session. The decision is narrow: can the next agent cite a current file, count, hash, and command receipt, or is it only inheriting a confident story about what happened?
 
 If you do not have a matrix yet, start with these questions:
 
