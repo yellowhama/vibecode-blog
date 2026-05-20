@@ -23,7 +23,9 @@ references:
 
 # Stateless MCP Servers Can Still Leak Shared State
 
-The most dangerous sentence in an MCP server review is: "It is HTTP, so it is stateless."
+On 2026-05-20, I opened GitHub Advisory `GHSA-345p-7cg4-v4c7`, checked the GitLab mirror, and compared both against the MCP Streamable HTTP transport spec. The most dangerous sentence in that review was not in the advisory.
+
+It was the sentence an engineer says right before skipping the real check: "It is HTTP, so it is stateless."
 
 The HTTP request may be stateless. The application object may not be. If one `McpServer` instance or one `StreamableHTTPServerTransport` instance is reused across clients, the agent boundary is already weaker than it looks.
 
@@ -31,7 +33,9 @@ That shared state is not an implementation detail. In an agent tool server, shar
 
 The annoying part is that the bug hides in the place reviewers skim past. Not the tool description. Not the auth middleware. The constructor location.
 
-Two users can hit the same `/mcp` endpoint, both can look properly authenticated, and the leak can still come from a reused transport object quietly carrying request-to-stream state from one client into another. That is not a vibes-based security concern. That is the difference between reviewing a route and reviewing a runtime.
+Two users can hit the same `/mcp` endpoint, both can look properly authenticated, and the leak can still come from a reused transport object quietly carrying request-to-stream state from one client into another.
+
+That is not a vibes-based security concern. That is the difference between reviewing a route and reviewing a runtime.
 
 ![MCP shared state boundary diagram](/images/posts/mcp-shared-state-data-leak.png)
 
@@ -44,6 +48,9 @@ The GitHub advisory lists affected versions as:
 ```txt
 @modelcontextprotocol/sdk >= 1.10.0, <= 1.25.3
 patched in 1.26.0
+published Feb 4, 2026
+updated Feb 9, 2026
+severity 7.1 high
 ```
 
 GitLab's advisory mirrors the same operational facts: affected versions start at `1.10.0`, the fixed version is `1.26.0`, and the weakness is a race around a shared resource.
@@ -59,7 +66,9 @@ That makes the fix more than "run npm update." It is a lifecycle contract.
 
 If the review stops at dependency version, it misses the operating lesson. The patched SDK matters; the ownership model still has to be reviewed.
 
-The MCP transport spec explains why this matters. Streamable HTTP can use POST and GET, can stream server messages over SSE, can support multiple client connections, and can establish sessions with `Mcp-Session-Id`. That means "HTTP" is not enough information. You still need to know whether server-to-client messages, event IDs, request IDs, and sessions are isolated per client.
+The MCP transport spec explains why this matters. Streamable HTTP can use POST and GET, can stream server messages over SSE, can support multiple client connections, and can establish sessions with `Mcp-Session-Id`.
+
+That means "HTTP" is not enough information. You still need to know whether server-to-client messages, event IDs, request IDs, and sessions are isolated per client.
 
 ## Unsafe Lifecycle
 
@@ -136,11 +145,11 @@ I would make the review table explicit:
 
 | Pattern | Risk | Review decision |
 | --- | --- | --- |
-| New server and transport per stateless request | Low | Accept if the SDK is patched and auth/origin controls pass. |
-| New server and transport per session ID | Low | Accept if session IDs are unique, owned, and terminated deliberately. |
-| Shared transport across requests | High | Reject. This is the exact transport reuse class. |
-| Shared server across transports | Conditional to high | Reject if tools send progress, sampling, elicitation, or any server-to-client message. |
-| Shared immutable tool schemas/config | Usually acceptable | Accept only if the object cannot own pending client lifecycle state. |
+| Per-request server and transport | Low | Accept with patched SDK and auth/origin checks. |
+| Per-session server and transport | Low | Accept with unique session ownership. |
+| Shared transport across requests | High | Reject. Exact reuse class. |
+| Shared server across transports | High | Reject when server-to-client messages exist. |
+| Shared immutable config | Usually acceptable | Accept only if it owns no client state. |
 
 The release receipt should include:
 
@@ -154,6 +163,23 @@ origin/auth controls checked for Streamable HTTP
 ```
 
 Without that receipt, "we updated the package" is too weak for agent infrastructure.
+
+## Browser Proof
+
+The rendered article has its own proof contract too:
+
+```txt
+body image: /images/posts/mcp-shared-state-data-leak.png
+ogImage: /images/posts/mcp-shared-state-data-leak.png
+rendered summary: F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
+desktop first-screen image check: 10/10
+mobile first-screen image check: 4/10
+surface expected images: 2/2
+```
+
+That is not decoration. A post about shared state needs a visual boundary that is also checked in the rendered browser output. Otherwise the article says "verify the boundary" while the page itself asks the reader to trust an unchecked illustration.
+
+The image contract is deliberately boring: one slug-specific diagram, no casual reuse across posts, and a rendered audit that records whether the expected image actually appears. Security writing needs this same discipline. Evidence that only exists as a sentence is easy to polish and hard to trust.
 
 ## Control Contract
 
