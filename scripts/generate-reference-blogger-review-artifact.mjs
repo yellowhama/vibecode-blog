@@ -414,6 +414,7 @@ async function main() {
   });
   const html = renderArtifact(summary, body);
   await mkdir(dirname(resolve(output)), { recursive: true });
+  await mkdir(dirname(resolve(summaryPath)), { recursive: true });
   await writeFile(output, html, "utf8");
   await writeFile(summaryPath, `${JSON.stringify(summary, null, 2)}\n`, "utf8");
   process.stdout.write(`reference_blogger_review_artifact=${resolve(output)}\n`);

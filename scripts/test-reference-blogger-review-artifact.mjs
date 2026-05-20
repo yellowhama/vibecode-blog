@@ -1,5 +1,5 @@
 import { spawnSync } from "node:child_process";
-import { mkdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { makeTestTempDir } from "./test-temp-root.mjs";
 
@@ -68,10 +68,18 @@ This does not prove every host rewrite is bad. It proves the article needs an ar
 try {
   const root = await makeTestTempDir("vibecode-reference-blogger-review-");
   const blogDir = join(root, "blog");
-  const output = join(root, "review.html");
-  const summary = join(root, "review.json");
+  const output = join(root, "html", "review.html");
+  const summary = join(root, "summary", "review.json");
   await mkdir(blogDir, { recursive: true });
   await writeFile(join(blogDir, "strong-review-artifact.md"), post, "utf8");
+  const packageJson = JSON.parse(await readFile(resolve("package.json"), "utf8"));
+  const verifyContent = packageJson.scripts?.["verify:content"] ?? "";
+  if (!verifyContent.includes("npm run test:reference-blogger-review-artifact")) {
+    throw new Error("verify:content must run test:reference-blogger-review-artifact");
+  }
+  if (!verifyContent.includes("npm run verify:reference-blogger-review")) {
+    throw new Error("verify:content must run verify:reference-blogger-review");
+  }
 
   const generated = run([
     "--slug",
@@ -123,6 +131,7 @@ try {
   process.stdout.write("reference_blogger_review_artifact_generation_self_test=pass\n");
   process.stdout.write("reference_blogger_review_artifact_check_self_test=pass\n");
   process.stdout.write("reference_blogger_review_artifact_stale_self_test=pass\n");
+  process.stdout.write("reference_blogger_review_artifact_verify_content_wiring_self_test=pass\n");
 } catch (error) {
   process.stderr.write(`${error instanceof Error ? error.message : String(error)}\n`);
   process.exitCode = 1;
