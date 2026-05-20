@@ -37,6 +37,8 @@ When a resumed session cannot answer those questions, the operator starts repeat
 
 This is why long prompts are not operating memory. They can carry context for a while, but they do not prove what happened, what changed, or what remains unsafe.
 
+The wrong standard is "does the next agent have enough context?" The useful standard is "can the next agent prove which source, command, approval hash, and remaining-work queue are current without trusting the previous chat?"
+
 ![AI memory operating structure diagram](/images/posts/ai-memory-operating-structure.png)
 
 ## The Broken Default
@@ -52,6 +54,8 @@ First, people stop reviewing it. Important decisions and temporary instructions 
 Second, agents stop retrieving it cleanly. They cannot tell which line is source evidence, which line is interpretation, and which line is a stale assumption from a previous session.
 
 A long prompt is not an audit trail. It is unstructured state.
+
+The trap is that long prompts feel responsible. They are full of warnings, decisions, links, and apologies. But when everything is in one scroll, nothing has an owner. A durable rule and a late-night guess sit next to each other wearing the same uniform.
 
 ## Before and After
 
@@ -82,6 +86,8 @@ archive_markdown_count=333
 That is the difference between memory as a vibe and memory as an operating surface. One asks the next agent to believe. The other gives it a place to look.
 
 The cost is not abstract. If the next agent says "wiki is current" while the index still says 245 files, the reviewer has to audit the story before auditing the work. If the public body changed but the approval hash still points at yesterday's markdown, the page is not approved. It is wearing an old receipt.
+
+The rule is blunt: if memory cannot be reindexed, searched, archived, or contradicted by a hash, it is not operating memory. It is a nicer prompt.
 
 ## Operating Memory Stack
 
@@ -128,6 +134,8 @@ F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
 The verification side is concrete too: `python reindex_wiki.py`, `archive_completed_artifacts.ps1`, `check_vibecode_completion_audit_sync.ps1`, and `check_company_artifacts_archive.ps1`.
 
 That is the useful test for memory. If the next agent cannot name the file, command, or receipt that proves the state, it is probably carrying a story, not memory.
+
+The current proof packet keeps that standard uncomfortable. On 2026-05-21, the wiki index checked 347 markdown files, the archive copied 379 files, the public site checked 9 non-About posts, and the rendered audit checked 24 viewports before the latest article state stayed public.
 
 ## Prompt, Skill, Wiki, or Memory
 
@@ -194,6 +202,8 @@ total packet files: 54
 
 That is what the next agent can use without re-reading the whole chat. It can tell which work is complete, which work is only a qualitative weakness, and which command has to prove the next change.
 
+The point is not to make the next agent obedient. The point is to make it falsifiable. A good handoff lets the next agent say, "that is stale," before it wastes two hours politely continuing a lie.
+
 ## Audit Checklist: Accept / Reject
 
 Before accepting an agent's memory claim, use this decision matrix.
@@ -229,8 +239,12 @@ The public writing is only the visible surface. The real asset is the memory con
 
 The same rule applies to visual proof. A memory diagram in the body is useful only if the post image contract agrees with it: one slug-specific image, matching `ogImage`, visible in rendered post checks, and not reused as a lazy placeholder across unrelated posts. Otherwise the image becomes another fake memory.
 
+Use this as the approval line: accept a memory claim only when it has a source file, current index receipt, archive receipt, approval hash, and next-action queue. Reject it when the claim only sounds complete.
+
 ## Boundary
 
 Operating memory does not make a model truthful. It does not remove the need for review. It does not prove the work is complete.
 
 It lowers the repeated context tax and makes the next agent's starting point inspectable. Agent systems should not depend on vibes, hidden state, or optimistic prompts. They should run on evidence, handoff, and verifiable boundaries.
+
+Before handing work to the next agent, ask one final question: "What would prove this summary wrong?" If the answer is "nothing, it is just in the chat," the system does not have memory yet. If the answer is a file path, count, hash, command, and queue item, the next agent can start without pretending.

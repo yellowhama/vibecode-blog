@@ -1,6 +1,6 @@
 {
-  "averageScore": 93,
-  "generatedAt": "2026-05-21T07:59:51+09:00",
+  "averageScore": 94,
+  "generatedAt": "2026-05-21T08:07:44+09:00",
   "minScore": 80,
   "minAverage": 82,
   "status": "writing_pulse_ready",
@@ -11,9 +11,9 @@
       "gaps": ["dated/count/hash receipts"]
     },
     "ai-memory-operating-structure": {
-      "score": 86,
-      "grade": "blogger-pulse-pass",
-      "gaps": ["explicit judgment lines", "dated/count/hash receipts"]
+      "score": 98,
+      "grade": "blogger-pulse-strong",
+      "gaps": []
     },
     "design-is-a-technical-contract": {
       "score": 98,
@@ -52,8 +52,8 @@
     }
   },
   "weakestQueue": [
-    "ai-memory-operating-structure",
     "software-3-0",
-    "html-review-artifacts-for-agents"
+    "html-review-artifacts-for-agents",
+    "ai-agent-work-disk-contract"
   ]
 }
