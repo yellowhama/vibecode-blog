@@ -137,6 +137,25 @@ const HUMAN_QUALITY_SCORECARD = [
   },
 ];
 
+function humanQuestionsFor({ body, decision }) {
+  const hasRealFailureTrace = decision?.realFailedDraftEvidence?.status === "present";
+  if (hasRealFailureTrace || body.includes("paragraph autopsy") || body.includes("review-desk protocol")) {
+    return [
+      "Does the opening make a cold reader care before it asks them to admire the internal system?",
+      "Can the reader reuse the paragraph autopsy and review-desk protocol without knowing the loop history?",
+      "Does the Loop 44 -> Loop 45 real failed-draft trace make the evidence strong enough, or does publication require another screenshot/log from a separate session?",
+      "If this becomes public, what exact sentence, artifact, or claim would embarrass the site?",
+    ];
+  }
+
+  return [
+    "Does the opening show a concrete object, source, or failure before it explains the topic?",
+    "Can the reader reuse the accept/reject table without knowing the internal packet history?",
+    "Does the draft have enough source-backed artifacts, screenshots, logs, or before/after traces, or does promotion require another proof object?",
+    "If this becomes public, what exact sentence, artifact, or claim would embarrass the site?",
+  ];
+}
+
 function buildSummary({ slug, markdownSha256, title, decision, reviewSummary, body }) {
   const blockers = receiptValue(body, "candidate_blockers")
     .split(/[,;]/)
@@ -169,12 +188,7 @@ function buildSummary({ slug, markdownSha256, title, decision, reviewSummary, bo
       screenshot: reviewSummary.screenshot,
     },
     humanQualityScorecard: HUMAN_QUALITY_SCORECARD,
-    humanQuestions: [
-      "Does the opening make a cold reader care before it asks them to admire the internal system?",
-      "Can the reader reuse the paragraph autopsy and review-desk protocol without knowing the loop history?",
-      "Does the Loop 44 -> Loop 45 real failed-draft trace make the evidence strong enough, or does publication require another screenshot/log from a separate session?",
-      "If this becomes public, what exact sentence, artifact, or claim would embarrass the site?",
-    ],
+    humanQuestions: humanQuestionsFor({ body, decision }),
     requiredDecisionOutputs: [
       "promote_to_approval_candidate or keep_internal_example",
       "human reviewer name or handle",
@@ -198,11 +212,21 @@ function buildHtml({ slug, title, markdownSha256, decision, reviewSummary, body 
   const critique = paragraph(section(body, "Editorial Critique Result"));
   const risk = paragraph(section(body, "Draft Risk"));
   const codeBlocks = allCodeBlocks(body);
-  const weakParagraph = codeBlocks.find((block) => block.includes("AI agents are transforming content operations")) ?? "";
-  const reviewFields = codeBlocks.find((block) => block.includes("source_changed_claim=which source forced")) ?? "";
+  const weakParagraph =
+    codeBlocks.find((block) => block.includes("AI agents are transforming content operations")) ??
+    codeBlocks.find((block) => block.includes("Now we have an AI marketing team")) ??
+    codeBlocks[0] ??
+    "";
+  const reviewFields =
+    codeBlocks.find((block) => block.includes("source_changed_claim=which source forced")) ??
+    codeBlocks.find((block) => block.includes("claim:")) ??
+    codeBlocks.find((block) => block.includes("skill:")) ??
+    codeBlocks[1] ??
+    "";
   const blockers = receiptValue(body, "candidate_blockers");
   const realEvidence = decision?.realFailedDraftEvidence;
   const facts = reviewSummaryFacts(reviewSummary);
+  const humanQuestions = humanQuestionsFor({ body, decision });
 
   return `<!doctype html>
 <html lang="en">
@@ -352,10 +376,7 @@ function buildHtml({ slug, title, markdownSha256, decision, reviewSummary, body 
     <section class="section">
       <h2>Required Human Questions</h2>
       <div class="grid">
-        <div class="question"><strong>1. First 30 seconds</strong>Does the bad-paragraph opening make the problem felt before the article explains the system?</div>
-        <div class="question"><strong>2. Transfer</strong>Can the reader use the autopsy form and review-desk protocol on their own draft tomorrow?</div>
-        <div class="question"><strong>3. Evidence</strong>Does the Loop 44 -> Loop 45 failure trace make the evidence strong enough, or must promotion wait for a separate failed session screenshot/log?</div>
-        <div class="question"><strong>4. Embarrassment check</strong>What exact claim, sentence, or artifact would make this piece look overconfident if published?</div>
+        ${humanQuestions.map((question, index) => `<div class="question"><strong>${index + 1}. Review question</strong>${escapeHtml(question)}</div>`).join("\n")}
       </div>
     </section>
 

@@ -261,6 +261,189 @@ function buildHtml({ slug, title, description, sha256, body }) {
 </html>`;
 }
 
+function tableBlocks(text) {
+  const blocks = [];
+  let current = [];
+  for (const line of text.split(/\r?\n/)) {
+    if (line.trim().startsWith("|")) {
+      current.push(line);
+    } else if (current.length > 0) {
+      if (current.length >= 2) blocks.push(current.join("\n"));
+      current = [];
+    }
+  }
+  if (current.length >= 2) blocks.push(current.join("\n"));
+  return blocks;
+}
+
+function allHeadings(text) {
+  return [...text.matchAll(/^##\s+(.+)$/gm)].map((match) => match[1].trim());
+}
+
+function buildGenericHtml({ slug, title, description, sha256, body }) {
+  const opening = sectionAny(body, ["Opening Pressure", "The Paragraph That Fooled Me", "The Paragraph That Gets Past You"]);
+  const readerProblem = sectionAny(body, ["Reader Problem", "The Failure Is Not Style", "The Reader Problem"]);
+  const angle = sectionAny(body, ["Angle", "The Harness Is the Point", "The Operating Claim"]);
+  const sourceThread = section(body, "Source Thread");
+  const pattern = section(body, "The Pattern Worth Stealing");
+  const transfer = sectionAny(body, [
+    "Reader Transfer",
+    "The Table To Use Before You Prompt Again",
+    "Use This Before You Prompt Again",
+  ]);
+  const verdict = section(body, "Approval Candidate Verdict");
+  const boundary = section(body, "Boundary");
+  const risk = section(body, "Draft Risk");
+  const codeBlocks = allCodeBlocks(body);
+  const tables = tableBlocks(body);
+  const headings = allHeadings(body);
+  const firstCode = codeBlocks[0] ?? "missing";
+  const sourceMap = codeBlocks.find((block) => block.includes("skill:") || block.includes("Research Scout")) ?? "missing";
+  const beforeAfter = codeBlocks.find((block) => block.includes("before:") && block.includes("after:")) ?? "missing";
+  const receipt = codeBlocks.find((block) => block.includes("approval_candidate=false")) ?? "missing";
+  const transferTable = tables[0] ?? "missing";
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${escapeHtml(title)} - Source Draft Review Artifact</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #20170f;
+      --muted: #75675e;
+      --paper: #fffaf2;
+      --canvas: #f3eadf;
+      --line: #d8c7b8;
+      --accent: #744c94;
+      --warn: #8e3b2f;
+      --ok: #255b42;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--canvas);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    main { width: min(1180px, calc(100vw - 32px)); margin: 0 auto; padding: 40px 0 64px; }
+    header { display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; align-items: end; border-bottom: 2px solid var(--line); padding-bottom: 24px; }
+    h1 { margin: 0; font-family: Georgia, serif; font-size: clamp(34px, 5vw, 64px); line-height: 1.02; letter-spacing: 0; }
+    h2 { margin: 0 0 12px; font-size: 20px; letter-spacing: 0; }
+    h3 { margin: 0 0 10px; color: var(--muted); font-size: 14px; letter-spacing: .08em; text-transform: uppercase; }
+    p { margin: 0 0 14px; }
+    code, pre { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; padding: 16px; background: #21170f; color: #fffaf2; border-radius: 8px; font-size: 13px; }
+    .meta, .card, .decision { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 18px; min-width: 0; }
+    .meta div { display: flex; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 9px; margin-top: 9px; }
+    .meta div:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+    .section { margin-top: 28px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .card.opening { border-top: 5px solid var(--warn); }
+    .card.good { border-top: 5px solid var(--ok); }
+    .card.accent { border-top: 5px solid var(--accent); }
+    .pull { background: var(--ink); color: var(--paper); border-radius: 8px; padding: 22px; font-family: Georgia, serif; font-size: 28px; line-height: 1.2; }
+    .muted { color: var(--muted); }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin: 5px 0; }
+    @media (max-width: 860px) {
+      header, .grid, .three { grid-template-columns: 1fr; }
+      main { width: min(100vw - 20px, 1180px); padding-top: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h3>Private Source Draft Review Artifact</h3>
+        <h1>${escapeHtml(title)}</h1>
+        <p class="muted">${escapeHtml(description)}</p>
+      </div>
+      <aside class="meta" aria-label="Review metadata">
+        <div><span>Slug</span><code>${escapeHtml(slug)}</code></div>
+        <div><span>Markdown SHA-256</span><code>${escapeHtml(sha256.slice(0, 16))}...</code></div>
+        <div><span>Publication state</span><code>draft_only</code></div>
+        <div><span>Approval candidate</span><code>false</code></div>
+      </aside>
+    </header>
+
+    <section class="section">
+      <div class="pull">Review the evidence spine, not the smoothness of the prose.</div>
+    </section>
+
+    <section class="section three">
+      <article class="decision">
+        <h2>Reader Decision</h2>
+        <p>${escapeHtml(paragraph(readerProblem))}</p>
+      </article>
+      <article class="decision">
+        <h2>Operating Claim</h2>
+        <p>${escapeHtml(paragraph(angle))}</p>
+      </article>
+      <article class="decision">
+        <h2>Approval Boundary</h2>
+        <p>${escapeHtml(paragraph(verdict))}</p>
+      </article>
+    </section>
+
+    <section class="section grid">
+      <article class="card opening">
+        <h2>Opening Evidence</h2>
+        <p>${escapeHtml(paragraph(opening))}</p>
+        <pre>${escapeHtml(firstCode)}</pre>
+      </article>
+      <article class="card accent">
+        <h2>Source Trace</h2>
+        <p>${escapeHtml(paragraph(sourceThread))}</p>
+        <pre>${escapeHtml(sourceMap)}</pre>
+      </article>
+      <article class="card good">
+        <h2>Before/After Trace</h2>
+        <p>${escapeHtml(paragraph(pattern))}</p>
+        <pre>${escapeHtml(beforeAfter)}</pre>
+      </article>
+      <article class="card accent">
+        <h2>Reader Transfer Table</h2>
+        <p>${escapeHtml(paragraph(transfer))}</p>
+        <pre>${escapeHtml(transferTable)}</pre>
+      </article>
+    </section>
+
+    <section class="section grid">
+      <article class="card">
+        <h2>Packet Receipt</h2>
+        <pre>${escapeHtml(receipt)}</pre>
+      </article>
+      <article class="card">
+        <h2>Draft Risk</h2>
+        <p>${escapeHtml(paragraph(risk))}</p>
+      </article>
+      <article class="card">
+        <h2>Boundary</h2>
+        <p>${escapeHtml(paragraph(boundary))}</p>
+      </article>
+      <article class="card">
+        <h2>Structure Map</h2>
+        <ul>${headings.map((heading) => `<li>${escapeHtml(heading)}</li>`).join("")}</ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="decision">
+        <h2>Reviewer Decision</h2>
+        <p>This artifact does not approve publication. The reviewer must decide whether the draft has enough source-backed scene, proof, transfer, voice, and image contract to become an approval candidate. Any rejection keeps the draft private.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>`;
+}
+
 async function main() {
   const slug = getArg("--slug") ?? "writing-harness-not-more-prompts";
   const blogDir = getArg("--blog-dir") ?? DEFAULT_BLOG_DIR;
@@ -273,11 +456,11 @@ async function main() {
   if (!/^draft:\s*true\s*$/m.test(frontmatter)) {
     throw new Error(`${slug}.md is not a private draft`);
   }
-  if (!body.includes("paragraph=") || !body.includes("keep_or_rewrite=")) {
-    throw new Error(`${slug}.md is missing the paragraph autopsy form`);
-  }
+  const builder = body.includes("paragraph=") && body.includes("keep_or_rewrite=")
+    ? buildHtml
+    : buildGenericHtml;
 
-  const html = buildHtml({
+  const html = builder({
     slug,
     title: getFrontmatterValue(frontmatter, "title") || slug,
     description: getFrontmatterValue(frontmatter, "description"),

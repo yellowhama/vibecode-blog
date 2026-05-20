@@ -19,6 +19,16 @@ function getArg(name) {
   return process.argv[index + 1];
 }
 
+function getArgs(name) {
+  const values = [];
+  for (let index = 0; index < process.argv.length; index += 1) {
+    if (process.argv[index] === name && process.argv[index + 1]) {
+      values.push(process.argv[index + 1]);
+    }
+  }
+  return values;
+}
+
 function findChrome() {
   const candidates = [
     process.env.CHROME_PATH,
@@ -142,6 +152,7 @@ async function capture() {
   const artifact = resolve(getArg("--artifact") ?? DEFAULT_ARTIFACT);
   const output = resolve(getArg("--output") ?? DEFAULT_OUTPUT);
   const summaryPath = resolve(getArg("--summary") ?? DEFAULT_SUMMARY);
+  const requiredTexts = getArgs("--required");
   if (!existsSync(artifact)) throw new Error(`draft review artifact not found: ${artifact}`);
 
   const chromePort = await freePort();
@@ -172,24 +183,26 @@ async function capture() {
     const load = cdp.waitFor("Page.loadEventFired", 10000).catch(() => undefined);
     await cdp.command("Page.navigate", { url: pathToFileURL(artifact).href });
     await load;
+    const defaultRequired = [
+      "Private Draft Review Artifact",
+      "Weak paragraph",
+      "Packet rejection",
+      "One-minute autopsy",
+      "Autopsy example",
+      "Review Desk Protocol",
+      "Harness review fields",
+      "Review-desk rewrite",
+      "Real Failed-Draft Trace",
+      "failed_draft_commit=0f07239",
+      "source note -> six packet files",
+      "Reviewer Decision"
+    ];
+    const required = requiredTexts.length > 0 ? requiredTexts : defaultRequired;
     const audit = await cdp.command("Runtime.evaluate", {
       returnByValue: true,
       expression: `(() => {
         const text = document.body.textContent;
-        const required = [
-          "Private Draft Review Artifact",
-          "Weak paragraph",
-          "Packet rejection",
-          "One-minute autopsy",
-          "Autopsy example",
-          "Review Desk Protocol",
-          "Harness review fields",
-          "Review-desk rewrite",
-          "Real Failed-Draft Trace",
-          "failed_draft_commit=0f07239",
-          "source note -> six packet files",
-          "Reviewer Decision"
-        ];
+        const required = ${JSON.stringify(required)};
         const missing = required.filter(item => !text.includes(item));
         return {
           title: document.title,
