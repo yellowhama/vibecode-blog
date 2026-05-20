@@ -27,6 +27,14 @@ AI coding agents no longer struggle to write plans. The newer failure mode is th
 
 A 200-line Markdown plan appears. The PR explanation gets longer. The research summary includes tables, diffs, timelines, snippets, and caveats. The human scrolls, nods, and moves to the next prompt without actually reviewing the work.
 
+On 2026-05-18, the useful example was a DESIGN.md spec review. The canon was still Markdown in the LLM wiki. The browser-readable artifact lived separately at:
+
+```txt
+F:\Aisaak\CompanyArtifacts\llm-wiki-completed\companies\vibecode-town\html-artifacts\design-md-spec-operating-review-2026-05-18.html
+```
+
+That file was useful because it showed source cards, token swatches, a risk table, and a copyable decision record in one screen. It would have been dangerous if it became the only place the decision lived.
+
 That is not a writing problem. It is a review-surface problem.
 
 HTML helps when the human decision depends on layout, comparison, sequence, or annotation. It fails when the team starts treating a polished artifact as the source of truth.
@@ -58,6 +66,15 @@ runtime evidence JSON
 
 Generated HTML is allowed to help the human see. It is not allowed to become hidden truth.
 
+The stricter Vibecode version is:
+
+```txt
+Markdown/JSON/file evidence is the system of record.
+HTML is a temporary review interface.
+The decision must export back to canon.
+The artifact must be deletable without losing the decision.
+```
+
 ## Where HTML Actually Changes the Review
 
 HTML is worth the extra generation time when it changes what the reviewer can notice.
@@ -74,6 +91,48 @@ HTML: the diff is annotated in the margin with the exact concern.
 ```
 
 That is the bar. If HTML only turns a memo into a nicer memo, keep the Markdown. If it makes the decision visible, use HTML.
+
+## A Real Artifact Shape
+
+The DESIGN.md review artifact had a concrete source inventory, not just a pretty page.
+
+```txt
+HTML artifact:
+companies/vibecode-town/html-artifacts/design-md-spec-operating-review-2026-05-18.html
+
+Canon source note:
+sources/raw/2026-05-18_design-md-spec-update-transcript-note.md
+
+Processed extract:
+sources/processed/design-md-spec-update-function-extract.md
+
+Template:
+companies/vibecode-town/html-review-artifact-template.md
+```
+
+The page did four jobs that plain Markdown would have made easy to skip:
+
+| HTML section | Review job |
+| --- | --- |
+| Source cards | Show what was read before the reviewer trusts the summary |
+| Decision surface | Separate adopt/hold-back choices |
+| Risk table | Make stale-spec and HTML-as-canon risks visible |
+| Export textarea | Return the decision to Markdown/structured canon |
+
+The important part was not that the page looked better. The important part was that it made the approval question harder to dodge:
+
+```txt
+Are we adopting DESIGN.md as an operating pattern?
+What did we verify upstream?
+What are we refusing to claim?
+Where does the decision go after review?
+```
+
+That last line is the line that keeps HTML useful instead of decorative.
+
+In the actual file, the useful controls were boring and inspectable: `design-md-spec-operating-review-2026-05-18.html` declared its source cards, the export lived in `exportText`, the copy action was a tiny `copyExport()` function, and the required pattern was preserved in `html-review-artifact-template.md`.
+
+That is the level of implementation detail a review artifact needs. If the only artifact you can name is "the page," you do not have a review system. You have a nice screenshot.
 
 ## A Rendered Review Receipt
 
@@ -97,14 +156,33 @@ The summary records the decision surface:
 
 ```txt
 postsChecked=10
-viewportsChecked=20
+indexRoutesChecked=2
+viewportsChecked=24
 failures=[]
-expectedImageVisible=true for each rendered result
+postDetailDesktopExpectedImagesInFirstScreen=10/10
+surfaceExpectedImagesInFirstScreen=2/2
 ```
 
 That is why review artifacts matter. A human no longer has to trust a paragraph that says the posts have images. The reviewer can inspect the desktop and mobile screenshots and see whether the expected image actually appeared.
 
 The same rule applies to generated HTML explainers: the artifact should make a review decision easier, and the result has to return to a durable receipt.
+
+The receipt is the difference between:
+
+```txt
+Looks good.
+```
+
+and:
+
+```txt
+summary.json exists.
+desktop/mobile screenshots exist.
+expected image appeared.
+approval manifest hash still matches.
+```
+
+One is a mood. The other is reviewable.
 
 ## Decision Matrix
 
@@ -132,6 +210,19 @@ secrets redacted
 network calls disabled
 ```
 
+For Vibecode, the template makes those inputs explicit:
+
+```txt
+Artifact job:
+Canonical source files:
+Repo files inspected:
+External sources checked:
+Private sources excluded or sanitized:
+Intended reviewer:
+Decision needed:
+Export target:
+```
+
 Then it should make the human decision easier:
 
 ```txt
@@ -152,6 +243,8 @@ What am I being asked to approve?
 Which evidence would make me say no?
 ```
 
+If the artifact cannot answer those questions, it is presentation, not review.
+
 ## The Export Rule
 
 Interactive HTML artifacts need one hard requirement: export.
@@ -170,6 +263,37 @@ copy as decision record
 
 Without export, HTML becomes hidden state. With export, the human can decide in the browser and send the result back into the durable contract.
 
+The DESIGN.md artifact used a plain `textarea` export:
+
+```txt
+Decision: Adopt DESIGN.md as a visual contract pattern for Vibecode, not as a final public recommendation yet.
+
+Canon:
+- sources/raw/2026-05-18_design-md-spec-update-transcript-note.md
+- sources/processed/design-md-spec-update-function-extract.md
+
+Rules:
+- DESIGN.md carries reasoning plus token values.
+- Tokens are named decisions and roles.
+- HTML is only a review surface; decisions export back to Markdown or structured data.
+```
+
+That is enough. A fancy export system is optional. A return path is not.
+
+## Failure Test
+
+Before accepting an HTML artifact, run this small test:
+
+| Question | Reject if |
+| --- | --- |
+| Can I delete the HTML file after export? | No durable Markdown/JSON decision remains |
+| Can I name the sources read? | The page has no source inventory |
+| Can I see what would make me say no? | The page only has positive framing |
+| Can I paste the decision into the next agent session? | No copy/export section exists |
+| Can I verify claims outside the browser? | The page is the only proof |
+
+This is the practical boundary. HTML can help a reviewer see. It cannot be the only thing the system remembers.
+
 ## Prompt Pattern
 
 Ask for the review surface and the return path:
@@ -185,6 +309,19 @@ Do not make the HTML the source of truth.
 ```
 
 That last sentence is the important part.
+
+For a design or research artifact, add the source inventory directly to the prompt:
+
+```txt
+Canonical sources:
+- companies/vibecode-town/sources/processed/design-md-spec-update-function-extract.md
+- companies/vibecode-town/html-review-artifact-template.md
+
+Output:
+- local single-file HTML review artifact
+- copy-as-Markdown decision record
+- explicit non-claims section
+```
 
 ## Boundary
 
