@@ -183,7 +183,7 @@
       "approvedAt": "2026-05-21T02:25:00+09:00",
       "approvalRef": "operator-reference-story-beat-loop-86-2026-05-21",
       "approvalScope": "current_public_baseline_after_vercel_story_beat_upgrade_loop_86",
-      "contentSha256": "8bfb61011cd1dd96120e3e019d9bf1ca3cb26c2493a96f8c8730b2948d562a5a",
+      "contentSha256": "dbaced073c296b5aa6ea032478bae5f9aad33947daf38f0bcf1de86bfe933c1a",
       "sourceWorkflow": "packet",
       "image": "/images/posts/vercel-is-not-a-deployment-contract.png",
       "requiredEvidence": [

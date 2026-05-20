@@ -252,7 +252,7 @@ The latest completed run produced the shape this article argues for:
 
 ```txt
 static pages built: 41
-Pagefind indexed words: 1950
+Pagefind indexed words: 1967
 public posts rendered: 10
 rendered viewports checked: 24
 publication approvals checked: 10
