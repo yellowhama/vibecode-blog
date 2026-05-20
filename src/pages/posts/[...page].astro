@@ -54,13 +54,20 @@ const leadPost = page.data.find(post => post.data.workflow === "packet" && post.
       </p>
     </section>
     {leadPost ? (
-      <section class="mb-10 grid gap-6 border border-ink/10 bg-background p-4 shadow-sm md:grid-cols-[minmax(0,1fr)_22rem] md:items-center" aria-label="Featured evidence-backed article">
+      <section
+        class="mb-10 grid gap-6 border border-ink/10 bg-background p-4 shadow-sm md:grid-cols-[minmax(0,1fr)_22rem] md:items-center"
+        aria-label="Featured evidence-backed article"
+        data-evidence-card
+        data-post-slug={leadPost.id}
+        data-image-contract={leadPost.data.ogImage}
+      >
         <div>
           <div class="mb-4 flex flex-wrap gap-2 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
             <span class="border border-ink/10 bg-paper-warm px-2 py-1">Source packet</span>
             <span class="border border-ink/10 bg-paper-warm px-2 py-1">{leadPost.data.references?.length ?? 0} sources</span>
             <span class="border border-ink/10 bg-paper-warm px-2 py-1">Unique image</span>
-            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Hash approved</span>
+            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Rendered proof</span>
+            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Hash approval</span>
           </div>
           <a href={`/posts/${leadPost.id}`} class="group no-underline">
             <h2 class="font-serif text-3xl italic leading-tight text-ink group-hover:underline decoration-accent/30">
@@ -68,6 +75,9 @@ const leadPost = page.data.find(post => post.data.workflow === "packet" && post.
             </h2>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-secondary">{leadPost.data.description}</p>
           </a>
+          <p class="mt-4 max-w-2xl font-mono text-[0.58rem] uppercase tracking-[0.16em] text-ink-faded">
+            Evidence receipt: source packet / unique image / rendered screenshots / current approval hash.
+          </p>
         </div>
         <a href={`/posts/${leadPost.id}`} class="order-first block no-underline md:order-none">
           <img src={leadPost.data.ogImage} alt={leadPost.data.title} class="aspect-[16/9] w-full border border-ink/10 bg-paper-warm object-contain p-2" />

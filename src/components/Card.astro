@@ -14,10 +14,10 @@ const cardClass = featured ? "blog-card-featured" : "blog-card";
 const seriesLabel = series ?? "Field Journal";
 const proofBadges = [
   workflow === "packet" ? "Source packet" : "About context",
-  `${references?.length ?? 0} sources`,
-  "Image contract",
+  `${references?.length ?? 0} source refs`,
+  "Unique image",
   "Rendered proof",
-  "Human approval",
+  "Hash approval",
 ];
 
 // Ensure we have a valid image path. If ogImage is missing, use a fallback based on the slug.
@@ -34,7 +34,12 @@ const thumbnail = ogImage && ogImage !== "" ? ogImage : getPlaceholder(id);
 
 ---
 
-<li class="list-none group">
+<li
+  class="list-none group"
+  data-evidence-card
+  data-post-slug={id}
+  data-image-contract={thumbnail}
+>
   <a
     href={getPath(id, filePath)}
     class:list={[cardClass, "block no-underline flex flex-col md:flex-row gap-8 items-start w-full"]}

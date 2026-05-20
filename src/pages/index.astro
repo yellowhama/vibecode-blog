@@ -52,12 +52,20 @@ const proofMetrics = [
           Technical notes on AI-assisted software work, written only when a claim can point to a source packet, verifier, rendered screenshot, or approval record.
         </p>
         {leadPost ? (
-          <a href={`/posts/${leadPost.id}`} class="block border border-ink/10 bg-background/90 p-3 shadow-sm no-underline transition-colors hover:border-accent/50">
+          <a
+            href={`/posts/${leadPost.id}`}
+            class="block border border-ink/10 bg-background/90 p-3 shadow-sm no-underline transition-colors hover:border-accent/50"
+            data-evidence-card
+            data-post-slug={leadPost.id}
+            data-image-contract={leadPost.data.ogImage}
+          >
             <img src={leadPost.data.ogImage} alt={leadPost.data.title} class="aspect-[16/9] w-full border border-ink/10 bg-paper-warm object-contain p-2" />
             <div class="mt-4 flex flex-wrap gap-2 font-mono text-[0.54rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
               <span class="border border-ink/10 bg-paper-warm px-2 py-1">{leadPost.data.references?.length ?? 0} sources</span>
+              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Source packet</span>
+              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Unique image</span>
               <span class="border border-ink/10 bg-paper-warm px-2 py-1">Rendered</span>
-              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Approved</span>
+              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Hash approval</span>
             </div>
             <p class="mt-4 font-serif text-xl italic leading-tight text-ink">{leadPost.data.title}</p>
             <p class="mt-2 text-sm leading-relaxed text-text-secondary">{leadPost.data.description}</p>
@@ -127,7 +135,7 @@ const proofMetrics = [
                   </p>
                   <h4 class="text-xl font-serif italic group-hover:text-accent-dim leading-tight text-ink">{post.data.title}</h4>
                   <p class="mt-2 font-mono text-[0.55rem] uppercase tracking-[0.16em] text-ink-faded">
-                    Packet / {post.data.references?.length ?? 0} sources / rendered / approval
+                    Packet / unique image / rendered / hash approval / {post.data.references?.length ?? 0} sources
                   </p>
                 </a>
               </li>

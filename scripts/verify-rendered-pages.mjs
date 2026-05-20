@@ -38,7 +38,7 @@ const SURFACE_ROUTES = [
     label: "posts index",
     path: "/posts/",
     expectedImage: null,
-    requiredTexts: ["Evidence-backed articles only", "Packet-backed", "Approvals"],
+    requiredTexts: ["Evidence-backed articles only", "Packet-backed", "Unique image", "Hash approval"],
     requiredLink: null,
     requirePostLink: true,
     requireContractImage: true,
@@ -385,6 +385,67 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       image.rect.top < window.innerHeight &&
       image.rect.bottom > 0
     );
+    const evidenceCards = Array.from(document.querySelectorAll("[data-evidence-card]")).map(card => {
+      const rect = card.getBoundingClientRect();
+      const text = (card.textContent || "").replace(/\\s+/g, " ").trim().toLowerCase();
+      const cardLinks = Array.from(card.querySelectorAll("a")).map(link => {
+        const linkRect = link.getBoundingClientRect();
+        return {
+          href: new URL(link.getAttribute("href") || "", location.href).pathname,
+          visible: linkRect.width >= 20 && linkRect.height >= 10 && linkRect.bottom > 0 && linkRect.top < window.innerHeight
+        };
+      });
+      const cardImages = Array.from(card.querySelectorAll("img")).map(img => {
+        const imageRect = img.getBoundingClientRect();
+        return {
+          src: new URL(img.currentSrc || img.src, location.href).pathname,
+          alt: img.getAttribute("alt") || "",
+          visible: img.complete &&
+            img.naturalWidth >= 300 &&
+            img.naturalHeight >= 150 &&
+            imageRect.width >= 120 &&
+            imageRect.height >= 80,
+          inFirstScreen: imageRect.top < window.innerHeight && imageRect.bottom > 0,
+          rect: {
+            top: Math.round(imageRect.top),
+            bottom: Math.round(imageRect.bottom),
+            width: Math.round(imageRect.width),
+            height: Math.round(imageRect.height)
+          }
+        };
+      });
+      const expectedContractImage = card.getAttribute("data-image-contract") || "";
+      const matchingContractImage = cardImages.find(image => image.src === expectedContractImage) || null;
+      return {
+        slug: card.getAttribute("data-post-slug") || "",
+        expectedContractImage,
+        rect: {
+          top: Math.round(rect.top),
+          bottom: Math.round(rect.bottom),
+          width: Math.round(rect.width),
+          height: Math.round(rect.height)
+        },
+        inFirstScreen: rect.top < window.innerHeight && rect.bottom > 0,
+        linkVisible: cardLinks.some(link => /^\\/posts\\/[^/]+\\/?$/.test(link.href) && link.visible),
+        hasSourcePacket: text.includes("source packet") || text.includes("packet"),
+        hasUniqueImage: text.includes("unique image") || text.includes("image contract"),
+        hasRenderedProof: text.includes("rendered proof") || text.includes("rendered"),
+        hasHashApproval: text.includes("hash approval") || text.includes("hash approved") || text.includes("human approval"),
+        matchingContractImage,
+        matchingContractImageVisible: Boolean(matchingContractImage?.visible),
+        matchingContractImageInFirstScreen: Boolean(matchingContractImage?.inFirstScreen)
+      };
+    });
+    const firstScreenEvidenceCards = evidenceCards.filter(card =>
+      card.inFirstScreen &&
+      card.linkVisible &&
+      card.hasSourcePacket &&
+      card.hasUniqueImage &&
+      card.hasRenderedProof &&
+      card.hasHashApproval &&
+      card.matchingContractImageVisible &&
+      card.matchingContractImageInFirstScreen
+    );
     return {
       title: document.title,
       h1: h1 ? h1.innerText.trim() : "",
@@ -426,6 +487,8 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       contractImages,
       visibleContractImages,
       firstScreenContractImages,
+      evidenceCards,
+      firstScreenEvidenceCards,
       viewport
     };
   })()`;
@@ -543,6 +606,9 @@ async function auditSurfaceRoute(chromePort, baseUrl, outputDir, spec, viewport,
     if (spec.requireContractImage && audit.firstScreenContractImages.length < 1) {
       failures.push("surface has no first-screen post contract image");
     }
+    if (spec.requireContractImage && audit.firstScreenEvidenceCards.length < 1) {
+      failures.push("surface has no first-screen evidence card with source, image, rendered, approval, link, and matching image");
+    }
 
     return {
       slug: spec.slug,
@@ -636,8 +702,15 @@ async function main() {
         (count, result) => count + result.audit.firstScreenContractImages.length,
         0,
       ),
+      surfaceEvidenceCardsInFirstScreen: contractImageSurfaceResults.reduce(
+        (count, result) => count + result.audit.firstScreenEvidenceCards.length,
+        0,
+      ),
       surfaceRoutesWithFirstScreenContractImages: contractImageSurfaceResults.filter(
         result => result.audit.firstScreenContractImages.length > 0,
+      ).length,
+      surfaceRoutesWithFirstScreenEvidenceCards: contractImageSurfaceResults.filter(
+        result => result.audit.firstScreenEvidenceCards.length > 0,
       ).length,
       surfaceRoutesRequiringContractImages: SURFACE_ROUTES.filter(spec => spec.requireContractImage).length * VIEWPORTS.length,
     };
@@ -669,6 +742,9 @@ async function main() {
     );
     process.stdout.write(
       `rendered_page_surface_contract_image_routes_first_screen=${firstScreenImageStats.surfaceRoutesWithFirstScreenContractImages}/${firstScreenImageStats.surfaceRoutesRequiringContractImages}\n`,
+    );
+    process.stdout.write(
+      `rendered_page_surface_evidence_card_routes_first_screen=${firstScreenImageStats.surfaceRoutesWithFirstScreenEvidenceCards}/${firstScreenImageStats.surfaceRoutesRequiringContractImages}\n`,
     );
     process.stdout.write(`rendered_page_screenshots_dir=${outputDir}\n`);
 
