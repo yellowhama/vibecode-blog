@@ -124,6 +124,10 @@ reindex_wiki.py
 archive_completed_artifacts.ps1
 ```
 
+The cost was not theoretical. A Korean transcript on an English blog would have made the site look unattended. Reused images would have told the reader the evidence was decorative. A premature product mention would have turned a technical article into a sales leak. A stale approval hash would have made the next operator trust a version no one had actually approved.
+
+That is the expensive part of cheap generation: the mistake arrives looking finished. Without a rejection path, the team pays for it later as rereading time, cleanup work, and lost credibility.
+
 The agent can still move fast. The difference is that every public surface now has a checker that can say no.
 
 That is the practical meaning of Software 3.0 for an operator: do not celebrate faster generation until the rejection path is at least as real as the creation path.
@@ -210,7 +214,9 @@ This is what changed: generation became cheap enough that the site needed an exp
 
 If an agent is only producing disposable prototypes, a prompt may be enough.
 
-If the agent is changing a product, publishing a post, touching deployment behavior, or producing evidence, ask for the contract before the implementation:
+Forward this article to the teammate who says, "the agent already made it, can we ship it?" The decision it should help them make is simple: if the change touches users, deployment, money, security, or another operator's future context, the first review is not taste. The first review is whether the rejection path exists.
+
+Before accepting the diff, ask for the contract:
 
 ```txt
 What source is authoritative?
