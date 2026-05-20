@@ -23,7 +23,7 @@ references:
 
 # The Work Disk Contract for AI Coding Agents
 
-On 2026-05-20, I ran `Get-PSDrive -Name C,F`, opened GitHub commit `76f4d0b`, and checked the rendered audit under `F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest`. The disk problem was not code. It was where the agent was allowed to leave proof.
+On 2026-05-21, I ran a PowerShell drive check, checked the LLM wiki archive gate, and opened the Chrome-rendered audit under `F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest`. The disk problem was not code. It was where the agent was allowed to leave proof.
 
 AI coding agents do not only edit source files, and that is the hidden risk.
 
@@ -32,6 +32,8 @@ They build. They test. They create fixtures. They write indexes. They generate l
 On this workstation, that distinction is not theoretical. The active source repo is on `F:\Aisaak\Projects\vibecode-town`, the LLM wiki archive is on `F:\Aisaak\CompanyArtifacts\llm-wiki-completed`, and the rendered audit writes to `F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest`.
 
 The repeated failure was still the old one: work kept drifting toward `C:` because the operating system made that the easy default.
+
+The important correction was sharper than "move the C files to F later." That only cleans up after the mistake. The real correction is to make the agent start from the F contract in the first place: repo on F, wiki on F, rendered evidence on F, test temp on F. No after-the-fact rescue mission.
 
 If builds, screenshots, search indexes, and evidence bundles fall into the operating system temp folder, the agent is changing code while quietly pressuring the workstation. The problem is not "the C drive is small." The problem is that nobody told the agent which disk role each artifact belongs to.
 
@@ -94,9 +96,9 @@ The active workstation makes the disk-role issue visible:
 ```txt
 Get-PSDrive -Name C,F
 
-Name   Used (GB)   Free (GB)   Root
-C         441.06      489.60   C:\
-F        1114.30     6337.72   F:\
+Name  UsedGB  FreeGB Root
+C     445.87  484.79 C:\
+F    1126.82 6325.20 F:\
 ```
 
 The point is not that F is always the right disk. The point is that this machine has a clear archive/work volume, and the agent was still being corrected for using C in places where completed company artifacts belonged on F.
@@ -113,15 +115,38 @@ test temp: F:\Aisaak\CompanyArtifacts\test-temp
 The archive receipt from the latest wiki sync was:
 
 ```txt
-archive_files_copied=279
-source_markdown_count=247
-archive_markdown_count=247
-Indexed 247 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
+archive_files_copied=353
+source_markdown_count=321
+archive_markdown_count=321
+Indexed 321 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
 ```
 
 That is why the path contract matters. Without it, an agent can pass a test while leaving the evidence trail in the wrong place.
 
 The receipt is only useful because it is in the same durable operating archive the next session will query.
+
+The bad version of the fix would have been:
+
+```txt
+write evidence to C
+notice the mistake
+copy some files to F
+hope the next run does not do it again
+```
+
+That is not a contract. That is a cleanup chore with better naming.
+
+The better version is:
+
+```txt
+start in F:\Aisaak\Projects\vibecode-town
+write wiki memory to F:\Aisaak\CompanyArtifacts\llm-wiki-completed
+write rendered proof to F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest
+write self-test fixtures to F:\Aisaak\CompanyArtifacts\test-temp
+fail checks when the archive and index drift
+```
+
+The difference looks small until the third autonomous loop. Then it is the difference between "resume from the archive" and "search the laptop."
 
 The same rule applies to rendered proof. The public post image contract is not only a design rule. It is a filesystem rule:
 
@@ -130,8 +155,9 @@ body image: /images/posts/ai-agent-work-disk-contract.png
 ogImage: /images/posts/ai-agent-work-disk-contract.png
 rendered summary: F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
 desktop first-screen image check: 10/10
-mobile first-screen image check: 4/10
+mobile first-screen image check: 10/10
 surface expected images: 2/2
+surface evidence cards: 4/4
 ```
 
 If screenshots are evidence, screenshot paths are part of the evidence. A missing image and a missing archive receipt are the same class of problem: the reader is asked to trust something the system did not preserve.
@@ -185,9 +211,9 @@ Test-Path $env:VIBECODE_TEST_TEMP_DIR
 And make the verifier say what happened:
 
 ```txt
-completion_audit_sync_archive_files_copied=279
-completion_audit_sync_source_markdown_count=247
-completion_audit_sync_archive_markdown_count=247
+completion_audit_sync_archive_files_copied=353
+completion_audit_sync_source_markdown_count=321
+completion_audit_sync_archive_markdown_count=321
 company_artifacts_archive_status=pass
 ```
 
