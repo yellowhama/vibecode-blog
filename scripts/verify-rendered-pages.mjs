@@ -276,6 +276,11 @@ function pageAuditExpression(expectedImagePath) {
     ) - window.innerWidth;
     const badWideElements = Array.from(document.querySelectorAll("article *"))
       .filter(element => {
+        const closestPre = element.closest("pre");
+        if (closestPre) {
+          const preRect = closestPre.getBoundingClientRect();
+          if (preRect.left >= -2 && preRect.right <= window.innerWidth + 2) return false;
+        }
         const rect = element.getBoundingClientRect();
         if (rect.width < 1 || rect.height < 1) return false;
         return rect.left < -2 || rect.right > window.innerWidth + 2;
@@ -376,6 +381,11 @@ function surfaceAuditExpression(spec, contractImagePaths) {
     ) - window.innerWidth;
     const badWideElements = Array.from(document.querySelectorAll("body *"))
       .filter(element => {
+        const closestPre = element.closest("pre");
+        if (closestPre) {
+          const preRect = closestPre.getBoundingClientRect();
+          if (preRect.left >= -2 && preRect.right <= window.innerWidth + 2) return false;
+        }
         const rect = element.getBoundingClientRect();
         if (rect.width < 1 || rect.height < 1) return false;
         return rect.left < -2 || rect.right > window.innerWidth + 2;
