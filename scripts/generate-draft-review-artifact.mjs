@@ -325,8 +325,13 @@ function buildGenericHtml({ slug, title, description, sha256, body }) {
   const visualReceipt =
     codeBlocks.find((block) => block.includes("visual_artifact=") || block.includes("source_draft_visual_sha256=")) ??
     "missing";
+  const queueReceipt =
+    codeBlocks.find((block) => block.includes("publisher_queue_artifact=") || block.includes("publisher_queue_required_text=")) ??
+    "";
   const visualArtifact = receiptValue(visualReceipt, "visual_artifact");
   const visualArtifactSrc = localImageSrc(visualArtifact || imageRefs[0]?.src || "");
+  const queueScreenshot = receiptValue(queueReceipt, "publisher_queue_screenshot");
+  const queueScreenshotSrc = localImageSrc(queueScreenshot);
   const transferTable = tables[0] ?? "missing";
 
   return `<!doctype html>
@@ -376,6 +381,7 @@ function buildGenericHtml({ slug, title, description, sha256, body }) {
     .muted { color: var(--muted); }
     .visual-img { display: block; width: 100%; max-height: 420px; object-fit: contain; background: #ece0d2; border: 1px solid var(--line); border-radius: 8px; margin-bottom: 14px; }
     .image-list { margin-top: 12px; font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+    .queue-proof { border-top: 5px solid var(--ok); }
     ul { margin: 0; padding-left: 20px; }
     li { margin: 5px 0; }
     @media (max-width: 860px) {
@@ -461,6 +467,23 @@ function buildGenericHtml({ slug, title, description, sha256, body }) {
         }
       </article>
     </section>
+
+    ${
+      queueReceipt
+        ? `<section class="section">
+      <article class="card queue-proof">
+        <h2>Queue Evidence</h2>
+        ${
+          queueScreenshotSrc
+            ? `<img class="visual-img" src="${escapeHtml(queueScreenshotSrc)}" alt="Publisher queue artifact screenshot" />`
+            : ""
+        }
+        <p>The draft includes a rendered publisher queue artifact so the queue advice can be inspected as an object, not only as prose.</p>
+        <pre>${escapeHtml(queueReceipt)}</pre>
+      </article>
+    </section>`
+        : ""
+    }
 
     <section class="section grid">
       <article class="card">
