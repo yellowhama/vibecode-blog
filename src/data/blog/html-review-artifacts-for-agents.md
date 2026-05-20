@@ -23,11 +23,15 @@ references:
 
 # Use HTML to Review Agent Output, Not to Replace the Contract
 
-AI coding agents no longer struggle to write plans. The newer failure mode is that they write plans nobody reads.
+On 2026-05-20, I opened the DESIGN.md review artifact in Chrome, put the LLM wiki source packet beside it, and checked whether the browser page could survive one ugly question: if I deleted the HTML file, would the decision still exist?
 
-A 200-line Markdown plan appears. The PR explanation gets longer. The research summary includes tables, diffs, timelines, snippets, and caveats. The human scrolls, nods, and moves to the next prompt without actually reviewing the work.
+That is the test most HTML-for-agents posts skip.
 
-On 2026-05-18, the useful example was a DESIGN.md spec review. The canon was still Markdown in the LLM wiki. The browser-readable artifact lived separately at:
+![HTML review artifact export loop diagram](/images/posts/html-review-artifacts-for-agents.png)
+
+AI coding agents no longer struggle to write plans. The newer failure mode is that they write plans nobody reads. A 200-line Markdown plan appears. The PR explanation gets longer. The research summary includes tables, diffs, timelines, snippets, and caveats. The human scrolls, nods, and moves to the next prompt without actually reviewing the work.
+
+The useful example was a DESIGN.md spec review. The canon stayed in Markdown under the LLM wiki. The browser-readable artifact lived separately at:
 
 ```txt
 F:\Aisaak\CompanyArtifacts\llm-wiki-completed\companies\vibecode-town\html-artifacts\design-md-spec-operating-review-2026-05-18.html
@@ -39,7 +43,7 @@ That is not a writing problem. It is a review-surface problem.
 
 HTML helps when the human decision depends on layout, comparison, sequence, or annotation. It fails when the team starts treating a polished artifact as the source of truth.
 
-![HTML review artifact export loop diagram](/images/posts/html-review-artifacts-for-agents.png)
+Pretty is not proof. A browser view without export is not a review artifact. It is a hidden contract with better typography.
 
 ## The Skipped Plan Problem
 
@@ -108,6 +112,9 @@ sources/processed/design-md-spec-update-function-extract.md
 
 Template:
 companies/vibecode-town/html-review-artifact-template.md
+
+Current rendered receipt:
+F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
 ```
 
 The page did four jobs that plain Markdown would have made easy to skip:
@@ -133,6 +140,36 @@ That last line is the line that keeps HTML useful instead of decorative.
 In the actual file, the useful controls were boring and inspectable: `design-md-spec-operating-review-2026-05-18.html` declared its source cards, the export lived in `exportText`, the copy action was a tiny `copyExport()` function, and the required pattern was preserved in `html-review-artifact-template.md`.
 
 That is the level of implementation detail a review artifact needs. If the only artifact you can name is "the page," you do not have a review system. You have a nice screenshot.
+
+## The Before/After
+
+Before the artifact, the review path looked like this:
+
+```txt
+read transcript note
+read processed extract
+read operating recommendation
+remember which parts are verified
+write a decision somewhere else
+hope the next agent finds it
+```
+
+After the artifact, the review path looked like this:
+
+```txt
+open design-md-spec-operating-review-2026-05-18.html
+scan source cards
+compare token/reasoning claims
+read the risk table
+copy the decision record
+paste the decision back into Markdown canon
+```
+
+That is the practical gain. HTML did not make the decision more official. It made the review less lossy.
+
+The old path asked the reviewer to hold the whole system in working memory. The new path put the comparison on screen and forced the decision back through `copy-as-Markdown`, `exportText`, `copyExport()`, `sources/raw/2026-05-18_design-md-spec-update-transcript-note.md`, `sources/processed/design-md-spec-update-function-extract.md`, and `companies/vibecode-town/html-review-artifact-template.md`.
+
+The rule is less smooth, more reviewable.
 
 ## A Rendered Review Receipt
 
@@ -161,6 +198,8 @@ viewportsChecked=24
 failures=[]
 postDetailDesktopExpectedImagesInFirstScreen=10/10
 surfaceExpectedImagesInFirstScreen=2/2
+surfaceContractImageRoutesInFirstScreen=2/2
+surfaceEvidenceCardRoutesInFirstScreen=2/2
 ```
 
 That is why review artifacts matter. A human no longer has to trust a paragraph that says the posts have images. The reviewer can inspect the desktop and mobile screenshots and see whether the expected image actually appeared.
@@ -179,6 +218,7 @@ and:
 summary.json exists.
 desktop/mobile screenshots exist.
 expected image appeared.
+evidence card appeared beside the matching image.
 approval manifest hash still matches.
 ```
 
