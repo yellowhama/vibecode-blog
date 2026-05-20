@@ -30,6 +30,19 @@ That is why DESIGN.md matters. It turns design taste into a technical contract t
 
 The point is not to make every agent a designer. The point is to stop every new design pass from starting with a blank visual memory.
 
+For Vibecode, the current source packet is not a mood-board note. It is a dated operating snapshot:
+
+```txt
+source packet: companies/vibecode-town/sources/processed/design-md-spec-update-function-extract.md
+agent contract: global/specs/design-md-agent-contract.md
+HTML review: companies/vibecode-town/html-artifacts/design-md-spec-operating-review-2026-05-18.html
+verified upstream date: 2026-05-19
+package snapshot: @google/design.md
+current lifecycle: alpha
+```
+
+That inventory is what keeps the post honest. The article can recommend the pattern, but it cannot pretend the upstream spec is finished.
+
 ![Design contract token and component diagram](/images/posts/design-is-a-technical-contract.png)
 
 ## The Real Problem
@@ -102,9 +115,56 @@ contrast or format issue is caught
 agent repairs the decision or documents an override
 ```
 
+The verified CLI snapshot in the current Vibecode packet is date-stamped for a reason:
+
+```txt
+npm install @google/design.md
+npx @google/design.md lint DESIGN.md
+npx @google/design.md diff DESIGN.md DESIGN-v2.md
+npx @google/design.md export --format json-tailwind DESIGN.md
+npx @google/design.md spec --rules
+```
+
+Do not treat those commands as permanent API law. Treat them as the 2026-05-19 snapshot that makes the current article concrete.
+
 That turns design from a preference conversation into an inspectable workflow. If an agent picks a low-contrast foreground/background pair, the linter can catch the failure before the choice becomes production UI.
 
 This is the operator value: the agent can be creative inside the roles, but it cannot silently replace the roles.
+
+## The Small Contract Shape
+
+A useful `DESIGN.md` should be small enough that a reviewer can see the roles and strict enough that an agent cannot invent around them.
+
+```md
+---
+tokens:
+  color:
+    primary:
+      value: "#21170f"
+      role: "main ink for headlines and durable body emphasis"
+    neutral:
+      value: "#f8f1e7"
+      role: "paper-like canvas"
+    accent:
+      value: "#b95b36"
+      role: "action and editorial emphasis"
+  typography:
+    body-main:
+      family: "serif"
+      size: "18px"
+      role: "long-form reading"
+  component:
+    button-primary:
+      background: "{color.accent}"
+      color: "{color.neutral}"
+---
+
+# Visual Reasoning
+Vibecode should feel like an engineer's annotated notebook:
+dense enough to trust, quiet enough to read, and never generic SaaS gloss.
+```
+
+That snippet does two jobs. The token block gives the agent values. The prose tells it why those values exist. Splitting those into separate files is where drift starts.
 
 ## A Small Operator Loop
 
@@ -148,13 +208,30 @@ npm run verify:site-quality=pass
 post_image_contracts_checked=10
 rendered_page_viewports_checked=24
 publication_approval_records_checked=10
-reference_writing_average_score=94
-latest_gate_commit=93c5139
+reference_writing_average_score=99
+latest_gate_commit=60d697a
 ```
 
 That is a design-system lesson in miniature. A visual decision becomes a named role, the role becomes data, and the data becomes lintable. The agent can still generate the image, but it cannot silently use a generic asset that has no relationship to the article.
 
 Without the contract, a generic "abstract design system" hero could pass a human glance. With the contract, it has to match the slug, the `ogImage`, the dimensions, the anchors, the rendered page, and the approval hash. That is the difference between taste as a suggestion and taste as an operating surface.
+
+## Design Review Still Has Two Surfaces
+
+The contract is not the review. It is the memory that review uses.
+
+For the DESIGN.md source packet, Vibecode keeps the split explicit:
+
+| Surface | File | Job |
+| --- | --- | --- |
+| Canonical extract | `design-md-spec-update-function-extract.md` | Durable source interpretation |
+| Agent contract | `design-md-agent-contract.md` | Rules the next agent should obey |
+| HTML review | `design-md-spec-operating-review-2026-05-18.html` | Human-readable decision surface |
+| Public article | `design-is-a-technical-contract.md` | Reader-facing explanation |
+
+That split is important. A generated HTML review can show token swatches and risk tables. The final decision still has to return to `DESIGN.md`, Markdown, JSON, or a patch checklist.
+
+If a design decision only exists in a screenshot, it is not a contract. If it only exists in a pretty HTML review page, it is still not a contract.
 
 ## Reader Decision
 
