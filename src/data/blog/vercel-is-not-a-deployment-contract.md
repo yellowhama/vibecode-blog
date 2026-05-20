@@ -36,6 +36,22 @@ The practical rule is simple: if production behavior only exists because one hos
 
 ![Deployment contract build route smoke test diagram](/images/posts/vercel-is-not-a-deployment-contract.png)
 
+## The Dashboard Lie
+
+The dangerous part was not that the site was broken. The dangerous part was that the site could look fine in the hosting dashboard.
+
+That is how deployment bugs survive. Vercel can make `/sitemap.xml` work with a rewrite. A Linux builder can make `cp -r` work. A preview URL can return 200. Each individual check looks reassuring, but none of them proves the static artifact can survive a host change.
+
+The better question is uglier and more useful:
+
+```txt
+If I delete the hosting platform from the story, what behavior is still inside the repo?
+```
+
+That one question caught both failures. The build command was not portable because it depended on a Unix shell. The routes were not portable because they depended on Vercel reading `vercel.json`.
+
+This is why I do not like agent-generated deployment summaries that say "ready for Coolify" after seeing a green local preview. A preview proves the app can render somewhere. It does not prove the app owns its build, routes, installer, search index, sitemap, robots file, and smoke checks.
+
 ## Broken System
 
 The first failure was local and obvious:
@@ -85,6 +101,8 @@ That is exactly the kind of gap an agent can miss. It sees a working URL and cal
 
 This is exactly how agentic operations produce slop. The agent says "Astro static site, deployable anywhere." The repo says "not quite."
 
+The table is the part worth copying into future deployment reviews. Do not ask only whether a feature works. Ask who owns it. If the answer is "the host understands a config file," then you have a platform behavior, not an application behavior.
+
 ## Control Surface
 
 The fix was to turn hidden host behavior into repo-owned behavior.
@@ -121,6 +139,10 @@ Now `/sitemap.xml` is produced by the app, and `/install.sh` is a real file in t
 
 The important change is ownership. The behavior moved from host interpretation into source-controlled code and files.
 
+That also changes how an agent should report the work. "I deployed it" is too broad. "The repo now builds `dist/sitemap.xml`, `dist/install.sh`, and `dist/pagefind`, and `scripts/verify-deploy-surface.mjs` blocks hidden external rewrites" is inspectable.
+
+The second sentence is less smooth. It is also the one you can trust.
+
 ## Deployment Contract Checklist
 
 Before calling a site portable, verify:
@@ -149,6 +171,18 @@ That is the standard Vibecode Town should use before moving a site to Coolify.
 
 The reader version is the same: test the artifact, not the platform dashboard.
 
+## The Three-Question Review
+
+For agentic projects, I now use a smaller review before accepting any deployment claim:
+
+| Question | Good answer | Bad answer |
+| --- | --- | --- |
+| Can the behavior be found in source control? | Route, file, script, or generated artifact exists in the repo/build output. | "The host maps it for us." |
+| Can a clean machine reproduce it? | `npm ci` and `npm run build` produce the same deploy surface. | "It worked in my dashboard." |
+| Can a verifier reject drift? | A script checks the route, file, or config boundary. | A human remembers to click around. |
+
+That review is deliberately boring. It is supposed to be. Deployment contracts should be boring in the same way seatbelts are boring: you do not want to discover whether they exist after impact.
+
 ## Field Receipt
 
 The portability lesson now has a repeatable site-level receipt:
@@ -164,8 +198,9 @@ The latest completed run produced the shape this article argues for:
 ```txt
 static pages built: 41
 public posts rendered: 10
-rendered viewports checked: 20
+rendered viewports checked: 24
 publication approvals checked: 10
+deploy surface gate: pass
 ```
 
 That is the deployment-contract mindset applied back to the blog itself: the dashboard is not the proof. The artifact and the verifier are the proof.
