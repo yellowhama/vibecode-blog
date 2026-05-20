@@ -7,6 +7,7 @@ import Scribble from "@/components/Scribble.astro";
 import Footer from "@/components/Footer.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
+import referenceCeiling from "@/data/reference-ceiling-scores.json";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 const sortedPosts = getSortedPosts(posts);
@@ -18,11 +19,14 @@ const publishedPosts = sortedPosts.length;
 const packetBackedPosts = evidencePosts.length;
 const renderedViewportChecks = 24;
 const approvalRecords = 10;
+const getReferenceCeiling = (slug: string) =>
+  referenceCeiling.posts[slug as keyof typeof referenceCeiling.posts]?.score;
 const proofMetrics = [
   { label: "Public posts", value: publishedPosts },
   { label: "Packet-backed", value: packetBackedPosts },
   { label: "Rendered viewports", value: renderedViewportChecks },
-  { label: "Hash-bound approvals", value: approvalRecords },
+  { label: "Hash approvals", value: approvalRecords },
+  { label: "Reference ceiling", value: referenceCeiling.averageScore },
 ];
 ---
 
@@ -61,6 +65,9 @@ const proofMetrics = [
           >
             <img src={leadPost.data.ogImage} alt={leadPost.data.title} class="aspect-[16/9] w-full border border-ink/10 bg-paper-warm object-contain p-2" />
             <div class="mt-4 flex flex-wrap gap-2 font-mono text-[0.54rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
+              {getReferenceCeiling(leadPost.id) ? (
+                <span class="border border-ink/10 bg-paper-warm px-2 py-1">Reference ceiling {getReferenceCeiling(leadPost.id)}</span>
+              ) : null}
               <span class="border border-ink/10 bg-paper-warm px-2 py-1">{leadPost.data.references?.length ?? 0} sources</span>
               <span class="border border-ink/10 bg-paper-warm px-2 py-1">Source packet</span>
               <span class="border border-ink/10 bg-paper-warm px-2 py-1">Unique image</span>
@@ -80,7 +87,7 @@ const proofMetrics = [
           About the Vibe Coding project
         </a>
       </div>
-      <dl class="mt-14 grid grid-cols-2 gap-3 md:grid-cols-4" aria-label="Current publication proof metrics">
+      <dl class="mt-14 grid grid-cols-2 gap-3 md:grid-cols-5" aria-label="Current publication proof metrics">
         {proofMetrics.map(metric => (
           <div class="border border-ink/10 bg-background/80 p-4 shadow-sm">
             <dt class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">{metric.label}</dt>
@@ -104,6 +111,9 @@ const proofMetrics = [
               <div class="mb-5 flex flex-wrap gap-2 font-mono text-[0.58rem] font-bold uppercase tracking-[0.16em]">
                 <span class="border border-ink/10 bg-paper-warm px-2 py-1 text-ink-faded">{featuredPosts[0].data.series ?? "Field Journal"}</span>
                 <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Source packet</span>
+                {getReferenceCeiling(featuredPosts[0].id) ? (
+                  <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Reference ceiling {getReferenceCeiling(featuredPosts[0].id)}</span>
+                ) : null}
                 <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">{featuredPosts[0].data.references?.length ?? 0} sources</span>
                 <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Rendered proof</span>
                 <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Human approval</span>
@@ -135,7 +145,7 @@ const proofMetrics = [
                   </p>
                   <h4 class="text-xl font-serif italic group-hover:text-accent-dim leading-tight text-ink">{post.data.title}</h4>
                   <p class="mt-2 font-mono text-[0.55rem] uppercase tracking-[0.16em] text-ink-faded">
-                    Packet / unique image / rendered / hash approval / {post.data.references?.length ?? 0} sources
+                    Reference ceiling {getReferenceCeiling(post.id) ?? "n/a"} / packet / unique image / rendered / hash approval / {post.data.references?.length ?? 0} sources
                   </p>
                 </a>
               </li>

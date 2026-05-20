@@ -28,17 +28,17 @@ const SURFACE_ROUTES = [
     label: "homepage",
     path: "/",
     expectedImage: "/images/home/hero-journal.png",
-    requiredTexts: ["Evidence-backed field notes", "Public posts", "Hash-bound approvals"],
+    requiredTexts: ["Evidence-backed field notes", "Public posts", "Reference ceiling"],
     requiredLink: "/posts/",
-    requirePostLink: false,
-    requireContractImage: false,
+    requirePostLink: true,
+    requireContractImage: true,
   },
   {
     slug: "surface-posts-index",
     label: "posts index",
     path: "/posts/",
     expectedImage: null,
-    requiredTexts: ["Evidence-backed articles only", "Packet-backed", "Unique image", "Hash approval"],
+    requiredTexts: ["Evidence-backed articles only", "Packet-backed", "Unique image", "Hash approval", "Reference ceiling"],
     requiredLink: null,
     requirePostLink: true,
     requireContractImage: true,
@@ -388,7 +388,10 @@ function surfaceAuditExpression(spec, contractImagePaths) {
     const evidenceCards = Array.from(document.querySelectorAll("[data-evidence-card]")).map(card => {
       const rect = card.getBoundingClientRect();
       const text = (card.textContent || "").replace(/\\s+/g, " ").trim().toLowerCase();
-      const cardLinks = Array.from(card.querySelectorAll("a")).map(link => {
+      const cardLinks = [
+        ...(card.matches("a") ? [card] : []),
+        ...Array.from(card.querySelectorAll("a"))
+      ].map(link => {
         const linkRect = link.getBoundingClientRect();
         return {
           href: new URL(link.getAttribute("href") || "", location.href).pathname,
@@ -431,6 +434,7 @@ function surfaceAuditExpression(spec, contractImagePaths) {
         hasUniqueImage: text.includes("unique image") || text.includes("image contract"),
         hasRenderedProof: text.includes("rendered proof") || text.includes("rendered"),
         hasHashApproval: text.includes("hash approval") || text.includes("hash approved") || text.includes("human approval"),
+        hasReferenceCeiling: text.includes("reference ceiling"),
         matchingContractImage,
         matchingContractImageVisible: Boolean(matchingContractImage?.visible),
         matchingContractImageInFirstScreen: Boolean(matchingContractImage?.inFirstScreen)
@@ -443,6 +447,7 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       card.hasUniqueImage &&
       card.hasRenderedProof &&
       card.hasHashApproval &&
+      card.hasReferenceCeiling &&
       card.matchingContractImageVisible &&
       card.matchingContractImageInFirstScreen
     );

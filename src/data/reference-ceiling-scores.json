@@ -1,0 +1,15 @@
+{
+  "averageScore": 97,
+  "generatedAt": "2026-05-20T02:46:56.240Z",
+  "posts": {
+    "ai-agent-work-disk-contract": { "score": 100, "grade": "reference-ceiling" },
+    "ai-memory-operating-structure": { "score": 100, "grade": "reference-ceiling" },
+    "design-is-a-technical-contract": { "score": 97, "grade": "reference-ceiling" },
+    "frustration-as-spec": { "score": 91, "grade": "reference-ceiling" },
+    "html-review-artifacts-for-agents": { "score": 100, "grade": "reference-ceiling" },
+    "mcp-shared-state-data-leak": { "score": 100, "grade": "reference-ceiling" },
+    "software-3-0": { "score": 100, "grade": "reference-ceiling" },
+    "vercel-is-not-a-deployment-contract": { "score": 100, "grade": "reference-ceiling" },
+    "what-vibe-coding-actually-is": { "score": 87, "grade": "strong-but-thin" }
+  }
+}
