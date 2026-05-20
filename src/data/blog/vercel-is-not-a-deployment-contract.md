@@ -23,6 +23,8 @@ At 1:57 a.m. on 2026-05-21, the Coolify migration audit failed before Coolify ev
 
 The portability test was local: build the repo, inspect the static artifact, and ask whether the same behavior would exist on a plain host serving `dist`.
 
+The reader decision is direct: before approving a migration, run the artifact check. If the route, installer, search file, or smoke verifier only exists in the host dashboard, the deployment review is not done.
+
 The repo looked portable. It was an Astro static site. It had a normal build command. But two hidden contracts fell out of the wall:
 
 ```txt
@@ -145,6 +147,31 @@ node scripts/verify-dist.mjs
 
 If those commands cannot prove the route or file exists outside the host dashboard, the deployment claim is not done yet.
 
+## Proof Chain
+
+Here is the migration chain as proof, not a dashboard mood:
+
+```txt
+Bad output:
+- Preview URL returns 200.
+- Vercel dashboard routes work.
+- Agent says "ready for Coolify."
+- dist/ still does not own /sitemap.xml, /install.sh, or the search-copy behavior.
+
+Gate added:
+- Run npm run build.
+- Run node scripts/verify-deploy-surface.mjs.
+- Run node scripts/verify-dist.mjs.
+- Reject the migration until the deploy surface exists in source control or generated dist files.
+
+After:
+- The repo owns src/pages/sitemap.xml.ts, public/install.sh, scripts/copy-pagefind.mjs, scripts/verify-deploy-surface.mjs, and scripts/verify-dist.mjs.
+- The current accepted review, zero-item revision plan, approval hash, and contentSha256 point at the revised article.
+- The rendered audit checks desktop/mobile first-screen image evidence and the image contract instead of trusting a dashboard screenshot.
+```
+
+That is the difference between "the host can serve it" and "the repository can prove it." The first is a platform habit. The second is a deployment contract.
+
 ## Hidden Contract Table
 
 | Hidden dependency | Why it mattered | Repo-owned replacement |
@@ -259,6 +286,11 @@ static pages built: 41
 Pagefind indexed words: 1967
 public posts rendered: 10
 rendered viewports checked: 24
+rendered_page_post_detail_first_screen_images_desktop: 10/10
+rendered_page_post_detail_first_screen_images_mobile: 10/10
+rendered_page_surface_expected_images_first_screen: 2/2
+rendered summary.json: F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
+image contract: /images/posts/vercel-is-not-a-deployment-contract.png
 publication approvals checked: 10
 deploy surface gate: pass
 static artifact verification: pass
