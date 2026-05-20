@@ -23,7 +23,11 @@ references:
 
 # How to Stop AI Agents From Losing Their Memory
 
-On 2026-05-20, this site could restart from `companies/vibecode-town/code-index.md`, `F:\Aisaak\CompanyArtifacts\vibecode-reference-writing-audit\latest.json`, `src/data/publication-approvals.json`, and `wiki_fts.db`. That matters because the next agent needs evidence, not a confident story about what probably happened.
+On 2026-05-20, I opened GitHub commit `328e671`, ran the reference ceiling audit, and found the real memory test was not in the chat. It was in `companies/vibecode-town/code-index.md`, `F:\Aisaak\CompanyArtifacts\vibecode-reference-writing-audit\latest.json`, `src/data/publication-approvals.json`, and `wiki_fts.db`.
+
+The next agent did not need a pep talk. It needed receipts.
+
+Without those receipts, every handoff becomes a public approval risk and a time leak.
 
 The expensive failure in long agent work is not forgetting a fact. It is forgetting the status of a fact.
 
@@ -48,6 +52,34 @@ First, people stop reviewing it. Important decisions and temporary instructions 
 Second, agents stop retrieving it cleanly. They cannot tell which line is source evidence, which line is interpretation, and which line is a stale assumption from a previous session.
 
 A long prompt is not an audit trail. It is unstructured state.
+
+## Before and After
+
+Here is the before/after that changes the work.
+
+Before, the restart surface was a chat scrollback. The agent had to infer which instruction was still active, which correction was frustration, and which sentence was a durable rule. That feels fast until the next session confidently repeats a solved mistake.
+
+After, the restart surface is an artifact chain:
+
+```txt
+source packet -> plan/report -> code-index.md -> wiki_fts.db -> archive receipt -> approval hash
+```
+
+That chain is slower to write than a single prompt. It is much faster than explaining the same project for the fifth time.
+
+For this site, the memory receipt is not "the agent said it updated the wiki." The receipt is closer to this:
+
+```txt
+python .\reindex_wiki.py
+Indexed 245 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
+
+powershell -ExecutionPolicy Bypass -File .\archive_completed_artifacts.ps1 -SkipGoalStatusRefresh
+archive_files_copied=277
+source_markdown_count=245
+archive_markdown_count=245
+```
+
+That is the difference between memory as a vibe and memory as an operating surface. One asks the next agent to believe. The other gives it a place to look.
 
 ## Operating Memory Stack
 
@@ -160,9 +192,20 @@ total packet files: 54
 
 That is what the next agent can use without re-reading the whole chat. It can tell which work is complete, which work is only a qualitative weakness, and which command has to prove the next change.
 
-## Audit Checklist
+## Audit Checklist: Accept / Reject
 
-Before trusting an agent workflow, ask:
+Before accepting an agent's memory claim, use this decision matrix.
+
+| Agent claim | Accept when | Reject when |
+| --- | --- | --- |
+| "I updated the wiki." | Reindex and archive receipts exist. | Only the chat says so. |
+| "The next agent has context." | It can cite `code-index.md` and `wiki_fts.db`. | Context lives only in scrollback. |
+| "This post is approved." | The current `contentSha256` matches the body. | The body changed after approval. |
+| "Images are handled." | One slug-matched image renders on desktop/mobile. | The image is generic or duplicated. |
+
+The rule is simple: accept artifacts, reject vibes.
+
+If you do not have a matrix yet, start with these questions:
 
 ```txt
 Is the original source outside the chat?
@@ -176,7 +219,11 @@ Are unverified product claims marked as unverified?
 
 If three of those are missing, the issue may not be model quality. It is missing operating memory.
 
-Vibecode uses this pattern for source-backed content: source notes, explicit specs, current handoffs, searchable wiki indexes, and evidence gates before Field Logs. The public writing is only the visible surface. The real asset is the memory contract behind it.
+Vibecode uses this pattern for source-backed content: source notes, explicit specs, current handoffs, searchable wiki indexes, and evidence gates before Field Logs.
+
+The public writing is only the visible surface. The real asset is the memory contract behind it.
+
+The same rule applies to visual proof. A memory diagram in the body is useful only if the post image contract agrees with it: one slug-specific image, matching `ogImage`, visible in rendered post checks, and not reused as a lazy placeholder across unrelated posts. Otherwise the image becomes another fake memory.
 
 ## Boundary
 
