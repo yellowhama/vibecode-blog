@@ -18,11 +18,15 @@ references:
 
 # Software 3.0 Is a Verification Problem
 
+On 2026-05-20, I opened GitHub commit `20f4834`, ran `npm run audit:reference-ceiling`, and found this article at the bottom of the report: `software-3-0 score=85 grade=strong-but-thin`.
+
+The code was fine. The essay was the failure.
+
 ![Software 3.0 kernel contract diagram](/images/posts/software-3-0.png)
 
 The easy take on Software 3.0 is that natural language became code. That is the least useful part of the idea.
 
-The part that changes daily engineering is harsher: generation got cheaper, so verification became the bottleneck.
+The part that changes daily engineering is harsher: generation got cheaper, so verification became the bottleneck. The agent can produce the next version. The operator still has to know what would make it true enough to publish.
 
 An agent can produce a diff faster than a human can understand its consequences. That does not remove engineering work. It moves the work from typing implementation to deciding what evidence would make the implementation acceptable.
 
@@ -124,6 +128,58 @@ The agent can still move fast. The difference is that every public surface now h
 
 That is the practical meaning of Software 3.0 for an operator: do not celebrate faster generation until the rejection path is at least as real as the creation path.
 
+## The Case File
+
+The concrete case is this article's own repair loop.
+
+Before the reference-ceiling pass, the article had already passed the normal publication gate. It had references, an image, a source packet, and a human approval. It was publishable. It was not yet strong.
+
+The above-gate audit made that difference visible:
+
+```txt
+report=F:\Aisaak\CompanyArtifacts\vibecode-reference-ceiling-audit\latest.json
+slug=software-3-0
+score=85
+grade=strong-but-thin
+gaps=opening scene, named system/date/artifact, inline artifacts, length
+```
+
+That is the Software 3.0 shift in one file. The first gate asks, "Can this ship without obvious damage?" The second gate asks, "Would a serious reader keep reading?"
+
+Different question. Different verifier.
+
+The repair did not require the agent to be more inspired. It required the system to point at the exact missing proof:
+
+```txt
+src/data/blog/software-3-0.md
+src/data/publication-approvals.json
+scripts/audit-reference-ceiling.mjs
+scripts/audit-reference-writing.mjs
+scripts/verify-rendered-pages.mjs
+F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
+F:\Aisaak\CompanyArtifacts\llm-wiki-completed\companies\vibecode-town\plans\software-3-0-evidence-bundle.md
+```
+
+That list is the new engineering object. Not the prompt. Not the chat. The object is the contract around the generated work.
+
+## Before/After For The Operator
+
+The shallow Software 3.0 workflow says:
+
+```txt
+ask agent -> get output -> skim output -> ship
+```
+
+The usable workflow says:
+
+```txt
+name source -> name boundary -> generate diff -> run verifier -> inspect receipt -> approve hash
+```
+
+The second workflow is slower in the moment and faster over the week. It prevents the hidden tax: rereading old chats, guessing why a file changed, fixing image drift after publish, or discovering that an approval no longer matches the Markdown hash.
+
+The best Software 3.0 systems will not feel like magic. They will feel like fewer mysteries.
+
 ## The Receipt
 
 One verified Vibecode Town receipt is small enough to inspect:
@@ -134,7 +190,8 @@ packet-backed posts: 9
 post image contracts checked: 10
 rendered viewport checks: 24
 publication approval records: 10
-reference-writing average score: 94
+reference-writing average score: 100
+reference-ceiling average score before this pass: 96
 ```
 
 The before/after is the important part.
