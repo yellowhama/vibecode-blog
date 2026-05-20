@@ -4,6 +4,7 @@ import { spawnSync } from "node:child_process";
 import { makeTestTempDir } from "./test-temp-root.mjs";
 
 const templateGenerator = "scripts/generate-human-quality-review-template.mjs";
+const reviewEditorGenerator = "scripts/generate-human-quality-review-editor.mjs";
 const resultVerifier = "scripts/verify-human-quality-review-result.mjs";
 const revisionQueueGenerator = "scripts/generate-human-quality-revision-queue.mjs";
 
@@ -96,6 +97,33 @@ async function main() {
       throw new Error("expected human quality review template check to pass");
     }
     process.stdout.write("human_quality_review_template_check_self_test=pass\n");
+
+    const editorPath = join(root, "editor.html");
+    result = run(reviewEditorGenerator, ["--template", templatePath, "--output", editorPath]);
+    if (result.status !== 0 || !result.stdout.includes("human_quality_review_editor=pass")) {
+      process.stderr.write(result.stdout + result.stderr);
+      throw new Error("expected human quality review editor generation to pass");
+    }
+    const editorHtml = await readFile(editorPath, "utf8");
+    for (const requiredText of [
+      "Human Quality Review Editor",
+      "Copy JSON",
+      "Any rejected row keeps the draft private",
+      "Evidence density",
+      "Embarrassment risk",
+    ]) {
+      if (!editorHtml.includes(requiredText)) {
+        throw new Error(`generated human quality review editor missing ${requiredText}`);
+      }
+    }
+    process.stdout.write("human_quality_review_editor_generation_self_test=pass\n");
+
+    result = run(reviewEditorGenerator, ["--check", "--template", templatePath, "--output", editorPath]);
+    if (result.status !== 0 || !result.stdout.includes("human_quality_review_editor=pass")) {
+      process.stderr.write(result.stdout + result.stderr);
+      throw new Error("expected fresh human quality review editor check to pass");
+    }
+    process.stdout.write("human_quality_review_editor_check_self_test=pass\n");
 
     await writeFile(reviewPath, `${JSON.stringify(reviewFixture(summary), null, 2)}\n`, "utf8");
     result = run(resultVerifier, ["--summary", summaryPath, "--review", reviewPath]);
