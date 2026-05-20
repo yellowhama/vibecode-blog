@@ -23,13 +23,15 @@ references:
 
 # The Work Disk Contract for AI Coding Agents
 
-On 2026-05-21, I ran a PowerShell drive check, checked the LLM wiki archive gate, and opened the Chrome-rendered audit under `F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest`. The disk problem was not code. It was where the agent was allowed to leave proof.
+On 2026-05-21, I ran a PowerShell drive check, checked the LLM wiki archive gate, and opened the Chrome-rendered audit under `F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest`. The disk problem was not code. It was where the agent was allowed to leave proof. Use this rule before accepting an agent run: name the source, memory, rendered-proof, and temp roots first.
 
 AI coding agents do not only edit source files, and that is the hidden risk.
 
 They build. They test. They create fixtures. They write indexes. They generate logs. They produce evidence bundles, compare outputs, and sometimes leave large temp trees behind. If those artifacts drift to the wrong drive, the agent can pass a test while making the next handoff harder to trust.
 
 On this workstation, that distinction is not theoretical. The active source repo is on `F:\Aisaak\Projects\vibecode-town`, the LLM wiki archive is on `F:\Aisaak\CompanyArtifacts\llm-wiki-completed`, and the rendered audit writes to `F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest`.
+
+If any receipt lands outside those roots, rerun it under the contract instead of cleaning it up by hand.
 
 The repeated failure was still the old one: work kept drifting toward `C:` because the operating system made that the easy default.
 
@@ -40,6 +42,55 @@ If builds, screenshots, search indexes, and evidence bundles fall into the opera
 A work disk contract answers that before the next long run starts.
 
 ![AI work disk contract diagram](/images/posts/ai-agent-work-disk-contract.png)
+
+## Approval Proof Chain
+
+Bad output:
+
+```txt
+The agent writes screenshots, test fixtures, wiki notes, and rendered summaries wherever the SDK defaults.
+The operator sees tests finish.
+Someone copies the C-drive leftovers to F by hand.
+The next session accepts the claim without knowing whether the proof was born under the contract or rescued later.
+```
+
+Gate added:
+
+```powershell
+Get-PSDrive -Name C,F
+Test-Path F:\Aisaak\CompanyArtifacts\llm-wiki-completed
+Test-Path F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
+```
+
+Then run the system checks that prove the archive and public proof still line up:
+
+```txt
+python .\reindex_wiki.py
+.\archive_completed_artifacts.ps1
+npm run verify:rendered-pages
+npm run verify:publication-approvals
+```
+
+After:
+
+```txt
+accepted review result exists
+zero-item revision plan exists
+publication approval hash matches contentSha256
+archive_files_copied=373
+source_markdown_count=341
+archive_markdown_count=341
+Indexed 341 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
+rendered desktop/mobile receipts still pass
+```
+
+Source: repo path, wiki root, rendered-audit root, test-temp root, archive sync output, and publication approval hash.
+
+Accept only when: the receipt was produced under the named roots and the archive/index/rendered checks pass after the run.
+
+Reject when: the evidence was copied into place after the run, the temp root is unknown, or the next agent would have to search `C:`, Downloads, chat, or an SDK temp folder.
+
+Boundary: a disk contract proves artifact jurisdiction; it does not prove the code, article, or runtime claim is correct.
 
 ## Bad Default
 
@@ -115,10 +166,10 @@ test temp: F:\Aisaak\CompanyArtifacts\test-temp
 The archive receipt from the latest wiki sync was:
 
 ```txt
-archive_files_copied=353
-source_markdown_count=321
-archive_markdown_count=321
-Indexed 321 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
+archive_files_copied=373
+source_markdown_count=341
+archive_markdown_count=341
+Indexed 341 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
 ```
 
 That is why the path contract matters. Without it, an agent can pass a test while leaving the evidence trail in the wrong place.
@@ -213,9 +264,9 @@ Test-Path $env:VIBECODE_TEST_TEMP_DIR
 And make the verifier say what happened:
 
 ```txt
-completion_audit_sync_archive_files_copied=353
-completion_audit_sync_source_markdown_count=321
-completion_audit_sync_archive_markdown_count=321
+completion_audit_sync_archive_files_copied=373
+completion_audit_sync_source_markdown_count=341
+completion_audit_sync_archive_markdown_count=341
 company_artifacts_archive_status=pass
 ```
 
