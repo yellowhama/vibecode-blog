@@ -16,7 +16,7 @@ const PAIN_WORDS =
 const READER_MOVE_WORDS =
   /\b(use this|before you|before accepting|do not accept|reject|accept|run|check|ask|decide|switch|write the|look for|forward this|send this)\b/i;
 const POV_WORDS =
-  /\b(the point is|the rule is|the trap is|the useful move|the better question|the wrong standard|the standard is|the practical move|that is why|that is the point|not .* but|instead of|rather than|only when)\b/i;
+  /\b(the point is|the rule is|the trap is|the useful move|the better question|the wrong standard|the standard is|the practical move|that is why|that is the point|not [^.]{0,120} but|instead of|rather than|only when)\b/gi;
 const WHY_WORDS =
   /\b(because|matters|means|so|cost|risk|trust|proof|evidence|reader|review|approval|public|production|security|handoff|decision|boundary)\b/gi;
 const PROCEDURE_WORDS =

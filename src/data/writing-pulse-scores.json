@@ -1,14 +1,14 @@
 {
-  "averageScore": 84,
-  "generatedAt": "2026-05-20T22:12:54.629Z",
+  "averageScore": 91,
+  "generatedAt": "2026-05-21T07:45:00+09:00",
   "minScore": 80,
   "minAverage": 82,
   "status": "writing_pulse_ready",
   "posts": {
     "ai-agent-work-disk-contract": {
-      "score": 86,
-      "grade": "blogger-pulse-pass",
-      "gaps": ["explicit judgment lines", "dated/count/hash receipts"]
+      "score": 94,
+      "grade": "blogger-pulse-strong",
+      "gaps": ["dated/count/hash receipts"]
     },
     "ai-memory-operating-structure": {
       "score": 86,
@@ -16,19 +16,19 @@
       "gaps": ["explicit judgment lines", "dated/count/hash receipts"]
     },
     "design-is-a-technical-contract": {
-      "score": 81,
-      "grade": "blogger-pulse-pass",
-      "gaps": ["reader action in opening", "explicit judgment lines", "dated/count/hash receipts"]
+      "score": 98,
+      "grade": "blogger-pulse-strong",
+      "gaps": []
     },
     "frustration-as-spec": {
-      "score": 86,
-      "grade": "blogger-pulse-pass",
-      "gaps": ["explicit judgment lines", "dated/count/hash receipts"]
+      "score": 94,
+      "grade": "blogger-pulse-strong",
+      "gaps": ["dated/count/hash receipts"]
     },
     "html-review-artifacts-for-agents": {
-      "score": 81,
-      "grade": "blogger-pulse-pass",
-      "gaps": ["reader action in opening", "explicit judgment lines", "dated/count/hash receipts"]
+      "score": 89,
+      "grade": "blogger-pulse-strong",
+      "gaps": ["reader action in opening", "dated/count/hash receipts"]
     },
     "mcp-shared-state-data-leak": {
       "score": 81,
@@ -41,19 +41,19 @@
       "gaps": ["explicit judgment lines", "dated/count/hash receipts"]
     },
     "vercel-is-not-a-deployment-contract": {
-      "score": 86,
-      "grade": "blogger-pulse-pass",
-      "gaps": ["explicit judgment lines", "dated/count/hash receipts"]
+      "score": 94,
+      "grade": "blogger-pulse-strong",
+      "gaps": ["dated/count/hash receipts"]
     },
     "what-vibe-coding-actually-is": {
-      "score": 86,
-      "grade": "blogger-pulse-pass",
-      "gaps": ["explicit judgment lines", "dated/count/hash receipts"]
+      "score": 94,
+      "grade": "blogger-pulse-strong",
+      "gaps": ["dated/count/hash receipts"]
     }
   },
   "weakestQueue": [
-    "design-is-a-technical-contract",
-    "html-review-artifacts-for-agents",
-    "mcp-shared-state-data-leak"
+    "mcp-shared-state-data-leak",
+    "ai-memory-operating-structure",
+    "software-3-0"
   ]
 }
