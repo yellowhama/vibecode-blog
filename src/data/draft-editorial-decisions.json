@@ -13,15 +13,17 @@
       "decision": "keep_internal_example",
       "approvalCandidate": false,
       "reviewerType": "editorial-system",
-      "decidedAt": "2026-05-20T04:40:00.000Z",
-      "rationale": "The draft is useful as an internal proof that the writing harness can move from source packet to critique repair, but it still depends on build-history context and lacks human critique, rendered candidate proof, image contract promotion, and final hash approval.",
+      "decidedAt": "2026-05-20T05:25:00.000Z",
+      "rationale": "The draft is useful as an internal proof that the writing harness can move from source packet to critique repair, and Loop 37 made the prose more readable. It still depends on build-history context and lacks a public-facing before/after writing example, human critique, rendered candidate proof, image contract promotion, and final hash approval.",
       "candidateBlockers": [
+        "public_before_after_example",
         "human_critique",
         "rendered_candidate",
         "hash_approval",
         "image_contract"
       ],
       "requiredNextActions": [
+        "Add one public-facing before/after writing example that shows a weak AI draft, the packet artifact that caught it, and the improved excerpt.",
         "Run a human editorial critique focused on whether the article works for a reader who has not followed the internal build history.",
         "If promoted, add a public post image contract and rendered candidate screenshots.",
         "If promoted, create a hash-bound human approval record after the final markdown and image are stable."
@@ -29,6 +31,7 @@
       "evidence": [
         "src/data/blog/writing-harness-not-more-prompts.md",
         "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/writing-harness-not-more-prompts-draft-critique.md",
+        "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/loop-37-writing-harness-draft-editorial-critique-2026-05-20.md",
         "public/images/posts/writing-harness-not-more-prompts.png"
       ]
     }

@@ -29,20 +29,28 @@ approval_required=true
 approval_candidate=false
 editorial_decision=keep_internal_example
 editorial_decision_ref=src/data/draft-editorial-decisions.json#writing-harness-not-more-prompts
-candidate_blockers=human_critique,rendered_candidate,hash_approval,image_contract
+candidate_blockers=public_before_after_example,human_critique,rendered_candidate,hash_approval,image_contract
 ```
 
 ## Opening Pressure
 
-The first real test was boring in the exact way a useful system test should be boring.
+The first honest test of the writing system did not look like a breakthrough.
 
-A processed AutoAgent source note went into the LLM wiki. A packet generator turned it into six files. A draft generator refused to write until the packet quality gate passed. Then the output landed here as `draft: true`, with no public route, no approval record, and no claim that it was finished.
+It looked like a source note going into the LLM wiki. Then six packet files. Then a draft generator refusing to run until the source workflow quality gate passed. Then a markdown file landing here as `draft: true`, with no public route, no approval record, and no permission to pretend it was done.
 
 That is the point.
 
-The weak move is to ask for better taste. The durable move is to define the writing harness, run it against a source, and keep only the changes that improve the article.
+Most AI writing advice skips this boring part and jumps straight to the costume rack.
 
-That sounds less romantic than "find your voice."
+"Write with more voice."
+
+"Make it punchier."
+
+"Sound like a top technical blogger."
+
+That is how you get prose wearing a leather jacket it did not earn.
+
+The durable move is less glamorous: define the writing harness, run it against a source, keep the traces, and reject the draft when the only improvement is confidence.
 
 It is also the difference between an agent that writes another polished summary and an agent that can be corrected, measured, and made less embarrassing next week.
 
@@ -64,15 +72,23 @@ Primary source: https://www.youtube.com/watch?v=RoaPvj9Ovug
 
 ## Draft Body
 
-The useful part of the AutoAgent pattern is not "agents improve themselves."
+The useful part of the AutoAgent pattern is not the headline version: "agents improve themselves."
 
-That phrase is too big. It gets people excited in exactly the wrong way.
+That phrase is too big. It gets people excited in exactly the wrong room.
 
-The useful part is smaller and more operational: the system separates the thing being improved from the thing doing the improvement. A task agent runs the work. A meta-agent changes the harness. A benchmark decides whether the change helped. The loop keeps the winner and throws away the loser.
+The useful part is smaller and more operational: the system separates the thing being improved from the thing doing the improvement.
+
+A task agent runs the work.
+
+A meta-agent changes the harness.
+
+A benchmark decides whether the change helped.
+
+The loop keeps the winner and throws away the loser.
 
 For writing, most teams do the opposite.
 
-They ask for a better prompt. Then a better voice prompt. Then a more opinionated voice prompt. Then a prompt that says "write like a top technical blogger," which is usually the moment the piece begins wearing a leather jacket it did not earn.
+They ask for a better prompt. Then a better voice prompt. Then a more opinionated voice prompt. Then a prompt that says "write like a top technical blogger," which usually produces three strong sentences, one fake anecdote, and a conclusion that sounds like it is trying to close a conference keynote.
 
 The missing object is the harness.
 
@@ -104,6 +120,10 @@ That is why this draft exists.
 
 It was not started from "write a post about self-improving agents." It started from a source extract in the LLM wiki, then a packet generator created six files: reader pressure, title angle, evidence bundle, brief, Gate 0, and draft critique. The draft generator then reran the packet quality gate and wrote only this `draft: true` file.
 
+That detail sounds procedural, but it changes the writing problem.
+
+A normal AI draft begins with a topic. This one begins with a paper trail.
+
 The receipt matters because the weak version of an agent writing system has no memory of why the post exists. It has a topic and a vibe. The stronger version has a pressure chain:
 
 ```txt
@@ -111,6 +131,17 @@ source -> angle -> evidence -> reader decision -> reject rule -> critique pressu
 ```
 
 If one link is missing, the agent should not write faster. It should stop earlier.
+
+That is the point most "AI content workflow" demos miss. Speed is not the scarce resource. Permission is.
+
+The agent should not be allowed to produce a public-looking article before the system can answer four questions:
+
+```txt
+What source changed this claim?
+What reader decision does the article help with?
+What artifact proves the mechanism?
+What condition would make us reject the draft?
+```
 
 Here is the before/after that matters:
 
@@ -124,13 +155,27 @@ Here is the before/after that matters:
 
 This is also where the self-improving-agent analogy should stop.
 
-Writing quality is not a single benchmark. A reference-ceiling score can tell us a draft lacks a scene, an artifact, a transfer, or visual proof. It cannot tell us whether the piece has earned the reader's trust. That last judgment still belongs to an editor who can say, "This is technically supported and still boring."
+Writing quality is not a single benchmark.
+
+A reference-ceiling score can tell us a draft lacks a scene, an artifact, a transfer, or visual proof. It cannot tell us whether the piece has earned the reader's trust. That last judgment still belongs to an editor who can say, "This is technically supported and still boring."
 
 The harness is not here to replace taste.
 
 It is here to make taste inspectable.
 
-When an editor says the post is bad, the system should be able to ask a better next question than "make it punchier." Did the opening start with a visible failure? Did the source change the claim? Did the article give the reader a reusable decision? Did the image explain the mechanism? Did the draft overclaim? Did the rendered page surface the evidence before the reader bounced?
+When an editor says the post is bad, the system should be able to ask a better next question than "make it punchier."
+
+Did the opening start with a visible failure?
+
+Did the source change the claim?
+
+Did the article give the reader a reusable decision?
+
+Did the image explain the mechanism?
+
+Did the draft overclaim?
+
+Did the rendered page surface the evidence before the reader bounced?
 
 Those questions can become files, gates, and receipts.
 
@@ -150,6 +195,16 @@ Use this decision table before automating any agent writing workflow:
 
 The rule is simple: prompts can suggest prose, but the harness decides whether the prose deserved to exist.
 
+The harder rule is more useful: if the draft cannot show the trace that produced it, do not ask it to sound more human. Ask why it was allowed to write at all.
+
+## Editorial Critique Result
+
+Current verdict: keep as an internal example.
+
+This draft is now readable enough to teach the harness idea, but it is not yet strong enough to publish as a reference blog post. It still leans on our internal build history. A public version needs one sharper outside-facing scene: a bad AI article that passed a vibe prompt, the packet artifacts that caught it, the rewritten excerpt, and the exact reason the harness made the piece better.
+
+The article should be promoted only after that before/after example exists.
+
 ## Approval Candidate Verdict
 
 Do not promote this draft yet.
@@ -167,4 +222,4 @@ It is a useful internal example because the harness improved the article in visi
 
 The draft can sound like a summary of the source instead of a sharp blog post with a visible scene and reader transfer.
 
-Current status: stronger than a scaffold, still not publication-ready. Before this can become public, it needs a real visual artifact, a stricter critique pass, and an approval record bound to the final markdown hash.
+Current status: stronger than a scaffold, still not publication-ready. Before this can become public, it needs a public-facing before/after writing example, rendered candidate proof, an image contract, and an approval record bound to the final markdown hash.
