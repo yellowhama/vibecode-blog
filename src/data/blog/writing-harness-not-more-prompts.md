@@ -30,6 +30,12 @@ approval_required=true
 
 ## Opening Pressure
 
+The first real test was boring in the exact way a useful system test should be boring.
+
+A processed AutoAgent source note went into the LLM wiki. A packet generator turned it into six files. A draft generator refused to write until the packet quality gate passed. Then the output landed here as `draft: true`, with no public route, no approval record, and no claim that it was finished.
+
+That is the point.
+
 The weak move is to ask for better taste. The durable move is to define the writing harness, run it against a source, and keep only the changes that improve the article.
 
 That sounds less romantic than "find your voice."
@@ -88,6 +94,8 @@ rendered audit -> what the reader actually sees
 human critique -> judgment the benchmark cannot own
 ```
 
+![Writing harness draft visual](/images/posts/writing-harness-not-more-prompts.png)
+
 That is why this draft exists.
 
 It was not started from "write a post about self-improving agents." It started from a source extract in the LLM wiki, then a packet generator created six files: reader pressure, title angle, evidence bundle, brief, Gate 0, and draft critique. The draft generator then reran the packet quality gate and wrote only this `draft: true` file.
@@ -118,7 +126,7 @@ The harness is not here to replace taste.
 
 It is here to make taste inspectable.
 
-When an editor says the post is bad, the system should be able to ask a better next question than "make it punchier." Did the opening start with a visible failure? Did the source change the claim? Did the article give the reader a reusable decision? Did the image prove anything? Did the draft overclaim? Did the rendered page surface the evidence before the reader bounced?
+When an editor says the post is bad, the system should be able to ask a better next question than "make it punchier." Did the opening start with a visible failure? Did the source change the claim? Did the article give the reader a reusable decision? Did the image explain the mechanism? Did the draft overclaim? Did the rendered page surface the evidence before the reader bounced?
 
 Those questions can become files, gates, and receipts.
 
