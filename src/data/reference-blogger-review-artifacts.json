@@ -17,6 +17,14 @@
       "summary": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/html-review-artifacts-for-agents-reference-blogger-review-summary.json",
       "reviewResult": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/html-review-artifacts-for-agents-reference-blogger-review-result.json",
       "revisionPlan": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/html-review-artifacts-for-agents-reference-blogger-revision-plan.json"
+    },
+    {
+      "slug": "mcp-shared-state-data-leak",
+      "blogDir": "src/data/blog",
+      "reviewArtifact": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/mcp-shared-state-data-leak-reference-blogger-review.html",
+      "summary": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/mcp-shared-state-data-leak-reference-blogger-review-summary.json",
+      "reviewResult": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/mcp-shared-state-data-leak-reference-blogger-review-result.json",
+      "revisionPlan": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/mcp-shared-state-data-leak-reference-blogger-revision-plan.json"
     }
   ]
 }

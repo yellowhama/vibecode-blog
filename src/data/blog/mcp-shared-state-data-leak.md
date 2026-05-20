@@ -107,6 +107,8 @@ The message reaches the wrong stream or the wrong client times out.
 
 That is why the advisory is uncomfortable. The leak is not "someone forgot auth." It is "auth succeeded, but the object that routes messages was shared."
 
+Make the cost concrete. A sampling prompt meant for Client A can land on Client B's stream. Client B times out, Client A receives a confusing retry, and the audit log still shows two authenticated users hitting the correct endpoint. Now the incident review is not "who bypassed auth?" It is "which shared object quietly mixed tenant state after auth succeeded?"
+
 ## The Review That Catches It
 
 The review that would catch this bug is almost embarrassingly small.
@@ -238,6 +240,8 @@ For stateless deployment, create fresh server and transport instances per reques
 The important question is not "does the endpoint return 200?" The question is "what object owns client state, and can another client reach it?"
 
 That question belongs in code review, not only in incident response.
+
+Forward this to the engineer or security reviewer who says the MCP endpoint is stateless because it is HTTP. The decision is specific: can they approve after `npm update`, or do they still need constructor-location evidence and a named lifecycle owner for every server and transport instance?
 
 A concrete release gate can be boring:
 
