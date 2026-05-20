@@ -24,6 +24,8 @@ references:
 
 The problem with the normal design handoff is that it fails agents for the same reason vague prompts fail them: too much context lives in someone's head.
 
+The reader decision is direct: before asking an agent to copy a visual style, turn the reusable roles into `DESIGN.md` tokens or keep the screenshot in review.
+
 A screenshot says what a screen looked like. It does not reliably say why the primary color exists, which type scale owns body copy, what a button hover variant is allowed to change, or which contrast rule should block a bad component.
 
 That is why DESIGN.md matters. It turns design taste into a technical contract the agent can read, edit, and lint.
@@ -281,6 +283,38 @@ The review question is blunt:
 
 ```txt
 If another agent reads this file tomorrow, will it know what to preserve, what to change, and what to refuse?
+```
+
+## Proof Chain
+
+Here is the design chain as proof, not a mood-board mood:
+
+```txt
+Bad output:
+- A Stitch screenshot looks good.
+- The agent copies the surface.
+- The next prompt asks for "the same style."
+- No one can say which color role, type role, component variant, or contrast rule must survive.
+
+Gate added:
+- Name the reusable role before encoding it.
+- Put the token value and the reasoning in DESIGN.md.
+- Run npx @google/design.md lint DESIGN.md.
+- Reject any visual decision that cannot round-trip into tokens, component props, or a patch checklist.
+
+After:
+- The current accepted review, zero-item revision plan, approval hash, and contentSha256 point at the revised article.
+- The article has a source packet, agent contract, HTML review surface, CLI snapshot, and public image-contract receipt.
+- The next agent gets a role to preserve instead of a screenshot to imitate.
+```
+
+The practical template is deliberately small:
+
+```txt
+Source: screenshot, mockup, DESIGN.md, token diff, or component implementation.
+Accept only when: the decision has a named role, a lintable value, and at least one reuse path.
+Reject when: the artifact is only a mood, one-off screenshot guess, or HTML review with no token/export path.
+Boundary: DESIGN.md preserves decisions; it does not prove final UI quality.
 ```
 
 Forward this to the builder who says, "just paste the Stitch screenshot into the next prompt." The decision is narrow: can this visual choice become a named role with a lintable value, or is it still review material that should stay outside the durable design memory?
