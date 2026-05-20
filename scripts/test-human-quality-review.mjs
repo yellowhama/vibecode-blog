@@ -8,6 +8,7 @@ const reviewEditorGenerator = "scripts/generate-human-quality-review-editor.mjs"
 const resultVerifier = "scripts/verify-human-quality-review-result.mjs";
 const revisionQueueGenerator = "scripts/generate-human-quality-revision-queue.mjs";
 const revisionPlanGenerator = "scripts/generate-human-quality-revision-plan.mjs";
+const revisionEditorGenerator = "scripts/generate-human-quality-revision-editor.mjs";
 
 function run(script, args) {
   return spawnSync(process.execPath, [resolve(script), ...args], {
@@ -313,6 +314,38 @@ async function main() {
       throw new Error("expected fresh human quality revision plan check to pass");
     }
     process.stdout.write("human_quality_revision_plan_check_self_test=pass\n");
+
+    const revisionEditorPath = join(root, "revision-editor.html");
+    result = run(revisionEditorGenerator, ["--plan", planPath, "--draft", draftPath, "--output", revisionEditorPath]);
+    if (
+      result.status !== 0 ||
+      !result.stdout.includes("human_quality_revision_editor=pass") ||
+      !result.stdout.includes("human_quality_revision_editor_items=1")
+    ) {
+      process.stderr.write(result.stdout + result.stderr);
+      throw new Error("expected anchored human quality revision plan to produce revision editor");
+    }
+    const revisionEditorHtml = await readFile(revisionEditorPath, "utf8");
+    for (const requiredText of [
+      "Human Quality Revision Desk",
+      "Copy Repair Prompt",
+      "Current Section Context",
+      "Evidence density",
+      "Add concrete screenshot proof before promotion.",
+      "Preserve draft:true and approval_candidate=false",
+    ]) {
+      if (!revisionEditorHtml.includes(requiredText)) {
+        throw new Error(`generated human quality revision editor missing ${requiredText}`);
+      }
+    }
+    process.stdout.write("human_quality_revision_editor_generation_self_test=pass\n");
+
+    result = run(revisionEditorGenerator, ["--check", "--plan", planPath, "--draft", draftPath, "--output", revisionEditorPath]);
+    if (result.status !== 0 || !result.stdout.includes("human_quality_revision_editor=pass")) {
+      process.stderr.write(result.stdout + result.stderr);
+      throw new Error("expected fresh human quality revision editor check to pass");
+    }
+    process.stdout.write("human_quality_revision_editor_check_self_test=pass\n");
 
     result = run(revisionQueueGenerator, ["--check", "--summary", summaryPath, "--review", reviewPath, "--output", queuePath]);
     if (result.status !== 0 || !result.stdout.includes("human_quality_revision_queue=pass")) {
