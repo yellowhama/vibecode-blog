@@ -1,4 +1,4 @@
-import { mkdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 import { makeTestTempDir } from "./test-temp-root.mjs";
@@ -91,6 +91,22 @@ async function main() {
     if (result.status !== 0 || !result.stdout.includes("human_promotion_review_packet=pass")) {
       process.stderr.write(result.stdout + result.stderr);
       throw new Error("expected human promotion review packet generation to pass");
+    }
+    const generatedHtml = await readFile(output, "utf8");
+    const generatedSummary = JSON.parse(await readFile(summary, "utf8"));
+    if (
+      !generatedHtml.includes("Reference Blogger Scorecard") ||
+      !generatedHtml.includes("Any reject keeps the draft private") ||
+      !generatedHtml.includes("Evidence density")
+    ) {
+      throw new Error("expected generated human review packet to include reference blogger scorecard");
+    }
+    if (
+      !Array.isArray(generatedSummary.humanQualityScorecard) ||
+      generatedSummary.humanQualityScorecard.length < 6 ||
+      !generatedSummary.humanQualityScorecard.some((item) => item.label === "Embarrassment risk")
+    ) {
+      throw new Error("expected generated human review summary to include human quality scorecard");
     }
     process.stdout.write("human_promotion_review_packet_generation_self_test=pass\n");
 

@@ -84,6 +84,51 @@ function reviewSummaryFacts(reviewSummary) {
   ];
 }
 
+const HUMAN_QUALITY_SCORECARD = [
+  {
+    label: "First 30 seconds",
+    rejectIf:
+      "A cold reader cannot say what problem the article is about, why it matters, and what tension is on the table before the internal system appears.",
+    requiredEvidence:
+      "Opening scene, failed paragraph, or visible artifact that creates reader pressure without relying on loop history.",
+  },
+  {
+    label: "Evidence density",
+    rejectIf:
+      "The article asks the reader to trust claims like better, strong, or reference quality without a screenshot, diff, table, log, hash, source packet, or before/after trace nearby.",
+    requiredEvidence:
+      "At least one concrete proof object per major claim, with enough context for a reviewer to inspect it.",
+  },
+  {
+    label: "Point of view",
+    rejectIf:
+      "The piece sounds like a neutral how-to, tool recap, or agent-generated explainer instead of making a defensible judgment about what teams should stop or start doing.",
+    requiredEvidence:
+      "A sharp accept/reject rule, tradeoff, or operating boundary that could be disagreed with.",
+  },
+  {
+    label: "Reader transfer",
+    rejectIf:
+      "The reader leaves informed but cannot reuse a checklist, review form, prompt shape, decision matrix, or operating rule on their own work.",
+    requiredEvidence:
+      "A reusable artifact whose fields are literal enough to copy into another draft review.",
+  },
+  {
+    label: "Voice and readability",
+    rejectIf:
+      "The article is accurate but has no pace, no memorable sentence, no human friction, or too many internal nouns in a row.",
+    requiredEvidence:
+      "Short paragraphs, quotable judgment lines, varied sentence rhythm, and at least one scene-level moment that is not generic.",
+  },
+  {
+    label: "Embarrassment risk",
+    rejectIf:
+      "One claim would look inflated, self-congratulatory, or unsupported if a skeptical technical reader opened the evidence files.",
+    requiredEvidence:
+      "Named claim to cut, weaken, or prove before promotion.",
+  },
+];
+
 function buildSummary({ slug, markdownSha256, title, decision, reviewSummary, body }) {
   const blockers = receiptValue(body, "candidate_blockers")
     .split(/[,;]/)
@@ -115,6 +160,7 @@ function buildSummary({ slug, markdownSha256, title, decision, reviewSummary, bo
       scrollHeight: reviewSummary.scrollHeight,
       screenshot: reviewSummary.screenshot,
     },
+    humanQualityScorecard: HUMAN_QUALITY_SCORECARD,
     humanQuestions: [
       "Does the opening make a cold reader care before it asks them to admire the internal system?",
       "Can the reader reuse the paragraph autopsy and review-desk protocol without knowing the loop history?",
@@ -188,6 +234,10 @@ function buildHtml({ slug, title, markdownSha256, decision, reviewSummary, body 
     .fact { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 14px; min-width: 0; }
     .fact span { display: block; color: var(--muted); font-size: 13px; }
     .fact code { overflow-wrap: anywhere; }
+    table { width: 100%; border-collapse: collapse; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+    th, td { text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); padding: 12px; }
+    th { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+    tr:last-child td { border-bottom: 0; }
     .callout { background: var(--ink); color: var(--paper); border-radius: 8px; padding: 20px; font-family: Georgia, serif; font-size: 25px; line-height: 1.22; }
     .muted { color: var(--muted); }
     @media (max-width: 860px) {
@@ -265,6 +315,25 @@ function buildHtml({ slug, title, markdownSha256, decision, reviewSummary, body 
     </section>
 
     <section class="section">
+      <h2>Reference Blogger Scorecard</h2>
+      <p class="muted">The human reviewer must mark each row <code>accept</code> or <code>reject</code>. Any reject keeps the draft private, even if the technical gates pass.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Criterion</th>
+            <th>Reject If</th>
+            <th>Required Evidence</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${HUMAN_QUALITY_SCORECARD.map(
+            (item) => `<tr><td><strong>${escapeHtml(item.label)}</strong></td><td>${escapeHtml(item.rejectIf)}</td><td>${escapeHtml(item.requiredEvidence)}</td></tr>`,
+          ).join("\n")}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
       <h2>Required Human Questions</h2>
       <div class="grid">
         <div class="question"><strong>1. First 30 seconds</strong>Does the bad-paragraph opening make the problem felt before the article explains the system?</div>
@@ -318,6 +387,9 @@ async function main() {
   }
   if (!html.includes(markdownSha256) || !html.includes("Human Promotion Review Packet")) {
     failures.push("human review HTML is missing required identity text");
+  }
+  if (!html.includes("Reference Blogger Scorecard") || !html.includes("Any reject keeps the draft private")) {
+    failures.push("human review HTML is missing the reference blogger scorecard");
   }
 
   if (check) {
