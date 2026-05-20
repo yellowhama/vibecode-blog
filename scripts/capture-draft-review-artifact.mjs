@@ -185,6 +185,9 @@ async function capture() {
           "Review Desk Protocol",
           "Harness review fields",
           "Review-desk rewrite",
+          "Real Failed-Draft Trace",
+          "failed_draft_commit=0f07239",
+          "source note -> six packet files",
           "Reviewer Decision"
         ];
         const missing = required.filter(item => !text.includes(item));

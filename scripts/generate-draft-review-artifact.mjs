@@ -57,6 +57,7 @@ function paragraph(text) {
 function buildHtml({ slug, title, description, sha256, body }) {
   const opening = section(body, "Opening Pressure");
   const reviewDesk = section(body, "What Changes In The Next Draft Review");
+  const realFailure = section(body, "Real Failure Evidence");
   const readerTransfer = section(body, "Reader Transfer");
   const editorial = section(body, "Editorial Critique Result");
   const risk = section(body, "Draft Risk");
@@ -73,6 +74,9 @@ function buildHtml({ slug, title, description, sha256, body }) {
   const oldReview = codeBlocks.find((block) => block.includes("make it more specific")) ?? "";
   const harnessReview = codeBlocks.find((block) => block.includes("source_changed_claim=which source forced")) ?? "";
   const reviewDeskRewrite = codeBlocks.find((block) => block.includes("The first draft looked fine until the review form")) ?? "";
+  const realFailureReceipt = codeBlocks.find((block) => block.includes("failed_draft_commit=0f07239")) ?? "";
+  const failedOpening = codeBlocks.find((block) => block.includes("source note -> six packet files")) ?? "";
+  const remainingBlockers = codeBlocks.find((block) => block.includes("human_critique=still_open")) ?? "";
 
   const cards = [
     ["Weak paragraph", weakParagraph],
@@ -195,6 +199,29 @@ function buildHtml({ slug, title, description, sha256, body }) {
           <pre>${escapeHtml(content || "missing")}</pre>
         </article>`)
           .join("\n")}
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Real Failed-Draft Trace</h2>
+      <p class="prose">${escapeHtml(paragraph(realFailure))}</p>
+      <div class="grid">
+        <article class="card accent">
+          <h2>Evidence Receipt</h2>
+          <pre>${escapeHtml(realFailureReceipt || "missing")}</pre>
+        </article>
+        <article class="card bad">
+          <h2>Failed Opening</h2>
+          <pre>${escapeHtml(failedOpening || "missing")}</pre>
+        </article>
+        <article class="card good">
+          <h2>Repair Signal</h2>
+          <p>Loop 45 moved the failure into the first screen: the weak paragraph appears first, the autopsy fields come back empty, and the editor has a visible reason to reject the prose.</p>
+        </article>
+        <article class="card accent">
+          <h2>Remaining Blockers</h2>
+          <pre>${escapeHtml(remainingBlockers || "missing")}</pre>
+        </article>
       </div>
     </section>
 
