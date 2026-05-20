@@ -44,6 +44,8 @@ The dangerous part was not that the site was broken. The dangerous part was that
 
 That is how deployment bugs survive. Vercel can make `/sitemap.xml` work with a rewrite. A Linux builder can make `cp -r` work. A preview URL can return 200. Each individual check looks reassuring, but none of them proves the static artifact can survive a host change.
 
+The cost shows up on migration day. Search traffic lands on `/sitemap.xml` and gets a missing file. A setup guide links to `/install.sh` and the static host has nothing to serve. The team burns the launch window arguing about DNS, CDN cache, and Coolify settings when the real failure was already visible in `dist/`.
+
 The better question is uglier and more useful:
 
 ```txt
@@ -225,6 +227,8 @@ Search asset: dist/pagefind/pagefind.js present
 That is the standard Vibecode Town should use before moving a site to Coolify.
 
 The reader version is the same: test the artifact, not the platform dashboard.
+
+Forward this to the teammate who says "the preview URL works, so we can migrate." The decision is narrow: can they approve the deployment from the host dashboard, or do they need a clean static artifact with routes, installer, search files, and verifier output before the migration is real?
 
 ## The Three-Question Review
 
