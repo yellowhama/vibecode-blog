@@ -113,10 +113,10 @@ test temp: F:\Aisaak\CompanyArtifacts\test-temp
 The archive receipt from the latest wiki sync was:
 
 ```txt
-archive_files_copied=278
-source_markdown_count=246
-archive_markdown_count=246
-Indexed 246 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
+archive_files_copied=279
+source_markdown_count=247
+archive_markdown_count=247
+Indexed 247 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
 ```
 
 That is why the path contract matters. Without it, an agent can pass a test while leaving the evidence trail in the wrong place.
@@ -185,9 +185,9 @@ Test-Path $env:VIBECODE_TEST_TEMP_DIR
 And make the verifier say what happened:
 
 ```txt
-completion_audit_sync_archive_files_copied=278
-completion_audit_sync_source_markdown_count=246
-completion_audit_sync_archive_markdown_count=246
+completion_audit_sync_archive_files_copied=279
+completion_audit_sync_source_markdown_count=247
+completion_audit_sync_archive_markdown_count=247
 company_artifacts_archive_status=pass
 ```
 

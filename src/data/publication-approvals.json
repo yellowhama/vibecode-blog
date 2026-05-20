@@ -43,7 +43,7 @@
       "approvedAt": "2026-05-20T22:45:00+09:00",
       "approvalRef": "operator-reference-ceiling-loop-21-2026-05-20",
       "approvalScope": "current_public_baseline_after_work_disk_reference_ceiling_upgrade_loop_21",
-      "contentSha256": "678d803d283ae1f3f560f1fdd4ab86dc0da7edeee6508b31c69b915fde7593df",
+      "contentSha256": "a7a7990bff303e695bba903259953da3d510d428cdaccc4219afdfde206346e3",
       "sourceWorkflow": "packet",
       "image": "/images/posts/ai-agent-work-disk-contract.png",
       "requiredEvidence": [
