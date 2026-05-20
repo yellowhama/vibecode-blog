@@ -13,8 +13,8 @@
       "decision": "keep_internal_example",
       "approvalCandidate": false,
       "reviewerType": "editorial-system",
-      "decidedAt": "2026-05-20T05:55:00.000Z",
-      "rationale": "The draft is useful as an internal proof that the writing harness can move from source packet to critique repair. Loop 38 added a public-facing before/after writing artifact, Loop 39 added a real revision trace from this draft's own opening, Loop 40 added a cold-reader red-pen test, Loop 41 added a one-minute paragraph autopsy form, Loop 42 added a private HTML review artifact, and Loop 43 added rendered screenshot proof for that private review surface. It still needs human critique, public rendered candidate proof, public image contract promotion, and final hash approval before this can become a public approval candidate.",
+      "decidedAt": "2026-05-20T06:20:00.000Z",
+      "rationale": "The draft is useful as an internal proof that the writing harness can move from source packet to critique repair. Loop 38 added a public-facing before/after writing artifact, Loop 39 added a real revision trace from this draft's own opening, Loop 40 added a cold-reader red-pen test, Loop 41 added a one-minute paragraph autopsy form, Loop 42 added a private HTML review artifact, Loop 43 added rendered screenshot proof for that private review surface, and Loop 44 used that artifact for an editorial-system critique. The critique found the draft has a strong argument and useful autopsy artifact, but the opening is still too internal, the scene work is not vivid enough, the AutoAgent comparison is underused, and visual proof remains private-only. It still needs human critique, public rendered candidate proof, public image contract promotion, and final hash approval before this can become a public approval candidate.",
       "candidateBlockers": [
         "human_critique",
         "rendered_candidate",
@@ -22,8 +22,9 @@
         "image_contract"
       ],
       "requiredNextActions": [
-        "Run a human editorial critique focused on whether the before/after writing artifact works for a reader who has not followed the internal build history.",
-        "If promoted, add a public post image contract and rendered candidate screenshots.",
+        "Revise the private draft against the Loop 44 critique: replace the internal-process opening with a reader-recognizable bad-draft scene, add a real-time editorial rejection moment, sharpen the AutoAgent harness-to-harness mapping, and move the paragraph autopsy closer to the center of the article.",
+        "Run a human editorial critique focused on whether the revised before/after writing artifact works for a reader who has not followed the internal build history.",
+        "If promoted, add a public post image contract and rendered candidate screenshots that show the weak paragraph, packet rejection, and autopsy stack.",
         "If promoted, create a hash-bound human approval record after the final markdown and image are stable."
       ],
       "evidence": [
@@ -37,6 +38,7 @@
         "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/writing-harness-not-more-prompts-review-artifact.html",
         "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/writing-harness-not-more-prompts-review-artifact-desktop.png",
         "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/writing-harness-not-more-prompts-review-artifact-summary.json",
+        "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/loop-44-writing-harness-rendered-artifact-editorial-critique-2026-05-20.md",
         "public/images/posts/writing-harness-not-more-prompts.png"
       ]
     }
