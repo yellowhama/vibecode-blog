@@ -213,6 +213,31 @@ The important change is not just the wording. The second version changes the rea
 
 That is the kind of before/after a writing harness should preserve. Not because every diff is profound. Most are not. But because a trace lets the editor argue about a concrete change instead of waving at "tone."
 
+The cold-reader test is harsher than the internal test.
+
+An internal reader can see the machinery and nod. A cold reader has one question: what do I do with this on my own draft tomorrow morning?
+
+So the artifact needs a red pen, not just a receipt:
+
+```txt
+If the paragraph can be moved to another company's blog without changing anything,
+reject it.
+
+If the paragraph names a system but shows no failed sentence, no source,
+and no reader decision, reject it.
+
+If the rewrite sounds better but cannot explain what it made inspectable,
+revert it.
+
+If the trace gives an editor a sharper question, keep it.
+```
+
+That is why the second opening is useful. It does not merely sound less generic. It gives the editor a sharper question: who gave this draft permission to look finished?
+
+That question transfers.
+
+Use it on any AI-written post that feels competent but forgettable. Do not ask whether the prose is polished. Ask what permission the paragraph is trying to smuggle past you.
+
 Here is the bigger before/after that matters:
 
 | Bad writing loop | Better harness loop |
@@ -271,7 +296,9 @@ The harder rule is more useful: if the draft cannot show the trace that produced
 
 Current verdict: keep as an internal example.
 
-This draft is now readable enough to teach the harness idea, and it includes two before/after artifacts: a weak prompt-only paragraph with its packet rejection, and a real revision trace from this draft's own opening. It is still not strong enough to publish as a reference blog post because the revision trace needs human critique and rendered-candidate review.
+This draft is now readable enough to teach the harness idea, and it includes two before/after artifacts: a weak prompt-only paragraph with its packet rejection, and a real revision trace from this draft's own opening. Loop 40 added the cold-reader red-pen test so the artifacts transfer to a reader's own draft instead of only documenting this internal run.
+
+It is still not strong enough to publish as a reference blog post because the red-pen test needs human critique and rendered-candidate review.
 
 The article should be promoted only after a human reviewer says the before/after artifact is strong enough for a cold reader.
 
@@ -292,4 +319,4 @@ It is a useful internal example because the harness improved the article in visi
 
 The draft can sound like a summary of the source instead of a sharp blog post with a visible scene and reader transfer.
 
-Current status: stronger than a scaffold, still not publication-ready. Before this can become public, it needs human critique of the synthetic example and real revision trace, rendered candidate proof, an image contract, and an approval record bound to the final markdown hash.
+Current status: stronger than a scaffold, still not publication-ready. Before this can become public, it needs human critique of the synthetic example, real revision trace, and cold-reader red-pen test; rendered candidate proof; an image contract; and an approval record bound to the final markdown hash.
