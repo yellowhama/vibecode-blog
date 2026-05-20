@@ -153,6 +153,8 @@ source_workflow_quality_gate=pass
 source_workflow_slug=${slug}
 publication_state=draft_only
 approval_required=true
+approval_candidate=false
+candidate_blockers=human_critique,rendered_candidate,hash_approval,image_contract
 \`\`\`
 
 ## The Paragraph That Gets Past You
@@ -212,6 +214,10 @@ Use this table as the minimum reader-transfer shape. Replace the examples with a
 | Claims a benefit | Shows the mechanism that created or broke it | The claim survives without the source |
 | Sounds more confident | Shows a before/after trace | The rewrite only changes tone |
 | Gives advice | Gives an accept/reject test | The reader cannot reuse it tomorrow |
+
+## Approval Candidate Verdict
+
+Not ready. This generated scaffold is not an approval candidate until a human reviewer can inspect the finished draft, rendered candidate, image contract, and final markdown hash.
 
 ## Boundary
 

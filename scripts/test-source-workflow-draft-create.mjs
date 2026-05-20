@@ -68,6 +68,13 @@ async function main() {
       throw new Error("expected generated draft to include gate receipt and approval boundary");
     }
     if (
+      !draft.includes("approval_candidate=false") ||
+      !draft.includes("candidate_blockers=human_critique,rendered_candidate,hash_approval,image_contract") ||
+      !draft.includes("## Approval Candidate Verdict")
+    ) {
+      throw new Error("expected generated draft to include approval-candidate boundary");
+    }
+    if (
       !draft.includes("opening_contract=show the object first") ||
       !draft.includes("scene=what the reader can picture") ||
       !draft.includes("The post should read like a reported field essay") ||

@@ -142,7 +142,7 @@ function scoreDraft(file, text) {
     failures.push("reader problem does not frame a reader decision");
   }
 
-  if (!/\bnot\b|\binstead\b|\bneeds\b|\brequires\b|\bshould\b/i.test(angle)) {
+  if (!/\bnot\b|\binstead\b|\bneeds\b|\brequires\b|\bshould\b|\bmust\b|\bonly\b|\bwithout\b|\bwhen\b/i.test(angle)) {
     failures.push("angle must state a sharp operating claim, not a topic label");
   }
 
