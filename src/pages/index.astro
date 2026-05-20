@@ -62,6 +62,8 @@ const proofMetrics = [
             data-evidence-card
             data-post-slug={leadPost.id}
             data-image-contract={leadPost.data.ogImage}
+            data-reference-score={getReferenceCeiling(leadPost.id) ?? 0}
+            data-source-count={leadPost.data.references?.length ?? 0}
           >
             <img src={leadPost.data.ogImage} alt={leadPost.data.title} class="aspect-[16/9] w-full border border-ink/10 bg-paper-warm object-contain p-2" />
             <div class="mt-4 flex flex-wrap gap-2 font-mono text-[0.54rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
@@ -76,6 +78,9 @@ const proofMetrics = [
             </div>
             <p class="mt-4 font-serif text-xl italic leading-tight text-ink">{leadPost.data.title}</p>
             <p class="mt-2 text-sm leading-relaxed text-text-secondary">{leadPost.data.description}</p>
+            <p class="mt-3 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
+              Start here: scored proof, source packet, unique image, rendered page, current approval hash.
+            </p>
           </a>
         ) : null}
       </div>
@@ -146,6 +151,9 @@ const proofMetrics = [
                   <h4 class="text-xl font-serif italic group-hover:text-accent-dim leading-tight text-ink">{post.data.title}</h4>
                   <p class="mt-2 font-mono text-[0.55rem] uppercase tracking-[0.16em] text-ink-faded">
                     Reference ceiling {getReferenceCeiling(post.id) ?? "n/a"} / packet / unique image / rendered / hash approval / {post.data.references?.length ?? 0} sources
+                  </p>
+                  <p class="mt-1 font-mono text-[0.52rem] uppercase tracking-[0.14em] text-ink-faded">
+                    Reader value: claim, proof artifact, and boundary are visible before opening.
                   </p>
                 </a>
               </li>

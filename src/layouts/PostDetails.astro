@@ -121,9 +121,21 @@ const nextPost =
       >
       <EditPost {hideEditPost} {post} class="max-sm:hidden" />
     </div>
+    {ogImageUrl ? (
+      <figure class="my-6 max-w-app" data-post-hero-image>
+        <img
+          src={ogImageUrl}
+          alt={`${title} proof diagram`}
+          class="aspect-[16/9] w-full border border-ink/10 bg-paper-warm object-contain p-2 shadow-sm"
+        />
+        <figcaption class="mt-2 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
+          Post image contract: unique slug image / rendered proof / current approval hash.
+        </figcaption>
+      </figure>
+    ) : null}
     <article
       id="article"
-      class="app-prose mt-8 w-full max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"
+      class="app-prose app-prose-uses-layout-image mt-8 w-full max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"
     >
       <Content />
     </article>

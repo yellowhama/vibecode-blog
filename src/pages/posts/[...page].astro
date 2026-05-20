@@ -67,6 +67,8 @@ const getReferenceCeiling = (slug: string) =>
         data-evidence-card
         data-post-slug={leadPost.id}
         data-image-contract={leadPost.data.ogImage}
+        data-reference-score={getReferenceCeiling(leadPost.id) ?? 0}
+        data-source-count={leadPost.data.references?.length ?? 0}
       >
         <div>
           <div class="mb-4 flex flex-wrap gap-2 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
@@ -87,6 +89,9 @@ const getReferenceCeiling = (slug: string) =>
           </a>
           <p class="mt-4 max-w-2xl font-mono text-[0.58rem] uppercase tracking-[0.16em] text-ink-faded">
             Evidence receipt: reference ceiling {getReferenceCeiling(leadPost.id) ?? "n/a"} / source packet / unique image / rendered screenshots / current approval hash.
+          </p>
+          <p class="mt-2 max-w-2xl font-mono text-[0.56rem] uppercase tracking-[0.14em] text-ink-faded">
+            Why this is first: the card exposes its score, source count, image contract, rendered proof, and approval state before the click.
           </p>
         </div>
         <a href={`/posts/${leadPost.id}`} class="order-first block no-underline md:order-none">

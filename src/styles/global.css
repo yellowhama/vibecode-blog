@@ -150,6 +150,10 @@ html[data-theme="dark"] {
     background: var(--bg-tertiary);
   }
 
+  article.app-prose-uses-layout-image img[src^="/images/posts/"] {
+    display: none;
+  }
+
   /* Button (pagination) */
   .blog-btn {
     background: var(--background);

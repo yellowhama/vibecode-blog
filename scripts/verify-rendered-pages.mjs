@@ -240,7 +240,7 @@ function pageAuditExpression(expectedImagePath) {
   return `(() => {
     const expectedImagePath = ${JSON.stringify(expectedImagePath)};
     const article = document.querySelector("article") || document.body;
-    const images = Array.from(article.querySelectorAll("img")).map(img => {
+    const images = Array.from(document.querySelectorAll("[data-post-hero-image] img, article img")).map(img => {
       const rect = img.getBoundingClientRect();
       return {
         src: new URL(img.currentSrc || img.src, location.href).pathname,
@@ -258,7 +258,15 @@ function pageAuditExpression(expectedImagePath) {
         }
       };
     });
-    const expected = images.find(image => image.src === expectedImagePath);
+    const expectedImageMatches = images.filter(image => image.src === expectedImagePath);
+    const expected = expectedImageMatches[0] || null;
+    const visibleExpectedImages = expectedImageMatches.filter(image =>
+      image.complete &&
+      image.naturalWidth >= 300 &&
+      image.naturalHeight >= 150 &&
+      image.rect.width >= 220 &&
+      image.rect.height >= 100
+    );
     const h1 = document.querySelector("h1");
     const h1Rect = h1 ? h1.getBoundingClientRect() : null;
     const viewport = { width: window.innerWidth, height: window.innerHeight };
@@ -283,6 +291,9 @@ function pageAuditExpression(expectedImagePath) {
         }
       }));
     const topText = (document.body.innerText || "").trim().replace(/\\s+/g, " ").slice(0, 700);
+    const expectedVisibleHeight = expected
+      ? Math.min(expected.rect.bottom, window.innerHeight) - Math.max(expected.rect.top, 0)
+      : 0;
     return {
       title: document.title,
       h1: h1 ? h1.innerText.trim() : "",
@@ -292,6 +303,7 @@ function pageAuditExpression(expectedImagePath) {
       badWideElements,
       images,
       expectedImage: expected || null,
+      visibleExpectedImageCount: visibleExpectedImages.length,
       expectedImageVisible: Boolean(
         expected &&
         expected.complete &&
@@ -302,6 +314,14 @@ function pageAuditExpression(expectedImagePath) {
       ),
       expectedImageInFirstScreen: Boolean(
         expected &&
+        expected.complete &&
+        expected.naturalWidth >= 300 &&
+        expected.naturalHeight >= 150 &&
+        expected.rect.width >= 220 &&
+        expected.rect.height >= 100 &&
+        expectedVisibleHeight >= 100 &&
+        expected.rect.top >= 0 &&
+        expected.rect.top < window.innerHeight * 0.85 &&
         expected.rect.top < window.innerHeight &&
         expected.rect.bottom > 0
       ),
@@ -419,9 +439,13 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       });
       const expectedContractImage = card.getAttribute("data-image-contract") || "";
       const matchingContractImage = cardImages.find(image => image.src === expectedContractImage) || null;
+      const referenceScore = Number.parseInt(card.getAttribute("data-reference-score") || "0", 10);
+      const sourceCount = Number.parseInt(card.getAttribute("data-source-count") || "0", 10);
       return {
         slug: card.getAttribute("data-post-slug") || "",
         expectedContractImage,
+        referenceScore,
+        sourceCount,
         rect: {
           top: Math.round(rect.top),
           bottom: Math.round(rect.bottom),
@@ -435,6 +459,8 @@ function surfaceAuditExpression(spec, contractImagePaths) {
         hasRenderedProof: text.includes("rendered proof") || text.includes("rendered"),
         hasHashApproval: text.includes("hash approval") || text.includes("hash approved") || text.includes("human approval"),
         hasReferenceCeiling: text.includes("reference ceiling"),
+        hasReferenceScoreData: Number.isFinite(referenceScore) && referenceScore >= 88,
+        hasSourceCountData: Number.isFinite(sourceCount) && sourceCount >= 1,
         matchingContractImage,
         matchingContractImageVisible: Boolean(matchingContractImage?.visible),
         matchingContractImageInFirstScreen: Boolean(matchingContractImage?.inFirstScreen)
@@ -448,6 +474,8 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       card.hasRenderedProof &&
       card.hasHashApproval &&
       card.hasReferenceCeiling &&
+      card.hasReferenceScoreData &&
+      card.hasSourceCountData &&
       card.matchingContractImageVisible &&
       card.matchingContractImageInFirstScreen
     );
@@ -499,6 +527,22 @@ function surfaceAuditExpression(spec, contractImagePaths) {
   })()`;
 }
 
+async function waitForImages(cdp) {
+  await cdp.command("Runtime.evaluate", {
+    expression: `Promise.all(Array.from(document.images).map(img => {
+      if (img.complete) return true;
+      return new Promise(resolve => {
+        const done = () => resolve(true);
+        img.addEventListener("load", done, { once: true });
+        img.addEventListener("error", done, { once: true });
+        setTimeout(done, 2500);
+      });
+    }))`,
+    returnByValue: true,
+    awaitPromise: true,
+  });
+}
+
 async function auditPage(chromePort, baseUrl, outputDir, contract, viewport) {
   const url = `${baseUrl}/posts/${contract.slug}/`;
   const target = await createTarget(chromePort, url);
@@ -519,6 +563,7 @@ async function auditPage(chromePort, baseUrl, outputDir, contract, viewport) {
     await cdp.command("Page.navigate", { url });
     await loaded;
     await new Promise(resolveDelay => setTimeout(resolveDelay, 500));
+    await waitForImages(cdp);
 
     const evaluation = await cdp.command("Runtime.evaluate", {
       expression: pageAuditExpression(contract.image),
@@ -541,6 +586,10 @@ async function auditPage(chromePort, baseUrl, outputDir, contract, viewport) {
     if (audit.badWideElements.length > 0) failures.push("article elements overflow the viewport");
     if (!audit.expectedImage) failures.push(`expected image is missing: ${contract.image}`);
     if (!audit.expectedImageVisible) failures.push(`expected image did not render visibly: ${contract.image}`);
+    if (!audit.expectedImageInFirstScreen) failures.push(`expected image is not strong in the first screen: ${contract.image}`);
+    if (audit.visibleExpectedImageCount !== 1) {
+      failures.push(`expected exactly one visible post image for ${contract.image}, got ${audit.visibleExpectedImageCount}`);
+    }
 
     return {
       slug: contract.slug,
@@ -575,6 +624,7 @@ async function auditSurfaceRoute(chromePort, baseUrl, outputDir, spec, viewport,
     await cdp.command("Page.navigate", { url });
     await loaded;
     await new Promise(resolveDelay => setTimeout(resolveDelay, 500));
+    await waitForImages(cdp);
 
     const evaluation = await cdp.command("Runtime.evaluate", {
       expression: surfaceAuditExpression(spec, contractImagePaths),
