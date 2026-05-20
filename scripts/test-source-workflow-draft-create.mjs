@@ -67,6 +67,17 @@ async function main() {
     if (!draft.includes("source_workflow_quality_gate=pass") || !draft.includes("approval_required=true")) {
       throw new Error("expected generated draft to include gate receipt and approval boundary");
     }
+    if (
+      !draft.includes("opening_contract=show the object first") ||
+      !draft.includes("scene=what the reader can picture") ||
+      !draft.includes("The post should read like a reported field essay") ||
+      !draft.includes("| Opens with the topic | Opens with the artifact or failure |")
+    ) {
+      throw new Error("expected generated draft to include reference-blogger scaffold contracts");
+    }
+    if (draft.includes("TODO: Write this section")) {
+      throw new Error("expected generated draft to avoid blank TODO body scaffolding");
+    }
     process.stdout.write("source_workflow_draft_create_positive_self_test=pass\n");
 
     result = run(draftCreator, [

@@ -159,7 +159,15 @@ approval_required=true
 
 ${hook || "TODO: Open on the visible failure, cost, or proof artifact from the source packet."}
 
-Before this draft can reach human promotion review, this section must show a concrete weak paragraph, log, failed claim, or artifact. It must name what is inspectably wrong, why that failure matters to the reader, and what decision the reader should make next.
+Before this draft can reach human promotion review, the opening must show the object before it explains the topic. Start with the weak paragraph, failed log, screenshot receipt, source contradiction, or decision that made the article necessary.
+
+\`\`\`txt
+opening_contract=show the object first
+must_include=weak quote, failed claim, log line, screenshot receipt, or source contradiction
+reader_pressure=why a smart reader would otherwise accept the wrong thing
+reject_if=the first paragraph could introduce any article in the same category
+rewrite_order=object -> why it fooled us -> what it cost -> what the reader should inspect
+\`\`\`
 
 ## The Failure Is Not Style
 
@@ -179,13 +187,31 @@ Primary source: ${sourceUrl}
 
 ## The Pattern Worth Stealing
 
-TODO: Write this section after reviewing the source and the internal artifacts. The post should make one strong claim, show the evidence, and transfer a concrete accept/reject decision to the reader.
+Replace this scaffold with prose only after every field below has a source-backed answer. The post should read like a reported field essay, not a tool recap or tutorial.
 
-TODO: Preserve a before/after revision trace, a quotable judgment line, and at least one copyable artifact so the editor can see why the rewrite is better instead of merely smoother.
+\`\`\`txt
+scene=what the reader can picture in the first 30 seconds
+claim=one operating claim the article is willing to defend
+mechanism=how the source or internal artifact actually works or fails
+proof=the exact quote, file, command, screenshot, hash, or table that changes the claim
+before_after=what a weaker version would have said and why this version is better
+judgment_line=a sentence a reader could quote because it rejects a lazy default
+reader_artifact=the checklist, table, prompt shape, or review form the reader can reuse
+boundary=what this article does not prove
+\`\`\`
+
+Do not promote the draft because it sounds smooth. Promote it only when the scene, claim, mechanism, proof, and reader artifact make the argument inspectable.
 
 ## The Table To Use Before You Prompt Again
 
-TODO: End with what the reader should now do differently, what they should verify, and what they should reject.
+Use this table as the minimum reader-transfer shape. Replace the examples with article-specific decisions before human review.
+
+| If the draft does this | Rewrite toward this | Reject when |
+| --- | --- | --- |
+| Opens with the topic | Opens with the artifact or failure | The first paragraph could fit any tool recap |
+| Claims a benefit | Shows the mechanism that created or broke it | The claim survives without the source |
+| Sounds more confident | Shows a before/after trace | The rewrite only changes tone |
+| Gives advice | Gives an accept/reject test | The reader cannot reuse it tomorrow |
 
 ## Boundary
 
