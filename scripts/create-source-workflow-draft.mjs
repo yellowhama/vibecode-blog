@@ -159,6 +159,8 @@ approval_required=true
 
 ${hook || "TODO: Open on the visible failure, cost, or proof artifact from the source packet."}
 
+Before this draft can reach human promotion review, this section must show a concrete weak paragraph, log, failed claim, or artifact. It must name what is inspectably wrong, why that failure matters to the reader, and what decision the reader should make next.
+
 ## Reader Problem
 
 ${readerProblem || "TODO: State the reader problem in one inspectable sentence."}
@@ -178,6 +180,8 @@ Primary source: ${sourceUrl}
 ## Draft Body
 
 TODO: Write this section after reviewing the source and the internal artifacts. The post should make one strong claim, show the evidence, and transfer a concrete accept/reject decision to the reader.
+
+TODO: Preserve a before/after revision trace, a quotable judgment line, and at least one copyable artifact so the editor can see why the rewrite is better instead of merely smoother.
 
 ## Reader Transfer
 

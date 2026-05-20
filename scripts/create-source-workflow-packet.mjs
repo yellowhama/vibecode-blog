@@ -87,9 +87,11 @@ function packetText(suffix, context) {
     "Avoid claims that are not supported by the evidence bundle.",
   ]);
   const mustIncludeBullets = bulletList(mustInclude, [
-    "a concrete opening failure or visible action",
+    "a concrete opening failure, weak paragraph, log, or visible action",
     "public source provenance",
     "internal proof artifacts",
+    "a cold-reader reason this matters",
+    "a so-what-now reader decision",
     "accept/reject transfer for the reader",
   ]);
   const nonClaimBullets = bulletList(nonClaims, [
@@ -147,8 +149,9 @@ ${corePoint}
 1. Open on a visible failure, cost, or proof artifact.
 2. Map the public source to the internal evidence.
 3. Explain the mechanism.
-4. Give the reader an accept/reject artifact.
-5. Name the boundary.
+4. Explain why the failure matters now.
+5. Give the reader an accept/reject artifact.
+6. Name the boundary.
 
 ## Proof
 Use the public source, the internal evidence bundle, and the source workflow quality gate receipt.
@@ -159,8 +162,10 @@ Specific, skeptical, evidence-backed, and useful. No generic AI booster copy.`,
 
 ## Required Checks
 - Does the opening show a concrete failure, scene, or action?
+- Does the opening name what is inspectably wrong, not only what the topic is?
 - Does the evidence bundle include public and internal evidence?
 - Does the draft give the reader an accept/reject decision?
+- Can a cold reader answer "why this matters" and "what should I do next" in the first screen?
 - Does the boundary prevent overclaiming?
 
 ## Reject If
@@ -176,11 +181,12 @@ Proceed only if the packet can guide a strong draft without guessing. Reject and
 The draft can sound like a summary of the source instead of a sharp blog post with a visible scene and reader transfer.
 
 ## Revision Pressure
-Every revision must add one of these: visible scene, named artifact, source-backed mechanism, before/after contrast, or accept/reject tool.
+Every revision must add one of these: visible scene, weak-paragraph autopsy, named artifact, source-backed mechanism, before/after contrast, why-it-matters pressure, or accept/reject tool.
 
 ## Quality Bar
 - Reference-writing score should be 100.
 - Reference-ceiling score should be 100 or have a named next repair.
+- Reference-blogger readiness must pass before human promotion review.
 - The draft should be understandable without reading internal chat history.
 
 ## Expected Score
