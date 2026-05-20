@@ -49,6 +49,8 @@
     "draft:human-quality-revision-editor": "node scripts/generate-human-quality-revision-editor.mjs",
     "verify:human-quality-revision-editor": "node scripts/generate-human-quality-revision-editor.mjs --check",
     "verify:human-quality-revision-result": "node scripts/verify-human-quality-revision-result.mjs",
+    "draft:human-quality-post-revision-handoff": "node scripts/generate-human-quality-post-revision-handoff.mjs",
+    "verify:human-quality-post-revision-handoff": "node scripts/generate-human-quality-post-revision-handoff.mjs --check",
     "verify:source-links": "node scripts/verify-source-references.mjs --check-http",
     "verify:factory-contract": "node scripts/verify-factory-contract.mjs",
     "verify:operating-articles": "node scripts/verify-operating-articles.mjs",

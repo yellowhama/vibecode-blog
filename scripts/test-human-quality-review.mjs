@@ -11,6 +11,7 @@ const revisionQueueGenerator = "scripts/generate-human-quality-revision-queue.mj
 const revisionPlanGenerator = "scripts/generate-human-quality-revision-plan.mjs";
 const revisionEditorGenerator = "scripts/generate-human-quality-revision-editor.mjs";
 const revisionResultVerifier = "scripts/verify-human-quality-revision-result.mjs";
+const postRevisionHandoffGenerator = "scripts/generate-human-quality-post-revision-handoff.mjs";
 
 function run(script, args) {
   return spawnSync(process.execPath, [resolve(script), ...args], {
@@ -415,6 +416,57 @@ async function main() {
       throw new Error("expected anchored human quality revision result to pass");
     }
     process.stdout.write("human_quality_revision_result_positive_self_test=pass\n");
+
+    const postRevisionHandoffPath = join(root, "post-revision-handoff.json");
+    result = run(postRevisionHandoffGenerator, [
+      "--plan",
+      planPath,
+      "--after",
+      afterDraftPath,
+      "--result",
+      revisionResultPath,
+      "--output",
+      postRevisionHandoffPath,
+    ]);
+    if (
+      result.status !== 0 ||
+      !result.stdout.includes("human_quality_post_revision_handoff=pass") ||
+      !result.stdout.includes("human_quality_post_revision_handoff_required_regeneration=8")
+    ) {
+      process.stderr.write(result.stdout + result.stderr);
+      throw new Error("expected human quality post revision handoff generation to pass");
+    }
+    const postRevisionHandoff = JSON.parse(await readFile(postRevisionHandoffPath, "utf8"));
+    if (
+      postRevisionHandoff.afterMarkdownSha256 !== sha256(afterDraftText) ||
+      postRevisionHandoff.promotionAllowed !== false ||
+      postRevisionHandoff.draftStillPrivate !== true ||
+      postRevisionHandoff.nextGate !== "regenerate_review_artifacts_before_second_human_review" ||
+      !postRevisionHandoff.requiredRegeneration.some(
+        (item) => item.command === "npm run draft:human-promotion-review-packet",
+      ) ||
+      !postRevisionHandoff.requiredRegeneration.some((item) => item.command === "npm run draft:human-quality-review-editor")
+    ) {
+      throw new Error("expected post revision handoff to require fresh review artifacts for the revised draft");
+    }
+    process.stdout.write("human_quality_post_revision_handoff_generation_self_test=pass\n");
+
+    result = run(postRevisionHandoffGenerator, [
+      "--check",
+      "--plan",
+      planPath,
+      "--after",
+      afterDraftPath,
+      "--result",
+      revisionResultPath,
+      "--output",
+      postRevisionHandoffPath,
+    ]);
+    if (result.status !== 0 || !result.stdout.includes("human_quality_post_revision_handoff=pass")) {
+      process.stderr.write(result.stdout + result.stderr);
+      throw new Error("expected fresh human quality post revision handoff check to pass");
+    }
+    process.stdout.write("human_quality_post_revision_handoff_check_self_test=pass\n");
 
     const broadRewriteText = afterDraftText.replace(
       "The reader leaves with a concrete review form, not a vague instruction to write better.",
