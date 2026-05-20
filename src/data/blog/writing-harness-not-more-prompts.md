@@ -34,13 +34,38 @@ candidate_blockers=human_critique,rendered_candidate,hash_approval,image_contrac
 
 ## Opening Pressure
 
-The first honest test of the writing system did not look like a breakthrough.
+Here is the paragraph that fooled me for about three seconds:
 
-It looked like a source note going into the LLM wiki. Then six packet files. Then a draft generator refusing to run until the source workflow quality gate passed. Then a markdown file landing here as `draft: true`, with no public route, no approval record, and no permission to pretend it was done.
+```txt
+AI agents are transforming content operations by enabling teams to create
+high-quality articles faster than ever before. With the right prompts,
+businesses can scale their publishing workflows while maintaining a consistent
+brand voice and improving efficiency across the entire marketing funnel.
+```
+
+It is clean. It is grammatically fine. It sounds like it has already seen the inside of a SaaS landing page and knows where the testimonial carousel lives.
+
+That is exactly why it is dangerous.
+
+Nothing in that paragraph can be inspected. No source changed a claim. No reader decision appears. No artifact proves the mechanism. No reject condition exists. It is not bad because it is ugly. It is bad because it has no handles.
+
+The one-minute autopsy makes the problem visible:
+
+```txt
+paragraph=AI agents are transforming content operations...
+source_changed_claim=empty
+reader_decision=empty
+proof_artifact=empty
+reject_condition=generic productivity claim without trace
+editor_question=what could a reader inspect or reuse here?
+keep_or_rewrite=rewrite
+```
+
+That is the moment the paragraph stops being "a little generic" and becomes inadmissible.
 
 That is the point.
 
-Most AI writing advice skips this boring part and jumps straight to the costume rack.
+Most AI writing advice skips this moment and jumps straight to the costume rack.
 
 "Write with more voice."
 
@@ -50,7 +75,7 @@ Most AI writing advice skips this boring part and jumps straight to the costume 
 
 That is how you get prose wearing a leather jacket it did not earn.
 
-The durable move is less glamorous: define the writing harness, run it against a source, keep the traces, and reject the draft when the only improvement is confidence.
+The durable move is less glamorous: define the writing harness, run the paragraph against a source, keep the traces, and reject the draft when the only improvement is confidence.
 
 It is also the difference between an agent that writes another polished summary and an agent that can be corrected, measured, and made less embarrassing next week.
 
@@ -92,43 +117,50 @@ They ask for a better prompt. Then a better voice prompt. Then a more opinionate
 
 The missing object is the harness.
 
-In the source, the loop has a few fixed parts:
+In the source, the loop has a few fixed parts. The task agent does the work, the meta-agent changes the harness, the benchmark decides whether the change helped, and the system keeps or reverts the result.
+
+That is the part worth stealing for writing.
+
+Not "let the agent write more."
+
+Not "tell the agent to sound like a better writer."
+
+Improve the editorial harness around the draft.
+
+The mapping is small enough to fit on one screen:
 
 ```txt
-program.md -> research direction
-agent.py -> task agent harness
-adapter -> benchmark connection
-parallel sandboxes -> many attempts
-traces/results -> evidence
-keep/revert -> selection
+AutoAgent: program.md -> research direction
+Writing: source packet -> what the article is allowed to claim
+
+AutoAgent: agent.py -> task agent harness
+Writing: draft generator -> private draft, never public
+
+AutoAgent: adapter -> benchmark connection
+Writing: reference-writing and reference-ceiling audits -> floor and serious-reader pressure
+
+AutoAgent: traces/results -> evidence
+Writing: weak paragraph, packet rejection, rewrite, rendered artifact -> editorial evidence
+
+AutoAgent: keep/revert -> selection
+Writing: keep, rewrite, reject, or keep as internal example
 ```
 
-The writing version needs the same shape:
+That last line is the difference between a writing system and a content slot machine.
 
-```txt
-source packet -> what the article is allowed to claim
-draft generator -> private draft, never public
-reference-writing audit -> publishable floor
-reference-ceiling audit -> serious-reader ceiling
-rendered audit -> what the reader actually sees
-human critique -> judgment the benchmark cannot own
-```
+In a content slot machine, the output appears and everyone reacts to it. In a harness, the draft has to show why it was allowed to exist.
 
-![Writing harness draft visual](/images/posts/writing-harness-not-more-prompts.png)
+This draft was not started from "write a post about self-improving agents." It started from a source extract in the LLM wiki, then a packet generator created six files: reader pressure, title angle, evidence bundle, brief, Gate 0, and draft critique. The draft generator then reran the packet quality gate and wrote only this `draft: true` file.
 
-That is why this draft exists.
+That detail sounds procedural until you put it beside the bad paragraph.
 
-It was not started from "write a post about self-improving agents." It started from a source extract in the LLM wiki, then a packet generator created six files: reader pressure, title angle, evidence bundle, brief, Gate 0, and draft critique. The draft generator then reran the packet quality gate and wrote only this `draft: true` file.
-
-That detail sounds procedural, but it changes the writing problem.
-
-A normal AI draft begins with a topic. This one begins with a paper trail.
-
-The receipt matters because the weak version of an agent writing system has no memory of why the post exists. It has a topic and a vibe. The stronger version has a pressure chain:
+A normal AI draft begins with a topic and a vibe. This one begins with a paper trail:
 
 ```txt
 source -> angle -> evidence -> reader decision -> reject rule -> critique pressure
 ```
+
+![Writing harness draft visual](/images/posts/writing-harness-not-more-prompts.png)
 
 If one link is missing, the agent should not write faster. It should stop earlier.
 
@@ -143,9 +175,7 @@ What artifact proves the mechanism?
 What condition would make us reject the draft?
 ```
 
-Here is a tiny example.
-
-The weak prompt-only version sounds respectable:
+The weak prompt-only version from the opening sounded respectable:
 
 ```txt
 AI agents are transforming content operations by enabling teams to create
@@ -156,7 +186,7 @@ brand voice and improving efficiency across the entire marketing funnel.
 
 That paragraph is not wrong in the useful sense. It is worse than wrong: it is frictionless. Nothing in it can be inspected, challenged, reused, or remembered.
 
-A harness should reject it before an editor wastes time saying "make it less generic."
+I pasted that paragraph into the review surface and it failed before the editor had to reach for taste.
 
 The packet catches the failure like this:
 
@@ -167,6 +197,10 @@ artifact=missing
 reject_condition=generic productivity claim without trace
 next_action=show the mechanism that prevents bad confident prose from shipping
 ```
+
+There is the whole editorial scene.
+
+The paragraph looks fine. The fields come back empty. The editor no longer has to say "make this more interesting." The editor can say, "No source changed this claim, no reader decision exists, and no proof artifact appears. Rewrite from the mechanism."
 
 The rewritten version has less polish and more load-bearing material:
 
@@ -185,7 +219,7 @@ The harness does not magically add taste. It removes the places where vague pros
 
 The same thing happened to this draft.
 
-The earlier version opened like this:
+One earlier version opened like this:
 
 ```txt
 The first real test was boring in the exact way a useful system test should be boring.
@@ -198,7 +232,7 @@ public route, no approval record, and no claim that it was finished.
 
 That version had the facts, but the sentence was still asking the reader to admire the process. It did not show the editorial danger clearly enough.
 
-The stronger version is the one you saw at the top:
+The next version was sharper, but still too internal:
 
 ```txt
 The first honest test of the writing system did not look like a breakthrough.
@@ -209,7 +243,11 @@ passed. Then a markdown file landing here as `draft: true`, with no public route
 no approval record, and no permission to pretend it was done.
 ```
 
-The important change is not just the wording. The second version changes the reader's job. Instead of "notice that a workflow happened," it asks: who gave this draft permission to look finished?
+That revision asked a better question: who gave this draft permission to look finished?
+
+But it still began inside our machinery.
+
+The current opening begins with the bad paragraph instead. That is the stronger move because it starts where the reader lives: staring at a competent AI paragraph that somehow gives them nothing to use.
 
 That is the kind of before/after a writing harness should preserve. Not because every diff is profound. Most are not. But because a trace lets the editor argue about a concrete change instead of waving at "tone."
 
@@ -238,7 +276,7 @@ That question transfers.
 
 Use it on any AI-written post that feels competent but forgettable. Do not ask whether the prose is polished. Ask what permission the paragraph is trying to smuggle past you.
 
-Then run the one-minute autopsy:
+Then run the one-minute autopsy, before asking for more style:
 
 ```txt
 paragraph=
@@ -250,19 +288,18 @@ editor_question=
 keep_or_rewrite=
 ```
 
-Here is what the weak paragraph looks like under that form:
-
-```txt
-paragraph=AI agents are transforming content operations...
-source_changed_claim=empty
-reader_decision=empty
-proof_artifact=empty
-reject_condition=generic productivity claim without trace
-editor_question=what could a reader inspect or reuse here?
-keep_or_rewrite=rewrite
-```
-
 That small form is the part worth stealing. It turns "this feels generic" into a visible failure state. Once the failure is visible, the editor can ask for a source, a decision, an artifact, or a rejection rule instead of begging the model for more personality.
+
+The visual proof version of the same idea should look like this:
+
+| Review surface | Empty field | Editorial consequence |
+| --- | --- | --- |
+| Weak paragraph sounds plausible | `source_changed_claim=empty` | The article has no right to make the claim yet. |
+| Paragraph promises productivity | `reader_decision=empty` | The reader cannot decide what to do differently. |
+| Paragraph names agents broadly | `proof_artifact=empty` | The mechanism is invisible. |
+| Paragraph passes a vibe check | `reject_condition=generic productivity claim without trace` | The draft must be rewritten from evidence, not tone. |
+
+That table is not decoration. It is what a public candidate would need to show as a screenshot or inline artifact before asking a human reviewer to approve the piece.
 
 Here is the bigger before/after that matters:
 
@@ -323,9 +360,9 @@ The harder rule is more useful: if the draft cannot show the trace that produced
 
 Current verdict: keep as an internal example.
 
-This draft is now readable enough to teach the harness idea, and it includes two before/after artifacts: a weak prompt-only paragraph with its packet rejection, and a real revision trace from this draft's own opening. Loop 40 added the cold-reader red-pen test so the artifacts transfer to a reader's own draft instead of only documenting this internal run. Loop 41 added the one-minute paragraph autopsy so the reader has a concrete form to fill before asking for more style.
+This draft is now readable enough to teach the harness idea, and it includes two before/after artifacts: a weak prompt-only paragraph with its packet rejection, and a real revision trace from this draft's own opening. Loop 40 added the cold-reader red-pen test so the artifacts transfer to a reader's own draft instead of only documenting this internal run. Loop 41 added the one-minute paragraph autopsy so the reader has a concrete form to fill before asking for more style. Loop 45 revised the opening around the bad-draft scene, added the real-time editorial rejection moment, sharpened the AutoAgent comparison into a harness-to-harness mapping, and added an inline visual-proof table for the weak paragraph/rejection/autopsy stack.
 
-It is still not strong enough to publish as a reference blog post because the red-pen test and autopsy form need human critique and rendered-candidate review.
+It is still not strong enough to publish as a reference blog post because the revised scene and visual-proof table need human critique and rendered-candidate review.
 
 The article should be promoted only after a human reviewer says the before/after artifact is strong enough for a cold reader.
 
