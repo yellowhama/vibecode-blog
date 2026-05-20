@@ -32,6 +32,8 @@ That is a funny failure for an article about frustration. The article knew the r
 
 So the repair starts with the same rule the article recommends: treat the correction as telemetry, then turn it into a boundary.
 
+Use this when an agent repeats the same mistake twice. Do not ask it to care harder. Write the missing contract, attach a verifier, and reject the next output that cannot show the receipt.
+
 The problem is not that the agent makes a mistake. The useful moment is when you correct the same mistake twice.
 
 On 2026-05-20, the mistake was boring enough to be dangerous. The active archive was on `F:\Aisaak\CompanyArtifacts\llm-wiki-completed`, but the work kept drifting back toward an old `C:` path. Then the public English blog had to be checked for Korean source leakage. Then the images existed, but did not prove the article. Then the same product mention tried to appear everywhere.
@@ -69,6 +71,41 @@ The repair was to convert each repeated correction into a file, gate, or receipt
 That table is the real specification work. The feeling points to the gap; the contract closes it.
 
 The standard is not "the operator is annoyed." The standard is "the same correction happened often enough that it deserves a durable boundary."
+
+## Bad/Gate/After Proof Chain
+
+Bad public output:
+
+```txt
+The English blog accepts Korean source text.
+The article has an image, but the image is generic or reused.
+The same product mention appears in unrelated posts.
+The operator complaint stays in chat, so the next agent repeats the failure.
+```
+
+Gate added:
+
+```txt
+npm run verify:public-page-review
+npm run verify:post-image-contracts
+npm run verify:publication-approvals
+npm run audit:reported-proof
+```
+
+After:
+
+```txt
+F:\Aisaak\Projects\vibecode-town\src\data\publication-approvals.json
+F:\Aisaak\Projects\vibecode-town\src\data\post-image-contracts.json
+F:\Aisaak\CompanyArtifacts\vibecode-reported-proof-audit\latest.json
+F:\Aisaak\CompanyArtifacts\vibecode-draft-review-artifacts\frustration-as-spec-reference-blogger-review-result.json
+```
+
+The accepted review must have zero rejected rows. The publication approval hash must match `contentSha256`. The zero-item revision plan must stay bound to the current markdown hash. The rendered page audit must prove the expected slug image appears in the first-screen route instead of merely existing on disk.
+
+Accept only when the complaint has a dated failure, a named gate, a passing after-state, and a reviewer or approval record another session can inspect.
+
+Reject when the complaint is only taste, cannot name the file or script that should change, or would create a rule no future operator should be forced to obey.
 
 ## The Case Study
 
@@ -116,15 +153,15 @@ Then it became a set of checks:
 | Unsupported public post | `verify:source-workflow` requires packet evidence for non-About posts |
 | Agent approves its own publication | `verify:publication-approvals` rejects agent-like reviewer names and stale hashes |
 
-The field receipt must be dated, otherwise it becomes another vibe. After Loop 96, the receipt looked like this:
+The field receipt must be dated, otherwise it becomes another vibe. After the current article-revision pass, the receipt looked like this:
 
 ```txt
 public posts checked: 10.
 packet-backed posts: 9.
 rendered viewports checked: 24.
 publication approval records: 10.
-wiki markdown files indexed: 334.
-archive markdown files copied: 366.
+wiki markdown files indexed: 342.
+archive files copied: 374.
 reference ceiling surface scores checked: 9.
 ```
 
