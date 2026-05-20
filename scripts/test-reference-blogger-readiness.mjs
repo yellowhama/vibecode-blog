@@ -44,7 +44,7 @@ approval_required=true
 approval_candidate=false
 \`\`\`
 
-## Opening Pressure
+## The Paragraph That Gets Past You
 
 Here is the weak paragraph that looked publishable until the editor inspected it:
 
@@ -54,13 +54,13 @@ AI agents are transforming content operations by making teams faster.
 
 That sentence is dangerous because no source changed the claim, no reader decision exists, no artifact proves the mechanism, and no reject condition tells the editor when to stop.
 
-## Reader Problem
+## The Failure Is Not Style
 
 The reader is trying to decide whether an agent-written post deserves human review or should be rejected before it wastes public attention.
 
 Reader question: What should the editor accept, reject, or verify before a draft is allowed to look finished?
 
-## Angle
+## The Harness Is the Point
 
 Reference-grade agent writing needs a harness instead of another prompt, because the harness makes every claim carry a source, artifact, reader decision, and reject rule.
 
@@ -93,7 +93,7 @@ The rule is simple: if the paragraph cannot explain what made it inspectable, th
 
 ${bodyFiller()}
 
-## Reader Transfer
+## The Table To Use Before You Prompt Again
 
 | If you see | Do this | Reject this |
 | --- | --- | --- |
@@ -158,7 +158,7 @@ It might be too generic.`,
     );
 
     result = run(["--blog-dir", failDir]);
-    if (result.status === 0 || !result.stderr.includes("Opening Pressure must show")) {
+    if (result.status === 0 || !result.stderr.includes("opening pressure must show")) {
       process.stderr.write(result.stdout + result.stderr);
       throw new Error("expected weak reference blogger fixture to fail");
     }

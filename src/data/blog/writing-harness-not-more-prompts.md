@@ -32,7 +32,7 @@ editorial_decision_ref=src/data/draft-editorial-decisions.json#writing-harness-n
 candidate_blockers=human_critique,rendered_candidate,hash_approval,image_contract
 ```
 
-## Opening Pressure
+## The Paragraph That Fooled Me
 
 Here is the paragraph that fooled me for about three seconds:
 
@@ -79,7 +79,7 @@ The durable move is less glamorous: define the writing harness, run the paragrap
 
 It is also the difference between an agent that writes another polished summary and an agent that can be corrected, measured, and made less embarrassing next week.
 
-## Reader Problem
+## The Failure Is Not Style
 
 The reader does not need another prompt that says "be more vivid."
 
@@ -87,7 +87,7 @@ The reader needs a way to catch the moment an AI paragraph looks finished while 
 
 Reader question: before you ask an agent to improve the style, what evidence proves the paragraph deserved to exist?
 
-## Angle
+## The Harness Is the Point
 
 Reference-grade agent writing needs the same discipline as self-improving agents: separate the draft from the harness, keep the traces, measure against a real bar, and revert changes that only sound better.
 
@@ -441,7 +441,7 @@ hash_approval=missing
 image_contract=missing
 ```
 
-## Reader Transfer
+## The Table To Use Before You Prompt Again
 
 Use this decision table before automating any agent writing workflow. The point is not to slow the agent down. The point is to stop the agent before it spends ten polished paragraphs hiding an empty first one.
 

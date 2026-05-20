@@ -5,13 +5,37 @@ import { basename, join } from "node:path";
 const DEFAULT_BLOG_DIR = "src/data/blog";
 const CODE_FENCE = /```[\s\S]*?```/g;
 const TABLE_ROW = /^\|.+\|$/gm;
-const REQUIRED_SECTIONS = [
-  "Opening Pressure",
-  "Reader Problem",
-  "Angle",
-  "Reader Transfer",
-  "Approval Candidate Verdict",
-  "Draft Risk",
+const REQUIRED_SECTION_ROLES = [
+  {
+    role: "opening pressure",
+    canonical: "Opening Pressure",
+    aliases: ["Opening Pressure", "The Paragraph That Fooled Me", "The Paragraph That Gets Past You"],
+  },
+  {
+    role: "reader problem",
+    canonical: "Reader Problem",
+    aliases: ["Reader Problem", "The Failure Is Not Style", "The Reader Problem"],
+  },
+  {
+    role: "angle",
+    canonical: "Angle",
+    aliases: ["Angle", "The Harness Is the Point", "The Operating Claim"],
+  },
+  {
+    role: "reader transfer",
+    canonical: "Reader Transfer",
+    aliases: ["Reader Transfer", "The Table To Use Before You Prompt Again", "Use This Before You Prompt Again"],
+  },
+  {
+    role: "approval verdict",
+    canonical: "Approval Candidate Verdict",
+    aliases: ["Approval Candidate Verdict"],
+  },
+  {
+    role: "draft risk",
+    canonical: "Draft Risk",
+    aliases: ["Draft Risk"],
+  },
 ];
 
 function getArg(name) {
@@ -56,9 +80,19 @@ function section(body, heading) {
   return match?.[1]?.trim() ?? "";
 }
 
-function headingExists(body, heading) {
-  const escaped = heading.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return new RegExp(`^##\\s+${escaped}\\s*$`, "im").test(body);
+function sectionByRole(body, role) {
+  for (const heading of role.aliases) {
+    const value = section(body, heading);
+    if (value) return value;
+  }
+  return "";
+}
+
+function headingExistsForRole(body, role) {
+  return role.aliases.some((heading) => {
+    const escaped = heading.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return new RegExp(`^##\\s+${escaped}\\s*$`, "im").test(body);
+  });
 }
 
 function wordCount(markdown) {
@@ -74,15 +108,16 @@ function scoreDraft(file, text) {
   const failures = [];
   const { body } = parseMarkdown(text);
   const slug = basename(file, ".md");
-  const opening = section(body, "Opening Pressure");
-  const readerProblem = section(body, "Reader Problem");
-  const angle = section(body, "Angle");
-  const readerTransfer = section(body, "Reader Transfer");
+  const rolesByCanonical = new Map(REQUIRED_SECTION_ROLES.map((role) => [role.canonical, role]));
+  const opening = sectionByRole(body, rolesByCanonical.get("Opening Pressure"));
+  const readerProblem = sectionByRole(body, rolesByCanonical.get("Reader Problem"));
+  const angle = sectionByRole(body, rolesByCanonical.get("Angle"));
+  const readerTransfer = sectionByRole(body, rolesByCanonical.get("Reader Transfer"));
   const bodyNoCode = stripCode(body);
 
-  for (const required of REQUIRED_SECTIONS) {
-    if (!headingExists(body, required)) {
-      failures.push(`missing required cold-reader section: ${required}`);
+  for (const required of REQUIRED_SECTION_ROLES) {
+    if (!headingExistsForRole(body, required)) {
+      failures.push(`missing required cold-reader section role: ${required.role}`);
     }
   }
 
@@ -91,31 +126,31 @@ function scoreDraft(file, text) {
   }
 
   if (!CODE_FENCE.test(opening) && !/^>\s+.+$/m.test(opening)) {
-    failures.push("Opening Pressure must show an inspectable quote, weak paragraph, log, or artifact");
+    failures.push("opening pressure must show an inspectable quote, weak paragraph, log, or artifact");
   }
   if (!/\b(dangerous|risk|cost|trust|public|publish|reader|embarrassing|inadmissible|forgettable|decision)\b/i.test(opening)) {
-    failures.push("Opening Pressure does not make the stakes felt for a cold reader");
+    failures.push("opening pressure does not make the stakes felt for a cold reader");
   }
   if (!/\b(source|reader decision|artifact|reject|inspect|trace|claim)\b/i.test(opening)) {
-    failures.push("Opening Pressure does not explain what is inspectably wrong");
+    failures.push("opening pressure does not explain what is inspectably wrong");
   }
 
   if (!/Reader question:/i.test(readerProblem)) {
-    failures.push("Reader Problem must include a literal Reader question line");
+    failures.push("reader problem must include a literal Reader question line");
   }
   if (!/\bwhat should|before|decide|accept|reject|verify|do differently\b/i.test(readerProblem)) {
-    failures.push("Reader Problem does not frame a reader decision");
+    failures.push("reader problem does not frame a reader decision");
   }
 
   if (!/\bnot\b|\binstead\b|\bneeds\b|\brequires\b|\bshould\b/i.test(angle)) {
-    failures.push("Angle must state a sharp operating claim, not a topic label");
+    failures.push("angle must state a sharp operating claim, not a topic label");
   }
 
   if (countMatches(readerTransfer, TABLE_ROW) < 4) {
-    failures.push("Reader Transfer must include a real decision table with at least four rows");
+    failures.push("reader transfer must include a real decision table with at least four rows");
   }
   if (!/\b(accept|reject|verify|use this|do this|before|run|ask|check)\b/i.test(readerTransfer)) {
-    failures.push("Reader Transfer does not give reusable action language");
+    failures.push("reader transfer does not give reusable action language");
   }
 
   if (!/\b(before\/after|before and after|weak paragraph|rewritten version|earlier version|current opening|old|new)\b/i.test(body)) {

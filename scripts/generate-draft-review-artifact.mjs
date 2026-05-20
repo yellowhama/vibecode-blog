@@ -32,6 +32,14 @@ function section(body, heading) {
   return body.slice(start, next === -1 ? undefined : start + next).trim();
 }
 
+function sectionAny(body, headings) {
+  for (const heading of headings) {
+    const value = section(body, heading);
+    if (value) return value;
+  }
+  return "";
+}
+
 function allCodeBlocks(text) {
   return [...text.matchAll(/```(?:txt)?\r?\n([\s\S]*?)```/g)].map((match) => match[1].trim());
 }
@@ -55,10 +63,14 @@ function paragraph(text) {
 }
 
 function buildHtml({ slug, title, description, sha256, body }) {
-  const opening = section(body, "Opening Pressure");
+  const opening = sectionAny(body, ["Opening Pressure", "The Paragraph That Fooled Me", "The Paragraph That Gets Past You"]);
   const reviewDesk = section(body, "What Changes In The Next Draft Review");
   const realFailure = section(body, "Real Failure Evidence");
-  const readerTransfer = section(body, "Reader Transfer");
+  const readerTransfer = sectionAny(body, [
+    "Reader Transfer",
+    "The Table To Use Before You Prompt Again",
+    "Use This Before You Prompt Again",
+  ]);
   const editorial = section(body, "Editorial Critique Result");
   const risk = section(body, "Draft Risk");
   const codeBlocks = allCodeBlocks(body);

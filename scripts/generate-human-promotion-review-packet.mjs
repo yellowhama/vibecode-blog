@@ -49,6 +49,14 @@ function section(body, heading) {
   return body.slice(start, next === -1 ? undefined : start + next).trim();
 }
 
+function sectionAny(body, headings) {
+  for (const heading of headings) {
+    const value = section(body, heading);
+    if (value) return value;
+  }
+  return "";
+}
+
 function paragraph(text) {
   return text
     .split(/\r?\n\r?\n/)
@@ -177,8 +185,16 @@ function buildSummary({ slug, markdownSha256, title, decision, reviewSummary, bo
 }
 
 function buildHtml({ slug, title, markdownSha256, decision, reviewSummary, body }) {
-  const opening = paragraph(section(body, "Opening Pressure"));
-  const transfer = paragraph(section(body, "Reader Transfer"));
+  const opening = paragraph(
+    sectionAny(body, ["Opening Pressure", "The Paragraph That Fooled Me", "The Paragraph That Gets Past You"]),
+  );
+  const transfer = paragraph(
+    sectionAny(body, [
+      "Reader Transfer",
+      "The Table To Use Before You Prompt Again",
+      "Use This Before You Prompt Again",
+    ]),
+  );
   const critique = paragraph(section(body, "Editorial Critique Result"));
   const risk = paragraph(section(body, "Draft Risk"));
   const codeBlocks = allCodeBlocks(body);

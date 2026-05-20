@@ -155,35 +155,35 @@ publication_state=draft_only
 approval_required=true
 \`\`\`
 
-## Opening Pressure
+## The Paragraph That Gets Past You
 
 ${hook || "TODO: Open on the visible failure, cost, or proof artifact from the source packet."}
 
 Before this draft can reach human promotion review, this section must show a concrete weak paragraph, log, failed claim, or artifact. It must name what is inspectably wrong, why that failure matters to the reader, and what decision the reader should make next.
 
-## Reader Problem
+## The Failure Is Not Style
 
 ${readerProblem || "TODO: State the reader problem in one inspectable sentence."}
 
 Reader question: ${readerQuestion || "TODO: Name the question the reader is trying to answer."}
 
-## Angle
+## The Harness Is the Point
 
 ${angle || corePoint || "TODO: Turn the source into a concrete operating decision, not a trend summary."}
 
-## Evidence To Use
+## Source Thread
 
 ${proof || "TODO: Use only packet-backed public source material and internal proof artifacts."}
 
 Primary source: ${sourceUrl}
 
-## Draft Body
+## The Pattern Worth Stealing
 
 TODO: Write this section after reviewing the source and the internal artifacts. The post should make one strong claim, show the evidence, and transfer a concrete accept/reject decision to the reader.
 
 TODO: Preserve a before/after revision trace, a quotable judgment line, and at least one copyable artifact so the editor can see why the rewrite is better instead of merely smoother.
 
-## Reader Transfer
+## The Table To Use Before You Prompt Again
 
 TODO: End with what the reader should now do differently, what they should verify, and what they should reject.
 
