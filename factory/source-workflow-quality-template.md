@@ -106,3 +106,20 @@ source -> angle -> evidence -> reader decision -> reject rule -> critique pressu
 ```
 
 If that chain is not present, repair the packet before writing the article.
+
+## Generator Command
+
+Use the packet generator when starting from a new source:
+
+```bash
+npm run write:source-workflow-packet -- \
+  --slug agent-writing-system \
+  --title "The Agent Writing System Needs Evidence Before Drafting" \
+  --source-url "https://example.com/reference" \
+  --reader-problem "The reader has a topic but not enough proof to trust an agent draft." \
+  --internal-evidence "script: scripts/create-source-workflow-packet.mjs; gate: npm run verify:source-workflow-quality"
+```
+
+The generator writes all six packet files and then runs the source workflow quality gate against a temporary validation post. If the packet set does not pass, the command fails and the draft should not start.
+
+It refuses accidental overwrite unless `--overwrite` is supplied.
