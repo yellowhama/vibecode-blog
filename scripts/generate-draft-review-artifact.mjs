@@ -56,6 +56,7 @@ function paragraph(text) {
 
 function buildHtml({ slug, title, description, sha256, body }) {
   const opening = section(body, "Opening Pressure");
+  const reviewDesk = section(body, "What Changes In The Next Draft Review");
   const readerTransfer = section(body, "Reader Transfer");
   const editorial = section(body, "Editorial Critique Result");
   const risk = section(body, "Draft Risk");
@@ -68,6 +69,10 @@ function buildHtml({ slug, title, description, sha256, body }) {
   const redPen = codeBlocks.find((block) => block.includes("If the paragraph can be moved")) ?? "";
   const autopsyBlank = codeBlocks.find((block) => block.includes("paragraph=") && block.includes("keep_or_rewrite=") && !block.includes("AI agents are transforming")) ?? "";
   const autopsyExample = codeBlocks.find((block) => block.includes("paragraph=AI agents are transforming content operations")) ?? "";
+  const reviewDeskWeak = codeBlocks.find((block) => block.includes("Agentic systems are changing how teams create")) ?? "";
+  const oldReview = codeBlocks.find((block) => block.includes("make it more specific")) ?? "";
+  const harnessReview = codeBlocks.find((block) => block.includes("source_changed_claim=which source forced")) ?? "";
+  const reviewDeskRewrite = codeBlocks.find((block) => block.includes("The first draft looked fine until the review form")) ?? "";
 
   const cards = [
     ["Weak paragraph", weakParagraph],
@@ -78,6 +83,12 @@ function buildHtml({ slug, title, description, sha256, body }) {
     ["Cold-reader red pen", redPen],
     ["One-minute autopsy", autopsyBlank],
     ["Autopsy example", autopsyExample],
+  ];
+  const reviewDeskCards = [
+    ["Review-desk weak opening", reviewDeskWeak],
+    ["Old style review", oldReview],
+    ["Harness review fields", harnessReview],
+    ["Review-desk rewrite", reviewDeskRewrite],
   ];
 
   return `<!doctype html>
@@ -175,11 +186,24 @@ function buildHtml({ slug, title, description, sha256, body }) {
     </section>
 
     <section class="section">
+      <h2>Review Desk Protocol</h2>
+      <p class="prose">${escapeHtml(paragraph(reviewDesk))}</p>
+      <div class="grid">
+        ${reviewDeskCards
+          .map(([label, content], index) => `<article class="card ${index === 0 || index === 1 ? "bad" : "good"}">
+          <h2>${escapeHtml(label)}</h2>
+          <pre>${escapeHtml(content || "missing")}</pre>
+        </article>`)
+          .join("\n")}
+      </div>
+    </section>
+
+    <section class="section">
       <h2>Reviewer Decision</h2>
       <div class="decision">
         <div class="pill"><strong>Promote?</strong>No. Keep private until human critique, rendered candidate proof, image contract, and hash approval exist.</div>
-        <div class="pill"><strong>What improved?</strong>The reader now gets a reusable paragraph autopsy instead of only a principle.</div>
-        <div class="pill"><strong>What to inspect next?</strong>Whether the artifact stack is vivid enough for a cold reader who has not followed the internal build.</div>
+        <div class="pill"><strong>What improved?</strong>The reader now gets a reusable paragraph autopsy and review-desk protocol instead of only a principle.</div>
+        <div class="pill"><strong>What to inspect next?</strong>Whether the artifact stack and review protocol are vivid enough for a cold reader who has not followed the internal build.</div>
       </div>
     </section>
 

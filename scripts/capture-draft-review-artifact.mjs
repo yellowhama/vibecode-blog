@@ -182,6 +182,9 @@ async function capture() {
           "Packet rejection",
           "One-minute autopsy",
           "Autopsy example",
+          "Review Desk Protocol",
+          "Harness review fields",
+          "Review-desk rewrite",
           "Reviewer Decision"
         ];
         const missing = required.filter(item => !text.includes(item));
