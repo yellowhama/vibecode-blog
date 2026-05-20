@@ -33,6 +33,8 @@ On this workstation, that distinction is not theoretical. The active source repo
 
 If any receipt lands outside those roots, rerun it under the contract instead of cleaning it up by hand.
 
+The current receipt is boring on purpose: commit `551c7f7`, 10 posts, 41 pages, 24 viewports, 10 Pagefind pages, 2123 words, 350 wiki files indexed, 382 files archived, and zero rendered-page failures. Those numbers are not decoration. They are the proof that the artifact trail lives where the next agent will look.
+
 The repeated failure was still the old one: work kept drifting toward `C:` because the operating system made that the easy default.
 
 The important correction was sharper than "move the C files to F later." That only cleans up after the mistake. The real correction is to make the agent start from the F contract in the first place: repo on F, wiki on F, rendered evidence on F, test temp on F. No after-the-fact rescue mission.
@@ -77,10 +79,10 @@ After:
 accepted review result exists
 zero-item revision plan exists
 publication approval hash matches contentSha256
-archive_files_copied=373
-source_markdown_count=341
-archive_markdown_count=341
-Indexed 341 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
+archive_files_copied=382
+source_markdown_count=350
+archive_markdown_count=350
+Indexed 350 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
 rendered desktop/mobile receipts still pass
 ```
 
@@ -166,10 +168,10 @@ test temp: F:\Aisaak\CompanyArtifacts\test-temp
 The archive receipt for this article revision was:
 
 ```txt
-archive_files_copied=373
-source_markdown_count=341
-archive_markdown_count=341
-Indexed 341 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
+archive_files_copied=382
+source_markdown_count=350
+archive_markdown_count=350
+Indexed 350 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
 ```
 
 That is why the path contract matters. Without it, an agent can pass a test while leaving the evidence trail in the wrong place.
@@ -264,9 +266,9 @@ Test-Path $env:VIBECODE_TEST_TEMP_DIR
 And make the verifier say what happened:
 
 ```txt
-completion_audit_sync_archive_files_copied=373
-completion_audit_sync_source_markdown_count=341
-completion_audit_sync_archive_markdown_count=341
+completion_audit_sync_archive_files_copied=382
+completion_audit_sync_source_markdown_count=350
+completion_audit_sync_archive_markdown_count=350
 company_artifacts_archive_status=pass
 ```
 
