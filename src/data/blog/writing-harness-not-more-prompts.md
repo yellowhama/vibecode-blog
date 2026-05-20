@@ -183,6 +183,36 @@ That is the job.
 
 The harness does not magically add taste. It removes the places where vague prose can hide. It forces the sentence to carry a source, a reader problem, an artifact, or a rejection rule.
 
+The same thing happened to this draft.
+
+The earlier version opened like this:
+
+```txt
+The first real test was boring in the exact way a useful system test should be boring.
+
+A processed AutoAgent source note went into the LLM wiki. A packet generator
+turned it into six files. A draft generator refused to write until the packet
+quality gate passed. Then the output landed here as `draft: true`, with no
+public route, no approval record, and no claim that it was finished.
+```
+
+That version had the facts, but the sentence was still asking the reader to admire the process. It did not show the editorial danger clearly enough.
+
+The stronger version is the one you saw at the top:
+
+```txt
+The first honest test of the writing system did not look like a breakthrough.
+
+It looked like a source note going into the LLM wiki. Then six packet files.
+Then a draft generator refusing to run until the source workflow quality gate
+passed. Then a markdown file landing here as `draft: true`, with no public route,
+no approval record, and no permission to pretend it was done.
+```
+
+The important change is not just the wording. The second version changes the reader's job. Instead of "notice that a workflow happened," it asks: who gave this draft permission to look finished?
+
+That is the kind of before/after a writing harness should preserve. Not because every diff is profound. Most are not. But because a trace lets the editor argue about a concrete change instead of waving at "tone."
+
 Here is the bigger before/after that matters:
 
 | Bad writing loop | Better harness loop |
@@ -241,7 +271,7 @@ The harder rule is more useful: if the draft cannot show the trace that produced
 
 Current verdict: keep as an internal example.
 
-This draft is now readable enough to teach the harness idea, and it includes a first before/after artifact: a weak prompt-only paragraph, the packet failure that catches it, and the rewritten version. It is still not strong enough to publish as a reference blog post because the example is synthetic and has not gone through human critique or rendered-candidate review.
+This draft is now readable enough to teach the harness idea, and it includes two before/after artifacts: a weak prompt-only paragraph with its packet rejection, and a real revision trace from this draft's own opening. It is still not strong enough to publish as a reference blog post because the revision trace needs human critique and rendered-candidate review.
 
 The article should be promoted only after a human reviewer says the before/after artifact is strong enough for a cold reader.
 
@@ -262,4 +292,4 @@ It is a useful internal example because the harness improved the article in visi
 
 The draft can sound like a summary of the source instead of a sharp blog post with a visible scene and reader transfer.
 
-Current status: stronger than a scaffold, still not publication-ready. Before this can become public, it needs human critique of the before/after artifact, rendered candidate proof, an image contract, and an approval record bound to the final markdown hash.
+Current status: stronger than a scaffold, still not publication-ready. Before this can become public, it needs human critique of the synthetic example and real revision trace, rendered candidate proof, an image contract, and an approval record bound to the final markdown hash.
