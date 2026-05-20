@@ -22,6 +22,10 @@ references:
 
 The problem is not that the agent makes a mistake. The useful moment is when you correct the same mistake twice.
 
+On 2026-05-20, the mistake was boring enough to be dangerous. The active archive was on `F:\Aisaak\CompanyArtifacts\llm-wiki-completed`, but the work kept drifting back toward an old `C:` path. Then the public English blog had to be checked for Korean source leakage. Then the images existed, but did not prove the article. Then the same product mention tried to appear everywhere.
+
+None of those were "creative direction" problems. They were missing operating boundaries.
+
 That is the point where frustration stops being a mood and starts being telemetry. Something in the system is under-specified. The agent is not seeing a boundary that the operator assumed was obvious.
 
 In the last site hardening pass, the repeated corrections were blunt:
@@ -34,36 +38,63 @@ Do not insert product mentions into every article.
 Do not call a clean-looking essay good if it has no evidence.
 ```
 
-Those complaints were not specs. They were signals pointing at missing specs. Leaving them in chat would guarantee the next agent repeats the same miss.
+Those complaints were useful, but they were not specs. A complaint dies in chat history. A contract survives the next session.
 
 ## From Complaint to Contract
 
-The repair pattern is simple:
+The repair was not to ask the agent to "be more careful." That instruction has the shelf life of a sticky note in a rainstorm.
+
+The repair was to convert each repeated correction into a file, gate, or receipt:
 
 | Friction | Contract | Verifier or evidence |
 | --- | --- | --- |
-| Files kept landing in the wrong place | Archive and temp roots must resolve to the F-drive operating archive | archive sync counts and temp-root scripts |
-| English blog received Korean content | Public posts must be English-only | editorial/public-surface gates |
-| Images were blank or reused | Each post needs one visible slug-specific image | image byte checks, public-surface gate, browser screenshot |
-| Product names appeared by default | No public product mention until proof/release context exists | public product mention scan |
-| Essays sounded polished but weak | Public posts need source, evidence, artifact, boundary, and reader decision | per-post quality critique |
+| Wrong disk root | Use the F-drive archive | `0fa2017`, archive sync |
+| Korean public copy | English-only posts | `verify-public-page-review`, Pagefind `en` |
+| Blank or reused images | One visible slug image | image contract, rendered screenshots |
+| Product-name drift | Require proof context | public/deploy scans |
+| Polished weak essays | Require evidence and a reader artifact | reference-writing audit |
 
 That table is the real specification work. The feeling points to the gap; the contract closes it.
 
 The standard is not "the operator is annoyed." The standard is "the same correction happened often enough that it deserves a durable boundary."
 
-## The Receipt Behind the Complaints
+## The Case Study
 
-The useful complaints were specific:
+Here is the difference in practice.
+
+Before the contract, the correction looked like this:
 
 ```txt
-The English blog cannot receive Korean content.
-The post has an image, but the image does not match the article.
-Do not mention the product in every post.
-The writing says the right things, but it does not show evidence.
+This is an English blog. Korean content cannot go public here.
 ```
 
-Each complaint became a public rejection path:
+That is emotionally clear, but mechanically weak. The next agent can nod, apologize, and still miss the same boundary.
+
+After the contract, the correction had a rejection path:
+
+```txt
+Gate: verify-public-page-review
+Rule: public source roots cannot contain CJK/Hangul text
+Scope: public blog markdown and public surfaces
+Evidence: page review output, Pagefind language=en
+```
+
+The same conversion happened for images. The original complaint was:
+
+```txt
+The post has an image, but the image does not match the article.
+```
+
+That became a contract:
+
+```txt
+One body image must match ogImage.
+The path must be /images/posts/<slug>.png.
+The image cannot be reused by another post.
+The rendered page must show the expected image.
+```
+
+Then it became a set of checks:
 
 | Complaint | Current rejection path |
 | --- | --- |
@@ -73,20 +104,39 @@ Each complaint became a public rejection path:
 | Unsupported public post | `verify:source-workflow` requires packet evidence for non-About posts |
 | Agent approves its own publication | `verify:publication-approvals` rejects agent-like reviewer names and stale hashes |
 
-The current field receipt is:
+The current field receipt after the last completed loop is:
 
 ```txt
-public posts checked: 10
-packet-backed posts: 9
-rendered screenshots: 20
-publication approval records: 10
+public posts checked: 10.
+packet-backed posts: 9.
+rendered viewports checked: 24.
+publication approval records: 10.
+wiki markdown files indexed: 239.
 ```
 
-That is the difference between a vent and a spec. The operator can still be annoyed. The repo now has a way to say no.
+That is the difference between a vent and a spec. The operator can still be annoyed. The repo now has a way to say no without needing the same speech again.
+
+## What the Agent Should Do With the Signal
+
+The useful move is not to preserve the angriest sentence. The useful move is to extract the missing invariant.
+
+Use this translation:
+
+| What the operator says | What the agent should ask |
+| --- | --- |
+| "Why are you still using C?" | Which root is canonical? |
+| "There are no images." | Which rendered route proves visibility? |
+| "Do not mention that product everywhere." | Which strings require release proof? |
+| "This is boring." | Which incident or receipt is missing? |
+| "You are rushing alone." | Where is human approval? |
+
+This is where a lot of agentic workflows waste time. They treat frustration as a tone problem. It is usually a missing interface problem.
+
+If the same correction happens twice, stop improving the prompt. Add the boundary to the system.
 
 ## Why Observability Matters
 
-Observability-driven development is useful here because agent failures are often process failures, not single-line bugs. A vague "the output is bad" complaint does not help the next session. A recorded failure mode does.
+Charity Majors' observability argument matters because agent failures are often process failures, not single-line bugs. A vague "the output is bad" complaint does not help the next session. A recorded failure mode does.
 
 Instead of asking the agent to "do better," capture:
 
@@ -98,7 +148,7 @@ which checker should fail next time
 what evidence proves the repair
 ```
 
-This is also how eval thinking helps. The point is not to invent a magical score. The point is to turn a repeated subjective complaint into a repeatable test or review gate.
+Hamel Husain's eval framing is useful for the same reason. The point is not to invent a magical score. The point is to turn a repeated subjective complaint into a repeatable test, checklist, or review gate.
 
 The output should become boring:
 
@@ -124,7 +174,7 @@ Use this pipeline when a workflow keeps producing the same correction:
 6. Re-run the workflow and check whether the correction disappears.
 ```
 
-Example:
+Example from the image failure:
 
 ```txt
 Friction: "The post has an image, but it does not match the article."
@@ -133,9 +183,30 @@ Contract: One body image must match ogImage, live under /images/posts/<slug>.png
 Verifier: editorial contract plus public-surface gate plus browser screenshot.
 ```
 
+Example from the writing failure:
+
+```txt
+Friction: "The post says the right things, but it has no reading value."
+Hidden assumption: passing source and language gates means the article is good enough.
+Contract: each non-About post needs lead pressure, evidence density, mechanism, reader artifact, boundary, scan quality, and visual function.
+Verifier: reference-writing audit plus human review before hash-bound approval.
+```
+
 The second version is actionable. Another agent can enforce it without guessing your mood.
 
 That is the reader move: do not preserve frustration as a quote. Preserve the contract it forced you to discover.
+
+## The Review Question
+
+Before turning frustration into policy, ask one question:
+
+```txt
+Would I still want this rule enforced if a different operator were in the chair?
+```
+
+If the answer is no, it is probably taste. Keep it in editorial review.
+
+If the answer is yes, write the contract. Put it where the next agent can find it. Then add the smallest verifier that catches the same failure without pretending to catch every possible failure.
 
 ## Boundary
 
