@@ -116,16 +116,19 @@ Then it became a set of checks:
 | Unsupported public post | `verify:source-workflow` requires packet evidence for non-About posts |
 | Agent approves its own publication | `verify:publication-approvals` rejects agent-like reviewer names and stale hashes |
 
-The current field receipt after the last completed loop is:
+The field receipt must be dated, otherwise it becomes another vibe. After Loop 96, the receipt looked like this:
 
 ```txt
 public posts checked: 10.
 packet-backed posts: 9.
 rendered viewports checked: 24.
 publication approval records: 10.
-wiki markdown files indexed: 253.
+wiki markdown files indexed: 334.
+archive markdown files copied: 366.
 reference ceiling surface scores checked: 9.
 ```
+
+If that block keeps saying "current" after the next loop changes the archive count, the article has repeated the failure it is trying to prevent. A receipt without a date is just a confident memory with better formatting.
 
 That is the difference between a vent and a spec. The operator can still be annoyed. The repo now has a way to say no without needing the same speech again.
 
@@ -238,6 +241,8 @@ a mood that gets weaker when written down
 ```
 
 If it passes the accept test, write the contract. Put it where the next agent can find it. Then add the smallest verifier that catches the same failure without pretending to catch every possible failure.
+
+Forward this to the agent lead who treats repeated frustration as tone feedback. The decision is narrow: does this complaint deserve a durable boundary and verifier, or should it stay in editorial review as taste?
 
 If it fails the accept test, keep it in editorial review. Not every annoyance deserves a gate. Some of them just deserve coffee and a calmer second pass.
 
