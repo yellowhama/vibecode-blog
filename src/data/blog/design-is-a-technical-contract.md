@@ -201,15 +201,18 @@ semantic anchors must appear in the post text
 expected image should render on the post page
 ```
 
-The latest full site-quality run after the reference-writing gate integration reported this receipt:
+The latest full site-quality run after the reference-ceiling surface upgrade reported this receipt:
 
 ```txt
 npm run verify:site-quality=pass
 post_image_contracts_checked=10
 rendered_page_viewports_checked=24
 publication_approval_records_checked=10
-reference_writing_average_score=99
-latest_gate_commit=60d697a
+rendered_page_surface_contract_image_routes_first_screen=4/4
+rendered_page_surface_evidence_card_routes_first_screen=4/4
+reference_writing_average_score=100
+reference_ceiling_average_score=100
+latest_gate_commit=4df981a
 ```
 
 That is a design-system lesson in miniature. A visual decision becomes a named role, the role becomes data, and the data becomes lintable. The agent can still generate the image, but it cannot silently use a generic asset that has no relationship to the article.
@@ -233,39 +236,52 @@ That split is important. A generated HTML review can show token swatches and ris
 
 If a design decision only exists in a screenshot, it is not a contract. If it only exists in a pretty HTML review page, it is still not a contract.
 
-## Reader Decision
+## Accept/Reject Review
 
-Use DESIGN.md when a design decision needs to survive more than one prompt.
+Use DESIGN.md when a design decision needs to survive more than one prompt. Do not use it as a fancy place to hide undecided taste.
 
-Good candidates:
+Accept a decision into DESIGN.md when at least two of these are true:
 
 ```txt
-brand color roles
-type hierarchy
-spacing rhythm
-component variants
-accessibility requirements
-design tone and forbidden patterns
+The same role will be reused across more than one screen.
+The agent needs the rule before generation, not after review.
+The decision has a named role, not just a hex value or screenshot vibe.
+A linter, token diff, screenshot review, or component check can catch drift.
+Changing the value later should update every component that points at the role.
 ```
 
-Bad candidates:
+Reject it from DESIGN.md when the input is only:
 
 ```txt
-one-off screenshot guesses
-temporary mood boards
+a one-off screenshot guess
+a temporary mood board
+a color the founder liked in one review
 visual polish that has not been decided yet
+a component variant with no agreed behavior
+an HTML mockup that cannot round-trip back into tokens or implementation
 ```
 
-The practical decision matrix is this:
+That last rejection matters. If an agent makes a gorgeous HTML review page but the decision cannot return to `DESIGN.md`, Tailwind tokens, component props, or a patch checklist, the artifact is presentation, not memory.
 
-| Situation | Use DESIGN.md? | Reason |
+The practical review matrix is this:
+
+| Situation | Decision | Reason |
 | --- | --- | --- |
-| Reused brand, type, spacing, or component role | Yes | Durable decision. |
-| More pages in the same visual system | Yes | Shared memory before generation. |
-| Hover or variant changes one property | Yes | Token reference keeps lineage. |
-| Screenshot with no agreed rules | Not yet | Decide before encoding. |
-| Final in-browser quality judgment | No | Use screenshots, review, and QA. |
-| One-off mood exploration | Usually no | Do not store temporary sketches. |
+| Reused brand, type, spacing, or component role | Accept | Durable decision. |
+| More pages in the same visual system | Accept | Shared memory before generation. |
+| Hover or variant changes one property | Accept | Token reference keeps lineage. |
+| Screenshot with no agreed rules | Reject for now | Decide before encoding. |
+| Final in-browser quality judgment | Reject | Use screenshots, review, and QA. |
+| One-off mood exploration | Reject | Do not store temporary sketches. |
+| HTML with no token/export path | Reject | Review surface, not source of truth. |
+
+The review question is blunt:
+
+```txt
+If another agent reads this file tomorrow, will it know what to preserve, what to change, and what to refuse?
+```
+
+If the answer is yes, encode the role. If the answer is no, keep the artifact in review until the decision becomes specific enough to lint.
 
 ## Boundary
 
