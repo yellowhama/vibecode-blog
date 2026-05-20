@@ -100,6 +100,8 @@ That is the bar. If HTML only turns a memo into a nicer memo, keep the Markdown.
 
 The DESIGN.md review artifact had a concrete source inventory, not just a pretty page.
 
+The portable part is not the Windows path. The portable part is the receipt shape: source note, processed extract, rendered review surface, export target, and a place where the final decision returns to canon.
+
 ```txt
 HTML artifact:
 companies/vibecode-town/html-artifacts/design-md-spec-operating-review-2026-05-18.html
@@ -236,6 +238,8 @@ One is a mood. The other is reviewable.
 
 This is where HTML wins: it makes the review faster without pretending to be the system of record.
 
+Forward this rule: HTML is for noticing; Markdown, JSON, and evidence files are for remembering.
+
 ## The Review Artifact Contract
 
 A useful HTML artifact should declare its own inputs.
@@ -334,9 +338,13 @@ Before accepting an HTML artifact, run this small test:
 
 This is the practical boundary. HTML can help a reviewer see. It cannot be the only thing the system remembers.
 
+The failure cost is not theoretical. If a tech lead approves the polished page but no Markdown or JSON decision is exported, the next agent inherits a phantom approval: no source list, no rejected caveat, no hash-bound receipt, and no way for a reviewer to tell whether the decision was inspected or merely admired. That is how one nice report becomes three extra review passes and a stale claim on the public site.
+
 ## Prompt Pattern
 
 Ask for the review surface and the return path:
+
+Send this pattern to the teammate who says, "The agent already made a polished HTML plan, can we approve it?" The answer is yes only if the HTML names its sources, shows what would make the reviewer say no, and exports the final decision back to the durable contract.
 
 ```txt
 Create a single local HTML review artifact for this PR.

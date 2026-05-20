@@ -63,7 +63,11 @@ function reviewFixture(overrides = {}) {
         row: "forward",
         verdict: "reject",
         evidence: "The post explains the rule but does not name the exact teammate who should receive it.",
+        targetSection: "Prompt Pattern",
         requiredChange: "Add a forwardable reader decision that names the audience and the decision it helps them make.",
+        narrowRewriteBrief:
+          'Revise only "Prompt Pattern" by adding one forwardable reviewer/audience sentence. Do not perform a broad style pass.',
+        acceptanceCheck: "The revised prompt section names a concrete teammate and the exact review decision this article helps them make.",
       },
       {
         row: "scene",
@@ -103,6 +107,13 @@ try {
   const plan = JSON.parse(await readFile(outputPath, "utf8"));
   if (plan.items.map((item) => item.row).sort().join(",") !== "forward,stakes") {
     throw new Error("expected plan items to match rejected forward and stakes rows");
+  }
+  const forwardItem = plan.items.find((item) => item.row === "forward");
+  if (forwardItem?.targetSection !== "Prompt Pattern") {
+    throw new Error("expected rejected review targetSection override to drive the revision plan");
+  }
+  if (!forwardItem?.narrowRewriteBrief.includes("one forwardable reviewer/audience sentence")) {
+    throw new Error("expected rejected review narrowRewriteBrief override to drive the revision plan");
   }
   if (!plan.items.every((item) => /Do not perform a broad style pass/i.test(item.narrowRewriteBrief))) {
     throw new Error("expected every plan item to reject broad style passes");

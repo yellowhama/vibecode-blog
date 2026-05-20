@@ -129,16 +129,19 @@ function anchorFor(summary, row) {
 function buildPlan(summary, review, rejected) {
   const items = rejected.map((decision, index) => {
     const row = ROWS[decision.row];
+    const targetSection = clean(decision.targetSection) || row.targetSection;
     return {
       id: `reference-blogger-revision-${String(index + 1).padStart(2, "0")}-${decision.row}`,
       row: decision.row,
       label: row.label,
-      targetSection: row.targetSection,
+      targetSection,
       targetAnchor: clean(decision.anchor ?? anchorFor(summary, decision.row)),
       reviewerProblem: clean(decision.evidence),
       requiredChange: clean(decision.requiredChange),
-      narrowRewriteBrief: `Revise only "${row.targetSection}" so the ${row.label.toLowerCase()} row would move from reject to accept. Do not perform a broad style pass.`,
-      acceptanceCheck: row.acceptanceCheck,
+      narrowRewriteBrief:
+        clean(decision.narrowRewriteBrief) ||
+        `Revise only "${targetSection}" so the ${row.label.toLowerCase()} row would move from reject to accept. Do not perform a broad style pass.`,
+      acceptanceCheck: clean(decision.acceptanceCheck) || row.acceptanceCheck,
     };
   });
 
