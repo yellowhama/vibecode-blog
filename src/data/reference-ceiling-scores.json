@@ -1,11 +1,11 @@
 {
-  "averageScore": 99,
-  "generatedAt": "2026-05-20T12:10:00+09:00",
+  "averageScore": 100,
+  "generatedAt": "2026-05-20T12:30:00+09:00",
   "posts": {
     "ai-agent-work-disk-contract": { "score": 100, "grade": "reference-ceiling" },
     "ai-memory-operating-structure": { "score": 100, "grade": "reference-ceiling" },
     "design-is-a-technical-contract": { "score": 97, "grade": "reference-ceiling" },
-    "frustration-as-spec": { "score": 91, "grade": "reference-ceiling" },
+    "frustration-as-spec": { "score": 100, "grade": "reference-ceiling" },
     "html-review-artifacts-for-agents": { "score": 100, "grade": "reference-ceiling" },
     "mcp-shared-state-data-leak": { "score": 100, "grade": "reference-ceiling" },
     "software-3-0": { "score": 100, "grade": "reference-ceiling" },

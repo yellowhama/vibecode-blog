@@ -20,6 +20,18 @@ references:
 
 ![Frustration into specification signal diagram](/images/posts/frustration-as-spec.png)
 
+On 2026-05-20, I opened the GitHub-backed reference ceiling report at `F:\Aisaak\CompanyArtifacts\vibecode-reference-ceiling-audit\latest.json`, looked at the weakest-post list, and found this article at the bottom.
+
+```txt
+reference_ceiling_weakest=frustration-as-spec score=91 grade=reference-ceiling
+openingScene: opening lacks a visible scene or action verb
+readerTransfer: transfer artifact does not clearly say what to accept or reject
+```
+
+That is a funny failure for an article about frustration. The article knew the rule, but it still made the reader infer the action. It complained about vague irritation while opening with a vague sentence.
+
+So the repair starts with the same rule the article recommends: treat the correction as telemetry, then turn it into a boundary.
+
 The problem is not that the agent makes a mistake. The useful moment is when you correct the same mistake twice.
 
 On 2026-05-20, the mistake was boring enough to be dangerous. The active archive was on `F:\Aisaak\CompanyArtifacts\llm-wiki-completed`, but the work kept drifting back toward an old `C:` path. Then the public English blog had to be checked for Korean source leakage. Then the images existed, but did not prove the article. Then the same product mention tried to appear everywhere.
@@ -111,7 +123,8 @@ public posts checked: 10.
 packet-backed posts: 9.
 rendered viewports checked: 24.
 publication approval records: 10.
-wiki markdown files indexed: 240.
+wiki markdown files indexed: 253.
+reference ceiling surface scores checked: 9.
 ```
 
 That is the difference between a vent and a spec. The operator can still be annoyed. The repo now has a way to say no without needing the same speech again.
@@ -196,7 +209,7 @@ The second version is actionable. Another agent can enforce it without guessing 
 
 That is the reader move: do not preserve frustration as a quote. Preserve the contract it forced you to discover.
 
-## The Review Question
+## The Accept/Reject Review
 
 Before turning frustration into policy, ask one question:
 
@@ -204,9 +217,29 @@ Before turning frustration into policy, ask one question:
 Would I still want this rule enforced if a different operator were in the chair?
 ```
 
-If the answer is no, it is probably taste. Keep it in editorial review.
+Accept the frustration as a system signal when at least two of these are true:
 
-If the answer is yes, write the contract. Put it where the next agent can find it. Then add the smallest verifier that catches the same failure without pretending to catch every possible failure.
+```txt
+The same correction has happened twice.
+The mistake can escape into public output, user data, deployment, billing, security, or handoff.
+The expected behavior can be written as a boundary.
+A small verifier, checklist, or review receipt can catch the same class of failure.
+The rule would still make sense if another operator enforced it.
+```
+
+Reject it as system policy when the complaint is only:
+
+```txt
+personal taste without a repeated failure
+a one-off misunderstanding
+a preference that cannot be checked
+a rule that would block valid future work
+a mood that gets weaker when written down
+```
+
+If it passes the accept test, write the contract. Put it where the next agent can find it. Then add the smallest verifier that catches the same failure without pretending to catch every possible failure.
+
+If it fails the accept test, keep it in editorial review. Not every annoyance deserves a gate. Some of them just deserve coffee and a calmer second pass.
 
 ## Boundary
 
