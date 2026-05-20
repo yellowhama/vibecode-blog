@@ -23,9 +23,11 @@ references:
 
 # The Work Disk Contract for AI Coding Agents
 
-On 2026-05-20, the disk problem was not code. AI coding agents do not only edit source files, and that is the hidden risk.
+On 2026-05-20, I ran `Get-PSDrive -Name C,F`, opened GitHub commit `76f4d0b`, and checked the rendered audit under `F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest`. The disk problem was not code. It was where the agent was allowed to leave proof.
 
-They build. They test. They create fixtures. They write indexes. They generate logs. They produce evidence bundles, compare outputs, and sometimes leave large temp trees behind.
+AI coding agents do not only edit source files, and that is the hidden risk.
+
+They build. They test. They create fixtures. They write indexes. They generate logs. They produce evidence bundles, compare outputs, and sometimes leave large temp trees behind. If those artifacts drift to the wrong drive, the agent can pass a test while making the next handoff harder to trust.
 
 On this workstation, that distinction is not theoretical. The active source repo is on `F:\Aisaak\Projects\vibecode-town`, the LLM wiki archive is on `F:\Aisaak\CompanyArtifacts\llm-wiki-completed`, and the rendered audit writes to `F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest`.
 
@@ -73,6 +75,18 @@ That is not an agent intelligence problem. It is an operations boundary problem.
 
 The worse version is more subtle: the test passes, but the receipt lands somewhere the next agent will never search. That is how a team gets a green check and a broken handoff at the same time.
 
+The bad version looks harmless in the moment:
+
+```txt
+"Build passed."
+"Screenshots generated."
+"Archive refreshed."
+```
+
+None of those statements are enough. The better receipt names where the work landed: `dist`, `F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json`, `F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db`, and `F:\Aisaak\CompanyArtifacts\test-temp\vibecode-node`.
+
+That is the whole point. A disk contract turns "it worked" into "it worked, and the evidence is in the place the next agent will search."
+
 ## Current Machine Receipt
 
 The active workstation makes the disk-role issue visible:
@@ -99,15 +113,28 @@ test temp: F:\Aisaak\CompanyArtifacts\test-temp
 The archive receipt from the latest wiki sync was:
 
 ```txt
-archive_files_copied=272
-source_markdown_count=240
-archive_markdown_count=240
-Indexed 240 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
+archive_files_copied=278
+source_markdown_count=246
+archive_markdown_count=246
+Indexed 246 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
 ```
 
 That is why the path contract matters. Without it, an agent can pass a test while leaving the evidence trail in the wrong place.
 
 The receipt is only useful because it is in the same durable operating archive the next session will query.
+
+The same rule applies to rendered proof. The public post image contract is not only a design rule. It is a filesystem rule:
+
+```txt
+body image: /images/posts/ai-agent-work-disk-contract.png
+ogImage: /images/posts/ai-agent-work-disk-contract.png
+rendered summary: F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
+desktop first-screen image check: 10/10
+mobile first-screen image check: 4/10
+surface expected images: 2/2
+```
+
+If screenshots are evidence, screenshot paths are part of the evidence. A missing image and a missing archive receipt are the same class of problem: the reader is asked to trust something the system did not preserve.
 
 ## Work Disk Contract
 
@@ -158,9 +185,9 @@ Test-Path $env:VIBECODE_TEST_TEMP_DIR
 And make the verifier say what happened:
 
 ```txt
-completion_audit_sync_archive_files_copied=272
-completion_audit_sync_source_markdown_count=240
-completion_audit_sync_archive_markdown_count=240
+completion_audit_sync_archive_files_copied=278
+completion_audit_sync_source_markdown_count=246
+completion_audit_sync_archive_markdown_count=246
 company_artifacts_archive_status=pass
 ```
 
@@ -192,6 +219,15 @@ public evidence gates reject samples and templates
 That last line matters. A sample result is useful documentation. It is not evidence.
 
 The reader action is not to copy these path names. It is to name the roles in your own repo and make scripts resolve them in that order.
+
+Use this acceptance test before trusting a new agent setup:
+
+| Claim | Accept when | Reject when |
+| --- | --- | --- |
+| "Temp files are safe." | Repo temp var wins before `os.tmpdir()`. | OS temp is silent default. |
+| "The archive is current." | Counts match and checker passes. | The agent only says it copied. |
+| "Screenshots prove the page." | `summary.json` and screenshot dir are named. | Only an image path is linked. |
+| "The handoff is durable." | Wiki/index path is searchable. | Artifact lives in chat or Downloads. |
 
 ## The Review Question
 
