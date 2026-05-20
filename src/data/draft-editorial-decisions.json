@@ -13,8 +13,8 @@
       "decision": "keep_internal_example",
       "approvalCandidate": false,
       "reviewerType": "editorial-system",
-      "decidedAt": "2026-05-20T05:18:05.776Z",
-      "rationale": "The draft is useful as an internal proof that the writing harness can move from source packet to critique repair. Loop 38 added a public-facing before/after writing artifact, Loop 39 added a real revision trace from this draft's own opening, and Loop 40 added a cold-reader red-pen test so the artifacts transfer to a reader's own draft. It still needs human critique, rendered candidate proof, image contract promotion, and final hash approval before this can become a public approval candidate.",
+      "decidedAt": "2026-05-20T05:26:50.325Z",
+      "rationale": "The draft is useful as an internal proof that the writing harness can move from source packet to critique repair. Loop 38 added a public-facing before/after writing artifact, Loop 39 added a real revision trace from this draft's own opening, Loop 40 added a cold-reader red-pen test, and Loop 41 added a one-minute paragraph autopsy form so the artifacts transfer to a reader's own draft. It still needs human critique, rendered candidate proof, image contract promotion, and final hash approval before this can become a public approval candidate.",
       "candidateBlockers": [
         "human_critique",
         "rendered_candidate",
@@ -33,6 +33,7 @@
         "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/loop-38-writing-harness-before-after-artifact-2026-05-20.md",
         "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/loop-39-writing-harness-real-revision-trace-2026-05-20.md",
         "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/loop-40-writing-harness-cold-reader-red-pen-2026-05-20.md",
+        "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/loop-41-writing-harness-cold-reader-critique-2026-05-20.md",
         "public/images/posts/writing-harness-not-more-prompts.png"
       ]
     }

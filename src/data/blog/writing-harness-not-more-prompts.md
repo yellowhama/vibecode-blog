@@ -238,6 +238,32 @@ That question transfers.
 
 Use it on any AI-written post that feels competent but forgettable. Do not ask whether the prose is polished. Ask what permission the paragraph is trying to smuggle past you.
 
+Then run the one-minute autopsy:
+
+```txt
+paragraph=
+source_changed_claim=
+reader_decision=
+proof_artifact=
+reject_condition=
+editor_question=
+keep_or_rewrite=
+```
+
+Here is what the weak paragraph looks like under that form:
+
+```txt
+paragraph=AI agents are transforming content operations...
+source_changed_claim=empty
+reader_decision=empty
+proof_artifact=empty
+reject_condition=generic productivity claim without trace
+editor_question=what could a reader inspect or reuse here?
+keep_or_rewrite=rewrite
+```
+
+That small form is the part worth stealing. It turns "this feels generic" into a visible failure state. Once the failure is visible, the editor can ask for a source, a decision, an artifact, or a rejection rule instead of begging the model for more personality.
+
 Here is the bigger before/after that matters:
 
 | Bad writing loop | Better harness loop |
@@ -285,6 +311,7 @@ Use this decision table before automating any agent writing workflow:
 | A topic but no source packet | Build the packet first | Asking for a full article |
 | A source but no reader pressure | Define the reader's decision | Summarizing the source |
 | A draft but no trace | Preserve the packet, command, and audit output | Saying "it feels better" |
+| A paragraph but no autopsy | Fill the one-minute form | Asking for more style |
 | A passing draft scaffold | Send it to critique | Treating `draft: true` as publishable |
 | A strong article body | Add image/rendered proof and approval | Publishing from local markdown alone |
 
@@ -296,9 +323,9 @@ The harder rule is more useful: if the draft cannot show the trace that produced
 
 Current verdict: keep as an internal example.
 
-This draft is now readable enough to teach the harness idea, and it includes two before/after artifacts: a weak prompt-only paragraph with its packet rejection, and a real revision trace from this draft's own opening. Loop 40 added the cold-reader red-pen test so the artifacts transfer to a reader's own draft instead of only documenting this internal run.
+This draft is now readable enough to teach the harness idea, and it includes two before/after artifacts: a weak prompt-only paragraph with its packet rejection, and a real revision trace from this draft's own opening. Loop 40 added the cold-reader red-pen test so the artifacts transfer to a reader's own draft instead of only documenting this internal run. Loop 41 added the one-minute paragraph autopsy so the reader has a concrete form to fill before asking for more style.
 
-It is still not strong enough to publish as a reference blog post because the red-pen test needs human critique and rendered-candidate review.
+It is still not strong enough to publish as a reference blog post because the red-pen test and autopsy form need human critique and rendered-candidate review.
 
 The article should be promoted only after a human reviewer says the before/after artifact is strong enough for a cold reader.
 
@@ -319,4 +346,4 @@ It is a useful internal example because the harness improved the article in visi
 
 The draft can sound like a summary of the source instead of a sharp blog post with a visible scene and reader transfer.
 
-Current status: stronger than a scaffold, still not publication-ready. Before this can become public, it needs human critique of the synthetic example, real revision trace, and cold-reader red-pen test; rendered candidate proof; an image contract; and an approval record bound to the final markdown hash.
+Current status: stronger than a scaffold, still not publication-ready. Before this can become public, it needs human critique of the synthetic example, real revision trace, cold-reader red-pen test, and paragraph autopsy form; rendered candidate proof; an image contract; and an approval record bound to the final markdown hash.
