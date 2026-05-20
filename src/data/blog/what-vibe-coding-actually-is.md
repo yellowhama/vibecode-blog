@@ -21,6 +21,10 @@ references:
 
 ![Vibe coding hype to contract to evidence diagram](/images/posts/what-vibe-coding-actually-is.png)
 
+Vibe coding fails in production at the moment confidence arrives before evidence.
+
+The practical move is not to stop exploring. It is to switch modes before a prototype touches users, money, data, deployment behavior, or public trust.
+
 On 2026-05-20, I ran `npm run audit:reference-ceiling -- --json` inside the GitHub-backed `F:\Aisaak\Projects\vibecode-town` repo and this article came back last.
 
 ```txt
@@ -30,9 +34,9 @@ originalArtifacts: needs more inline file paths, commands, config keys, or artif
 voice: voice lacks compression or contrast
 ```
 
-That is a useful humiliation. The code was not broken. The idea was not wrong. The post was too smooth.
+That was a useful humiliation. The code was not broken. The idea was not wrong. The post was too smooth.
 
-And too smooth is exactly how bad vibe coding sneaks into production.
+Too smooth is exactly how bad vibe coding sneaks into production: no one can find the point where the model should have been rejected.
 
 The first version of this article opened with a generic route failure: a `500`, an agent, three plausible fixes, and a framework contract it did not understand. That was true, but it was still soft. It had the shape of a lesson without the receipt that makes a reader trust the lesson.
 
@@ -95,6 +99,8 @@ The trap is treating those as maturity levels. They are modes. A senior engineer
 
 Here is the kind of bug that exposes the difference.
 
+This is an illustrative Next.js-style route-handler contract example. The exact framework version matters less than the failure shape: the agent edits from an old route-input model while the project expects a newer one.
+
 ```ts
 // Wrong contract for a newer route API.
 export async function GET(
@@ -106,7 +112,7 @@ export async function GET(
 }
 ```
 
-If the framework expects `params` to be resolved asynchronously, this code can look reasonable while still violating the route contract. A prompt like "fix the 500 error" gives the model too much room. It may change error handling, response shape, imports, logging, or file layout while missing the one rule that matters.
+If the route contract expects `params` to be resolved asynchronously, this code can look reasonable while still violating the rule. A prompt like "fix the 500 error" gives the model too much room. It may change error handling, response shape, imports, logging, or file layout while missing the one thing that matters.
 
 The fix is not a better vibe. The fix is a better contract.
 
@@ -174,6 +180,23 @@ English blog received Korean source text.
 Several posts reused generic-looking images.
 Product names appeared in posts without release evidence.
 Markdown changed without a fresh human publication approval hash.
+```
+
+That was not a cosmetic failure. It was a trust failure.
+
+The compact failure chain was:
+
+```txt
+Bad public output:
+- Korean source text could leak into an English blog.
+- Generic or repeated images could appear beside unrelated posts.
+- Unsupported product mentions could make the site look like a brochure.
+
+Gate added:
+- Source workflow, image contract, rendered page, public review, and approval hash checks.
+
+After:
+- A post can be drafted by an agent, but it cannot remain public unless the receipt stack agrees.
 ```
 
 The repair was not a longer prompt. It was a contract stack in code:
@@ -264,7 +287,7 @@ The wrong standard is "did the agent make something impressive?" The better stan
 
 Before the next agent session, decide which mode you are in.
 
-Use this decision matrix:
+Use one decision matrix:
 
 | If the work is... | Use this mode | Required artifact |
 | --- | --- | --- |
@@ -274,7 +297,7 @@ Use this decision matrix:
 | Public post | Contract-driven agent work | Packet, image contract, approval hash |
 | Security, billing, data, deploy | Contract-driven agent work | Failing test or verifier |
 
-Use vibe coding when all three are true:
+Use vibe coding only when all three are true:
 
 ```txt
 the cost of being wrong is low
@@ -292,7 +315,7 @@ another agent will continue the work
 security, billing, or user trust is involved
 ```
 
-Then write the contract first:
+Then write one contract before the diff:
 
 ```txt
 Source:
@@ -302,27 +325,9 @@ Forbidden changes:
 Evidence to keep:
 ```
 
-Accept the output only when the answer includes all five. Reject it when the agent gives you confidence without source, a diff without boundary, or a claim without evidence.
+Accept the output only when those five fields are present and current. Reject it when the agent gives you confidence without source, a diff without boundary, a claim without evidence, or a passing result that no one can reproduce.
 
-For a public post, that means the minimum accept/reject surface is:
-
-```txt
-Source packet exists.
-Image is slug-specific and semantically matched.
-Rendered screenshot exists for desktop and mobile.
-Current Markdown hash has human approval.
-Reference-ceiling score is visible and current.
-```
-
-For a product change, the nouns change, but the shape does not:
-
-```txt
-Source contract exists.
-Diff stays inside the boundary.
-Smoke test or verifier runs.
-Failure before and pass after are preserved.
-Handoff says what not to touch next.
-```
+That is the operator choice: keep vibe coding for discovery, then make production work boring enough to reject.
 
 ## Boundary
 

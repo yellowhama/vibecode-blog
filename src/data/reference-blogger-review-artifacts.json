@@ -65,6 +65,14 @@
       "summary": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/frustration-as-spec-reference-blogger-review-summary.json",
       "reviewResult": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/frustration-as-spec-reference-blogger-review-result.json",
       "revisionPlan": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/frustration-as-spec-reference-blogger-revision-plan.json"
+    },
+    {
+      "slug": "what-vibe-coding-actually-is",
+      "blogDir": "src/data/blog",
+      "reviewArtifact": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/what-vibe-coding-actually-is-reference-blogger-review.html",
+      "summary": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/what-vibe-coding-actually-is-reference-blogger-review-summary.json",
+      "reviewResult": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/what-vibe-coding-actually-is-reference-blogger-review-result.json",
+      "revisionPlan": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/what-vibe-coding-actually-is-reference-blogger-revision-plan.json"
     }
   ]
 }
