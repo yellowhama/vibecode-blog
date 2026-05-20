@@ -163,7 +163,7 @@ rendered evidence: F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest
 test temp: F:\Aisaak\CompanyArtifacts\test-temp
 ```
 
-The archive receipt from the latest wiki sync was:
+The archive receipt for this article revision was:
 
 ```txt
 archive_files_copied=373
