@@ -1,6 +1,7 @@
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { makeTestTempDir } from "./test-temp-root.mjs";
 
 const templateGenerator = "scripts/generate-human-quality-review-template.mjs";
@@ -9,6 +10,7 @@ const resultVerifier = "scripts/verify-human-quality-review-result.mjs";
 const revisionQueueGenerator = "scripts/generate-human-quality-revision-queue.mjs";
 const revisionPlanGenerator = "scripts/generate-human-quality-revision-plan.mjs";
 const revisionEditorGenerator = "scripts/generate-human-quality-revision-editor.mjs";
+const revisionResultVerifier = "scripts/verify-human-quality-revision-result.mjs";
 
 function run(script, args) {
   return spawnSync(process.execPath, [resolve(script), ...args], {
@@ -105,6 +107,40 @@ function fixtureAnchor() {
       "The first honest test of the writing system did not look like a breakthrough. It looked like a paragraph that sounded competent until a reviewer asked what source changed the claim, what decision the reader could make, and what proof object would survive a skeptical reader.",
       260,
     ),
+  };
+}
+
+function sha256(value) {
+  return createHash("sha256").update(value).digest("hex");
+}
+
+function revisionResultFixture(summary, beforeText, afterText, plan, overrides = {}) {
+  return {
+    schema: "vibecode-human-quality-revision-result/v1",
+    slug: summary.slug,
+    sourcePlanMarkdownSha256: plan.markdownSha256,
+    beforeMarkdownSha256: sha256(beforeText),
+    afterMarkdownSha256: sha256(afterText),
+    promotionAllowed: false,
+    nextGate: "regenerate_human_review_packet",
+    reviser: {
+      name: "Revision Operator",
+      handle: "revision-operator",
+      revisedAt: "2026-05-20T00:30:00.000Z",
+    },
+    items: plan.items.map((item) => ({
+      planItemId: item.id,
+      targetSection: item.targetSection,
+      beforeQuote: item.targetQuote,
+      afterQuote:
+        "The first honest test of this review desk is whether the same opening now shows the failed paragraph, the receipt, the reviewer objection, and the concrete proof gap before asking for approval.",
+      changeSummary:
+        "Revised the anchored opening evidence-density failure by adding the reviewer objection and concrete proof gap directly inside the target section.",
+      acceptanceEvidence:
+        "The revised target section now names the failed paragraph, receipt, reviewer objection, and proof gap, giving the next human reviewer concrete evidence to inspect.",
+      broadRewriteDenied: true,
+    })),
+    ...overrides,
   };
 }
 
@@ -346,6 +382,65 @@ async function main() {
       throw new Error("expected fresh human quality revision editor check to pass");
     }
     process.stdout.write("human_quality_revision_editor_check_self_test=pass\n");
+
+    const afterDraftPath = join(root, "draft-after.md");
+    const beforeOpening =
+      "The first honest test of the writing system did not look like a breakthrough. It looked like a paragraph that sounded competent until a reviewer asked what source changed the claim, what decision the reader could make, and what proof object would survive a skeptical reader.";
+    const afterOpening =
+      "The first honest test of this review desk is whether the same opening now shows the failed paragraph, the receipt, the reviewer objection, and the concrete proof gap before asking for approval.";
+    const afterDraftText = draftText.replace(beforeOpening, afterOpening);
+    const revisionResultPath = join(root, "revision-result.json");
+    await writeFile(afterDraftPath, afterDraftText, "utf8");
+    await writeFile(
+      revisionResultPath,
+      `${JSON.stringify(revisionResultFixture(summary, draftText, afterDraftText, plan), null, 2)}\n`,
+      "utf8",
+    );
+    result = run(revisionResultVerifier, [
+      "--plan",
+      planPath,
+      "--before",
+      draftPath,
+      "--after",
+      afterDraftPath,
+      "--result",
+      revisionResultPath,
+    ]);
+    if (
+      result.status !== 0 ||
+      !result.stdout.includes("human_quality_revision_result=pass") ||
+      !result.stdout.includes("human_quality_revision_changed_sections=Packet Receipt")
+    ) {
+      process.stderr.write(result.stdout + result.stderr);
+      throw new Error("expected anchored human quality revision result to pass");
+    }
+    process.stdout.write("human_quality_revision_result_positive_self_test=pass\n");
+
+    const broadRewriteText = afterDraftText.replace(
+      "The reader leaves with a concrete review form, not a vague instruction to write better.",
+      "The reader leaves with a concrete review form, a new ending, and a rewritten transfer promise that was not part of the anchored repair plan.",
+    );
+    await writeFile(afterDraftPath, broadRewriteText, "utf8");
+    await writeFile(
+      revisionResultPath,
+      `${JSON.stringify(revisionResultFixture(summary, draftText, broadRewriteText, plan), null, 2)}\n`,
+      "utf8",
+    );
+    result = run(revisionResultVerifier, [
+      "--plan",
+      planPath,
+      "--before",
+      draftPath,
+      "--after",
+      afterDraftPath,
+      "--result",
+      revisionResultPath,
+    ]);
+    if (result.status === 0 || !result.stderr.includes("revision changed non-plan section: Reader Transfer")) {
+      process.stderr.write(result.stdout + result.stderr);
+      throw new Error("expected broad human quality revision result to fail");
+    }
+    process.stdout.write("human_quality_revision_result_broad_rewrite_self_test=pass\n");
 
     result = run(revisionQueueGenerator, ["--check", "--summary", summaryPath, "--review", reviewPath, "--output", queuePath]);
     if (result.status !== 0 || !result.stdout.includes("human_quality_revision_queue=pass")) {
