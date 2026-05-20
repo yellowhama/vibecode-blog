@@ -23,11 +23,15 @@ references:
 
 # The Work Disk Contract for AI Coding Agents
 
-AI coding agents do not only edit source files.
+On 2026-05-20, the disk problem was not code. AI coding agents do not only edit source files, and that is the hidden risk.
 
 They build. They test. They create fixtures. They write indexes. They generate logs. They produce evidence bundles, compare outputs, and sometimes leave large temp trees behind.
 
-If all of that falls into the operating system default temp folder, the agent is changing code while quietly pressuring the workstation. The problem is not "the C drive is small." The problem is that nobody told the agent which disk role each artifact belongs to.
+On this workstation, that distinction is not theoretical. The active source repo is on `F:\Aisaak\Projects\vibecode-town`, the LLM wiki archive is on `F:\Aisaak\CompanyArtifacts\llm-wiki-completed`, and the rendered audit writes to `F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest`.
+
+The repeated failure was still the old one: work kept drifting toward `C:` because the operating system made that the easy default.
+
+If builds, screenshots, search indexes, and evidence bundles fall into the operating system temp folder, the agent is changing code while quietly pressuring the workstation. The problem is not "the C drive is small." The problem is that nobody told the agent which disk role each artifact belongs to.
 
 A work disk contract answers that before the next long run starts.
 
@@ -67,6 +71,8 @@ discover the active machine state is now part of the task
 
 That is not an agent intelligence problem. It is an operations boundary problem.
 
+The worse version is more subtle: the test passes, but the receipt lands somewhere the next agent will never search. That is how a team gets a green check and a broken handoff at the same time.
+
 ## Current Machine Receipt
 
 The active workstation makes the disk-role issue visible:
@@ -74,9 +80,9 @@ The active workstation makes the disk-role issue visible:
 ```txt
 Get-PSDrive -Name C,F
 
-Name          Used          Free
-C     473489145856  525797683200
-F    1195198464000 6806346575872
+Name   Used (GB)   Free (GB)   Root
+C         441.06      489.60   C:\
+F        1114.30     6337.72   F:\
 ```
 
 The point is not that F is always the right disk. The point is that this machine has a clear archive/work volume, and the agent was still being corrected for using C in places where completed company artifacts belonged on F.
@@ -87,28 +93,33 @@ The current contract names the durable locations:
 product repo: F:\Aisaak\Projects\vibecode-town
 LLM wiki: F:\Aisaak\CompanyArtifacts\llm-wiki-completed
 rendered evidence: F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest
+test temp: F:\Aisaak\CompanyArtifacts\test-temp
 ```
 
 The archive receipt from the latest wiki sync was:
 
 ```txt
-archive_files_copied=256
-source_markdown_count=224
-archive_markdown_count=224
+archive_files_copied=272
+source_markdown_count=240
+archive_markdown_count=240
+Indexed 240 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
 ```
 
 That is why the path contract matters. Without it, an agent can pass a test while leaving the evidence trail in the wrong place.
+
+The receipt is only useful because it is in the same durable operating archive the next session will query.
 
 ## Work Disk Contract
 
 Vibecode uses the contract this way:
 
-| Role | Example |
-| --- | --- |
-| source repo | code under active change |
-| operating memory | current handoff, status, searchable index |
-| completed archive | durable artifacts another agent can trust later |
-| self-test temp | disposable test output |
+| Role | Bad default | Contract |
+| --- | --- | --- |
+| source repo | write fixtures beside source | keep source under the repo only |
+| operating memory | scatter notes in chat | store handoff/wiki/index on F |
+| completed archive | leave receipts in temp | copy durable evidence to archive |
+| self-test temp | use OS temp silently | use project temp root first |
+| screenshots | trust generated HTML | write rendered proof to audit dir |
 
 The implementation is deliberately boring. Scripts read repo-specific temp variables first, then shared temp variables, then a large local archive drive, and only then fall back to the OS default.
 
@@ -125,6 +136,35 @@ The point is not that these exact names are universal. They are not. The point i
 This pattern is fixed in the Vibecode repo through a [real commit](https://github.com/yellowhama/vibecode-blog/commit/1e62c79c62d0b3b0b1cf2c13d334b0bef80b341d), not just a note in a prompt.
 
 That distinction matters. A prompt reminder can be missed. A script-level path contract can be tested.
+
+## Copyable Contract
+
+For a repo with long-running agents, write the contract down before the first autonomous loop:
+
+```powershell
+$env:VIBECODE_TEST_TEMP_DIR = "F:\Aisaak\CompanyArtifacts\test-temp\vibecode-node"
+$env:PROJECT_TEST_TEMP_DIR = "F:\Aisaak\CompanyArtifacts\test-temp\vibecode-town"
+$env:LLM_WIKI_ROOT = "F:\Aisaak\CompanyArtifacts\llm-wiki-completed"
+```
+
+Then add a drift check:
+
+```powershell
+Get-PSDrive -Name C,F
+Test-Path $env:LLM_WIKI_ROOT
+Test-Path $env:VIBECODE_TEST_TEMP_DIR
+```
+
+And make the verifier say what happened:
+
+```txt
+completion_audit_sync_archive_files_copied=272
+completion_audit_sync_source_markdown_count=240
+completion_audit_sync_archive_markdown_count=240
+company_artifacts_archive_status=pass
+```
+
+This is the part most agent setups skip. They define a workflow, but not a filesystem jurisdiction. Then the first real loop writes code in one place, screenshots in another, and evidence in a third.
 
 ## Practical Checklist
 
@@ -153,11 +193,23 @@ That last line matters. A sample result is useful documentation. It is not evide
 
 The reader action is not to copy these path names. It is to name the roles in your own repo and make scripts resolve them in that order.
 
+## The Review Question
+
+Before trusting an agent-produced receipt, ask:
+
+```txt
+If a new agent starts tomorrow, where will it search for this artifact?
+```
+
+If the answer is "the chat," "Downloads," or "whatever temp folder the SDK picked," the receipt is not operational memory. It is debris.
+
+If the answer is a named archive path, backed by a checker that compares source and archive counts, the receipt can become part of the system.
+
 ## Boundary
 
 A work disk contract does not prove the work is correct. It does not make a runtime receipt real. It does not turn a sample artifact into evidence.
 
-It only makes filesystem behavior explicit enough that other gates can trust where artifacts are supposed to live.
+It only makes filesystem behavior explicit enough that other gates can trust where artifacts are supposed to live. Disk routing is infrastructure for evidence quality, not evidence quality itself.
 
 ## Why This Belongs in the Trust Engine
 
