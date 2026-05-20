@@ -29,7 +29,7 @@ approval_required=true
 approval_candidate=false
 editorial_decision=keep_internal_example
 editorial_decision_ref=src/data/draft-editorial-decisions.json#writing-harness-not-more-prompts
-candidate_blockers=public_before_after_example,human_critique,rendered_candidate,hash_approval,image_contract
+candidate_blockers=human_critique,rendered_candidate,hash_approval,image_contract
 ```
 
 ## Opening Pressure
@@ -143,7 +143,47 @@ What artifact proves the mechanism?
 What condition would make us reject the draft?
 ```
 
-Here is the before/after that matters:
+Here is a tiny example.
+
+The weak prompt-only version sounds respectable:
+
+```txt
+AI agents are transforming content operations by enabling teams to create
+high-quality articles faster than ever before. With the right prompts,
+businesses can scale their publishing workflows while maintaining a consistent
+brand voice and improving efficiency across the entire marketing funnel.
+```
+
+That paragraph is not wrong in the useful sense. It is worse than wrong: it is frictionless. Nothing in it can be inspected, challenged, reused, or remembered.
+
+A harness should reject it before an editor wastes time saying "make it less generic."
+
+The packet catches the failure like this:
+
+```txt
+source_changed_claim=no
+reader_decision=missing
+artifact=missing
+reject_condition=generic productivity claim without trace
+next_action=show the mechanism that prevents bad confident prose from shipping
+```
+
+The rewritten version has less polish and more load-bearing material:
+
+```txt
+The draft generator should not be allowed to write just because the topic is
+"self-improving agents." It should first point to the source packet, name the
+reader decision, and say what would make the draft fail. In this run, that meant
+the AutoAgent note could become a private `draft:true` article only after the
+source workflow quality gate passed. The system did not make the writing good.
+It made the writing accountable.
+```
+
+That is the job.
+
+The harness does not magically add taste. It removes the places where vague prose can hide. It forces the sentence to carry a source, a reader problem, an artifact, or a rejection rule.
+
+Here is the bigger before/after that matters:
 
 | Bad writing loop | Better harness loop |
 | --- | --- |
@@ -201,9 +241,9 @@ The harder rule is more useful: if the draft cannot show the trace that produced
 
 Current verdict: keep as an internal example.
 
-This draft is now readable enough to teach the harness idea, but it is not yet strong enough to publish as a reference blog post. It still leans on our internal build history. A public version needs one sharper outside-facing scene: a bad AI article that passed a vibe prompt, the packet artifacts that caught it, the rewritten excerpt, and the exact reason the harness made the piece better.
+This draft is now readable enough to teach the harness idea, and it includes a first before/after artifact: a weak prompt-only paragraph, the packet failure that catches it, and the rewritten version. It is still not strong enough to publish as a reference blog post because the example is synthetic and has not gone through human critique or rendered-candidate review.
 
-The article should be promoted only after that before/after example exists.
+The article should be promoted only after a human reviewer says the before/after artifact is strong enough for a cold reader.
 
 ## Approval Candidate Verdict
 
@@ -222,4 +262,4 @@ It is a useful internal example because the harness improved the article in visi
 
 The draft can sound like a summary of the source instead of a sharp blog post with a visible scene and reader transfer.
 
-Current status: stronger than a scaffold, still not publication-ready. Before this can become public, it needs a public-facing before/after writing example, rendered candidate proof, an image contract, and an approval record bound to the final markdown hash.
+Current status: stronger than a scaffold, still not publication-ready. Before this can become public, it needs human critique of the before/after artifact, rendered candidate proof, an image contract, and an approval record bound to the final markdown hash.
