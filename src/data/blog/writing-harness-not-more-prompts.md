@@ -175,16 +175,9 @@ What artifact proves the mechanism?
 What condition would make us reject the draft?
 ```
 
-The weak prompt-only version from the opening sounded respectable:
+The opening paragraph is the example.
 
-```txt
-AI agents are transforming content operations by enabling teams to create
-high-quality articles faster than ever before. With the right prompts,
-businesses can scale their publishing workflows while maintaining a consistent
-brand voice and improving efficiency across the entire marketing funnel.
-```
-
-That paragraph is not wrong in the useful sense. It is worse than wrong: it is frictionless. Nothing in it can be inspected, challenged, reused, or remembered.
+It promises productivity, consistency, brand voice, and scale. Those are the four horsemen of harmless-looking AI content. The paragraph is not wrong in the useful sense. It is worse than wrong: it is frictionless. Nothing in it can be inspected, challenged, reused, or remembered.
 
 I pasted that paragraph into the review surface and it failed before the editor had to reach for taste.
 
@@ -270,7 +263,7 @@ revert it.
 If the trace gives an editor a sharper question, keep it.
 ```
 
-That is why the second opening is useful. It does not merely sound less generic. It gives the editor a sharper question: who gave this draft permission to look finished?
+That is why starting with the bad paragraph is useful. It does not merely sound less generic. It gives the editor a sharper question: who gave this draft permission to look finished?
 
 That question transfers.
 
