@@ -5,6 +5,7 @@ import { makeTestTempDir } from "./test-temp-root.mjs";
 
 const templateGenerator = "scripts/generate-human-quality-review-template.mjs";
 const resultVerifier = "scripts/verify-human-quality-review-result.mjs";
+const revisionQueueGenerator = "scripts/generate-human-quality-revision-queue.mjs";
 
 function run(script, args) {
   return spawnSync(process.execPath, [resolve(script), ...args], {
@@ -120,6 +121,49 @@ async function main() {
       throw new Error("expected reject-plus-promote human quality review result to fail");
     }
     process.stdout.write("human_quality_review_result_reject_blocks_promotion_self_test=pass\n");
+
+    const validRejectReview = reviewFixture(summary, {
+      decision: "keep_internal_example",
+      scorecard: summary.humanQualityScorecard.map((row, index) => ({
+        label: row.label,
+        verdict: index === 1 ? "reject" : "accept",
+        evidenceNote: `Reviewed ${row.label} with enough evidence note text for the verifier to inspect the row.`,
+        requiredChange: index === 1 ? "Add concrete screenshot proof before promotion." : "",
+      })),
+      nextActions: ["Revise the rejected evidence density row before another promotion review."],
+    });
+    const queuePath = join(root, "revision-queue.json");
+    await writeFile(reviewPath, `${JSON.stringify(validRejectReview, null, 2)}\n`, "utf8");
+    result = run(resultVerifier, ["--summary", summaryPath, "--review", reviewPath]);
+    if (result.status !== 0 || !result.stdout.includes("human_quality_review_result=pass")) {
+      process.stderr.write(result.stdout + result.stderr);
+      throw new Error("expected keep-private rejected human quality review result to pass");
+    }
+    result = run(revisionQueueGenerator, ["--summary", summaryPath, "--review", reviewPath, "--output", queuePath]);
+    if (
+      result.status !== 0 ||
+      !result.stdout.includes("human_quality_revision_queue=pass") ||
+      !result.stdout.includes("human_quality_revision_queue_reject_count=1")
+    ) {
+      process.stderr.write(result.stdout + result.stderr);
+      throw new Error("expected rejected human quality review to produce revision queue");
+    }
+    const queue = JSON.parse(await readFile(queuePath, "utf8"));
+    if (
+      queue.queueStatus !== "revision_required" ||
+      queue.items.length !== 1 ||
+      queue.items[0].scorecardLabel !== "Evidence density"
+    ) {
+      throw new Error("expected revision queue to contain the rejected Evidence density row");
+    }
+    process.stdout.write("human_quality_revision_queue_reject_self_test=pass\n");
+
+    result = run(revisionQueueGenerator, ["--check", "--summary", summaryPath, "--review", reviewPath, "--output", queuePath]);
+    if (result.status !== 0 || !result.stdout.includes("human_quality_revision_queue=pass")) {
+      process.stderr.write(result.stdout + result.stderr);
+      throw new Error("expected fresh human quality revision queue check to pass");
+    }
+    process.stdout.write("human_quality_revision_queue_check_self_test=pass\n");
   } finally {
     await rm(root, { recursive: true, force: true });
   }

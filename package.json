@@ -40,6 +40,8 @@
     "draft:human-quality-review-template": "node scripts/generate-human-quality-review-template.mjs",
     "verify:human-quality-review-template": "node scripts/generate-human-quality-review-template.mjs --check",
     "verify:human-quality-review-result": "node scripts/verify-human-quality-review-result.mjs",
+    "draft:human-quality-revision-queue": "node scripts/generate-human-quality-revision-queue.mjs",
+    "verify:human-quality-revision-queue": "node scripts/generate-human-quality-revision-queue.mjs --check",
     "verify:source-links": "node scripts/verify-source-references.mjs --check-http",
     "verify:factory-contract": "node scripts/verify-factory-contract.mjs",
     "verify:operating-articles": "node scripts/verify-operating-articles.mjs",
