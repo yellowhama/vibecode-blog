@@ -103,7 +103,7 @@
       "approvedAt": "2026-05-20T18:45:00+09:00",
       "approvalRef": "operator-reference-writing-loop-14-2026-05-20",
       "approvalScope": "current_public_baseline_after_frustration_case_study_upgrade_loop_14",
-      "contentSha256": "2fb906fd4201f5797880b421aa604b24b445db73447918ad9625bc20ae437b03",
+      "contentSha256": "1cfbe75d658e39aa2468f8a0e4a7384a299a297b4f6c1fd4c24ae5101208caf0",
       "sourceWorkflow": "packet",
       "image": "/images/posts/frustration-as-spec.png",
       "requiredEvidence": [

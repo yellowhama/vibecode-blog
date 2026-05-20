@@ -111,7 +111,7 @@ public posts checked: 10.
 packet-backed posts: 9.
 rendered viewports checked: 24.
 publication approval records: 10.
-wiki markdown files indexed: 239.
+wiki markdown files indexed: 240.
 ```
 
 That is the difference between a vent and a spec. The operator can still be annoyed. The repo now has a way to say no without needing the same speech again.
