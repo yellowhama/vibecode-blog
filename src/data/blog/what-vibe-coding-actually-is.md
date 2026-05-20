@@ -21,7 +21,22 @@ references:
 
 ![Vibe coding hype to contract to evidence diagram](/images/posts/what-vibe-coding-actually-is.png)
 
-The failure did not look dramatic.
+On 2026-05-20, I ran `npm run audit:reference-ceiling -- --json` inside the GitHub-backed `F:\Aisaak\Projects\vibecode-town` repo and this article came back last.
+
+```txt
+reference_ceiling_weakest=what-vibe-coding-actually-is score=87 grade=strong-but-thin
+openingScene: opening needs a named system, date, count, command, or artifact
+originalArtifacts: needs more inline file paths, commands, config keys, or artifact names
+voice: voice lacks compression or contrast
+```
+
+That is a useful humiliation. The code was not broken. The idea was not wrong. The post was too smooth.
+
+And too smooth is exactly how bad vibe coding sneaks into production.
+
+The first version of this article opened with a generic route failure: a `500`, an agent, three plausible fixes, and a framework contract it did not understand. That was true, but it was still soft. It had the shape of a lesson without the receipt that makes a reader trust the lesson.
+
+So here is the sharper claim: vibe coding is not the enemy. Unreceipted confidence is the enemy. Vibe coding is a good way to discover a shape; it becomes dangerous when everyone forgets that discovery mode has no right to ship.
 
 A route returned 500. The agent tried three fixes. Each answer sounded plausible. None of them touched the actual problem: the framework version had changed the route contract, and the agent was still editing from the old mental model.
 
@@ -64,6 +79,8 @@ The agent needs the source, boundary, and verifier before it edits.
 
 Most failed "vibe coding" stories are really a mode error. The operator kept behaving as if the work was exploratory after the work had become contractual.
 
+Not all AI coding is vibe coding. Not all vibe coding belongs in production.
+
 The practical taxonomy is this:
 
 | Mode | Good use | Stop when |
@@ -103,6 +120,49 @@ Route contract:
 
 Now the agent has a boundary. It can still move quickly, but the output has something to be rejected against.
 
+## The Artifact That Changed The Standard
+
+The important part of the route example is not the route. It is the moment when the operator stops asking for "a fix" and starts giving the model a rejection surface.
+
+Bad prompt:
+
+```txt
+Fix the 500 error.
+```
+
+Better contract:
+
+```txt
+Source:
+- Check the framework route-handler contract before editing.
+
+Boundary:
+- Only change id extraction.
+- Do not change the response JSON shape.
+- Do not add new dependencies.
+
+Acceptance check:
+- Request /tasks/123.
+- Response must be 200.
+- Response body must include {"taskId":"123"}.
+
+Forbidden changes:
+- No broad error-wrapper rewrite.
+- No route folder move.
+- No silent fallback id.
+
+Evidence to keep:
+- Failing output before.
+- Passing smoke result after.
+- File path and commit hash.
+```
+
+That is the entire difference. The model did not become magically wiser. The work became rejectable.
+
+This is also why a strong agent workflow often feels less glamorous than the demo. The demo asks the agent to build something visible. Production asks the agent to preserve something invisible: a route contract, a schema promise, an approval hash, a deployment assumption, a security boundary.
+
+The useful operator move is not "trust the model less." That is too broad. The useful move is: name the hidden contract before the model gets permission to edit.
+
 ## A Field Receipt From This Site
 
 The same failure shape showed up in this site, just on the publishing surface instead of a route handler.
@@ -118,13 +178,14 @@ Markdown changed without a fresh human publication approval hash.
 
 The repair was not a longer prompt. It was a contract stack in code:
 
-The operational boundary is `scripts/verify-public-page-review.mjs`, `scripts/verify-post-image-contracts.mjs`, `scripts/verify-rendered-pages.mjs`, `scripts/verify-publication-approvals.mjs`, and `npm run verify:site-quality`.
+The operational boundary is `scripts/verify-public-page-review.mjs`, `scripts/verify-post-image-contracts.mjs`, `scripts/verify-rendered-pages.mjs`, `scripts/verify-publication-approvals.mjs`, `scripts/verify-reference-ceiling-surface.mjs`, and `npm run verify:site-quality`.
 
 ```txt
 scripts/verify-public-page-review.mjs
 scripts/verify-post-image-contracts.mjs
 scripts/verify-rendered-pages.mjs
 scripts/verify-publication-approvals.mjs
+scripts/verify-reference-ceiling-surface.mjs
 npm run verify:site-quality
 ```
 
@@ -146,19 +207,34 @@ The later writing-quality loop continued the same rule:
 6730995 Improve DESIGN.md article evidence
 5f939db Improve Software 3.0 verification mechanism
 f7076c0 Correct Software 3.0 approval loop ref
+283a6fe Strengthen evidence-backed post surfacing
 ```
 
 The current receipt is concrete:
 
 ```txt
 packet_backed_posts=9
-packet_files=54
+source_workflow_posts_checked=9
 post_image_contracts_checked=10
 rendered_viewport_checks=24
 publication_approval_records=10
+reference_ceiling_surface_scores_checked=9
+rendered_page_surface_evidence_card_routes_first_screen=4/4
 ```
 
 That is the production shift. The agent is still allowed to draft, rewrite, and generate images. But the output cannot remain public unless the source packet, image contract, rendered screenshot, and exact Markdown hash agree.
+
+There is a before/after hidden in that receipt:
+
+| Before | After |
+| --- | --- |
+| "Looks good" | `publication_approval_records_checked=10` |
+| "It has images" | `post_image_contracts_checked=10` |
+| "The page opens" | `rendered_page_viewports_checked=24` |
+| "The writing is probably fine" | `reference_ceiling_surface_scores_checked=9` |
+| "Ship it" | `npm run verify:site-quality` |
+
+The second column is not more poetic. It is more useful.
 
 ## The Production Shift
 
@@ -181,6 +257,8 @@ intent
 That middle part is the craft. The contract can be a migration note, a route rule, a schema, a design token file, a deployment checklist, or a failing test. The format matters less than the function: it turns vague intent into a reviewable boundary.
 
 This is why "AI slop" is often a process problem. The model may be wrong, but the operator also failed to define what correctness meant before asking for the diff.
+
+The wrong standard is "did the agent make something impressive?" The better standard is "did the agent leave behind a thing I can reject?"
 
 ## Reader Decision
 
@@ -222,6 +300,28 @@ Boundary:
 Acceptance check:
 Forbidden changes:
 Evidence to keep:
+```
+
+Accept the output only when the answer includes all five. Reject it when the agent gives you confidence without source, a diff without boundary, or a claim without evidence.
+
+For a public post, that means the minimum accept/reject surface is:
+
+```txt
+Source packet exists.
+Image is slug-specific and semantically matched.
+Rendered screenshot exists for desktop and mobile.
+Current Markdown hash has human approval.
+Reference-ceiling score is visible and current.
+```
+
+For a product change, the nouns change, but the shape does not:
+
+```txt
+Source contract exists.
+Diff stays inside the boundary.
+Smoke test or verifier runs.
+Failure before and pass after are preserved.
+Handoff says what not to touch next.
 ```
 
 ## Boundary
