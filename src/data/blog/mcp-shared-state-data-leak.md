@@ -27,6 +27,8 @@ At 1:54 a.m. on 2026-05-21, I opened GitHub Advisory `GHSA-345p-7cg4-v4c7`, chec
 
 It was the sentence an engineer says right before skipping the real check: "It is HTTP, so it is stateless."
 
+Before accepting an MCP endpoint, run the constructor-location check. If the server or transport owner is unclear, the review is not done.
+
 The HTTP request may be stateless. The application object may not be. If one `McpServer` instance or one `StreamableHTTPServerTransport` instance is reused across clients, the agent boundary is already weaker than it looks.
 
 That shared state is not an implementation detail. In an agent tool server, shared state is a security boundary. A route handler can look clean while the object graph behind it still connects two clients that should never meet.
@@ -34,6 +36,8 @@ That shared state is not an implementation detail. In an agent tool server, shar
 The annoying part is that the bug hides in the place reviewers skim past. Not the tool description. Not the auth middleware. The constructor location.
 
 That is the part I would put in red ink on the review: do not tell me the route is authenticated until you can tell me where the server and transport are constructed.
+
+The move is simple: upgrade the SDK, then reject the review until the constructor locations prove the server and transport lifecycle.
 
 Two users can hit the same `/mcp` endpoint, both can look properly authenticated, and the leak can still come from a reused transport object quietly carrying request-to-stream state from one client into another.
 
@@ -139,6 +143,46 @@ src/mcp/routes.ts:53:await transport.handleRequest(request, response)
 That does not prove the whole server is secure. It proves the reviewer looked at the right layer. The route can still need auth, origin validation, session ownership, and dependency gates. But at least the review is no longer staring at the front door while the hallway connects two apartments.
 
 This is the writing lesson and the security lesson at the same time: a claim is weak until it points at the exact object that would make it false.
+
+## Proof Chain
+
+Here is the release chain as proof, not a mood:
+
+```txt
+Bad output:
+- The endpoint returns 200.
+- Authentication passes.
+- The team says "HTTP is stateless."
+- The same module-level server or transport object can still route client state across streams.
+
+Gate added:
+- Check the SDK floor.
+- Grep constructor locations.
+- Reject shared transport or server/protocol ownership unless an isolated session owner is named.
+- Keep the review result attached to the current article hash.
+
+After:
+- The advisory is no longer only a dependency note.
+- The review has a lifecycle owner, a constructor-location receipt, and a release decision.
+- The current accepted review, zero-item revision plan, approval hash, and contentSha256 all point at the revised article.
+```
+
+The command version is deliberately boring:
+
+```bash
+npm run verify:reported-proof
+node scripts/audit-reported-proof.mjs --output F:\Aisaak\CompanyArtifacts\vibecode-reported-proof-audit\latest.json
+```
+
+That gate caught this article before the revision:
+
+```txt
+reported_proof_weakest=mcp-shared-state-data-leak score=81 grade=reported-proof-pass
+proofChain: missing ordered failure -> gate/check -> after/pass proof chain
+artifactAnchors: needs at least one command the reader can recognize or rerun
+```
+
+The accepted state has to change from "advisory summarized" to "review object proved." If the proof chain is missing, the article can still be correct, but it is harder to forward because the reader has to assemble the failure path themselves.
 
 ## Minimal Audit Evidence
 
