@@ -1,0 +1,59 @@
+{
+  "averageScore": 84,
+  "generatedAt": "2026-05-20T22:12:54.629Z",
+  "minScore": 80,
+  "minAverage": 82,
+  "status": "writing_pulse_ready",
+  "posts": {
+    "ai-agent-work-disk-contract": {
+      "score": 86,
+      "grade": "blogger-pulse-pass",
+      "gaps": ["explicit judgment lines", "dated/count/hash receipts"]
+    },
+    "ai-memory-operating-structure": {
+      "score": 86,
+      "grade": "blogger-pulse-pass",
+      "gaps": ["explicit judgment lines", "dated/count/hash receipts"]
+    },
+    "design-is-a-technical-contract": {
+      "score": 81,
+      "grade": "blogger-pulse-pass",
+      "gaps": ["reader action in opening", "explicit judgment lines", "dated/count/hash receipts"]
+    },
+    "frustration-as-spec": {
+      "score": 86,
+      "grade": "blogger-pulse-pass",
+      "gaps": ["explicit judgment lines", "dated/count/hash receipts"]
+    },
+    "html-review-artifacts-for-agents": {
+      "score": 81,
+      "grade": "blogger-pulse-pass",
+      "gaps": ["reader action in opening", "explicit judgment lines", "dated/count/hash receipts"]
+    },
+    "mcp-shared-state-data-leak": {
+      "score": 81,
+      "grade": "blogger-pulse-pass",
+      "gaps": ["explicit judgment lines", "dated/count/hash receipts", "ending boundary"]
+    },
+    "software-3-0": {
+      "score": 86,
+      "grade": "blogger-pulse-pass",
+      "gaps": ["explicit judgment lines", "dated/count/hash receipts"]
+    },
+    "vercel-is-not-a-deployment-contract": {
+      "score": 86,
+      "grade": "blogger-pulse-pass",
+      "gaps": ["explicit judgment lines", "dated/count/hash receipts"]
+    },
+    "what-vibe-coding-actually-is": {
+      "score": 86,
+      "grade": "blogger-pulse-pass",
+      "gaps": ["explicit judgment lines", "dated/count/hash receipts"]
+    }
+  },
+  "weakestQueue": [
+    "design-is-a-technical-contract",
+    "html-review-artifacts-for-agents",
+    "mcp-shared-state-data-leak"
+  ]
+}

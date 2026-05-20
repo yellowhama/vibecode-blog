@@ -8,6 +8,7 @@ import Footer from "@/components/Footer.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
 import referenceCeiling from "@/data/reference-ceiling-scores.json";
+import writingPulse from "@/data/writing-pulse-scores.json";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 const sortedPosts = getSortedPosts(posts);
@@ -21,11 +22,15 @@ const renderedViewportChecks = publishedPosts * 2 + 4;
 const approvalRecords = publishedPosts;
 const getReferenceCeiling = (slug: string) =>
   referenceCeiling.posts[slug as keyof typeof referenceCeiling.posts]?.score;
+const getWritingPulse = (slug: string) =>
+  writingPulse.posts[slug as keyof typeof writingPulse.posts]?.score;
 const leadReferenceScore = leadPost ? getReferenceCeiling(leadPost.id) : undefined;
+const leadWritingPulseScore = leadPost ? getWritingPulse(leadPost.id) : undefined;
 const leadSourceCount = leadPost?.data.references?.length ?? 0;
 const leadProofRows = leadPost
   ? [
       { label: "Quality signal", value: `Reference ceiling ${leadReferenceScore ?? "n/a"}` },
+      { label: "Writing pulse", value: `${leadWritingPulseScore ?? "n/a"}; weakest posts stay visible as revision queue, not hidden.` },
       { label: "Source trail", value: `${leadSourceCount} source refs plus packet workflow` },
       { label: "Visual proof", value: "Slug-specific image visible before the click" },
       { label: "Release gate", value: "Rendered page evidence and hash approval required" },
@@ -37,6 +42,7 @@ const proofMetrics = [
   { label: "Rendered viewports", value: renderedViewportChecks },
   { label: "Hash approvals", value: approvalRecords },
   { label: "Reference ceiling", value: referenceCeiling.averageScore },
+  { label: "Writing pulse", value: writingPulse.averageScore },
 ];
 ---
 
@@ -54,7 +60,7 @@ const proofMetrics = [
         <span>Evidence-backed field notes</span>
         <span class="h-px w-12 bg-accent"></span>
         <span>2026.05</span>
-        <a href="/posts/" class="font-black text-ink underline underline-offset-4 md:hidden">Archive</a>
+        <a href="/posts/" class="font-black text-ink underline underline-offset-4">Archive</a>
       </div>
       <h1 class="text-5xl md:text-7xl font-serif italic text-ink tracking-tighter leading-[0.95] mb-10 max-w-4xl">
         Agent output is cheap. <br/> Public trust needs <Scribble type="underline">receipts</Scribble>.
@@ -71,6 +77,7 @@ const proofMetrics = [
             data-post-slug={leadPost.id}
             data-image-contract={leadPost.data.ogImage}
             data-reference-score={leadReferenceScore ?? 0}
+            data-writing-pulse-score={leadWritingPulseScore ?? 0}
             data-source-count={leadSourceCount}
             data-surfacing-reason="best-evidence-backed-lead"
           >
@@ -78,6 +85,9 @@ const proofMetrics = [
             <div class="mt-4 flex flex-wrap gap-2 font-mono text-[0.54rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
               {leadReferenceScore ? (
                 <span class="border border-ink/10 bg-paper-warm px-2 py-1">Reference ceiling {leadReferenceScore}</span>
+              ) : null}
+              {leadWritingPulseScore ? (
+                <span class="border border-ink/10 bg-paper-warm px-2 py-1">Writing pulse {leadWritingPulseScore}</span>
               ) : null}
               <span class="border border-ink/10 bg-paper-warm px-2 py-1">{leadSourceCount} sources</span>
               <span class="border border-ink/10 bg-paper-warm px-2 py-1">Source packet</span>
@@ -96,7 +106,7 @@ const proofMetrics = [
               ))}
             </dl>
             <p class="mt-3 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
-              Start here: scored proof, source packet, unique image, rendered page, current approval hash.
+              Start here: scored proof, writing pulse, source packet, unique image, rendered page, current approval hash.
             </p>
           </a>
         ) : null}
@@ -112,7 +122,7 @@ const proofMetrics = [
           About the Vibe Coding project
         </a>
       </div>
-      <dl class="mt-14 grid grid-cols-2 gap-3 md:grid-cols-5" aria-label="Current publication proof metrics">
+      <dl class="mt-14 grid grid-cols-2 gap-3 md:grid-cols-6" aria-label="Current publication proof metrics">
         {proofMetrics.map(metric => (
           <div class="border border-ink/10 bg-background/80 p-4 shadow-sm">
             <dt class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">{metric.label}</dt>
@@ -138,6 +148,9 @@ const proofMetrics = [
                 <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Source packet</span>
                 {getReferenceCeiling(featuredPosts[0].id) ? (
                   <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Reference ceiling {getReferenceCeiling(featuredPosts[0].id)}</span>
+                ) : null}
+                {getWritingPulse(featuredPosts[0].id) ? (
+                  <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Writing pulse {getWritingPulse(featuredPosts[0].id)}</span>
                 ) : null}
                 <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">{featuredPosts[0].data.references?.length ?? 0} sources</span>
                 <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Rendered proof</span>
@@ -170,7 +183,7 @@ const proofMetrics = [
                   </p>
                   <h4 class="text-xl font-serif italic group-hover:text-accent-dim leading-tight text-ink">{post.data.title}</h4>
                   <p class="mt-2 font-mono text-[0.55rem] uppercase tracking-[0.16em] text-ink-faded">
-                    Reference ceiling {getReferenceCeiling(post.id) ?? "n/a"} / packet / unique image / rendered / hash approval / {post.data.references?.length ?? 0} sources
+                    Reference ceiling {getReferenceCeiling(post.id) ?? "n/a"} / writing pulse {getWritingPulse(post.id) ?? "n/a"} / packet / unique image / rendered / hash approval / {post.data.references?.length ?? 0} sources
                   </p>
                   <p class="mt-1 font-mono text-[0.52rem] uppercase tracking-[0.14em] text-ink-faded">
                     Reader value: claim, proof artifact, and boundary are visible before opening.

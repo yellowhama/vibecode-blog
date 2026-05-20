@@ -28,7 +28,7 @@ const SURFACE_ROUTES = [
     label: "homepage",
     path: "/",
     expectedImage: "/images/home/hero-journal.png",
-    requiredTexts: ["Evidence-backed field notes", "Public posts", "Reference ceiling"],
+    requiredTexts: ["Evidence-backed field notes", "Public posts", "Reference ceiling", "Writing pulse"],
     requiredLink: "/posts/",
     requirePostLink: true,
     requireContractImage: true,
@@ -38,7 +38,7 @@ const SURFACE_ROUTES = [
     label: "posts index",
     path: "/posts/",
     expectedImage: null,
-    requiredTexts: ["Evidence-backed articles only", "Packet-backed", "Unique image", "Hash approval", "Reference ceiling"],
+    requiredTexts: ["Evidence-backed articles only", "Packet-backed", "Unique image", "Hash approval", "Reference ceiling", "Writing pulse"],
     requiredLink: null,
     requirePostLink: true,
     requireContractImage: true,
@@ -461,12 +461,14 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       const surfacingReason = card.getAttribute("data-surfacing-reason") || "";
       const matchingContractImage = cardImages.find(image => image.src === expectedContractImage) || null;
       const referenceScore = Number.parseInt(card.getAttribute("data-reference-score") || "0", 10);
+      const writingPulseScore = Number.parseInt(card.getAttribute("data-writing-pulse-score") || "0", 10);
       const sourceCount = Number.parseInt(card.getAttribute("data-source-count") || "0", 10);
       return {
         slug: card.getAttribute("data-post-slug") || "",
         expectedContractImage,
         surfacingReason,
         referenceScore,
+        writingPulseScore,
         sourceCount,
         rect: {
           top: Math.round(rect.top),
@@ -481,11 +483,13 @@ function surfaceAuditExpression(spec, contractImagePaths) {
         hasRenderedProof: text.includes("rendered proof") || text.includes("rendered"),
         hasHashApproval: text.includes("hash approval") || text.includes("hash approved") || text.includes("human approval"),
         hasReferenceCeiling: text.includes("reference ceiling"),
+        hasWritingPulse: text.includes("writing pulse"),
         explainsSurfacing: text.includes("why this is first") ||
           text.includes("start here") ||
           text.includes("surfaced because") ||
           surfacingReason.length > 0,
         hasReferenceScoreData: Number.isFinite(referenceScore) && referenceScore >= 88,
+        hasWritingPulseData: Number.isFinite(writingPulseScore) && writingPulseScore >= 80,
         hasSourceCountData: Number.isFinite(sourceCount) && sourceCount >= 1,
         matchingContractImage,
         matchingContractImageVisible: Boolean(matchingContractImage?.visible),
@@ -500,8 +504,10 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       card.hasRenderedProof &&
       card.hasHashApproval &&
       card.hasReferenceCeiling &&
+      card.hasWritingPulse &&
       card.explainsSurfacing &&
       card.hasReferenceScoreData &&
+      card.hasWritingPulseData &&
       card.hasSourceCountData &&
       card.matchingContractImageVisible &&
       card.matchingContractImageInFirstScreen

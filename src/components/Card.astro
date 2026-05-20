@@ -4,6 +4,7 @@ import { slugifyStr } from "@/utils/slugify";
 import { getPath } from "@/utils/getPath";
 import Datetime from "./Datetime.astro";
 import referenceCeiling from "@/data/reference-ceiling-scores.json";
+import writingPulse from "@/data/writing-pulse-scores.json";
 
 type Props = {
   variant?: "h2" | "h3";
@@ -14,8 +15,10 @@ const { title, description, featured, ogImage, series, workflow, references, ...
 const cardClass = featured ? "blog-card-featured" : "blog-card";
 const seriesLabel = series ?? "Field Journal";
 const ceilingScore = referenceCeiling.posts[id as keyof typeof referenceCeiling.posts]?.score;
+const pulseScore = writingPulse.posts[id as keyof typeof writingPulse.posts]?.score;
 const proofBadges = [
   ceilingScore ? `Reference ceiling ${ceilingScore}` : null,
+  pulseScore ? `Writing pulse ${pulseScore}` : null,
   workflow === "packet" ? "Source packet" : "About context",
   `${references?.length ?? 0} source refs`,
   "Unique image",
@@ -43,6 +46,7 @@ const thumbnail = ogImage && ogImage !== "" ? ogImage : getPlaceholder(id);
   data-post-slug={id}
   data-image-contract={thumbnail}
   data-reference-score={ceilingScore ?? 0}
+  data-writing-pulse-score={pulseScore ?? 0}
   data-source-count={references?.length ?? 0}
 >
   <a
@@ -60,7 +64,7 @@ const thumbnail = ogImage && ogImage !== "" ? ogImage : getPlaceholder(id);
       <Datetime {...props} class="text-ink-faded" />
       <p class="mt-4 text-base leading-relaxed text-text-secondary line-clamp-3">{description}</p>
       <p class="mt-3 max-w-2xl font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
-        Surfaced because: {workflow === "packet" ? "source packet" : "site context"} / {ceilingScore ? `reference ceiling ${ceilingScore}` : "unscored"} / {references?.length ?? 0} source refs / rendered image proof.
+        Surfaced because: {workflow === "packet" ? "source packet" : "site context"} / {ceilingScore ? `reference ceiling ${ceilingScore}` : "unscored"} / {pulseScore ? `writing pulse ${pulseScore}` : "pulse n/a"} / {references?.length ?? 0} source refs / rendered image proof.
       </p>
       <div class="mt-5 flex flex-wrap gap-2 font-mono text-[0.54rem] font-bold uppercase tracking-[0.14em] text-ink-faded" aria-label="Publication proof status">
         {proofBadges.map(badge => (

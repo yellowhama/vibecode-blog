@@ -10,6 +10,7 @@ import Pagination from "@/components/Pagination.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
 import referenceCeiling from "@/data/reference-ceiling-scores.json";
+import writingPulse from "@/data/writing-pulse-scores.json";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await getCollection("blog", ({ data }) => !data.draft);
@@ -24,11 +25,15 @@ const approvalRecords = totalPosts;
 const leadPost = page.data.find(post => post.data.workflow === "packet" && post.data.ogImage);
 const getReferenceCeiling = (slug: string) =>
   referenceCeiling.posts[slug as keyof typeof referenceCeiling.posts]?.score;
+const getWritingPulse = (slug: string) =>
+  writingPulse.posts[slug as keyof typeof writingPulse.posts]?.score;
 const leadReferenceScore = leadPost ? getReferenceCeiling(leadPost.id) : undefined;
+const leadWritingPulseScore = leadPost ? getWritingPulse(leadPost.id) : undefined;
 const leadSourceCount = leadPost?.data.references?.length ?? 0;
 const leadProofRows = leadPost
   ? [
       { label: "Why first", value: "This card exposes proof state before asking for the click." },
+      { label: "Writing pulse", value: `${leadWritingPulseScore ?? "n/a"} average gate ${writingPulse.averageScore}; weak posts remain queued for revision.` },
       { label: "Evidence", value: `${leadSourceCount} source refs, source packet workflow, rendered screenshot contract.` },
       { label: "Image", value: "The thumbnail must match the slug-specific image contract in the first screen." },
       { label: "Approval", value: "The post remains public only while current Markdown hash approval agrees." },
@@ -40,7 +45,7 @@ const leadProofRows = leadPost
   <Header />
   <Main
     pageTitle="Posts"
-    pageDesc="Evidence-backed articles only. Every non-About post is tied to source packets, a unique image contract, rendered screenshots, and a human approval record."
+    pageDesc="Evidence-backed articles only. Every non-About post is tied to source packets, writing pulse, a unique image contract, rendered screenshots, and a human approval record."
   >
     {leadPost ? (
       <section
@@ -50,6 +55,7 @@ const leadProofRows = leadPost
         data-post-slug={leadPost.id}
         data-image-contract={leadPost.data.ogImage}
         data-reference-score={leadReferenceScore ?? 0}
+        data-writing-pulse-score={leadWritingPulseScore ?? 0}
         data-source-count={leadSourceCount}
         data-surfacing-reason="archive-lead-evidence-card"
       >
@@ -58,6 +64,9 @@ const leadProofRows = leadPost
             <span class="border border-ink/10 bg-paper-warm px-2 py-1">Source packet</span>
             {leadReferenceScore ? (
               <span class="border border-ink/10 bg-paper-warm px-2 py-1">Reference ceiling {leadReferenceScore}</span>
+            ) : null}
+            {leadWritingPulseScore ? (
+              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Writing pulse {leadWritingPulseScore}</span>
             ) : null}
             <span class="border border-ink/10 bg-paper-warm px-2 py-1">{leadSourceCount} sources</span>
             <span class="border border-ink/10 bg-paper-warm px-2 py-1">Unique image</span>
@@ -79,7 +88,7 @@ const leadProofRows = leadPost
             ))}
           </dl>
           <p class="mt-4 max-w-2xl font-mono text-[0.58rem] uppercase tracking-[0.16em] text-ink-faded">
-            Evidence receipt: reference ceiling {leadReferenceScore ?? "n/a"} / source packet / unique image / rendered screenshots / current approval hash.
+            Evidence receipt: reference ceiling {leadReferenceScore ?? "n/a"} / writing pulse {leadWritingPulseScore ?? "n/a"} / source packet / unique image / rendered screenshots / current approval hash.
           </p>
           <p class="mt-2 max-w-2xl font-mono text-[0.56rem] uppercase tracking-[0.14em] text-ink-faded">
             Why this is first: the card exposes its score, source count, image contract, rendered proof, and approval state before the click.
@@ -91,7 +100,7 @@ const leadProofRows = leadPost
       </section>
     ) : null}
     <section class="mb-10 border-y border-ink/10 bg-accent/5 py-6" aria-label="Archive proof status">
-      <div class="grid gap-4 sm:grid-cols-5">
+      <div class="grid gap-4 sm:grid-cols-6">
         <div>
           <p class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">Visible posts</p>
           <p class="mt-1 font-mono text-2xl font-black text-ink">{totalPosts}</p>
@@ -111,6 +120,10 @@ const leadProofRows = leadPost
         <div>
           <p class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">Ceiling avg</p>
           <p class="mt-1 font-mono text-2xl font-black text-ink">{referenceCeiling.averageScore}</p>
+        </div>
+        <div>
+          <p class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">Pulse avg</p>
+          <p class="mt-1 font-mono text-2xl font-black text-ink">{writingPulse.averageScore}</p>
         </div>
       </div>
       <p class="mt-5 max-w-2xl text-sm leading-relaxed text-text-secondary">
