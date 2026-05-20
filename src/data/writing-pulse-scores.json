@@ -1,6 +1,6 @@
 {
-  "averageScore": 95,
-  "generatedAt": "2026-05-21T08:15:58+09:00",
+  "averageScore": 96,
+  "generatedAt": "2026-05-21T08:28:58+09:00",
   "minScore": 80,
   "minAverage": 82,
   "status": "writing_pulse_ready",
@@ -26,9 +26,9 @@
       "gaps": ["dated/count/hash receipts"]
     },
     "html-review-artifacts-for-agents": {
-      "score": 89,
+      "score": 98,
       "grade": "blogger-pulse-strong",
-      "gaps": ["reader action in opening", "dated/count/hash receipts"]
+      "gaps": []
     },
     "mcp-shared-state-data-leak": {
       "score": 98,
@@ -52,8 +52,8 @@
     }
   },
   "weakestQueue": [
-    "html-review-artifacts-for-agents",
     "ai-agent-work-disk-contract",
-    "frustration-as-spec"
+    "frustration-as-spec",
+    "vercel-is-not-a-deployment-contract"
   ]
 }

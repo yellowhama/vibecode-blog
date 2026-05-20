@@ -23,9 +23,11 @@ references:
 
 # Use HTML to Review Agent Output, Not to Replace the Contract
 
-On 2026-05-20, I opened the DESIGN.md review artifact in Chrome, put the LLM wiki source packet beside it, and checked whether the browser page could survive one ugly question: if I deleted the HTML file, would the decision still exist?
+On 2026-05-20, I opened the DESIGN.md review artifact in Chrome, put the LLM wiki source packet beside it, and checked whether the browser page could survive one ugly risk question: if I deleted the HTML file, would the decision still exist?
 
 That is the test most HTML-for-agents posts skip.
+
+Before accepting a polished agent-made HTML file, run that delete test. Ask where the sources are, where the rejection criteria are, where the exported decision lands, and which hash-bound receipt would still prove the decision tomorrow.
 
 ![HTML review artifact export loop diagram](/images/posts/html-review-artifacts-for-agents.png)
 
@@ -234,6 +236,8 @@ vibecode-rendered-audit/latest/summary.json
 vibecode-rendered-audit/latest/*-desktop.png
 vibecode-rendered-audit/latest/*-mobile.png
 ```
+
+The current writing-pulse repair kept the same standard and added a fresh receipt: product commit `3ad3512`, 10 posts, 41 pages, 24 viewports, 10 Pagefind pages, 2113 words, 349 files indexed in the wiki, 381 files archived, and zero rendered-page failures. The `html-review-artifacts-for-agents` approval now points at the current Markdown hash, so the article cannot silently drift away from its own proof chain.
 
 The summary records the decision surface:
 
