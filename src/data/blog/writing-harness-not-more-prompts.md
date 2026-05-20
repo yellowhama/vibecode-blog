@@ -81,21 +81,27 @@ It is also the difference between an agent that writes another polished summary 
 
 ## Reader Problem
 
-The reader is trying to make agent-written posts better, but prompt tweaks alone keep producing polished summaries instead of memorable evidence-backed articles.
+The reader does not need another prompt that says "be more vivid."
 
-Reader question: What should the reader accept, reject, or verify before using this idea?
+The reader needs a way to catch the moment an AI paragraph looks finished while still giving them nothing to inspect, nothing to decide, and nothing to reuse.
+
+Reader question: before you ask an agent to improve the style, what evidence proves the paragraph deserved to exist?
 
 ## Angle
 
-Reference-grade agent writing needs the same loop as self-improving agents: a program, a harness, a benchmark, traces, revert paths, and domain judgment.
+Reference-grade agent writing needs the same discipline as self-improving agents: separate the draft from the harness, keep the traces, measure against a real bar, and revert changes that only sound better.
 
-## Evidence To Use
+## Source Thread
 
-Use the public source, the internal evidence bundle, and the source workflow quality gate receipt.
+The source is useful because it is not about prose at all.
+
+In the AutoAgent explanation, the interesting move is that a meta-agent does not merely run tasks. It edits the task agent's prompts, tools, and orchestration, then checks whether those changes improve benchmark results.
 
 Primary source: https://www.youtube.com/watch?v=RoaPvj9Ovug
 
-## Draft Body
+That gives writing teams a better metaphor than "prompt harder."
+
+## The Pattern Worth Stealing
 
 The useful part of the AutoAgent pattern is not the headline version: "agents improve themselves."
 
@@ -437,7 +443,7 @@ image_contract=missing
 
 ## Reader Transfer
 
-Use this decision table before automating any agent writing workflow:
+Use this decision table before automating any agent writing workflow. The point is not to slow the agent down. The point is to stop the agent before it spends ten polished paragraphs hiding an empty first one.
 
 | If you have... | Do this | Reject this |
 | --- | --- | --- |
@@ -456,7 +462,11 @@ The harder rule is more useful: if the draft cannot show the trace that produced
 
 Current verdict: keep as an internal example.
 
-This draft is now readable enough to teach the harness idea, and it includes three before/after artifacts: a weak prompt-only paragraph with its packet rejection, a real revision trace from this draft's own opening, and a Loop 44 -> Loop 45 failure/repair trace from the rendered review artifact. Loop 40 added the cold-reader red-pen test so the artifacts transfer to a reader's own draft instead of only documenting this internal run. Loop 41 added the one-minute paragraph autopsy so the reader has a concrete form to fill before asking for more style. Loop 45 revised the opening around the bad-draft scene, added the real-time editorial rejection moment, sharpened the AutoAgent comparison into a harness-to-harness mapping, and added an inline visual-proof table for the weak paragraph/rejection/autopsy stack. Loop 50 added the review-desk protocol so the reader can see exactly how a vague style review turns into source, decision, artifact, and reject-condition fields. Loop 54 added hash-bound real failed-draft evidence from the draft's own rendered-artifact critique.
+The draft now has the shape of a real post instead of a packet report: it opens on a recognizable bad paragraph, shows why the paragraph fails, maps AutoAgent's harness loop to editorial review, and gives the reader a one-minute autopsy form they can use on their own draft.
+
+The strongest material is the before/after stack: weak prompt-only paragraph, empty review fields, rewritten paragraph, cold-reader red pen, and the Loop 44 -> Loop 45 failure trace from this draft's own history. Those artifacts make the argument inspectable.
+
+The remaining concern is taste. The piece is useful, but a human reviewer still has to decide whether the examples feel sharp enough for a cold reader or whether the article is only convincing to someone who already understands the internal workflow.
 
 It is closer to a public candidate now, but still not approved as a reference blog post because the synthetic examples, review-desk protocol, real failure trace, and visual-proof table still need human critique and rendered-candidate review.
 
@@ -466,7 +476,7 @@ The article should be promoted only after a human reviewer says the before/after
 
 Do not promote this draft yet.
 
-It is a useful internal example because the harness improved the article in visible steps: packet, draft, critique, visual. It is not a public candidate until a human critique says the piece works for a reader who has not followed the build history, a rendered candidate screenshot exists, an image contract is added, and the final markdown hash has an approval record.
+It is a useful internal example because the harness improved the article in visible steps: packet, draft, critique, visual proof, and review artifact. It is not a public candidate until a human critique says the piece works for a reader who has not followed the build history, a rendered candidate screenshot exists, an image contract is added, and the final markdown hash has an approval record.
 
 ## Boundary
 
@@ -477,6 +487,8 @@ It is a useful internal example because the harness improved the article in visi
 
 ## Draft Risk
 
-The draft can sound like a summary of the source instead of a sharp blog post with a visible scene and reader transfer.
+The draft can still over-explain the operating system around the article.
+
+That is the main taste risk: the evidence is now present, but the post must not ask the reader to care about our loop history. It has to keep returning to the reader's own problem: the paragraph that looks clean, passes a vibe check, and still gives the editor no reason to let it ship.
 
 Current status: stronger than a scaffold, still not publication-ready. Before this can become public, it needs human critique of the synthetic example, real revision trace, cold-reader red-pen test, paragraph autopsy form, and real failed-draft evidence; rendered candidate proof; an image contract; and an approval record bound to the final markdown hash.
