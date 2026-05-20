@@ -30,10 +30,143 @@ function asArray(value) {
   return Array.isArray(value) ? value : [];
 }
 
-function buildEditor(template) {
+function defaultDraftPath(template) {
+  return `src/data/blog/${template.slug}.md`;
+}
+
+function stripFrontmatter(markdown) {
+  if (!markdown.startsWith("---")) return markdown;
+  const end = markdown.indexOf("\n---", 3);
+  return end === -1 ? markdown : markdown.slice(end + 4);
+}
+
+function wordCount(value) {
+  const words = String(value ?? "").match(/[A-Za-z0-9][A-Za-z0-9'-]*/g);
+  return words ? words.length : 0;
+}
+
+function cleanParagraph(value) {
+  return String(value ?? "")
+    .replace(/\s+/g, " ")
+    .replace(/^#+\s*/, "")
+    .trim();
+}
+
+function collectMarkdownParagraphs(body) {
+  const paragraphs = [];
+  let inFence = false;
+  let buffer = [];
+  for (const rawLine of body.split(/\r?\n/)) {
+    const line = rawLine.trim();
+    if (line.startsWith("```")) {
+      inFence = !inFence;
+      if (buffer.length) {
+        paragraphs.push(cleanParagraph(buffer.join(" ")));
+        buffer = [];
+      }
+      continue;
+    }
+    if (inFence || !line || line.startsWith("|") || line.startsWith("!") || line.startsWith("- ")) {
+      if (buffer.length) {
+        paragraphs.push(cleanParagraph(buffer.join(" ")));
+        buffer = [];
+      }
+      continue;
+    }
+    if (/^#{1,6}\s/.test(line)) {
+      if (buffer.length) {
+        paragraphs.push(cleanParagraph(buffer.join(" ")));
+        buffer = [];
+      }
+      continue;
+    }
+    buffer.push(line);
+  }
+  if (buffer.length) paragraphs.push(cleanParagraph(buffer.join(" ")));
+  return paragraphs.filter((paragraph) => paragraph.length >= 90);
+}
+
+function parseDraftContext(markdown, draftPath) {
+  const body = stripFrontmatter(markdown);
+  const headingMatch = body.match(/^#\s+(.+)$/m);
+  const title = headingMatch ? headingMatch[1].trim() : "";
+  const headings = Array.from(body.matchAll(/^##\s+(.+)$/gm)).map((match) => match[1].trim());
+  const images = Array.from(body.matchAll(/!\[([^\]]*)\]\(([^)]+)\)/g)).map((match) => ({
+    alt: match[1].trim(),
+    src: match[2].trim(),
+  }));
+  const receiptLines = body
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) =>
+      /^(publication_state|approval_required|approval_candidate|editorial_decision|candidate_blockers|real_failed_draft_evidence|critique|rendered_screenshot|rendered_summary|source_workflow_slug)=/.test(line),
+    );
+  const paragraphs = collectMarkdownParagraphs(body);
+  const opening = paragraphs.slice(0, 3);
+  const selected = [];
+  for (const paragraph of paragraphs) {
+    if (
+      selected.length < 8 &&
+      /failed|review|reader|evidence|artifact|AutoAgent|red-pen|paragraph|harness/i.test(paragraph)
+    ) {
+      selected.push(paragraph);
+    }
+  }
+  for (const paragraph of opening) {
+    if (!selected.includes(paragraph) && selected.length < 8) selected.unshift(paragraph);
+  }
+  return {
+    loaded: true,
+    draftPath,
+    title,
+    wordCount: wordCount(body),
+    headings: headings.slice(0, 12),
+    images,
+    receiptLines,
+    opening,
+    reviewPassages: selected.slice(0, 8),
+  };
+}
+
+function emptyDraftContext(draftPath) {
+  return {
+    loaded: false,
+    draftPath,
+    title: "",
+    wordCount: 0,
+    headings: [],
+    images: [],
+    receiptLines: [],
+    opening: [],
+    reviewPassages: [],
+  };
+}
+
+function renderList(items, className, renderItem) {
+  if (items.length === 0) return `<p class="${className} empty">No items found.</p>`;
+  return `<ul class="${className}">${items.map(renderItem).join("")}</ul>`;
+}
+
+function buildEditor(template, draftContext) {
   const scorecard = asArray(template.scorecard);
   const blockers = asArray(template.sourcePacket?.currentBlockers);
   const serializedTemplate = JSON.stringify(template).replaceAll("</", "<\\/");
+  const serializedDraftContext = JSON.stringify(draftContext).replaceAll("</", "<\\/");
+  const openingCards = draftContext.opening
+    .map((paragraph, index) => `<article><p class="eyebrow">Opening excerpt ${index + 1}</p><p>${escapeHtml(paragraph)}</p></article>`)
+    .join("");
+  const reviewPassageCards = draftContext.reviewPassages
+    .map(
+      (paragraph, index) => `
+        <article class="passage">
+          <p class="eyebrow">Passage to inspect ${index + 1}</p>
+          <p>${escapeHtml(paragraph)}</p>
+        </article>`,
+    )
+    .join("");
+  const receiptList = renderList(draftContext.receiptLines, "receipt-list", (line) => `<li><code>${escapeHtml(line)}</code></li>`);
+  const imageList = renderList(draftContext.images, "receipt-list", (image) => `<li><code>${escapeHtml(image.src)}</code> ${escapeHtml(image.alt)}</li>`);
+  const headingList = renderList(draftContext.headings, "heading-list", (heading) => `<li>${escapeHtml(heading)}</li>`);
 
   const scorecardRows = scorecard
     .map(
@@ -218,6 +351,44 @@ function buildEditor(template) {
       text-transform: uppercase;
     }
     .row-contract dd { margin: 6px 0 0; font-size: 13px; }
+    .review-desk {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .desk-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 18px;
+    }
+    .desk-card h2 { margin-bottom: 10px; }
+    .desk-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .desk-grid article, .passage {
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      padding: 14px;
+    }
+    .desk-grid p, .passage p { margin: 0; }
+    .receipt-list, .heading-list {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .receipt-list li, .heading-list li { margin: 5px 0; }
+    .empty { color: var(--bad); font-weight: 800; }
+    .review-rule {
+      border: 1px solid #e5b7a7;
+      background: #fff3ed;
+      color: #6f2d1d;
+      padding: 12px;
+      margin-top: 12px;
+      font-weight: 800;
+    }
     .side-panel {
       position: sticky;
       top: 16px;
@@ -272,7 +443,7 @@ function buildEditor(template) {
       text-transform: uppercase;
     }
     @media (max-width: 900px) {
-      .layout, .reviewer, .meta, .row-contract { grid-template-columns: 1fr; }
+      .layout, .reviewer, .meta, .row-contract, .desk-grid { grid-template-columns: 1fr; }
       .side-panel { position: static; }
       .score-head { display: grid; }
       .verdicts { justify-content: flex-start; }
@@ -301,6 +472,48 @@ function buildEditor(template) {
 
     <div class="layout">
       <section>
+        <section class="review-desk" aria-label="Draft review desk">
+          <div class="desk-card">
+            <p class="eyebrow">Draft Review Desk</p>
+            <h2>Read the article before scoring it.</h2>
+            <dl class="meta">
+              <div><dt>Draft path</dt><dd>${escapeHtml(draftContext.draftPath)}</dd></div>
+              <div><dt>Draft loaded</dt><dd>${escapeHtml(String(draftContext.loaded))}</dd></div>
+              <div><dt>Draft title</dt><dd>${escapeHtml(draftContext.title || template.slug)}</dd></div>
+              <div><dt>Word count</dt><dd>${escapeHtml(String(draftContext.wordCount))}</dd></div>
+            </dl>
+            <div class="review-rule">Reviewer must cite an exact passage, artifact, screenshot, receipt line, or missing proof in every evidence note. Do not approve from vibe.</div>
+          </div>
+          <div class="desk-card">
+            <p class="eyebrow">Opening excerpt</p>
+            <h2>Can a cold reader care before the system appears?</h2>
+            <div class="desk-grid">${openingCards || '<p class="empty">Opening excerpt unavailable.</p>'}</div>
+          </div>
+          <div class="desk-card">
+            <p class="eyebrow">Evidence receipts</p>
+            <h2>Proof objects inside the draft</h2>
+            <div class="desk-grid">
+              <div>
+                <p class="eyebrow">Receipt lines</p>
+                ${receiptList}
+              </div>
+              <div>
+                <p class="eyebrow">Images</p>
+                ${imageList}
+              </div>
+            </div>
+          </div>
+          <div class="desk-card">
+            <p class="eyebrow">Structure map</p>
+            <h2>What the article asks the reader to move through</h2>
+            ${headingList}
+          </div>
+          <div class="desk-card">
+            <p class="eyebrow">Passages to inspect</p>
+            <h2>Score the writing against these passages, not the idea of the system.</h2>
+            ${reviewPassageCards || '<p class="empty">No review passages found.</p>'}
+          </div>
+        </section>
         <div class="reviewer">
           <label class="field">Reviewer name<input id="reviewer-name" type="text" placeholder="Required" /></label>
           <label class="field">Reviewer handle<input id="reviewer-handle" type="text" placeholder="Optional" /></label>
@@ -342,8 +555,10 @@ function buildEditor(template) {
   </main>
 
   <script id="review-template" type="application/json">${serializedTemplate}</script>
+  <script id="draft-context" type="application/json">${serializedDraftContext}</script>
   <script>
     const template = JSON.parse(document.getElementById("review-template").textContent);
+    const draftContext = JSON.parse(document.getElementById("draft-context").textContent);
     const rows = Array.from(document.querySelectorAll("[data-score-row]"));
     const status = document.getElementById("status");
     const preview = document.getElementById("json-preview");
@@ -371,6 +586,11 @@ function buildEditor(template) {
         markdownSha256: template.markdownSha256,
         reviewStatus: "completed_human_review",
         promotionAllowedWithoutHuman: false,
+        sourceDraft: {
+          path: draftContext.draftPath || "",
+          wordCount: draftContext.wordCount || 0,
+          loaded: Boolean(draftContext.loaded)
+        },
         reviewer: {
           name: document.getElementById("reviewer-name").value.trim(),
           handle: document.getElementById("reviewer-handle").value.trim(),
@@ -432,12 +652,16 @@ function buildEditor(template) {
 `;
 }
 
-function validateEditor(template, html) {
+function validateEditor(template, html, draftContext) {
   const failures = [];
   const required = [
     "Human Quality Review Editor",
     "Copy JSON",
     "Any rejected row keeps the draft private",
+    "Draft Review Desk",
+    "Opening excerpt",
+    "Evidence receipts",
+    "Reviewer must cite an exact passage",
     "Evidence density",
     "Embarrassment risk",
     "promotionAllowedWithoutHuman",
@@ -449,6 +673,9 @@ function validateEditor(template, html) {
   }
   if (!template.slug || !template.markdownSha256) {
     failures.push("review editor template requires slug and markdownSha256");
+  }
+  if (!draftContext.loaded || draftContext.wordCount < 500 || draftContext.opening.length === 0) {
+    failures.push("review editor requires loaded draft context with opening excerpts");
   }
   if (asArray(template.scorecard).length < 6) {
     failures.push("review editor template requires at least six scorecard rows");
@@ -464,8 +691,12 @@ async function main() {
   const output = resolve(getArg("--output") ?? DEFAULT_OUTPUT);
   const check = hasArg("--check");
   const template = JSON.parse(await readFile(templatePath, "utf8"));
-  const html = buildEditor(template);
-  const failures = validateEditor(template, html);
+  const draftPath = resolve(getArg("--draft") ?? defaultDraftPath(template));
+  const draftContext = existsSync(draftPath)
+    ? parseDraftContext(await readFile(draftPath, "utf8"), draftPath)
+    : emptyDraftContext(draftPath);
+  const html = buildEditor(template, draftContext);
+  const failures = validateEditor(template, html, draftContext);
 
   if (check) {
     if (!existsSync(output)) {
