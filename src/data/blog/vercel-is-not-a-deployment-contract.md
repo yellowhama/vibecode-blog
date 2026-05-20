@@ -19,7 +19,7 @@ references:
 
 # Vercel Is Not a Deployment Contract
 
-The Coolify migration audit failed before Coolify ever touched the site.
+At 1:57 a.m. on 2026-05-21, the Coolify migration audit failed before Coolify ever touched the site.
 
 The portability test was local: build the repo, inspect the static artifact, and ask whether the same behavior would exist on a plain host serving `dist`.
 
@@ -33,6 +33,8 @@ package.json depended on cp -r
 That is not a deployment contract. That is a hosting habit.
 
 The practical rule is simple: if production behavior only exists because one host knows a special file, the repo does not own that behavior yet.
+
+I also rechecked the official docs while revising this: Coolify's GitHub integration is a deploy-from-repository system, and Astro's own pages docs say files in `src/pages/` become site endpoints. That is the exact ownership line this post is about. If the behavior is a route, page, or file, make the repo produce it. Do not ask the host dashboard to remember it for you.
 
 ![Deployment contract build route smoke test diagram](/images/posts/vercel-is-not-a-deployment-contract.png)
 
@@ -89,6 +91,57 @@ The second failure was quieter:
 Those routes existed only because Vercel interpreted `vercel.json`. A static host serving `dist` would not know that `/sitemap.xml` should point at `/sitemap-index.xml`, or that `/install.sh` should route to a remote installer.
 
 That is exactly the kind of gap an agent can miss. It sees a working URL and calls the site deployed. The artifact says otherwise.
+
+## The Command That Caught It
+
+The useful review was not a screenshot of a green dashboard. It was a boring file check.
+
+The bad state looked like this:
+
+```txt
+package.json
+  "build": "astro build && pagefind --site dist && cp -r dist/pagefind public/"
+
+vercel.json
+  /install.sh -> https://raw.githubusercontent.com/example/install/main/install.sh
+  /sitemap.xml -> /sitemap-index.xml
+
+dist/
+  install.sh missing
+  sitemap.xml missing unless the host rewrites it
+```
+
+That is the moment the review should stop. Not because Vercel did anything wrong, but because the repo was letting Vercel hold production behavior in its pocket.
+
+The repaired state has a different shape:
+
+```txt
+package.json
+  "build": "astro build && pagefind --site dist && node scripts/copy-pagefind.mjs"
+
+src/pages/sitemap.xml.ts
+public/install.sh
+scripts/copy-pagefind.mjs
+scripts/verify-deploy-surface.mjs
+scripts/verify-dist.mjs
+
+dist/
+  sitemap.xml present
+  install.sh present
+  pagefind/pagefind.js present
+```
+
+That is a much better sentence than "deployed successfully." It names the ownership transfer.
+
+The release-stopping review command is:
+
+```txt
+npm run build
+node scripts/verify-deploy-surface.mjs
+node scripts/verify-dist.mjs
+```
+
+If those commands cannot prove the route or file exists outside the host dashboard, the deployment claim is not done yet.
 
 ## Hidden Contract Table
 
@@ -162,9 +215,11 @@ Current state:
 
 ```txt
 Build: pass
-High audit gate: pass
-Full lint: pass after excluding non-site pipeline folders
+Static artifact gate: pass
+Deploy surface gate: pass
+Full lint: pass
 Portable routes: /sitemap.xml and /install.sh generated into dist
+Search asset: dist/pagefind/pagefind.js present
 ```
 
 That is the standard Vibecode Town should use before moving a site to Coolify.
@@ -197,10 +252,12 @@ The latest completed run produced the shape this article argues for:
 
 ```txt
 static pages built: 41
+Pagefind indexed words: 1950
 public posts rendered: 10
 rendered viewports checked: 24
 publication approvals checked: 10
 deploy surface gate: pass
+static artifact verification: pass
 ```
 
 That is the deployment-contract mindset applied back to the blog itself: the dashboard is not the proof. The artifact and the verifier are the proof.
