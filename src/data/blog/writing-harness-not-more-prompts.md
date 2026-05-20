@@ -332,6 +332,72 @@ Those questions can become files, gates, and receipts.
 
 That is the practical takeaway from the AutoAgent pattern for a writing system: improve the harness before you ask the agent to act more confident inside a bad harness.
 
+## What Changes In The Next Draft Review
+
+Here is the review desk version.
+
+A writer brings in a draft that opens like this:
+
+```txt
+Agentic systems are changing how teams create and manage knowledge work.
+By combining source-aware workflows with automated critique, companies can
+produce more reliable content while improving speed and consistency.
+```
+
+The old review asks for style:
+
+```txt
+make it more specific
+add more voice
+make the hook stronger
+```
+
+That sounds reasonable, but it gives the agent too much room to bluff. The rewrite can get louder without getting truer.
+
+The harness review asks for evidence:
+
+```txt
+source_changed_claim=which source forced this sentence to exist?
+reader_decision=what can the reader now accept, reject, or verify?
+proof_artifact=what file, log, screenshot, diff, or table proves the mechanism?
+reject_condition=what would make us refuse this paragraph?
+rewrite_order=claim -> evidence -> consequence -> reader action
+```
+
+That order matters.
+
+If the claim comes first, the draft can still cosplay as expertise. If the evidence comes first, the sentence has to earn the claim before it gets to wear it.
+
+The rewritten opening is allowed to be less elegant:
+
+```txt
+The first draft looked fine until the review form came back empty. No source
+changed the claim. No reader decision appeared. No artifact showed the
+mechanism. So the editor did not ask for more voice. The editor asked why the
+paragraph had permission to exist.
+```
+
+That is a better paragraph because it gives the reader a test. It is not better because it sounds more "human." It is better because a reviewer can point to the exact place where the system caught the failure.
+
+This is the part that matters for an agentic writing company.
+
+Without the harness, every draft review becomes a taste argument. One person says it is flat. Another says it is clear. The agent receives both notes and averages them into something smooth, diplomatic, and useless.
+
+With the harness, the review becomes inspectable:
+
+| Review question | Good answer | Bad answer |
+| --- | --- | --- |
+| What source changed the claim? | "The AutoAgent loop separates task agent, meta-agent, benchmark, and keep/revert." | "The source is about self-improving agents." |
+| What did the reader learn to do? | "Reject paragraphs with no source, decision, artifact, or reject condition." | "Use better prompts." |
+| What artifact proves the claim? | "The autopsy form and before/after trace." | "The post explains it." |
+| What should fail next time? | "A confident paragraph with empty review fields." | "A boring introduction." |
+
+That last row is the real upgrade.
+
+"Boring" is not a useful failure condition. Empty fields are.
+
+Once the failure condition is concrete, the agent can improve the next draft without pretending that taste is a magic spell.
+
 ## Reader Transfer
 
 Use this decision table before automating any agent writing workflow:
@@ -353,9 +419,9 @@ The harder rule is more useful: if the draft cannot show the trace that produced
 
 Current verdict: keep as an internal example.
 
-This draft is now readable enough to teach the harness idea, and it includes two before/after artifacts: a weak prompt-only paragraph with its packet rejection, and a real revision trace from this draft's own opening. Loop 40 added the cold-reader red-pen test so the artifacts transfer to a reader's own draft instead of only documenting this internal run. Loop 41 added the one-minute paragraph autopsy so the reader has a concrete form to fill before asking for more style. Loop 45 revised the opening around the bad-draft scene, added the real-time editorial rejection moment, sharpened the AutoAgent comparison into a harness-to-harness mapping, and added an inline visual-proof table for the weak paragraph/rejection/autopsy stack.
+This draft is now readable enough to teach the harness idea, and it includes two before/after artifacts: a weak prompt-only paragraph with its packet rejection, and a real revision trace from this draft's own opening. Loop 40 added the cold-reader red-pen test so the artifacts transfer to a reader's own draft instead of only documenting this internal run. Loop 41 added the one-minute paragraph autopsy so the reader has a concrete form to fill before asking for more style. Loop 45 revised the opening around the bad-draft scene, added the real-time editorial rejection moment, sharpened the AutoAgent comparison into a harness-to-harness mapping, and added an inline visual-proof table for the weak paragraph/rejection/autopsy stack. Loop 50 added the review-desk protocol so the reader can see exactly how a vague style review turns into source, decision, artifact, and reject-condition fields.
 
-It is still not strong enough to publish as a reference blog post because the revised scene and visual-proof table need human critique and rendered-candidate review.
+It is closer to a public candidate now, but still not approved as a reference blog post because the synthetic examples, review-desk protocol, and visual-proof table need human critique and rendered-candidate review.
 
 The article should be promoted only after a human reviewer says the before/after artifact is strong enough for a cold reader.
 
