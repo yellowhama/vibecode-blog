@@ -14,17 +14,37 @@
       "approvalCandidate": false,
       "reviewerType": "editorial-system",
       "decidedAt": "2026-05-20T16:25:00.000Z",
-      "rationale": "The draft is useful as an internal proof that the writing harness can move from source packet to critique repair. Loop 38 added a public-facing before/after writing artifact, Loop 39 added a real revision trace from this draft's own opening, Loop 40 added a cold-reader red-pen test, Loop 41 added a one-minute paragraph autopsy form, Loop 42 added a private HTML review artifact, Loop 43 added rendered screenshot proof for that private review surface, Loop 44 used that artifact for an editorial-system critique, Loop 45 revised the private draft against that critique, Loop 46 tightened the revised draft by removing a repeated weak-paragraph block and replacing stale prior-loop phrasing, Loop 47 judged the current draft ready for human promotion review while still not public-ready, Loop 49 added a reference-blogger readiness gate, Loop 50 added a review-desk protocol that turns vague style review into source, decision, artifact, and reject-condition fields, Loop 51 surfaced that protocol in the private HTML review artifact, Loop 52 created a current-hash human promotion review packet, and Loop 53 made the remaining real-evidence blocker explicit. The draft now opens with a reader-recognizable bad AI paragraph, adds a real-time editorial rejection moment, sharpens the AutoAgent comparison into a harness-to-harness mapping, adds an inline visual-proof table, gives the reader a concrete review protocol for their own drafts, and admits that synthetic examples are not enough for public promotion. It still needs human critique, real failed-draft/session evidence, public rendered candidate proof, public image contract promotion, and final hash approval before this can become a public approval candidate.",
+      "rationale": "The draft is useful as an internal proof that the writing harness can move from source packet to critique repair. Loop 38 added a public-facing before/after writing artifact, Loop 39 added a real revision trace from this draft's own opening, Loop 40 added a cold-reader red-pen test, Loop 41 added a one-minute paragraph autopsy form, Loop 42 added a private HTML review artifact, Loop 43 added rendered screenshot proof for that private review surface, Loop 44 used that artifact for an editorial-system critique, Loop 45 revised the private draft against that critique, Loop 46 tightened the revised draft by removing a repeated weak-paragraph block and replacing stale prior-loop phrasing, Loop 47 judged the current draft ready for human promotion review while still not public-ready, Loop 49 added a reference-blogger readiness gate, Loop 50 added a review-desk protocol that turns vague style review into source, decision, artifact, and reject-condition fields, Loop 51 surfaced that protocol in the private HTML review artifact, Loop 52 created a current-hash human promotion review packet, Loop 53 made the remaining real-evidence blocker explicit, and Loop 54 attached hash-bound real failed-draft evidence from the Loop 44 rendered-artifact critique and Loop 45 repair. The draft now opens with a reader-recognizable bad AI paragraph, adds a real-time editorial rejection moment, sharpens the AutoAgent comparison into a harness-to-harness mapping, adds an inline visual-proof table, gives the reader a concrete review protocol for their own drafts, and has a real failure/repair trace from its own history. It still needs human critique, public rendered candidate proof, public image contract promotion, and final hash approval before this can become a public approval candidate.",
       "candidateBlockers": [
         "human_critique",
-        "real_failed_draft_evidence",
         "rendered_candidate",
         "hash_approval",
         "image_contract"
       ],
+      "realFailedDraftEvidence": {
+        "status": "present",
+        "kind": "rendered_artifact_editorial_critique",
+        "failedDraftCommit": "0f07239",
+        "repairedDraftCommit": "5235746",
+        "critiquePath": "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/loop-44-writing-harness-rendered-artifact-editorial-critique-2026-05-20.md",
+        "renderedScreenshotPath": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/writing-harness-not-more-prompts-review-artifact-desktop.png",
+        "renderedSummaryPath": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/writing-harness-not-more-prompts-review-artifact-summary.json",
+        "critiqueSha256": "55AFABB1EFFE0AEC458921182C6BD70357E0DD50F9657B1812E14534184F15F8",
+        "renderedScreenshotSha256": "04FE28F3D4F9D4C05C8030B4B984A3B03AF8DDFD382F8B66227BB476F56A91E4",
+        "renderedSummarySha256": "5B4BFC905CE99B45257407DEAA4777A4C3B99B9AEC875B829C2309AE9C8DBF49",
+        "failureSignals": [
+          "Loop 44 rejected the old opening because it started with source note -> six packet files -> draft generator -> draft:true instead of a reader-recognizable bad-draft scene.",
+          "Loop 44 said the draft had receipts but not enough scene, so the reader did not watch the editor catch the failure in real time.",
+          "Loop 44 said the AutoAgent source was underused and needed a tighter harness-to-harness mapping."
+        ],
+        "repairSignals": [
+          "Loop 45 moved the weak paragraph and autopsy into the opening.",
+          "Loop 45 added the real-time editorial rejection moment where the paragraph becomes inadmissible.",
+          "Loop 45 sharpened the AutoAgent comparison into a harness-to-harness mapping."
+        ]
+      },
       "requiredNextActions": [
-        "Send the current private draft, rendered HTML review artifact, and human promotion review packet to human promotion review. The human reviewer should decide whether the bad-draft opening, real-time rejection moment, AutoAgent harness mapping, visual-proof table, and explicit real-evidence blocker work for a reader who has not followed the internal build history.",
-        "Before promotion, add at least one real failed-draft/session screenshot, log, or review trace showing the harness rejecting a paragraph that otherwise could have shipped.",
+        "Send the current private draft, rendered HTML review artifact, real failed-draft evidence packet, and human promotion review packet to human promotion review. The human reviewer should decide whether the bad-draft opening, real-time rejection moment, AutoAgent harness mapping, visual-proof table, and Loop 44 -> Loop 45 failure trace work for a reader who has not followed the internal build history.",
         "If promoted, add a public post image contract and rendered candidate screenshots that show the weak paragraph, packet rejection, and autopsy stack.",
         "If promoted, create a hash-bound human approval record after the final markdown and image are stable."
       ],
@@ -46,6 +66,7 @@
         "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/loop-49-reference-blogger-readiness-gate-2026-05-20.md",
         "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/loop-50-writing-harness-review-desk-protocol-2026-05-20.md",
         "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/loop-52-human-promotion-review-packet-2026-05-20.md",
+        "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/writing-harness-real-failed-draft-evidence.json",
         "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/writing-harness-not-more-prompts-human-promotion-review.html",
         "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/writing-harness-not-more-prompts-human-promotion-review-summary.json",
         "public/images/posts/writing-harness-not-more-prompts.png"

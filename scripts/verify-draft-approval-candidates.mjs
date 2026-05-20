@@ -1,5 +1,6 @@
 import { access, readdir, readFile } from "node:fs/promises";
 import { constants } from "node:fs";
+import { createHash } from "node:crypto";
 import { basename, join } from "node:path";
 import sharp from "sharp";
 
@@ -65,6 +66,10 @@ async function fileExists(path) {
   } catch {
     return false;
   }
+}
+
+async function sha256(path) {
+  return createHash("sha256").update(await readFile(path)).digest("hex");
 }
 
 async function validateImage(slug, imagePath, failures) {
@@ -160,7 +165,66 @@ function asArray(value) {
   return Array.isArray(value) ? value : [];
 }
 
-function validateDecision({ file, slug, body, approvalCandidate, blockers }, decision, failures) {
+async function validateRealFailedDraftEvidence(file, decision, blockers, failures) {
+  const evidence = decision?.realFailedDraftEvidence;
+  const blockerIsOpen = blockers.includes("real_failed_draft_evidence");
+
+  if (blockerIsOpen) {
+    if (evidence?.status === "present") {
+      failures.push(`${file}: real_failed_draft_evidence blocker is still open but decision marks realFailedDraftEvidence present`);
+    }
+    return;
+  }
+
+  if (!evidence || evidence.status !== "present") {
+    failures.push(`${file}: removing real_failed_draft_evidence blocker requires realFailedDraftEvidence.status=present`);
+    return;
+  }
+
+  const requiredStrings = [
+    "kind",
+    "failedDraftCommit",
+    "repairedDraftCommit",
+    "critiquePath",
+    "renderedScreenshotPath",
+    "renderedSummaryPath",
+    "critiqueSha256",
+    "renderedScreenshotSha256",
+    "renderedSummarySha256",
+  ];
+  for (const key of requiredStrings) {
+    if (!evidence[key] || typeof evidence[key] !== "string") {
+      failures.push(`${file}: realFailedDraftEvidence.${key} is required when blocker is cleared`);
+    }
+  }
+  if (asArray(evidence.failureSignals).length < 2) {
+    failures.push(`${file}: realFailedDraftEvidence.failureSignals must name at least two concrete failures`);
+  }
+  if (asArray(evidence.repairSignals).length < 2) {
+    failures.push(`${file}: realFailedDraftEvidence.repairSignals must name at least two concrete repairs`);
+  }
+
+  const hashChecks = [
+    ["critiquePath", "critiqueSha256"],
+    ["renderedScreenshotPath", "renderedScreenshotSha256"],
+    ["renderedSummaryPath", "renderedSummarySha256"],
+  ];
+  for (const [pathKey, hashKey] of hashChecks) {
+    const evidencePath = evidence[pathKey];
+    const expectedHash = evidence[hashKey];
+    if (!evidencePath || !expectedHash) continue;
+    if (!(await fileExists(evidencePath))) {
+      failures.push(`${file}: realFailedDraftEvidence.${pathKey} is missing: ${evidencePath}`);
+      continue;
+    }
+    const actualHash = await sha256(evidencePath);
+    if (actualHash.toLowerCase() !== expectedHash.toLowerCase()) {
+      failures.push(`${file}: realFailedDraftEvidence.${hashKey} does not match ${pathKey}`);
+    }
+  }
+}
+
+async function validateDecision({ file, slug, body, approvalCandidate, blockers }, decision, failures) {
   if (!decision) {
     failures.push(`${file}: missing draft editorial decision record`);
     return;
@@ -217,6 +281,8 @@ function validateDecision({ file, slug, body, approvalCandidate, blockers }, dec
       failures.push(`${file}: editorial decision missing candidate blocker ${blocker}`);
     }
   }
+
+  await validateRealFailedDraftEvidence(file, decision, blockers, failures);
 }
 
 async function main() {
@@ -252,7 +318,7 @@ async function main() {
     const result = await validateDraft(file, text);
     if (!result.skipped) {
       const { frontmatter, body } = parseMarkdown(text);
-      validateDecision(
+      await validateDecision(
         {
           file,
           slug: result.slug,

@@ -100,6 +100,14 @@ function buildSummary({ slug, markdownSha256, title, decision, reviewSummary, bo
     currentDecision: decision?.decision ?? "missing",
     reviewerType: decision?.reviewerType ?? "missing",
     candidateBlockers: blockers,
+    realFailedDraftEvidence: {
+      status: decision?.realFailedDraftEvidence?.status ?? "missing",
+      kind: decision?.realFailedDraftEvidence?.kind ?? "missing",
+      failedDraftCommit: decision?.realFailedDraftEvidence?.failedDraftCommit ?? "missing",
+      repairedDraftCommit: decision?.realFailedDraftEvidence?.repairedDraftCommit ?? "missing",
+      critiquePath: decision?.realFailedDraftEvidence?.critiquePath ?? "missing",
+      renderedScreenshotPath: decision?.realFailedDraftEvidence?.renderedScreenshotPath ?? "missing",
+    },
     reviewArtifact: {
       requiredTextMatches: reviewSummary.requiredTextMatches,
       requiredTextTotal: reviewSummary.requiredTextTotal,
@@ -110,7 +118,7 @@ function buildSummary({ slug, markdownSha256, title, decision, reviewSummary, bo
     humanQuestions: [
       "Does the opening make a cold reader care before it asks them to admire the internal system?",
       "Can the reader reuse the paragraph autopsy and review-desk protocol without knowing the loop history?",
-      "Are the synthetic examples strong enough, or does publication require a real failed draft/session screenshot?",
+      "Does the Loop 44 -> Loop 45 real failed-draft trace make the evidence strong enough, or does publication require another screenshot/log from a separate session?",
       "If this becomes public, what exact sentence, artifact, or claim would embarrass the site?",
     ],
     requiredDecisionOutputs: [
@@ -131,6 +139,7 @@ function buildHtml({ slug, title, markdownSha256, decision, reviewSummary, body 
   const weakParagraph = codeBlocks.find((block) => block.includes("AI agents are transforming content operations")) ?? "";
   const reviewFields = codeBlocks.find((block) => block.includes("source_changed_claim=which source forced")) ?? "";
   const blockers = receiptValue(body, "candidate_blockers");
+  const realEvidence = decision?.realFailedDraftEvidence;
   const facts = reviewSummaryFacts(reviewSummary);
 
   return `<!doctype html>
@@ -200,6 +209,7 @@ function buildHtml({ slug, title, markdownSha256, decision, reviewSummary, body 
         <div><span>Markdown SHA-256</span><code>${escapeHtml(markdownSha256)}</code></div>
         <div><span>Current decision</span><code>${escapeHtml(decision?.decision ?? "missing")}</code></div>
         <div><span>Current blockers</span><code>${escapeHtml(blockers)}</code></div>
+        <div><span>Real failure evidence</span><code>${escapeHtml(realEvidence?.status ?? "missing")}</code></div>
       </aside>
     </header>
 
@@ -241,12 +251,25 @@ function buildHtml({ slug, title, markdownSha256, decision, reviewSummary, body 
       </article>
     </section>
 
+    <section class="section grid">
+      <article class="card">
+        <h2>Real Failed-Draft Trace</h2>
+        <p><strong>Failed draft:</strong> <code>${escapeHtml(realEvidence?.failedDraftCommit ?? "missing")}</code></p>
+        <p><strong>Repaired draft:</strong> <code>${escapeHtml(realEvidence?.repairedDraftCommit ?? "missing")}</code></p>
+        <p class="muted">${escapeHtml(realEvidence?.critiquePath ?? "missing")}</p>
+      </article>
+      <article class="card">
+        <h2>Failure Signals</h2>
+        <pre>${escapeHtml((realEvidence?.failureSignals ?? []).join("\n"))}</pre>
+      </article>
+    </section>
+
     <section class="section">
       <h2>Required Human Questions</h2>
       <div class="grid">
         <div class="question"><strong>1. First 30 seconds</strong>Does the bad-paragraph opening make the problem felt before the article explains the system?</div>
         <div class="question"><strong>2. Transfer</strong>Can the reader use the autopsy form and review-desk protocol on their own draft tomorrow?</div>
-        <div class="question"><strong>3. Evidence</strong>Are synthetic examples enough here, or must promotion wait for a real failed draft/session screenshot?</div>
+        <div class="question"><strong>3. Evidence</strong>Does the Loop 44 -> Loop 45 failure trace make the evidence strong enough, or must promotion wait for a separate failed session screenshot/log?</div>
         <div class="question"><strong>4. Embarrassment check</strong>What exact claim, sentence, or artifact would make this piece look overconfident if published?</div>
       </div>
     </section>
