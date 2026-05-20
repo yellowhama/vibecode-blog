@@ -1,6 +1,6 @@
 {
   "averageScore": 97,
-  "generatedAt": "2026-05-21T08:38:26+09:00",
+  "generatedAt": "2026-05-21T08:57:35+09:00",
   "minScore": 80,
   "minAverage": 82,
   "status": "writing_pulse_ready",
@@ -21,9 +21,9 @@
       "gaps": []
     },
     "frustration-as-spec": {
-      "score": 94,
+      "score": 98,
       "grade": "blogger-pulse-strong",
-      "gaps": ["dated/count/hash receipts"]
+      "gaps": []
     },
     "html-review-artifacts-for-agents": {
       "score": 98,
@@ -52,8 +52,8 @@
     }
   },
   "weakestQueue": [
-    "frustration-as-spec",
     "vercel-is-not-a-deployment-contract",
-    "what-vibe-coding-actually-is"
+    "what-vibe-coding-actually-is",
+    "ai-agent-work-disk-contract"
   ]
 }

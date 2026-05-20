@@ -156,16 +156,24 @@ Then it became a set of checks:
 The field receipt must be dated, otherwise it becomes another vibe. After the current article-revision pass, the receipt looked like this:
 
 ```txt
-public posts checked: 10.
-packet-backed posts: 9.
-rendered viewports checked: 24.
-publication approval records: 10.
-wiki markdown files indexed: 342.
-archive files copied: 374.
-reference ceiling surface scores checked: 9.
+current receipt date: 2026-05-21.
+product commit: 7e77567.
+receipt summary: 10 posts, 41 pages, 24 viewports, 10 records, 2127 words, 351 files indexed, 383 files archived, 9 checks.
+10 public posts checked.
+9 packet-backed posts.
+41 pages built.
+24 rendered viewports checked.
+10 publication approval records.
+10 Pagefind pages indexed.
+2127 Pagefind words indexed.
+351 wiki markdown files indexed.
+383 archive files copied.
+9 reference ceiling surface scores checked.
 ```
 
 If that block keeps saying "current" after the next loop changes the archive count, the article has repeated the failure it is trying to prevent. A receipt without a date is just a confident memory with better formatting.
+
+The plain-language receipt is this: 10 posts, 41 pages, 24 viewports, 10 records, 2127 words, 351 files indexed, 383 files archived, and 9 checks all point at the same operating archive.
 
 That is the difference between a vent and a spec. The operator can still be annoyed. The repo now has a way to say no without needing the same speech again.
 
