@@ -34,6 +34,7 @@ function queueItem(row, index) {
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-|-$/g, "")}`,
     scorecardLabel: row.label,
+    evidenceAnchor: row.evidenceAnchor ?? null,
     problem: clean(row.evidenceNote),
     requiredChange: clean(row.requiredChange),
     revisionTarget: "article body",

@@ -78,13 +78,46 @@ The reader leaves with a concrete review form, not a vague instruction to write 
 `;
 }
 
-function reviewFixture(summary, overrides = {}) {
+function wordCount(value) {
+  const words = String(value ?? "").match(/[A-Za-z0-9][A-Za-z0-9'-]*/g);
+  return words ? words.length : 0;
+}
+
+function stripFrontmatter(markdown) {
+  if (!markdown.startsWith("---")) return markdown;
+  const end = markdown.indexOf("\n---", 3);
+  return end === -1 ? markdown : markdown.slice(end + 4);
+}
+
+function shortText(value, max = 150) {
+  const text = String(value ?? "").replace(/\s+/g, " ").trim();
+  return text.length > max ? `${text.slice(0, max - 1)}...` : text;
+}
+
+function fixtureAnchor() {
+  return {
+    id: "opening-1",
+    kind: "opening",
+    label: "Opening excerpt 1",
+    text: shortText(
+      "The first honest test of the writing system did not look like a breakthrough. It looked like a paragraph that sounded competent until a reviewer asked what source changed the claim, what decision the reader could make, and what proof object would survive a skeptical reader.",
+      260,
+    ),
+  };
+}
+
+function reviewFixture(summary, draftPath, draftText, overrides = {}) {
   return {
     schema: "vibecode-human-quality-review/v1",
     slug: summary.slug,
     markdownSha256: summary.markdownSha256,
     reviewStatus: "completed_human_review",
     promotionAllowedWithoutHuman: false,
+    sourceDraft: {
+      path: draftPath,
+      wordCount: wordCount(stripFrontmatter(draftText)),
+      loaded: true,
+    },
     reviewer: {
       name: "Human Reviewer",
       handle: "human",
@@ -94,7 +127,8 @@ function reviewFixture(summary, overrides = {}) {
     scorecard: summary.humanQualityScorecard.map((row) => ({
       label: row.label,
       verdict: "accept",
-      evidenceNote: `Accepted ${row.label} because the draft provides inspectable evidence and reader-facing pressure in this fixture.`,
+      evidenceAnchor: fixtureAnchor(),
+      evidenceNote: `Accepted ${row.label} because the opening anchor shows a failed paragraph, a source-change question, a reader decision, and a proof object to inspect.`,
       requiredChange: "",
     })),
     overallRationale:
@@ -112,9 +146,10 @@ async function main() {
     const templatePath = join(root, "template.json");
     const draftPath = join(root, "draft.md");
     const reviewPath = join(root, "review.json");
+    const draftText = draftFixture();
     await mkdir(root, { recursive: true });
     await writeFile(summaryPath, `${JSON.stringify(summary, null, 2)}\n`, "utf8");
-    await writeFile(draftPath, draftFixture(), "utf8");
+    await writeFile(draftPath, draftText, "utf8");
 
     let result = run(templateGenerator, ["--summary", summaryPath, "--output", templatePath]);
     if (result.status !== 0 || !result.stdout.includes("human_quality_review_template=pass")) {
@@ -169,7 +204,7 @@ async function main() {
     }
     process.stdout.write("human_quality_review_editor_check_self_test=pass\n");
 
-    await writeFile(reviewPath, `${JSON.stringify(reviewFixture(summary), null, 2)}\n`, "utf8");
+    await writeFile(reviewPath, `${JSON.stringify(reviewFixture(summary, draftPath, draftText), null, 2)}\n`, "utf8");
     result = run(resultVerifier, ["--summary", summaryPath, "--review", reviewPath]);
     if (result.status !== 0 || !result.stdout.includes("human_quality_review_result=pass")) {
       process.stderr.write(result.stdout + result.stderr);
@@ -177,12 +212,29 @@ async function main() {
     }
     process.stdout.write("human_quality_review_result_accept_self_test=pass\n");
 
-    const rejectReview = reviewFixture(summary, {
+    const unanchoredReview = reviewFixture(summary, draftPath, draftText, {
+      scorecard: summary.humanQualityScorecard.map((row) => ({
+        label: row.label,
+        verdict: "accept",
+        evidenceNote: `Reviewed ${row.label} with a long but unanchored evidence note that should fail because it is not tied to the current draft.`,
+        requiredChange: "",
+      })),
+    });
+    await writeFile(reviewPath, `${JSON.stringify(unanchoredReview, null, 2)}\n`, "utf8");
+    result = run(resultVerifier, ["--summary", summaryPath, "--review", reviewPath]);
+    if (result.status === 0 || !result.stderr.includes("evidenceAnchor must reference")) {
+      process.stderr.write(result.stdout + result.stderr);
+      throw new Error("expected unanchored human quality review result to fail");
+    }
+    process.stdout.write("human_quality_review_result_unanchored_self_test=pass\n");
+
+    const rejectReview = reviewFixture(summary, draftPath, draftText, {
       decision: "promote_to_approval_candidate",
       scorecard: summary.humanQualityScorecard.map((row, index) => ({
         label: row.label,
         verdict: index === 1 ? "reject" : "accept",
-        evidenceNote: `Reviewed ${row.label} with enough evidence note text for the verifier to inspect the row.`,
+        evidenceAnchor: fixtureAnchor(),
+        evidenceNote: `Reviewed ${row.label} against the opening anchor, which gives the verifier enough source-bound evidence to inspect the row.`,
         requiredChange: index === 1 ? "Add concrete screenshot proof before promotion." : "",
       })),
     });
@@ -194,12 +246,13 @@ async function main() {
     }
     process.stdout.write("human_quality_review_result_reject_blocks_promotion_self_test=pass\n");
 
-    const validRejectReview = reviewFixture(summary, {
+    const validRejectReview = reviewFixture(summary, draftPath, draftText, {
       decision: "keep_internal_example",
       scorecard: summary.humanQualityScorecard.map((row, index) => ({
         label: row.label,
         verdict: index === 1 ? "reject" : "accept",
-        evidenceNote: `Reviewed ${row.label} with enough evidence note text for the verifier to inspect the row.`,
+        evidenceAnchor: fixtureAnchor(),
+        evidenceNote: `Reviewed ${row.label} against the opening anchor, which gives the verifier enough source-bound evidence to inspect the row.`,
         requiredChange: index === 1 ? "Add concrete screenshot proof before promotion." : "",
       })),
       nextActions: ["Revise the rejected evidence density row before another promotion review."],

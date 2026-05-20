@@ -115,7 +115,7 @@ function parseDraftContext(markdown, draftPath) {
   for (const paragraph of opening) {
     if (!selected.includes(paragraph) && selected.length < 8) selected.unshift(paragraph);
   }
-  return {
+  const context = {
     loaded: true,
     draftPath,
     title,
@@ -126,6 +126,8 @@ function parseDraftContext(markdown, draftPath) {
     opening,
     reviewPassages: selected.slice(0, 8),
   };
+  context.evidenceAnchors = buildEvidenceAnchors(context);
+  return context;
 }
 
 function emptyDraftContext(draftPath) {
@@ -139,12 +141,39 @@ function emptyDraftContext(draftPath) {
     receiptLines: [],
     opening: [],
     reviewPassages: [],
+    evidenceAnchors: [],
   };
 }
 
 function renderList(items, className, renderItem) {
   if (items.length === 0) return `<p class="${className} empty">No items found.</p>`;
   return `<ul class="${className}">${items.map(renderItem).join("")}</ul>`;
+}
+
+function shortText(value, max = 150) {
+  const text = cleanParagraph(value);
+  return text.length > max ? `${text.slice(0, max - 1)}...` : text;
+}
+
+function anchor(id, kind, label, text) {
+  return { id, kind, label, text: shortText(text, 260) };
+}
+
+function buildEvidenceAnchors(context) {
+  const anchors = [];
+  context.opening.forEach((text, index) => {
+    anchors.push(anchor(`opening-${index + 1}`, "opening", `Opening excerpt ${index + 1}`, text));
+  });
+  context.receiptLines.forEach((text, index) => {
+    anchors.push(anchor(`receipt-${index + 1}`, "receipt", `Receipt line ${index + 1}`, text));
+  });
+  context.images.forEach((image, index) => {
+    anchors.push(anchor(`image-${index + 1}`, "image", `Image ${index + 1}`, `${image.src} ${image.alt}`));
+  });
+  context.reviewPassages.forEach((text, index) => {
+    anchors.push(anchor(`passage-${index + 1}`, "passage", `Passage to inspect ${index + 1}`, text));
+  });
+  return anchors;
 }
 
 function buildEditor(template, draftContext) {
@@ -167,6 +196,9 @@ function buildEditor(template, draftContext) {
   const receiptList = renderList(draftContext.receiptLines, "receipt-list", (line) => `<li><code>${escapeHtml(line)}</code></li>`);
   const imageList = renderList(draftContext.images, "receipt-list", (image) => `<li><code>${escapeHtml(image.src)}</code> ${escapeHtml(image.alt)}</li>`);
   const headingList = renderList(draftContext.headings, "heading-list", (heading) => `<li>${escapeHtml(heading)}</li>`);
+  const evidenceAnchorOptions = draftContext.evidenceAnchors
+    .map((item) => `<option value="${escapeHtml(item.id)}">${escapeHtml(item.label)} - ${escapeHtml(item.text)}</option>`)
+    .join("");
 
   const scorecardRows = scorecard
     .map(
@@ -192,6 +224,13 @@ function buildEditor(template, draftContext) {
               <dd>${escapeHtml(row.requiredEvidence)}</dd>
             </div>
           </dl>
+          <label class="field">
+            Evidence anchor
+            <select data-evidence-anchor>
+              <option value="">Choose the passage, receipt, image, or missing proof this row depends on</option>
+              ${evidenceAnchorOptions}
+            </select>
+          </label>
           <label class="field">
             Evidence note
             <textarea data-evidence-note rows="4" placeholder="Name the exact passage, artifact, screenshot, failure trace, or reader reaction that supports this verdict."></textarea>
@@ -575,6 +614,7 @@ function buildEditor(template, draftContext) {
 
     function collectReview() {
       const scorecard = rows.map((row, index) => ({
+        evidenceAnchor: draftContext.evidenceAnchors.find((anchor) => anchor.id === row.querySelector("[data-evidence-anchor]").value) || null,
         label: template.scorecard[index].label,
         verdict: selectedVerdict(index),
         evidenceNote: row.querySelector("[data-evidence-note]").value.trim(),
@@ -616,6 +656,7 @@ function buildEditor(template, draftContext) {
       if (review.nextActions.length < 1) failures.push("At least one next action is required.");
       for (const row of review.scorecard) {
         if (!["accept", "reject"].includes(row.verdict)) failures.push(row.label + ": verdict required.");
+        if (!row.evidenceAnchor) failures.push(row.label + ": evidence anchor is required.");
         if (row.evidenceNote.length < 40) failures.push(row.label + ": evidence note is too thin.");
         if (row.verdict === "reject" && row.requiredChange.length < 20) {
           failures.push(row.label + ": required change is needed when rejected.");
@@ -661,11 +702,13 @@ function validateEditor(template, html, draftContext) {
     "Draft Review Desk",
     "Opening excerpt",
     "Evidence receipts",
+    "Evidence anchor",
     "Reviewer must cite an exact passage",
     "Evidence density",
     "Embarrassment risk",
     "promotionAllowedWithoutHuman",
     "data-score-row",
+    "data-evidence-anchor",
   ];
 
   if (template.promotionAllowedWithoutHuman !== false) {
@@ -676,6 +719,9 @@ function validateEditor(template, html, draftContext) {
   }
   if (!draftContext.loaded || draftContext.wordCount < 500 || draftContext.opening.length === 0) {
     failures.push("review editor requires loaded draft context with opening excerpts");
+  }
+  if (asArray(draftContext.evidenceAnchors).length < 6) {
+    failures.push("review editor requires draft evidence anchors");
   }
   if (asArray(template.scorecard).length < 6) {
     failures.push("review editor template requires at least six scorecard rows");
