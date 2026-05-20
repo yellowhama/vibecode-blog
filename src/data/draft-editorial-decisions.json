@@ -13,8 +13,8 @@
       "decision": "keep_internal_example",
       "approvalCandidate": false,
       "reviewerType": "editorial-system",
-      "decidedAt": "2026-05-20T06:50:00.000Z",
-      "rationale": "The draft is useful as an internal proof that the writing harness can move from source packet to critique repair. Loop 38 added a public-facing before/after writing artifact, Loop 39 added a real revision trace from this draft's own opening, Loop 40 added a cold-reader red-pen test, Loop 41 added a one-minute paragraph autopsy form, Loop 42 added a private HTML review artifact, Loop 43 added rendered screenshot proof for that private review surface, Loop 44 used that artifact for an editorial-system critique, Loop 45 revised the private draft against that critique, and Loop 46 tightened the revised draft by removing a repeated weak-paragraph block and replacing a stale prior-loop phrase with a clearer current-opening explanation. The draft now opens with a reader-recognizable bad AI paragraph, adds a real-time editorial rejection moment, sharpens the AutoAgent comparison into a harness-to-harness mapping, and adds an inline visual-proof table for the weak paragraph/rejection/autopsy stack. It still needs human critique, public rendered candidate proof, public image contract promotion, and final hash approval before this can become a public approval candidate.",
+      "decidedAt": "2026-05-20T07:05:00.000Z",
+      "rationale": "The draft is useful as an internal proof that the writing harness can move from source packet to critique repair. Loop 38 added a public-facing before/after writing artifact, Loop 39 added a real revision trace from this draft's own opening, Loop 40 added a cold-reader red-pen test, Loop 41 added a one-minute paragraph autopsy form, Loop 42 added a private HTML review artifact, Loop 43 added rendered screenshot proof for that private review surface, Loop 44 used that artifact for an editorial-system critique, Loop 45 revised the private draft against that critique, Loop 46 tightened the revised draft by removing a repeated weak-paragraph block and replacing stale prior-loop phrasing, and Loop 47 judged the current draft ready for human promotion review while still not public-ready. The draft now opens with a reader-recognizable bad AI paragraph, adds a real-time editorial rejection moment, sharpens the AutoAgent comparison into a harness-to-harness mapping, and adds an inline visual-proof table for the weak paragraph/rejection/autopsy stack. It still needs human critique, public rendered candidate proof, public image contract promotion, and final hash approval before this can become a public approval candidate.",
       "candidateBlockers": [
         "human_critique",
         "rendered_candidate",
@@ -22,7 +22,7 @@
         "image_contract"
       ],
       "requiredNextActions": [
-        "Run a human editorial critique focused on whether the revised bad-draft opening, real-time rejection moment, AutoAgent harness mapping, and visual-proof table work for a reader who has not followed the internal build history.",
+        "Send the current private draft and rendered HTML review artifact to human promotion review. The human reviewer should decide whether the bad-draft opening, real-time rejection moment, AutoAgent harness mapping, and visual-proof table work for a reader who has not followed the internal build history.",
         "If promoted, add a public post image contract and rendered candidate screenshots that show the weak paragraph, packet rejection, and autopsy stack.",
         "If promoted, create a hash-bound human approval record after the final markdown and image are stable."
       ],
@@ -40,6 +40,7 @@
         "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/loop-44-writing-harness-rendered-artifact-editorial-critique-2026-05-20.md",
         "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/loop-45-writing-harness-draft-revision-2026-05-20.md",
         "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/loop-46-writing-harness-draft-clarity-pass-2026-05-20.md",
+        "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/loop-47-writing-harness-cold-reader-verdict-2026-05-20.md",
         "public/images/posts/writing-harness-not-more-prompts.png"
       ]
     }

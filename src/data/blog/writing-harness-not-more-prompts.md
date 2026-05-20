@@ -177,7 +177,7 @@ What condition would make us reject the draft?
 
 The opening paragraph is the example.
 
-It promises productivity, consistency, brand voice, and scale. Those are the four horsemen of harmless-looking AI content. The paragraph is not wrong in the useful sense. It is worse than wrong: it is frictionless. Nothing in it can be inspected, challenged, reused, or remembered.
+It promises productivity, consistency, brand voice, and scale. That is the standard four-part disguise of harmless-looking AI content. The paragraph is not wrong in the useful sense. It is worse than wrong: it is frictionless. Nothing in it can be inspected, challenged, reused, or remembered.
 
 I pasted that paragraph into the review surface and it failed before the editor had to reach for taste.
 
