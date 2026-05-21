@@ -8,6 +8,9 @@ workflow: "packet"
 tags: ["engineering", "observability", "debugging", "slop-detection"]
 ogImage: "/images/posts/frustration-as-spec.png"
 references:
+  - name: "OpenTelemetry Signals"
+    url: "https://opentelemetry.io/docs/concepts/signals/"
+    guru: "OpenTelemetry"
   - name: "LLMs Demand Observability-Driven Development"
     url: "https://www.honeycomb.io/blog/llms-demand-observability-driven-development"
     guru: "Charity Majors"
@@ -18,7 +21,9 @@ references:
 
 # Frustration Is a Signal, Not the Specification
 
-![Frustration into specification signal diagram](/images/posts/frustration-as-spec.png)
+![Rendered proof diagram for complaint signal, contract boundary, and verifier receipt](/images/posts/frustration-as-spec.png)
+
+Read the image as the article's operating path, not a mood board. The failure gap is simple: repeated frustration can look like feedback while never becoming a boundary the next agent can obey. The left side is the complaint signal, the middle is the contract boundary, and the right side is the verifier receipt. If the complaint cannot travel that path, it is still editorial feedback, not system policy.
 
 On 2026-05-20, I opened the GitHub-backed reference ceiling report at `F:\Aisaak\CompanyArtifacts\vibecode-reference-ceiling-audit\latest.json`, looked at the weakest-post list, and found this article at the bottom.
 
@@ -199,6 +204,10 @@ If the same correction happens twice, stop improving the prompt. Add the boundar
 
 Charity Majors' observability argument matters because agent failures are often process failures, not single-line bugs. A vague "the output is bad" complaint does not help the next session. A recorded failure mode does.
 
+The outside standard is useful here. OpenTelemetry treats signals as things a system emits so another system can collect, process, and inspect them. Charity's version says LLM work needs that same observability habit. Hamel's eval framing says the review examples need to become searchable and repeatable.
+
+The weaker pattern is "the operator got frustrated." The stronger pattern is "the system emitted a signal, the team named the missing boundary, and the next run has a verifier that can reject the same failure."
+
 Instead of asking the agent to "do better," capture:
 
 ```txt
@@ -257,7 +266,7 @@ The second version is actionable. Another agent can enforce it without guessing 
 
 That is the reader move: do not preserve frustration as a quote. Preserve the contract it forced you to discover.
 
-## The Accept/Reject Review
+## Frustration-to-Spec Decision Checklist
 
 Before turning frustration into policy, ask one question:
 
