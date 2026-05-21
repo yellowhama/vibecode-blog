@@ -17,20 +17,7 @@ references:
 
 # Self-Improving Agents Need a Judge Outside the Loop
 
-> Private draft. Not approved for publication.
-
-## Packet Receipt
-
-```txt
-source_workflow_quality_gate=pass
-source_workflow_slug=self-improving-agents-need-evals
-publication_state=draft_only
-approval_required=true
-approval_candidate=false
-candidate_blockers=human_critique,rendered_candidate,hash_approval,image_contract
-editorial_decision=keep_internal_example
-editorial_decision_ref=src/data/draft-editorial-decisions.json#self-improving-agents-need-evals
-```
+> Private draft. Not approved for publication. The reader-facing article voice ends before the review appendix.
 
 ## The Paragraph That Gets Past You
 
@@ -40,19 +27,19 @@ Here is the paragraph that should make an editor nervous:
 Self-improving agents are the next major leap in AI. Instead of waiting for humans to improve prompts and tools, agents can now test themselves, learn from results, and make their own harnesses better over time.
 ```
 
-It sounds clean. It is also the kind of paragraph that lets bad systems walk straight through the front door.
+It sounds clean. That is the problem. The risk is not that a bad loop looks broken; the dangerous version looks professional enough for a tired reader to trust.
 
 The missing word is judge.
 
 A loop that improves itself is not impressive by default. A loop that improves itself against the wrong judge is a machine for producing cleaner mistakes. It will not necessarily get worse. That is the trap. It may get better and better at the measurement that fails to see the thing you actually care about.
 
-What is inspectably wrong with the paragraph is not its tone. It gives the reader no source boundary, no reject condition, no trace to inspect, and no decision about what would make the loop unsafe. The claim sounds useful because it hides the artifact that should be judged.
+What is inspectably wrong with the paragraph is not style. It gives you no boundary on the source, no reject condition, no trace to inspect, and no person or system allowed to say no. The claim sounds useful because it hides the thing that should be judged.
 
 That is the part of self-improving agents worth taking seriously before the demos get too smooth.
 
 ## The Failure Is Not Style
 
-The source video describes AutoAgent as a meta-agent system: one agent edits the harness, runs task agents against benchmarks, reads the results and traces, then keeps or reverts changes.
+The provided source packet describes AutoAgent as a meta-agent system: one agent edits the harness, runs task agents against benchmarks, reads results and traces, then keeps or reverts changes.
 
 Reader question: before you let an agent improve its own harness, what should you accept, reject, or verify about the judge that decides keep versus revert?
 
@@ -64,7 +51,7 @@ edit harness -> run tasks -> score benchmark -> inspect trace -> keep/revert -> 
 
 But the shape is also dangerous if you admire the loop more than the evaluator.
 
-If the benchmark can only see whether a spreadsheet task passed, the agent may learn to optimize the spreadsheet path. If the benchmark can only see terminal success, it may learn terminal success. That is fine when the benchmark is the work. It is not fine when the benchmark is a proxy for a messier human outcome.
+If the benchmark can only see whether a spreadsheet task passed, the agent may learn to optimize the spreadsheet path. If the benchmark can only see terminal success, it may learn terminal success. That is fine when the benchmark is the work. It is not fine when the benchmark is only a proxy for a messier human outcome.
 
 For writing, the failure is obvious. A draft can pass structure checks and still read like an internal status memo. It can have sources and still not have a point. It can include an image and still use that image as decoration. It can render correctly and still make a cold reader ask, "Why am I reading this?"
 
@@ -72,18 +59,22 @@ If that failure is not visible to the judge, a self-improving writing agent will
 
 ## The Harness Is the Point
 
-The useful lesson from the source is not "let agents improve themselves." The useful lesson is that every improvement loop needs a keep/revert boundary.
+The useful lesson from the source is not "let agents improve themselves." The useful lesson is that every improvement loop needs a keep/revert boundary that is outside the thing being improved.
 
-Vibecode's article-production harness has the same job:
+That means the roles have to be separated:
 
 ```txt
-Source Scout -> Packet Builder -> Angle Strategist -> Evidence Designer
-Draft Writer -> Reference Critic -> Public Surface Editor -> Rendered QA -> Publisher
+source person: what was actually said or shown?
+angle person: what problem should the reader care about?
+writer: can this become a readable argument?
+critic: what would make this inadmissible?
+render checker: what did the browser actually show?
+publisher: what is allowed to go public?
 ```
 
-That is not bureaucracy. It is where the judge lives.
+That is not bureaucracy. It is separation of powers.
 
-The Draft Writer is allowed to write. It is not allowed to approve. The Reference Critic is allowed to reject. It is not allowed to hide a weak source behind a nicer sentence. Rendered QA is allowed to check the browser. It is not allowed to assume markdown intent became user-visible proof. Publisher is allowed to queue. It is not allowed to waive failed gates.
+The writer is allowed to write. The writer is not allowed to approve. The critic is allowed to reject. The critic is not allowed to hide a weak source behind a nicer sentence. The rendered checker is allowed to inspect what appears on screen. The publisher is not allowed to waive a failed gate because the article now sounds confident.
 
 This is the line I would steal from the source:
 
@@ -99,27 +90,23 @@ In the auto research pattern, the agent edits training code, trains briefly, eva
 
 The source names a meta-agent/task-agent setup. The task agent does the work. The meta-agent changes the harness and uses benchmark feedback to decide whether those changes survive.
 
-That is the bridge into company work. Most teams do not have one workflow. They have support triage, content production, QA, reporting, sales research, data cleanup, incident review, and dozens of small processes that each need a different harness.
+Source basis: this draft is based on user-provided transcript notes and processed source notes, not a full verbatim transcript archive.
+
+That is the bridge into company work. In company work, the same pattern can map onto many workflows: support triage, content production, QA, reporting, sales research, data cleanup, incident review, and dozens of small processes that each need a different harness.
 
 The mistake is to hear that and immediately build more agents.
 
 The better move is to ask what each loop will be judged by.
 
-That is the point: the loop is not the product. The refusal rule is the product.
+That is an editorial principle, not a source quote: the loop is not the product. The refusal rule is the product.
 
 ## Visual Evidence
 
-Private source-draft visual artifact:
-
 ![Self-improving agents draft visual](/images/posts/self-improving-agents-need-evals.png)
 
-```txt
-visual_artifact=F:\Aisaak\CompanyArtifacts\vibecode-draft-review-artifacts\self-improving-agents-need-evals-source-map.png
-visual_summary=F:\Aisaak\CompanyArtifacts\vibecode-draft-review-artifacts\self-improving-agents-need-evals-source-map-summary.json
-image_state=private_evidence_plan_only_unique_public_image_required_before_promotion
-```
+A useful diagram for this idea should not show a heroic loop eating its own tail. It should show the judge outside the loop: proposal, sandbox, score, trace review, and keep/revert. If the image only says "AI improves itself," it has failed the article.
 
-The visual job is not to decorate the article. It has to show the judge outside the loop: proposal, sandbox, score, trace review, and keep/revert. If the future public image does not make that relationship visible in the first screen, the image contract should fail.
+The visual job is not decoration. It should make the separation of powers visible before the reader reaches the table.
 
 ## The Pattern Worth Stealing
 
@@ -134,15 +121,15 @@ revert_rule: what exact result forces rollback?
 human_stop: where can a person block publication, deployment, or spend?
 ```
 
-For Vibecode, the same map becomes:
+Here is the same pattern for a content agent, stripped of internal project nouns:
 
 ```txt
-claim: this draft is getting better
-judge: reference critic + rendered QA + human promotion review
-blind_spot: smooth prose with weak source pressure
-trace: source packet, evidence plan, critique, queue artifact, hash
-revert_rule: any reject row keeps the draft private
-human_stop: publisher cannot publish without approval
+claim: this article draft is getting better
+judge: a critic who can reject it for source weakness, dullness, or reader confusion
+blind_spot: smooth prose with no evidence pressure
+trace: source packet, rejected paragraph, revision diff, rendered page
+revert_rule: any rejected row keeps the draft private
+human_stop: publication requires approval on the exact final version
 ```
 
 That is why the judge has to sit outside the loop. The writer cannot be the judge of writing. The agent that creates the artifact cannot be the final authority on whether the artifact proves anything.
@@ -154,11 +141,13 @@ before: a generated scaffold said the draft should start with a visible failure 
 after: the current opening starts with a weak self-improving-agent paragraph and rejects it
 before: the source was a topic summary
 after: the source became an edit/run/score/trace/keep-revert mechanism
-before: the queue was implied
-after: the queue item is a blocked artifact with required proof
+before: the workflow roles leaked into the article voice
+after: the article voice carries the argument, and review metadata is pushed into the appendix
 ```
 
 The rule is simple: if the improvement loop cannot show the thing it rejected, it has not earned the word improvement.
+
+The voice rule is just as important: if the writer starts sounding like the publisher, the article is already losing the reader.
 
 ## The Table To Use Before You Prompt Again
 
@@ -168,11 +157,44 @@ The rule is simple: if the improvement loop cannot show the thing it rejected, i
 | Task completion | Trace of how the task was completed | The output passes but the path is not inspectable |
 | Draft quality | Source pressure, proof object, and reader transfer | The article sounds better but says nothing sharper |
 | Visual polish | Whether the image proves the claim | The image decorates instead of explains |
-| Publish readiness | Human approval on the exact final hash | The system wants to publish because all automated gates are green |
+| Voice consistency | Which role is speaking in each section | The writer starts narrating approval state, queue state, or gate state |
+| Publish readiness | Human approval on the exact final hash | The system wants to publish because automated gates are green |
 
 This is the uncomfortable part: a useful agent loop needs an enemy. Not a hostile person, but a constraint that refuses the output when it gets too good at the wrong game.
 
 If your self-improving system has no enemy, the benchmark becomes the boss.
+
+## Approval Candidate Verdict
+
+Not ready.
+
+AI critic review moved this draft backward from "send to human promotion review" to "revise before human review." The core argument works, but the previous version let packet, publisher, and approval language leak into the article body. This version isolates the writer voice from the review appendix, but it still needs a fresh reference critique, a rendered public candidate route, a unique public image contract, and final human approval on the exact markdown hash before any promotion discussion.
+
+## Draft Risk
+
+The biggest remaining risk is that the article becomes correct but bloodless: a useful operating memo pretending to be a blog post.
+
+The next critic should judge whether the opening, source mechanism, visual explanation, and table are strong enough for a cold technical reader who has not followed the internal harness work. If the answer is no, keep it private and rewrite the story before adding more gates.
+
+## Boundary
+
+This article is not claiming AutoAgent is production-ready for all workflows. It is not claiming benchmarks are bad. It is not claiming human review can be removed.
+
+It is making one narrower claim: any self-improving agent loop needs an external judge that can see the failure the loop is likely to optimize around.
+
+## Packet Receipt
+
+```txt
+source_workflow_quality_gate=pass
+source_workflow_slug=self-improving-agents-need-evals
+publication_state=draft_only
+approval_required=true
+approval_candidate=false
+candidate_blockers=human_critique,rendered_candidate,hash_approval,image_contract
+editorial_decision=keep_internal_example
+editorial_decision_ref=src/data/draft-editorial-decisions.json#self-improving-agents-need-evals
+ai_critic_verdict=revise_before_human_review
+```
 
 ## Publisher Queue Item
 
@@ -180,54 +202,17 @@ If your self-improving system has no enemy, the benchmark becomes the boss.
 publisher_queue_item:
   title: "Self-Improving Agents Need a Judge Outside the Loop"
   source_url: "https://www.youtube.com/watch?v=RoaPvj9Ovug"
-  reader_decision: "Should this private draft stay internal, be revised, or move to human promotion review after a real critique?"
+  reader_decision: "Should this private draft stay internal, be revised, or move to human promotion review after a fresh voice-aware critique?"
   required_proof:
     - source workflow packet
     - processed function extract
     - evidence plan
     - private source draft visual artifact
-    - reference critic report
-    - publisher queue artifact
+    - AI critic review
+    - voice contract revision
+    - fresh reference critic report
     - human approval packet
   image_state: "private_evidence_plan_only_unique_public_image_required_before_promotion"
   publish_state: "blocked"
   approval_required: true
 ```
-
-## Approval Candidate Verdict
-
-Not ready.
-
-This draft has a real source packet, a clear operating claim, and a reusable reader table. It is still not an approval candidate because it needs reference critique, rendered/private artifact proof, a unique public image contract, and a human approval decision tied to the final markdown hash.
-
-## Editorial Critique Result
-
-Reference critic verdict: keep private.
-
-What works:
-
-- The opening rejects the generic self-improving-agent paragraph instead of summarizing the topic.
-- The article names the actual mechanism: edit harness, run tasks, score benchmark, inspect trace, keep/revert.
-- The reader gets a reusable accept/reject table.
-- The publisher queue item blocks publication instead of treating artifact generation as approval.
-
-What still blocks promotion:
-
-- The piece needs a human review row on whether the "judge outside the loop" argument is memorable enough for a cold technical reader.
-- The visual is private proof only; a unique public image contract still has to be created.
-- The article has not been rendered as a public candidate route.
-- The final markdown hash has not been accepted by a human reviewer.
-
-Required next action: send this exact private draft, rendered review artifact, source-map artifact, and publisher queue artifact to human promotion review. Any reject keeps the draft private.
-
-## Boundary
-
-This article is not claiming that AutoAgent is production-ready for all workflows. It is not claiming benchmarks are bad. It is not claiming human review can be removed.
-
-It is making one narrower claim: any self-improving agent loop needs an external judge that can see the failure the loop is likely to optimize around.
-
-## Draft Risk
-
-The biggest risk is that this becomes a clever commentary post instead of a useful operating artifact.
-
-Before promotion, the next reviewer should ask whether the table is strong enough to use on a real agent project tomorrow. If not, keep it private and revise the reader-transfer section before any publication discussion.

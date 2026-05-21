@@ -80,7 +80,7 @@
       "approvalCandidate": false,
       "reviewerType": "editorial-system",
       "decidedAt": "2026-05-22T00:00:00.000Z",
-      "rationale": "Loop 128 ran a real user-provided source through the article-production harness from source packet to private draft, reference critique, rendered review artifact, publisher queue item, and human promotion review packet. The draft has a defensible operating claim: self-improving agent loops need a judge outside the loop because a benchmark can miss source trust, evidence fit, rendered output, and human reader risk. It remains private because the source is transcript-based, the public image contract does not exist, the rendered candidate route does not exist, and no human reviewer has accepted the final markdown hash.",
+      "rationale": "Loop 128 ran a real user-provided source through the article-production harness from source packet to private draft, reference critique, rendered review artifact, publisher queue item, and human promotion review packet. The AI critic panel then found that the workflow chain exists and publication remains blocked, but the draft should be revised before human review because the prior article body mixed writer, critic, QA, publisher, and approval voices. The draft now has a clearer reader-facing field-note voice and a defensible operating claim: self-improving agent loops need a judge outside the loop because a benchmark can miss source trust, evidence fit, rendered output, and human reader risk. It remains private because the source is transcript-note based, the public image contract does not exist, the rendered candidate route does not exist, a fresh voice-aware reference critique has not accepted the revision, and no human reviewer has accepted the final markdown hash.",
       "candidateBlockers": [
         "human_critique",
         "rendered_candidate",
@@ -96,8 +96,8 @@
         "renderedScreenshotPath": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-review-artifact-desktop.png",
         "renderedSummaryPath": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-review-artifact-summary.json",
         "critiqueSha256": "7B4B7591E20393800716DEC310751DE9ECE8712AC07C109BCFA32BFE0E7CB000",
-        "renderedScreenshotSha256": "0DA26D629E3E99B3D98E65DEF6D163CBA97B57EFFA9E4490C9193BE96BB804ED",
-        "renderedSummarySha256": "F73F2F7B4AA9B81CA35E629E9A911ED2EAAB4DBCA7DC0B243C3DC8A700AC2C7E",
+        "renderedScreenshotSha256": "CD2E877BBB579D342FC8C0F8A9ECD7AE1853AFECCBD72A9F7C5EC99BBF4AECA9",
+        "renderedSummarySha256": "21D546535D0F65658050DB9AD47AC69543A5A2B875C7A8C6EC74F11C9887CA4B",
         "failureSignals": [
           "The generated scaffold was only a structure and had to be rewritten into a real article before review.",
           "The source supports a narrow operating argument, not a broad AutoAgent implementation tutorial.",
@@ -110,7 +110,9 @@
         ]
       },
       "requiredNextActions": [
-        "Send the current private draft, review artifact, source map artifact, publisher queue artifact, and human promotion review packet to a human reviewer.",
+        "Run a fresh voice-aware reference critique against the revised private draft before sending it to human review.",
+        "Regenerate the private review artifact, publisher queue artifact, and human promotion packet against the revised markdown hash.",
+        "Only after a fresh critic accepts the voice separation, send the current private draft, review artifact, source map artifact, publisher queue artifact, and human promotion review packet to a human reviewer.",
         "If promoted, create a unique public image contract and rendered candidate screenshots.",
         "If promoted, create a hash-bound human approval record after the final markdown and image are stable."
       ],
@@ -132,7 +134,11 @@
         "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-review-artifact-desktop.png",
         "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-review-artifact-summary.json",
         "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-publisher-queue-artifact.html",
-        "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-publisher-queue-artifact-generation-summary.json"
+        "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-publisher-queue-artifact-generation-summary.json",
+        "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-human-promotion-review.html",
+        "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-human-promotion-review-summary.json",
+        "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-ai-critic-review-summary.json",
+        "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/self-improving-agents-need-evals-ai-critic-review-2026-05-22.md"
       ]
     }
   ]

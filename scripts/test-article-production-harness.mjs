@@ -57,7 +57,11 @@ function makeRole(id) {
     outputs: [`${id} output`],
     hardStops:
       id === "draft-writer"
-        ? ["Writer cannot approve its own work.", "Generated drafts stay draft: true until promotion."]
+        ? [
+            "Writer cannot approve its own work.",
+            "Generated drafts stay draft: true until promotion.",
+            "Do not write packet, queue, approval, score, or hash language into the reader-facing article body.",
+          ]
         : [`${title} stops when its required evidence is missing.`],
     skills: [`${id} skill`],
     verification: {
@@ -103,6 +107,32 @@ function validManifest(repoRoot) {
         { stage: "public-surface", pattern: "producer-reviewer", roles: ["public-surface-editor", "rendered-qa"] },
         { stage: "publication", pattern: "pipeline", roles: ["publisher"] },
       ],
+    },
+    voiceContract: {
+      reference: "revfactory/unreal-idol V3 persona architecture",
+      articleVoice: {
+        role: "field-note essayist",
+        mustDo: ["Start from a concrete failure."],
+        mustNotDo: ["Do not narrate packet receipts, queue state, approval state, or hash language as public prose."],
+      },
+      roleVoiceBoundaries: [
+        {
+          role: "draft-writer",
+          voice: "reader-facing argument only",
+          forbiddenSections: ["packet receipt", "publisher queue", "approval candidate verdict"],
+        },
+        {
+          role: "reference-critic",
+          voice: "private reject/accept scorecard",
+          forbiddenSections: ["reader-facing essay body"],
+        },
+        {
+          role: "publisher",
+          voice: "private queue and approval control",
+          forbiddenSections: ["reader-facing essay body", "homepage copy"],
+        },
+      ],
+      appendixRule: "Private packet, queue, approval, and hash material stays after the reader-facing article body.",
     },
     pipelineOrder: roleIds,
     roles: roleIds.map(makeRole),
@@ -195,6 +225,20 @@ try {
       ["article_production_harness_gate=pass"],
     );
 
+    const missingVoiceContract = structuredClone(manifest);
+    delete missingVoiceContract.voiceContract;
+    await writeFile(
+      join(root, "src", "data", "article-production-harness.json"),
+      `${JSON.stringify(missingVoiceContract, null, 2)}\n`,
+      "utf8",
+    );
+    requireRun(
+      "missing voice contract",
+      run(["--repo-root", root, "--wiki-root", wikiRoot, "--decisions-ref", "src/data/draft-editorial-decisions.json"]),
+      1,
+      ["voiceContract is required"],
+    );
+
     const missingRole = structuredClone(manifest);
     missingRole.roles = missingRole.roles.filter((role) => role.id !== "rendered-qa");
     await writeFile(
@@ -245,6 +289,7 @@ try {
     process.stdout.write("article_production_harness_missing_role_self_test=pass\n");
     process.stdout.write("article_production_harness_collapsed_writer_self_test=pass\n");
     process.stdout.write("article_production_harness_stale_surface_self_test=pass\n");
+    process.stdout.write("article_production_harness_voice_contract_self_test=pass\n");
   } catch (error) {
     await rm(root, { recursive: true, force: true });
     throw error;

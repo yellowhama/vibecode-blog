@@ -56,6 +56,47 @@
       }
     ]
   },
+  "voiceContract": {
+    "reference": "revfactory/unreal-idol V3 persona architecture",
+    "problem": "A single writer voice collapses when it starts speaking as writer, critic, QA, and publisher inside the same article body.",
+    "articleVoice": {
+      "role": "field-note essayist",
+      "mustDo": [
+        "Start from a concrete failure, artifact, or reader-recognizable bad paragraph.",
+        "Explain why the failure matters before naming the internal system.",
+        "Keep one argumentative voice through the reader-facing article body.",
+        "Translate internal roles into reader-facing language unless the section is explicitly private appendix.",
+        "End with a usable decision rule, table, or operational question."
+      ],
+      "mustNotDo": [
+        "Narrate packet receipts, approval state, hash language, queue state, score labels, or gate names as public article prose.",
+        "Let the writer approve, reject, queue, or publish its own work.",
+        "Use project-internal nouns as the hook.",
+        "Turn a blog post into a status report."
+      ]
+    },
+    "roleVoiceBoundaries": [
+      {
+        "role": "draft-writer",
+        "voice": "reader-facing argument only",
+        "allowedSections": ["opening", "reader problem", "source thread", "pattern", "reader transfer", "boundary"],
+        "forbiddenSections": ["packet receipt", "publisher queue", "approval candidate verdict", "hash approval"]
+      },
+      {
+        "role": "reference-critic",
+        "voice": "reject/accept scorecard",
+        "allowedSections": ["critique report", "revision plan", "review artifact"],
+        "forbiddenSections": ["reader-facing essay body"]
+      },
+      {
+        "role": "publisher",
+        "voice": "private queue and approval control",
+        "allowedSections": ["publisher queue item", "publication approvals"],
+        "forbiddenSections": ["reader-facing essay body", "homepage copy"]
+      }
+    ],
+    "appendixRule": "Private packet, queue, approval, and hash material may exist in a draft only after the reader-facing article body and must not be treated as public prose."
+  },
   "pipelineOrder": [
     "source-scout",
     "packet-builder",
@@ -147,7 +188,11 @@
       "owns": ["draft markdown"],
       "inputs": ["packet", "brief", "evidence plan"],
       "outputs": ["src/data/blog/<slug>.md"],
-      "hardStops": ["Writer cannot approve its own work.", "Generated drafts stay draft: true until promotion."],
+      "hardStops": [
+        "Writer cannot approve its own work.",
+        "Generated drafts stay draft: true until promotion.",
+        "Do not write packet, queue, approval, score, or hash language into the reader-facing article body."
+      ],
       "skills": ["draft writing", "source-grounded prose"],
       "verification": {
         "command": "npm run verify:draft-approval-candidates",
@@ -284,7 +329,7 @@
       "sourceWorkflowSlug": "self-improving-agents-need-evals",
       "draftPath": "src/data/blog/self-improving-agents-need-evals.md",
       "decisionRef": "src/data/draft-editorial-decisions.json#self-improving-agents-need-evals",
-      "currentGate": "human-promotion-review",
+      "currentGate": "private-draft",
       "publicPromotionAllowed": false,
       "nextRole": "reference-critic",
       "lifecycleRoleOrder": [
@@ -347,6 +392,11 @@
         {
           "kind": "human-promotion-summary",
           "path": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-human-promotion-review-summary.json",
+          "required": true
+        },
+        {
+          "kind": "ai-critic-review-summary",
+          "path": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-ai-critic-review-summary.json",
           "required": true
         }
       ]

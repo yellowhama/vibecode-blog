@@ -187,6 +187,40 @@ function validateArchitecture(manifest) {
   return failures;
 }
 
+function validateVoiceContract(manifest) {
+  const failures = [];
+  const contract = manifest.voiceContract;
+  if (!contract || typeof contract !== "object") {
+    failures.push("voiceContract is required");
+    return failures;
+  }
+  if (!/unreal-idol/i.test(contract.reference ?? "")) {
+    failures.push("voiceContract.reference must cite the unreal-idol persona architecture");
+  }
+  const mustNotDo = asArray(contract.articleVoice?.mustNotDo).join(" ");
+  for (const phrase of ["packet", "queue", "approval", "hash"]) {
+    if (!new RegExp(`\\b${phrase}\\b`, "i").test(mustNotDo)) {
+      failures.push(`voiceContract.articleVoice.mustNotDo must forbid ${phrase} language in public prose`);
+    }
+  }
+  if (!/reader-facing article body/i.test(contract.appendixRule ?? "")) {
+    failures.push("voiceContract.appendixRule must separate private appendix material from the reader-facing article body");
+  }
+  const boundaries = asArray(contract.roleVoiceBoundaries);
+  for (const role of ["draft-writer", "reference-critic", "publisher"]) {
+    const boundary = boundaries.find((item) => item?.role === role);
+    if (!boundary) {
+      failures.push(`voiceContract.roleVoiceBoundaries missing ${role}`);
+      continue;
+    }
+    if (!isNonEmptyString(boundary.voice)) failures.push(`voiceContract ${role} boundary must name its voice`);
+    if (!Array.isArray(boundary.forbiddenSections) || boundary.forbiddenSections.length === 0) {
+      failures.push(`voiceContract ${role} boundary must list forbiddenSections`);
+    }
+  }
+  return failures;
+}
+
 function validateSourceReferences(manifest) {
   const failures = [];
   const paths = asArray(manifest.sourceReferences).map((ref) => ref?.path);
@@ -331,6 +365,7 @@ async function main() {
   }
   failures.push(...validateSourceReferences(manifest));
   failures.push(...validateArchitecture(manifest));
+  failures.push(...validateVoiceContract(manifest));
   failures.push(...validateRoles(manifest));
   failures.push(...await validateTrackedArticles(manifest, repoRoot, decisionsPath, decisionsRefPrefix, approvalsPath));
   const wiki = await validateWikiDocs(wikiRoot);
