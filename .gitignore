@@ -27,6 +27,9 @@ vibecode-dev-server*.log
 # pagefind (generated at build time)
 public/pagefind/
 
+# local gbrain source attachment
+.gbrain-source
+
 # large source assets (brunch export images)
 easy_peasy/assets/
 __pycache__
