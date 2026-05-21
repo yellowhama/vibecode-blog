@@ -22,17 +22,27 @@ const totalPosts = page.data.length;
 const packetBackedPosts = page.data.filter(post => post.data.workflow === "packet").length;
 const renderedViewportChecks = totalPosts * 2 + 4;
 const approvalRecords = totalPosts;
-const leadPost = page.data.find(post => post.data.workflow === "packet" && post.data.ogImage);
 const getReferenceCeiling = (slug: string) =>
   referenceCeiling.posts[slug as keyof typeof referenceCeiling.posts]?.score;
 const getWritingPulse = (slug: string) =>
   writingPulse.posts[slug as keyof typeof writingPulse.posts]?.score;
+const getEvidenceStrength = (post: (typeof page.data)[number]) => {
+  const referenceScore = getReferenceCeiling(post.id) ?? 0;
+  const pulseScore = getWritingPulse(post.id) ?? 0;
+  const sourceScore = Math.min(post.data.references?.length ?? 0, 6) * 3;
+  const featuredBonus = post.data.featured ? 2 : 0;
+  return referenceScore + pulseScore + sourceScore + featuredBonus;
+};
+const leadPost = [...page.data]
+  .filter(post => post.data.workflow === "packet" && post.data.ogImage)
+  .sort((a, b) => getEvidenceStrength(b) - getEvidenceStrength(a))[0];
 const leadReferenceScore = leadPost ? getReferenceCeiling(leadPost.id) : undefined;
 const leadWritingPulseScore = leadPost ? getWritingPulse(leadPost.id) : undefined;
 const leadSourceCount = leadPost?.data.references?.length ?? 0;
+const leadEvidenceStrength = leadPost ? getEvidenceStrength(leadPost) : 0;
 const leadProofRows = leadPost
   ? [
-      { label: "Why first", value: "This card exposes proof state before asking for the click." },
+      { label: "Why first", value: `Evidence rank 1 by reference ceiling, writing pulse, and source count; strength ${leadEvidenceStrength}.` },
       { label: "Writing pulse", value: `${leadWritingPulseScore ?? "n/a"} average gate ${writingPulse.averageScore}; weak posts remain queued for revision.` },
       { label: "Evidence", value: `${leadSourceCount} source refs, source packet workflow, rendered screenshot contract.` },
       { label: "Image", value: "The thumbnail must match the slug-specific image contract in the first screen." },
@@ -57,7 +67,9 @@ const leadProofRows = leadPost
         data-reference-score={leadReferenceScore ?? 0}
         data-writing-pulse-score={leadWritingPulseScore ?? 0}
         data-source-count={leadSourceCount}
-        data-surfacing-reason="archive-lead-evidence-card"
+        data-evidence-strength={leadEvidenceStrength}
+        data-evidence-rank="1"
+        data-surfacing-reason={`archive-lead-evidence-strength-${leadEvidenceStrength}`}
       >
         <div>
           <div class="mb-4 flex flex-wrap gap-2 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
@@ -88,7 +100,7 @@ const leadProofRows = leadPost
             ))}
           </dl>
           <p class="mt-4 max-w-2xl font-mono text-[0.58rem] uppercase tracking-[0.16em] text-ink-faded">
-            Evidence receipt: reference ceiling {leadReferenceScore ?? "n/a"} / writing pulse {leadWritingPulseScore ?? "n/a"} / source packet / unique image / rendered screenshots / current approval hash.
+            Evidence receipt: evidence rank 1 / strength {leadEvidenceStrength} / reference ceiling {leadReferenceScore ?? "n/a"} / writing pulse {leadWritingPulseScore ?? "n/a"} / source packet / unique image / rendered screenshots / current approval hash.
           </p>
           <p class="mt-2 max-w-2xl font-mono text-[0.56rem] uppercase tracking-[0.14em] text-ink-faded">
             Why this is first: the card exposes its score, source count, image contract, rendered proof, and approval state before the click.

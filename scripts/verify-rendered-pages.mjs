@@ -28,7 +28,7 @@ const SURFACE_ROUTES = [
     label: "homepage",
     path: "/",
     expectedImage: "/images/home/hero-journal.png",
-    requiredTexts: ["Evidence-backed field notes", "Public posts", "Reference ceiling", "Writing pulse"],
+    requiredTexts: ["Evidence-backed field notes", "Public posts", "Reference ceiling", "Writing pulse", "Evidence rank"],
     requiredLink: "/posts/",
     requirePostLink: true,
     requireContractImage: true,
@@ -38,7 +38,7 @@ const SURFACE_ROUTES = [
     label: "posts index",
     path: "/posts/",
     expectedImage: null,
-    requiredTexts: ["Evidence-backed articles only", "Packet-backed", "Unique image", "Hash approval", "Reference ceiling", "Writing pulse"],
+    requiredTexts: ["Evidence-backed articles only", "Packet-backed", "Unique image", "Hash approval", "Reference ceiling", "Writing pulse", "Evidence rank"],
     requiredLink: null,
     requirePostLink: true,
     requireContractImage: true,
@@ -463,6 +463,8 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       const referenceScore = Number.parseInt(card.getAttribute("data-reference-score") || "0", 10);
       const writingPulseScore = Number.parseInt(card.getAttribute("data-writing-pulse-score") || "0", 10);
       const sourceCount = Number.parseInt(card.getAttribute("data-source-count") || "0", 10);
+      const evidenceStrength = Number.parseInt(card.getAttribute("data-evidence-strength") || "0", 10);
+      const evidenceRank = Number.parseInt(card.getAttribute("data-evidence-rank") || "0", 10);
       return {
         slug: card.getAttribute("data-post-slug") || "",
         expectedContractImage,
@@ -470,6 +472,8 @@ function surfaceAuditExpression(spec, contractImagePaths) {
         referenceScore,
         writingPulseScore,
         sourceCount,
+        evidenceStrength,
+        evidenceRank,
         rect: {
           top: Math.round(rect.top),
           bottom: Math.round(rect.bottom),
@@ -491,6 +495,9 @@ function surfaceAuditExpression(spec, contractImagePaths) {
         hasReferenceScoreData: Number.isFinite(referenceScore) && referenceScore >= 88,
         hasWritingPulseData: Number.isFinite(writingPulseScore) && writingPulseScore >= 80,
         hasSourceCountData: Number.isFinite(sourceCount) && sourceCount >= 1,
+        hasEvidenceStrengthData: Number.isFinite(evidenceStrength) && evidenceStrength >= 200,
+        hasEvidenceRankText: text.includes("evidence rank") || text.includes("evidence strength"),
+        hasLeadRankData: !Number.isFinite(evidenceRank) || evidenceRank === 0 || evidenceRank === 1,
         matchingContractImage,
         matchingContractImageVisible: Boolean(matchingContractImage?.visible),
         matchingContractImageInFirstScreen: Boolean(matchingContractImage?.inFirstScreen)
@@ -509,6 +516,9 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       card.hasReferenceScoreData &&
       card.hasWritingPulseData &&
       card.hasSourceCountData &&
+      card.hasEvidenceStrengthData &&
+      card.hasEvidenceRankText &&
+      card.hasLeadRankData &&
       card.matchingContractImageVisible &&
       card.matchingContractImageInFirstScreen
     );
@@ -699,7 +709,7 @@ async function auditSurfaceRoute(chromePort, baseUrl, outputDir, spec, viewport,
       failures.push("surface has no distinct first-screen post contract image");
     }
     if (spec.requireContractImage && audit.firstScreenEvidenceCards.length < 1) {
-      failures.push("surface has no first-screen evidence card with source, image, rendered, approval, surfacing reason, link, and matching image");
+      failures.push("surface has no first-screen evidence card with source, image, rendered, approval, surfacing reason, evidence strength, rank text, link, and matching image");
     }
 
     return {
