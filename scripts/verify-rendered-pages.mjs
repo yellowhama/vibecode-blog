@@ -27,8 +27,8 @@ const SURFACE_ROUTES = [
     slug: "surface-home",
     label: "homepage",
     path: "/",
-    expectedImage: "/images/home/hero-journal.png",
-    requiredTexts: ["Evidence-backed field notes", "Public posts", "Reference ceiling", "Writing pulse", "Evidence rank"],
+    expectedImage: "/images/posts/design-is-a-technical-contract.png",
+    requiredTexts: ["Evidence-backed field notes", "Public posts", "Blogger ceiling", "Reference ceiling", "Writing pulse", "Evidence rank"],
     requiredLink: "/posts/",
     requirePostLink: true,
     requireContractImage: true,
@@ -38,7 +38,7 @@ const SURFACE_ROUTES = [
     label: "posts index",
     path: "/posts/",
     expectedImage: null,
-    requiredTexts: ["Evidence-backed articles only", "Packet-backed", "Unique image", "Hash approval", "Reference ceiling", "Writing pulse", "Evidence rank"],
+    requiredTexts: ["Evidence-backed articles only", "Packet-backed", "Unique image", "Hash approval", "Blogger ceiling", "Reference ceiling", "Writing pulse", "Evidence rank"],
     requiredLink: null,
     requirePostLink: true,
     requireContractImage: true,
@@ -405,6 +405,9 @@ function surfaceAuditExpression(spec, contractImagePaths) {
     const expectedSurfaceImage = spec.expectedImage
       ? images.find(image => image.src === spec.expectedImage) || null
       : null;
+    const expectedSurfaceVisibleHeight = expectedSurfaceImage
+      ? Math.max(0, Math.min(expectedSurfaceImage.rect.bottom, window.innerHeight) - Math.max(expectedSurfaceImage.rect.top, 0))
+      : 0;
     const contractImages = images.filter(image => contractImagePaths.includes(image.src));
     const visibleContractImages = contractImages.filter(image =>
       image.complete &&
@@ -460,6 +463,7 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       const expectedContractImage = card.getAttribute("data-image-contract") || "";
       const surfacingReason = card.getAttribute("data-surfacing-reason") || "";
       const matchingContractImage = cardImages.find(image => image.src === expectedContractImage) || null;
+      const referenceBloggerScore = Number.parseInt(card.getAttribute("data-reference-blogger-score") || "0", 10);
       const referenceScore = Number.parseInt(card.getAttribute("data-reference-score") || "0", 10);
       const writingPulseScore = Number.parseInt(card.getAttribute("data-writing-pulse-score") || "0", 10);
       const sourceCount = Number.parseInt(card.getAttribute("data-source-count") || "0", 10);
@@ -469,6 +473,7 @@ function surfaceAuditExpression(spec, contractImagePaths) {
         slug: card.getAttribute("data-post-slug") || "",
         expectedContractImage,
         surfacingReason,
+        referenceBloggerScore,
         referenceScore,
         writingPulseScore,
         sourceCount,
@@ -486,12 +491,14 @@ function surfaceAuditExpression(spec, contractImagePaths) {
         hasUniqueImage: text.includes("unique image") || text.includes("image contract"),
         hasRenderedProof: text.includes("rendered proof") || text.includes("rendered"),
         hasHashApproval: text.includes("hash approval") || text.includes("hash approved") || text.includes("human approval"),
+        hasBloggerCeiling: text.includes("blogger ceiling"),
         hasReferenceCeiling: text.includes("reference ceiling"),
         hasWritingPulse: text.includes("writing pulse"),
         explainsSurfacing: text.includes("why this is first") ||
           text.includes("start here") ||
           text.includes("surfaced because") ||
           surfacingReason.length > 0,
+        hasReferenceBloggerScoreData: Number.isFinite(referenceBloggerScore) && referenceBloggerScore >= 97,
         hasReferenceScoreData: Number.isFinite(referenceScore) && referenceScore >= 88,
         hasWritingPulseData: Number.isFinite(writingPulseScore) && writingPulseScore >= 80,
         hasSourceCountData: Number.isFinite(sourceCount) && sourceCount >= 1,
@@ -510,9 +517,11 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       card.hasUniqueImage &&
       card.hasRenderedProof &&
       card.hasHashApproval &&
+      card.hasBloggerCeiling &&
       card.hasReferenceCeiling &&
       card.hasWritingPulse &&
       card.explainsSurfacing &&
+      card.hasReferenceBloggerScoreData &&
       card.hasReferenceScoreData &&
       card.hasWritingPulseData &&
       card.hasSourceCountData &&
@@ -557,7 +566,14 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       ),
       expectedSurfaceImageInFirstScreen: Boolean(
         expectedSurfaceImage &&
-        expectedSurfaceImage.rect.top < window.innerHeight &&
+        expectedSurfaceImage.complete &&
+        expectedSurfaceImage.naturalWidth >= 300 &&
+        expectedSurfaceImage.naturalHeight >= 150 &&
+        expectedSurfaceImage.rect.width >= 80 &&
+        expectedSurfaceImage.rect.height >= 80 &&
+        expectedSurfaceVisibleHeight >= 80 &&
+        expectedSurfaceImage.rect.top >= 0 &&
+        expectedSurfaceImage.rect.top < window.innerHeight * 0.85 &&
         expectedSurfaceImage.rect.bottom > 0
       ),
       contractImages,
@@ -697,7 +713,7 @@ async function auditSurfaceRoute(chromePort, baseUrl, outputDir, spec, viewport,
       failures.push(`surface expected image did not render visibly: ${spec.expectedImage}`);
     }
     if (spec.expectedImage && !audit.expectedSurfaceImageInFirstScreen) {
-      failures.push(`surface expected image is not in the first screen: ${spec.expectedImage}`);
+      failures.push(`surface expected image is not strong in the first screen: ${spec.expectedImage}`);
     }
     if (spec.requireContractImage && audit.visibleContractImages.length < 1) {
       failures.push("surface has no visible post contract image");
@@ -709,7 +725,7 @@ async function auditSurfaceRoute(chromePort, baseUrl, outputDir, spec, viewport,
       failures.push("surface has no distinct first-screen post contract image");
     }
     if (spec.requireContractImage && audit.firstScreenEvidenceCards.length < 1) {
-      failures.push("surface has no first-screen evidence card with source, image, rendered, approval, surfacing reason, evidence strength, rank text, link, and matching image");
+      failures.push("surface has no first-screen evidence card with source, image, rendered, approval, blogger ceiling, surfacing reason, evidence strength, rank text, link, and matching image");
     }
 
     return {

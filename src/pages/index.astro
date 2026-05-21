@@ -8,6 +8,7 @@ import Footer from "@/components/Footer.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
 import referenceCeiling from "@/data/reference-ceiling-scores.json";
+import referenceBloggerCeiling from "@/data/reference-blogger-ceiling-scores.json";
 import writingPulse from "@/data/writing-pulse-scores.json";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
@@ -19,26 +20,31 @@ const renderedViewportChecks = publishedPosts * 2 + 4;
 const approvalRecords = publishedPosts;
 const getReferenceCeiling = (slug: string) =>
   referenceCeiling.posts[slug as keyof typeof referenceCeiling.posts]?.score;
+const getReferenceBloggerCeiling = (slug: string) =>
+  referenceBloggerCeiling.posts[slug as keyof typeof referenceBloggerCeiling.posts]?.score;
 const getWritingPulse = (slug: string) =>
   writingPulse.posts[slug as keyof typeof writingPulse.posts]?.score;
 const getEvidenceStrength = (post: (typeof evidencePosts)[number]) => {
+  const bloggerScore = getReferenceBloggerCeiling(post.id) ?? 0;
   const referenceScore = getReferenceCeiling(post.id) ?? 0;
   const pulseScore = getWritingPulse(post.id) ?? 0;
   const sourceScore = Math.min(post.data.references?.length ?? 0, 6) * 3;
   const featuredBonus = post.data.featured ? 2 : 0;
-  return referenceScore + pulseScore + sourceScore + featuredBonus;
+  return bloggerScore + referenceScore + pulseScore + sourceScore + featuredBonus;
 };
 const evidenceRankedPosts = [...evidencePosts].sort((a, b) => getEvidenceStrength(b) - getEvidenceStrength(a));
 const recentPosts = evidenceRankedPosts.slice(0, SITE.postPerIndex);
 const featuredPosts = evidenceRankedPosts.slice(0, 1);
 const leadPost = evidenceRankedPosts[0];
+const leadBloggerScore = leadPost ? getReferenceBloggerCeiling(leadPost.id) : undefined;
 const leadReferenceScore = leadPost ? getReferenceCeiling(leadPost.id) : undefined;
 const leadWritingPulseScore = leadPost ? getWritingPulse(leadPost.id) : undefined;
 const leadSourceCount = leadPost?.data.references?.length ?? 0;
 const leadEvidenceStrength = leadPost ? getEvidenceStrength(leadPost) : 0;
 const leadProofRows = leadPost
   ? [
-      { label: "Evidence rank", value: `#1 by reference ceiling, writing pulse, and source count; strength ${leadEvidenceStrength}.` },
+      { label: "Evidence rank", value: `#1 by blogger ceiling, reference ceiling, writing pulse, and source count; strength ${leadEvidenceStrength}.` },
+      { label: "Blogger ceiling", value: `${leadBloggerScore ?? "n/a"}; candidate threshold ${referenceBloggerCeiling.candidateThreshold}.` },
       { label: "Quality signal", value: `Reference ceiling ${leadReferenceScore ?? "n/a"}` },
       { label: "Writing pulse", value: `${leadWritingPulseScore ?? "n/a"}; weakest posts stay visible as revision queue, not hidden.` },
       { label: "Source trail", value: `${leadSourceCount} source refs plus packet workflow` },
@@ -51,6 +57,7 @@ const proofMetrics = [
   { label: "Packet-backed", value: packetBackedPosts },
   { label: "Rendered viewports", value: renderedViewportChecks },
   { label: "Hash approvals", value: approvalRecords },
+  { label: "Blogger ceiling", value: referenceBloggerCeiling.averageScore },
   { label: "Reference ceiling", value: referenceCeiling.averageScore },
   { label: "Writing pulse", value: writingPulse.averageScore },
 ];
@@ -86,6 +93,7 @@ const proofMetrics = [
             data-evidence-card
             data-post-slug={leadPost.id}
             data-image-contract={leadPost.data.ogImage}
+            data-reference-blogger-score={leadBloggerScore ?? 0}
             data-reference-score={leadReferenceScore ?? 0}
             data-writing-pulse-score={leadWritingPulseScore ?? 0}
             data-source-count={leadSourceCount}
@@ -97,6 +105,9 @@ const proofMetrics = [
             <div class="mt-4 flex flex-wrap gap-2 font-mono text-[0.54rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
               {leadReferenceScore ? (
                 <span class="border border-ink/10 bg-paper-warm px-2 py-1">Reference ceiling {leadReferenceScore}</span>
+              ) : null}
+              {leadBloggerScore ? (
+                <span class="border border-ink/10 bg-paper-warm px-2 py-1">Blogger ceiling {leadBloggerScore}</span>
               ) : null}
               {leadWritingPulseScore ? (
                 <span class="border border-ink/10 bg-paper-warm px-2 py-1">Writing pulse {leadWritingPulseScore}</span>
@@ -134,7 +145,7 @@ const proofMetrics = [
           About the Vibe Coding project
         </a>
       </div>
-      <dl class="mt-14 grid grid-cols-2 gap-3 md:grid-cols-6" aria-label="Current publication proof metrics">
+      <dl class="mt-14 grid grid-cols-2 gap-3 md:grid-cols-7" aria-label="Current publication proof metrics">
         {proofMetrics.map(metric => (
           <div class="border border-ink/10 bg-background/80 p-4 shadow-sm">
             <dt class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">{metric.label}</dt>
@@ -160,6 +171,9 @@ const proofMetrics = [
                 <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Source packet</span>
                 {getReferenceCeiling(featuredPosts[0].id) ? (
                   <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Reference ceiling {getReferenceCeiling(featuredPosts[0].id)}</span>
+                ) : null}
+                {getReferenceBloggerCeiling(featuredPosts[0].id) ? (
+                  <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Blogger ceiling {getReferenceBloggerCeiling(featuredPosts[0].id)}</span>
                 ) : null}
                 {getWritingPulse(featuredPosts[0].id) ? (
                   <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Writing pulse {getWritingPulse(featuredPosts[0].id)}</span>
@@ -195,7 +209,7 @@ const proofMetrics = [
                   </p>
                   <h4 class="text-xl font-serif italic group-hover:text-accent-dim leading-tight text-ink">{post.data.title}</h4>
                   <p class="mt-2 font-mono text-[0.55rem] uppercase tracking-[0.16em] text-ink-faded">
-                    Evidence rank {index + 1} / strength {getEvidenceStrength(post)} / reference ceiling {getReferenceCeiling(post.id) ?? "n/a"} / writing pulse {getWritingPulse(post.id) ?? "n/a"} / packet / unique image / rendered / hash approval / {post.data.references?.length ?? 0} sources
+                    Evidence rank {index + 1} / strength {getEvidenceStrength(post)} / blogger ceiling {getReferenceBloggerCeiling(post.id) ?? "n/a"} / reference ceiling {getReferenceCeiling(post.id) ?? "n/a"} / writing pulse {getWritingPulse(post.id) ?? "n/a"} / packet / unique image / rendered / hash approval / {post.data.references?.length ?? 0} sources
                   </p>
                   <p class="mt-1 font-mono text-[0.52rem] uppercase tracking-[0.14em] text-ink-faded">
                     Reader value: claim, proof artifact, and boundary are visible before opening.
