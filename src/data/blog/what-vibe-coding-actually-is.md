@@ -231,19 +231,33 @@ The later writing-quality loop continued the same rule:
 5f939db Improve Software 3.0 verification mechanism
 f7076c0 Correct Software 3.0 approval loop ref
 283a6fe Strengthen evidence-backed post surfacing
+9bd66bc Improve Vercel writing pulse
+0c074f9 Strengthen evidence surface ranking
 ```
 
-The current receipt is concrete:
+The baseline receipt for this body repair is concrete, and it is dated because an undated receipt is just a better-looking vibe. On 2026-05-21, after `0c074f9`, the site had to prove that public trust was still attached to files, commands, and hashes rather than the agent's summary of what it thought it had done.
 
 ```txt
+receipt date: 2026-05-21
+receipt baseline product commit: 0c074f9231175a48edce077d74df0d6fc6202e95
+static pages built: 41 pages
+Pagefind indexed: 10 pages / 2145 words
 packet_backed_posts=9
 source_workflow_posts_checked=9
 post_image_contracts_checked=10
-rendered_viewport_checks=24
+rendered viewport checks: 24 viewports
 publication_approval_records=10
 reference_ceiling_surface_scores_checked=9
 rendered_page_surface_evidence_card_routes_first_screen=4/4
+surface_home_lead=ai-memory-operating-structure strength=209 rank=1 image_in_first_screen=true
+surface_posts_index_lead=ai-memory-operating-structure strength=209 rank=1 image_in_first_screen=true
+wiki indexed: 354 files
+archive copied: 386 files
 ```
+
+Read without the code fence, the receipt is still falsifiable: on 2026-05-21, baseline product commit `0c074f9231175a48edce077d74df0d6fc6202e95` produced 41 pages, 10 posts, 2145 words, 24 viewports, 10 records, 354 files indexed, and 386 files archived.
+
+That receipt changed the review question. A reviewer no longer has to ask whether the site "looks like" an English AI engineering blog. The reviewer can ask whether the source packet count, image contracts, rendered first-screen checks, approval hashes, and public surface rank all agree on the same publishable object.
 
 That is the production shift. The agent is still allowed to draft, rewrite, and generate images. But the output cannot remain public unless the source packet, image contract, rendered screenshot, and exact Markdown hash agree.
 
