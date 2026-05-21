@@ -585,6 +585,31 @@ async function waitForImages(cdp) {
   });
 }
 
+async function navigateAndWaitForReadableDocument(cdp, url) {
+  await cdp.command("Page.navigate", { url }, 30000);
+  const deadline = Date.now() + 30000;
+  let lastState = "unknown";
+  let lastHref = "unknown";
+  while (Date.now() < deadline) {
+    const ready = await cdp
+      .command(
+        "Runtime.evaluate",
+        {
+          expression: `({ href: location.href, readyState: document.readyState })`,
+          returnByValue: true,
+        },
+        5000
+      )
+      .catch(() => null);
+    const value = ready?.result?.result?.value;
+    lastState = value?.readyState || lastState;
+    lastHref = value?.href || lastHref;
+    if ((lastState === "interactive" || lastState === "complete") && lastHref === url) return;
+    await new Promise(resolveDelay => setTimeout(resolveDelay, 250));
+  }
+  throw new Error(`Timed out waiting for readable document: ${url} state=${lastState} href=${lastHref}`);
+}
+
 async function auditPage(chromePort, baseUrl, outputDir, contract, viewport) {
   const url = `${baseUrl}/posts/${contract.slug}/`;
   const target = await createTarget(chromePort, url);
@@ -601,9 +626,7 @@ async function auditPage(chromePort, baseUrl, outputDir, contract, viewport) {
       mobile: viewport.mobile,
     });
 
-    const loaded = cdp.waitFor("Page.loadEventFired", 12000);
-    await cdp.command("Page.navigate", { url });
-    await loaded;
+    await navigateAndWaitForReadableDocument(cdp, url);
     await new Promise(resolveDelay => setTimeout(resolveDelay, 500));
     await waitForImages(cdp);
 
@@ -662,9 +685,7 @@ async function auditSurfaceRoute(chromePort, baseUrl, outputDir, spec, viewport,
       mobile: viewport.mobile,
     });
 
-    const loaded = cdp.waitFor("Page.loadEventFired", 12000);
-    await cdp.command("Page.navigate", { url });
-    await loaded;
+    await navigateAndWaitForReadableDocument(cdp, url);
     await new Promise(resolveDelay => setTimeout(resolveDelay, 500));
     await waitForImages(cdp);
 
