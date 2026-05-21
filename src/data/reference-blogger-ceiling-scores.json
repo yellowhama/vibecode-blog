@@ -1,20 +1,18 @@
 {
-  "averageScore": 109,
-  "generatedAt": "2026-05-21T11:31:36+09:00",
+  "averageScore": 110,
+  "generatedAt": "2026-05-21T11:45:03+09:00",
   "candidateThreshold": 104,
-  "candidateCount": 8,
+  "candidateCount": 9,
   "posts": {
     "ai-agent-work-disk-contract": { "score": 109, "grade": "reference-blogger-candidate" },
     "ai-memory-operating-structure": { "score": 104, "grade": "reference-blogger-candidate" },
     "design-is-a-technical-contract": { "score": 112, "grade": "reference-blogger-candidate" },
     "frustration-as-spec": { "score": 112, "grade": "reference-blogger-candidate" },
     "html-review-artifacts-for-agents": { "score": 109, "grade": "reference-blogger-candidate" },
-    "mcp-shared-state-data-leak": { "score": 100, "grade": "strong-operating-essay" },
+    "mcp-shared-state-data-leak": { "score": 112, "grade": "reference-blogger-candidate" },
     "software-3-0": { "score": 112, "grade": "reference-blogger-candidate" },
     "vercel-is-not-a-deployment-contract": { "score": 108, "grade": "reference-blogger-candidate" },
     "what-vibe-coding-actually-is": { "score": 112, "grade": "reference-blogger-candidate" }
   },
-  "revisionQueue": [
-    { "slug": "mcp-shared-state-data-leak", "score": 100, "grade": "strong-operating-essay" }
-  ]
+  "revisionQueue": []
 }

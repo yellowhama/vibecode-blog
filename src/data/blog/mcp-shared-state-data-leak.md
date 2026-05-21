@@ -45,7 +45,9 @@ That is not a vibes-based security concern. That is the difference between revie
 
 The wrong standard is "does the endpoint look stateless?" The useful standard is "can the reviewer name the exact object that owns each client's pending messages?"
 
-![MCP shared state boundary diagram](/images/posts/mcp-shared-state-data-leak.png)
+![Rendered artifact diagram showing MCP constructor ownership, shared transport risk, and session-boundary receipt](/images/posts/mcp-shared-state-data-leak.png)
+
+Read the rendered artifact as the review path, not as a generic MCP illustration. The left side is the false comfort: HTTP route, auth passes, endpoint returns 200. The right side is the receipt: constructor location, transport lifetime, session owner, and boundary controls. The leak hides in the gap between those two pictures.
 
 ## What Changed
 
@@ -77,6 +79,8 @@ If the review stops at dependency version, it misses the operating lesson. The p
 The MCP transport spec explains why this matters. Streamable HTTP can use POST and GET, can stream server messages over SSE, can support multiple client connections, and can establish sessions with `Mcp-Session-Id`.
 
 That means "HTTP" is not enough information. You still need to know whether server-to-client messages, event IDs, request IDs, and sessions are isolated per client.
+
+The three references do different jobs. GitHub gives the affected package boundary. GitLab gives the mirrorable advisory receipt. The MCP transport spec gives the runtime surface where messages, streams, and sessions actually live. What works is reading them together: version tells you whether the package is patched; constructor ownership tells you whether the deployment is still dangerous; transport rules tell you which HTTP controls sit beside the lifecycle audit.
 
 ## Unsafe Lifecycle
 
@@ -343,7 +347,7 @@ If session IDs exist, can you point to the map/store that owns each session?
 
 If any answer is unclear, the system does not have a control surface. It has a hope.
 
-The reader decision is direct: upgrade the SDK, then grep for singleton server or transport construction before calling the system reviewed. If the answer is "we think the framework handles it," the review is not done. Name the object. Name the owner. Name the lifetime.
+The reader decision is direct: upgrade the SDK, then grep for singleton server or transport construction before calling the system reviewed. Next time an MCP endpoint is described as stateless, ask for the constructor-location receipt before you read the rest of the security summary. If the answer is "we think the framework handles it," the review is not done. Name the object. Name the owner. Name the lifetime.
 
 Accept the endpoint only when the reviewer can show the patched SDK, the constructor locations, the session owner, and the HTTP boundary controls in one packet. Reject it when any part of that packet is a sentence without a file, command, or owner behind it.
 
