@@ -278,6 +278,78 @@
           "required": true
         }
       ]
+    },
+    {
+      "slug": "self-improving-agents-need-evals",
+      "sourceWorkflowSlug": "self-improving-agents-need-evals",
+      "draftPath": "src/data/blog/self-improving-agents-need-evals.md",
+      "decisionRef": "src/data/draft-editorial-decisions.json#self-improving-agents-need-evals",
+      "currentGate": "human-promotion-review",
+      "publicPromotionAllowed": false,
+      "nextRole": "reference-critic",
+      "lifecycleRoleOrder": [
+        "source-scout",
+        "packet-builder",
+        "angle-strategist",
+        "evidence-designer",
+        "draft-writer",
+        "reference-critic",
+        "public-surface-editor",
+        "rendered-qa",
+        "publisher"
+      ],
+      "requiredArtifacts": [
+        {
+          "kind": "draft",
+          "path": "src/data/blog/self-improving-agents-need-evals.md",
+          "required": true
+        },
+        {
+          "kind": "decision",
+          "path": "src/data/draft-editorial-decisions.json",
+          "required": true
+        },
+        {
+          "kind": "raw-source-note",
+          "path": "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/sources/raw/2026-05-22_self-improving-agents-youtube-source-note.md",
+          "required": true
+        },
+        {
+          "kind": "processed-function-extract",
+          "path": "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/sources/processed/self-improving-agents-function-extract.md",
+          "required": true
+        },
+        {
+          "kind": "evidence-plan",
+          "path": "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/self-improving-agents-need-evals-evidence-plan.md",
+          "required": true
+        },
+        {
+          "kind": "reference-critic-report",
+          "path": "F:/Aisaak/CompanyArtifacts/llm-wiki-completed/companies/vibecode-town/plans/self-improving-agents-need-evals-reference-critic-report.md",
+          "required": true
+        },
+        {
+          "kind": "source-map-summary",
+          "path": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-source-map-summary.json",
+          "required": true
+        },
+        {
+          "kind": "review-artifact-summary",
+          "path": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-review-artifact-summary.json",
+          "required": true
+        },
+        {
+          "kind": "publisher-queue-summary",
+          "path": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-publisher-queue-artifact-generation-summary.json",
+          "required": true
+        },
+        {
+          "kind": "human-promotion-summary",
+          "path": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/self-improving-agents-need-evals-human-promotion-review-summary.json",
+          "required": true
+        }
+      ]
     }
   ]
 }

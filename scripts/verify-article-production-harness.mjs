@@ -202,13 +202,30 @@ async function validateTrackedArticles(manifest, repoRoot, decisionsPath, decisi
   const approvals = (await exists(approvalsPath)) ? await readJson(approvalsPath) : { approvals: [] };
   const decisionItems = asArray(decisions.decisions);
   const approvalItems = asArray(approvals.approvals);
+  const seenSlugs = new Set();
+  const allowedCurrentGates = new Set([
+    "source-packet",
+    "angle-brief",
+    "evidence-plan",
+    "private-draft",
+    "reference-critique",
+    "rendered-qa",
+    "publisher-queue",
+    "human-promotion-review",
+    "approval-candidate",
+    "published",
+  ]);
 
   for (const item of asArray(manifest.trackedArticles)) {
     const label = item?.slug ?? "unknown tracked article";
     if (!isNonEmptyString(item?.slug)) failures.push("trackedArticles entry missing slug");
+    if (item?.slug && seenSlugs.has(item.slug)) failures.push(`${label}: duplicate trackedArticles slug`);
+    if (item?.slug) seenSlugs.add(item.slug);
     if (!isNonEmptyString(item?.sourceWorkflowSlug)) failures.push(`${label}: missing sourceWorkflowSlug`);
     if (!isNonEmptyString(item?.draftPath)) failures.push(`${label}: missing draftPath`);
     if (!isNonEmptyString(item?.decisionRef)) failures.push(`${label}: missing decisionRef`);
+    if (!allowedCurrentGates.has(item?.currentGate)) failures.push(`${label}: invalid currentGate ${item?.currentGate}`);
+    if (!REQUIRED_ROLES.includes(item?.nextRole)) failures.push(`${label}: invalid nextRole ${item?.nextRole}`);
     if (typeof item?.publicPromotionAllowed !== "boolean") {
       failures.push(`${label}: publicPromotionAllowed must be boolean`);
     }
