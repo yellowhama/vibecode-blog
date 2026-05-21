@@ -139,3 +139,21 @@ npm run draft:source-workflow-post -- \
 This command reruns the source workflow quality gate before writing anything. It only writes `draft: true`, includes a packet receipt, and refuses publication flags such as `--publish` or `--draft`.
 
 Publication still requires the separate human approval workflow.
+
+## Article-Production Harness Manifest
+
+The source workflow proves a packet can support a draft. The article-production harness manifest proves the workflow has not collapsed back into one all-purpose agent.
+
+Check it with:
+
+```bash
+npm run verify:article-production-harness
+```
+
+The manifest tracks:
+
+```txt
+source scout -> packet builder -> angle strategist -> evidence designer -> draft writer -> reference critic -> public surface editor -> rendered QA -> publisher
+```
+
+It does not replace packet, draft, rendered, or publication gates. It indexes the role boundaries and the current draft lifecycle so future loops know who owns the next move.

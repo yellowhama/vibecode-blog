@@ -1,0 +1,283 @@
+{
+  "schema": "vibecode-article-production-harness/v1",
+  "updatedAt": "2026-05-22T00:00:00+09:00",
+  "purpose": "Keep Vibecode article production split across source, packet, angle, evidence, draft, critique, public surface, rendered QA, and publishing roles.",
+  "sourceReferences": [
+    {
+      "name": "Revfactory Harness function extract",
+      "path": "companies/vibecode-town/sources/processed/revfactory-harness-function-extract.md",
+      "role": "team architecture reference"
+    },
+    {
+      "name": "Revfactory Unreal Idol function extract",
+      "path": "companies/vibecode-town/sources/processed/revfactory-unreal-idol-function-extract.md",
+      "role": "applied artifact-map reference"
+    }
+  ],
+  "architecture": {
+    "allowedPatterns": [
+      "pipeline",
+      "fan-out/fan-in",
+      "expert-pool",
+      "producer-reviewer",
+      "supervisor",
+      "hierarchical-delegation"
+    ],
+    "defaultArticleLoop": [
+      {
+        "stage": "source-intake",
+        "pattern": "fan-out/fan-in",
+        "roles": ["source-scout", "packet-builder"]
+      },
+      {
+        "stage": "packet-angle",
+        "pattern": "pipeline",
+        "roles": ["packet-builder", "angle-strategist"]
+      },
+      {
+        "stage": "visual-proof",
+        "pattern": "producer-reviewer",
+        "roles": ["evidence-designer", "reference-critic"]
+      },
+      {
+        "stage": "draft-repair",
+        "pattern": "producer-reviewer",
+        "roles": ["draft-writer", "reference-critic"]
+      },
+      {
+        "stage": "public-surface",
+        "pattern": "producer-reviewer",
+        "roles": ["public-surface-editor", "rendered-qa"]
+      },
+      {
+        "stage": "publication",
+        "pattern": "pipeline",
+        "roles": ["publisher"]
+      }
+    ]
+  },
+  "pipelineOrder": [
+    "source-scout",
+    "packet-builder",
+    "angle-strategist",
+    "evidence-designer",
+    "draft-writer",
+    "reference-critic",
+    "public-surface-editor",
+    "rendered-qa",
+    "publisher"
+  ],
+  "roles": [
+    {
+      "id": "source-scout",
+      "title": "Source Scout",
+      "purpose": "Find primary sources, repo references, transcripts, release notes, examples, and capture dates.",
+      "owns": ["source URL inventory", "raw source notes", "repo commit IDs"],
+      "inputs": ["user-provided URL", "reference request", "topic seed"],
+      "outputs": ["sources/raw/*", "source URL list", "capture metadata"],
+      "hardStops": ["No source URL, no idea.", "Do not draft article prose."],
+      "skills": ["source capture", "repo/reference inspection"],
+      "verification": {
+        "command": "npm run verify:source-references",
+        "evidence": "source URLs and capture notes"
+      },
+      "boundary": {
+        "public": "May cite public sources and repository facts.",
+        "private": "Must not expose local secrets, private notes, or copyrighted creative material beyond allowed reference use."
+      }
+    },
+    {
+      "id": "packet-builder",
+      "title": "Packet Builder",
+      "purpose": "Convert sources into a durable packet with claims, non-claims, evidence, dates, and reader pressure.",
+      "owns": ["source packet", "reader pressure", "evidence bundle"],
+      "inputs": ["raw source notes", "source URL list", "repo facts"],
+      "outputs": ["sources/processed/*", "plans/<slug>-reader-pressure.md", "plans/<slug>-evidence-bundle.md"],
+      "hardStops": ["No packet, no draft.", "Do not smooth over missing evidence."],
+      "skills": ["source workflow packet", "evidence boundary writing"],
+      "verification": {
+        "command": "npm run verify:source-workflow-quality",
+        "evidence": "source-workflow packet quality output"
+      },
+      "boundary": {
+        "public": "Can expose source-backed claims and explicit non-claims.",
+        "private": "Must keep internal evidence paths sanitized when used in public prose."
+      }
+    },
+    {
+      "id": "angle-strategist",
+      "title": "Angle Strategist",
+      "purpose": "Turn the packet into reader problem, title options, thesis, why-now tension, and reject conditions.",
+      "owns": ["title angle", "brief", "Gate 0"],
+      "inputs": ["source packet", "reader pressure", "series portfolio"],
+      "outputs": ["plans/<slug>-title-angle.md", "plans/<slug>-brief.md", "plans/<slug>-gate-0.md"],
+      "hardStops": ["Do not name the framework before the reader problem.", "Do not invent claims not forced by the packet."],
+      "skills": ["angle editing", "reader-pressure framing"],
+      "verification": {
+        "command": "npm run verify:source-workflow-quality",
+        "evidence": "Gate 0 and brief sections"
+      },
+      "boundary": {
+        "public": "Must produce a reader-facing argument.",
+        "private": "Must not leak internal queue or approval labels as the public hook."
+      }
+    },
+    {
+      "id": "evidence-designer",
+      "title": "Evidence Designer",
+      "purpose": "Design the screenshot, diagram, log, rendered artifact, or image that proves the article.",
+      "owns": ["visual proof plan", "image brief", "rendered/private artifact plan"],
+      "inputs": ["brief", "evidence bundle", "draft risk"],
+      "outputs": ["image plan", "visual artifact", "proof-object notes"],
+      "hardStops": ["Visuals cannot be decorative.", "Images cannot be reused across posts."],
+      "skills": ["visual proof design", "image contract planning"],
+      "verification": {
+        "command": "npm run verify:post-image-contracts",
+        "evidence": "post image contract and public surface image ownership"
+      },
+      "boundary": {
+        "public": "The image should compress the argument.",
+        "private": "Private rendered candidate artifacts must stay private until promotion."
+      }
+    },
+    {
+      "id": "draft-writer",
+      "title": "Draft Writer",
+      "purpose": "Write only from the approved packet, angle, and evidence plan.",
+      "owns": ["draft markdown"],
+      "inputs": ["packet", "brief", "evidence plan"],
+      "outputs": ["src/data/blog/<slug>.md"],
+      "hardStops": ["Writer cannot approve its own work.", "Generated drafts stay draft: true until promotion."],
+      "skills": ["draft writing", "source-grounded prose"],
+      "verification": {
+        "command": "npm run verify:draft-approval-candidates",
+        "evidence": "draft candidate state"
+      },
+      "boundary": {
+        "public": "Public prose must be English and reader-facing.",
+        "private": "Draft state, blockers, and approval notes remain internal until publication."
+      }
+    },
+    {
+      "id": "reference-critic",
+      "title": "Reference Critic",
+      "purpose": "Reject or accept the draft against reference-blogger, reader-payoff, reported-proof, and writing-pulse standards.",
+      "owns": ["critique", "review artifact", "revision plan"],
+      "inputs": ["draft", "source packet", "reference standards"],
+      "outputs": ["plans/<slug>-draft-critique.md", "review artifact", "revision plan"],
+      "hardStops": ["No praise-first critique.", "No broad rewrite without target section and acceptance check."],
+      "skills": ["reference blogger review", "reader payoff audit", "writing pulse audit"],
+      "verification": {
+        "command": "npm run verify:reference-blogger-review-manifest",
+        "evidence": "review artifact summary and accepted review result"
+      },
+      "boundary": {
+        "public": "Critique output can shape the article.",
+        "private": "Review rows, rejected rows, and revision plans are internal unless converted into reader-facing prose."
+      }
+    },
+    {
+      "id": "public-surface-editor",
+      "title": "Public Surface Editor",
+      "purpose": "Make homepage, card, excerpt, image label, taxonomy, and newsletter language reader-facing.",
+      "owns": ["homepage copy", "posts index copy", "card copy", "image labels"],
+      "inputs": ["final article", "public identity", "image plan"],
+      "outputs": ["public route copy", "card metadata", "image text"],
+      "hardStops": ["Do not expose internal score labels, hashes, approval states, packet counts, or operator dashboard language."],
+      "skills": ["public surface editing", "taxonomy cleanup"],
+      "verification": {
+        "command": "npm run verify:dist",
+        "evidence": "dist public-language scan"
+      },
+      "boundary": {
+        "public": "Only reader-facing field-note language.",
+        "private": "Internal gate names can stay in scripts/manifests, not on public pages."
+      }
+    },
+    {
+      "id": "rendered-qa",
+      "title": "Rendered QA",
+      "purpose": "Verify the built page, screenshots, first-screen image visibility, and public copy.",
+      "owns": ["rendered audit", "screenshots", "viewport checks"],
+      "inputs": ["built dist", "public surface copy", "image assets"],
+      "outputs": ["F:/Aisaak/CompanyArtifacts/vibecode-rendered-audit/latest/*"],
+      "hardStops": ["Markdown correctness is not rendered correctness.", "No first-screen image, no publish."],
+      "skills": ["rendered page QA", "screenshot inspection"],
+      "verification": {
+        "command": "npm run verify:rendered-pages",
+        "evidence": "rendered audit summary and screenshots"
+      },
+      "boundary": {
+        "public": "Checks what users actually see.",
+        "private": "Audit screenshots and summaries are evidence artifacts unless intentionally surfaced."
+      }
+    },
+    {
+      "id": "publisher",
+      "title": "Publisher",
+      "purpose": "Maintain queue, approval records, publication manifest, final verification, commit, and push.",
+      "owns": ["publisher queue", "publication approvals", "commit and push"],
+      "inputs": ["accepted article", "rendered evidence", "human approval"],
+      "outputs": ["src/data/publication-approvals.json", "release commit", "push"],
+      "hardStops": ["No human approval and passing gates, no publish.", "Publisher cannot waive failed gates."],
+      "skills": ["publication approval", "ship verification"],
+      "verification": {
+        "command": "npm run verify:site-quality",
+        "evidence": "full site quality output"
+      },
+      "boundary": {
+        "public": "Only final approved article and public surface are published.",
+        "private": "Queue, hashes, reviewer records, and blockers remain internal."
+      }
+    }
+  ],
+  "trackedArticles": [
+    {
+      "slug": "writing-harness-not-more-prompts",
+      "sourceWorkflowSlug": "writing-harness-not-more-prompts",
+      "draftPath": "src/data/blog/writing-harness-not-more-prompts.md",
+      "decisionRef": "src/data/draft-editorial-decisions.json#writing-harness-not-more-prompts",
+      "currentGate": "human-promotion-review",
+      "publicPromotionAllowed": false,
+      "nextRole": "reference-critic",
+      "lifecycleRoleOrder": [
+        "source-scout",
+        "packet-builder",
+        "angle-strategist",
+        "evidence-designer",
+        "draft-writer",
+        "reference-critic",
+        "public-surface-editor",
+        "rendered-qa",
+        "publisher"
+      ],
+      "requiredArtifacts": [
+        {
+          "kind": "draft",
+          "path": "src/data/blog/writing-harness-not-more-prompts.md",
+          "required": true
+        },
+        {
+          "kind": "decision",
+          "path": "src/data/draft-editorial-decisions.json",
+          "required": true
+        },
+        {
+          "kind": "review-artifact-summary",
+          "path": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/writing-harness-not-more-prompts-review-artifact-summary.json",
+          "required": true
+        },
+        {
+          "kind": "human-promotion-summary",
+          "path": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/writing-harness-not-more-prompts-human-promotion-review-summary.json",
+          "required": true
+        },
+        {
+          "kind": "real-failed-draft-evidence",
+          "path": "F:/Aisaak/CompanyArtifacts/vibecode-draft-review-artifacts/writing-harness-real-failed-draft-evidence.json",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
