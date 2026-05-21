@@ -15,11 +15,16 @@ references:
   - name: "Andrej Karpathy: Software Is Changing Again"
     url: "https://www.youtube.com/watch?v=LCEmiRjPEtQ"
     guru: "Andrej Karpathy"
+  - name: "Building effective agents"
+    url: "https://www.anthropic.com/engineering/building-effective-agents"
+    guru: "Anthropic"
 ---
 
 # What Vibe Coding Actually Is
 
-![Vibe coding hype to contract to evidence diagram](/images/posts/what-vibe-coding-actually-is.png)
+![Rendered artifact diagram showing vibe coding discovery, contract boundary, and evidence receipt before production](/images/posts/what-vibe-coding-actually-is.png)
+
+Read the rendered artifact as the mode switch, not as a vibe-coding poster. The left side is useful discovery: shape, reaction, steering. The right side is production: `Source`, `Boundary`, `Acceptance check`, `Forbidden changes`, and `Evidence to keep`. The failure is the middle gap, where a prototype quietly becomes public work before the receipt gate exists.
 
 Vibe coding fails in production at the moment confidence arrives before evidence.
 
@@ -53,6 +58,10 @@ The decision is simple: use vibe coding to find the shape of a system; switch to
 Simon Willison's useful correction is that not all AI-assisted programming is vibe coding. That distinction matters because the word gets used for two different workflows.
 
 Karpathy's Software 3.0 framing points in the same direction from the other side: natural language can become part of the programming surface, but engineering does not disappear. It moves into context, constraints, and verification.
+
+Anthropic's agent/workflow distinction gives the third edge of the comparison. A workflow follows a defined path. An agent chooses more of the path itself. What works is matching the mode to the risk: vibe coding for shape discovery, workflow-like contracts for known production paths, and higher-autonomy agents only when the stop conditions are explicit. The mistake is pretending those are the same because all three involve a model.
+
+The stronger pattern is not "use AI less." The stronger pattern is: name the mode before you judge the output.
 
 The first workflow is exploration:
 
@@ -235,13 +244,13 @@ f7076c0 Correct Software 3.0 approval loop ref
 0c074f9 Strengthen evidence surface ranking
 ```
 
-The baseline receipt for this body repair is concrete, and it is dated because an undated receipt is just a better-looking vibe. On 2026-05-21, after `0c074f9`, the site had to prove that public trust was still attached to files, commands, and hashes rather than the agent's summary of what it thought it had done.
+The baseline receipt for this body repair is concrete, and it is dated because an undated receipt is just a better-looking vibe. On 2026-05-21, after `f89df79`, the site had to prove that public trust was still attached to files, commands, and hashes rather than the agent's summary of what it thought it had done.
 
 ```txt
 receipt date: 2026-05-21
-receipt baseline product commit: 0c074f9231175a48edce077d74df0d6fc6202e95
+receipt baseline product commit: f89df79ab748bab40dc876e67652bf7c94b1629e
 static pages built: 41 pages
-Pagefind indexed: 10 pages / 2145 words
+Pagefind indexed: 10 pages / 2188 words
 packet_backed_posts=9
 source_workflow_posts_checked=9
 post_image_contracts_checked=10
@@ -249,13 +258,14 @@ rendered viewport checks: 24 viewports
 publication_approval_records=10
 reference_ceiling_surface_scores_checked=9
 rendered_page_surface_evidence_card_routes_first_screen=4/4
-surface_home_lead=ai-memory-operating-structure strength=209 rank=1 image_in_first_screen=true
-surface_posts_index_lead=ai-memory-operating-structure strength=209 rank=1 image_in_first_screen=true
-wiki indexed: 354 files
-archive copied: 386 files
+reference_blogger_ceiling_candidate_count=7
+surface_home_lead=design-is-a-technical-contract blogger_ceiling=112 evidence_strength=321
+surface_posts_index_lead=design-is-a-technical-contract blogger_ceiling=112 evidence_strength=321
+wiki indexed: 361 files
+archive copied: 393 files
 ```
 
-Read without the code fence, the receipt is still falsifiable: on 2026-05-21, baseline product commit `0c074f9231175a48edce077d74df0d6fc6202e95` produced 41 pages, 10 posts, 2145 words, 24 viewports, 10 records, 354 files indexed, and 386 files archived.
+Read without the code fence, the receipt is still falsifiable: on 2026-05-21, baseline product commit `f89df79ab748bab40dc876e67652bf7c94b1629e` produced 41 pages, 10 posts, 2188 words, 24 viewports, 10 records, 361 files indexed, and 393 files archived.
 
 That receipt changed the review question. A reviewer no longer has to ask whether the site "looks like" an English AI engineering blog. The reviewer can ask whether the source packet count, image contracts, rendered first-screen checks, approval hashes, and public surface rank all agree on the same publishable object.
 
