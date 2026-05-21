@@ -279,11 +279,13 @@ npm run verify:site-quality
 
 That command does more than build the Astro site. It runs the public content gates, builds `dist`, indexes Pagefind, captures rendered post screenshots, checks publication approvals, verifies deploy artifacts, and runs the field-log gate.
 
-The latest completed run produced the shape this article argues for:
+The baseline run for this revision produced the shape this article argues for. This receipt is deliberately dated because an undated deployment receipt becomes the same problem as a dashboard memory: it may be true, but the next reviewer cannot tell when it stopped being true.
 
 ```txt
+receipt date: 2026-05-21
+receipt baseline commit: 24785f9
 static pages built: 41
-Pagefind indexed words: 1967
+Pagefind indexed words: 2128
 public posts rendered: 10
 rendered viewports checked: 24
 rendered_page_post_detail_first_screen_images_desktop: 10/10
@@ -292,9 +294,13 @@ rendered_page_surface_expected_images_first_screen: 2/2
 rendered summary.json: F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
 image contract: /images/posts/vercel-is-not-a-deployment-contract.png
 publication approvals checked: 10
+wiki markdown files indexed: 352
+archive files copied: 384
 deploy surface gate: pass
 static artifact verification: pass
 ```
+
+The plain-language receipt is this: on 2026-05-21, baseline commit `24785f9` produced 41 pages, 10 posts, 24 viewports, 10/10 desktop images, 10/10 mobile images, 2128 words, 352 files indexed, and 384 files archived. The latest rendered summary SHA-256 was `39ace97df604c2fb2abad56b023a7d3c207d73ef44912fbc96d7678646b79207`.
 
 That is the deployment-contract mindset applied back to the blog itself: the dashboard is not the proof. The artifact and the verifier are the proof.
 
@@ -313,3 +319,5 @@ If a route exists only in the host dashboard, it is not part of the app.
 If a build works only because the host shell happens to support a command, it is not portable.
 
 The contract has to live in the repo. Coolify did not create this rule. It just made the missing contract visible.
+
+Before accepting the next deployment claim, run the artifact verifier and reject the migration if the proof still lives in a host dashboard. The boundary is simple: a live host can be useful evidence, but it is not the contract.
