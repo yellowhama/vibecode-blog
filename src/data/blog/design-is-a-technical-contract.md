@@ -22,17 +22,23 @@ references:
 
 # DESIGN.md Turns Visual Taste Into an Agent Contract
 
-The problem with the normal design handoff is that it fails agents for the same reason vague prompts fail them: too much context lives in someone's head, then everyone acts surprised when the agent invents the missing part.
+On 2026-05-21, I reopened the DESIGN.md packet, the public article, and the rendered image audit because the post had a familiar problem: it was correct, but the first screen still read too much like a principle. That matters because design memory is a trust surface; if the next reviewer cannot inspect the role, the agent will fill the gap with taste-shaped guesswork.
+
+That is exactly how design handoffs fail agents. Too much context lives in someone's head, then everyone acts surprised when the agent invents the missing part.
 
 Before you ask an agent to copy a visual style, write the reusable roles into `DESIGN.md` tokens or reject the screenshot as review material. Do not accept "it looks close" as proof.
 
 A screenshot says what a screen looked like. It does not reliably say why the primary color exists, which type scale owns body copy, what a button hover variant is allowed to change, or which contrast rule should block a bad component.
 
-That is why DESIGN.md matters. It turns design taste into a technical contract the agent can read, edit, and lint.
+The mistake is not using screenshots. The mistake is letting screenshots become memory.
+
+That is why DESIGN.md matters. It turns design taste into a technical contract the agent can read, edit, lint, and refuse.
 
 The point is not to make every agent a designer. The point is to stop every new design pass from starting with a blank visual memory.
 
 The wrong standard is "can the agent imitate the screenshot?" The better question is "can the next reviewer name the role, value, lint check, and refusal condition without asking the original designer what they meant?"
+
+The stronger pattern is to compare every design reference against four reusable functions: role, value, validator, and refusal condition.
 
 For Vibecode, the current source packet is not a mood-board note. It is a dated operating snapshot:
 
@@ -47,7 +53,9 @@ current lifecycle: alpha
 
 That inventory is what keeps the post honest. The article can recommend the pattern, but it cannot pretend the upstream spec is finished.
 
-![Design contract token and component diagram](/images/posts/design-is-a-technical-contract.png)
+![Rendered proof diagram for DESIGN.md roles, component references, and lint gate](/images/posts/design-is-a-technical-contract.png)
+
+Read the image as a proof object, not decoration. The left side is the durable role/value memory; the middle is the component dependency graph; the right side is the lint/review gate that can reject a bad agent decision before it becomes another screenshot to imitate.
 
 ## The Real Problem
 
@@ -249,9 +257,11 @@ That split is important. A generated HTML review can show token swatches and ris
 
 If a design decision only exists in a screenshot, it is not a contract. If it only exists in a pretty HTML review page, it is still not a contract.
 
-## Accept/Reject Review
+## Accept/Reject Decision Checklist
 
 Use DESIGN.md when a design decision needs to survive more than one prompt. Do not use it as a fancy place to hide undecided taste.
+
+Next time an agent hands you a polished design, run this review before you ask for more variants.
 
 Accept a decision into DESIGN.md when at least two of these are true:
 
