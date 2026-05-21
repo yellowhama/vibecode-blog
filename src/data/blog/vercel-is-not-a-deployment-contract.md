@@ -9,6 +9,9 @@ workflow: "packet"
 tags: ["engineering", "deployment", "coolify", "technical-contracts"]
 ogImage: "/images/posts/vercel-is-not-a-deployment-contract.png"
 references:
+  - name: "Vercel Rewrites Documentation"
+    url: "https://vercel.com/docs/rewrites"
+    guru: "Vercel"
   - name: "Coolify GitHub CI/CD Documentation"
     url: "https://coolify.io/docs/applications/ci-cd/github/overview"
     guru: "Coolify"
@@ -36,9 +39,11 @@ That is not a deployment contract. That is a hosting habit.
 
 The practical rule is simple: if production behavior only exists because one host knows a special file, the repo does not own that behavior yet.
 
-I also rechecked the official docs while revising this: Coolify's GitHub integration is a deploy-from-repository system, and Astro's own pages docs say files in `src/pages/` become site endpoints. That is the exact ownership line this post is about. If the behavior is a route, page, or file, make the repo produce it. Do not ask the host dashboard to remember it for you.
+I also rechecked the official docs while revising this: Vercel documents rewrites as platform routing rules, Coolify's GitHub integration is a deploy-from-repository system, and Astro's own pages docs say files in `src/pages/` become site endpoints. That comparison is the whole post. The weaker pattern is "the platform can route it." The stronger pattern is "the repository can build it, a static host can serve it, and a verifier can reject it."
 
-![Deployment contract build route smoke test diagram](/images/posts/vercel-is-not-a-deployment-contract.png)
+![Rendered proof diagram for deploy surface build, route ownership, and smoke verifier](/images/posts/vercel-is-not-a-deployment-contract.png)
+
+Read the image as the review path, not a deployment illustration. Build output is on the left, route ownership is in the middle, and the smoke test verifier is on the right. If any route only exists in the host layer, the diagram breaks before the migration is approved.
 
 ## The Dashboard Lie
 
@@ -228,6 +233,8 @@ The second sentence is less smooth. It is also the one you can trust.
 ## Deployment Contract Checklist
 
 Before calling a site portable, verify:
+
+Next time an agent says a site is "ready for Coolify" or "ready to move off Vercel," paste this checklist into the review before opening the hosting dashboard.
 
 ```txt
 npm ci
