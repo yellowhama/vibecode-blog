@@ -8,7 +8,7 @@
     "frustration-as-spec": { "score": 100, "grade": "reference-ceiling" },
     "html-review-artifacts-for-agents": { "score": 100, "grade": "reference-ceiling" },
     "mcp-shared-state-data-leak": { "score": 100, "grade": "reference-ceiling" },
-    "software-3-0": { "score": 100, "grade": "reference-ceiling" },
+    "software-3-0": { "score": 96, "grade": "reference-ceiling" },
     "vercel-is-not-a-deployment-contract": { "score": 100, "grade": "reference-ceiling" },
     "what-vibe-coding-actually-is": { "score": 100, "grade": "reference-ceiling" }
   }

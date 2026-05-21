@@ -1,8 +1,8 @@
 {
-  "averageScore": 106,
-  "generatedAt": "2026-05-21T10:58:00+09:00",
+  "averageScore": 107,
+  "generatedAt": "2026-05-21T11:15:47+09:00",
   "candidateThreshold": 104,
-  "candidateCount": 6,
+  "candidateCount": 7,
   "posts": {
     "ai-agent-work-disk-contract": { "score": 109, "grade": "reference-blogger-candidate" },
     "ai-memory-operating-structure": { "score": 104, "grade": "reference-blogger-candidate" },
@@ -10,12 +10,11 @@
     "frustration-as-spec": { "score": 112, "grade": "reference-blogger-candidate" },
     "html-review-artifacts-for-agents": { "score": 109, "grade": "reference-blogger-candidate" },
     "mcp-shared-state-data-leak": { "score": 100, "grade": "strong-operating-essay" },
-    "software-3-0": { "score": 98, "grade": "strong-operating-essay" },
+    "software-3-0": { "score": 112, "grade": "reference-blogger-candidate" },
     "vercel-is-not-a-deployment-contract": { "score": 108, "grade": "reference-blogger-candidate" },
     "what-vibe-coding-actually-is": { "score": 98, "grade": "strong-operating-essay" }
   },
   "revisionQueue": [
-    { "slug": "software-3-0", "score": 98, "grade": "strong-operating-essay" },
     { "slug": "what-vibe-coding-actually-is", "score": 98, "grade": "strong-operating-essay" },
     { "slug": "mcp-shared-state-data-leak", "score": 100, "grade": "strong-operating-essay" }
   ]

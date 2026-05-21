@@ -14,6 +14,9 @@ references:
   - name: "Not all AI-assisted programming is vibe coding"
     url: "https://simonwillison.net/2025/Mar/19/vibe-coding/"
     guru: "Simon Willison"
+  - name: "Building effective agents"
+    url: "https://www.anthropic.com/engineering/building-effective-agents"
+    guru: "Anthropic"
 ---
 
 # Software 3.0 Is a Verification Problem
@@ -22,11 +25,15 @@ On 2026-05-20, I opened GitHub commit `20f4834`, ran `npm run audit:reference-ce
 
 The code was fine. The essay was the failure.
 
-![Software 3.0 kernel contract diagram](/images/posts/software-3-0.png)
+![Proof diagram showing source, contract, verifier, receipt, and approval gates for Software 3.0 work](/images/posts/software-3-0.png)
+
+Read the image as a rejection diagram, not a decoration. The useful path is `source -> contract -> diff -> verifier -> receipt -> approval`; the dangerous path is `prompt -> plausible output -> social pressure to accept`. The diagram exists to make that gap visible before the agent starts editing files like `src/data/blog/software-3-0.md` or records like `src/data/publication-approvals.json`.
 
 The easy take on Software 3.0 is that natural language became code. That is the least useful part of the idea.
 
 The part that changes daily engineering is harsher: generation got cheaper, so verification became the bottleneck. The agent can produce the next version. The operator still has to know what would make it true enough to publish.
+
+The problem is not that agents are too weak to write. The problem is that they are strong enough to produce confident, coherent, almost-right work faster than the team can inspect it.
 
 An agent can produce a diff faster than a human can understand its consequences. That does not remove engineering work. It moves the work from typing implementation to deciding what evidence would make the implementation acceptable.
 
@@ -106,6 +113,10 @@ The rule is blunt: if you cannot name the source, boundary, verifier, receipt, a
 | Trusting one green result | Keeping repeatable gates |
 
 That table is the useful Software 3.0 model. Not "the LLM is literally the operating system." The useful model is that the model has become a fast execution surface, and every fast execution surface needs contracts.
+
+Karpathy's Software 3.0 frame is useful because it names the shift in the medium. Willison's vibe-coding boundary is useful because it refuses to call every AI-assisted edit the same thing. Anthropic's agent/workflow distinction is useful because it asks whether the system is following a defined path or choosing its own next step. Put those together and the stronger pattern is obvious: do not argue about whether the work is "AI code." Ask which path produced it, which boundary constrained it, and which verifier can reject it.
+
+The weaker pattern is content about agents that stops at vocabulary. The stronger pattern turns the vocabulary into an operating rule.
 
 ## A Concrete Example
 
@@ -229,6 +240,8 @@ Use this as the acceptance line: accept generated work only when the rejection p
 If an agent is only producing disposable prototypes, a prompt may be enough.
 
 Forward this article to the teammate who says, "the agent already made it, can we ship it?" The decision it should help them make is simple: if the change touches users, deployment, money, security, or another operator's future context, the first review is not taste. The first review is whether the rejection path exists.
+
+Next time an agent hands you a finished-looking diff, do not start by reading the prettiest part. Start by looking for the thing that could have stopped it.
 
 Before accepting the diff, ask for the contract:
 
