@@ -23,7 +23,7 @@ references:
 
 # How to Stop AI Agents From Losing Their Memory
 
-On 2026-05-20, I opened GitHub commit `328e671`, ran the reference ceiling audit, and found the real memory test was not in the chat. It was in `companies/vibecode-town/code-index.md`, `F:\Aisaak\CompanyArtifacts\vibecode-reference-writing-audit\latest.json`, `src/data/publication-approvals.json`, and `wiki_fts.db`.
+On 2026-05-20, I opened GitHub commit `328e671`, ran the reference ceiling audit, and found the real memory test was not in the chat. It was in `companies/vibecode-town/code-index.md`, `<artifact-root>\\vibecode-reference-writing-audit\latest.json`, `src/data/publication-approvals.json`, and `wiki_fts.db`.
 
 The next agent did not need a pep talk. It needed receipts.
 
@@ -37,7 +37,7 @@ When a resumed session cannot answer those questions, the operator starts repeat
 
 This is why long prompts are not operating memory. They can carry context for a while, but they do not prove what happened, what changed, or what remains unsafe.
 
-The wrong standard is "does the next agent have enough context?" The useful standard is "can the next agent prove which source, command, approval hash, and remaining-work queue are current without trusting the previous chat?"
+The wrong standard is "does the next agent have enough context?" The useful standard is "can the next agent prove which source, command, approval record, and remaining-work queue are current without trusting the previous chat?"
 
 ![AI memory operating structure diagram](/images/posts/ai-memory-operating-structure.png)
 
@@ -66,7 +66,7 @@ Before, the restart surface was a chat scrollback. The agent had to infer which 
 After, the restart surface is an artifact chain:
 
 ```txt
-source packet -> plan/report -> code-index.md -> wiki_fts.db -> archive receipt -> approval hash
+source packet -> plan/report -> code-index.md -> wiki_fts.db -> archive receipt -> approval record
 ```
 
 That chain is slower to write than a single prompt. It is much faster than explaining the same project for the fifth time.
@@ -75,7 +75,7 @@ For this site, the memory receipt is not "the agent said it updated the wiki." T
 
 ```txt
 python .\reindex_wiki.py
-Indexed 333 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
+Indexed 333 markdown files into <wiki-root>\wiki_fts.db
 
 .\archive_completed_artifacts.ps1
 archive_files_copied=365
@@ -85,7 +85,7 @@ archive_markdown_count=333
 
 That is the difference between memory as a vibe and memory as an operating surface. One asks the next agent to believe. The other gives it a place to look.
 
-The cost is not abstract. If the next agent says "wiki is current" while the index still says 245 files, the reviewer has to audit the story before auditing the work. If the public body changed but the approval hash still points at yesterday's markdown, the page is not approved. It is wearing an old receipt.
+The cost is not abstract. If the next agent says "wiki is current" while the index still says 245 files, the reviewer has to audit the story before auditing the work. If the public body changed but the approval record still points at yesterday's markdown, the page is not approved. It is wearing an old receipt.
 
 The rule is blunt: if memory cannot be reindexed, searched, archived, or contradicted by a hash, it is not operating memory. It is a nicer prompt.
 
@@ -128,7 +128,7 @@ companies/vibecode-town/sources/raw
 companies/vibecode-town/sources/processed
 companies/vibecode-town/plans
 companies/vibecode-town/code-index.md
-F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
+<wiki-root>\wiki_fts.db
 ```
 
 The verification side is concrete too: `python reindex_wiki.py`, `archive_completed_artifacts.ps1`, `check_vibecode_completion_audit_sync.ps1`, and `check_company_artifacts_archive.ps1`.
@@ -186,9 +186,9 @@ Usable restart surface:
 Goal: make public posts source-backed, English, image-backed, and approval-bound.
 Recent status: product commit dd3565e is pushed.
 Verified evidence: verify:site-quality passed; 10 posts, 24 rendered viewport checks, 10 approval records.
-Files changed: publication approval manifest, rendered audit script, post image contract gate, reference-writing audit.
+Files changed: publication review manifest, rendered audit script, image rule gate, reference-writing audit.
 Known boundary: the writing floor is much stronger, but some posts still need sharper openings and artifacts.
-Next action: improve the lowest-scoring post, then refresh approval hash, wiki index, and archive checks.
+Next action: improve the lowest-scoring post, then refresh approval record, wiki index, and archive checks.
 Completion is not proven until: site-quality, wiki reindex, and archive checks pass again.
 ```
 
@@ -212,7 +212,7 @@ Before accepting an agent's memory claim, use this decision matrix.
 | --- | --- | --- |
 | "I updated the wiki." | Reindex and archive receipts exist. | Only the chat says so. |
 | "The next agent has context." | It can cite `code-index.md` and `wiki_fts.db`. | Context lives only in scrollback. |
-| "This post is approved." | The current `contentSha256` matches the body. | The body changed after approval. |
+| "This post is approved." | The current `current content digest` matches the body. | The body changed after approval. |
 | "Images are handled." | One slug-matched image renders on desktop/mobile. | The image is generic or duplicated. |
 
 The rule is simple: accept artifacts, reject vibes.
@@ -237,9 +237,9 @@ Vibecode uses this pattern for source-backed content: source notes, explicit spe
 
 The public writing is only the visible surface. The real asset is the memory contract behind it.
 
-The same rule applies to visual proof. A memory diagram in the body is useful only if the post image contract agrees with it: one slug-specific image, matching `ogImage`, visible in rendered post checks, and not reused as a lazy placeholder across unrelated posts. Otherwise the image becomes another fake memory.
+The same rule applies to visual proof. A memory diagram in the body is useful only if the image rule agrees with it: one slug-specific image, matching `ogImage`, visible in rendered post checks, and not reused as a lazy placeholder across unrelated posts. Otherwise the image becomes another fake memory.
 
-Use this as the approval line: accept a memory claim only when it has a source file, current index receipt, archive receipt, approval hash, and next-action queue. Reject it when the claim only sounds complete.
+Use this as the approval line: accept a memory claim only when it has a source file, current index receipt, archive receipt, approval record, and next-action queue. Reject it when the claim only sounds complete.
 
 ## Boundary
 

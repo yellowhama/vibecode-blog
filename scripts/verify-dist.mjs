@@ -31,6 +31,19 @@ const FORBIDDEN_PRODUCT_MENTIONS = [
   { label: "MUSU", pattern: /\bMUSU\b/ },
   { label: "musu-bee", pattern: /\bmusu-bee\b/i },
 ];
+const SURFACE_FORBIDDEN_INTERNAL_LANGUAGE = [
+  /rendered proof/i,
+  /approval checks/i,
+  /approval hash/i,
+  /publishing gates/i,
+  /source,\s*image,\s*rendered/i,
+  /blogger ceiling/i,
+  /reference ceiling/i,
+  /writing pulse/i,
+  /recent receipts/i,
+  /featured evidence/i,
+  /evidence archive/i,
+];
 
 async function exists(path) {
   try {
@@ -69,6 +82,17 @@ for (const [file, expected] of contentChecks) {
   const text = await readFile(path, "utf8");
   if (!text.includes(expected)) {
     failures.push(`${file} does not include ${expected}`);
+  }
+}
+
+for (const file of ["index.html", "posts/index.html"]) {
+  const path = join(distDir, file);
+  if (!(await exists(path))) continue;
+  const text = await readFile(path, "utf8");
+  for (const pattern of SURFACE_FORBIDDEN_INTERNAL_LANGUAGE) {
+    if (pattern.test(text)) {
+      failures.push(`${file} contains internal production language matching ${pattern}`);
+    }
   }
 }
 

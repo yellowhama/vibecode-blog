@@ -21,11 +21,11 @@ references:
 
 # Frustration Is a Signal, Not the Specification
 
-![Rendered proof diagram for complaint signal, contract boundary, and verifier receipt](/images/posts/frustration-as-spec.png)
+![rendered evidence diagram for complaint signal, contract boundary, and verifier receipt](/images/posts/frustration-as-spec.png)
 
 Read the image as the article's operating path, not a mood board. The failure gap is simple: repeated frustration can look like feedback while never becoming a boundary the next agent can obey. The left side is the complaint signal, the middle is the contract boundary, and the right side is the verifier receipt. If the complaint cannot travel that path, it is still editorial feedback, not system policy.
 
-On 2026-05-20, I opened the GitHub-backed reference ceiling report at `F:\Aisaak\CompanyArtifacts\vibecode-reference-ceiling-audit\latest.json`, looked at the weakest-post list, and found this article at the bottom.
+On 2026-05-20, I opened the GitHub-backed reference ceiling report at `<artifact-root>\\vibecode-reference-ceiling-audit\latest.json`, looked at the weakest-post list, and found this article at the bottom.
 
 ```txt
 reference_ceiling_weakest=frustration-as-spec score=91 grade=reference-ceiling
@@ -41,7 +41,7 @@ Use this when an agent repeats the same mistake twice. Do not ask it to care har
 
 The problem is not that the agent makes a mistake. The useful moment is when you correct the same mistake twice.
 
-On 2026-05-20, the mistake was boring enough to be dangerous. The active archive was on `F:\Aisaak\CompanyArtifacts\llm-wiki-completed`, but the work kept drifting back toward an old `C:` path. Then the public English blog had to be checked for Korean source leakage. Then the images existed, but did not prove the article. Then the same product mention tried to appear everywhere.
+On 2026-05-20, the mistake was boring enough to be dangerous. The active archive was on `<wiki-root>`, but the work kept drifting back toward an old `C:` path. Then the public English blog had to be checked for Korean source leakage. Then the images existed, but did not prove the article. Then the same product mention tried to appear everywhere.
 
 None of those were "creative direction" problems. They were missing operating boundaries.
 
@@ -69,7 +69,7 @@ The repair was to convert each repeated correction into a file, gate, or receipt
 | --- | --- | --- |
 | Wrong disk root | Use the F-drive archive | `0fa2017`, archive sync |
 | Korean public copy | English-only posts | `verify-public-page-review`, Pagefind `en` |
-| Blank or reused images | One visible slug image | image contract, rendered screenshots |
+| Blank or reused images | One visible slug image | image rule, rendered screenshots |
 | Product-name drift | Require proof context | public/deploy scans |
 | Polished weak essays | Require evidence and a reader artifact | reference-writing audit |
 
@@ -100,13 +100,13 @@ npm run audit:reported-proof
 After:
 
 ```txt
-F:\Aisaak\Projects\vibecode-town\src\data\publication-approvals.json
-F:\Aisaak\Projects\vibecode-town\src\data\post-image-contracts.json
-F:\Aisaak\CompanyArtifacts\vibecode-reported-proof-audit\latest.json
-F:\Aisaak\CompanyArtifacts\vibecode-draft-review-artifacts\frustration-as-spec-reference-blogger-review-result.json
+<repo-root>\src\data\publication-approvals.json
+<repo-root>\src\data\post-image-contracts.json
+<artifact-root>\\vibecode-reported-proof-audit\latest.json
+<artifact-root>\\vibecode-draft-review-artifacts\frustration-as-spec-reference-blogger-review-result.json
 ```
 
-The accepted review must have zero rejected rows. The publication approval hash must match `contentSha256`. The zero-item revision plan must stay bound to the current markdown hash. The rendered page audit must prove the expected slug image appears in the first-screen route instead of merely existing on disk.
+The accepted review must have zero rejected rows. The publication review record must match `current content digest`. The zero-item revision plan must stay bound to the current markdown hash. The rendered page audit must prove the expected slug image appears in the first-screen route instead of merely existing on disk.
 
 Accept only when the complaint has a dated failure, a named gate, a passing after-state, and a reviewer or approval record another session can inspect.
 
@@ -168,7 +168,7 @@ receipt summary: 10 posts, 41 pages, 24 viewports, 10 records, 2128 words, 352 f
 9 packet-backed posts.
 41 pages built.
 24 rendered viewports checked.
-10 publication approval records.
+10 publication review records.
 10 Pagefind pages indexed.
 2128 Pagefind words indexed.
 352 wiki markdown files indexed.
@@ -226,7 +226,7 @@ The output should become boring:
 Complaint: repeated image mismatch.
 Contract: image must be slug-specific, visible, and semantically tied to the post.
 Verifier: manifest check plus rendered page audit.
-Evidence: screenshot or image contract record.
+Evidence: screenshot or image rule record.
 ```
 
 Once the complaint has that shape, another agent can enforce it without needing to remember the argument.
@@ -248,7 +248,7 @@ Example from the image failure:
 
 ```txt
 Friction: "The post has an image, but it does not match the article."
-Hidden assumption: The image contract only checked existence.
+Hidden assumption: The image rule only checked existence.
 Contract: One body image must match ogImage, live under /images/posts/<slug>.png, be non-reused, and be visually meaningful.
 Verifier: editorial contract plus public-surface gate plus browser screenshot.
 ```

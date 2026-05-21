@@ -30,7 +30,7 @@ Vibe coding fails in production at the moment confidence arrives before evidence
 
 The practical move is not to stop exploring. It is to switch modes before a prototype touches users, money, data, deployment behavior, or public trust.
 
-On 2026-05-20, I ran `npm run audit:reference-ceiling -- --json` inside the GitHub-backed `F:\Aisaak\Projects\vibecode-town` repo and this article came back last.
+On 2026-05-20, I ran `npm run audit:reference-ceiling -- --json` inside the GitHub-backed `<repo-root>` repo and this article came back last.
 
 ```txt
 reference_ceiling_weakest=what-vibe-coding-actually-is score=87 grade=strong-but-thin
@@ -174,7 +174,7 @@ Evidence to keep:
 
 That is the entire difference. The model did not become magically wiser. The work became rejectable.
 
-This is also why a strong agent workflow often feels less glamorous than the demo. The demo asks the agent to build something visible. Production asks the agent to preserve something invisible: a route contract, a schema promise, an approval hash, a deployment assumption, a security boundary.
+This is also why a strong agent workflow often feels less glamorous than the demo. The demo asks the agent to build something visible. Production asks the agent to preserve something invisible: a route contract, a schema promise, an approval record, a deployment assumption, a security boundary.
 
 The useful operator move is not "trust the model less." That is too broad. The useful move is: name the hidden contract before the model gets permission to edit.
 
@@ -188,7 +188,7 @@ Before the hardening loop, a plausible agent run could create a post, attach an 
 English blog received Korean source text.
 Several posts reused generic-looking images.
 Product names appeared in posts without release evidence.
-Markdown changed without a fresh human publication approval hash.
+Markdown changed without a fresh human publication review record.
 ```
 
 That was not a cosmetic failure. It was a trust failure.
@@ -202,7 +202,7 @@ Bad public output:
 - Unsupported product mentions could make the site look like a brochure.
 
 Gate added:
-- Source workflow, image contract, rendered page, public review, and approval hash checks.
+- Source workflow, image rule, rendered page, public review, and approval record checks.
 
 After:
 - A post can be drafted by an agent, but it cannot remain public unless the receipt stack agrees.
@@ -227,10 +227,10 @@ The relevant commit chain shows the same pattern:
 
 ```txt
 bc23231 Harden public page review gate
-64eece2 Add post image contract gate
+64eece2 Add image rule gate
 21c2144 Require packet-backed operator posts
 5c94781 Add rendered page audit and deepen post rewrites
-bf86204 Require human publication approvals
+bf86204 Require human publication reviews
 ```
 
 The later writing-quality loop continued the same rule:
@@ -241,7 +241,7 @@ The later writing-quality loop continued the same rule:
 f7076c0 Correct Software 3.0 approval loop ref
 283a6fe Strengthen evidence-backed post surfacing
 9bd66bc Improve Vercel writing pulse
-0c074f9 Strengthen evidence surface ranking
+0c074f9 Strengthen public article surfacing
 ```
 
 The baseline receipt for this body repair is concrete, and it is dated because an undated receipt is just a better-looking vibe. On 2026-05-21, after `f89df79`, the site had to prove that public trust was still attached to files, commands, and hashes rather than the agent's summary of what it thought it had done.
@@ -267,9 +267,9 @@ archive copied: 393 files
 
 Read without the code fence, the receipt is still falsifiable: on 2026-05-21, baseline product commit `f89df79ab748bab40dc876e67652bf7c94b1629e` produced 41 pages, 10 posts, 2188 words, 24 viewports, 10 records, 361 files indexed, and 393 files archived.
 
-That receipt changed the review question. A reviewer no longer has to ask whether the site "looks like" an English AI engineering blog. The reviewer can ask whether the source packet count, image contracts, rendered first-screen checks, approval hashes, and public surface rank all agree on the same publishable object.
+That receipt changed the review question. A reviewer no longer has to ask whether the site "looks like" an English AI engineering blog. The reviewer can ask whether the source packet count, image rules, rendered first-screen checks, approval records, and public article state all agree on the same publishable object.
 
-That is the production shift. The agent is still allowed to draft, rewrite, and generate images. But the output cannot remain public unless the source packet, image contract, rendered screenshot, and exact Markdown hash agree.
+That is the production shift. The agent is still allowed to draft, rewrite, and generate images. But the output cannot remain public unless the source packet, image rule, rendered screenshot, and exact Markdown hash agree.
 
 There is a before/after hidden in that receipt:
 
@@ -318,7 +318,7 @@ Use one decision matrix:
 | Disposable, local, reversible | Vibe coding | A thing to react to |
 | Unclear prototype | Vibe coding, then stop | Notes on what changed |
 | Product change | Contract-driven agent work | Source, boundary, check |
-| Public post | Contract-driven agent work | Packet, image contract, approval hash |
+| Public post | Contract-driven agent work | Packet, image rule, approval record |
 | Security, billing, data, deploy | Contract-driven agent work | Failing test or verifier |
 
 Use vibe coding only when all three are true:

@@ -174,14 +174,14 @@ Gate added:
 After:
 - The advisory is no longer only a dependency note.
 - The review has a lifecycle owner, a constructor-location receipt, and a release decision.
-- The current accepted review, zero-item revision plan, approval hash, and contentSha256 all point at the revised article.
+- The current accepted review, zero-item revision plan, approval record, and current content digest all point at the revised article.
 ```
 
 The command version is deliberately boring:
 
 ```bash
 npm run verify:reported-proof
-node scripts/audit-reported-proof.mjs --output F:\Aisaak\CompanyArtifacts\vibecode-reported-proof-audit\latest.json
+node scripts/audit-reported-proof.mjs --output <artifact-root>\\vibecode-reported-proof-audit\latest.json
 ```
 
 The current writing-pulse body repair added a second receipt, because a security article should not ask for evidence while carrying stale evidence of its own:
@@ -271,7 +271,7 @@ The rendered article has its own proof contract too:
 ```txt
 body image: /images/posts/mcp-shared-state-data-leak.png
 ogImage: /images/posts/mcp-shared-state-data-leak.png
-rendered summary: F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
+rendered summary: <rendered-audit-root>\summary.json
 desktop first-screen image check: 10/10
 mobile first-screen image check: 10/10
 surface expected images: 2/2
@@ -285,14 +285,14 @@ The stale receipt was the useful failure here. An older version of this article 
 
 A stale proof number is not a cosmetic issue. It teaches the reader to trust the article less.
 
-The image contract is deliberately boring: one slug-specific diagram, no casual reuse across posts, and a rendered audit that records whether the expected image actually appears. Security writing needs this same discipline. Evidence that only exists as a sentence is easy to polish and hard to trust.
+The image rule is deliberately boring: one slug-specific diagram, no casual reuse across posts, and a rendered audit that records whether the expected image actually appears. Security writing needs this same discipline. Evidence that only exists as a sentence is easy to polish and hard to trust.
 
 After this repair, the article must keep the same standard it asks of MCP code:
 
 ```txt
-writing-pulse report: F:\Aisaak\CompanyArtifacts\vibecode-writing-pulse-audit\latest.json
-rendered-page report: F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
-publication approval: src/data/publication-approvals.json
+writing-pulse report: <artifact-root>\\vibecode-writing-pulse-audit\latest.json
+rendered-page report: <rendered-audit-root>\summary.json
+publication review: src/data/publication-approvals.json
 reference review manifest: src/data/reference-blogger-review-artifacts.json
 ```
 

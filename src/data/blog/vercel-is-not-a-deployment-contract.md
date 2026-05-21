@@ -41,7 +41,7 @@ The practical rule is simple: if production behavior only exists because one hos
 
 I also rechecked the official docs while revising this: Vercel documents rewrites as platform routing rules, Coolify's GitHub integration is a deploy-from-repository system, and Astro's own pages docs say files in `src/pages/` become site endpoints. That comparison is the whole post. The weaker pattern is "the platform can route it." The stronger pattern is "the repository can build it, a static host can serve it, and a verifier can reject it."
 
-![Rendered proof diagram for deploy surface build, route ownership, and smoke verifier](/images/posts/vercel-is-not-a-deployment-contract.png)
+![rendered evidence diagram for deploy surface build, route ownership, and smoke verifier](/images/posts/vercel-is-not-a-deployment-contract.png)
 
 Read the image as the review path, not a deployment illustration. Build output is on the left, route ownership is in the middle, and the smoke test verifier is on the right. If any route only exists in the host layer, the diagram breaks before the migration is approved.
 
@@ -171,8 +171,8 @@ Gate added:
 
 After:
 - The repo owns src/pages/sitemap.xml.ts, public/install.sh, scripts/copy-pagefind.mjs, scripts/verify-deploy-surface.mjs, and scripts/verify-dist.mjs.
-- The current accepted review, zero-item revision plan, approval hash, and contentSha256 point at the revised article.
-- The rendered audit checks desktop/mobile first-screen image evidence and the image contract instead of trusting a dashboard screenshot.
+- The current accepted review, zero-item revision plan, approval record, and current content digest point at the revised article.
+- The rendered audit checks desktop/mobile first-screen image evidence and the image rule instead of trusting a dashboard screenshot.
 ```
 
 That is the difference between "the host can serve it" and "the repository can prove it." The first is a platform habit. The second is a deployment contract.
@@ -284,7 +284,7 @@ The portability lesson now has a repeatable site-level receipt:
 npm run verify:site-quality
 ```
 
-That command does more than build the Astro site. It runs the public content gates, builds `dist`, indexes Pagefind, captures rendered post screenshots, checks publication approvals, verifies deploy artifacts, and runs the field-log gate.
+That command does more than build the Astro site. It runs the public content gates, builds `dist`, indexes Pagefind, captures rendered post screenshots, checks publication reviews, verifies deploy artifacts, and runs the field-log gate.
 
 The baseline run for this revision produced the shape this article argues for. This receipt is deliberately dated because an undated deployment receipt becomes the same problem as a dashboard memory: it may be true, but the next reviewer cannot tell when it stopped being true.
 
@@ -298,9 +298,9 @@ rendered viewports checked: 24
 rendered_page_post_detail_first_screen_images_desktop: 10/10
 rendered_page_post_detail_first_screen_images_mobile: 10/10
 rendered_page_surface_expected_images_first_screen: 2/2
-rendered summary.json: F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
-image contract: /images/posts/vercel-is-not-a-deployment-contract.png
-publication approvals checked: 10
+rendered summary.json: <rendered-audit-root>\summary.json
+image rule: /images/posts/vercel-is-not-a-deployment-contract.png
+publication reviews checked: 10
 wiki markdown files indexed: 352
 archive files copied: 384
 deploy surface gate: pass
@@ -315,7 +315,7 @@ That is the deployment-contract mindset applied back to the blog itself: the das
 
 This does not prove Coolify production is ready.
 
-Hetzner identity verification is still blocked, so the actual `staging.vibecode.town` deployment has not happened. It also does not solve every dependency advisory. The high-severity audit gate is clean, but npm still reports moderate Astro and YAML advisories that require breaking changes to remove completely.
+This verifies the static artifact and deployment assumptions, not every future host migration. It also does not solve every dependency advisory. The high-severity audit gate is clean, but npm still reports moderate Astro and YAML advisories that require breaking changes to remove completely.
 
 That is an accepted boundary, not a hidden failure.
 

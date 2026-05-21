@@ -41,55 +41,39 @@ const getEvidenceStrength = (post: (typeof page.data)[number]) => {
 const leadPost = [...page.data]
   .filter(post => post.data.workflow === "packet" && post.data.ogImage)
   .sort((a, b) => getEvidenceStrength(b) - getEvidenceStrength(a))[0];
-const leadBloggerScore = leadPost ? getReferenceBloggerCeiling(leadPost.id) : undefined;
-const leadReferenceScore = leadPost ? getReferenceCeiling(leadPost.id) : undefined;
-const leadWritingPulseScore = leadPost ? getWritingPulse(leadPost.id) : undefined;
 const leadSourceCount = leadPost?.data.references?.length ?? 0;
-const leadEvidenceStrength = leadPost ? getEvidenceStrength(leadPost) : 0;
 const leadProofRows = leadPost
   ? [
-      { label: "Why this one", value: "It starts with a concrete artifact and turns the source material into a usable operating rule." },
-      { label: "Source trail", value: `${leadSourceCount} outside references and a working artifact behind the argument.` },
-      { label: "What to inspect", value: "Open the image first, then check whether the essay proves the claim instead of merely naming the trend." },
-      { label: "Reader payoff", value: "Each article should leave you with a decision rule you can reuse in your own agent workflow." },
+      { label: "Artifact", value: "A concrete file, run, screenshot, log, or decision surface anchors the argument." },
+      { label: "Question", value: "What did this artifact make clearer about shipping software with agents?" },
+      { label: "Sources", value: `${leadSourceCount} references behind the argument.` },
+      { label: "Payoff", value: "A decision rule you can reuse in your own agent workflow." },
     ]
   : [];
 ---
 
-<Layout title={`Posts | ${SITE.title}`}>
+<Layout title={`Field Notes | ${SITE.title}`}>
   <Header />
   <Main
-    pageTitle="Posts"
-    pageDesc="Evidence-backed articles only. Every non-About post is tied to sources, a concrete artifact, an original visual, and a review pass before publication."
+    pageTitle="Field Notes"
+    pageDesc="Articles for people shipping software with agents: concrete artifacts, source pressure, and reusable operating rules."
   >
     {leadPost ? (
       <section
         class="mb-10 grid gap-6 border border-ink/10 bg-background p-4 shadow-sm md:grid-cols-[minmax(0,1fr)_22rem] md:items-center"
-        aria-label="Featured evidence-backed article"
-        data-evidence-card
+        aria-label="Featured field note"
+        data-article-card
         data-post-slug={leadPost.id}
-        data-image-contract={leadPost.data.ogImage}
-        data-reference-blogger-score={leadBloggerScore ?? 0}
-        data-reference-score={leadReferenceScore ?? 0}
-        data-writing-pulse-score={leadWritingPulseScore ?? 0}
-        data-source-count={leadSourceCount}
-        data-evidence-strength={leadEvidenceStrength}
-        data-evidence-rank="1"
-        data-surfacing-reason={`archive-lead-evidence-strength-${leadEvidenceStrength}`}
-        data-publication-approved="true"
       >
         <div>
-          <div class="mb-4 flex flex-wrap gap-2 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
-            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Source-backed</span>
-            <span class="border border-ink/10 bg-paper-warm px-2 py-1">{leadSourceCount} references</span>
-            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Original visual</span>
-            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Practical rule</span>
-          </div>
+          <p class="mb-4 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
+            Start here / {leadPost.data.series ?? "Field Log"}
+          </p>
           <a href={`/posts/${leadPost.id}`} class="group no-underline">
             <h2 class="font-serif text-3xl italic leading-tight text-ink group-hover:underline decoration-accent/30">
               {leadPost.data.title}
             </h2>
-          <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-secondary">{leadPost.data.description}</p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-secondary">{leadPost.data.description}</p>
           </a>
           <dl class="mt-5 grid gap-2 border-y border-ink/10 py-4 sm:grid-cols-2">
             {leadProofRows.map(row => (
@@ -100,7 +84,7 @@ const leadProofRows = leadPost
             ))}
           </dl>
           <p class="mt-4 max-w-2xl font-mono text-[0.58rem] uppercase tracking-[0.16em] text-ink-faded">
-            Start here: concrete claim, source trail, original visual, and a reusable decision rule.
+            Start here: concrete artifact, source pressure, and a reusable decision rule.
           </p>
         </div>
         <a href={`/posts/${leadPost.id}`} class="order-first block no-underline md:order-none">

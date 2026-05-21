@@ -75,7 +75,7 @@ function Draw-Motif($graphics, $item, $accentBrush, $accentPen, $inkPen, $mutedP
       $graphics.DrawLine($accentPen, $x + 224, $y + 302, $x + 195, $y + 330)
     }
     "signal" {
-      $points = @(
+      $points = [System.Drawing.Point[]]@(
         [System.Drawing.Point]::new($x + 52, $y + 260),
         [System.Drawing.Point]::new($x + 112, $y + 246),
         [System.Drawing.Point]::new($x + 152, $y + 118),
@@ -180,7 +180,7 @@ foreach ($item in $items) {
   $subFont = [System.Drawing.Font]::new("Georgia", 26)
   $monoFont = [System.Drawing.Font]::new("Consolas", 20)
 
-  $graphics.DrawString("VIBECODE / POST IMAGE CONTRACT", $labelFont, $accent, 92, 92)
+  $graphics.DrawString("VIBECODE / FIELD NOTE", $labelFont, $accent, 92, 92)
   $titleRect = [System.Drawing.RectangleF]::new(92, 148, 560, 126)
   $titleFormat = [System.Drawing.StringFormat]::new()
   $titleFormat.Trimming = [System.Drawing.StringTrimming]::EllipsisWord
@@ -188,7 +188,7 @@ foreach ($item in $items) {
   $graphics.DrawString($item.Subtitle, $subFont, $muted, 96, 288)
   Draw-RoundRect $graphics $accentPen $null 96 388 470 74 12
   $graphics.DrawString($item.Signal, $monoFont, $ink, 122, 412)
-  $graphics.DrawString("/images/posts/" + $item.Slug + ".png", [System.Drawing.Font]::new("Consolas", 16), $muted, 96, 502)
+  $graphics.DrawString("artifact -> decision rule", [System.Drawing.Font]::new("Consolas", 16), $muted, 96, 502)
 
   Draw-Motif $graphics $item $accent $accentPen $inkPen $mutedPen $panel
 

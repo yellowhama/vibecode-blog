@@ -28,7 +28,7 @@ const SURFACE_ROUTES = [
     label: "homepage",
     path: "/",
     expectedImage: "/images/posts/design-is-a-technical-contract.png",
-    requiredTexts: ["Evidence-backed field notes", "Start with the artifact", "Use sources as pressure", "Leave a decision rule"],
+    requiredTexts: ["Agentic software field notes", "Field notes for people shipping software with agents", "Start from the artifact", "Latest Field Notes"],
     requiredLink: "/posts/",
     requirePostLink: true,
     requireContractImage: true,
@@ -38,7 +38,7 @@ const SURFACE_ROUTES = [
     label: "posts index",
     path: "/posts/",
     expectedImage: null,
-    requiredTexts: ["Evidence-backed articles only", "Concrete artifact", "Source pressure", "Reusable rule"],
+    requiredTexts: ["Field Notes", "concrete artifacts", "source pressure", "Reusable rule"],
     requiredLink: null,
     requirePostLink: true,
     requireContractImage: true,
@@ -183,10 +183,19 @@ function openCdp(webSocketDebuggerUrl) {
   const pending = new Map();
   const waiters = new Map();
 
+  function rejectPending(error) {
+    for (const { rejectCommand, timeout } of pending.values()) {
+      clearTimeout(timeout);
+      rejectCommand(error);
+    }
+    pending.clear();
+  }
+
   ws.addEventListener("message", event => {
     const message = JSON.parse(event.data);
     if (message.id && pending.has(message.id)) {
-      const { resolveCommand, rejectCommand } = pending.get(message.id);
+      const { resolveCommand, rejectCommand, timeout } = pending.get(message.id);
+      clearTimeout(timeout);
       pending.delete(message.id);
       if (message.error) rejectCommand(new Error(message.error.message));
       else resolveCommand(message);
@@ -204,12 +213,23 @@ function openCdp(webSocketDebuggerUrl) {
     ws.addEventListener("error", rejectReady, { once: true });
   });
 
-  function command(method, params = {}) {
+  ws.addEventListener("close", () => {
+    rejectPending(new Error("Chrome DevTools connection closed before command completed."));
+  });
+  ws.addEventListener("error", () => {
+    rejectPending(new Error("Chrome DevTools connection errored before command completed."));
+  });
+
+  function command(method, params = {}, timeoutMs = 15000) {
     const id = nextId;
     nextId += 1;
     const payload = JSON.stringify({ id, method, params });
     return new Promise((resolveCommand, rejectCommand) => {
-      pending.set(id, { resolveCommand, rejectCommand });
+      const timeout = setTimeout(() => {
+        pending.delete(id);
+        rejectCommand(new Error(`Timed out waiting for Chrome command ${method}`));
+      }, timeoutMs);
+      pending.set(id, { resolveCommand, rejectCommand, timeout });
       ws.send(payload);
     });
   }
@@ -423,7 +443,7 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       image.rect.bottom > 0
     );
     const firstScreenContractImagePaths = Array.from(new Set(firstScreenContractImages.map(image => image.src)));
-    const evidenceCards = Array.from(document.querySelectorAll("[data-evidence-card]")).map(card => {
+    const evidenceCards = Array.from(document.querySelectorAll("[data-article-card]")).map(card => {
       const rect = card.getBoundingClientRect();
       const text = (card.textContent || "").replace(/\\s+/g, " ").trim().toLowerCase();
       const cardLinks = [
@@ -460,26 +480,9 @@ function surfaceAuditExpression(spec, contractImagePaths) {
           }
         };
       });
-      const expectedContractImage = card.getAttribute("data-image-contract") || "";
-      const surfacingReason = card.getAttribute("data-surfacing-reason") || "";
-      const matchingContractImage = cardImages.find(image => image.src === expectedContractImage) || null;
-      const referenceBloggerScore = Number.parseInt(card.getAttribute("data-reference-blogger-score") || "0", 10);
-      const referenceScore = Number.parseInt(card.getAttribute("data-reference-score") || "0", 10);
-      const writingPulseScore = Number.parseInt(card.getAttribute("data-writing-pulse-score") || "0", 10);
-      const sourceCount = Number.parseInt(card.getAttribute("data-source-count") || "0", 10);
-      const evidenceStrength = Number.parseInt(card.getAttribute("data-evidence-strength") || "0", 10);
-      const evidenceRank = Number.parseInt(card.getAttribute("data-evidence-rank") || "0", 10);
-      const publicationApproved = card.getAttribute("data-publication-approved") === "true";
+      const matchingContractImage = cardImages.find(image => contractImagePaths.includes(image.src)) || null;
       return {
         slug: card.getAttribute("data-post-slug") || "",
-        expectedContractImage,
-        surfacingReason,
-        referenceBloggerScore,
-        referenceScore,
-        writingPulseScore,
-        sourceCount,
-        evidenceStrength,
-        evidenceRank,
         rect: {
           top: Math.round(rect.top),
           bottom: Math.round(rect.bottom),
@@ -488,25 +491,13 @@ function surfaceAuditExpression(spec, contractImagePaths) {
         },
         inFirstScreen: rect.top < window.innerHeight && rect.bottom > 0,
         linkVisible: cardLinks.some(link => /^\\/posts\\/[^/]+\\/?$/.test(link.href) && link.visible),
-        hasSourcePacket: text.includes("source-backed") || text.includes("source trail") || text.includes("source"),
-        hasUniqueImage: text.includes("original visual") || text.includes("image"),
-        hasRenderedProof: text.includes("inspect") || text.includes("original visual") || text.includes("artifact"),
-        hasHashApproval: publicationApproved,
-        hasBloggerCeiling: Number.isFinite(referenceBloggerScore) && referenceBloggerScore >= 97,
-        hasReferenceCeiling: Number.isFinite(referenceScore) && referenceScore >= 88,
-        hasWritingPulse: Number.isFinite(writingPulseScore) && writingPulseScore >= 80,
-        explainsSurfacing: text.includes("why this is first") ||
+        hasPublicSourceLanguage: text.includes("source") || text.includes("reference"),
+        hasPublicArtifactLanguage: text.includes("artifact") || text.includes("visual") || text.includes("design.md"),
+        hasPublicDecisionLanguage: text.includes("rule") || text.includes("decision") || text.includes("use it for"),
+        explainsSurfacing: text.includes("artifact") ||
           text.includes("start here") ||
-          text.includes("why read") ||
-          text.includes("why this one") ||
-          surfacingReason.length > 0,
-        hasReferenceBloggerScoreData: Number.isFinite(referenceBloggerScore) && referenceBloggerScore >= 97,
-        hasReferenceScoreData: Number.isFinite(referenceScore) && referenceScore >= 88,
-        hasWritingPulseData: Number.isFinite(writingPulseScore) && writingPulseScore >= 80,
-        hasSourceCountData: Number.isFinite(sourceCount) && sourceCount >= 1,
-        hasEvidenceStrengthData: Number.isFinite(evidenceStrength) && evidenceStrength >= 200,
-        hasEvidenceRankText: text.includes("start here") || text.includes("why read") || text.includes("why this one") || text.includes("artifact"),
-        hasLeadRankData: !Number.isFinite(evidenceRank) || evidenceRank === 0 || evidenceRank === 1,
+          text.includes("problem") ||
+          text.includes("payoff"),
         matchingContractImage,
         matchingContractImageVisible: Boolean(matchingContractImage?.visible),
         matchingContractImageInFirstScreen: Boolean(matchingContractImage?.inFirstScreen)
@@ -515,21 +506,10 @@ function surfaceAuditExpression(spec, contractImagePaths) {
     const firstScreenEvidenceCards = evidenceCards.filter(card =>
       card.inFirstScreen &&
       card.linkVisible &&
-      card.hasSourcePacket &&
-      card.hasUniqueImage &&
-      card.hasRenderedProof &&
-      card.hasHashApproval &&
-      card.hasBloggerCeiling &&
-      card.hasReferenceCeiling &&
-      card.hasWritingPulse &&
+      card.hasPublicSourceLanguage &&
+      card.hasPublicArtifactLanguage &&
+      card.hasPublicDecisionLanguage &&
       card.explainsSurfacing &&
-      card.hasReferenceBloggerScoreData &&
-      card.hasReferenceScoreData &&
-      card.hasWritingPulseData &&
-      card.hasSourceCountData &&
-      card.hasEvidenceStrengthData &&
-      card.hasEvidenceRankText &&
-      card.hasLeadRankData &&
       card.matchingContractImageVisible &&
       card.matchingContractImageInFirstScreen
     );
@@ -727,7 +707,7 @@ async function auditSurfaceRoute(chromePort, baseUrl, outputDir, spec, viewport,
       failures.push("surface has no distinct first-screen post contract image");
     }
     if (spec.requireContractImage && audit.firstScreenEvidenceCards.length < 1) {
-      failures.push("surface has no first-screen evidence card with public source/image/review language, internal score data, surfacing reason, link, and matching image");
+      failures.push("surface has no first-screen article card with public source/artifact/decision language, link, and matching image");
     }
 
     return {

@@ -23,13 +23,13 @@ references:
 
 # The Work Disk Contract for AI Coding Agents
 
-On 2026-05-21, I ran a PowerShell drive check, checked the LLM wiki archive gate, and opened the Chrome-rendered audit under `F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest`. The disk problem was not code. It was where the agent was allowed to leave proof. Use this rule before accepting an agent run: name the source, memory, rendered-proof, and temp roots first.
+On 2026-05-21, I ran a PowerShell drive check, checked the LLM wiki archive gate, and opened the Chrome-rendered audit under `<rendered-audit-root>`. The disk problem was not code. It was where the agent was allowed to leave proof. Use this rule before accepting an agent run: name the source, memory, rendered evidence, and temp roots first.
 
 AI coding agents do not only edit source files, and that is the hidden risk.
 
 They build. They test. They create fixtures. They write indexes. They generate logs. They produce evidence bundles, compare outputs, and sometimes leave large temp trees behind. If those artifacts drift to the wrong drive, the agent can pass a test while making the next handoff harder to trust.
 
-On this workstation, that distinction is not theoretical. The active source repo is on `F:\Aisaak\Projects\vibecode-town`, the LLM wiki archive is on `F:\Aisaak\CompanyArtifacts\llm-wiki-completed`, and the rendered audit writes to `F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest`.
+On this workstation, that distinction is not theoretical. The active source repo is on `<repo-root>`, the LLM wiki archive is on `<wiki-root>`, and the rendered audit writes to `<rendered-audit-root>`.
 
 If any receipt lands outside those roots, rerun it under the contract instead of cleaning it up by hand.
 
@@ -60,8 +60,8 @@ Gate added:
 
 ```powershell
 Get-PSDrive -Name C,F
-Test-Path F:\Aisaak\CompanyArtifacts\llm-wiki-completed
-Test-Path F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
+Test-Path <wiki-root>
+Test-Path <rendered-audit-root>\summary.json
 ```
 
 Then run the system checks that prove the archive and public proof still line up:
@@ -78,15 +78,15 @@ After:
 ```txt
 accepted review result exists
 zero-item revision plan exists
-publication approval hash matches contentSha256
+publication review record matches the current content digest
 archive_files_copied=382
 source_markdown_count=350
 archive_markdown_count=350
-Indexed 350 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
+Indexed 350 markdown files into <wiki-root>\wiki_fts.db
 rendered desktop/mobile receipts still pass
 ```
 
-Source: repo path, wiki root, rendered-audit root, test-temp root, archive sync output, and publication approval hash.
+Source: repo path, wiki root, rendered-audit root, test-temp root, archive sync output, and publication review record.
 
 Accept only when: the receipt was produced under the named roots and the archive/index/rendered checks pass after the run.
 
@@ -138,7 +138,7 @@ The bad version looks harmless in the moment:
 "Archive refreshed."
 ```
 
-None of those statements are enough. The better receipt names where the work landed: `dist`, `F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json`, `F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db`, and `F:\Aisaak\CompanyArtifacts\test-temp\vibecode-node`.
+None of those statements are enough. The better receipt names where the work landed: `dist`, `<rendered-audit-root>\summary.json`, `<wiki-root>\wiki_fts.db`, and `<test-temp-root>\vibecode-node`.
 
 That is the whole point. A disk contract turns "it worked" into "it worked, and the evidence is in the place the next agent will search."
 
@@ -159,10 +159,10 @@ The point is not that F is always the right disk. The point is that this machine
 The current contract names the durable locations:
 
 ```txt
-product repo: F:\Aisaak\Projects\vibecode-town
-LLM wiki: F:\Aisaak\CompanyArtifacts\llm-wiki-completed
-rendered evidence: F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest
-test temp: F:\Aisaak\CompanyArtifacts\test-temp
+product repo: <repo-root>
+LLM wiki: <wiki-root>
+rendered evidence: <rendered-audit-root>
+test temp: <test-temp-root>
 ```
 
 The archive receipt for this article revision was:
@@ -171,7 +171,7 @@ The archive receipt for this article revision was:
 archive_files_copied=382
 source_markdown_count=350
 archive_markdown_count=350
-Indexed 350 markdown files into F:\Aisaak\CompanyArtifacts\llm-wiki-completed\wiki_fts.db
+Indexed 350 markdown files into <wiki-root>\wiki_fts.db
 ```
 
 That is why the path contract matters. Without it, an agent can pass a test while leaving the evidence trail in the wrong place.
@@ -194,21 +194,21 @@ The cost arrives in the next session. The wiki says the archive is current, the 
 The better version is:
 
 ```txt
-start in F:\Aisaak\Projects\vibecode-town
-write wiki memory to F:\Aisaak\CompanyArtifacts\llm-wiki-completed
-write rendered proof to F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest
-write self-test fixtures to F:\Aisaak\CompanyArtifacts\test-temp
+start in <repo-root>
+write wiki memory to <wiki-root>
+write rendered evidence to <rendered-audit-root>
+write self-test fixtures to <test-temp-root>
 fail checks when the archive and index drift
 ```
 
 The difference looks small until the third autonomous loop. Then it is the difference between "resume from the archive" and "search the laptop."
 
-The same rule applies to rendered proof. The public post image contract is not only a design rule. It is a filesystem rule:
+The same rule applies to rendered evidence. The public image rule is not only a design rule. It is a filesystem rule:
 
 ```txt
 body image: /images/posts/ai-agent-work-disk-contract.png
 ogImage: /images/posts/ai-agent-work-disk-contract.png
-rendered summary: F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
+rendered summary: <rendered-audit-root>\summary.json
 desktop first-screen image check: 10/10
 mobile first-screen image check: 10/10
 surface expected images: 2/2
@@ -227,7 +227,7 @@ Vibecode uses the contract this way:
 | operating memory | scatter notes in chat | store handoff/wiki/index on F |
 | completed archive | leave receipts in temp | copy durable evidence to archive |
 | self-test temp | use OS temp silently | use project temp root first |
-| screenshots | trust generated HTML | write rendered proof to audit dir |
+| screenshots | trust generated HTML | write rendered evidence to audit dir |
 
 The implementation is deliberately boring. Scripts read repo-specific temp variables first, then shared temp variables, then a large local archive drive, and only then fall back to the OS default.
 
@@ -235,7 +235,7 @@ The implementation is deliberately boring. Scripts read repo-specific temp varia
 VIBECODE_TEST_TEMP_DIR
 PROJECT_TEST_TEMP_DIR
 TEST_TEMP_DIR
-F:\Aisaak\CompanyArtifacts\test-temp
+<test-temp-root>
 os.tmpdir()
 ```
 
@@ -250,9 +250,9 @@ That distinction matters. A prompt reminder can be missed. A script-level path c
 For a repo with long-running agents, write the contract down before the first autonomous loop:
 
 ```powershell
-$env:VIBECODE_TEST_TEMP_DIR = "F:\Aisaak\CompanyArtifacts\test-temp\vibecode-node"
-$env:PROJECT_TEST_TEMP_DIR = "F:\Aisaak\CompanyArtifacts\test-temp\vibecode-town"
-$env:LLM_WIKI_ROOT = "F:\Aisaak\CompanyArtifacts\llm-wiki-completed"
+$env:VIBECODE_TEST_TEMP_DIR = "<test-temp-root>\vibecode-node"
+$env:PROJECT_TEST_TEMP_DIR = "<test-temp-root>\vibecode-town"
+$env:LLM_WIKI_ROOT = "<wiki-root>"
 ```
 
 Then add a drift check:
@@ -318,7 +318,7 @@ Before trusting an agent-produced receipt, ask:
 If a new agent starts tomorrow, where will it search for this artifact?
 ```
 
-Forward this to the operator who says, "just move the C files to F after the run." The decision is narrow: can they accept the receipt as operating memory, or must the agent rerun with repo, wiki, rendered proof, and test temp roots already pointed at the durable work disk?
+Forward this to the operator who says, "just move the C files to F after the run." The decision is narrow: can they accept the receipt as operating memory, or must the agent rerun with repo, wiki, rendered evidence, and test temp roots already pointed at the durable work disk?
 
 If the answer is "the chat," "Downloads," or "whatever temp folder the SDK picked," the receipt is not operational memory. It is debris.
 

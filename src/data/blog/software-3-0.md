@@ -141,7 +141,7 @@ reindex_wiki.py
 archive_completed_artifacts.ps1
 ```
 
-The cost was not theoretical. A Korean transcript on an English blog would have made the site look unattended. Reused images would have told the reader the evidence was decorative. A premature product mention would have turned a technical article into a sales leak. A stale approval hash would have made the next operator trust a version no one had actually approved.
+The cost was not theoretical. A source-language mismatch on an English blog would have made the site look unattended. Reused images would have told the reader the evidence was decorative. A premature product mention would have turned a technical article into a sales leak. A stale approval record would have made the next operator trust a version no one had actually approved.
 
 That is the expensive part of cheap generation: the mistake arrives looking finished. Without a rejection path, the team pays for it later as rereading time, cleanup work, and lost credibility.
 
@@ -162,7 +162,7 @@ Before the reference-ceiling pass, the article had already passed the normal pub
 The above-gate audit made that difference visible:
 
 ```txt
-report=F:\Aisaak\CompanyArtifacts\vibecode-reference-ceiling-audit\latest.json
+report=<artifact-root>\\vibecode-reference-ceiling-audit\latest.json
 slug=software-3-0
 score=85
 grade=strong-but-thin
@@ -181,8 +181,8 @@ src/data/publication-approvals.json
 scripts/audit-reference-ceiling.mjs
 scripts/audit-reference-writing.mjs
 scripts/verify-rendered-pages.mjs
-F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
-F:\Aisaak\CompanyArtifacts\llm-wiki-completed\companies\vibecode-town\plans\software-3-0-evidence-bundle.md
+<rendered-audit-root>\summary.json
+<wiki-root>\companies\vibecode-town\plans\software-3-0-evidence-bundle.md
 ```
 
 That list is the new engineering object. Not the prompt. Not the chat. The object is the contract around the generated work.
@@ -214,9 +214,9 @@ One verified Vibecode Town receipt is small enough to inspect:
 ```txt
 published posts checked: 10
 packet-backed posts: 9
-post image contracts checked: 10
+image rules checked: 10
 rendered viewport checks: 24
-publication approval records: 10
+publication review records: 10
 reference-writing average score: 100
 reference-ceiling average score before this pass: 96
 ```
@@ -273,4 +273,4 @@ The limit appears when the output has to survive contact with users, money, secu
 
 The engineering discipline is still the same shape: define the system, constrain the change, verify the result. The difference is that now the unverified output arrives much faster.
 
-Before shipping agent-written work, ask one final question: "What would have stopped this output?" If the answer is "I would have noticed," the process is still Software 2.0 review wearing Software 3.0 speed. If the answer is a source, boundary, verifier, receipt, and approval hash, the system has a real contract.
+Before shipping agent-written work, ask one final question: "What would have stopped this output?" If the answer is "I would have noticed," the process is still Software 2.0 review wearing Software 3.0 speed. If the answer is a source, boundary, verifier, receipt, and approval record, the system has a real contract.

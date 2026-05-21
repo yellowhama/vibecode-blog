@@ -53,7 +53,7 @@ current lifecycle: alpha
 
 That inventory is what keeps the post honest. The article can recommend the pattern, but it cannot pretend the upstream spec is finished.
 
-![Rendered proof diagram for DESIGN.md roles, component references, and lint gate](/images/posts/design-is-a-technical-contract.png)
+![rendered evidence diagram for DESIGN.md roles, component references, and lint gate](/images/posts/design-is-a-technical-contract.png)
 
 Read the image as a proof object, not decoration. The left side is the durable role/value memory; the middle is the component dependency graph; the right side is the lint/review gate that can reject a bad agent decision before it becomes another screenshot to imitate.
 
@@ -188,9 +188,9 @@ That snippet does two jobs. The token block gives the agent values. The prose te
 
 The same pattern is now used for Vibecode post imagery.
 
-On 2026-05-20, this site had 10 public post image contracts and 10 hash-bound publication approvals. That is not a giant design system. It is small enough to inspect by hand, which makes it a useful test case: if the contract cannot keep 10 posts honest, it definitely will not keep a 200-screen product honest.
+On 2026-05-20, this site had 10 public image rules and 10 current publication records. That is not a giant design system. It is small enough to inspect by hand, which makes it a useful test case: if the contract cannot keep 10 posts honest, it definitely will not keep a 200-screen product honest.
 
-The public image contract is not "make the post look nice." It lives in `src/data/post-image-contracts.json` as structured data:
+The public image rule is not "make the post look nice." It lives in `src/data/post-image-contracts.json` as structured data:
 
 ```json
 {
@@ -238,7 +238,7 @@ That 2026-05-21 run built 41 pages, indexed 10 pages and 2067 words, checked 24 
 
 That is a design-system lesson in miniature. A visual decision becomes a named role, the role becomes data, and the data becomes lintable. The agent can still generate the image, but it cannot silently use a generic asset that has no relationship to the article.
 
-Without the contract, a generic "abstract design system" hero could pass a human glance. With the contract, it has to match the slug, the `ogImage`, the dimensions, the anchors, the rendered page, and the approval hash. That is the difference between taste as a suggestion and taste as an operating surface.
+Without the contract, a generic "abstract design system" hero could pass a human glance. With the contract, it has to match the slug, the `ogImage`, the dimensions, the anchors, the rendered page, and the approval record. That is the difference between taste as a suggestion and taste as an operating surface.
 
 ## Design Review Still Has Two Surfaces
 
@@ -322,7 +322,7 @@ Gate added:
 - Reject any visual decision that cannot round-trip into tokens, component props, or a patch checklist.
 
 After:
-- The current accepted review, zero-item revision plan, approval hash, and contentSha256 point at the revised article.
+- The current accepted review, zero-item revision plan, approval record, and current content digest point at the revised article.
 - The article has a source packet, agent contract, HTML review surface, CLI snapshot, and public image-contract receipt.
 - The next agent gets a role to preserve instead of a screenshot to imitate.
 ```

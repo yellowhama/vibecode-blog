@@ -3,9 +3,6 @@ import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@/utils/slugify";
 import { getPath } from "@/utils/getPath";
 import Datetime from "./Datetime.astro";
-import referenceCeiling from "@/data/reference-ceiling-scores.json";
-import referenceBloggerCeiling from "@/data/reference-blogger-ceiling-scores.json";
-import writingPulse from "@/data/writing-pulse-scores.json";
 
 type Props = {
   variant?: "h2" | "h3";
@@ -14,17 +11,10 @@ type Props = {
 const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 const { title, description, featured, ogImage, series, workflow, references, ...props } = data;
 const cardClass = featured ? "blog-card-featured" : "blog-card";
-const seriesLabel = series ?? "Field Journal";
-const ceilingScore = referenceCeiling.posts[id as keyof typeof referenceCeiling.posts]?.score;
-const bloggerCeilingScore = referenceBloggerCeiling.posts[id as keyof typeof referenceBloggerCeiling.posts]?.score;
-const pulseScore = writingPulse.posts[id as keyof typeof writingPulse.posts]?.score;
-const evidenceStrength = (bloggerCeilingScore ?? 0) + (ceilingScore ?? 0) + (pulseScore ?? 0) + Math.min(references?.length ?? 0, 6) * 3 + (featured ? 2 : 0);
-const proofBadges = [
-  workflow === "packet" ? "Source-backed" : "Site note",
-  `${references?.length ?? 0} references`,
-  "Original visual",
-  "Practical rule",
-].filter(Boolean);
+const seriesLabel = series ?? "Field Log";
+const sourceLabel = workflow === "packet" && references?.length
+  ? `${references.length} source${references.length === 1 ? "" : "s"}`
+  : "Field note";
 
 // Ensure we have a valid image path. If ogImage is missing, use a fallback based on the slug.
 
@@ -42,23 +32,15 @@ const thumbnail = ogImage && ogImage !== "" ? ogImage : getPlaceholder(id);
 
 <li
   class="list-none group"
-  data-evidence-card
+  data-article-card
   data-post-slug={id}
-  data-image-contract={thumbnail}
-  data-reference-blogger-score={bloggerCeilingScore ?? 0}
-  data-reference-score={ceilingScore ?? 0}
-  data-writing-pulse-score={pulseScore ?? 0}
-  data-source-count={references?.length ?? 0}
-  data-evidence-strength={evidenceStrength}
-  data-surfacing-reason={`card-evidence-strength-${evidenceStrength}`}
-  data-publication-approved="true"
 >
   <a
     href={getPath(id, filePath)}
     class:list={[cardClass, "block no-underline flex flex-col md:flex-row gap-8 items-start w-full"]}
   >
     <div class="flex-1 w-full">
-      <div class="text-mono text-[0.6rem] tracking-widest text-ink-faded uppercase mb-2">{featured ? "Featured" : "Journal Entry"} / {seriesLabel}</div>
+      <div class="text-mono text-[0.6rem] tracking-widest text-ink-faded uppercase mb-2">{featured ? "Start here" : seriesLabel}</div>
       <Heading
         style={{ viewTransitionName: slugifyStr(title.replaceAll(".", "-")) }}
         class="text-2xl md:text-3xl font-serif italic text-ink group-hover:underline decoration-accent/30 leading-tight mb-3"
@@ -67,13 +49,12 @@ const thumbnail = ogImage && ogImage !== "" ? ogImage : getPlaceholder(id);
       </Heading>
       <Datetime {...props} class="text-ink-faded" />
       <p class="mt-4 text-base leading-relaxed text-text-secondary line-clamp-3">{description}</p>
-      <p class="mt-3 max-w-2xl font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
-        Start with the artifact: a concrete claim, a source trail, and a visual you can inspect before opening the full essay.
-      </p>
-      <div class="mt-5 flex flex-wrap gap-2 font-mono text-[0.54rem] font-bold uppercase tracking-[0.14em] text-ink-faded" aria-label="Publication proof status">
-        {proofBadges.map(badge => (
-          <span class="border border-ink/10 bg-background px-2 py-1">{badge}</span>
-        ))}
+      <div class="mt-5 flex flex-wrap gap-3 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded" aria-label="Article metadata">
+        <span>{sourceLabel}</span>
+        <span aria-hidden="true">/</span>
+        <span>visual artifact</span>
+        <span aria-hidden="true">/</span>
+        <span>decision rule</span>
       </div>
     </div>
     

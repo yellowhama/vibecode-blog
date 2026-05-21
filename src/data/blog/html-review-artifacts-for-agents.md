@@ -36,7 +36,7 @@ AI coding agents no longer struggle to write plans. The newer failure mode is th
 The useful example was a DESIGN.md spec review. The canon stayed in Markdown under the LLM wiki. The browser-readable artifact lived separately at:
 
 ```txt
-F:\Aisaak\CompanyArtifacts\llm-wiki-completed\companies\vibecode-town\html-artifacts\design-md-spec-operating-review-2026-05-18.html
+<wiki-root>\companies\vibecode-town\html-artifacts\design-md-spec-operating-review-2026-05-18.html
 ```
 
 That file was useful because it showed source cards, token swatches, a risk table, and a copyable decision record in one screen. It would have been dangerous if it became the only place the decision lived.
@@ -118,7 +118,7 @@ Template:
 companies/vibecode-town/html-review-artifact-template.md
 
 Current rendered receipt:
-F:\Aisaak\CompanyArtifacts\vibecode-rendered-audit\latest\summary.json
+<rendered-audit-root>\summary.json
 ```
 
 The page did four jobs that plain Markdown would have made easy to skip:
@@ -182,7 +182,7 @@ After:
 ```txt
 accepted review result exists
 zero-item revision plan exists
-publication approval hash matches contentSha256
+publication review record matches the current content digest
 rendered desktop/mobile receipts still pass
 the exported decision survives without the HTML page
 ```

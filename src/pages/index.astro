@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Scribble from "@/components/Scribble.astro";
+import NewsletterSignup from "@/components/NewsletterSignup.astro";
 
 import Footer from "@/components/Footer.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
@@ -29,20 +30,16 @@ const getEvidenceStrength = (post: (typeof evidencePosts)[number]) => {
   return bloggerScore + referenceScore + pulseScore + sourceScore + featuredBonus;
 };
 const evidenceRankedPosts = [...evidencePosts].sort((a, b) => getEvidenceStrength(b) - getEvidenceStrength(a));
-const recentPosts = evidenceRankedPosts.slice(0, SITE.postPerIndex);
 const featuredPosts = evidenceRankedPosts.slice(0, 1);
 const leadPost = evidenceRankedPosts[0];
-const leadBloggerScore = leadPost ? getReferenceBloggerCeiling(leadPost.id) : undefined;
-const leadReferenceScore = leadPost ? getReferenceCeiling(leadPost.id) : undefined;
-const leadWritingPulseScore = leadPost ? getWritingPulse(leadPost.id) : undefined;
+const recentPosts = evidenceRankedPosts.filter(post => post.id !== leadPost?.id).slice(0, SITE.postPerIndex);
 const leadSourceCount = leadPost?.data.references?.length ?? 0;
-const leadEvidenceStrength = leadPost ? getEvidenceStrength(leadPost) : 0;
 const leadProofRows = leadPost
   ? [
-      { label: "Why read", value: "A design system stops being taste once an agent can read it, edit it, and check it." },
-      { label: "What it shows", value: "The article follows one concrete DESIGN.md file from roles and tokens to a lintable contract." },
-      { label: "Source trail", value: `${leadSourceCount} outside references and the working artifact behind the argument.` },
-      { label: "Use it for", value: "Before asking an agent to copy a style, give it roles, token names, and a way to reject bad contrast." },
+      { label: "Artifact", value: "One DESIGN.md file with roles, token values, and the reasoning that keeps them connected." },
+      { label: "Problem", value: "Agents can copy a look while losing the design decision that made the look work." },
+      { label: "Rule", value: "Give the agent named roles, concrete tokens, and a way to reject bad contrast." },
+      { label: "Sources", value: `${leadSourceCount} references behind the argument.` },
     ]
   : [];
 const editorialPrinciples = [
@@ -53,8 +50,8 @@ const editorialPrinciples = [
 ---
 
 <Layout
-  title="vibecode | Evidence-backed agent engineering"
-  description="Evidence-backed technical notes on AI-assisted software work, public publishing gates, rendered proof, and agent operating contracts."
+  title="vibecode | Field notes for agentic software"
+  description="Field notes for people shipping software with agents: real artifacts, broken runs, design contracts, and operating rules."
 >
   <Header />
 
@@ -63,42 +60,28 @@ const editorialPrinciples = [
 
     <div class="app-layout relative z-10">
       <div class="flex flex-wrap items-center gap-4 mb-10 text-[0.8rem] tracking-[0.28em] font-mono text-ink-faded uppercase">
-        <span>Evidence-backed field notes</span>
+        <span>Agentic software field notes</span>
         <span class="h-px w-12 bg-accent"></span>
         <span>2026.05</span>
         <a href="/posts/" class="font-black text-ink underline underline-offset-4">Archive</a>
       </div>
       <h1 class="text-5xl md:text-7xl font-serif italic text-ink tracking-tighter leading-[0.95] mb-10 max-w-4xl">
-        Agent output is cheap. <br/> Public trust needs <Scribble type="underline">receipts</Scribble>.
+        Field notes for people shipping software with <Scribble type="underline">agents</Scribble>.
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_24rem] gap-12 items-end">
         <p class="text-xl md:text-2xl text-text-secondary font-serif leading-relaxed italic">
-          Technical notes on AI-assisted software work, written only when a claim can point to a source, a failure, a verifier, or a visible artifact.
+          Real artifacts, broken runs, design contracts, and operating rules from AI-assisted software work. Start from the artifact, not the take.
         </p>
         {leadPost ? (
           <a
             href={`/posts/${leadPost.id}`}
             class="order-first block border border-ink/10 bg-background/90 p-3 shadow-sm no-underline transition-colors hover:border-accent/50 md:order-none"
-            data-evidence-card
+            data-article-card
             data-post-slug={leadPost.id}
-            data-image-contract={leadPost.data.ogImage}
-            data-reference-blogger-score={leadBloggerScore ?? 0}
-            data-reference-score={leadReferenceScore ?? 0}
-            data-writing-pulse-score={leadWritingPulseScore ?? 0}
-            data-source-count={leadSourceCount}
-            data-evidence-strength={leadEvidenceStrength}
-            data-evidence-rank="1"
-            data-surfacing-reason={`evidence-strength-${leadEvidenceStrength}`}
-            data-publication-approved="true"
           >
             <img src={leadPost.data.ogImage} alt={leadPost.data.title} class="aspect-[16/9] w-full border border-ink/10 bg-paper-warm object-contain p-2" />
-            <div class="mt-4 flex flex-wrap gap-2 font-mono text-[0.54rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
-              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Source-backed</span>
-              <span class="border border-ink/10 bg-paper-warm px-2 py-1">{leadSourceCount} references</span>
-              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Original visual</span>
-              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Practical rule</span>
-            </div>
-            <p class="mt-4 font-serif text-xl italic leading-tight text-ink">{leadPost.data.title}</p>
+            <p class="mt-4 font-mono text-[0.56rem] font-bold uppercase tracking-[0.16em] text-ink-faded">Start here / {leadPost.data.series ?? "Field Log"}</p>
+            <p class="mt-2 font-serif text-xl italic leading-tight text-ink">{leadPost.data.title}</p>
             <p class="mt-2 text-sm leading-relaxed text-text-secondary">{leadPost.data.description}</p>
             <dl class="mt-4 grid grid-cols-1 gap-2 border-t border-ink/10 pt-4">
               {leadProofRows.map(row => (
@@ -109,7 +92,7 @@ const editorialPrinciples = [
               ))}
             </dl>
             <p class="mt-3 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
-              Start here if you want design guidance that an agent can actually use, not another moodboard.
+              Start here if you want design guidance an agent can actually use, not another moodboard.
             </p>
           </a>
         ) : null}
@@ -119,10 +102,10 @@ const editorialPrinciples = [
       </a>
       <div class="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
         <a href="/posts/" class="group hidden items-center gap-4 font-mono text-xs tracking-[0.3em] uppercase bg-accent text-ink px-6 py-4 hover:bg-accent-dim transition-colors font-black md:flex">
-          Read the Evidence Archive <span>&rarr;</span>
+          Read the Archive <span>&rarr;</span>
         </a>
         <a href="/about/" class="font-mono text-[0.65rem] tracking-[0.2em] uppercase text-ink-faded hover:text-ink underline underline-offset-4">
-          About the Vibe Coding project
+          About the project
         </a>
       </div>
       <dl class="mt-14 grid grid-cols-1 gap-3 md:grid-cols-3" aria-label="Editorial principles">
@@ -141,18 +124,14 @@ const editorialPrinciples = [
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mt-32">
       <div class="lg:col-span-8 space-y-16">
-        <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10 border-b border-ink/5 pb-4">Featured Evidence</h2>
+        <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10 border-b border-ink/5 pb-4">Start Here</h2>
 
         {featuredPosts.length > 0 ? (
           <section class="featured-lead">
             <a href={`/posts/${featuredPosts[0].id}`} class="group block no-underline">
-              <div class="mb-5 flex flex-wrap gap-2 font-mono text-[0.58rem] font-bold uppercase tracking-[0.16em]">
-                <span class="border border-ink/10 bg-paper-warm px-2 py-1 text-ink-faded">{featuredPosts[0].data.series ?? "Field Journal"}</span>
-                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Source-backed</span>
-                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">{featuredPosts[0].data.references?.length ?? 0} references</span>
-                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Original visual</span>
-                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Practical rule</span>
-              </div>
+              <p class="mb-5 font-mono text-[0.58rem] font-bold uppercase tracking-[0.16em] text-ink-faded">
+                {featuredPosts[0].data.series ?? "Field Log"} / {featuredPosts[0].data.references?.length ?? 0} references
+              </p>
               <h2 class="text-4xl md:text-6xl font-serif italic mb-8 leading-[1.1] group-hover:underline decoration-accent/30 text-ink">
                 {featuredPosts[0].data.title}
               </h2>
@@ -169,21 +148,18 @@ const editorialPrinciples = [
       </div>
 
       <aside class="lg:col-span-4 border-t lg:border-t-0 lg:border-l border-ink/10 pt-16 lg:pt-0 lg:pl-16"> 
-        <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10">Recent Receipts</h2>
+        <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10">Latest Field Notes</h2>
         <ul class="space-y-10">
           {recentPosts.length > 0 ? (
             recentPosts.map(post => (
               <li class="relative pl-0 group">
                 <a href={`/posts/${post.id}`} class="block no-underline">
                   <p class="mb-2 font-mono text-[0.6rem] font-bold uppercase tracking-[0.22em] text-ink-faded">
-                    {post.data.series ?? "Field Journal"}
+                    {post.data.series ?? "Field Log"}
                   </p>
                   <h4 class="text-xl font-serif italic group-hover:text-accent-dim leading-tight text-ink">{post.data.title}</h4>
                   <p class="mt-2 font-mono text-[0.55rem] uppercase tracking-[0.16em] text-ink-faded">
-                    {post.data.references?.length ?? 0} references / original visual / practical rule
-                  </p>
-                  <p class="mt-1 font-mono text-[0.52rem] uppercase tracking-[0.14em] text-ink-faded">
-                    Reader value: claim, proof artifact, and boundary are visible before opening.
+                    {post.data.references?.length ?? 0} references / artifact / decision rule
                   </p>
                 </a>
               </li>
@@ -201,23 +177,9 @@ const editorialPrinciples = [
     <div class="app-layout max-w-2xl mx-auto text-center relative z-10">
       <h2 class="text-3xl md:text-4xl font-serif italic mb-4 text-ink">Get the Field Notes</h2>
       <p class="text-lg text-text-secondary font-serif italic mb-10">
-        New posts go out only after source, image, rendered, and approval checks pass. <br/> Leave your email to get the next evidence-backed note.
+        Get one field note when there is a real artifact worth studying.
       </p>
-      <form class="flex flex-col sm:flex-row gap-4">
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your address"
-          class="flex-1 px-8 py-4 bg-background border-2 border-ink/10 font-serif italic focus:outline-none focus:border-accent text-lg rounded-xl transition-all"
-          required
-        />
-        <button
-          type="submit"
-          class="bg-ink text-background px-10 py-4 font-mono text-xs tracking-[0.3em] uppercase font-black hover:bg-ink/90 transition-all rounded-xl shadow-lg active:scale-95"
-        >
-          Subscribe
-        </button>
-      </form>
+      <NewsletterSignup compact class="mx-auto max-w-xl" />
       <p class="mt-6 text-[10px] font-mono text-ink-faded uppercase tracking-[0.2em] font-bold">No hype. No spam. Only signal.</p>
     </div>
   </section>
