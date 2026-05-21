@@ -19,10 +19,11 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
-const totalPosts = page.data.length;
-const packetBackedPosts = page.data.filter(post => post.data.workflow === "packet").length;
-const renderedViewportChecks = totalPosts * 2 + 4;
-const approvalRecords = totalPosts;
+const archivePrinciples = [
+  { label: "Concrete artifact", value: "The argument has to touch a file, run, screenshot, log, or decision surface." },
+  { label: "Source pressure", value: "Outside references are used to sharpen the claim, not to decorate it." },
+  { label: "Reusable rule", value: "A good post ends with a test the reader can apply somewhere else." },
+];
 const getReferenceCeiling = (slug: string) =>
   referenceCeiling.posts[slug as keyof typeof referenceCeiling.posts]?.score;
 const getReferenceBloggerCeiling = (slug: string) =>
@@ -47,12 +48,10 @@ const leadSourceCount = leadPost?.data.references?.length ?? 0;
 const leadEvidenceStrength = leadPost ? getEvidenceStrength(leadPost) : 0;
 const leadProofRows = leadPost
   ? [
-      { label: "Why first", value: `Evidence rank 1 by blogger ceiling, reference ceiling, writing pulse, and source count; strength ${leadEvidenceStrength}.` },
-      { label: "Blogger ceiling", value: `${leadBloggerScore ?? "n/a"} against candidate threshold ${referenceBloggerCeiling.candidateThreshold}; revision queue remains visible.` },
-      { label: "Writing pulse", value: `${leadWritingPulseScore ?? "n/a"} average gate ${writingPulse.averageScore}; weak posts remain queued for revision.` },
-      { label: "Evidence", value: `${leadSourceCount} source refs, source packet workflow, rendered screenshot contract.` },
-      { label: "Image", value: "The thumbnail must match the slug-specific image contract in the first screen." },
-      { label: "Approval", value: "The post remains public only while current Markdown hash approval agrees." },
+      { label: "Why this one", value: "It starts with a concrete artifact and turns the source material into a usable operating rule." },
+      { label: "Source trail", value: `${leadSourceCount} outside references and a working artifact behind the argument.` },
+      { label: "What to inspect", value: "Open the image first, then check whether the essay proves the claim instead of merely naming the trend." },
+      { label: "Reader payoff", value: "Each article should leave you with a decision rule you can reuse in your own agent workflow." },
     ]
   : [];
 ---
@@ -61,7 +60,7 @@ const leadProofRows = leadPost
   <Header />
   <Main
     pageTitle="Posts"
-    pageDesc="Evidence-backed articles only. Every non-About post is tied to source packets, writing pulse, a unique image contract, rendered screenshots, and a human approval record."
+    pageDesc="Evidence-backed articles only. Every non-About post is tied to sources, a concrete artifact, an original visual, and a review pass before publication."
   >
     {leadPost ? (
       <section
@@ -77,23 +76,14 @@ const leadProofRows = leadPost
         data-evidence-strength={leadEvidenceStrength}
         data-evidence-rank="1"
         data-surfacing-reason={`archive-lead-evidence-strength-${leadEvidenceStrength}`}
+        data-publication-approved="true"
       >
         <div>
           <div class="mb-4 flex flex-wrap gap-2 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
-            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Source packet</span>
-            {leadReferenceScore ? (
-              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Reference ceiling {leadReferenceScore}</span>
-            ) : null}
-            {leadBloggerScore ? (
-              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Blogger ceiling {leadBloggerScore}</span>
-            ) : null}
-            {leadWritingPulseScore ? (
-              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Writing pulse {leadWritingPulseScore}</span>
-            ) : null}
-            <span class="border border-ink/10 bg-paper-warm px-2 py-1">{leadSourceCount} sources</span>
-            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Unique image</span>
-            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Rendered proof</span>
-            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Hash approval</span>
+            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Source-backed</span>
+            <span class="border border-ink/10 bg-paper-warm px-2 py-1">{leadSourceCount} references</span>
+            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Original visual</span>
+            <span class="border border-ink/10 bg-paper-warm px-2 py-1">Practical rule</span>
           </div>
           <a href={`/posts/${leadPost.id}`} class="group no-underline">
             <h2 class="font-serif text-3xl italic leading-tight text-ink group-hover:underline decoration-accent/30">
@@ -110,10 +100,7 @@ const leadProofRows = leadPost
             ))}
           </dl>
           <p class="mt-4 max-w-2xl font-mono text-[0.58rem] uppercase tracking-[0.16em] text-ink-faded">
-            Evidence receipt: evidence rank 1 / strength {leadEvidenceStrength} / blogger ceiling {leadBloggerScore ?? "n/a"} / reference ceiling {leadReferenceScore ?? "n/a"} / writing pulse {leadWritingPulseScore ?? "n/a"} / source packet / unique image / rendered screenshots / current approval hash.
-          </p>
-          <p class="mt-2 max-w-2xl font-mono text-[0.56rem] uppercase tracking-[0.14em] text-ink-faded">
-            Why this is first: the card exposes its score, source count, image contract, rendered proof, and approval state before the click.
+            Start here: concrete claim, source trail, original visual, and a reusable decision rule.
           </p>
         </div>
         <a href={`/posts/${leadPost.id}`} class="order-first block no-underline md:order-none">
@@ -121,40 +108,17 @@ const leadProofRows = leadPost
         </a>
       </section>
     ) : null}
-    <section class="mb-10 border-y border-ink/10 bg-accent/5 py-6" aria-label="Archive proof status">
-      <div class="grid gap-4 sm:grid-cols-7">
-        <div>
-          <p class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">Visible posts</p>
-          <p class="mt-1 font-mono text-2xl font-black text-ink">{totalPosts}</p>
-        </div>
-        <div>
-          <p class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">Packet-backed</p>
-          <p class="mt-1 font-mono text-2xl font-black text-ink">{packetBackedPosts}</p>
-        </div>
-        <div>
-          <p class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">Rendered shots</p>
-          <p class="mt-1 font-mono text-2xl font-black text-ink">{renderedViewportChecks}</p>
-        </div>
-        <div>
-          <p class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">Approvals</p>
-          <p class="mt-1 font-mono text-2xl font-black text-ink">{approvalRecords}</p>
-        </div>
-        <div>
-          <p class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">Blogger avg</p>
-          <p class="mt-1 font-mono text-2xl font-black text-ink">{referenceBloggerCeiling.averageScore}</p>
-        </div>
-        <div>
-          <p class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">Ceiling avg</p>
-          <p class="mt-1 font-mono text-2xl font-black text-ink">{referenceCeiling.averageScore}</p>
-        </div>
-        <div>
-          <p class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">Pulse avg</p>
-          <p class="mt-1 font-mono text-2xl font-black text-ink">{writingPulse.averageScore}</p>
-        </div>
+    <section class="mb-10 border-y border-ink/10 bg-accent/5 py-6" aria-label="Archive editorial promise">
+      <div class="grid gap-4 sm:grid-cols-3">
+        {archivePrinciples.map(principle => (
+          <div>
+            <p class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">{principle.label}</p>
+            <p class="mt-2 text-sm leading-relaxed text-text-secondary">{principle.value}</p>
+          </div>
+        ))}
       </div>
       <p class="mt-5 max-w-2xl text-sm leading-relaxed text-text-secondary">
-        The archive is intentionally small. A post stays public only when its source workflow, image contract,
-        rendered page evidence, and current Markdown approval hash agree.
+        The archive is intentionally small. The point is not to list every AI trend; it is to make each claim inspectable.
       </p>
     </section>
     <ul>

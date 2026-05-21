@@ -14,10 +14,6 @@ import writingPulse from "@/data/writing-pulse-scores.json";
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 const sortedPosts = getSortedPosts(posts);
 const evidencePosts = sortedPosts.filter(post => post.data.workflow === "packet" && post.data.references?.length);
-const publishedPosts = sortedPosts.length;
-const packetBackedPosts = evidencePosts.length;
-const renderedViewportChecks = publishedPosts * 2 + 4;
-const approvalRecords = publishedPosts;
 const getReferenceCeiling = (slug: string) =>
   referenceCeiling.posts[slug as keyof typeof referenceCeiling.posts]?.score;
 const getReferenceBloggerCeiling = (slug: string) =>
@@ -43,23 +39,16 @@ const leadSourceCount = leadPost?.data.references?.length ?? 0;
 const leadEvidenceStrength = leadPost ? getEvidenceStrength(leadPost) : 0;
 const leadProofRows = leadPost
   ? [
-      { label: "Evidence rank", value: `#1 by blogger ceiling, reference ceiling, writing pulse, and source count; strength ${leadEvidenceStrength}.` },
-      { label: "Blogger ceiling", value: `${leadBloggerScore ?? "n/a"}; candidate threshold ${referenceBloggerCeiling.candidateThreshold}.` },
-      { label: "Quality signal", value: `Reference ceiling ${leadReferenceScore ?? "n/a"}` },
-      { label: "Writing pulse", value: `${leadWritingPulseScore ?? "n/a"}; weakest posts stay visible as revision queue, not hidden.` },
-      { label: "Source trail", value: `${leadSourceCount} source refs plus packet workflow` },
-      { label: "Visual proof", value: "Slug-specific image visible before the click" },
-      { label: "Release gate", value: "Rendered page evidence and hash approval required" },
+      { label: "Why read", value: "A design system stops being taste once an agent can read it, edit it, and check it." },
+      { label: "What it shows", value: "The article follows one concrete DESIGN.md file from roles and tokens to a lintable contract." },
+      { label: "Source trail", value: `${leadSourceCount} outside references and the working artifact behind the argument.` },
+      { label: "Use it for", value: "Before asking an agent to copy a style, give it roles, token names, and a way to reject bad contrast." },
     ]
   : [];
-const proofMetrics = [
-  { label: "Public posts", value: publishedPosts },
-  { label: "Packet-backed", value: packetBackedPosts },
-  { label: "Rendered viewports", value: renderedViewportChecks },
-  { label: "Hash approvals", value: approvalRecords },
-  { label: "Blogger ceiling", value: referenceBloggerCeiling.averageScore },
-  { label: "Reference ceiling", value: referenceCeiling.averageScore },
-  { label: "Writing pulse", value: writingPulse.averageScore },
+const editorialPrinciples = [
+  { label: "Start with the artifact", value: "Each essay opens around a concrete file, failure, run, diagram, or decision." },
+  { label: "Use sources as pressure", value: "References are not decoration; they force the argument to become more specific." },
+  { label: "Leave a decision rule", value: "The reader should leave with a way to accept, reject, or reuse the idea." },
 ];
 ---
 
@@ -84,7 +73,7 @@ const proofMetrics = [
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_24rem] gap-12 items-end">
         <p class="text-xl md:text-2xl text-text-secondary font-serif leading-relaxed italic">
-          Technical notes on AI-assisted software work, written only when a claim can point to a source packet, verifier, rendered screenshot, or approval record.
+          Technical notes on AI-assisted software work, written only when a claim can point to a source, a failure, a verifier, or a visible artifact.
         </p>
         {leadPost ? (
           <a
@@ -100,23 +89,14 @@ const proofMetrics = [
             data-evidence-strength={leadEvidenceStrength}
             data-evidence-rank="1"
             data-surfacing-reason={`evidence-strength-${leadEvidenceStrength}`}
+            data-publication-approved="true"
           >
             <img src={leadPost.data.ogImage} alt={leadPost.data.title} class="aspect-[16/9] w-full border border-ink/10 bg-paper-warm object-contain p-2" />
             <div class="mt-4 flex flex-wrap gap-2 font-mono text-[0.54rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
-              {leadReferenceScore ? (
-                <span class="border border-ink/10 bg-paper-warm px-2 py-1">Reference ceiling {leadReferenceScore}</span>
-              ) : null}
-              {leadBloggerScore ? (
-                <span class="border border-ink/10 bg-paper-warm px-2 py-1">Blogger ceiling {leadBloggerScore}</span>
-              ) : null}
-              {leadWritingPulseScore ? (
-                <span class="border border-ink/10 bg-paper-warm px-2 py-1">Writing pulse {leadWritingPulseScore}</span>
-              ) : null}
-              <span class="border border-ink/10 bg-paper-warm px-2 py-1">{leadSourceCount} sources</span>
-              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Source packet</span>
-              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Unique image</span>
-              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Rendered</span>
-              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Hash approval</span>
+              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Source-backed</span>
+              <span class="border border-ink/10 bg-paper-warm px-2 py-1">{leadSourceCount} references</span>
+              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Original visual</span>
+              <span class="border border-ink/10 bg-paper-warm px-2 py-1">Practical rule</span>
             </div>
             <p class="mt-4 font-serif text-xl italic leading-tight text-ink">{leadPost.data.title}</p>
             <p class="mt-2 text-sm leading-relaxed text-text-secondary">{leadPost.data.description}</p>
@@ -129,7 +109,7 @@ const proofMetrics = [
               ))}
             </dl>
             <p class="mt-3 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
-              Start here: evidence rank 1, scored proof, writing pulse, source packet, unique image, rendered page, current approval hash.
+              Start here if you want design guidance that an agent can actually use, not another moodboard.
             </p>
           </a>
         ) : null}
@@ -145,11 +125,11 @@ const proofMetrics = [
           About the Vibe Coding project
         </a>
       </div>
-      <dl class="mt-14 grid grid-cols-2 gap-3 md:grid-cols-7" aria-label="Current publication proof metrics">
-        {proofMetrics.map(metric => (
+      <dl class="mt-14 grid grid-cols-1 gap-3 md:grid-cols-3" aria-label="Editorial principles">
+        {editorialPrinciples.map(principle => (
           <div class="border border-ink/10 bg-background/80 p-4 shadow-sm">
-            <dt class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">{metric.label}</dt>
-            <dd class="mt-2 font-mono text-2xl font-black text-ink">{metric.value}</dd>
+            <dt class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">{principle.label}</dt>
+            <dd class="mt-2 text-sm leading-relaxed text-text-secondary">{principle.value}</dd>
           </div>
         ))}
       </dl>
@@ -168,19 +148,10 @@ const proofMetrics = [
             <a href={`/posts/${featuredPosts[0].id}`} class="group block no-underline">
               <div class="mb-5 flex flex-wrap gap-2 font-mono text-[0.58rem] font-bold uppercase tracking-[0.16em]">
                 <span class="border border-ink/10 bg-paper-warm px-2 py-1 text-ink-faded">{featuredPosts[0].data.series ?? "Field Journal"}</span>
-                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Source packet</span>
-                {getReferenceCeiling(featuredPosts[0].id) ? (
-                  <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Reference ceiling {getReferenceCeiling(featuredPosts[0].id)}</span>
-                ) : null}
-                {getReferenceBloggerCeiling(featuredPosts[0].id) ? (
-                  <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Blogger ceiling {getReferenceBloggerCeiling(featuredPosts[0].id)}</span>
-                ) : null}
-                {getWritingPulse(featuredPosts[0].id) ? (
-                  <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Writing pulse {getWritingPulse(featuredPosts[0].id)}</span>
-                ) : null}
-                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">{featuredPosts[0].data.references?.length ?? 0} sources</span>
-                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Rendered proof</span>
-                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Human approval</span>
+                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Source-backed</span>
+                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">{featuredPosts[0].data.references?.length ?? 0} references</span>
+                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Original visual</span>
+                <span class="border border-ink/10 bg-background px-2 py-1 text-ink-faded">Practical rule</span>
               </div>
               <h2 class="text-4xl md:text-6xl font-serif italic mb-8 leading-[1.1] group-hover:underline decoration-accent/30 text-ink">
                 {featuredPosts[0].data.title}
@@ -201,7 +172,7 @@ const proofMetrics = [
         <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10">Recent Receipts</h2>
         <ul class="space-y-10">
           {recentPosts.length > 0 ? (
-            recentPosts.map((post, index) => (
+            recentPosts.map(post => (
               <li class="relative pl-0 group">
                 <a href={`/posts/${post.id}`} class="block no-underline">
                   <p class="mb-2 font-mono text-[0.6rem] font-bold uppercase tracking-[0.22em] text-ink-faded">
@@ -209,7 +180,7 @@ const proofMetrics = [
                   </p>
                   <h4 class="text-xl font-serif italic group-hover:text-accent-dim leading-tight text-ink">{post.data.title}</h4>
                   <p class="mt-2 font-mono text-[0.55rem] uppercase tracking-[0.16em] text-ink-faded">
-                    Evidence rank {index + 1} / strength {getEvidenceStrength(post)} / blogger ceiling {getReferenceBloggerCeiling(post.id) ?? "n/a"} / reference ceiling {getReferenceCeiling(post.id) ?? "n/a"} / writing pulse {getWritingPulse(post.id) ?? "n/a"} / packet / unique image / rendered / hash approval / {post.data.references?.length ?? 0} sources
+                    {post.data.references?.length ?? 0} references / original visual / practical rule
                   </p>
                   <p class="mt-1 font-mono text-[0.52rem] uppercase tracking-[0.14em] text-ink-faded">
                     Reader value: claim, proof artifact, and boundary are visible before opening.

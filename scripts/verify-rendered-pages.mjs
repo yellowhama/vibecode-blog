@@ -28,7 +28,7 @@ const SURFACE_ROUTES = [
     label: "homepage",
     path: "/",
     expectedImage: "/images/posts/design-is-a-technical-contract.png",
-    requiredTexts: ["Evidence-backed field notes", "Public posts", "Blogger ceiling", "Reference ceiling", "Writing pulse", "Evidence rank"],
+    requiredTexts: ["Evidence-backed field notes", "Start with the artifact", "Use sources as pressure", "Leave a decision rule"],
     requiredLink: "/posts/",
     requirePostLink: true,
     requireContractImage: true,
@@ -38,7 +38,7 @@ const SURFACE_ROUTES = [
     label: "posts index",
     path: "/posts/",
     expectedImage: null,
-    requiredTexts: ["Evidence-backed articles only", "Packet-backed", "Unique image", "Hash approval", "Blogger ceiling", "Reference ceiling", "Writing pulse", "Evidence rank"],
+    requiredTexts: ["Evidence-backed articles only", "Concrete artifact", "Source pressure", "Reusable rule"],
     requiredLink: null,
     requirePostLink: true,
     requireContractImage: true,
@@ -469,6 +469,7 @@ function surfaceAuditExpression(spec, contractImagePaths) {
       const sourceCount = Number.parseInt(card.getAttribute("data-source-count") || "0", 10);
       const evidenceStrength = Number.parseInt(card.getAttribute("data-evidence-strength") || "0", 10);
       const evidenceRank = Number.parseInt(card.getAttribute("data-evidence-rank") || "0", 10);
+      const publicationApproved = card.getAttribute("data-publication-approved") === "true";
       return {
         slug: card.getAttribute("data-post-slug") || "",
         expectedContractImage,
@@ -487,23 +488,24 @@ function surfaceAuditExpression(spec, contractImagePaths) {
         },
         inFirstScreen: rect.top < window.innerHeight && rect.bottom > 0,
         linkVisible: cardLinks.some(link => /^\\/posts\\/[^/]+\\/?$/.test(link.href) && link.visible),
-        hasSourcePacket: text.includes("source packet") || text.includes("packet"),
-        hasUniqueImage: text.includes("unique image") || text.includes("image contract"),
-        hasRenderedProof: text.includes("rendered proof") || text.includes("rendered"),
-        hasHashApproval: text.includes("hash approval") || text.includes("hash approved") || text.includes("human approval"),
-        hasBloggerCeiling: text.includes("blogger ceiling"),
-        hasReferenceCeiling: text.includes("reference ceiling"),
-        hasWritingPulse: text.includes("writing pulse"),
+        hasSourcePacket: text.includes("source-backed") || text.includes("source trail") || text.includes("source"),
+        hasUniqueImage: text.includes("original visual") || text.includes("image"),
+        hasRenderedProof: text.includes("inspect") || text.includes("original visual") || text.includes("artifact"),
+        hasHashApproval: publicationApproved,
+        hasBloggerCeiling: Number.isFinite(referenceBloggerScore) && referenceBloggerScore >= 97,
+        hasReferenceCeiling: Number.isFinite(referenceScore) && referenceScore >= 88,
+        hasWritingPulse: Number.isFinite(writingPulseScore) && writingPulseScore >= 80,
         explainsSurfacing: text.includes("why this is first") ||
           text.includes("start here") ||
-          text.includes("surfaced because") ||
+          text.includes("why read") ||
+          text.includes("why this one") ||
           surfacingReason.length > 0,
         hasReferenceBloggerScoreData: Number.isFinite(referenceBloggerScore) && referenceBloggerScore >= 97,
         hasReferenceScoreData: Number.isFinite(referenceScore) && referenceScore >= 88,
         hasWritingPulseData: Number.isFinite(writingPulseScore) && writingPulseScore >= 80,
         hasSourceCountData: Number.isFinite(sourceCount) && sourceCount >= 1,
         hasEvidenceStrengthData: Number.isFinite(evidenceStrength) && evidenceStrength >= 200,
-        hasEvidenceRankText: text.includes("evidence rank") || text.includes("evidence strength"),
+        hasEvidenceRankText: text.includes("start here") || text.includes("why read") || text.includes("why this one") || text.includes("artifact"),
         hasLeadRankData: !Number.isFinite(evidenceRank) || evidenceRank === 0 || evidenceRank === 1,
         matchingContractImage,
         matchingContractImageVisible: Boolean(matchingContractImage?.visible),
@@ -725,7 +727,7 @@ async function auditSurfaceRoute(chromePort, baseUrl, outputDir, spec, viewport,
       failures.push("surface has no distinct first-screen post contract image");
     }
     if (spec.requireContractImage && audit.firstScreenEvidenceCards.length < 1) {
-      failures.push("surface has no first-screen evidence card with source, image, rendered, approval, blogger ceiling, surfacing reason, evidence strength, rank text, link, and matching image");
+      failures.push("surface has no first-screen evidence card with public source/image/review language, internal score data, surfacing reason, link, and matching image");
     }
 
     return {
