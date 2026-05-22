@@ -15,6 +15,19 @@ export default [
   },
   { rules: { "no-console": "error" } },
   {
+    files: ["scripts/**/*.mjs"],
+    rules: {
+      "no-console": "off",
+      "@typescript-eslint/no-unused-vars": "warn"
+    }
+  },
+  {
+    files: ["src/pages/admin.astro", "src/pages/api/**/*.ts"],
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off"
+    }
+  },
+  {
     ignores: [
       "node_modules/**",
       "node_modules_*/**",

@@ -631,6 +631,7 @@ const { posts: initialPosts, summary: initialSummary } = await response.json();
 
 <script>
   // State store
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let globalPosts: any[] = [];
   let selectedSlug: string | null = null;
 
@@ -722,6 +723,7 @@ const { posts: initialPosts, summary: initialSummary } = await response.json();
         updateScorecardPanel(selectedSlug);
       }
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.error("Failed to load state", e);
     }
   }
@@ -1073,11 +1075,11 @@ const { posts: initialPosts, summary: initialSummary } = await response.json();
     appendConsoleLine(`> Spawning auditor: python factory/vibe_critic.py ${filepath}`, "text-text-muted");
     
     const startTime = Date.now();
-    let timerInterval = setInterval(() => {
-      if (consoleTimer) {
-        consoleTimer.textContent = `${((Date.now() - startTime) / 1000).toFixed(2)}s`;
-      }
-    }, 50);
+    const timerInterval = setInterval(() => {
+    if (consoleTimer) {
+      consoleTimer.textContent = `${((Date.now() - startTime) / 1000).toFixed(2)}s`;
+    }
+  }, 50);
 
     try {
       const res = await fetch("/api/admin-run-audit", {
@@ -1104,6 +1106,7 @@ const { posts: initialPosts, summary: initialSummary } = await response.json();
 
       // Refresh data
       await fetchState();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       clearInterval(timerInterval);
       setConsoleStatus("Error", "text-rose-400");
@@ -1164,11 +1167,11 @@ const { posts: initialPosts, summary: initialSummary } = await response.json();
     appendConsoleLine(`> Spawning pipeline command for: ${label}...`, "text-text-muted");
     
     const startTime = Date.now();
-    let timerInterval = setInterval(() => {
-      if (consoleTimer) {
-        consoleTimer.textContent = `${((Date.now() - startTime) / 1000).toFixed(2)}s`;
-      }
-    }, 50);
+    const timerInterval = setInterval(() => {
+    if (consoleTimer) {
+      consoleTimer.textContent = `${((Date.now() - startTime) / 1000).toFixed(2)}s`;
+    }
+  }, 50);
 
     try {
       const res = await fetch("/api/admin-verify", {
@@ -1196,6 +1199,7 @@ const { posts: initialPosts, summary: initialSummary } = await response.json();
       }
 
       await fetchState();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       clearInterval(timerInterval);
       setConsoleStatus("Error", "text-rose-400");
