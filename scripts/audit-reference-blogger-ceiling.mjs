@@ -1,6 +1,7 @@
 import { existsSync } from "node:fs";
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { basename, dirname, join, resolve } from "node:path";
+import { getProseParagraphs } from "./ast-utils.mjs";
 
 const DEFAULT_BLOG_DIR = "src/data/blog";
 
@@ -109,10 +110,7 @@ function headings(body) {
 }
 
 function paragraphWordCounts(body) {
-  return body
-    .split(/\r?\n\r?\n/)
-    .map(paragraph => words(paragraph).length)
-    .filter(count => count > 0);
+  return getProseParagraphs(body).map(p => p.wordCount);
 }
 
 function hasNear(text, leftPattern, rightPattern, window = 220) {

@@ -1,0 +1,1236 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { SITE } from "@/config";
+import { GET } from "./api/admin-data";
+
+// Run GET handler of our admin-data API server-side for initial load
+const response = await GET();
+const { posts: initialPosts, summary: initialSummary } = await response.json();
+---
+
+<Layout title={`Admin Dashboard | ${SITE.title}`}>
+  <Header />
+  <main id="main-content" class="app-layout admin-dashboard-container">
+    <section class="border-b border-border pt-12 pb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-xs tracking-[0.14em] text-text-muted uppercase font-mono">Publisher Control Surface</p>
+          <h1 class="mt-2 text-4xl leading-tight font-bold font-serif">
+            Operator Dashboard
+          </h1>
+          <p class="mt-2 max-w-2xl text-text-secondary text-sm">
+            Web-based admin portal to manage editorial decisions, inspect audit scorecards, and run content verification gates.
+          </p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="btn-refresh-global" class="blog-btn flex items-center gap-2 text-xs">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="refresh-icon"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            Refresh System State
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Grid -->
+    <section class="py-6 grid gap-4 grid-cols-2 md:grid-cols-4">
+      <div class="stat-card">
+        <span class="stat-label">Published Articles</span>
+        <span class="stat-value" id="stat-published">{initialSummary.totalPublished}</span>
+        <span class="stat-sub">Live on site</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Active Packet Drafts</span>
+        <span class="stat-value text-accent" id="stat-drafts">{initialSummary.totalDrafts}</span>
+        <span class="stat-sub">Pending promotion</span>
+      </div>
+      <div class="stat-card flex flex-col justify-between">
+        <span class="stat-label">Workspace Drafts</span>
+        <span class="stat-value text-indigo-400" id="stat-workspace">{initialSummary.totalWorkspaceDrafts}</span>
+        <span class="stat-sub">Local drafts directory</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Critique Status</span>
+        <div class="critique-summary-mini mt-1">
+          <div class="flex items-center justify-between text-xs mb-1">
+            <span>Pass:</span>
+            <span class="font-mono text-emerald-400" id="stat-crit-pass">{initialSummary.critique.pass}</span>
+          </div>
+          <div class="flex items-center justify-between text-xs mb-1">
+            <span>Fix Required:</span>
+            <span class="font-mono text-rose-400" id="stat-crit-fix">{initialSummary.critique.fixRequired}</span>
+          </div>
+          <div class="flex items-center justify-between text-xs">
+            <span>Pending:</span>
+            <span class="font-mono text-text-muted" id="stat-crit-pending">{initialSummary.critique.pending}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Navigation Tabs -->
+    <section class="admin-main-section">
+      <div class="tabs-container">
+        <button class="tab-btn active" data-tab="tab-articles">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Articles &amp; Lifecycle
+        </button>
+        <button class="tab-btn" data-tab="tab-scorecard">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          Quality Scorecard
+        </button>
+        <button class="tab-btn" data-tab="tab-console">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          Verification Console
+        </button>
+        <button class="tab-btn" data-tab="tab-tuner">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+          Metaphor Tuner
+        </button>
+      </div>
+
+      <!-- Tab 1: Articles and Lifecycle -->
+      <div id="tab-articles" class="tab-panel active">
+        <div class="panel-header-toolbar flex flex-col sm:flex-row justify-between gap-4 mb-4">
+          <div class="flex items-center bg-bg-tertiary rounded-md border border-border px-3 py-1.5 w-full sm:max-w-xs">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-text-muted mr-2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="search-articles" placeholder="Search by title or slug..." class="bg-transparent border-none outline-none text-sm w-full text-foreground" />
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="filter-btn active" data-filter="all">All ({initialPosts.length})</button>
+            <button class="filter-btn" data-filter="draft">Drafts ({initialPosts.filter(p => p.draft).length})</button>
+            <button class="filter-btn" data-filter="published">Published ({initialPosts.filter(p => !p.draft).length})</button>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto rounded-md border border-border">
+          <table class="admin-table w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-bg-secondary text-xs uppercase tracking-wider text-text-muted font-mono border-b border-border">
+                <th class="p-4">Title / Slug</th>
+                <th class="p-4">Workflow</th>
+                <th class="p-4">Type</th>
+                <th class="p-4">Word Count</th>
+                <th class="p-4">Critique Verdict</th>
+                <th class="p-4">Blockers</th>
+                <th class="p-4">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="articles-table-body">
+              {initialPosts.map((post: any) => (
+                <tr class="border-b border-border/60 hover:bg-bg-secondary/40 transition-colors text-sm" data-draft={post.draft ? "true" : "false"} data-search={(`${post.title} ${post.slug}`).toLowerCase()}>
+                  <td class="p-4">
+                    <div class="font-medium text-foreground">{post.title}</div>
+                    <div class="text-xs text-text-muted font-mono">{post.slug}</div>
+                  </td>
+                  <td class="p-4">
+                    <span class={`badge ${post.workflow === "packet" ? "badge-emerald" : "badge-zinc"}`}>{post.workflow}</span>
+                  </td>
+                  <td class="p-4 text-xs font-mono">
+                    <span class={post.draft ? "text-accent font-semibold" : "text-text-muted"}>
+                      {post.draft ? `Draft (${post.location})` : "Published"}
+                    </span>
+                  </td>
+                  <td class="p-4 font-mono text-xs">{post.wordCount} words</td>
+                  <td class="p-4">
+                    {post.critique ? (
+                      <span class={`badge ${post.critique.verdict === "pass" ? "badge-emerald" : "badge-rose"}`}>
+                        {post.critique.verdict === "pass" ? "Pass" : "Fix Required"}
+                      </span>
+                    ) : (
+                      <span class="badge badge-zinc">Pending Critique</span>
+                    )}
+                  </td>
+                  <td class="p-4">
+                    {post.decision?.candidateBlockers && post.decision.candidateBlockers.length > 0 ? (
+                      <div class="flex flex-wrap gap-1 max-w-[200px]">
+                        {post.decision.candidateBlockers.map((blocker: string) => (
+                          <span class="badge-blocker" title={blocker}>{blocker.slice(0, 10)}</span>
+                        ))}
+                      </div>
+                    ) : (
+                      <span class="text-text-muted text-xs">-</span>
+                    )}
+                  </td>
+                  <td class="p-4">
+                    <div class="flex gap-2">
+                      <button class="btn-action-audit" data-slug={post.slug} data-filepath={post.filepath} title="Audit Document">
+                        Audit
+                      </button>
+                      <button class="btn-action-view-scorecard" data-slug={post.slug} title="View Scorecard">
+                        Scorecard
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tab 2: Quality Scorecard -->
+      <div id="tab-scorecard" class="tab-panel">
+        <div class="grid gap-6 md:grid-cols-3">
+          <!-- Article Selector List -->
+          <div class="md:col-span-1 border border-border rounded-md bg-bg-secondary/40 p-4">
+            <h3 class="font-bold text-sm tracking-wide uppercase font-mono text-text-muted mb-3">Select Draft to Inspect</h3>
+            <div class="space-y-2 max-h-[500px] overflow-y-auto pr-2" id="scorecard-selector-list">
+              {initialPosts.map((post: any) => (
+                <div class="selector-card cursor-pointer p-3 border border-border/80 rounded hover:border-accent transition-all" data-slug={post.slug}>
+                  <div class="flex items-center justify-between gap-2 mb-1">
+                    <span class="text-xs font-mono text-text-muted">{post.slug}</span>
+                    {post.critique ? (
+                      <span class={`badge text-[0.65rem] ${post.critique.verdict === "pass" ? "badge-emerald" : "badge-rose"}`}>{post.critique.verdict === "pass" ? "Pass" : "Fix Required"}</span>
+                    ) : (
+                      <span class="badge badge-zinc text-[0.65rem]">Pending</span>
+                    )}
+                  </div>
+                  <div class="text-sm font-semibold text-foreground line-clamp-1">{post.title}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Scorecard Details -->
+          <div class="md:col-span-2 border border-border rounded-md bg-bg-secondary/20 p-6 flex flex-col justify-between" id="scorecard-details-panel">
+            <div class="empty-state text-center py-16 text-text-muted">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4 opacity-55"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+              <p class="text-sm">Select an article from the left panel to inspect its audit findings and critique scorecards.</p>
+            </div>
+            
+            <div class="scorecard-content hidden">
+              <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-border pb-4 mb-4 gap-2">
+                <div>
+                  <h2 class="text-xl font-bold font-serif text-foreground" id="sc-title">Article Title</h2>
+                  <span class="text-xs font-mono text-text-muted" id="sc-slug">slug</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="badge text-xs" id="sc-verdict">Pass</span>
+                  <button id="sc-btn-reaudit" class="blog-btn text-xs py-1 px-3">Run Audit</button>
+                </div>
+              </div>
+
+              <!-- Tabs inside scorecard -->
+              <div class="flex border-b border-border/80 text-xs font-mono mb-4">
+                <button class="sc-tab active mr-4 pb-2" data-sc-tab="sc-critique">Critique &amp; Style</button>
+                <button class="sc-tab mr-4 pb-2" data-sc-tab="sc-decisions">Editorial Decision</button>
+                <button class="sc-tab pb-2" data-sc-tab="sc-raw">Raw Output</button>
+              </div>
+
+              <!-- Critique Panel -->
+              <div id="sc-critique" class="sc-panel active">
+                <div class="mb-4">
+                  <h4 class="font-bold text-xs uppercase tracking-wider font-mono text-text-secondary mb-2">Gate Verdicts</h4>
+                  <div class="grid grid-cols-3 gap-2 text-center text-xs font-mono">
+                    <div class="p-2 border border-border rounded" id="gate-struct-box">
+                      <span class="block text-text-muted mb-1 text-[0.65rem]">Structure</span>
+                      <span class="font-bold" id="gate-struct-val">PASS</span>
+                    </div>
+                    <div class="p-2 border border-border rounded" id="gate-rhythm-box">
+                      <span class="block text-text-muted mb-1 text-[0.65rem]">Rhythm</span>
+                      <span class="font-bold" id="gate-rhythm-val">PASS</span>
+                    </div>
+                    <div class="p-2 border border-border rounded" id="gate-mouth-box">
+                      <span class="block text-text-muted mb-1 text-[0.65rem]">Mouthfeel</span>
+                      <span class="font-bold" id="gate-mouth-val">PASS</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="findings-area mt-4">
+                  <h4 class="font-bold text-xs uppercase tracking-wider font-mono text-text-secondary mb-2">Critique Findings</h4>
+                  <div class="space-y-3" id="sc-findings-list">
+                    <!-- Dynamic findings -->
+                  </div>
+                </div>
+
+                <div class="tasks-area mt-4 border-t border-border pt-4">
+                  <h4 class="font-bold text-xs uppercase tracking-wider font-mono text-text-secondary mb-2">Revision Tasks</h4>
+                  <div class="space-y-2" id="sc-tasks-list">
+                    <!-- Dynamic tasks -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Editorial Decisions Panel -->
+              <div id="sc-decisions" class="sc-panel hidden">
+                <div class="space-y-4">
+                  <div>
+                    <span class="text-xs text-text-muted font-mono block">Decision Rationale</span>
+                    <p class="text-sm mt-1 bg-bg-secondary/40 p-3 rounded border border-border leading-relaxed" id="sc-dec-rationale">None</p>
+                  </div>
+                  <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <span class="text-xs text-text-muted font-mono block">Decided At</span>
+                      <span class="text-sm font-semibold block mt-1" id="sc-dec-date">-</span>
+                    </div>
+                    <div>
+                      <span class="text-xs text-text-muted font-mono block">Reviewer Type</span>
+                      <span class="text-sm font-semibold block mt-1" id="sc-dec-reviewer">-</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span class="text-xs text-text-muted font-mono block">Required Next Actions</span>
+                    <ul class="list-disc list-inside text-sm mt-1 space-y-1 text-text-secondary pl-2" id="sc-dec-actions">
+                      <!-- Actions -->
+                    </ul>
+                  </div>
+                  <div>
+                    <span class="text-xs text-text-muted font-mono block">Evidence Linked</span>
+                    <div class="flex flex-wrap gap-1 mt-1" id="sc-dec-evidence">
+                      <!-- Evidence links -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Raw critique data -->
+              <div id="sc-raw" class="sc-panel hidden">
+                <pre class="bg-bg-tertiary text-xs p-4 rounded border border-border overflow-x-auto text-emerald-400 font-mono" id="sc-raw-content">{}</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Verification Console -->
+      <div id="tab-console" class="tab-panel">
+        <div class="grid gap-6 md:grid-cols-4">
+          <!-- Command Options -->
+          <div class="md:col-span-1 space-y-4 border border-border rounded-md bg-bg-secondary/30 p-4">
+            <h3 class="font-bold text-sm tracking-wide uppercase font-mono text-text-muted">Launch Verify Gate</h3>
+            
+            <button class="console-btn-launch w-full text-left p-3 border border-border rounded hover:border-accent transition-all flex flex-col justify-between" data-action="verify_content">
+              <span class="font-bold text-sm text-foreground">Content Pipeline</span>
+              <span class="text-[0.65rem] font-mono text-text-muted mt-1">npm run verify:content</span>
+            </button>
+
+            <button class="console-btn-launch w-full text-left p-3 border border-border rounded hover:border-accent transition-all flex flex-col justify-between" data-action="verify_site">
+              <span class="font-bold text-sm text-foreground">Site Quality Check</span>
+              <span class="text-[0.65rem] font-mono text-text-muted mt-1">npm run verify:site-quality</span>
+            </button>
+
+            <button class="console-btn-launch w-full text-left p-3 border border-border rounded hover:border-accent transition-all flex flex-col justify-between" data-action="build">
+              <span class="font-bold text-sm text-foreground">Production Build</span>
+              <span class="text-[0.65rem] font-mono text-text-muted mt-1">npm run build</span>
+            </button>
+
+            <button class="console-btn-launch w-full text-left p-3 border border-border rounded hover:border-accent transition-all flex flex-col justify-between" data-action="index_code">
+              <span class="font-bold text-sm text-foreground">Index Local Code</span>
+              <span class="text-[0.65rem] font-mono text-text-muted mt-1">npm run index:local-code</span>
+            </button>
+          </div>
+
+          <!-- Console Output terminal -->
+          <div class="md:col-span-3 border border-border rounded-md bg-bg-secondary/10 flex flex-col">
+            <div class="bg-bg-tertiary px-4 py-2 border-b border-border flex items-center justify-between text-xs font-mono">
+              <div class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                <span class="text-text-secondary ml-2" id="console-title">Console Ready</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="text-text-muted" id="console-timer">0.00s</span>
+                <button id="console-clear" class="text-text-muted hover:text-foreground">Clear</button>
+              </div>
+            </div>
+            
+            <div class="console-body p-4 bg-[#0A0A0A] min-h-[400px] max-h-[500px] overflow-y-auto font-mono text-xs text-emerald-400 leading-relaxed border-b border-border flex-1">
+              <div id="console-log-lines">
+                <span class="text-text-muted">&gt; Console initialized. Click a task in the left panel to begin.</span>
+              </div>
+            </div>
+
+            <div class="bg-bg-tertiary p-3 flex justify-between items-center text-xs">
+              <span id="console-status-text" class="text-text-muted font-mono">Status: Idle</span>
+              <button id="console-copy" class="blog-btn text-xs py-1 px-3">Copy Output</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 4: Metaphor Tuner -->
+      <div id="tab-tuner" class="tab-panel">
+        <div class="border border-border rounded-md bg-bg-secondary/40 p-6 leading-relaxed">
+          <h2 class="text-2xl font-bold font-serif text-foreground mb-4">Vibe Critic Metaphor Rules</h2>
+          <p class="text-sm text-text-secondary mb-6">
+            The style critic (<code>vibe_critic.py</code>) enforces a strict ban on flowery, generic AI marketing words to maintain an engineering-centric dry tone. 
+            However, to preserve creative, essayistic narrative voice, we utilize **Zone-Based Style Gates** that differentiate between technical code descriptions and introductory narratives.
+          </p>
+
+          <div class="grid gap-6 md:grid-cols-2">
+            <!-- Left: Banned metaphors -->
+            <div class="border border-border rounded p-4 bg-bg-secondary/60">
+              <h3 class="font-bold text-sm tracking-wide font-mono text-accent uppercase mb-3">Banned Metaphors</h3>
+              <div class="space-y-4">
+                <div class="border-b border-border/60 pb-3">
+                  <span class="font-bold text-sm block">"ocean"</span>
+                  <span class="text-xs text-text-muted">Marketing fluff, vague metaphorical references to AI space.</span>
+                </div>
+                <div class="border-b border-border/60 pb-3">
+                  <span class="font-bold text-sm block">"drift"</span>
+                  <span class="text-xs text-text-muted">Vibe coding drift, float on context waves.</span>
+                </div>
+                <div class="pb-2">
+                  <span class="font-bold text-sm block">"castaway"</span>
+                  <span class="text-xs text-text-muted">Dramatic writer descriptions in technology details.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Zone splitting -->
+            <div class="border border-border rounded p-4 bg-bg-secondary/60">
+              <h3 class="font-bold text-sm tracking-wide font-mono text-accent uppercase mb-3">Zone Mapping Matrix</h3>
+              <div class="space-y-4">
+                <div>
+                  <span class="font-bold text-xs uppercase font-mono text-emerald-400 block mb-1">✓ Allowed (Narrative Context)</span>
+                  <p class="text-xs text-text-secondary leading-relaxed">
+                    Introductory essays, about pages, limitations descriptions, backgrounds, or caveats headings. 
+                    Allowed to explain concepts using analogies to hook the reader.
+                  </p>
+                  <span class="text-[0.65rem] font-mono text-text-muted block mt-1">Headings: Introduction, Caveats, Limits, Non-claims, About, Background</span>
+                </div>
+                
+                <div class="border-t border-border/60 pt-3">
+                  <span class="font-bold text-xs uppercase font-mono text-rose-400 block mb-1">✗ Strictly Blocked (Technical Contract)</span>
+                  <p class="text-xs text-text-secondary leading-relaxed">
+                    Design checklist, mechanics details, decision matrix tables, verdicts, pipelines, or workflow steps.
+                    Strict requirements of clear, dry, precise engineering facts without prose metaphors.
+                  </p>
+                  <span class="text-[0.65rem] font-mono text-text-muted block mt-1">Headings: Mechanism, Checklist, Decision Matrix, Runbook, Verdict, Pipeline, Architecture</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style is:global>
+  /* Local Scoped styles for the Dashboard */
+  .admin-dashboard-container {
+    font-family: var(--font-ui) !important;
+  }
+  .stat-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem;
+    transition: all 0.2s var(--ease-out);
+  }
+  .stat-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+  }
+  .stat-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    tracking-wider: 0.05em;
+    color: var(--text-muted);
+  }
+  .stat-value {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 0.25rem;
+    font-family: var(--font-lora);
+  }
+  .stat-sub {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 0.15rem;
+  }
+
+  .tabs-container {
+    display: flex;
+    gap: 8px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs-container::-webkit-scrollbar {
+    display: none;
+  }
+  .tab-btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    cursor: pointer;
+    transition: all 0.2s var(--ease-out);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+  }
+  .tab-btn:hover {
+    color: var(--foreground);
+    border-bottom-color: var(--border-strong);
+  }
+  .tab-btn.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  .tab-panel {
+    display: none;
+  }
+  .tab-panel.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .filter-btn {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .filter-btn:hover {
+    border-color: var(--border-strong);
+    color: var(--foreground);
+  }
+  .filter-btn.active {
+    background: var(--foreground);
+    color: var(--background);
+    border-color: var(--foreground);
+  }
+
+  .admin-table th, .admin-table td {
+    border-bottom: 1px solid var(--border);
+  }
+  .admin-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .badge-emerald {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+  .badge-rose {
+    background-color: rgba(244, 63, 94, 0.15);
+    color: #f43f5e;
+    border: 1px solid rgba(244, 63, 94, 0.3);
+  }
+  .badge-zinc {
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+  }
+  .badge-blocker {
+    background-color: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    font-size: 0.65rem;
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+
+  .btn-action-audit, .btn-action-view-scorecard {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border: 1px solid var(--border);
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+  }
+  .btn-action-audit:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .btn-action-view-scorecard:hover {
+    border-color: var(--foreground);
+    color: var(--foreground);
+  }
+
+  .selector-card.active {
+    border-color: var(--accent) !important;
+    background-color: var(--bg-secondary) !important;
+  }
+
+  .sc-tab {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s ease;
+  }
+  .sc-tab:hover {
+    color: var(--foreground);
+  }
+  .sc-tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  .sc-panel {
+    display: none;
+  }
+  .sc-panel.active {
+    display: block;
+  }
+
+  .finding-item {
+    background: rgba(244, 63, 94, 0.05);
+    border-left: 3px solid #f43f5e;
+    padding: 10px 12px;
+    border-radius: 0 4px 4px 0;
+  }
+  .task-item {
+    background: var(--bg-tertiary);
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+
+  /* Refresh spin animation */
+  .refresh-icon.spinning {
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+</style>
+
+<script>
+  // State store
+  let globalPosts: any[] = [];
+  let selectedSlug: string | null = null;
+
+  // Cache elements
+  const searchInput = document.getElementById("search-articles") as HTMLInputElement;
+  const tableBody = document.getElementById("articles-table-body");
+  const scorecardList = document.getElementById("scorecard-selector-list");
+  const scorecardDetailsEmpty = document.querySelector("#scorecard-details-panel .empty-state");
+  const scorecardContent = document.querySelector("#scorecard-details-panel .scorecard-content");
+  
+  // Elements inside scorecard
+  const scTitle = document.getElementById("sc-title");
+  const scSlug = document.getElementById("sc-slug");
+  const scVerdict = document.getElementById("sc-verdict");
+  const scFindingsList = document.getElementById("sc-findings-list");
+  const scTasksList = document.getElementById("sc-tasks-list");
+  const scRawContent = document.getElementById("sc-raw-content");
+  const scDecRationale = document.getElementById("sc-dec-rationale");
+  const scDecDate = document.getElementById("sc-dec-date");
+  const scDecReviewer = document.getElementById("sc-dec-reviewer");
+  const scDecActions = document.getElementById("sc-dec-actions");
+  const scDecEvidence = document.getElementById("sc-dec-evidence");
+  const scBtnReaudit = document.getElementById("sc-btn-reaudit");
+
+  // Console Elements
+  const consoleLogLines = document.getElementById("console-log-lines");
+  const consoleTitle = document.getElementById("console-title");
+  const consoleStatus = document.getElementById("console-status-text");
+  const consoleTimer = document.getElementById("console-timer");
+  const consoleClear = document.getElementById("console-clear");
+  const consoleCopy = document.getElementById("console-copy");
+
+  // Initialize
+  document.addEventListener("DOMContentLoaded", async () => {
+    setupTabs();
+    setupFilters();
+    setupConsole();
+    await fetchState();
+    
+    // Wire refresh button
+    const btnRefresh = document.getElementById("btn-refresh-global");
+    if (btnRefresh) {
+      btnRefresh.addEventListener("click", async () => {
+        const icon = btnRefresh.querySelector(".refresh-icon");
+        icon?.classList.add("spinning");
+        await fetchState();
+        setTimeout(() => icon?.classList.remove("spinning"), 500);
+      });
+    }
+
+    // Wire search input
+    if (searchInput) {
+      searchInput.addEventListener("input", runSearch);
+    }
+
+    // Wire action delegates on table and scorecard selector
+    document.addEventListener("click", handleGlobalClicks);
+
+    // Reaudit button wired
+    if (scBtnReaudit) {
+      scBtnReaudit.addEventListener("click", triggerReaudit);
+    }
+  });
+
+  async function fetchState() {
+    try {
+      const res = await fetch("/api/admin-data");
+      const data = await res.json();
+      globalPosts = data.posts || [];
+      
+      // Update counters
+      const statPublished = document.getElementById("stat-published");
+      const statDrafts = document.getElementById("stat-drafts");
+      const statWorkspace = document.getElementById("stat-workspace");
+      const statPass = document.getElementById("stat-crit-pass");
+      const statFix = document.getElementById("stat-crit-fix");
+      const statPending = document.getElementById("stat-crit-pending");
+
+      if (statPublished) statPublished.textContent = data.summary.totalPublished;
+      if (statDrafts) statDrafts.textContent = data.summary.totalDrafts;
+      if (statWorkspace) statWorkspace.textContent = data.summary.totalWorkspaceDrafts;
+      if (statPass) statPass.textContent = data.summary.critique.pass;
+      if (statFix) statFix.textContent = data.summary.critique.fixRequired;
+      if (statPending) statPending.textContent = data.summary.critique.pending;
+
+      renderTable();
+      renderScorecardSelector();
+      if (selectedSlug) {
+        updateScorecardPanel(selectedSlug);
+      }
+    } catch (e) {
+      console.error("Failed to load state", e);
+    }
+  }
+
+  function setupTabs() {
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    tabButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const targetTabId = btn.getAttribute("data-tab");
+        if (!targetTabId) return;
+
+        // Toggle active button
+        tabButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // Toggle panels
+        document.querySelectorAll(".tab-panel").forEach(panel => {
+          panel.classList.remove("active");
+        });
+        document.getElementById(targetTabId)?.classList.add("active");
+      });
+    });
+
+    // Wire internal scorecard sub-tabs
+    const scTabButtons = document.querySelectorAll(".sc-tab");
+    scTabButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const targetScTabId = btn.getAttribute("data-sc-tab");
+        if (!targetScTabId) return;
+
+        scTabButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        document.querySelectorAll(".sc-panel").forEach(p => p.classList.add("hidden"));
+        document.getElementById(targetScTabId)?.classList.remove("hidden");
+      });
+    });
+  }
+
+  function setupFilters() {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    filterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        runSearch();
+      });
+    });
+  }
+
+  function runSearch() {
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+    const activeFilter = document.querySelector(".filter-btn.active")?.getAttribute("data-filter") || "all";
+    
+    const rows = tableBody ? tableBody.querySelectorAll("tr") : [];
+    rows.forEach(row => {
+      const isDraft = row.getAttribute("data-draft") === "true";
+      const searchText = row.getAttribute("data-search") || "";
+      
+      let matchesFilter = true;
+      if (activeFilter === "draft") matchesFilter = isDraft;
+      else if (activeFilter === "published") matchesFilter = !isDraft;
+
+      let matchesSearch = true;
+      if (query) matchesSearch = searchText.includes(query);
+
+      if (matchesFilter && matchesSearch) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  }
+
+  function renderTable() {
+    if (!tableBody) return;
+    tableBody.innerHTML = "";
+    
+    globalPosts.forEach(post => {
+      const tr = document.createElement("tr");
+      tr.className = "border-b border-border/60 hover:bg-bg-secondary/40 transition-colors text-sm";
+      tr.setAttribute("data-draft", post.draft ? "true" : "false");
+      tr.setAttribute("data-search", `${post.title} ${post.slug}`.toLowerCase());
+
+      const blockersCount = post.decision?.candidateBlockers?.length || 0;
+      const blockersHtml = blockersCount > 0 
+        ? `<div class="flex flex-wrap gap-1 max-w-[200px]">${post.decision.candidateBlockers.map((b: string) => `<span class="badge-blocker" title="${b}">${b.slice(0, 10)}</span>`).join('')}</div>`
+        : `<span class="text-text-muted text-xs">-</span>`;
+
+      const critiqueBadge = post.critique
+        ? `<span class="badge ${post.critique.verdict === 'pass' ? 'badge-emerald' : 'badge-rose'}">${post.critique.verdict === 'pass' ? 'Pass' : 'Fix Required'}</span>`
+        : `<span class="badge badge-zinc">Pending Critique</span>`;
+
+      tr.innerHTML = `
+        <td class="p-4">
+          <div class="font-medium text-foreground">${post.title}</div>
+          <div class="text-xs text-text-muted font-mono">${post.slug}</div>
+        </td>
+        <td class="p-4">
+          <span class="badge ${post.workflow === 'packet' ? 'badge-emerald' : 'badge-zinc'}">${post.workflow}</span>
+        </td>
+        <td class="p-4 text-xs font-mono">
+          <span class="${post.draft ? 'text-accent font-semibold' : 'text-text-muted'}">
+            ${post.draft ? `Draft (${post.location})` : 'Published'}
+          </span>
+        </td>
+        <td class="p-4 font-mono text-xs">${post.wordCount} words</td>
+        <td class="p-4">${critiqueBadge}</td>
+        <td class="p-4">${blockersHtml}</td>
+        <td class="p-4">
+          <div class="flex gap-2">
+            <button class="btn-action-audit" data-slug="${post.slug}" data-filepath="${post.filepath}" title="Audit Document">Audit</button>
+            <button class="btn-action-view-scorecard" data-slug="${post.slug}" title="View Scorecard">Scorecard</button>
+          </div>
+        </td>
+      `;
+      tableBody.appendChild(tr);
+    });
+
+    runSearch(); // Apply filters/search to refreshed list
+  }
+
+  function renderScorecardSelector() {
+    if (!scorecardList) return;
+    scorecardList.innerHTML = "";
+
+    globalPosts.forEach(post => {
+      const card = document.createElement("div");
+      card.className = `selector-card cursor-pointer p-3 border border-border/80 rounded hover:border-accent transition-all ${post.slug === selectedSlug ? 'active' : ''}`;
+      card.setAttribute("data-slug", post.slug);
+
+      const critiqueBadge = post.critique
+        ? `<span class="badge text-[0.65rem] ${post.critique.verdict === 'pass' ? 'badge-emerald' : 'badge-rose'}">${post.critique.verdict === 'pass' ? 'Pass' : 'Fix Required'}</span>`
+        : `<span class="badge badge-zinc text-[0.65rem]">Pending</span>`;
+
+      card.innerHTML = `
+        <div class="flex items-center justify-between gap-2 mb-1">
+          <span class="text-xs font-mono text-text-muted">${post.slug}</span>
+          ${critiqueBadge}
+        </div>
+        <div class="text-sm font-semibold text-foreground line-clamp-1">${post.title}</div>
+      `;
+      scorecardList.appendChild(card);
+    });
+  }
+
+  function updateScorecardPanel(slug: string) {
+    selectedSlug = slug;
+    
+    // Highlight selected card
+    const cards = scorecardList ? scorecardList.querySelectorAll(".selector-card") : [];
+    cards.forEach(c => {
+      if (c.getAttribute("data-slug") === slug) {
+        c.classList.add("active");
+      } else {
+        c.classList.remove("active");
+      }
+    });
+
+    const post = globalPosts.find(p => p.slug === slug);
+    if (!post) return;
+
+    if (scorecardDetailsEmpty) scorecardDetailsEmpty.classList.add("hidden");
+    if (scorecardContent) scorecardContent.classList.remove("hidden");
+
+    // Populate general headers
+    if (scTitle) scTitle.textContent = post.title;
+    if (scSlug) scSlug.textContent = `Path: ${post.filepath} (${post.wordCount} words)`;
+    
+    if (scVerdict) {
+      scVerdict.textContent = post.critique ? (post.critique.verdict === "pass" ? "Pass" : "Fix Required") : "Pending Critique";
+      scVerdict.className = `badge text-xs ${post.critique ? (post.critique.verdict === "pass" ? "badge-emerald" : "badge-rose") : "badge-zinc"}`;
+    }
+
+    if (scBtnReaudit) {
+      scBtnReaudit.setAttribute("data-slug", post.slug);
+      scBtnReaudit.setAttribute("data-filepath", post.filepath);
+    }
+
+    // Populate critique sub-panel
+    const critique = post.critique;
+    
+    // Gate statuses
+    const structBox = document.getElementById("gate-struct-box");
+    const rhythmBox = document.getElementById("gate-rhythm-box");
+    const mouthBox = document.getElementById("gate-mouth-box");
+    const structVal = document.getElementById("gate-struct-val");
+    const rhythmVal = document.getElementById("gate-rhythm-val");
+    const mouthVal = document.getElementById("gate-mouth-val");
+
+    if (critique) {
+      // Structure check
+      const structurePass = critique.structure_rhythm_mouth_gate?.structure?.verdict !== "fail";
+      if (structVal) structVal.textContent = structurePass ? "PASS" : "FAIL";
+      if (structBox) structBox.className = `p-2 border rounded ${structurePass ? 'border-emerald-500/30 text-emerald-400' : 'border-rose-500/30 text-rose-400'}`;
+
+      // Rhythm check
+      const rhythmPass = critique.structure_rhythm_mouth_gate?.rhythm?.verdict !== "fail";
+      if (rhythmVal) rhythmVal.textContent = rhythmPass ? "PASS" : "FAIL";
+      if (rhythmBox) rhythmBox.className = `p-2 border rounded ${rhythmPass ? 'border-emerald-500/30 text-emerald-400' : 'border-rose-500/30 text-rose-400'}`;
+
+      // Mouthfeel check
+      const mouthPass = critique.structure_rhythm_mouth_gate?.mouthfeel?.verdict !== "fail";
+      if (mouthVal) mouthVal.textContent = mouthPass ? "PASS" : "FAIL";
+      if (mouthBox) mouthBox.className = `p-2 border rounded ${mouthPass ? 'border-emerald-500/30 text-emerald-400' : 'border-rose-500/30 text-rose-400'}`;
+
+      // Populate findings
+      if (scFindingsList) {
+        // Since we parse simple yaml, critique.findings could be strings or objects. 
+        // VibeCritic outputs arrays. If none, show passes.
+        // We will mock/render findings if report verdict is fix required.
+        if (critique.verdict !== "pass") {
+          scFindingsList.innerHTML = `
+            <div class="finding-item">
+              <div class="font-bold text-xs uppercase text-rose-400 mb-1">M01: Mouthfeel Metaphor Violation</div>
+              <p class="text-xs text-text-secondary leading-relaxed">${critique.evidence || "Flowery metaphors detected in technical zones."}</p>
+              <div class="text-[0.7rem] text-text-muted mt-2 font-mono">Recommendation: ${critique.required_change || "Purge all poetic metaphors. Use dry engineering language."}</div>
+            </div>
+          `;
+        } else {
+          scFindingsList.innerHTML = `<div class="text-xs text-emerald-400 font-mono">✓ 0 style violations found in strict technical zones.</div>`;
+        }
+      }
+
+      // Populate revision tasks
+      if (scTasksList) {
+        if (critique.verdict !== "pass") {
+          scTasksList.innerHTML = `
+            <div class="task-item flex items-center justify-between gap-2">
+              <div>
+                <div class="text-xs font-semibold text-foreground">Purge Metaphors</div>
+                <div class="text-[0.65rem] text-text-muted">Rewrite technical sections.</div>
+              </div>
+              <span class="badge badge-zinc text-[0.6rem]">Todo</span>
+            </div>
+          `;
+        } else {
+          scTasksList.innerHTML = `<div class="text-xs text-text-muted font-mono">No actions required.</div>`;
+        }
+      }
+
+      // Raw yaml
+      if (scRawContent) {
+        scRawContent.textContent = JSON.stringify(critique, null, 2);
+      }
+
+    } else {
+      // Pending
+      if (structVal) structVal.textContent = "PENDING";
+      if (rhythmVal) rhythmVal.textContent = "PENDING";
+      if (mouthVal) mouthVal.textContent = "PENDING";
+      if (structBox) structBox.className = "p-2 border border-border rounded text-text-muted";
+      if (rhythmBox) rhythmBox.className = "p-2 border border-border rounded text-text-muted";
+      if (mouthBox) mouthBox.className = "p-2 border border-border rounded text-text-muted";
+      
+      if (scFindingsList) scFindingsList.innerHTML = `<div class="text-xs text-text-muted font-mono">No critique report loaded. Run Audit first.</div>`;
+      if (scTasksList) scTasksList.innerHTML = `<div class="text-xs text-text-muted font-mono">No tasks loaded.</div>`;
+      if (scRawContent) scRawContent.textContent = "{}";
+    }
+
+    // Populate editorial decisions sub-panel
+    const decision = post.decision;
+    if (decision) {
+      if (scDecRationale) scDecRationale.textContent = decision.rationale || "None";
+      if (scDecDate) scDecDate.textContent = new Date(decision.decidedAt).toLocaleString();
+      if (scDecReviewer) scDecReviewer.textContent = `${decision.reviewerType} reviewer`;
+      
+      if (scDecActions) {
+        scDecActions.innerHTML = "";
+        const actions = decision.requiredNextActions || [];
+        actions.forEach((act: string) => {
+          const li = document.createElement("li");
+          li.className = "mb-1 leading-relaxed";
+          li.textContent = act;
+          scDecActions.appendChild(li);
+        });
+        if (actions.length === 0) {
+          scDecActions.innerHTML = `<li class="text-text-muted">No next actions specified.</li>`;
+        }
+      }
+
+      if (scDecEvidence) {
+        scDecEvidence.innerHTML = "";
+        const evidence = decision.evidence || [];
+        evidence.forEach((ev: string) => {
+          const badge = document.createElement("span");
+          badge.className = "badge-blocker truncate max-w-[240px]";
+          badge.textContent = ev.split('/').pop() || ev;
+          badge.title = ev;
+          scDecEvidence.appendChild(badge);
+        });
+        if (evidence.length === 0) {
+          scDecEvidence.innerHTML = `<span class="text-text-muted text-xs">-</span>`;
+        }
+      }
+
+    } else {
+      if (scDecRationale) scDecRationale.textContent = "No editorial decision manifest exists for this slug. Usually created during packet draft lifecycle stages.";
+      if (scDecDate) scDecDate.textContent = "-";
+      if (scDecReviewer) scDecReviewer.textContent = "-";
+      if (scDecActions) scDecActions.innerHTML = `<li class="text-text-muted">N/A</li>`;
+      if (scDecEvidence) scDecEvidence.innerHTML = `<span class="text-text-muted text-xs">-</span>`;
+    }
+  }
+
+  function handleGlobalClicks(e: MouseEvent) {
+    const target = e.target as HTMLElement;
+
+    // View scorecard button on table
+    if (target.classList.contains("btn-action-view-scorecard")) {
+      const slug = target.getAttribute("data-slug");
+      if (slug) {
+        // Click corresponding tab btn
+        const tabBtn = document.querySelector(".tab-btn[data-tab='tab-scorecard']") as HTMLButtonElement;
+        tabBtn?.click();
+        // Set selected slug
+        updateScorecardPanel(slug);
+      }
+    }
+
+    // Audit button on table
+    if (target.classList.contains("btn-action-audit")) {
+      const slug = target.getAttribute("data-slug");
+      const filepath = target.getAttribute("data-filepath");
+      if (slug && filepath) {
+        runAudit(slug, filepath);
+      }
+    }
+
+    // Selector card inside scorecard list
+    const selectorCard = target.closest(".selector-card") as HTMLElement;
+    if (selectorCard) {
+      const slug = selectorCard.getAttribute("data-slug");
+      if (slug) {
+        updateScorecardPanel(slug);
+      }
+    }
+  }
+
+  async function runAudit(slug: string, filepath: string) {
+    // Navigate to console tab
+    const tabBtn = document.querySelector(".tab-btn[data-tab='tab-console']") as HTMLButtonElement;
+    tabBtn?.click();
+
+    // Start Console execution UI
+    setConsoleHeader(`Auditing ${slug}`, "Running vibe_critic...");
+    clearConsole();
+    
+    appendConsoleLine(`> Spawning auditor: python factory/vibe_critic.py ${filepath}`, "text-text-muted");
+    
+    const startTime = Date.now();
+    let timerInterval = setInterval(() => {
+      if (consoleTimer) {
+        consoleTimer.textContent = `${((Date.now() - startTime) / 1000).toFixed(2)}s`;
+      }
+    }, 50);
+
+    try {
+      const res = await fetch("/api/admin-run-audit", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ slug, filepath, action: "vibe_critic" }),
+      });
+      const result = await res.json();
+      
+      clearInterval(timerInterval);
+      if (consoleTimer) consoleTimer.textContent = `${(result.duration / 1000).toFixed(2)}s`;
+
+      if (result.status === "success") {
+        setConsoleStatus("Success", "text-emerald-400");
+        appendConsoleLine(result.stdout || "Success.", "text-emerald-400");
+        if (result.stderr) {
+          appendConsoleLine(result.stderr, "text-amber-400");
+        }
+      } else {
+        setConsoleStatus("Failed", "text-rose-400");
+        appendConsoleLine(result.stdout || "", "text-text-secondary");
+        appendConsoleLine(result.stderr || "Execution failed.", "text-rose-400");
+      }
+
+      // Refresh data
+      await fetchState();
+    } catch (err: any) {
+      clearInterval(timerInterval);
+      setConsoleStatus("Error", "text-rose-400");
+      appendConsoleLine(`Error: ${err.message}`, "text-rose-400");
+    }
+  }
+
+  async function triggerReaudit() {
+    if (!scBtnReaudit) return;
+    const slug = scBtnReaudit.getAttribute("data-slug");
+    const filepath = scBtnReaudit.getAttribute("data-filepath");
+    if (slug && filepath) {
+      await runAudit(slug, filepath);
+      // Switch back to scorecard tab
+      const tabBtn = document.querySelector(".tab-btn[data-tab='tab-scorecard']") as HTMLButtonElement;
+      tabBtn?.click();
+    }
+  }
+
+  // Console Utilities
+  function setupConsole() {
+    // Clear button
+    if (consoleClear) {
+      consoleClear.addEventListener("click", () => {
+        clearConsole();
+        appendConsoleLine("> Console cleared.", "text-text-muted");
+      });
+    }
+
+    // Copy button
+    if (consoleCopy) {
+      consoleCopy.addEventListener("click", () => {
+        const text = consoleLogLines ? consoleLogLines.innerText : "";
+        navigator.clipboard.writeText(text);
+        
+        const oldLabel = consoleCopy.textContent;
+        consoleCopy.textContent = "Copied!";
+        setTimeout(() => consoleCopy.textContent = oldLabel, 1500);
+      });
+    }
+
+    // Launch task buttons
+    const launchButtons = document.querySelectorAll(".console-btn-launch");
+    launchButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const action = btn.getAttribute("data-action");
+        if (action) {
+          runVerifyTask(action, btn.querySelector(".font-bold")?.textContent || "Verify Task");
+        }
+      });
+    });
+  }
+
+  async function runVerifyTask(action: string, label: string) {
+    setConsoleHeader(label, "Running command...");
+    clearConsole();
+    
+    appendConsoleLine(`> Spawning pipeline command for: ${label}...`, "text-text-muted");
+    
+    const startTime = Date.now();
+    let timerInterval = setInterval(() => {
+      if (consoleTimer) {
+        consoleTimer.textContent = `${((Date.now() - startTime) / 1000).toFixed(2)}s`;
+      }
+    }, 50);
+
+    try {
+      const res = await fetch("/api/admin-verify", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ action }),
+      });
+      const result = await res.json();
+      
+      clearInterval(timerInterval);
+      if (consoleTimer) consoleTimer.textContent = `${(result.duration / 1000).toFixed(2)}s`;
+
+      appendConsoleLine(`$ ${result.command}`, "text-indigo-300 mb-2 block font-bold");
+
+      if (result.status === "success") {
+        setConsoleStatus("Pass", "text-emerald-400");
+        appendConsoleLine(result.stdout || "Pipeline verification pass.", "text-emerald-400");
+        if (result.stderr) {
+          appendConsoleLine(result.stderr, "text-amber-400");
+        }
+      } else {
+        setConsoleStatus("Fail", "text-rose-400");
+        appendConsoleLine(result.stdout || "", "text-text-secondary");
+        appendConsoleLine(result.stderr || "Pipeline verification failed.", "text-rose-400");
+      }
+
+      await fetchState();
+    } catch (err: any) {
+      clearInterval(timerInterval);
+      setConsoleStatus("Error", "text-rose-400");
+      appendConsoleLine(`Error: ${err.message}`, "text-rose-400");
+    }
+  }
+
+  function clearConsole() {
+    if (consoleLogLines) consoleLogLines.innerHTML = "";
+  }
+
+  function appendConsoleLine(text: string, className: string) {
+    if (!consoleLogLines) return;
+    const line = document.createElement("div");
+    line.className = className;
+    line.style.whiteSpace = "pre-wrap";
+    line.textContent = text;
+    consoleLogLines.appendChild(line);
+    
+    // Scroll body
+    const body = consoleLogLines.parentElement;
+    if (body) {
+      body.scrollTop = body.scrollHeight;
+    }
+  }
+
+  function setConsoleHeader(title: string, status: string) {
+    if (consoleTitle) consoleTitle.textContent = title;
+    if (consoleStatus) consoleStatus.textContent = `Status: ${status}`;
+  }
+
+  function setConsoleStatus(status: string, className: string) {
+    if (consoleStatus) {
+      consoleStatus.textContent = `Status: ${status}`;
+      consoleStatus.className = `font-mono ${className}`;
+    }
+  }
+</script>

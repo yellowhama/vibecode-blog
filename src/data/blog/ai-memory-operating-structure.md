@@ -1,13 +1,17 @@
 ---
-title: "How to Stop AI Agents From Losing Their Memory"
+title: "How to Stop AI Agents From Losing Their Memory: The Operating Structure"
 pubDatetime: 2026-05-16T06:00:00Z
-description: "Long prompts are not operating memory because agent work needs source notes, specs, handoffs, indexes, and explicit remaining-work queues."
+description: "Long LLM prompts are not operating memory. Learn how to build an artifact-driven memory stack with source notes, specs, and searchable indexes for autonomous AI agents."
 draft: false
 featured: true
 series: "AI Explainer"
 workflow: "packet"
 lang: "en"
-tags: ["engineering", "ai-agents", "llm-wiki", "technical-contracts"]
+tags:
+  - ai-agents
+  - llm-memory
+  - software-engineering
+  - technical-contracts
 ogImage: "/images/posts/ai-memory-operating-structure.png"
 references:
   - name: "Conversation state"
@@ -23,19 +27,19 @@ references:
 
 # How to Stop AI Agents From Losing Their Memory
 
-On 2026-05-20, I opened GitHub commit `328e671`, ran the reference ceiling audit, and found the real memory test was not in the chat. It was in `companies/vibecode-town/code-index.md`, `<artifact-root>\\vibecode-reference-writing-audit\latest.json`, `src/data/publication-approvals.json`, and `wiki_fts.db`.
+On 2026-05-20, I opened GitHub commit `328e671`, ran the reference ceiling audit, and found the real memory test was not in the chat window. It was in `companies/vibecode-town/code-index.md`, `<artifact-root>\vibecode-reference-writing-audit\latest.json`, `src/data/publication-approvals.json`, and `wiki_fts.db`.
 
 The next agent did not need a pep talk. It needed receipts.
 
 Without those receipts, every handoff becomes a public approval risk and a time leak.
 
-The expensive failure in long agent work is not forgetting a fact. It is forgetting the status of a fact.
+The expensive failure in long-running agent work is not forgetting a fact. It is **forgetting the status of a fact.**
 
-Was that source real or just a summary? Was the feature done or only planned? Did the previous agent run the verifier, or did it only say the verifier should exist?
+Was that source real or just a summary? Was the feature done or only planned? Did the previous agent run the verifier, or did it only *say* the verifier should exist?
 
 When a resumed session cannot answer those questions, the operator starts repeating the same corrections. The prompt becomes a junk drawer. The next agent inherits confidence without provenance.
 
-This is why long prompts are not operating memory. They can carry context for a while, but they do not prove what happened, what changed, or what remains unsafe.
+This is why **long prompts are not operating memory**. They can carry context for a while, but they do not prove what happened, what changed, or what remains unsafe.
 
 The wrong standard is "does the next agent have enough context?" The useful standard is "can the next agent prove which source, command, approval record, and remaining-work queue are current without trusting the previous chat?"
 
@@ -45,31 +49,31 @@ The wrong standard is "does the next agent have enough context?" The useful stan
 
 The bad default is to make the prompt bigger.
 
-At first, it works. Tell the model the policy, paste the previous decision, add the reference link, remind it not to invent proof. But once the work stretches across days, the prompt becomes a meeting note, a spec, an incident log, a style guide, and a task queue at the same time.
+At first, it works. You tell the model the policy, paste the previous decision, add the reference link, and remind it not to invent proof. But once the work stretches across days, the prompt becomes a meeting note, a spec, an incident log, a style guide, and a task queue all at the same time.
 
 Two things break.
 
-First, people stop reviewing it. Important decisions and temporary instructions live in the same wall of text, so the operator skims the exact material that should constrain the work.
+First, humans stop reviewing it. Important decisions and temporary instructions live in the same wall of text, so the operator skims the exact material that should constrain the work.
 
 Second, agents stop retrieving it cleanly. They cannot tell which line is source evidence, which line is interpretation, and which line is a stale assumption from a previous session.
 
 A long prompt is not an audit trail. It is unstructured state.
 
-The trap is that long prompts feel responsible. They are full of warnings, decisions, links, and apologies. But when everything is in one scroll, nothing has an owner. A durable rule and a late-night guess sit next to each other wearing the same uniform.
+The trap is that long prompts *feel* responsible. They are full of warnings, decisions, links, and apologies. But when everything is in one scroll, nothing has an owner. A durable rule and a late-night guess sit next to each other wearing the same uniform.
 
 ## Before and After
 
 Here is the before/after that changes the work.
 
-Before, the restart surface was a chat scrollback. The agent had to infer which instruction was still active, which correction was frustration, and which sentence was a durable rule. That feels fast until the next session confidently repeats a solved mistake.
+**Before:** The restart surface was a chat scrollback. The agent had to infer which instruction was still active, which correction was frustration, and which sentence was a durable rule. That feels fast until the next session confidently repeats a solved mistake.
 
-After, the restart surface is an artifact chain:
+**After:** The restart surface is an artifact chain:
 
 ```txt
 source packet -> plan/report -> code-index.md -> wiki_fts.db -> archive receipt -> approval record
 ```
 
-That chain is slower to write than a single prompt. It is much faster than explaining the same project for the fifth time.
+That chain is slower to write than a single prompt, but it is much faster than explaining the same project for the fifth time.
 
 For this site, the memory receipt is not "the agent said it updated the wiki." The receipt is closer to this:
 
@@ -87,13 +91,13 @@ That is the difference between memory as a vibe and memory as an operating surfa
 
 The cost is not abstract. If the next agent says "wiki is current" while the index still says 245 files, the reviewer has to audit the story before auditing the work. If the public body changed but the approval record still points at yesterday's markdown, the page is not approved. It is wearing an old receipt.
 
-The rule is blunt: if memory cannot be reindexed, searched, archived, or contradicted by a hash, it is not operating memory. It is a nicer prompt.
+The rule is blunt: **if memory cannot be reindexed, searched, archived, or contradicted by a hash, it is not operating memory. It is just a nicer prompt.**
 
 ## Operating Memory Stack
 
 Agent work needs a small Operating Memory Stack.
 
-The short version is source, spec, handoff, index.
+The short version is: **source, spec, handoff, index.**
 
 ```txt
 raw source
@@ -104,9 +108,9 @@ search index
 remaining-work queue
 ```
 
-Raw source is the preserved input: transcript, log, command output, diff, research link, support ticket, or field note.
+**Raw source** is the preserved input: transcript, log, command output, diff, research link, support ticket, or field note.
 
-The processed source note is not a summary for humans. It extracts reusable pressure:
+The **processed source note** is not a summary for humans. It extracts reusable pressure:
 
 ```txt
 what the source changes
@@ -115,11 +119,11 @@ what rule it implies
 where it can mislead the next agent
 ```
 
-The spec is the repeatable contract. It says what the system must keep doing even when a different agent enters the repo.
+The **spec** is the repeatable contract. It says what the system must keep doing even when a different agent enters the repo.
 
-The handoff is the current state. It should tell the next session what passed, what failed, and what must not be treated as complete.
+The **handoff** is the current state. It should tell the next session what passed, what failed, and what must not be treated as complete.
 
-The index makes the memory searchable. The remaining-work queue turns documents back into action.
+The **index** makes the memory searchable. The **remaining-work queue** turns documents back into action.
 
 In this repo, the stack is concrete:
 
@@ -174,13 +178,13 @@ The last line matters. Without it, the next session tends to convert partial pro
 
 Here is the difference in the current Vibecode workflow.
 
-Bad restart surface:
+**Bad restart surface:**
 
 ```txt
 We improved the blog and fixed the gates. Continue from there.
 ```
 
-Usable restart surface:
+**Usable restart surface:**
 
 ```txt
 Goal: make public posts source-backed, English, image-backed, and approval-bound.
@@ -212,10 +216,10 @@ Before accepting an agent's memory claim, use this decision matrix.
 | --- | --- | --- |
 | "I updated the wiki." | Reindex and archive receipts exist. | Only the chat says so. |
 | "The next agent has context." | It can cite `code-index.md` and `wiki_fts.db`. | Context lives only in scrollback. |
-| "This post is approved." | The current `current content digest` matches the body. | The body changed after approval. |
+| "This post is approved." | The current `content digest` matches the body. | The body changed after approval. |
 | "Images are handled." | One slug-matched image renders on desktop/mobile. | The image is generic or duplicated. |
 
-The rule is simple: accept artifacts, reject vibes.
+The rule is simple: **accept artifacts, reject vibes.**
 
 Forward this to the agent lead who says the chat summary is enough for the next session. The decision is narrow: can the next agent cite a current file, count, hash, and command receipt, or is it only inheriting a confident story about what happened?
 
@@ -247,4 +251,4 @@ Operating memory does not make a model truthful. It does not remove the need for
 
 It lowers the repeated context tax and makes the next agent's starting point inspectable. Agent systems should not depend on vibes, hidden state, or optimistic prompts. They should run on evidence, handoff, and verifiable boundaries.
 
-Before handing work to the next agent, ask one final question: "What would prove this summary wrong?" If the answer is "nothing, it is just in the chat," the system does not have memory yet. If the answer is a file path, count, hash, command, and queue item, the next agent can start without pretending.
+Before handing work to the next agent, ask one final question: **"What would prove this summary wrong?"** If the answer is "nothing, it is just in the chat," the system does not have memory yet. If the answer is a file path, count, hash, command, and queue item, the next agent can start without pretending.

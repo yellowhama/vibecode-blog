@@ -1,13 +1,18 @@
 ---
-title: "The Work Disk Contract for AI Coding Agents"
+title: "The Work Disk Contract: Managing Artifacts in AI Coding Agents"
 pubDatetime: 2026-05-17T02:00:00Z
-description: "AI agents build, test, index, and generate evidence. If their temp and archive paths are accidental, the machine becomes part of the failure mode."
+description: "AI coding agents generate artifacts like builds, tests, and logs. Discover why defining a strict 'Work Disk Contract' is crucial to prevent operating system failures and lost evidence."
 draft: false
 featured: false
 series: "AI Tool Note"
 workflow: "packet"
 lang: "en"
-tags: ["ai-tools", "engineering", "local-first", "technical-contracts"]
+tags:
+  - ai-agents
+  - software-engineering
+  - technical-contracts
+  - vibecoding
+  - devops
 ogImage: "/images/posts/ai-agent-work-disk-contract.png"
 references:
   - name: "Node.js os.tmpdir"
@@ -23,31 +28,33 @@ references:
 
 # The Work Disk Contract for AI Coding Agents
 
-On 2026-05-21, I ran a PowerShell drive check, checked the LLM wiki archive gate, and opened the Chrome-rendered audit under `<rendered-audit-root>`. The disk problem was not code. It was where the agent was allowed to leave proof. Use this rule before accepting an agent run: name the source, memory, rendered evidence, and temp roots first.
+On 2026-05-21, I ran a PowerShell drive check, verified the LLM wiki archive gate, and opened the Chrome-rendered audit under `<rendered-audit-root>`. The disk problem we faced was not code. It was a lack of definition about **where the agent was allowed to leave proof.** 
 
-AI coding agents do not only edit source files, and that is the hidden risk.
+Use this rule before accepting any agent run: **name the source, memory, rendered evidence, and temp roots first.**
 
-They build. They test. They create fixtures. They write indexes. They generate logs. They produce evidence bundles, compare outputs, and sometimes leave large temp trees behind. If those artifacts drift to the wrong drive, the agent can pass a test while making the next handoff harder to trust.
+AI coding agents do not only edit source files—and that is the hidden risk.
 
-On this workstation, that distinction is not theoretical. The active source repo is on `<repo-root>`, the LLM wiki archive is on `<wiki-root>`, and the rendered audit writes to `<rendered-audit-root>`.
+They build. They test. They create fixtures. They write indexes. They generate logs. They produce evidence bundles, compare outputs, and sometimes leave massive temp trees behind. If those artifacts drift to the wrong drive, the agent can pass a test while making the next handoff harder to trust.
 
-If any receipt lands outside those roots, rerun it under the contract instead of cleaning it up by hand.
+On this workstation, that distinction is not theoretical. The active source repo is strictly on `<repo-root>`, the LLM wiki archive is on `<wiki-root>`, and the rendered audit writes to `<rendered-audit-root>`.
 
-The current receipt is boring on purpose: commit `551c7f7`, 10 posts, 41 pages, 24 viewports, 10 Pagefind pages, 2123 words, 350 wiki files indexed, 382 files archived, and zero rendered-page failures. Those numbers are not decoration. They are the proof that the artifact trail lives where the next agent will look.
+If any receipt lands outside those roots, rerun the workflow under the contract instead of cleaning it up by hand.
 
-The repeated failure was still the old one: work kept drifting toward `C:` because the operating system made that the easy default.
+The current receipt is boring on purpose: commit `551c7f7`, 10 posts, 41 pages, 24 viewports, 10 Pagefind pages, 2123 words, 350 wiki files indexed, 382 files archived, and zero rendered-page failures. Those numbers are not decoration. They are the proof that the artifact trail lives exactly where the next agent will look.
 
-The important correction was sharper than "move the C files to F later." That only cleans up after the mistake. The real correction is to make the agent start from the F contract in the first place: repo on F, wiki on F, rendered evidence on F, test temp on F. No after-the-fact rescue mission.
+The repeated failure was always the old one: work kept drifting toward `C:` because the operating system made that the easy default.
+
+The important correction was sharper than simply "move the C files to F later." That only cleans up after the mistake. The real correction is to make the agent start from the `F:` contract in the first place: repo on F, wiki on F, rendered evidence on F, test temp on F. No after-the-fact rescue missions.
 
 If builds, screenshots, search indexes, and evidence bundles fall into the operating system temp folder, the agent is changing code while quietly pressuring the workstation. The problem is not "the C drive is small." The problem is that nobody told the agent which disk role each artifact belongs to.
 
-A work disk contract answers that before the next long run starts.
+A **work disk contract** answers that before the next long run starts.
 
 ![AI work disk contract diagram](/images/posts/ai-agent-work-disk-contract.png)
 
 ## Approval Proof Chain
 
-Bad output:
+**Bad output:**
 
 ```txt
 The agent writes screenshots, test fixtures, wiki notes, and rendered summaries wherever the SDK defaults.
@@ -56,7 +63,7 @@ Someone copies the C-drive leftovers to F by hand.
 The next session accepts the claim without knowing whether the proof was born under the contract or rescued later.
 ```
 
-Gate added:
+**Gate added:**
 
 ```powershell
 Get-PSDrive -Name C,F
@@ -73,7 +80,7 @@ npm run verify:rendered-pages
 npm run verify:publication-approvals
 ```
 
-After:
+**After:**
 
 ```txt
 accepted review result exists
@@ -88,17 +95,17 @@ rendered desktop/mobile receipts still pass
 
 Source: repo path, wiki root, rendered-audit root, test-temp root, archive sync output, and publication review record.
 
-Accept only when: the receipt was produced under the named roots and the archive/index/rendered checks pass after the run.
+**Accept only when:** the receipt was produced under the named roots and the archive/index/rendered checks pass after the run.
 
-Reject when: the evidence was copied into place after the run, the temp root is unknown, or the next agent would have to search `C:`, Downloads, chat, or an SDK temp folder.
+**Reject when:** the evidence was copied into place after the run, the temp root is unknown, or the next agent would have to search `C:`, Downloads, chat, or an SDK temp folder to find it.
 
-Boundary: a disk contract proves artifact jurisdiction; it does not prove the code, article, or runtime claim is correct.
+*Boundary:* A disk contract proves artifact jurisdiction; it does not prove the code, article, or runtime claim is correct.
 
 ## Bad Default
 
 Node.js exposes `os.tmpdir()`, which is convenient and portable. That convenience is exactly why it becomes risky in long agent sessions. Operators stop asking where repeated test artifacts are going.
 
-The first check is not a model check. It is a disk-role check:
+The first check is not a model check. It is a **disk-role check**:
 
 ```powershell
 Get-PSDrive -Name C,F
@@ -138,7 +145,7 @@ The bad version looks harmless in the moment:
 "Archive refreshed."
 ```
 
-None of those statements are enough. The better receipt names where the work landed: `dist`, `<rendered-audit-root>\summary.json`, `<wiki-root>\wiki_fts.db`, and `<test-temp-root>\vibecode-node`.
+None of those statements are enough. The better receipt names *where* the work landed: `dist`, `<rendered-audit-root>\summary.json`, `<wiki-root>\wiki_fts.db`, and `<test-temp-root>\vibecode-node`.
 
 That is the whole point. A disk contract turns "it worked" into "it worked, and the evidence is in the place the next agent will search."
 
@@ -154,7 +161,7 @@ C     445.87  484.79 C:\
 F    1126.82 6325.20 F:\
 ```
 
-The point is not that F is always the right disk. The point is that this machine has a clear archive/work volume, and the agent was still being corrected for using C in places where completed company artifacts belonged on F.
+The point is not that `F:` is always the right disk. The point is that this machine has a clear archive/work volume, and the agent was still being corrected for using `C:` in places where completed company artifacts belonged on `F:`.
 
 The current contract names the durable locations:
 
@@ -189,7 +196,7 @@ hope the next run does not do it again
 
 That is not a contract. That is a cleanup chore with better naming.
 
-The cost arrives in the next session. The wiki says the archive is current, the rendered audit points at F, but the screenshot or temp fixture that justified the claim was born on C and copied later by hand. Now the reviewer is not checking the work. They are checking whether the cleanup story was true.
+The cost arrives in the next session. The wiki says the archive is current, the rendered audit points at `F:`, but the screenshot or temp fixture that justified the claim was born on `C:` and copied later by hand. Now the reviewer is not checking the work. They are checking whether the cleanup story was true.
 
 The better version is:
 

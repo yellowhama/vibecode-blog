@@ -1,11 +1,16 @@
 ---
-title: "Frustration Is a Signal, Not the Specification"
+title: "Frustration Is a Signal, Not the Specification: Engineering Agentic Boundaries"
 pubDatetime: 2026-05-10T10:00:00Z
-description: "The useful move is not to vent at the agent. It is to turn repeated irritation into a contract, a verifier, and evidence."
+description: "Don't just vent at your AI agent when it makes a mistake. Turn repeated frustration into a strict technical contract, a verifier, and a durable test."
 draft: false
 series: "Field Log"
 workflow: "packet"
-tags: ["engineering", "observability", "debugging", "slop-detection"]
+tags:
+  - ai-agents
+  - software-engineering
+  - debugging
+  - technical-contracts
+  - observability
 ogImage: "/images/posts/frustration-as-spec.png"
 references:
   - name: "OpenTelemetry Signals"
@@ -25,7 +30,7 @@ references:
 
 Read the image as the article's operating path, not a mood board. The failure gap is simple: repeated frustration can look like feedback while never becoming a boundary the next agent can obey. The left side is the complaint signal, the middle is the contract boundary, and the right side is the verifier receipt. If the complaint cannot travel that path, it is still editorial feedback, not system policy.
 
-On 2026-05-20, I opened the GitHub-backed reference ceiling report at `<artifact-root>\\vibecode-reference-ceiling-audit\latest.json`, looked at the weakest-post list, and found this article at the bottom.
+On 2026-05-20, I opened the GitHub-backed reference ceiling report at `<artifact-root>\vibecode-reference-ceiling-audit\latest.json`, looked at the weakest-post list, and found this article at the bottom.
 
 ```txt
 reference_ceiling_weakest=frustration-as-spec score=91 grade=reference-ceiling
@@ -35,9 +40,9 @@ readerTransfer: transfer artifact does not clearly say what to accept or reject
 
 That is a funny failure for an article about frustration. The article knew the rule, but it still made the reader infer the action. It complained about vague irritation while opening with a vague sentence.
 
-So the repair starts with the same rule the article recommends: treat the correction as telemetry, then turn it into a boundary.
+So the repair starts with the same rule the article recommends: **treat the correction as telemetry, then turn it into a boundary.**
 
-Use this when an agent repeats the same mistake twice. Do not ask it to care harder. Write the missing contract, attach a verifier, and reject the next output that cannot show the receipt.
+Use this when an agent repeats the same mistake twice. Do not ask it to "care harder." Write the missing contract, attach a verifier, and reject the next output that cannot show the receipt.
 
 The problem is not that the agent makes a mistake. The useful moment is when you correct the same mistake twice.
 
@@ -79,7 +84,7 @@ The standard is not "the operator is annoyed." The standard is "the same correct
 
 ## Bad/Gate/After Proof Chain
 
-Bad public output:
+**Bad public output:**
 
 ```txt
 The English blog accepts Korean source text.
@@ -88,7 +93,7 @@ The same product mention appears in unrelated posts.
 The operator complaint stays in chat, so the next agent repeats the failure.
 ```
 
-Gate added:
+**Gate added:**
 
 ```txt
 npm run verify:public-page-review
@@ -97,20 +102,20 @@ npm run verify:publication-approvals
 npm run audit:reported-proof
 ```
 
-After:
+**After:**
 
 ```txt
 <repo-root>\src\data\publication-approvals.json
 <repo-root>\src\data\post-image-contracts.json
-<artifact-root>\\vibecode-reported-proof-audit\latest.json
-<artifact-root>\\vibecode-draft-review-artifacts\frustration-as-spec-reference-blogger-review-result.json
+<artifact-root>\vibecode-reported-proof-audit\latest.json
+<artifact-root>\vibecode-draft-review-artifacts\frustration-as-spec-reference-blogger-review-result.json
 ```
 
 The accepted review must have zero rejected rows. The publication review record must match `current content digest`. The zero-item revision plan must stay bound to the current markdown hash. The rendered page audit must prove the expected slug image appears in the first-screen route instead of merely existing on disk.
 
-Accept only when the complaint has a dated failure, a named gate, a passing after-state, and a reviewer or approval record another session can inspect.
+**Accept only when** the complaint has a dated failure, a named gate, a passing after-state, and a reviewer or approval record another session can inspect.
 
-Reject when the complaint is only taste, cannot name the file or script that should change, or would create a rule no future operator should be forced to obey.
+**Reject when** the complaint is only taste, cannot name the file or script that should change, or would create a rule no future operator should be forced to obey.
 
 ## The Case Study
 
@@ -244,7 +249,7 @@ Use this pipeline when a workflow keeps producing the same correction:
 6. Re-run the workflow and check whether the correction disappears.
 ```
 
-Example from the image failure:
+**Example from the image failure:**
 
 ```txt
 Friction: "The post has an image, but it does not match the article."
@@ -253,7 +258,7 @@ Contract: One body image must match ogImage, live under /images/posts/<slug>.png
 Verifier: editorial contract plus public-surface gate plus browser screenshot.
 ```
 
-Example from the writing failure:
+**Example from the writing failure:**
 
 ```txt
 Friction: "The post says the right things, but it has no reading value."
@@ -274,7 +279,7 @@ Before turning frustration into policy, ask one question:
 Would I still want this rule enforced if a different operator were in the chair?
 ```
 
-Accept the frustration as a system signal when at least two of these are true:
+**Accept the frustration as a system signal when at least two of these are true:**
 
 ```txt
 The same correction has happened twice.
@@ -284,7 +289,7 @@ A small verifier, checklist, or review receipt can catch the same class of failu
 The rule would still make sense if another operator enforced it.
 ```
 
-Reject it as system policy when the complaint is only:
+**Reject it as system policy when the complaint is only:**
 
 ```txt
 personal taste without a repeated failure

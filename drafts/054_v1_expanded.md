@@ -14,7 +14,7 @@ references:
 
 The Instagram ads lied to you. 
 
-You¡¯ve seen the videos: a guy in a hoodie, a dark room, a prompt like *"Make me a SaaS that scans LinkedIn,"* and 30 seconds later, 10,000 lines of perfect code appear in Cursor. The narrator promises that "coding is dead" and you can now build products at the speed of thought. 
+YouÂ¡Â¯ve seen the videos: a guy in a hoodie, a dark room, a prompt like *"Make me a SaaS that scans LinkedIn,"* and 30 seconds later, 10,000 lines of perfect code appear in Cursor. The narrator promises that "coding is dead" and you can now build products at the speed of thought. 
 
 I fell for it. I tried to "vibe" my way into a production-grade data aggregator for MUSU. I failed 50 times in a row. 
 
@@ -38,7 +38,7 @@ The physics changed: implementation is now cheap and ephemeral. But, as Karpathy
 
 ## 2. The Backlash: Why "Real" Developers Hate Your Vibes
 
-If you spend any time on Hacker News or Reddit, you¡¯ll see the backlash. Seasoned engineers call it **"AI Slop."** And for the most part, they are right.
+If you spend any time on Hacker News or Reddit, youÂ¡Â¯ll see the backlash. Seasoned engineers call it **"AI Slop."** And for the most part, they are right.
 
 The problem with pure "vibe coding" is the **One-Shot Illusion**. It is easy to vibe out a landing page or a todo app. But the moment you hit a breaking change in a dependency, the vibe collapses into a loop of incompetence.
 
@@ -79,7 +79,7 @@ I fed *that* to the AI. It fixed the bug in one shot. 150 tokens. 0 slop.
 
 "Vibe coding" is a fun term for weekend projects, but it is a dangerous trap for production systems. 
 
-The true craft in 2026 isn't about knowing how to type or-loops. It¡¯s about **Context Engineering**. It¡¯s about being a "Student of the Gurus" and understanding the technical contracts between your systems so you can **Verify** the AI's output.
+The true craft in 2026 isn't about knowing how to type or-loops. ItÂ¡Â¯s about **Context Engineering**. ItÂ¡Â¯s about being a "Student of the Gurus" and understanding the technical contracts between your systems so you can **Verify** the AI's output.
 
 I am no longer a "Vibe Coder." I am an **Agentic Engineer**. I define the **Cage** (The Contract), and I let the LLM provide the **Flight** (The Implementation).
 
@@ -88,4 +88,4 @@ The tighter the cage, the faster the bird flies.
 ---
 *Next Log: [Day 247] - Using Frustration as the Specification.*
 
-[Master the AI ocean with the Contract-Led approach in MUSU](https://musu.pro)
+[Master the AI space with the Contract-Led approach in MUSU](https://musu.pro)

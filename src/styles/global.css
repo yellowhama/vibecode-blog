@@ -35,8 +35,9 @@ html[data-theme="dark"] {
 }
 
 @theme inline {
-  --font-app: var(--font-lora);
-  --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-app: var(--font-inter);
+  --font-ui: var(--font-inter);
+  --font-heading: var(--font-outfit);
   --color-background: var(--background);
   --color-bg-secondary: var(--bg-secondary);
   --color-bg-tertiary: var(--bg-tertiary);
@@ -195,7 +196,7 @@ html[data-theme="dark"] {
 }
 
   /* Magazine / Field Journal styles */
-  .font-serif { font-family: var(--font-lora); }
+  .font-serif { font-family: var(--font-inter); } /* Deprecated serif usage, mapping to inter */
   .text-ink { color: #432c1c; }
   .text-ink-faded { color: rgba(67, 44, 28, 0.6); }
   .bg-paper-warm { background-color: #F4E5C2; }
@@ -212,7 +213,7 @@ html[data-theme="dark"] {
   .text-ink { color: #432c1c; }
   .text-ink-faded { color: rgba(67, 44, 28, 0.6); }
   .font-mono { font-family: ui-monospace, "IBM Plex Mono", monospace; }
-  .font-serif { font-family: var(--font-lora); }
+  .font-serif { font-family: var(--font-inter); }
 
   /* Visual Interest for Boring Landing */
   .hero-journal-wrap {

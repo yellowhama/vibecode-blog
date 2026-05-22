@@ -1,27 +1,32 @@
 ---
-title: "About Vibecode Town"
+title: "About Vibecode Town: A Field Log for AI-Assisted Software Engineering"
 pubDatetime: 2026-05-10T10:00:00Z
-description: "Vibecode Town publishes evidence-backed field notes about AI-assisted software work, agent workflows, and technical contracts."
+description: "Vibecode Town is an evidence-backed field log tracking AI-assisted software development, agentic workflows, and technical contracts. We focus on verifiable proof, not AI hype."
 draft: false
 series: "About"
-tags: ["about", "mission", "engineering"]
+tags:
+  - about
+  - mission
+  - ai-agents
+  - software-engineering
+  - vibecoding
 ogImage: "/images/posts/000-about.png"
 ---
 
 # About Vibecode Town
 
-Vibecode Town is a field log for AI-assisted software work.
+Vibecode Town is an evidence-backed field log for AI-assisted software work.
 
-The site tracks what changes when agents write code, operate tools, produce evidence, and touch public surfaces. The standard is not hype. The standard is whether a claim can be tied to a source, a command, a failure, a verifier, or a durable artifact.
+We track exactly what changes when autonomous agents write code, operate tools, produce evidence, and interact with public surfaces. Our standard is not hype. Our standard is whether a technical claim can be directly tied to a source file, a terminal command, a reproducible failure, a strict verifier, or a durable artifact.
 
-If a post cannot show why the issue matters, what changed, and what the reader should do next, it does not belong here yet.
+If a post cannot clearly demonstrate why an issue matters, what was changed, and what the reader should do next, it does not belong here yet.
 
 ![Vibe Coding Project operating log diagram](/images/posts/000-about.png)
 
 ## Publishing Contract
 
-1. **Show the failure.** Start from the bug, handoff gap, bad deploy, weak article, or unsafe assumption.
-2. **Name the contract.** Turn the lesson into a boundary another agent can follow.
-3. **Keep the proof.** Prefer source notes, commands, screenshots, build logs, manifests, and repeatable checks over generic advice.
+1. **Show the failure.** Start directly from the bug, handoff gap, bad deploy, weak article, or unsafe assumption.
+2. **Name the contract.** Turn the lesson into a strict boundary that another AI agent or engineer can follow.
+3. **Keep the proof.** Prefer source notes, terminal commands, screenshots, build logs, manifests, and repeatable checks over generic advice.
 
-Vibecode Town does not publish fake product proof, recycled AI summaries, or tool worship. The goal is narrower: make agentic software work reviewable.
+Vibecode Town does not publish fake product proof, recycled AI summaries, or tool worship. Our goal is much narrower: **to make agentic software work transparent, reviewable, and reproducible.**

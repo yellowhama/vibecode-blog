@@ -1,6 +1,7 @@
 import { existsSync } from "node:fs";
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { basename, dirname, resolve, join } from "node:path";
+import { getProseParagraphs } from "./ast-utils.mjs";
 
 const DEFAULT_BLOG_DIR = "src/data/blog";
 const CODE_FENCE = /```[\s\S]*?```/g;
@@ -94,10 +95,7 @@ function lastWords(markdown, count) {
 }
 
 function firstParagraph(body) {
-  return body
-    .split(/\r?\n\r?\n/)
-    .map(paragraph => stripMarkdown(paragraph))
-    .find(Boolean) ?? "";
+  return getProseParagraphs(body)[0]?.text ?? "";
 }
 
 function countMatches(text, pattern) {
@@ -213,11 +211,8 @@ function scoreEnding(body) {
 
 function scoreVoice(body) {
   const clean = stripMarkdown(body);
-  const paragraphs = body
-    .split(/\r?\n\r?\n/)
-    .map(paragraph => stripMarkdown(paragraph))
-    .filter(Boolean);
-  const longParagraphs = paragraphs.filter(paragraph => words(paragraph).length > 90).length;
+  const paragraphs = getProseParagraphs(body);
+  const longParagraphs = paragraphs.filter(p => p.wordCount > 90).length;
   const findings = [];
   let score = 0;
 

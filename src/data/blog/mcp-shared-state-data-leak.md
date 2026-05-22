@@ -1,13 +1,18 @@
 ---
-title: "Stateless MCP Servers Can Still Leak Shared State"
+title: "Stateless MCP Servers Can Still Leak Shared State: A Security Contract"
 pubDatetime: 2026-05-18T07:30:00Z
-description: "The MCP SDK advisory is not just a package update. It is a server and transport lifecycle contract for agent tool infrastructure."
+description: "An HTTP endpoint might be stateless, but your MCP server might not be. Learn how shared object state in AI agent infrastructure can silently leak data across clients."
 draft: false
 featured: false
 series: "AI Market Watch"
 workflow: "packet"
 lang: "en"
-tags: ["ai-security", "mcp", "agent-infrastructure", "technical-contracts"]
+tags:
+  - ai-security
+  - mcp
+  - agent-infrastructure
+  - software-engineering
+  - technical-contracts
 ogImage: "/images/posts/mcp-shared-state-data-leak.png"
 references:
   - name: "GitHub Advisory GHSA-345p-7cg4-v4c7"
@@ -25,13 +30,13 @@ references:
 
 At 1:54 a.m. on 2026-05-21, I opened GitHub Advisory `GHSA-345p-7cg4-v4c7`, checked the GitLab mirror again, and compared both against the MCP Streamable HTTP transport spec. The most dangerous sentence in that review was not in the advisory.
 
-It was the sentence an engineer says right before skipping the real check: "It is HTTP, so it is stateless."
+It was the sentence an engineer says right before skipping the real check: *"It is HTTP, so it is stateless."*
 
 Before accepting an MCP endpoint, run the constructor-location check. If the server or transport owner is unclear, the review is not done.
 
 The HTTP request may be stateless. The application object may not be. If one `McpServer` instance or one `StreamableHTTPServerTransport` instance is reused across clients, the agent boundary is already weaker than it looks.
 
-That shared state is not an implementation detail. In an agent tool server, shared state is a security boundary. A route handler can look clean while the object graph behind it still connects two clients that should never meet.
+That shared state is not an implementation detail. In an agent tool server, **shared state is a security boundary.** A route handler can look clean while the object graph behind it still connects two clients that should never meet.
 
 The annoying part is that the bug hides in the place reviewers skim past. Not the tool description. Not the auth middleware. The constructor location.
 
@@ -86,7 +91,7 @@ The three references do different jobs. GitHub gives the affected package bounda
 
 The risky pattern is a module-level singleton:
 
-```txt
+```ts
 global server = new McpServer(...)
 global transport = new StreamableHTTPServerTransport(...)
 ```
@@ -127,7 +132,7 @@ The review that would catch this bug is almost embarrassingly small.
 
 It does not start with a security architecture diagram. It starts with a grep result and one uncomfortable line number:
 
-```txt
+```bash
 rg "new McpServer|new Server|new StreamableHTTPServerTransport" src
 
 src/mcp/server.ts:8:const server = new McpServer(...)
@@ -141,7 +146,7 @@ Not because every global object is bad. Because these are not just global object
 
 The good review produces a different shape:
 
-```txt
+```bash
 src/mcp/routes.ts:39:const server = new McpServer(...)
 src/mcp/routes.ts:40:const transport = new StreamableHTTPServerTransport(...)
 src/mcp/routes.ts:52:await server.connect(transport)
@@ -152,26 +157,33 @@ That does not prove the whole server is secure. It proves the reviewer looked at
 
 This is the writing lesson and the security lesson at the same time: a claim is weak until it points at the exact object that would make it false.
 
-The rule is blunt: if the review cannot point at the constructor, it has not reviewed the lifecycle. It has reviewed the paint on the door.
+The rule is blunt: **if the review cannot point at the constructor, it has not reviewed the lifecycle. It has reviewed the paint on the door.**
 
 ## Proof Chain
 
 Here is the release chain as proof, not a mood:
 
+**Bad output:**
+
 ```txt
-Bad output:
 - The endpoint returns 200.
 - Authentication passes.
 - The team says "HTTP is stateless."
 - The same module-level server or transport object can still route client state across streams.
+```
 
-Gate added:
+**Gate added:**
+
+```txt
 - Check the SDK floor.
 - Grep constructor locations.
 - Reject shared transport or server/protocol ownership unless an isolated session owner is named.
 - Keep the review result attached to the current article hash.
+```
 
-After:
+**After:**
+
+```txt
 - The advisory is no longer only a dependency note.
 - The review has a lifecycle owner, a constructor-location receipt, and a release decision.
 - The current accepted review, zero-item revision plan, approval record, and current content digest all point at the revised article.
@@ -181,7 +193,7 @@ The command version is deliberately boring:
 
 ```bash
 npm run verify:reported-proof
-node scripts/audit-reported-proof.mjs --output <artifact-root>\\vibecode-reported-proof-audit\latest.json
+node scripts/audit-reported-proof.mjs --output <artifact-root>\vibecode-reported-proof-audit\latest.json
 ```
 
 The current writing-pulse body repair added a second receipt, because a security article should not ask for evidence while carrying stale evidence of its own:
@@ -290,7 +302,7 @@ The image rule is deliberately boring: one slug-specific diagram, no casual reus
 After this repair, the article must keep the same standard it asks of MCP code:
 
 ```txt
-writing-pulse report: <artifact-root>\\vibecode-writing-pulse-audit\latest.json
+writing-pulse report: <artifact-root>\vibecode-writing-pulse-audit\latest.json
 rendered-page report: <rendered-audit-root>\summary.json
 publication review: src/data/publication-approvals.json
 reference review manifest: src/data/reference-blogger-review-artifacts.json

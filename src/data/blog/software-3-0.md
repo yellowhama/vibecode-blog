@@ -5,7 +5,13 @@ description: "The useful Software 3.0 lesson is not that LLMs replace engineerin
 draft: false
 series: "AI Explainer"
 workflow: "packet"
-tags: ["engineering", "software-3.0", "agentic-engineering", "verification"]
+tags:
+  - software-engineering
+  - ai-agents
+  - software-3.0
+  - agentic-engineering
+  - verification
+  - technical-contracts
 ogImage: "/images/posts/software-3-0.png"
 references:
   - name: "Andrej Karpathy: Software Is Changing Again"

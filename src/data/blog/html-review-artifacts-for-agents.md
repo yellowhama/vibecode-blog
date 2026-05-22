@@ -1,13 +1,18 @@
 ---
 title: "Use HTML to Review Agent Output, Not to Replace the Contract"
 pubDatetime: 2026-05-18T15:00:00Z
-description: "Claude Code can make long plans, PR explainers, and reports easier to read as HTML. The source of truth still has to return to Markdown, JSON, or evidence files."
+description: "HTML is great for reviewing complex AI agent outputs, but dangerous as a system of record. Learn why the final decision must always export back to Markdown or JSON."
 draft: false
 featured: false
 series: "AI Tool Note"
 workflow: "packet"
 lang: "en"
-tags: ["ai-tools", "claude-code", "agentic-engineering", "technical-contracts"]
+tags:
+  - ai-agents
+  - software-engineering
+  - claude-code
+  - ui-design
+  - technical-contracts
 ogImage: "/images/posts/html-review-artifacts-for-agents.png"
 references:
   - name: "Thariq X post"
@@ -23,7 +28,7 @@ references:
 
 # Use HTML to Review Agent Output, Not to Replace the Contract
 
-On 2026-05-20, I opened the DESIGN.md review artifact in Chrome, put the LLM wiki source packet beside it, and checked whether the browser page could survive one ugly risk question: if I deleted the HTML file, would the decision still exist?
+On 2026-05-20, I opened the DESIGN.md review artifact in Chrome, put the LLM wiki source packet beside it, and checked whether the browser page could survive one ugly risk question: **if I deleted the HTML file, would the decision still exist?**
 
 That is the test most HTML-for-agents posts skip.
 
@@ -33,7 +38,7 @@ Before accepting a polished agent-made HTML file, run that delete test. Ask wher
 
 AI coding agents no longer struggle to write plans. The newer failure mode is that they write plans nobody reads. A 200-line Markdown plan appears. The PR explanation gets longer. The research summary includes tables, diffs, timelines, snippets, and caveats. The human scrolls, nods, and moves to the next prompt without actually reviewing the work.
 
-The useful example was a DESIGN.md spec review. The canon stayed in Markdown under the LLM wiki. The browser-readable artifact lived separately at:
+The useful example was a `DESIGN.md` spec review. The canon stayed in Markdown under the LLM wiki. The browser-readable artifact lived separately at:
 
 ```txt
 <wiki-root>\companies\vibecode-town\html-artifacts\design-md-spec-operating-review-2026-05-18.html
@@ -100,7 +105,7 @@ That is the bar. If HTML only turns a memo into a nicer memo, keep the Markdown.
 
 ## A Real Artifact Shape
 
-The DESIGN.md review artifact had a concrete source inventory, not just a pretty page.
+The `DESIGN.md` review artifact had a concrete source inventory, not just a pretty page.
 
 The portable part is not the Windows path. The portable part is the receipt shape: source note, processed extract, rendered review surface, export target, and a place where the final decision returns to canon.
 
@@ -149,7 +154,7 @@ That is the level of implementation detail a review artifact needs. If the only 
 
 Here is the failure pattern to reject before an HTML artifact reaches a teammate.
 
-Bad output:
+**Bad output:**
 
 ```txt
 The agent produces a polished local HTML page.
@@ -160,7 +165,7 @@ No Markdown or JSON decision record receives the approval.
 The next agent treats the page as canon because it is the prettiest artifact in the folder.
 ```
 
-Gate added:
+**Gate added:**
 
 ```txt
 npm run verify:rendered-pages
@@ -177,7 +182,7 @@ Reject when: the page is the only proof, the copy button exports only praise, or
 Boundary: HTML may be the review surface; it may not be the approval state.
 ```
 
-After:
+**After:**
 
 ```txt
 accepted review result exists
@@ -191,7 +196,7 @@ That chain is the difference between "the artifact looked impressive" and "the a
 
 ## The Before/After
 
-Before the artifact, the review path looked like this:
+**Before the artifact**, the review path looked like this:
 
 ```txt
 read transcript note
@@ -202,7 +207,7 @@ write a decision somewhere else
 hope the next agent finds it
 ```
 
-After the artifact, the review path looked like this:
+**After the artifact**, the review path looked like this:
 
 ```txt
 open design-md-spec-operating-review-2026-05-18.html
@@ -286,7 +291,7 @@ One is a mood. The other is reviewable.
 
 This is where HTML wins: it makes the review faster without pretending to be the system of record.
 
-Forward this rule: HTML is for noticing; Markdown, JSON, and evidence files are for remembering.
+Forward this rule: **HTML is for noticing; Markdown, JSON, and evidence files are for remembering.**
 
 ## The Review Artifact Contract
 
@@ -339,7 +344,7 @@ If the artifact cannot answer those questions, it is presentation, not review.
 
 ## The Export Rule
 
-Interactive HTML artifacts need one hard requirement: export.
+Interactive HTML artifacts need one hard requirement: **export.**
 
 If a slider tunes animation timing, if a drag-and-drop board reprioritizes tickets, or if a prompt editor previews filled templates, the final decision cannot stay trapped in the browser.
 
@@ -355,7 +360,7 @@ copy as decision record
 
 Without export, HTML becomes hidden state. With export, the human can decide in the browser and send the result back into the durable contract.
 
-The DESIGN.md artifact used a plain `textarea` export:
+The `DESIGN.md` artifact used a plain `textarea` export:
 
 ```txt
 Decision: Adopt DESIGN.md as a visual contract pattern for Vibecode, not as a final public recommendation yet.

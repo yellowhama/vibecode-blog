@@ -1,13 +1,18 @@
 ---
 title: "The Writing System Needs a Harness, Not More Prompts"
 pubDatetime: 2026-05-20T04:08:37.438Z
-description: "A packet-backed draft on why better agent writing needs an evaluation harness, not prompt taste alone."
+description: "A packet-backed draft on why better agent writing needs an evaluation harness, not prompt taste alone. How to build a writing loop that can actually say no."
 draft: true
 featured: false
 series: "AI Tool Note"
 lang: "en"
 workflow: "packet"
-tags: ["ai-agents", "writing", "verification", "agentic-engineering"]
+tags:
+  - ai-agents
+  - writing
+  - verification
+  - agentic-engineering
+  - technical-contracts
 ogImage: "/images/posts/writing-harness-not-more-prompts.png"
 references:
   - name: "Primary source packet reference"

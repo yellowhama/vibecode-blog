@@ -1,6 +1,7 @@
 import { existsSync } from "node:fs";
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { basename, dirname, join, resolve } from "node:path";
+import { getProseParagraphs } from "./ast-utils.mjs";
 
 const DEFAULT_BLOG_DIR = "src/data/blog";
 
@@ -226,11 +227,8 @@ function scoreBoundary(body) {
 
 function scoreVoiceAndScan(body, combined) {
   const readable = stripMarkdown(body);
-  const paragraphs = body
-    .split(/\r?\n\r?\n/)
-    .map(paragraph => stripMarkdown(paragraph))
-    .filter(Boolean);
-  const longParagraphs = paragraphs.filter(paragraph => words(paragraph).length > 90).length;
+  const paragraphs = getProseParagraphs(body);
+  const longParagraphs = paragraphs.filter(p => p.wordCount > 90).length;
   const headings = sectionHeadings(body);
   const weakHits = WEAK_PHRASES.filter(phrase =>
     new RegExp(`\\b${phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i").test(combined),

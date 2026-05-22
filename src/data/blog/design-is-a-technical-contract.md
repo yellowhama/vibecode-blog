@@ -1,12 +1,16 @@
 ---
-title: "DESIGN.md Turns Visual Taste Into an Agent Contract"
+title: "DESIGN.md: Turning Visual Taste Into a Strict Agent Contract"
 pubDatetime: 2026-05-13T18:00:00Z
-description: "DESIGN.md works because it keeps design reasoning and token values together, then gives agents a file they can read, edit, and lint."
+description: "Visual design for AI agents fails when built on screenshots and vibes. Learn how DESIGN.md turns UI taste into an inspectable, lintable technical contract."
 draft: false
 featured: true
 series: "Field Log"
 workflow: "packet"
-tags: ["engineering", "design-md", "agentic-design", "technical-contracts"]
+tags:
+  - ai-agents
+  - ui-design
+  - design-systems
+  - technical-contracts
 ogImage: "/images/posts/design-is-a-technical-contract.png"
 references:
   - name: "Google Labs Stitch DESIGN.md announcement"
@@ -32,7 +36,7 @@ A screenshot says what a screen looked like. It does not reliably say why the pr
 
 The mistake is not using screenshots. The mistake is letting screenshots become memory.
 
-That is why DESIGN.md matters. It turns design taste into a technical contract the agent can read, edit, lint, and refuse.
+That is why `DESIGN.md` matters. **It turns design taste into a technical contract the agent can read, edit, lint, and refuse.**
 
 The point is not to make every agent a designer. The point is to stop every new design pass from starting with a blank visual memory.
 
@@ -72,7 +76,7 @@ The cost shows up one review later. Someone pastes a finished-looking Stitch scr
 
 That is the trap: the screenshot can look specific while the decision is still missing. A visual reference is not enough proof when the job is to preserve a system across the next five prompts.
 
-DESIGN.md solves that by keeping prose and tokens in one persistent file.
+`DESIGN.md` solves that by keeping prose and tokens in one persistent file.
 
 That changes the prompt from this:
 
@@ -107,7 +111,7 @@ That matters for agents because the instruction is no longer "make it greenish."
 
 ## Components Need References, Not Guesswork
 
-The DESIGN.md spec direction is especially useful for components. A button token can point to a color role instead of hard-coding another hex value.
+The `DESIGN.md` spec direction is especially useful for components. A button token can point to a color role instead of hard-coding another hex value.
 
 ```txt
 button.primary.background -> color.accent
@@ -121,7 +125,7 @@ That is exactly the kind of structure agents need. They are good at applying exp
 
 ## The Linter Loop
 
-The strongest part of the DESIGN.md update is not the file name. It is the validation loop.
+The strongest part of the `DESIGN.md` update is not the file name. It is the validation loop.
 
 ```txt
 agent reads DESIGN.md
@@ -147,7 +151,7 @@ That turns design from a preference conversation into an inspectable workflow. I
 
 This is the operator value: the agent can be creative inside the roles, but it cannot silently replace the roles.
 
-The rule is blunt: if a design decision cannot be linted, diffed, rendered, or rejected later, it is not ready to become agent memory.
+The rule is blunt: **if a design decision cannot be linted, diffed, rendered, or rejected later, it is not ready to become agent memory.**
 
 ## The Small Contract Shape
 
@@ -259,11 +263,11 @@ If a design decision only exists in a screenshot, it is not a contract. If it on
 
 ## Accept/Reject Decision Checklist
 
-Use DESIGN.md when a design decision needs to survive more than one prompt. Do not use it as a fancy place to hide undecided taste.
+Use `DESIGN.md` when a design decision needs to survive more than one prompt. Do not use it as a fancy place to hide undecided taste.
 
 Next time an agent hands you a polished design, run this review before you ask for more variants.
 
-Accept a decision into DESIGN.md when at least two of these are true:
+**Accept a decision into DESIGN.md when at least two of these are true:**
 
 ```txt
 The same role will be reused across more than one screen.
@@ -273,7 +277,7 @@ A linter, token diff, screenshot review, or component check can catch drift.
 Changing the value later should update every component that points at the role.
 ```
 
-Reject it from DESIGN.md when the input is only:
+**Reject it from DESIGN.md when the input is only:**
 
 ```txt
 a one-off screenshot guess
@@ -308,24 +312,22 @@ If another agent reads this file tomorrow, will it know what to preserve, what t
 
 Here is the design chain as proof, not a mood-board mood:
 
-```txt
-Bad output:
+**Bad output:**
 - A Stitch screenshot looks good.
 - The agent copies the surface.
 - The next prompt asks for "the same style."
 - No one can say which color role, type role, component variant, or contrast rule must survive.
 
-Gate added:
+**Gate added:**
 - Name the reusable role before encoding it.
 - Put the token value and the reasoning in DESIGN.md.
-- Run npx @google/design.md lint DESIGN.md.
+- Run `npx @google/design.md lint DESIGN.md`.
 - Reject any visual decision that cannot round-trip into tokens, component props, or a patch checklist.
 
-After:
+**After:**
 - The current accepted review, zero-item revision plan, approval record, and current content digest point at the revised article.
 - The article has a source packet, agent contract, HTML review surface, CLI snapshot, and public image-contract receipt.
 - The next agent gets a role to preserve instead of a screenshot to imitate.
-```
 
 The practical template is deliberately small:
 
@@ -342,10 +344,10 @@ If the answer is yes, encode the role. If the answer is no, keep the artifact in
 
 ## Boundary
 
-DESIGN.md does not prove that the resulting interface is good. A weak brand system written in a tidy file is still a weak brand system.
+`DESIGN.md` does not prove that the resulting interface is good. A weak brand system written in a tidy file is still a weak brand system.
 
 It also does not replace design review, browser screenshots, or implementation QA. The file can tell an agent which roles exist, but it cannot decide whether the final screen feels trustworthy, whether the hierarchy lands in the browser, or whether a component works under real content.
 
-The limit is simple: use DESIGN.md to preserve decisions, not to avoid making them. If the team has not agreed on the role, token, or component behavior, the file should expose that gap instead of letting an agent invent taste silently.
+The limit is simple: use `DESIGN.md` to preserve decisions, not to avoid making them. If the team has not agreed on the role, token, or component behavior, the file should expose that gap instead of letting an agent invent taste silently.
 
 The contract is not the final UI. It is the memory that keeps the next UI from starting over.

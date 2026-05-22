@@ -60,12 +60,20 @@ export default defineConfig({
   },
   fonts: [
     {
-      name: "Lora",
-      cssVariable: "--font-lora",
+      name: "Inter",
+      cssVariable: "--font-inter",
       provider: fontProviders.google(),
-      fallbacks: ["Georgia", "serif"],
+      fallbacks: ["sans-serif"],
       weights: [400, 500, 600, 700],
-      styles: ["normal", "italic"],
+      styles: ["normal"],
+    },
+    {
+      name: "Outfit",
+      cssVariable: "--font-outfit",
+      provider: fontProviders.google(),
+      fallbacks: ["sans-serif"],
+      weights: [400, 500, 600, 700, 800],
+      styles: ["normal"],
     },
   ],
 });

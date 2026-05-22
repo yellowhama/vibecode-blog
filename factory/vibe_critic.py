@@ -9,6 +9,43 @@ class VibeCritic:
         self.output_dir = os.path.join(project_root, 'reviews')
         os.makedirs(self.output_dir, exist_ok=True)
 
+    def split_sections(self, content):
+        import re
+        body = content
+        frontmatter_match = re.match(r'^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$', content)
+        if frontmatter_match:
+            body = frontmatter_match.group(2)
+            
+        sections = []
+        current_heading = "introduction"
+        current_lines = []
+        
+        for line in body.splitlines():
+            heading_match = re.match(r'^##\s+(.+)$', line)
+            if heading_match:
+                sections.append({
+                    "heading": current_heading.lower(),
+                    "text": "\n".join(current_lines).strip()
+                })
+                current_heading = heading_match.group(1).strip()
+                current_lines = []
+            else:
+                current_lines.append(line)
+                
+        sections.append({
+            "heading": current_heading.lower(),
+            "text": "\n".join(current_lines).strip()
+        })
+        return sections
+
+    def is_technical_section(self, heading):
+        technical_keywords = [
+            "mechanism", "checklist", "decision matrix", "contract", "runbook",
+            "workflow", "verdict", "pipeline", "architecture", "control surface",
+            "rule", "evidence", "implementation"
+        ]
+        return any(keyword in heading for keyword in technical_keywords)
+
     def run_critique(self, draft_path):
         if not os.path.exists(draft_path):
             print(f"Draft not found: {draft_path}")
@@ -38,21 +75,33 @@ class VibeCritic:
             "revision_tasks": []
         }
 
-        # Simulating a finding if poetic language is found
-        if any(word in content.lower() for word in ["ocean", "drift", "castaway"]):
+        # Check for banned metaphors ONLY in technical sections
+        sections = self.split_sections(content)
+        has_banned_metaphor = False
+        evidence_list = []
+        for sec in sections:
+            heading = sec["heading"]
+            text = sec["text"]
+            if self.is_technical_section(heading):
+                for word in ["ocean", "drift", "castaway"]:
+                    if word in text.lower():
+                        has_banned_metaphor = True
+                        evidence_list.append(f"Found flowery metaphor '{word}' in technical section '{heading}'.")
+
+        if has_banned_metaphor:
             report["verdict"] = "fix required"
             report["structure_rhythm_mouth_gate"]["mouthfeel"]["verdict"] = "fail"
             report["findings"].append({
                 "finding_id": "M01",
                 "severity": "major",
-                "evidence": "Found flowery metaphors (ocean/drift).",
-                "required_change": "Purge all poetic metaphors. Use dry engineering language.",
+                "evidence": " ".join(evidence_list),
+                "required_change": "Purge all poetic metaphors from technical sections. Use dry engineering language.",
                 "owner": "vibe_writer"
             })
             report["revision_tasks"].append({
                 "task_id": "R01",
                 "source_finding": "M01",
-                "instruction": "Rewrite the introduction to remove 'ocean' and 'drift' metaphors.",
+                "instruction": "Rewrite the technical sections to remove 'ocean', 'drift', and 'castaway' metaphors.",
                 "done": False
             })
 

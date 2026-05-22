@@ -1,12 +1,17 @@
 ---
-title: "What Vibe Coding Actually Is"
+title: "What Vibe Coding Actually Is: Exploration vs Production"
 pubDatetime: 2026-05-10T10:00:00Z
 description: "Vibe coding is useful for exploration, but production work starts when intent becomes a technical contract the agent can verify against."
 draft: false
 featured: true
 series: "AI Explainer"
 workflow: "packet"
-tags: ["engineering", "vibe-coding", "agentic-engineering", "technical-contracts"]
+tags:
+  - software-engineering
+  - vibe-coding
+  - ai-agents
+  - agentic-engineering
+  - technical-contracts
 ogImage: "/images/posts/what-vibe-coding-actually-is.png"
 references:
   - name: "Not all AI-assisted programming is vibe coding"

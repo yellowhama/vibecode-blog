@@ -1,13 +1,18 @@
 ---
 title: "Self-Improving Agents Need a Judge Outside the Loop"
 pubDatetime: 2026-05-21T16:03:27.688Z
-description: "A private source-backed draft about why self-improving agent loops need external judgment before they optimize the wrong thing."
+description: "A self-improving AI agent without an external judge is just a machine for producing cleaner mistakes. Why autonomous improvement loops need strict human and technical boundaries."
 draft: true
 featured: false
 series: "AI Tool Note"
 lang: "en"
 workflow: "packet"
-tags: ["ai-agents", "agent-harness", "verification"]
+tags:
+  - ai-agents
+  - evals
+  - verification
+  - software-engineering
+  - technical-contracts
 ogImage: "/images/posts/self-improving-agents-need-evals.png"
 references:
   - name: "Primary source packet reference"
@@ -29,7 +34,7 @@ Self-improving agents are the next major leap in AI. Instead of waiting for huma
 
 It sounds clean. That is the problem. The risk is not that a bad loop looks broken; the dangerous version looks professional enough for a tired reader to trust.
 
-The missing word is judge.
+The missing word is **judge.**
 
 A loop that improves itself is not impressive by default. A loop that improves itself against the wrong judge is a machine for producing cleaner mistakes. It will not necessarily get worse. That is the trap. It may get better and better at the measurement that fails to see the thing you actually care about.
 
@@ -145,7 +150,7 @@ before: the workflow roles leaked into the article voice
 after: the article voice carries the argument, and review metadata is pushed into the appendix
 ```
 
-The rule is simple: if the improvement loop cannot show the thing it rejected, it has not earned the word improvement.
+The rule is simple: **if the improvement loop cannot show the thing it rejected, it has not earned the word improvement.**
 
 The voice rule is just as important: if the writer starts sounding like the publisher, the article is already losing the reader.
 
