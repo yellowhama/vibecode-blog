@@ -135,22 +135,22 @@ const editorialPrinciples = [
         </a>
       ) : null}
 
-      <!-- Recent Posts List (Side-by-side) -->
-      <div class="flex flex-col gap-12 mt-12">
+      <!-- Recent Posts List (Grid) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 pt-12 border-t border-border">
         {recentPosts.length > 0 ? (
           recentPosts.map((post, index) => (
             <a 
               href={`/posts/${post.id}`} 
-              class="group flex flex-col md:flex-row gap-8 items-center no-underline reveal-on-scroll border-t border-border pt-12" 
+              class="group flex flex-col gap-5 items-start no-underline reveal-on-scroll" 
               style={`transition-delay: ${index * 100}ms`}
             >
-              <!-- Image on Left -->
-              <div class="w-full md:w-2/5 aspect-[4/3] border border-border bg-bg-secondary rounded-lg overflow-hidden relative shrink-0">
+              <!-- Image on Top -->
+              <div class="w-full aspect-[4/3] border border-border bg-bg-secondary rounded-lg overflow-hidden relative shrink-0">
                 <img src={post.data.ogImage || "/images/blog/notebook-sketch.png"} alt={post.data.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
               </div>
               
-              <!-- Text on Right -->
-              <div class="w-full md:w-3/5 flex flex-col gap-3">
+              <!-- Text Below -->
+              <div class="w-full flex flex-col gap-3">
                 <div class="flex items-center gap-3">
                   <span class="font-mono text-[0.6rem] font-medium uppercase tracking-widest text-accent">
                     {post.data.series ?? "Field Log"}
@@ -160,17 +160,17 @@ const editorialPrinciples = [
                     {post.data.references?.length ?? 0} References
                   </span>
                 </div>
-                <h4 class="text-3xl font-semibold text-foreground group-hover:text-accent transition-colors leading-tight">
+                <h4 class="text-xl md:text-2xl font-semibold text-foreground group-hover:text-accent transition-colors leading-tight">
                   {post.data.title}
                 </h4>
-                <p class="text-text-secondary leading-relaxed text-lg mt-2 line-clamp-3">
+                <p class="text-text-secondary leading-relaxed text-base line-clamp-3">
                   {post.data.description}
                 </p>
               </div>
             </a>
           ))
         ) : (
-          <div class="text-sm font-mono text-text-muted uppercase tracking-widest text-center py-12 border border-dashed border-border rounded-xl">Awaiting the next log...</div>
+          <div class="col-span-full text-sm font-mono text-text-muted uppercase tracking-widest text-center py-12 border border-dashed border-border rounded-xl">Awaiting the next log...</div>
         )}
       </div>
     </div>
