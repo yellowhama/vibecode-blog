@@ -36,14 +36,14 @@ async function loadGoogleFonts(
 > {
   const fontsConfig = [
     {
-      name: "Lora",
-      font: "Lora",
+      name: "Outfit",
+      font: "Outfit",
       weight: 400,
       style: "normal",
     },
     {
-      name: "Lora",
-      font: "Lora",
+      name: "Outfit",
+      font: "Outfit",
       weight: 700,
       style: "bold",
     },
