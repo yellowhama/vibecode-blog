@@ -59,16 +59,16 @@ const editorialPrinciples = [
     <img src="/images/home/hero-journal.png" class="hero-journal-img opacity-20" alt="" />
 
     <div class="app-layout relative z-10">
-      <div class="flex flex-wrap items-center gap-4 mb-10 text-[0.8rem] tracking-[0.28em] font-mono text-ink-faded uppercase">
+      <div class="flex flex-wrap items-center gap-4 mb-10 text-[0.8rem] tracking-[0.28em] font-mono text-ink-faded uppercase animate-fade-in-up">
         <span>Agentic software field notes</span>
         <span class="h-px w-12 bg-accent"></span>
         <span>2026.05</span>
         <a href="/posts/" class="font-black text-ink underline underline-offset-4">Archive</a>
       </div>
-      <h1 class="text-5xl md:text-7xl font-serif italic text-ink tracking-tighter leading-[0.95] mb-10 max-w-4xl">
+      <h1 class="text-5xl md:text-7xl font-serif italic text-ink tracking-tighter leading-[0.95] mb-10 max-w-4xl animate-fade-in-up delay-100">
         Field notes for people shipping software with <Scribble type="underline">agents</Scribble>.
       </h1>
-      <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_24rem] gap-12 items-end">
+      <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_24rem] gap-12 items-end animate-fade-in-up delay-200">
         <p class="text-xl md:text-2xl text-text-secondary font-serif leading-relaxed italic">
           Real artifacts, broken runs, design contracts, and operating rules from AI-assisted software work. Start from the artifact, not the take.
         </p>
@@ -79,7 +79,7 @@ const editorialPrinciples = [
             data-article-card
             data-post-slug={leadPost.id}
           >
-            <img src={leadPost.data.ogImage} alt={leadPost.data.title} class="aspect-[16/9] w-full border border-ink/10 bg-paper-warm object-contain p-2" />
+            <img src={leadPost.data.ogImage} alt={leadPost.data.title} class="aspect-[16/9] w-full border border-ink/10 bg-paper-warm dark:bg-zinc-800/80 object-contain p-2 transition-colors" />
             <p class="mt-4 font-mono text-[0.56rem] font-bold uppercase tracking-[0.16em] text-ink-faded">Start here / {leadPost.data.series ?? "Field Log"}</p>
             <p class="mt-2 font-serif text-xl italic leading-tight text-ink">{leadPost.data.title}</p>
             <p class="mt-2 text-sm leading-relaxed text-text-secondary">{leadPost.data.description}</p>
@@ -108,7 +108,7 @@ const editorialPrinciples = [
           About the project
         </a>
       </div>
-      <dl class="mt-14 grid grid-cols-1 gap-3 md:grid-cols-3" aria-label="Editorial principles">
+      <dl class="mt-14 grid grid-cols-1 gap-3 md:grid-cols-3 reveal-on-scroll" aria-label="Editorial principles">
         {editorialPrinciples.map(principle => (
           <div class="border border-ink/10 bg-background/80 p-4 shadow-sm">
             <dt class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">{principle.label}</dt>
@@ -127,7 +127,7 @@ const editorialPrinciples = [
         <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10 border-b border-ink/5 pb-4">Start Here</h2>
 
         {featuredPosts.length > 0 ? (
-          <section class="featured-lead">
+          <section class="featured-lead reveal-on-scroll">
             <a href={`/posts/${featuredPosts[0].id}`} class="group block no-underline">
               <p class="mb-5 font-mono text-[0.58rem] font-bold uppercase tracking-[0.16em] text-ink-faded">
                 {featuredPosts[0].data.series ?? "Field Log"} / {featuredPosts[0].data.references?.length ?? 0} references
@@ -151,8 +151,8 @@ const editorialPrinciples = [
         <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10">Latest Field Notes</h2>
         <ul class="space-y-10">
           {recentPosts.length > 0 ? (
-            recentPosts.map(post => (
-              <li class="relative pl-0 group">
+            recentPosts.map((post, index) => (
+              <li class="relative pl-4 border-l-2 border-accent/20 group reveal-on-scroll" style={`transition-delay: ${index * 100}ms`}>
                 <a href={`/posts/${post.id}`} class="block no-underline">
                   <p class="mb-2 font-mono text-[0.6rem] font-bold uppercase tracking-[0.22em] text-ink-faded">
                     {post.data.series ?? "Field Log"}
@@ -172,7 +172,7 @@ const editorialPrinciples = [
     </div>
   </main>
 
-  <section class="mt-32 border-y border-ink/10 py-24 bg-accent/5 relative overflow-hidden">
+  <section class="mt-32 border-y border-ink/10 py-24 bg-accent/5 relative overflow-hidden reveal-on-scroll">
     <div class="absolute -right-20 -top-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl opacity-50"></div>  
     <div class="app-layout max-w-2xl mx-auto text-center relative z-10">
       <h2 class="text-3xl md:text-4xl font-serif italic mb-4 text-ink">Get the Field Notes</h2>
