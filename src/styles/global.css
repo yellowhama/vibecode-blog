@@ -5,33 +5,34 @@
 
 /* ─── Editorial Design Tokens ──────────────────────────────────── */
 
-/* Editorial palette: cocoa brown, amber, and off-white */
+/* Premium Software UI palette (Linear/Vercel inspired) */
 :root,
 html[data-theme="light"] {
-  --background: #FDFCF0;
-  --bg-secondary: #F4E5C2;
-  --bg-tertiary: #EDEBE0;
+  --background: #FFFFFF;
+  --bg-secondary: #FAFAFA;
+  --bg-tertiary: #F4F4F5;
   --bg-elevated: #FFFFFF;
-  --foreground: #432c1c; /* deep cocoa ink */
-  --text-secondary: rgba(67, 44, 28, 0.75);
-  --text-muted: rgba(67, 44, 28, 0.5);
-  --accent: #ffa602;      /* amber accent */
-  --accent-dim: #e69500;
-  --border: rgba(67, 44, 28, 0.12);
-  --border-strong: rgba(67, 44, 28, 0.25);
+  --foreground: #09090b; /* zinc-950 */
+  --text-secondary: rgba(9, 9, 11, 0.65);
+  --text-muted: rgba(9, 9, 11, 0.45);
+  --accent: #f59e0b;      /* amber-500 */
+  --accent-dim: #d97706;  /* amber-600 */
+  --border: rgba(9, 9, 11, 0.1);
+  --border-strong: rgba(9, 9, 11, 0.2);
 }
 
 html[data-theme="dark"] {
-  --background: #0A0A0A;
-  --bg-secondary: #141414;
-  --bg-tertiary: #1A1A1A;
-  --foreground: #FDFCF0;
-  --text-secondary: rgba(253, 252, 240, 0.8);
-  --text-muted: rgba(253, 252, 240, 0.5);
-  --accent: #ffa602;      /* keep amber accent in dark mode */
-  --accent-dim: #d48b00;
-  --border: rgba(253, 252, 240, 0.15);
-  --border-strong: rgba(253, 252, 240, 0.3);
+  --background: #09090b; /* zinc-950 */
+  --bg-secondary: #18181b; /* zinc-900 */
+  --bg-tertiary: #27272a; /* zinc-800 */
+  --bg-elevated: #09090b;
+  --foreground: #FAFAFA; /* zinc-50 */
+  --text-secondary: rgba(250, 250, 250, 0.65);
+  --text-muted: rgba(250, 250, 250, 0.45);
+  --accent: #fbbf24;      /* amber-400 */
+  --accent-dim: #f59e0b;  /* amber-500 */
+  --border: rgba(250, 250, 250, 0.1);
+  --border-strong: rgba(250, 250, 250, 0.2);
 }
 
 @theme inline {
@@ -195,58 +196,38 @@ html[data-theme="dark"] {
   }
 }
 
-  /* Magazine / Field Journal styles */
-  .font-serif { font-family: var(--font-outfit); }
-  .text-ink { color: #432c1c; }
-  .text-ink-faded { color: rgba(67, 44, 28, 0.6); }
-  .bg-paper-warm { background-color: #F4E5C2; }
-  .border-ink { border-color: #2D1D19; }
-
-  /* Utility for magazine feel */
+  /* Utility */
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;  
     overflow: hidden;
   }
-  /* Magazine Helpers */
-  .text-ink { color: #432c1c; }
-  .text-ink-faded { color: rgba(67, 44, 28, 0.6); }
   .font-mono { font-family: ui-monospace, "IBM Plex Mono", monospace; }
-  .font-serif { font-family: var(--font-outfit); }
 
-  /* Visual Interest for Boring Landing */
-  .hero-journal-wrap {
-    position: relative;
-    overflow: hidden;
-    background-color: var(--background);
-    border-bottom: 2px solid var(--foreground);
-  }
-  .hero-journal-img {
-    position: absolute;
-    right: -10%;
-    top: -10%;
-    width: 60%;
-    height: 120%;
-    object-fit: contain;
-    opacity: 0.15;
-    pointer-events: none;
-    filter: sepia(0.5);
-  }
-  [data-theme="dark"] .hero-journal-img {
-    opacity: 0.08;
-    filter: invert(1) sepia(0.2) brightness(1.2);
-  }
-
-  /* Paper Texture & Artistic Effects */
-  .bg-paper-texture {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
+  /* Premium Agentic UX Styles */
+  .bg-grid-pattern {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, var(--border) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
   }
   
-  .rough-edge-mask {
-    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L100,0 L100,100 L0,100 Z' fill='black' /%3E%3C/svg%3E");
-    /* In production, this would be a more complex SVG for rough edges */
+  .glass-panel {
+    background: rgba(var(--bg-secondary), 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-panel:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
+  }
+  html[data-theme="dark"] .glass-panel:hover {
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5), 0 0 20px -5px rgba(251, 191, 36, 0.1);
   }
 
   /* Premium Micro-Interactions */

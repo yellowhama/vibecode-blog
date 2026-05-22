@@ -5,9 +5,6 @@ const COMFY_DIR = 'F:\\Aisaak\\Projects\\ComfyUI';
 const PYTHON_EXE = path.join(COMFY_DIR, 'venv', 'Scripts', 'python.exe');
 const COMFY_URL = 'http://127.0.0.1:18188';
 
-/**
- * Checks if the ComfyUI server is currently online.
- */
 export async function isComfyOnline() {
   try {
     const response = await fetch(COMFY_URL, { method: 'GET' });
@@ -17,42 +14,26 @@ export async function isComfyOnline() {
   }
 }
 
-/**
- * Waits until the ComfyUI server is online.
- */
 async function waitForServer(timeoutMs = 120000) {
   const startTime = Date.now();
   while (Date.now() - startTime < timeoutMs) {
-    if (await isComfyOnline()) {
-      return true;
-    }
+    if (await isComfyOnline()) return true;
     await new Promise(r => setTimeout(r, 2000));
   }
   throw new Error('Timeout waiting for ComfyUI server to start.');
 }
 
-/**
- * Ensures ComfyUI is running. If not, spawns it in the background.
- */
 export async function ensureComfyRunning() {
-  const online = await isComfyOnline();
-  if (online) {
-    console.log('[Comfy Launcher] ComfyUI is already running.');
-    return;
-  }
+  if (await isComfyOnline()) return;
 
-  console.log('[Comfy Launcher] ComfyUI is offline. Starting server in background...');
+  console.log('[Comfy Launcher] Applying Final 128-bit Bus Optimization for 4060 Ti 16GB...');
 
-  // Spawn detached so it continues running even after this script finishes
-  // Optimized for RTX 4060 Ti 16GB (128-bit bus) to lock models in VRAM
   const comfyProcess = spawn(PYTHON_EXE, [
     'main.py', 
     '--port', '18188', 
-    '--fp8_e4m3fn-text-enc', 
-    '--fp8_e4m3fn-unet', 
-    '--gpu-only', 
-    '--highvram', 
-    '--disable-smart-memory',
+    '--weight-dtype', 'fp8_e4m3fn',
+    '--use-split-cross-attention',
+    '--preview-method', 'none',
     '--fast'
   ], {
     cwd: COMFY_DIR,
@@ -64,16 +45,10 @@ export async function ensureComfyRunning() {
     }
   });
 
-  // Unref to allow the Node process to exit independently
   comfyProcess.unref();
-
-  console.log('[Comfy Launcher] Server spawned (PID: ' + comfyProcess.pid + '). Waiting for it to become ready...');
-
   await waitForServer();
-  console.log('[Comfy Launcher] ComfyUI is now online and ready to accept prompts!');
 }
 
-// Allow manual execution to just start the server
 if (process.argv[1] === new URL(import.meta.url).pathname) {
   ensureComfyRunning().catch(console.error);
 }

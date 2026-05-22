@@ -53,6 +53,21 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 let ogImageUrl: string | undefined;
 
 // Determine OG image source
+  references,
+} = post.data;
+
+/* ========== Related Posts (same tags) ========== */
+const currentTags = new Set(tags.map(t => t.toLowerCase()));
+const relatedPosts = posts
+  .filter(p => p.id !== post.id)
+  .filter(p => p.data.tags.some(t => currentTags.has(t.toLowerCase())))
+  .slice(0, 3);
+
+const { Content, remarkPluginFrontmatter } = await render(post);
+
+let ogImageUrl: string | undefined;
+
+// Determine OG image source
 if (typeof initOgImage === "string") {
   ogImageUrl = initOgImage; // Remote OG image (absolute URL)
 } else if (initOgImage?.src) {
@@ -104,31 +119,44 @@ const nextPost =
     class:list={["app-layout pb-12", { "mt-8": !SITE.showBackButton }]}
     data-pagefind-body
   >
-    <span class="block mb-2 font-mono text-[0.7rem] tracking-[0.2em] text-text-muted uppercase">{series ?? "Article"} &middot; {tags[0] || "Engineering"} &middot; {new Date(pubDatetime).toISOString().slice(0,7).replace("-", ".")}</span>
-    <h1 transition:name={slugifyStr(title.replaceAll(".", "-"))}
-      class="inline-block text-2xl font-bold text-foreground sm:text-3xl"
-    >
-      {title}
-    </h1>
-    <div class="my-2 flex items-center gap-2">
-      <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" readingTime={remarkPluginFrontmatter.minutesRead} />
-      <span
-        aria-hidden="true"
-        class:list={[
-          "max-sm:hidden",
-          { hidden: !SITE.editPost.enabled || hideEditPost },
-        ]}>|</span
+    <header class="flex flex-col items-center text-center max-w-4xl mx-auto my-12 gap-6 reveal-on-scroll">
+      <div class="flex items-center gap-3">
+        <span class="px-3 py-1 font-mono text-[0.65rem] font-bold uppercase tracking-widest text-accent bg-accent/10 rounded-full">
+          {series ?? "Field Log"}
+        </span>
+        <span class="w-1.5 h-1.5 rounded-full bg-border"></span>
+        <span class="font-mono text-[0.65rem] tracking-widest text-text-muted uppercase">
+          {tags[0] || "Engineering"}
+        </span>
+      </div>
+
+      <h1 transition:name={slugifyStr(title.replaceAll(".", "-"))}
+        class="text-4xl md:text-6xl font-semibold text-foreground tracking-tight leading-tight"
       >
-      <EditPost {hideEditPost} {post} class="max-sm:hidden" />
-    </div>
+        {title}
+      </h1>
+
+      <div class="flex items-center gap-4 text-text-muted font-mono text-xs tracking-widest uppercase mt-2">
+        <Datetime {pubDatetime} {modDatetime} {timezone} size="sm" readingTime={remarkPluginFrontmatter.minutesRead} />
+        {(!SITE.editPost.enabled || hideEditPost) ? null : (
+          <>
+            <span class="text-border">|</span>
+            <EditPost {hideEditPost} {post} />
+          </>
+        )}
+      </div>
+    </header>
+
     {ogImageUrl ? (
-      <figure class="my-6 max-w-app" data-post-hero-image>
-        <img
-          src={ogImageUrl}
-          alt={`${title} proof diagram`}
-          class="aspect-[16/9] w-full border border-ink/10 bg-paper-warm object-contain p-2 shadow-sm"
-        />
-        <figcaption class="mt-2 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
+      <figure class="my-12 w-full max-w-5xl mx-auto reveal-on-scroll" data-post-hero-image>
+        <div class="aspect-[16/9] md:aspect-[21/9] w-full rounded-2xl overflow-hidden border border-border bg-bg-secondary relative">
+          <img
+            src={ogImageUrl}
+            alt={`${title} proof diagram`}
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+        <figcaption class="mt-4 text-center font-mono text-[0.65rem] uppercase tracking-widest text-text-muted">
           Visual summary of the artifact and decision rule discussed in this field note.
         </figcaption>
       </figure>

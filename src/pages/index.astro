@@ -49,138 +49,142 @@ const editorialPrinciples = [
 ];
 ---
 
+
 <Layout
   title="vibecode | Field notes for agentic software"
   description="Field notes for people shipping software with agents: real artifacts, broken runs, design contracts, and operating rules."
 >
   <Header />
 
-  <header class="hero-journal-wrap py-12 md:py-24 mb-16 relative overflow-hidden">
-    <img src="/images/home/hero-journal.png" class="hero-journal-img opacity-20" alt="" />
+  <header class="relative pt-32 pb-24 mb-16 overflow-hidden bg-grid-pattern border-b border-border">
+    <!-- Subtle Glow in background -->
+    <div class="absolute inset-0 bg-background/50 backdrop-blur-[1px]"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/20 rounded-full blur-[100px] pointer-events-none"></div>
 
-    <div class="app-layout relative z-10">
-      <div class="flex flex-wrap items-center gap-4 mb-10 text-[0.8rem] tracking-[0.28em] font-mono text-ink-faded uppercase animate-fade-in-up">
-        <span>Agentic software field notes</span>
-        <span class="h-px w-12 bg-accent"></span>
-        <span>2026.05</span>
-        <a href="/posts/" class="font-black text-ink underline underline-offset-4">Archive</a>
+    <div class="app-layout relative z-10 flex flex-col items-center text-center">
+      <div class="inline-flex items-center gap-3 px-3 py-1 mb-8 text-[0.7rem] font-mono tracking-widest uppercase border rounded-full border-border bg-bg-secondary/50 text-text-secondary animate-fade-in-up">
+        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+        Agentic Software Field Notes
       </div>
-      <h1 class="text-5xl md:text-7xl font-serif italic text-ink tracking-tighter leading-[0.95] mb-10 max-w-4xl animate-fade-in-up delay-100">
-        Field notes for people shipping software with <Scribble type="underline">agents</Scribble>.
+      
+      <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter leading-tight mb-8 max-w-4xl animate-fade-in-up delay-100">
+        Shipping software with <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-dim">autonomous agents</span>.
       </h1>
-      <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_24rem] gap-12 items-end animate-fade-in-up delay-200">
-        <p class="text-xl md:text-2xl text-text-secondary font-serif leading-relaxed italic">
-          Real artifacts, broken runs, design contracts, and operating rules from AI-assisted software work. Start from the artifact, not the take.
-        </p>
-        {leadPost ? (
-          <a
-            href={`/posts/${leadPost.id}`}
-            class="order-first block border border-ink/10 bg-background/90 p-3 shadow-sm no-underline transition-colors hover:border-accent/50 md:order-none"
-            data-article-card
-            data-post-slug={leadPost.id}
-          >
-            <img src={leadPost.data.ogImage} alt={leadPost.data.title} class="aspect-[16/9] w-full border border-ink/10 bg-paper-warm dark:bg-zinc-800/80 object-contain p-2 transition-colors" />
-            <p class="mt-4 font-mono text-[0.56rem] font-bold uppercase tracking-[0.16em] text-ink-faded">Start here / {leadPost.data.series ?? "Field Log"}</p>
-            <p class="mt-2 font-serif text-xl italic leading-tight text-ink">{leadPost.data.title}</p>
-            <p class="mt-2 text-sm leading-relaxed text-text-secondary">{leadPost.data.description}</p>
-            <dl class="mt-4 grid grid-cols-1 gap-2 border-t border-ink/10 pt-4">
-              {leadProofRows.map(row => (
-                <div class="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-3 text-left">
-                  <dt class="font-mono text-[0.52rem] font-black uppercase tracking-[0.14em] text-ink-faded">{row.label}</dt>
-                  <dd class="text-xs leading-relaxed text-text-secondary">{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-            <p class="mt-3 font-mono text-[0.56rem] font-bold uppercase tracking-[0.14em] text-ink-faded">
-              Start here if you want design guidance an agent can actually use, not another moodboard.
-            </p>
-          </a>
-        ) : null}
-      </div>
-      <a href="/posts/" class="mt-8 inline-flex items-center gap-3 font-mono text-xs tracking-[0.24em] uppercase bg-accent text-ink px-5 py-3 hover:bg-accent-dim transition-colors font-black md:hidden">
-        Read the Archive <span>&rarr;</span>
-      </a>
-      <div class="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-        <a href="/posts/" class="group hidden items-center gap-4 font-mono text-xs tracking-[0.3em] uppercase bg-accent text-ink px-6 py-4 hover:bg-accent-dim transition-colors font-black md:flex">
-          Read the Archive <span>&rarr;</span>
+      
+      <p class="text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed animate-fade-in-up delay-200">
+        Real artifacts, broken runs, design contracts, and operating rules. 
+        Start from the code, not the hype.
+      </p>
+
+      <div class="flex gap-4 mt-10 animate-fade-in-up delay-300">
+        <a href="/posts/" class="px-6 py-3 text-sm font-medium transition-colors border rounded-md text-background bg-foreground hover:bg-background hover:text-foreground hover:border-foreground">
+          Read the Archive
         </a>
-        <a href="/about/" class="font-mono text-[0.65rem] tracking-[0.2em] uppercase text-ink-faded hover:text-ink underline underline-offset-4">
-          About the project
+        <a href="/about/" class="px-6 py-3 text-sm font-medium transition-colors border rounded-md bg-bg-secondary border-border hover:border-border-strong text-foreground">
+          About the Project
         </a>
       </div>
-      <dl class="mt-14 grid grid-cols-1 gap-3 md:grid-cols-3 reveal-on-scroll" aria-label="Editorial principles">
-        {editorialPrinciples.map(principle => (
-          <div class="border border-ink/10 bg-background/80 p-4 shadow-sm">
-            <dt class="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-faded">{principle.label}</dt>
-            <dd class="mt-2 text-sm leading-relaxed text-text-secondary">{principle.value}</dd>
-          </div>
-        ))}
-      </dl>
     </div>
   </header>
 
   <main id="main-content" class="app-layout py-12">
+    <!-- Principles Bento -->
+    <dl class="grid grid-cols-1 gap-4 md:grid-cols-3 mb-24 reveal-on-scroll" aria-label="Editorial principles">
+      {editorialPrinciples.map(principle => (
+        <div class="glass-panel p-6">
+          <dt class="font-mono text-xs uppercase tracking-widest text-text-muted mb-3">{principle.label}</dt>
+          <dd class="text-sm leading-relaxed text-text-secondary">{principle.value}</dd>
+        </div>
+      ))}
+    </dl>
 
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mt-32">
-      <div class="lg:col-span-8 space-y-16">
-        <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10 border-b border-ink/5 pb-4">Start Here</h2>
-
-        {featuredPosts.length > 0 ? (
-          <section class="featured-lead reveal-on-scroll">
-            <a href={`/posts/${featuredPosts[0].id}`} class="group block no-underline">
-              <p class="mb-5 font-mono text-[0.58rem] font-bold uppercase tracking-[0.16em] text-ink-faded">
-                {featuredPosts[0].data.series ?? "Field Log"} / {featuredPosts[0].data.references?.length ?? 0} references
-              </p>
-              <h2 class="text-4xl md:text-6xl font-serif italic mb-8 leading-[1.1] group-hover:underline decoration-accent/30 text-ink">
-                {featuredPosts[0].data.title}
-              </h2>
-              <p class="text-xl md:text-2xl text-text-secondary font-serif leading-relaxed mb-10 max-w-2xl">
-                {featuredPosts[0].data.description}
-              </p>
-            </a>
-          </section>
-        ) : (
-           <div class="py-20 border-2 border-dashed border-ink/10 rounded-2xl text-center bg-accent/[0.02]">
-             <p class="font-serif italic text-ink/40 text-lg">No field log is ready yet.</p>
-           </div>
-        )}
+    <!-- Blog Feed (Fly.io Style Layout) -->
+    <div class="flex flex-col gap-16 mt-32">
+      <div class="flex items-center gap-4 border-b border-border pb-4">
+        <h2 class="font-mono text-xs tracking-widest uppercase text-text-muted">Field Notes</h2>
+        <div class="h-px flex-1 bg-border"></div>
       </div>
 
-      <aside class="lg:col-span-4 border-t lg:border-t-0 lg:border-l border-ink/10 pt-16 lg:pt-0 lg:pl-16"> 
-        <h2 class="font-mono text-[0.7rem] tracking-[0.4em] uppercase text-ink-faded mb-10">Latest Field Notes</h2>
-        <ul class="space-y-10">
-          {recentPosts.length > 0 ? (
-            recentPosts.map((post, index) => (
-              <li class="relative pl-4 border-l-2 border-accent/20 group reveal-on-scroll" style={`transition-delay: ${index * 100}ms`}>
-                <a href={`/posts/${post.id}`} class="block no-underline">
-                  <p class="mb-2 font-mono text-[0.6rem] font-bold uppercase tracking-[0.22em] text-ink-faded">
+      {leadPost ? (
+        <a
+          href={`/posts/${leadPost.id}`}
+          class="group flex flex-col gap-8 reveal-on-scroll no-underline"
+          data-article-card
+        >
+          <!-- Massive Top Image -->
+          <div class="border border-border bg-bg-secondary relative aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-xl">
+            <img src={leadPost.data.ogImage || "/images/blog/notebook-sketch.png"} alt={leadPost.data.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <!-- Text Content below -->
+          <div class="flex flex-col gap-4 max-w-4xl mx-auto text-center items-center">
+            <div class="flex items-center justify-center gap-3">
+              <span class="px-3 py-1 text-[0.65rem] font-bold uppercase tracking-widest text-background bg-foreground rounded-full">
+                {leadPost.data.series ?? "Featured"}
+              </span>
+              <span class="font-mono text-[0.65rem] tracking-widest text-text-muted">
+                {leadPost.data.references?.length ?? 0} References
+              </span>
+            </div>
+            <h3 class="text-4xl md:text-5xl font-semibold tracking-tight text-foreground group-hover:text-accent transition-colors mt-2">
+              {leadPost.data.title}
+            </h3>
+            <p class="text-xl text-text-secondary leading-relaxed mt-2">
+              {leadPost.data.description}
+            </p>
+          </div>
+        </a>
+      ) : null}
+
+      <!-- Recent Posts List (Side-by-side) -->
+      <div class="flex flex-col gap-12 mt-12">
+        {recentPosts.length > 0 ? (
+          recentPosts.map((post, index) => (
+            <a 
+              href={`/posts/${post.id}`} 
+              class="group flex flex-col md:flex-row gap-8 items-center no-underline reveal-on-scroll border-t border-border pt-12" 
+              style={`transition-delay: ${index * 100}ms`}
+            >
+              <!-- Image on Left -->
+              <div class="w-full md:w-2/5 aspect-[4/3] border border-border bg-bg-secondary rounded-lg overflow-hidden relative shrink-0">
+                <img src={post.data.ogImage || "/images/blog/notebook-sketch.png"} alt={post.data.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              </div>
+              
+              <!-- Text on Right -->
+              <div class="w-full md:w-3/5 flex flex-col gap-3">
+                <div class="flex items-center gap-3">
+                  <span class="font-mono text-[0.6rem] font-medium uppercase tracking-widest text-accent">
                     {post.data.series ?? "Field Log"}
-                  </p>
-                  <h4 class="text-xl font-serif italic group-hover:text-accent-dim leading-tight text-ink">{post.data.title}</h4>
-                  <p class="mt-2 font-mono text-[0.55rem] uppercase tracking-[0.16em] text-ink-faded">
-                    {post.data.references?.length ?? 0} references / artifact / decision rule
-                  </p>
-                </a>
-              </li>
-            ))
-          ) : (
-            <li class="text-xs font-mono text-ink-faded uppercase tracking-widest italic">Awaiting the next log...</li>
-          )}
-        </ul>
-      </aside>
+                  </span>
+                  <span class="w-1 h-1 rounded-full bg-border"></span>
+                  <span class="font-mono text-[0.6rem] tracking-widest text-text-muted">
+                    {post.data.references?.length ?? 0} References
+                  </span>
+                </div>
+                <h4 class="text-3xl font-semibold text-foreground group-hover:text-accent transition-colors leading-tight">
+                  {post.data.title}
+                </h4>
+                <p class="text-text-secondary leading-relaxed text-lg mt-2 line-clamp-3">
+                  {post.data.description}
+                </p>
+              </div>
+            </a>
+          ))
+        ) : (
+          <div class="text-sm font-mono text-text-muted uppercase tracking-widest text-center py-12 border border-dashed border-border rounded-xl">Awaiting the next log...</div>
+        )}
+      </div>
     </div>
   </main>
 
-  <section class="mt-32 border-y border-ink/10 py-24 bg-accent/5 relative overflow-hidden reveal-on-scroll">
-    <div class="absolute -right-20 -top-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl opacity-50"></div>  
-    <div class="app-layout max-w-2xl mx-auto text-center relative z-10">
-      <h2 class="text-3xl md:text-4xl font-serif italic mb-4 text-ink">Get the Field Notes</h2>
-      <p class="text-lg text-text-secondary font-serif italic mb-10">
-        Get one field note when there is a real artifact worth studying.
+  <section class="mt-24 border-t border-border py-24 bg-bg-secondary relative overflow-hidden reveal-on-scroll">
+    <div class="app-layout max-w-2xl mx-auto text-center relative z-10 flex flex-col items-center">
+      <h2 class="text-3xl font-semibold tracking-tight text-foreground mb-4">Subscribe to the Signal</h2>
+      <p class="text-text-secondary mb-10">
+        Get one field note when there is a real artifact worth studying. No hype. No spam.
       </p>
-      <NewsletterSignup compact class="mx-auto max-w-xl" />
-      <p class="mt-6 text-[10px] font-mono text-ink-faded uppercase tracking-[0.2em] font-bold">No hype. No spam. Only signal.</p>
+      <div class="w-full glass-panel p-2">
+        <NewsletterSignup compact class="w-full" />
+      </div>
     </div>
   </section>
 
