@@ -53,21 +53,6 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 let ogImageUrl: string | undefined;
 
 // Determine OG image source
-  references,
-} = post.data;
-
-/* ========== Related Posts (same tags) ========== */
-const currentTags = new Set(tags.map(t => t.toLowerCase()));
-const relatedPosts = posts
-  .filter(p => p.id !== post.id)
-  .filter(p => p.data.tags.some(t => currentTags.has(t.toLowerCase())))
-  .slice(0, 3);
-
-const { Content, remarkPluginFrontmatter } = await render(post);
-
-let ogImageUrl: string | undefined;
-
-// Determine OG image source
 if (typeof initOgImage === "string") {
   ogImageUrl = initOgImage; // Remote OG image (absolute URL)
 } else if (initOgImage?.src) {
