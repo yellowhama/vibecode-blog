@@ -1,0 +1,36 @@
+﻿[model_arguments]
+pretrained_model_name_or_path = "F:/Aisaak/Projects/ComfyUI/models/unet/flux1-dev-fp8.safetensors"
+clip_l = "F:/Aisaak/Projects/ComfyUI/models/clip/clip_l.safetensors"
+t5xxl = "F:/Aisaak/Projects/ComfyUI/models/clip/t5xxl_fp8_e4m3fn.safetensors"
+v_parameterization = false
+
+[dataset_arguments]
+dataset_config = "F:/Aisaak/Projects/vibecode-town/.vibecode/lora_training/dataset.toml"
+debug_dataset = false
+
+[training_arguments]
+output_dir = "F:/Aisaak/Projects/vibecode-town/.vibecode/lora_training/output"
+output_name = "VibecodeTownCharacters"
+save_precision = "bf16"
+save_every_n_epochs = 1
+train_batch_size = 1
+max_train_epochs = 15
+optimizer_type = "AdamW8bit"
+learning_rate = 1e-4
+max_data_loader_n_workers = 0
+mixed_precision = "bf16"
+gradient_checkpointing = true
+gradient_accumulation_steps = 1
+xformers = true
+network_module = "networks.lora_flux"
+network_dim = 16
+network_alpha = 16
+persistent_data_loader_workers = false
+cache_latents = true
+cache_latents_to_disk = true
+seed = 42
+
+[sample_prompt_arguments]
+sample_every_n_epochs = 1
+sample_prompts = "F:/Aisaak/Projects/vibecode-town/.vibecode/lora_training/sample_prompts.txt"
+sample_sampler = "euler"

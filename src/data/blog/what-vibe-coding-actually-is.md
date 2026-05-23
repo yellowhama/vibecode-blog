@@ -13,7 +13,7 @@ tags:
   - ai-agents
   - agentic-engineering
   - technical-contracts
-ogImage: "/images/posts/what-vibe-coding-actually-is.png"
+
 references:
   - name: "Not all AI-assisted programming is vibe coding"
     url: "https://simonwillison.net/2025/Mar/19/vibe-coding/"

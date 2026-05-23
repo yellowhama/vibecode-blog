@@ -14,7 +14,7 @@ tags:
   - technical-contracts
   - vibecoding
   - devops
-ogImage: "/images/posts/ai-agent-work-disk-contract.png"
+
 references:
   - name: "Node.js os.tmpdir"
     url: "https://nodejs.org/api/os.html#ostmpdir"

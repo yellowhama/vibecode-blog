@@ -13,7 +13,7 @@ tags:
   - agentic-engineering
   - verification
   - technical-contracts
-ogImage: "/images/posts/software-3-0.png"
+
 references:
   - name: "Andrej Karpathy: Software Is Changing Again"
     url: "https://www.youtube.com/watch?v=LCEmiRjPEtQ"
