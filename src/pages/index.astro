@@ -118,7 +118,7 @@ const editorialPrinciples = [
         >
           <!-- Massive Top Image -->
           <div class="border border-border bg-bg-secondary relative aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-xl">
-            <img src={leadPost.data.ogImage || "/images/placeholders/retro-1.png"} alt={leadPost.data.title} class="absolute inset-0 w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105" />
+            <img src={leadPost.data.ogImage || "/images/placeholders/retro-1.png"} alt={leadPost.data.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
           </div>
           <!-- Text Content below -->
           <div class="flex flex-col gap-4 max-w-4xl mx-auto text-center items-center">
@@ -151,7 +151,7 @@ const editorialPrinciples = [
             >
               <!-- Image on Top -->
               <div class="w-full aspect-[4/3] border border-border bg-bg-secondary rounded-lg overflow-hidden relative shrink-0">
-                <img src={post.data.ogImage || "/images/placeholders/retro-2.png"} alt={post.data.title} class="absolute inset-0 w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105" />
+                <img src={post.data.ogImage || "/images/placeholders/retro-2.png"} alt={post.data.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
               </div>
               
               <!-- Text Below -->
