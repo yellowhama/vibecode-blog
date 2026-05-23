@@ -6,6 +6,7 @@ draft: false
 featured: true
 series: "AI Explainer"
 workflow: "packet"
+ogImage: "/images/blog/vibe-coding.png"
 tags:
   - software-engineering
   - vibe-coding

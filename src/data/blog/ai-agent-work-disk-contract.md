@@ -6,6 +6,7 @@ draft: false
 featured: false
 series: "AI Tool Note"
 workflow: "packet"
+ogImage: "/images/blog/agent-disk.png"
 lang: "en"
 tags:
   - ai-agents
