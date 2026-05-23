@@ -43,9 +43,14 @@ const isActive = (path: string) => {
   >
     <a
       href="/"
-      class="py-1 whitespace-nowrap sm:my-auto flex items-center no-underline"
+      class="py-1 whitespace-nowrap sm:my-auto flex items-center gap-2 no-underline group"
     >
-      <img src="/logo.png" alt="Vibecode Town" class="h-10 sm:h-12 w-auto rounded-md drop-shadow-md" />
+      <div class="flex h-8 w-8 items-center justify-center rounded-sm bg-accent border-2 border-foreground shadow-[2px_2px_0px_var(--foreground)] transition-transform group-hover:-translate-y-[2px] group-hover:shadow-[4px_4px_0px_var(--foreground)]">
+        <span class="font-bold text-background text-xl leading-none">V</span>
+      </div>
+      <span class="text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-accent">
+        VibeCode
+      </span>
     </a>
     <nav
       id="nav-menu"
