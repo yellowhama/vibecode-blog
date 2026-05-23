@@ -56,10 +56,14 @@ const editorialPrinciples = [
 >
   <Header />
 
-  <header class="relative pt-32 pb-24 mb-16 overflow-hidden bg-grid-pattern border-b border-border">
-    <!-- Subtle Glow in background -->
-    <div class="absolute inset-0 bg-background/50 backdrop-blur-[1px]"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/20 rounded-full blur-[100px] pointer-events-none"></div>
+  <header class="relative pt-40 pb-32 mb-16 overflow-hidden border-b border-border">
+    <!-- Hero Town Background -->
+    <div class="absolute inset-0 w-full h-full">
+      <img src="/images/hero.png" alt="VibeCode Town Background" class="w-full h-full object-cover opacity-50 mix-blend-luminosity" />
+    </div>
+    
+    <!-- Gradient Overlay for readability -->
+    <div class="absolute inset-0 bg-gradient-to-b from-background/95 via-background/70 to-background"></div>
 
     <div class="app-layout relative z-10 flex flex-col items-center text-center">
       <div class="inline-flex items-center gap-3 px-3 py-1 mb-8 text-[0.7rem] font-mono tracking-widest uppercase border rounded-full border-border bg-bg-secondary/50 text-text-secondary animate-fade-in-up">
