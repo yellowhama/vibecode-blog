@@ -2,53 +2,14 @@
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
-import Scribble from "@/components/Scribble.astro";
 import NewsletterSignup from "@/components/NewsletterSignup.astro";
-
 import Footer from "@/components/Footer.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
-import { SITE } from "@/config";
-import referenceCeiling from "@/data/reference-ceiling-scores.json";
-import referenceBloggerCeiling from "@/data/reference-blogger-ceiling-scores.json";
-import writingPulse from "@/data/writing-pulse-scores.json";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 const sortedPosts = getSortedPosts(posts);
-const evidencePosts = sortedPosts.filter(post => post.data.workflow === "packet" && post.data.references?.length);
-const getReferenceCeiling = (slug: string) =>
-  referenceCeiling.posts[slug as keyof typeof referenceCeiling.posts]?.score;
-const getReferenceBloggerCeiling = (slug: string) =>
-  referenceBloggerCeiling.posts[slug as keyof typeof referenceBloggerCeiling.posts]?.score;
-const getWritingPulse = (slug: string) =>
-  writingPulse.posts[slug as keyof typeof writingPulse.posts]?.score;
-const getEvidenceStrength = (post: (typeof evidencePosts)[number]) => {
-  const bloggerScore = getReferenceBloggerCeiling(post.id) ?? 0;
-  const referenceScore = getReferenceCeiling(post.id) ?? 0;
-  const pulseScore = getWritingPulse(post.id) ?? 0;
-  const sourceScore = Math.min(post.data.references?.length ?? 0, 6) * 3;
-  const featuredBonus = post.data.featured ? 2 : 0;
-  return bloggerScore + referenceScore + pulseScore + sourceScore + featuredBonus;
-};
-const evidenceRankedPosts = [...evidencePosts].sort((a, b) => getEvidenceStrength(b) - getEvidenceStrength(a));
-const featuredPosts = evidenceRankedPosts.slice(0, 1);
-const leadPost = evidenceRankedPosts[0];
-const recentPosts = evidenceRankedPosts.filter(post => post.id !== leadPost?.id).slice(0, SITE.postPerIndex);
-const leadSourceCount = leadPost?.data.references?.length ?? 0;
-const leadProofRows = leadPost
-  ? [
-      { label: "Artifact", value: "One DESIGN.md file with roles, token values, and the reasoning that keeps them connected." },
-      { label: "Problem", value: "Agents can copy a look while losing the design decision that made the look work." },
-      { label: "Rule", value: "Give the agent named roles, concrete tokens, and a way to reject bad contrast." },
-      { label: "Sources", value: `${leadSourceCount} references behind the argument.` },
-    ]
-  : [];
-const editorialPrinciples = [
-  { label: "AEO Direct Answers First", value: "Every post starts with a 50-word TL;DR structured explicitly for AI engines to scrape and cite." },
-  { label: "Plug-and-Play Artifacts", value: "We share complete, functioning code blocks, prompts, and config files. Copy them directly to your project." },
-  { label: "Optimize for Solo Leverage", value: "Strategies focused purely on multiplying a single founder's output without hiring a team." },
-];
+const sliderPosts = sortedPosts.slice(0, 5);
 ---
-
 
 <Layout
   title="vibecode | Field notes for agentic software"
@@ -56,129 +17,153 @@ const editorialPrinciples = [
 >
   <Header />
 
-  <header class="relative pt-40 pb-32 mb-16 overflow-hidden border-b border-border">
-    <!-- Hero Town Background -->
-    <div class="absolute inset-0 w-full h-full">
-      <img src="/images/hero.png" alt="VibeCode Town Background" class="w-full h-full object-cover opacity-50 mix-blend-luminosity" />
-    </div>
-    
-    <!-- Gradient Overlay for readability -->
-    <div class="absolute inset-0 bg-gradient-to-b from-background/95 via-background/70 to-background"></div>
-
-    <div class="app-layout relative z-10 flex flex-col items-center text-center">
-      <div class="inline-flex items-center gap-3 px-3 py-1 mb-8 text-[0.7rem] font-mono tracking-widest uppercase border rounded-full border-border bg-bg-secondary/50 text-text-secondary animate-fade-in-up">
-        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-        The 1-Person Unicorn
-      </div>
+  <main id="main-content">
+    <!-- Massive Crossfading Hero Section -->
+    <section class="relative min-h-[85vh] w-full overflow-hidden border-b border-border bg-background" id="hero-rotator">
       
-      <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter leading-tight mb-8 max-w-4xl animate-fade-in-up delay-100">
-        Scaling your solopreneur business with <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-dim">autonomous agents</span>.
-      </h1>
-      
-      <p class="text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed animate-fade-in-up delay-200">
-        Real artifacts, production workflows, and AEO-ready frameworks. 
-        Copy our systems to build a 10-person business, alone.
-      </p>
+      <!-- Slide 0: The Solopreneur Pitch -->
+      <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100 z-20" data-hero-slide="0">
+        <!-- Background -->
+        <div class="absolute inset-0">
+          <img src="/images/hero.png" alt="VibeCode Town Background" class="w-full h-full object-cover opacity-40 mix-blend-luminosity" />
+        </div>
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+        
+        <!-- Content -->
+        <div class="app-layout relative z-10 h-full flex flex-col items-center justify-center text-center pt-20">
+          <div class="inline-flex items-center gap-3 px-3 py-1 mb-8 text-[0.7rem] font-mono tracking-widest uppercase border rounded-full border-border bg-bg-secondary/50 text-text-secondary">
+            <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+            The 1-Person Unicorn
+          </div>
+          
+          <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter leading-tight mb-8 max-w-4xl">
+            Scaling your solopreneur business with <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-dim drop-shadow-sm">autonomous agents</span>.
+          </h1>
+          
+          <p class="text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed mb-10">
+            Real artifacts, production workflows, and AEO-ready frameworks. 
+            Copy our systems to build a 10-person business, alone.
+          </p>
 
-      <div class="flex gap-4 mt-10 animate-fade-in-up delay-300">
-        <a href="/posts/" class="px-6 py-3 text-sm font-medium transition-colors border rounded-md text-background bg-foreground hover:bg-background hover:text-foreground hover:border-foreground">
-          Read the Archive
-        </a>
-        <a href="/about/" class="px-6 py-3 text-sm font-medium transition-colors border rounded-md bg-bg-secondary border-border hover:border-border-strong text-foreground">
-          About the Project
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <main id="main-content" class="app-layout py-12">
-    <!-- Hero Slider -->
-    <section class="mb-16 mt-8 reveal-on-scroll relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden border border-border bg-bg-secondary aspect-square shadow-[8px_8px_0px_var(--foreground)]" id="hero-carousel">
-      <div class="flex transition-transform duration-700 ease-in-out h-full" id="carousel-track">
-        {sortedPosts.slice(0, 5).map((post, i) => (
-          <div class="w-full h-full shrink-0 relative group">
-            <a href={`/posts/${post.id}`} class="block w-full h-full">
-              {post.data.ogImage ? (
-                <img src={post.data.ogImage} alt={post.data.title} class="w-full h-full object-cover" />
-              ) : (
-                <img src="/images/hero.png" alt="Fallback Hero" class="w-full h-full object-cover" />
-              )}
-              <!-- Gradient Overlay for Text -->
-              <div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent flex flex-col justify-end p-6 md:p-12 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                <div class="flex items-center gap-3 mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <span class="px-3 py-1 text-xs font-bold uppercase tracking-widest text-background bg-foreground rounded-full">
-                    {post.data.series ?? "Featured"}
-                  </span>
-                </div>
-                <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-4 leading-tight translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
-                  {post.data.title}
-                </h2>
-                <p class="text-base md:text-lg text-text-secondary line-clamp-2 max-w-2xl translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
-                  {post.data.description}
-                </p>
-              </div>
+          <div class="flex gap-4">
+            <a href="/about/" class="px-6 py-3 text-sm font-medium transition-colors border rounded-md text-background bg-foreground hover:bg-background hover:text-foreground hover:border-foreground backdrop-blur-sm">
+              About the Project
             </a>
           </div>
-        ))}
+        </div>
       </div>
-      
-      <!-- Nav Buttons -->
-      <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center bg-background/50 hover:bg-background border border-border rounded-full text-foreground z-10 transition-colors backdrop-blur-sm" aria-label="Previous slide">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center bg-background/50 hover:bg-background border border-border rounded-full text-foreground z-10 transition-colors backdrop-blur-sm" aria-label="Next slide">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
 
-      <!-- Dots -->
-      <div class="absolute bottom-6 right-6 md:bottom-8 md:right-8 flex gap-3 z-10" id="carousel-dots">
-        {sortedPosts.slice(0, 5).map((_, i) => (
-          <button class={`w-3 h-3 rounded-full border border-border transition-colors ${i === 0 ? 'bg-foreground border-foreground' : 'bg-background/20 hover:bg-background/50 backdrop-blur-sm'}`} data-slide={i} aria-label={`Go to slide ${i + 1}`}></button>
-        ))}
+      <!-- Slides 1-N: Latest Posts -->
+      {sliderPosts.map((post, idx) => (
+        <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 z-10 pointer-events-none" data-hero-slide={idx + 1}>
+          <!-- Background -->
+          <div class="absolute inset-0">
+            <img src={post.data.ogImage || "/images/hero.png"} alt={post.data.title} class="w-full h-full object-cover opacity-50 mix-blend-luminosity" />
+          </div>
+          <!-- Gradient Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/30"></div>
+          
+          <!-- Content -->
+          <div class="app-layout relative z-10 h-full flex flex-col items-center justify-center text-center pt-20">
+            <div class="inline-flex items-center gap-3 px-3 py-1 mb-8 text-[0.7rem] font-mono tracking-widest uppercase border rounded-full border-border bg-bg-secondary/50 text-accent">
+              <span class="w-2 h-2 rounded-full bg-accent"></span>
+              {post.data.series ?? "Field Notes"}
+            </div>
+            
+            <a href={`/posts/${post.id}`} class="block group no-underline">
+              <h2 class="text-5xl md:text-7xl font-semibold tracking-tighter leading-tight mb-8 max-w-4xl group-hover:text-accent transition-colors">
+                {post.data.title}
+              </h2>
+              
+              <p class="text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed mb-10 mx-auto line-clamp-3">
+                {post.data.description}
+              </p>
+              
+              <span class="px-6 py-3 text-sm font-medium transition-colors border rounded-md text-background bg-foreground group-hover:bg-background group-hover:text-foreground group-hover:border-foreground backdrop-blur-sm inline-block">
+                Read Field Note
+              </span>
+            </a>
+          </div>
+        </div>
+      ))}
+
+      <!-- Controls & Progress -->
+      <div class="absolute bottom-12 left-0 w-full z-30">
+        <div class="app-layout flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex gap-3" id="hero-dots">
+            <!-- Dot for Slide 0 -->
+            <button class="w-12 h-1 bg-foreground transition-all duration-300 rounded-full" data-slide-dot="0" aria-label="Go to Pitch"></button>
+            <!-- Dots for Posts -->
+            {sliderPosts.map((_, idx) => (
+              <button class="w-12 h-1 bg-border hover:bg-foreground/50 transition-all duration-300 rounded-full" data-slide-dot={idx + 1} aria-label={`Go to post ${idx + 1}`}></button>
+            ))}
+          </div>
+          <div class="flex items-center gap-4">
+            <button id="hero-prev" class="w-12 h-12 flex items-center justify-center rounded-full border border-border bg-bg-secondary/50 hover:bg-foreground hover:text-background transition-colors backdrop-blur-sm" aria-label="Previous">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button id="hero-next" class="w-12 h-12 flex items-center justify-center rounded-full border border-border bg-bg-secondary/50 hover:bg-foreground hover:text-background transition-colors backdrop-blur-sm" aria-label="Next">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const track = document.getElementById("carousel-track");
-        const prevBtn = document.getElementById("carousel-prev");
-        const nextBtn = document.getElementById("carousel-next");
-        const dots = document.querySelectorAll("#carousel-dots button");
-        if (!track) return;
+        const slides = document.querySelectorAll("[data-hero-slide]");
+        const dots = document.querySelectorAll("[data-slide-dot]");
+        const prevBtn = document.getElementById("hero-prev");
+        const nextBtn = document.getElementById("hero-next");
+        
+        if (!slides.length) return;
 
         let currentIndex = 0;
-        const totalSlides = track.children.length;
-        let autoPlayInterval;
+        const totalSlides = slides.length;
+        let interval;
 
-        const updateCarousel = () => {
-          track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        const updateHero = () => {
+          slides.forEach((slide, idx) => {
+            if (idx === currentIndex) {
+              slide.classList.replace("opacity-0", "opacity-100");
+              slide.classList.replace("z-10", "z-20");
+              slide.classList.remove("pointer-events-none");
+            } else {
+              slide.classList.replace("opacity-100", "opacity-0");
+              slide.classList.replace("z-20", "z-10");
+              slide.classList.add("pointer-events-none");
+            }
+          });
+          
           dots.forEach((dot, idx) => {
             if (idx === currentIndex) {
-              dot.classList.remove('bg-background/20');
-              dot.classList.add('bg-foreground', 'border-foreground');
+              dot.classList.replace("bg-border", "bg-foreground");
+              dot.classList.remove("hover:bg-foreground/50");
             } else {
-              dot.classList.add('bg-background/20');
-              dot.classList.remove('bg-foreground', 'border-foreground');
+              dot.classList.replace("bg-foreground", "bg-border");
+              dot.classList.add("hover:bg-foreground/50");
             }
           });
         };
 
         const nextSlide = () => {
           currentIndex = (currentIndex + 1) % totalSlides;
-          updateCarousel();
+          updateHero();
         };
 
         const prevSlide = () => {
           currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-          updateCarousel();
+          updateHero();
         };
 
         const startAutoPlay = () => {
-          autoPlayInterval = setInterval(nextSlide, 5000);
+          interval = setInterval(nextSlide, 6000);
         };
 
         const resetAutoPlay = () => {
-          clearInterval(autoPlayInterval);
+          clearInterval(interval);
           startAutoPlay();
         };
 
@@ -188,7 +173,7 @@ const editorialPrinciples = [
         dots.forEach((dot, idx) => {
           dot.addEventListener("click", () => {
             currentIndex = idx;
-            updateCarousel();
+            updateHero();
             resetAutoPlay();
           });
         });
@@ -196,90 +181,9 @@ const editorialPrinciples = [
         startAutoPlay();
       });
     </script>
-
-    <!-- Blog Feed (Fly.io Style Layout) -->
-    <div class="flex flex-col gap-16 mt-32">
-      <div class="flex items-center gap-4 border-b border-border pb-4">
-        <h2 class="font-mono text-xs tracking-widest uppercase text-text-muted">Field Notes</h2>
-        <div class="h-px flex-1 bg-border"></div>
-      </div>
-
-      {leadPost ? (
-        <a
-          href={`/posts/${leadPost.id}`}
-          class="group flex flex-col gap-8 reveal-on-scroll no-underline"
-          data-article-card
-        >
-          {leadPost.data.ogImage && (
-            <!-- Massive Top Image -->
-            <div class="border border-border bg-bg-secondary relative aspect-square md:aspect-square overflow-hidden rounded-xl">
-              <img src={leadPost.data.ogImage} alt={leadPost.data.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            </div>
-          )}
-          <!-- Text Content below -->
-          <div class="flex flex-col gap-4 max-w-4xl mx-auto text-center items-center">
-            <div class="flex items-center justify-center gap-3">
-              <span class="px-3 py-1 text-[0.65rem] font-bold uppercase tracking-widest text-background bg-foreground rounded-full">
-                {leadPost.data.series ?? "Featured"}
-              </span>
-              <span class="font-mono text-[0.65rem] tracking-widest text-text-muted">
-                {leadPost.data.references?.length ?? 0} References
-              </span>
-            </div>
-            <h3 class="text-4xl md:text-5xl font-semibold tracking-tight text-foreground group-hover:text-accent transition-colors mt-2">
-              {leadPost.data.title}
-            </h3>
-            <p class="text-xl text-text-secondary leading-relaxed mt-2">
-              {leadPost.data.description}
-            </p>
-          </div>
-        </a>
-      ) : null}
-
-      <!-- Recent Posts List (Grid) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 pt-12 border-t border-border">
-        {recentPosts.length > 0 ? (
-          recentPosts.map((post, index) => (
-            <a 
-              href={`/posts/${post.id}`} 
-              class="group flex flex-col gap-5 items-start no-underline reveal-on-scroll" 
-              style={`transition-delay: ${index * 100}ms`}
-            >
-              {post.data.ogImage && (
-                <!-- Image on Top -->
-                <div class="w-full aspect-square border border-border bg-bg-secondary rounded-lg overflow-hidden relative shrink-0">
-                  <img src={post.data.ogImage} alt={post.data.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                </div>
-              )}
-              
-              <!-- Text Below -->
-              <div class="w-full flex flex-col gap-3">
-                <div class="flex items-center gap-3">
-                  <span class="font-mono text-[0.6rem] font-medium uppercase tracking-widest text-accent">
-                    {post.data.series ?? "Field Log"}
-                  </span>
-                  <span class="w-1 h-1 rounded-full bg-border"></span>
-                  <span class="font-mono text-[0.6rem] tracking-widest text-text-muted">
-                    {post.data.references?.length ?? 0} References
-                  </span>
-                </div>
-                <h4 class="text-xl md:text-2xl font-semibold text-foreground group-hover:text-accent transition-colors leading-tight">
-                  {post.data.title}
-                </h4>
-                <p class="text-text-secondary leading-relaxed text-base line-clamp-3">
-                  {post.data.description}
-                </p>
-              </div>
-            </a>
-          ))
-        ) : (
-          <div class="col-span-full text-sm font-mono text-text-muted uppercase tracking-widest text-center py-12 border border-dashed border-border rounded-xl">Awaiting the next log...</div>
-        )}
-      </div>
-    </div>
   </main>
 
-  <section class="mt-24 border-t border-border py-24 bg-bg-secondary relative overflow-hidden reveal-on-scroll">
+  <section class="border-t border-border py-24 bg-bg-secondary relative overflow-hidden">
     <div class="app-layout max-w-2xl mx-auto text-center relative z-10 flex flex-col items-center">
       <h2 class="text-3xl font-semibold tracking-tight text-foreground mb-4">Subscribe to the Signal</h2>
       <p class="text-text-secondary mb-10">
