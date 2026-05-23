@@ -13,7 +13,7 @@ tags:
   - verification
   - software-engineering
   - technical-contracts
-ogImage: /images/thumbnails/ai_robot_companion_1779455515648.png
+ogImage: /images/default/retro-1.png
 references:
   - name: "Primary source packet reference"
     url: "https://www.youtube.com/watch?v=RoaPvj9Ovug"

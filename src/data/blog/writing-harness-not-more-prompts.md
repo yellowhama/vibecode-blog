@@ -2,7 +2,7 @@
 title: "The Writing System Needs a Harness, Not More Prompts"
 pubDatetime: 2026-05-20T04:08:37.438Z
 description: "A packet-backed draft on why better agent writing needs an evaluation harness, not prompt taste alone. How to build a writing loop that can actually say no."
-ogImage: /images/thumbnails/webtoon_panel_concept_1779455329077.png
+ogImage: /images/default/manuscript.png
 draft: true
 featured: false
 series: "AI Tool Note"

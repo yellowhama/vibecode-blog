@@ -11,7 +11,7 @@ tags:
   - debugging
   - technical-contracts
   - observability
-ogImage: /images/thumbnails/cynical_senior_dev_1779455299466.png
+ogImage: /images/default/blueprint.png
 references:
   - name: "OpenTelemetry Signals"
     url: "https://opentelemetry.io/docs/concepts/signals/"
