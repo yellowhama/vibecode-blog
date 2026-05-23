@@ -13,7 +13,6 @@ tags:
   - agent-infrastructure
   - software-engineering
   - technical-contracts
-ogImage: /images/thumbnails/thumbnail_tshirt_badge_1779564855711.png
 references:
   - name: "GitHub Advisory GHSA-345p-7cg4-v4c7"
     url: "https://github.com/advisories/GHSA-345p-7cg4-v4c7"

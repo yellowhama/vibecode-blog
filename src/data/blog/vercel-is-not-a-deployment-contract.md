@@ -12,7 +12,6 @@ tags:
   - coolify
   - vercel
   - technical-contracts
-ogImage: "/images/posts/vercel-is-not-a-deployment-contract.png"
 references:
   - name: "Vercel Rewrites Documentation"
     url: "https://vercel.com/docs/rewrites"

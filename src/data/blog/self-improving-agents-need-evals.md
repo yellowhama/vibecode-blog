@@ -13,7 +13,7 @@ tags:
   - verification
   - software-engineering
   - technical-contracts
-ogImage: "/images/posts/self-improving-agents-need-evals.png"
+ogImage: /images/thumbnails/ai_robot_companion_1779455515648.png
 references:
   - name: "Primary source packet reference"
     url: "https://www.youtube.com/watch?v=RoaPvj9Ovug"

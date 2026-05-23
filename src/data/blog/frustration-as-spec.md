@@ -11,7 +11,7 @@ tags:
   - debugging
   - technical-contracts
   - observability
-ogImage: "/images/posts/frustration-as-spec.png"
+ogImage: /images/thumbnails/cynical_senior_dev_1779455299466.png
 references:
   - name: "OpenTelemetry Signals"
     url: "https://opentelemetry.io/docs/concepts/signals/"

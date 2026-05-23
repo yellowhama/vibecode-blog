@@ -10,7 +10,6 @@ tags:
   - ai-agents
   - software-engineering
   - vibecoding
-ogImage: "/images/posts/000-about.png"
 ---
 
 # About Vibecode Town

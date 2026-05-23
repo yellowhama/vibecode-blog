@@ -13,7 +13,6 @@ tags:
   - verification
   - agentic-engineering
   - technical-contracts
-ogImage: "/images/posts/writing-harness-not-more-prompts.png"
 references:
   - name: "Primary source packet reference"
     url: "https://www.youtube.com/watch?v=RoaPvj9Ovug"

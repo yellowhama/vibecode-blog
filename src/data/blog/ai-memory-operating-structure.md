@@ -12,7 +12,6 @@ tags:
   - llm-memory
   - software-engineering
   - technical-contracts
-ogImage: "/images/posts/ai-memory-operating-structure.png"
 references:
   - name: "Conversation state"
     url: "https://developers.openai.com/api/docs/guides/conversation-state"
