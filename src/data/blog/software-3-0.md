@@ -5,7 +5,7 @@ description: "The useful Software 3.0 lesson is not that LLMs replace engineerin
 draft: false
 series: "AI Explainer"
 workflow: "packet"
-ogImage: "/images/blog/software-3-0.png"
+ogImage: /images/thumbnails/thumbnail_software_3_0_1779565125512.png
 tags:
   - software-engineering
   - ai-agents

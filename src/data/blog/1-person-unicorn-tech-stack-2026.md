@@ -7,7 +7,7 @@ tags: ["ai-agents", "solopreneur", "tech-stack", "automation"]
 series: "Field Log"
 featured: true
 workflow: "packet"
-ogImage: "/images/blog/tech-stack-2026.png"
+ogImage: /images/thumbnails/thumbnail_tech_stack_1779565048844.png
 references:
   - name: "MCP Official Spec"
     url: "https://modelcontextprotocol.io/"

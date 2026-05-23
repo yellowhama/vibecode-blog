@@ -7,7 +7,7 @@ tags: ["ai-agents", "solopreneur", "automation", "n8n"]
 series: "Field Log"
 featured: true
 workflow: "packet"
-ogImage: "/images/blog/zero-budget-agent.png"
+ogImage: /images/thumbnails/zero_budget_marketing_agent_1779563707222.png
 references:
   - name: "musu-crawl-ai"
     url: "https://github.com/yellowhama/musu-crawl-ai"

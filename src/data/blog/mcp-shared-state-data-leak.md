@@ -13,7 +13,7 @@ tags:
   - agent-infrastructure
   - software-engineering
   - technical-contracts
-ogImage: "/images/posts/mcp-shared-state-data-leak.png"
+ogImage: /images/thumbnails/thumbnail_tshirt_badge_1779564855711.png
 references:
   - name: "GitHub Advisory GHSA-345p-7cg4-v4c7"
     url: "https://github.com/advisories/GHSA-345p-7cg4-v4c7"
@@ -282,7 +282,7 @@ The rendered article has its own proof contract too:
 
 ```txt
 body image: /images/posts/mcp-shared-state-data-leak.png
-ogImage: /images/posts/mcp-shared-state-data-leak.png
+ogImage: /images/thumbnails/thumbnail_tshirt_badge_1779564855711.png
 rendered summary: <rendered-audit-root>\summary.json
 desktop first-screen image check: 10/10
 mobile first-screen image check: 10/10

@@ -6,7 +6,7 @@ draft: false
 featured: false
 series: "AI Tool Note"
 workflow: "packet"
-ogImage: "/images/blog/agent-disk.png"
+ogImage: /images/thumbnails/thumbnail_agent_disk_1779565086528.png
 lang: "en"
 tags:
   - ai-agents
@@ -215,7 +215,7 @@ The same rule applies to rendered evidence. The public image rule is not only a 
 
 ```txt
 body image: /images/posts/ai-agent-work-disk-contract.png
-ogImage: /images/posts/ai-agent-work-disk-contract.png
+ogImage: /images/thumbnails/thumbnail_agent_disk_1779565086528.png
 rendered summary: <rendered-audit-root>\summary.json
 desktop first-screen image check: 10/10
 mobile first-screen image check: 10/10

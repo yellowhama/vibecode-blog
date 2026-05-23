@@ -13,7 +13,7 @@ tags:
   - claude-code
   - ui-design
   - technical-contracts
-ogImage: "/images/posts/html-review-artifacts-for-agents.png"
+ogImage: /images/thumbnails/thumbnail_retro_risograph_1779564793673.png
 references:
   - name: "Thariq X post"
     url: "https://x.com/trq212/status/2052809885763747935"
