@@ -2,14 +2,12 @@ import fs from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import 'dotenv/config';
-import { GoogleGenAI, Type } from '@google/genai';
+import { GoogleGenAI } from '@google/genai'; // Fixed import: GoogleGenAI
 import { generateImageAndWait } from './comfy-api-client.mjs';
 import { ensureComfyRunning } from './comfy-launcher.mjs';
 
-// ai is already the GoogleGenAI instance in my previous script, 
-// but let's make sure we use the correct method.
-const genAI = new GoogleGenAI(process.env.GEMINI_API_KEY ? { apiKey: process.env.GEMINI_API_KEY } : { apiKey: 'dummy' });
-const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' }); // Using 2.0-flash as it's common
+const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || 'dummy' });
+
 
 // 1980s Garfield-inspired Style Prompt
 const STYLE_PROMPT = "1980s retro comic strip style, Jim Davis art style, bold ink outlines, flat vibrant colors, halftone patterns, hand-drawn cel shading, vintage Sunday funny pages aesthetic, clean 2d illustration";
@@ -27,8 +25,8 @@ async function playerHana(articleText) {
   Propose a "mind-blowing" idea for a new AI feature or business automation inspired by this. 
   Be extremely energetic, use lots of exclamation marks, and show your total lack of technical understanding but infinite optimism.`;
   
-  const result = await model.generateContent(prompt);
-  return result.response.text();
+  const result = await genAI.models.generateContent({ model: 'gemini-2.0-flash', contents: prompt });
+  return result.text;
 }
 
 /**
@@ -69,23 +67,7 @@ async function playerScenarist(articleText, hanaDialogue, chipDialogue) {
   const response = await model.generateContent({
     contents: [{ role: 'user', parts: [{ text: prompt }] }],
     generationConfig: {
-      responseMimeType: "application/json",
-      responseSchema: {
-        type: Type.OBJECT,
-        properties: {
-          panels: { 
-            type: Type.ARRAY, 
-            items: { 
-              type: Type.OBJECT, 
-              properties: { 
-                panel: { type: Type.INTEGER }, 
-                visual_prompt: { type: Type.STRING }, 
-                dialogue: { type: Type.ARRAY, items: { type: Type.OBJECT, properties: { speaker: { type: Type.STRING }, text: { type: Type.STRING } } } } 
-              } 
-            } 
-          }
-        }
-      }
+      responseMimeType: "application/json"
     }
   });
 
