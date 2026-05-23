@@ -2,6 +2,7 @@
 title: "Use HTML to Review Agent Output, Not to Replace the Contract"
 pubDatetime: 2026-05-18T15:00:00Z
 description: "HTML is great for reviewing complex AI agent outputs, but dangerous as a system of record. Learn why the final decision must always export back to Markdown or JSON."
+ogImage: /images/thumbnails/thumbnail_retro_risograph_1779564793673.png
 draft: false
 featured: false
 series: "AI Tool Note"

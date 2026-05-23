@@ -19,154 +19,169 @@ const recentPosts = sortedPosts;
   <Header />
 
   <main id="main-content">
-    <header class="relative min-h-[90vh] flex flex-col justify-center pt-32 pb-24 mb-0 overflow-hidden border-b border-border bg-background">
-      <!-- Hero Town Background -->
-      <div class="absolute inset-0 w-full h-full">
-        <img src="/images/hero.png" alt="VibeCode Town Background" class="w-full h-full object-cover opacity-20 mix-blend-luminosity" />
-      </div>
+    <!-- Massive Crossfading Hero Section (The Slider) -->
+    <section class="relative min-h-[85vh] w-full overflow-hidden border-b border-border bg-background" id="hero-rotator">
       
-      <!-- Gradient Overlay -->
-      <div class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/30"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background"></div>
-
-      <div class="app-layout relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <!-- Left: Solopreneur Text (Static) -->
-        <div class="lg:col-span-7 flex flex-col items-start text-left animate-fade-in-up">
+      <!-- Slide 0: The Solopreneur Pitch -->
+      <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100 z-20" data-hero-slide="0">
+        <!-- Background -->
+        <div class="absolute inset-0">
+          <img src="/images/hero.png" alt="VibeCode Town Background" class="w-full h-full object-cover opacity-40 mix-blend-luminosity" />
+        </div>
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+        
+        <!-- Content -->
+        <div class="app-layout relative z-10 h-full flex flex-col items-center justify-center text-center pt-20">
           <div class="inline-flex items-center gap-3 px-3 py-1 mb-8 text-[0.7rem] font-mono tracking-widest uppercase border rounded-full border-border bg-bg-secondary/50 text-text-secondary">
             <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
             The 1-Person Unicorn
           </div>
           
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tighter leading-tight mb-8">
+          <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter leading-tight mb-8 max-w-4xl">
             Scaling your solopreneur business with <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-dim drop-shadow-sm">autonomous agents</span>.
           </h1>
           
-          <p class="text-lg md:text-xl text-text-secondary max-w-xl leading-relaxed mb-10">
+          <p class="text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed mb-10">
             Real artifacts, production workflows, and AEO-ready frameworks. 
             Copy our systems to build a 10-person business, alone.
           </p>
 
           <div class="flex gap-4">
-            <a href="/about/" class="px-6 py-3 text-sm font-medium transition-colors border rounded-md bg-bg-secondary/80 border-border hover:border-border-strong text-foreground backdrop-blur-sm">
+            <a href="/about/" class="px-6 py-3 text-sm font-medium transition-colors border rounded-md text-background bg-foreground hover:bg-background hover:text-foreground hover:border-foreground backdrop-blur-sm">
               About the Project
             </a>
           </div>
         </div>
+      </div>
 
-        <!-- Right: Rotating Post Cards (Dynamic) -->
-        <div class="lg:col-span-5 relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto aspect-[3/4] mt-12 lg:mt-0 animate-fade-in-up delay-200 perspective-1000">
-          <div class="w-full h-full relative group" id="hero-post-rotator">
-            
-            {sliderPosts.map((post, i) => (
-              <div class={`absolute inset-0 transition-all duration-1000 ease-in-out ${i === 0 ? 'opacity-100 translate-y-0 scale-100 z-20' : 'opacity-0 translate-y-8 scale-95 z-10 pointer-events-none'}`} data-rotator-slide={i}>
-                <a href={`/posts/${post.id}`} class="block w-full h-full bg-bg-secondary/80 backdrop-blur-md border border-border rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.5)] group-hover:border-accent transition-colors flex flex-col no-underline">
-                  <!-- Thumbnail Container (1:1 Aspect Ratio Preserved inside a flex box) -->
-                  <div class="w-full aspect-square relative overflow-hidden bg-background border-b border-border shrink-0">
-                    <img src={post.data.ogImage || "/images/hero.png"} alt={post.data.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-bg-secondary/80 via-transparent to-transparent"></div>
-                    <div class="absolute top-4 left-4">
-                      <span class="px-3 py-1 text-[0.65rem] font-bold uppercase tracking-widest text-background bg-foreground rounded-full shadow-lg">
-                        {post.data.series ?? "Field Log"}
-                      </span>
-                    </div>
-                  </div>
-                  <!-- Text Content -->
-                  <div class="p-6 flex-1 flex flex-col justify-center">
-                    <h3 class="text-xl md:text-2xl font-bold tracking-tight text-foreground group-hover:text-accent transition-colors line-clamp-2 mb-3 leading-snug">
-                      {post.data.title}
-                    </h3>
-                    <p class="text-sm text-text-secondary line-clamp-2">
-                      {post.data.description}
-                    </p>
-                  </div>
-                </a>
-              </div>
-            ))}
-
-            <!-- Mini Controls for Slider -->
-            <div class="absolute -bottom-16 right-0 flex items-center gap-4 z-30">
-              <button id="rotator-prev" class="w-10 h-10 flex items-center justify-center rounded-full border border-border bg-bg-secondary/80 hover:bg-foreground hover:text-background transition-colors backdrop-blur-sm" aria-label="Previous Post">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-              </button>
-              <div class="flex gap-2" id="rotator-dots">
-                {sliderPosts.map((_, i) => (
-                  <button class={`w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-foreground' : 'bg-border hover:bg-foreground/50'}`} data-rotator-dot={i} aria-label={`Go to post ${i + 1}`}></button>
-                ))}
-              </div>
-              <button id="rotator-next" class="w-10 h-10 flex items-center justify-center rounded-full border border-border bg-bg-secondary/80 hover:bg-foreground hover:text-background transition-colors backdrop-blur-sm" aria-label="Next Post">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-              </button>
+      <!-- Slides 1-N: Latest Posts -->
+      {sliderPosts.map((post, idx) => (
+        <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 z-10 pointer-events-none" data-hero-slide={idx + 1}>
+          <!-- Background -->
+          <div class="absolute inset-0">
+            <img src={post.data.ogImage || "/images/hero.png"} alt={post.data.title} class="w-full h-full object-cover opacity-50 mix-blend-luminosity" />
+          </div>
+          <!-- Gradient Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/30"></div>
+          
+          <!-- Content -->
+          <div class="app-layout relative z-10 h-full flex flex-col items-center justify-center text-center pt-20">
+            <div class="inline-flex items-center gap-3 px-3 py-1 mb-8 text-[0.7rem] font-mono tracking-widest uppercase border rounded-full border-border bg-bg-secondary/50 text-accent">
+              <span class="w-2 h-2 rounded-full bg-accent"></span>
+              {post.data.series ?? "Field Notes"}
             </div>
             
+            <a href={`/posts/${post.id}`} class="block group no-underline">
+              <h2 class="text-5xl md:text-7xl font-semibold tracking-tighter leading-tight mb-8 max-w-4xl group-hover:text-accent transition-colors">
+                {post.data.title}
+              </h2>
+              
+              <p class="text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed mb-10 mx-auto line-clamp-3">
+                {post.data.description}
+              </p>
+              
+              <span class="px-6 py-3 text-sm font-medium transition-colors border rounded-md text-background bg-foreground group-hover:bg-background group-hover:text-foreground group-hover:border-foreground backdrop-blur-sm inline-block">
+                Read Field Note
+              </span>
+            </a>
+          </div>
+        </div>
+      ))}
+
+      <!-- Controls & Progress -->
+      <div class="absolute bottom-12 left-0 w-full z-30">
+        <div class="app-layout flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex gap-3" id="hero-dots">
+            <!-- Dot for Slide 0 -->
+            <button class="w-12 h-1 bg-foreground transition-all duration-300 rounded-full" data-slide-dot="0" aria-label="Go to Pitch"></button>
+            <!-- Dots for Posts -->
+            {sliderPosts.map((_, idx) => (
+              <button class="w-12 h-1 bg-border hover:bg-foreground/50 transition-all duration-300 rounded-full" data-slide-dot={idx + 1} aria-label={`Go to post ${idx + 1}`}></button>
+            ))}
+          </div>
+          <div class="flex items-center gap-4">
+            <button id="hero-prev" class="w-12 h-12 flex items-center justify-center rounded-full border border-border bg-bg-secondary/50 hover:bg-foreground hover:text-background transition-colors backdrop-blur-sm" aria-label="Previous">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button id="hero-next" class="w-12 h-12 flex items-center justify-center rounded-full border border-border bg-bg-secondary/50 hover:bg-foreground hover:text-background transition-colors backdrop-blur-sm" aria-label="Next">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
           </div>
         </div>
       </div>
+    </section>
 
-      <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          const slides = document.querySelectorAll("[data-rotator-slide]");
-          const dots = document.querySelectorAll("[data-rotator-dot]");
-          const prevBtn = document.getElementById("rotator-prev");
-          const nextBtn = document.getElementById("rotator-next");
-          
-          if (!slides.length) return;
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll("[data-hero-slide]");
+        const dots = document.querySelectorAll("[data-slide-dot]");
+        const prevBtn = document.getElementById("hero-prev");
+        const nextBtn = document.getElementById("hero-next");
+        
+        if (!slides.length) return;
 
-          let currentIndex = 0;
-          const totalSlides = slides.length;
-          let interval;
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+        let interval;
 
-          const updateSlider = () => {
-            slides.forEach((slide, idx) => {
-              if (idx === currentIndex) {
-                slide.className = "absolute inset-0 transition-all duration-1000 ease-in-out opacity-100 translate-y-0 scale-100 z-20";
-              } else {
-                slide.className = "absolute inset-0 transition-all duration-1000 ease-in-out opacity-0 translate-y-8 scale-95 z-10 pointer-events-none";
-              }
-            });
-            
-            dots.forEach((dot, idx) => {
-              if (idx === currentIndex) {
-                dot.className = "w-2 h-2 rounded-full transition-colors bg-foreground";
-              } else {
-                dot.className = "w-2 h-2 rounded-full transition-colors bg-border hover:bg-foreground/50";
-              }
-            });
-          };
-
-          const nextSlide = () => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateSlider();
-          };
-
-          const prevSlide = () => {
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            updateSlider();
-          };
-
-          const startAutoPlay = () => {
-            interval = setInterval(nextSlide, 5000);
-          };
-
-          const resetAutoPlay = () => {
-            clearInterval(interval);
-            startAutoPlay();
-          };
-
-          if (nextBtn) nextBtn.addEventListener("click", () => { nextSlide(); resetAutoPlay(); });
-          if (prevBtn) prevBtn.addEventListener("click", () => { prevSlide(); resetAutoPlay(); });
-
-          dots.forEach((dot, idx) => {
-            dot.addEventListener("click", () => {
-              currentIndex = idx;
-              updateSlider();
-              resetAutoPlay();
-            });
+        const updateHero = () => {
+          slides.forEach((slide, idx) => {
+            if (idx === currentIndex) {
+              slide.classList.replace("opacity-0", "opacity-100");
+              slide.classList.replace("z-10", "z-20");
+              slide.classList.remove("pointer-events-none");
+            } else {
+              slide.classList.replace("opacity-100", "opacity-0");
+              slide.classList.replace("z-20", "z-10");
+              slide.classList.add("pointer-events-none");
+            }
           });
+          
+          dots.forEach((dot, idx) => {
+            if (idx === currentIndex) {
+              dot.classList.replace("bg-border", "bg-foreground");
+              dot.classList.remove("hover:bg-foreground/50");
+            } else {
+              dot.classList.replace("bg-foreground", "bg-border");
+              dot.classList.add("hover:bg-foreground/50");
+            }
+          });
+        };
 
+        const nextSlide = () => {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          updateHero();
+        };
+
+        const prevSlide = () => {
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          updateHero();
+        };
+
+        const startAutoPlay = () => {
+          interval = setInterval(nextSlide, 6000);
+        };
+
+        const resetAutoPlay = () => {
+          clearInterval(interval);
           startAutoPlay();
+        };
+
+        if (nextBtn) nextBtn.addEventListener("click", () => { nextSlide(); resetAutoPlay(); });
+        if (prevBtn) prevBtn.addEventListener("click", () => { prevSlide(); resetAutoPlay(); });
+
+        dots.forEach((dot, idx) => {
+          dot.addEventListener("click", () => {
+            currentIndex = idx;
+            updateHero();
+            resetAutoPlay();
+          });
         });
-      </script>
-    </header>
+
+        startAutoPlay();
+      });
+    </script>
 
     <!-- Blog Feed Grid -->
     <div class="app-layout py-24">

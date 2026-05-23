@@ -281,7 +281,7 @@ The rendered article has its own proof contract too:
 
 ```txt
 body image: /images/posts/mcp-shared-state-data-leak.png
-ogImage: /images/thumbnails/thumbnail_tshirt_badge_1779564855711.png
+ogImage: /images/thumbnails/thumbnail_tshirt_groovy_1779564901239.png
 rendered summary: <rendered-audit-root>\summary.json
 desktop first-screen image check: 10/10
 mobile first-screen image check: 10/10
