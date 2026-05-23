@@ -88,45 +88,110 @@ const editorialPrinciples = [
   </header>
 
   <main id="main-content" class="app-layout py-12">
-    <!-- Horizontal Scroller: Latest & Featured -->
-    <section class="mb-16 mt-8 reveal-on-scroll">
-      <div class="flex items-center gap-4 mb-6">
-        <h2 class="text-2xl font-semibold tracking-tight text-foreground">Latest & Recommended</h2>
-        <div class="h-px flex-1 bg-border"></div>
+    <!-- Hero Slider -->
+    <section class="mb-16 mt-8 reveal-on-scroll relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden border border-border bg-bg-secondary aspect-square shadow-[8px_8px_0px_var(--foreground)]" id="hero-carousel">
+      <div class="flex transition-transform duration-700 ease-in-out h-full" id="carousel-track">
+        {sortedPosts.slice(0, 5).map((post, i) => (
+          <div class="w-full h-full shrink-0 relative group">
+            <a href={`/posts/${post.id}`} class="block w-full h-full">
+              {post.data.ogImage ? (
+                <img src={post.data.ogImage} alt={post.data.title} class="w-full h-full object-cover" />
+              ) : (
+                <img src="/images/hero.png" alt="Fallback Hero" class="w-full h-full object-cover" />
+              )}
+              <!-- Gradient Overlay for Text -->
+              <div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent flex flex-col justify-end p-6 md:p-12 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="flex items-center gap-3 mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <span class="px-3 py-1 text-xs font-bold uppercase tracking-widest text-background bg-foreground rounded-full">
+                    {post.data.series ?? "Featured"}
+                  </span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-4 leading-tight translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                  {post.data.title}
+                </h2>
+                <p class="text-base md:text-lg text-text-secondary line-clamp-2 max-w-2xl translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+                  {post.data.description}
+                </p>
+              </div>
+            </a>
+          </div>
+        ))}
       </div>
       
-      <div class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide">
-        {sortedPosts.slice(0, 6).map(post => (
-          <a href={`/posts/${post.id}`} class="snap-start shrink-0 w-80 group flex flex-col gap-4 no-underline bg-bg-secondary p-4 rounded-xl border border-border hover:border-accent transition-colors">
-            {post.data.ogImage && (
-              <div class="w-full aspect-square border border-border bg-background rounded-lg overflow-hidden relative">
-                <img src={post.data.ogImage} alt={post.data.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-              </div>
-            )}
-            <div>
-              <div class="flex items-center gap-2 mb-2">
-                <span class="font-mono text-[0.6rem] uppercase tracking-widest text-accent px-2 py-0.5 bg-accent/10 rounded-full">
-                  {post.data.series ?? "Field Log"}
-                </span>
-                {post.data.featured && (
-                  <span class="font-mono text-[0.6rem] uppercase tracking-widest text-background bg-foreground px-2 py-0.5 rounded-full">
-                    Recommended
-                  </span>
-                )}
-              </div>
-              <h3 class="text-lg font-semibold text-foreground group-hover:text-accent transition-colors leading-tight line-clamp-2">
-                {post.data.title}
-              </h3>
-            </div>
-          </a>
+      <!-- Nav Buttons -->
+      <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center bg-background/50 hover:bg-background border border-border rounded-full text-foreground z-10 transition-colors backdrop-blur-sm" aria-label="Previous slide">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center bg-background/50 hover:bg-background border border-border rounded-full text-foreground z-10 transition-colors backdrop-blur-sm" aria-label="Next slide">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <!-- Dots -->
+      <div class="absolute bottom-6 right-6 md:bottom-8 md:right-8 flex gap-3 z-10" id="carousel-dots">
+        {sortedPosts.slice(0, 5).map((_, i) => (
+          <button class={`w-3 h-3 rounded-full border border-border transition-colors ${i === 0 ? 'bg-foreground border-foreground' : 'bg-background/20 hover:bg-background/50 backdrop-blur-sm'}`} data-slide={i} aria-label={`Go to slide ${i + 1}`}></button>
         ))}
       </div>
     </section>
 
-    <!-- Hero Landing -->
-    <div class="mb-16 mt-8 flex justify-center reveal-on-scroll">
-      <img src="/images/hero.png" alt="VibeCode Town - A retro-futuristic hacker town" class="w-full max-w-5xl rounded-xl border-4 border-foreground shadow-[8px_8px_0px_var(--foreground)] object-cover aspect-square" />
-    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const track = document.getElementById("carousel-track");
+        const prevBtn = document.getElementById("carousel-prev");
+        const nextBtn = document.getElementById("carousel-next");
+        const dots = document.querySelectorAll("#carousel-dots button");
+        if (!track) return;
+
+        let currentIndex = 0;
+        const totalSlides = track.children.length;
+        let autoPlayInterval;
+
+        const updateCarousel = () => {
+          track.style.transform = `translateX(-${currentIndex * 100}%)`;
+          dots.forEach((dot, idx) => {
+            if (idx === currentIndex) {
+              dot.classList.remove('bg-background/20');
+              dot.classList.add('bg-foreground', 'border-foreground');
+            } else {
+              dot.classList.add('bg-background/20');
+              dot.classList.remove('bg-foreground', 'border-foreground');
+            }
+          });
+        };
+
+        const nextSlide = () => {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          updateCarousel();
+        };
+
+        const prevSlide = () => {
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          updateCarousel();
+        };
+
+        const startAutoPlay = () => {
+          autoPlayInterval = setInterval(nextSlide, 5000);
+        };
+
+        const resetAutoPlay = () => {
+          clearInterval(autoPlayInterval);
+          startAutoPlay();
+        };
+
+        if (nextBtn) nextBtn.addEventListener("click", () => { nextSlide(); resetAutoPlay(); });
+        if (prevBtn) prevBtn.addEventListener("click", () => { prevSlide(); resetAutoPlay(); });
+
+        dots.forEach((dot, idx) => {
+          dot.addEventListener("click", () => {
+            currentIndex = idx;
+            updateCarousel();
+            resetAutoPlay();
+          });
+        });
+
+        startAutoPlay();
+      });
+    </script>
 
     <!-- Blog Feed (Fly.io Style Layout) -->
     <div class="flex flex-col gap-16 mt-32">
