@@ -56,6 +56,37 @@ const editorialPrinciples = [
 >
   <Header />
 
+  <header class="relative pt-32 pb-24 mb-16 overflow-hidden bg-grid-pattern border-b border-border">
+    <!-- Subtle Glow in background -->
+    <div class="absolute inset-0 bg-background/50 backdrop-blur-[1px]"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/20 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="app-layout relative z-10 flex flex-col items-center text-center">
+      <div class="inline-flex items-center gap-3 px-3 py-1 mb-8 text-[0.7rem] font-mono tracking-widest uppercase border rounded-full border-border bg-bg-secondary/50 text-text-secondary animate-fade-in-up">
+        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+        The 1-Person Unicorn
+      </div>
+      
+      <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter leading-tight mb-8 max-w-4xl animate-fade-in-up delay-100">
+        Scaling your solopreneur business with <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-dim">autonomous agents</span>.
+      </h1>
+      
+      <p class="text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed animate-fade-in-up delay-200">
+        Real artifacts, production workflows, and AEO-ready frameworks. 
+        Copy our systems to build a 10-person business, alone.
+      </p>
+
+      <div class="flex gap-4 mt-10 animate-fade-in-up delay-300">
+        <a href="/posts/" class="px-6 py-3 text-sm font-medium transition-colors border rounded-md text-background bg-foreground hover:bg-background hover:text-foreground hover:border-foreground">
+          Read the Archive
+        </a>
+        <a href="/about/" class="px-6 py-3 text-sm font-medium transition-colors border rounded-md bg-bg-secondary border-border hover:border-border-strong text-foreground">
+          About the Project
+        </a>
+      </div>
+    </div>
+  </header>
+
   <main id="main-content" class="app-layout py-12">
     <!-- Horizontal Scroller: Latest & Featured -->
     <section class="mb-16 mt-8 reveal-on-scroll">
