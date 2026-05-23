@@ -88,6 +88,11 @@ const editorialPrinciples = [
   </header>
 
   <main id="main-content" class="app-layout py-12">
+    <!-- Hero Logo -->
+    <div class="mb-16 mt-8 flex justify-center reveal-on-scroll">
+      <img src="/logo.png" alt="Vibecode Town Analog Logo" class="w-full max-w-3xl rounded-xl border-4 border-foreground shadow-[8px_8px_0px_var(--foreground)]" />
+    </div>
+
     <!-- Principles Bento -->
     <dl class="grid grid-cols-1 gap-4 md:grid-cols-3 mb-24 reveal-on-scroll" aria-label="Editorial principles">
       {editorialPrinciples.map(principle => (
@@ -113,7 +118,7 @@ const editorialPrinciples = [
         >
           <!-- Massive Top Image -->
           <div class="border border-border bg-bg-secondary relative aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-xl">
-            <img src={leadPost.data.ogImage || "/images/blog/notebook-sketch.png"} alt={leadPost.data.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img src={leadPost.data.ogImage || "/images/placeholders/retro-1.png"} alt={leadPost.data.title} class="absolute inset-0 w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105" />
           </div>
           <!-- Text Content below -->
           <div class="flex flex-col gap-4 max-w-4xl mx-auto text-center items-center">
@@ -146,7 +151,7 @@ const editorialPrinciples = [
             >
               <!-- Image on Top -->
               <div class="w-full aspect-[4/3] border border-border bg-bg-secondary rounded-lg overflow-hidden relative shrink-0">
-                <img src={post.data.ogImage || "/images/blog/notebook-sketch.png"} alt={post.data.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src={post.data.ogImage || "/images/placeholders/retro-2.png"} alt={post.data.title} class="absolute inset-0 w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105" />
               </div>
               
               <!-- Text Below -->

@@ -15,7 +15,7 @@ const seriesLabel = series ?? "Field Log";
 
 const getPlaceholder = (slug: string) => {
   const hashes = slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  const variants = ['blueprint', 'sketch', 'wiring', 'manuscript', 'gear'];
+  const variants = ['retro-1', 'retro-2'];
   const variant = variants[hashes % variants.length];
   return `/images/placeholders/${variant}.png`;
 };
@@ -34,7 +34,7 @@ const thumbnail = ogImage && ogImage !== "" ? ogImage : getPlaceholder(id);
   >
     <!-- Image on Left -->
     <div class="w-full md:w-2/5 aspect-[4/3] border border-border bg-bg-secondary rounded-lg overflow-hidden relative shrink-0">
-      <img src={thumbnail} alt={title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='/images/blog/notebook-sketch.png';" />
+      <img src={thumbnail} alt={title} class="absolute inset-0 w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105" onerror="this.src='/images/placeholders/retro-1.png';" />
     </div>
     
     <!-- Text on Right -->
