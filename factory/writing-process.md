@@ -11,10 +11,11 @@ We do not write "how-to" tutorials. We write incident reports. Every post must o
 | **-2** | **Expansion** | Discover new potential "Beacons" monthly. | Validated Signal-to-Noise grading. |
 | **-1.5** | **Hygiene** | Feedback, Content Quality | Prune "slop" or low-signal sources. |
 | **-1** | **The Scout** | Approved Pool | Pick 3-5 high-signal assets from the *validated* pool. |
+| **-0.5** | **Agent Fact-Check (Anti-Hallucination)** | **MANDATORY FOR AGENTS:** Fetch and read primary documentation/code (e.g. GitHub README, API docs) of the subject before proceeding. | Evidence of raw source documentation read. |
 | **0** | **Beacon Capture** | Fetch and deconstruct related articles/videos from Beacons. | Full text/transcript captured in `research/raw/`. |
 | **1** | **Visual Conception** | Draw the mental model using `mcp_pencil_batch_design` (Pencil Dev). | PNG illustration in `public/images/posts/`. |
-| **2** | **Tech Brief** | Generate an XML-structured plan detailing exact errors, tools, and the "Aha Moment." | Approved Brief in `plans/`. |
-| **3** | **First Draft** | Generate a raw, cynical engineering log. | **NO NUMBERS IN TITLE.** Minimum 600 words. |
+| **2** | **Tech Brief & Packet** | Generate the 6-file source workflow packet (reader-pressure, evidence-bundle, etc.). | **MUST PASS** `npm run verify:source-workflow-quality` |
+| **3** | **First Draft** | Generate a raw, cynical engineering log based ONLY on the validated packet. | **NO NUMBERS IN TITLE.** Minimum 600 words. |
 | **4** | **Critique & SEO** | Run `vibe_critic.py` (SRM) + Audit Schema Density. | Pass SRM + Score 7/10+ on 10-Question Audit. |
 | **5** | **Targeted Rewrite** | Apply the critique feedback to produce the final, polished markdown. | High-signal, dry tone, verified implementation. |
 

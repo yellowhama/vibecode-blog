@@ -1,7 +1,41 @@
 {
-  "generated_at": "2026-05-20T03:41:27.729Z",
+  "generated_at": "2026-05-24T00:50:28.554Z",
   "source": "F:\\Aisaak\\CompanyArtifacts\\llm-wiki-completed",
   "packets": {
+    "1-person-unicorn-tech-stack-2026": {
+      "files": [
+        {
+          "suffix": "reader-pressure",
+          "path": "companies/vibecode-town/plans/1-person-unicorn-tech-stack-2026-reader-pressure.md",
+          "sha256": "5cb260339e6c57cc040f098903919c59c1d779f5d0f0ae6e24682078ba174104"
+        },
+        {
+          "suffix": "title-angle",
+          "path": "companies/vibecode-town/plans/1-person-unicorn-tech-stack-2026-title-angle.md",
+          "sha256": "54dc40841b9bdfb79cc3bd1413500820826e482a95d221a1c8786e2998a3e4a7"
+        },
+        {
+          "suffix": "evidence-bundle",
+          "path": "companies/vibecode-town/plans/1-person-unicorn-tech-stack-2026-evidence-bundle.md",
+          "sha256": "874c13b02bd69b5349dfa6aec4eacc602e5ed92efc6aaae1e900b7e7fb8ead83"
+        },
+        {
+          "suffix": "brief",
+          "path": "companies/vibecode-town/plans/1-person-unicorn-tech-stack-2026-brief.md",
+          "sha256": "6735c5f536c5e3e972e0c3cca0ce845f814b62a63f12486e0de13fc0373db75a"
+        },
+        {
+          "suffix": "gate-0",
+          "path": "companies/vibecode-town/plans/1-person-unicorn-tech-stack-2026-gate-0.md",
+          "sha256": "a4fb6fe5acfdb5529fe23088078c13cf9f5d98ba5965a1535f22379bde58dd1a"
+        },
+        {
+          "suffix": "draft-critique",
+          "path": "companies/vibecode-town/plans/1-person-unicorn-tech-stack-2026-draft-critique.md",
+          "sha256": "c61efa119d5ede48d6f7a393a6230d5389e2222c3ec4171fd67e052bb8d601c6"
+        }
+      ]
+    },
     "ai-agent-work-disk-contract": {
       "files": [
         {
@@ -172,6 +206,40 @@
         }
       ]
     },
+    "image-design-contract": {
+      "files": [
+        {
+          "suffix": "reader-pressure",
+          "path": "companies/vibecode-town/plans/image-design-contract-reader-pressure.md",
+          "sha256": "bff33f6b1458e2970a1ddd7a2bc85aad63ddfc89c8e784e0075d39b4eed36804"
+        },
+        {
+          "suffix": "title-angle",
+          "path": "companies/vibecode-town/plans/image-design-contract-title-angle.md",
+          "sha256": "e24950695f86bb5fa21f99a29eb2f95498eddebf13c394ba684e024b062b16f2"
+        },
+        {
+          "suffix": "evidence-bundle",
+          "path": "companies/vibecode-town/plans/image-design-contract-evidence-bundle.md",
+          "sha256": "a2bd9706d12ac5a1af6d65f8306e46227bc8fa778718acfcff2ea89bb5a6427f"
+        },
+        {
+          "suffix": "brief",
+          "path": "companies/vibecode-town/plans/image-design-contract-brief.md",
+          "sha256": "f7769ac7a723cfbd6207f532bb5821ea975d03a08f4ab04fd9805264a5c61ef9"
+        },
+        {
+          "suffix": "gate-0",
+          "path": "companies/vibecode-town/plans/image-design-contract-gate-0.md",
+          "sha256": "069479556ecfb704cd04484f918f64e0e7ac917486e43e6e4d27fb86fb897705"
+        },
+        {
+          "suffix": "draft-critique",
+          "path": "companies/vibecode-town/plans/image-design-contract-draft-critique.md",
+          "sha256": "63928e6f3885da3a85d83187217ff927b425cd0e9313479287b210c0bef9ccb3"
+        }
+      ]
+    },
     "mcp-shared-state-data-leak": {
       "files": [
         {
@@ -305,6 +373,40 @@
           "suffix": "draft-critique",
           "path": "companies/vibecode-town/plans/what-vibe-coding-actually-is-draft-critique.md",
           "sha256": "cc5ebf5fb7da9d5a4c103a112b65f403c4a59a2401b9c61e0b45c7b7d2c32986"
+        }
+      ]
+    },
+    "zero-budget-marketing-agent": {
+      "files": [
+        {
+          "suffix": "reader-pressure",
+          "path": "companies/vibecode-town/plans/zero-budget-marketing-agent-reader-pressure.md",
+          "sha256": "cdabf4e4d06414b1f628763d1c68468aef5decbc809144a70e6afb5fd74a0d85"
+        },
+        {
+          "suffix": "title-angle",
+          "path": "companies/vibecode-town/plans/zero-budget-marketing-agent-title-angle.md",
+          "sha256": "b9814f51c3c4240b6882141e0108e8da80ca564f3013b774d77ade7134306ef1"
+        },
+        {
+          "suffix": "evidence-bundle",
+          "path": "companies/vibecode-town/plans/zero-budget-marketing-agent-evidence-bundle.md",
+          "sha256": "cacc27e7c703d05a899dacd949a3a1edf4bfc74e49544200edfe7fa86d3182b0"
+        },
+        {
+          "suffix": "brief",
+          "path": "companies/vibecode-town/plans/zero-budget-marketing-agent-brief.md",
+          "sha256": "ff36bbcde3b434be63c809b5db48dc1654145aa7330027d6e544e2226d494c12"
+        },
+        {
+          "suffix": "gate-0",
+          "path": "companies/vibecode-town/plans/zero-budget-marketing-agent-gate-0.md",
+          "sha256": "f33195d03240804a639a415f83569ce668d9cffbe704ad2c74126557a4455d79"
+        },
+        {
+          "suffix": "draft-critique",
+          "path": "companies/vibecode-town/plans/zero-budget-marketing-agent-draft-critique.md",
+          "sha256": "493cb4592c2621182196213aefe5de3bc2f5e232beb01b216703aeb85e603e27"
         }
       ]
     }

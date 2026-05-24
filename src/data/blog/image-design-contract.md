@@ -10,7 +10,7 @@ tags:
   - design
   - technical-contracts
   - visual-assets
-ogImage: /images/thumbnails/thumbnail_image_contract_1779582259241.png
+ogImage: /images/posts/image-design-contract.png
 references:
   - name: "Design System Guidelines"
     url: "https://github.com/yellowhama/vibecode-blog"
@@ -45,12 +45,12 @@ The visual identity of VibeCode Town is rooted in **analog, retro, and tactile**
 
 > [!WARNING]  
 > **[REJECTED] The Bad Asset**
-> ![Rejected cybernetic asset](/images/archive/zero_budget_marketing_agent_1779563707222.png)
+> Asset path: `/images/archive/zero_budget_marketing_agent_1779563707222.png`
 > *Why it fails: Glowing neon, cybernetic robot elements, 3D render feel, entirely off-brand for an analog retro site.*
 
 > [!TIP]  
 > **[ACCEPTED] The Good Asset**
-> ![Accepted retro asset](/images/posts/image_design_contract_good_1779582275316.png)
+> Asset path: `/images/posts/image_design_contract_good_1779582275316.png`
 > *Why it passes: Flat risograph style, muted teal and orange palette, mechanical (not cybernetic), analog texture.*
 
 ### Standard Generation Prompt
@@ -122,4 +122,4 @@ Before any agent or operator approves a post for publication, the `ogImage` path
 
 This contract **does not prove** that every AI model will follow the prompt faithfully—model drift, version updates, and provider-side changes can silently break compliance. It **fails when** the generation model ignores negative prompts (e.g., DALL·E 3 occasionally injects text despite explicit exclusion), when a new team member bypasses the rejection workflow, or when fallback images themselves fall out of the approved palette. Treat this contract as a living gate, not a permanent guarantee.
 
-![Visual proof of image design contract](/images/thumbnails/thumbnail_image_contract_1779582259241.png)
+![Visual proof of image design contract](/images/posts/image-design-contract.png)

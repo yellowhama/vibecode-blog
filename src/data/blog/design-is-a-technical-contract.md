@@ -11,7 +11,7 @@ tags:
   - ui-design
   - design-systems
   - technical-contracts
-ogImage: /images/thumbnails/thumbnail_retro_blueprint_1779564813126.png
+ogImage: /images/posts/design-is-a-technical-contract.png
 references:
   - name: "Google Labs Stitch DESIGN.md announcement"
     url: "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-design-md/"

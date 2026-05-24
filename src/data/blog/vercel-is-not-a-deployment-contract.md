@@ -2,7 +2,7 @@
 title: "Vercel Is Not a Deployment Contract"
 pubDatetime: 2026-05-16T09:00:00Z
 description: "A Coolify migration audit exposed two hidden Vercel assumptions: rewrites that only existed in vercel.json and a build script that depended on a Unix shell. Learn how to verify your deployment contract."
-ogImage: /images/thumbnails/thumbnail_graphic_groovy_1779564978997.png
+ogImage: /images/posts/vercel-is-not-a-deployment-contract.png
 draft: false
 featured: true
 series: "Field Log"

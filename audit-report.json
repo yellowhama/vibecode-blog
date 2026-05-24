@@ -1,0 +1,605 @@
+{
+  "generatedAt": "2026-05-24T00:10:17.917Z",
+  "blogDir": "F:\\Aisaak\\Projects\\vibecode-town\\src\\data\\blog",
+  "postsChecked": 12,
+  "postsSkipped": 1,
+  "averageScore": 90,
+  "weakestPosts": [
+    {
+      "slug": "image-design-contract",
+      "score": 60,
+      "grade": "not-reference-grade",
+      "ceilingGaps": [
+        "openingScene: opening lacks a visible scene or action verb",
+        "openingScene: opening needs a named system, date, count, command, or artifact",
+        "originalArtifacts: does not name enough real artifacts such as screenshots, diffs, logs, receipts, or rendered summaries",
+        "originalArtifacts: missing screenshot/rendered/browser artifact evidence",
+        "originalArtifacts: missing measurable receipt language",
+        "voice: 1 paragraph(s) are too long for scanner-first reading",
+        "voice: piece is short for a strong reference essay",
+        "voice: needs more section-level rhythm"
+      ]
+    },
+    {
+      "slug": "1-person-unicorn-tech-stack-2026",
+      "score": 61,
+      "grade": "not-reference-grade",
+      "ceilingGaps": [
+        "openingScene: opening lacks a visible scene or action verb",
+        "originalArtifacts: missing before/after contrast",
+        "originalArtifacts: missing screenshot/rendered/browser artifact evidence",
+        "originalArtifacts: needs at least two code/log/command blocks for dense technical reading",
+        "originalArtifacts: needs more inline file paths, commands, config keys, or artifact names",
+        "voice: voice lacks compression or contrast",
+        "voice: piece is short for a strong reference essay",
+        "voice: needs more section-level rhythm"
+      ]
+    },
+    {
+      "slug": "zero-budget-marketing-agent",
+      "score": 65,
+      "grade": "needs-artifacts",
+      "ceilingGaps": [
+        "originalArtifacts: missing before/after contrast",
+        "originalArtifacts: missing screenshot/rendered/browser artifact evidence",
+        "readerTransfer: no named reader-transfer section",
+        "readerTransfer: transfer artifact does not clearly say what to accept or reject",
+        "voice: voice lacks compression or contrast",
+        "voice: piece is short for a strong reference essay",
+        "voice: needs more section-level rhythm",
+        "visualProof: visual proof is not tied to a rendered artifact, screenshot, diagram, or failure log"
+      ]
+    },
+    {
+      "slug": "software-3-0",
+      "score": 96,
+      "grade": "reference-ceiling",
+      "ceilingGaps": [
+        "voice: 1 paragraph(s) are too long for scanner-first reading"
+      ]
+    },
+    {
+      "slug": "ai-agent-work-disk-contract",
+      "score": 100,
+      "grade": "reference-ceiling",
+      "ceilingGaps": []
+    }
+  ],
+  "posts": [
+    {
+      "file": "000-about.md",
+      "slug": "000-about",
+      "title": "About Vibecode Town: A Field Log for AI-Assisted Software Engineering",
+      "series": "About",
+      "skipped": true,
+      "reason": "About pages are not scored by the reference ceiling audit."
+    },
+    {
+      "file": "1-person-unicorn-tech-stack-2026.md",
+      "slug": "1-person-unicorn-tech-stack-2026",
+      "title": "The 1-Person Unicorn Tech Stack (2026 Edition)",
+      "series": "Field Log",
+      "skipped": false,
+      "wordCount": 566,
+      "score": 61,
+      "grade": "not-reference-grade",
+      "ceilingGaps": [
+        "openingScene: opening lacks a visible scene or action verb",
+        "originalArtifacts: missing before/after contrast",
+        "originalArtifacts: missing screenshot/rendered/browser artifact evidence",
+        "originalArtifacts: needs at least two code/log/command blocks for dense technical reading",
+        "originalArtifacts: needs more inline file paths, commands, config keys, or artifact names",
+        "voice: voice lacks compression or contrast",
+        "voice: piece is short for a strong reference essay",
+        "voice: needs more section-level rhythm"
+      ],
+      "dimensions": {
+        "openingScene": {
+          "score": 14,
+          "max": 20,
+          "findings": [
+            "opening lacks a visible scene or action verb"
+          ]
+        },
+        "originalArtifacts": {
+          "score": 10,
+          "max": 25,
+          "findings": [
+            "missing before/after contrast",
+            "missing screenshot/rendered/browser artifact evidence",
+            "needs at least two code/log/command blocks for dense technical reading",
+            "needs more inline file paths, commands, config keys, or artifact names"
+          ]
+        },
+        "readerTransfer": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "voice": {
+          "score": 10,
+          "max": 20,
+          "findings": [
+            "voice lacks compression or contrast",
+            "piece is short for a strong reference essay",
+            "needs more section-level rhythm"
+          ]
+        },
+        "visualProof": {
+          "score": 7,
+          "max": 15,
+          "findings": [
+            "visual proof is not tied to a rendered artifact, screenshot, diagram, or failure log",
+            "visual proof lacks render/device/image-contract detail"
+          ]
+        }
+      }
+    },
+    {
+      "file": "ai-agent-work-disk-contract.md",
+      "slug": "ai-agent-work-disk-contract",
+      "title": "The Work Disk Contract: Managing Artifacts in AI Coding Agents",
+      "series": "AI Tool Note",
+      "skipped": false,
+      "wordCount": 1556,
+      "score": 100,
+      "grade": "reference-ceiling",
+      "ceilingGaps": [],
+      "dimensions": {
+        "openingScene": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "originalArtifacts": {
+          "score": 25,
+          "max": 25,
+          "findings": []
+        },
+        "readerTransfer": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "voice": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "visualProof": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "ai-memory-operating-structure.md",
+      "slug": "ai-memory-operating-structure",
+      "title": "How to Stop AI Agents From Losing Their Memory: The Operating Structure",
+      "series": "AI Explainer",
+      "skipped": false,
+      "wordCount": 1464,
+      "score": 100,
+      "grade": "reference-ceiling",
+      "ceilingGaps": [],
+      "dimensions": {
+        "openingScene": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "originalArtifacts": {
+          "score": 25,
+          "max": 25,
+          "findings": []
+        },
+        "readerTransfer": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "voice": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "visualProof": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "design-is-a-technical-contract.md",
+      "slug": "design-is-a-technical-contract",
+      "title": "DESIGN.md: Turning Visual Taste Into a Strict Agent Contract",
+      "series": "Field Log",
+      "skipped": false,
+      "wordCount": 1789,
+      "score": 100,
+      "grade": "reference-ceiling",
+      "ceilingGaps": [],
+      "dimensions": {
+        "openingScene": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "originalArtifacts": {
+          "score": 25,
+          "max": 25,
+          "findings": []
+        },
+        "readerTransfer": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "voice": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "visualProof": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "frustration-as-spec.md",
+      "slug": "frustration-as-spec",
+      "title": "Frustration Is a Signal, Not the Specification: Engineering Agentic Boundaries",
+      "series": "Field Log",
+      "skipped": false,
+      "wordCount": 1478,
+      "score": 100,
+      "grade": "reference-ceiling",
+      "ceilingGaps": [],
+      "dimensions": {
+        "openingScene": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "originalArtifacts": {
+          "score": 25,
+          "max": 25,
+          "findings": []
+        },
+        "readerTransfer": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "voice": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "visualProof": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "html-review-artifacts-for-agents.md",
+      "slug": "html-review-artifacts-for-agents",
+      "title": "Use HTML to Review Agent Output, Not to Replace the Contract",
+      "series": "AI Tool Note",
+      "skipped": false,
+      "wordCount": 1574,
+      "score": 100,
+      "grade": "reference-ceiling",
+      "ceilingGaps": [],
+      "dimensions": {
+        "openingScene": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "originalArtifacts": {
+          "score": 25,
+          "max": 25,
+          "findings": []
+        },
+        "readerTransfer": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "voice": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "visualProof": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "image-design-contract.md",
+      "slug": "image-design-contract",
+      "title": "Image Design Contract: Visual Assets & Generators",
+      "series": "Field Log",
+      "skipped": false,
+      "wordCount": 721,
+      "score": 60,
+      "grade": "not-reference-grade",
+      "ceilingGaps": [
+        "openingScene: opening lacks a visible scene or action verb",
+        "openingScene: opening needs a named system, date, count, command, or artifact",
+        "originalArtifacts: does not name enough real artifacts such as screenshots, diffs, logs, receipts, or rendered summaries",
+        "originalArtifacts: missing screenshot/rendered/browser artifact evidence",
+        "originalArtifacts: missing measurable receipt language",
+        "voice: 1 paragraph(s) are too long for scanner-first reading",
+        "voice: piece is short for a strong reference essay",
+        "voice: needs more section-level rhythm"
+      ],
+      "dimensions": {
+        "openingScene": {
+          "score": 10,
+          "max": 20,
+          "findings": [
+            "opening lacks a visible scene or action verb",
+            "opening needs a named system, date, count, command, or artifact"
+          ]
+        },
+        "originalArtifacts": {
+          "score": 10,
+          "max": 25,
+          "findings": [
+            "does not name enough real artifacts such as screenshots, diffs, logs, receipts, or rendered summaries",
+            "missing screenshot/rendered/browser artifact evidence",
+            "missing measurable receipt language"
+          ]
+        },
+        "readerTransfer": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "voice": {
+          "score": 10,
+          "max": 20,
+          "findings": [
+            "1 paragraph(s) are too long for scanner-first reading",
+            "piece is short for a strong reference essay",
+            "needs more section-level rhythm"
+          ]
+        },
+        "visualProof": {
+          "score": 10,
+          "max": 15,
+          "findings": [
+            "visual proof is not tied to a rendered artifact, screenshot, diagram, or failure log"
+          ]
+        }
+      }
+    },
+    {
+      "file": "mcp-shared-state-data-leak.md",
+      "slug": "mcp-shared-state-data-leak",
+      "title": "Stateless MCP Servers Can Still Leak Shared State: A Security Contract",
+      "series": "AI Market Watch",
+      "skipped": false,
+      "wordCount": 2094,
+      "score": 100,
+      "grade": "reference-ceiling",
+      "ceilingGaps": [],
+      "dimensions": {
+        "openingScene": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "originalArtifacts": {
+          "score": 25,
+          "max": 25,
+          "findings": []
+        },
+        "readerTransfer": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "voice": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "visualProof": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "software-3-0.md",
+      "slug": "software-3-0",
+      "title": "Software 3.0 Is a Verification Problem",
+      "series": "AI Explainer",
+      "skipped": false,
+      "wordCount": 1640,
+      "score": 96,
+      "grade": "reference-ceiling",
+      "ceilingGaps": [
+        "voice: 1 paragraph(s) are too long for scanner-first reading"
+      ],
+      "dimensions": {
+        "openingScene": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "originalArtifacts": {
+          "score": 25,
+          "max": 25,
+          "findings": []
+        },
+        "readerTransfer": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "voice": {
+          "score": 16,
+          "max": 20,
+          "findings": [
+            "1 paragraph(s) are too long for scanner-first reading"
+          ]
+        },
+        "visualProof": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "vercel-is-not-a-deployment-contract.md",
+      "slug": "vercel-is-not-a-deployment-contract",
+      "title": "Vercel Is Not a Deployment Contract",
+      "series": "Field Log",
+      "skipped": false,
+      "wordCount": 1540,
+      "score": 100,
+      "grade": "reference-ceiling",
+      "ceilingGaps": [],
+      "dimensions": {
+        "openingScene": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "originalArtifacts": {
+          "score": 25,
+          "max": 25,
+          "findings": []
+        },
+        "readerTransfer": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "voice": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "visualProof": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "what-vibe-coding-actually-is.md",
+      "slug": "what-vibe-coding-actually-is",
+      "title": "What Vibe Coding Actually Is: Exploration vs Production",
+      "series": "AI Explainer",
+      "skipped": false,
+      "wordCount": 1668,
+      "score": 100,
+      "grade": "reference-ceiling",
+      "ceilingGaps": [],
+      "dimensions": {
+        "openingScene": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "originalArtifacts": {
+          "score": 25,
+          "max": 25,
+          "findings": []
+        },
+        "readerTransfer": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "voice": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "visualProof": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "zero-budget-marketing-agent.md",
+      "slug": "zero-budget-marketing-agent",
+      "title": "The All-in-One Autonomous Research Agent: Deep Dives with musu-crawl-ai",
+      "series": "Field Log",
+      "skipped": false,
+      "wordCount": 544,
+      "score": 65,
+      "grade": "needs-artifacts",
+      "ceilingGaps": [
+        "originalArtifacts: missing before/after contrast",
+        "originalArtifacts: missing screenshot/rendered/browser artifact evidence",
+        "readerTransfer: no named reader-transfer section",
+        "readerTransfer: transfer artifact does not clearly say what to accept or reject",
+        "voice: voice lacks compression or contrast",
+        "voice: piece is short for a strong reference essay",
+        "voice: needs more section-level rhythm",
+        "visualProof: visual proof is not tied to a rendered artifact, screenshot, diagram, or failure log"
+      ],
+      "dimensions": {
+        "openingScene": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "originalArtifacts": {
+          "score": 15,
+          "max": 25,
+          "findings": [
+            "missing before/after contrast",
+            "missing screenshot/rendered/browser artifact evidence"
+          ]
+        },
+        "readerTransfer": {
+          "score": 13,
+          "max": 20,
+          "findings": [
+            "no named reader-transfer section",
+            "transfer artifact does not clearly say what to accept or reject"
+          ]
+        },
+        "voice": {
+          "score": 10,
+          "max": 20,
+          "findings": [
+            "voice lacks compression or contrast",
+            "piece is short for a strong reference essay",
+            "needs more section-level rhythm"
+          ]
+        },
+        "visualProof": {
+          "score": 7,
+          "max": 15,
+          "findings": [
+            "visual proof is not tied to a rendered artifact, screenshot, diagram, or failure log",
+            "visual proof lacks render/device/image-contract detail"
+          ]
+        }
+      }
+    }
+  ]
+}

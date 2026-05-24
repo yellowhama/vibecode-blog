@@ -6,7 +6,7 @@ draft: false
 featured: true
 series: "AI Explainer"
 workflow: "packet"
-ogImage: /images/thumbnails/thumbnail_vibe_coding_1779565063309.png
+ogImage: /images/posts/what-vibe-coding-actually-is.png
 tags:
   - software-engineering
   - vibe-coding

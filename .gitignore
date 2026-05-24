@@ -51,3 +51,6 @@ vibecode-diagrams/node_modules/
 vibecode-diagrams/dist/
 vibecode-assembler/node_modules/
 vibecode-assembler/dist/
+
+# llm-wiki
+llm-wiki/

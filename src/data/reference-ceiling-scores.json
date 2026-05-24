@@ -1,15 +1,18 @@
 {
-  "averageScore": 100,
-  "generatedAt": "2026-05-20T12:45:00+09:00",
+  "averageScore": 96,
+  "generatedAt": "2026-05-24T09:16:00+09:00",
   "posts": {
+    "1-person-unicorn-tech-stack-2026": { "score": 73, "grade": "needs-artifacts" },
     "ai-agent-work-disk-contract": { "score": 100, "grade": "reference-ceiling" },
     "ai-memory-operating-structure": { "score": 100, "grade": "reference-ceiling" },
     "design-is-a-technical-contract": { "score": 100, "grade": "reference-ceiling" },
     "frustration-as-spec": { "score": 100, "grade": "reference-ceiling" },
     "html-review-artifacts-for-agents": { "score": 100, "grade": "reference-ceiling" },
+    "image-design-contract": { "score": 96, "grade": "reference-ceiling" },
     "mcp-shared-state-data-leak": { "score": 100, "grade": "reference-ceiling" },
     "software-3-0": { "score": 96, "grade": "reference-ceiling" },
     "vercel-is-not-a-deployment-contract": { "score": 100, "grade": "reference-ceiling" },
-    "what-vibe-coding-actually-is": { "score": 100, "grade": "reference-ceiling" }
+    "what-vibe-coding-actually-is": { "score": 100, "grade": "reference-ceiling" },
+    "zero-budget-marketing-agent": { "score": 85, "grade": "strong-but-thin" }
   }
 }

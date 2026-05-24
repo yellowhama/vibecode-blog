@@ -2,7 +2,7 @@
 title: "How to Stop AI Agents From Losing Their Memory: The Operating Structure"
 pubDatetime: 2026-05-16T06:00:00Z
 description: "Long LLM prompts are not operating memory. Learn how to build an artifact-driven memory stack with source notes, specs, and searchable indexes for autonomous AI agents."
-ogImage: /images/thumbnails/thumbnail_tshirt_badge_1779564855711.png
+ogImage: /images/posts/ai-memory-operating-structure.png
 draft: false
 featured: true
 series: "AI Explainer"

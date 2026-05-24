@@ -10,11 +10,12 @@ tags:
   - ai-agents
   - software-engineering
   - vibecoding
+ogImage: /images/posts/000-about.png
 ---
 
 # About Vibecode Town
 
-Vibecode Town is an evidence-backed field log for AI-assisted software work.
+Vibecode Town is an evidence-backed field notes for AI-assisted software work.
 
 We track exactly what changes when autonomous agents write code, operate tools, produce evidence, and interact with public surfaces. Our standard is not hype. Our standard is whether a technical claim can be directly tied to a source file, a terminal command, a reproducible failure, a strict verifier, or a durable artifact.
 

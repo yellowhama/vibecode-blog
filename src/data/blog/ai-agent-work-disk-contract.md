@@ -6,7 +6,7 @@ draft: false
 featured: false
 series: "AI Tool Note"
 workflow: "packet"
-ogImage: /images/thumbnails/thumbnail_agent_disk_1779565086528.png
+ogImage: /images/posts/ai-agent-work-disk-contract.png
 lang: "en"
 tags:
   - ai-agents
@@ -29,7 +29,7 @@ references:
 
 # The Work Disk Contract for AI Coding Agents
 
-On 2026-05-21, I ran a PowerShell drive check, verified the LLM wiki archive gate, and opened the Chrome-rendered audit under `<rendered-audit-root>`. The disk problem we faced was not code. It was a lack of definition about **where the agent was allowed to leave proof.** 
+On 2026-05-21, I ran a PowerShell drive check, verified the LLM wiki archive paths and gate, and opened the Chrome-rendered audit under `<rendered-audit-root>`. The disk problem we faced was not code. It was a lack of definition about **where the agent was allowed to leave proof.** 
 
 Use this rule before accepting any agent run: **name the source, memory, rendered evidence, and temp roots first.**
 

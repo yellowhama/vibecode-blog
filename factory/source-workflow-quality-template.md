@@ -105,6 +105,8 @@ Do not start drafting because a topic sounds useful. Start drafting after the pa
 source -> angle -> evidence -> reader decision -> reject rule -> critique pressure
 ```
 
+**AGENT ANTI-HALLUCINATION RULE:** AI Agents must NEVER bypass this packet creation. An AI Agent must fetch and read the primary source documentation (e.g., GitHub README, official API docs) *before* writing the evidence bundle. If the evidence bundle relies on assumed or legacy context (like guessing a tool uses n8n), the entire packet is invalid.
+
 If that chain is not present, repair the packet before writing the article.
 
 ## Generator Command

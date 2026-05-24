@@ -108,5 +108,38 @@
     "motif": "deconstruct",
     "rationale": "The deconstruct motif supports the distinction between exploration and production verification.",
     "anchors": ["vibe coding", "exploration", "verification"]
+  },
+  {
+    "slug": "1-person-unicorn-tech-stack-2026",
+    "image": "/images/posts/1-person-unicorn-tech-stack-2026.png",
+    "title": "1-Person Unicorn Tech Stack",
+    "subtitle": "Extreme developer leverage using agents",
+    "signal": "Cursor | MCP | Vercel",
+    "accent": "#2E6F7E",
+    "motif": "stack",
+    "rationale": "Visualizes the solopreneur's tech stack architecture shifting from code typing to orchestration.",
+    "anchors": ["Cursor", "Model Context Protocol", "Vercel"]
+  },
+  {
+    "slug": "image-design-contract",
+    "image": "/images/posts/image-design-contract.png",
+    "title": "Image Design Contract",
+    "subtitle": "Visual Assets & Generators",
+    "signal": "style -> directory -> validation",
+    "accent": "#B95B36",
+    "motif": "sketch",
+    "rationale": "Specifies strict visual guidelines and fallback mechanisms for blog post graphics.",
+    "anchors": ["Image Design Contract", "Visual Assets", "ogImage"]
+  },
+  {
+    "slug": "zero-budget-marketing-agent",
+    "image": "/images/posts/zero-budget-marketing-agent.png",
+    "title": "Autonomous Research Agent",
+    "subtitle": "Deep Dives with musu-crawl-ai",
+    "signal": "fetch -> search -> compile",
+    "accent": "#526E35",
+    "motif": "crawler",
+    "rationale": "Maps out the native concurrent Go crawler loop compiling semantic local wikis.",
+    "anchors": ["musu-crawl-ai", "fetch web", "research"]
   }
 ]

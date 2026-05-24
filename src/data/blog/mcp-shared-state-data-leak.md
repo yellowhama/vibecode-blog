@@ -7,6 +7,7 @@ featured: false
 series: "AI Market Watch"
 workflow: "packet"
 lang: "en"
+ogImage: /images/posts/mcp-shared-state-data-leak.png
 tags:
   - ai-security
   - mcp

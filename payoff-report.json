@@ -1,0 +1,612 @@
+{
+  "generatedAt": "2026-05-24T00:07:28.166Z",
+  "blogDir": "F:\\Aisaak\\Projects\\vibecode-town\\src\\data\\blog",
+  "strict": false,
+  "thresholds": {
+    "minScore": 82,
+    "minAverage": 86
+  },
+  "postsChecked": 12,
+  "postsSkipped": 1,
+  "averageScore": 99,
+  "weakestPosts": [
+    {
+      "slug": "1-person-unicorn-tech-stack-2026",
+      "score": 81,
+      "grade": "payoff-thin",
+      "blockers": [
+        "body does not keep converting facts into so-what-now judgment",
+        "procedure outruns reasoning"
+      ]
+    },
+    {
+      "slug": "image-design-contract",
+      "score": 85,
+      "grade": "reader-payoff-pass",
+      "blockers": [
+        "procedure outruns reasoning"
+      ]
+    },
+    {
+      "slug": "zero-budget-marketing-agent",
+      "score": 94,
+      "grade": "reader-payoff-strong",
+      "blockers": []
+    },
+    {
+      "slug": "mcp-shared-state-data-leak",
+      "score": 98,
+      "grade": "reader-payoff-strong",
+      "blockers": []
+    },
+    {
+      "slug": "vercel-is-not-a-deployment-contract",
+      "score": 98,
+      "grade": "reader-payoff-strong",
+      "blockers": []
+    }
+  ],
+  "belowMinimum": [
+    "1-person-unicorn-tech-stack-2026"
+  ],
+  "postsWithBlockers": [
+    "1-person-unicorn-tech-stack-2026",
+    "image-design-contract"
+  ],
+  "posts": [
+    {
+      "file": "000-about.md",
+      "slug": "000-about",
+      "title": "About Vibecode Town: A Field Log for AI-Assisted Software Engineering",
+      "series": "About",
+      "skipped": true,
+      "reason": "About pages are not scored by the reader payoff audit."
+    },
+    {
+      "file": "1-person-unicorn-tech-stack-2026.md",
+      "slug": "1-person-unicorn-tech-stack-2026",
+      "title": "The 1-Person Unicorn Tech Stack (2026 Edition)",
+      "series": "Field Log",
+      "skipped": false,
+      "wordCount": 410,
+      "score": 81,
+      "grade": "payoff-thin",
+      "blockers": [
+        "body does not keep converting facts into so-what-now judgment",
+        "procedure outruns reasoning"
+      ],
+      "dimensions": {
+        "opening": {
+          "score": 26,
+          "max": 26,
+          "findings": []
+        },
+        "soWhat": {
+          "score": 11,
+          "max": 20,
+          "findings": [
+            "body rarely turns facts into so-what-now judgment",
+            "needs enough section rhythm for a scanner to follow the argument"
+          ]
+        },
+        "procedureBalance": {
+          "score": 11,
+          "max": 17,
+          "findings": [
+            "too few why/risk/decision/evidence words to support a strong argument"
+          ]
+        },
+        "readerArtifact": {
+          "score": 11,
+          "max": 15,
+          "findings": [
+            "no copyable block, command, or prompt the reader can reuse"
+          ]
+        },
+        "ending": {
+          "score": 14,
+          "max": 14,
+          "findings": []
+        },
+        "voice": {
+          "score": 8,
+          "max": 12,
+          "findings": [
+            "missing quotable judgment lines"
+          ]
+        }
+      }
+    },
+    {
+      "file": "ai-agent-work-disk-contract.md",
+      "slug": "ai-agent-work-disk-contract",
+      "title": "The Work Disk Contract: Managing Artifacts in AI Coding Agents",
+      "series": "AI Tool Note",
+      "skipped": false,
+      "wordCount": 1556,
+      "score": 104,
+      "grade": "reader-payoff-strong",
+      "blockers": [],
+      "dimensions": {
+        "opening": {
+          "score": 26,
+          "max": 26,
+          "findings": []
+        },
+        "soWhat": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "procedureBalance": {
+          "score": 17,
+          "max": 17,
+          "findings": []
+        },
+        "readerArtifact": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        },
+        "ending": {
+          "score": 14,
+          "max": 14,
+          "findings": []
+        },
+        "voice": {
+          "score": 12,
+          "max": 12,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "ai-memory-operating-structure.md",
+      "slug": "ai-memory-operating-structure",
+      "title": "How to Stop AI Agents From Losing Their Memory: The Operating Structure",
+      "series": "AI Explainer",
+      "skipped": false,
+      "wordCount": 1464,
+      "score": 104,
+      "grade": "reader-payoff-strong",
+      "blockers": [],
+      "dimensions": {
+        "opening": {
+          "score": 26,
+          "max": 26,
+          "findings": []
+        },
+        "soWhat": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "procedureBalance": {
+          "score": 17,
+          "max": 17,
+          "findings": []
+        },
+        "readerArtifact": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        },
+        "ending": {
+          "score": 14,
+          "max": 14,
+          "findings": []
+        },
+        "voice": {
+          "score": 12,
+          "max": 12,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "design-is-a-technical-contract.md",
+      "slug": "design-is-a-technical-contract",
+      "title": "DESIGN.md: Turning Visual Taste Into a Strict Agent Contract",
+      "series": "Field Log",
+      "skipped": false,
+      "wordCount": 1789,
+      "score": 104,
+      "grade": "reader-payoff-strong",
+      "blockers": [],
+      "dimensions": {
+        "opening": {
+          "score": 26,
+          "max": 26,
+          "findings": []
+        },
+        "soWhat": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "procedureBalance": {
+          "score": 17,
+          "max": 17,
+          "findings": []
+        },
+        "readerArtifact": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        },
+        "ending": {
+          "score": 14,
+          "max": 14,
+          "findings": []
+        },
+        "voice": {
+          "score": 12,
+          "max": 12,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "frustration-as-spec.md",
+      "slug": "frustration-as-spec",
+      "title": "Frustration Is a Signal, Not the Specification: Engineering Agentic Boundaries",
+      "series": "Field Log",
+      "skipped": false,
+      "wordCount": 1478,
+      "score": 104,
+      "grade": "reader-payoff-strong",
+      "blockers": [],
+      "dimensions": {
+        "opening": {
+          "score": 26,
+          "max": 26,
+          "findings": []
+        },
+        "soWhat": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "procedureBalance": {
+          "score": 17,
+          "max": 17,
+          "findings": []
+        },
+        "readerArtifact": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        },
+        "ending": {
+          "score": 14,
+          "max": 14,
+          "findings": []
+        },
+        "voice": {
+          "score": 12,
+          "max": 12,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "html-review-artifacts-for-agents.md",
+      "slug": "html-review-artifacts-for-agents",
+      "title": "Use HTML to Review Agent Output, Not to Replace the Contract",
+      "series": "AI Tool Note",
+      "skipped": false,
+      "wordCount": 1574,
+      "score": 104,
+      "grade": "reader-payoff-strong",
+      "blockers": [],
+      "dimensions": {
+        "opening": {
+          "score": 26,
+          "max": 26,
+          "findings": []
+        },
+        "soWhat": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "procedureBalance": {
+          "score": 17,
+          "max": 17,
+          "findings": []
+        },
+        "readerArtifact": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        },
+        "ending": {
+          "score": 14,
+          "max": 14,
+          "findings": []
+        },
+        "voice": {
+          "score": 12,
+          "max": 12,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "image-design-contract.md",
+      "slug": "image-design-contract",
+      "title": "Image Design Contract: Visual Assets & Generators",
+      "series": "Field Log",
+      "skipped": false,
+      "wordCount": 639,
+      "score": 85,
+      "grade": "reader-payoff-pass",
+      "blockers": [
+        "procedure outruns reasoning"
+      ],
+      "dimensions": {
+        "opening": {
+          "score": 23,
+          "max": 26,
+          "findings": [
+            "opening needs a concrete object: file, command, log, product, route, screenshot, or hash"
+          ]
+        },
+        "soWhat": {
+          "score": 14,
+          "max": 20,
+          "findings": [
+            "body rarely turns facts into so-what-now judgment"
+          ]
+        },
+        "procedureBalance": {
+          "score": 11,
+          "max": 17,
+          "findings": [
+            "too few why/risk/decision/evidence words to support a strong argument"
+          ]
+        },
+        "readerArtifact": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        },
+        "ending": {
+          "score": 14,
+          "max": 14,
+          "findings": []
+        },
+        "voice": {
+          "score": 8,
+          "max": 12,
+          "findings": [
+            "missing quotable judgment lines"
+          ]
+        }
+      }
+    },
+    {
+      "file": "mcp-shared-state-data-leak.md",
+      "slug": "mcp-shared-state-data-leak",
+      "title": "Stateless MCP Servers Can Still Leak Shared State: A Security Contract",
+      "series": "AI Market Watch",
+      "skipped": false,
+      "wordCount": 2094,
+      "score": 98,
+      "grade": "reader-payoff-strong",
+      "blockers": [],
+      "dimensions": {
+        "opening": {
+          "score": 20,
+          "max": 26,
+          "findings": [
+            "opening does not quickly name the failure, pain, or contradiction"
+          ]
+        },
+        "soWhat": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "procedureBalance": {
+          "score": 17,
+          "max": 17,
+          "findings": []
+        },
+        "readerArtifact": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        },
+        "ending": {
+          "score": 14,
+          "max": 14,
+          "findings": []
+        },
+        "voice": {
+          "score": 12,
+          "max": 12,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "software-3-0.md",
+      "slug": "software-3-0",
+      "title": "Software 3.0 Is a Verification Problem",
+      "series": "AI Explainer",
+      "skipped": false,
+      "wordCount": 1640,
+      "score": 104,
+      "grade": "reader-payoff-strong",
+      "blockers": [],
+      "dimensions": {
+        "opening": {
+          "score": 26,
+          "max": 26,
+          "findings": []
+        },
+        "soWhat": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "procedureBalance": {
+          "score": 17,
+          "max": 17,
+          "findings": []
+        },
+        "readerArtifact": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        },
+        "ending": {
+          "score": 14,
+          "max": 14,
+          "findings": []
+        },
+        "voice": {
+          "score": 12,
+          "max": 12,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "vercel-is-not-a-deployment-contract.md",
+      "slug": "vercel-is-not-a-deployment-contract",
+      "title": "Vercel Is Not a Deployment Contract",
+      "series": "Field Log",
+      "skipped": false,
+      "wordCount": 1540,
+      "score": 98,
+      "grade": "reader-payoff-strong",
+      "blockers": [],
+      "dimensions": {
+        "opening": {
+          "score": 26,
+          "max": 26,
+          "findings": []
+        },
+        "soWhat": {
+          "score": 14,
+          "max": 20,
+          "findings": [
+            "body rarely turns facts into so-what-now judgment"
+          ]
+        },
+        "procedureBalance": {
+          "score": 17,
+          "max": 17,
+          "findings": []
+        },
+        "readerArtifact": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        },
+        "ending": {
+          "score": 14,
+          "max": 14,
+          "findings": []
+        },
+        "voice": {
+          "score": 12,
+          "max": 12,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "what-vibe-coding-actually-is.md",
+      "slug": "what-vibe-coding-actually-is",
+      "title": "What Vibe Coding Actually Is: Exploration vs Production",
+      "series": "AI Explainer",
+      "skipped": false,
+      "wordCount": 1668,
+      "score": 104,
+      "grade": "reader-payoff-strong",
+      "blockers": [],
+      "dimensions": {
+        "opening": {
+          "score": 26,
+          "max": 26,
+          "findings": []
+        },
+        "soWhat": {
+          "score": 20,
+          "max": 20,
+          "findings": []
+        },
+        "procedureBalance": {
+          "score": 17,
+          "max": 17,
+          "findings": []
+        },
+        "readerArtifact": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        },
+        "ending": {
+          "score": 14,
+          "max": 14,
+          "findings": []
+        },
+        "voice": {
+          "score": 12,
+          "max": 12,
+          "findings": []
+        }
+      }
+    },
+    {
+      "file": "zero-budget-marketing-agent.md",
+      "slug": "zero-budget-marketing-agent",
+      "title": "The All-in-One Autonomous Research Agent: Deep Dives with musu-crawl-ai",
+      "series": "Field Log",
+      "skipped": false,
+      "wordCount": 544,
+      "score": 94,
+      "grade": "reader-payoff-strong",
+      "blockers": [],
+      "dimensions": {
+        "opening": {
+          "score": 26,
+          "max": 26,
+          "findings": []
+        },
+        "soWhat": {
+          "score": 14,
+          "max": 20,
+          "findings": [
+            "body rarely turns facts into so-what-now judgment"
+          ]
+        },
+        "procedureBalance": {
+          "score": 17,
+          "max": 17,
+          "findings": []
+        },
+        "readerArtifact": {
+          "score": 15,
+          "max": 15,
+          "findings": []
+        },
+        "ending": {
+          "score": 14,
+          "max": 14,
+          "findings": []
+        },
+        "voice": {
+          "score": 8,
+          "max": 12,
+          "findings": [
+            "missing quotable judgment lines"
+          ]
+        }
+      }
+    }
+  ]
+}
