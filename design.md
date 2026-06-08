@@ -1,73 +1,150 @@
-# VibeCode Town - Design System & Brand Identity
-
-This document defines the core brand identity, technical design contracts, color palettes, and visual rules for **VibeCode Town**. It serves as the single source of truth for both human operators and autonomous agents working on the site.
-
+---
+name: Land-OS Retro-Engineering
+colors:
+  surface: '#1a110b'
+  surface-dim: '#1a110b'
+  surface-bright: '#43372f'
+  surface-container-lowest: '#150c07'
+  surface-container-low: '#231a13'
+  surface-container: '#281e17'
+  surface-container-high: '#332821'
+  surface-container-highest: '#3e322b'
+  on-surface: '#f2dfd4'
+  on-surface-variant: '#d8c3ac'
+  inverse-surface: '#f2dfd4'
+  inverse-on-surface: '#392e27'
+  outline: '#a08e79'
+  outline-variant: '#534433'
+  surface-tint: '#ffb95b'
+  primary: '#ffcc8d'
+  on-primary: '#462a00'
+  primary-container: '#ffa602'
+  on-primary-container: '#684100'
+  inverse-primary: '#845400'
+  secondary: '#e4bfa8'
+  on-secondary: '#422b1b'
+  secondary-container: '#5b4130'
+  on-secondary-container: '#d2ae98'
+  tertiary: '#d4d5d5'
+  on-tertiary: '#2f3131'
+  tertiary-container: '#b8b9b9'
+  on-tertiary-container: '#484a4a'
+  error: '#ffb4ab'
+  on-error: '#690005'
+  error-container: '#93000a'
+  on-error-container: '#ffdad6'
+  primary-fixed: '#ffddb6'
+  primary-fixed-dim: '#ffb95b'
+  on-primary-fixed: '#2a1800'
+  on-primary-fixed-variant: '#643f00'
+  secondary-fixed: '#ffdcc6'
+  secondary-fixed-dim: '#e4bfa8'
+  on-secondary-fixed: '#2a1708'
+  on-secondary-fixed-variant: '#5b4130'
+  tertiary-fixed: '#e2e2e2'
+  tertiary-fixed-dim: '#c6c6c7'
+  on-tertiary-fixed: '#1a1c1c'
+  on-tertiary-fixed-variant: '#454747'
+  background: '#1a110b'
+  on-background: '#f2dfd4'
+  surface-variant: '#3e322b'
+typography:
+  headline-lg:
+    fontFamily: Outfit
+    fontSize: 48px
+    fontWeight: '800'
+    lineHeight: '1.1'
+    letterSpacing: -0.02em
+  headline-lg-mobile:
+    fontFamily: Outfit
+    fontSize: 32px
+    fontWeight: '800'
+    lineHeight: '1.2'
+  headline-md:
+    fontFamily: Outfit
+    fontSize: 32px
+    fontWeight: '700'
+    lineHeight: '1.2'
+  headline-sm:
+    fontFamily: Outfit
+    fontSize: 24px
+    fontWeight: '700'
+    lineHeight: '1.2'
+  body-lg:
+    fontFamily: Outfit
+    fontSize: 20px
+    fontWeight: '400'
+    lineHeight: '1.5'
+  body-md:
+    fontFamily: Outfit
+    fontSize: 18px
+    fontWeight: '400'
+    lineHeight: '1.5'
+  label-mono:
+    fontFamily: Space Mono
+    fontSize: 14px
+    fontWeight: '700'
+    lineHeight: '1.2'
+  body-ko:
+    fontFamily: Pretendard
+    fontSize: 18px
+    fontWeight: '500'
+    lineHeight: '1.6'
+spacing:
+  base: 8px
+  xs: 4px
+  sm: 12px
+  md: 24px
+  lg: 48px
+  xl: 80px
+  gutter: 24px
+  margin-mobile: 16px
+  margin-desktop: 64px
 ---
 
-## 1. Core Brand Concept
+## Brand & Style
+The design system is an "Analog Engineering" interface that blends high-utility brutalism with mid-century industrial hardware aesthetics. It targets a demographic that appreciates tactile clarity and high legibility, specifically optimized for elderly users through high-contrast ratios and oversized interactive hit areas.
 
-**VibeCode Town** is a field log for "The 1-Person Unicorn." The content focuses on scaling a solopreneur business using autonomous agents, AEO (Agent Engine Optimization), and rigorous technical contracts.
+The visual style is **High-Contrast Brutalist**. It rejects soft gradients and subtle shadows in favor of hard-edged borders, solid offsets, and a rigid mechanical structure. The emotional response should be one of "rugged reliability"—feeling like a physical control panel rather than a ephemeral digital overlay.
 
-The brand tone is:
-- **Technical but Accessible**: We deal with complex agentic infrastructure but explain it through clear, grounded analogies.
-- **Analog & Tactile**: Despite writing about cutting-edge AI, the aesthetic is deliberately "retro print" or "blueprint" to emphasize structure, reliability, and engineering discipline rather than hyping up sci-fi magic.
-- **Opinionated**: We don't just share code; we share strong operational boundaries and systems (e.g., "Frustration as a Spec", "Design is a Technical Contract").
+## Colors
+The palette is restricted to ensure AAA accessibility standards for contrast. 
+- **Main Surface:** The `#432C1C` (Dark Espresso) serves as the primary container background, providing a warm but deep canvas that reduces eye strain compared to pure black.
+- **Primary Accent:** `#FFA602` (Golden Orange) is used exclusively for primary actions, active states, and critical information. 
+- **Functional Contrast:** Pure white is used for secondary text and icons against the dark background, while `#1A110B` is used for deep "well" effects and background layering.
+- **Outlines:** All borders use either pure White or the Primary Golden Orange to maintain structural definition.
 
----
+## Typography
+Typography is optimized for readability. **Outfit** provides a clean, geometric sans-serif base for high-speed scanning of headers and body text. **Space Mono** is utilized for technical data, labels, and "read-out" elements to reinforce the engineering aesthetic. For Korean text, **Pretendard** is mandated for its exceptional legibility and modern proportions.
 
-## 2. Color Palette (The 70s Analog Retro Print)
+- **Contrast:** No text should fall below a 7:1 contrast ratio.
+- **Scale:** Minimum font size for mobile body text is 18px to accommodate elderly vision.
+- **Weight:** Use Bold and Extra Bold for hierarchy; avoid light weights that might "wash out" on dark backgrounds.
 
-We use a high-contrast, warm color palette that evokes vintage paper, coffee, and printed manuals.
+## Layout & Spacing
+This design system utilizes a **Fixed Grid** philosophy inspired by architectural blueprints. Elements are placed on a strict 8px baseline grid to ensure a rhythmic, mechanical feel.
 
-### Light Mode (Default)
-- **Background**: `#FDFBF7` *(Warm Paper Cream)* - Used for the main body.
-- **Foreground / Text**: `#432c1c` *(Dark Coffee Brown)* - Used for primary text and heavy borders.
-- **Accent**: `#ffa602` *(Golden Orange)* - Used for links, highlights, and primary buttons.
-- **Accent Dim**: `#d98801` - Used for hover states.
+- **Desktop:** 12-column grid with a max-width of 1280px. Gutters are fixed at 24px to maintain clear separation between "modules."
+- **Mobile:** 4-column fluid grid. Margins are increased to 24px to prevent thumb-overlap on hardware bezels.
+- **Sectioning:** Content should be grouped into "Modules" (Cards) with significant padding (md/lg) to prevent visual clutter, which is essential for accessibility.
 
-### Dark Mode (Deep Espresso)
-- **Background**: `#251714` *(Deep Espresso)* - Used for the main body.
-- **Foreground / Text**: `#FDFBF7` *(Warm Paper Cream)* - Reverses the light mode text for high readability.
-- **Accent**: `#ffa602` *(Golden Orange)* - Glows beautifully against the dark background.
-- **Accent Dim**: `#ffb733` - Used for hover states.
+## Elevation & Depth
+Depth is created through **Bold Borders** and **Solid Shadows** (Neobrutalism), rather than light-source simulation. 
 
----
+- **Surface Tiers:** Level 0 is the page background (#1A110B). Level 1 is the primary container (#432C1C).
+- **The Offset Shadow:** Interactive elements feature a solid, 100% opacity shadow (usually #000000 or a darker shade of the container) offset by 4px or 8px down and to the right. 
+- **Outlines:** Every container must have a minimum 2px solid border. Active elements use the Golden Orange (#FFA602) border; inactive use White or a muted variant.
+- **Interaction:** On hover or press, the element "pushes" into the shadow (translate X/Y) to simulate a physical mechanical button.
 
-## 3. Typography
+## Shapes
+This design system uses **Sharp (0px)** corners exclusively. The absence of rounding reinforces the "industrial hardware" and "analog equipment" narrative. 
 
-- **Headings**: `Outfit` - Geometric, clean, but friendly. Used for all `<h1>` to `<h6>` tags. Letter-spacing is slightly tightened (`-0.02em`) for a solid editorial feel.
-- **Body & UI**: `Inter` - Highly legible, neutral sans-serif for long-form reading and UI elements.
-- **Code & Metadata**: `Space Mono` or system monospace. Used for tags, dates, overlines, and code blocks to reinforce the engineering vibe.
+Structural integrity is conveyed through right angles and thick strokes. All buttons, input fields, and cards must maintain 90-degree corners. The only exception is for status indicators (LED style) which may be perfect circles.
 
----
-
-## 4. Image Design Contract
-
-Visuals on VibeCode Town are strictly governed by an aesthetic contract to prevent generic AI "sci-fi" slop.
-
-### The Required Aesthetic
-- **Style**: Retro risograph, vintage comic book, or analog blueprint sketch.
-- **Colors**: Muted colors (teal, burnt orange, off-white, washed-out navy).
-- **Texture**: High analog texture, grain, paper bleed, or halftone dots.
-- **Format**: Flat graphic design, heavy outlines.
-
-### The Forbidden Elements
-- **NO Cybernetics**: No glowing blue robot eyes, neon circuits, or futuristic holograms.
-- **NO 3D/CGI**: Do not use 3D renders or Pixar-style character designs.
-- **NO Text**: Do not allow image generators to write text, as it becomes garbled.
-
-### Standard Image Prompt
-Any agent or operator generating images for a post MUST use this base prompt structure:
-> "A vintage comic style or retro risograph illustration of `[SUBJECT]`, analog texture, muted colors, flat design, no text, no cybernetic or sci-fi elements."
-
----
-
-## 5. UI & Layout Principles
-
-- **Borders & Shadows**: We use hard, thick borders (e.g., `border border-foreground`) and solid drop shadows (`box-shadow: 8px 8px 0 0 var(--foreground)`) for interactive elements and diagrams to give a brutalist, tactile feel.
-- **Hero Sections**: Hero background images use `mix-blend-luminosity` and lowered opacity (e.g., `opacity-60`) behind gradient overlays. This ensures text remains perfectly readable while the analog artwork sets the mood in the background.
-- **Crossfades**: We prefer elegant crossfades (`transition-opacity duration-1000`) over jarring horizontal sliding animations for rotators.
-
-## 6. Execution Rule
-
-Whenever designing a new component, generating an image, or modifying a layout, **do not invent new aesthetics**. Fall back to the variables defined in `src/styles/global.css` and the prompts defined in this document.
+## Components
+- **Buttons:** Large, high-contrast blocks. Primary buttons use #FFA602 background with black text. They must include a 4px solid black offset shadow that disappears on "active" state to simulate a physical press.
+- **Input Fields:** Darker background (#1A110B) with a 2px white border. Labels must be in Space Mono above the field.
+- **Cards:** Defined by a 2px solid white border. Header areas of cards should 고전 background color to separate "Control" from "Content."
+- **Chips/Status:** High-visibility tags using Space Mono. Use "LED" style circular icons next to text to indicate system status (e.g., Green for "Operational").
+- **Checkboxes/Radios:** Oversized (min 32px) for easy tapping. Active states must fill with #FFA602.
+- **Lists:** Separated by 2px solid horizontal rules. Increase vertical padding to 24px per item to ensure high hit-density for elderly users.
