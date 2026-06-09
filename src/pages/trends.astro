@@ -1,0 +1,228 @@
+---
+// /trends — Developer Search & Tech Trends Board
+// nongjida의 "수요토픽 정렬 & 앵커 정규화" 강점을 가져와 vibecode에 녹여낸 기능.
+// 개발자들이 실제로 가장 많이 검색하고 AI 검색(GEO)에서 자주 호출하는 기술 트렌드를 시각적으로 추적.
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+const TRENDS = [
+  {
+    keyword: "Model Context Protocol (MCP)",
+    trendScore: 98,
+    geoPriority: "High (AEO)",
+    status: "HOT",
+    searchGrowth: "+142%",
+    description: "에이전트가 다른 상태/데이터와 상호작용하는 데이터 바운더리 설계 및 커스텀 MCP 공유 상태.",
+    lessonLink: "/posts/mcp-shared-state-data-leak",
+    category: "Infrastructure"
+  },
+  {
+    keyword: "Agentic Disk Contract",
+    trendScore: 89,
+    geoPriority: "High",
+    status: "HOT",
+    searchGrowth: "+85%",
+    description: "에이전트가 로컬 파일시스템에 물리적인 파괴를 일으키지 않도록 격격된 안전 규약 및 경계 설정.",
+    lessonLink: "/posts/ai-agent-work-disk-contract",
+    category: "Security"
+  },
+  {
+    keyword: "Structured Agent Memory",
+    trendScore: 85,
+    geoPriority: "Medium",
+    status: "EMERGING",
+    searchGrowth: "+61%",
+    description: "세션 단위를 뛰어넘는 에이전트의 영구 데이터베이스 및 인 메모리 세션 관리.",
+    lessonLink: "/posts/ai-memory-operating-structure",
+    category: "Memory"
+  },
+  {
+    keyword: "Technical UI Contracts",
+    trendScore: 81,
+    geoPriority: "Evergreen",
+    status: "EVERGREEN",
+    searchGrowth: "+30%",
+    description: "디자인 스펙을 토큰으로 박아 에이전트의 UI/UX 코드생성 오차 범위를 원천 차단하는 디자인 계약.",
+    lessonLink: "/posts/design-is-a-technical-contract",
+    category: "Design"
+  },
+  {
+    keyword: "Agent Self-Improving Evals",
+    trendScore: 78,
+    geoPriority: "High (AEO)",
+    status: "EMERGING",
+    searchGrowth: "+95%",
+    description: "에이전트의 작업을 사람이 수동 검사하지 않고 자체 테스트 루프로 계속 평가하고 개선하는 피드백 루프.",
+    lessonLink: "/posts/self-improving-agents-need-evals",
+    category: "Evals"
+  },
+  {
+    keyword: "HTML Review Artifacts",
+    trendScore: 72,
+    geoPriority: "Evergreen",
+    status: "EVERGREEN",
+    searchGrowth: "+24%",
+    description: "에이전트의 산출물을 샌드박스에서 즉각 렌더링하고 사람이 30초 내에 검수하도록 유도하는 아티팩트 설계.",
+    lessonLink: "/posts/html-review-artifacts-for-agents",
+    category: "UX"
+  }
+];
+
+const METRICS = {
+  totalQueries: "14.2K",
+  geoCoverage: "88.4%",
+  updatedAt: "2026-06-10"
+};
+---
+
+<Layout
+  title="Developer Trends | vibecode"
+  description="Agentic software engineering trend board. Track high-growth keywords, AI Search engine (GEO) priority, and real search demand matched to live lessons."
+>
+  <Header />
+
+  <main id="main-content" class="app-layout">
+    <!-- HERO -->
+    <section class="border-b border-border py-12 sm:py-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-[0.7rem] font-mono tracking-widest uppercase border rounded-full border-border bg-bg-secondary text-accent">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+        Demand & Search Trends (Live)
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-3xl">
+        AI 에이전트가 찾아내는 <br class="max-sm:hidden"/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-dim">실전 엔지니어링 수요</span>
+      </h1>
+
+      <p class="mt-4 text-text-secondary max-w-2xl leading-relaxed">
+        검색엔진 지표와 AI 챗봇이 가장 목말라하는(AEO) 실전 에이전트 구조 키워드를 정규화하여 실시간으로 추적합니다.
+        가장 수요가 많은 기술을 우선적으로 습득하여 1인 기업 스택을 조기에 구축하십시오.
+      </p>
+
+      <!-- statistics grid -->
+      <div class="mt-8 grid grid-cols-3 gap-px bg-border border border-border rounded-md overflow-hidden">
+        <div class="bg-background p-4 text-center">
+          <div class="font-mono text-xl sm:text-2xl font-bold text-accent">{METRICS.totalQueries}</div>
+          <div class="text-[0.65rem] sm:text-xs text-text-muted mt-1 uppercase tracking-wider">Dev Queries / Mo</div>
+        </div>
+        <div class="bg-background p-4 text-center">
+          <div class="font-mono text-xl sm:text-2xl font-bold text-accent">{METRICS.geoCoverage}</div>
+          <div class="text-[0.65rem] sm:text-xs text-text-muted mt-1 uppercase tracking-wider">AI Search Index</div>
+        </div>
+        <div class="bg-background p-4 text-center">
+          <div class="font-mono text-xl sm:text-2xl font-bold text-accent">{METRICS.updatedAt}</div>
+          <div class="text-[0.65rem] sm:text-xs text-text-muted mt-1 uppercase tracking-wider">Last Sync</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TREND BOARD LIST -->
+    <section class="py-12">
+      <div class="flex items-end justify-between flex-wrap gap-4 mb-8">
+        <h2 class="text-2xl font-bold tracking-tight">Trending Keywords & Match</h2>
+        <p class="text-xs text-text-muted max-w-xs">
+          트렌드 스코어는 검색량과 GEO 인용 가치를 합산하여 정규화한 값입니다.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2">
+        {TRENDS.map((t) => (
+          <div class="s-card p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-2 py-0.5 text-[0.65rem] font-mono border rounded bg-bg-secondary text-text-secondary">{t.category}</span>
+                <span class:list={[
+                  "font-mono text-[0.65rem] px-2 py-0.5 rounded font-bold border",
+                  t.status === "HOT" ? "bg-rose-500/10 border-rose-500/30 text-rose-500" :
+                  t.status === "EMERGING" ? "bg-amber-500/10 border-amber-500/30 text-amber-500" :
+                  "bg-emerald-500/10 border-emerald-500/30 text-emerald-500"
+                ]}>
+                  {t.status}
+                </span>
+              </div>
+
+              <h3 class="text-xl font-bold text-foreground mt-4">{t.keyword}</h3>
+              <p class="mt-2 text-sm text-text-secondary leading-relaxed">{t.description}</p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-dashed border-border flex items-center justify-between text-xs">
+              <div class="flex gap-4">
+                <div>
+                  <span class="text-text-muted">Trend</span>
+                  <strong class="font-mono text-accent block">{t.trendScore} ({t.searchGrowth})</strong>
+                </div>
+                <div>
+                  <span class="text-text-muted">AEO Priority</span>
+                  <strong class="font-mono text-foreground block">{t.geoPriority}</strong>
+                </div>
+              </div>
+
+              <a href={t.lessonLink} class="font-mono text-accent hover:underline shrink-0">
+                Study Lesson →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION (FOUNDING COHORT) -->
+    <section class="py-12 border-t border-border">
+      <div class="s-card p-8 bg-bg-secondary text-center max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold tracking-tight">수요 트렌드를 실제 1인 기업 스택으로 빌드하십시오</h2>
+        <p class="mt-3 text-sm text-text-secondary leading-relaxed max-w-xl mx-auto">
+          트렌드 보드에 잡힌 모든 핵심 에이전트 아키텍처는 에이전틱 소프트웨어 워크샵에서 실무 코드로 다뤄집니다. 
+          Founding Cohort에 합류하여 실시간 기술 전환 선도자가 되십시오.
+        </p>
+        <div class="mt-6 flex justify-center gap-4">
+          <a href="/learn" class="s-btn-primary text-sm">Join the waitlist</a>
+          <a href="/posts" class="s-btn-ghost text-sm">Read Field Notes</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .s-card {
+    border: 2px solid var(--foreground);
+    box-shadow: 4px 4px 0 var(--foreground);
+    border-radius: 0.375rem;
+    background: var(--background);
+  }
+  .s-btn-primary {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    border: 2px solid var(--foreground);
+    background: var(--accent);
+    color: var(--background);
+    border-radius: 0.375rem;
+    box-shadow: 2px 2px 0 var(--foreground);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    text-decoration: none;
+  }
+  .s-btn-primary:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 var(--foreground);
+  }
+  .s-btn-ghost {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    border: 2px solid var(--foreground);
+    background: var(--background);
+    color: var(--foreground);
+    border-radius: 0.375rem;
+    box-shadow: 1.5px 1.5px 0 var(--foreground);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    text-decoration: none;
+  }
+  .s-btn-ghost:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 2px 2px 0 var(--foreground);
+  }
+</style>
