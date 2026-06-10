@@ -10,7 +10,7 @@ tags:
   - ai-agents
   - software-engineering
   - vibecoding
-ogImage: /images/posts/000-about.png
+ogImage: /images/posts/000-about.webp
 ---
 
 # About Vibecode Town
@@ -21,7 +21,7 @@ We track exactly what changes when autonomous agents write code, operate tools, 
 
 If a post cannot clearly demonstrate why an issue matters, what was changed, and what the reader should do next, it does not belong here yet.
 
-![Vibe Coding Project operating log diagram](/images/posts/000-about.png)
+![Vibe Coding Project operating log diagram](/images/posts/000-about.webp)
 
 ## Publishing Contract
 

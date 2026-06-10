@@ -7,7 +7,7 @@ featured: false
 series: "AI Market Watch"
 workflow: "packet"
 lang: "en"
-ogImage: /images/posts/mcp-shared-state-data-leak.png
+ogImage: /images/posts/mcp-shared-state-data-leak.webp
 tags:
   - ai-security
   - mcp
@@ -50,7 +50,7 @@ That is not a vibes-based security concern. That is the difference between revie
 
 The wrong standard is "does the endpoint look stateless?" The useful standard is "can the reviewer name the exact object that owns each client's pending messages?"
 
-![Rendered artifact diagram showing MCP constructor ownership, shared transport risk, and session-boundary receipt](/images/posts/mcp-shared-state-data-leak.png)
+![Rendered artifact diagram showing MCP constructor ownership, shared transport risk, and session-boundary receipt](/images/posts/mcp-shared-state-data-leak.webp)
 
 Read the rendered artifact as the review path, not as a generic MCP illustration. The left side is the false comfort: HTTP route, auth passes, endpoint returns 200. The right side is the receipt: constructor location, transport lifetime, session owner, and boundary controls. The leak hides in the gap between those two pictures.
 
@@ -281,8 +281,8 @@ Without that receipt, "we updated the package" is too weak for agent infrastruct
 The rendered article has its own proof contract too:
 
 ```txt
-body image: /images/posts/mcp-shared-state-data-leak.png
-ogImage: /images/thumbnails/thumbnail_tshirt_groovy_1779564901239.png
+body image: /images/posts/mcp-shared-state-data-leak.webp
+ogImage: /images/thumbnails/thumbnail_tshirt_groovy_1779564901239.webp
 rendered summary: <rendered-audit-root>\summary.json
 desktop first-screen image check: 10/10
 mobile first-screen image check: 10/10

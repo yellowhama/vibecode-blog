@@ -6,7 +6,7 @@ draft: false
 featured: false
 series: "AI Tool Note"
 workflow: "packet"
-ogImage: /images/posts/ai-agent-work-disk-contract.png
+ogImage: /images/posts/ai-agent-work-disk-contract.webp
 lang: "en"
 tags:
   - ai-agents
@@ -51,7 +51,7 @@ If builds, screenshots, search indexes, and evidence bundles fall into the opera
 
 A **work disk contract** answers that before the next long run starts.
 
-![AI work disk contract diagram](/images/posts/ai-agent-work-disk-contract.png)
+![AI work disk contract diagram](/images/posts/ai-agent-work-disk-contract.webp)
 
 ## Approval Proof Chain
 
@@ -214,8 +214,8 @@ The difference looks small until the third autonomous loop. Then it is the diffe
 The same rule applies to rendered evidence. The public image rule is not only a design rule. It is a filesystem rule:
 
 ```txt
-body image: /images/posts/ai-agent-work-disk-contract.png
-ogImage: /images/thumbnails/thumbnail_agent_disk_1779565086528.png
+body image: /images/posts/ai-agent-work-disk-contract.webp
+ogImage: /images/thumbnails/thumbnail_agent_disk_1779565086528.webp
 rendered summary: <rendered-audit-root>\summary.json
 desktop first-screen image check: 10/10
 mobile first-screen image check: 10/10

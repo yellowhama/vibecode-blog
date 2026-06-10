@@ -7,7 +7,7 @@ tags: ["ai-agents", "solopreneur", "automation", "musu-crawl-ai"]
 series: "Field Log"
 featured: true
 workflow: "packet"
-ogImage: /images/posts/zero-budget-marketing-agent.png
+ogImage: /images/posts/zero-budget-marketing-agent.webp
 references:
   - name: "musu-crawl-ai"
     url: "https://github.com/yellowhama/musu-crawl-ai"
@@ -148,4 +148,4 @@ Caveat: the tool is a data acquisition and structuring layer. It builds the wiki
 
 Download the binary from [musu-crawl-ai releases](https://github.com/yellowhama/musu-crawl-ai/releases), run `./musu-crawl init`, and fetch one URL. If the output Markdown is cleaner than what you currently have in your bookmarks, adopt it. If not, reject it. The evidence is above — rerun the commands and compare.
 
-![Visual proof: the musu-crawl-ai pipeline compresses messy multi-source input into structured, tagged wiki output — this diagram serves as evidence of the data flow architecture](/images/posts/zero-budget-marketing-agent.png)
+![Visual proof: the musu-crawl-ai pipeline compresses messy multi-source input into structured, tagged wiki output — this diagram serves as evidence of the data flow architecture](/images/posts/zero-budget-marketing-agent.webp)

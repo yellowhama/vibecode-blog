@@ -6,7 +6,7 @@ draft: false
 featured: true
 series: "AI Explainer"
 workflow: "packet"
-ogImage: /images/posts/what-vibe-coding-actually-is.png
+ogImage: /images/posts/what-vibe-coding-actually-is.webp
 tags:
   - software-engineering
   - vibe-coding
@@ -28,7 +28,7 @@ references:
 
 # What Vibe Coding Actually Is
 
-![Rendered artifact diagram showing vibe coding discovery, contract boundary, and evidence receipt before production](/images/posts/what-vibe-coding-actually-is.png)
+![Rendered artifact diagram showing vibe coding discovery, contract boundary, and evidence receipt before production](/images/posts/what-vibe-coding-actually-is.webp)
 
 Read the rendered artifact as the mode switch, not as a vibe-coding poster. The left side is useful discovery: shape, reaction, steering. The right side is production: `Source`, `Boundary`, `Acceptance check`, `Forbidden changes`, and `Evidence to keep`. The failure is the middle gap, where a prototype quietly becomes public work before the receipt gate exists.
 

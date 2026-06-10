@@ -2,7 +2,7 @@
 title: "Use HTML to Review Agent Output, Not to Replace the Contract"
 pubDatetime: 2026-05-18T15:00:00Z
 description: "HTML is great for reviewing complex AI agent outputs, but dangerous as a system of record. Learn why the final decision must always export back to Markdown or JSON."
-ogImage: /images/posts/html-review-artifacts-for-agents.png
+ogImage: /images/posts/html-review-artifacts-for-agents.webp
 draft: false
 featured: false
 series: "AI Tool Note"
@@ -34,7 +34,7 @@ That is the test most HTML-for-agents posts skip.
 
 Before accepting a polished agent-made HTML file, run that delete test. Ask where the sources are, where the rejection criteria are, where the exported decision lands, and which hash-bound receipt would still prove the decision tomorrow.
 
-![HTML review artifact export loop diagram](/images/posts/html-review-artifacts-for-agents.png)
+![HTML review artifact export loop diagram](/images/posts/html-review-artifacts-for-agents.webp)
 
 AI coding agents no longer struggle to write plans. The newer failure mode is that they write plans nobody reads. A 200-line Markdown plan appears. The PR explanation gets longer. The research summary includes tables, diffs, timelines, snippets, and caveats. The human scrolls, nods, and moves to the next prompt without actually reviewing the work.
 
@@ -238,8 +238,8 @@ That is not enough. The rendered audit left inspectable artifacts:
 
 ```txt
 vibecode-rendered-audit/latest/summary.json
-vibecode-rendered-audit/latest/*-desktop.png
-vibecode-rendered-audit/latest/*-mobile.png
+vibecode-rendered-audit/latest/*-desktop.webp
+vibecode-rendered-audit/latest/*-mobile.webp
 ```
 
 The current writing-pulse repair kept the same standard and added a fresh receipt: product commit `3ad3512`, 10 posts, 41 pages, 24 viewports, 10 Pagefind pages, 2113 words, 349 files indexed in the wiki, 381 files archived, and zero rendered-page failures. The `html-review-artifacts-for-agents` approval now points at the current Markdown hash, so the article cannot silently drift away from its own proof chain.

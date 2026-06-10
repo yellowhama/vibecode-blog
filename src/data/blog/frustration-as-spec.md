@@ -11,7 +11,7 @@ tags:
   - debugging
   - technical-contracts
   - observability
-ogImage: /images/posts/frustration-as-spec.png
+ogImage: /images/posts/frustration-as-spec.webp
 references:
   - name: "OpenTelemetry Signals"
     url: "https://opentelemetry.io/docs/concepts/signals/"
@@ -26,7 +26,7 @@ references:
 
 # Frustration Is a Signal, Not the Specification
 
-![rendered evidence diagram for complaint signal, contract boundary, and verifier receipt](/images/posts/frustration-as-spec.png)
+![rendered evidence diagram for complaint signal, contract boundary, and verifier receipt](/images/posts/frustration-as-spec.webp)
 
 Read the image as the article's operating path, not a mood board. The failure gap is simple: repeated frustration can look like feedback while never becoming a boundary the next agent can obey. The left side is the complaint signal, the middle is the contract boundary, and the right side is the verifier receipt. If the complaint cannot travel that path, it is still editorial feedback, not system policy.
 
@@ -148,7 +148,7 @@ That became a contract:
 
 ```txt
 One body image must match ogImage.
-The path must be /images/posts/<slug>.png.
+The path must be /images/posts/<slug>.webp.
 The image cannot be reused by another post.
 The rendered page must show the expected image.
 ```
@@ -254,7 +254,7 @@ Use this pipeline when a workflow keeps producing the same correction:
 ```txt
 Friction: "The post has an image, but it does not match the article."
 Hidden assumption: The image rule only checked existence.
-Contract: One body image must match ogImage, live under /images/posts/<slug>.png, be non-reused, and be visually meaningful.
+Contract: One body image must match ogImage, live under /images/posts/<slug>.webp, be non-reused, and be visually meaningful.
 Verifier: editorial contract plus public-surface gate plus browser screenshot.
 ```
 

@@ -2,7 +2,7 @@
 title: "Vercel Is Not a Deployment Contract"
 pubDatetime: 2026-05-16T09:00:00Z
 description: "A Coolify migration audit exposed two hidden Vercel assumptions: rewrites that only existed in vercel.json and a build script that depended on a Unix shell. Learn how to verify your deployment contract."
-ogImage: /images/posts/vercel-is-not-a-deployment-contract.png
+ogImage: /images/posts/vercel-is-not-a-deployment-contract.webp
 draft: false
 featured: true
 series: "Field Log"
@@ -46,7 +46,7 @@ The practical rule is simple: if production behavior only exists because one hos
 
 I also rechecked the official docs while revising this: Vercel documents rewrites as platform routing rules, Coolify's GitHub integration is a deploy-from-repository system, and Astro's own pages docs say files in `src/pages/` become site endpoints. That comparison is the whole post. The weaker pattern is "the platform can route it." The stronger pattern is "the repository can build it, a static host can serve it, and a verifier can reject it."
 
-![rendered evidence diagram for deploy surface build, route ownership, and smoke verifier](/images/posts/vercel-is-not-a-deployment-contract.png)
+![rendered evidence diagram for deploy surface build, route ownership, and smoke verifier](/images/posts/vercel-is-not-a-deployment-contract.webp)
 
 Read the image as the review path, not a deployment illustration. Build output is on the left, route ownership is in the middle, and the smoke test verifier is on the right. If any route only exists in the host layer, the diagram breaks before the migration is approved.
 
@@ -304,7 +304,7 @@ rendered_page_post_detail_first_screen_images_desktop: 10/10
 rendered_page_post_detail_first_screen_images_mobile: 10/10
 rendered_page_surface_expected_images_first_screen: 2/2
 rendered summary.json: <rendered-audit-root>\summary.json
-image rule: /images/posts/vercel-is-not-a-deployment-contract.png
+image rule: /images/posts/vercel-is-not-a-deployment-contract.webp
 publication reviews checked: 10
 wiki markdown files indexed: 352
 archive files copied: 384

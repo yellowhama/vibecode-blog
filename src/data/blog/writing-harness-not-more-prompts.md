@@ -2,7 +2,7 @@
 title: "The Writing System Needs a Harness, Not More Prompts"
 pubDatetime: 2026-05-20T04:08:37.438Z
 description: "A packet-backed draft on why better agent writing needs an evaluation harness, not prompt taste alone. How to build a writing loop that can actually say no."
-ogImage: /images/default/manuscript.png
+ogImage: /images/default/manuscript.webp
 draft: true
 featured: false
 series: "AI Tool Note"
@@ -171,7 +171,7 @@ A normal AI draft begins with a topic and a vibe. This one begins with a paper t
 source -> angle -> evidence -> reader decision -> reject rule -> critique pressure
 ```
 
-![Writing harness draft visual](/images/posts/writing-harness-not-more-prompts.png)
+![Writing harness draft visual](/images/posts/writing-harness-not-more-prompts.webp)
 
 If one link is missing, the agent should not write faster. It should stop earlier.
 
@@ -422,7 +422,7 @@ failed_draft_commit=0f07239 Record rendered artifact editorial critique
 repaired_draft_commit=5235746 Revise writing harness draft from artifact critique
 real_failed_draft_evidence=F:\Aisaak\CompanyArtifacts\vibecode-draft-review-artifacts\writing-harness-real-failed-draft-evidence.json
 critique=F:\Aisaak\CompanyArtifacts\llm-wiki-completed\companies\vibecode-town\plans\loop-44-writing-harness-rendered-artifact-editorial-critique-2026-05-20.md
-rendered_screenshot=F:\Aisaak\CompanyArtifacts\vibecode-draft-review-artifacts\writing-harness-not-more-prompts-review-artifact-desktop.png
+rendered_screenshot=F:\Aisaak\CompanyArtifacts\vibecode-draft-review-artifacts\writing-harness-not-more-prompts-review-artifact-desktop.webp
 ```
 
 The failed version opened like this:

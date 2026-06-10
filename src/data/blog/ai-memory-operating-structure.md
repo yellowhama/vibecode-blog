@@ -2,7 +2,7 @@
 title: "How to Stop AI Agents From Losing Their Memory: The Operating Structure"
 pubDatetime: 2026-05-16T06:00:00Z
 description: "Long LLM prompts are not operating memory. Learn how to build an artifact-driven memory stack with source notes, specs, and searchable indexes for autonomous AI agents."
-ogImage: /images/posts/ai-memory-operating-structure.png
+ogImage: /images/posts/ai-memory-operating-structure.webp
 draft: false
 featured: true
 series: "AI Explainer"
@@ -43,7 +43,7 @@ This is why **long prompts are not operating memory**. They can carry context fo
 
 The wrong standard is "does the next agent have enough context?" The useful standard is "can the next agent prove which source, command, approval record, and remaining-work queue are current without trusting the previous chat?"
 
-![AI memory operating structure diagram](/images/posts/ai-memory-operating-structure.png)
+![AI memory operating structure diagram](/images/posts/ai-memory-operating-structure.webp)
 
 ## The Broken Default
 

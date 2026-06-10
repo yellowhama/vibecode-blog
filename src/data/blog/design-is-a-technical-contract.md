@@ -11,7 +11,7 @@ tags:
   - ui-design
   - design-systems
   - technical-contracts
-ogImage: /images/posts/design-is-a-technical-contract.png
+ogImage: /images/posts/design-is-a-technical-contract.webp
 references:
   - name: "Google Labs Stitch DESIGN.md announcement"
     url: "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-design-md/"
@@ -57,7 +57,7 @@ current lifecycle: alpha
 
 That inventory is what keeps the post honest. The article can recommend the pattern, but it cannot pretend the upstream spec is finished.
 
-![rendered evidence diagram for DESIGN.md roles, component references, and lint gate](/images/posts/design-is-a-technical-contract.png)
+![rendered evidence diagram for DESIGN.md roles, component references, and lint gate](/images/posts/design-is-a-technical-contract.webp)
 
 Read the image as a proof object, not decoration. The left side is the durable role/value memory; the middle is the component dependency graph; the right side is the lint/review gate that can reject a bad agent decision before it becomes another screenshot to imitate.
 
@@ -199,7 +199,7 @@ The public image rule is not "make the post look nice." It lives in `src/data/po
 ```json
 {
   "slug": "design-is-a-technical-contract",
-  "image": "/images/posts/design-is-a-technical-contract.png",
+  "image": "/images/posts/design-is-a-technical-contract.webp",
   "signal": "roles -> components -> lint",
   "motif": "tokens",
   "anchors": ["design md", "tokens", "linter"]

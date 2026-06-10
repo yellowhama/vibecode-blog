@@ -10,7 +10,7 @@ tags:
   - design
   - technical-contracts
   - visual-assets
-ogImage: /images/posts/image-design-contract.png
+ogImage: /images/posts/image-design-contract.webp
 references:
   - name: "Design System Guidelines"
     url: "https://github.com/yellowhama/vibecode-blog"
@@ -45,12 +45,12 @@ The visual identity of VibeCode Town is rooted in **analog, retro, and tactile**
 
 > [!WARNING]  
 > **[REJECTED] The Bad Asset**
-> Asset path: `/images/archive/zero_budget_marketing_agent_1779563707222.png`
+> Asset path: `/images/archive/zero_budget_marketing_agent_1779563707222.webp`
 > *Why it fails: Glowing neon, cybernetic robot elements, 3D render feel, entirely off-brand for an analog retro site.*
 
 > [!TIP]  
 > **[ACCEPTED] The Good Asset**
-> Asset path: `/images/posts/image_design_contract_good_1779582275316.png`
+> Asset path: `/images/posts/image_design_contract_good_1779582275316.webp`
 > *Why it passes: Flat risograph style, muted teal and orange palette, mechanical (not cybernetic), analog texture.*
 
 ### Standard Generation Prompt
@@ -74,23 +74,23 @@ The following table documents the current valid images and the specific posts th
 
 | Post Slug | Target Image File | Location |
 | --- | --- | --- |
-| `1-person-unicorn-tech-stack-2026` | `thumbnail_tech_stack_...png` | `thumbnails/` |
-| `ai-agent-work-disk-contract` | `thumbnail_agent_disk_...png` | `thumbnails/` |
-| `ai-memory-operating-structure` | `thumbnail_tshirt_badge_...png` | `thumbnails/` |
-| `design-is-a-technical-contract` | `thumbnail_retro_blueprint_...png` | `thumbnails/` |
-| `html-review-artifacts-for-agents` | `thumbnail_retro_risograph_...png` | `thumbnails/` |
-| `mcp-shared-state-data-leak` | `thumbnail_tshirt_groovy_...png` | `thumbnails/` |
-| `software-3-0` | `thumbnail_software_3_0_...png` | `thumbnails/` |
-| `vercel-is-not-a-deployment-contract` | `thumbnail_graphic_groovy_...png` | `thumbnails/` |
-| `what-vibe-coding-actually-is` | `thumbnail_vibe_coding_...png` | `thumbnails/` |
-| `zero-budget-marketing-agent` | `thumbnail_graphic_mascot_...png` | `thumbnails/` |
+| `1-person-unicorn-tech-stack-2026` | `thumbnail_tech_stack_...webp` | `thumbnails/` |
+| `ai-agent-work-disk-contract` | `thumbnail_agent_disk_...webp` | `thumbnails/` |
+| `ai-memory-operating-structure` | `thumbnail_tshirt_badge_...webp` | `thumbnails/` |
+| `design-is-a-technical-contract` | `thumbnail_retro_blueprint_...webp` | `thumbnails/` |
+| `html-review-artifacts-for-agents` | `thumbnail_retro_risograph_...webp` | `thumbnails/` |
+| `mcp-shared-state-data-leak` | `thumbnail_tshirt_groovy_...webp` | `thumbnails/` |
+| `software-3-0` | `thumbnail_software_3_0_...webp` | `thumbnails/` |
+| `vercel-is-not-a-deployment-contract` | `thumbnail_graphic_groovy_...webp` | `thumbnails/` |
+| `what-vibe-coding-actually-is` | `thumbnail_vibe_coding_...webp` | `thumbnails/` |
+| `zero-budget-marketing-agent` | `thumbnail_graphic_mascot_...webp` | `thumbnails/` |
 
 ### Default Fallbacks
 The cost of missing a fallback is a broken `ogImage` in production—so every post must have proof that a valid default exists. If an image generation quota is exhausted, or if an image breaks the contract, the post must fall back to one of the following defaults:
-- `/images/default/blueprint.png`
-- `/images/default/retro-1.png`
-- `/images/default/manuscript.png`
-- `/images/default/gear.png`
+- `/images/default/blueprint.webp`
+- `/images/default/retro-1.webp`
+- `/images/default/manuscript.webp`
+- `/images/default/gear.webp`
 
 ## Reader Decision
 
@@ -108,7 +108,7 @@ Before adopting this contract for your own project, run through the checklist be
 
 If you cannot check every box, the contract is incomplete and should not be enforced in production.
 
-**Before:** The agent generated a generic cybernetic thumbnail. The `ogImage` pointed to `public/images/archive/rejected_cyber_robot.png`. Bad public output shipped because no gate existed.
+**Before:** The agent generated a generic cybernetic thumbnail. The `ogImage` pointed to `public/images/archive/rejected_cyber_robot.webp`. Bad public output shipped because no gate existed.
 
 **Gate added:** Run `npm run verify:post-image-contracts` to check that every post's `ogImage` path maps to `thumbnails/` and that no path references `archive/`. The gate reads `src/data/post-image-contracts.json` and `scripts/verify-post-image-contracts.mjs` to confirm the accepted review.
 
@@ -122,4 +122,4 @@ Before any agent or operator approves a post for publication, the `ogImage` path
 
 This contract **does not prove** that every AI model will follow the prompt faithfully—model drift, version updates, and provider-side changes can silently break compliance. It **fails when** the generation model ignores negative prompts (e.g., DALL·E 3 occasionally injects text despite explicit exclusion), when a new team member bypasses the rejection workflow, or when fallback images themselves fall out of the approved palette. Treat this contract as a living gate, not a permanent guarantee.
 
-![Visual proof of image design contract](/images/posts/image-design-contract.png)
+![Visual proof of image design contract](/images/posts/image-design-contract.webp)

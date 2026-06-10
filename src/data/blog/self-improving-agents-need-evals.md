@@ -13,7 +13,7 @@ tags:
   - verification
   - software-engineering
   - technical-contracts
-ogImage: /images/default/retro-1.png
+ogImage: /images/default/retro-1.webp
 references:
   - name: "Primary source packet reference"
     url: "https://www.youtube.com/watch?v=RoaPvj9Ovug"
@@ -107,7 +107,7 @@ That is an editorial principle, not a source quote: the loop is not the product.
 
 ## Visual Evidence
 
-![Self-improving agents draft visual](/images/posts/self-improving-agents-need-evals.png)
+![Self-improving agents draft visual](/images/posts/self-improving-agents-need-evals.webp)
 
 A useful diagram for this idea should not show a heroic loop eating its own tail. It should show the judge outside the loop: proposal, sandbox, score, trace review, and keep/revert. If the image only says "AI improves itself," it has failed the article.
 

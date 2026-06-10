@@ -5,7 +5,7 @@ description: "The useful Software 3.0 lesson is not that LLMs replace engineerin
 draft: false
 series: "AI Explainer"
 workflow: "packet"
-ogImage: /images/posts/software-3-0.png
+ogImage: /images/posts/software-3-0.webp
 tags:
   - software-engineering
   - ai-agents
@@ -32,7 +32,7 @@ On 2026-05-20, I opened GitHub commit `20f4834`, ran `npm run audit:reference-ce
 
 The code was fine. The essay was the failure.
 
-![Proof diagram showing source, contract, verifier, receipt, and approval gates for Software 3.0 work](/images/posts/software-3-0.png)
+![Proof diagram showing source, contract, verifier, receipt, and approval gates for Software 3.0 work](/images/posts/software-3-0.webp)
 
 Read the image as a rejection diagram, not a decoration. The useful path is `source -> contract -> diff -> verifier -> receipt -> approval`; the dangerous path is `prompt -> plausible output -> social pressure to accept`. The diagram exists to make that gap visible before the agent starts editing files like `src/data/blog/software-3-0.md` or records like `src/data/publication-approvals.json`.
 
