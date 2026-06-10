@@ -16,27 +16,27 @@ const noteCount = posts.length;
 
 // 커리큘럼 — 각 모듈은 실제 Field Note 글에 그라운딩(slug 존재 시 링크).
 const MODULES = [
-  { n: "01", title: "The 1-Person Unicorn Stack", desc: "10명 몫을 혼자 굴리는 에이전트 스택 전체 구성도 — 무엇을 자동화하고 무엇을 손에 쥐는가.", slug: "1-person-unicorn-tech-stack-2026" },
-  { n: "02", title: "Design as a Technical Contract", desc: "디자인을 토큰·스펙으로 박아 에이전트가 어긋나지 않게 만드는 계약 설계.", slug: "design-is-a-technical-contract" },
-  { n: "03", title: "Agent Memory, Structured", desc: "세션을 넘어 누적되는 운영 기억 — 무엇을 저장하고 무엇을 버리는가.", slug: "ai-memory-operating-structure" },
-  { n: "04", title: "The Disk Contract for Agent Work", desc: "에이전트가 파일시스템을 안전하게 쓰게 하는 경계·규약. 제품↔데이터 분리의 실전.", slug: "ai-agent-work-disk-contract" },
-  { n: "05", title: "MCP Shared State & Data Boundaries", desc: "여러 에이전트가 같은 상태를 만질 때의 데이터 누수 — 실제 사고와 차단 패턴.", slug: "mcp-shared-state-data-leak" },
-  { n: "06", title: "Evals: Self-Improving Agents", desc: "측정 없이는 못 키운다 — 자기개선 루프를 만드는 평가 하네스.", slug: "self-improving-agents-need-evals" },
-  { n: "07", title: "Frustration as Spec", desc: "막힌 지점을 그대로 명세로 바꾸는 법 — 반복 교정을 자산으로.", slug: "frustration-as-spec" },
-  { n: "08", title: "Review Artifacts for Agents", desc: "에이전트 산출물을 사람이 5분 안에 검수하게 만드는 HTML 리뷰 아티팩트.", slug: "html-review-artifacts-for-agents" },
+  { n: "01", title: "The 1-Person Unicorn Stack", desc: "The complete agentic architecture to run a 10-person operation solo—what to automate and what to handhold.", slug: "1-person-unicorn-tech-stack-2026" },
+  { n: "02", title: "Design as a Technical Contract", desc: "Locking down UI/UX through exact design tokens to eliminate agent hallucination in frontend code.", slug: "design-is-a-technical-contract" },
+  { n: "03", title: "Agent Memory, Structured", desc: "Building persistent operational memory across sessions—knowing what to save and what to flush.", slug: "ai-memory-operating-structure" },
+  { n: "04", title: "The Disk Contract for Agent Work", desc: "Setting strict filesystem boundaries to prevent agents from corrupting local dev environments.", slug: "ai-agent-work-disk-contract" },
+  { n: "05", title: "MCP Shared State & Data Boundaries", desc: "Resolving data leaks when multiple stateless MCP servers interact with shared databases.", slug: "mcp-shared-state-data-leak" },
+  { n: "06", title: "Evals: Self-Improving Agents", desc: "You can't improve what you don't measure. Building evaluation harnesses for self-healing loops.", slug: "self-improving-agents-need-evals" },
+  { n: "07", title: "Frustration as Spec", desc: "Transforming developer frustration into strict prompt specifications for continuous refinement.", slug: "frustration-as-spec" },
+  { n: "08", title: "Review Artifacts for Agents", desc: "Designing visual HTML sandbox artifacts that allow human operators to review agent work in 30 seconds.", slug: "html-review-artifacts-for-agents" },
 ];
 
 const PILLARS = [
-  { k: "Evidence, not hype", v: "마법 서사 없음. 실제 run.log·코드·아티팩트로만 가르친다." },
-  { k: "Live curriculum", v: `${noteCount}편의 Field Notes가 그대로 교재 — 운영하며 계속 갱신된다.` },
-  { k: "Copy the systems", v: "이론이 아니라 그대로 복제해 쓰는 운영 시스템(스택·계약·하네스)." },
+  { k: "Evidence, not hype", v: "No magic wand narratives. We teach exclusively through raw run logs, code, and live artifacts." },
+  { k: "Live curriculum", v: `${noteCount} published Field Notes serve as a living textbook that constantly evolves with our production system.` },
+  { k: "Copy the systems", v: "This isn't theory. Copy and paste our actual operating tech stacks, CI contracts, and agent harnesses." },
 ];
 
 const FAQS = [
-  { q: "누구를 위한 워크샵인가?", a: "에이전트로 실제 제품·회사를 굴리려는 시니어 엔지니어/솔로프리너. 프롬프트 팁이 아니라 운영 시스템을 원하는 사람." },
-  { q: "블로그 글과 뭐가 다른가?", a: "Field Notes는 무료로 공개된 단편이다. 워크샵은 그 조각들을 하나의 작동하는 운영체계로 엮고, 실제 코드·하네스·체크리스트를 순서대로 따라 구축한다." },
-  { q: "선행 지식이 필요한가?", a: "프로덕션 코드를 짜본 엔지니어 기준. 특정 언어보다 '시스템을 계약으로 사고하는' 자세가 중요하다." },
-  { q: "가격과 일정은?", a: "Founding Cohort 정원·가격은 대기자에게 먼저, 공개 전 별도 안내한다. 지금은 자리를 잡아두는 단계." },
+  { q: "Who is this workshop for?", a: "Senior engineers and solopreneurs looking to run actual products and companies with agents. If you are looking for simple prompt hacks, this is not for you." },
+  { q: "How is this different from the blog?", a: "Field Notes are fragmented pieces of our operation. The workshop weaves these pieces into one cohesive, deployable operating system with step-by-step code and checklists." },
+  { q: "Are there any prerequisites?", a: "You should be comfortable with production-level software engineering. More importantly, you must be able to think of systems as strict 'contracts'." },
+  { q: "Pricing and schedule?", a: "Details regarding the Founding Cohort pricing and capacity will be sent exclusively to the waitlist before any public launch. Secure your spot now." },
 ];
 ---
 
