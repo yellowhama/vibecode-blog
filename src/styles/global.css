@@ -3,36 +3,24 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-/* ─── Editorial Design Tokens ──────────────────────────────────── */
+/* ─── Techno-Futurist Dark Minimalism Tokens ──────────────────────────────────── */
 
-/* 70s Analog Retro Print palette */
 :root,
-html[data-theme="light"] {
-  --background: #FDFBF7; /* warm paper cream */
-  --bg-secondary: #F3EFE6;
-  --bg-tertiary: #E8E2D5;
-  --bg-elevated: #FDFBF7;
-  --foreground: #432c1c; /* dark coffee brown */
-  --text-secondary: rgba(67, 44, 28, 0.75);
-  --text-muted: rgba(67, 44, 28, 0.55);
-  --accent: #ffa602;      /* golden orange */
-  --accent-dim: #d98801;  
-  --border: rgba(67, 44, 28, 0.15);
-  --border-strong: rgba(67, 44, 28, 0.3);
-}
-
+html[data-theme="light"],
 html[data-theme="dark"] {
-  --background: #251714; /* deep espresso */
-  --bg-secondary: #31211C; 
-  --bg-tertiary: #3E2B25;
-  --bg-elevated: #251714;
-  --foreground: #FDFBF7; /* warm paper cream */
-  --text-secondary: rgba(253, 251, 247, 0.75);
-  --text-muted: rgba(253, 251, 247, 0.55);
-  --accent: #ffa602;      /* golden orange */
-  --accent-dim: #ffb733;  
-  --border: rgba(253, 251, 247, 0.15);
-  --border-strong: rgba(253, 251, 247, 0.3);
+  --background: #050505; /* Deep space black */
+  --bg-secondary: #0A0A0A; 
+  --bg-tertiary: #171717;
+  --bg-elevated: #050505;
+  --foreground: #FAFAFA; /* Pure white for high contrast text */
+  --text-secondary: #A3A3A3;
+  --text-muted: #525252;
+  --accent: #00E599;      /* Vercel Neon green */
+  --accent-dim: #00B87A;  
+  --accent-glow: rgba(0, 229, 153, 0.15);
+  --muted: #171717;
+  --border: #262626;      /* Thin 1px border */
+  --border-strong: #404040;
 }
 
 @theme inline {
