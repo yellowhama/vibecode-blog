@@ -1,7 +1,5 @@
 ---
 // /trends — Developer Search & Tech Trends Board
-// nongjida의 "수요토픽 정렬 & 앵커 정규화" 강점을 가져와 vibecode에 녹여낸 기능.
-// 개발자들이 실제로 가장 많이 검색하고 AI 검색(GEO)에서 자주 호출하는 기술 트렌드를 시각적으로 추적.
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
@@ -13,7 +11,7 @@ const TRENDS = [
     geoPriority: "High (AEO)",
     status: "HOT",
     searchGrowth: "+142%",
-    description: "에이전트가 다른 상태/데이터와 상호작용하는 데이터 바운더리 설계 및 커스텀 MCP 공유 상태.",
+    description: "Designing data boundaries and custom MCP shared states for agents interacting with external data safely.",
     lessonLink: "/posts/mcp-shared-state-data-leak",
     category: "Infrastructure"
   },
@@ -23,7 +21,7 @@ const TRENDS = [
     geoPriority: "High",
     status: "HOT",
     searchGrowth: "+85%",
-    description: "에이전트가 로컬 파일시스템에 물리적인 파괴를 일으키지 않도록 격격된 안전 규약 및 경계 설정.",
+    description: "Establishing strict safety protocols and boundaries to prevent physical damage to the local file system by agents.",
     lessonLink: "/posts/ai-agent-work-disk-contract",
     category: "Security"
   },
@@ -33,7 +31,7 @@ const TRENDS = [
     geoPriority: "Medium",
     status: "EMERGING",
     searchGrowth: "+61%",
-    description: "세션 단위를 뛰어넘는 에이전트의 영구 데이터베이스 및 인 메모리 세션 관리.",
+    description: "Cross-session persistent databases and in-memory session management architectures for autonomous agents.",
     lessonLink: "/posts/ai-memory-operating-structure",
     category: "Memory"
   },
@@ -43,7 +41,7 @@ const TRENDS = [
     geoPriority: "Evergreen",
     status: "EVERGREEN",
     searchGrowth: "+30%",
-    description: "디자인 스펙을 토큰으로 박아 에이전트의 UI/UX 코드생성 오차 범위를 원천 차단하는 디자인 계약.",
+    description: "Hardcoding design specs into tokens to eliminate UI/UX code generation drift in agent outputs.",
     lessonLink: "/posts/design-is-a-technical-contract",
     category: "Design"
   },
@@ -53,7 +51,7 @@ const TRENDS = [
     geoPriority: "High (AEO)",
     status: "EMERGING",
     searchGrowth: "+95%",
-    description: "에이전트의 작업을 사람이 수동 검사하지 않고 자체 테스트 루프로 계속 평가하고 개선하는 피드백 루프.",
+    description: "Building automated feedback loops that evaluate and improve agent tasks without manual human inspection.",
     lessonLink: "/posts/self-improving-agents-need-evals",
     category: "Evals"
   },
@@ -63,7 +61,7 @@ const TRENDS = [
     geoPriority: "Evergreen",
     status: "EVERGREEN",
     searchGrowth: "+24%",
-    description: "에이전트의 산출물을 샌드박스에서 즉각 렌더링하고 사람이 30초 내에 검수하도록 유도하는 아티팩트 설계.",
+    description: "Designing sandbox render artifacts that allow human operators to verify agent UI outputs in under 30 seconds.",
     lessonLink: "/posts/html-review-artifacts-for-agents",
     category: "UX"
   }
@@ -91,13 +89,12 @@ const METRICS = {
       </div>
 
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-3xl">
-        AI 에이전트가 찾아내는 <br class="max-sm:hidden"/>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-dim">실전 엔지니어링 수요</span>
+        Engineering Demands <br class="max-sm:hidden"/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-dim">Identified by AI Agents</span>
       </h1>
 
       <p class="mt-4 text-text-secondary max-w-2xl leading-relaxed">
-        검색엔진 지표와 AI 챗봇이 가장 목말라하는(AEO) 실전 에이전트 구조 키워드를 정규화하여 실시간으로 추적합니다.
-        가장 수요가 많은 기술을 우선적으로 습득하여 1인 기업 스택을 조기에 구축하십시오.
+        We normalize and track the most demanded real-world agent architecture keywords from search indexes and AI Chatbots (AEO) in real-time. Acquire high-demand skills early to build your 1-person unicorn stack.
       </p>
 
       <!-- statistics grid -->
@@ -122,7 +119,7 @@ const METRICS = {
       <div class="flex items-end justify-between flex-wrap gap-4 mb-8">
         <h2 class="text-2xl font-bold tracking-tight">Trending Keywords & Match</h2>
         <p class="text-xs text-text-muted max-w-xs">
-          트렌드 스코어는 검색량과 GEO 인용 가치를 합산하여 정규화한 값입니다.
+          The trend score is a normalized value combining raw search volume and GEO citation priority.
         </p>
       </div>
 
@@ -170,10 +167,9 @@ const METRICS = {
     <!-- CALL TO ACTION (FOUNDING COHORT) -->
     <section class="py-12 border-t border-border">
       <div class="s-card p-8 bg-bg-secondary text-center max-w-3xl mx-auto">
-        <h2 class="text-2xl font-bold tracking-tight">수요 트렌드를 실제 1인 기업 스택으로 빌드하십시오</h2>
+        <h2 class="text-2xl font-bold tracking-tight">Build the high-demand stack as a Solopreneur</h2>
         <p class="mt-3 text-sm text-text-secondary leading-relaxed max-w-xl mx-auto">
-          트렌드 보드에 잡힌 모든 핵심 에이전트 아키텍처는 에이전틱 소프트웨어 워크샵에서 실무 코드로 다뤄집니다. 
-          Founding Cohort에 합류하여 실시간 기술 전환 선도자가 되십시오.
+          Every core agentic architecture captured on this trend board is taught with production-ready code in our Agentic Software Workshop. Join the Founding Cohort and become an early adopter of the tech transition.
         </p>
         <div class="mt-6 flex justify-center gap-4">
           <a href="/learn" class="s-btn-primary text-sm">Join the waitlist</a>
