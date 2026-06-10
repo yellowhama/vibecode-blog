@@ -1,8 +1,12 @@
 ---
 slug: 1-person-unicorn-tech-stack-2026
 title: "The Agentic Software Stack for 1-Person Unicorns in 2026"
-category: "Field Log"
-summary: "We reveal the actual 2026 uncrewed technology stack and architecture we use to run a 10-person production operation entirely solo."
+pubDatetime: 2026-06-10T12:00:00Z
+description: "We reveal the actual 2026 uncrewed technology stack and architecture we use to run a 10-person production operation entirely solo."
+draft: false
+featured: true
+series: "Field Log"
+lang: "en"
 tags: ["tech-stack", "agentic-engineering", "solopreneur", "automation"]
 ---
 
