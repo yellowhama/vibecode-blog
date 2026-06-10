@@ -228,13 +228,26 @@ const recentPosts = sortedPosts;
       </div>
     </div>
 
-    <section class="border-t border-border py-24 bg-bg-secondary relative overflow-hidden">
+    <section class="border-t border-border py-24 relative overflow-hidden">
+      <!-- Background Video -->
+      <div class="absolute inset-0 z-0">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          class="w-full h-full object-cover opacity-50"
+          src="/hero-bg.mp4"
+        ></video>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background"></div>
+      </div>
+
       <div class="app-layout max-w-2xl mx-auto text-center relative z-10 flex flex-col items-center">
-        <h2 class="text-3xl font-semibold tracking-tight text-foreground mb-4">Subscribe to the Signal</h2>
-        <p class="text-text-secondary mb-10">
+        <h2 class="text-3xl font-semibold tracking-tight text-foreground mb-4 drop-shadow-md">Subscribe to the Signal</h2>
+        <p class="text-text-secondary mb-10 drop-shadow-sm">
           Get one field note when there is a real artifact worth studying. No hype. No spam.
         </p>
-        <div class="w-full glass-panel p-2">
+        <div class="w-full backdrop-blur-md bg-background/50 border border-border rounded-xl p-6 shadow-[0_0_30px_rgba(0,229,153,0.1)]">
           <NewsletterSignup compact class="w-full" />
         </div>
       </div>
