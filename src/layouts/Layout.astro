@@ -2,7 +2,7 @@
 import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
-import CommandPalette from "@/components/CommandPalette.astro";
+import CommandPalette from "@/components/CommandPalette.tsx";
 import { SITE } from "@/config";
 import "@/styles/global.css";
 
@@ -197,7 +197,7 @@ const structuredData = {
       });
     </script>
 
-    <CommandPalette />
+    <CommandPalette client:load />
 
     <script>
       import { inject } from '@vercel/analytics';
