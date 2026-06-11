@@ -20,7 +20,8 @@ const { class: className, compact = false } = Astro.props;
 const explicitAction = import.meta.env.PUBLIC_NEWSLETTER_ACTION || "";
 const beehiivPubId = import.meta.env.PUBLIC_BEEHIIV_PUB_ID || "";
 // Beehiiv hosted embed posts to https://embeds.beehiiv.com/<pubId> — no API key needed.
-const action = explicitAction || (beehiivPubId ? `https://embeds.beehiiv.com/${beehiivPubId}` : "");
+const RELAY_DEFAULT = "https://api-kr.nongjida.kr/api/newsletter/subscribe"; // self-hosted (nurikun relay)
+const action = explicitAction || (beehiivPubId ? `https://embeds.beehiiv.com/${beehiivPubId}` : RELAY_DEFAULT);
 const live = Boolean(action);
 ---
 
@@ -113,14 +114,24 @@ const live = Boolean(action);
         submitBtn.disabled = true;
       }
       try {
-        const body = new URLSearchParams({ email });
-        await fetch(action, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: body.toString(),
-        });
-        showToast("You're in! Check your inbox to confirm.", "success");
+        if (action.includes("/api/newsletter/subscribe")) {
+          // Self-hosted relay (nurikun): JSON + CORS, double opt-in confirm mail follows.
+          const r = await fetch(action, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, list: "vibecode-weekly" }),
+          });
+          if (!r.ok) throw new Error(String(r.status));
+        } else {
+          const body = new URLSearchParams({ email });
+          await fetch(action, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: body.toString(),
+          });
+        }
+        showToast("Check your inbox — click the confirm link to finish.", "success");
         form.reset();
       } catch {
         // Network/policy blocked the background POST — fall back to the hosted page.
